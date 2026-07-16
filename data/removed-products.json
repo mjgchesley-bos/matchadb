@@ -1,0 +1,16 @@
+[
+  {
+    "brand": "Midori Spring",
+    "product": "Organic Ceremonial Matcha - Tenryu Origins Okumidori",
+    "reason": "Product page returns HTTP 404 and redirects to the homepage; brand's own on-site search for \"tenryu\" returns zero results. Appears discontinued.",
+    "sourceUrl": "https://www.midorispring.com/products/organic-ceremonial-matcha-tenryu-origins",
+    "checkedDate": "2026-07-16"
+  },
+  {
+    "brand": "Marukyu Koyamaen",
+    "product": "Hatsuenishi",
+    "reason": "Product page returns \"Page not found\" on the live site (confirmed via browser). Research notes flag this as possibly seasonal (a \"Shin Matcha\"/new-harvest release), so it may return in a future season rather than being permanently discontinued.",
+    "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1115020c1",
+    "checkedDate": "2026-07-16"
+  }
+]

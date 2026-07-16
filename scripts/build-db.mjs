@@ -18,9 +18,12 @@ const REGION = process.env.AWS_REGION || "us-east-1";
 const BUCKET = process.env.S3_BUCKET || "matcha-product-database";
 const OUT_PATH = path.join(__dirname, "..", "data", "matcha.db");
 const FX_RATE_PATH = path.join(__dirname, "..", "data", "fx-rate.json");
+const REMOVED_PATH = path.join(__dirname, "..", "data", "removed-products.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
+const removedProducts = JSON.parse(fs.readFileSync(REMOVED_PATH, "utf-8"));
+const removedSet = new Set(removedProducts.map((r) => `${r.brand}||${r.product}`));
 
 async function getS3Json(key) {
   const res = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
@@ -192,10 +195,15 @@ async function main() {
   const productIds = new Map(); // "brand||product" -> id
   let contradictionRows = 0;
 
+  let removedCount = 0;
   for (const p of products) {
     const brand = (p.brand || "").trim();
     const product = (p.product || "").trim();
     if (!brand || !product) continue;
+    if (removedSet.has(`${brand}||${product}`)) {
+      removedCount++;
+      continue;
+    }
 
     const brandId = getBrandId(brand);
     const disclosed = p.disclosed || {};
@@ -287,6 +295,7 @@ async function main() {
   const fxConvertedCount = db.exec("SELECT COUNT(*) FROM products WHERE fx_converted = 1")[0].values[0][0];
 
   console.log(`\nBuilt database:`);
+  console.log(`  excluded as removed/discontinued (404): ${removedCount}`);
   console.log(`  brands: ${brandCount}`);
   console.log(`  products: ${productCount}`);
   console.log(`  contradiction rows: ${contradictionRows}`);
