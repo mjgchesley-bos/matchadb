@@ -1,6 +1,7 @@
 {
   "usdToJpy": 162.178,
   "gbpToUsd": 1.3535,
+  "eurToUsd": 1.1458,
   "asOf": "2026-07-16",
   "source": "mid-market rate, web search (xe.com/Yahoo Finance/Bloomberg aggregation)"
 }

@@ -3,12 +3,17 @@
 // Deliberately conservative: if it can't find a confident, unambiguous pair,
 // it returns null rather than guessing — those get flagged for manual review.
 
-const PRICE_KEY_RE = /price|cost|size|sku|variant|pricing|weight|count/i;
+const PRICE_KEY_RE = /price|cost|size|sku|variant|pricing|weight|count|format/i;
 // Brewing/prep amounts (water volume, spoon measures) get swept up by the
 // generic "size" keyword match but are NOT retail package sizes — excluding
 // them from weight extraction specifically (they can still be scanned for
 // amounts, which they never actually contain).
 const SERVING_AMOUNT_KEY_RE = /serving[_\s]?size|serving[_\s]?amount|serving[_\s]?guidance/i;
+// A "discount"/"savings" key holds an amount-OFF figure (e.g. "$21.20 off"),
+// never a real price — it happens to satisfy PRICE_KEY_RE only because
+// "discount" contains "count" as a substring, an unintended collision with
+// the "item count"/"pack count" keys that keyword was meant for.
+const DISCOUNT_AMOUNT_KEY_RE = /^discount$|^savings?$|discount[_\s]?amount|savings?[_\s]?amount/i;
 
 // Is this key name clearly a monetary amount (so a bare number under it,
 // with no "$"/"¥"/"£" of its own, should be treated as a currency amount)?
@@ -27,6 +32,7 @@ const WEIGHT_RE = /(\d+(?:\.\d+)?)\s?(kg|kilograms?|g\b|grams?|gram|oz\b|ounces?
 const USD_RE = /(?:US\$|USD\s?\$?|\$)\s?([\d,]+(?:\.\d{1,2})?)/gi;
 const JPY_RE = /(?:¥|JPY\s?|yen\s?)\s?([\d,]+)|([\d,]+)\s?(?:yen|¥|JPY)/gi;
 const GBP_RE = /(?:£|GBP\s?£?)\s?([\d,]+(?:\.\d{1,2})?)/gi;
+const EUR_RE = /(?:€|EUR\s?€?)\s?([\d,]+(?:\.\d{1,2})?)/gi;
 
 function unitToGrams(value, unit) {
   const u = unit.toLowerCase();
@@ -36,11 +42,22 @@ function unitToGrams(value, unit) {
   return value; // grams
 }
 
+// A weight immediately preceded by "per" (e.g. "133.00 per 100g", or a key
+// name like "price_per_100g") is the unit in a normalized comparison rate,
+// not a real package size — same reasoning as isPerUnitRate below, applied
+// to the weight side of the phrase. Tolerates "_" as well as whitespace so
+// it also catches the pattern embedded in a key name.
+const PER_UNIT_RATE_BEHIND_RE = /per[_\s]*$/i;
+function isPerUnitRateWeight(text, matchStartIndex) {
+  return PER_UNIT_RATE_BEHIND_RE.test(text.slice(Math.max(0, matchStartIndex - 6), matchStartIndex));
+}
+
 function findWeights(text) {
   const out = [];
   let m;
   const re = new RegExp(WEIGHT_RE.source, "gi");
   while ((m = re.exec(text))) {
+    if (isPerUnitRateWeight(text, m.index)) continue;
     const unit = m[2].toLowerCase();
     out.push({
       index: m.index,
@@ -51,29 +68,50 @@ function findWeights(text) {
   return out;
 }
 
+// A price figure immediately followed by "per <weight unit>" (e.g. "EUR
+// 133.00 per 100g", "$4.20 per oz") is a normalized comparison rate, not a
+// real price for that size — including it would create a false pair against
+// the size word following "per", and a false conflict against the actual
+// price. Deliberately narrow to weight units only (not "per serving"/"per
+// unit"/"per cup"), since those describe how a genuine, real price is dosed
+// rather than restating it at a different, unrelated package size.
+const PER_UNIT_RATE_AHEAD_RE =
+  /^\s*per[_\s]*\d*\.?\d*[_\s]*(kg|kilograms?|g\b|grams?|gram|oz\b|ounces?|lbs?\b|pounds?)\b/i;
+function isPerUnitRate(text, matchEndIndex) {
+  return PER_UNIT_RATE_AHEAD_RE.test(text.slice(matchEndIndex, matchEndIndex + 12));
+}
+
 function findAmounts(text, priceType) {
   const out = [];
   let m;
   const usd = new RegExp(USD_RE.source, "gi");
   while ((m = usd.exec(text))) {
+    if (isPerUnitRate(text, m.index + m[0].length)) continue;
     out.push({ index: m.index, amount: parseFloat(m[1].replace(/,/g, "")), currency: "USD", priceType });
   }
   const jpy = new RegExp(JPY_RE.source, "gi");
   while ((m = jpy.exec(text))) {
+    if (isPerUnitRate(text, m.index + m[0].length)) continue;
     const raw = m[1] || m[2];
     if (raw) out.push({ index: m.index, amount: parseFloat(raw.replace(/,/g, "")), currency: "JPY", priceType });
   }
   const gbp = new RegExp(GBP_RE.source, "gi");
   while ((m = gbp.exec(text))) {
+    if (isPerUnitRate(text, m.index + m[0].length)) continue;
     out.push({ index: m.index, amount: parseFloat(m[1].replace(/,/g, "")), currency: "GBP", priceType });
+  }
+  const eur = new RegExp(EUR_RE.source, "gi");
+  while ((m = eur.exec(text))) {
+    if (isPerUnitRate(text, m.index + m[0].length)) continue;
+    out.push({ index: m.index, amount: parseFloat(m[1].replace(/,/g, "")), currency: "EUR", priceType });
   }
   return out;
 }
 
 // Sub-key names that signal WHICH of possibly-multiple prices is the one a
 // customer actually pays right now, vs. a crossed-out list/regular price.
-const SALE_KEY_RE = /^sale|discount|current[_\s]?price|now[_\s]?price/i;
-const REGULAR_KEY_RE = /^regular|list[_\s]?price|msrp|original[_\s]?price|full[_\s]?price/i;
+const SALE_KEY_RE = /sale|discount|current[_\s]?price|now[_\s]?price/i;
+const REGULAR_KEY_RE = /regular|list[_\s]?price|msrp|original[_\s]?price|full[_\s]?price/i;
 
 function priceTypeFromKey(key) {
   if (SALE_KEY_RE.test(key)) return "sale";
@@ -173,6 +211,8 @@ function collectAmountsAndWeights(disclosed) {
   const allWeightsSeen = []; // every distinct weight mentioned anywhere, for fallback pairing
 
   for (const [key, value] of Object.entries(disclosed || {})) {
+    if (DISCOUNT_AMOUNT_KEY_RE.test(key)) continue;
+
     // A plain numeric value under a price-named key (e.g. price_usd: 9.99) has
     // no "$" for the regex to key off of — handle it directly as USD.
     if (isMoneyKey(key) && typeof value === "number") {
@@ -188,6 +228,11 @@ function collectAmountsAndWeights(disclosed) {
       for (const item of value) blobs.push({ text: flattenItemToText(item), priceType: undefined });
     } else if (typeof value === "object" && value !== null) {
       for (const [subKey, subVal] of Object.entries(value)) {
+        // Key name is included in the scanned text on purpose — some products
+        // encode the size IN the key itself (e.g. "prices_and_sizes": {"30g
+        // (1oz)": "$27.95"}), which findWeights needs to see. A key like
+        // "price_per_100g" also contains a weight-shaped substring, but that
+        // case is handled separately by excluding weights preceded by "per".
         blobs.push({
           text: `${subKey}: ${flattenItemToText(subVal, subKey)}`,
           priceType: priceTypeFromKey(subKey),
@@ -253,12 +298,12 @@ export function hasAnyPriceAmount(disclosed) {
 export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
   const pairs = extractPricePairs(disclosed);
 
-  const byCurrency = { USD: [], JPY: [], GBP: [] };
+  const byCurrency = { USD: [], JPY: [], GBP: [], EUR: [] };
   for (const p of pairs) {
     if (byCurrency[p.currency]) byCurrency[p.currency].push(p);
   }
 
-  const hadPriceContradiction = /price|\$|¥|£|cost/i.test(contradictionsText);
+  const hadPriceContradiction = /price|\$|¥|£|€|cost/i.test(contradictionsText);
 
   const currency =
     byCurrency.USD.length > 0
@@ -267,7 +312,9 @@ export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
         ? "JPY"
         : byCurrency.GBP.length > 0
           ? "GBP"
-          : null;
+          : byCurrency.EUR.length > 0
+            ? "EUR"
+            : null;
 
   if (!currency) {
     return {

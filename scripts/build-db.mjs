@@ -89,6 +89,10 @@ function extractStructuredFields(disclosed, contradictionsText) {
       priceUsd = Math.round(price.priceNative * fxRate.gbpToUsd * 100) / 100;
       fxConverted = 1;
       fxRateDate = fxRate.asOf;
+    } else if (price.priceCurrency === "EUR") {
+      priceUsd = Math.round(price.priceNative * fxRate.eurToUsd * 100) / 100;
+      fxConverted = 1;
+      fxRateDate = fxRate.asOf;
     }
   }
 
