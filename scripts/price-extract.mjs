@@ -119,6 +119,23 @@ function priceTypeFromKey(key) {
   return undefined;
 }
 
+// Some products encode price as an object keyed by SIZE with bare-number
+// values and the currency named only on the PARENT key, e.g.
+// "sizes_and_prices_JPY": {"20g can": 4200, "40g can": 8120}. Neither
+// isMoneyKey (checks the sub-key, which is a size label here, not a money
+// word) nor the plain findAmounts regex (no "¥"/"$" on a bare number) would
+// ever catch this on their own — the money-ness and currency both come from
+// the parent key name alone.
+const PRICE_OBJECT_KEY_RE = /price|cost/i;
+const CURRENCY_SYMBOL = { USD: "$", JPY: "¥", GBP: "£", EUR: "€" };
+function currencyHintFromKey(key) {
+  if (/jpy|yen|¥/i.test(key)) return "JPY";
+  if (/gbp|£/i.test(key)) return "GBP";
+  if (/eur|€/i.test(key)) return "EUR";
+  if (/usd|\$/i.test(key)) return "USD";
+  return null;
+}
+
 // Processes one "blob" (a single key's flattened text, or a single array item's
 // flattened text). Splits on segment delimiters first (";", "|") so that
 // strings like "$26.00 (30g); $49.00 (80g)" pair each price with the weight in
@@ -227,14 +244,23 @@ function collectAmountsAndWeights(disclosed) {
     if (Array.isArray(value)) {
       for (const item of value) blobs.push({ text: flattenItemToText(item), priceType: undefined });
     } else if (typeof value === "object" && value !== null) {
+      const parentCurrency = PRICE_OBJECT_KEY_RE.test(key) ? currencyHintFromKey(key) : null;
       for (const [subKey, subVal] of Object.entries(value)) {
         // Key name is included in the scanned text on purpose — some products
         // encode the size IN the key itself (e.g. "prices_and_sizes": {"30g
         // (1oz)": "$27.95"}), which findWeights needs to see. A key like
         // "price_per_100g" also contains a weight-shaped substring, but that
         // case is handled separately by excluding weights preceded by "per".
+        // Guard against per-unit-rate/percentage sub-keys (e.g. a sibling
+        // "discount_pct": 30 next to "regular"/"sale") — same exclusion used
+        // by isMoneyKey elsewhere, so a rate doesn't get mistaken for a price
+        // just because it shares a parent object with real currency values.
+        const valueText =
+          parentCurrency && typeof subVal === "number" && !RATE_EXCLUSION_RE.test(subKey)
+            ? `${CURRENCY_SYMBOL[parentCurrency]}${subVal}`
+            : flattenItemToText(subVal, subKey);
         blobs.push({
-          text: `${subKey}: ${flattenItemToText(subVal, subKey)}`,
+          text: `${subKey}: ${valueText}`,
           priceType: priceTypeFromKey(subKey),
         });
       }
