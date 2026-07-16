@@ -40,3 +40,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# working data-quality review artifacts (not needed by the app itself)
+data/price-review-needed.json
+data/price-no-data.json
+data/price-ambiguous-size.json
+data/price-conflicting.json
+data/price-contradiction-flagged.json
+data/price-needs-review.csv

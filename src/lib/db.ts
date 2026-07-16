@@ -30,6 +30,13 @@ export type ProductRow = {
   product_name: string;
   price_usd: number | null;
   price_per_gram: number | null;
+  price_size_grams: number | null;
+  price_native: number | null;
+  price_currency: string | null;
+  price_needs_review: number;
+  price_review_reason: string | null;
+  fx_converted: number;
+  fx_rate_date: string | null;
   grade: string | null;
   cultivar: string | null;
   region: string | null;
@@ -115,6 +122,8 @@ export async function getProducts(filters: BrowseFilters) {
 
   const dataRes = db.exec(
     `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
+            p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
+            p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
             p.has_contradictions, p.not_found, p.page_notes
      FROM products p
@@ -184,6 +193,8 @@ export async function getBrandProducts(brandName: string) {
   const db = await getDb();
   const res = db.exec(
     `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
+            p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
+            p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
             p.has_contradictions, p.not_found, p.page_notes
      FROM products p JOIN brands b ON p.brand_id = b.id

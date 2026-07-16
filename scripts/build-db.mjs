@@ -9,6 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { config } from "dotenv";
+import { resolveCanonicalPrice } from "./price-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(__dirname, "..", ".env.local") });
@@ -16,8 +17,10 @@ config({ path: path.join(__dirname, "..", ".env.local") });
 const REGION = process.env.AWS_REGION || "us-east-1";
 const BUCKET = process.env.S3_BUCKET || "matcha-product-database";
 const OUT_PATH = path.join(__dirname, "..", "data", "matcha.db");
+const FX_RATE_PATH = path.join(__dirname, "..", "data", "fx-rate.json");
 
 const s3 = new S3Client({ region: REGION });
+const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
 
 async function getS3Json(key) {
   const res = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
@@ -61,20 +64,7 @@ function findFirstKeyword(haystackLower, keywords) {
   return null;
 }
 
-function extractPrice(disclosed) {
-  const text = flattenToText(disclosed).join(" | ");
-  // grab the first $-amount we can find, e.g. "$26.99"
-  const match = text.match(/\$\s?(\d+(?:\.\d{1,2})?)/);
-  const priceUsd = match ? parseFloat(match[1]) : null;
-
-  // try to find an explicit "per gram" figure, e.g. "$0.90/g" or "$0.90 per gram"
-  const perGramMatch = text.match(/\$\s?(\d+(?:\.\d{1,4})?)\s?(?:\/\s?g\b|per\s?gram)/i);
-  const pricePerGram = perGramMatch ? parseFloat(perGramMatch[1]) : null;
-
-  return { priceUsd, pricePerGram };
-}
-
-function extractStructuredFields(disclosed) {
+function extractStructuredFields(disclosed, contradictionsText) {
   const textParts = flattenToText(disclosed);
   const text = textParts.join(" | ");
   const lower = text.toLowerCase();
@@ -82,8 +72,19 @@ function extractStructuredFields(disclosed) {
   const grade = findFirstKeyword(lower, GRADE_KEYWORDS);
   const cultivar = findFirstKeyword(lower, CULTIVAR_KEYWORDS);
   const region = findFirstKeyword(lower, REGION_KEYWORDS);
-  const organicCertified = /\borganic\b/i.test(text) ? 1 : 0;
-  const { priceUsd, pricePerGram } = extractPrice(disclosed);
+  // avoid the "conventional, not organic" false-positive: only count it as
+  // organic if "organic" appears without a negation word shortly before it
+  const organicCertified = /\borganic\b/i.test(text) && !/\b(not|non)[\s-]?organic\b/i.test(text) ? 1 : 0;
+
+  const price = resolveCanonicalPrice(disclosed, contradictionsText || "");
+  let priceUsd = price.priceUsd;
+  let fxConverted = 0;
+  let fxRateDate = null;
+  if (priceUsd == null && price.priceCurrency === "JPY" && price.priceNative != null) {
+    priceUsd = Math.round((price.priceNative / fxRate.usdToJpy) * 100) / 100;
+    fxConverted = 1;
+    fxRateDate = fxRate.asOf;
+  }
 
   return {
     grade: grade ? grade[0].toUpperCase() + grade.slice(1) : null,
@@ -91,7 +92,14 @@ function extractStructuredFields(disclosed) {
     region: region ? region[0].toUpperCase() + region.slice(1) : null,
     organicCertified,
     priceUsd,
-    pricePerGram,
+    pricePerGram: price.pricePerGram,
+    priceSizeGrams: price.priceSizeGrams,
+    priceNative: price.priceNative,
+    priceCurrency: price.priceCurrency,
+    priceNeedsReview: price.needsReview ? 1 : 0,
+    priceReviewReason: price.reviewReason,
+    fxConverted,
+    fxRateDate,
   };
 }
 
@@ -119,6 +127,13 @@ async function main() {
       product_name TEXT NOT NULL,
       price_usd REAL,
       price_per_gram REAL,
+      price_size_grams REAL,
+      price_native REAL,
+      price_currency TEXT,
+      price_needs_review INTEGER DEFAULT 0,
+      price_review_reason TEXT,
+      fx_converted INTEGER DEFAULT 0,
+      fx_rate_date TEXT,
       grade TEXT,
       cultivar TEXT,
       region TEXT,
@@ -174,20 +189,30 @@ async function main() {
 
     const brandId = getBrandId(brand);
     const disclosed = p.disclosed || {};
-    const fields = extractStructuredFields(disclosed);
-    const notFound = p.source_url ? 0 : 1;
     const hasContradictions = p.contradictions && p.contradictions.length > 0 ? 1 : 0;
+    const contradictionsText = hasContradictions ? p.contradictions.join(" || ") : "";
+    const fields = extractStructuredFields(disclosed, contradictionsText);
+    const notFound = p.source_url ? 0 : 1;
 
     db.run(
       `INSERT OR IGNORE INTO products
-        (brand_id, product_name, price_usd, price_per_gram, grade, cultivar, region,
-         organic_certified, source_url, has_contradictions, not_found, disclosed_json, page_notes)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        (brand_id, product_name, price_usd, price_per_gram, price_size_grams, price_native,
+         price_currency, price_needs_review, price_review_reason, fx_converted, fx_rate_date,
+         grade, cultivar, region, organic_certified, source_url, has_contradictions, not_found,
+         disclosed_json, page_notes)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         brandId,
         product,
         fields.priceUsd,
         fields.pricePerGram,
+        fields.priceSizeGrams,
+        fields.priceNative,
+        fields.priceCurrency,
+        fields.priceNeedsReview,
+        fields.priceReviewReason,
+        fields.fxConverted,
+        fields.fxRateDate,
         fields.grade,
         fields.cultivar,
         fields.region,
@@ -247,12 +272,18 @@ async function main() {
 
   const brandCount = db.exec("SELECT COUNT(*) FROM brands")[0].values[0][0];
   const productCount = db.exec("SELECT COUNT(*) FROM products")[0].values[0][0];
+  const priceResolvedCount = db.exec("SELECT COUNT(*) FROM products WHERE price_usd IS NOT NULL AND price_needs_review = 0")[0].values[0][0];
+  const priceReviewCount = db.exec("SELECT COUNT(*) FROM products WHERE price_needs_review = 1")[0].values[0][0];
+  const fxConvertedCount = db.exec("SELECT COUNT(*) FROM products WHERE fx_converted = 1")[0].values[0][0];
 
   console.log(`\nBuilt database:`);
   console.log(`  brands: ${brandCount}`);
   console.log(`  products: ${productCount}`);
   console.log(`  contradiction rows: ${contradictionRows}`);
   console.log(`  secondary_source rows linked to a database brand: ${secondaryRows} (of ${secondary.length} total findings)`);
+  console.log(`  prices cleanly resolved: ${priceResolvedCount}`);
+  console.log(`  prices needing human review: ${priceReviewCount}`);
+  console.log(`  prices converted from JPY (rate as of ${fxRate.asOf}): ${fxConvertedCount}`);
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
   const data = db.export();

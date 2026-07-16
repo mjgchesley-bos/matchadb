@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductById } from "@/lib/db";
+import { formatPrice } from "@/lib/price";
 
 function formatValue(v: unknown): string {
   if (v == null) return "";
@@ -60,13 +61,37 @@ export default async function ProductDetailPage({
             Organic
           </span>
         )}
-        {product.price_usd != null && (
-          <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-3 py-1 text-sm">
-            ${product.price_usd.toFixed(2)}
-            {product.price_per_gram != null ? ` (~$${product.price_per_gram.toFixed(2)}/g)` : ""}
-          </span>
-        )}
+        {(() => {
+          const price = formatPrice(product);
+          if (price.kind === "unresolved") {
+            return (
+              <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 px-3 py-1 text-sm italic">
+                Price not confirmed
+              </span>
+            );
+          }
+          return (
+            <span
+              className={`rounded-full px-3 py-1 text-sm ${
+                price.caution
+                  ? "bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-200"
+                  : "bg-neutral-100 dark:bg-neutral-800"
+              }`}
+            >
+              {price.text}
+              {product.price_per_gram != null ? ` (~$${product.price_per_gram.toFixed(2)}/g)` : ""}
+              {price.caution && " ⚠ worth double-checking"}
+            </span>
+          );
+        })()}
       </div>
+
+      {product.price_usd == null && (
+        <p className="mt-2 text-xs text-neutral-500">
+          We couldn&apos;t confidently pin down a price and package size from this product&apos;s
+          page — see the original page below for current pricing.
+        </p>
+      )}
 
       {product.not_found === 1 && (
         <div className="mt-6 rounded-lg border border-red-300 dark:border-red-800 bg-red-50 dark:bg-red-950 p-4 text-sm text-red-800 dark:text-red-200">

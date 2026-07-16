@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getProducts, getFilterOptions, type BrowseFilters } from "@/lib/db";
+import { formatPrice } from "@/lib/price";
 
 function toStr(v: string | string[] | undefined): string | undefined {
   return Array.isArray(v) ? v[0] : v;
@@ -225,9 +226,22 @@ export default async function BrowsePage({
                   </span>
                 )}
               </div>
-              {p.price_usd != null && (
-                <span className="text-sm mt-1">${p.price_usd.toFixed(2)}</span>
-              )}
+              {(() => {
+                const price = formatPrice(p);
+                if (price.kind === "unresolved") {
+                  return (
+                    <span className="text-sm mt-1 text-neutral-400 italic">
+                      Price not confirmed
+                    </span>
+                  );
+                }
+                return (
+                  <span className="text-sm mt-1">
+                    {price.text}
+                    {price.caution && <span className="text-amber-600 ml-1">⚠</span>}
+                  </span>
+                );
+              })()}
             </Link>
           ))}
         </div>

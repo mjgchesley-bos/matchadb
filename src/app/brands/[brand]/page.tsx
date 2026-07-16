@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBrandProducts } from "@/lib/db";
+import { formatPrice } from "@/lib/price";
 
 export default async function BrandPage({
   params,
@@ -48,9 +49,20 @@ export default async function BrandPage({
                 </span>
               )}
             </div>
-            {p.price_usd != null && (
-              <span className="text-sm mt-1">${p.price_usd.toFixed(2)}</span>
-            )}
+            {(() => {
+              const price = formatPrice(p);
+              if (price.kind === "unresolved") {
+                return (
+                  <span className="text-sm mt-1 text-neutral-400 italic">Price not confirmed</span>
+                );
+              }
+              return (
+                <span className="text-sm mt-1">
+                  {price.text}
+                  {price.caution && <span className="text-amber-600 ml-1">⚠</span>}
+                </span>
+              );
+            })()}
           </Link>
         ))}
       </div>
