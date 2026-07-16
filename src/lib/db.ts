@@ -23,6 +23,19 @@ export function getDb(): Promise<Database> {
   return dbPromise;
 }
 
+export type ProductPriceRow = {
+  id: number;
+  product_id: number;
+  size_grams: number;
+  price_native: number | null;
+  price_currency: string;
+  price_usd: number | null;
+  fx_converted: number;
+  fx_rate_date: string | null;
+  needs_review: number;
+  all_amounts_json: string;
+};
+
 export type ProductRow = {
   id: number;
   brand_id: number;
@@ -181,11 +194,16 @@ export async function getProductById(id: number) {
     )
   ).map((r) => ({ ...r, finding: JSON.parse(r.finding_json) }));
 
+  const priceVariants = rowsToObjects<ProductPriceRow>(
+    db.exec("SELECT * FROM product_prices WHERE product_id = ? ORDER BY size_grams", [id])
+  ).map((r) => ({ ...r, allAmounts: JSON.parse(r.all_amounts_json) as number[] }));
+
   return {
     ...product,
     disclosed: JSON.parse(product.disclosed_json),
     contradictions,
     secondarySources,
+    priceVariants,
   };
 }
 

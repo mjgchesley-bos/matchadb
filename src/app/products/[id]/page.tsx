@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductById } from "@/lib/db";
-import { formatPrice } from "@/lib/price";
+import { formatPrice, formatPriceVariant } from "@/lib/price";
 
 function formatValue(v: unknown): string {
   if (v == null) return "";
@@ -63,6 +63,7 @@ export default async function ProductDetailPage({
         )}
         {(() => {
           const price = formatPrice(product);
+          const hasMultipleSizes = product.priceVariants.length > 1;
           if (price.kind === "unresolved") {
             return (
               <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 px-3 py-1 text-sm italic">
@@ -78,6 +79,7 @@ export default async function ProductDetailPage({
                   : "bg-neutral-100 dark:bg-neutral-800"
               }`}
             >
+              {hasMultipleSizes ? "From " : ""}
               {price.text}
               {product.price_per_gram != null ? ` (~$${product.price_per_gram.toFixed(2)}/g)` : ""}
               {price.caution && " ⚠ worth double-checking"}
@@ -86,7 +88,28 @@ export default async function ProductDetailPage({
         })()}
       </div>
 
-      {product.price_usd == null && (
+      {product.priceVariants.length > 0 && (
+        <section className="mt-4">
+          <h2 className="text-sm font-medium text-neutral-500 mb-1">
+            Pricing as disclosed on the product page
+          </h2>
+          <ul className="text-sm divide-y divide-neutral-200 dark:divide-neutral-800 border-t border-b border-neutral-200 dark:border-neutral-800">
+            {product.priceVariants.map((v) => {
+              const { text, caution } = formatPriceVariant(v);
+              return (
+                <li
+                  key={v.id}
+                  className={`py-2 ${caution ? "text-amber-800 dark:text-amber-300" : ""}`}
+                >
+                  {text}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
+      {product.priceVariants.every((v) => v.needs_review === 1) && (
         <p className="mt-2 text-xs text-neutral-500">
           We couldn&apos;t confidently pin down a price and package size from this product&apos;s
           page — see the original page below for current pricing.

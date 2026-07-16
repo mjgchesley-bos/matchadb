@@ -169,6 +169,21 @@ function processBlob(text, priceType) {
           nearest = w;
         }
       }
+      // If a directly-stated gram weight represents the SAME size as the
+      // nearest match (within clustering tolerance — e.g. "30g (1oz):
+      // $27.95", where "1oz" happens to sit textually closer), prefer the
+      // page's own gram figure over the oz/lb conversion. But don't
+      // substitute a native-gram weight that's actually a DIFFERENT
+      // quantity — e.g. "$20 ... 6.3 oz total (12 sticks, 15 grams per
+      // stick)" has a real per-stick weight that has nothing to do with the
+      // whole box's price, and swapping it in would silently attach the
+      // box's price to a single stick's size.
+      if (!nearest.isNativeGram) {
+        const equivalentNative = weights.find(
+          (w) => w.isNativeGram && Math.abs(w.grams - nearest.grams) / nearest.grams <= 0.1
+        );
+        if (equivalentNative) nearest = equivalentNative;
+      }
       paired.push({ grams: nearest.grams, amount: a.amount, currency: a.currency, priceType: a.priceType });
     }
   }
@@ -307,6 +322,75 @@ export function extractPricePairs(disclosed) {
   return allPaired.filter((p) => p.grams != null && p.amount != null && p.grams > 0 && p.amount > 0);
 }
 
+// Groups already-same-currency pairs by package size (10% tolerance, same
+// reasoning as clusterWeights — an oz figure and its "~Xg" conversion land a
+// hair apart numerically but are clearly the same physical size).
+function clusterPairsByGrams(pairs) {
+  if (pairs.length === 0) return [];
+  const sorted = [...pairs].sort((a, b) => a.grams - b.grams);
+  const clusters = [[sorted[0]]];
+  for (let i = 1; i < sorted.length; i++) {
+    const current = sorted[i];
+    const last = clusters[clusters.length - 1];
+    const avg = last.reduce((s, v) => s + v.grams, 0) / last.length;
+    if (Math.abs(current.grams - avg) / avg <= 0.1) {
+      last.push(current);
+    } else {
+      clusters.push([current]);
+    }
+  }
+  return clusters;
+}
+
+// Given a cluster of same-size, same-currency pairs, pick the single
+// confident amount where possible: unanimous, or disambiguated by sale/
+// regular tagging. Returns amount: null (never a guess) when multiple
+// genuinely different prices exist for this size and there's no tag telling
+// us which one a customer actually pays — allAmounts is always the full raw
+// list so callers can show exactly what was disclosed rather than a
+// resolution we invented.
+function resolveClusterAmount(cluster) {
+  const allAmounts = [...new Set(cluster.map((c) => c.amount))];
+  if (allAmounts.length === 1) {
+    return { amount: allAmounts[0], allAmounts };
+  }
+  const saleAmounts = [...new Set(cluster.filter((c) => c.priceType === "sale").map((c) => c.amount))];
+  if (saleAmounts.length === 1) {
+    return { amount: saleAmounts[0], allAmounts };
+  }
+  return { amount: null, allAmounts };
+}
+
+/**
+ * Every distinct size/price offering actually disclosed for a product — not
+ * just the smallest. This is what the product detail page shows: the raw
+ * pricing table as found, rather than a single collapsed "canonical" number.
+ */
+export function extractPriceVariants(disclosed) {
+  const pairs = extractPricePairs(disclosed);
+  const byCurrency = {};
+  for (const p of pairs) {
+    (byCurrency[p.currency] ||= []).push(p);
+  }
+
+  const variants = [];
+  for (const [currency, list] of Object.entries(byCurrency)) {
+    for (const cluster of clusterPairsByGrams(list)) {
+      const grams = cluster.reduce((s, v) => s + v.grams, 0) / cluster.length;
+      const { amount, allAmounts } = resolveClusterAmount(cluster);
+      variants.push({
+        grams,
+        priceCurrency: currency,
+        priceNative: amount,
+        allAmounts,
+        needsReview: amount == null,
+      });
+    }
+  }
+
+  return variants.sort((a, b) => a.grams - b.grams);
+}
+
 // Was ANY price amount found anywhere in the disclosed data, regardless of
 // whether it could be tied to a specific size? Used to tell "no price
 // disclosed at all" apart from "price disclosed but size is ambiguous" —
@@ -357,33 +441,20 @@ export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
   const candidates = byCurrency[currency];
   const minGrams = Math.min(...candidates.map((c) => c.grams));
   const atMinSize = candidates.filter((c) => Math.abs(c.grams - minGrams) < 0.01);
-  const distinctAmounts = new Set(atMinSize.map((c) => c.amount));
+  const { amount } = resolveClusterAmount(atMinSize);
 
-  let resolvedAmount = null;
-
-  if (distinctAmounts.size > 1) {
-    // Not a genuine conflict if this is just "sale price" vs "regular/list
-    // price" for the same item — the sale price is what a customer actually
-    // pays right now, so prefer it rather than flagging as ambiguous.
-    const saleAmounts = new Set(atMinSize.filter((c) => c.priceType === "sale").map((c) => c.amount));
-    if (saleAmounts.size === 1) {
-      resolvedAmount = [...saleAmounts][0];
-    } else {
-      return {
-        priceUsd: null,
-        priceNative: null,
-        priceCurrency: currency,
-        priceSizeGrams: minGrams,
-        pricePerGram: null,
-        needsReview: true,
-        reviewReason: "conflicting_prices_at_smallest_size",
-      };
-    }
-  } else {
-    resolvedAmount = atMinSize[0].amount;
+  if (amount == null) {
+    return {
+      priceUsd: null,
+      priceNative: null,
+      priceCurrency: currency,
+      priceSizeGrams: minGrams,
+      pricePerGram: null,
+      needsReview: true,
+      reviewReason: "conflicting_prices_at_smallest_size",
+    };
   }
 
-  const amount = resolvedAmount;
   const pricePerGram = amount / minGrams;
 
   return {

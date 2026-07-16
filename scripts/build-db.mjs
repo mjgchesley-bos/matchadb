@@ -9,7 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { config } from "dotenv";
-import { resolveCanonicalPrice } from "./price-extract.mjs";
+import { resolveCanonicalPrice, extractPriceVariants } from "./price-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(__dirname, "..", ".env.local") });
@@ -67,6 +67,18 @@ function findFirstKeyword(haystackLower, keywords) {
   return null;
 }
 
+// Converts a native-currency amount to USD using the pinned fx-rate.json
+// snapshot. Returns usd: null / converted: 0 for USD itself (nothing to
+// convert) or an unrecognized currency.
+function convertToUsd(amount, currency) {
+  if (amount == null) return { usd: null, converted: 0 };
+  if (currency === "USD") return { usd: amount, converted: 0 };
+  if (currency === "JPY") return { usd: Math.round((amount / fxRate.usdToJpy) * 100) / 100, converted: 1 };
+  if (currency === "GBP") return { usd: Math.round(amount * fxRate.gbpToUsd * 100) / 100, converted: 1 };
+  if (currency === "EUR") return { usd: Math.round(amount * fxRate.eurToUsd * 100) / 100, converted: 1 };
+  return { usd: null, converted: 0 };
+}
+
 function extractStructuredFields(disclosed, contradictionsText) {
   const textParts = flattenToText(disclosed);
   const text = textParts.join(" | ");
@@ -84,19 +96,10 @@ function extractStructuredFields(disclosed, contradictionsText) {
   let fxConverted = 0;
   let fxRateDate = null;
   if (priceUsd == null && price.priceNative != null) {
-    if (price.priceCurrency === "JPY") {
-      priceUsd = Math.round((price.priceNative / fxRate.usdToJpy) * 100) / 100;
-      fxConverted = 1;
-      fxRateDate = fxRate.asOf;
-    } else if (price.priceCurrency === "GBP") {
-      priceUsd = Math.round(price.priceNative * fxRate.gbpToUsd * 100) / 100;
-      fxConverted = 1;
-      fxRateDate = fxRate.asOf;
-    } else if (price.priceCurrency === "EUR") {
-      priceUsd = Math.round(price.priceNative * fxRate.eurToUsd * 100) / 100;
-      fxConverted = 1;
-      fxRateDate = fxRate.asOf;
-    }
+    const converted = convertToUsd(price.priceNative, price.priceCurrency);
+    priceUsd = converted.usd;
+    fxConverted = converted.converted;
+    fxRateDate = converted.converted ? fxRate.asOf : null;
   }
 
   return {
@@ -175,12 +178,32 @@ async function main() {
       contradiction_text TEXT
     );
 
+    -- Every distinct size/price offering actually disclosed for a product,
+    -- not just the smallest ("canonical") one stored on products itself.
+    -- price_usd/all_amounts_json is null/populated only when a size had
+    -- multiple genuinely different listed prices with no way to tell which
+    -- is current (e.g. two different-looking listings) -- shown as-is
+    -- rather than guessed.
+    CREATE TABLE product_prices (
+      id INTEGER PRIMARY KEY,
+      product_id INTEGER REFERENCES products(id),
+      size_grams REAL,
+      price_native REAL,
+      price_currency TEXT,
+      price_usd REAL,
+      fx_converted INTEGER DEFAULT 0,
+      fx_rate_date TEXT,
+      needs_review INTEGER DEFAULT 0,
+      all_amounts_json TEXT
+    );
+
     CREATE INDEX idx_products_brand ON products(brand_id);
     CREATE INDEX idx_products_grade ON products(grade);
     CREATE INDEX idx_products_region ON products(region);
     CREATE INDEX idx_secondary_product ON secondary_sources(product_id);
     CREATE INDEX idx_secondary_brand ON secondary_sources(brand_id);
     CREATE INDEX idx_contradictions_product ON contradictions(product_id);
+    CREATE INDEX idx_product_prices_product ON product_prices(product_id);
   `);
 
   const brandIds = new Map();
@@ -194,6 +217,7 @@ async function main() {
 
   const productIds = new Map(); // "brand||product" -> id
   let contradictionRows = 0;
+  let priceVariantRows = 0;
 
   let removedCount = 0;
   for (const p of products) {
@@ -256,6 +280,28 @@ async function main() {
         contradictionRows++;
       }
     }
+
+    for (const variant of extractPriceVariants(disclosed)) {
+      const converted = convertToUsd(variant.priceNative, variant.priceCurrency);
+      db.run(
+        `INSERT INTO product_prices
+          (product_id, size_grams, price_native, price_currency, price_usd, fx_converted, fx_rate_date,
+           needs_review, all_amounts_json)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          productId,
+          variant.grams,
+          variant.priceNative,
+          variant.priceCurrency,
+          converted.usd,
+          converted.converted,
+          converted.converted ? fxRate.asOf : null,
+          variant.needsReview ? 1 : 0,
+          JSON.stringify(variant.allAmounts),
+        ]
+      );
+      priceVariantRows++;
+    }
   }
 
   let secondaryRows = 0;
@@ -299,6 +345,7 @@ async function main() {
   console.log(`  brands: ${brandCount}`);
   console.log(`  products: ${productCount}`);
   console.log(`  contradiction rows: ${contradictionRows}`);
+  console.log(`  price variant rows (all disclosed sizes): ${priceVariantRows}`);
   console.log(`  secondary_source rows linked to a database brand: ${secondaryRows} (of ${secondary.length} total findings)`);
   console.log(`  prices cleanly resolved: ${priceResolvedCount}`);
   console.log(`  prices needing human review: ${priceReviewCount}`);

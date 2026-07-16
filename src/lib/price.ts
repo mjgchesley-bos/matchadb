@@ -1,4 +1,4 @@
-import type { ProductRow } from "./db";
+import type { ProductPriceRow, ProductRow } from "./db";
 
 export type PriceDisplay =
   | { kind: "resolved"; text: string; caution: boolean }
@@ -26,4 +26,32 @@ export function formatPrice(p: ProductRow): PriceDisplay {
 
 function trimNum(n: number): string {
   return Number.isInteger(n) ? String(n) : n.toFixed(1);
+}
+
+function currencySymbol(currency: string): string {
+  return currency === "JPY" ? "¥" : currency === "GBP" ? "£" : currency === "EUR" ? "€" : "$";
+}
+
+// One row of the full "every size actually disclosed" pricing table shown
+// on the product detail page — as opposed to formatPrice's single collapsed
+// "from $X" figure used on browse/brand list pages.
+export function formatPriceVariant(
+  v: ProductPriceRow & { allAmounts: number[] }
+): { text: string; caution: boolean } {
+  const size = `${trimNum(v.size_grams)}g`;
+  const symbol = currencySymbol(v.price_currency);
+
+  if (v.needs_review === 1 || v.price_native == null) {
+    const amounts = v.allAmounts
+      .map((a) => `${symbol}${v.price_currency === "JPY" ? trimNum(a) : a.toFixed(2)}`)
+      .join(" or ");
+    return { text: `${size} — ${amounts} (multiple prices listed on the page; unclear which is current)`, caution: true };
+  }
+
+  const nativeAmount = v.price_currency === "JPY" ? trimNum(v.price_native) : v.price_native.toFixed(2);
+  let text = `${size} — ${symbol}${nativeAmount}`;
+  if (v.fx_converted === 1 && v.price_usd != null) {
+    text += ` (~$${v.price_usd.toFixed(2)} USD${v.fx_rate_date ? `, rate as of ${v.fx_rate_date}` : ""})`;
+  }
+  return { text, caution: false };
 }
