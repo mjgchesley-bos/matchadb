@@ -80,10 +80,16 @@ function extractStructuredFields(disclosed, contradictionsText) {
   let priceUsd = price.priceUsd;
   let fxConverted = 0;
   let fxRateDate = null;
-  if (priceUsd == null && price.priceCurrency === "JPY" && price.priceNative != null) {
-    priceUsd = Math.round((price.priceNative / fxRate.usdToJpy) * 100) / 100;
-    fxConverted = 1;
-    fxRateDate = fxRate.asOf;
+  if (priceUsd == null && price.priceNative != null) {
+    if (price.priceCurrency === "JPY") {
+      priceUsd = Math.round((price.priceNative / fxRate.usdToJpy) * 100) / 100;
+      fxConverted = 1;
+      fxRateDate = fxRate.asOf;
+    } else if (price.priceCurrency === "GBP") {
+      priceUsd = Math.round(price.priceNative * fxRate.gbpToUsd * 100) / 100;
+      fxConverted = 1;
+      fxRateDate = fxRate.asOf;
+    }
   }
 
   return {

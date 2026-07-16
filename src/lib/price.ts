@@ -12,8 +12,10 @@ export function formatPrice(p: ProductRow): PriceDisplay {
   const size = p.price_size_grams != null ? ` (${trimNum(p.price_size_grams)}g)` : "";
   let text = `$${p.price_usd.toFixed(2)}${size}`;
 
-  if (p.fx_converted === 1 && p.price_native != null && p.price_currency === "JPY") {
-    text = `¥${trimNum(p.price_native)}${size} — ~$${p.price_usd.toFixed(2)} USD (converted${
+  if (p.fx_converted === 1 && p.price_native != null) {
+    const symbol = p.price_currency === "JPY" ? "¥" : p.price_currency === "GBP" ? "£" : "";
+    const nativeAmount = p.price_currency === "JPY" ? trimNum(p.price_native) : p.price_native.toFixed(2);
+    text = `${symbol}${nativeAmount}${size} — ~$${p.price_usd.toFixed(2)} USD (converted${
       p.fx_rate_date ? `, rate as of ${p.fx_rate_date}` : ""
     })`;
   }

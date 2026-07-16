@@ -9,11 +9,24 @@ const PRICE_KEY_RE = /price|cost|size|sku|variant|pricing|weight|count/i;
 // them from weight extraction specifically (they can still be scanned for
 // amounts, which they never actually contain).
 const SERVING_AMOUNT_KEY_RE = /serving[_\s]?size|serving[_\s]?amount|serving[_\s]?guidance/i;
-const DIRECT_PRICE_KEY_RE = /^price(_usd)?$|_price$|^cost$|^price_usd$/i;
+
+// Is this key name clearly a monetary amount (so a bare number under it,
+// with no "$"/"¥"/"£" of its own, should be treated as a currency amount)?
+// Deliberately broad on "contains price/cost", since real key names vary a
+// lot ("price_usd", "regular_price_usd", "sale_price_usd", "cost", "msrp"...)
+// — but excludes per-unit RATES (price_per_gram, discount_pct), which are
+// numerically much smaller and would produce nonsense if treated as a full
+// price.
+const RATE_EXCLUSION_RE = /per[_\s]?(gram|g\b|serving|oz|unit|cup)|_pct\b|percent/i;
+function isMoneyKey(key) {
+  if (RATE_EXCLUSION_RE.test(key)) return false;
+  return /price|cost|amount|msrp/i.test(key) || /^regular$|^sale$/i.test(key);
+}
 
 const WEIGHT_RE = /(\d+(?:\.\d+)?)\s?(kg|kilograms?|g\b|grams?|gram|oz\b|ounces?|lbs?\b|pounds?)\b/gi;
 const USD_RE = /(?:US\$|USD\s?\$?|\$)\s?([\d,]+(?:\.\d{1,2})?)/gi;
 const JPY_RE = /(?:¥|JPY\s?|yen\s?)\s?([\d,]+)|([\d,]+)\s?(?:yen|¥|JPY)/gi;
+const GBP_RE = /(?:£|GBP\s?£?)\s?([\d,]+(?:\.\d{1,2})?)/gi;
 
 function unitToGrams(value, unit) {
   const u = unit.toLowerCase();
@@ -49,6 +62,10 @@ function findAmounts(text, priceType) {
   while ((m = jpy.exec(text))) {
     const raw = m[1] || m[2];
     if (raw) out.push({ index: m.index, amount: parseFloat(raw.replace(/,/g, "")), currency: "JPY", priceType });
+  }
+  const gbp = new RegExp(GBP_RE.source, "gi");
+  while ((m = gbp.exec(text))) {
+    out.push({ index: m.index, amount: parseFloat(m[1].replace(/,/g, "")), currency: "GBP", priceType });
   }
   return out;
 }
@@ -104,16 +121,11 @@ function processBlob(text, priceType) {
   return { paired, unpairedAmounts, weights: allWeights };
 }
 
-// Sub-key names that indicate a bare number is a monetary amount, e.g.
-// price_usd: { regular: 17.98, sale: 12.60 } — "regular"/"sale" have no
-// currency symbol of their own, but their key name makes the intent clear.
-const MONEY_SUBKEY_RE = /^price$|^cost$|^amount$|^msrp$|regular|sale/i;
-
 function flattenItemToText(item, keyHint) {
   if (item == null) return "";
   if (typeof item === "string") return item;
   if (typeof item === "number") {
-    return keyHint && MONEY_SUBKEY_RE.test(keyHint) ? `$${item}` : String(item);
+    return keyHint && isMoneyKey(keyHint) ? `$${item}` : String(item);
   }
   if (typeof item === "boolean") return String(item);
   if (Array.isArray(item)) return item.map((v) => flattenItemToText(v)).join(" | ");
@@ -150,7 +162,12 @@ function clusterWeights(weights) {
   });
 }
 
-export function extractPricePairs(disclosed) {
+// Shared collection pass used by both extractPricePairs (which needs the
+// fallback-paired, weight-filtered result) and hasAnyPriceAmount (which just
+// needs to know whether ANY amount was found anywhere, paired or not — used
+// to distinguish "no price disclosed at all" from "price disclosed but size
+// is ambiguous" when reporting what needs manual review).
+function collectAmountsAndWeights(disclosed) {
   const allPaired = [];
   const allUnpairedAmounts = [];
   const allWeightsSeen = []; // every distinct weight mentioned anywhere, for fallback pairing
@@ -158,7 +175,7 @@ export function extractPricePairs(disclosed) {
   for (const [key, value] of Object.entries(disclosed || {})) {
     // A plain numeric value under a price-named key (e.g. price_usd: 9.99) has
     // no "$" for the regex to key off of — handle it directly as USD.
-    if (DIRECT_PRICE_KEY_RE.test(key) && typeof value === "number") {
+    if (isMoneyKey(key) && typeof value === "number") {
       allUnpairedAmounts.push({ index: 0, amount: value, currency: "USD", priceType: priceTypeFromKey(key) });
       continue;
     }
@@ -211,7 +228,21 @@ export function extractPricePairs(disclosed) {
     // (-> needs review)
   }
 
+  return { allPaired, allUnpairedAmounts };
+}
+
+export function extractPricePairs(disclosed) {
+  const { allPaired } = collectAmountsAndWeights(disclosed);
   return allPaired.filter((p) => p.grams != null && p.amount != null && p.grams > 0 && p.amount > 0);
+}
+
+// Was ANY price amount found anywhere in the disclosed data, regardless of
+// whether it could be tied to a specific size? Used to tell "no price
+// disclosed at all" apart from "price disclosed but size is ambiguous" —
+// the latter is worth a human's review, the former isn't (nothing to review).
+export function hasAnyPriceAmount(disclosed) {
+  const { allPaired, allUnpairedAmounts } = collectAmountsAndWeights(disclosed);
+  return allPaired.length > 0 || allUnpairedAmounts.length > 0;
 }
 
 /**
@@ -222,14 +253,21 @@ export function extractPricePairs(disclosed) {
 export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
   const pairs = extractPricePairs(disclosed);
 
-  const byCurrency = { USD: [], JPY: [] };
+  const byCurrency = { USD: [], JPY: [], GBP: [] };
   for (const p of pairs) {
     if (byCurrency[p.currency]) byCurrency[p.currency].push(p);
   }
 
-  const hadPriceContradiction = /price|\$|¥|cost/i.test(contradictionsText);
+  const hadPriceContradiction = /price|\$|¥|£|cost/i.test(contradictionsText);
 
-  const currency = byCurrency.USD.length > 0 ? "USD" : byCurrency.JPY.length > 0 ? "JPY" : null;
+  const currency =
+    byCurrency.USD.length > 0
+      ? "USD"
+      : byCurrency.JPY.length > 0
+        ? "JPY"
+        : byCurrency.GBP.length > 0
+          ? "GBP"
+          : null;
 
   if (!currency) {
     return {

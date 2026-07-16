@@ -2,15 +2,9 @@ import initSqlJs from "sql.js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { extractPricePairs, resolveCanonicalPrice } from "./price-extract.mjs";
+import { resolveCanonicalPrice, hasAnyPriceAmount } from "./price-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-// re-derive whether ANY amount was found at all (regardless of weight pairing)
-function anyAmountFound(disclosed) {
-  const text = JSON.stringify(disclosed);
-  return /\$\s?\d|USD\s?\d|¥\s?\d|JPY\s?\d|\d\s?yen/i.test(text);
-}
 
 async function main() {
   const SQL = await initSqlJs();
@@ -42,7 +36,7 @@ async function main() {
     } else if (result.reviewReason === "conflicting_prices_at_smallest_size") {
       conflicting.push(entry);
     } else if (result.reviewReason === "no_price_size_pair_found") {
-      if (anyAmountFound(disclosed)) {
+      if (hasAnyPriceAmount(disclosed)) {
         ambiguousSize.push(entry);
       } else {
         noPriceAtAll.push(entry);
