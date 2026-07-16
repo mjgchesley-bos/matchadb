@@ -317,9 +317,73 @@ function collectAmountsAndWeights(disclosed) {
   return { allPaired, allUnpairedAmounts };
 }
 
+// Some brands (e.g. Breakaway Matcha) price tiers by SERVING COUNT rather
+// than weight, with the count baked into the key name itself, e.g.
+// "price_30_servings": "$48.00 ($1.28/serving)" or "price_100_servings":
+// "$1.03/serving" (a rate only, no flat total given for that tier). These
+// are only convertible to a real gram size when the product discloses an
+// explicit servings-to-grams ratio elsewhere (e.g. serving_size: "One
+// gram...") — we never assume 1 serving = 1 gram without seeing it stated,
+// since other brands price by serving count with no such ratio at all.
+const SERVINGS_PRICE_KEY_RE = /^price[_\s].*?(\d+)[_\s]*servings?$/i;
+const SERVING_TO_GRAM_RE = /(?:^|\b)(one|\d+(?:\.\d+)?)\s*grams?\b/i;
+
+function gramsPerServingFromDisclosed(disclosed) {
+  for (const [key, value] of Object.entries(disclosed || {})) {
+    if (!SERVING_AMOUNT_KEY_RE.test(key) || typeof value !== "string") continue;
+    const m = SERVING_TO_GRAM_RE.exec(value);
+    if (m) return m[1].toLowerCase() === "one" ? 1 : parseFloat(m[1]);
+  }
+  return null;
+}
+
+// A dollar figure immediately followed by "/serving" is a per-serving RATE,
+// not the tier's flat total — has to be multiplied by the serving count.
+// Prefer an actual flat total if the same string also states one (e.g.
+// "$48.00 ($1.28/serving)" — 48.00 is the real total, 1.28 is just the
+// derived per-serving figure for comparison shopping).
+function amountFromServingTierValue(value, servings) {
+  // Capturing an optional "/serving" as PART of each match (rather than a
+  // lookahead) avoids a backtracking trap: a lookahead here would let the
+  // engine shrink the optional decimal group to satisfy it, silently
+  // truncating "$1.03" down to "$1" to dodge a following "/serving".
+  const dollarRe = /\$([\d,]+(?:\.\d{1,2})?)(\s*\/\s*serving)?/gi;
+  let m;
+  let total = null;
+  let rate = null;
+  while ((m = dollarRe.exec(value))) {
+    const amount = parseFloat(m[1].replace(/,/g, ""));
+    if (m[2]) {
+      rate = amount;
+    } else {
+      total = amount;
+    }
+  }
+  if (total != null) return total;
+  if (rate != null) return Math.round(rate * servings * 100) / 100;
+  return null;
+}
+
+function extractServingTierPairs(disclosed) {
+  const gramsPerServing = gramsPerServingFromDisclosed(disclosed);
+  if (gramsPerServing == null) return [];
+
+  const pairs = [];
+  for (const [key, value] of Object.entries(disclosed || {})) {
+    const keyMatch = SERVINGS_PRICE_KEY_RE.exec(key);
+    if (!keyMatch || typeof value !== "string") continue;
+    const servings = parseFloat(keyMatch[1]);
+    const amount = amountFromServingTierValue(value, servings);
+    if (amount == null) continue;
+    pairs.push({ grams: servings * gramsPerServing, amount, currency: "USD", priceType: undefined });
+  }
+  return pairs;
+}
+
 export function extractPricePairs(disclosed) {
   const { allPaired } = collectAmountsAndWeights(disclosed);
-  return allPaired.filter((p) => p.grams != null && p.amount != null && p.grams > 0 && p.amount > 0);
+  const allPairs = [...allPaired, ...extractServingTierPairs(disclosed)];
+  return allPairs.filter((p) => p.grams != null && p.amount != null && p.grams > 0 && p.amount > 0);
 }
 
 // Groups already-same-currency pairs by package size (10% tolerance, same
