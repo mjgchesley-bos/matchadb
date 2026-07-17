@@ -21,6 +21,7 @@ const FX_RATE_PATH = path.join(__dirname, "..", "data", "fx-rate.json");
 const REMOVED_PATH = path.join(__dirname, "..", "data", "removed-products.json");
 const LIVE_PRICES_PATH = path.join(__dirname, "..", "data", "live-prices.json");
 const PRICE_LINK_ONLY_PATH = path.join(__dirname, "..", "data", "price-display-overrides.json");
+const RESOLVED_CONTRADICTIONS_PATH = path.join(__dirname, "..", "data", "resolved-contradictions.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
@@ -28,6 +29,19 @@ const removedProducts = JSON.parse(fs.readFileSync(REMOVED_PATH, "utf-8"));
 const removedSet = new Set(removedProducts.map((r) => `${r.brand}||${r.product}`));
 const priceLinkOnlyProducts = JSON.parse(fs.readFileSync(PRICE_LINK_ONLY_PATH, "utf-8"));
 const priceLinkOnlySet = new Set(priceLinkOnlyProducts.map((r) => `${r.brand}||${r.product}`));
+
+// Specific archived contradictions that live-scraping has since resolved
+// (e.g. a price whose size "couldn't be confirmed" in the archived research,
+// now confirmed directly from the current product page) -- curated rather
+// than auto-detected, since telling "resolved" apart from "still a real
+// inconsistency" requires a human to actually look.
+const resolvedContradictions = JSON.parse(fs.readFileSync(RESOLVED_CONTRADICTIONS_PATH, "utf-8"));
+const resolvedContradictionsByKey = new Map();
+for (const r of resolvedContradictions) {
+  const key = `${r.brand}||${r.product}`;
+  if (!resolvedContradictionsByKey.has(key)) resolvedContradictionsByKey.set(key, []);
+  resolvedContradictionsByKey.get(key).push(r.matchSubstring);
+}
 
 // Live-scraped pricing (scripts/scrape-live-prices.mjs) is the authoritative
 // source when available -- real, complete, CURRENT variant data straight
@@ -261,8 +275,12 @@ async function main() {
 
     const brandId = getBrandId(brand);
     const disclosed = p.disclosed || {};
-    const hasContradictions = p.contradictions && p.contradictions.length > 0 ? 1 : 0;
-    const contradictionsText = hasContradictions ? p.contradictions.join(" || ") : "";
+    const resolvedSubstrings = resolvedContradictionsByKey.get(`${brand}||${product}`) || [];
+    const contradictions = (p.contradictions || []).filter(
+      (c) => !resolvedSubstrings.some((sub) => c.includes(sub))
+    );
+    const hasContradictions = contradictions.length > 0 ? 1 : 0;
+    const contradictionsText = hasContradictions ? contradictions.join(" || ") : "";
 
     const liveEntry = livePricesByKey.get(`${brand}||${product}`);
     // Normalize to null (not just an empty array) when every live variant's
@@ -319,7 +337,7 @@ async function main() {
     productIds.set(`${brand}||${product}`, productId);
 
     if (hasContradictions) {
-      for (const c of p.contradictions) {
+      for (const c of contradictions) {
         db.run("INSERT INTO contradictions (product_id, contradiction_text) VALUES (?, ?)", [
           productId,
           c,

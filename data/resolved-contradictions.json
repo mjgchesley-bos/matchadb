@@ -1,0 +1,9 @@
+[
+  {
+    "brand": "David's Tea",
+    "product": "Grand Cru Matcha",
+    "matchSubstring": "the weight/size of the $64.90 default variant is not stated on the page — could not confirm which package size this price corresponds to.",
+    "reason": "Live-scraped the current product page directly and confirmed 1.8oz is stated inline next to the $64.90 price -- this contradiction is resolved, not just stale.",
+    "resolvedDate": "2026-07-17"
+  }
+]
