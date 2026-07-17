@@ -6553,17 +6553,17 @@
     "brand": "Maeda-en",
     "product_name": "Re-Q Matcha Latte",
     "source_url": "https://maeda-en.com/collections/matcha/products/re-q-matcha-latte",
-    "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:42:52.691Z",
     "variants": [
       {
-        "label": "Re-Q Matcha Latte - 7pk.",
-        "grams": null,
+        "label": "0.4oz x 7 packets",
+        "grams": 79.3786,
         "priceNative": 15,
         "currency": "USD"
       }
-    ]
+    ],
+    "status": "ok",
+    "method": "manual_verified",
+    "scrapedAt": "2026-07-17T03:04:06.224Z"
   },
   "305": {
     "id": 305,
@@ -11032,17 +11032,17 @@
     "brand": "Obubu Tea Farms",
     "product_name": "Matcha Cultivars Comparison Set",
     "source_url": "https://obubutea.com/shop/green-tea/matcha/matcha-cultivars-comparison-set/",
-    "status": "ok",
-    "method": "json_ld",
-    "scrapedAt": "2026-07-17T01:57:15.099Z",
     "variants": [
       {
-        "label": "Matcha Cultivars Comparison Set",
-        "grams": null,
+        "label": "4 x 1.5g variety packets",
+        "grams": 6,
         "priceNative": 800,
         "currency": "JPY"
       }
-    ]
+    ],
+    "status": "ok",
+    "method": "manual_verified",
+    "scrapedAt": "2026-07-17T03:04:06.222Z"
   },
   "523": {
     "id": 523,
@@ -11560,17 +11560,17 @@
     "brand": "Pique Tea",
     "product_name": "Sun Goddess Matcha",
     "source_url": "https://www.piquelife.com/products/matcha-green-tea",
-    "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:33:40.599Z",
     "variants": [
       {
-        "label": "Sun Goddess Matcha",
-        "grams": null,
+        "label": "28 servings, 56g total",
+        "grams": 56,
         "priceNative": 68,
         "currency": "USD"
       }
-    ]
+    ],
+    "status": "ok",
+    "method": "manual_verified",
+    "scrapedAt": "2026-07-17T03:04:06.224Z"
   },
   "553": {
     "id": 553,

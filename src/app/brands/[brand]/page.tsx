@@ -56,6 +56,13 @@ export default async function BrandPage({
                   <span className="text-sm mt-1 text-neutral-400 italic">Price not confirmed</span>
                 );
               }
+              if (price.kind === "linkOnly") {
+                return (
+                  <span className="text-sm mt-1 text-neutral-400 italic">
+                    Pricing on product page
+                  </span>
+                );
+              }
               return (
                 <span className="text-sm mt-1">
                   {price.text}

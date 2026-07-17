@@ -235,6 +235,13 @@ export default async function BrowsePage({
                     </span>
                   );
                 }
+                if (price.kind === "linkOnly") {
+                  return (
+                    <span className="text-sm mt-1 text-neutral-400 italic">
+                      Pricing on product page
+                    </span>
+                  );
+                }
                 return (
                   <span className="text-sm mt-1">
                     {price.text}

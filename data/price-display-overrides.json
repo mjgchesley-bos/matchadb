@@ -1,0 +1,26 @@
+[
+  {
+    "brand": "Kenko Tea",
+    "product": "Culinary Grade Matcha",
+    "reason": "Priced by bag-count multiplier (1/3/5 Bags) with the base 100g size stated only in the page title, not any price-bearing text. A real price exists; not worth forcing into a per-gram figure.",
+    "checkedDate": "2026-07-17"
+  },
+  {
+    "brand": "Kenko Tea",
+    "product": "Premium Ceremonial Grade Matcha",
+    "reason": "Same brand-wide bag-count-multiplier pattern as Culinary Grade Matcha (1/3 Tins).",
+    "checkedDate": "2026-07-17"
+  },
+  {
+    "brand": "Rishi Tea",
+    "product": "Matcha Sticks",
+    "reason": "Priced by stick-count (30/7 Count), a fundamentally different format from a standard tin -- real price exists, not shown as a per-gram figure.",
+    "checkedDate": "2026-07-17"
+  },
+  {
+    "brand": "Numi Organic Tea",
+    "product": "Matcha Toasted Rice",
+    "reason": "Tea-bag format, priced per box of bags ($7.99 / 18 tea bags) with no gram weight ever disclosed -- same non-standard-packaging category as Kenko/Rishi.",
+    "checkedDate": "2026-07-17"
+  }
+]

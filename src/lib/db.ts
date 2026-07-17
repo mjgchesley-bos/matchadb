@@ -59,6 +59,7 @@ export type ProductRow = {
   has_contradictions: number;
   not_found: number;
   page_notes: string | null;
+  price_link_only: number;
 };
 
 function rowsToObjects<T>(result: initSqlJs.QueryExecResult[]): T[] {
@@ -139,7 +140,7 @@ export async function getProducts(filters: BrowseFilters) {
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
-            p.has_contradictions, p.not_found, p.page_notes
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only
      FROM products p
      JOIN brands b ON p.brand_id = b.id
      ${whereSql}
@@ -215,7 +216,7 @@ export async function getBrandProducts(brandName: string) {
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
-            p.has_contradictions, p.not_found, p.page_notes
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only
      FROM products p JOIN brands b ON p.brand_id = b.id
      WHERE b.name = ?
      ORDER BY p.product_name COLLATE NOCASE`,

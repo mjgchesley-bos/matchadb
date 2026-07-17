@@ -71,6 +71,13 @@ export default async function ProductDetailPage({
               </span>
             );
           }
+          if (price.kind === "linkOnly") {
+            return (
+              <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 px-3 py-1 text-sm italic">
+                Pricing available on product page
+              </span>
+            );
+          }
           return (
             <span
               className={`rounded-full px-3 py-1 text-sm ${
@@ -109,11 +116,19 @@ export default async function ProductDetailPage({
         </section>
       )}
 
-      {product.priceVariants.every((v) => v.needs_review === 1) && (
+      {product.price_link_only === 1 ? (
         <p className="mt-2 text-xs text-neutral-500">
-          We couldn&apos;t confidently pin down a price and package size from this product&apos;s
-          page — see the original page below for current pricing.
+          This product is priced by count (sticks, tea bags, or multi-pack bundles) rather than a
+          package weight, so we don&apos;t show a computed per-gram figure — see the original page
+          below for current pricing.
         </p>
+      ) : (
+        product.priceVariants.every((v) => v.needs_review === 1) && (
+          <p className="mt-2 text-xs text-neutral-500">
+            We couldn&apos;t confidently pin down a price and package size from this
+            product&apos;s page — see the original page below for current pricing.
+          </p>
+        )
       )}
 
       {product.not_found === 1 && (

@@ -2,10 +2,18 @@ import type { ProductPriceRow, ProductRow } from "./db";
 
 export type PriceDisplay =
   | { kind: "resolved"; text: string; caution: boolean }
+  | { kind: "linkOnly" }
   | { kind: "unresolved" };
 
 export function formatPrice(p: ProductRow): PriceDisplay {
   if (p.price_usd == null) {
+    // A real price is confirmed to exist (curated in
+    // data/price-display-overrides.json), just not in a packaging format
+    // (stick counts, tea-bag counts) that reduces to a comparable per-gram
+    // figure -- distinct from genuinely having no price data at all.
+    if (p.price_link_only === 1) {
+      return { kind: "linkOnly" };
+    }
     return { kind: "unresolved" };
   }
 

@@ -20,11 +20,14 @@ const OUT_PATH = path.join(__dirname, "..", "data", "matcha.db");
 const FX_RATE_PATH = path.join(__dirname, "..", "data", "fx-rate.json");
 const REMOVED_PATH = path.join(__dirname, "..", "data", "removed-products.json");
 const LIVE_PRICES_PATH = path.join(__dirname, "..", "data", "live-prices.json");
+const PRICE_LINK_ONLY_PATH = path.join(__dirname, "..", "data", "price-display-overrides.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
 const removedProducts = JSON.parse(fs.readFileSync(REMOVED_PATH, "utf-8"));
 const removedSet = new Set(removedProducts.map((r) => `${r.brand}||${r.product}`));
+const priceLinkOnlyProducts = JSON.parse(fs.readFileSync(PRICE_LINK_ONLY_PATH, "utf-8"));
+const priceLinkOnlySet = new Set(priceLinkOnlyProducts.map((r) => `${r.brand}||${r.product}`));
 
 // Live-scraped pricing (scripts/scrape-live-prices.mjs) is the authoritative
 // source when available -- real, complete, CURRENT variant data straight
@@ -178,6 +181,12 @@ async function main() {
       not_found INTEGER DEFAULT 0,
       disclosed_json TEXT,
       page_notes TEXT,
+      -- A real price is confirmed to exist, but the packaging format (stick
+      -- counts, tea-bag counts, bag-count multipliers) doesn't map to a
+      -- comparable per-gram figure -- curated in data/price-display-overrides.json
+      -- rather than auto-detected. Site shows "Pricing available on product
+      -- page" instead of a computed number for these, never "no data".
+      price_link_only INTEGER DEFAULT 0,
       UNIQUE(brand_id, product_name)
     );
 
@@ -278,8 +287,8 @@ async function main() {
         (brand_id, product_name, price_usd, price_per_gram, price_size_grams, price_native,
          price_currency, price_needs_review, price_review_reason, fx_converted, fx_rate_date,
          grade, cultivar, region, organic_certified, source_url, has_contradictions, not_found,
-         disclosed_json, page_notes)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         disclosed_json, page_notes, price_link_only)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         brandId,
         product,
@@ -301,6 +310,7 @@ async function main() {
         notFound,
         JSON.stringify(disclosed),
         p.page_notes || null,
+        priceLinkOnlySet.has(`${brand}||${product}`) ? 1 : 0,
       ]
     );
 
@@ -399,6 +409,7 @@ async function main() {
   console.log(`  contradiction rows: ${contradictionRows}`);
   console.log(`  price variant rows (all disclosed sizes): ${priceVariantRows}`);
   console.log(`  products using live-scraped pricing: ${liveDataCount}`);
+  console.log(`  price-link-only (real price, non-comparable format): ${priceLinkOnlySet.size}`);
   console.log(`  secondary_source rows linked to a database brand: ${secondaryRows} (of ${secondary.length} total findings)`);
   console.log(`  prices cleanly resolved: ${priceResolvedCount}`);
   console.log(`  prices needing human review: ${priceReviewCount}`);
