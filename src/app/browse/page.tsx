@@ -231,7 +231,7 @@ export default async function BrowsePage({
                 if (price.kind === "unresolved") {
                   return (
                     <span className="text-sm mt-1 text-neutral-400 italic">
-                      Price not confirmed
+                      {p.source_url ? "See website for pricing" : "Price not confirmed"}
                     </span>
                   );
                 }

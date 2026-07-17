@@ -53,7 +53,9 @@ export default async function BrandPage({
               const price = formatPrice(p);
               if (price.kind === "unresolved") {
                 return (
-                  <span className="text-sm mt-1 text-neutral-400 italic">Price not confirmed</span>
+                  <span className="text-sm mt-1 text-neutral-400 italic">
+                    {p.source_url ? "See website for pricing" : "Price not confirmed"}
+                  </span>
                 );
               }
               if (price.kind === "linkOnly") {

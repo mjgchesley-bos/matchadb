@@ -67,7 +67,7 @@ export default async function ProductDetailPage({
           if (price.kind === "unresolved") {
             return (
               <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 px-3 py-1 text-sm italic">
-                Price not confirmed
+                {product.source_url ? "See website for pricing" : "Price not confirmed"}
               </span>
             );
           }
