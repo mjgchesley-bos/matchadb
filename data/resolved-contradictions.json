@@ -5,5 +5,138 @@
     "matchSubstring": "the weight/size of the $64.90 default variant is not stated on the page — could not confirm which package size this price corresponds to.",
     "reason": "Live-scraped the current product page directly and confirmed 1.8oz is stated inline next to the $64.90 price -- this contradiction is resolved, not just stale.",
     "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "David's Tea",
+    "product": "Matcha Matsu",
+    "matchSubstring": "could not confirm which package size the $42.90 price/43-48 cup yield refers to.",
+    "reason": "Live-scraped and confirmed: 1.8oz for $42.90 stated inline next to the price on the current page.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Breakaway Matcha",
+    "product": "Blend Jizo Matcha",
+    "matchSubstring": "which is inconsistent with how other Breakaway products display distinct total prices per size tier",
+    "reason": "Full live-scrape of all 5 serving tiers now shows genuinely distinct prices per tier (30g=$179, 100g=$499, 250g=$999) -- the flat-$179-for-every-tier reading was an artifact of the archived-data extraction only capturing the default-selected variant, not a real site behavior.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Breakaway Matcha",
+    "product": "Blend Rikyu Matcha",
+    "matchSubstring": "Could not confirm which is current.",
+    "reason": "Live-scraped: 30g = $144.00, matching the 'direct page fetch' side of this contradiction -- the $4.80/serving sold-out reading was stale.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Breakaway Matcha",
+    "product": "Blend Satoshi Matcha",
+    "matchSubstring": "Could not verify true price-per-size breakdown.",
+    "reason": "Full live-scrape of all serving tiers now shows genuinely distinct prices (30g=$189, 100g=$539, 250g=$1099) -- resolves the same flat-price extraction artifact seen on Blend Jizo.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Dona",
+    "product": "First Flush Ceremonial Grade Matcha",
+    "matchSubstring": "only the underlying product JSON (30g=$40, 100g=$100) clarifies the true per-size pricing.",
+    "reason": "Live-scraped and confirmed exactly this: 30g=$40, 100g=$100, both captured as separate confirmed tiers.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Kanbayashi Shunsho",
+    "product": "Ryo Matcha",
+    "matchSubstring": "confidence is lower than for other products' prices, which were confirmed directly from the fetched page content.",
+    "reason": "Live-scraped and confirmed: 30g = $19.44 exactly, matching the web-search figure this contradiction couldn't independently verify at the time.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Kettl",
+    "product": "Ryokuan",
+    "matchSubstring": "Size associated with the $65.00 price is inconsistent across sources.",
+    "reason": "Live-scraped both tiers directly: 100g=$65, 1000g=$450 -- confirms $65 is the 100g price, not 1kg as the stale search-summary claimed.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Kettl",
+    "product": "Shirakawa Gokou",
+    "matchSubstring": "the $48.00 figure could not be independently confirmed and may reflect stale search-index data.",
+    "reason": "Live-scraped the current page directly and confirmed $72.00 for the 20g tin; no $48.00 variant exists -- confirms this contradiction's own suspicion that the $48 figure was stale search-index data.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Kettl",
+    "product": "Suiteki",
+    "matchSubstring": "the size tied to the $45.00 starting price is inconsistent across extraction passes and could not be definitively resolved.",
+    "reason": "Live-scraped and confirmed: $45.00 is the 40g tier's price.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Rishi Tea",
+    "product": "Matcha Hekisui",
+    "matchSubstring": "Could not confirm which is authoritative.",
+    "reason": "Live-scraped and confirmed: 30g = $70.00, matching the 'direct page fetch' side of this contradiction.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Ujido",
+    "product": "Ceremonial Blend Matcha",
+    "matchSubstring": "with no $21.99 option visible.",
+    "reason": "Live-scraped and confirmed: 2oz=$27.99, 4oz=$53.99, no $21.99 tier exists -- the stale web-search snippet is superseded by the current live page.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Ujido",
+    "product": "Culinary Matcha (Summer Harvest Barista)",
+    "matchSubstring": "the live product page shows a regular price of $19.99.",
+    "reason": "Live-scraped and confirmed: $19.99 is the current live price, superseding the stale $15.99 web-search snippet.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Ujido",
+    "product": "Premium Ceremonial Grade Matcha",
+    "matchSubstring": "the live product page shows a regular price of $74.99 with no sale price and Sold Out status.",
+    "reason": "Live-scraped and confirmed: $74.99 is the current live price, superseding the stale $59.99/$54.99 web-search snippet.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Ujido",
+    "product": "Roasted Matcha (Hojicha Latte)",
+    "matchSubstring": "the live product page shows a regular price of $18.99.",
+    "reason": "Live-scraped and confirmed: $18.99 is the current live price, superseding the stale $14.99 web-search snippet.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Ujido",
+    "product": "Sweet Matcha Latte",
+    "matchSubstring": "the live product page shows a regular price of $49.99.",
+    "reason": "Live-scraped and confirmed: $49.99 is the current live price, superseding the stale $39.99 web-search snippet.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Zenkyu",
+    "product": "Signature Blend Matcha",
+    "matchSubstring": "but the fetched page itself showed only JPY).",
+    "reason": "Live-scraped via Shopify variant data: the site does serve a confirmed USD price ($44.00), resolving the currency ambiguity.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Zenkyu",
+    "product": "Single Origin - Okumidori",
+    "matchSubstring": "Not clearly reconciled from available data.",
+    "reason": "Live-scraped via Shopify variant data: confirmed USD price $70.00, resolving the currency ambiguity.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Zenkyu",
+    "product": "Single Origin - Samidori",
+    "matchSubstring": "Not clearly reconciled from available data.",
+    "reason": "Live-scraped via Shopify variant data: confirmed USD price $70.00, resolving the currency ambiguity.",
+    "resolvedDate": "2026-07-17"
+  },
+  {
+    "brand": "Zenkyu",
+    "product": "Uji Latte Blend Matcha",
+    "matchSubstring": "Not clearly reconciled from available data.",
+    "reason": "Live-scraped via Shopify variant data: confirmed USD price $44.00, resolving the currency ambiguity.",
+    "resolvedDate": "2026-07-17"
   }
 ]
