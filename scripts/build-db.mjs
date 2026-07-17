@@ -285,15 +285,19 @@ async function main() {
     const isLinkOnly = priceLinkOnlySet.has(`${brand}||${product}`);
 
     const liveEntry = livePricesByKey.get(`${brand}||${product}`);
-    // Normalize to null (not just an empty array) when every live variant's
-    // size was unparseable (e.g. a product name with no weight in it, like
-    // Palais des Thés) -- an empty array is truthy, and without this both
-    // downstream consumers would treat "found live data but couldn't use
-    // any of it" as "use live data: none", silently producing zero price
-    // rows instead of correctly falling back to the archived-data path.
+    // Keep any variant with a real price even if its size never parsed to
+    // grams -- pickCanonicalFromVariants still uses these (to show a price
+    // without a size, rather than nothing) as long as every priced variant
+    // agrees on one price. Normalize to null (not just an empty array) when
+    // there's nothing usable at all (e.g. a product name with no weight in
+    // it, like Palais des Thés) -- an empty array is truthy, and without
+    // this both downstream consumers would treat "found live data but
+    // couldn't use any of it" as "use live data: none", silently producing
+    // zero price rows instead of correctly falling back to the
+    // archived-data path.
     let liveVariants = liveEntry
       ? liveEntry.variants
-          .filter((v) => v.grams != null && v.priceNative != null)
+          .filter((v) => v.priceNative != null)
           .map((v) => ({ grams: v.grams, priceCurrency: v.currency, priceNative: v.priceNative }))
       : null;
     if (liveVariants && liveVariants.length === 0) liveVariants = null;
@@ -366,18 +370,23 @@ async function main() {
     // Live-scraped variants (real, complete, current) replace the
     // archived-data-derived ones entirely when available -- see the
     // liveVariants computation above. price_link_only products show no
-    // per-size table at all (see the isLinkOnly note above fields).
+    // per-size table at all (see the isLinkOnly note above fields). Variants
+    // with no size (grams == null) are excluded from this per-size table --
+    // there's nothing to list a "size" as -- but still feed the canonical
+    // price via extractStructuredFields above (a price shown with no size).
     const priceVariants = isLinkOnly
       ? []
       : liveVariants
-      ? liveVariants.map((v) => ({
-          grams: v.grams,
-          priceCurrency: v.priceCurrency,
-          priceNative: v.priceNative,
-          allAmounts: [v.priceNative],
-          needsReview: false,
-          inferred: false,
-        }))
+      ? liveVariants
+          .filter((v) => v.grams != null)
+          .map((v) => ({
+            grams: v.grams,
+            priceCurrency: v.priceCurrency,
+            priceNative: v.priceNative,
+            allAmounts: [v.priceNative],
+            needsReview: false,
+            inferred: false,
+          }))
       : extractPriceVariants(disclosed);
 
     for (const variant of priceVariants) {

@@ -600,18 +600,39 @@ export function pickCanonicalFromVariants(variants) {
           : byCurrency.EUR.length > 0
             ? "EUR"
             : null;
-  if (!currency) {
-    return { priceUsd: null, priceNative: null, priceCurrency: null, priceSizeGrams: null, pricePerGram: null };
+  if (currency) {
+    const candidates = byCurrency[currency];
+    const smallest = candidates.reduce((min, v) => (v.grams < min.grams ? v : min), candidates[0]);
+    return {
+      priceUsd: currency === "USD" ? smallest.priceNative : null,
+      priceNative: smallest.priceNative,
+      priceCurrency: currency,
+      priceSizeGrams: smallest.grams,
+      pricePerGram: currency === "USD" ? smallest.priceNative / smallest.grams : null,
+    };
   }
-  const candidates = byCurrency[currency];
-  const smallest = candidates.reduce((min, v) => (v.grams < min.grams ? v : min), candidates[0]);
-  return {
-    priceUsd: currency === "USD" ? smallest.priceNative : null,
-    priceNative: smallest.priceNative,
-    priceCurrency: currency,
-    priceSizeGrams: smallest.grams,
-    pricePerGram: currency === "USD" ? smallest.priceNative / smallest.grams : null,
-  };
+
+  // No variant paired a price with a size -- the package weight may
+  // genuinely never be disclosed anywhere on the page (e.g. DoMatcha's
+  // Master's Choice, Encha's Limited Edition Reserve line). Rather than
+  // hiding a real, confirmed price behind "price not confirmed," show it
+  // without a size -- but only when every variant agrees on one price, so
+  // this never silently guesses among genuinely different price tiers
+  // (e.g. Mantra Matcha's 1/2/3-Pack pricing, which stays unresolved here).
+  const priced = variants.filter((v) => v.priceNative != null);
+  const distinctPrices = new Set(priced.map((v) => `${v.priceCurrency}:${v.priceNative}`));
+  if (priced.length > 0 && distinctPrices.size === 1) {
+    const v = priced[0];
+    return {
+      priceUsd: v.priceCurrency === "USD" ? v.priceNative : null,
+      priceNative: v.priceNative,
+      priceCurrency: v.priceCurrency,
+      priceSizeGrams: null,
+      pricePerGram: null,
+    };
+  }
+
+  return { priceUsd: null, priceNative: null, priceCurrency: null, priceSizeGrams: null, pricePerGram: null };
 }
 
 /**

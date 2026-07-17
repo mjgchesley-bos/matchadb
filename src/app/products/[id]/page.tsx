@@ -122,7 +122,13 @@ export default async function ProductDetailPage({
           package weight, so we don&apos;t show a computed per-gram figure — see the original page
           below for current pricing.
         </p>
+      ) : product.price_usd != null && product.price_size_grams == null ? (
+        <p className="mt-2 text-xs text-neutral-500">
+          The price shown is confirmed, but this product&apos;s package size isn&apos;t stated
+          anywhere on the page, so we can&apos;t show a per-gram figure.
+        </p>
       ) : (
+        product.priceVariants.length > 0 &&
         product.priceVariants.every((v) => v.needs_review === 1) && (
           <p className="mt-2 text-xs text-neutral-500">
             We couldn&apos;t confidently pin down a price and package size from this
