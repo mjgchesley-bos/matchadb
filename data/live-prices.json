@@ -5518,6 +5518,1021 @@
       }
     ]
   },
+  "314": {
+    "id": 314,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Ao no Mori",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1154020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.105Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "315": {
+    "id": 315,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Aoarashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11a1040c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 2120,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 4650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 4340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 8700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "318": {
+    "id": 318,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Chigi no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1181040c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 2920,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 6650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 6340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 12700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "319": {
+    "id": 319,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Choan",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1121020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 7150,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 13820,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "320": {
+    "id": 320,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Eiju",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1131020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 4700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 9120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "321": {
+    "id": 321,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Hatsu no Mori",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1153020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "323": {
+    "id": 323,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Hekiun no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f52020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 3700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 7120,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 17150,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 33700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "324": {
+    "id": 324,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Isuzu",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1191040c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 2520,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 5650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 5340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 10700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "325": {
+    "id": 325,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Keichi no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1112020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 4700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 9120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "326": {
+    "id": 326,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Kinrin",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1151020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 3000,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 5720,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 13650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 13340,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "327": {
+    "id": 327,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Kissho",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c2020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2000,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 3720,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "328": {
+    "id": 328,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Kiun",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1122020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 3700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 7120,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 17150,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "329": {
+    "id": 329,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Kiwami Choan",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1g36020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 12600,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 24720,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "330": {
+    "id": 330,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Kokonoe no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1183040c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 7120,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 17150,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 33700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "331": {
+    "id": 331,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Low Caffeine Matcha",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f94020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2200,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "332": {
+    "id": 332,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Miya no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c3020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 3000,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 5720,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "333": {
+    "id": 333,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Myofu no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1192020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 4700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 9120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "335": {
+    "id": 335,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Saihou no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f68020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 4200,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 8120,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 19650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 19340,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "336": {
+    "id": 336,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Sanyu no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11b2040c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "337": {
+    "id": 337,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Seijo no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1182020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 10650,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 20700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "338": {
+    "id": 338,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Seiwa no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1144020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 3700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 7120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "339": {
+    "id": 339,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Shofu",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1124020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "340": {
+    "id": 340,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Shohaku",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1142020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2000,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 3720,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 8650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 8340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 16700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "341": {
+    "id": 341,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Shoka no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1172020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 4200,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 8120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "342": {
+    "id": 342,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Shoun no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1152020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 4200,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 8120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "343": {
+    "id": 343,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Suisho no Mukashi",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1114020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 3700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 7120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "344": {
+    "id": 344,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Tama no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1132020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 10650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 10340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 20700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "345": {
+    "id": 345,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Tenju",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1111020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 20100,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 40120,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "346": {
+    "id": 346,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Tomo no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1d23040c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 3720,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 8650,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 16700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "348": {
+    "id": 348,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Unkaku",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1141020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 3700,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 7120,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 17150,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 16840,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "349": {
+    "id": 349,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Wakatake",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11b1100c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 3650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 3340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 6800,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "350": {
+    "id": 350,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Wako",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1161020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 10650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 10340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 20700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "351": {
+    "id": 351,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Yoyo no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f62020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 10650,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 20700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "352": {
+    "id": 352,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Yugen",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1171020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2000,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 3720,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 8650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 8340,
+        "currency": "JPY"
+      },
+      {
+        "label": "200g can",
+        "grams": 200,
+        "priceNative": 16700,
+        "currency": "JPY"
+      }
+    ]
+  },
+  "353": {
+    "id": 353,
+    "brand": "Marukyu Koyamaen",
+    "product_name": "Yukyu no Shiro",
+    "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f78020c1",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:19:58.106Z",
+    "variants": [
+      {
+        "label": "20g can",
+        "grams": 20,
+        "priceNative": 2400,
+        "currency": "JPY"
+      },
+      {
+        "label": "40g can",
+        "grams": 40,
+        "priceNative": 4520,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g can",
+        "grams": 100,
+        "priceNative": 10650,
+        "currency": "JPY"
+      },
+      {
+        "label": "100g bag",
+        "grams": 100,
+        "priceNative": 10340,
+        "currency": "JPY"
+      }
+    ]
+  },
   "355": {
     "id": 355,
     "brand": "Matcha Konomi",
