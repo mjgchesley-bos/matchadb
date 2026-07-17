@@ -8339,24 +8339,24 @@
     "product_name": "Ceremonial Grade Latte Matcha",
     "source_url": "https://matcha.com/products/ceremonial-grade-latte-matcha",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:44:41.789Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:42:35.598Z",
     "variants": [
       {
         "label": "1-bag (60-servings)",
-        "grams": null,
+        "grams": 60,
         "priceNative": 49,
         "currency": "USD"
       },
       {
         "label": "2-bags (120-servings)",
-        "grams": null,
+        "grams": 120,
         "priceNative": 94,
         "currency": "USD"
       },
       {
         "label": "3-bags (180-servings)",
-        "grams": null,
+        "grams": 180,
         "priceNative": 117,
         "currency": "USD"
       }
