@@ -1,26 +1,26 @@
 @import "tailwindcss";
 
 /*
-  Palette grounded in the subject: a deep charcoal-green ground (like a
-  lacquered chawan in low light) rather than pure black, warm rice-paper
-  neutrals instead of clinical grays, and one genuinely vivid, saturated
-  matcha green as the single hero accent -- not the washed sage-green a
-  generic build defaults to. A muted brass/gold reads as the traditional
-  "ceremonial" marker, used sparingly.
+  Light theme: crisp white grounds with fresh light-green raised surfaces
+  (alternating bands down the page), and a rich, DARKER forest green held
+  in reserve as the accent -- for buttons, links, and badge text -- rather
+  than used as a dominant tone. Dark theme keeps the deeper charcoal-green
+  ground from the original concept (dark mode should still read as dark),
+  with a brighter green as its own accent.
 */
 :root {
-  --color-paper: #faf7ef;
-  --color-paper-raised: #f3efe2;
-  --color-ink: #1c1b14;
-  --color-ink-muted: #66634f;
-  --color-ink-faint: #9a9680;
-  --color-line: #e2ddc9;
-  --color-line-strong: #cfc9ae;
+  --color-paper: #ffffff;
+  --color-paper-raised: #e8f3dd;
+  --color-ink: #182114;
+  --color-ink-muted: #5b6b4c;
+  --color-ink-faint: #8b9a7a;
+  --color-line: #d7e8c8;
+  --color-line-strong: #b9d69f;
 
-  --color-matcha: #3c7a1c;
-  --color-matcha-bright: #5aa62c;
-  --color-matcha-soft: #e6efd8;
-  --color-matcha-ink: #1f3d0f;
+  --color-matcha: #235c14;
+  --color-matcha-bright: #2f7a1e;
+  --color-matcha-soft: #dff0d0;
+  --color-matcha-ink: #1c4a10;
 
   --color-gold: #93711f;
   --color-gold-soft: #f1e6c8;

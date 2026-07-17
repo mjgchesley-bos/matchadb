@@ -50,7 +50,7 @@ export default async function Home() {
           <div className="mt-10 flex flex-wrap items-center gap-5">
             <Link
               href="/browse"
-              className="group inline-flex items-center gap-2 bg-ink text-paper px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:bg-matcha-ink dark:hover:bg-matcha"
+              className="group inline-flex items-center gap-2 bg-matcha text-paper px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:bg-matcha-bright"
             >
               Browse the catalog
               <span className="transition-transform group-hover:translate-x-1">&rarr;</span>

@@ -172,7 +172,7 @@ export default async function BrowsePage({
 
             <button
               type="submit"
-              className="bg-ink text-paper py-2.5 text-sm font-medium tracking-wide hover:bg-matcha-ink dark:hover:bg-matcha transition-colors"
+              className="bg-matcha text-paper py-2.5 text-sm font-medium tracking-wide hover:bg-matcha-bright transition-colors"
             >
               Apply filters
             </button>
