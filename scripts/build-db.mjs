@@ -10,6 +10,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { config } from "dotenv";
 import { resolveCanonicalPrice, extractPriceVariants, pickCanonicalFromVariants } from "./price-extract.mjs";
+import { GRADE_KEYWORDS, CULTIVAR_KEYWORDS, REGION_KEYWORDS, findFirstKeyword } from "./attribute-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(__dirname, "..", ".env.local") });
@@ -22,6 +23,7 @@ const REMOVED_PATH = path.join(__dirname, "..", "data", "removed-products.json")
 const LIVE_PRICES_PATH = path.join(__dirname, "..", "data", "live-prices.json");
 const PRICE_LINK_ONLY_PATH = path.join(__dirname, "..", "data", "price-display-overrides.json");
 const RESOLVED_CONTRADICTIONS_PATH = path.join(__dirname, "..", "data", "resolved-contradictions.json");
+const LIVE_ATTRIBUTES_PATH = path.join(__dirname, "..", "data", "live-attributes.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
@@ -55,6 +57,20 @@ for (const entry of Object.values(livePricesRaw)) {
   livePricesByKey.set(`${entry.brand}||${entry.product_name}`, entry);
 }
 
+// Live-scraped grade/cultivar/region (scripts/scrape-live-attributes.mjs) --
+// same rationale as live pricing: the archived research text is a point-in-
+// time snapshot and often simply never captured a field the current page
+// states plainly. Only fills in a gap the archived-text extraction left
+// null; never overrides an archived-text match.
+const liveAttributesRaw = fs.existsSync(LIVE_ATTRIBUTES_PATH)
+  ? JSON.parse(fs.readFileSync(LIVE_ATTRIBUTES_PATH, "utf-8"))
+  : {};
+const liveAttributesByKey = new Map();
+for (const entry of Object.values(liveAttributesRaw)) {
+  if (entry.status !== "ok") continue;
+  liveAttributesByKey.set(`${entry.brand}||${entry.product_name}`, entry);
+}
+
 async function getS3Json(key) {
   const res = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
   const body = await res.Body.transformToString("utf-8");
@@ -62,16 +78,8 @@ async function getS3Json(key) {
 }
 
 // ---- best-effort structured-field extraction from the free-form "disclosed" object ----
-
-const GRADE_KEYWORDS = ["ceremonial", "culinary", "premium", "koicha", "usucha", "latte grade", "food grade"];
-const CULTIVAR_KEYWORDS = [
-  "yabukita", "samidori", "okumidori", "saemidori", "asahi", "gokou", "gokō", "uji hikari",
-  "tsuyuhikari", "kanaya midori", "yutakamidori", "sae akari", "zairai", "narino",
-];
-const REGION_KEYWORDS = [
-  "uji", "nishio", "kagoshima", "shizuoka", "kyoto", "yame", "wazuka", "shirakawa",
-  "kyushu", "nara", "kakegawa", "aichi", "miyazaki", "aichi", "china", "taiwan", "korea", "vietnam",
-];
+// GRADE_KEYWORDS / CULTIVAR_KEYWORDS / REGION_KEYWORDS / findFirstKeyword
+// now live in attribute-extract.mjs, shared with scrape-live-attributes.mjs.
 
 function flattenToText(value, acc = []) {
   if (value == null) return acc;
@@ -90,13 +98,6 @@ function flattenToText(value, acc = []) {
   return acc;
 }
 
-function findFirstKeyword(haystackLower, keywords) {
-  for (const kw of keywords) {
-    if (haystackLower.includes(kw)) return kw;
-  }
-  return null;
-}
-
 // Converts a native-currency amount to USD using the pinned fx-rate.json
 // snapshot. Returns usd: null / converted: 0 for USD itself (nothing to
 // convert) or an unrecognized currency.
@@ -109,14 +110,19 @@ function convertToUsd(amount, currency) {
   return { usd: null, converted: 0 };
 }
 
-function extractStructuredFields(disclosed, contradictionsText, liveVariants) {
+function extractStructuredFields(disclosed, contradictionsText, liveVariants, liveAttributes, productName) {
   const textParts = flattenToText(disclosed);
   const text = textParts.join(" | ");
   const lower = text.toLowerCase();
+  const nameLower = (productName || "").toLowerCase();
 
-  const grade = findFirstKeyword(lower, GRADE_KEYWORDS);
-  const cultivar = findFirstKeyword(lower, CULTIVAR_KEYWORDS);
-  const region = findFirstKeyword(lower, REGION_KEYWORDS);
+  // Priority: the product's own name (highest confidence, zero risk, no
+  // fetch needed -- e.g. "Ceremonial Vanilla Matcha" already says its grade)
+  // > archived research text > live-scraped page text (only fills a gap the
+  // first two left null; never overrides either).
+  const grade = findFirstKeyword(nameLower, GRADE_KEYWORDS) || findFirstKeyword(lower, GRADE_KEYWORDS) || liveAttributes?.grade || null;
+  const cultivar = findFirstKeyword(nameLower, CULTIVAR_KEYWORDS) || findFirstKeyword(lower, CULTIVAR_KEYWORDS) || liveAttributes?.cultivar || null;
+  const region = findFirstKeyword(nameLower, REGION_KEYWORDS) || findFirstKeyword(lower, REGION_KEYWORDS) || liveAttributes?.region || null;
   // avoid the "conventional, not organic" false-positive: only count it as
   // organic if "organic" appears without a negation word shortly before it
   const organicCertified = /\borganic\b/i.test(text) && !/\b(not|non)[\s-]?organic\b/i.test(text) ? 1 : 0;
@@ -264,6 +270,7 @@ async function main() {
 
   let removedCount = 0;
   let liveDataCount = 0;
+  let liveAttributesCount = 0;
   for (const p of products) {
     const brand = (p.brand || "").trim();
     const product = (p.product || "").trim();
@@ -303,7 +310,10 @@ async function main() {
     if (liveVariants && liveVariants.length === 0) liveVariants = null;
     if (liveVariants) liveDataCount++;
 
-    const fields = extractStructuredFields(disclosed, contradictionsText, liveVariants);
+    const liveAttrEntry = liveAttributesByKey.get(`${brand}||${product}`);
+    if (liveAttrEntry) liveAttributesCount++;
+
+    const fields = extractStructuredFields(disclosed, contradictionsText, liveVariants, liveAttrEntry, product);
     // A price_link_only product deliberately shows no computed per-gram
     // figure and no per-size table, regardless of what the archived data or
     // live scrape found -- the flag must win outright, not just apply when
@@ -448,6 +458,9 @@ async function main() {
   const priceResolvedCount = db.exec("SELECT COUNT(*) FROM products WHERE price_usd IS NOT NULL AND price_needs_review = 0")[0].values[0][0];
   const priceReviewCount = db.exec("SELECT COUNT(*) FROM products WHERE price_needs_review = 1")[0].values[0][0];
   const fxConvertedCount = db.exec("SELECT COUNT(*) FROM products WHERE fx_converted = 1")[0].values[0][0];
+  const gradeMissing = db.exec("SELECT COUNT(*) FROM products WHERE grade IS NULL")[0].values[0][0];
+  const cultivarMissing = db.exec("SELECT COUNT(*) FROM products WHERE cultivar IS NULL")[0].values[0][0];
+  const regionMissing = db.exec("SELECT COUNT(*) FROM products WHERE region IS NULL")[0].values[0][0];
 
   console.log(`\nBuilt database:`);
   console.log(`  excluded as removed/discontinued (404): ${removedCount}`);
@@ -456,11 +469,13 @@ async function main() {
   console.log(`  contradiction rows: ${contradictionRows}`);
   console.log(`  price variant rows (all disclosed sizes): ${priceVariantRows}`);
   console.log(`  products using live-scraped pricing: ${liveDataCount}`);
+  console.log(`  products with a live-scraped grade/cultivar/region fallback available: ${liveAttributesCount}`);
   console.log(`  price-link-only (real price, non-comparable format): ${priceLinkOnlySet.size}`);
   console.log(`  secondary_source rows linked to a database brand: ${secondaryRows} (of ${secondary.length} total findings)`);
   console.log(`  prices cleanly resolved: ${priceResolvedCount}`);
   console.log(`  prices needing human review: ${priceReviewCount}`);
   console.log(`  prices converted from JPY (rate as of ${fxRate.asOf}): ${fxConvertedCount}`);
+  console.log(`  missing grade / cultivar / region: ${gradeMissing} / ${cultivarMissing} / ${regionMissing}`);
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
   const data = db.export();
