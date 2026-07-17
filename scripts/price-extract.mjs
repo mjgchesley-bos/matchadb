@@ -380,10 +380,53 @@ function extractServingTierPairs(disclosed) {
   return pairs;
 }
 
+// Many Shopify-style product pages disclose ONE overall price (regular_price/
+// sale_price/price) plus a separate list of size options (e.g. "size_variants":
+// ["1oz/30g", "3.5oz", "12oz", "6g Sample"]), with no per-size price
+// breakdown captured. The page itself links them — the shown price is for
+// whichever size is pre-selected, which is consistently the FIRST-listed
+// option on this dataset's sites (verified live across three unrelated
+// brands: Matcha Outlet, Naoki Matcha, Jade Leaf). This is an INFERENCE, not
+// a stated fact, so pairs from here are always tagged `inferred: true` and
+// shown labeled as such rather than blended in with explicitly-stated
+// pricing. Only used as a last resort, when nothing else resolved anything.
+const SIZE_ARRAY_KEY_RE = /size|variant/i;
+const SINGLE_PRICE_KEY_RE = /^regular_price$|^sale_price$|^price$/i;
+
+function extractInferredFirstVariantPairs(disclosed) {
+  const sizeArrayEntry = Object.entries(disclosed || {}).find(
+    ([k, v]) => SIZE_ARRAY_KEY_RE.test(k) && Array.isArray(v) && v.length > 0 && typeof v[0] === "string"
+  );
+  if (!sizeArrayEntry) return [];
+
+  const weights = findWeights(sizeArrayEntry[1][0]);
+  if (weights.length === 0) return [];
+  // Prefer a directly-stated gram figure over an oz/lb conversion appearing
+  // in the same size label (e.g. "1oz/30g" — 30g is the page's own number).
+  const nativeWeight = weights.find((w) => w.isNativeGram);
+  const grams = (nativeWeight || weights[0]).grams;
+
+  const pairs = [];
+  for (const [key, value] of Object.entries(disclosed || {})) {
+    if (!SINGLE_PRICE_KEY_RE.test(key) || typeof value !== "string") continue;
+    for (const a of findAmounts(value, priceTypeFromKey(key))) {
+      pairs.push({ grams, amount: a.amount, currency: a.currency, priceType: a.priceType, inferred: true });
+    }
+  }
+  return pairs;
+}
+
 export function extractPricePairs(disclosed) {
   const { allPaired } = collectAmountsAndWeights(disclosed);
-  const allPairs = [...allPaired, ...extractServingTierPairs(disclosed)];
-  return allPairs.filter((p) => p.grams != null && p.amount != null && p.grams > 0 && p.amount > 0);
+  let allPairs = [...allPaired, ...extractServingTierPairs(disclosed)].filter(
+    (p) => p.grams != null && p.amount != null && p.grams > 0 && p.amount > 0
+  );
+  if (allPairs.length === 0) {
+    allPairs = extractInferredFirstVariantPairs(disclosed).filter(
+      (p) => p.grams != null && p.amount != null && p.grams > 0 && p.amount > 0
+    );
+  }
+  return allPairs;
 }
 
 // Groups already-same-currency pairs by package size (10% tolerance, same
@@ -414,15 +457,16 @@ function clusterPairsByGrams(pairs) {
 // list so callers can show exactly what was disclosed rather than a
 // resolution we invented.
 function resolveClusterAmount(cluster) {
+  const inferred = cluster.every((c) => c.inferred);
   const allAmounts = [...new Set(cluster.map((c) => c.amount))];
   if (allAmounts.length === 1) {
-    return { amount: allAmounts[0], allAmounts };
+    return { amount: allAmounts[0], allAmounts, inferred };
   }
   const saleAmounts = [...new Set(cluster.filter((c) => c.priceType === "sale").map((c) => c.amount))];
   if (saleAmounts.length === 1) {
-    return { amount: saleAmounts[0], allAmounts };
+    return { amount: saleAmounts[0], allAmounts, inferred };
   }
-  return { amount: null, allAmounts };
+  return { amount: null, allAmounts, inferred };
 }
 
 /**
@@ -441,13 +485,14 @@ export function extractPriceVariants(disclosed) {
   for (const [currency, list] of Object.entries(byCurrency)) {
     for (const cluster of clusterPairsByGrams(list)) {
       const grams = cluster.reduce((s, v) => s + v.grams, 0) / cluster.length;
-      const { amount, allAmounts } = resolveClusterAmount(cluster);
+      const { amount, allAmounts, inferred } = resolveClusterAmount(cluster);
       variants.push({
         grams,
         priceCurrency: currency,
         priceNative: amount,
         allAmounts,
         needsReview: amount == null,
+        inferred: amount != null && inferred,
       });
     }
   }
@@ -505,7 +550,7 @@ export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
   const candidates = byCurrency[currency];
   const minGrams = Math.min(...candidates.map((c) => c.grams));
   const atMinSize = candidates.filter((c) => Math.abs(c.grams - minGrams) < 0.01);
-  const { amount } = resolveClusterAmount(atMinSize);
+  const { amount, inferred } = resolveClusterAmount(atMinSize);
 
   if (amount == null) {
     return {
@@ -520,6 +565,7 @@ export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
   }
 
   const pricePerGram = amount / minGrams;
+  const needsReview = hadPriceContradiction || inferred;
 
   return {
     priceUsd: currency === "USD" ? amount : null,
@@ -527,7 +573,11 @@ export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
     priceCurrency: currency,
     priceSizeGrams: minGrams,
     pricePerGram: currency === "USD" ? pricePerGram : null,
-    needsReview: hadPriceContradiction,
-    reviewReason: hadPriceContradiction ? "flagged_price_contradiction_in_research" : null,
+    needsReview,
+    reviewReason: hadPriceContradiction
+      ? "flagged_price_contradiction_in_research"
+      : inferred
+        ? "size_inferred_from_listed_option"
+        : null,
   };
 }

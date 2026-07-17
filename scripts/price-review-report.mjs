@@ -22,6 +22,7 @@ async function main() {
   const ambiguousSize = [];
   const conflicting = [];
   const contradictionFlagged = [];
+  const inferredSize = [];
 
   for (const row of rows) {
     const [id, brand, product, sourceUrl, disclosedJson, contradictions] = row;
@@ -31,7 +32,9 @@ async function main() {
 
     const entry = { id, brand, product, sourceUrl, ...result };
 
-    if (result.reviewReason === "flagged_price_contradiction_in_research") {
+    if (result.reviewReason === "size_inferred_from_listed_option") {
+      inferredSize.push(entry);
+    } else if (result.reviewReason === "flagged_price_contradiction_in_research") {
       contradictionFlagged.push(entry);
     } else if (result.reviewReason === "conflicting_prices_at_smallest_size") {
       conflicting.push(entry);
@@ -48,6 +51,7 @@ async function main() {
   console.log(`Price found but size ambiguous (worth reviewing): ${ambiguousSize.length}`);
   console.log(`Conflicting prices at the same size (worth reviewing): ${conflicting.length}`);
   console.log(`Had a price contradiction already flagged in research (worth reviewing): ${contradictionFlagged.length}`);
+  console.log(`Size inferred from a listed option, not stated for this price (shown, but labeled): ${inferredSize.length}`);
   console.log(`Total genuinely worth human review: ${ambiguousSize.length + conflicting.length + contradictionFlagged.length}`);
 
   const outDir = path.join(__dirname, "..", "data");
@@ -55,6 +59,7 @@ async function main() {
   fs.writeFileSync(path.join(outDir, "price-ambiguous-size.json"), JSON.stringify(ambiguousSize, null, 2));
   fs.writeFileSync(path.join(outDir, "price-conflicting.json"), JSON.stringify(conflicting, null, 2));
   fs.writeFileSync(path.join(outDir, "price-contradiction-flagged.json"), JSON.stringify(contradictionFlagged, null, 2));
+  fs.writeFileSync(path.join(outDir, "price-inferred-size.json"), JSON.stringify(inferredSize, null, 2));
 
   // build a single CSV for the genuinely-worth-reviewing set, for easy spreadsheet review
   const forReview = [...ambiguousSize, ...conflicting, ...contradictionFlagged];

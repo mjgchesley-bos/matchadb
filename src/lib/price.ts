@@ -53,5 +53,9 @@ export function formatPriceVariant(
   if (v.fx_converted === 1 && v.price_usd != null) {
     text += ` (~$${v.price_usd.toFixed(2)} USD${v.fx_rate_date ? `, rate as of ${v.fx_rate_date}` : ""})`;
   }
+  if (v.inferred === 1) {
+    text += " (size inferred from the page's listed option — not explicitly stated for this price)";
+    return { text, caution: true };
+  }
   return { text, caution: false };
 }

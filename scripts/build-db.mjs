@@ -194,7 +194,8 @@ async function main() {
       fx_converted INTEGER DEFAULT 0,
       fx_rate_date TEXT,
       needs_review INTEGER DEFAULT 0,
-      all_amounts_json TEXT
+      all_amounts_json TEXT,
+      inferred INTEGER DEFAULT 0
     );
 
     CREATE INDEX idx_products_brand ON products(brand_id);
@@ -286,8 +287,8 @@ async function main() {
       db.run(
         `INSERT INTO product_prices
           (product_id, size_grams, price_native, price_currency, price_usd, fx_converted, fx_rate_date,
-           needs_review, all_amounts_json)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+           needs_review, all_amounts_json, inferred)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           productId,
           variant.grams,
@@ -298,6 +299,7 @@ async function main() {
           converted.converted ? fxRate.asOf : null,
           variant.needsReview ? 1 : 0,
           JSON.stringify(variant.allAmounts),
+          variant.inferred ? 1 : 0,
         ]
       );
       priceVariantRows++;

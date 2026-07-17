@@ -34,6 +34,7 @@ export type ProductPriceRow = {
   fx_rate_date: string | null;
   needs_review: number;
   all_amounts_json: string;
+  inferred: number;
 };
 
 export type ProductRow = {

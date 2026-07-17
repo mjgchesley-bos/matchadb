@@ -43,6 +43,7 @@ next-env.d.ts
 
 # working data-quality review artifacts (not needed by the app itself)
 data/price-review-needed.json
+data/price-inferred-size.json
 data/price-no-data.json
 data/price-ambiguous-size.json
 data/price-conflicting.json
