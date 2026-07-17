@@ -15,6 +15,12 @@ function humanizeKey(key: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="font-mono text-xs tracking-[0.2em] uppercase text-matcha mb-3">{children}</p>
+  );
+}
+
 export default async function ProductDetailPage({
   params,
 }: {
@@ -30,60 +36,60 @@ export default async function ProductDetailPage({
   const disclosedEntries = Object.entries(product.disclosed || {});
 
   return (
-    <main className="flex-1 max-w-3xl mx-auto w-full p-6">
+    <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-10">
       <Link
         href={`/brands/${encodeURIComponent(product.brand_name)}`}
-        className="text-sm text-green-700 dark:text-green-400 hover:underline"
+        className="text-sm text-ink-muted hover:text-matcha transition-colors"
       >
         &larr; {product.brand_name}
       </Link>
 
-      <h1 className="text-3xl font-bold mt-2">{product.product_name}</h1>
+      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-3 leading-tight">
+        {product.product_name}
+      </h1>
 
-      <div className="flex flex-wrap gap-2 mt-3">
+      <div className="flex flex-wrap gap-2 mt-4">
         {product.grade && (
-          <span className="rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 text-sm">
+          <span className="rounded-full bg-matcha-soft text-matcha-ink px-3 py-1 text-sm">
             {product.grade}
           </span>
         )}
         {product.cultivar && (
-          <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-3 py-1 text-sm">
+          <span className="rounded-full bg-paper-raised border border-line text-ink-muted px-3 py-1 text-sm">
             Cultivar: {product.cultivar}
           </span>
         )}
         {product.region && (
-          <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-3 py-1 text-sm">
+          <span className="rounded-full bg-paper-raised border border-line text-ink-muted px-3 py-1 text-sm">
             {product.region}
           </span>
         )}
         {product.organic_certified === 1 && (
-          <span className="rounded-full bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 px-3 py-1 text-sm">
-            Organic
-          </span>
+          <span className="rounded-full bg-gold-soft text-gold px-3 py-1 text-sm">Organic</span>
         )}
         {(() => {
           const price = formatPrice(product);
           const hasMultipleSizes = product.priceVariants.length > 1;
           if (price.kind === "unresolved") {
             return (
-              <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 px-3 py-1 text-sm italic">
+              <span className="rounded-full bg-paper-raised border border-line text-ink-faint px-3 py-1 text-sm italic">
                 {product.source_url ? "See website for pricing" : "Price not confirmed"}
               </span>
             );
           }
           if (price.kind === "linkOnly") {
             return (
-              <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-500 px-3 py-1 text-sm italic">
+              <span className="rounded-full bg-paper-raised border border-line text-ink-faint px-3 py-1 text-sm italic">
                 Pricing available on product page
               </span>
             );
           }
           return (
             <span
-              className={`rounded-full px-3 py-1 text-sm ${
+              className={`rounded-full px-3 py-1 text-sm tabular-nums ${
                 price.caution
-                  ? "bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-200"
-                  : "bg-neutral-100 dark:bg-neutral-800"
+                  ? "bg-amber-100 dark:bg-amber-900/40 text-amber-900 dark:text-amber-300"
+                  : "bg-paper-raised border border-line-strong text-ink"
               }`}
             >
               {hasMultipleSizes ? "From " : ""}
@@ -96,17 +102,15 @@ export default async function ProductDetailPage({
       </div>
 
       {product.priceVariants.length > 0 && (
-        <section className="mt-4">
-          <h2 className="text-sm font-medium text-neutral-500 mb-1">
-            Pricing as disclosed on the product page
-          </h2>
-          <ul className="text-sm divide-y divide-neutral-200 dark:divide-neutral-800 border-t border-b border-neutral-200 dark:border-neutral-800">
+        <section className="mt-8">
+          <SectionLabel>Pricing as disclosed</SectionLabel>
+          <ul className="text-sm divide-y divide-line border-t border-b border-line">
             {product.priceVariants.map((v) => {
               const { text, caution } = formatPriceVariant(v);
               return (
                 <li
                   key={v.id}
-                  className={`py-2 ${caution ? "text-amber-800 dark:text-amber-300" : ""}`}
+                  className={`py-2.5 tabular-nums ${caution ? "text-amber-700 dark:text-amber-400" : "text-ink"}`}
                 >
                   {text}
                 </li>
@@ -117,20 +121,20 @@ export default async function ProductDetailPage({
       )}
 
       {product.price_link_only === 1 ? (
-        <p className="mt-2 text-xs text-neutral-500">
+        <p className="mt-3 text-xs text-ink-faint">
           This product is priced by count (sticks, tea bags, or multi-pack bundles) rather than a
           package weight, so we don&apos;t show a computed per-gram figure — see the original page
           below for current pricing.
         </p>
       ) : product.price_usd != null && product.price_size_grams == null ? (
-        <p className="mt-2 text-xs text-neutral-500">
+        <p className="mt-3 text-xs text-ink-faint">
           The price shown is confirmed, but this product&apos;s package size isn&apos;t stated
           anywhere on the page, so we can&apos;t show a per-gram figure.
         </p>
       ) : (
         product.priceVariants.length > 0 &&
         product.priceVariants.every((v) => v.needs_review === 1) && (
-          <p className="mt-2 text-xs text-neutral-500">
+          <p className="mt-3 text-xs text-ink-faint">
             We couldn&apos;t confidently pin down a price and package size from this
             product&apos;s page — see the original page below for current pricing.
           </p>
@@ -138,7 +142,7 @@ export default async function ProductDetailPage({
       )}
 
       {product.not_found === 1 && (
-        <div className="mt-6 rounded-lg border border-red-300 dark:border-red-800 bg-red-50 dark:bg-red-950 p-4 text-sm text-red-800 dark:text-red-200">
+        <div className="mt-8 border border-red-300 dark:border-red-900 bg-red-50 dark:bg-red-950/40 p-4 text-sm text-red-800 dark:text-red-300">
           <strong>Unverifiable:</strong> we could not locate a live, official page for this
           product during research. It may be discontinued, renamed, or the brand may not maintain
           a findable page for it. This entry is preserved for transparency rather than removed.
@@ -146,11 +150,11 @@ export default async function ProductDetailPage({
       )}
 
       {product.contradictions.length > 0 && (
-        <div className="mt-6 rounded-lg border border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-950 p-4">
-          <h2 className="font-semibold text-amber-900 dark:text-amber-200 mb-2">
-            ⚠ Flagged inconsistencies on the brand&apos;s own page
+        <div className="mt-8 border border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30 p-5">
+          <h2 className="font-semibold text-amber-900 dark:text-amber-300 mb-2.5 flex items-center gap-2">
+            <span aria-hidden>&#9888;</span> Flagged inconsistencies on the brand&apos;s own page
           </h2>
-          <ul className="list-disc list-inside text-sm text-amber-900 dark:text-amber-200 space-y-1">
+          <ul className="list-disc list-inside text-sm text-amber-900 dark:text-amber-300 space-y-1.5">
             {product.contradictions.map((c, i) => (
               <li key={i}>{c}</li>
             ))}
@@ -159,12 +163,12 @@ export default async function ProductDetailPage({
       )}
 
       {product.source_url && (
-        <p className="mt-6 text-sm">
+        <p className="mt-7 text-sm">
           <a
             href={product.source_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-green-700 dark:text-green-400 hover:underline"
+            className="text-matcha hover:text-matcha-bright transition-colors"
           >
             View original product page &rarr;
           </a>
@@ -172,13 +176,13 @@ export default async function ProductDetailPage({
       )}
 
       {disclosedEntries.length > 0 && (
-        <section className="mt-8">
-          <h2 className="text-xl font-semibold mb-3">Everything disclosed on the product page</h2>
-          <dl className="divide-y divide-neutral-200 dark:divide-neutral-800 border-t border-b border-neutral-200 dark:border-neutral-800">
+        <section className="mt-12">
+          <SectionLabel>Everything disclosed on the product page</SectionLabel>
+          <dl className="divide-y divide-line border-t border-b border-line">
             {disclosedEntries.map(([key, value]) => (
-              <div key={key} className="py-3 grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-1">
-                <dt className="text-sm font-medium text-neutral-500">{humanizeKey(key)}</dt>
-                <dd className="text-sm whitespace-pre-wrap">{formatValue(value)}</dd>
+              <div key={key} className="py-3.5 grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-1">
+                <dt className="text-sm font-medium text-ink-faint">{humanizeKey(key)}</dt>
+                <dd className="text-sm whitespace-pre-wrap text-ink">{formatValue(value)}</dd>
               </div>
             ))}
           </dl>
@@ -186,26 +190,23 @@ export default async function ProductDetailPage({
       )}
 
       {product.page_notes && (
-        <section className="mt-6">
-          <h2 className="text-lg font-semibold mb-2">Research notes</h2>
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">{product.page_notes}</p>
+        <section className="mt-8">
+          <SectionLabel>Research notes</SectionLabel>
+          <p className="text-sm text-ink-muted leading-relaxed">{product.page_notes}</p>
         </section>
       )}
 
       {product.secondarySources.length > 0 && (
-        <section className="mt-8">
-          <h2 className="text-xl font-semibold mb-3">Secondary sources</h2>
+        <section className="mt-12">
+          <SectionLabel>Secondary sources</SectionLabel>
           <div className="flex flex-col gap-3">
             {product.secondarySources.map((s, i) => (
-              <div
-                key={i}
-                className="border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 text-sm"
-              >
-                <div className="flex items-center justify-between mb-1">
-                  <span className="font-medium">{s.source_name}</span>
-                  <span className="text-xs uppercase text-neutral-500">{s.source_type}</span>
+              <div key={i} className="border border-line bg-paper-raised/50 p-4 text-sm">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="font-medium text-ink">{s.source_name}</span>
+                  <span className="text-xs uppercase tracking-wide text-ink-faint">{s.source_type}</span>
                 </div>
-                <pre className="whitespace-pre-wrap text-neutral-600 dark:text-neutral-400 text-xs">
+                <pre className="whitespace-pre-wrap text-ink-muted text-xs leading-relaxed">
                   {JSON.stringify(s.finding, null, 2)}
                 </pre>
                 {s.source_url && (
@@ -213,7 +214,7 @@ export default async function ProductDetailPage({
                     href={s.source_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-green-700 dark:text-green-400 hover:underline text-xs"
+                    className="text-matcha hover:text-matcha-bright transition-colors text-xs"
                   >
                     Source &rarr;
                   </a>

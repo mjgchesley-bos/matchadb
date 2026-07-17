@@ -13,6 +13,10 @@ function toNum(v: string | string[] | undefined): number | undefined {
   return Number.isFinite(n) ? n : undefined;
 }
 
+const fieldClass =
+  "w-full border border-line-strong rounded-sm px-3 py-2 bg-paper text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors";
+const labelClass = "block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5";
+
 export default async function BrowsePage({
   searchParams,
 }: {
@@ -49,232 +53,224 @@ export default async function BrowsePage({
   }
 
   return (
-    <main className="flex-1 grid grid-cols-1 md:grid-cols-[240px_1fr] gap-6 p-6 max-w-6xl mx-auto w-full">
-      <aside className="md:sticky md:top-6 h-fit">
-        <form method="get" className="flex flex-col gap-4 text-sm">
-          <div>
-            <label className="block font-medium mb-1" htmlFor="q">
-              Search
-            </label>
-            <input
-              id="q"
-              name="q"
-              defaultValue={filters.q}
-              placeholder="Brand or product name"
-              className="w-full border border-neutral-300 dark:border-neutral-700 rounded px-2 py-1.5 bg-transparent"
-            />
-          </div>
+    <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
+      <div className="mb-8">
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-matcha mb-2">Catalog</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">
+          Browse every product
+        </h1>
+      </div>
 
-          <div>
-            <label className="block font-medium mb-1" htmlFor="brand">
-              Brand
-            </label>
-            <select
-              id="brand"
-              name="brand"
-              defaultValue={filters.brand || ""}
-              className="w-full border border-neutral-300 dark:border-neutral-700 rounded px-2 py-1.5 bg-transparent"
-            >
-              <option value="">All brands</option>
-              {brands.map((b) => (
-                <option key={b} value={b}>
-                  {b}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="block font-medium mb-1" htmlFor="grade">
-              Grade
-            </label>
-            <select
-              id="grade"
-              name="grade"
-              defaultValue={filters.grade || ""}
-              className="w-full border border-neutral-300 dark:border-neutral-700 rounded px-2 py-1.5 bg-transparent"
-            >
-              <option value="">Any grade</option>
-              {grades.map((g) => (
-                <option key={g} value={g}>
-                  {g}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label className="block font-medium mb-1" htmlFor="region">
-              Region
-            </label>
-            <select
-              id="region"
-              name="region"
-              defaultValue={filters.region || ""}
-              className="w-full border border-neutral-300 dark:border-neutral-700 rounded px-2 py-1.5 bg-transparent"
-            >
-              <option value="">Any region</option>
-              {regions.map((r) => (
-                <option key={r} value={r}>
-                  {r}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="flex gap-2">
-            <div className="flex-1">
-              <label className="block font-medium mb-1" htmlFor="minPrice">
-                Min $
+      <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-10">
+        <aside className="md:sticky md:top-24 h-fit">
+          <form method="get" className="flex flex-col gap-5 text-sm">
+            <div>
+              <label className={labelClass} htmlFor="q">
+                Search
               </label>
               <input
-                id="minPrice"
-                name="minPrice"
-                type="number"
-                step="0.01"
-                defaultValue={filters.minPrice}
-                className="w-full border border-neutral-300 dark:border-neutral-700 rounded px-2 py-1.5 bg-transparent"
+                id="q"
+                name="q"
+                defaultValue={filters.q}
+                placeholder="Brand or product name"
+                className={fieldClass}
               />
             </div>
-            <div className="flex-1">
-              <label className="block font-medium mb-1" htmlFor="maxPrice">
-                Max $
+
+            <div>
+              <label className={labelClass} htmlFor="brand">
+                Brand
               </label>
-              <input
-                id="maxPrice"
-                name="maxPrice"
-                type="number"
-                step="0.01"
-                defaultValue={filters.maxPrice}
-                className="w-full border border-neutral-300 dark:border-neutral-700 rounded px-2 py-1.5 bg-transparent"
-              />
+              <select id="brand" name="brand" defaultValue={filters.brand || ""} className={fieldClass}>
+                <option value="">All brands</option>
+                {brands.map((b) => (
+                  <option key={b} value={b}>
+                    {b}
+                  </option>
+                ))}
+              </select>
             </div>
-          </div>
 
-          <label className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              name="organicOnly"
-              value="1"
-              defaultChecked={filters.organicOnly}
-            />
-            Organic-certified only
-          </label>
+            <div>
+              <label className={labelClass} htmlFor="grade">
+                Grade
+              </label>
+              <select id="grade" name="grade" defaultValue={filters.grade || ""} className={fieldClass}>
+                <option value="">Any grade</option>
+                {grades.map((g) => (
+                  <option key={g} value={g}>
+                    {g}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          <label className="flex items-center gap-2">
-            <input
-              type="checkbox"
-              name="hasContradictionsOnly"
-              value="1"
-              defaultChecked={filters.hasContradictionsOnly}
-            />
-            Flag: has contradictions
-          </label>
+            <div>
+              <label className={labelClass} htmlFor="region">
+                Region
+              </label>
+              <select id="region" name="region" defaultValue={filters.region || ""} className={fieldClass}>
+                <option value="">Any region</option>
+                {regions.map((r) => (
+                  <option key={r} value={r}>
+                    {r}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          <button
-            type="submit"
-            className="rounded bg-green-700 hover:bg-green-800 text-white py-2 font-medium"
-          >
-            Apply filters
-          </button>
-          <Link href="/browse" className="text-center text-neutral-500 hover:underline">
-            Clear all
-          </Link>
-        </form>
-      </aside>
-
-      <section>
-        <p className="text-sm text-neutral-500 mb-4">
-          {total.toLocaleString()} product{total === 1 ? "" : "s"} found
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {products.map((p) => (
-            <Link
-              key={p.id}
-              href={`/products/${p.id}`}
-              className="border border-neutral-200 dark:border-neutral-800 rounded-lg p-4 hover:border-green-600 transition-colors flex flex-col gap-1"
-            >
-              <span className="text-xs uppercase tracking-wide text-neutral-500">
-                {p.brand_name}
-              </span>
-              <span className="font-medium">{p.product_name}</span>
-              <div className="flex flex-wrap gap-1.5 mt-1 text-xs">
-                {p.grade && (
-                  <span className="rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-0.5">
-                    {p.grade}
-                  </span>
-                )}
-                {p.region && (
-                  <span className="rounded-full bg-neutral-100 dark:bg-neutral-800 px-2 py-0.5">
-                    {p.region}
-                  </span>
-                )}
-                {p.organic_certified === 1 && (
-                  <span className="rounded-full bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 px-2 py-0.5">
-                    Organic
-                  </span>
-                )}
-                {p.has_contradictions === 1 && (
-                  <span className="rounded-full bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 px-2 py-0.5">
-                    ⚠ flagged
-                  </span>
-                )}
-                {p.not_found === 1 && (
-                  <span className="rounded-full bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-0.5">
-                    unverifiable
-                  </span>
-                )}
+            <div className="flex gap-3">
+              <div className="flex-1">
+                <label className={labelClass} htmlFor="minPrice">
+                  Min $
+                </label>
+                <input
+                  id="minPrice"
+                  name="minPrice"
+                  type="number"
+                  step="0.01"
+                  defaultValue={filters.minPrice}
+                  className={fieldClass}
+                />
               </div>
-              {(() => {
-                const price = formatPrice(p);
-                if (price.kind === "unresolved") {
-                  return (
-                    <span className="text-sm mt-1 text-neutral-400 italic">
-                      {p.source_url ? "See website for pricing" : "Price not confirmed"}
-                    </span>
-                  );
-                }
-                if (price.kind === "linkOnly") {
-                  return (
-                    <span className="text-sm mt-1 text-neutral-400 italic">
-                      Pricing on product page
-                    </span>
-                  );
-                }
-                return (
-                  <span className="text-sm mt-1">
-                    {price.text}
-                    {price.caution && <span className="text-amber-600 ml-1">⚠</span>}
-                  </span>
-                );
-              })()}
+              <div className="flex-1">
+                <label className={labelClass} htmlFor="maxPrice">
+                  Max $
+                </label>
+                <input
+                  id="maxPrice"
+                  name="maxPrice"
+                  type="number"
+                  step="0.01"
+                  defaultValue={filters.maxPrice}
+                  className={fieldClass}
+                />
+              </div>
+            </div>
+
+            <label className="flex items-center gap-2.5 text-ink-muted">
+              <input
+                type="checkbox"
+                name="organicOnly"
+                value="1"
+                defaultChecked={filters.organicOnly}
+                className="accent-matcha"
+              />
+              Organic-certified only
+            </label>
+
+            <label className="flex items-center gap-2.5 text-ink-muted">
+              <input
+                type="checkbox"
+                name="hasContradictionsOnly"
+                value="1"
+                defaultChecked={filters.hasContradictionsOnly}
+                className="accent-matcha"
+              />
+              Flag: has contradictions
+            </label>
+
+            <button
+              type="submit"
+              className="bg-ink text-paper py-2.5 text-sm font-medium tracking-wide hover:bg-matcha-ink dark:hover:bg-matcha transition-colors"
+            >
+              Apply filters
+            </button>
+            <Link href="/browse" className="text-center text-ink-faint hover:text-ink-muted transition-colors">
+              Clear all
             </Link>
-          ))}
-        </div>
+          </form>
+        </aside>
 
-        {products.length === 0 && (
-          <p className="text-neutral-500 mt-8">No products match those filters.</p>
-        )}
+        <section>
+          <p className="text-sm text-ink-muted mb-5">
+            {total.toLocaleString()} product{total === 1 ? "" : "s"} found
+          </p>
 
-        {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-4 mt-8 text-sm">
-            {page > 1 && (
-              <Link href={pageHref(page - 1)} className="hover:underline">
-                &larr; Previous
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {products.map((p) => (
+              <Link
+                key={p.id}
+                href={`/products/${p.id}`}
+                className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised/40 hover:bg-paper-raised transition-colors flex flex-col gap-1"
+              >
+                <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
+                <span className="font-medium text-ink leading-snug">{p.product_name}</span>
+                <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
+                  {p.grade && (
+                    <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5">
+                      {p.grade}
+                    </span>
+                  )}
+                  {p.region && (
+                    <span className="rounded-full bg-paper-raised border border-line text-ink-muted px-2 py-0.5">
+                      {p.region}
+                    </span>
+                  )}
+                  {p.organic_certified === 1 && (
+                    <span className="rounded-full bg-gold-soft text-gold px-2 py-0.5">Organic</span>
+                  )}
+                  {p.has_contradictions === 1 && (
+                    <span className="rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 px-2 py-0.5">
+                      &#9888; flagged
+                    </span>
+                  )}
+                  {p.not_found === 1 && (
+                    <span className="rounded-full bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 px-2 py-0.5">
+                      unverifiable
+                    </span>
+                  )}
+                </div>
+                {(() => {
+                  const price = formatPrice(p);
+                  if (price.kind === "unresolved") {
+                    return (
+                      <span className="text-sm mt-1.5 text-ink-faint italic">
+                        {p.source_url ? "See website for pricing" : "Price not confirmed"}
+                      </span>
+                    );
+                  }
+                  if (price.kind === "linkOnly") {
+                    return (
+                      <span className="text-sm mt-1.5 text-ink-faint italic">
+                        Pricing on product page
+                      </span>
+                    );
+                  }
+                  return (
+                    <span className="text-sm mt-1.5 tabular-nums text-ink">
+                      {price.text}
+                      {price.caution && <span className="text-amber-600 ml-1">&#9888;</span>}
+                    </span>
+                  );
+                })()}
               </Link>
-            )}
-            <span className="text-neutral-500">
-              Page {page} of {totalPages}
-            </span>
-            {page < totalPages && (
-              <Link href={pageHref(page + 1)} className="hover:underline">
-                Next &rarr;
-              </Link>
-            )}
+            ))}
           </div>
-        )}
-      </section>
+
+          {products.length === 0 && (
+            <p className="text-ink-muted mt-8">No products match those filters.</p>
+          )}
+
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-10 text-sm">
+              {page > 1 && (
+                <Link href={pageHref(page - 1)} className="text-ink-muted hover:text-ink transition-colors">
+                  &larr; Previous
+                </Link>
+              )}
+              <span className="text-ink-faint font-mono">
+                {page} / {totalPages}
+              </span>
+              {page < totalPages && (
+                <Link href={pageHref(page + 1)} className="text-ink-muted hover:text-ink transition-colors">
+                  Next &rarr;
+                </Link>
+              )}
+            </div>
+          )}
+        </section>
+      </div>
     </main>
   );
 }

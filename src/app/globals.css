@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
+/*
+  Palette grounded in the subject: a deep charcoal-green ground (like a
+  lacquered chawan in low light) rather than pure black, warm rice-paper
+  neutrals instead of clinical grays, and one genuinely vivid, saturated
+  matcha green as the single hero accent -- not the washed sage-green a
+  generic build defaults to. A muted brass/gold reads as the traditional
+  "ceremonial" marker, used sparingly.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-paper: #faf7ef;
+  --color-paper-raised: #f3efe2;
+  --color-ink: #1c1b14;
+  --color-ink-muted: #66634f;
+  --color-ink-faint: #9a9680;
+  --color-line: #e2ddc9;
+  --color-line-strong: #cfc9ae;
+
+  --color-matcha: #3c7a1c;
+  --color-matcha-bright: #5aa62c;
+  --color-matcha-soft: #e6efd8;
+  --color-matcha-ink: #1f3d0f;
+
+  --color-gold: #93711f;
+  --color-gold-soft: #f1e6c8;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root[data-theme="dark"] {
+  --color-paper: #14160f;
+  --color-paper-raised: #1c1e15;
+  --color-ink: #f1ede0;
+  --color-ink-muted: #a8a58f;
+  --color-ink-faint: #6f6c58;
+  --color-line: #2b2d21;
+  --color-line-strong: #3a3c2c;
+
+  --color-matcha: #8fe356;
+  --color-matcha-bright: #a9f077;
+  --color-matcha-soft: #202b16;
+  --color-matcha-ink: #d8f4bd;
+
+  --color-gold: #d3ac5c;
+  --color-gold-soft: #2c2412;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --color-paper: #14160f;
+    --color-paper-raised: #1c1e15;
+    --color-ink: #f1ede0;
+    --color-ink-muted: #a8a58f;
+    --color-ink-faint: #6f6c58;
+    --color-line: #2b2d21;
+    --color-line-strong: #3a3c2c;
+
+    --color-matcha: #8fe356;
+    --color-matcha-bright: #a9f077;
+    --color-matcha-soft: #202b16;
+    --color-matcha-ink: #d8f4bd;
+
+    --color-gold: #d3ac5c;
+    --color-gold-soft: #2c2412;
   }
 }
 
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-raised: var(--color-paper-raised);
+  --color-ink: var(--color-ink);
+  --color-ink-muted: var(--color-ink-muted);
+  --color-ink-faint: var(--color-ink-faint);
+  --color-line: var(--color-line);
+  --color-line-strong: var(--color-line-strong);
+
+  --color-matcha: var(--color-matcha);
+  --color-matcha-bright: var(--color-matcha-bright);
+  --color-matcha-soft: var(--color-matcha-soft);
+  --color-matcha-ink: var(--color-matcha-ink);
+
+  --color-gold: var(--color-gold);
+  --color-gold-soft: var(--color-gold-soft);
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-geist-mono);
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--color-matcha);
+  color: var(--color-paper);
 }

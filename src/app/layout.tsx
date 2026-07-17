@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Manrope, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -26,20 +32,37 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${manrope.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header className="border-b border-neutral-200 dark:border-neutral-800 px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="font-semibold text-green-800 dark:text-green-400 text-lg">
-            MatchaDB
-          </Link>
-          <nav className="flex gap-6 text-sm">
-            <Link href="/browse" className="hover:underline">
-              Browse
+        <header className="sticky top-0 z-30 border-b border-line bg-paper/90 backdrop-blur-sm">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <Link href="/" className="flex items-baseline gap-1.5 group">
+              <span className="font-display text-[1.4rem] font-semibold tracking-tight text-ink">
+                Matcha
+              </span>
+              <span className="font-display text-[1.4rem] font-semibold tracking-tight text-matcha">
+                DB
+              </span>
+              <span className="h-1.5 w-1.5 rounded-full bg-matcha ml-0.5 mb-0.5 transition-transform group-hover:scale-125" />
             </Link>
-          </nav>
+            <nav className="flex items-center gap-8 text-[0.9rem]">
+              <Link
+                href="/browse"
+                className="text-ink-muted hover:text-ink transition-colors"
+              >
+                Browse the catalog
+              </Link>
+            </nav>
+          </div>
         </header>
         {children}
+        <footer className="border-t border-line mt-auto">
+          <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-faint">
+            <span>MatchaDB &mdash; sourcing, pricing, and transparency data pulled directly from brand product pages.</span>
+            <span className="font-mono">Research build</span>
+          </div>
+        </footer>
       </body>
     </html>
   );
