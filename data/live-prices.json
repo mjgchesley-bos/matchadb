@@ -220,6 +220,155 @@
       }
     ]
   },
+  "16": {
+    "id": 16,
+    "brand": "Blue Willow Tea",
+    "product_name": "Ceremonial Matcha Harukasumi (Spring Cloud)",
+    "source_url": "https://bluewillowtea.com/collections/matcha/products/ceremonial-matcha-harukasumi-spring-cloud",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:05:18.307Z",
+    "variants": [
+      {
+        "label": "40g. tin",
+        "priceNative": 54,
+        "currency": "USD",
+        "grams": 40
+      }
+    ]
+  },
+  "17": {
+    "id": 17,
+    "brand": "Blue Willow Tea",
+    "product_name": "Ceremonial Matcha Tsubokiri (Koicha Grade)",
+    "source_url": "https://bluewillowtea.com/collections/matcha/products/ceremonial-matcha-tsubokiri-koicha-grade",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:05:19.989Z",
+    "variants": [
+      {
+        "label": "40g. tin",
+        "priceNative": 60,
+        "currency": "USD",
+        "grams": 40
+      }
+    ]
+  },
+  "18": {
+    "id": 18,
+    "brand": "Blue Willow Tea",
+    "product_name": "Culinary Grade Matcha Powder",
+    "source_url": "https://bluewillowtea.com/collections/matcha/products/culinary-grade-matcha-powder",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:05:21.572Z",
+    "variants": [
+      {
+        "label": "4 oz. canister",
+        "priceNative": 40,
+        "currency": "USD",
+        "grams": 113.398
+      },
+      {
+        "label": "8 oz. bag",
+        "priceNative": 65,
+        "currency": "USD",
+        "grams": 226.796
+      },
+      {
+        "label": "16 oz. bag",
+        "priceNative": 108,
+        "currency": "USD",
+        "grams": 453.592
+      }
+    ]
+  },
+  "19": {
+    "id": 19,
+    "brand": "Blue Willow Tea",
+    "product_name": "Forest Dew Ceremonial Latte Matcha Powder",
+    "source_url": "https://bluewillowtea.com/collections/matcha/products/forest-dew-ceremonial-latte-matcha",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:05:23.146Z",
+    "variants": [
+      {
+        "label": "30g",
+        "priceNative": 26,
+        "currency": "USD",
+        "grams": 30
+      },
+      {
+        "label": "80g.",
+        "priceNative": 49,
+        "currency": "USD",
+        "grams": 80
+      }
+    ]
+  },
+  "20": {
+    "id": 20,
+    "brand": "Blue Willow Tea",
+    "product_name": "Kinrin Stone-Ground Ceremonial Matcha",
+    "source_url": "https://bluewillowtea.com/collections/matcha/products/kinrin-ceremonial-matcha",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:05:24.598Z",
+    "variants": [
+      {
+        "label": "40g. tin",
+        "priceNative": 50,
+        "currency": "USD",
+        "grams": 40
+      }
+    ]
+  },
+  "21": {
+    "id": 21,
+    "brand": "Blue Willow Tea",
+    "product_name": "Shohaku Stone-Ground Ceremonial Matcha",
+    "source_url": "https://bluewillowtea.com/collections/matcha/products/shohaku-stone-ground-ceremonial-matcha",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:05:26.097Z",
+    "variants": [
+      {
+        "label": "40g Shohaku",
+        "priceNative": 46,
+        "currency": "USD",
+        "grams": 40
+      },
+      {
+        "label": "100g Shohaku bag",
+        "priceNative": 88,
+        "currency": "USD",
+        "grams": 100
+      }
+    ]
+  },
+  "22": {
+    "id": 22,
+    "brand": "Blue Willow Tea",
+    "product_name": "Wazuka Uji Jade Stone-Ground Matcha",
+    "source_url": "https://bluewillowtea.com/collections/matcha/products/wazuka-uji-jade-matcha",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:05:27.608Z",
+    "variants": [
+      {
+        "label": "30g",
+        "priceNative": 58,
+        "currency": "USD",
+        "grams": 30
+      },
+      {
+        "label": "80g.",
+        "priceNative": 97,
+        "currency": "USD",
+        "grams": 80
+      }
+    ]
+  },
   "23": {
     "id": 23,
     "brand": "Breakaway Matcha",
@@ -1075,6 +1224,74 @@
         "grams": null,
         "priceNative": 45,
         "currency": "USD"
+      }
+    ]
+  },
+  "53": {
+    "id": 53,
+    "brand": "Chamberlain Coffee",
+    "product_name": "Ceremonial Coconut Matcha",
+    "source_url": "https://chamberlaincoffee.com/products/coconut-matcha",
+    "status": "ok",
+    "method": "json_ld",
+    "scrapedAt": "2026-07-17T02:03:54.625Z",
+    "variants": [
+      {
+        "label": "Ceremonial Coconut Matcha Green Tea Powder",
+        "priceNative": 30,
+        "currency": "USD",
+        "grams": null
+      }
+    ]
+  },
+  "54": {
+    "id": 54,
+    "brand": "Chamberlain Coffee",
+    "product_name": "Ceremonial Honey Matcha",
+    "source_url": "https://chamberlaincoffee.com/products/honey-matcha",
+    "status": "ok",
+    "method": "json_ld",
+    "scrapedAt": "2026-07-17T02:03:55.663Z",
+    "variants": [
+      {
+        "label": "Ceremonial Honey Matcha Green Tea Powder",
+        "priceNative": 30,
+        "currency": "USD",
+        "grams": null
+      }
+    ]
+  },
+  "55": {
+    "id": 55,
+    "brand": "Chamberlain Coffee",
+    "product_name": "Ceremonial Vanilla Matcha",
+    "source_url": "https://chamberlaincoffee.com/products/vanilla-matcha-green-tea-powder",
+    "status": "ok",
+    "method": "json_ld",
+    "scrapedAt": "2026-07-17T02:03:56.678Z",
+    "variants": [
+      {
+        "label": "Ceremonial Vanilla Matcha Green Tea Powder",
+        "priceNative": 30,
+        "currency": "USD",
+        "grams": null
+      }
+    ]
+  },
+  "56": {
+    "id": 56,
+    "brand": "Chamberlain Coffee",
+    "product_name": "Organic Ceremonial Matcha",
+    "source_url": "https://chamberlaincoffee.com/products/matcha-green-tea-powder",
+    "status": "ok",
+    "method": "json_ld",
+    "scrapedAt": "2026-07-17T02:03:57.681Z",
+    "variants": [
+      {
+        "label": "Organic Ceremonial Matcha Green Tea Powder",
+        "priceNative": 30,
+        "currency": "USD",
+        "grams": null
       }
     ]
   },
@@ -11571,6 +11788,40 @@
         "grams": 20,
         "priceNative": 64.05,
         "currency": "USD"
+      }
+    ]
+  },
+  "690": {
+    "id": 690,
+    "brand": "Tsuki Matcha",
+    "product_name": "L'Original - Grade Ceremonial",
+    "source_url": "https://tsukimatcha.com/en/products/original",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:06:15.623Z",
+    "variants": [
+      {
+        "label": "L'Original - Grade Cérémonial",
+        "priceNative": 24.99,
+        "currency": "EUR",
+        "grams": null
+      }
+    ]
+  },
+  "691": {
+    "id": 691,
+    "brand": "Tsuki Matcha",
+    "product_name": "Matcha Vanille - Grade Ceremonial",
+    "source_url": "https://tsukimatcha.com/en/products/matcha-vanille",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:06:17.906Z",
+    "variants": [
+      {
+        "label": "Matcha Vanille - Grade Cérémonial",
+        "priceNative": 26.99,
+        "currency": "EUR",
+        "grams": null
       }
     ]
   },

@@ -96,7 +96,7 @@
     "url": "https://chamberlaincoffee.com/products/coconut-matcha",
     "status": "ok",
     "httpStatus": 200,
-    "strategy": "shopify_other",
+    "strategy": "json_ld",
     "hasVarMeta": false,
     "hasProductJsonTag": false,
     "hasShopifyMarker": true,
