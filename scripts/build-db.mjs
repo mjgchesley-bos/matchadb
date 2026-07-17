@@ -9,7 +9,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { config } from "dotenv";
-import { resolveCanonicalPrice, extractPriceVariants } from "./price-extract.mjs";
+import { resolveCanonicalPrice, extractPriceVariants, pickCanonicalFromVariants } from "./price-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(__dirname, "..", ".env.local") });
@@ -19,11 +19,24 @@ const BUCKET = process.env.S3_BUCKET || "matcha-product-database";
 const OUT_PATH = path.join(__dirname, "..", "data", "matcha.db");
 const FX_RATE_PATH = path.join(__dirname, "..", "data", "fx-rate.json");
 const REMOVED_PATH = path.join(__dirname, "..", "data", "removed-products.json");
+const LIVE_PRICES_PATH = path.join(__dirname, "..", "data", "live-prices.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
 const removedProducts = JSON.parse(fs.readFileSync(REMOVED_PATH, "utf-8"));
 const removedSet = new Set(removedProducts.map((r) => `${r.brand}||${r.product}`));
+
+// Live-scraped pricing (scripts/scrape-live-prices.mjs) is the authoritative
+// source when available -- real, complete, CURRENT variant data straight
+// from the product page, superseding whatever the archived research JSON
+// happened to capture (which is often incomplete and can be stale; see the
+// Breakaway Matcha and Matcha Outlet cases that motivated building this).
+const livePricesRaw = fs.existsSync(LIVE_PRICES_PATH) ? JSON.parse(fs.readFileSync(LIVE_PRICES_PATH, "utf-8")) : {};
+const livePricesByKey = new Map();
+for (const entry of Object.values(livePricesRaw)) {
+  if (entry.status !== "ok") continue;
+  livePricesByKey.set(`${entry.brand}||${entry.product_name}`, entry);
+}
 
 async function getS3Json(key) {
   const res = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
@@ -79,7 +92,7 @@ function convertToUsd(amount, currency) {
   return { usd: null, converted: 0 };
 }
 
-function extractStructuredFields(disclosed, contradictionsText) {
+function extractStructuredFields(disclosed, contradictionsText, liveVariants) {
   const textParts = flattenToText(disclosed);
   const text = textParts.join(" | ");
   const lower = text.toLowerCase();
@@ -91,7 +104,13 @@ function extractStructuredFields(disclosed, contradictionsText) {
   // organic if "organic" appears without a negation word shortly before it
   const organicCertified = /\borganic\b/i.test(text) && !/\b(not|non)[\s-]?organic\b/i.test(text) ? 1 : 0;
 
-  const price = resolveCanonicalPrice(disclosed, contradictionsText || "");
+  // Live-scraped variants are real, confirmed, current data -- no
+  // clustering/disambiguation needed, and no review flag, unlike prices
+  // reconstructed from free-form research text.
+  const price =
+    liveVariants && liveVariants.length > 0
+      ? { ...pickCanonicalFromVariants(liveVariants), needsReview: false, reviewReason: null }
+      : resolveCanonicalPrice(disclosed, contradictionsText || "");
   let priceUsd = price.priceUsd;
   let fxConverted = 0;
   let fxRateDate = null;
@@ -221,6 +240,7 @@ async function main() {
   let priceVariantRows = 0;
 
   let removedCount = 0;
+  let liveDataCount = 0;
   for (const p of products) {
     const brand = (p.brand || "").trim();
     const product = (p.product || "").trim();
@@ -234,7 +254,16 @@ async function main() {
     const disclosed = p.disclosed || {};
     const hasContradictions = p.contradictions && p.contradictions.length > 0 ? 1 : 0;
     const contradictionsText = hasContradictions ? p.contradictions.join(" || ") : "";
-    const fields = extractStructuredFields(disclosed, contradictionsText);
+
+    const liveEntry = livePricesByKey.get(`${brand}||${product}`);
+    const liveVariants = liveEntry
+      ? liveEntry.variants
+          .filter((v) => v.grams != null && v.priceNative != null)
+          .map((v) => ({ grams: v.grams, priceCurrency: v.currency, priceNative: v.priceNative }))
+      : null;
+    if (liveVariants && liveVariants.length > 0) liveDataCount++;
+
+    const fields = extractStructuredFields(disclosed, contradictionsText, liveVariants);
     const notFound = p.source_url ? 0 : 1;
 
     db.run(
@@ -282,7 +311,21 @@ async function main() {
       }
     }
 
-    for (const variant of extractPriceVariants(disclosed)) {
+    // Live-scraped variants (real, complete, current) replace the
+    // archived-data-derived ones entirely when available -- see the
+    // liveVariants computation above.
+    const priceVariants = liveVariants
+      ? liveVariants.map((v) => ({
+          grams: v.grams,
+          priceCurrency: v.priceCurrency,
+          priceNative: v.priceNative,
+          allAmounts: [v.priceNative],
+          needsReview: false,
+          inferred: false,
+        }))
+      : extractPriceVariants(disclosed);
+
+    for (const variant of priceVariants) {
       const converted = convertToUsd(variant.priceNative, variant.priceCurrency);
       db.run(
         `INSERT INTO product_prices
@@ -348,6 +391,7 @@ async function main() {
   console.log(`  products: ${productCount}`);
   console.log(`  contradiction rows: ${contradictionRows}`);
   console.log(`  price variant rows (all disclosed sizes): ${priceVariantRows}`);
+  console.log(`  products using live-scraped pricing: ${liveDataCount}`);
   console.log(`  secondary_source rows linked to a database brand: ${secondaryRows} (of ${secondary.length} total findings)`);
   console.log(`  prices cleanly resolved: ${priceResolvedCount}`);
   console.log(`  prices needing human review: ${priceReviewCount}`);

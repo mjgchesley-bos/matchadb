@@ -52,7 +52,7 @@ function isPerUnitRateWeight(text, matchStartIndex) {
   return PER_UNIT_RATE_BEHIND_RE.test(text.slice(Math.max(0, matchStartIndex - 6), matchStartIndex));
 }
 
-function findWeights(text) {
+export function findWeights(text) {
   const out = [];
   let m;
   const re = new RegExp(WEIGHT_RE.source, "gi");
@@ -328,13 +328,25 @@ function collectAmountsAndWeights(disclosed) {
 const SERVINGS_PRICE_KEY_RE = /^price[_\s].*?(\d+)[_\s]*servings?$/i;
 const SERVING_TO_GRAM_RE = /(?:^|\b)(one|\d+(?:\.\d+)?)\s*grams?\b/i;
 
-function gramsPerServingFromDisclosed(disclosed) {
+export function gramsPerServingFromDisclosed(disclosed) {
   for (const [key, value] of Object.entries(disclosed || {})) {
     if (!SERVING_AMOUNT_KEY_RE.test(key) || typeof value !== "string") continue;
     const m = SERVING_TO_GRAM_RE.exec(value);
     if (m) return m[1].toLowerCase() === "one" ? 1 : parseFloat(m[1]);
   }
   return null;
+}
+
+// Parses a serving count from a live-scraped variant label like "100
+// Servings" — used together with gramsPerServingFromDisclosed to convert
+// serving-tiered live variants (e.g. Breakaway Matcha) into a real gram
+// size, the same servings-to-grams logic already used for the archived-data
+// path, just applied to an actual product variant label instead of a key
+// name.
+const SERVINGS_LABEL_RE = /(\d+(?:\.\d+)?)\s*servings?\b/i;
+export function parseServingsFromLabel(label) {
+  const m = SERVINGS_LABEL_RE.exec(label || "");
+  return m ? parseFloat(m[1]) : null;
 }
 
 // A dollar figure immediately followed by "/serving" is a per-serving RATE,
@@ -565,6 +577,41 @@ export function extractPriceVariants(disclosed) {
 export function hasAnyPriceAmount(disclosed) {
   const { allPaired, allUnpairedAmounts } = collectAmountsAndWeights(disclosed);
   return allPaired.length > 0 || allUnpairedAmounts.length > 0;
+}
+
+// Picks the canonical (smallest-size) price from an already-resolved list of
+// variants — used for live-scraped data, where every variant is already a
+// confirmed real (size, price) pair with no clustering/disambiguation
+// needed (unlike resolveCanonicalPrice, which has to reconcile ambiguity
+// out of free-form research text).
+export function pickCanonicalFromVariants(variants) {
+  const byCurrency = { USD: [], JPY: [], GBP: [], EUR: [] };
+  for (const v of variants) {
+    if (v.priceNative == null || v.grams == null) continue;
+    if (byCurrency[v.priceCurrency]) byCurrency[v.priceCurrency].push(v);
+  }
+  const currency =
+    byCurrency.USD.length > 0
+      ? "USD"
+      : byCurrency.JPY.length > 0
+        ? "JPY"
+        : byCurrency.GBP.length > 0
+          ? "GBP"
+          : byCurrency.EUR.length > 0
+            ? "EUR"
+            : null;
+  if (!currency) {
+    return { priceUsd: null, priceNative: null, priceCurrency: null, priceSizeGrams: null, pricePerGram: null };
+  }
+  const candidates = byCurrency[currency];
+  const smallest = candidates.reduce((min, v) => (v.grams < min.grams ? v : min), candidates[0]);
+  return {
+    priceUsd: currency === "USD" ? smallest.priceNative : null,
+    priceNative: smallest.priceNative,
+    priceCurrency: currency,
+    priceSizeGrams: smallest.grams,
+    pricePerGram: currency === "USD" ? smallest.priceNative / smallest.grams : null,
+  };
 }
 
 /**
