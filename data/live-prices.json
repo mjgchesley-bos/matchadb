@@ -3348,6 +3348,190 @@
       }
     ]
   },
+  "161": {
+    "id": 161,
+    "brand": "Hekisuien",
+    "product_name": "Chiyo no Sakae",
+    "source_url": "https://www.sazentea.com/en/products/p248-matcha-chiyo-no-sakae.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.165Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 16.2,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 63.72,
+        "currency": "USD"
+      }
+    ]
+  },
+  "162": {
+    "id": 162,
+    "brand": "Hekisuien",
+    "product_name": "Daigyoku",
+    "source_url": "https://www.sazentea.com/en/products/p197-matcha-daigyoku.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 29.16,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 128.52,
+        "currency": "USD"
+      }
+    ]
+  },
+  "163": {
+    "id": 163,
+    "brand": "Hekisuien",
+    "product_name": "Hatsu Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p200-matcha-hatsumukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 74.52,
+        "currency": "USD"
+      }
+    ]
+  },
+  "164": {
+    "id": 164,
+    "brand": "Hekisuien",
+    "product_name": "Kin no Uzu",
+    "source_url": "https://www.sazentea.com/en/products/p199-matcha-kin-no-uzu.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 20.52,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 85.32,
+        "currency": "USD"
+      }
+    ]
+  },
+  "165": {
+    "id": 165,
+    "brand": "Hekisuien",
+    "product_name": "Matsu no Midori",
+    "source_url": "https://www.sazentea.com/en/products/p198-matcha-matsu-no-midori.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 101.52,
+        "currency": "USD"
+      }
+    ]
+  },
+  "166": {
+    "id": 166,
+    "brand": "Hekisuien",
+    "product_name": "Midori no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p255-matcha-midori-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 27,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 117.72,
+        "currency": "USD"
+      }
+    ]
+  },
+  "167": {
+    "id": 167,
+    "brand": "Hekisuien",
+    "product_name": "Shiro no Kotobuki",
+    "source_url": "https://www.sazentea.com/en/products/p196-matcha-shiro-no-kotobuki.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 36.72,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 166.32,
+        "currency": "USD"
+      }
+    ]
+  },
+  "168": {
+    "id": 168,
+    "brand": "Hekisuien",
+    "product_name": "Tenko",
+    "source_url": "https://www.sazentea.com/en/products/p195-matcha-tenko.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g Branded CAN",
+        "grams": 30,
+        "priceNative": 44.28,
+        "currency": "USD"
+      },
+      {
+        "label": "150g Branded CAN",
+        "grams": 150,
+        "priceNative": 204.12,
+        "currency": "USD"
+      }
+    ]
+  },
   "169": {
     "id": 169,
     "brand": "Horii Shichimeien",
@@ -4440,6 +4624,1043 @@
         "label": "30g",
         "grams": 30,
         "priceNative": 43,
+        "currency": "USD"
+      }
+    ]
+  },
+  "225": {
+    "id": 225,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Atomukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1591-koicha-atomukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 38.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 38.88,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 75.6,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 75.6,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 187.92,
+        "currency": "USD"
+      }
+    ]
+  },
+  "226": {
+    "id": 226,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Babamukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1592-koicha-babamukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 30.24,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 30.24,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 58.32,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 58.32,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 144.72,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 287.28,
+        "currency": "USD"
+      }
+    ]
+  },
+  "227": {
+    "id": 227,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Hashitate no Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1610-koicha-hashidate-no-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      }
+    ]
+  },
+  "228": {
+    "id": 228,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Hatsumukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1590-koicha-hatsumukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 86.4,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 86.4,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 214.92,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 427.68,
+        "currency": "USD"
+      }
+    ]
+  },
+  "229": {
+    "id": 229,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Hatsune no Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1619-koicha-hatsune-no-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 35.64,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 35.64,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 88.02,
+        "currency": "USD"
+      }
+    ]
+  },
+  "230": {
+    "id": 230,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Hijirimukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1593-koicha-hijirimukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 106.92,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 211.68,
+        "currency": "USD"
+      }
+    ]
+  },
+  "231": {
+    "id": 231,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Kashin no Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1650-koicha-kashin-no-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 106.92,
+        "currency": "USD"
+      }
+    ]
+  },
+  "232": {
+    "id": 232,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Matsukazemukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1596-koicha-matsukazemukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 11.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 12.96,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 55.08,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 107.46,
+        "currency": "USD"
+      }
+    ]
+  },
+  "233": {
+    "id": 233,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Sazumimukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1594-koicha-sazumimukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 35.64,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 35.64,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 88.02,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 173.88,
+        "currency": "USD"
+      }
+    ]
+  },
+  "234": {
+    "id": 234,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Seitan no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1612-koicha-seitan-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 106.92,
+        "currency": "USD"
+      }
+    ]
+  },
+  "235": {
+    "id": 235,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Koicha Soumei no Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1613-koicha-soumei-no-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 106.92,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 211.68,
+        "currency": "USD"
+      }
+    ]
+  },
+  "237": {
+    "id": 237,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Ryo Matcha",
+    "source_url": "https://www.sazentea.com/en/products/p1605-ryo-matcha.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g single size",
+        "grams": 30,
+        "priceNative": 19.44,
+        "currency": "USD"
+      }
+    ]
+  },
+  "238": {
+    "id": 238,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Aya no Mori",
+    "source_url": "https://www.sazentea.com/en/products/p1602-usucha-aya-no-mori.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 8.1,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 9.18,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 15.12,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 36.72,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 70.2,
+        "currency": "USD"
+      }
+    ]
+  },
+  "239": {
+    "id": 239,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Biwa no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1600-usucha-biwa-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 11.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 12.96,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 55.08,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 107.46,
+        "currency": "USD"
+      }
+    ]
+  },
+  "240": {
+    "id": 240,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Gokumukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1597-usucha-gokumukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 43.2,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 106.92,
+        "currency": "USD"
+      }
+    ]
+  },
+  "241": {
+    "id": 241,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Goun no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1647-usucha-goun-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 11.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 12.96,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 55.08,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 107.46,
+        "currency": "USD"
+      }
+    ]
+  },
+  "242": {
+    "id": 242,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Konomi no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1598-usucha-konomi-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 35.64,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 35.64,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 88.02,
+        "currency": "USD"
+      }
+    ]
+  },
+  "243": {
+    "id": 243,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Kouko no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1615-usucha-kouko-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 11.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 12.96,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 55.08,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 107.46,
+        "currency": "USD"
+      }
+    ]
+  },
+  "244": {
+    "id": 244,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Matsu no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1604-usucha-matsu-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 10.26,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 11.34,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 45.9,
+        "currency": "USD"
+      }
+    ]
+  },
+  "245": {
+    "id": 245,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Mikazuki no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1609-usucha-mikazuki-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 11.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 12.96,
+        "currency": "USD"
+      }
+    ]
+  },
+  "246": {
+    "id": 246,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Momoyo no Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1611-usucha-momoyo-no-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 11.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 12.96,
+        "currency": "USD"
+      },
+      {
+        "label": "40g",
+        "grams": 40,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 55.08,
+        "currency": "USD"
+      }
+    ]
+  },
+  "247": {
+    "id": 247,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Mozumukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1601-usucha-mozumukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 9.72,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 10.8,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 18.36,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 19.44,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 44.28,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 85.32,
+        "currency": "USD"
+      }
+    ]
+  },
+  "248": {
+    "id": 248,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Ryo no Kage",
+    "source_url": "https://www.sazentea.com/en/products/p1603-usucha-ryo-no-kage.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 7.02,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 8.1,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 12.96,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 14.04,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 30.78,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 59.4,
+        "currency": "USD"
+      }
+    ]
+  },
+  "249": {
+    "id": 249,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Sachi no Shiro",
+    "source_url": "https://www.sazentea.com/en/products/p1618-usucha-sachi-no-shiro.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 11.88,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 12.96,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 22.68,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 23.76,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 55.08,
+        "currency": "USD"
+      },
+      {
+        "label": "200g",
+        "grams": 200,
+        "priceNative": 107.46,
+        "currency": "USD"
+      }
+    ]
+  },
+  "250": {
+    "id": 250,
+    "brand": "Kanbayashi Shunsho",
+    "product_name": "Usucha Yuzuriha Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p1599-usucha-yuzuriha-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "20g Branded BOX",
+        "grams": 20,
+        "priceNative": 15.12,
+        "currency": "USD"
+      },
+      {
+        "label": "20g Branded CAN",
+        "grams": 20,
+        "priceNative": 16.2,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded BOX",
+        "grams": 40,
+        "priceNative": 29.16,
+        "currency": "USD"
+      },
+      {
+        "label": "40g Branded CAN",
+        "grams": 40,
+        "priceNative": 30.24,
+        "currency": "USD"
+      },
+      {
+        "label": "100g",
+        "grams": 100,
+        "priceNative": 71.28,
         "currency": "USD"
       }
     ]
@@ -10852,6 +12073,23 @@
       }
     ]
   },
+  "585": {
+    "id": 585,
+    "brand": "Sazen Tea",
+    "product_name": "Organic Cooking Matcha",
+    "source_url": "https://www.sazentea.com/en/products/p249-organic-cooking-matcha.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "1000g single size",
+        "grams": 1000,
+        "priceNative": 540,
+        "currency": "USD"
+      }
+    ]
+  },
   "587": {
     "id": 587,
     "brand": "Sencha Naturals",
@@ -12995,6 +14233,74 @@
         "label": "Vanilla Matcha Green Tea Powder, 3.53 oz",
         "grams": 100.07373499999999,
         "priceNative": 7.49,
+        "currency": "USD"
+      }
+    ]
+  },
+  "704": {
+    "id": 704,
+    "brand": "Yamamasa Koyamaen",
+    "product_name": "Chajyu no Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p816-matcha-chajyu-no-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g single size",
+        "grams": 30,
+        "priceNative": 162,
+        "currency": "USD"
+      }
+    ]
+  },
+  "706": {
+    "id": 706,
+    "brand": "Yamamasa Koyamaen",
+    "product_name": "Kaguraden",
+    "source_url": "https://www.sazentea.com/en/products/p818-matcha-kaguraden.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g single size",
+        "grams": 30,
+        "priceNative": 82.08,
+        "currency": "USD"
+      }
+    ]
+  },
+  "707": {
+    "id": 707,
+    "brand": "Yamamasa Koyamaen",
+    "product_name": "Kasuga no Mukashi",
+    "source_url": "https://www.sazentea.com/en/products/p817-matcha-kasuga-no-mukashi.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g single size",
+        "grams": 30,
+        "priceNative": 108,
+        "currency": "USD"
+      }
+    ]
+  },
+  "712": {
+    "id": 712,
+    "brand": "Yamamasa Koyamaen",
+    "product_name": "Seiun",
+    "source_url": "https://www.sazentea.com/en/products/p819-matcha-seiun.html",
+    "status": "ok",
+    "method": "browser_datalayer",
+    "scrapedAt": "2026-07-17T02:30:05.166Z",
+    "variants": [
+      {
+        "label": "30g single size",
+        "grams": 30,
+        "priceNative": 55.08,
         "currency": "USD"
       }
     ]
