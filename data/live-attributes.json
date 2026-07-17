@@ -804,8 +804,11 @@
     "brand": "Distinctly Organic",
     "product_name": "Matcha Green Tea Powder (Ceremonial Grade)",
     "source_url": "https://www.amazon.com/Distinctly-Organic-Matcha-Green-Tea/dp/B01N7QYN6I",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-07-17T18:13:55.858Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
   },
   "91": {
     "id": 91,
@@ -813,7 +816,7 @@
     "product_name": "MatchaBiotics",
     "source_url": "https://www.amazon.com/MatchaBiotics-PRO-10-Organic-Matcha-Probiotics/dp/B0745SLQKP (Amazon listing found via search; direct fetch not completed due to dynamic-content/access limitations)",
     "status": "no_attributes_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "92": {
     "id": 92,
@@ -5016,8 +5019,11 @@
     "brand": "Tradition",
     "product_name": "Pure Green Tea Powder / Matcha Tea Powder",
     "source_url": "https://www.amazon.com/Tradition-Powder-Matcha-Product-Taiwan/dp/B001T5GHUM",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-07-17T18:14:07.343Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "taiwan"
   },
   "692": {
     "id": 692,
@@ -5098,8 +5104,8 @@
     "brand": "uVernal",
     "product_name": "Organic Ceremonial Matcha",
     "source_url": "https://www.amazon.com/stores/uVernal/Homepage/page/9816C196-B67E-4639-9782-2DECF0E1263E (brand storefront; specific ASIN for this exact ceremonial-labeled tin not independently isolated from the general Organic Matcha Green Tea Powder listing)",
-    "status": "blocked",
-    "httpStatus": 503
+    "status": "no_attributes_found",
+    "httpStatus": 200
   },
   "700": {
     "id": 700,
