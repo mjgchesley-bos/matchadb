@@ -381,25 +381,44 @@ function extractServingTierPairs(disclosed) {
 }
 
 // Many Shopify-style product pages disclose ONE overall price (regular_price/
-// sale_price/price) plus a separate list of size options (e.g. "size_variants":
-// ["1oz/30g", "3.5oz", "12oz", "6g Sample"]), with no per-size price
-// breakdown captured. The page itself links them — the shown price is for
-// whichever size is pre-selected, which is consistently the FIRST-listed
-// option on this dataset's sites (verified live across three unrelated
-// brands: Matcha Outlet, Naoki Matcha, Jade Leaf). This is an INFERENCE, not
-// a stated fact, so pairs from here are always tagged `inferred: true` and
-// shown labeled as such rather than blended in with explicitly-stated
+// sale_price/price/price_usd) plus a separate list of size options — either
+// plain strings (e.g. "size_variants": ["1oz/30g", "3.5oz", "12oz"]) or
+// objects with a size sub-field (e.g. "size_variants": [{size: "30g (1.06
+// oz)", cups: 15}, ...]) — with no per-size price breakdown captured. The
+// page itself links them — the shown price is for whichever size is
+// pre-selected, which is consistently the FIRST-listed option on this
+// dataset's sites (verified live across five unrelated brands: Matcha
+// Outlet, Naoki Matcha, Jade Leaf, Nio Teas, Encha). This is an INFERENCE,
+// not a stated fact, so pairs from here are always tagged `inferred: true`
+// and shown labeled as such rather than blended in with explicitly-stated
 // pricing. Only used as a last resort, when nothing else resolved anything.
 const SIZE_ARRAY_KEY_RE = /size|variant/i;
 const SINGLE_PRICE_KEY_RE = /^regular_price$|^sale_price$|^price$/i;
 
+function firstVariantSizeText(firstEntry) {
+  if (typeof firstEntry === "string") return firstEntry;
+  if (typeof firstEntry !== "object" || firstEntry === null) return null;
+  // An object entry (e.g. {size: "30g (1.06 oz)", cups: 15}) — pull the
+  // size-labeled sub-field specifically, so an unrelated number sitting in
+  // the same object (like "cups: 15") never gets mistaken for a weight.
+  const sizeField = Object.entries(firstEntry).find(([k, v]) => /size/i.test(k) && typeof v === "string");
+  return sizeField ? sizeField[1] : null;
+}
+
 function extractInferredFirstVariantPairs(disclosed) {
   const sizeArrayEntry = Object.entries(disclosed || {}).find(
-    ([k, v]) => SIZE_ARRAY_KEY_RE.test(k) && Array.isArray(v) && v.length > 0 && typeof v[0] === "string"
+    ([k, v]) =>
+      SIZE_ARRAY_KEY_RE.test(k) &&
+      Array.isArray(v) &&
+      v.length > 0 &&
+      (typeof v[0] === "string" || (typeof v[0] === "object" && v[0] !== null))
   );
   if (!sizeArrayEntry) return [];
 
-  const weights = findWeights(sizeArrayEntry[1][0]);
+  const firstText = firstVariantSizeText(sizeArrayEntry[1][0]);
+  if (!firstText) return [];
+
+  const weights = findWeights(firstText);
   if (weights.length === 0) return [];
   // Prefer a directly-stated gram figure over an oz/lb conversion appearing
   // in the same size label (e.g. "1oz/30g" — 30g is the page's own number).
@@ -408,6 +427,10 @@ function extractInferredFirstVariantPairs(disclosed) {
 
   const pairs = [];
   for (const [key, value] of Object.entries(disclosed || {})) {
+    if (isMoneyKey(key) && typeof value === "number") {
+      pairs.push({ grams, amount: value, currency: "USD", priceType: priceTypeFromKey(key), inferred: true });
+      continue;
+    }
     if (!SINGLE_PRICE_KEY_RE.test(key) || typeof value !== "string") continue;
     for (const a of findAmounts(value, priceTypeFromKey(key))) {
       pairs.push({ grams, amount: a.amount, currency: a.currency, priceType: a.priceType, inferred: true });
