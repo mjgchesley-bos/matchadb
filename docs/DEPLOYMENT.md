@@ -39,9 +39,47 @@ If you don't already have a GitHub repo for this project:
 
 ## 3. Custom domain (once you own matchadb.com)
 
-In the Amplify app → **Domain management** → **Add domain** → enter `matchadb.com` → follow the
-DNS verification steps shown (Amplify will give you CNAME/A records to add wherever the domain is
-registered).
+Live app: `https://main.d2f6dk4eu6ukwh.amplifyapp.com`
+
+In the Amplify app → **Domain management** → **Add domain** → enter the **root domain**
+(`matchadb.com`, not `www.matchadb.com` — Amplify configures the `www` subdomain separately in
+the next step). When Amplify asks about automatically creating a Route 53 hosted zone, **decline
+it** — that migrates the domain's nameservers away from the registrar (losing any existing email
+DNS records in the process) and adds a small recurring Route 53 cost, for a project that's
+otherwise been kept deliberately low-cost. Manually adding the DNS records at the registrar
+instead is a few extra clicks, nothing more.
+
+On the subdomain-configuration screen, both `matchadb.com` and `www.matchadb.com` map to the
+`main` branch. Check "Setup redirect from https://matchadb.com to https://www.matchadb.com" —
+makes `www` canonical, which is Amplify's own default and needs no extra manual redirect rule.
+Keep the **Amplify managed certificate** (free, auto-renewing) rather than a custom SSL cert.
+
+Amplify will then show DNS records to add at the registrar:
+- A verification `CNAME` (a long hashed hostname → an `*.acm-validations.aws` target) — proves
+  domain ownership so Amplify can issue the SSL cert.
+- `www` → `CNAME` → the CloudFront distribution domain (e.g. `dXXXXXXXXXXXXX.cloudfront.net`).
+- `@` (root) → `ANAME`/`ALIAS` → the same CloudFront distribution domain.
+
+### GoDaddy-specific notes (registrar quirks worth documenting)
+
+- GoDaddy's DNS panel does **not** offer an `ANAME`/`ALIAS` record type (checked available types:
+  A, AAAA, CNAME, MX, TXT, SRV, CAA, NS, HTTPS, SVCB, TLSA — no alias-style apex record). A plain
+  `A` record won't work for the root domain either, since CloudFront doesn't have a fixed IP.
+  **Fallback:** use GoDaddy's separate **Domain Forwarding** feature (Domain Settings →
+  Forwarding, not the DNS records table) to forward the bare `matchadb.com` →
+  `https://www.matchadb.com` (301/permanent, "Forward Only" — never "masking", which hides the
+  real URL and hurts SEO). This achieves the same end result for visitors via a different
+  mechanism (a registrar-level HTTP redirect instead of DNS-level aliasing to CloudFront) — root
+  domain traffic never actually reaches Amplify, so Amplify's own Domain Management page may keep
+  showing the root-domain portion as unverified/pending indefinitely. That's expected and
+  harmless; `www.matchadb.com` is what Amplify actually serves with a valid cert, and that's the
+  real canonical site.
+- New GoDaddy domains ship with a default `CNAME www → matchadb.com.` record already present —
+  trying to *add* a new `www` record fails ("record could not be added") until you *edit* that
+  existing one instead.
+- DNS propagation: GoDaddy quotes "up to 48 hours" but it's typically much faster in practice
+  (minutes to a couple hours for CNAME changes to take effect and for Amplify to auto-detect
+  verification and issue the cert).
 
 ## Updating the live site later
 
