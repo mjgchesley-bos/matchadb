@@ -14,9 +14,21 @@
 // shipping with a wrong grade="Premium" from the archived-text extraction.
 export const GRADE_KEYWORDS = ["ceremonial", "culinary", "koicha", "usucha", "latte grade", "food grade"];
 
+// Mined directly from this dataset's own archived research text (every
+// product's disclosed "cultivar" field, where present) rather than a
+// generic list -- these are cultivar names actually attested for products
+// in this database, not a guess at what might show up. The original list
+// only covered the handful of best-known cultivars and was missing real
+// ones already sitting in the archived text, e.g. Meiryoku (confirmed
+// earlier from Obubu's Matcha Cultivars Comparison Set) and Sayamakaori.
 export const CULTIVAR_KEYWORDS = [
-  "yabukita", "samidori", "okumidori", "saemidori", "asahi", "gokou", "gokō", "uji hikari",
-  "tsuyuhikari", "kanaya midori", "yutakamidori", "sae akari", "zairai", "narino",
+  "yabukita", "samidori", "okumidori", "oku midori", "saemidori", "asahi", "asahikari",
+  "gokou", "gokō", "gokoh", "uji hikari", "ujihikari", "tsuyuhikari",
+  "kanaya midori", "kanayamidori", "yutakamidori", "sae akari", "saeakari",
+  "zairai", "narino", "asanoka", "asatsuyu", "sayamakaori", "okuyutaka",
+  "komakage", "koshun", "seimei", "ooika", "meiryoku", "kirari 31",
+  "hikari-tsuyu", "hikaritsuyu", "benihikari", "kotobuki", "hoshun", "houshun",
+  "yukihikari", "inaguchi", "kyōken-283", "kyoken-283", "zuisho", "haruto 34",
 ];
 
 export const REGION_KEYWORDS = [
