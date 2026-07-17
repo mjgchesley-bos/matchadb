@@ -6,14 +6,16 @@ export type PriceDisplay =
   | { kind: "unresolved" };
 
 export function formatPrice(p: ProductRow): PriceDisplay {
+  // A real price is confirmed to exist (curated in
+  // data/price-display-overrides.json), just not in a packaging format
+  // (stick counts, tea-bag counts) that reduces to a comparable per-gram
+  // figure -- distinct from genuinely having no price data at all. Checked
+  // before price_usd so the flag always wins, even if some other resolution
+  // path ever produces a number for this product.
+  if (p.price_link_only === 1) {
+    return { kind: "linkOnly" };
+  }
   if (p.price_usd == null) {
-    // A real price is confirmed to exist (curated in
-    // data/price-display-overrides.json), just not in a packaging format
-    // (stick counts, tea-bag counts) that reduces to a comparable per-gram
-    // figure -- distinct from genuinely having no price data at all.
-    if (p.price_link_only === 1) {
-      return { kind: "linkOnly" };
-    }
     return { kind: "unresolved" };
   }
 

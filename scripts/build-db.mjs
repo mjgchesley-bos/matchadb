@@ -282,6 +282,8 @@ async function main() {
     const hasContradictions = contradictions.length > 0 ? 1 : 0;
     const contradictionsText = hasContradictions ? contradictions.join(" || ") : "";
 
+    const isLinkOnly = priceLinkOnlySet.has(`${brand}||${product}`);
+
     const liveEntry = livePricesByKey.get(`${brand}||${product}`);
     // Normalize to null (not just an empty array) when every live variant's
     // size was unparseable (e.g. a product name with no weight in it, like
@@ -298,6 +300,21 @@ async function main() {
     if (liveVariants) liveDataCount++;
 
     const fields = extractStructuredFields(disclosed, contradictionsText, liveVariants);
+    // A price_link_only product deliberately shows no computed per-gram
+    // figure and no per-size table, regardless of what the archived data or
+    // live scrape found -- the flag must win outright, not just apply when
+    // nothing else happened to resolve a number (see Aiya's To Go Sticks,
+    // which briefly showed both the "see pricing on page" badge AND a
+    // confusing leftover price row from the archived-data fallback).
+    if (isLinkOnly) {
+      fields.priceUsd = null;
+      fields.pricePerGram = null;
+      fields.priceSizeGrams = null;
+      fields.priceNative = null;
+      fields.priceCurrency = null;
+      fields.priceNeedsReview = 0;
+      fields.priceReviewReason = null;
+    }
     const notFound = p.source_url ? 0 : 1;
 
     db.run(
@@ -328,7 +345,7 @@ async function main() {
         notFound,
         JSON.stringify(disclosed),
         p.page_notes || null,
-        priceLinkOnlySet.has(`${brand}||${product}`) ? 1 : 0,
+        isLinkOnly ? 1 : 0,
       ]
     );
 
@@ -348,8 +365,11 @@ async function main() {
 
     // Live-scraped variants (real, complete, current) replace the
     // archived-data-derived ones entirely when available -- see the
-    // liveVariants computation above.
-    const priceVariants = liveVariants
+    // liveVariants computation above. price_link_only products show no
+    // per-size table at all (see the isLinkOnly note above fields).
+    const priceVariants = isLinkOnly
+      ? []
+      : liveVariants
       ? liveVariants.map((v) => ({
           grams: v.grams,
           priceCurrency: v.priceCurrency,

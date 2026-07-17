@@ -28,5 +28,11 @@
     "product": "Sweetened Roasted Matcha To Go Sticks",
     "reason": "Single-serving stick/packet format (8 sticks per box) -- same non-standard-packaging category as Rishi Tea Matcha Sticks, even though a total net weight (96g) is disclosed on the page.",
     "checkedDate": "2026-07-17"
+  },
+  {
+    "brand": "Aiya",
+    "product": "Sweetened Matcha To Go Sticks",
+    "reason": "Same single-serving stick/packet format as the roasted variant (id 13) -- reverted from a computed 96g/$15.36 price for consistency with its sibling product.",
+    "checkedDate": "2026-07-17"
   }
 ]
