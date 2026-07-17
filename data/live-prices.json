@@ -498,36 +498,36 @@
     "product_name": "Blend 97 Matcha",
     "source_url": "https://breakawaymatcha.com/products/blend-97",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:28.130Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.902Z",
     "variants": [
       {
         "label": "30 Servings",
-        "grams": null,
+        "grams": 30,
         "priceNative": 79,
         "currency": "USD"
       },
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 219,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 465,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 844,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 1519,
         "currency": "USD"
       }
@@ -702,24 +702,24 @@
     "product_name": "Blend Rikyu Matcha",
     "source_url": "https://breakawaymatcha.com/products/blend-rikyu",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:33.808Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "30 Servings",
-        "grams": null,
+        "grams": 30,
         "priceNative": 144,
         "currency": "USD"
       },
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 403,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 856,
         "currency": "USD"
       }
@@ -731,24 +731,24 @@
     "product_name": "Blend Satoshi Matcha",
     "source_url": "https://breakawaymatcha.com/products/blend-satoshi",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:34.851Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "30 Servings",
-        "grams": null,
+        "grams": 30,
         "priceNative": 189,
         "currency": "USD"
       },
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 539,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 1099,
         "currency": "USD"
       }
@@ -760,36 +760,36 @@
     "product_name": "Coldbrew Organic Matcha",
     "source_url": "https://breakawaymatcha.com/products/coldbrew-organic",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:35.707Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "30 Servings",
-        "grams": null,
+        "grams": 30,
         "priceNative": 49,
         "currency": "USD"
       },
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 129,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 274,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 493,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 887,
         "currency": "USD"
       }
@@ -801,36 +801,36 @@
     "product_name": "Coldbrew Original Matcha",
     "source_url": "https://breakawaymatcha.com/products/coldbrew-original",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:36.562Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "30 Servings",
-        "grams": null,
+        "grams": 30,
         "priceNative": 37,
         "currency": "USD"
       },
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 99,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 209,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 376,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 676,
         "currency": "USD"
       }
@@ -842,36 +842,36 @@
     "product_name": "Coldbrew Reserve Matcha",
     "source_url": "https://breakawaymatcha.com/products/coldbrew-reserve",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:37.438Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "30 Servings",
-        "grams": null,
+        "grams": 30,
         "priceNative": 44,
         "currency": "USD"
       },
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 108,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 229,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 412,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 741,
         "currency": "USD"
       }
@@ -883,30 +883,30 @@
     "product_name": "Culinary Organic Matcha",
     "source_url": "https://breakawaymatcha.com/products/culinary-organic",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:38.646Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 59,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 128,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 229,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 399,
         "currency": "USD"
       }
@@ -918,30 +918,30 @@
     "product_name": "Culinary Original Matcha",
     "source_url": "https://breakawaymatcha.com/products/culinary-original",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:39.500Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 49,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 99,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 178,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 299,
         "currency": "USD"
       }
@@ -953,30 +953,30 @@
     "product_name": "Culinary Reserve Matcha",
     "source_url": "https://breakawaymatcha.com/products/culinary-reserve",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:40.630Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 55,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 119,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 224,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 395,
         "currency": "USD"
       }
@@ -988,36 +988,36 @@
     "product_name": "Hyperpremium Organic",
     "source_url": "https://breakawaymatcha.com/products/hyperpremium-organic",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:41.488Z",
+    "method": "shopify_var_meta+manual_servings_ratio_verified",
+    "scrapedAt": "2026-07-17T03:38:32.903Z",
     "variants": [
       {
         "label": "30 Servings",
-        "grams": null,
+        "grams": 30,
         "priceNative": 64,
         "currency": "USD"
       },
       {
         "label": "100 Servings",
-        "grams": null,
+        "grams": 100,
         "priceNative": 184,
         "currency": "USD"
       },
       {
         "label": "250 Servings",
-        "grams": null,
+        "grams": 250,
         "priceNative": 389,
         "currency": "USD"
       },
       {
         "label": "500 Servings",
-        "grams": null,
+        "grams": 500,
         "priceNative": 699,
         "currency": "USD"
       },
       {
         "label": "1000 Servings",
-        "grams": null,
+        "grams": 1000,
         "priceNative": 1249,
         "currency": "USD"
       }
