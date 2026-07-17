@@ -39,3 +39,10 @@ Visit `http://localhost:3000`.
 ## Deployment
 
 See `docs/DEPLOYMENT.md` for step-by-step AWS Amplify Hosting setup instructions.
+
+## Re-scraping / data hygiene
+
+See `docs/SCRAPING_NOTES.md` before re-running the live-price or live-attribute scrapers —
+it documents the pipeline architecture, the curated override-file system, and every
+brand-specific quirk (currency switchers, stale URLs, pack-multiplier labels, etc.) discovered so
+far, so they don't need rediscovering on the next pass.
