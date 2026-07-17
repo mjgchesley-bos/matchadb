@@ -2998,8 +2998,8 @@
     "product_name": "Pure Matcha",
     "source_url": "https://golde.co/products/new-pure-matcha",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:18:45.195Z",
+    "method": "shopify_var_meta+pack_multiplier_fix",
+    "scrapedAt": "2026-07-17T18:55:50.710Z",
     "variants": [
       {
         "label": "30g tin",
@@ -3015,7 +3015,7 @@
       },
       {
         "label": "30g tin (3-pack)",
-        "grams": 30,
+        "grams": 90,
         "priceNative": 104,
         "currency": "USD"
       }

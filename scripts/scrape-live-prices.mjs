@@ -158,11 +158,27 @@ function extractJsonLd(html) {
   return null;
 }
 
+// Detects a "(3-pack)" / "3-pack" / "3 pack" / "pack of 3" style multiplier
+// so a bundle of N identical units doesn't get mislabeled with a single
+// unit's weight -- caught on Golde's "30g tin (3-pack)" variant, which
+// recorded grams:30 for what's actually 3x30g=90g. The cheaper single tin
+// still won canonical-price tie-breaking by luck, but the per-size table
+// showed a confusing duplicate-looking "30g" row at a different price.
+// "Pack of 1" is explicitly harmless here -- multiplying by 1 is a no-op.
+const PACK_MULTIPLIER_RE = /\(\s*(\d+)[\s-]*pack\s*\)|\b(\d+)[\s-]*packs?\b|\bpack\s*of\s*(\d+)\b/i;
+function packMultiplier(label) {
+  const m = PACK_MULTIPLIER_RE.exec(label || "");
+  if (!m) return 1;
+  const n = parseInt(m[1] || m[2] || m[3], 10);
+  return n > 0 ? n : 1;
+}
+
 function gramsFromLabel(label) {
   const weights = findWeights(label);
   if (weights.length === 0) return null;
   const native = weights.find((w) => w.isNativeGram);
-  return (native || weights[0]).grams;
+  const base = (native || weights[0]).grams;
+  return base * packMultiplier(label);
 }
 
 async function scrapeOne(product) {
