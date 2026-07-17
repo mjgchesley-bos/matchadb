@@ -1983,25 +1983,52 @@
     "id": 81,
     "brand": "David's Tea",
     "product_name": "Organic Maple Matcha",
-    "source_url": "https://davidstea.com/products/organic-maple-matcha",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "source_url": "https://davidstea.com/en-us/products/organic-maple-matcha-us",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:37:41.561Z",
+    "variants": [
+      {
+        "label": "Organic Maple Matcha",
+        "grams": 50,
+        "priceNative": 17.14,
+        "currency": "USD"
+      }
+    ]
   },
   "82": {
     "id": 82,
     "brand": "David's Tea",
     "product_name": "Organic Peach Matcha",
-    "source_url": "https://davidstea.com/products/organic-peach-matcha",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "source_url": "https://davidstea.com/en-us/products/organic-peach-matcha-us",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:37:43.089Z",
+    "variants": [
+      {
+        "label": "Organic Peach Matcha",
+        "grams": 50,
+        "priceNative": 17.14,
+        "currency": "USD"
+      }
+    ]
   },
   "83": {
     "id": 83,
     "brand": "David's Tea",
     "product_name": "Organic Pistachio Matcha",
-    "source_url": "https://davidstea.com/products/organic-pistachio-matcha",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "source_url": "https://davidstea.com/en-us/products/organic-pistachio-matcha-us",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:37:44.627Z",
+    "variants": [
+      {
+        "label": "Organic Pistachio Matcha",
+        "grams": 50,
+        "priceNative": 17.14,
+        "currency": "USD"
+      }
+    ]
   },
   "84": {
     "id": 84,
@@ -2024,33 +2051,69 @@
     "id": 85,
     "brand": "David's Tea",
     "product_name": "Organic Strawberry Matcha",
-    "source_url": "https://davidstea.com/products/organic-strawberry-matcha",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "source_url": "https://davidstea.com/en-us/products/organic-strawberry-matcha-us",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:37:46.047Z",
+    "variants": [
+      {
+        "label": "Organic Strawberry Matcha",
+        "grams": 50,
+        "priceNative": 17.14,
+        "currency": "USD"
+      }
+    ]
   },
   "86": {
     "id": 86,
     "brand": "David's Tea",
     "product_name": "Organic Vanilla Matcha",
-    "source_url": "https://davidstea.com/products/organic-vanilla-matcha",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "source_url": "https://davidstea.com/en-us/products/organic-vanilla-matcha-us",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:37:47.643Z",
+    "variants": [
+      {
+        "label": "Organic Vanilla Matcha",
+        "grams": 50,
+        "priceNative": 17.14,
+        "currency": "USD"
+      }
+    ]
   },
   "87": {
     "id": 87,
     "brand": "David's Tea",
     "product_name": "Organic Vanilla Matcha - Unsweetened",
-    "source_url": "https://davidstea.com/products/vanilla-matcha-sugar-free-organic-50-grams",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "source_url": "https://davidstea.com/en-us/products/vanilla-matcha-sugar-free-organic-50-grams-us",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:37:49.817Z",
+    "variants": [
+      {
+        "label": "Organic Vanilla Matcha - Unsweetened",
+        "grams": 50,
+        "priceNative": 35.98,
+        "currency": "USD"
+      }
+    ]
   },
   "88": {
     "id": 88,
     "brand": "David's Tea",
     "product_name": "Organic Watermelon Matcha",
-    "source_url": "https://davidstea.com/products/organic-watermelon-matcha",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "source_url": "https://davidstea.com/en-us/products/organic-watermelon-matcha-us",
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-07-17T02:37:51.575Z",
+    "variants": [
+      {
+        "label": "Organic Watermelon Matcha",
+        "grams": 50,
+        "priceNative": 15.58,
+        "currency": "USD"
+      }
+    ]
   },
   "89": {
     "id": 89,
