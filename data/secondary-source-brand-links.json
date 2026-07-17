@@ -1,0 +1,38 @@
+[
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "Kyoto Dew Ceremonial Grade Matcha", "brand": "Kyoto Dew" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "Matcha Konomi Akira Ceremonial Grade Matcha", "brand": "Matcha Konomi" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "3rd Place (Ceremonial", "brand": "Matcha Moon" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "Kiss Me Organics Ceremonial Grade Matcha", "brand": "Kiss Me Organics" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "KENKO Ceremonial Grade Matcha", "brand": "Kenko Tea" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "KENKO Culinary Grade Matcha", "brand": "Kenko Tea" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "Matcha Moon Culinary Grade Matcha", "brand": "Matcha Moon" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "Kiss Me Organics Culinary Grade Matcha", "brand": "Kiss Me Organics" },
+  { "source_url": "https://minimalistbaker.com/best-matcha-review/", "matchSubstring": "Epic Matcha Culinary Grade", "brand": "Epic Matcha" },
+
+  { "source_url": "https://www.thekitchn.com/best-matcha-brands-23777414", "matchSubstring": "Dona First Flush Ceremonial Grade Matcha", "brand": "Dona" },
+
+  { "source_url": "https://ratetea.com/browse_reviews.php?style_id=123", "matchSubstring": "Green Foods, Matcha Green Tea", "brand": "Green Foods" },
+  { "source_url": "https://ratetea.com/style/matcha/123/", "matchSubstring": "The Tao of Tea, Liquid Jade Matcha", "brand": "The Tao of Tea" },
+
+  { "source_url": "https://nymag.com/strategist/article/best-matcha-powder.html", "matchSubstring": "Paragon Tea Room, Baking Matcha", "brand": "Paragon Tea Room" },
+  { "source_url": "https://nymag.com/strategist/article/best-matcha-powder.html", "matchSubstring": "Blue Willow Tea, Shohaku", "brand": "Blue Willow Tea" },
+  { "source_url": "https://nymag.com/strategist/article/best-matcha-powder.html", "matchSubstring": "CAP Beauty, The Big Matcha", "brand": "CAP Beauty" },
+
+  { "source_url": "https://fortune.com/article/best-matcha-powders/", "matchSubstring": "Legion, Genesis Greens", "brand": "Legion" },
+  { "source_url": "https://fortune.com/article/best-matcha-powders/", "matchSubstring": "Mantra Matcha, Super Premium Ceremonial Matcha", "brand": "Mantra Matcha" },
+  { "source_url": "https://fortune.com/article/best-matcha-powders/", "matchSubstring": "Best Affordable", "brand": "Sencha Naturals" },
+
+  { "source_url": "https://health.yahoo.com/wellness/nutrition/vitamins-supplements/article/best-matcha-powder-211516287.html", "matchSubstring": "Matcha Konomi, Akira Organic Ceremonial", "brand": "Matcha Konomi" },
+  { "source_url": "https://health.yahoo.com/wellness/nutrition/vitamins-supplements/article/best-matcha-powder-211516287.html", "matchSubstring": "Emerald Ceremonial", "brand": "Midori Spring" },
+  { "source_url": "https://health.yahoo.com/wellness/nutrition/vitamins-supplements/article/best-matcha-powder-211516287.html", "matchSubstring": "Best for Lattes", "brand": "Blue Bottle" },
+  { "source_url": "https://health.yahoo.com/wellness/nutrition/vitamins-supplements/article/best-matcha-powder-211516287.html", "matchSubstring": "Kenko, Organic Culinary Grade", "brand": "Kenko Tea" },
+  { "source_url": "https://health.yahoo.com/wellness/nutrition/vitamins-supplements/article/best-matcha-powder-211516287.html", "matchSubstring": "Matcha DNA, Certified Organic", "brand": "MatchaDNA" },
+  { "source_url": "https://health.yahoo.com/wellness/nutrition/vitamins-supplements/article/best-matcha-powder-211516287.html", "matchSubstring": "Miru Rare Ceremonial Matcha", "brand": "Midori Spring" },
+
+  { "source_url": "https://www.seriouseats.com/best-matcha-powder-8757655", "matchSubstring": "Tea Spot, Ceremonial Grade A", "brand": "The Tea Spot" },
+  { "source_url": "https://www.seriouseats.com/best-matcha-powder-8757655", "matchSubstring": "Navitas Organics, Culinary Grade", "brand": "Navitas Organics" },
+  { "source_url": "https://www.seriouseats.com/best-matcha-powder-8757655", "matchSubstring": "Steven Smith Teamaker, Matcha No. 7", "brand": "Steven Smith Teamaker" },
+  { "source_url": "https://www.seriouseats.com/best-matcha-powder-8757655", "matchSubstring": "Blue Bottle, Craft Matcha", "brand": "Blue Bottle" },
+  { "source_url": "https://www.seriouseats.com/best-matcha-powder-8757655", "matchSubstring": "Chamberlain Coffee, Matcha", "brand": "Chamberlain Coffee" },
+  { "source_url": "https://www.seriouseats.com/best-matcha-powder-8757655", "matchSubstring": "Kyoto Dew, Matcha", "brand": "Kyoto Dew" }
+]

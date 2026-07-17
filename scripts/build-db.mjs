@@ -24,6 +24,7 @@ const LIVE_PRICES_PATH = path.join(__dirname, "..", "data", "live-prices.json");
 const PRICE_LINK_ONLY_PATH = path.join(__dirname, "..", "data", "price-display-overrides.json");
 const RESOLVED_CONTRADICTIONS_PATH = path.join(__dirname, "..", "data", "resolved-contradictions.json");
 const LIVE_ATTRIBUTES_PATH = path.join(__dirname, "..", "data", "live-attributes.json");
+const SECONDARY_LINKS_PATH = path.join(__dirname, "..", "data", "secondary-source-brand-links.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
@@ -70,6 +71,18 @@ for (const entry of Object.values(liveAttributesRaw)) {
   if (entry.status !== "ok") continue;
   liveAttributesByKey.set(`${entry.brand}||${entry.product_name}`, entry);
 }
+
+// Curated brand links for secondary-source findings (lab reports, reviews,
+// safety incidents) whose matched_brand came back blank in the archived
+// research even though the finding's own text names a brand we do have --
+// e.g. a Minimalist Baker review whose "notes" field literally says
+// "Product: Matcha Moon Ceremonial Grade Matcha," annotated at research
+// time as "not in database" because the brand catalog was smaller then.
+// Verified individually against the current brands table before adding --
+// not auto-detected, since a naive brand-name substring match produces real
+// false positives (e.g. a brand named "Tradition" matching inside the word
+// "traditional").
+const secondaryLinks = JSON.parse(fs.readFileSync(SECONDARY_LINKS_PATH, "utf-8"));
 
 async function getS3Json(key) {
   const res = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
@@ -425,7 +438,7 @@ async function main() {
 
   let secondaryRows = 0;
   for (const s of secondary) {
-    const brand = s.matched_brand || null;
+    let brand = s.matched_brand || null;
     const product = s.matched_product || null;
     let brandId = null;
     let productId = null;
@@ -433,6 +446,14 @@ async function main() {
       brandId = brandIds.get(brand) || null;
       if (product) {
         productId = productIds.get(`${brand}||${product}`) || null;
+      }
+    }
+    if (!brandId) {
+      const findingText = JSON.stringify(s.finding || {});
+      const link = secondaryLinks.find((l) => l.source_url === s.source_url && findingText.includes(l.matchSubstring));
+      if (link) {
+        brand = link.brand;
+        brandId = brandIds.get(brand) || null;
       }
     }
     // only keep findings that are actually linked to a brand in our database
