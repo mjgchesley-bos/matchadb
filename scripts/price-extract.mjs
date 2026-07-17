@@ -381,16 +381,20 @@ function extractServingTierPairs(disclosed) {
 }
 
 // Many Shopify-style product pages disclose ONE overall price (regular_price/
-// sale_price/price/price_usd) plus a separate list of size options — either
-// plain strings (e.g. "size_variants": ["1oz/30g", "3.5oz", "12oz"]) or
-// objects with a size sub-field (e.g. "size_variants": [{size: "30g (1.06
-// oz)", cups: 15}, ...]) — with no per-size price breakdown captured. The
-// page itself links them — the shown price is for whichever size is
-// pre-selected, which is consistently the FIRST-listed option on this
-// dataset's sites (verified live across five unrelated brands: Matcha
-// Outlet, Naoki Matcha, Jade Leaf, Nio Teas, Encha). This is an INFERENCE,
-// not a stated fact, so pairs from here are always tagged `inferred: true`
-// and shown labeled as such rather than blended in with explicitly-stated
+// sale_price/price/price_usd) plus size options captured in one of three
+// shapes: a plain-string array (e.g. "size_variants": ["1oz/30g", "3.5oz",
+// "12oz"]), an object array with a size sub-field (e.g. "size_variants":
+// [{size: "30g (1.06 oz)", cups: 15}, ...]), or ONE free-text string
+// mentioning multiple weights (e.g. "sizes": "20 Gram Tin and 40 Gram Tin
+// (both listed sold out)") — with no per-size price breakdown captured in
+// any of the three. The page itself links them — the shown price is for
+// whichever size is pre-selected, which is consistently the FIRST-mentioned
+// option on this dataset's sites (verified live across six unrelated
+// brands: Matcha Outlet, Naoki Matcha, Jade Leaf, Nio Teas, Encha, Gion
+// Tsujiri — the last confirmed by screenshot, since the selected state
+// doesn't survive a plain-text page read). This is an INFERENCE, not a
+// stated fact, so pairs from here are always tagged `inferred: true` and
+// shown labeled as such rather than blended in with explicitly-stated
 // pricing. Only used as a last resort, when nothing else resolved anything.
 const SIZE_ARRAY_KEY_RE = /size|variant/i;
 const SINGLE_PRICE_KEY_RE = /^regular_price$|^sale_price$|^price$/i;
@@ -413,17 +417,47 @@ function extractInferredFirstVariantPairs(disclosed) {
       v.length > 0 &&
       (typeof v[0] === "string" || (typeof v[0] === "object" && v[0] !== null))
   );
-  if (!sizeArrayEntry) return [];
 
-  const firstText = firstVariantSizeText(sizeArrayEntry[1][0]);
-  if (!firstText) return [];
+  // Guard against text comparing MULTIPLE RETAILERS' separate offerings
+  // (e.g. "30g net weight (Sazen); Ujichamatcha also offers a 150g option")
+  // rather than describing ONE page's own size-selector — caught via manual
+  // spot-check (Kaguraden: the shown price was explicitly Ujichamatcha's,
+  // for their 150g size, while the first-mentioned size, 30g, was Sazen's —
+  // pairing them would silently attach the wrong retailer's price to the
+  // wrong retailer's size). A parenthetical proper-noun mention is the
+  // tell — a real size label's parens hold a unit conversion ("(1.06 oz)"),
+  // never something shaped like a company name.
+  const CITES_EXTERNAL_SOURCE_RE = /\(\s*[A-Z][a-zA-Z]*(?:\.(?:com|co|net))?[,)]/;
 
-  const weights = findWeights(firstText);
+  let weights;
+  if (sizeArrayEntry) {
+    const firstText = firstVariantSizeText(sizeArrayEntry[1][0]);
+    if (firstText && CITES_EXTERNAL_SOURCE_RE.test(firstText)) return [];
+    weights = firstText ? findWeights(firstText) : [];
+  } else {
+    // Fallback: sizes described in ONE free-text string mentioning 2+
+    // weights, rather than a structured array. Requires 2+ weight mentions
+    // so this never fires on a plain single-size string (which the normal
+    // pairing pass already handles), and stays scoped to keys that are
+    // explicitly about size/variants, not an unrelated blob that happens to
+    // mention two numbers for different reasons.
+    const sizeStringEntry = Object.entries(disclosed || {}).find(
+      ([k, v]) => SIZE_ARRAY_KEY_RE.test(k) && typeof v === "string" && findWeights(v).length >= 2
+    );
+    if (sizeStringEntry && CITES_EXTERNAL_SOURCE_RE.test(sizeStringEntry[1])) return [];
+    weights = sizeStringEntry ? findWeights(sizeStringEntry[1]) : [];
+  }
   if (weights.length === 0) return [];
-  // Prefer a directly-stated gram figure over an oz/lb conversion appearing
-  // in the same size label (e.g. "1oz/30g" — 30g is the page's own number).
-  const nativeWeight = weights.find((w) => w.isNativeGram);
-  const grams = (nativeWeight || weights[0]).grams;
+
+  // Keep the FIRST-mentioned weight (reading order) — the verified
+  // convention — but prefer a directly-stated gram figure if it's
+  // numerically the same size as that first mention (e.g. "1oz/30g": 30g is
+  // the page's own number, not the oz conversion).
+  const firstWeight = weights[0];
+  const equivalentNative = weights.find(
+    (w) => w.isNativeGram && Math.abs(w.grams - firstWeight.grams) / firstWeight.grams <= 0.1
+  );
+  const grams = (equivalentNative || firstWeight).grams;
 
   const pairs = [];
   for (const [key, value] of Object.entries(disclosed || {})) {
@@ -432,6 +466,7 @@ function extractInferredFirstVariantPairs(disclosed) {
       continue;
     }
     if (!SINGLE_PRICE_KEY_RE.test(key) || typeof value !== "string") continue;
+    if (CITES_EXTERNAL_SOURCE_RE.test(value)) continue;
     for (const a of findAmounts(value, priceTypeFromKey(key))) {
       pairs.push({ grams, amount: a.amount, currency: a.currency, priceType: a.priceType, inferred: true });
     }
