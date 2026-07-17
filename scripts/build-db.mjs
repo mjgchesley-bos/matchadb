@@ -256,12 +256,19 @@ async function main() {
     const contradictionsText = hasContradictions ? p.contradictions.join(" || ") : "";
 
     const liveEntry = livePricesByKey.get(`${brand}||${product}`);
-    const liveVariants = liveEntry
+    // Normalize to null (not just an empty array) when every live variant's
+    // size was unparseable (e.g. a product name with no weight in it, like
+    // Palais des Thés) -- an empty array is truthy, and without this both
+    // downstream consumers would treat "found live data but couldn't use
+    // any of it" as "use live data: none", silently producing zero price
+    // rows instead of correctly falling back to the archived-data path.
+    let liveVariants = liveEntry
       ? liveEntry.variants
           .filter((v) => v.grams != null && v.priceNative != null)
           .map((v) => ({ grams: v.grams, priceCurrency: v.currency, priceNative: v.priceNative }))
       : null;
-    if (liveVariants && liveVariants.length > 0) liveDataCount++;
+    if (liveVariants && liveVariants.length === 0) liveVariants = null;
+    if (liveVariants) liveDataCount++;
 
     const fields = extractStructuredFields(disclosed, contradictionsText, liveVariants);
     const notFound = p.source_url ? 0 : 1;

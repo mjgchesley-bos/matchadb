@@ -140,7 +140,7 @@ function extractJsonLd(html) {
     } catch {
       continue;
     }
-    const graph = data["@graph"] || [data];
+    const graph = Array.isArray(data) ? data : data["@graph"] || [data];
     const product = graph.find((g) => g["@type"] === "Product");
     if (!product) continue;
     const offers = Array.isArray(product.offers) ? product.offers : product.offers ? [product.offers] : [];
