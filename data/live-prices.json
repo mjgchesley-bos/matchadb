@@ -192,12 +192,12 @@
     "product_name": "Sweetened Matcha To Go Sticks",
     "source_url": "https://aiya-america.com/sweetened-matcha-to-go-sticks/",
     "status": "ok",
-    "method": "json_ld",
-    "scrapedAt": "2026-07-17T01:57:09.230Z",
+    "method": "json_ld+manual_size_verified",
+    "scrapedAt": "2026-07-17T03:49:38.325Z",
     "variants": [
       {
         "label": "Sweetened Matcha To Go Sticks",
-        "grams": null,
+        "grams": 96,
         "priceNative": 15.36,
         "currency": "USD"
       }
@@ -1233,14 +1233,14 @@
     "product_name": "Ceremonial Coconut Matcha",
     "source_url": "https://chamberlaincoffee.com/products/coconut-matcha",
     "status": "ok",
-    "method": "json_ld",
-    "scrapedAt": "2026-07-17T02:03:54.625Z",
+    "method": "json_ld+manual_size_verified",
+    "scrapedAt": "2026-07-17T03:49:38.326Z",
     "variants": [
       {
         "label": "Ceremonial Coconut Matcha Green Tea Powder",
         "priceNative": 30,
         "currency": "USD",
-        "grams": null
+        "grams": 30.05
       }
     ]
   },
@@ -1832,12 +1832,12 @@
     "product_name": "Grand Cru Matcha",
     "source_url": "https://davidstea.com/en-us/products/organic-grand-cru-matcha-us",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:18:00.429Z",
+    "method": "shopify_var_meta+manual_size_verified",
+    "scrapedAt": "2026-07-17T03:49:38.327Z",
     "variants": [
       {
         "label": "Organic Grand Cru Matcha",
-        "grams": null,
+        "grams": 51.03,
         "priceNative": 64.9,
         "currency": "USD"
       }
@@ -2138,12 +2138,12 @@
     "product_name": "Ceremonial",
     "source_url": "https://domatcha.com/products/ceremonial",
     "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-07-17T01:17:59.788Z",
+    "method": "shopify_var_meta+manual_size_verified",
+    "scrapedAt": "2026-07-17T03:49:38.327Z",
     "variants": [
       {
         "label": "Ceremonial",
-        "grams": null,
+        "grams": 28.35,
         "priceNative": 33.99,
         "currency": "USD"
       }
