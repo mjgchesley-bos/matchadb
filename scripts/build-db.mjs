@@ -11,6 +11,8 @@ import { fileURLToPath } from "node:url";
 import { config } from "dotenv";
 import { resolveCanonicalPrice, extractPriceVariants, pickCanonicalFromVariants } from "./price-extract.mjs";
 import { GRADE_KEYWORDS, CULTIVAR_KEYWORDS, REGION_KEYWORDS, findFirstKeyword } from "./attribute-extract.mjs";
+import { consolidateTastingNotes } from "./taste-extract.mjs";
+import { extractFlavorTags } from "./flavor-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(__dirname, "..", ".env.local") });
@@ -220,6 +222,16 @@ async function main() {
       -- rather than auto-detected. Site shows "Pricing available on product
       -- page" instead of a computed number for these, never "no data".
       price_link_only INTEGER DEFAULT 0,
+      -- Consolidated from ~70 differently-named free-text taste/flavor keys
+      -- found across the archived research (tasting_notes, flavor_profile,
+      -- aroma, sweetness_level, mouthfeel, texture, ...) -- see
+      -- scripts/taste-extract.mjs.
+      tasting_notes TEXT,
+      -- JSON array of discrete flavor/texture tags (Sweet, Umami, Grassy,
+      -- Bitter, ...) extracted from tasting_notes -- see
+      -- scripts/flavor-extract.mjs. A filterable facet, unlike the free-text
+      -- tasting_notes field.
+      flavor_tags TEXT,
       UNIQUE(brand_id, product_name)
     );
 
@@ -284,6 +296,8 @@ async function main() {
   let removedCount = 0;
   let liveDataCount = 0;
   let liveAttributesCount = 0;
+  let tastingNotesCount = 0;
+  let flavorTagsCount = 0;
   for (const p of products) {
     const brand = (p.brand || "").trim();
     const product = (p.product || "").trim();
@@ -343,14 +357,18 @@ async function main() {
       fields.priceReviewReason = null;
     }
     const notFound = p.source_url ? 0 : 1;
+    const tastingNotes = consolidateTastingNotes(disclosed);
+    if (tastingNotes) tastingNotesCount++;
+    const flavorTags = extractFlavorTags(tastingNotes);
+    if (flavorTags.length > 0) flavorTagsCount++;
 
     db.run(
       `INSERT OR IGNORE INTO products
         (brand_id, product_name, price_usd, price_per_gram, price_size_grams, price_native,
          price_currency, price_needs_review, price_review_reason, fx_converted, fx_rate_date,
          grade, cultivar, region, organic_certified, source_url, has_contradictions, not_found,
-         disclosed_json, page_notes, price_link_only)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         disclosed_json, page_notes, price_link_only, tasting_notes, flavor_tags)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         brandId,
         product,
@@ -373,6 +391,8 @@ async function main() {
         JSON.stringify(disclosed),
         p.page_notes || null,
         isLinkOnly ? 1 : 0,
+        tastingNotes,
+        JSON.stringify(flavorTags),
       ]
     );
 
@@ -497,6 +517,8 @@ async function main() {
   console.log(`  prices needing human review: ${priceReviewCount}`);
   console.log(`  prices converted from JPY (rate as of ${fxRate.asOf}): ${fxConvertedCount}`);
   console.log(`  missing grade / cultivar / region: ${gradeMissing} / ${cultivarMissing} / ${regionMissing}`);
+  console.log(`  products with consolidated tasting notes: ${tastingNotesCount}`);
+  console.log(`  products with at least one flavor tag: ${flavorTagsCount}`);
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
   const data = db.export();
