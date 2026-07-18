@@ -29,6 +29,7 @@ export default async function BrowsePage({
     brand: toStr(sp.brand),
     grade: toStr(sp.grade),
     region: toStr(sp.region),
+    flavor: toStr(sp.flavor),
     organicOnly: toStr(sp.organicOnly) === "1",
     hasContradictionsOnly: toStr(sp.hasContradictionsOnly) === "1",
     minPrice: toNum(sp.minPrice),
@@ -37,7 +38,7 @@ export default async function BrowsePage({
     pageSize: 24,
   };
 
-  const [{ products, total, page, totalPages }, { brands, grades, regions }] = await Promise.all([
+  const [{ products, total, page, totalPages }, { brands, grades, regions, flavors }] = await Promise.all([
     getProducts(filters),
     getFilterOptions(),
   ]);
@@ -114,6 +115,20 @@ export default async function BrowsePage({
                 {regions.map((r) => (
                   <option key={r} value={r}>
                     {r}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className={labelClass} htmlFor="flavor">
+                Flavor
+              </label>
+              <select id="flavor" name="flavor" defaultValue={filters.flavor || ""} className={fieldClass}>
+                <option value="">Any flavor</option>
+                {flavors.map((f) => (
+                  <option key={f} value={f}>
+                    {f}
                   </option>
                 ))}
               </select>
@@ -210,6 +225,14 @@ export default async function BrowsePage({
                   {p.organic_certified === 1 && (
                     <span className="rounded-full bg-gold-soft text-gold px-2 py-0.5">Organic</span>
                   )}
+                  {(JSON.parse(p.flavor_tags) as string[]).slice(0, 2).map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                   {p.has_contradictions === 1 && (
                     <span className="rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 px-2 py-0.5">
                       &#9888; flagged

@@ -443,8 +443,8 @@
     "brand": "Mantra Matcha",
     "product_name": "Superfood Berry Matcha",
     "source_url": "https://mantramatcha.com/products/superfood-berry-matcha",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 503
   },
   "314": {
     "id": 314,
@@ -829,8 +829,8 @@
     "brand": "Teapigs",
     "product_name": "Premium Organic Matcha Green Tea",
     "source_url": "https://teapigs.com/products/matcha",
-    "status": "no_taste_content_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 503
   },
   "659": {
     "id": 659,

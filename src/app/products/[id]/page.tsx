@@ -67,6 +67,14 @@ export default async function ProductDetailPage({
         {product.organic_certified === 1 && (
           <span className="rounded-full bg-gold-soft text-gold px-3 py-1 text-sm">Organic</span>
         )}
+        {product.flavorTags.map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-3 py-1 text-sm"
+          >
+            {tag}
+          </span>
+        ))}
         {(() => {
           const price = formatPrice(product);
           const hasMultipleSizes = product.priceVariants.length > 1;
@@ -139,6 +147,19 @@ export default async function ProductDetailPage({
             product&apos;s page — see the original page below for current pricing.
           </p>
         )
+      )}
+
+      {product.tasting_notes && (
+        <section className="mt-10 bg-paper-raised/60 border border-line p-5">
+          <SectionLabel>Tasting notes</SectionLabel>
+          <div className="flex flex-col gap-2">
+            {product.tasting_notes.split(" | ").map((line, i) => (
+              <p key={i} className="text-sm text-ink leading-relaxed">
+                {line}
+              </p>
+            ))}
+          </div>
+        </section>
       )}
 
       {product.not_found === 1 && (

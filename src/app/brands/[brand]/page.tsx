@@ -40,6 +40,14 @@ export default async function BrandPage({
                   {p.grade}
                 </span>
               )}
+              {(JSON.parse(p.flavor_tags) as string[]).slice(0, 2).map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5"
+                >
+                  {tag}
+                </span>
+              ))}
               {p.has_contradictions === 1 && (
                 <span className="rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 px-2 py-0.5">
                   &#9888; flagged

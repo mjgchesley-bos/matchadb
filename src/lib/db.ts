@@ -60,6 +60,8 @@ export type ProductRow = {
   not_found: number;
   page_notes: string | null;
   price_link_only: number;
+  tasting_notes: string | null;
+  flavor_tags: string;
 };
 
 function rowsToObjects<T>(result: initSqlJs.QueryExecResult[]): T[] {
@@ -79,6 +81,7 @@ export type BrowseFilters = {
   brand?: string;
   grade?: string;
   region?: string;
+  flavor?: string;
   organicOnly?: boolean;
   hasContradictionsOnly?: boolean;
   minPrice?: number;
@@ -112,6 +115,13 @@ export async function getProducts(filters: BrowseFilters) {
     where.push("p.region = ?");
     params.push(filters.region);
   }
+  if (filters.flavor) {
+    // flavor_tags is a JSON array string, e.g. ["Sweet","Umami"] -- a quoted
+    // substring match is exact enough here since tag names are a fixed,
+    // known vocabulary with no risk of one tag name containing another.
+    where.push("p.flavor_tags LIKE ?");
+    params.push(`%"${filters.flavor}"%`);
+  }
   if (filters.organicOnly) {
     where.push("p.organic_certified = 1");
   }
@@ -140,7 +150,8 @@ export async function getProducts(filters: BrowseFilters) {
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
-            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
+            p.tasting_notes, p.flavor_tags
      FROM products p
      JOIN brands b ON p.brand_id = b.id
      ${whereSql}
@@ -165,7 +176,15 @@ export async function getFilterOptions() {
   const regions = rowsToObjects<{ region: string }>(
     db.exec("SELECT DISTINCT region FROM products WHERE region IS NOT NULL ORDER BY region")
   ).map((r) => r.region);
-  return { brands, grades, regions };
+  const flavorRows = rowsToObjects<{ flavor_tags: string }>(
+    db.exec("SELECT flavor_tags FROM products WHERE flavor_tags != '[]'")
+  );
+  const flavorSet = new Set<string>();
+  for (const r of flavorRows) {
+    for (const tag of JSON.parse(r.flavor_tags) as string[]) flavorSet.add(tag);
+  }
+  const flavors = [...flavorSet].sort();
+  return { brands, grades, regions, flavors };
 }
 
 export async function getProductById(id: number) {
@@ -203,6 +222,7 @@ export async function getProductById(id: number) {
   return {
     ...product,
     disclosed: JSON.parse(product.disclosed_json),
+    flavorTags: JSON.parse(product.flavor_tags) as string[],
     contradictions,
     secondarySources,
     priceVariants,
@@ -216,7 +236,8 @@ export async function getBrandProducts(brandName: string) {
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
-            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
+            p.tasting_notes, p.flavor_tags
      FROM products p JOIN brands b ON p.brand_id = b.id
      WHERE b.name = ?
      ORDER BY p.product_name COLLATE NOCASE`,
