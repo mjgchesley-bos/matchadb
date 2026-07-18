@@ -27,6 +27,7 @@ const PRICE_LINK_ONLY_PATH = path.join(__dirname, "..", "data", "price-display-o
 const RESOLVED_CONTRADICTIONS_PATH = path.join(__dirname, "..", "data", "resolved-contradictions.json");
 const LIVE_ATTRIBUTES_PATH = path.join(__dirname, "..", "data", "live-attributes.json");
 const SECONDARY_LINKS_PATH = path.join(__dirname, "..", "data", "secondary-source-brand-links.json");
+const LIVE_TASTE_PATH = path.join(__dirname, "..", "data", "live-taste.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
@@ -85,6 +86,17 @@ for (const entry of Object.values(liveAttributesRaw)) {
 // false positives (e.g. a brand named "Tradition" matching inside the word
 // "traditional").
 const secondaryLinks = JSON.parse(fs.readFileSync(SECONDARY_LINKS_PATH, "utf-8"));
+
+// Live-scraped product-page descriptions (scripts/scrape-live-taste.mjs) --
+// only used as a fallback when the archived-research consolidation
+// (taste-extract.mjs) found nothing at all for that product, same
+// never-override rule as every other live-scrape fallback in this file.
+const liveTasteRaw = fs.existsSync(LIVE_TASTE_PATH) ? JSON.parse(fs.readFileSync(LIVE_TASTE_PATH, "utf-8")) : {};
+const liveTasteByKey = new Map();
+for (const entry of Object.values(liveTasteRaw)) {
+  if (entry.status !== "ok") continue;
+  liveTasteByKey.set(`${entry.brand}||${entry.product_name}`, entry);
+}
 
 async function getS3Json(key) {
   const res = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
@@ -298,6 +310,7 @@ async function main() {
   let liveAttributesCount = 0;
   let tastingNotesCount = 0;
   let flavorTagsCount = 0;
+  let liveTasteCount = 0;
   for (const p of products) {
     const brand = (p.brand || "").trim();
     const product = (p.product || "").trim();
@@ -357,7 +370,14 @@ async function main() {
       fields.priceReviewReason = null;
     }
     const notFound = p.source_url ? 0 : 1;
-    const tastingNotes = consolidateTastingNotes(disclosed);
+    let tastingNotes = consolidateTastingNotes(disclosed);
+    if (!tastingNotes) {
+      const liveTasteEntry = liveTasteByKey.get(`${brand}||${product}`);
+      if (liveTasteEntry) {
+        tastingNotes = `Live Page Description: ${liveTasteEntry.description}`;
+        liveTasteCount++;
+      }
+    }
     if (tastingNotes) tastingNotesCount++;
     const flavorTags = extractFlavorTags(tastingNotes);
     if (flavorTags.length > 0) flavorTagsCount++;
@@ -517,7 +537,7 @@ async function main() {
   console.log(`  prices needing human review: ${priceReviewCount}`);
   console.log(`  prices converted from JPY (rate as of ${fxRate.asOf}): ${fxConvertedCount}`);
   console.log(`  missing grade / cultivar / region: ${gradeMissing} / ${cultivarMissing} / ${regionMissing}`);
-  console.log(`  products with consolidated tasting notes: ${tastingNotesCount}`);
+  console.log(`  products with consolidated tasting notes: ${tastingNotesCount} (of which ${liveTasteCount} from live-scraped page descriptions)`);
   console.log(`  products with at least one flavor tag: ${flavorTagsCount}`);
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
