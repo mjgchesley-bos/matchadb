@@ -31,7 +31,7 @@ export default async function BrandPage({
           <Link
             key={p.id}
             href={`/products/${p.id}`}
-            className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised/40 hover:bg-paper-raised transition-colors flex flex-col gap-1"
+            className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised hover:bg-matcha-soft transition-colors flex flex-col gap-1"
           >
             <span className="font-medium text-ink">{p.product_name}</span>
             <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">

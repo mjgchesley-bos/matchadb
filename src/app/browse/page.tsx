@@ -207,7 +207,7 @@ export default async function BrowsePage({
               <Link
                 key={p.id}
                 href={`/products/${p.id}`}
-                className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised/40 hover:bg-paper-raised transition-colors flex flex-col gap-1"
+                className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised hover:bg-matcha-soft transition-colors flex flex-col gap-1"
               >
                 <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
                 <span className="font-medium text-ink leading-snug">{p.product_name}</span>

@@ -62,14 +62,14 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="border-y border-line bg-paper-raised">
+      <section className="bg-matcha">
         <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6">
           {stats.map((s) => (
             <div key={s.label}>
-              <div className="font-display text-4xl sm:text-5xl font-semibold text-ink tabular-nums">
+              <div className="font-display text-4xl sm:text-5xl font-semibold text-paper tabular-nums">
                 {s.value}
               </div>
-              <div className="mt-2 text-sm text-ink-muted">{s.label}</div>
+              <div className="mt-2 text-sm text-paper/75">{s.label}</div>
             </div>
           ))}
         </div>
