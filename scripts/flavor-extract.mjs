@@ -105,6 +105,32 @@ function isNegated(text, matchIndex, strict) {
   });
 }
 
+// Keywords whose "-y" form has a real-word "-ier"/"-iest"/"-iness" collision
+// that means something other than the taste (checked against this dataset's
+// text and found clear: 0 occurrences currently, but a foreseeable risk for
+// future data since it's a real word, not a coincidental substring).
+// "chocolatey" -> root "chocolate" -> "chocolatier" is a profession noun (a
+// chocolate-maker), not a taste descriptor, so it's excluded from automatic
+// stemming below.
+const STEMMING_EXCLUSIONS = new Set(["chocolatey"]);
+
+// For an adjective ending in "y" (creamy, nutty, earthy, ...), the comparative
+// / superlative / noun forms ("creamier", "nuttiest", "earthiness") share a
+// root but not a prefix with the base word -- "creaminess" diverges from
+// "creamy" right after "cream", so the plain prefix match below never catches
+// it. Rather than hand-listing every inflected form as its own keyword,
+// derive them from the root at match time. Found via a real count: 21
+// products in this dataset were silently missing a tag for exactly this
+// reason (15 Creamy, 4 Nutty, 2 Earthy) before this fix.
+function keywordPattern(kw) {
+  const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (kw.endsWith("y") && kw.length > 3 && !STEMMING_EXCLUSIONS.has(kw)) {
+    const root = escape(kw.slice(0, -1));
+    return `${root}(?:y|ier|iest|iness)`;
+  }
+  return escape(kw);
+}
+
 export function extractFlavorTags(tastingNotes) {
   if (!tastingNotes) return [];
   const lower = tastingNotes.toLowerCase();
@@ -113,7 +139,7 @@ export function extractFlavorTags(tastingNotes) {
     let matched = false;
     let anyNegated = false;
     for (const kw of keywords) {
-      const re = new RegExp(`(?<![\\p{L}\\p{N}])${kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`, "giu");
+      const re = new RegExp(`(?<![\\p{L}\\p{N}])${keywordPattern(kw)}`, "giu");
       let m;
       while ((m = re.exec(lower)) !== null) {
         if (isNegated(lower, m.index, !!strictNegation)) {
