@@ -33,7 +33,7 @@ export default async function Home() {
           className="pointer-events-none absolute -top-40 right-[-10%] h-[32rem] w-[32rem] rounded-full bg-matcha-soft blur-3xl opacity-70 dark:opacity-40"
         />
         <div className="relative max-w-5xl mx-auto px-6 pt-20 pb-24 sm:pt-28 sm:pb-32">
-          <p className="font-mono text-xs tracking-[0.2em] uppercase text-matcha mb-6">
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-6">
             Matcha, catalogued
           </p>
           <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[4.25rem] sm:leading-[1.02] font-semibold tracking-tight text-ink text-balance max-w-3xl">
@@ -50,7 +50,7 @@ export default async function Home() {
           <div className="mt-10 flex flex-wrap items-center gap-5">
             <Link
               href="/browse"
-              className="group inline-flex items-center gap-2 bg-matcha text-paper px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:bg-matcha-bright"
+              className="group inline-flex items-center gap-2 bg-matcha text-paper px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:bg-forest"
             >
               Browse the catalog
               <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
@@ -82,7 +82,7 @@ export default async function Home() {
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8">
           {pillars.map((p, i) => (
             <div key={p.title}>
-              <span className="font-mono text-xs text-matcha">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-mono text-xs text-forest">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="mt-3 font-display text-xl font-semibold text-ink">{p.title}</h3>
               <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{p.copy}</p>
             </div>

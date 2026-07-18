@@ -44,7 +44,7 @@ export default function RootLayout({
               <span className="font-display text-[1.4rem] font-semibold tracking-tight text-matcha">
                 DB
               </span>
-              <span className="h-1.5 w-1.5 rounded-full bg-matcha ml-0.5 mb-0.5 transition-transform group-hover:scale-125" />
+              <span className="h-1.5 w-1.5 rounded-full bg-forest ml-0.5 mb-0.5 transition-transform group-hover:scale-125" />
             </Link>
             <nav className="flex items-center gap-8 text-[0.9rem]">
               <Link

@@ -56,7 +56,7 @@ export default async function BrowsePage({
   return (
     <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
       <div className="mb-8">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-matcha mb-2">Catalog</p>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Catalog</p>
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">
           Browse every product
         </h1>
@@ -187,7 +187,7 @@ export default async function BrowsePage({
 
             <button
               type="submit"
-              className="bg-matcha text-paper py-2.5 text-sm font-medium tracking-wide hover:bg-matcha-bright transition-colors"
+              className="bg-matcha text-paper py-2.5 text-sm font-medium tracking-wide hover:bg-forest transition-colors"
             >
               Apply filters
             </button>

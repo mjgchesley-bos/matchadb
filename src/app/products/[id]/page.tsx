@@ -17,7 +17,7 @@ function humanizeKey(key: string): string {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-mono text-xs tracking-[0.2em] uppercase text-matcha mb-3">{children}</p>
+    <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{children}</p>
   );
 }
 
@@ -189,7 +189,7 @@ export default async function ProductDetailPage({
             href={product.source_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-matcha hover:text-matcha-bright transition-colors"
+            className="text-matcha hover:text-forest transition-colors"
           >
             View original product page &rarr;
           </a>
@@ -235,7 +235,7 @@ export default async function ProductDetailPage({
                     href={s.source_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-matcha hover:text-matcha-bright transition-colors text-xs"
+                    className="text-matcha hover:text-forest transition-colors text-xs"
                   >
                     Source &rarr;
                   </a>

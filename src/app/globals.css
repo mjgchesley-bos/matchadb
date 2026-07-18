@@ -2,11 +2,13 @@
 
 /*
   Light theme: crisp white grounds with fresh light-green raised surfaces
-  (alternating bands down the page), and a rich, DARKER forest green held
-  in reserve as the accent -- for buttons, links, and badge text -- rather
-  than used as a dominant tone. Dark theme keeps the deeper charcoal-green
-  ground from the original concept (dark mode should still read as dark),
-  with a brighter green as its own accent.
+  (alternating bands down the page). Primary is a standard, vibrant matcha
+  green (buttons, links, badges, the "DB" wordmark) -- the darker forest
+  green is a deliberate second color, not just a dimmer version of the
+  primary: it's the accent used for hover states (darkening on hover, not
+  brightening) and quiet structural marks (section-label kickers, the
+  header's accent dot). Dark theme mirrors the same primary/accent split
+  against its deeper charcoal-green ground.
 */
 :root {
   --color-paper: #ffffff;
@@ -17,8 +19,8 @@
   --color-line: #d7e8c8;
   --color-line-strong: #b9d69f;
 
-  --color-matcha: #235c14;
-  --color-matcha-bright: #2f7a1e;
+  --color-matcha: #23843a;
+  --color-forest: #235c14;
   --color-matcha-soft: #dff0d0;
   --color-matcha-ink: #1c4a10;
 
@@ -36,7 +38,7 @@
   --color-line-strong: #3a3c2c;
 
   --color-matcha: #8fe356;
-  --color-matcha-bright: #a9f077;
+  --color-forest: #5c9c4a;
   --color-matcha-soft: #202b16;
   --color-matcha-ink: #d8f4bd;
 
@@ -55,7 +57,7 @@
     --color-line-strong: #3a3c2c;
 
     --color-matcha: #8fe356;
-    --color-matcha-bright: #a9f077;
+    --color-forest: #5c9c4a;
     --color-matcha-soft: #202b16;
     --color-matcha-ink: #d8f4bd;
 
@@ -74,7 +76,7 @@
   --color-line-strong: var(--color-line-strong);
 
   --color-matcha: var(--color-matcha);
-  --color-matcha-bright: var(--color-matcha-bright);
+  --color-forest: var(--color-forest);
   --color-matcha-soft: var(--color-matcha-soft);
   --color-matcha-ink: var(--color-matcha-ink);
 
