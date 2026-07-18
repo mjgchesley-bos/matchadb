@@ -12,18 +12,31 @@
 // unambiguous negation ("no," "not," "without") -- a mild qualifier there
 // ("slight sweetness") still means the trait is genuinely present.
 
+// Synonym additions below (Nutty's specific-nut words, Sweet's "vanilla",
+// Fruity's specific-fruit words, Creamy's "milky", Grassy's specific-vegetal
+// words) were mined from real comparison phrases in this dataset
+// ("reminiscent of X," "notes of X") rather than guessed, and each was
+// individually checked for false-positive risk before inclusion. Notably
+// excluded: plain "milk" (62 occurrences, but nearly all of them are "Just
+// Add Milk" brewing instructions, not a taste description -- would have
+// been a large false-positive source) and "date"/"dates" (the fruit is a
+// genuine but rare match here, heavily outweighed by "Best before" /
+// "harvest date" collisions throughout the archived data).
 export const FLAVOR_TAGS = [
-  { tag: "Sweet", keywords: ["sweet", "sweetness"] },
+  { tag: "Sweet", keywords: ["sweet", "sweetness", "vanilla"] },
   { tag: "Umami", keywords: ["umami", "savory", "savoury", "brothy"] },
-  { tag: "Grassy", keywords: ["grassy", "vegetal", "grassiness"] },
+  { tag: "Grassy", keywords: ["grassy", "vegetal", "grassiness", "spinach", "kale", "greens"] },
   { tag: "Earthy", keywords: ["earthy", "earthiness"] },
-  { tag: "Nutty", keywords: ["nutty"] },
-  { tag: "Floral", keywords: ["floral"] },
-  { tag: "Fruity", keywords: ["fruity", "citrus"] },
+  {
+    tag: "Nutty",
+    keywords: ["nutty", "peanut", "cashew", "walnut", "chestnut", "hazelnut", "macadamia", "almond"],
+  },
+  { tag: "Floral", keywords: ["floral", "florals"] },
+  { tag: "Fruity", keywords: ["fruity", "citrus", "melon", "apple", "lime", "strawberry", "papaya"] },
   { tag: "Chocolatey", keywords: ["chocolate", "chocolatey", "cocoa", "cacao"] },
-  { tag: "Roasted", keywords: ["roasted", "toasted"] },
+  { tag: "Roasted", keywords: ["roasted", "toasted", "baked"] },
   { tag: "Marine", keywords: ["oceanic", "marine", "seaweed", "kombu", "nori"] },
-  { tag: "Creamy", keywords: ["creamy", "velvety", "buttery"] },
+  { tag: "Creamy", keywords: ["creamy", "velvety", "buttery", "milky"] },
   { tag: "Smooth", keywords: ["smooth", "silky"] },
   { tag: "Rich", keywords: ["rich", "robust", "bold", "intense", "full-bodied"] },
   { tag: "Delicate", keywords: ["delicate", "subtle", "mild", "light"] },
