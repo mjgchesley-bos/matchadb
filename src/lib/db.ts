@@ -65,6 +65,12 @@ export type ProductRow = {
   tasting_notes: string | null;
   flavor_tags: string;
   use_tags: string;
+  l_theanine_mg_g: number | null;
+  l_theanine_source: string | null;
+  l_theanine_note: string | null;
+  egcg_mg_g: number | null;
+  egcg_source: string | null;
+  egcg_note: string | null;
 };
 
 function rowsToObjects<T>(result: initSqlJs.QueryExecResult[]): T[] {
@@ -90,6 +96,8 @@ export type BrowseFilters = {
   hasContradictionsOnly?: boolean;
   minPrice?: number;
   maxPrice?: number;
+  minTheanine?: number;
+  minEgcg?: number;
   page?: number;
   pageSize?: number;
 };
@@ -144,6 +152,14 @@ function buildWhereClause(filters: BrowseFilters): { where: string[]; params: (s
     where.push("p.price_usd <= ?");
     params.push(filters.maxPrice);
   }
+  if (filters.minTheanine != null) {
+    where.push("p.l_theanine_mg_g >= ?");
+    params.push(filters.minTheanine);
+  }
+  if (filters.minEgcg != null) {
+    where.push("p.egcg_mg_g >= ?");
+    params.push(filters.minEgcg);
+  }
 
   return { where, params };
 }
@@ -169,7 +185,9 @@ export async function getProducts(filters: BrowseFilters) {
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
             p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
-            p.tasting_notes, p.flavor_tags, p.use_tags
+            p.tasting_notes, p.flavor_tags, p.use_tags,
+            p.l_theanine_mg_g, p.l_theanine_source, p.l_theanine_note,
+            p.egcg_mg_g, p.egcg_source, p.egcg_note
      FROM products p
      JOIN brands b ON p.brand_id = b.id
      ${whereSql}
@@ -198,7 +216,9 @@ export async function getTieredPicks(filters: BrowseFilters) {
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
             p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
-            p.tasting_notes, p.flavor_tags, p.use_tags`;
+            p.tasting_notes, p.flavor_tags, p.use_tags,
+            p.l_theanine_mg_g, p.l_theanine_source, p.l_theanine_note,
+            p.egcg_mg_g, p.egcg_source, p.egcg_note`;
 
   function pickForRange(rangeSql: string, rangeParams: number[]) {
     const res = db.exec(
@@ -308,7 +328,9 @@ export async function getBrandProducts(brandName: string) {
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
             p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
-            p.tasting_notes, p.flavor_tags, p.use_tags
+            p.tasting_notes, p.flavor_tags, p.use_tags,
+            p.l_theanine_mg_g, p.l_theanine_source, p.l_theanine_note,
+            p.egcg_mg_g, p.egcg_source, p.egcg_note
      FROM products p JOIN brands b ON p.brand_id = b.id
      WHERE b.name = ?
      ORDER BY p.product_name COLLATE NOCASE`,

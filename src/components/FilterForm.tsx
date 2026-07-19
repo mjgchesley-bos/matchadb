@@ -140,6 +140,35 @@ export function FilterForm({
         </div>
       </div>
 
+      <div className={`flex gap-3 ${wideClassName}`}>
+        <div className="flex-1">
+          <label className={labelClass} htmlFor="minTheanine">
+            Min L-theanine (mg/g)
+          </label>
+          <input
+            id="minTheanine"
+            name="minTheanine"
+            type="number"
+            step="0.1"
+            defaultValue={filters.minTheanine}
+            className={fieldClass}
+          />
+        </div>
+        <div className="flex-1">
+          <label className={labelClass} htmlFor="minEgcg">
+            Min EGCG (mg/g)
+          </label>
+          <input
+            id="minEgcg"
+            name="minEgcg"
+            type="number"
+            step="0.1"
+            defaultValue={filters.minEgcg}
+            className={fieldClass}
+          />
+        </div>
+      </div>
+
       <div className={`flex flex-col gap-3 ${wideClassName}`}>
         <label className="flex items-center gap-2.5 text-ink-muted">
           <input

@@ -14,6 +14,7 @@ import { GRADE_KEYWORDS, CULTIVAR_KEYWORDS, REGION_KEYWORDS, findFirstKeyword } 
 import { consolidateTastingNotes } from "./taste-extract.mjs";
 import { extractFlavorTags } from "./flavor-extract.mjs";
 import { extractUseTags } from "./use-extract.mjs";
+import { resolveCompoundData } from "./compounds-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(__dirname, "..", ".env.local") });
@@ -248,6 +249,19 @@ async function main() {
       -- JSON array of use-case tags (Tea, Lattes, Culinary) extracted from
       -- the full disclosed_json blob plus grade -- see scripts/use-extract.mjs.
       use_tags TEXT,
+      -- L-theanine / EGCG content in mg/g, each with its own source tier
+      -- ("disclosed" = brand's own page states it; "cultivar_research" /
+      -- "grade_research" = a real cited published measurement, not this
+      -- product's own lab result) and a human-readable note carrying the
+      -- citation -- see scripts/compounds-extract.mjs. mg_g is null when
+      -- only a non-per-gram disclosure exists (e.g. "27-40mg per serving"
+      -- with no known serving weight); the note still shows the raw text.
+      l_theanine_mg_g REAL,
+      l_theanine_source TEXT,
+      l_theanine_note TEXT,
+      egcg_mg_g REAL,
+      egcg_source TEXT,
+      egcg_note TEXT,
       UNIQUE(brand_id, product_name)
     );
 
@@ -316,6 +330,8 @@ async function main() {
   let flavorTagsCount = 0;
   let useTagsCount = 0;
   let liveTasteCount = 0;
+  let theanineCount = 0;
+  let egcgCount = 0;
   for (const p of products) {
     const brand = (p.brand || "").trim();
     const product = (p.product || "").trim();
@@ -388,14 +404,18 @@ async function main() {
     if (flavorTags.length > 0) flavorTagsCount++;
     const useTags = extractUseTags(disclosed, fields.grade);
     if (useTags.length > 0) useTagsCount++;
+    const compounds = resolveCompoundData(disclosed, fields.grade, fields.cultivar);
+    if (compounds.theanine.source) theanineCount++;
+    if (compounds.egcg.source) egcgCount++;
 
     db.run(
       `INSERT OR IGNORE INTO products
         (brand_id, product_name, price_usd, price_per_gram, price_size_grams, price_native,
          price_currency, price_needs_review, price_review_reason, fx_converted, fx_rate_date,
          grade, cultivar, region, organic_certified, source_url, has_contradictions, not_found,
-         disclosed_json, page_notes, price_link_only, tasting_notes, flavor_tags, use_tags)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         disclosed_json, page_notes, price_link_only, tasting_notes, flavor_tags, use_tags,
+         l_theanine_mg_g, l_theanine_source, l_theanine_note, egcg_mg_g, egcg_source, egcg_note)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         brandId,
         product,
@@ -421,6 +441,12 @@ async function main() {
         tastingNotes,
         JSON.stringify(flavorTags),
         JSON.stringify(useTags),
+        compounds.theanine.mgPerG,
+        compounds.theanine.source,
+        compounds.theanine.note,
+        compounds.egcg.mgPerG,
+        compounds.egcg.source,
+        compounds.egcg.note,
       ]
     );
 
@@ -548,6 +574,8 @@ async function main() {
   console.log(`  products with consolidated tasting notes: ${tastingNotesCount} (of which ${liveTasteCount} from live-scraped page descriptions)`);
   console.log(`  products with at least one flavor tag: ${flavorTagsCount}`);
   console.log(`  products with at least one use tag: ${useTagsCount}`);
+  console.log(`  products with L-theanine data: ${theanineCount}`);
+  console.log(`  products with EGCG data: ${egcgCount}`);
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
   const data = db.export();
