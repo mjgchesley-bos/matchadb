@@ -118,9 +118,9 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 py-16 text-center">
+      <section className="max-w-4xl mx-auto px-6 py-10 text-center">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Matcha, matched</p>
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-10">
+        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-6">
           Tell us what you&apos;re after
         </h2>
 

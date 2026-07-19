@@ -40,7 +40,7 @@ export function ProductCard({ product: p }: { product: ProductRow }) {
   return (
     <div className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised hover:bg-matcha-soft transition-colors flex flex-col gap-1">
       <Link href={`/products/${p.id}`} className="flex flex-col gap-1">
-        <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
+        <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
         <span className="font-medium text-ink leading-snug">{p.product_name}</span>
         {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
         <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
@@ -114,7 +114,7 @@ export function TieredPickCard({ label, product: p }: { label: string; product: 
         <span className="inline-block self-start rounded-full bg-matcha text-paper px-2.5 py-0.5 text-xs font-medium tracking-wide mb-1">
           {label}
         </span>
-        <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
+        <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
         <span className="font-medium text-ink leading-snug">{p.product_name}</span>
         {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
         {price.kind === "resolved" && (
