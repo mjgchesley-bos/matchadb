@@ -86,3 +86,26 @@ Amplify will then show DNS records to add at the registrar:
 - If the underlying research data changes: run `npm run build:db` locally, commit the updated
   `data/matcha.db`, push to `main`. Amplify redeploys automatically on push.
 - If you change the app code: just push to `main` — same auto-redeploy.
+
+## Automated weekly price refresh
+
+`.github/workflows/refresh-prices.yml` runs every Monday (and on manual trigger via the
+Actions tab): re-scrapes live pricing from each brand's current product page, rebuilds
+`matcha.db`, and commits + pushes only if something actually changed — which then triggers
+the usual Amplify auto-redeploy. This is what backs the home page's "not a stale snapshot"
+claim; without it that copy would be describing a one-time snapshot, not a live one.
+
+Scope is price-only, not grade/cultivar/region/taste — those change far less often and
+aren't claimed to be kept current anywhere on the site, so refreshing them weekly would just
+be unnecessary load against ~100 brand sites.
+
+**One-time setup**: add these as repository secrets (Settings → Secrets and variables →
+Actions → New repository secret), using the same values already in your local `.env.local`:
+
+- `AWS_ACCESS_KEY_ID`
+- `AWS_SECRET_ACCESS_KEY`
+- `AWS_REGION`
+- `S3_BUCKET`
+
+The workflow needs these to pull the archived research JSON from S3 (same as `build:db`
+locally) and won't run correctly until they're set.

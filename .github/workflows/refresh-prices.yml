@@ -1,0 +1,75 @@
+name: Weekly price refresh
+
+# Re-scrapes live pricing from each brand's current product page, rebuilds
+# matcha.db, and commits the result if anything changed -- this is what makes
+# the home page's "not a stale snapshot" claim actually true, rather than
+# aspirational. Scope is deliberately price-only: grade/cultivar/region/taste
+# change far less often and aren't claimed to be live-updated anywhere on the
+# site, so re-scraping them weekly would just be extra load against brand
+# sites for no corresponding claim.
+on:
+  schedule:
+    - cron: "0 9 * * 1" # Monday 09:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-prices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm ci
+
+      - name: Scrape live prices (json_ld)
+        run: node scripts/scrape-live-prices.mjs --strategy=json_ld
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+
+      - name: Scrape live prices (shopify_var_meta)
+        run: node scripts/scrape-live-prices.mjs --strategy=shopify_var_meta
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+
+      - name: Scrape live prices (shopify_other)
+        run: node scripts/scrape-live-prices.mjs --strategy=shopify_other
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+
+      - name: Resolve any unparsed package sizes
+        run: node scripts/resolve-live-price-sizes.mjs
+
+      - name: Rebuild database
+        run: npm run build:db
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+
+      - name: Commit and push if data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/matcha.db data/live-prices.json
+          if git diff --cached --quiet; then
+            echo "No price changes this run."
+          else
+            git commit -m "Automated weekly price refresh"
+            git push
+          fi
