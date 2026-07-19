@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductById } from "@/lib/db";
 import { formatPrice, formatPriceVariant } from "@/lib/price";
+import { getExternalLinkInfo } from "@/lib/links";
 
 function formatValue(v: unknown): string {
   if (v == null) return "";
@@ -34,6 +35,7 @@ export default async function ProductDetailPage({
   if (!product) notFound();
 
   const disclosedEntries = Object.entries(product.disclosed || {});
+  const externalLink = getExternalLinkInfo(product.source_url);
 
   return (
     <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-10">
@@ -183,15 +185,15 @@ export default async function ProductDetailPage({
         </div>
       )}
 
-      {product.source_url && (
+      {externalLink && (
         <p className="mt-7 text-sm">
           <a
-            href={product.source_url}
+            href={externalLink.url}
             target="_blank"
             rel="noopener noreferrer"
             className="text-matcha hover:text-forest transition-colors"
           >
-            View original product page &rarr;
+            {externalLink.label} &rarr;
           </a>
         </p>
       )}

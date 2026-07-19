@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getProducts, getFilterOptions, getTieredPicks, type BrowseFilters, type ProductRow } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
+import { getExternalLinkInfo } from "@/lib/links";
 
 function toStr(v: string | string[] | undefined): string | undefined {
   return Array.isArray(v) ? v[0] : v;
@@ -55,64 +56,70 @@ function gradeLabel(grade: string): string {
 }
 
 function ProductCard({ product: p }: { product: ProductRow }) {
+  const link = getExternalLinkInfo(p.source_url);
   return (
-    <Link
-      href={`/products/${p.id}`}
-      className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised hover:bg-matcha-soft transition-colors flex flex-col gap-1"
-    >
-      <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
-      <span className="font-medium text-ink leading-snug">{p.product_name}</span>
-      <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
-        {p.grade && (
-          <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5">{p.grade}</span>
-        )}
-        {p.region && (
-          <span className="rounded-full bg-paper-raised border border-line text-ink-muted px-2 py-0.5">
-            {p.region}
-          </span>
-        )}
-        {p.organic_certified === 1 && (
-          <span className="rounded-full bg-gold-soft text-gold px-2 py-0.5">Organic</span>
-        )}
-        {(JSON.parse(p.flavor_tags) as string[]).slice(0, 2).map((tag) => (
-          <span
-            key={tag}
-            className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5"
-          >
-            {tag}
-          </span>
-        ))}
-        {p.has_contradictions === 1 && (
-          <span className="rounded-full bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 px-2 py-0.5">
-            &#9888; flagged
-          </span>
-        )}
-        {p.not_found === 1 && (
-          <span className="rounded-full bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 px-2 py-0.5">
-            unverifiable
-          </span>
-        )}
-      </div>
-      {(() => {
-        const price = formatPrice(p);
-        if (price.kind === "unresolved") {
+    <div className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised hover:bg-matcha-soft transition-colors flex flex-col gap-1">
+      <Link href={`/products/${p.id}`} className="flex flex-col gap-1">
+        <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
+        <span className="font-medium text-ink leading-snug">{p.product_name}</span>
+        {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
+        <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
+          {p.grade && (
+            <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5">{p.grade}</span>
+          )}
+          {p.region && (
+            <span className="rounded-full bg-paper-raised border border-line text-ink-muted px-2 py-0.5">
+              {p.region}
+            </span>
+          )}
+          {p.organic_certified === 1 && (
+            <span className="rounded-full bg-gold-soft text-gold px-2 py-0.5">Organic</span>
+          )}
+          {(JSON.parse(p.flavor_tags) as string[]).slice(0, 2).map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5"
+            >
+              {tag}
+            </span>
+          ))}
+          {p.not_found === 1 && (
+            <span className="rounded-full bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 px-2 py-0.5">
+              unverifiable
+            </span>
+          )}
+        </div>
+        {(() => {
+          const price = formatPrice(p);
+          if (price.kind === "unresolved") {
+            return (
+              <span className="text-sm mt-1.5 text-ink-faint italic">
+                {p.source_url ? "See website for pricing" : "Price not confirmed"}
+              </span>
+            );
+          }
+          if (price.kind === "linkOnly") {
+            return <span className="text-sm mt-1.5 text-ink-faint italic">Pricing on product page</span>;
+          }
           return (
-            <span className="text-sm mt-1.5 text-ink-faint italic">
-              {p.source_url ? "See website for pricing" : "Price not confirmed"}
+            <span className="text-sm mt-1.5 tabular-nums text-ink">
+              {price.text}
+              {price.caution && <span className="text-amber-600 ml-1">&#9888;</span>}
             </span>
           );
-        }
-        if (price.kind === "linkOnly") {
-          return <span className="text-sm mt-1.5 text-ink-faint italic">Pricing on product page</span>;
-        }
-        return (
-          <span className="text-sm mt-1.5 tabular-nums text-ink">
-            {price.text}
-            {price.caution && <span className="text-amber-600 ml-1">&#9888;</span>}
-          </span>
-        );
-      })()}
-    </Link>
+        })()}
+      </Link>
+      {link && (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-matcha hover:text-forest transition-colors mt-1.5"
+        >
+          {link.label} &rarr;
+        </a>
+      )}
+    </div>
   );
 }
 
@@ -120,20 +127,31 @@ function ProductCard({ product: p }: { product: ProductRow }) {
 // bolder border and a tier-name badge instead of the plain brand/grade line.
 function TieredPickCard({ label, product: p }: { label: string; product: ProductRow }) {
   const price = formatPrice(p);
+  const link = getExternalLinkInfo(p.source_url);
   return (
-    <Link
-      href={`/products/${p.id}`}
-      className="border-2 border-matcha rounded-sm p-4 bg-paper hover:bg-matcha-soft transition-colors flex flex-col gap-1"
-    >
-      <span className="inline-block self-start rounded-full bg-matcha text-paper px-2.5 py-0.5 text-xs font-medium tracking-wide mb-1">
-        {label}
-      </span>
-      <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
-      <span className="font-medium text-ink leading-snug">{p.product_name}</span>
-      {price.kind === "resolved" && (
-        <span className="text-sm mt-1.5 tabular-nums text-ink">{price.text}</span>
+    <div className="border-2 border-matcha rounded-sm p-4 bg-paper hover:bg-matcha-soft transition-colors flex flex-col gap-1">
+      <Link href={`/products/${p.id}`} className="flex flex-col gap-1">
+        <span className="inline-block self-start rounded-full bg-matcha text-paper px-2.5 py-0.5 text-xs font-medium tracking-wide mb-1">
+          {label}
+        </span>
+        <span className="text-xs uppercase tracking-wide text-ink-faint">{p.brand_name}</span>
+        <span className="font-medium text-ink leading-snug">{p.product_name}</span>
+        {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
+        {price.kind === "resolved" && (
+          <span className="text-sm mt-1.5 tabular-nums text-ink">{price.text}</span>
+        )}
+      </Link>
+      {link && (
+        <a
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs text-matcha hover:text-forest transition-colors mt-1.5"
+        >
+          {link.label} &rarr;
+        </a>
       )}
-    </Link>
+    </div>
   );
 }
 
