@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import Script from "next/script";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-EED2DFH6L6";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -35,6 +38,18 @@ export default function RootLayout({
       className={`${fraunces.variable} ${manrope.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <header className="sticky top-0 z-30 bg-matcha">
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-baseline gap-1.5 group">
