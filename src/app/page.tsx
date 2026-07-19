@@ -47,7 +47,7 @@ export default async function Home({
     { value: retailerCount.toLocaleString(), label: "Retailer sites verified" },
   ];
 
-  const recognizableBrands = ["Trader Joe's", "Kirkland Signature", "Blue Bottle", "Harney & Sons", "Numi Organic Tea"];
+  const featuredBrands = ["Marukyu Koyamaen", "Ippodo", "Kettl", "Aiya", "Rocky's", "Hekisuien"];
 
   const photoStrip = [
     {
@@ -174,10 +174,10 @@ export default async function Home({
       <section className="max-w-5xl mx-auto px-6 py-20 text-center">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Brands in the record</p>
         <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
-          Including names you already know
+          Home to the names serious matcha drinkers know
         </h2>
         <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
-          {recognizableBrands.map((b) => (
+          {featuredBrands.map((b) => (
             <span key={b} className="text-lg text-ink-muted">
               {b}
             </span>
