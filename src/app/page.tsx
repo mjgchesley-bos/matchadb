@@ -14,15 +14,11 @@ export default async function Home() {
   const pillars = [
     {
       title: "Pricing, per gram",
-      copy: "Every size a brand sells, scraped directly from the current product page and normalized to a comparable $/g figure — not a stale snapshot.",
+      copy: "Scraped directly from each brand's current product page and normalized to a comparable $/g figure wherever the package size is disclosed — not a stale snapshot.",
     },
     {
       title: "Grade & provenance",
       copy: "Ceremonial or culinary, cultivar, growing region — captured where the brand actually discloses it, never inferred or guessed.",
-    },
-    {
-      title: "Flagged, not hidden",
-      copy: "When a brand's own page contradicts itself — on origin, on price, on anything — we surface it instead of quietly picking a side.",
     },
   ];
 
@@ -31,7 +27,7 @@ export default async function Home() {
       label: "The harvest",
       src: "/images/strip-the-harvest.jpg",
       alt: "A farmer with a woven basket walking through terraced tea rows in Japan at sunrise",
-      copy: "Where the record starts — the terraced fields behind the grade and cultivar fields in every listing.",
+      copy: "Where the record starts — the terraced fields behind the grade, cultivar, and region data, captured wherever a brand discloses it.",
     },
     {
       label: "The afternoon break",
@@ -133,7 +129,7 @@ export default async function Home() {
         <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink max-w-md">
           What&apos;s in the record
         </h2>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-8">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12 max-w-2xl">
           {pillars.map((p, i) => (
             <div key={p.title}>
               <span className="font-mono text-xs text-forest">{String(i + 1).padStart(2, "0")}</span>
