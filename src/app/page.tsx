@@ -14,11 +14,11 @@ export default async function Home() {
   const pillars = [
     {
       title: "Pricing, per gram",
-      copy: "Scraped directly from each brand's current product page and normalized to a comparable $/g figure wherever the package size is disclosed — not a stale snapshot.",
+      copy: "Scraped directly from each brand's current product page and normalized to a comparable $/g figure wherever the package size is disclosed.",
     },
     {
       title: "Grade & provenance",
-      copy: "Ceremonial or culinary, cultivar, growing region — captured where the brand actually discloses it, never inferred or guessed.",
+      copy: "Ceremonial or culinary, cultivar, growing region — captured where the brand actually discloses it.",
     },
   ];
 
