@@ -15,7 +15,7 @@ export default async function Home({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const sp = await searchParams;
-  const { brandCount, productCount } = await getStats();
+  const { brandCount, productCount, retailerCount } = await getStats();
 
   // Home is a matching tool, not a database search -- only grade/use/flavor
   // are exposed here. Search, brand, region, price, and the QA-flag
@@ -44,27 +44,26 @@ export default async function Home({
   const stats = [
     { value: productCount.toLocaleString(), label: "Products catalogued" },
     { value: brandCount.toLocaleString(), label: "Brands researched" },
-    { value: "90+", label: "Retailer sites verified" },
+    { value: retailerCount.toLocaleString(), label: "Retailer sites verified" },
   ];
+
+  const recognizableBrands = ["Trader Joe's", "Kirkland Signature", "Blue Bottle", "Harney & Sons", "Numi Organic Tea"];
 
   const photoStrip = [
     {
       label: "The harvest",
       src: "/images/strip-the-harvest.jpg",
       alt: "A farmer with a woven basket walking through terraced tea rows in Japan at sunrise",
-      copy: "Where the record starts — the terraced fields behind the grade, cultivar, and region data, captured wherever a brand discloses it.",
     },
     {
       label: "The afternoon break",
       src: "/images/strip-the-afternoon-break.jpg",
       alt: "Friends sharing iced matcha lattes at a café table beside a Japanese garden window",
-      copy: "The reason the pricing matters — matcha as something people actually reach for, not just a spec sheet.",
     },
     {
       label: "The ingredient",
       src: "/images/strip-the-ingredient.jpg",
       alt: "Vibrant green matcha powder scattered on dark slate beside a gold measuring spoon",
-      copy: "The thing itself — what a gram of it actually looks like before it's a price, a grade, or a listing.",
     },
   ];
 
@@ -88,16 +87,20 @@ export default async function Home({
             A guided matching tool and sourcing map are coming in later phases.
           </p>
         </div>
-        <div className="max-w-xs mx-auto px-6 pb-16">
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-line">
-            <Image
-              src="/images/hero-matcha-garden.jpg"
-              alt="Iced matcha latte with leaf-pattern latte art, held beside a koi pond in a Japanese garden"
-              fill
-              priority
-              sizes="(min-width: 640px) 320px, 80vw"
-              className="object-cover"
-            />
+        <div className="max-w-4xl mx-auto px-6 pb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {photoStrip.map((item, i) => (
+              <div key={item.label} className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-line">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  priority={i === 0}
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -168,24 +171,16 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {photoStrip.map((item) => (
-            <div key={item.label}>
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-line">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(min-width: 640px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <p className="mt-4 font-mono text-xs tracking-[0.2em] uppercase text-forest">
-                {item.label}
-              </p>
-              <p className="mt-1.5 text-sm text-ink-muted leading-relaxed">{item.copy}</p>
-            </div>
+      <section className="max-w-5xl mx-auto px-6 py-20 text-center">
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Brands in the record</p>
+        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
+          Including names you already know
+        </h2>
+        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
+          {recognizableBrands.map((b) => (
+            <span key={b} className="text-lg text-ink-muted">
+              {b}
+            </span>
           ))}
         </div>
       </section>

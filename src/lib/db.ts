@@ -2,6 +2,7 @@ import initSqlJs, { type Database } from "sql.js";
 import fs from "node:fs";
 import path from "node:path";
 import { PRICE_TIER_CHEAP_MAX, PRICE_TIER_MID_MAX } from "./price";
+import { getExternalLinkInfo } from "./links";
 
 let dbPromise: Promise<Database> | null = null;
 
@@ -320,5 +321,16 @@ export async function getStats() {
   const db = await getDb();
   const brandCount = db.exec("SELECT COUNT(*) FROM brands")[0].values[0][0] as number;
   const productCount = db.exec("SELECT COUNT(*) FROM products")[0].values[0][0] as number;
-  return { brandCount, productCount };
+
+  const urlRows = rowsToObjects<{ source_url: string }>(
+    db.exec("SELECT source_url FROM products WHERE source_url IS NOT NULL")
+  );
+  const hostnames = new Set<string>();
+  for (const r of urlRows) {
+    const link = getExternalLinkInfo(r.source_url);
+    if (link) hostnames.add(link.hostname);
+  }
+  const retailerCount = hostnames.size;
+
+  return { brandCount, productCount, retailerCount };
 }

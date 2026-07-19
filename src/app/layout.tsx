@@ -66,7 +66,7 @@ export default function RootLayout({
             <nav className="flex items-center gap-8 text-[0.9rem]">
               <Link
                 href="/browse"
-                className="text-paper/80 hover:text-paper transition-colors"
+                className="inline-flex items-center rounded-full bg-paper text-ink px-6 py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 Search full database
               </Link>

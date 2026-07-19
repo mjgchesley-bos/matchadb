@@ -1,34 +1,16 @@
 @import "tailwindcss";
 
 /*
-  Light theme: crisp white grounds with fresh light-green raised surfaces
-  (alternating bands down the page). Primary is a standard, vibrant matcha
-  green (buttons, links, badges, the "DB" wordmark) -- the darker forest
-  green is a deliberate second color, not just a dimmer version of the
-  primary: it's the accent used for hover states (darkening on hover, not
-  brightening) and quiet structural marks (section-label kickers, the
-  header's accent dot). Dark theme mirrors the same primary/accent split
-  against its deeper charcoal-green ground.
+  Fixed dark theme -- this is the only theme the site shows, deliberately,
+  regardless of a visitor's system light/dark preference (explicit decision:
+  a consistent brand look mattered more here than following each visitor's
+  OS setting). Primary is a vibrant matcha green (buttons, links, badges,
+  the "DB" wordmark) against the deep charcoal-green ground; the muted
+  forest green is a deliberate second color used for hover states
+  (darkening on hover, not brightening) and quiet structural marks
+  (section-label kickers, the header's accent dot).
 */
 :root {
-  --color-paper: #ffffff;
-  --color-paper-raised: #e8f3dd;
-  --color-ink: #182114;
-  --color-ink-muted: #5b6b4c;
-  --color-ink-faint: #8b9a7a;
-  --color-line: #d7e8c8;
-  --color-line-strong: #b9d69f;
-
-  --color-matcha: #23843a;
-  --color-forest: #235c14;
-  --color-matcha-soft: #dff0d0;
-  --color-matcha-ink: #1c4a10;
-
-  --color-gold: #93711f;
-  --color-gold-soft: #f1e6c8;
-}
-
-:root[data-theme="dark"] {
   --color-paper: #14160f;
   --color-paper-raised: #1c1e15;
   --color-ink: #f1ede0;
@@ -44,26 +26,6 @@
 
   --color-gold: #d3ac5c;
   --color-gold-soft: #2c2412;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-paper: #14160f;
-    --color-paper-raised: #1c1e15;
-    --color-ink: #f1ede0;
-    --color-ink-muted: #a8a58f;
-    --color-ink-faint: #6f6c58;
-    --color-line: #2b2d21;
-    --color-line-strong: #3a3c2c;
-
-    --color-matcha: #8fe356;
-    --color-forest: #5c9c4a;
-    --color-matcha-soft: #202b16;
-    --color-matcha-ink: #d8f4bd;
-
-    --color-gold: #d3ac5c;
-    --color-gold-soft: #2c2412;
-  }
 }
 
 @theme inline {
