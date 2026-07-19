@@ -68,7 +68,7 @@ export default function RootLayout({
                 href="/browse"
                 className="text-paper/80 hover:text-paper transition-colors"
               >
-                Browse the catalog
+                Search full database
               </Link>
             </nav>
           </div>

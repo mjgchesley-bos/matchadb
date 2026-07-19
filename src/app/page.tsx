@@ -1,25 +1,54 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getStats } from "@/lib/db";
+import { getStats, getProducts, getFilterOptions, getTieredPicks, type BrowseFilters } from "@/lib/db";
+import { toStr, toArr, toNum } from "@/lib/searchParams";
+import { ProductCard, TieredPickCard } from "@/components/product-cards";
+import { FilterForm } from "@/components/FilterForm";
 
-export default async function Home() {
+// Abbreviated relative to /browse's full result set + pagination -- the home
+// page shows a sample plus a link to the full database rather than paging.
+const HOME_PAGE_SIZE = 9;
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const sp = await searchParams;
   const { brandCount, productCount } = await getStats();
+
+  const filters: BrowseFilters = {
+    q: toStr(sp.q),
+    brand: toStr(sp.brand),
+    grades: toArr(sp.grade),
+    region: toStr(sp.region),
+    flavors: toArr(sp.flavor),
+    uses: toArr(sp.use),
+    organicOnly: toStr(sp.organicOnly) === "1",
+    hasContradictionsOnly: toStr(sp.hasContradictionsOnly) === "1",
+    minPrice: toNum(sp.minPrice),
+    maxPrice: toNum(sp.maxPrice),
+    page: 1,
+    pageSize: HOME_PAGE_SIZE,
+  };
+
+  const [{ products, total }, filterOptions, tieredPicks] = await Promise.all([
+    getProducts(filters),
+    getFilterOptions(),
+    getTieredPicks(filters),
+  ]);
+
+  const seeAllParams = new URLSearchParams();
+  for (const [k, v] of Object.entries(sp)) {
+    if (!v) continue;
+    for (const item of Array.isArray(v) ? v : [v]) seeAllParams.append(k, item);
+  }
+  const seeAllHref = seeAllParams.toString() ? `/browse?${seeAllParams.toString()}` : "/browse";
 
   const stats = [
     { value: productCount.toLocaleString(), label: "Products catalogued" },
     { value: brandCount.toLocaleString(), label: "Brands researched" },
     { value: "90+", label: "Retailer sites verified" },
-  ];
-
-  const pillars = [
-    {
-      title: "Pricing, per gram",
-      copy: "Scraped directly from each brand's current product page and normalized to a comparable $/g figure wherever the package size is disclosed.",
-    },
-    {
-      title: "Grade & provenance",
-      copy: "Ceremonial or culinary, cultivar, growing region — captured where the brand actually discloses it.",
-    },
   ];
 
   const photoStrip = [
@@ -46,7 +75,7 @@ export default async function Home() {
   return (
     <main className="flex-1">
       <section className="relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-6 pt-20 pb-14 sm:pt-24 text-center">
+        <div className="max-w-3xl mx-auto px-6 pt-20 pb-10 sm:pt-24 text-center">
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-6">
             Matcha, catalogued
           </p>
@@ -59,27 +88,18 @@ export default async function Home() {
             directly from each brand&apos;s own product pages, kept current, and never smoothed
             over when the source contradicts itself.
           </p>
-          <div className="mt-10 flex flex-col items-center gap-3">
-            <Link
-              href="/browse"
-              className="group inline-flex items-center gap-2 bg-matcha text-paper px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:bg-forest"
-            >
-              Browse the catalog
-              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-            </Link>
-            <span className="text-sm text-ink-faint">
-              A guided matching tool and sourcing map are coming in later phases.
-            </span>
-          </div>
+          <p className="mt-4 text-sm text-ink-faint">
+            A guided matching tool and sourcing map are coming in later phases.
+          </p>
         </div>
-        <div className="max-w-4xl mx-auto px-6 pb-24">
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm border border-line">
+        <div className="max-w-xs mx-auto px-6 pb-16">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-line">
             <Image
               src="/images/hero-matcha-garden.jpg"
               alt="Iced matcha latte with leaf-pattern latte art, held beside a koi pond in a Japanese garden"
               fill
               priority
-              sizes="(min-width: 1024px) 896px, 100vw"
+              sizes="(min-width: 640px) 320px, 80vw"
               className="object-cover"
             />
           </div>
@@ -99,7 +119,66 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pt-20">
+      <section className="max-w-5xl mx-auto px-6 py-16">
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Find your matcha</p>
+        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
+          Filter the database
+        </h2>
+
+        <div className="bg-paper-raised border border-line rounded-sm p-6 sm:p-8">
+          <FilterForm
+            filters={filters}
+            options={filterOptions}
+            clearHref="/"
+            formClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm items-start"
+            wideClassName="sm:col-span-2 lg:col-span-3"
+          />
+        </div>
+
+        {tieredPicks && (
+          <div className="mt-10">
+            <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-4">
+              A pick at every price
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <TieredPickCard label="Budget pick" product={tieredPicks.cheap} />
+              <TieredPickCard label="Mid-range pick" product={tieredPicks.mid} />
+              <TieredPickCard label="Premium pick" product={tieredPicks.premium} />
+            </div>
+          </div>
+        )}
+
+        <div className="mt-10">
+          <p className="text-sm text-ink-muted mb-5">
+            Showing {products.length} of {total.toLocaleString()} matching product
+            {total === 1 ? "" : "s"}
+          </p>
+
+          {products.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {products.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-ink-muted">No products match those filters.</p>
+          )}
+
+          {total > products.length && (
+            <div className="mt-8 text-center">
+              <Link
+                href={seeAllHref}
+                className="group inline-flex items-center gap-2 text-matcha hover:text-forest font-medium transition-colors"
+              >
+                See all {total.toLocaleString()} results in the full database
+                <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+              </Link>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section className="max-w-5xl mx-auto px-6 py-20">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
           {photoStrip.map((item) => (
             <div key={item.label}>
@@ -116,21 +195,6 @@ export default async function Home() {
                 {item.label}
               </p>
               <p className="mt-1.5 text-sm text-ink-muted leading-relaxed">{item.copy}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="max-w-5xl mx-auto px-6 py-24">
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink max-w-md">
-          What&apos;s in the record
-        </h2>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12 max-w-2xl">
-          {pillars.map((p, i) => (
-            <div key={p.title}>
-              <span className="font-mono text-xs text-forest">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-3 font-display text-xl font-semibold text-ink">{p.title}</h3>
-              <p className="mt-2.5 text-sm text-ink-muted leading-relaxed">{p.copy}</p>
             </div>
           ))}
         </div>
