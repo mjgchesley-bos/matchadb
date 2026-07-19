@@ -46,46 +46,42 @@ export default async function Home() {
   return (
     <main className="flex-1">
       <section className="relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 pt-20 pb-24 sm:pt-24 sm:pb-28">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-14 items-center">
-            <div>
-              <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-6">
-                Matcha, catalogued
-              </p>
-              <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[3.75rem] sm:leading-[1.02] font-semibold tracking-tight text-ink text-balance">
-                Every matcha brand,
-                <br />
-                held to the same standard.
-              </h1>
-              <p className="mt-7 text-lg text-ink-muted max-w-xl leading-relaxed">
-                A research database of {productCount.toLocaleString()} matcha products across{" "}
-                {brandCount.toLocaleString()} brands &mdash; pricing, grade, and sourcing pulled
-                directly from each brand&apos;s own product pages, kept current, and never smoothed
-                over when the source contradicts itself.
-              </p>
-              <div className="mt-10 flex flex-col items-start gap-3">
-                <Link
-                  href="/browse"
-                  className="group inline-flex items-center gap-2 bg-matcha text-paper px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:bg-forest"
-                >
-                  Browse the catalog
-                  <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-                </Link>
-                <span className="text-sm text-ink-faint">
-                  A guided matching tool and sourcing map are coming in later phases.
-                </span>
-              </div>
-            </div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-line">
-              <Image
-                src="/images/hero-matcha-garden.jpg"
-                alt="Iced matcha latte with leaf-pattern latte art, held beside a koi pond in a Japanese garden"
-                fill
-                priority
-                sizes="(min-width: 1024px) 460px, 100vw"
-                className="object-cover"
-              />
-            </div>
+        <div className="max-w-3xl mx-auto px-6 pt-20 pb-14 sm:pt-24 text-center">
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-6">
+            Matcha, catalogued
+          </p>
+          <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[4.25rem] sm:leading-[1.02] font-semibold tracking-tight text-ink text-balance">
+            The Global Matcha Database
+          </h1>
+          <p className="mt-7 text-lg text-ink-muted max-w-xl mx-auto leading-relaxed">
+            A research database of {productCount.toLocaleString()} matcha products across{" "}
+            {brandCount.toLocaleString()} brands &mdash; pricing, grade, and sourcing pulled
+            directly from each brand&apos;s own product pages, kept current, and never smoothed
+            over when the source contradicts itself.
+          </p>
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <Link
+              href="/browse"
+              className="group inline-flex items-center gap-2 bg-matcha text-paper px-7 py-3.5 text-sm font-medium tracking-wide transition-colors hover:bg-forest"
+            >
+              Browse the catalog
+              <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+            </Link>
+            <span className="text-sm text-ink-faint">
+              A guided matching tool and sourcing map are coming in later phases.
+            </span>
+          </div>
+        </div>
+        <div className="max-w-4xl mx-auto px-6 pb-24">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-sm border border-line">
+            <Image
+              src="/images/hero-matcha-garden.jpg"
+              alt="Iced matcha latte with leaf-pattern latte art, held beside a koi pond in a Japanese garden"
+              fill
+              priority
+              sizes="(min-width: 1024px) 896px, 100vw"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
