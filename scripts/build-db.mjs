@@ -13,6 +13,7 @@ import { resolveCanonicalPrice, extractPriceVariants, pickCanonicalFromVariants 
 import { GRADE_KEYWORDS, CULTIVAR_KEYWORDS, REGION_KEYWORDS, findFirstKeyword } from "./attribute-extract.mjs";
 import { consolidateTastingNotes } from "./taste-extract.mjs";
 import { extractFlavorTags } from "./flavor-extract.mjs";
+import { extractUseTags } from "./use-extract.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 config({ path: path.join(__dirname, "..", ".env.local") });
@@ -244,6 +245,9 @@ async function main() {
       -- scripts/flavor-extract.mjs. A filterable facet, unlike the free-text
       -- tasting_notes field.
       flavor_tags TEXT,
+      -- JSON array of use-case tags (Tea, Lattes, Culinary) extracted from
+      -- the full disclosed_json blob plus grade -- see scripts/use-extract.mjs.
+      use_tags TEXT,
       UNIQUE(brand_id, product_name)
     );
 
@@ -310,6 +314,7 @@ async function main() {
   let liveAttributesCount = 0;
   let tastingNotesCount = 0;
   let flavorTagsCount = 0;
+  let useTagsCount = 0;
   let liveTasteCount = 0;
   for (const p of products) {
     const brand = (p.brand || "").trim();
@@ -381,14 +386,16 @@ async function main() {
     if (tastingNotes) tastingNotesCount++;
     const flavorTags = extractFlavorTags(tastingNotes);
     if (flavorTags.length > 0) flavorTagsCount++;
+    const useTags = extractUseTags(disclosed, fields.grade);
+    if (useTags.length > 0) useTagsCount++;
 
     db.run(
       `INSERT OR IGNORE INTO products
         (brand_id, product_name, price_usd, price_per_gram, price_size_grams, price_native,
          price_currency, price_needs_review, price_review_reason, fx_converted, fx_rate_date,
          grade, cultivar, region, organic_certified, source_url, has_contradictions, not_found,
-         disclosed_json, page_notes, price_link_only, tasting_notes, flavor_tags)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+         disclosed_json, page_notes, price_link_only, tasting_notes, flavor_tags, use_tags)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         brandId,
         product,
@@ -413,6 +420,7 @@ async function main() {
         isLinkOnly ? 1 : 0,
         tastingNotes,
         JSON.stringify(flavorTags),
+        JSON.stringify(useTags),
       ]
     );
 
@@ -539,6 +547,7 @@ async function main() {
   console.log(`  missing grade / cultivar / region: ${gradeMissing} / ${cultivarMissing} / ${regionMissing}`);
   console.log(`  products with consolidated tasting notes: ${tastingNotesCount} (of which ${liveTasteCount} from live-scraped page descriptions)`);
   console.log(`  products with at least one flavor tag: ${flavorTagsCount}`);
+  console.log(`  products with at least one use tag: ${useTagsCount}`);
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
   const data = db.export();

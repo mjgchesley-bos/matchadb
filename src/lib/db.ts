@@ -1,6 +1,7 @@
 import initSqlJs, { type Database } from "sql.js";
 import fs from "node:fs";
 import path from "node:path";
+import { PRICE_TIER_CHEAP_MAX, PRICE_TIER_MID_MAX } from "./price";
 
 let dbPromise: Promise<Database> | null = null;
 
@@ -62,6 +63,7 @@ export type ProductRow = {
   price_link_only: number;
   tasting_notes: string | null;
   flavor_tags: string;
+  use_tags: string;
 };
 
 function rowsToObjects<T>(result: initSqlJs.QueryExecResult[]): T[] {
@@ -79,9 +81,10 @@ function rowsToObjects<T>(result: initSqlJs.QueryExecResult[]): T[] {
 export type BrowseFilters = {
   q?: string;
   brand?: string;
-  grade?: string;
+  grades?: string[];
   region?: string;
-  flavor?: string;
+  flavors?: string[];
+  uses?: string[];
   organicOnly?: boolean;
   hasContradictionsOnly?: boolean;
   minPrice?: number;
@@ -90,12 +93,7 @@ export type BrowseFilters = {
   pageSize?: number;
 };
 
-export async function getProducts(filters: BrowseFilters) {
-  const db = await getDb();
-  const page = filters.page && filters.page > 0 ? filters.page : 1;
-  const pageSize = filters.pageSize && filters.pageSize > 0 ? filters.pageSize : 24;
-  const offset = (page - 1) * pageSize;
-
+function buildWhereClause(filters: BrowseFilters): { where: string[]; params: (string | number)[] } {
   const where: string[] = [];
   const params: (string | number)[] = [];
 
@@ -107,20 +105,29 @@ export async function getProducts(filters: BrowseFilters) {
     where.push("b.name = ?");
     params.push(filters.brand);
   }
-  if (filters.grade) {
-    where.push("p.grade = ?");
-    params.push(filters.grade);
+  if (filters.grades && filters.grades.length > 0) {
+    // Checking multiple grades means "any of these" (a product has exactly
+    // one grade) -- standard faceted-search convention: OR within a facet,
+    // AND across facets.
+    where.push(`p.grade IN (${filters.grades.map(() => "?").join(",")})`);
+    params.push(...filters.grades);
   }
   if (filters.region) {
     where.push("p.region = ?");
     params.push(filters.region);
   }
-  if (filters.flavor) {
+  if (filters.flavors && filters.flavors.length > 0) {
     // flavor_tags is a JSON array string, e.g. ["Sweet","Umami"] -- a quoted
     // substring match is exact enough here since tag names are a fixed,
     // known vocabulary with no risk of one tag name containing another.
-    where.push("p.flavor_tags LIKE ?");
-    params.push(`%"${filters.flavor}"%`);
+    // Selecting multiple flavors means "any of these," same OR-within-facet
+    // convention as grade.
+    where.push(`(${filters.flavors.map(() => "p.flavor_tags LIKE ?").join(" OR ")})`);
+    params.push(...filters.flavors.map((f) => `%"${f}"%`));
+  }
+  if (filters.uses && filters.uses.length > 0) {
+    where.push(`(${filters.uses.map(() => "p.use_tags LIKE ?").join(" OR ")})`);
+    params.push(...filters.uses.map((u) => `%"${u}"%`));
   }
   if (filters.organicOnly) {
     where.push("p.organic_certified = 1");
@@ -137,6 +144,16 @@ export async function getProducts(filters: BrowseFilters) {
     params.push(filters.maxPrice);
   }
 
+  return { where, params };
+}
+
+export async function getProducts(filters: BrowseFilters) {
+  const db = await getDb();
+  const page = filters.page && filters.page > 0 ? filters.page : 1;
+  const pageSize = filters.pageSize && filters.pageSize > 0 ? filters.pageSize : 24;
+  const offset = (page - 1) * pageSize;
+
+  const { where, params } = buildWhereClause(filters);
   const whereSql = where.length ? `WHERE ${where.join(" AND ")}` : "";
 
   const countRes = db.exec(
@@ -151,7 +168,7 @@ export async function getProducts(filters: BrowseFilters) {
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
             p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
-            p.tasting_notes, p.flavor_tags
+            p.tasting_notes, p.flavor_tags, p.use_tags
      FROM products p
      JOIN brands b ON p.brand_id = b.id
      ${whereSql}
@@ -163,6 +180,50 @@ export async function getProducts(filters: BrowseFilters) {
   const products = rowsToObjects<ProductRow>(dataRes);
 
   return { products, total, page, pageSize, totalPages: Math.max(1, Math.ceil(total / pageSize)) };
+}
+
+// One representative product per price tier (cheap/mid/premium) under the
+// current filters -- only returned when all three tiers actually have a
+// match, per the "present as a match when all 3 are applicable" brief.
+// Within a tier, prefers the most completely-documented product (has grade,
+// region, and at least one flavor tag) as a tiebreaker, then cheapest.
+export async function getTieredPicks(filters: BrowseFilters) {
+  const db = await getDb();
+  const { where, params } = buildWhereClause(filters);
+  const baseWhere = where.length ? `${where.join(" AND ")} AND ` : "";
+
+  const columns = `p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
+            p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
+            p.price_review_reason, p.fx_converted, p.fx_rate_date,
+            p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
+            p.tasting_notes, p.flavor_tags, p.use_tags`;
+
+  function pickForRange(rangeSql: string, rangeParams: number[]) {
+    const res = db.exec(
+      `SELECT ${columns}
+       FROM products p
+       JOIN brands b ON p.brand_id = b.id
+       WHERE ${baseWhere}${rangeSql}
+       ORDER BY
+         (p.grade IS NOT NULL AND p.region IS NOT NULL AND p.flavor_tags != '[]') DESC,
+         p.price_per_gram ASC
+       LIMIT 1`,
+      [...params, ...rangeParams]
+    );
+    const rows = rowsToObjects<ProductRow>(res);
+    return rows[0] || null;
+  }
+
+  const cheap = pickForRange("p.price_per_gram IS NOT NULL AND p.price_per_gram <= ?", [PRICE_TIER_CHEAP_MAX]);
+  const mid = pickForRange(
+    "p.price_per_gram IS NOT NULL AND p.price_per_gram > ? AND p.price_per_gram <= ?",
+    [PRICE_TIER_CHEAP_MAX, PRICE_TIER_MID_MAX]
+  );
+  const premium = pickForRange("p.price_per_gram IS NOT NULL AND p.price_per_gram > ?", [PRICE_TIER_MID_MAX]);
+
+  if (!cheap || !mid || !premium) return null;
+  return { cheap, mid, premium };
 }
 
 export async function getFilterOptions() {
@@ -184,7 +245,15 @@ export async function getFilterOptions() {
     for (const tag of JSON.parse(r.flavor_tags) as string[]) flavorSet.add(tag);
   }
   const flavors = [...flavorSet].sort();
-  return { brands, grades, regions, flavors };
+  const useRows = rowsToObjects<{ use_tags: string }>(
+    db.exec("SELECT use_tags FROM products WHERE use_tags != '[]'")
+  );
+  const useSet = new Set<string>();
+  for (const r of useRows) {
+    for (const tag of JSON.parse(r.use_tags) as string[]) useSet.add(tag);
+  }
+  const uses = [...useSet].sort();
+  return { brands, grades, regions, flavors, uses };
 }
 
 export async function getProductById(id: number) {
@@ -223,6 +292,7 @@ export async function getProductById(id: number) {
     ...product,
     disclosed: JSON.parse(product.disclosed_json),
     flavorTags: JSON.parse(product.flavor_tags) as string[],
+    useTags: JSON.parse(product.use_tags) as string[],
     contradictions,
     secondarySources,
     priceVariants,
@@ -237,7 +307,7 @@ export async function getBrandProducts(brandName: string) {
             p.price_review_reason, p.fx_converted, p.fx_rate_date,
             p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
             p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
-            p.tasting_notes, p.flavor_tags
+            p.tasting_notes, p.flavor_tags, p.use_tags
      FROM products p JOIN brands b ON p.brand_id = b.id
      WHERE b.name = ?
      ORDER BY p.product_name COLLATE NOCASE`,

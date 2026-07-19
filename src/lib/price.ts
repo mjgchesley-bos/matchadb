@@ -1,5 +1,21 @@
 import type { ProductPriceRow, ProductRow } from "./db";
 
+// Cutoffs are the real 33rd/66th percentile of price_per_gram across the 427
+// products that have one (checked directly against the database, not
+// guessed round numbers) -- splits the priced catalog into roughly even
+// thirds rather than arbitrary "cheap"/"expensive" bands.
+export const PRICE_TIER_CHEAP_MAX = 0.7;
+export const PRICE_TIER_MID_MAX = 1.4;
+
+export type PriceTier = "cheap" | "mid" | "premium";
+
+export function getPriceTier(pricePerGram: number | null): PriceTier | null {
+  if (pricePerGram == null) return null;
+  if (pricePerGram <= PRICE_TIER_CHEAP_MAX) return "cheap";
+  if (pricePerGram <= PRICE_TIER_MID_MAX) return "mid";
+  return "premium";
+}
+
 export type PriceDisplay =
   | { kind: "resolved"; text: string; caution: boolean }
   | { kind: "linkOnly" }
