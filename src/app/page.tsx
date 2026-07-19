@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getStats, getProducts, getFilterOptions, getTieredPicks, type BrowseFilters } from "@/lib/db";
-import { toStr, toArr, toNum } from "@/lib/searchParams";
+import { toArr } from "@/lib/searchParams";
 import { ProductCard, TieredPickCard } from "@/components/product-cards";
-import { FilterForm } from "@/components/FilterForm";
+import { MatchTool } from "@/components/MatchTool";
 
 // Abbreviated relative to /browse's full result set + pagination -- the home
 // page shows a sample plus a link to the full database rather than paging.
@@ -17,17 +17,13 @@ export default async function Home({
   const sp = await searchParams;
   const { brandCount, productCount } = await getStats();
 
+  // Home is a matching tool, not a database search -- only grade/use/flavor
+  // are exposed here. Search, brand, region, price, and the QA-flag
+  // checkboxes are database-search concerns that live on /browse.
   const filters: BrowseFilters = {
-    q: toStr(sp.q),
-    brand: toStr(sp.brand),
     grades: toArr(sp.grade),
-    region: toStr(sp.region),
     flavors: toArr(sp.flavor),
     uses: toArr(sp.use),
-    organicOnly: toStr(sp.organicOnly) === "1",
-    hasContradictionsOnly: toStr(sp.hasContradictionsOnly) === "1",
-    minPrice: toNum(sp.minPrice),
-    maxPrice: toNum(sp.maxPrice),
     page: 1,
     pageSize: HOME_PAGE_SIZE,
   };
@@ -119,22 +115,16 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 py-16">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Find your matcha</p>
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
-          Filter the database
+      <section className="max-w-3xl mx-auto px-6 py-16 text-center">
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Matcha, matched</p>
+        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-10">
+          Tell us what you&apos;re after
         </h2>
 
-        <div className="bg-paper-raised border border-line rounded-sm p-6 sm:p-8">
-          <FilterForm
-            filters={filters}
-            options={filterOptions}
-            clearHref="/"
-            formClassName="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm items-start"
-            wideClassName="sm:col-span-2 lg:col-span-3"
-          />
-        </div>
+        <MatchTool filters={filters} options={filterOptions} clearHref="/" />
+      </section>
 
+      <section className="max-w-5xl mx-auto px-6 pb-16">
         {tieredPicks && (
           <div className="mt-10">
             <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-4">
