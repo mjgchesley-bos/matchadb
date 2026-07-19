@@ -24,15 +24,34 @@ const labelClass = "block text-xs font-medium tracking-wide uppercase text-ink-f
 
 // Checkbox rendered as a toggle pill -- no client JS needed, since browsers
 // natively submit one query param per checked box sharing the same `name`.
-function PillCheckbox({ name, value, defaultChecked }: { name: string; value: string; defaultChecked: boolean }) {
+function PillCheckbox({
+  name,
+  value,
+  label,
+  defaultChecked,
+}: {
+  name: string;
+  value: string;
+  label?: string;
+  defaultChecked: boolean;
+}) {
   return (
     <label className="cursor-pointer">
       <input type="checkbox" name={name} value={value} defaultChecked={defaultChecked} className="peer sr-only" />
       <span className="inline-block rounded-full border border-line-strong px-3 py-1.5 text-sm text-ink-muted transition-colors peer-hover:border-matcha peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha">
-        {value}
+        {label || value}
       </span>
     </label>
   );
+}
+
+// Usucha/koicha are preparation styles (thin vs. thick tea), not
+// self-explanatory the way "Ceremonial"/"Culinary" are -- a short
+// parenthetical saves someone a trip to a glossary.
+function gradeLabel(grade: string): string {
+  if (grade === "Usucha") return "Usucha (standard)";
+  if (grade === "Koicha") return "Koicha (thick)";
+  return grade;
 }
 
 function ProductCard({ product: p }: { product: ProductRow }) {
@@ -196,7 +215,13 @@ export default async function BrowsePage({
               <span className={labelClass}>Grade</span>
               <div className="flex flex-wrap gap-2">
                 {grades.map((g) => (
-                  <PillCheckbox key={g} name="grade" value={g} defaultChecked={filters.grades!.includes(g)} />
+                  <PillCheckbox
+                    key={g}
+                    name="grade"
+                    value={g}
+                    label={gradeLabel(g)}
+                    defaultChecked={filters.grades!.includes(g)}
+                  />
                 ))}
               </div>
             </div>
