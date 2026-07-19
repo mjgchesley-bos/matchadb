@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Manrope, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
+import { GoogleAnalyticsPageView } from "./google-analytics-pageview";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-EED2DFH6L6";
@@ -47,9 +48,10 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
           `}
         </Script>
+        <GoogleAnalyticsPageView />
         <header className="sticky top-0 z-30 bg-matcha">
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-baseline gap-1.5 group">
