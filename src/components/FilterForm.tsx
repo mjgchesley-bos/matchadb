@@ -2,6 +2,23 @@ import Link from "next/link";
 import type { BrowseFilters } from "@/lib/db";
 import { PillCheckbox, gradeLabel } from "./product-cards";
 
+// Usucha/Koicha are brewing styles, not a quality tier -- both still filter
+// on the same underlying `grade` column, but get their own labeled section
+// so they don't read as competing with Ceremonial/Culinary for one slot.
+// "Latte grade" is excluded -- only one product uses that literal label, and
+// the real "good for lattes" signal lives in the Use facet ("Lattes", 363
+// products) instead.
+const QUALITY_ORDER = ["Ceremonial", "Culinary"];
+const PREP_ORDER = ["Usucha", "Koicha"];
+const USE_ORDER = ["Tea", "Lattes", "Culinary"];
+function sortByOrder(values: string[], order: string[]): string[] {
+  return [...values].sort((a, b) => {
+    const ai = order.indexOf(a);
+    const bi = order.indexOf(b);
+    return (ai === -1 ? Infinity : ai) - (bi === -1 ? Infinity : bi);
+  });
+}
+
 const fieldClass =
   "w-full border border-line-strong rounded-sm px-3 py-2 bg-paper text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors";
 const labelClass = "block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5";
@@ -67,7 +84,10 @@ export function FilterForm({
       <div>
         <span className={labelClass}>Grade</span>
         <div className="flex flex-wrap gap-2">
-          {options.grades.map((g) => (
+          {sortByOrder(
+            options.grades.filter((g) => QUALITY_ORDER.includes(g)),
+            QUALITY_ORDER
+          ).map((g) => (
             <PillCheckbox
               key={g}
               name="grade"
@@ -79,10 +99,30 @@ export function FilterForm({
         </div>
       </div>
 
+      {options.grades.some((g) => PREP_ORDER.includes(g)) && (
+        <div>
+          <span className={labelClass}>Preparation style</span>
+          <div className="flex flex-wrap gap-2">
+            {sortByOrder(
+              options.grades.filter((g) => PREP_ORDER.includes(g)),
+              PREP_ORDER
+            ).map((g) => (
+              <PillCheckbox
+                key={g}
+                name="grade"
+                value={g}
+                label={gradeLabel(g)}
+                defaultChecked={filters.grades?.includes(g) ?? false}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
       <div>
         <span className={labelClass}>Use</span>
         <div className="flex flex-wrap gap-2">
-          {options.uses.map((u) => (
+          {sortByOrder(options.uses, USE_ORDER).map((u) => (
             <PillCheckbox key={u} name="use" value={u} defaultChecked={filters.uses?.includes(u) ?? false} />
           ))}
         </div>
