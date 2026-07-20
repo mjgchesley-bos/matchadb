@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState, useTransition } from "react";
+import { useTransition } from "react";
 import type { BrowseFilters } from "@/lib/db";
 import { gradeLabel } from "./product-cards";
 
@@ -10,22 +10,18 @@ import { gradeLabel } from "./product-cards";
 // is the "fun matching tool" surface, not a dense search form, so it gets
 // room to breathe and a hover lift instead of a flat border swap. Controlled
 // (checked, not defaultChecked) since state now comes from the URL via
-// router.push rather than native form submission. `focused` grows the pill
-// slightly when its group is the one currently guiding the user (see
-// activeGroup below), then shrinks back once attention moves on.
+// router.push rather than native form submission.
 function MatchPill({
   name,
   value,
   label,
   checked,
-  focused,
   onToggle,
 }: {
   name: string;
   value: string;
   label?: string;
   checked: boolean;
-  focused: boolean;
   onToggle: (name: string, value: string, checked: boolean) => void;
 }) {
   return (
@@ -38,39 +34,20 @@ function MatchPill({
         onChange={(e) => onToggle(name, value, e.target.checked)}
         className="peer sr-only"
       />
-      <span
-        className={`inline-block rounded-full border-2 border-line-strong font-medium text-ink-muted transition-all duration-300 hover:-translate-y-0.5 hover:border-matcha hover:shadow-sm peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha peer-checked:-translate-y-0.5 peer-checked:shadow-md ${
-          focused ? "px-5 py-2.5 text-base sm:text-lg" : "px-4 py-2 text-sm sm:text-base"
-        }`}
-      >
+      <span className="inline-block rounded-full border-2 border-line-strong px-4 py-2 text-sm sm:text-base font-medium text-ink-muted transition-all duration-150 hover:-translate-y-0.5 hover:border-matcha hover:shadow-sm peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha peer-checked:-translate-y-0.5 peer-checked:shadow-md">
         {label || value}
       </span>
     </label>
   );
 }
 
-// groupRef is a plain callback (not a forwarded ref) so the parent can key
-// each group's DOM node by name for the IntersectionObserver below.
-function MatchGroup({
-  prompt,
-  focused,
-  groupRef,
-  children,
-}: {
-  prompt: string;
-  focused: boolean;
-  groupRef: (el: HTMLDivElement | null) => void;
-  children: React.ReactNode;
-}) {
+// Each prompt now carries the same size/weight/color the removed "Tell us
+// what you're after" section heading used to have -- so the four questions
+// read as a set of equal headings, not a heading plus sub-questions.
+function MatchGroup({ prompt, children }: { prompt: string; children: React.ReactNode }) {
   return (
-    <div ref={groupRef} className="text-center">
-      <p
-        className={`font-display text-ink mb-3 transition-all duration-300 ${
-          focused ? "text-2xl sm:text-3xl" : "text-lg sm:text-xl"
-        }`}
-      >
-        {prompt}
-      </p>
+    <div className="text-center">
+      <p className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-3">{prompt}</p>
       <div className="flex flex-wrap justify-center gap-2.5">{children}</div>
     </div>
   );
@@ -97,11 +74,6 @@ function sortByOrder(values: string[], order: string[]): string[] {
   });
 }
 
-// The four prompts, in on-page order -- also the order emphasis advances
-// through as the user answers each one.
-const GROUP_ORDER = ["use", "grade", "preparation", "flavor"] as const;
-type GroupKey = (typeof GROUP_ORDER)[number];
-
 // Home's abbreviated matching tool -- deliberately just three facets
 // (grade/use/flavor), not the full search form. Search, brand, region,
 // price, and the QA-flag checkboxes are database-search concerns that live
@@ -124,47 +96,6 @@ export function MatchTool({
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
 
-  // Which group is currently "guiding" the user -- starts on the first
-  // prompt, moves forward as the user scrolls past a group or answers it.
-  const [activeGroup, setActiveGroup] = useState<GroupKey>("use");
-  const groupRefs = useRef<Partial<Record<GroupKey, HTMLDivElement | null>>>({});
-
-  useEffect(() => {
-    // Groups sit close enough together that an IntersectionObserver "band"
-    // often has two of them satisfying it at once (a race between
-    // independent observers). Picking whichever group's center is nearest
-    // the viewport's vertical center avoids that ambiguity -- exactly one
-    // winner at any scroll position.
-    let rafId: number | null = null;
-    function updateActiveGroup() {
-      rafId = null;
-      const centerY = window.innerHeight / 2;
-      let closestKey: GroupKey | null = null;
-      let closestDist = Infinity;
-      for (const key of GROUP_ORDER) {
-        const el = groupRefs.current[key];
-        if (!el) continue;
-        const rect = el.getBoundingClientRect();
-        const dist = Math.abs(rect.top + rect.height / 2 - centerY);
-        if (dist < closestDist) {
-          closestDist = dist;
-          closestKey = key;
-        }
-      }
-      if (closestKey) setActiveGroup(closestKey);
-    }
-    function onScroll() {
-      if (rafId == null) rafId = requestAnimationFrame(updateActiveGroup);
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
-      if (rafId != null) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   function handleToggle(name: string, value: string, checked: boolean) {
     const current: Record<string, string[]> = {
       grade: filters.grades ?? [],
@@ -185,16 +116,6 @@ export function MatchTool({
     });
   }
 
-  // Wraps handleToggle so picking an option also immediately advances
-  // emphasis to the next prompt, instead of waiting for the user to scroll.
-  function makeToggle(groupKey: GroupKey) {
-    return (name: string, value: string, checked: boolean) => {
-      handleToggle(name, value, checked);
-      const idx = GROUP_ORDER.indexOf(groupKey);
-      if (idx !== -1 && idx < GROUP_ORDER.length - 1) setActiveGroup(GROUP_ORDER[idx + 1]);
-    };
-  }
-
   const uses = sortByOrder(options.uses, USE_ORDER);
   const qualityGrades = sortByOrder(
     options.grades.filter((g) => QUALITY_ORDER.includes(g)),
@@ -207,32 +128,13 @@ export function MatchTool({
 
   return (
     <div className={`flex flex-col gap-7 transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
-      <MatchGroup
-        prompt="How will you use it?"
-        focused={activeGroup === "use"}
-        groupRef={(el) => {
-          groupRefs.current.use = el;
-        }}
-      >
+      <MatchGroup prompt="How will you use it?">
         {uses.map((u) => (
-          <MatchPill
-            key={u}
-            name="use"
-            value={u}
-            checked={filters.uses?.includes(u) ?? false}
-            focused={activeGroup === "use"}
-            onToggle={makeToggle("use")}
-          />
+          <MatchPill key={u} name="use" value={u} checked={filters.uses?.includes(u) ?? false} onToggle={handleToggle} />
         ))}
       </MatchGroup>
 
-      <MatchGroup
-        prompt="What grade?"
-        focused={activeGroup === "grade"}
-        groupRef={(el) => {
-          groupRefs.current.grade = el;
-        }}
-      >
+      <MatchGroup prompt="What grade?">
         {qualityGrades.map((g) => (
           <MatchPill
             key={g}
@@ -240,20 +142,13 @@ export function MatchTool({
             value={g}
             label={gradeLabel(g)}
             checked={filters.grades?.includes(g) ?? false}
-            focused={activeGroup === "grade"}
-            onToggle={makeToggle("grade")}
+            onToggle={handleToggle}
           />
         ))}
       </MatchGroup>
 
       {prepStyles.length > 0 && (
-        <MatchGroup
-          prompt="Prepared thin or thick?"
-          focused={activeGroup === "preparation"}
-          groupRef={(el) => {
-            groupRefs.current.preparation = el;
-          }}
-        >
+        <MatchGroup prompt="Prepared thin or thick?">
           {prepStyles.map((g) => (
             <MatchPill
               key={g}
@@ -261,29 +156,15 @@ export function MatchTool({
               value={g}
               label={gradeLabel(g)}
               checked={filters.grades?.includes(g) ?? false}
-              focused={activeGroup === "preparation"}
-              onToggle={makeToggle("preparation")}
+              onToggle={handleToggle}
             />
           ))}
         </MatchGroup>
       )}
 
-      <MatchGroup
-        prompt="What flavor calls to you?"
-        focused={activeGroup === "flavor"}
-        groupRef={(el) => {
-          groupRefs.current.flavor = el;
-        }}
-      >
+      <MatchGroup prompt="What flavor calls to you?">
         {options.flavors.map((f) => (
-          <MatchPill
-            key={f}
-            name="flavor"
-            value={f}
-            checked={filters.flavors?.includes(f) ?? false}
-            focused={activeGroup === "flavor"}
-            onToggle={makeToggle("flavor")}
-          />
+          <MatchPill key={f} name="flavor" value={f} checked={filters.flavors?.includes(f) ?? false} onToggle={handleToggle} />
         ))}
       </MatchGroup>
 

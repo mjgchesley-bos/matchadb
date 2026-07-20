@@ -119,10 +119,7 @@ export default async function Home({
       </section>
 
       <section className="max-w-4xl mx-auto px-6 py-10 text-center">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Matcha, matched</p>
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-6">
-          Tell us what you&apos;re after
-        </h2>
+        <p className="font-mono text-sm sm:text-base tracking-[0.2em] uppercase text-forest mb-6">Matcha, matched</p>
 
         <MatchTool filters={filters} options={filterOptions} clearHref="/" />
       </section>
