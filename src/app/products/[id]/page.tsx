@@ -267,34 +267,6 @@ export default async function ProductDetailPage({
         </section>
       )}
 
-      {product.secondarySources.length > 0 && (
-        <section className="mt-12">
-          <SectionLabel>Secondary sources</SectionLabel>
-          <div className="flex flex-col gap-3">
-            {product.secondarySources.map((s, i) => (
-              <div key={i} className="border border-line bg-paper-raised/50 p-4 text-sm">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="font-medium text-ink">{s.source_name}</span>
-                  <span className="text-xs uppercase tracking-wide text-ink-faint">{s.source_type}</span>
-                </div>
-                <pre className="whitespace-pre-wrap text-ink-muted text-xs leading-relaxed">
-                  {JSON.stringify(s.finding, null, 2)}
-                </pre>
-                {s.source_url && (
-                  <a
-                    href={s.source_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-matcha hover:text-forest transition-colors text-xs"
-                  >
-                    Source &rarr;
-                  </a>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
     </main>
   );
 }
