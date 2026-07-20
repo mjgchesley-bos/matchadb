@@ -18,11 +18,20 @@ export function PillCheckbox({
 }) {
   return (
     // `relative` keeps the absolutely-positioned sr-only input's layout box
-    // pinned to this label rather than resolving against a distant
-    // positioned ancestor (or the viewport) -- without it, some browsers'
-    // scroll-into-view-on-focus behavior can jump to a wildly wrong position
-    // when the hidden checkbox receives focus on click.
-    <label className="relative cursor-pointer">
+    // pinned to this label. On top of that, a browser's default action for
+    // mousedown on a focusable element is to focus it AND, if not fully in
+    // view, scroll it into view -- that scroll-into-view is the actual
+    // jump. preventDefault stops that whole default action, and we focus
+    // the input ourselves with preventScroll, the API built for exactly
+    // this. The click/change that drives the actual toggle still fires
+    // normally afterward.
+    <label
+      className="relative cursor-pointer"
+      onMouseDown={(e) => {
+        e.preventDefault();
+        e.currentTarget.querySelector("input")?.focus({ preventScroll: true });
+      }}
+    >
       <input type="checkbox" name={name} value={value} defaultChecked={defaultChecked} className="peer sr-only" />
       <span className="inline-block rounded-full border border-line-strong px-3 py-1.5 text-sm text-ink-muted transition-colors peer-hover:border-matcha peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha">
         {label || value}

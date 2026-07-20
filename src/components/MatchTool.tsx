@@ -27,32 +27,20 @@ function MatchPill({
   return (
     // `relative` keeps the absolutely-positioned sr-only input's layout box
     // pinned to this label rather than resolving against a distant
-    // positioned ancestor (or the viewport) -- without it, some browsers'
-    // scroll-into-view-on-focus behavior can jump to a wildly wrong position
-    // when the hidden checkbox receives focus on click.
+    // positioned ancestor (or the viewport). On top of that, a browser's
+    // default action for mousedown on a focusable element is to both focus
+    // it AND, if that element isn't fully in view, scroll it into view --
+    // that scroll-into-view step is the actual jump. `preventDefault` here
+    // stops that whole default action (including the browser-chosen scroll
+    // target), and we then focus the input ourselves with `preventScroll`,
+    // which is the API built specifically to move focus without scrolling.
+    // The click/change events that drive the actual toggle still fire
+    // normally afterward, untouched.
     <label
       className="relative cursor-pointer"
       onMouseDown={(e) => {
-        // Focus fires synchronously before `change`, and some browsers'
-        // scroll-into-view-on-focus can jump the page before any of our
-        // React state/transition logic even runs. Capturing scrollY here
-        // (the earliest point in the click sequence) and restoring it the
-        // instant focus lands closes that gap.
-        const y = window.scrollY;
-        const input = e.currentTarget.querySelector("input");
-        const reassert = () => {
-          if (window.scrollY !== y) window.scrollTo(0, y);
-        };
-        const restore = () => {
-          // Browsers differ on whether a focus-triggered scroll happens
-          // before or after the `focus` event fires, so re-check at a few
-          // points rather than assuming one ordering.
-          reassert();
-          requestAnimationFrame(reassert);
-          setTimeout(reassert, 50);
-          input?.removeEventListener("focus", restore);
-        };
-        input?.addEventListener("focus", restore);
+        e.preventDefault();
+        e.currentTarget.querySelector("input")?.focus({ preventScroll: true });
       }}
     >
       <input
