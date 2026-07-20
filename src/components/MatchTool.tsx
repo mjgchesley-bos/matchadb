@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useTransition } from "react";
+import { useEffect, useRef, useTransition } from "react";
 import type { BrowseFilters } from "@/lib/db";
 import { gradeLabel } from "./product-cards";
 
@@ -30,7 +30,31 @@ function MatchPill({
     // positioned ancestor (or the viewport) -- without it, some browsers'
     // scroll-into-view-on-focus behavior can jump to a wildly wrong position
     // when the hidden checkbox receives focus on click.
-    <label className="relative cursor-pointer">
+    <label
+      className="relative cursor-pointer"
+      onMouseDown={(e) => {
+        // Focus fires synchronously before `change`, and some browsers'
+        // scroll-into-view-on-focus can jump the page before any of our
+        // React state/transition logic even runs. Capturing scrollY here
+        // (the earliest point in the click sequence) and restoring it the
+        // instant focus lands closes that gap.
+        const y = window.scrollY;
+        const input = e.currentTarget.querySelector("input");
+        const reassert = () => {
+          if (window.scrollY !== y) window.scrollTo(0, y);
+        };
+        const restore = () => {
+          // Browsers differ on whether a focus-triggered scroll happens
+          // before or after the `focus` event fires, so re-check at a few
+          // points rather than assuming one ordering.
+          reassert();
+          requestAnimationFrame(reassert);
+          setTimeout(reassert, 50);
+          input?.removeEventListener("focus", restore);
+        };
+        input?.addEventListener("focus", restore);
+      }}
+    >
       <input
         type="checkbox"
         name={name}
@@ -100,8 +124,30 @@ export function MatchTool({
 }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const lockedScrollY = useRef<number | null>(null);
+
+  // `router.push(..., { scroll: false })` stops Next from deliberately
+  // scrolling to top, but it doesn't stop other things from nudging scroll
+  // during the transition (a focus shift onto the toggled checkbox, a
+  // layout reflow as the results grid updates, etc). Pinning scrollY on an
+  // interval for the brief pending window overrides any of those regardless
+  // of which one is the culprit, then releases once the new content has
+  // settled. Uses setInterval rather than requestAnimationFrame -- rAF is
+  // tied to the paint/compositor cycle and can be starved in some
+  // environments, where a plain timer keeps firing regardless.
+  useEffect(() => {
+    if (!isPending) {
+      lockedScrollY.current = null;
+      return;
+    }
+    const intervalId = setInterval(() => {
+      if (lockedScrollY.current != null) window.scrollTo(0, lockedScrollY.current);
+    }, 16);
+    return () => clearInterval(intervalId);
+  }, [isPending]);
 
   function handleToggle(name: string, value: string, checked: boolean) {
+    lockedScrollY.current = window.scrollY;
     const current: Record<string, string[]> = {
       grade: filters.grades ?? [],
       use: filters.uses ?? [],
