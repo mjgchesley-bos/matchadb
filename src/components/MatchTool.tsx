@@ -112,30 +112,51 @@ export function MatchTool({
 }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
-  const lockedScrollY = useRef<number | null>(null);
+  const lastUserGesture = useRef(0);
+
+  // Tracks the most recent genuine scroll-capable user input (wheel, touch,
+  // arrow/page keys) so the revert logic below can tell "the user is
+  // actually scrolling right now" apart from "something else moved the
+  // page" -- without this, blindly reverting any scroll change would also
+  // fight a user who deliberately scrolls right after clicking a pill.
+  useEffect(() => {
+    const mark = () => {
+      lastUserGesture.current = Date.now();
+    };
+    window.addEventListener("wheel", mark, { passive: true });
+    window.addEventListener("touchmove", mark, { passive: true });
+    window.addEventListener("keydown", mark);
+    return () => {
+      window.removeEventListener("wheel", mark);
+      window.removeEventListener("touchmove", mark);
+      window.removeEventListener("keydown", mark);
+    };
+  }, []);
 
   // `router.push(..., { scroll: false })` stops Next from deliberately
-  // scrolling to top, but it doesn't stop other things from nudging scroll
-  // during the transition (a focus shift onto the toggled checkbox, a
-  // layout reflow as the results grid updates, etc). Pinning scrollY on an
-  // interval for the brief pending window overrides any of those regardless
-  // of which one is the culprit, then releases once the new content has
-  // settled. Uses setInterval rather than requestAnimationFrame -- rAF is
-  // tied to the paint/compositor cycle and can be starved in some
-  // environments, where a plain timer keeps firing regardless.
-  useEffect(() => {
-    if (!isPending) {
-      lockedScrollY.current = null;
-      return;
-    }
-    const intervalId = setInterval(() => {
-      if (lockedScrollY.current != null) window.scrollTo(0, lockedScrollY.current);
-    }, 16);
-    return () => clearInterval(intervalId);
-  }, [isPending]);
-
+  // scrolling to top, but something is still nudging scroll on every
+  // toggle -- including on *unselecting* a pill, which rules out the
+  // checkbox's own focus as the cause (a couple of targeted fixes aimed at
+  // that already shipped and didn't help). The most likely remaining
+  // culprit is Next's own router re-focusing a route announcer element
+  // after each navigation, for accessibility -- not something app code can
+  // reach into. Rather than keep guessing at the exact mechanism, this
+  // watches for any scroll change shortly after a toggle and snaps back,
+  // unless it looks like the user is genuinely scrolling themselves.
   function handleToggle(name: string, value: string, checked: boolean) {
-    lockedScrollY.current = window.scrollY;
+    const savedY = window.scrollY;
+    let active = true;
+    const revert = () => {
+      if (!active) return;
+      const userIsScrolling = Date.now() - lastUserGesture.current < 150;
+      if (!userIsScrolling && window.scrollY !== savedY) window.scrollTo(0, savedY);
+    };
+    window.addEventListener("scroll", revert, { passive: true });
+    setTimeout(() => {
+      active = false;
+      window.removeEventListener("scroll", revert);
+    }, 600);
+
     const current: Record<string, string[]> = {
       grade: filters.grades ?? [],
       use: filters.uses ?? [],
