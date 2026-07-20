@@ -277,6 +277,15 @@ export async function getFilterOptions() {
   return { brands, grades, regions, flavors, uses };
 }
 
+export async function getRegionCounts() {
+  const db = await getDb();
+  return rowsToObjects<{ region: string; count: number }>(
+    db.exec(
+      "SELECT region, COUNT(*) as count FROM products WHERE region IS NOT NULL GROUP BY region ORDER BY count DESC"
+    )
+  );
+}
+
 export async function getProductById(id: number) {
   const db = await getDb();
   const productRes = db.exec(
