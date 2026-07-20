@@ -17,7 +17,12 @@ export function PillCheckbox({
   defaultChecked: boolean;
 }) {
   return (
-    <label className="cursor-pointer">
+    // `relative` keeps the absolutely-positioned sr-only input's layout box
+    // pinned to this label rather than resolving against a distant
+    // positioned ancestor (or the viewport) -- without it, some browsers'
+    // scroll-into-view-on-focus behavior can jump to a wildly wrong position
+    // when the hidden checkbox receives focus on click.
+    <label className="relative cursor-pointer">
       <input type="checkbox" name={name} value={value} defaultChecked={defaultChecked} className="peer sr-only" />
       <span className="inline-block rounded-full border border-line-strong px-3 py-1.5 text-sm text-ink-muted transition-colors peer-hover:border-matcha peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha">
         {label || value}

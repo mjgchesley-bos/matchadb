@@ -25,7 +25,12 @@ function MatchPill({
   onToggle: (name: string, value: string, checked: boolean) => void;
 }) {
   return (
-    <label className="cursor-pointer">
+    // `relative` keeps the absolutely-positioned sr-only input's layout box
+    // pinned to this label rather than resolving against a distant
+    // positioned ancestor (or the viewport) -- without it, some browsers'
+    // scroll-into-view-on-focus behavior can jump to a wildly wrong position
+    // when the hidden checkbox receives focus on click.
+    <label className="relative cursor-pointer">
       <input
         type="checkbox"
         name={name}
