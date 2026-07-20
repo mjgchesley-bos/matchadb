@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { BrowseFilters } from "@/lib/db";
-import { PillCheckbox, gradeLabel } from "./product-cards";
+import { gradeLabel } from "./product-cards";
+import { PillCheckbox } from "./PillCheckbox";
 
 // Usucha/Koicha are brewing styles, not a quality tier -- both still filter
 // on the same underlying `grade` column, but get their own labeled section
