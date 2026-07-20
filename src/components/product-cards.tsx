@@ -3,22 +3,27 @@ import Link from "next/link";
 import type { ProductRow } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
-import { getBrandLogoPath } from "@/lib/logos";
+import { getBrandLogoPath, logoNeedsDarkBackdrop } from "@/lib/logos";
 
 // A small, fixed-size chip for brand logos. Real logos come in wildly
-// different aspect ratios and background assumptions (dark mark on
-// transparent, light mark on transparent, already-white background) --
-// wrapping every one in the same plain white box with object-contain is the
-// one treatment that reads correctly regardless of which kind a given
-// brand's asset happens to be, without inspecting each of the 93 files by
-// hand.
-function BrandLogo({ brandName, size = 28 }: { brandName: string; size?: number }) {
+// different aspect ratios and background assumptions -- most are a dark or
+// colorful mark on a transparent background, which reads fine on a plain
+// white chip. A handful (checked by sampling actual pixel color across all
+// 93 files, not guessed) are white-on-transparent and go invisible on
+// white, so those get a dark backdrop instead. The explicit dark `color`
+// on the default chip protects any SVG using `fill="currentColor"` from
+// silently inheriting the surrounding (light) text color and vanishing the
+// same way.
+export function BrandLogo({ brandName, size = 28 }: { brandName: string; size?: number }) {
   const src = getBrandLogoPath(brandName);
   if (!src) return null;
+  const dark = logoNeedsDarkBackdrop(brandName);
   return (
     <span
-      className="inline-flex items-center justify-center rounded-sm bg-white shrink-0 overflow-hidden border border-line-strong/40"
-      style={{ width: size, height: size }}
+      className={`inline-flex items-center justify-center rounded-sm shrink-0 overflow-hidden border border-line-strong/40 ${
+        dark ? "bg-paper" : "bg-white"
+      }`}
+      style={{ width: size, height: size, color: dark ? "#f1ede0" : "#1a1a1a" }}
     >
       <Image
         src={src}

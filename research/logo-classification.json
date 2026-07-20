@@ -1,0 +1,638 @@
+{
+  "365.png": {
+    "kind": "raster",
+    "avg_luminance": 123.4,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "aiya.png": {
+    "kind": "raster",
+    "avg_luminance": 202.6,
+    "near_white_frac": 0.48,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "blue-bottle.svg": {
+    "kind": "svg",
+    "fills": [
+      "#00a8d9",
+      "#565759"
+    ]
+  },
+  "blue-willow-tea.png": {
+    "kind": "raster",
+    "avg_luminance": 7.1,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "breakaway-matcha.png": {
+    "kind": "raster",
+    "avg_luminance": 33.8,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.74,
+    "mostly_opaque_no_alpha": false
+  },
+  "cha-cha-matcha.png": {
+    "kind": "raster",
+    "avg_luminance": 0.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "chalait.jpg": {
+    "kind": "raster",
+    "avg_luminance": 188.9,
+    "near_white_frac": 0.74,
+    "near_black_frac": 0.26,
+    "mostly_opaque_no_alpha": true
+  },
+  "chamberlain-coffee.svg": {
+    "kind": "svg",
+    "fills": [
+      "currentcolor"
+    ]
+  },
+  "chikiriya-tea-house.png": {
+    "kind": "raster",
+    "avg_luminance": 1.8,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "culinary-teas.png": {
+    "kind": "raster",
+    "avg_luminance": 1.2,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "david-s-tea.svg": {
+    "kind": "svg",
+    "fills": [
+      "white",
+      "#00b1b0"
+    ]
+  },
+  "domatcha.svg": {
+    "kind": "svg",
+    "fills": []
+  },
+  "dona.svg": {
+    "kind": "svg",
+    "fills": [
+      "#222"
+    ]
+  },
+  "encha.svg": {
+    "kind": "svg",
+    "fills": [
+      "#43bb73"
+    ]
+  },
+  "epic-matcha.png": {
+    "kind": "raster",
+    "avg_luminance": 0.9,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.99,
+    "mostly_opaque_no_alpha": false
+  },
+  "fukujuen.png": {
+    "kind": "raster",
+    "avg_luminance": 26.8,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "gion-tsujiri.png": {
+    "kind": "raster",
+    "avg_luminance": 255.0,
+    "near_white_frac": 1.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "golde.svg": {
+    "kind": "svg",
+    "fills": [
+      "#312113"
+    ]
+  },
+  "green-foods.png": {
+    "kind": "raster",
+    "avg_luminance": 192.9,
+    "near_white_frac": 0.52,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "greenergy-matcha.png": {
+    "kind": "raster",
+    "avg_luminance": 94.7,
+    "near_white_frac": 0.02,
+    "near_black_frac": 0.36,
+    "mostly_opaque_no_alpha": false
+  },
+  "grin-mood.png": {
+    "kind": "raster",
+    "avg_luminance": 232.9,
+    "near_white_frac": 0.87,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": true
+  },
+  "harney-and-sons.png": {
+    "kind": "raster",
+    "avg_luminance": 61.6,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.64,
+    "mostly_opaque_no_alpha": false
+  },
+  "heapwell.png": {
+    "kind": "raster",
+    "avg_luminance": 249.4,
+    "near_white_frac": 0.91,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "hekisuien.png": {
+    "kind": "raster",
+    "avg_luminance": 255.0,
+    "near_white_frac": 1.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "horii-shichimeien.png": {
+    "kind": "raster",
+    "avg_luminance": 50.6,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "hoshino-seichaen.png": {
+    "kind": "raster",
+    "avg_luminance": 0.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "ikkyu.png": {
+    "kind": "raster",
+    "avg_luminance": 68.4,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.1,
+    "mostly_opaque_no_alpha": false
+  },
+  "ippodo.svg": {
+    "kind": "svg",
+    "fills": [
+      "#000000"
+    ]
+  },
+  "ito-en.png": {
+    "kind": "raster",
+    "avg_luminance": 67.9,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.59,
+    "mostly_opaque_no_alpha": false
+  },
+  "itoh-kyuemon.png": {
+    "kind": "raster",
+    "avg_luminance": 28.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.54,
+    "mostly_opaque_no_alpha": false
+  },
+  "jade-leaf-matcha.svg": {
+    "kind": "svg",
+    "fills": [
+      "#00b28b",
+      "#00665e"
+    ]
+  },
+  "jing-tea.svg": {
+    "kind": "svg",
+    "fills": [
+      "#1a1a1a"
+    ]
+  },
+  "kanbayashi-shunsho.png": {
+    "kind": "raster",
+    "avg_luminance": 19.1,
+    "near_white_frac": 0.04,
+    "near_black_frac": 0.89,
+    "mostly_opaque_no_alpha": true
+  },
+  "kenko-tea.png": {
+    "kind": "raster",
+    "avg_luminance": 223.7,
+    "near_white_frac": 0.68,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": true
+  },
+  "kettl.svg": {
+    "kind": "svg",
+    "fills": [
+      "#1a1a1a",
+      "#dd6444"
+    ]
+  },
+  "kirkland-signature.svg": {
+    "kind": "svg",
+    "fills": [
+      "#231f20",
+      "#fff",
+      "#ef2e31"
+    ]
+  },
+  "kiss-me-organics.png": {
+    "kind": "raster",
+    "avg_luminance": 244.3,
+    "near_white_frac": 0.91,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "kusmi-tea.svg": {
+    "kind": "svg",
+    "fills": [
+      "#303030",
+      "white"
+    ]
+  },
+  "kyoto-dew.png": {
+    "kind": "raster",
+    "avg_luminance": 154.5,
+    "near_white_frac": 0.06,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "legion.png": {
+    "kind": "raster",
+    "avg_luminance": 107.8,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.02,
+    "mostly_opaque_no_alpha": false
+  },
+  "leopard.png": {
+    "kind": "raster",
+    "avg_luminance": 0.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "maeda-en.png": {
+    "kind": "raster",
+    "avg_luminance": 65.4,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.71,
+    "mostly_opaque_no_alpha": false
+  },
+  "mantra-matcha.png": {
+    "kind": "raster",
+    "avg_luminance": 139.8,
+    "near_white_frac": 0.24,
+    "near_black_frac": 0.23,
+    "mostly_opaque_no_alpha": false
+  },
+  "marukyu-koyamaen.jpg": {
+    "kind": "raster",
+    "avg_luminance": 196.3,
+    "near_white_frac": 0.71,
+    "near_black_frac": 0.19,
+    "mostly_opaque_no_alpha": true
+  },
+  "matcha-com.png": {
+    "kind": "raster",
+    "avg_luminance": 242.4,
+    "near_white_frac": 0.89,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": true
+  },
+  "matcha-konomi.png": {
+    "kind": "raster",
+    "avg_luminance": 96.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "matcha-moon.png": {
+    "kind": "raster",
+    "avg_luminance": 142.6,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "matcha-nude.svg": {
+    "kind": "svg",
+    "fills": [
+      "#73a14f",
+      "#fff"
+    ]
+  },
+  "matcha-outlet.jpg": {
+    "kind": "raster",
+    "avg_luminance": 215.1,
+    "near_white_frac": 0.76,
+    "near_black_frac": 0.12,
+    "mostly_opaque_no_alpha": true
+  },
+  "matchabar.png": {
+    "kind": "raster",
+    "avg_luminance": 157.8,
+    "near_white_frac": 0.26,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "matchadna.svg": {
+    "kind": "svg",
+    "fills": [
+      "#1c7c33"
+    ]
+  },
+  "matchaeologist.png": {
+    "kind": "raster",
+    "avg_luminance": 0.4,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "matchaful.png": {
+    "kind": "raster",
+    "avg_luminance": 38.7,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "midori-spring.png": {
+    "kind": "raster",
+    "avg_luminance": 88.1,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "mighty-leaf.jpg": {
+    "kind": "raster",
+    "avg_luminance": 223.5,
+    "near_white_frac": 0.74,
+    "near_black_frac": 0.07,
+    "mostly_opaque_no_alpha": true
+  },
+  "mizuba-tea-co.png": {
+    "kind": "raster",
+    "avg_luminance": 32.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "morihan.png": {
+    "kind": "raster",
+    "avg_luminance": 31.5,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.7,
+    "mostly_opaque_no_alpha": false
+  },
+  "my-matcha-life.jpg": {
+    "kind": "raster",
+    "avg_luminance": 232.2,
+    "near_white_frac": 0.74,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": true
+  },
+  "nakamura-tokichi.svg": {
+    "kind": "svg",
+    "fills": [
+      "#1c1c1b"
+    ]
+  },
+  "naoki-matcha.png": {
+    "kind": "raster",
+    "avg_luminance": 255.0,
+    "near_white_frac": 1.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "navitas-organics.png": {
+    "kind": "raster",
+    "avg_luminance": 98.6,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "nio-teas.png": {
+    "kind": "raster",
+    "avg_luminance": 27.4,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "numi-organic-tea.svg": {
+    "kind": "svg",
+    "fills": [
+      "#f7f5f0",
+      "white",
+      "#393839"
+    ]
+  },
+  "obubu-tea-farms.jpg": {
+    "kind": "raster",
+    "avg_luminance": 215.0,
+    "near_white_frac": 0.75,
+    "near_black_frac": 0.08,
+    "mostly_opaque_no_alpha": true
+  },
+  "ocha-and-co.png": {
+    "kind": "raster",
+    "avg_luminance": 71.9,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.04,
+    "mostly_opaque_no_alpha": false
+  },
+  "ooika.webp": {
+    "kind": "raster",
+    "avg_luminance": 0.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "palais-des-thes.svg": {
+    "kind": "svg",
+    "fills": [
+      "white"
+    ]
+  },
+  "paragon-tea-room.png": {
+    "kind": "raster",
+    "avg_luminance": 145.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "pique-tea.png": {
+    "kind": "raster",
+    "avg_luminance": 20.3,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "rocky-s.png": {
+    "kind": "raster",
+    "avg_luminance": 42.9,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "rya.svg": {
+    "kind": "svg",
+    "fills": [
+      "#ff5900",
+      "white"
+    ]
+  },
+  "sazen-tea.ico": {
+    "kind": "raster",
+    "avg_luminance": 164.9,
+    "near_white_frac": 0.01,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "sencha-naturals.png": {
+    "kind": "raster",
+    "avg_luminance": 123.5,
+    "near_white_frac": 0.13,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "shogyokuen.png": {
+    "kind": "raster",
+    "avg_luminance": 154.7,
+    "near_white_frac": 0.46,
+    "near_black_frac": 0.33,
+    "mostly_opaque_no_alpha": false
+  },
+  "steven-smith-teamaker.svg": {
+    "kind": "svg",
+    "fills": [
+      "#212121",
+      "white"
+    ]
+  },
+  "takaokaya.png": {
+    "kind": "raster",
+    "avg_luminance": 77.4,
+    "near_white_frac": 0.13,
+    "near_black_frac": 0.61,
+    "mostly_opaque_no_alpha": false
+  },
+  "teadealers.jpg": {
+    "kind": "raster",
+    "avg_luminance": 213.5,
+    "near_white_frac": 0.77,
+    "near_black_frac": 0.1,
+    "mostly_opaque_no_alpha": true
+  },
+  "teapigs.png": {
+    "kind": "raster",
+    "avg_luminance": 39.0,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "tenzo-tea.png": {
+    "kind": "raster",
+    "avg_luminance": 46.1,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "tezumi.png": {
+    "kind": "raster",
+    "avg_luminance": 90.4,
+    "near_white_frac": 0.17,
+    "near_black_frac": 0.33,
+    "mostly_opaque_no_alpha": false
+  },
+  "the-republic-of-tea.png": {
+    "kind": "raster",
+    "avg_luminance": 0.4,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "the-tao-of-tea.png": {
+    "kind": "raster",
+    "avg_luminance": 122.1,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "the-tea-spot.png": {
+    "kind": "raster",
+    "avg_luminance": 26.8,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "tokyo-tea-trading.svg": {
+    "kind": "svg",
+    "fills": [
+      "#040000"
+    ]
+  },
+  "trader-joe-s.svg": {
+    "kind": "svg",
+    "fills": [
+      "#d21242"
+    ]
+  },
+  "tsujiki.png": {
+    "kind": "raster",
+    "avg_luminance": 255.0,
+    "near_white_frac": 1.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "tsuki-matcha.png": {
+    "kind": "raster",
+    "avg_luminance": 255.0,
+    "near_white_frac": 1.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "ujido.png": {
+    "kind": "raster",
+    "avg_luminance": 56.8,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "ujinotsuyu.png": {
+    "kind": "raster",
+    "avg_luminance": 52.3,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "vahdam.png": {
+    "kind": "raster",
+    "avg_luminance": 64.3,
+    "near_white_frac": 0.0,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": false
+  },
+  "yamamasa-koyamaen.svg": {
+    "kind": "svg",
+    "fills": []
+  },
+  "yamamotoyama.jpg": {
+    "kind": "raster",
+    "avg_luminance": 80.7,
+    "near_white_frac": 0.08,
+    "near_black_frac": 0.0,
+    "mostly_opaque_no_alpha": true
+  },
+  "zenkyu.png": {
+    "kind": "raster",
+    "avg_luminance": 26.9,
+    "near_white_frac": 0.0,
+    "near_black_frac": 1.0,
+    "mostly_opaque_no_alpha": false
+  }
+}

@@ -22,3 +22,21 @@ export function getBrandLogoPath(brandName: string): string | null {
   const filename = manifest[slugify(brandName)];
   return filename ? `/logos/${filename}` : null;
 }
+
+// A handful of the real logos are white-on-transparent (Hekisuien, Gion
+// Tsujiri, Naoki Matcha, Tsujiki, Tsuki Matcha) or white-only-fill SVG
+// (Palais des Thés) -- confirmed by sampling opaque pixel color across all
+// 93 files, not a guess. Those need a dark backdrop instead of the default
+// white chip, or the mark is invisible against it.
+const NEEDS_DARK_BACKDROP = new Set([
+  "hekisuien",
+  "gion-tsujiri",
+  "naoki-matcha",
+  "tsujiki",
+  "tsuki-matcha",
+  "palais-des-thes",
+]);
+
+export function logoNeedsDarkBackdrop(brandName: string): boolean {
+  return NEEDS_DARK_BACKDROP.has(slugify(brandName));
+}
