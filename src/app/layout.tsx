@@ -78,9 +78,16 @@ export default function RootLayout({
         </header>
         {children}
         <footer className="border-t border-line bg-paper-raised mt-auto">
-          <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-ink-faint">
-            <span>MatchaDB &mdash; sourcing, pricing, and transparency data pulled directly from brand product pages.</span>
-            <span className="font-mono">Research build</span>
+          <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-3 text-xs text-ink-faint">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <span>MatchaDB &mdash; sourcing, pricing, and transparency data pulled directly from brand product pages.</span>
+              <span className="font-mono">Research build</span>
+            </div>
+            <p className="text-center sm:text-left text-[0.7rem] text-ink-faint/80 border-t border-line pt-3">
+              Brand names, logos, and trademarks shown belong to their respective owners and are used solely to identify
+              and link to each brand&apos;s own products. MatchaDB is an independent research project, is not affiliated
+              with, sponsored by, or endorsed by any brand listed here, and does not endorse any brand or product.
+            </p>
           </div>
         </footer>
       </body>

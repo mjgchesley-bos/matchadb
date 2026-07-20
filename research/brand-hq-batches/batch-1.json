@@ -1,0 +1,302 @@
+{
+  "365": [
+    {
+      "product": "Organic Powdered Matcha (Whole Leaf Green Tea)",
+      "region": null,
+      "sourceUrl": "https://www.wholefoodsmarket.com/grocery/product/365-by-whole-foods-market-organic-powdered-matcha-finely-ground-whole-leaf-green-tea-5-ounce-b07ylbfqj9"
+    }
+  ],
+  "Aiya": [
+    {
+      "product": "Ceremonial Matcha",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/ceremonial-matcha-30g-tin/"
+    },
+    {
+      "product": "Ceremonial Matcha 100g",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/ceremonial-matcha-100g-bag/"
+    },
+    {
+      "product": "Culinary Grade Matcha",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/culinary-grade-matcha-100g-bag/"
+    },
+    {
+      "product": "Matcha To Go Sticks",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/matcha-to-go-sticks/"
+    },
+    {
+      "product": "Organic Ceremonial Matcha",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/organic-ceremonial-matcha-30g-tin/"
+    },
+    {
+      "product": "Organic Ceremonial Matcha 100g",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/organic-ceremonial-matcha-100g-bag/"
+    },
+    {
+      "product": "Organic Culinary Grade Matcha",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/organic-culinary-grade-matcha-50g-bag/"
+    },
+    {
+      "product": "Sugar Free Sweetened Matcha To Go Sticks",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/sugar-free-sweetened-matcha-to-go-sticks/"
+    },
+    {
+      "product": "Sweetened Matcha Blend",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/sweetened-matcha-blend-1kg-bag/"
+    },
+    {
+      "product": "Sweetened Matcha Latte Pods",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/sweetened-matcha-latte-pods/"
+    },
+    {
+      "product": "Sweetened Matcha To Go Sticks",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/sweetened-matcha-to-go-sticks/"
+    },
+    {
+      "product": "Sweetened Roasted Matcha To Go Sticks",
+      "region": null,
+      "sourceUrl": "https://aiya-america.com/sweetened-roasted-matcha-to-go-sticks/"
+    }
+  ],
+  "Aoya": [
+    {
+      "product": "Ceremonial",
+      "region": null,
+      "sourceUrl": null
+    }
+  ],
+  "Blue Bottle": [
+    {
+      "product": "Craft Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://bluebottlecoffee.com/us/eng/product/craft-matcha"
+    }
+  ],
+  "Blue Willow Tea": [
+    {
+      "product": "Ceremonial Matcha Harukasumi (Spring Cloud)",
+      "region": "Uji",
+      "sourceUrl": "https://bluewillowtea.com/collections/matcha/products/ceremonial-matcha-harukasumi-spring-cloud"
+    },
+    {
+      "product": "Ceremonial Matcha Tsubokiri (Koicha Grade)",
+      "region": "Uji",
+      "sourceUrl": "https://bluewillowtea.com/collections/matcha/products/ceremonial-matcha-tsubokiri-koicha-grade"
+    },
+    {
+      "product": "Culinary Grade Matcha Powder",
+      "region": "Uji",
+      "sourceUrl": "https://bluewillowtea.com/collections/matcha/products/culinary-grade-matcha-powder"
+    },
+    {
+      "product": "Forest Dew Ceremonial Latte Matcha Powder",
+      "region": "Kagoshima",
+      "sourceUrl": "https://bluewillowtea.com/collections/matcha/products/forest-dew-ceremonial-latte-matcha"
+    },
+    {
+      "product": "Kinrin Stone-Ground Ceremonial Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://bluewillowtea.com/collections/matcha/products/kinrin-ceremonial-matcha"
+    },
+    {
+      "product": "Shohaku Stone-Ground Ceremonial Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://bluewillowtea.com/collections/matcha/products/shohaku-stone-ground-ceremonial-matcha"
+    },
+    {
+      "product": "Wazuka Uji Jade Stone-Ground Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://bluewillowtea.com/collections/matcha/products/wazuka-uji-jade-matcha"
+    }
+  ],
+  "Breakaway Matcha": [
+    {
+      "product": "Blend 93 Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-93"
+    },
+    {
+      "product": "Blend 94 Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-94"
+    },
+    {
+      "product": "Blend 95 Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-95"
+    },
+    {
+      "product": "Blend 97 Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-97"
+    },
+    {
+      "product": "Blend 98 Matcha",
+      "region": "Kyoto",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-98"
+    },
+    {
+      "product": "Blend Daphne Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-daphne"
+    },
+    {
+      "product": "Blend Hikari Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-hikari"
+    },
+    {
+      "product": "Blend Jizo Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-jizo"
+    },
+    {
+      "product": "Blend Kamakura Matcha",
+      "region": "Kyoto",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-kamakura"
+    },
+    {
+      "product": "Blend Rikyu Matcha",
+      "region": "Kyoto",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-rikyu"
+    },
+    {
+      "product": "Blend Satoshi Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://breakawaymatcha.com/products/blend-satoshi"
+    },
+    {
+      "product": "Coldbrew Organic Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/coldbrew-organic"
+    },
+    {
+      "product": "Coldbrew Original Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/coldbrew-original"
+    },
+    {
+      "product": "Coldbrew Reserve Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/coldbrew-reserve"
+    },
+    {
+      "product": "Culinary Organic Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/culinary-organic"
+    },
+    {
+      "product": "Culinary Original Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/culinary-original"
+    },
+    {
+      "product": "Culinary Reserve Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://breakawaymatcha.com/products/culinary-reserve"
+    },
+    {
+      "product": "Hyperpremium Organic",
+      "region": "Kagoshima",
+      "sourceUrl": "https://breakawaymatcha.com/products/hyperpremium-organic"
+    }
+  ],
+  "CAP Beauty": [
+    {
+      "product": "The Big Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.capbeauty.com/products/the-big-matcha"
+    },
+    {
+      "product": "The Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.capbeauty.com/products/the-matcha"
+    },
+    {
+      "product": "The Matcha Stick",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.capbeauty.com/products/the-neat-matcha-stick"
+    }
+  ],
+  "Cha Cha Matcha": [
+    {
+      "product": "Asahi",
+      "region": "Uji",
+      "sourceUrl": "https://chachamatcha.com/products/cha-cha-ceremonial-grade-matcha"
+    },
+    {
+      "product": "Gokou",
+      "region": "Uji",
+      "sourceUrl": "https://chachamatcha.com/products/gokuo-blend-matcha"
+    },
+    {
+      "product": "Hojicha",
+      "region": "Uji",
+      "sourceUrl": "https://chachamatcha.com/products/hojicha"
+    },
+    {
+      "product": "Signature Blend",
+      "region": "Uji",
+      "sourceUrl": "https://chachamatcha.com/products/imperial-blend-matcha"
+    },
+    {
+      "product": "Somidori",
+      "region": "Uji",
+      "sourceUrl": "https://chachamatcha.com/products/somidori"
+    }
+  ],
+  "Chalait": [
+    {
+      "product": "Everyday Ceremonial Grade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.chalait.com/products/everyday-ceremonial-grade-matcha"
+    },
+    {
+      "product": "Limited Release Ceremonial Grade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.chalait.com/products/ceremonial-matcha-reserve-grade"
+    },
+    {
+      "product": "Organic Ceremonial Grade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.chalait.com/products/organic-ceremonial-grade-matcha"
+    },
+    {
+      "product": "Top Ceremonial Grade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.chalait.com/products/top-ceremonial-grade-matcha"
+    }
+  ],
+  "Chamberlain Coffee": [
+    {
+      "product": "Ceremonial Coconut Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://chamberlaincoffee.com/products/coconut-matcha"
+    },
+    {
+      "product": "Ceremonial Honey Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://chamberlaincoffee.com/products/honey-matcha"
+    },
+    {
+      "product": "Ceremonial Vanilla Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://chamberlaincoffee.com/products/vanilla-matcha-green-tea-powder"
+    },
+    {
+      "product": "Organic Ceremonial Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://chamberlaincoffee.com/products/matcha-green-tea-powder"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import { getStats, getProducts, getFilterOptions, getTieredPicks, type BrowseFil
 import { toArr } from "@/lib/searchParams";
 import { ProductCard, TieredPickCard } from "@/components/product-cards";
 import { MatchTool } from "@/components/MatchTool";
+import { getBrandLogoPath } from "@/lib/logos";
 
 // Abbreviated relative to /browse's full result set + pagination -- the home
 // page shows a sample plus a link to the full database rather than paging.
@@ -173,12 +174,38 @@ export default async function Home({
         <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
           Home to the names serious matcha drinkers know
         </h2>
-        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
-          {featuredBrands.map((b) => (
-            <span key={b} className="text-lg text-ink-muted">
-              {b}
-            </span>
-          ))}
+        <div className="flex flex-wrap justify-center gap-4">
+          {featuredBrands.map((b) => {
+            const logoSrc = getBrandLogoPath(b);
+            return (
+              <Link
+                key={b}
+                href={`/brands/${encodeURIComponent(b)}`}
+                className="group flex flex-col items-center gap-2.5 w-28 p-3 rounded-sm border border-transparent hover:border-line transition-colors"
+              >
+                {logoSrc ? (
+                  <span className="inline-flex items-center justify-center rounded-sm bg-white overflow-hidden border border-line-strong/40 w-16 h-16 transition-transform group-hover:-translate-y-0.5">
+                    <Image
+                      src={logoSrc}
+                      alt={`${b} logo`}
+                      width={64}
+                      height={64}
+                      className="object-contain p-2"
+                      style={{ width: "100%", height: "100%" }}
+                      unoptimized
+                    />
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center justify-center rounded-sm bg-paper-raised border border-line w-16 h-16 text-ink-faint text-xs">
+                    {b.slice(0, 2).toUpperCase()}
+                  </span>
+                )}
+                <span className="text-sm text-ink-muted text-center leading-snug group-hover:text-ink transition-colors">
+                  {b}
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </section>
     </main>

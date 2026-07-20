@@ -1,0 +1,402 @@
+{
+  "Matcha Nude": [
+    {
+      "product": "First Whisk Organic Matcha",
+      "region": null,
+      "sourceUrl": "https://matchanude.com/products/first-whisk-50g"
+    },
+    {
+      "product": "Premium Organic Matcha",
+      "region": null,
+      "sourceUrl": "https://matchanude.com/products/premium-50g"
+    }
+  ],
+  "Matcha Outlet": [
+    {
+      "product": "Japanese Private Reserve D25",
+      "region": "Shizuoka",
+      "sourceUrl": "https://matchaoutlet.com/products/private-reserve-matcha-d25"
+    },
+    {
+      "product": "Japanese Ryori Matcha",
+      "region": null,
+      "sourceUrl": "https://matchaoutlet.com/products/japanese-ryori-matcha-culinary-grade-1"
+    },
+    {
+      "product": "Organic Starter Matcha",
+      "region": "China",
+      "sourceUrl": "https://matchaoutlet.com/products/starter-matcha"
+    },
+    {
+      "product": "Private Reserve Matcha A23",
+      "region": null,
+      "sourceUrl": "https://matchaoutlet.com/products/best-matcha-powder"
+    },
+    {
+      "product": "Private Reserve Matcha B30",
+      "region": null,
+      "sourceUrl": "https://matchaoutlet.com/products/private-reserve-matcha-b30"
+    },
+    {
+      "product": "Sweet Japanese Matcha Green Tea Latte",
+      "region": "Uji",
+      "sourceUrl": "https://matchaoutlet.com/products/sweet-japanese-matcha-green-tea-latte"
+    }
+  ],
+  "Matcha.com": [
+    {
+      "product": "Ceremonial Grade Latte Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/ceremonial-grade-latte-matcha"
+    },
+    {
+      "product": "Chocolate Flavored Ceremonial Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-ceremonial-grade-flavored-matcha-chocolate-matcha-vanilla-matcha-mango"
+    },
+    {
+      "product": "Daily Ritual Ceremonial",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/daily-ritual"
+    },
+    {
+      "product": "First Harvest",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/first-harvest"
+    },
+    {
+      "product": "Japanese Ceremonial Organic",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/japanese-ceremonial-organic-usda"
+    },
+    {
+      "product": "Mango Flavored Ceremonial Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-ceremonial-grade-flavored-matcha-chocolate-matcha-vanilla-matcha-mango"
+    },
+    {
+      "product": "Matcha Morning Roast",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/matcha-morning-roast"
+    },
+    {
+      "product": "Mighty Mushroom Matcha Latte",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/mighty-mushroom-matcha-latte"
+    },
+    {
+      "product": "Organic Chef's Choice",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-chefs-choice"
+    },
+    {
+      "product": "Organic Decaf Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-decaf-matcha"
+    },
+    {
+      "product": "Organic Matcha Latte Adaptogen & Superfood Blend",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-matcha-latte-adaptogen-superfood-blend"
+    },
+    {
+      "product": "Organic Matcha Masala Chai",
+      "region": null,
+      "sourceUrl": "https://matcha.com/products/organic-matcha-masala-chai"
+    },
+    {
+      "product": "Organic Single Estate",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-single-estate"
+    },
+    {
+      "product": "Organic Superior",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-superior"
+    },
+    {
+      "product": "Original Ceremonial Grade",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/ceremonial-grade"
+    },
+    {
+      "product": "Premium Ceremonial Master's Blend",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/masters-blend"
+    },
+    {
+      "product": "Space Matcha Organic Instant Matcha Cubes",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/space-matcha-organic-matcha-instant-cubes"
+    },
+    {
+      "product": "Summer Reserve",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/summer-reserve"
+    },
+    {
+      "product": "Tenchi Ceremonial Organic",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/tenchi-ceremonial-organic"
+    },
+    {
+      "product": "Vanilla Flavored Ceremonial Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matcha.com/products/organic-ceremonial-grade-flavored-matcha-chocolate-matcha-vanilla-matcha-mango"
+    }
+  ],
+  "MatchaBar": [
+    {
+      "product": "Ceremonial Grade Matcha Powder",
+      "region": "Nishio",
+      "sourceUrl": "https://www.matchabar.co/products/ceremonial-grade-matcha-powder"
+    }
+  ],
+  "MatchaDNA": [
+    {
+      "product": "Milky Coconut Latte Sticks",
+      "region": null,
+      "sourceUrl": "https://www.matchadna.com/products/the-milky-coconut-latte-sticks"
+    },
+    {
+      "product": "Milky Matcha Latte Bag",
+      "region": null,
+      "sourceUrl": "https://www.matchadna.com/products/the-milky-latte-bag"
+    },
+    {
+      "product": "Milky Matcha Latte Sticks",
+      "region": null,
+      "sourceUrl": "https://www.matchadna.com/products/the-milky-latte-sticks"
+    },
+    {
+      "product": "The Bag (Pure Organic Matcha)",
+      "region": null,
+      "sourceUrl": "https://www.matchadna.com/products/matchadna-matcha-green-bag"
+    },
+    {
+      "product": "The Sticks (Original Matcha Sticks)",
+      "region": null,
+      "sourceUrl": "https://www.matchadna.com/products/the-sticks"
+    },
+    {
+      "product": "The Tea Bags",
+      "region": null,
+      "sourceUrl": null
+    },
+    {
+      "product": "The Tin (Pure Organic Matcha)",
+      "region": null,
+      "sourceUrl": "https://www.matchadna.com/products/the-tin"
+    }
+  ],
+  "Matchaeologist": [
+    {
+      "product": "Matsu Ceremonial Matcha",
+      "region": null,
+      "sourceUrl": "https://www.matchaeologist.com/products/matsu-ceremonial-matcha"
+    },
+    {
+      "product": "Maya Ceremonial Matcha",
+      "region": null,
+      "sourceUrl": "https://www.matchaeologist.com/products/maya-ceremonial-matcha-100g"
+    },
+    {
+      "product": "Meiko Ceremonial Matcha",
+      "region": null,
+      "sourceUrl": "https://www.matchaeologist.com/products/meiko-ceremonial-matcha"
+    },
+    {
+      "product": "Midori Culinary Matcha",
+      "region": null,
+      "sourceUrl": "https://www.matchaeologist.com/products/midori-culinary-matcha"
+    },
+    {
+      "product": "Mirai Culinary Matcha",
+      "region": null,
+      "sourceUrl": "https://www.matchaeologist.com/products/mirai-culinary-matcha-1kg"
+    },
+    {
+      "product": "Misaki Ceremonial Matcha",
+      "region": null,
+      "sourceUrl": "https://www.matchaeologist.com/products/misaki-ceremonial-matcha"
+    }
+  ],
+  "Matchaful": [
+    {
+      "product": "Hikari Single Origin Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.matchaful.com/products/hikari-single-origin-matcha-100g"
+    },
+    {
+      "product": "Kiwami Single Cultivar Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.matchaful.com/products/kiwami-single-cultivar-matcha-100g"
+    },
+    {
+      "product": "Tsuyuhikari Limited Reserve Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.matchaful.com/products/tsuyuhikari-limited-reserve-matcha-100g"
+    }
+  ],
+  "Midori Spring": [
+    {
+      "product": "Ceremonial Matcha Emerald (Conventional)",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.midorispring.com/products/conventional-ceremonial-matcha-emerald-100g"
+    },
+    {
+      "product": "Conventional Ceremonial Matcha Gold No. 2",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.midorispring.com/products/conventional-ceremonial-matcha-gold-no-2"
+    },
+    {
+      "product": "GEM Premiere Organic Genmaicha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.midorispring.com/products/gem-premiere-organic-genmaicha-roasted-rice-matcha-blend"
+    },
+    {
+      "product": "Organic Ceremonial Matcha Emerald",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.midorispring.com/products/ceremonial-emerald-class-organic-matcha"
+    },
+    {
+      "product": "Organic Ceremonial Matcha Gold",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.midorispring.com/products/ceremonial-gold-class-organic-matcha-green-tea"
+    },
+    {
+      "product": "Organic Culinary Matcha SEN",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.midorispring.com/products/organic-culinary-grade-matcha-eco-class-100-g"
+    },
+    {
+      "product": "REI Cold Brew Matcha (Conventional)",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.midorispring.com/products/rei-cold-brew-matcha-conventional-smooth-creamy"
+    },
+    {
+      "product": "Rare Ceremonial Matcha - Kiyora Ujihikari Limited",
+      "region": "Uji",
+      "sourceUrl": "https://www.midorispring.com/products/ceremonial-kiyora-ujihikari-limited-matcha"
+    },
+    {
+      "product": "Rare Ceremonial Matcha - Miru Limited",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.midorispring.com/products/rare-ceremonial-matcha-miru-limited-30g"
+    }
+  ],
+  "Mighty Leaf": [
+    {
+      "product": "Organic Ceremonial Matcha (Usucha)",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.peets.com/products/organic-ceremonial-matcha-tea"
+    },
+    {
+      "product": "Organic Emerald Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.peets.com/products/organic-emerald-matcha-tea"
+    },
+    {
+      "product": "Organic Genmaicha with Matcha",
+      "region": null,
+      "sourceUrl": null
+    },
+    {
+      "product": "Organic Mint Matcha",
+      "region": null,
+      "sourceUrl": "https://www.peets.com/products/organic-mint-matcha"
+    },
+    {
+      "product": "Organic Spiced Turmeric Matcha",
+      "region": null,
+      "sourceUrl": "https://www.peets.com/products/organic-spiced-turmeric-matcha-tea"
+    }
+  ],
+  "Mizuba Tea Co": [
+    {
+      "product": "Asahi Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mizubatea.com/products/asahi-matcha"
+    },
+    {
+      "product": "Daily Matcha Green Tea",
+      "region": "Uji",
+      "sourceUrl": "https://mizubatea.com/products/daily-matcha"
+    },
+    {
+      "product": "House Organic Matcha Green Tea",
+      "region": null,
+      "sourceUrl": "https://mizubatea.com/products/house-organic-matcha"
+    },
+    {
+      "product": "Kokoro Ceremonial Matcha Green Tea",
+      "region": "Uji",
+      "sourceUrl": "https://mizubatea.com/products/kokoro-matcha"
+    },
+    {
+      "product": "Koshun Matcha Green Tea",
+      "region": "Shizuoka",
+      "sourceUrl": "https://mizubatea.com/products/koshun-matcha-green-tea"
+    },
+    {
+      "product": "Nagomi Organic Matcha Green Tea",
+      "region": "Shizuoka",
+      "sourceUrl": "https://mizubatea.com/products/nagomi-organic-matcha"
+    },
+    {
+      "product": "Okumidori Matcha Green Tea",
+      "region": "Wazuka",
+      "sourceUrl": "https://mizubatea.com/products/okumidori-matcha-green-tea"
+    },
+    {
+      "product": "Organic Signature Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://mizubatea.com/products/culinary-organic-matcha"
+    },
+    {
+      "product": "Samidori Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mizubatea.com/products/samidori-matcha"
+    },
+    {
+      "product": "Shirakawa Ceremonial Matcha Green Tea",
+      "region": "Shirakawa",
+      "sourceUrl": "https://mizubatea.com/products/shirakawa-matcha"
+    },
+    {
+      "product": "Tenryu Matcha Green Tea",
+      "region": "Shizuoka",
+      "sourceUrl": "https://mizubatea.com/products/tenryu-matcha-green-tea"
+    },
+    {
+      "product": "Tsuyuhikari Matcha Green Tea",
+      "region": "Shizuoka",
+      "sourceUrl": "https://mizubatea.com/products/tsuyuhikari-organic-matcha-green-tea"
+    },
+    {
+      "product": "Uji Hikari Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mizubatea.com/products/uji-hikari-matcha"
+    },
+    {
+      "product": "Yama Matcha Green Tea",
+      "region": "Shizuoka",
+      "sourceUrl": "https://mizubatea.com/products/yama-matcha-green-tea"
+    },
+    {
+      "product": "Yame Signature Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://mizubatea.com/products/yame-signature-matcha"
+    },
+    {
+      "product": "Yorokobi Organic Matcha Green Tea",
+      "region": "Uji",
+      "sourceUrl": "https://mizubatea.com/products/yorokobi-ceremonial-organic-matcha"
+    },
+    {
+      "product": "Yugana Matcha Green Tea",
+      "region": "Uji",
+      "sourceUrl": "https://mizubatea.com/products/yugana-matcha-green-tea"
+    }
+  ]
+}

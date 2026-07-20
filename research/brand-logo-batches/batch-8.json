@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Palais des Thés",
+    "slug": "palais-des-thes",
+    "domain": "https://us.palaisdesthes.com"
+  },
+  {
+    "brand": "Paragon Tea Room",
+    "slug": "paragon-tea-room",
+    "domain": "https://paragontearoom.com"
+  },
+  {
+    "brand": "Pique Tea",
+    "slug": "pique-tea",
+    "domain": "https://www.piquelife.com"
+  },
+  {
+    "brand": "Rishi Tea",
+    "slug": "rishi-tea",
+    "domain": "https://www.rishi-tea.com"
+  },
+  {
+    "brand": "Rocky's",
+    "slug": "rocky-s",
+    "domain": "https://www.rockysmatcha.com"
+  },
+  {
+    "brand": "Rya",
+    "slug": "rya",
+    "domain": "https://ujichamatcha.com"
+  },
+  {
+    "brand": "Sazen Tea",
+    "slug": "sazen-tea",
+    "domain": "https://www.sazentea.com"
+  },
+  {
+    "brand": "Sencha Naturals",
+    "slug": "sencha-naturals",
+    "domain": "https://senchanaturals.com"
+  },
+  {
+    "brand": "Shogyokuen",
+    "slug": "shogyokuen",
+    "domain": "https://kettl.co"
+  },
+  {
+    "brand": "Steven Smith Teamaker",
+    "slug": "steven-smith-teamaker",
+    "domain": "https://www.smithtea.com"
+  }
+]

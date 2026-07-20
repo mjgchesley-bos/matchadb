@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Morihan",
+    "slug": "morihan",
+    "domain": "https://tea-and-coffee.shop"
+  },
+  {
+    "brand": "My Matcha Life",
+    "slug": "my-matcha-life",
+    "domain": "https://shop.mymatchalife.com"
+  },
+  {
+    "brand": "Nakamura Tokichi",
+    "slug": "nakamura-tokichi",
+    "domain": "https://global.tokichi.jp"
+  },
+  {
+    "brand": "Naoki Matcha",
+    "slug": "naoki-matcha",
+    "domain": "https://naokimatcha.com"
+  },
+  {
+    "brand": "Navitas Organics",
+    "slug": "navitas-organics",
+    "domain": "https://navitasorganics.com"
+  },
+  {
+    "brand": "Nio Teas",
+    "slug": "nio-teas",
+    "domain": "https://nioteas.com"
+  },
+  {
+    "brand": "Numi Organic Tea",
+    "slug": "numi-organic-tea",
+    "domain": "https://numitea.com"
+  },
+  {
+    "brand": "Obubu Tea Farms",
+    "slug": "obubu-tea-farms",
+    "domain": "https://obubutea.com"
+  },
+  {
+    "brand": "Ocha & Co.",
+    "slug": "ocha-and-co",
+    "domain": "https://www.ochaandco.com"
+  },
+  {
+    "brand": "Ooika",
+    "slug": "ooika",
+    "domain": "https://ooika.co"
+  }
+]

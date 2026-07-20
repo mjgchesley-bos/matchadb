@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "365",
+    "slug": "365",
+    "domain": "https://www.wholefoodsmarket.com"
+  },
+  {
+    "brand": "Aiya",
+    "slug": "aiya",
+    "domain": "https://aiya-america.com"
+  },
+  {
+    "brand": "Aoya",
+    "slug": "aoya",
+    "domain": null
+  },
+  {
+    "brand": "Blue Bottle",
+    "slug": "blue-bottle",
+    "domain": "https://bluebottlecoffee.com"
+  },
+  {
+    "brand": "Blue Willow Tea",
+    "slug": "blue-willow-tea",
+    "domain": "https://bluewillowtea.com"
+  },
+  {
+    "brand": "Breakaway Matcha",
+    "slug": "breakaway-matcha",
+    "domain": "https://breakawaymatcha.com"
+  },
+  {
+    "brand": "CAP Beauty",
+    "slug": "cap-beauty",
+    "domain": "https://www.capbeauty.com"
+  },
+  {
+    "brand": "Cha Cha Matcha",
+    "slug": "cha-cha-matcha",
+    "domain": "https://chachamatcha.com"
+  },
+  {
+    "brand": "Chalait",
+    "slug": "chalait",
+    "domain": "https://www.chalait.com"
+  },
+  {
+    "brand": "Chamberlain Coffee",
+    "slug": "chamberlain-coffee",
+    "domain": "https://chamberlaincoffee.com"
+  }
+]

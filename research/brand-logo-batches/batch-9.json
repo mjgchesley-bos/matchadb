@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Takaokaya",
+    "slug": "takaokaya",
+    "domain": "https://www.takaokayausa.com"
+  },
+  {
+    "brand": "TeaDealers",
+    "slug": "teadealers",
+    "domain": "https://www.teadealers.com"
+  },
+  {
+    "brand": "Teapigs",
+    "slug": "teapigs",
+    "domain": "https://teapigs.com"
+  },
+  {
+    "brand": "Tenzo Tea",
+    "slug": "tenzo-tea",
+    "domain": "https://tenzotea.co"
+  },
+  {
+    "brand": "Tezumi",
+    "slug": "tezumi",
+    "domain": "https://tezumi.com"
+  },
+  {
+    "brand": "The Republic of Tea",
+    "slug": "the-republic-of-tea",
+    "domain": "https://www.republicoftea.com"
+  },
+  {
+    "brand": "The Tao of Tea",
+    "slug": "the-tao-of-tea",
+    "domain": "https://taooftea.com"
+  },
+  {
+    "brand": "The Tea Spot",
+    "slug": "the-tea-spot",
+    "domain": "https://theteaspot.com"
+  },
+  {
+    "brand": "Tokyo Tea Trading",
+    "slug": "tokyo-tea-trading",
+    "domain": "https://shopping.tokyoteatrading.com"
+  },
+  {
+    "brand": "Trader Joe's",
+    "slug": "trader-joe-s",
+    "domain": "https://www.traderjoes.com"
+  }
+]

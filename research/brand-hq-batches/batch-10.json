@@ -1,0 +1,242 @@
+{
+  "Tradition": [
+    {
+      "product": "Japanese Ceremonial Matcha Powder",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.goodyoung.info/en/product/tradition-japanesematchapowder/"
+    },
+    {
+      "product": "Pure Green Tea Powder / Matcha Tea Powder",
+      "region": "Taiwan",
+      "sourceUrl": "https://www.amazon.com/Tradition-Powder-Matcha-Product-Taiwan/dp/B001T5GHUM"
+    }
+  ],
+  "Tsujiki": [
+    {
+      "product": "Asahi SC",
+      "region": "Uji",
+      "sourceUrl": "https://yunomi.life/products/heritage-grade-uji-matcha-asahi-single-cultivar-by-master-kyoto-tea-farmer-tsuji-kiyoharu"
+    },
+    {
+      "product": "Samidori SC",
+      "region": "Uji",
+      "sourceUrl": "https://yunomi.life/products/heritage-grade-uji-matcha-samidori-single-cultivar-by-master-kyoto-tea-farmer-tsuji-kiyoharu"
+    },
+    {
+      "product": "Uji Hikari SC",
+      "region": "Uji",
+      "sourceUrl": "https://yunomi.life/products/modern-heritage-grade-uji-matcha-uji-hikari-single-cultivar-by-master-kyoto-tea-farmer-tsuji-kiyoharu-20g"
+    }
+  ],
+  "Tsuki Matcha": [
+    {
+      "product": "L'Original - Grade Ceremonial",
+      "region": "Shizuoka",
+      "sourceUrl": "https://tsukimatcha.com/en/products/original"
+    },
+    {
+      "product": "Matcha Vanille - Grade Ceremonial",
+      "region": "Kagoshima",
+      "sourceUrl": "https://tsukimatcha.com/en/products/matcha-vanille"
+    }
+  ],
+  "Ujido": [
+    {
+      "product": "Ceremonial Blend Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://ujido.com/products/matcha"
+    },
+    {
+      "product": "Ceremonial Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://ujido.com/products/ceremonial-grade-matcha-30g-1oz-1"
+    },
+    {
+      "product": "Culinary Matcha (Summer Harvest Barista)",
+      "region": "Uji",
+      "sourceUrl": "https://ujido.com/products/matcha-summer-harvest"
+    },
+    {
+      "product": "Premium Ceremonial Grade Matcha",
+      "region": "Kyoto",
+      "sourceUrl": "https://ujido.com/products/premium-ceremonial-grade-matcha-30g-1oz-1"
+    },
+    {
+      "product": "Roasted Matcha (Hojicha Latte)",
+      "region": "Uji",
+      "sourceUrl": "https://ujido.com/products/roasted-matcha-2oz"
+    },
+    {
+      "product": "Sweet Matcha Latte",
+      "region": "Uji",
+      "sourceUrl": "https://ujido.com/products/sweet-matcha-16oz"
+    }
+  ],
+  "Ujinotsuyu": [
+    {
+      "product": "Hagoromo Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.ujinotsuyu.co.jp/english/ujicha"
+    }
+  ],
+  "uVernal": [
+    {
+      "product": "Organic Ceremonial Matcha",
+      "region": "China",
+      "sourceUrl": "https://www.amazon.com/stores/uVernal/Homepage/page/9816C196-B67E-4639-9782-2DECF0E1263E (brand storefront; specific ASIN for this exact ceremonial-labeled tin not independently isolated from the general Organic Matcha Green Tea Powder listing)"
+    },
+    {
+      "product": "Organic Matcha Green Tea Powder",
+      "region": "China",
+      "sourceUrl": "https://www.amazon.com/Organic-Matcha-Green-Tea-Powder/dp/B00KHXESLC"
+    }
+  ],
+  "Vahdam": [
+    {
+      "product": "Pure Matcha Green Tea Powder",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.vahdam.com/products/authentic-japanese-matcha-green-tea-powder-3-53"
+    },
+    {
+      "product": "Turmeric Matcha Green Tea Powder",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.vahdam.com/products/turmeric-matcha-green-tea"
+    },
+    {
+      "product": "Vanilla Matcha Green Tea Powder",
+      "region": null,
+      "sourceUrl": "https://www.vahdam.com/products/vanilla-matcha-green-tea"
+    }
+  ],
+  "Yamamasa Koyamaen": [
+    {
+      "product": "Chajyu no Mukashi",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p816-matcha-chajyu-no-mukashi.html"
+    },
+    {
+      "product": "Hagami no Mukashi",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p850-matcha-hagami-no-mukashi.html"
+    },
+    {
+      "product": "Kaguraden",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p818-matcha-kaguraden.html"
+    },
+    {
+      "product": "Kasuga no Mukashi",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p817-matcha-kasuga-no-mukashi.html"
+    },
+    {
+      "product": "Matsukaze",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p826-matcha-matsukaze.html"
+    },
+    {
+      "product": "Ogurayama",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p823-matcha-ogurayama.html"
+    },
+    {
+      "product": "Otowa no Shiro",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p831-matcha-otowa-no-shiro.html"
+    },
+    {
+      "product": "Samidori",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p825-matcha-samidori.html"
+    },
+    {
+      "product": "Seiun",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p819-matcha-seiun.html"
+    },
+    {
+      "product": "Senjin no Mukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p821-matcha-senjin-no-mukashi.html"
+    },
+    {
+      "product": "Shikibu no Mukashi",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p822-matcha-shikibu-no-mukashi.html"
+    },
+    {
+      "product": "Suimei no Mukashi",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p830-matcha-suimei-no-mukashi.html"
+    },
+    {
+      "product": "Tennouzan",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p820-matcha-tennouzan.html"
+    },
+    {
+      "product": "Yomo no Kaori",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p824-matcha-yomo-no-kaori.html"
+    }
+  ],
+  "Yamamotoyama": [
+    {
+      "product": "Iced Matcha Green Tea Sweetened",
+      "region": null,
+      "sourceUrl": "https://yamamotoyama.com/products/iced-matcha-green-tea-sweetened"
+    },
+    {
+      "product": "Iced Matcha Green Tea Unsweetened",
+      "region": null,
+      "sourceUrl": "https://yamamotoyama.com/products/iced-matcha-green-tea-unsweetened"
+    },
+    {
+      "product": "Matcha Apple Green Tea",
+      "region": null,
+      "sourceUrl": "https://yamamotoyama.com/products/matcha-apple-pyramid-green-tea-bag"
+    },
+    {
+      "product": "Matcha Genmai Green Tea",
+      "region": null,
+      "sourceUrl": "https://yamamotoyama.com/products/matcha-genmai-green-tea-bag"
+    },
+    {
+      "product": "Matcha Sencha Green Tea",
+      "region": null,
+      "sourceUrl": "https://yamamotoyama.com/products/matcha-sencha-green-tea-bag"
+    },
+    {
+      "product": "Organic Matcha Sencha Green Tea",
+      "region": null,
+      "sourceUrl": "https://yamamotoyama.com/products/organic-matcha-sencha-green-tea-bag"
+    }
+  ],
+  "Zenkyu": [
+    {
+      "product": "Nishio Blend - Asahi & Samidori",
+      "region": "Nishio",
+      "sourceUrl": "https://zenkyumatcha.com/products/nishio-blend-asahi-samidori-20g"
+    },
+    {
+      "product": "Signature Blend Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://zenkyumatcha.com/products/zenkyu-signature-blend-matcha"
+    },
+    {
+      "product": "Single Origin - Okumidori",
+      "region": "Nishio",
+      "sourceUrl": "https://zenkyumatcha.com/products/single-origin-okumidori-40g"
+    },
+    {
+      "product": "Single Origin - Samidori",
+      "region": "Nishio",
+      "sourceUrl": "https://zenkyumatcha.com/products/single-origin-samidori-20g"
+    },
+    {
+      "product": "Uji Latte Blend Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://zenkyumatcha.com/products/uji-latte-blend-matcha"
+    }
+  ]
+}

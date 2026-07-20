@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Matcha Nude",
+    "slug": "matcha-nude",
+    "domain": "https://matchanude.com"
+  },
+  {
+    "brand": "Matcha Outlet",
+    "slug": "matcha-outlet",
+    "domain": "https://matchaoutlet.com"
+  },
+  {
+    "brand": "Matcha.com",
+    "slug": "matcha-com",
+    "domain": "https://matcha.com"
+  },
+  {
+    "brand": "MatchaBar",
+    "slug": "matchabar",
+    "domain": "https://www.matchabar.co"
+  },
+  {
+    "brand": "MatchaDNA",
+    "slug": "matchadna",
+    "domain": "https://www.matchadna.com"
+  },
+  {
+    "brand": "Matchaeologist",
+    "slug": "matchaeologist",
+    "domain": "https://www.matchaeologist.com"
+  },
+  {
+    "brand": "Matchaful",
+    "slug": "matchaful",
+    "domain": "https://www.matchaful.com"
+  },
+  {
+    "brand": "Midori Spring",
+    "slug": "midori-spring",
+    "domain": "https://www.midorispring.com"
+  },
+  {
+    "brand": "Mighty Leaf",
+    "slug": "mighty-leaf",
+    "domain": "https://www.peets.com"
+  },
+  {
+    "brand": "Mizuba Tea Co",
+    "slug": "mizuba-tea-co",
+    "domain": "https://mizubatea.com"
+  }
+]

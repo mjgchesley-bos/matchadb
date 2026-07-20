@@ -1,7 +1,37 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ProductRow } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
+import { getBrandLogoPath } from "@/lib/logos";
+
+// A small, fixed-size chip for brand logos. Real logos come in wildly
+// different aspect ratios and background assumptions (dark mark on
+// transparent, light mark on transparent, already-white background) --
+// wrapping every one in the same plain white box with object-contain is the
+// one treatment that reads correctly regardless of which kind a given
+// brand's asset happens to be, without inspecting each of the 93 files by
+// hand.
+function BrandLogo({ brandName, size = 28 }: { brandName: string; size?: number }) {
+  const src = getBrandLogoPath(brandName);
+  if (!src) return null;
+  return (
+    <span
+      className="inline-flex items-center justify-center rounded-sm bg-white shrink-0 overflow-hidden border border-line-strong/40"
+      style={{ width: size, height: size }}
+    >
+      <Image
+        src={src}
+        alt={`${brandName} logo`}
+        width={size}
+        height={size}
+        className="object-contain p-0.5"
+        style={{ width: "100%", height: "100%" }}
+        unoptimized
+      />
+    </span>
+  );
+}
 
 // Checkbox rendered as a toggle pill -- no client JS needed, since browsers
 // natively submit one query param per checked box sharing the same `name`.
@@ -54,7 +84,10 @@ export function ProductCard({ product: p }: { product: ProductRow }) {
   return (
     <div className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised hover:bg-matcha-soft transition-colors flex flex-col gap-1">
       <Link href={`/products/${p.id}`} className="flex flex-col gap-1">
-        <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
+        <span className="flex items-center gap-2">
+          <BrandLogo brandName={p.brand_name} />
+          <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
+        </span>
         <span className="font-medium text-ink leading-snug">{p.product_name}</span>
         {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
         <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
@@ -128,7 +161,10 @@ export function TieredPickCard({ label, product: p }: { label: string; product: 
         <span className="inline-block self-start rounded-full bg-matcha text-paper px-2.5 py-0.5 text-xs font-medium tracking-wide mb-1">
           {label}
         </span>
-        <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
+        <span className="flex items-center gap-2">
+          <BrandLogo brandName={p.brand_name} />
+          <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
+        </span>
         <span className="font-medium text-ink leading-snug">{p.product_name}</span>
         {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
         {price.kind === "resolved" && (

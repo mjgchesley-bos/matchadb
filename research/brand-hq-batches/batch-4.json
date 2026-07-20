@@ -1,0 +1,502 @@
+{
+  "Ikkyu": [
+    {
+      "product": "MIYUKI",
+      "region": "Kagoshima",
+      "sourceUrl": "https://shop.ikkyu-tea.com/products/miyuki"
+    }
+  ],
+  "Ippodo": [
+    {
+      "product": "Ikuyo",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/ikuyo-100"
+    },
+    {
+      "product": "Kan",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/kan-20"
+    },
+    {
+      "product": "Kanza",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/kanza"
+    },
+    {
+      "product": "Kuon",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/kuon-eternity"
+    },
+    {
+      "product": "Matcha To-Go Packets (10 x 2g)",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/matcha-to-go-packets"
+    },
+    {
+      "product": "New Harvest 2026",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/new-harvest-matcha"
+    },
+    {
+      "product": "Sayaka",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/sayaka-no-mukashi"
+    },
+    {
+      "product": "Seiun",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/seiun"
+    },
+    {
+      "product": "Uji-Shimizu",
+      "region": "Uji",
+      "sourceUrl": "https://ippodotea.com/products/uji-shimizu-sticks"
+    },
+    {
+      "product": "Ummon",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/ummon-no-mukashi-40g"
+    },
+    {
+      "product": "Wakaki",
+      "region": "Kyoto",
+      "sourceUrl": "https://ippodotea.com/products/wakaki-20g-box"
+    }
+  ],
+  "Ito En": [
+    {
+      "product": "Matcha Green Tea Sweet Powder Bag",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/matcha-green-tea-sweet-powder-bag-copy"
+    },
+    {
+      "product": "Matcha Love Barista Craft Blend Sweetened Matcha Powder Mix",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/barista-craft-blend-sweetened-powder-mix"
+    },
+    {
+      "product": "Matcha Love Culinary Grade Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/matcha-love-culinary"
+    },
+    {
+      "product": "Matcha Love Organic Ceremonial Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/matcha-love-organic"
+    },
+    {
+      "product": "Matcha Love Single-Serve Unsweetened Matcha Powder Sticks",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/single-serve-unsweetened-sticks"
+    },
+    {
+      "product": "Oi Ocha Green Tea Powder with Matcha",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/green-tea-powder-with-matcha"
+    },
+    {
+      "product": "Oi Ocha Organic Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/green-tea-powder-with-matcha-copy"
+    },
+    {
+      "product": "Sweet Matcha Powder Sticks",
+      "region": null,
+      "sourceUrl": "https://itoen.com/products/ito-en-matcha-green-tea-sweet-powder-sticks"
+    }
+  ],
+  "Itoh Kyuemon": [
+    {
+      "product": "Ajirogi",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/ajirogi-itoh-kyuemon"
+    },
+    {
+      "product": "Hokyu",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/hokyu-itoh-kyuemon"
+    },
+    {
+      "product": "Jukyu",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/jukyu-itoh-kyuemon"
+    },
+    {
+      "product": "Seiju no Mori",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/seiju-no-mori-itoh-kyuemon"
+    },
+    {
+      "product": "Uji Midori",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/uji-midori-itoh-kyuemon"
+    }
+  ],
+  "Jade Leaf Matcha": [
+    {
+      "product": "Cafe Style Sweetened Matcha Latte Mix - Sugar Free",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/cafe-style-matcha-latte-mix-sugar-free"
+    },
+    {
+      "product": "Collagen Matcha Latte Mix - Sweetened (Sugar Free)",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/collagen-matcha-latte-mix-sweetened-sugar-free"
+    },
+    {
+      "product": "Collagen Matcha Latte Mix - Unsweetened",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/collagen-matcha-latte-mix-unsweetened"
+    },
+    {
+      "product": "Organic Cafe Style Sweetened Matcha Latte Mix - Original",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/cafe-style-matcha-latte-mix"
+    },
+    {
+      "product": "Organic Cafe Style Sweetened Matcha Latte Mix - Strawberry",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/organic-cafe-style-sweetened-matcha-latte-mix-strawberry"
+    },
+    {
+      "product": "Organic Cafe Style Sweetened Matcha Latte Mix - Vanilla",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/organic-cafe-style-sweetened-matcha-latte-mix-vanilla"
+    },
+    {
+      "product": "Organic Ceremonial Matcha - Barista Edition",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/organic-barista-edition-ceremonial-matcha"
+    },
+    {
+      "product": "Organic Ceremonial Matcha - Teahouse Edition",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/organic-teahouse-edition-ceremonial-matcha-tins-pouches"
+    },
+    {
+      "product": "Organic Culinary Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.jadeleafmatcha.com/products/organic-culinary-matcha"
+    }
+  ],
+  "Jing Tea": [
+    {
+      "product": "Ceremonial Latte Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://jingtea.com/products/matcha-latte"
+    },
+    {
+      "product": "Organic Matcha Ceremonial Grade",
+      "region": "Kagoshima",
+      "sourceUrl": "https://jingtea.com/products/ceremonial-matcha-loose-tea"
+    }
+  ],
+  "Kanbayashi Shunsho": [
+    {
+      "product": "Koicha Atomukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1591-koicha-atomukashi.html"
+    },
+    {
+      "product": "Koicha Babamukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1592-koicha-babamukashi.html"
+    },
+    {
+      "product": "Koicha Hashitate no Mukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1610-koicha-hashidate-no-mukashi.html"
+    },
+    {
+      "product": "Koicha Hatsumukashi",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1590-koicha-hatsumukashi.html"
+    },
+    {
+      "product": "Koicha Hatsune no Mukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1619-koicha-hatsune-no-mukashi.html"
+    },
+    {
+      "product": "Koicha Hijirimukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1593-koicha-hijirimukashi.html"
+    },
+    {
+      "product": "Koicha Kashin no Mukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1650-koicha-kashin-no-mukashi.html"
+    },
+    {
+      "product": "Koicha Matsukazemukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1596-koicha-matsukazemukashi.html"
+    },
+    {
+      "product": "Koicha Sazumimukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1594-koicha-sazumimukashi.html"
+    },
+    {
+      "product": "Koicha Seitan no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1612-koicha-seitan-no-shiro.html"
+    },
+    {
+      "product": "Koicha Soumei no Mukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1613-koicha-soumei-no-mukashi.html"
+    },
+    {
+      "product": "Koicha Zuihou",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1595-koicha-zuihou.html"
+    },
+    {
+      "product": "Ryo Matcha",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1605-ryo-matcha.html"
+    },
+    {
+      "product": "Usucha Aya no Mori",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1602-usucha-aya-no-mori.html"
+    },
+    {
+      "product": "Usucha Biwa no Shiro",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1600-usucha-biwa-no-shiro.html"
+    },
+    {
+      "product": "Usucha Gokumukashi",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1597-usucha-gokumukashi.html"
+    },
+    {
+      "product": "Usucha Goun no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1647-usucha-goun-no-shiro.html"
+    },
+    {
+      "product": "Usucha Konomi no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1598-usucha-konomi-no-shiro.html"
+    },
+    {
+      "product": "Usucha Kouko no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1615-usucha-kouko-no-shiro.html"
+    },
+    {
+      "product": "Usucha Matsu no Shiro",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1604-usucha-matsu-no-shiro.html"
+    },
+    {
+      "product": "Usucha Mikazuki no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1609-usucha-mikazuki-no-shiro.html"
+    },
+    {
+      "product": "Usucha Momoyo no Mukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1611-usucha-momoyo-no-mukashi.html"
+    },
+    {
+      "product": "Usucha Mozumukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1601-usucha-mozumukashi.html"
+    },
+    {
+      "product": "Usucha Ryo no Kage",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1603-usucha-ryo-no-kage.html"
+    },
+    {
+      "product": "Usucha Sachi no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1618-usucha-sachi-no-shiro.html"
+    },
+    {
+      "product": "Usucha Yuzuriha Mukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1599-usucha-yuzuriha-mukashi.html"
+    }
+  ],
+  "Kenko Tea": [
+    {
+      "product": "Culinary Grade Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://kenkomatcha.com/products/culinary-matcha"
+    },
+    {
+      "product": "Organic Ceremonial Grade Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://kenkomatcha.com/products/organic-matcha-premium-ceremonial-grade-100g-bag"
+    },
+    {
+      "product": "Organic Culinary Grade Matcha",
+      "region": null,
+      "sourceUrl": "https://kenkomatcha.com/products/organic-culinary-grade-matcha-powder-100g-bag"
+    },
+    {
+      "product": "Premium Ceremonial Grade Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://kenkomatcha.com/products/ceremonial-matcha-30g-tin"
+    }
+  ],
+  "Kettl": [
+    {
+      "product": "Fuujun",
+      "region": null,
+      "sourceUrl": "https://kettl.co/products/fuujun-matcha"
+    },
+    {
+      "product": "Fuyou",
+      "region": "Kyoto",
+      "sourceUrl": "https://kettl.co/products/fuyou-matcha"
+    },
+    {
+      "product": "Gokasho Blended",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/gokasho-blended-matcha"
+    },
+    {
+      "product": "Gokasho Organic Saemidori",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/saemidori-matcha-saemidorimo-cha"
+    },
+    {
+      "product": "Gokasho Organic Samidori",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/organic-samidori-matcha-20g-%E6%9C%89%E6%A9%9F%E3%81%95%E3%81%BF%E3%81%A9%E3%82%8A"
+    },
+    {
+      "product": "Gokasho Organic Uji Hikari",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/uji-hikari-matcha"
+    },
+    {
+      "product": "Hanaka",
+      "region": "Yame",
+      "sourceUrl": "https://kettl.co/products/hanaka-matcha"
+    },
+    {
+      "product": "Hibiki",
+      "region": "Yame",
+      "sourceUrl": "https://kettl.co/products/hibiki-matcha"
+    },
+    {
+      "product": "Hukuju",
+      "region": "Yame",
+      "sourceUrl": "https://kettl.co/products/hukuju-matcha"
+    },
+    {
+      "product": "Kasumi",
+      "region": "Kyoto",
+      "sourceUrl": "https://kettl.co/products/kasumi-matcha"
+    },
+    {
+      "product": "Kiyona",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/kiyona-matcha"
+    },
+    {
+      "product": "Kogetsu",
+      "region": "Kyoto",
+      "sourceUrl": "https://kettl.co/products/kogetsu-matcha"
+    },
+    {
+      "product": "Kouya",
+      "region": "Kyoto",
+      "sourceUrl": "https://kettl.co/products/kouya-matcha"
+    },
+    {
+      "product": "Okuju",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/okuju-matcha"
+    },
+    {
+      "product": "Ousui",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/ousui-matcha"
+    },
+    {
+      "product": "Ryokuan",
+      "region": "Shizuoka",
+      "sourceUrl": "https://kettl.co/products/ryokuan-matcha"
+    },
+    {
+      "product": "Satsuma Organic Saemidori",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/satsuma-organic-saemidori-matcha"
+    },
+    {
+      "product": "Seion",
+      "region": "Nishio",
+      "sourceUrl": "https://kettl.co/products/seion-matcha"
+    },
+    {
+      "product": "Shirakawa Asahi",
+      "region": "Shirakawa",
+      "sourceUrl": "https://kettl.co/products/shirakawa-asahi-matcha"
+    },
+    {
+      "product": "Shirakawa Gokou",
+      "region": "Shirakawa",
+      "sourceUrl": "https://kettl.co/products/shirakawa-goukou-matcha"
+    },
+    {
+      "product": "Shirakawa Samidori",
+      "region": "Shirakawa",
+      "sourceUrl": "https://kettl.co/products/shirakawa-samidori-matcha-samidorimo-cha"
+    },
+    {
+      "product": "Shunka",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/shunka-matcha"
+    },
+    {
+      "product": "Soukou",
+      "region": "Yame",
+      "sourceUrl": "https://kettl.co/products/soukou-matcha"
+    },
+    {
+      "product": "Suiteki",
+      "region": "Nishio",
+      "sourceUrl": "https://kettl.co/products/suiteki-matcha-100g"
+    },
+    {
+      "product": "Tenkuu",
+      "region": null,
+      "sourceUrl": "https://kettl.co/products/tenkuu-matcha"
+    },
+    {
+      "product": "Tsuji Family Blend",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/tsuji-family-blend-matcha"
+    },
+    {
+      "product": "Tsurukage",
+      "region": "Kyushu",
+      "sourceUrl": "https://kettl.co/products/tsurukage-matcha"
+    },
+    {
+      "product": "Uji Homare",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/uji-homare-matcha"
+    },
+    {
+      "product": "Wakakusa",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/wakakusa-matcha"
+    }
+  ],
+  "Kirkland Signature": [
+    {
+      "product": "Organic Matcha Green Tea Powder",
+      "region": null,
+      "sourceUrl": "https://www.costcobusinessdelivery.com/p/-/kirkland-signature-organic-matcha-green-tea-powder-12-oz/4201065125"
+    }
+  ]
+}

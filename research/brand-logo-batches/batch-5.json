@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Kiss Me Organics",
+    "slug": "kiss-me-organics",
+    "domain": "https://us.kissmeorganics.com"
+  },
+  {
+    "brand": "Kusmi Tea",
+    "slug": "kusmi-tea",
+    "domain": "https://www.kusmitea.com"
+  },
+  {
+    "brand": "Kyoto Dew",
+    "slug": "kyoto-dew",
+    "domain": "https://www.kyotodewmatcha.net"
+  },
+  {
+    "brand": "Legion",
+    "slug": "legion",
+    "domain": "https://legionathletics.com"
+  },
+  {
+    "brand": "Leopard",
+    "slug": "leopard",
+    "domain": null
+  },
+  {
+    "brand": "Maeda-en",
+    "slug": "maeda-en",
+    "domain": "https://maeda-en.com"
+  },
+  {
+    "brand": "Mantra Matcha",
+    "slug": "mantra-matcha",
+    "domain": "https://mantramatcha.com"
+  },
+  {
+    "brand": "Marukyu Koyamaen",
+    "slug": "marukyu-koyamaen",
+    "domain": "https://www.marukyu-koyamaen.co.jp"
+  },
+  {
+    "brand": "Matcha Konomi",
+    "slug": "matcha-konomi",
+    "domain": "https://matchakonomi.com"
+  },
+  {
+    "brand": "Matcha Moon",
+    "slug": "matcha-moon",
+    "domain": "https://matchamoon.com"
+  }
+]

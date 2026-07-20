@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Ikkyu",
+    "slug": "ikkyu",
+    "domain": "https://shop.ikkyu-tea.com"
+  },
+  {
+    "brand": "Ippodo",
+    "slug": "ippodo",
+    "domain": "https://ippodotea.com"
+  },
+  {
+    "brand": "Ito En",
+    "slug": "ito-en",
+    "domain": "https://itoen.com"
+  },
+  {
+    "brand": "Itoh Kyuemon",
+    "slug": "itoh-kyuemon",
+    "domain": "https://ujichamatcha.com"
+  },
+  {
+    "brand": "Jade Leaf Matcha",
+    "slug": "jade-leaf-matcha",
+    "domain": "https://www.jadeleafmatcha.com"
+  },
+  {
+    "brand": "Jing Tea",
+    "slug": "jing-tea",
+    "domain": "https://jingtea.com"
+  },
+  {
+    "brand": "Kanbayashi Shunsho",
+    "slug": "kanbayashi-shunsho",
+    "domain": "https://www.sazentea.com"
+  },
+  {
+    "brand": "Kenko Tea",
+    "slug": "kenko-tea",
+    "domain": "https://kenkomatcha.com"
+  },
+  {
+    "brand": "Kettl",
+    "slug": "kettl",
+    "domain": "https://kettl.co"
+  },
+  {
+    "brand": "Kirkland Signature",
+    "slug": "kirkland-signature",
+    "domain": "https://www.costcobusinessdelivery.com"
+  }
+]

@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Tradition",
+    "slug": "tradition",
+    "domain": "https://www.goodyoung.info"
+  },
+  {
+    "brand": "Tsujiki",
+    "slug": "tsujiki",
+    "domain": "https://yunomi.life"
+  },
+  {
+    "brand": "Tsuki Matcha",
+    "slug": "tsuki-matcha",
+    "domain": "https://tsukimatcha.com"
+  },
+  {
+    "brand": "Ujido",
+    "slug": "ujido",
+    "domain": "https://ujido.com"
+  },
+  {
+    "brand": "Ujinotsuyu",
+    "slug": "ujinotsuyu",
+    "domain": "https://www.ujinotsuyu.co.jp"
+  },
+  {
+    "brand": "uVernal",
+    "slug": "uvernal",
+    "domain": "https://www.amazon.com"
+  },
+  {
+    "brand": "Vahdam",
+    "slug": "vahdam",
+    "domain": "https://www.vahdam.com"
+  },
+  {
+    "brand": "Yamamasa Koyamaen",
+    "slug": "yamamasa-koyamaen",
+    "domain": "https://www.sazentea.com"
+  },
+  {
+    "brand": "Yamamotoyama",
+    "slug": "yamamotoyama",
+    "domain": "https://yamamotoyama.com"
+  },
+  {
+    "brand": "Zenkyu",
+    "slug": "zenkyu",
+    "domain": "https://zenkyumatcha.com"
+  }
+]

@@ -1,0 +1,347 @@
+{
+  "Palais des Thés": [
+    {
+      "product": "Genmaicha Matcha (Organic)",
+      "region": null,
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/us-organic-genmaicha-matcha-d3120am.html"
+    },
+    {
+      "product": "Organic Ichi Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/matcha-ichi.html"
+    },
+    {
+      "product": "Organic Kokoro Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/matcha-kokoro.html"
+    },
+    {
+      "product": "Organic Matcha Asanoka",
+      "region": "Kagoshima",
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/d500052am-en.html"
+    },
+    {
+      "product": "Organic Matcha Kirishima",
+      "region": "Kagoshima",
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/d500019am-en.html"
+    },
+    {
+      "product": "Organic Mint Matcha",
+      "region": null,
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/organic-mint-matcha.html"
+    },
+    {
+      "product": "Organic Neko Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/d100031am-en.html"
+    },
+    {
+      "product": "Organic Rose Matcha",
+      "region": null,
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/organic-rose-matcha.html"
+    },
+    {
+      "product": "Organic Vanilla Matcha",
+      "region": null,
+      "sourceUrl": "https://us.palaisdesthes.com/en_us/organic-vanilla-matcha.html"
+    }
+  ],
+  "Paragon Tea Room": [
+    {
+      "product": "Baking Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://paragontearoom.com/products/baking-matcha"
+    },
+    {
+      "product": "Ceremonial Ginger Matcha (Seasonal)",
+      "region": null,
+      "sourceUrl": "https://paragontearoom.com/products/bogo-ceremonial-ginger-matcha-40g"
+    },
+    {
+      "product": "Ceremonial Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://paragontearoom.com/products/ceremonial-matcha"
+    }
+  ],
+  "Pique Tea": [
+    {
+      "product": "Matcha Fasting Green Tea",
+      "region": null,
+      "sourceUrl": "https://www.piquelife.com/products/matcha-green-fasting-tea"
+    },
+    {
+      "product": "Sun Goddess Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.piquelife.com/products/matcha-green-tea"
+    }
+  ],
+  "Rishi Tea": [
+    {
+      "product": "Barista Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rishi-tea.com/products/organic-barista-matcha"
+    },
+    {
+      "product": "Kobayashi-san's Matcha Tsuyuhikari",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.rishi-tea.com/products/kobayashi-sans-matcha-tsuyuhikari"
+    },
+    {
+      "product": "Matcha Hekisui",
+      "region": "Uji",
+      "sourceUrl": "https://www.rishi-tea.com/products/matcha-hekisui"
+    },
+    {
+      "product": "Matcha Houju",
+      "region": "Uji",
+      "sourceUrl": "https://www.rishi-tea.com/products/matcha-houju"
+    },
+    {
+      "product": "Matcha Sticks",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rishi-tea.com/products/organic-matcha-sticks"
+    },
+    {
+      "product": "Matcha Ukitsu",
+      "region": "Uji",
+      "sourceUrl": "https://rishi-tea.com/products/matcha-ukitsu-gd23"
+    },
+    {
+      "product": "Nishi-san's Matcha Okumidori",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rishi-tea.com/products/nishi-sans-matcha-okumidori"
+    },
+    {
+      "product": "Nishi-san's Matcha Saemidori",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rishi-tea.com/products/nishi-sans-matcha-saemidori"
+    },
+    {
+      "product": "Nishi-san's Matcha Tsuyuhikari",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rishi-tea.com/products/nishi-sans-matcha-tsuyuhikari"
+    },
+    {
+      "product": "Sweet Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rishi-tea.com/products/sweet-matcha-powder"
+    },
+    {
+      "product": "Teahouse Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rishi-tea.com/products/organic-teahouse-ceremonial-matcha"
+    }
+  ],
+  "Rocky's": [
+    {
+      "product": "Ceremonial Blend",
+      "region": "Uji",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-ceremonial-blend-matcha-20g"
+    },
+    {
+      "product": "Horii Shichimeien Ceremonial Blend",
+      "region": "Uji",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-horii-shichimeien-ceremonial-blend-20g"
+    },
+    {
+      "product": "Osada Ceremonial Blend",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-osada-ceremonial-blend-matcha-20g"
+    },
+    {
+      "product": "SC Horii Shichimeien Narino",
+      "region": "Uji",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-single-cultivar-narino-matcha-20g"
+    },
+    {
+      "product": "SC Koshun",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-single-cultivar-koshun-matcha-20g"
+    },
+    {
+      "product": "SC Okumidori",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-single-cultivar-okumidori-matcha-20g"
+    },
+    {
+      "product": "SC Saeakari",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-single-cultivar-saeakari-matcha-20g"
+    },
+    {
+      "product": "SC Samidori",
+      "region": "Uji",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-for-awake-ny-single-cultivar-samidori-matcha-20g"
+    },
+    {
+      "product": "Tsujiki Ceremonial Blend",
+      "region": "Uji",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-tsujiki-blend-matcha-20g"
+    },
+    {
+      "product": "Uji Premium Blend",
+      "region": "Uji",
+      "sourceUrl": "https://www.rockysmatcha.com/products/rockys-matcha-uji-premium-blend-matcha-100g"
+    }
+  ],
+  "Rya": [
+    {
+      "product": "Kirari",
+      "region": "Yame",
+      "sourceUrl": "https://ujichamatcha.com/products/kirari-rya"
+    },
+    {
+      "product": "Kokoro",
+      "region": "Yame",
+      "sourceUrl": "https://ujichamatcha.com/products/kokoro-rya"
+    },
+    {
+      "product": "Kyo Midori",
+      "region": "Kyoto",
+      "sourceUrl": "https://ujichamatcha.com/products/kyo-midori-rya"
+    },
+    {
+      "product": "Okumidori",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/okumidori-rya"
+    },
+    {
+      "product": "Pacific Sunrise",
+      "region": null,
+      "sourceUrl": "https://ujichamatcha.com/products/pacific-sunrise-rya"
+    },
+    {
+      "product": "Saemidori",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/saemidori-rya"
+    },
+    {
+      "product": "Samidori",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/samidori-rya"
+    },
+    {
+      "product": "Uji Midori",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/rya-uji-midori"
+    },
+    {
+      "product": "Yabukita",
+      "region": "Yame",
+      "sourceUrl": "https://ujichamatcha.com/products/yabukita-rya"
+    }
+  ],
+  "Sazen Tea": [
+    {
+      "product": "Cooking Matcha",
+      "region": "Kyoto",
+      "sourceUrl": "https://www.sazentea.com/en/products/p38-cooking-matcha.html"
+    },
+    {
+      "product": "Matcha Lucky Box",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p2251-matcha-lucky-box.html"
+    },
+    {
+      "product": "Organic Cooking Matcha",
+      "region": null,
+      "sourceUrl": "https://www.sazentea.com/en/products/p249-organic-cooking-matcha.html"
+    },
+    {
+      "product": "Sakura Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.sazentea.com/en/products/p1693-sakura-matcha.html"
+    }
+  ],
+  "Sencha Naturals": [
+    {
+      "product": "Emperor's Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://senchanaturals.com/products/emperors-matcha"
+    },
+    {
+      "product": "Oat Milk Matcha Lattes",
+      "region": null,
+      "sourceUrl": null
+    },
+    {
+      "product": "Organic Everyday Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": null
+    }
+  ],
+  "Shogyokuen": [
+    {
+      "product": "Chikka",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/chikka-matcha"
+    },
+    {
+      "product": "Fuujun",
+      "region": null,
+      "sourceUrl": "https://kettl.co/products/fuujun-matcha"
+    },
+    {
+      "product": "Hatsumukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://yunomi.life/products/shogyokuen-matcha-hatsu-mukashi-imperial-ceremonial-grade"
+    },
+    {
+      "product": "Iwai no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://yunomi.life/products/shogyokuen-matcha-iwai-no-shiro-premium-ceremonial-grade"
+    },
+    {
+      "product": "Izumi no Shiro",
+      "region": "Kyoto",
+      "sourceUrl": "https://yunomi.life/products/shogyokuen-matcha-izumi-no-shiro"
+    },
+    {
+      "product": "Kakuun",
+      "region": "Kyoto",
+      "sourceUrl": "https://yunomi.life/products/shogyokuen-heritage-grade-matcha-kakuun-40g-can"
+    },
+    {
+      "product": "Ousui",
+      "region": "Uji",
+      "sourceUrl": "https://kettl.co/products/ousui-matcha"
+    },
+    {
+      "product": "Shogyoku",
+      "region": "Kyoto",
+      "sourceUrl": "https://yunomi.life/products/shogyokuen-matcha-shogyoku"
+    },
+    {
+      "product": "Toyomukashi",
+      "region": "Kyoto",
+      "sourceUrl": "https://yunomi.life/products/shogyokuen-matcha-toyomukashi-premium-ceremonial-grade"
+    },
+    {
+      "product": "Zuisho",
+      "region": "Uji",
+      "sourceUrl": "https://yunomi.life/products/shogyokuen-matcha-zuisho"
+    }
+  ],
+  "Steven Smith Teamaker": [
+    {
+      "product": "Matcha Latte Mix (No. 77)",
+      "region": null,
+      "sourceUrl": "https://www.smithtea.com/products/matcha-latte-mix"
+    },
+    {
+      "product": "No. 7 Matcha",
+      "region": null,
+      "sourceUrl": "https://www.smithtea.com/products/matcha"
+    },
+    {
+      "product": "Okumidori Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://www.smithtea.com/products/okumidori-matcha"
+    },
+    {
+      "product": "Stone-Milled Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.smithtea.com/products/stone-milled-matcha"
+    }
+  ]
+}

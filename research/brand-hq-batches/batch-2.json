@@ -1,0 +1,337 @@
+{
+  "Chikiriya Tea House": [
+    {
+      "product": "Tenarai",
+      "region": "Uji",
+      "sourceUrl": "https://kyo-chikiriya.shop/products/tales-of-uji-premium-matcha-tenarai-okumidori"
+    },
+    {
+      "product": "Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://ujichamatcha.com/products/uji-matcha-chikiriya-tea-house"
+    },
+    {
+      "product": "Ujihime",
+      "region": "Uji",
+      "sourceUrl": "https://kyo-chikiriya.shop/products/tales-of-uji-premium-matcha-roasted-ujihime"
+    }
+  ],
+  "Culinary Teas": [
+    {
+      "product": "Black Tea Matcha",
+      "region": null,
+      "sourceUrl": "https://culinaryteas.com/products/black-matcha-kenya"
+    },
+    {
+      "product": "Earl Grey Matcha",
+      "region": null,
+      "sourceUrl": "https://culinaryteas.com/products/earl-grey-matcha"
+    },
+    {
+      "product": "Genmaicha Extra Green with Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://culinaryteas.com/products/genmaicha_extra_green_with_matcha"
+    },
+    {
+      "product": "Matcha Green Tea Powder",
+      "region": "Nishio",
+      "sourceUrl": "https://culinaryteas.com/products/matcha_green_tea_powder"
+    },
+    {
+      "product": "Matcha Latte Powder",
+      "region": null,
+      "sourceUrl": "https://culinaryteas.com/products/matcha-latte-powder-1"
+    },
+    {
+      "product": "Matcha Sampler",
+      "region": "Uji",
+      "sourceUrl": "https://culinaryteas.com/products/matcha-sampler"
+    },
+    {
+      "product": "Organic Hibiscus Matcha",
+      "region": null,
+      "sourceUrl": "https://culinaryteas.com/products/hibiscus-green-matcha"
+    },
+    {
+      "product": "Peppermint Matcha",
+      "region": null,
+      "sourceUrl": "https://culinaryteas.com/products/peppermint-matcha"
+    },
+    {
+      "product": "Rooibos Matcha (Organic)",
+      "region": null,
+      "sourceUrl": "https://culinaryteas.com/products/rooibos-matcha"
+    },
+    {
+      "product": "Uji Kyoto Premium Ceremonial Grade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://culinaryteas.com/products/ceremonial-matcha"
+    },
+    {
+      "product": "White Rhino Matcha",
+      "region": null,
+      "sourceUrl": "https://culinaryteas.com/products/white_rhino_matcha"
+    },
+    {
+      "product": "Yame Spring Blossom First Flush Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://culinaryteas.com/products/yame-spring-blossom-first-flush-matcha"
+    }
+  ],
+  "David's Tea": [
+    {
+      "product": "Grand Cru Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-grand-cru-matcha-us"
+    },
+    {
+      "product": "Matcha Matsu",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-matcha-matsu-us"
+    },
+    {
+      "product": "Organic Banana Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-banana-matcha-us"
+    },
+    {
+      "product": "Organic Blueberry Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-blueberry-matcha-us"
+    },
+    {
+      "product": "Organic Cherry Blossom Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-cherry-blossom-matcha-us"
+    },
+    {
+      "product": "Organic Cinnamon Bun Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/cinnamon-bun-matcha-organic-50-grams-us"
+    },
+    {
+      "product": "Organic Coffee Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-coffee-matcha"
+    },
+    {
+      "product": "Organic Key Lime Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/key-lime-matcha-organic-50-grams"
+    },
+    {
+      "product": "Organic Lemonade Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-lemonade-matcha-us"
+    },
+    {
+      "product": "Organic Maple Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/products/organic-maple-matcha"
+    },
+    {
+      "product": "Organic Peach Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/products/organic-peach-matcha"
+    },
+    {
+      "product": "Organic Pistachio Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/products/organic-pistachio-matcha"
+    },
+    {
+      "product": "Organic Piña Colada Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/organic-pina-colada-matcha-us"
+    },
+    {
+      "product": "Organic Strawberry Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/products/organic-strawberry-matcha"
+    },
+    {
+      "product": "Organic Vanilla Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/products/organic-vanilla-matcha"
+    },
+    {
+      "product": "Organic Vanilla Matcha - Unsweetened",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/products/vanilla-matcha-sugar-free-organic-50-grams"
+    },
+    {
+      "product": "Organic Watermelon Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/products/organic-watermelon-matcha"
+    },
+    {
+      "product": "Vanilla Matcha",
+      "region": "Nishio",
+      "sourceUrl": "https://davidstea.com/en-us/products/vanilla-matcha-us"
+    }
+  ],
+  "Distinctly Organic": [
+    {
+      "product": "Matcha Green Tea Powder (Ceremonial Grade)",
+      "region": "Nishio",
+      "sourceUrl": "https://www.amazon.com/Distinctly-Organic-Matcha-Green-Tea/dp/B01N7QYN6I"
+    },
+    {
+      "product": "MatchaBiotics",
+      "region": "Nishio",
+      "sourceUrl": "https://www.amazon.com/MatchaBiotics-PRO-10-Organic-Matcha-Probiotics/dp/B0745SLQKP (Amazon listing found via search; direct fetch not completed due to dynamic-content/access limitations)"
+    }
+  ],
+  "DoMatcha": [
+    {
+      "product": "Ceremonial",
+      "region": null,
+      "sourceUrl": "https://domatcha.com/products/ceremonial"
+    },
+    {
+      "product": "Ceremonial Organic",
+      "region": null,
+      "sourceUrl": "https://domatcha.com/products/ceremonial-organic"
+    },
+    {
+      "product": "Digest Specialty Health Blend Organic Tea",
+      "region": null,
+      "sourceUrl": "https://domatcha.com/products/digest-green-mix"
+    },
+    {
+      "product": "Master's Choice",
+      "region": "Kyoto",
+      "sourceUrl": "https://domatcha.com/products/masters-choice"
+    },
+    {
+      "product": "Master's Decaf",
+      "region": "Kyoto",
+      "sourceUrl": "https://domatcha.com/products/masters-decaf"
+    },
+    {
+      "product": "Summer Harvest",
+      "region": null,
+      "sourceUrl": "https://domatcha.com/products/summer-harvest"
+    }
+  ],
+  "Dona": [
+    {
+      "product": "First Flush Ceremonial Grade Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://drinkdona.com/products/ceremonial-grade-matcha"
+    }
+  ],
+  "Encha": [
+    {
+      "product": "Barista Grade Latte Organic Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://encha.com/products/encha-matcha-barista-grade-latte-organic-matcha-powder"
+    },
+    {
+      "product": "Ceremonial Grade Latte Matcha Powder",
+      "region": "Uji",
+      "sourceUrl": "https://encha.com/products/vegan-latte-grade-organic-matcha"
+    },
+    {
+      "product": "Ceremonial Grade Matcha Powder",
+      "region": "Uji",
+      "sourceUrl": "https://encha.com/products/encha-ceremonial-grade"
+    },
+    {
+      "product": "Matcha Latte Powder - Keto Collagen",
+      "region": null,
+      "sourceUrl": "https://encha.com/products/encha-matcha-latte-powder-keto-collagen-matcha-powder"
+    },
+    {
+      "product": "Matcha Latte Powder - Reishi Mushroom",
+      "region": "Uji",
+      "sourceUrl": "https://encha.com/products/encha-matcha-latte-powder-reishi-mushroom"
+    },
+    {
+      "product": "Matcha Latte Powder - Vanilla",
+      "region": null,
+      "sourceUrl": "https://encha.com/products/encha-matcha-latte-powder-vanilla-matcha"
+    },
+    {
+      "product": "Matcha Latte Powder Sweetened - Lightly Sweet",
+      "region": null,
+      "sourceUrl": "https://encha.com/products/encha-matcha-latte-powder-sweetened-lightly-sweet-matcha-powder"
+    },
+    {
+      "product": "Okumidori Limited Edition Reserve Ceremonial Grade Matcha Powder",
+      "region": "Kagoshima",
+      "sourceUrl": "https://encha.com/products/encha-okumidori-limited-edition-reserve-ceremonial-grade-matcha-powder"
+    },
+    {
+      "product": "Saemidori Limited Edition Reserve Ceremonial Grade Matcha Powder",
+      "region": "Kagoshima",
+      "sourceUrl": "https://encha.com/products/encha-saemidori-limited-edition-reserve-ceremonial-grade-matcha-powder"
+    }
+  ],
+  "Epic Matcha": [
+    {
+      "product": "Ceremonial Grade Matcha",
+      "region": null,
+      "sourceUrl": "https://shop.epicmatcha.com/products/ceremonial-grade-matcha-from-japan"
+    },
+    {
+      "product": "Culinary Grade Matcha",
+      "region": null,
+      "sourceUrl": "https://shop.epicmatcha.com/products/culinary-grade-matcha-from-japan"
+    }
+  ],
+  "First Harvest Tea": [
+    {
+      "product": "Organic Ceremonial Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.firstharvesttea.com/products/first-harvest-organic-ceremonial-grade-matcha-tea-1-oz-bag"
+    }
+  ],
+  "Fukujuen": [
+    {
+      "product": "Banjo no Mukashi",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/en-us/products/banjo-no-mukashi-20g"
+    },
+    {
+      "product": "Eisho no Mukashi",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/en-us/products/eisho-no-mukashi-20g"
+    },
+    {
+      "product": "Kotobuki no Shiro",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/en-us/products/powdered-japanese-tea-matcha-kotobuki-no-shiro-20g"
+    },
+    {
+      "product": "Matcha Stick",
+      "region": "Kyoto",
+      "sourceUrl": "https://global.fukujuen.com/en-us/products/matcha-powder-sticks"
+    },
+    {
+      "product": "Seijin no Shiro",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/en-us/products/matcha-seijin-no-shiro-20g-can"
+    },
+    {
+      "product": "Stone-Milled Kuro",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/en-us/products/powdered-japanese-tea-stone-milled-matcha-kuro"
+    },
+    {
+      "product": "Stone-Milled Shiro",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/en-us/products/powdered-japanese-tea-stone-milled-matcha-shiro"
+    },
+    {
+      "product": "Stone-Milled Syu",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/products/powdered-japanese-tea-stone-milled-matcha-syu"
+    },
+    {
+      "product": "Zuien",
+      "region": "Uji",
+      "sourceUrl": "https://global.fukujuen.com/en-us/collections/frontpage/products/matcha-zuien-20g-can"
+    }
+  ]
+}

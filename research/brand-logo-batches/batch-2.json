@@ -1,0 +1,52 @@
+[
+  {
+    "brand": "Chikiriya Tea House",
+    "slug": "chikiriya-tea-house",
+    "domain": "https://kyo-chikiriya.shop"
+  },
+  {
+    "brand": "Culinary Teas",
+    "slug": "culinary-teas",
+    "domain": "https://culinaryteas.com"
+  },
+  {
+    "brand": "David's Tea",
+    "slug": "david-s-tea",
+    "domain": "https://davidstea.com"
+  },
+  {
+    "brand": "Distinctly Organic",
+    "slug": "distinctly-organic",
+    "domain": "https://www.amazon.com"
+  },
+  {
+    "brand": "DoMatcha",
+    "slug": "domatcha",
+    "domain": "https://domatcha.com"
+  },
+  {
+    "brand": "Dona",
+    "slug": "dona",
+    "domain": "https://drinkdona.com"
+  },
+  {
+    "brand": "Encha",
+    "slug": "encha",
+    "domain": "https://encha.com"
+  },
+  {
+    "brand": "Epic Matcha",
+    "slug": "epic-matcha",
+    "domain": "https://shop.epicmatcha.com"
+  },
+  {
+    "brand": "First Harvest Tea",
+    "slug": "first-harvest-tea",
+    "domain": "https://www.firstharvesttea.com"
+  },
+  {
+    "brand": "Fukujuen",
+    "slug": "fukujuen",
+    "domain": "https://global.fukujuen.com"
+  }
+]

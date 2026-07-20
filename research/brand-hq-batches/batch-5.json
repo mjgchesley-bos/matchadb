@@ -1,0 +1,437 @@
+{
+  "Kiss Me Organics": [
+    {
+      "product": "Ceremonial Grade Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://us.kissmeorganics.com/shop/ceremonial-matcha/"
+    },
+    {
+      "product": "Culinary Grade Matcha",
+      "region": null,
+      "sourceUrl": "https://us.kissmeorganics.com/shop/culinary-matcha/"
+    },
+    {
+      "product": "Matcha Capsules",
+      "region": null,
+      "sourceUrl": "https://us.kissmeorganics.com/shop/matcha-capsule/"
+    },
+    {
+      "product": "Vita Matcha",
+      "region": null,
+      "sourceUrl": "https://us.kissmeorganics.com/shop/vita-matcha/"
+    }
+  ],
+  "Kusmi Tea": [
+    {
+      "product": "Ceremonial Matcha",
+      "region": null,
+      "sourceUrl": "https://www.kusmitea.com/en/products/ceremonial-matcha"
+    },
+    {
+      "product": "Matcha (Organic)",
+      "region": null,
+      "sourceUrl": "https://www.kusmitea.com/en/products/matcha"
+    },
+    {
+      "product": "Premium Matcha",
+      "region": null,
+      "sourceUrl": "https://www.kusmitea.com/en/products/premium-matcha-1"
+    }
+  ],
+  "Kyoto Dew": [
+    {
+      "product": "Ceremonial Grade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://www.kyotodewmatcha.net/product-page/premium-ceremonial-grade-organic-japanese-matcha"
+    }
+  ],
+  "Legion": [
+    {
+      "product": "Genesis Greens",
+      "region": null,
+      "sourceUrl": "https://legionathletics.com/products/supplements/genesis-superfood-supplement/"
+    }
+  ],
+  "Leopard": [
+    {
+      "product": "Ceremonial Grade Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": null
+    },
+    {
+      "product": "Fine Culinary Grade Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": null
+    }
+  ],
+  "Maeda-en": [
+    {
+      "product": "Ceremonial Matcha Green Tea Powder",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/ceremonial-matcha"
+    },
+    {
+      "product": "Culinary Matcha Green Tea Powder",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/culinary-matcha"
+    },
+    {
+      "product": "Kai-yo no Mukashi Matcha",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/kai-yo-no-mukashi"
+    },
+    {
+      "product": "MatchaBooster Genmai",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/matchabooster-genmai"
+    },
+    {
+      "product": "MatchaBooster Sweetened",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/matchabooster-sweetened"
+    },
+    {
+      "product": "MatchaBooster Unsweetened",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/matchabooster-unsweetened"
+    },
+    {
+      "product": "MatchaBooster Yuzu",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/matchabooster-yuzu"
+    },
+    {
+      "product": "NAKED MATCHA Organic Matcha Green Tea Powder",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/naked-matcha-organic-matcha"
+    },
+    {
+      "product": "Re-Q Matcha Latte",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/re-q-matcha-latte"
+    },
+    {
+      "product": "Shiki Matcha Green Tea Powder",
+      "region": null,
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/shiki-matcha"
+    },
+    {
+      "product": "Tsuji-Midori",
+      "region": "Uji",
+      "sourceUrl": "https://maeda-en.com/collections/matcha/products/tsuji-midori"
+    }
+  ],
+  "Mantra Matcha": [
+    {
+      "product": "Banana Cacao Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mantramatcha.com/products/banana-cacao-matcha"
+    },
+    {
+      "product": "Cinnamon Goji Berry Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mantramatcha.com/products/cinnamon-goji-berry-matcha"
+    },
+    {
+      "product": "Ginger Beet Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mantramatcha.com/products/ginger-beet-matcha"
+    },
+    {
+      "product": "Rose Hip Dragon Fruit Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mantramatcha.com/products/rose-hip-dragon-fruit-matcha"
+    },
+    {
+      "product": "Strawberry Lemon Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mantramatcha.com/products/strawberry-lemon-matcha"
+    },
+    {
+      "product": "Super Premium Ceremonial Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mantramatcha.com/products/super-premium-ceremonial-matcha-powder"
+    },
+    {
+      "product": "Superfood Berry Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://mantramatcha.com/products/superfood-berry-matcha"
+    }
+  ],
+  "Marukyu Koyamaen": [
+    {
+      "product": "Ao no Mori",
+      "region": "Uji",
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1154020c1"
+    },
+    {
+      "product": "Aoarashi",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11a1040c1"
+    },
+    {
+      "product": "Ayame",
+      "region": "Uji",
+      "sourceUrl": null
+    },
+    {
+      "product": "Byakuren",
+      "region": "Nara",
+      "sourceUrl": null
+    },
+    {
+      "product": "Chigi no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1181040c1"
+    },
+    {
+      "product": "Choan",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1121020c1"
+    },
+    {
+      "product": "Eiju",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1131020c1"
+    },
+    {
+      "product": "Hatsu no Mori",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1153020c1"
+    },
+    {
+      "product": "Hatsukaori",
+      "region": null,
+      "sourceUrl": null
+    },
+    {
+      "product": "Hekiun no Mukashi",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f52020c1"
+    },
+    {
+      "product": "Isuzu",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1191040c1"
+    },
+    {
+      "product": "Keichi no Mukashi",
+      "region": "Nara",
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1112020c1"
+    },
+    {
+      "product": "Kinrin",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1151020c1"
+    },
+    {
+      "product": "Kissho",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c2020c1"
+    },
+    {
+      "product": "Kiun",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1122020c1"
+    },
+    {
+      "product": "Kiwami Choan",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1g36020c1"
+    },
+    {
+      "product": "Kokonoe no Mukashi",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1183040c1"
+    },
+    {
+      "product": "Low Caffeine Matcha",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f94020c1"
+    },
+    {
+      "product": "Miya no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c3020c1"
+    },
+    {
+      "product": "Myofu no Mukashi",
+      "region": "Nara",
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1192020c1"
+    },
+    {
+      "product": "Rindo",
+      "region": null,
+      "sourceUrl": null
+    },
+    {
+      "product": "Saihou no Mukashi",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f68020c1"
+    },
+    {
+      "product": "Sanyu no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11b2040c1"
+    },
+    {
+      "product": "Seijo no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1182020c1"
+    },
+    {
+      "product": "Seiwa no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1144020c1"
+    },
+    {
+      "product": "Shofu",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1124020c1"
+    },
+    {
+      "product": "Shohaku",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1142020c1"
+    },
+    {
+      "product": "Shoka no Mukashi",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1172020c1"
+    },
+    {
+      "product": "Shoun no Mukashi",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1152020c1"
+    },
+    {
+      "product": "Suisho no Mukashi",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1114020c1"
+    },
+    {
+      "product": "Tama no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1132020c1"
+    },
+    {
+      "product": "Tenju",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1111020c1"
+    },
+    {
+      "product": "Tomo no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1d23040c1"
+    },
+    {
+      "product": "Tsuki no Shiro",
+      "region": null,
+      "sourceUrl": null
+    },
+    {
+      "product": "Unkaku",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1141020c1"
+    },
+    {
+      "product": "Wakatake",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11b1100c1"
+    },
+    {
+      "product": "Wako",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1161020c1"
+    },
+    {
+      "product": "Yoyo no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f62020c1"
+    },
+    {
+      "product": "Yugen",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1171020c1"
+    },
+    {
+      "product": "Yukyu no Shiro",
+      "region": null,
+      "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f78020c1"
+    },
+    {
+      "product": "Zuisen no Shiro",
+      "region": null,
+      "sourceUrl": null
+    }
+  ],
+  "Matcha Konomi": [
+    {
+      "product": "Akira Matcha (Organic Ceremonial)",
+      "region": "Kyoto",
+      "sourceUrl": "https://matchakonomi.com/products/akira-matcha"
+    },
+    {
+      "product": "Akira Tencha",
+      "region": null,
+      "sourceUrl": "https://matchakonomi.com/products/akira-tencha-50g-bag"
+    },
+    {
+      "product": "Amaya Matcha (Ceremonial)",
+      "region": "Uji",
+      "sourceUrl": "https://matchakonomi.com/products/amaya-premium-ceremonial-japanese-matcha-green-tea-powder"
+    },
+    {
+      "product": "Ki Matcha (Organic Ceremonial)",
+      "region": "Shizuoka",
+      "sourceUrl": "https://matchakonomi.com/products/ki-organic-ceremonial-matcha-3-sizes"
+    },
+    {
+      "product": "Miya Matcha (Organic Ceremonial)",
+      "region": "Miyazaki",
+      "sourceUrl": "https://matchakonomi.com/products/miya-organic-ceremonial-matcha"
+    },
+    {
+      "product": "Oishi Organic Gourmet Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matchakonomi.com/products/oishi-matcha"
+    },
+    {
+      "product": "Oka Matcha (Premium Culinary)",
+      "region": "Kagoshima",
+      "sourceUrl": "https://matchakonomi.com/products/oka-organic-culinary-matcha-2-sizes"
+    }
+  ],
+  "Matcha Moon": [
+    {
+      "product": "Ceremonial Gyokuro Matcha Green Tea Powder",
+      "region": "Kagoshima",
+      "sourceUrl": "https://matchamoon.com/products/ceremonial-gokuro-matcha-green-tea-powder-40g"
+    },
+    {
+      "product": "Daily Zen Organic All-Purpose Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matchamoon.com/products/daily-zen-organic-all-purpose-japanese-matcha-green-tea-powder-1"
+    },
+    {
+      "product": "Organic Matcha-Style Hojicha Roasted Green Tea Powder",
+      "region": "Uji",
+      "sourceUrl": "https://matchamoon.com/products/organic-hojicha-roasted-green-tea-powder"
+    },
+    {
+      "product": "Pure Zen Premium Organic Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matchamoon.com/products/pure-zen-premium-japanese-uji-matcha-green-tea-powder"
+    },
+    {
+      "product": "Spring Zen Superior Organic Ceremonial Grade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://matchamoon.com/products/pure-zen-premium-organic-japanese-matcha-green-tea-powder"
+    },
+    {
+      "product": "Wakoucha Organic Matcha-Style Black Tea Powder",
+      "region": "Kagoshima",
+      "sourceUrl": "https://matchamoon.com/products/wakoucha-organic-matcha-style-black-tea-powder"
+    }
+  ]
+}

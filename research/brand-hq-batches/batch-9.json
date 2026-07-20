@@ -1,0 +1,427 @@
+{
+  "Takaokaya": [
+    {
+      "product": "Culinary Grade Matcha (Bulk)",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.takaokayausa.com/collections/tea/products/culinary-grade-matcha-in-bulk"
+    },
+    {
+      "product": "Green Breeze Organic Matcha (Bulk)",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.takaokayausa.com/products/green-breeze-organic-green-tea-powder"
+    },
+    {
+      "product": "Green Breeze Organic Matcha (Stick Type)",
+      "region": null,
+      "sourceUrl": "https://www.takaokayausa.com/products/green-breeze-organic-green-tea-powder-1"
+    },
+    {
+      "product": "Organic Matcha \"Silver\" Grade",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.takaokayausa.com/products/shizuoka-matcha-organic-silver-grade"
+    },
+    {
+      "product": "Organic Matcha Ceremonial \"Gold\" Grade",
+      "region": "Shizuoka",
+      "sourceUrl": "https://www.takaokayausa.com/products/shizuoka-matcha-organic-gold-grade"
+    }
+  ],
+  "TeaDealers": [
+    {
+      "product": "Asahi 6007",
+      "region": "Uji",
+      "sourceUrl": "https://www.teadealers.com/products/japan-asahi-6007-matcha"
+    },
+    {
+      "product": "Genou",
+      "region": "Uji",
+      "sourceUrl": "https://www.teadealers.com/products/japan-genou-matcha"
+    },
+    {
+      "product": "Shouraku",
+      "region": "Uji",
+      "sourceUrl": "https://www.teadealers.com/products/japan-shouraku-matcha"
+    },
+    {
+      "product": "Shousui",
+      "region": "Uji",
+      "sourceUrl": "https://www.teadealers.com/products/japan-shousui-matcha"
+    },
+    {
+      "product": "Sokuchouzan",
+      "region": "Uji",
+      "sourceUrl": "https://www.teadealers.com/products/japan-sokuchouzan-matcha"
+    }
+  ],
+  "Teapigs": [
+    {
+      "product": "Premium Organic Matcha Green Tea",
+      "region": "Nishio",
+      "sourceUrl": "https://teapigs.com/products/matcha"
+    }
+  ],
+  "Tenzo Tea": [
+    {
+      "product": "Tenzo Organic Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://tenzotea.co/products/organic-matcha-tenzo-tea"
+    },
+    {
+      "product": "Tenzo Sweet Blend Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://tenzotea.co/products/sweet-blend-single-serve-box"
+    }
+  ],
+  "Tezumi": [
+    {
+      "product": "Ato-Mukashi - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/ato-mukashi-uji-matcha"
+    },
+    {
+      "product": "Barista Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/products/barista-matcha"
+    },
+    {
+      "product": "Betsugi - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/betsugi-uji-matcha"
+    },
+    {
+      "product": "Chitose - Yame Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/chitose-yame-matcha"
+    },
+    {
+      "product": "Chiyo-Mukashi - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/chiyo-mukashi-uji-matcha"
+    },
+    {
+      "product": "Eiryoku - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/products/eiryoku-uji-matcha"
+    },
+    {
+      "product": "Goku-Mukashi Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/goku-mukashi-nishio-matcha"
+    },
+    {
+      "product": "Haruto - Organic Tenryu Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://tezumi.com/products/organic-haruto-matcha"
+    },
+    {
+      "product": "Hatsu-Mukashi - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/hatsu-mukashi-uji-matcha"
+    },
+    {
+      "product": "Hika - Shiga Matcha",
+      "region": null,
+      "sourceUrl": "https://tezumi.com/products/hika-shiga-matcha"
+    },
+    {
+      "product": "Hotaru - Organic Isagawa Gokou Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/hotaru-organic-isagawa-gokou-matcha"
+    },
+    {
+      "product": "Kanoyama - Uji Okumidori Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/kanoyama-matcha"
+    },
+    {
+      "product": "Kazan - Kagoshima Matcha",
+      "region": "Kagoshima",
+      "sourceUrl": "https://tezumi.com/products/kazan-kagoshima-matcha"
+    },
+    {
+      "product": "Kiku-no-Sono Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/products/uji-kiku-no-sono-matcha"
+    },
+    {
+      "product": "Komiya - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/products/komiya-uji-matcha"
+    },
+    {
+      "product": "Kyotanabe Gokou Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/kyotanabe-gokou-matcha"
+    },
+    {
+      "product": "Mare - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/mare-uji-matcha"
+    },
+    {
+      "product": "Miyama - Shiga Matcha",
+      "region": null,
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/miyama-shiga-matcha"
+    },
+    {
+      "product": "Moegi - Yame Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://tezumi.com/products/moegi-yame-matcha"
+    },
+    {
+      "product": "Organic Barista / Culinary Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://tezumi.com/products/organic-barista-matcha"
+    },
+    {
+      "product": "Rikyu - Nukata Matcha",
+      "region": "Aichi",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/rikyu-nukata-matcha"
+    },
+    {
+      "product": "Seicho-no-Mukashi - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/seicho-no-mukashi-uji-matcha"
+    },
+    {
+      "product": "Seika-no-Mukashi - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/seika-no-mukashi-uji-matcha"
+    },
+    {
+      "product": "Shirakawa Asahi Matcha",
+      "region": "Shirakawa",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/shirakawa-asahi-matcha"
+    },
+    {
+      "product": "Shirakawa Gokou Matcha",
+      "region": "Shirakawa",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/shirakawa-gokou-matcha"
+    },
+    {
+      "product": "Shirakawa Samidori Matcha",
+      "region": "Shirakawa",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/shirakawa-samidori-matcha"
+    },
+    {
+      "product": "Shirakawa Uji-Hikari Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/shirakawa-uji-hikari-matcha"
+    },
+    {
+      "product": "Shoyo - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/shoyo-matcha"
+    },
+    {
+      "product": "Tokiwa - Yame Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/tokiwa-yame-matcha"
+    },
+    {
+      "product": "Tozan - Organic Shizuoka Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/tozan-organic-shizuoka-matcha"
+    },
+    {
+      "product": "Tsuji-no-Mukashi - Shirakawa Matcha",
+      "region": "Shirakawa",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/tsuji-no-mukashi-shirakawa-matcha"
+    },
+    {
+      "product": "Uji Asahi Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/uji-asahi-matcha"
+    },
+    {
+      "product": "Uji Hikari Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/uji-hikari-matcha"
+    },
+    {
+      "product": "Uji Samidori Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/uji-samidori-matcha"
+    },
+    {
+      "product": "Uji-no-Mori - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/uji-no-mori-matcha"
+    },
+    {
+      "product": "Umezuki - Uji Okumidori Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/umezuki-matcha"
+    },
+    {
+      "product": "Uta-no-Mori - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/uta-no-mori-matcha"
+    },
+    {
+      "product": "Wakatake - Yame Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/wakatake-yame-matcha"
+    },
+    {
+      "product": "Wazuka Saemidori Matcha",
+      "region": "Wazuka",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/wazuka-saemidori-matcha"
+    },
+    {
+      "product": "Yame Kirari 31 Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/yame-kirari-31-matcha"
+    },
+    {
+      "product": "Yame Okumidori Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/yame-okumidori-matcha"
+    },
+    {
+      "product": "Yuryo - Uji Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://tezumi.com/collections/matcha/products/yuryo-uji-matcha"
+    }
+  ],
+  "The Republic of Tea": [
+    {
+      "product": "Daily Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/daily-matcha"
+    },
+    {
+      "product": "Dubai Chocolate Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/the-japanese-matcha-collection"
+    },
+    {
+      "product": "Get Matcha (Organic Green Tea Blend)",
+      "region": "China",
+      "sourceUrl": "https://www.republicoftea.com/products/get-matcha-organic-green-tea-for-daily-health"
+    },
+    {
+      "product": "Organic Ceremonial Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/organic-full-leaf-matcha"
+    },
+    {
+      "product": "Organic Double Green Matcha Lavender Tea Bags",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/organic-double-green-matcha-lavender-tea-bags"
+    },
+    {
+      "product": "Organic Double Green Matcha Strawberry Tea Bags",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/organic-double-green-matcha-strawberry-tea-bags"
+    },
+    {
+      "product": "Organic Double Green Matcha Tea Bags",
+      "region": "China",
+      "sourceUrl": "https://www.republicoftea.com/products/organic-double-green-matcha-tea"
+    },
+    {
+      "product": "Organic Double Green Matcha Yuzu Tea Bags",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/organic-double-green-matcha-yuzu-tea-bags"
+    },
+    {
+      "product": "Organic Matcha Concentrate",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/organic-matcha-concentrate"
+    },
+    {
+      "product": "Organic U-Matcha Single Sips",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/organic-matcha-to-go"
+    },
+    {
+      "product": "Sweet Vanilla Matcha Powder",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/the-japanese-matcha-collection"
+    },
+    {
+      "product": "U-Matcha Natural Powder",
+      "region": null,
+      "sourceUrl": "https://www.republicoftea.com/products/u-matcha-natural"
+    }
+  ],
+  "The Tao of Tea": [
+    {
+      "product": "Liquid Jade Matcha",
+      "region": "Uji",
+      "sourceUrl": "https://taooftea.com/product/liquid-jade-matcha/"
+    },
+    {
+      "product": "Matcha Ceremonial Grade",
+      "region": "Nishio",
+      "sourceUrl": "https://taooftea.com/product/matcha-ceremonial-grade/"
+    },
+    {
+      "product": "Matcha Grade A",
+      "region": "Nishio",
+      "sourceUrl": "https://taooftea.com/product/matcha-grade-a/"
+    },
+    {
+      "product": "Special Grade Matcha",
+      "region": "Shizuoka",
+      "sourceUrl": "https://taooftea.com/product/special-grade-matcha/"
+    },
+    {
+      "product": "Sweet Matcha",
+      "region": null,
+      "sourceUrl": "https://taooftea.com/product/sweet-matcha/"
+    },
+    {
+      "product": "Yame Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://taooftea.com/product/yame-matcha/"
+    },
+    {
+      "product": "Yuzu Matcha",
+      "region": "China",
+      "sourceUrl": "https://taooftea.com/product/yuzu-matcha/"
+    }
+  ],
+  "The Tea Spot": [
+    {
+      "product": "Ceremonial Grade-A Matcha",
+      "region": "Yame",
+      "sourceUrl": "https://theteaspot.com/collections/matcha/products/ceremonial-matcha-grade-a"
+    },
+    {
+      "product": "Ceremonial Matcha To Go Sticks",
+      "region": "Kagoshima",
+      "sourceUrl": "https://theteaspot.com/collections/matcha/products/ceremonial-matcha-to-go-sticks"
+    },
+    {
+      "product": "Keep Fit Organic Matcha Blend",
+      "region": null,
+      "sourceUrl": "https://theteaspot.com/collections/matcha/products/keep-fit-organic-citrus-green"
+    },
+    {
+      "product": "Organic Matcha",
+      "region": "China",
+      "sourceUrl": "https://theteaspot.com/collections/matcha/products/organic-matcha-tea"
+    }
+  ],
+  "Tokyo Tea Trading": [
+    {
+      "product": "Jewels of Tea 2024 Champion",
+      "region": "Uji",
+      "sourceUrl": "https://shopping.tokyoteatrading.com/products/the-jewels-of-tea2024_6016"
+    }
+  ],
+  "Trader Joe's": [
+    {
+      "product": "Matcha Green Tea Latte Mix",
+      "region": null,
+      "sourceUrl": "https://www.traderjoes.com/home/products/pdp/matcha-green-tea-latte-mix-052512"
+    },
+    {
+      "product": "Matcha Green Tea Powder",
+      "region": null,
+      "sourceUrl": "https://www.traderjoes.com/home/products/pdp/matcha-green-tea-powder-057159"
+    }
+  ]
+}

@@ -1,8 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBrandProducts } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
+import { getBrandLogoPath } from "@/lib/logos";
 
 export default async function BrandPage({
   params,
@@ -14,15 +16,29 @@ export default async function BrandPage({
   const products = await getBrandProducts(brandName);
 
   if (products.length === 0) notFound();
+  const logoSrc = getBrandLogoPath(brandName);
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
       <Link href="/browse" className="text-sm text-ink-muted hover:text-matcha transition-colors">
         &larr; All products
       </Link>
-      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-3 mb-1.5">
-        {brandName}
-      </h1>
+      <div className="flex items-center gap-4 mt-3 mb-1.5">
+        {logoSrc && (
+          <span className="inline-flex items-center justify-center rounded-sm bg-white shrink-0 overflow-hidden border border-line-strong/40 w-14 h-14">
+            <Image
+              src={logoSrc}
+              alt={`${brandName} logo`}
+              width={56}
+              height={56}
+              className="object-contain p-1.5"
+              style={{ width: "100%", height: "100%" }}
+              unoptimized
+            />
+          </span>
+        )}
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{brandName}</h1>
+      </div>
       <p className="text-sm text-ink-muted mb-8">
         {products.length} product{products.length === 1 ? "" : "s"} in the database
       </p>
