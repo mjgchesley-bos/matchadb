@@ -63,8 +63,11 @@ export default function RootLayout({
               </span>
               <span className="h-1.5 w-1.5 rounded-full bg-paper ml-0.5 mb-0.5 transition-transform group-hover:scale-125" />
             </Link>
-            <nav className="flex items-center gap-8 text-[0.9rem]">
-              <Link href="/map" className="text-paper/90 hover:text-paper transition-colors">
+            <nav className="flex items-center gap-4 text-[0.9rem]">
+              <Link
+                href="/map"
+                className="inline-flex items-center rounded-full bg-paper text-ink px-6 py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
                 Sourcing map
               </Link>
               <Link
