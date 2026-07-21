@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getStats, getProducts, getFilterOptions, getTieredPicks, type BrowseFilters } from "@/lib/db";
+import {
+  getStats,
+  getProducts,
+  getFilterOptions,
+  getTieredPicks,
+  getPopularProducts,
+  POPULAR_BRANDS,
+  type BrowseFilters,
+} from "@/lib/db";
 import { toArr } from "@/lib/searchParams";
 import { ProductCard, TieredPickCard, BrandLogo } from "@/components/product-cards";
 import { MatchTool } from "@/components/MatchTool";
@@ -28,11 +36,21 @@ export default async function Home({
     pageSize: HOME_PAGE_SIZE,
   };
 
-  const [{ products, total }, filterOptions, tieredPicks] = await Promise.all([
+  // Before any selection, an alphabetical sample just surfaces whatever
+  // brand starts with "A" -- swap in a curated round-robin of popular
+  // brands instead. Once a filter is applied, that curation doesn't apply
+  // (the visitor is now asking a specific question), so fall back to the
+  // normal filtered/alphabetical result set.
+  const noFiltersSelected =
+    filters.grades!.length === 0 && filters.flavors!.length === 0 && filters.uses!.length === 0;
+
+  const [{ products: defaultProducts, total }, filterOptions, tieredPicks, popularProducts] = await Promise.all([
     getProducts(filters),
     getFilterOptions(),
     getTieredPicks(filters),
+    noFiltersSelected ? getPopularProducts(HOME_PAGE_SIZE) : Promise.resolve(null),
   ]);
+  const products = popularProducts ?? defaultProducts;
 
   const seeAllParams = new URLSearchParams();
   for (const [k, v] of Object.entries(sp)) {
@@ -47,7 +65,6 @@ export default async function Home({
     { value: retailerCount.toLocaleString(), label: "Retailer sites verified" },
   ];
 
-  const featuredBrands = ["Marukyu Koyamaen", "Ippodo", "Kettl", "Aiya", "Rocky's", "Hekisuien"];
 
   const photoStrip = [
     {
@@ -174,7 +191,7 @@ export default async function Home({
           Home to the names serious matcha drinkers know
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
-          {featuredBrands.map((b) => (
+          {POPULAR_BRANDS.map((b) => (
             <Link
               key={b}
               href={`/brands/${encodeURIComponent(b)}`}

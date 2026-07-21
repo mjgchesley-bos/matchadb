@@ -183,6 +183,62 @@ export async function getProducts(filters: BrowseFilters) {
   return { products, total, page, pageSize, totalPages: Math.max(1, Math.ceil(total / pageSize)) };
 }
 
+// No sales or traffic data exists to derive real popularity from, so this
+// is an editorial call -- the same brands already featured in the "names
+// serious matcha drinkers know" section on the home page. Exported so that
+// section and this query share one list instead of drifting apart.
+export const POPULAR_BRANDS = ["Marukyu Koyamaen", "Ippodo", "Kettl", "Aiya", "Rocky's", "Hekisuien"];
+
+// The home page's default (no filters applied) product grid used to just
+// be alphabetical, which surfaced whatever brand starts with "A" rather
+// than anything a visitor would recognize. This picks one product per
+// popular brand at a time (round-robin), so with 6 popular brands and a
+// 9-product grid, the best-documented, cheapest-per-gram product from each
+// brand is shown first, then a second product from each brand fills the
+// remaining 3 slots -- no single brand dominates the grid.
+export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
+  const db = await getDb();
+  const placeholders = POPULAR_BRANDS.map(() => "?").join(",");
+  const res = db.exec(
+    `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
+            p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
+            p.price_review_reason, p.fx_converted, p.fx_rate_date,
+            p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
+            p.tasting_notes, p.flavor_tags, p.use_tags
+     FROM products p
+     JOIN brands b ON p.brand_id = b.id
+     WHERE b.name IN (${placeholders}) AND p.not_found = 0
+     ORDER BY
+       (p.grade IS NOT NULL AND p.region IS NOT NULL AND p.flavor_tags != '[]') DESC,
+       p.price_per_gram ASC`,
+    POPULAR_BRANDS
+  );
+  const rows = rowsToObjects<ProductRow>(res);
+
+  const byBrand = new Map<string, ProductRow[]>();
+  for (const r of rows) {
+    if (!byBrand.has(r.brand_name)) byBrand.set(r.brand_name, []);
+    byBrand.get(r.brand_name)!.push(r);
+  }
+  const brandsWithProducts = POPULAR_BRANDS.filter((b) => byBrand.has(b));
+
+  const picks: ProductRow[] = [];
+  for (let round = 0; picks.length < limit && round < 10; round++) {
+    let addedThisRound = false;
+    for (const brand of brandsWithProducts) {
+      const candidate = byBrand.get(brand)![round];
+      if (candidate) {
+        picks.push(candidate);
+        addedThisRound = true;
+        if (picks.length >= limit) break;
+      }
+    }
+    if (!addedThisRound) break;
+  }
+  return picks;
+}
+
 // One representative product per price tier (cheap/mid/premium) under the
 // current filters -- only returned when all three tiers actually have a
 // match, per the "present as a match when all 3 are applicable" brief.
