@@ -38,7 +38,7 @@ export const CULTIVAR_KEYWORDS = [
 // region if one were ever added here.
 export const REGION_KEYWORDS = [
   "uji", "nishio", "kagoshima", "shizuoka", "kyoto", "yame", "wazuka", "shirakawa",
-  "kyushu", "nara", "kakegawa", "aichi", "miyazaki",
+  "sonogi", "nagasaki", "kyushu", "nara", "kakegawa", "aichi", "miyazaki",
   "zhejiang", "china", "jeju", "korea", "taiwan", "vietnam",
 ];
 

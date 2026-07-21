@@ -95,14 +95,24 @@ export function SourcingMap({
       await waitForStyle(map);
       if (!active) return;
 
-      const boundaries = await Promise.all(regionCounts.map(({ region }) => fetchBoundary(region)));
+      // Country-level regions never get a boundary fetched at all --
+      // outlining an entire nation doesn't add precision, it just gives a
+      // "we don't actually know the sub-region" fact undeserved visual
+      // weight (China's own outline is the country border; that's not a
+      // helpful shape for "somewhere in this country"). Point marker only.
+      const regionsNeedingBoundary = regionCounts.filter(({ region }) => {
+        const info = REGION_COORDINATES[region];
+        return info && info.precision !== "country";
+      });
+      const fetched = await Promise.all(regionsNeedingBoundary.map(({ region }) => fetchBoundary(region)));
       if (!active) return;
+      const boundaryByRegion = new Map(regionsNeedingBoundary.map(({ region }, i) => [region, fetched[i]]));
 
-      regionCounts.forEach(({ region, count }, i) => {
+      regionCounts.forEach(({ region, count }) => {
         const info = REGION_COORDINATES[region];
         if (!info) return;
 
-        const boundary = boundaries[i];
+        const boundary = boundaryByRegion.get(region) ?? null;
         // Mapbox's popup bubble is a hardcoded white background regardless
         // of site theme -- without an explicit dark color here, this text
         // inherits the page's light "ink" color (built for a dark
@@ -112,7 +122,7 @@ export function SourcingMap({
              ${count} product${count === 1 ? "" : "s"}
              ${
                info.precision === "country"
-                 ? '<br/><span style="opacity:0.7;font-size:11px;">approximate -- country-level only</span>'
+                 ? '<br/><span style="opacity:0.7;font-size:11px;">country-level only -- no more specific location was ever disclosed</span>'
                  : info.precision === "province"
                    ? '<br/><span style="opacity:0.7;font-size:11px;">province-level -- more specific than country, not a single farm</span>'
                    : boundary
@@ -279,16 +289,15 @@ export function SourcingMap({
     <div className="flex flex-col gap-3">
       <div ref={containerRef} className="w-full h-[520px] rounded-sm overflow-hidden border border-line" />
       <p className="text-xs text-ink-faint">
-        Green outlines are real administrative boundaries -- the closest verifiable boundary for each
-        region: the town or city the brand disclosed, its province when a country was all a product's
-        own listing gave but another source named the province, or the country itself when that's the
-        most specific thing ever disclosed. Click a shape (or its count badge) to see products from
-        that region. Gold
-        diamonds are specific named farms we independently verified beyond the region level; click one
-        for its source and the exact products it supplies. One region (Kyushu) spans multiple
-        prefectures with no single administrative boundary, so it's shown as a point only. No farm
-        property boundaries are shown anywhere -- there's no public registry of land-parcel outlines
-        for private tea farms --{" "}
+        Green outlines are real administrative boundaries -- shown for towns and provinces, where a
+        brand's own disclosure (or another verified source) named one. A handful of regions never get
+        more specific than a bare country, or span multiple prefectures with no single administrative
+        boundary at all -- those show only a small point badge rather than an outline that would
+        overstate how precisely the sourcing is actually known. Click a shape (or its count badge) to
+        see products from that region. Gold diamonds are specific named farms we independently
+        verified beyond the region level; click one for its source and the exact products it supplies.
+        No farm property boundaries are shown anywhere -- there's no public registry of land-parcel
+        outlines for private tea farms --{" "}
         <Link href="/browse" className="text-matcha hover:text-forest transition-colors">
           browse all products
         </Link>{" "}

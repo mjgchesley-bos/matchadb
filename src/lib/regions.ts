@@ -27,7 +27,14 @@ export const REGION_COORDINATES: Record<string, RegionInfo> = {
   Shirakawa: { name: "Shirakawa (Uji)", country: "Japan", lat: 34.8725, lng: 135.8167, precision: "town" },
   Nara: { name: "Nara", country: "Japan", lat: 34.6851, lng: 135.8048, precision: "town" },
   Aichi: { name: "Aichi", country: "Japan", lat: 35.1802, lng: 136.9066, precision: "town" },
+  // Kept as a fallback for any future product whose disclosure genuinely
+  // never gets more specific than "Kyushu" -- the one product that used
+  // to sit here ("captures everything they love about matcha from
+  // Kyushu") also disclosed "Sonogi, Nagasaki Prefecture" in the same
+  // breath, a real specific tea-growing town, so it moved to Sonogi below
+  // rather than staying at this multi-prefecture, no-boundary fallback.
   Kyushu: { name: "Kyushu", country: "Japan", lat: 32.7503, lng: 130.75, precision: "town" },
+  Sonogi: { name: "Sonogi (Higashisonogi)", country: "Japan", lat: 33.0369, lng: 129.9172, precision: "town" },
   Miyazaki: { name: "Miyazaki", country: "Japan", lat: 31.9111, lng: 131.4239, precision: "town" },
   Zhejiang: { name: "Zhejiang", country: "China", lat: 30.2937, lng: 120.1614, precision: "province" },
   Jeju: { name: "Jeju Island", country: "South Korea", lat: 33.5097, lng: 126.5219, precision: "province" },
