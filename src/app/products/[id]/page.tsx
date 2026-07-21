@@ -17,6 +17,55 @@ function humanizeKey(key: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+// "disclosed" fields were extracted by many independent research passes
+// over 728 different product pages, so the same two kinds of noise show up
+// under dozens of different key spellings rather than one consistent name.
+// Excluded here:
+//  - page/listing titles -- just restate the product name already shown in
+//    the H1 above, so they're pure duplication, not new information.
+//  - SKUs / product codes -- a retailer inventory number, not something a
+//    matcha shopper cares about.
+// Deliberately NOT excluded: keys that merely contain "title" or "sku" as
+// part of a different, genuinely informative field -- e.g. a Japanese-
+// language product name, or brand claims that happen to reference a SKU --
+// since those aren't redundant or irrelevant, just named loosely by
+// whichever research pass wrote them.
+const REDUNDANT_DISCLOSED_KEYS = new Set([
+  "title",
+  "subtitle",
+  "page_title",
+  "meta_title",
+  "full_title",
+  "full_title_on_page",
+  "full_page_title",
+  "listed_title",
+  "listing_title",
+  "amazon_listing_title",
+  "amazon_us_listing_title",
+  "canonical_page_title",
+  "h1_page_title",
+  "on_page_title",
+  "official_title",
+  "official_page_title",
+  "official_product_title",
+  "product_page_title",
+  "product_title",
+  "full_product_title",
+  "full_listed_title",
+  "full_listing_title",
+  "full_name_as_listed_in_url_title",
+  "page_title_tagline",
+  "page_title_url_slug",
+  "page_title_variants",
+  "sku",
+  "sku_field",
+  "sku_1_pack",
+  "sku_30g",
+  "sku_80g",
+  "product_code_sku",
+  "related_sku_noted",
+]);
+
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{children}</p>
@@ -35,7 +84,9 @@ export default async function ProductDetailPage({
   const product = await getProductById(productId);
   if (!product) notFound();
 
-  const disclosedEntries = Object.entries(product.disclosed || {});
+  const disclosedEntries = Object.entries(product.disclosed || {}).filter(
+    ([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key)
+  );
   const externalLink = getExternalLinkInfo(product.source_url);
 
   return (
