@@ -37,6 +37,15 @@ export function SourcingMap({ regionCounts }: { regionCounts: RegionCount[] }) {
     mapRef.current = map;
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
 
+    // Mapbox GL measures its container once at construction time. If that
+    // happens before the surrounding layout has settled to its final width
+    // (web font loading, flex reflow, etc.), the map permanently renders at
+    // whatever tiny size it first saw -- a ResizeObserver keeps it in sync
+    // with the container's actual size for the lifetime of the component,
+    // not just on mount.
+    const resizeObserver = new ResizeObserver(() => map.resize());
+    resizeObserver.observe(containerRef.current);
+
     const maxCount = Math.max(...regionCounts.map((r) => r.count));
 
     for (const { region, count } of regionCounts) {
@@ -81,6 +90,7 @@ export function SourcingMap({ regionCounts }: { regionCounts: RegionCount[] }) {
     }
 
     return () => {
+      resizeObserver.disconnect();
       map.remove();
       mapRef.current = null;
     };
