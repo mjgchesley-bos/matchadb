@@ -81,9 +81,9 @@ export function ProductCard({ product: p }: { product: ProductRow }) {
       <Link href={`/products/${p.id}`} className="flex flex-col gap-1">
         <span className="flex items-center gap-2">
           <BrandLogo brandName={p.brand_name} />
-          <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
+          <span className="text-base font-bold text-ink">{p.brand_name}</span>
         </span>
-        <span className="font-medium text-ink leading-snug">{p.product_name}</span>
+        <span className="text-sm text-ink-muted leading-snug">{p.product_name}</span>
         {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
         <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
           {p.grade && (
@@ -158,9 +158,9 @@ export function TieredPickCard({ label, product: p }: { label: string; product: 
         </span>
         <span className="flex items-center gap-2">
           <BrandLogo brandName={p.brand_name} />
-          <span className="text-sm font-semibold text-ink">{p.brand_name}</span>
+          <span className="text-base font-bold text-ink">{p.brand_name}</span>
         </span>
-        <span className="font-medium text-ink leading-snug">{p.product_name}</span>
+        <span className="text-sm text-ink-muted leading-snug">{p.product_name}</span>
         {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
         {price.kind === "resolved" && (
           <span className="text-sm mt-1.5 tabular-nums text-ink">{price.text}</span>
