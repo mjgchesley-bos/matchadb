@@ -5,6 +5,7 @@ import Link from "next/link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { REGION_COORDINATES } from "@/lib/regions";
+import type { FarmLocation } from "@/lib/farms";
 
 export type RegionCount = { region: string; count: number };
 
@@ -17,7 +18,13 @@ function radiusFor(count: number, maxCount: number): number {
   return Math.round(min + (max - min) * scale);
 }
 
-export function SourcingMap({ regionCounts }: { regionCounts: RegionCount[] }) {
+export function SourcingMap({
+  regionCounts,
+  farmLocations = [],
+}: {
+  regionCounts: RegionCount[];
+  farmLocations?: FarmLocation[];
+}) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
 
@@ -89,12 +96,60 @@ export function SourcingMap({ regionCounts }: { regionCounts: RegionCount[] }) {
       });
     }
 
+    // A second, visually distinct layer: real named farms/gardens, each
+    // independently verified against the brand's own page (see
+    // src/lib/farms.ts for how these were sourced and why the list is
+    // short) -- a solid gold diamond rather than the green region circles,
+    // so it reads as "we confirmed this exact place" rather than "this is
+    // just the city the brand mentioned."
+    for (const farm of farmLocations) {
+      // Mapbox sets `transform` on the marker's own root element for
+      // positioning (translate), which would silently overwrite a rotate()
+      // set directly on it -- so the diamond shape has to live on a nested
+      // child instead, leaving the root free for Mapbox to position.
+      const el = document.createElement("div");
+      el.style.width = "16px";
+      el.style.height = "16px";
+      el.style.cursor = "pointer";
+      el.setAttribute("role", "button");
+      el.setAttribute("aria-label", `${farm.name}, verified farm location`);
+
+      const diamond = document.createElement("div");
+      diamond.style.width = "100%";
+      diamond.style.height = "100%";
+      diamond.style.transform = "rotate(45deg)";
+      diamond.style.background = "#e0b23c";
+      diamond.style.border = "2px solid #fff6df";
+      el.appendChild(diamond);
+
+      const productLinks = farm.productIds
+        .map((id) => `<a href="/products/${id}" style="color:#8fe356;text-decoration:underline;">#${id}</a>`)
+        .join(", ");
+
+      const popup = new mapboxgl.Popup({ offset: 16, closeButton: false }).setHTML(
+        `<div style="font-family: var(--font-manrope), sans-serif; padding: 2px; max-width: 220px;">
+           <strong>${farm.name}</strong><br/>
+           <span style="opacity:0.85;">${farm.brand}</span><br/>
+           <span style="font-size:11px;opacity:0.8;">${farm.description}</span><br/>
+           <span style="font-size:11px;">Products: ${productLinks}</span><br/>
+           <a href="${farm.sourceUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#e0b23c;">
+             Verified source &rarr;
+           </a>
+         </div>`
+      );
+
+      new mapboxgl.Marker({ element: el })
+        .setLngLat([farm.lng, farm.lat])
+        .setPopup(popup)
+        .addTo(map);
+    }
+
     return () => {
       resizeObserver.disconnect();
       map.remove();
       mapRef.current = null;
     };
-  }, [regionCounts]);
+  }, [regionCounts, farmLocations]);
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   if (!token) {
@@ -109,8 +164,10 @@ export function SourcingMap({ regionCounts }: { regionCounts: RegionCount[] }) {
     <div className="flex flex-col gap-3">
       <div ref={containerRef} className="w-full h-[520px] rounded-sm overflow-hidden border border-line" />
       <p className="text-xs text-ink-faint">
-        Marker size reflects product count. Click a marker to see products from that region.
-        Regions marked "approximate" reflect country-level sourcing data only --{" "}
+        Green circles are city/prefecture-level regions -- size reflects product count, click to see
+        products from that region. Gold diamonds are specific named farms we independently verified;
+        click one for its source and the exact products it supplies. Regions marked "approximate"
+        reflect country-level sourcing data only --{" "}
         <Link href="/browse" className="text-matcha hover:text-forest transition-colors">
           browse all products
         </Link>{" "}

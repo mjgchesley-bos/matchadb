@@ -1,5 +1,6 @@
 import { getRegionCounts, getStats } from "@/lib/db";
 import { SourcingMap } from "@/components/SourcingMap";
+import { FARM_LOCATIONS } from "@/lib/farms";
 
 export default async function MapPage() {
   const [regionCounts, stats] = await Promise.all([getRegionCounts(), getStats()]);
@@ -14,11 +15,15 @@ export default async function MapPage() {
         </h1>
         <p className="text-ink-muted mt-2">
           {totalWithRegion} of {stats.productCount} products have a disclosed growing region, pulled
-          directly from each brand&apos;s own product page.
+          directly from each brand&apos;s own product page. A gold marker means a brand named a
+          specific farm and we independently verified its location; everything else is only as
+          precise as the city or prefecture the brand itself disclosed. No farm property boundaries
+          are shown -- there's no public registry of land-parcel outlines for private tea farms, so
+          we don't draw shapes that don't correspond to anything real.
         </p>
       </div>
 
-      <SourcingMap regionCounts={regionCounts} />
+      <SourcingMap regionCounts={regionCounts} farmLocations={FARM_LOCATIONS} />
     </main>
   );
 }
