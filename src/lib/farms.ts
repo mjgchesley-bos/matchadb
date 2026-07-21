@@ -19,6 +19,11 @@ export type FarmLocation = {
   lng: number;
   description: string;
   sourceUrl: string;
+  // Key into public/region-boundaries/{boundaryKey}.geojson -- the real
+  // administrative area (city/ward) the farm sits within, one precision
+  // level tighter than the region-level pins since a specific farm was
+  // named. Not the farm's own property line -- see the file-level comment.
+  boundaryKey: string;
 };
 
 export const FARM_LOCATIONS: FarmLocation[] = [
@@ -35,6 +40,7 @@ export const FARM_LOCATIONS: FarmLocation[] = [
     description:
       "A fourth-generation, single-estate family farm in Kikugawa City, Shizuoka -- run by Hattori-san.",
     sourceUrl: "https://hattori-tea-farm.com/pages/company",
+    boundaryKey: "farm-hattori-kikugawa",
   },
   {
     name: "Isagawa Valley (Osada Seicha)",
@@ -47,5 +53,6 @@ export const FARM_LOCATIONS: FarmLocation[] = [
     description:
       "A remote, 20-hectare organic mountain plantation at 300-600m altitude in the Haruno subregion of Tenryū, Shizuoka.",
     sourceUrl: "https://www.tezumi.com/products/organic-haruto-matcha",
+    boundaryKey: "farm-isagawa-tenryu",
   },
 ];
