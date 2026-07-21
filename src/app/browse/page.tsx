@@ -27,8 +27,6 @@ export default async function BrowsePage({
     hasContradictionsOnly: toStr(sp.hasContradictionsOnly) === "1",
     minPrice: toNum(sp.minPrice),
     maxPrice: toNum(sp.maxPrice),
-    minTheanine: toNum(sp.minTheanine),
-    minEgcg: toNum(sp.minEgcg),
     page: toNum(sp.page) || 1,
     pageSize: PAGE_SIZE,
   };

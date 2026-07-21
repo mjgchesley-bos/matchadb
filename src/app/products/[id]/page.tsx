@@ -23,16 +23,6 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-// Distinguishes a brand's own disclosed number from a published-research
-// estimate applied by cultivar or grade tier -- never shown as if they were
-// the same kind of claim.
-function compoundSourceLabel(source: string | null): string {
-  if (source === "disclosed") return "Brand disclosed";
-  if (source === "cultivar_research") return "Published research (cultivar)";
-  if (source === "grade_research") return "Published research (grade estimate)";
-  return "";
-}
-
 export default async function ProductDetailPage({
   params,
 }: {
@@ -174,44 +164,6 @@ export default async function ProductDetailPage({
                 {line}
               </p>
             ))}
-          </div>
-        </section>
-      )}
-
-      {(product.l_theanine_note || product.egcg_note) && (
-        <section className="mt-10 bg-paper-raised/60 border border-line p-5">
-          <SectionLabel>Health compounds</SectionLabel>
-          <div className="flex flex-col gap-4">
-            {product.l_theanine_note && (
-              <div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-sm font-semibold text-ink">L-theanine</span>
-                  {product.l_theanine_mg_g != null && (
-                    <span className="text-sm tabular-nums text-ink">
-                      {product.l_theanine_mg_g.toFixed(1)} mg/g
-                    </span>
-                  )}
-                  <span className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5 text-xs">
-                    {compoundSourceLabel(product.l_theanine_source)}
-                  </span>
-                </div>
-                <p className="text-xs text-ink-faint mt-1 leading-relaxed">{product.l_theanine_note}</p>
-              </div>
-            )}
-            {product.egcg_note && (
-              <div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="text-sm font-semibold text-ink">EGCG</span>
-                  {product.egcg_mg_g != null && (
-                    <span className="text-sm tabular-nums text-ink">{product.egcg_mg_g.toFixed(1)} mg/g</span>
-                  )}
-                  <span className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5 text-xs">
-                    {compoundSourceLabel(product.egcg_source)}
-                  </span>
-                </div>
-                <p className="text-xs text-ink-faint mt-1 leading-relaxed">{product.egcg_note}</p>
-              </div>
-            )}
           </div>
         </section>
       )}
