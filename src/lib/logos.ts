@@ -6,7 +6,15 @@ import brandLogos from "./brand-logos.json";
 // image). 93 of 100 brands have one on file; the rest genuinely don't
 // publish a usable logo asset anywhere findable, so callers should treat
 // a null return as "show the brand name as text," not an error.
-const manifest: Record<string, string> = brandLogos;
+// `ratio` (width/height) is baked in by scripts/compute-logo-ratios.mjs --
+// most logos are wide wordmarks (3:1 to 11:1), not square icons, and
+// letting a fixed-height CSS box size itself via width:auto/height:auto
+// is underdetermined for SVGs with no explicit width/height attribute
+// (only a viewBox), which rendered at least one logo (Ippodo) as a
+// near-invisible sliver. A known ratio lets the container use CSS
+// `aspect-ratio` instead, which is unambiguous.
+type LogoEntry = { file: string; ratio: number };
+const manifest: Record<string, LogoEntry> = brandLogos;
 
 function slugify(name: string): string {
   return name
@@ -19,8 +27,13 @@ function slugify(name: string): string {
 }
 
 export function getBrandLogoPath(brandName: string): string | null {
-  const filename = manifest[slugify(brandName)];
-  return filename ? `/logos/${filename}` : null;
+  const entry = manifest[slugify(brandName)];
+  return entry ? `/logos/${entry.file}` : null;
+}
+
+export function getBrandLogoRatio(brandName: string): number {
+  const entry = manifest[slugify(brandName)];
+  return entry ? entry.ratio : 1;
 }
 
 // A handful of the real logos are white-on-transparent (Hekisuien, Gion

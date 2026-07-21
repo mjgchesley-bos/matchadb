@@ -1,38 +1,63 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ProductRow } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
-import { getBrandLogoPath, logoNeedsDarkBackdrop } from "@/lib/logos";
+import { getBrandLogoPath, getBrandLogoRatio, logoNeedsDarkBackdrop } from "@/lib/logos";
 
-// A small, fixed-size chip for brand logos. Real logos come in wildly
-// different aspect ratios and background assumptions -- most are a dark or
-// colorful mark on a transparent background, which reads fine on a plain
-// white chip. A handful (checked by sampling actual pixel color across all
-// 93 files, not guessed) are white-on-transparent and go invisible on
-// white, so those get a dark backdrop instead. The explicit dark `color`
-// on the default chip protects any SVG using `fill="currentColor"` from
-// silently inheriting the surrounding (light) text color and vanishing the
-// same way.
-export function BrandLogo({ brandName, size = 28 }: { brandName: string; size?: number }) {
+// A brand logo chip sized by HEIGHT, not a forced square -- real logos are
+// mostly wide wordmarks (checked actual pixel dimensions across all 93
+// files: most run 3:1 to 11:1 width:height), and squeezing a 6:1 wordmark
+// into a square box via object-contain shrinks it to a few px tall,
+// unreadable. The container's width is computed here from the logo's own
+// baked-in ratio (scripts/compute-logo-ratios.mjs) and clamped between a
+// floor (so a tall/narrow vertical wordmark isn't a sliver) and a cap (so
+// an 11:1 wordmark doesn't blow out the layout) -- both container
+// dimensions end up as concrete numbers, so the <img> can just fill them
+// with object-fit: contain. Deliberately not CSS width:auto/height:auto:
+// that's underdetermined for an SVG with only a viewBox and no explicit
+// width/height attribute, which is what rendered Ippodo's logo as a
+// near-invisible sliver.
+// Most logos are a dark or colorful mark on a transparent background,
+// which reads fine on a plain white chip. A handful (checked by sampling
+// actual pixel color, not guessed) are white-on-transparent and go
+// invisible on white, so those get a dark backdrop instead. The explicit
+// dark `color` on the default chip protects any SVG using
+// `fill="currentColor"` from silently inheriting the surrounding (light)
+// text color and vanishing the same way.
+export function BrandLogo({
+  brandName,
+  size = 28,
+  maxWidth,
+}: {
+  brandName: string;
+  size?: number;
+  // Overrides the default cap of size * 4 -- needed anywhere the logo sits
+  // in a fixed-width column (a grid tile) rather than a free-flowing flex
+  // row, so a wide wordmark can't overflow its container.
+  maxWidth?: number;
+}) {
   const src = getBrandLogoPath(brandName);
   if (!src) return null;
   const dark = logoNeedsDarkBackdrop(brandName);
+  const ratio = getBrandLogoRatio(brandName);
+  const cap = maxWidth ?? size * 4;
+  const width = Math.round(Math.min(Math.max(size * ratio, size * 0.5), cap));
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-sm shrink-0 overflow-hidden border border-line-strong/40 ${
+      className={`inline-flex items-center justify-center rounded-sm shrink-0 border border-line-strong/40 ${
         dark ? "bg-paper" : "bg-white"
       }`}
-      style={{ width: size, height: size, color: dark ? "#f1ede0" : "#1a1a1a" }}
+      style={{ height: size, width, color: dark ? "#f1ede0" : "#1a1a1a" }}
     >
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element -- local static
+          file, no optimization to gain; plain img lets the container
+          control sizing directly instead of Next Image's required fixed
+          width/height */}
+      <img
         src={src}
         alt={`${brandName} logo`}
-        width={size}
-        height={size}
-        className="object-contain p-0.5"
-        style={{ width: "100%", height: "100%" }}
-        unoptimized
+        loading="lazy"
+        style={{ width: "100%", height: "100%", objectFit: "contain", padding: 2 }}
       />
     </span>
   );

@@ -178,10 +178,10 @@ export default async function Home({
             <Link
               key={b}
               href={`/brands/${encodeURIComponent(b)}`}
-              className="group flex flex-col items-center gap-2.5 w-28 p-3 rounded-sm border border-transparent hover:border-line transition-colors"
+              className="group flex flex-col items-center gap-2.5 w-36 p-3 rounded-sm border border-transparent hover:border-line transition-colors"
             >
               <span className="transition-transform group-hover:-translate-y-0.5">
-                <BrandLogo brandName={b} size={64} />
+                <BrandLogo brandName={b} size={64} maxWidth={120} />
               </span>
               <span className="text-sm text-ink-muted text-center leading-snug group-hover:text-ink transition-colors">
                 {b}

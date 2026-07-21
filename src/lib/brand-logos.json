@@ -1,95 +1,374 @@
 {
-  "365": "365.png",
-  "aiya": "aiya.png",
-  "blue-bottle": "blue-bottle.svg",
-  "blue-willow-tea": "blue-willow-tea.png",
-  "breakaway-matcha": "breakaway-matcha.png",
-  "cha-cha-matcha": "cha-cha-matcha.png",
-  "chalait": "chalait.jpg",
-  "chamberlain-coffee": "chamberlain-coffee.svg",
-  "chikiriya-tea-house": "chikiriya-tea-house.png",
-  "culinary-teas": "culinary-teas.png",
-  "david-s-tea": "david-s-tea.svg",
-  "domatcha": "domatcha.svg",
-  "dona": "dona.svg",
-  "encha": "encha.svg",
-  "epic-matcha": "epic-matcha.png",
-  "fukujuen": "fukujuen.png",
-  "gion-tsujiri": "gion-tsujiri.png",
-  "golde": "golde.svg",
-  "green-foods": "green-foods.png",
-  "greenergy-matcha": "greenergy-matcha.png",
-  "grin-mood": "grin-mood.png",
-  "harney-and-sons": "harney-and-sons.png",
-  "heapwell": "heapwell.png",
-  "hekisuien": "hekisuien.png",
-  "horii-shichimeien": "horii-shichimeien.png",
-  "hoshino-seichaen": "hoshino-seichaen.png",
-  "ikkyu": "ikkyu.png",
-  "ippodo": "ippodo.svg",
-  "ito-en": "ito-en.png",
-  "itoh-kyuemon": "itoh-kyuemon.png",
-  "jade-leaf-matcha": "jade-leaf-matcha.svg",
-  "jing-tea": "jing-tea.svg",
-  "kanbayashi-shunsho": "kanbayashi-shunsho.png",
-  "kenko-tea": "kenko-tea.png",
-  "kettl": "kettl.svg",
-  "kirkland-signature": "kirkland-signature.svg",
-  "kiss-me-organics": "kiss-me-organics.png",
-  "kusmi-tea": "kusmi-tea.svg",
-  "kyoto-dew": "kyoto-dew.png",
-  "legion": "legion.png",
-  "leopard": "leopard.png",
-  "maeda-en": "maeda-en.png",
-  "mantra-matcha": "mantra-matcha.png",
-  "marukyu-koyamaen": "marukyu-koyamaen.jpg",
-  "matcha-com": "matcha-com.png",
-  "matcha-konomi": "matcha-konomi.png",
-  "matcha-moon": "matcha-moon.png",
-  "matcha-nude": "matcha-nude.svg",
-  "matcha-outlet": "matcha-outlet.jpg",
-  "matchabar": "matchabar.png",
-  "matchadna": "matchadna.svg",
-  "matchaeologist": "matchaeologist.png",
-  "matchaful": "matchaful.png",
-  "midori-spring": "midori-spring.png",
-  "mighty-leaf": "mighty-leaf.jpg",
-  "mizuba-tea-co": "mizuba-tea-co.png",
-  "morihan": "morihan.png",
-  "my-matcha-life": "my-matcha-life.jpg",
-  "nakamura-tokichi": "nakamura-tokichi.svg",
-  "naoki-matcha": "naoki-matcha.png",
-  "navitas-organics": "navitas-organics.png",
-  "nio-teas": "nio-teas.png",
-  "numi-organic-tea": "numi-organic-tea.svg",
-  "obubu-tea-farms": "obubu-tea-farms.jpg",
-  "ocha-and-co": "ocha-and-co.png",
-  "ooika": "ooika.webp",
-  "palais-des-thes": "palais-des-thes.svg",
-  "paragon-tea-room": "paragon-tea-room.png",
-  "pique-tea": "pique-tea.png",
-  "rocky-s": "rocky-s.png",
-  "rya": "rya.svg",
-  "sazen-tea": "sazen-tea.ico",
-  "sencha-naturals": "sencha-naturals.png",
-  "shogyokuen": "shogyokuen.png",
-  "steven-smith-teamaker": "steven-smith-teamaker.svg",
-  "takaokaya": "takaokaya.png",
-  "teadealers": "teadealers.jpg",
-  "teapigs": "teapigs.png",
-  "tenzo-tea": "tenzo-tea.png",
-  "tezumi": "tezumi.png",
-  "the-republic-of-tea": "the-republic-of-tea.png",
-  "the-tao-of-tea": "the-tao-of-tea.png",
-  "the-tea-spot": "the-tea-spot.png",
-  "tokyo-tea-trading": "tokyo-tea-trading.svg",
-  "trader-joe-s": "trader-joe-s.svg",
-  "tsujiki": "tsujiki.png",
-  "tsuki-matcha": "tsuki-matcha.png",
-  "ujido": "ujido.png",
-  "ujinotsuyu": "ujinotsuyu.png",
-  "vahdam": "vahdam.png",
-  "yamamasa-koyamaen": "yamamasa-koyamaen.svg",
-  "yamamotoyama": "yamamotoyama.jpg",
-  "zenkyu": "zenkyu.png"
+  "365": {
+    "file": "365.png",
+    "ratio": 1.5
+  },
+  "aiya": {
+    "file": "aiya.png",
+    "ratio": 1.056
+  },
+  "blue-bottle": {
+    "file": "blue-bottle.svg",
+    "ratio": 0.839
+  },
+  "blue-willow-tea": {
+    "file": "blue-willow-tea.png",
+    "ratio": 6
+  },
+  "breakaway-matcha": {
+    "file": "breakaway-matcha.png",
+    "ratio": 5.159
+  },
+  "cha-cha-matcha": {
+    "file": "cha-cha-matcha.png",
+    "ratio": 3.423
+  },
+  "chalait": {
+    "file": "chalait.jpg",
+    "ratio": 2.886
+  },
+  "chamberlain-coffee": {
+    "file": "chamberlain-coffee.svg",
+    "ratio": 2.586
+  },
+  "chikiriya-tea-house": {
+    "file": "chikiriya-tea-house.png",
+    "ratio": 4.417
+  },
+  "culinary-teas": {
+    "file": "culinary-teas.png",
+    "ratio": 3
+  },
+  "david-s-tea": {
+    "file": "david-s-tea.svg",
+    "ratio": 5.611
+  },
+  "domatcha": {
+    "file": "domatcha.svg",
+    "ratio": 1.078
+  },
+  "dona": {
+    "file": "dona.svg",
+    "ratio": 5.894
+  },
+  "encha": {
+    "file": "encha.svg",
+    "ratio": 5.082
+  },
+  "epic-matcha": {
+    "file": "epic-matcha.png",
+    "ratio": 1
+  },
+  "fukujuen": {
+    "file": "fukujuen.png",
+    "ratio": 1.325
+  },
+  "gion-tsujiri": {
+    "file": "gion-tsujiri.png",
+    "ratio": 0.184
+  },
+  "golde": {
+    "file": "golde.svg",
+    "ratio": 4.167
+  },
+  "green-foods": {
+    "file": "green-foods.png",
+    "ratio": 1
+  },
+  "greenergy-matcha": {
+    "file": "greenergy-matcha.png",
+    "ratio": 4.054
+  },
+  "grin-mood": {
+    "file": "grin-mood.png",
+    "ratio": 2.158
+  },
+  "harney-and-sons": {
+    "file": "harney-and-sons.png",
+    "ratio": 4.557
+  },
+  "heapwell": {
+    "file": "heapwell.png",
+    "ratio": 4.274
+  },
+  "hekisuien": {
+    "file": "hekisuien.png",
+    "ratio": 4.525
+  },
+  "horii-shichimeien": {
+    "file": "horii-shichimeien.png",
+    "ratio": 0.943
+  },
+  "hoshino-seichaen": {
+    "file": "hoshino-seichaen.png",
+    "ratio": 6.243
+  },
+  "ikkyu": {
+    "file": "ikkyu.png",
+    "ratio": 1
+  },
+  "ippodo": {
+    "file": "ippodo.svg",
+    "ratio": 5.429
+  },
+  "ito-en": {
+    "file": "ito-en.png",
+    "ratio": 4.46
+  },
+  "itoh-kyuemon": {
+    "file": "itoh-kyuemon.png",
+    "ratio": 3.377
+  },
+  "jade-leaf-matcha": {
+    "file": "jade-leaf-matcha.svg",
+    "ratio": 5.714
+  },
+  "jing-tea": {
+    "file": "jing-tea.svg",
+    "ratio": 1
+  },
+  "kanbayashi-shunsho": {
+    "file": "kanbayashi-shunsho.png",
+    "ratio": 3.25
+  },
+  "kenko-tea": {
+    "file": "kenko-tea.png",
+    "ratio": 1.783
+  },
+  "kettl": {
+    "file": "kettl.svg",
+    "ratio": 1.1
+  },
+  "kirkland-signature": {
+    "file": "kirkland-signature.svg",
+    "ratio": 3.253
+  },
+  "kiss-me-organics": {
+    "file": "kiss-me-organics.png",
+    "ratio": 9.355
+  },
+  "kusmi-tea": {
+    "file": "kusmi-tea.svg",
+    "ratio": 3.353
+  },
+  "kyoto-dew": {
+    "file": "kyoto-dew.png",
+    "ratio": 1.266
+  },
+  "legion": {
+    "file": "legion.png",
+    "ratio": 2.787
+  },
+  "leopard": {
+    "file": "leopard.png",
+    "ratio": 6.25
+  },
+  "maeda-en": {
+    "file": "maeda-en.png",
+    "ratio": 5.747
+  },
+  "mantra-matcha": {
+    "file": "mantra-matcha.png",
+    "ratio": 0.85
+  },
+  "marukyu-koyamaen": {
+    "file": "marukyu-koyamaen.jpg",
+    "ratio": 3.81
+  },
+  "matcha-com": {
+    "file": "matcha-com.png",
+    "ratio": 1.913
+  },
+  "matcha-konomi": {
+    "file": "matcha-konomi.png",
+    "ratio": 1
+  },
+  "matcha-moon": {
+    "file": "matcha-moon.png",
+    "ratio": 1.914
+  },
+  "matcha-nude": {
+    "file": "matcha-nude.svg",
+    "ratio": 1
+  },
+  "matcha-outlet": {
+    "file": "matcha-outlet.jpg",
+    "ratio": 4.425
+  },
+  "matchabar": {
+    "file": "matchabar.png",
+    "ratio": 2.069
+  },
+  "matchadna": {
+    "file": "matchadna.svg",
+    "ratio": 2.253
+  },
+  "matchaeologist": {
+    "file": "matchaeologist.png",
+    "ratio": 6.579
+  },
+  "matchaful": {
+    "file": "matchaful.png",
+    "ratio": 9.091
+  },
+  "midori-spring": {
+    "file": "midori-spring.png",
+    "ratio": 5.177
+  },
+  "mighty-leaf": {
+    "file": "mighty-leaf.jpg",
+    "ratio": 1.683
+  },
+  "mizuba-tea-co": {
+    "file": "mizuba-tea-co.png",
+    "ratio": 4.245
+  },
+  "morihan": {
+    "file": "morihan.png",
+    "ratio": 1.844
+  },
+  "my-matcha-life": {
+    "file": "my-matcha-life.jpg",
+    "ratio": 1
+  },
+  "nakamura-tokichi": {
+    "file": "nakamura-tokichi.svg",
+    "ratio": 6.014
+  },
+  "naoki-matcha": {
+    "file": "naoki-matcha.png",
+    "ratio": 2.271
+  },
+  "navitas-organics": {
+    "file": "navitas-organics.png",
+    "ratio": 2.364
+  },
+  "nio-teas": {
+    "file": "nio-teas.png",
+    "ratio": 1
+  },
+  "numi-organic-tea": {
+    "file": "numi-organic-tea.svg",
+    "ratio": 3.077
+  },
+  "obubu-tea-farms": {
+    "file": "obubu-tea-farms.jpg",
+    "ratio": 3.021
+  },
+  "ocha-and-co": {
+    "file": "ocha-and-co.png",
+    "ratio": 1
+  },
+  "ooika": {
+    "file": "ooika.webp",
+    "ratio": 1
+  },
+  "palais-des-thes": {
+    "file": "palais-des-thes.svg",
+    "ratio": 5.636
+  },
+  "paragon-tea-room": {
+    "file": "paragon-tea-room.png",
+    "ratio": 1
+  },
+  "pique-tea": {
+    "file": "pique-tea.png",
+    "ratio": 4.3
+  },
+  "rocky-s": {
+    "file": "rocky-s.png",
+    "ratio": 6.107
+  },
+  "rya": {
+    "file": "rya.svg",
+    "ratio": 2.533
+  },
+  "sazen-tea": {
+    "file": "sazen-tea.ico",
+    "ratio": 1
+  },
+  "sencha-naturals": {
+    "file": "sencha-naturals.png",
+    "ratio": 2.475
+  },
+  "shogyokuen": {
+    "file": "shogyokuen.png",
+    "ratio": 3.611
+  },
+  "steven-smith-teamaker": {
+    "file": "steven-smith-teamaker.svg",
+    "ratio": 1.556
+  },
+  "takaokaya": {
+    "file": "takaokaya.png",
+    "ratio": 3.556
+  },
+  "teadealers": {
+    "file": "teadealers.jpg",
+    "ratio": 8.667
+  },
+  "teapigs": {
+    "file": "teapigs.png",
+    "ratio": 4.585
+  },
+  "tenzo-tea": {
+    "file": "tenzo-tea.png",
+    "ratio": 3.62
+  },
+  "tezumi": {
+    "file": "tezumi.png",
+    "ratio": 4.274
+  },
+  "the-republic-of-tea": {
+    "file": "the-republic-of-tea.png",
+    "ratio": 3.49
+  },
+  "the-tao-of-tea": {
+    "file": "the-tao-of-tea.png",
+    "ratio": 11.198
+  },
+  "the-tea-spot": {
+    "file": "the-tea-spot.png",
+    "ratio": 1
+  },
+  "tokyo-tea-trading": {
+    "file": "tokyo-tea-trading.svg",
+    "ratio": 0.604
+  },
+  "trader-joe-s": {
+    "file": "trader-joe-s.svg",
+    "ratio": 6.667
+  },
+  "tsujiki": {
+    "file": "tsujiki.png",
+    "ratio": 0.408
+  },
+  "tsuki-matcha": {
+    "file": "tsuki-matcha.png",
+    "ratio": 2.284
+  },
+  "ujido": {
+    "file": "ujido.png",
+    "ratio": 2.615
+  },
+  "ujinotsuyu": {
+    "file": "ujinotsuyu.png",
+    "ratio": 6.795
+  },
+  "vahdam": {
+    "file": "vahdam.png",
+    "ratio": 3.876
+  },
+  "yamamasa-koyamaen": {
+    "file": "yamamasa-koyamaen.svg",
+    "ratio": 0.81
+  },
+  "yamamotoyama": {
+    "file": "yamamotoyama.jpg",
+    "ratio": 0.679
+  },
+  "zenkyu": {
+    "file": "zenkyu.png",
+    "ratio": 1.362
+  }
 }
