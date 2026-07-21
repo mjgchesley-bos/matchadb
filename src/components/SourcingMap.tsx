@@ -103,15 +103,21 @@ export function SourcingMap({
         if (!info) return;
 
         const boundary = boundaries[i];
-        const popupHtml = `<div style="font-family: var(--font-manrope), sans-serif; padding: 2px;">
+        // Mapbox's popup bubble is a hardcoded white background regardless
+        // of site theme -- without an explicit dark color here, this text
+        // inherits the page's light "ink" color (built for a dark
+        // background) and goes invisible against the popup's white one.
+        const popupHtml = `<div style="font-family: var(--font-manrope), sans-serif; padding: 2px; color: #1a1a1a;">
              <strong>${info.name}</strong>, ${info.country}<br/>
              ${count} product${count === 1 ? "" : "s"}
              ${
                info.precision === "country"
                  ? '<br/><span style="opacity:0.7;font-size:11px;">approximate -- country-level only</span>'
-                 : boundary
-                   ? '<br/><span style="opacity:0.7;font-size:11px;">real administrative boundary</span>'
-                   : '<br/><span style="opacity:0.7;font-size:11px;">no single boundary exists for this region -- shown as a point only</span>'
+                 : info.precision === "province"
+                   ? '<br/><span style="opacity:0.7;font-size:11px;">province-level -- more specific than country, not a single farm</span>'
+                   : boundary
+                     ? '<br/><span style="opacity:0.7;font-size:11px;">real administrative boundary</span>'
+                     : '<br/><span style="opacity:0.7;font-size:11px;">no single boundary exists for this region -- shown as a point only</span>'
              }
            </div>`;
 
@@ -235,7 +241,7 @@ export function SourcingMap({
           .join(", ");
 
         const popup = new mapboxgl.Popup({ offset: 16, closeButton: false }).setHTML(
-          `<div style="font-family: var(--font-manrope), sans-serif; padding: 2px; max-width: 220px;">
+          `<div style="font-family: var(--font-manrope), sans-serif; padding: 2px; max-width: 220px; color: #1a1a1a;">
              <strong>${farm.name}</strong><br/>
              <span style="opacity:0.85;">${farm.brand}</span><br/>
              <span style="font-size:11px;opacity:0.8;">${farm.description}</span><br/>
@@ -274,8 +280,10 @@ export function SourcingMap({
       <div ref={containerRef} className="w-full h-[520px] rounded-sm overflow-hidden border border-line" />
       <p className="text-xs text-ink-faint">
         Green outlines are real administrative boundaries -- the closest verifiable boundary for each
-        region: the town or city the brand disclosed, or its prefecture/country when that's all that
-        was disclosed. Click a shape (or its count badge) to see products from that region. Gold
+        region: the town or city the brand disclosed, its province when a country was all a product's
+        own listing gave but another source named the province, or the country itself when that's the
+        most specific thing ever disclosed. Click a shape (or its count badge) to see products from
+        that region. Gold
         diamonds are specific named farms we independently verified beyond the region level; click one
         for its source and the exact products it supplies. One region (Kyushu) spans multiple
         prefectures with no single administrative boundary, so it's shown as a point only. No farm

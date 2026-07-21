@@ -31,9 +31,15 @@ export const CULTIVAR_KEYWORDS = [
   "yukihikari", "inaguchi", "kyōken-283", "kyoken-283", "zuisho", "haruto 34",
 ];
 
+// "zhejiang"/"jeju" listed before "china"/"korea" -- findFirstKeyword
+// returns on the first array match, so a more specific province/island
+// keyword has to be checked before the country-level fallback it's
+// nested inside, the same way "uji" needs to win over a broader Japan
+// region if one were ever added here.
 export const REGION_KEYWORDS = [
   "uji", "nishio", "kagoshima", "shizuoka", "kyoto", "yame", "wazuka", "shirakawa",
-  "kyushu", "nara", "kakegawa", "aichi", "miyazaki", "china", "taiwan", "korea", "vietnam",
+  "kyushu", "nara", "kakegawa", "aichi", "miyazaki",
+  "zhejiang", "china", "jeju", "korea", "taiwan", "vietnam",
 ];
 
 // Word-boundary match, not a plain substring -- a plain .includes() would

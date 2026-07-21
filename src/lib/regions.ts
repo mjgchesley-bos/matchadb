@@ -1,16 +1,19 @@
-// Real-world coordinates for every distinct `region` value in the database
-// (checked against the data: 15 distinct values across 547 of 728 products).
+// Real-world coordinates for every distinct `region` value in the database.
 // Japanese entries are specific tea-growing towns/prefectures and are
-// precise. China/Korea/Taiwan are country-level only in our source data (no
-// sub-region was ever captured), so their coordinates are a single
-// representative point in a well-known tea-growing area of that country --
-// labeled as country-level, not claimed as a specific farm location.
+// precise. Zhejiang and Jeju are provinces -- one level less precise than a
+// Japanese town, one level more precise than a bare country -- pulled from
+// disclosed text that named the actual province/island even though the
+// database's structured region defaulted to the country (Numi's "Zhejiang,
+// China -- ... single Verified Fair Labor(TM) farm"; Grin Mood's "Jeju
+// Island, South Korea"). China/Taiwan remain country-level: no sub-region
+// was ever disclosed for their other products, so a province pin there
+// would just be a guess, not a verified location.
 export type RegionInfo = {
   name: string;
   country: string;
   lat: number;
   lng: number;
-  precision: "town" | "country";
+  precision: "town" | "province" | "country";
 };
 
 export const REGION_COORDINATES: Record<string, RegionInfo> = {
@@ -26,6 +29,8 @@ export const REGION_COORDINATES: Record<string, RegionInfo> = {
   Aichi: { name: "Aichi", country: "Japan", lat: 35.1802, lng: 136.9066, precision: "town" },
   Kyushu: { name: "Kyushu", country: "Japan", lat: 32.7503, lng: 130.75, precision: "town" },
   Miyazaki: { name: "Miyazaki", country: "Japan", lat: 31.9111, lng: 131.4239, precision: "town" },
+  Zhejiang: { name: "Zhejiang", country: "China", lat: 30.2937, lng: 120.1614, precision: "province" },
+  Jeju: { name: "Jeju Island", country: "South Korea", lat: 33.5097, lng: 126.5219, precision: "province" },
   China: { name: "China", country: "China", lat: 30.2741, lng: 120.1551, precision: "country" },
   Korea: { name: "Korea", country: "South Korea", lat: 35.0667, lng: 127.75, precision: "country" },
   Taiwan: { name: "Taiwan", country: "Taiwan", lat: 23.912, lng: 120.686, precision: "country" },

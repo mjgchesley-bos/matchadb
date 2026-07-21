@@ -156,6 +156,23 @@ for (const [regionKey, fileBase] of Object.entries(directMunicipalities)) {
   }
 }
 
+// --- Provinces: Zhejiang (China), Jeju (South Korea) -- disclosed text
+// named these specifically (Numi: "Zhejiang, China"; Grin Mood: "Jeju
+// Island, South Korea"), one precision level tighter than the bare
+// country pins above. Source: Natural Earth admin-1 states/provinces. ---
+{
+  const data = readJson(path.join(scratchBoundaries, "admin1.geojson"));
+  const wanted = { Zhejiang: "Zhejiang", Jeju: "Jeju" };
+  for (const [regionKey, provinceName] of Object.entries(wanted)) {
+    const feature = data.features.find((f) => f.properties.name === provinceName);
+    if (!feature) {
+      console.log(`${regionKey}: NOT FOUND (${provinceName})`);
+      continue;
+    }
+    writeRegion(regionKey, feature.geometry, 0.004);
+  }
+}
+
 // --- Farm-location context boundaries (not REGION_COORDINATES keys --
 // consumed by farms.ts as each farm's nearest known administrative
 // boundary, same "closest boundary we can verify" logic as the region
