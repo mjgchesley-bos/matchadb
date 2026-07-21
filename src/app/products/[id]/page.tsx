@@ -224,19 +224,6 @@ export default async function ProductDetailPage({
         </div>
       )}
 
-      {product.contradictions.length > 0 && (
-        <div className="mt-8 border border-amber-300 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/30 p-5">
-          <h2 className="font-semibold text-amber-900 dark:text-amber-300 mb-2.5 flex items-center gap-2">
-            <span aria-hidden>&#9888;</span> Flagged inconsistencies on the brand&apos;s own page
-          </h2>
-          <ul className="list-disc list-inside text-sm text-amber-900 dark:text-amber-300 space-y-1.5">
-            {product.contradictions.map((c, i) => (
-              <li key={i}>{c}</li>
-            ))}
-          </ul>
-        </div>
-      )}
-
       {externalLink && (
         <p className="mt-7 text-sm">
           <a
