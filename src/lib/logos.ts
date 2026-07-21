@@ -36,12 +36,16 @@ export function getBrandLogoRatio(brandName: string): number {
   return entry ? entry.ratio : 1;
 }
 
-// A handful of the real logos are white-on-transparent (Hekisuien, Gion
-// Tsujiri, Naoki Matcha, Tsujiki, Tsuki Matcha) or white-only-fill SVG
-// (Palais des Thés) -- confirmed by sampling opaque pixel color across all
-// 93 files, not a guess. Those need a dark backdrop instead of the default
-// white chip, or the mark is invisible against it.
-const NEEDS_DARK_BACKDROP = new Set([
+// A handful of the real logos are pure white-on-transparent (Hekisuien,
+// Gion Tsujiri, Naoki Matcha, Tsujiki, Tsuki Matcha) or a white-only-fill
+// SVG (Palais des Thés) -- confirmed via research/logo-classification.json,
+// which sampled every opaque pixel across all 93 files: each of these six
+// is 100% near-white (avg luminance 255) or an SVG with only a "white"
+// fill, no color. Since they're monochrome white, `filter: invert()` turns
+// them solid black with no color-shift risk, which lets them sit on the
+// same white chip as every other logo instead of standing out with a
+// one-off dark backdrop.
+const NEEDS_INVERT = new Set([
   "hekisuien",
   "gion-tsujiri",
   "naoki-matcha",
@@ -50,6 +54,6 @@ const NEEDS_DARK_BACKDROP = new Set([
   "palais-des-thes",
 ]);
 
-export function logoNeedsDarkBackdrop(brandName: string): boolean {
-  return NEEDS_DARK_BACKDROP.has(slugify(brandName));
+export function logoNeedsInvert(brandName: string): boolean {
+  return NEEDS_INVERT.has(slugify(brandName));
 }

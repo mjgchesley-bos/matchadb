@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ProductRow } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
-import { getBrandLogoPath, getBrandLogoRatio, logoNeedsDarkBackdrop } from "@/lib/logos";
+import { getBrandLogoPath, getBrandLogoRatio, logoNeedsInvert } from "@/lib/logos";
 
 // A brand logo chip sized by HEIGHT, not a forced square -- real logos are
 // mostly wide wordmarks (checked actual pixel dimensions across all 93
@@ -17,13 +17,11 @@ import { getBrandLogoPath, getBrandLogoRatio, logoNeedsDarkBackdrop } from "@/li
 // that's underdetermined for an SVG with only a viewBox and no explicit
 // width/height attribute, which is what rendered Ippodo's logo as a
 // near-invisible sliver.
-// Most logos are a dark or colorful mark on a transparent background,
-// which reads fine on a plain white chip. A handful (checked by sampling
-// actual pixel color, not guessed) are white-on-transparent and go
-// invisible on white, so those get a dark backdrop instead. The explicit
-// dark `color` on the default chip protects any SVG using
-// `fill="currentColor"` from silently inheriting the surrounding (light)
-// text color and vanishing the same way.
+// Every chip uses the same plain white background. A handful of logos are
+// pure white-on-transparent artwork (confirmed monochrome, not guessed --
+// see logoNeedsInvert), which would vanish on white, so those get
+// `filter: invert()` to flip them black instead of a one-off dark
+// backdrop -- keeps every brand tile visually consistent.
 export function BrandLogo({
   brandName,
   size = 28,
@@ -38,16 +36,14 @@ export function BrandLogo({
 }) {
   const src = getBrandLogoPath(brandName);
   if (!src) return null;
-  const dark = logoNeedsDarkBackdrop(brandName);
+  const invert = logoNeedsInvert(brandName);
   const ratio = getBrandLogoRatio(brandName);
   const cap = maxWidth ?? size * 4;
   const width = Math.round(Math.min(Math.max(size * ratio, size * 0.5), cap));
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-sm shrink-0 border border-line-strong/40 ${
-        dark ? "bg-paper" : "bg-white"
-      }`}
-      style={{ height: size, width, color: dark ? "#f1ede0" : "#1a1a1a" }}
+      className="inline-flex items-center justify-center rounded-sm shrink-0 border border-line-strong/40 bg-white"
+      style={{ height: size, width, color: "#1a1a1a" }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- local static
           file, no optimization to gain; plain img lets the container
@@ -57,7 +53,13 @@ export function BrandLogo({
         src={src}
         alt={`${brandName} logo`}
         loading="lazy"
-        style={{ width: "100%", height: "100%", objectFit: "contain", padding: 2 }}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "contain",
+          padding: 2,
+          filter: invert ? "invert(1)" : undefined,
+        }}
       />
     </span>
   );
