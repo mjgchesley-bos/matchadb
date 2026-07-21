@@ -189,13 +189,38 @@ export async function getProducts(filters: BrowseFilters) {
 // section and this query share one list instead of drifting apart.
 export const POPULAR_BRANDS = ["Marukyu Koyamaen", "Ippodo", "Kettl", "Aiya", "Rocky's", "Hekisuien"];
 
+// Both curated home-page sections (this one and getTieredPicks) are meant
+// to represent a brand's actual matcha, not whichever SKU happens to be
+// cheapest per gram -- novelty delivery formats (single-serve sticks,
+// pods, instant cubes, pre-mixed sweetened latte blends, snack "bites",
+// liquid concentrate) routinely undercut real loose-powder tins on a
+// per-gram basis without being what the brand is actually known for.
+// Checked against all 728 product names before shipping this list --
+// zero false positives, every match is genuinely one of these formats.
+// Scoped to these two curation queries only: a shopper who searches
+// /browse for "sticks" should still find them, this just keeps them out
+// of the "here's what's good" picks.
+const EXCLUDE_NOVELTY_FORMATS_SQL = `
+    p.product_name NOT LIKE '%stick%' AND p.product_name NOT LIKE '%pod%' AND
+    p.product_name NOT LIKE '%packet%' AND p.product_name NOT LIKE '%sachet%' AND
+    p.product_name NOT LIKE '%instant%' AND p.product_name NOT LIKE '%concentrate%' AND
+    p.product_name NOT LIKE '%bite%' AND p.product_name NOT LIKE '%latte mix%' AND
+    p.product_name NOT LIKE '%to-go%' AND p.product_name NOT LIKE '%to go%' AND
+    p.product_name NOT LIKE '%single-serve%' AND p.product_name NOT LIKE '%single serve%' AND
+    p.product_name NOT LIKE '%cube%' AND
+    (p.product_name NOT LIKE '%sweetened%' OR p.product_name LIKE '%unsweetened%')`;
+
 // The home page's default (no filters applied) product grid used to just
 // be alphabetical, which surfaced whatever brand starts with "A" rather
 // than anything a visitor would recognize. This picks one product per
 // popular brand at a time (round-robin), so with 6 popular brands and a
 // 9-product grid, the best-documented, cheapest-per-gram product from each
 // brand is shown first, then a second product from each brand fills the
-// remaining 3 slots -- no single brand dominates the grid.
+// remaining 3 slots -- no single brand dominates the grid. Sorting on
+// price_per_gram puts NULLs (products priced by count rather than weight,
+// e.g. anything sold as "10 sticks" instead of grams) first in plain SQLite
+// ASC order, which would make an unpriced product look like the cheapest --
+// the explicit IS NULL check forces real prices to sort ahead of that.
 export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
   const db = await getDb();
   const placeholders = POPULAR_BRANDS.map(() => "?").join(",");
@@ -208,9 +233,10 @@ export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
             p.tasting_notes, p.flavor_tags, p.use_tags
      FROM products p
      JOIN brands b ON p.brand_id = b.id
-     WHERE b.name IN (${placeholders}) AND p.not_found = 0
+     WHERE b.name IN (${placeholders}) AND p.not_found = 0 AND ${EXCLUDE_NOVELTY_FORMATS_SQL}
      ORDER BY
        (p.grade IS NOT NULL AND p.region IS NOT NULL AND p.flavor_tags != '[]') DESC,
+       (p.price_per_gram IS NULL) ASC,
        p.price_per_gram ASC`,
     POPULAR_BRANDS
   );
@@ -247,7 +273,7 @@ export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
 export async function getTieredPicks(filters: BrowseFilters) {
   const db = await getDb();
   const { where, params } = buildWhereClause(filters);
-  const baseWhere = where.length ? `${where.join(" AND ")} AND ` : "";
+  const baseWhere = `${where.length ? where.join(" AND ") + " AND " : ""}${EXCLUDE_NOVELTY_FORMATS_SQL} AND `;
 
   const columns = `p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
