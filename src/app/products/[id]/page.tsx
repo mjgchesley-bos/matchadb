@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getProductById } from "@/lib/db";
 import { formatPrice, formatPriceVariant } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
+import { BrandLogo } from "@/components/product-cards";
 
 function formatValue(v: unknown): string {
   if (v == null) return "";
@@ -56,9 +57,12 @@ export default async function ProductDetailPage({
         &larr; {product.brand_name}
       </Link>
 
-      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink mt-3 leading-tight">
-        {product.product_name}
-      </h1>
+      <div className="flex items-center gap-3 mt-3">
+        <BrandLogo brandName={product.brand_name} size={40} />
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight">
+          {product.product_name}
+        </h1>
+      </div>
 
       <div className="flex flex-wrap gap-2 mt-4">
         {product.grade && (
