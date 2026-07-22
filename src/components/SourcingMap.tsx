@@ -193,13 +193,15 @@ export function SourcingMap({
 
     setupRegions();
 
-    // A second, visually distinct layer: real named farms/gardens, each
-    // independently verified against the brand's own page (see
-    // src/lib/farms.ts for how these were sourced and why the list is
-    // short) -- a solid gold diamond plus a gold outline of the farm's
-    // containing city/ward (one precision level tighter than the green
-    // region boundaries), so it reads as "we confirmed this exact place,"
-    // not just another city-level shape.
+    // A second layer: real named farms/gardens, each independently
+    // verified against the brand's own page (see src/lib/farms.ts for how
+    // these were sourced and why the list is short). Same green as every
+    // region shape -- deliberately not a distinct accent color (gold was
+    // tried first and dropped: it read as a "premium/quality" signal,
+    // which isn't what this represents, just "more precisely located").
+    // The diamond shape is the only thing that still sets these apart --
+    // shape communicates "different kind of marker" without implying a
+    // ranking the way a special color would.
     async function setupFarms() {
       await waitForStyle(map);
       if (!active) return;
@@ -216,13 +218,13 @@ export function SourcingMap({
             id: `${sourceId}-fill`,
             type: "fill",
             source: sourceId,
-            paint: { "fill-color": "#e0b23c", "fill-opacity": 0.1 },
+            paint: { "fill-color": "#8fe356", "fill-opacity": 0.12 },
           });
           map.addLayer({
             id: `${sourceId}-line`,
             type: "line",
             source: sourceId,
-            paint: { "line-color": "#e0b23c", "line-width": 1.5, "line-dasharray": [2, 1] },
+            paint: { "line-color": "#8fe356", "line-width": 2 },
           });
         }
 
@@ -242,7 +244,7 @@ export function SourcingMap({
         diamond.style.width = "100%";
         diamond.style.height = "100%";
         diamond.style.transform = "rotate(45deg)";
-        diamond.style.background = "#e0b23c";
+        diamond.style.background = "#8fe356";
         diamond.style.border = "2px solid #fff6df";
         el.appendChild(diamond);
 
@@ -256,7 +258,7 @@ export function SourcingMap({
              <span style="opacity:0.85;">${farm.brand}</span><br/>
              <span style="font-size:11px;opacity:0.8;">${farm.description}</span><br/>
              <span style="font-size:11px;">Products: ${productLinks}</span><br/>
-             <a href="${farm.sourceUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#e0b23c;">
+             <a href="${farm.sourceUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#8fe356;">
                Verified source &rarr;
              </a>
            </div>`
@@ -294,7 +296,7 @@ export function SourcingMap({
         more specific than a bare country, or span multiple prefectures with no single administrative
         boundary at all -- those show only a small point badge rather than an outline that would
         overstate how precisely the sourcing is actually known. Click a shape (or its count badge) to
-        see products from that region. Gold diamonds are specific named farms we independently
+        see products from that region. Diamond markers are specific named farms we independently
         verified beyond the region level; click one for its source and the exact products it supplies.
         No farm property boundaries are shown anywhere -- there's no public registry of land-parcel
         outlines for private tea farms --{" "}
