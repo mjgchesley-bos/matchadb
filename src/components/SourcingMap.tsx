@@ -53,6 +53,26 @@ function waitForStyle(map: mapboxgl.Map): Promise<void> {
   });
 }
 
+// A town or ward boundary is only a few pixels across at the map's
+// default all-of-East-Asia zoom -- the real shape is there, it's just too
+// small to read as anything but a dot. Rather than exaggerate it (which
+// would misrepresent how big the place actually is), clicking flies the
+// camera to the boundary's real extent so the true outline becomes
+// visible at a scale where it's actually legible.
+function boundsOf(geometry: GeoJSON.Geometry): mapboxgl.LngLatBounds {
+  const bounds = new mapboxgl.LngLatBounds();
+  function walk(coords: unknown, depth: number) {
+    if (depth === 0) {
+      bounds.extend(coords as [number, number]);
+    } else {
+      (coords as unknown[]).forEach((c) => walk(c, depth - 1));
+    }
+  }
+  const depth = geometry.type === "MultiPolygon" ? 3 : geometry.type === "Polygon" ? 2 : 0;
+  if ("coordinates" in geometry) walk(geometry.coordinates, depth);
+  return bounds;
+}
+
 export function SourcingMap({
   regionCounts,
   farmLocations = [],
@@ -158,6 +178,10 @@ export function SourcingMap({
           });
           map.on("click", `${sourceId}-fill`, (e) => {
             popup.setLngLat(e.lngLat).addTo(map);
+            // A town-sized region is only a few pixels across at the
+            // map's default zoom -- zoom to its real extent so the
+            // outline is actually legible, not just theoretically there.
+            map.fitBounds(boundsOf(boundary.geometry), { padding: 60, duration: 800 });
           });
         }
 
@@ -267,6 +291,12 @@ export function SourcingMap({
         );
 
         new mapboxgl.Marker({ element: el }).setLngLat([farm.lng, farm.lat]).setPopup(popup).addTo(map);
+
+        if (boundary) {
+          el.addEventListener("click", () => {
+            map.fitBounds(boundsOf(boundary.geometry), { padding: 60, duration: 800 });
+          });
+        }
       });
     }
 
