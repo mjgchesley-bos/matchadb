@@ -95,18 +95,18 @@ export function SourcingMap({
       await waitForStyle(map);
       if (!active) return;
 
-      // Country-level regions never get a boundary fetched at all --
-      // outlining an entire nation doesn't add precision, it just gives a
-      // "we don't actually know the sub-region" fact undeserved visual
-      // weight (China's own outline is the country border; that's not a
-      // helpful shape for "somewhere in this country"). Point marker only.
-      const regionsNeedingBoundary = regionCounts.filter(({ region }) => {
-        const info = REGION_COORDINATES[region];
-        return info && info.precision !== "country";
-      });
-      const fetched = await Promise.all(regionsNeedingBoundary.map(({ region }) => fetchBoundary(region)));
+      // Whether a shape renders is driven entirely by whether a boundary
+      // file actually exists for that region (scripts/build-region-
+      // boundaries.mjs), not by precision tier -- both China and Taiwan
+      // are country-level precision in the data, but only Taiwan has a
+      // file, because outlining a small, specific country like Taiwan is
+      // informative while outlining a country the size of China isn't
+      // (it just gives "we don't know the sub-region" undeserved visual
+      // weight). fetchBoundary already returns null on a 404, so a
+      // missing file falls straight through to the point-only badge.
+      const fetched = await Promise.all(regionCounts.map(({ region }) => fetchBoundary(region)));
       if (!active) return;
-      const boundaryByRegion = new Map(regionsNeedingBoundary.map(({ region }, i) => [region, fetched[i]]));
+      const boundaryByRegion = new Map(regionCounts.map(({ region }, i) => [region, fetched[i]]));
 
       regionCounts.forEach(({ region, count }) => {
         const info = REGION_COORDINATES[region];
@@ -121,12 +121,14 @@ export function SourcingMap({
              <strong>${info.name}</strong>, ${info.country}<br/>
              ${count} product${count === 1 ? "" : "s"}
              ${
-               info.precision === "country"
-                 ? '<br/><span style="opacity:0.7;font-size:11px;">country-level only -- no more specific location was ever disclosed</span>'
-                 : info.precision === "province"
-                   ? '<br/><span style="opacity:0.7;font-size:11px;">province-level -- more specific than country, not a single farm</span>'
-                   : boundary
-                     ? '<br/><span style="opacity:0.7;font-size:11px;">real administrative boundary</span>'
+               boundary
+                 ? info.precision === "country"
+                   ? '<br/><span style="opacity:0.7;font-size:11px;">the whole country, shown because it\'s a small enough place for that to be genuinely informative</span>'
+                   : '<br/><span style="opacity:0.7;font-size:11px;">real administrative boundary</span>'
+                 : info.precision === "country"
+                   ? '<br/><span style="opacity:0.7;font-size:11px;">country-level only -- no more specific location was ever disclosed</span>'
+                   : info.precision === "province"
+                     ? '<br/><span style="opacity:0.7;font-size:11px;">province-level -- more specific than country, not a single farm</span>'
                      : '<br/><span style="opacity:0.7;font-size:11px;">no single boundary exists for this region -- shown as a point only</span>'
              }
            </div>`;
@@ -291,10 +293,11 @@ export function SourcingMap({
     <div className="flex flex-col gap-3">
       <div ref={containerRef} className="w-full h-[520px] rounded-sm overflow-hidden border border-line" />
       <p className="text-xs text-ink-faint">
-        Green outlines are real administrative boundaries -- shown for towns and provinces, where a
-        brand's own disclosure (or another verified source) named one. A handful of regions never get
-        more specific than a bare country, or span multiple prefectures with no single administrative
-        boundary at all -- those show only a small point badge rather than an outline that would
+        Green outlines are real administrative boundaries -- towns and provinces where a brand's own
+        disclosure (or another verified source) named one, plus a couple of countries small enough
+        that outlining the whole nation is still genuinely informative (Taiwan). Regions that never get
+        more specific than a country the size of China, or span multiple prefectures with no single
+        administrative boundary at all, show only a small point badge instead -- an outline there would
         overstate how precisely the sourcing is actually known. Click a shape (or its count badge) to
         see products from that region. Diamond markers are specific named farms we independently
         verified beyond the region level; click one for its source and the exact products it supplies.

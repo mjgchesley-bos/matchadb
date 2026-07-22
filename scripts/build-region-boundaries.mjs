@@ -143,11 +143,18 @@ for (const [regionKey, fileBase] of Object.entries(directMunicipalities)) {
   writeRegion("Aichi", feature.geometry, 0.004);
 }
 
-// Country-level regions (China, Taiwan, and formerly Korea) deliberately
-// have no boundary file at all -- SourcingMap.tsx never fetches one for
-// precision:"country" regions, since outlining an entire nation doesn't
-// add any real precision over the point marker; it just gives "we don't
-// know the sub-region" undeserved visual weight.
+// China deliberately has no boundary file -- its remaining 7 products
+// never disclose anything more specific than the country, and China is
+// large enough that outlining the whole nation doesn't add real
+// precision, just gives "we don't know the sub-region" undeserved visual
+// weight. Taiwan is the opposite case: also only country-level precision
+// in the data, but Taiwan *is* a small, specific place -- outlining the
+// whole island is actually informative, unlike outlining all of China.
+{
+  const data = readJson(path.join(scratchBoundaries, "countries.geojson"));
+  const feature = data.features.find((f) => f.properties.name === "Taiwan");
+  if (feature) writeRegion("Taiwan", feature.geometry, 0.01);
+}
 
 // --- Provinces: Zhejiang (China), Jeju (South Korea) -- disclosed text
 // named these specifically (Numi: "Zhejiang, China"; Grin Mood: "Jeju
