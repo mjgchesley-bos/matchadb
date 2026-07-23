@@ -3,7 +3,7 @@ import brandLogos from "./brand-logos.json";
 // Real logo files live in public/logos/, sourced from each brand's own
 // official site (or, where a brand's site is dead/blocked, an archived
 // snapshot of their own real logo -- never a fabricated or substitute
-// image). 93 of 100 brands have one on file; the rest genuinely don't
+// image). 95 of 100 brands have one on file; the rest genuinely don't
 // publish a usable logo asset anywhere findable, so callers should treat
 // a null return as "show the brand name as text," not an error.
 // `ratio` (width/height) is baked in by scripts/compute-logo-ratios.mjs --

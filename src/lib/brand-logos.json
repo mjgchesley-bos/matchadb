@@ -19,6 +19,10 @@
     "file": "breakaway-matcha.png",
     "ratio": 5.159
   },
+  "cap-beauty": {
+    "file": "cap-beauty.jpg",
+    "ratio": 1
+  },
   "cha-cha-matcha": {
     "file": "cha-cha-matcha.png",
     "ratio": 3.423
@@ -274,6 +278,10 @@
   "pique-tea": {
     "file": "pique-tea.png",
     "ratio": 4.3
+  },
+  "rishi-tea": {
+    "file": "rishi-tea.svg",
+    "ratio": 2.897
   },
   "rocky-s": {
     "file": "rocky-s.png",
