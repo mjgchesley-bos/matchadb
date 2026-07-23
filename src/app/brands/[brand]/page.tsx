@@ -1,9 +1,33 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBrandProducts } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo } from "@/components/product-cards";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/site";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ brand: string }>;
+}): Promise<Metadata> {
+  const { brand } = await params;
+  const brandName = decodeURIComponent(brand);
+  const products = await getBrandProducts(brandName);
+  if (products.length === 0) return {};
+
+  const title = `${brandName} Matcha — ${products.length} Product${products.length === 1 ? "" : "s"}`;
+  const description = `Pricing, sourcing, cultivar, and tasting-note data for every ${brandName} matcha product in MatchaDB's research database.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `${SITE_URL}/brands/${encodeURIComponent(brandName)}` },
+    openGraph: { title, description, url: `${SITE_URL}/brands/${encodeURIComponent(brandName)}` },
+  };
+}
 
 export default async function BrandPage({
   params,
@@ -16,8 +40,20 @@ export default async function BrandPage({
 
   if (products.length === 0) notFound();
 
+  const brandUrl = `${SITE_URL}/brands/${encodeURIComponent(brandName)}`;
+
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "MatchaDB", item: SITE_URL },
+            { "@type": "ListItem", position: 2, name: brandName, item: brandUrl },
+          ],
+        }}
+      />
       <Link href="/browse" className="text-sm text-ink-muted hover:text-matcha transition-colors">
         &larr; All products
       </Link>

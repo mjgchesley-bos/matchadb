@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -12,10 +13,16 @@ import {
 import { toArr } from "@/lib/searchParams";
 import { ProductCard, TieredPickCard, BrandLogo } from "@/components/product-cards";
 import { MatchTool } from "@/components/MatchTool";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 // Abbreviated relative to /browse's full result set + pagination -- the home
 // page shows a sample plus a link to the full database rather than paging.
 const HOME_PAGE_SIZE = 9;
+
+export const metadata: Metadata = {
+  alternates: { canonical: SITE_URL },
+};
 
 export default async function Home({
   searchParams,
@@ -86,6 +93,19 @@ export default async function Home({
 
   return (
     <main className="flex-1">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: SITE_NAME,
+          url: SITE_URL,
+          potentialAction: {
+            "@type": "SearchAction",
+            target: `${SITE_URL}/browse?q={search_term_string}`,
+            "query-input": "required name=search_term_string",
+          },
+        }}
+      />
       <section className="relative overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 pt-20 pb-10 sm:pt-24 text-center">
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-6">

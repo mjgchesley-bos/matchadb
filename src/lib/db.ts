@@ -408,6 +408,17 @@ export async function getBrandProducts(brandName: string) {
   return rowsToObjects<ProductRow>(res);
 }
 
+export async function getSitemapEntries() {
+  const db = await getDb();
+  const products = rowsToObjects<{ id: number }>(
+    db.exec("SELECT id FROM products WHERE not_found = 0")
+  );
+  const brands = rowsToObjects<{ name: string }>(
+    db.exec("SELECT name FROM brands ORDER BY name COLLATE NOCASE")
+  ).map((r) => r.name);
+  return { productIds: products.map((p) => p.id), brands };
+}
+
 export async function getStats() {
   const db = await getDb();
   const brandCount = db.exec("SELECT COUNT(*) FROM brands")[0].values[0][0] as number;

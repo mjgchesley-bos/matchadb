@@ -3,6 +3,7 @@ import { Fraunces, Manrope, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
 import { GoogleAnalyticsPageView } from "./google-analytics-pageview";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-EED2DFH6L6";
@@ -24,8 +25,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MatchaDB",
-  description: "A research database and comparison tool for matcha products.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "MatchaDB — Matcha Research & Comparison Database",
+    template: `%s | ${SITE_NAME}`,
+  },
+  description:
+    "Compare pricing, sourcing region, cultivar, and tasting notes across hundreds of matcha products from Japanese and global brands — with sourcing transparency called out where brands disagree or leave gaps.",
+  openGraph: {
+    siteName: SITE_NAME,
+    type: "website",
+    locale: "en_US",
+    images: [{ url: "/images/hero-matcha-garden.jpg", width: 1024, height: 559 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

@@ -1,13 +1,26 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getProducts, getFilterOptions, getTieredPicks, type BrowseFilters } from "@/lib/db";
 import { toStr, toArr, toNum } from "@/lib/searchParams";
 import { ProductCard, TieredPickCard } from "@/components/product-cards";
 import { FilterForm } from "@/components/FilterForm";
+import { SITE_URL } from "@/lib/site";
 
 // The full search experience: every filter, the largest page size on the
 // site. The home page embeds the same filter form but shows fewer results
 // and links here for the rest.
 const PAGE_SIZE = 48;
+
+// Canonical always points at the bare, unfiltered URL -- filter/search query
+// strings produce near-duplicate content (the same 728 products re-sliced),
+// which would otherwise dilute this page's ranking across dozens of indexed
+// variants instead of consolidating it on one authoritative URL.
+export const metadata: Metadata = {
+  title: "Search the Matcha Database",
+  description:
+    "Filter and compare matcha products by brand, grade, region, cultivar, flavor, and price per gram — full database search across every product MatchaDB has researched.",
+  alternates: { canonical: `${SITE_URL}/browse` },
+};
 
 export default async function BrowsePage({
   searchParams,

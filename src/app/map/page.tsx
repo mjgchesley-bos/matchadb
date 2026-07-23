@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import { getRegionCounts, getStats } from "@/lib/db";
 import { SourcingMap } from "@/components/SourcingMap";
 import { FARM_LOCATIONS } from "@/lib/farms";
+import { SITE_URL } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Sourcing Map — Where Matcha Comes From",
+  description:
+    "An interactive map of matcha growing regions and named farms, built from sourcing disclosures on brands' own product pages — real administrative boundaries only, never fabricated farm outlines.",
+  alternates: { canonical: `${SITE_URL}/map` },
+};
 
 export default async function MapPage() {
   const [regionCounts, stats] = await Promise.all([getRegionCounts(), getStats()]);
@@ -15,7 +24,7 @@ export default async function MapPage() {
         </h1>
         <p className="text-ink-muted mt-2">
           {totalWithRegion} of {stats.productCount} products have a disclosed growing region, pulled
-          directly from each brand&apos;s own product page. A gold marker means a brand named a
+          directly from each brand&apos;s own product page. A diamond marker means a brand named a
           specific farm and we independently verified its location; everything else is only as
           precise as the city or prefecture the brand itself disclosed. No farm property boundaries
           are shown -- there's no public registry of land-parcel outlines for private tea farms, so

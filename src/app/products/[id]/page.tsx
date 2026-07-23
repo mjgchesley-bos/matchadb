@@ -1,9 +1,50 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductById } from "@/lib/db";
 import { formatPrice, formatPriceVariant } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo } from "@/components/product-cards";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/site";
+
+function buildProductDescription(product: Awaited<ReturnType<typeof getProductById>>): string {
+  if (!product) return "";
+  const parts: string[] = [];
+  parts.push(`${product.product_name} by ${product.brand_name}`);
+  const details: string[] = [];
+  if (product.grade) details.push(product.grade);
+  if (product.region) details.push(`sourced from ${product.region}`);
+  if (product.cultivar) details.push(`${product.cultivar} cultivar`);
+  if (details.length > 0) parts.push(details.join(", "));
+  const price = formatPrice(product);
+  if (price.kind !== "unresolved" && price.kind !== "linkOnly") {
+    parts.push(price.text + (product.price_per_gram != null ? ` (~$${product.price_per_gram.toFixed(2)}/g)` : ""));
+  }
+  return parts.join(" — ") + " — pricing, sourcing, and tasting notes on MatchaDB.";
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const productId = Number(id);
+  if (!Number.isFinite(productId)) return {};
+  const product = await getProductById(productId);
+  if (!product) return {};
+
+  const title = `${product.product_name} by ${product.brand_name}`;
+  const description = buildProductDescription(product);
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `${SITE_URL}/products/${product.id}` },
+    openGraph: { title, description, url: `${SITE_URL}/products/${product.id}` },
+  };
+}
 
 function formatValue(v: unknown): string {
   if (v == null) return "";
@@ -88,9 +129,46 @@ export default async function ProductDetailPage({
     ([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key)
   );
   const externalLink = getExternalLinkInfo(product.source_url);
+  const productUrl = `${SITE_URL}/products/${product.id}`;
 
   return (
     <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-10">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: product.product_name,
+          brand: { "@type": "Brand", name: product.brand_name },
+          description: buildProductDescription(product),
+          url: productUrl,
+          ...(product.price_usd != null
+            ? {
+                offers: {
+                  "@type": "Offer",
+                  price: product.price_usd,
+                  priceCurrency: "USD",
+                  url: externalLink?.url ?? productUrl,
+                },
+              }
+            : {}),
+        }}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "MatchaDB", item: SITE_URL },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: product.brand_name,
+              item: `${SITE_URL}/brands/${encodeURIComponent(product.brand_name)}`,
+            },
+            { "@type": "ListItem", position: 3, name: product.product_name, item: productUrl },
+          ],
+        }}
+      />
       <Link
         href={`/brands/${encodeURIComponent(product.brand_name)}`}
         className="text-sm text-ink-muted hover:text-matcha transition-colors"
