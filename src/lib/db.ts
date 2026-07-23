@@ -408,6 +408,43 @@ export async function getBrandProducts(brandName: string) {
   return rowsToObjects<ProductRow>(res);
 }
 
+// Only returns products that genuinely share a region or grade with the
+// given product -- never pads with unrelated results just to fill a "similar
+// products" box, since that would be a fake relevance signal for both users
+// and crawlers.
+export async function getRelatedProducts(
+  product: { id: number; region: string | null; grade: string | null },
+  limit = 4
+): Promise<ProductRow[]> {
+  if (!product.region && !product.grade) return [];
+  const db = await getDb();
+  const res = db.exec(
+    `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
+            p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
+            p.price_review_reason, p.fx_converted, p.fx_rate_date,
+            p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
+            p.tasting_notes, p.flavor_tags, p.use_tags
+     FROM products p JOIN brands b ON p.brand_id = b.id
+     WHERE p.id != ? AND p.not_found = 0
+       AND ((? IS NOT NULL AND p.region = ?) OR (? IS NOT NULL AND p.grade = ?))
+     ORDER BY
+       (CASE WHEN ? IS NOT NULL AND p.region = ? THEN 2 ELSE 0 END) +
+       (CASE WHEN ? IS NOT NULL AND p.grade = ? THEN 1 ELSE 0 END) DESC,
+       p.product_name COLLATE NOCASE
+     LIMIT ?`,
+    [
+      product.id,
+      product.region, product.region,
+      product.grade, product.grade,
+      product.region, product.region,
+      product.grade, product.grade,
+      limit,
+    ]
+  );
+  return rowsToObjects<ProductRow>(res);
+}
+
 export async function getSitemapEntries() {
   const db = await getDb();
   const products = rowsToObjects<{ id: number }>(

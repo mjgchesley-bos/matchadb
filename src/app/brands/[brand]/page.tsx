@@ -54,9 +54,13 @@ export default async function BrandPage({
           ],
         }}
       />
-      <Link href="/browse" className="text-sm text-ink-muted hover:text-matcha transition-colors">
-        &larr; All products
-      </Link>
+      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-ink-muted">
+        <Link href="/" className="hover:text-matcha transition-colors">
+          MatchaDB
+        </Link>
+        <span aria-hidden="true">/</span>
+        <span className="text-ink-faint truncate">{brandName}</span>
+      </nav>
       <div className="flex items-center gap-4 mt-3 mb-1.5">
         <BrandLogo brandName={brandName} size={56} />
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{brandName}</h1>

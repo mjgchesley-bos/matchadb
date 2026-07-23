@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProductById } from "@/lib/db";
+import { getProductById, getRelatedProducts, getBrandProducts } from "@/lib/db";
 import { formatPrice, formatPriceVariant } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
-import { BrandLogo } from "@/components/product-cards";
+import { BrandLogo, ProductCard } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 
@@ -109,7 +109,7 @@ const REDUNDANT_DISCLOSED_KEYS = new Set([
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{children}</p>
+    <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{children}</h2>
   );
 }
 
@@ -130,6 +130,12 @@ export default async function ProductDetailPage({
   );
   const externalLink = getExternalLinkInfo(product.source_url);
   const productUrl = `${SITE_URL}/products/${product.id}`;
+
+  const [relatedProducts, brandProducts] = await Promise.all([
+    getRelatedProducts({ id: product.id, region: product.region, grade: product.grade }, 4),
+    getBrandProducts(product.brand_name),
+  ]);
+  const moreFromBrand = brandProducts.filter((p) => p.id !== product.id).slice(0, 4);
 
   return (
     <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-10">
@@ -169,12 +175,20 @@ export default async function ProductDetailPage({
           ],
         }}
       />
-      <Link
-        href={`/brands/${encodeURIComponent(product.brand_name)}`}
-        className="text-sm text-ink-muted hover:text-matcha transition-colors"
-      >
-        &larr; {product.brand_name}
-      </Link>
+      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-ink-muted">
+        <Link href="/" className="hover:text-matcha transition-colors">
+          MatchaDB
+        </Link>
+        <span aria-hidden="true">/</span>
+        <Link
+          href={`/brands/${encodeURIComponent(product.brand_name)}`}
+          className="hover:text-matcha transition-colors"
+        >
+          {product.brand_name}
+        </Link>
+        <span aria-hidden="true">/</span>
+        <span className="text-ink-faint truncate">{product.product_name}</span>
+      </nav>
 
       <div className="flex items-center gap-3 mt-3">
         <BrandLogo brandName={product.brand_name} size={40} />
@@ -336,6 +350,40 @@ export default async function ProductDetailPage({
         <section className="mt-8">
           <SectionLabel>Research notes</SectionLabel>
           <p className="text-sm text-ink-muted leading-relaxed">{product.page_notes}</p>
+        </section>
+      )}
+
+      {relatedProducts.length > 0 && (
+        <section className="mt-12">
+          <SectionLabel>
+            {product.region && product.grade
+              ? `More ${product.grade} matcha from ${product.region}`
+              : product.region
+                ? `More matcha from ${product.region}`
+                : `More ${product.grade} matcha`}
+          </SectionLabel>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {relatedProducts.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {moreFromBrand.length > 0 && (
+        <section className="mt-12">
+          <SectionLabel>More from {product.brand_name}</SectionLabel>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {moreFromBrand.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+          <Link
+            href={`/brands/${encodeURIComponent(product.brand_name)}`}
+            className="inline-block mt-4 text-sm text-matcha hover:text-forest transition-colors"
+          >
+            View all {product.brand_name} products &rarr;
+          </Link>
         </section>
       )}
 
