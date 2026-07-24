@@ -65,6 +65,15 @@ export type ProductRow = {
   tasting_notes: string | null;
   flavor_tags: string;
   use_tags: string;
+  // Only present on getProductById's `SELECT p.*` -- other queries here
+  // select an explicit column list that doesn't include these, so they're
+  // optional rather than columns every ProductRow is guaranteed to carry.
+  l_theanine_mg_g?: number | null;
+  l_theanine_source?: string | null;
+  l_theanine_note?: string | null;
+  egcg_mg_g?: number | null;
+  egcg_source?: string | null;
+  egcg_note?: string | null;
 };
 
 function rowsToObjects<T>(result: initSqlJs.QueryExecResult[]): T[] {
