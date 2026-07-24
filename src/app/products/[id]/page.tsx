@@ -458,11 +458,6 @@ export default async function ProductDetailPage({
       {hasCompounds && (
         <section className="mt-12">
           <SectionLabel>Composition</SectionLabel>
-          <p className="text-sm text-ink-muted mb-4 max-w-xl">
-            L-theanine (a calming, umami-sweet amino acid) and EGCG (a bitter antioxidant
-            catechin) are the two compounds most associated with matcha&apos;s characteristic
-            taste and effects.
-          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <CompoundCard
               label="L-theanine"
