@@ -164,7 +164,7 @@ export default async function Home({
       <section className="max-w-5xl mx-auto px-6 pb-16">
         {tieredPicks && (
           <div className="mt-10">
-            <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-4">
+            <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-4">
               A pick at every price
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

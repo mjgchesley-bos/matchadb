@@ -77,7 +77,7 @@ export default async function BrowsePage({
         <section>
           {tieredPicks && (
             <div className="mb-10">
-              <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-4">
+              <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-4">
                 A pick at every price
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
