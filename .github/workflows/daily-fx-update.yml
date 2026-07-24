@@ -1,0 +1,52 @@
+name: Daily FX rate update
+
+# Exchange rates move daily; the old approach was a one-off manually-
+# researched snapshot in data/fx-rate.json that just got stale. This
+# refreshes it from a real, free, no-key rate source (Frankfurter, ECB
+# daily reference rates) and rebuilds the database so every JPY/GBP/EUR
+# price gets reconverted -- separate from the weekly price-scrape workflow
+# since currency rates and brands' own listed prices change on different
+# schedules and scraping brand sites daily would be excessive for no
+# corresponding benefit.
+on:
+  schedule:
+    - cron: "0 8 * * *" # 08:00 UTC daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-fx-rate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm ci
+
+      - name: Fetch today's real exchange rates
+        run: node scripts/update-fx-rate.mjs
+
+      - name: Rebuild database against the new rate
+        run: npm run build:db
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          S3_BUCKET: ${{ secrets.S3_BUCKET }}
+
+      - name: Commit and push if the rate changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/fx-rate.json data/matcha.db
+          if git diff --cached --quiet; then
+            echo "No FX rate change this run."
+          else
+            git commit -m "Automated daily FX rate update"
+            git push
+          fi

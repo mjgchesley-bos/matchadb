@@ -1,7 +1,7 @@
 {
-  "usdToJpy": 162.178,
-  "gbpToUsd": 1.3535,
-  "eurToUsd": 1.1458,
-  "asOf": "2026-07-16",
-  "source": "mid-market rate, web search (xe.com/Yahoo Finance/Bloomberg aggregation)"
+  "usdToJpy": 163.47,
+  "gbpToUsd": 1.335238,
+  "eurToUsd": 1.139199,
+  "asOf": "2026-07-23",
+  "source": "Frankfurter API (ECB daily reference rates), frankfurter.dev"
 }

@@ -42,9 +42,7 @@ export function formatPrice(p: ProductRow): PriceDisplay {
     const symbol =
       p.price_currency === "JPY" ? "¥" : p.price_currency === "GBP" ? "£" : p.price_currency === "EUR" ? "€" : "";
     const nativeAmount = p.price_currency === "JPY" ? trimNum(p.price_native) : p.price_native.toFixed(2);
-    text = `${symbol}${nativeAmount}${size} — ~$${p.price_usd.toFixed(2)} USD (converted${
-      p.fx_rate_date ? `, rate as of ${p.fx_rate_date}` : ""
-    })`;
+    text = `${symbol}${nativeAmount}${size} — ~$${p.price_usd.toFixed(2)} USD (converted)`;
   }
 
   return { kind: "resolved", text, caution: p.price_needs_review === 1 };
@@ -77,7 +75,7 @@ export function formatPriceVariant(
   const nativeAmount = v.price_currency === "JPY" ? trimNum(v.price_native) : v.price_native.toFixed(2);
   let text = `${size} — ${symbol}${nativeAmount}`;
   if (v.fx_converted === 1 && v.price_usd != null) {
-    text += ` (~$${v.price_usd.toFixed(2)} USD${v.fx_rate_date ? `, rate as of ${v.fx_rate_date}` : ""})`;
+    text += ` (~$${v.price_usd.toFixed(2)} USD)`;
   }
   if (v.inferred === 1) {
     text += " (size inferred from the page's listed option — not explicitly stated for this price)";
