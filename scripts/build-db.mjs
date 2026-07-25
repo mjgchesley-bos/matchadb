@@ -30,6 +30,7 @@ const RESOLVED_CONTRADICTIONS_PATH = path.join(__dirname, "..", "data", "resolve
 const LIVE_ATTRIBUTES_PATH = path.join(__dirname, "..", "data", "live-attributes.json");
 const SECONDARY_LINKS_PATH = path.join(__dirname, "..", "data", "secondary-source-brand-links.json");
 const LIVE_TASTE_PATH = path.join(__dirname, "..", "data", "live-taste.json");
+const PRODUCT_ID_REGISTRY_PATH = path.join(__dirname, "..", "data", "product-id-registry.json");
 
 const s3 = new S3Client({ region: REGION });
 const fxRate = JSON.parse(fs.readFileSync(FX_RATE_PATH, "utf-8"));
@@ -37,6 +38,26 @@ const removedProducts = JSON.parse(fs.readFileSync(REMOVED_PATH, "utf-8"));
 const removedSet = new Set(removedProducts.map((r) => `${r.brand}||${r.product}`));
 const priceLinkOnlyProducts = JSON.parse(fs.readFileSync(PRICE_LINK_ONLY_PATH, "utf-8"));
 const priceLinkOnlySet = new Set(priceLinkOnlyProducts.map((r) => `${r.brand}||${r.product}`));
+
+// /products/[id] URLs are public and get indexed/bookmarked/linked to, so a
+// product's id must never change once assigned -- even across a rebuild
+// that adds or removes other products. Before this registry existed, ids
+// were plain SQLite rowid-by-insertion-order, so removing any product
+// silently reshuffled the id of every product after it. This file is the
+// permanent "brand||product -> id" source of truth: existing entries are
+// always reused verbatim, new products get the next unused id appended to
+// it, and a removed product's id is never recycled (its entry just stops
+// being referenced by anything, rather than being deleted from here) --
+// see data/removed-products.json for what "removed" means in this pipeline.
+const productIdRegistry = JSON.parse(fs.readFileSync(PRODUCT_ID_REGISTRY_PATH, "utf-8"));
+let nextRegistryId = Math.max(0, ...Object.values(productIdRegistry)) + 1;
+function getStableProductId(brand, product) {
+  const key = `${brand}||${product}`;
+  if (productIdRegistry[key] != null) return productIdRegistry[key];
+  const id = nextRegistryId++;
+  productIdRegistry[key] = id;
+  return id;
+}
 
 // Specific archived contradictions that live-scraping has since resolved
 // (e.g. a price whose size "couldn't be confirmed" in the archived research,
@@ -408,15 +429,18 @@ async function main() {
     if (compounds.theanine.source) theanineCount++;
     if (compounds.egcg.source) egcgCount++;
 
+    const productId = getStableProductId(brand, product);
+
     db.run(
       `INSERT OR IGNORE INTO products
-        (brand_id, product_name, price_usd, price_per_gram, price_size_grams, price_native,
+        (id, brand_id, product_name, price_usd, price_per_gram, price_size_grams, price_native,
          price_currency, price_needs_review, price_review_reason, fx_converted, fx_rate_date,
          grade, cultivar, region, organic_certified, source_url, has_contradictions, not_found,
          disclosed_json, page_notes, price_link_only, tasting_notes, flavor_tags, use_tags,
          l_theanine_mg_g, l_theanine_source, l_theanine_note, egcg_mg_g, egcg_source, egcg_note)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
+        productId,
         brandId,
         product,
         fields.priceUsd,
@@ -450,8 +474,6 @@ async function main() {
       ]
     );
 
-    const idRes = db.exec("SELECT last_insert_rowid() AS id");
-    const productId = idRes[0].values[0][0];
     productIds.set(`${brand}||${product}`, productId);
 
     if (hasContradictions) {
@@ -581,6 +603,14 @@ async function main() {
   const data = db.export();
   fs.writeFileSync(OUT_PATH, Buffer.from(data));
   console.log(`\nWrote ${OUT_PATH} (${(data.length / 1024).toFixed(0)} KB)`);
+
+  // Persist any newly-assigned ids (new products since the last run) so
+  // they're permanent from here on too -- sorted by id for a readable diff,
+  // not insertion order.
+  const sortedRegistry = Object.fromEntries(
+    Object.entries(productIdRegistry).sort((a, b) => a[1] - b[1])
+  );
+  fs.writeFileSync(PRODUCT_ID_REGISTRY_PATH, JSON.stringify(sortedRegistry, null, 2) + "\n");
 }
 
 main().catch((err) => {

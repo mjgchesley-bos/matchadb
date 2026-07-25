@@ -3,7 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { PRICE_TIER_CHEAP_MAX, PRICE_TIER_MID_MAX } from "./price";
 import { getExternalLinkInfo } from "./links";
-import { BRAND_RECOGNITION_SCORES, DEFAULT_RECOGNITION_SCORE } from "./brand-recognition";
+import { BRAND_RECOGNITION_SCORES, DEFAULT_RECOGNITION_SCORE, getBrandRecognitionScore } from "./brand-recognition";
 
 let dbPromise: Promise<Database> | null = null;
 
@@ -241,17 +241,17 @@ const EXCLUDE_NOVELTY_FORMATS_SQL = `
 // The home page's default (no filters applied) product grid used to just
 // be alphabetical, which surfaced whatever brand starts with "A" rather
 // than anything a visitor would recognize. This picks one product per
-// popular brand at a time (round-robin), so with 6 popular brands and a
-// 9-product grid, the best-documented, cheapest-per-gram product from each
-// brand is shown first, then a second product from each brand fills the
-// remaining 3 slots -- no single brand dominates the grid. Sorting on
+// brand at a time (round-robin), ordered by brand-recognition.ts's score
+// (highest first) rather than a fixed 6-brand list -- so with a 9-product
+// grid, the best-documented, cheapest-per-gram product from each of the
+// top-scored brands is shown first, then a second product from each fills
+// remaining slots -- no single brand dominates the grid. Sorting on
 // price_per_gram puts NULLs (products priced by count rather than weight,
 // e.g. anything sold as "10 sticks" instead of grams) first in plain SQLite
 // ASC order, which would make an unpriced product look like the cheapest --
 // the explicit IS NULL check forces real prices to sort ahead of that.
 export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
   const db = await getDb();
-  const placeholders = POPULAR_BRANDS.map(() => "?").join(",");
   const res = db.exec(
     `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
@@ -261,12 +261,11 @@ export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
             p.tasting_notes, p.flavor_tags, p.use_tags
      FROM products p
      JOIN brands b ON p.brand_id = b.id
-     WHERE b.name IN (${placeholders}) AND p.not_found = 0 AND ${EXCLUDE_NOVELTY_FORMATS_SQL}
+     WHERE p.not_found = 0 AND ${EXCLUDE_NOVELTY_FORMATS_SQL}
      ORDER BY
        (p.grade IS NOT NULL AND p.region IS NOT NULL AND p.flavor_tags != '[]') DESC,
        (p.price_per_gram IS NULL) ASC,
-       p.price_per_gram ASC`,
-    POPULAR_BRANDS
+       p.price_per_gram ASC`
   );
   const rows = rowsToObjects<ProductRow>(res);
 
@@ -275,7 +274,9 @@ export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
     if (!byBrand.has(r.brand_name)) byBrand.set(r.brand_name, []);
     byBrand.get(r.brand_name)!.push(r);
   }
-  const brandsWithProducts = POPULAR_BRANDS.filter((b) => byBrand.has(b));
+  const brandsWithProducts = [...byBrand.keys()].sort(
+    (a, b) => getBrandRecognitionScore(b) - getBrandRecognitionScore(a) || a.localeCompare(b)
+  );
 
   const picks: ProductRow[] = [];
   for (let round = 0; picks.length < limit && round < 10; round++) {

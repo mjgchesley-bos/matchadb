@@ -12,5 +12,12 @@
     "reason": "Product page returns \"Page not found\" on the live site (confirmed via browser). Research notes flag this as possibly seasonal (a \"Shin Matcha\"/new-harvest release), so it may return in a future season rather than being permanently discontinued.",
     "sourceUrl": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1115020c1",
     "checkedDate": "2026-07-16"
+  },
+  {
+    "brand": "Aoya",
+    "product": "Ceremonial",
+    "reason": "Could not confirm a real, independently-existing brand named \"Aoya\" -- exhaustive research (web search, Amazon/Etsy/eBay/Walmart, social media, and a fresh re-check) found no official site, retailer listing, or social account under that exact name. Only two near-name matches kept surfacing (\"Aiya,\" already its own separate documented brand here, and \"AOI Tea Company,\" a real Nishio-based wholesale matcha manufacturer not currently in this database), but the entry has zero other data (no source_url, no price, empty disclosed fields) to responsibly determine which one -- if either -- it was actually meant to be. Removed rather than guess-merged into either real company, since misattribution would be worse than dropping it.",
+    "sourceUrl": null,
+    "checkedDate": "2026-07-24"
   }
 ]
