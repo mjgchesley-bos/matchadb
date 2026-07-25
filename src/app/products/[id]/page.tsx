@@ -176,26 +176,21 @@ function StatCard({ label, value }: { label: string; value: string }) {
   );
 }
 
-// grade_research/cultivar_research are real published lab measurements for
-// matcha of that grade or cultivar in general -- not a lab result for this
-// specific tin -- so the label always says "estimate," never states it as
-// this product's own measured value.
-function compoundSourceLabel(source: string | null | undefined): string {
-  if (source === "disclosed") return "As stated on the brand's own product page";
-  if (source === "cultivar_research") return "Published estimate for this cultivar";
-  if (source === "grade_research") return "Published estimate for this grade";
-  return "";
-}
-
+// note already fully self-describes its own provenance -- e.g. "Ceremonial-
+// grade published estimate -- Goto et al., ..." or "Disclosed on the
+// brand's own product page: 27-40mg" (see scripts/compounds-extract.mjs) --
+// so it's shown as-is rather than behind a second, redundant label restating
+// the same thing in different words (grade_research/cultivar_research are
+// real published lab measurements for matcha of that grade or cultivar in
+// general, never this specific tin's own measured value -- but the note
+// text already says that itself).
 function CompoundCard({
   label,
   mgPerGram,
-  source,
   note,
 }: {
   label: string;
   mgPerGram: number | null | undefined;
-  source: string | null | undefined;
   note: string | null | undefined;
 }) {
   if (!note) return null;
@@ -204,17 +199,12 @@ function CompoundCard({
       <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-ink-faint mb-1.5">
         {label}
       </p>
-      {mgPerGram != null ? (
+      {mgPerGram != null && (
         <p className="text-2xl font-display font-semibold text-ink tabular-nums">
           {mgPerGram} <span className="text-sm font-sans font-normal text-ink-muted">mg/g</span>
         </p>
-      ) : (
-        <p className="text-sm text-ink">{note}</p>
       )}
-      <p className="text-xs text-ink-faint mt-2 leading-relaxed">
-        {compoundSourceLabel(source)}
-        {mgPerGram != null ? ` — ${note}` : ""}
-      </p>
+      <p className="text-xs text-ink-faint mt-2 leading-relaxed">{note}</p>
     </div>
   );
 }
@@ -462,13 +452,11 @@ export default async function ProductDetailPage({
             <CompoundCard
               label="L-theanine"
               mgPerGram={product.l_theanine_mg_g}
-              source={product.l_theanine_source}
               note={product.l_theanine_note}
             />
             <CompoundCard
               label="EGCG"
               mgPerGram={product.egcg_mg_g}
-              source={product.egcg_source}
               note={product.egcg_note}
             />
           </div>
