@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { PRICE_TIER_CHEAP_MAX, PRICE_TIER_MID_MAX } from "./price";
 import { getExternalLinkInfo } from "./links";
+import { BRAND_RECOGNITION_SCORES, DEFAULT_RECOGNITION_SCORE } from "./brand-recognition";
 
 let dbPromise: Promise<Database> | null = null;
 
@@ -157,6 +158,22 @@ function buildWhereClause(filters: BrowseFilters): { where: string[]; params: (s
   return { where, params };
 }
 
+// Default /browse ordering used to be pure alphabetical by brand name,
+// which surfaced whichever brand happens to start with "A" with equal
+// weight to a widely-recognized retail name or a genuinely reputable
+// specialty tea house -- see brand-recognition.ts for why/how the score
+// itself is assigned. Built as a parameterized SQL CASE (not a template-
+// interpolated string) so brand names with quotes/special characters can't
+// break the query; params bind 1:1 with the `?` placeholders in order.
+function buildRecognitionOrderBy(): { sql: string; params: (string | number)[] } {
+  const entries = Object.entries(BRAND_RECOGNITION_SCORES);
+  const whens = entries.map(() => "WHEN ? THEN ?").join(" ");
+  const params: (string | number)[] = [];
+  for (const [name, score] of entries) params.push(name, score);
+  params.push(DEFAULT_RECOGNITION_SCORE);
+  return { sql: `CASE b.name ${whens} ELSE ? END`, params };
+}
+
 export async function getProducts(filters: BrowseFilters) {
   const db = await getDb();
   const page = filters.page && filters.page > 0 ? filters.page : 1;
@@ -172,6 +189,8 @@ export async function getProducts(filters: BrowseFilters) {
   );
   const total = countRes.length ? (countRes[0].values[0][0] as number) : 0;
 
+  const { sql: recognitionCaseSql, params: recognitionParams } = buildRecognitionOrderBy();
+
   const dataRes = db.exec(
     `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
@@ -182,9 +201,9 @@ export async function getProducts(filters: BrowseFilters) {
      FROM products p
      JOIN brands b ON p.brand_id = b.id
      ${whereSql}
-     ORDER BY b.name COLLATE NOCASE, p.product_name COLLATE NOCASE
+     ORDER BY ${recognitionCaseSql} DESC, b.name COLLATE NOCASE, p.product_name COLLATE NOCASE
      LIMIT ? OFFSET ?`,
-    [...params, pageSize, offset]
+    [...params, ...recognitionParams, pageSize, offset]
   );
 
   const products = rowsToObjects<ProductRow>(dataRes);
