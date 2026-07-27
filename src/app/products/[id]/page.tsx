@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProductById, getRelatedProducts, getBrandProducts } from "@/lib/db";
@@ -6,6 +7,7 @@ import { formatPrice, formatPriceVariant } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo, ProductCard, gradeLabel } from "@/components/product-cards";
 import { getBrandLogoPath } from "@/lib/logos";
+import { getRegionInfo } from "@/lib/regions";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 
@@ -75,30 +77,51 @@ function humanizeKey(key: string): string {
 // "Label: " prefix in the text -- e.g. "Tasting Notes: Bright green,
 // fresh..." Harmless in the old small-text list, but glaring now that this
 // renders as a large quote. This is the exact, closed set of leading labels
-// found across all 646 tasting_notes rows (checked directly against the
-// database, not guessed) -- stripping only an exact match here can't eat
+// found across every line of every one of the 646 tasting_notes rows, after
+// splitting on " | " the same way the renderer below does -- checking only
+// the string's first segment (an earlier pass here) missed labels that
+// leak in on a later line, e.g. "Tasting Notes Texture:" as the second of
+// three " | "-joined lines. Stripping only an exact match here can't eat
 // real content that happens to contain a colon.
 const TASTING_NOTES_NOISE_LABELS = new Set(
   [
-    "Tasting Notes", "Flavor Profile", "Live Page Description", "Tasting Notes Aroma",
-    "Tasting Notes Sazen", "Aroma", "Flavor Description", "Flavor Category",
-    "Tasting Profile Taste", "Tasting Notes Flavor", "Flavor Description On Page",
-    "Tasting Profile Flavor", "Tasting Profile", "Flavor Summary", "Tasting Notes Disclosed",
-    "Tasting Emphasis", "Tasting Notes From Review Summary", "Tasting Notes Summary",
-    "Flavor Profile Tags", "Taste Notes", "Tasting Notes Liquor Color", "Tasting Notes Color",
-    "Aroma Per Reviewer", "Flavor", "Tasting Notes Koicha", "Tasting Notes Description",
-    "Yunomi Tasting Score", "Tasting Scores Umami", "Tasting Scores Umami Strength",
-    "Flavor Profile Tagline", "Additional Flavor Range Claim", "Flavor Profile General",
-    "Appearance Texture", "Tasting Notes Per Secondary Review", "Tasting Notes Official Description",
-    "Tasting Notes Official Page", "Flavor Claim", "Tasting Notes Primary Flavors",
-    "Tasting Notes Dry Leaves", "Flavour Descriptor On Page", "Tasting Notes In The Cup",
-    "Tasting Notes Descriptors", "Tasting Notes General", "Tasting Description", "Flavors Seen",
-    "Taste", "Tasting And Benefit Description", "Flavor Lineup Referenced On Page",
-    "Tasting Notes Chocolate", "Tasting Notes Mango", "Tasting Notes Per Reviewer",
-    "Tasting Notes Descriptor", "Tasting Method Note", "Aroma Taste",
-    "Flavor Profile Gauges Umami", "Tasting Notes Flavor Description", "Flavor Profile Ratings Body",
-    "Site Search Evidence Of Other Flavors", "Tasting Notes Descriptive", "Third Party Tasting Notes",
-    "Taste Per Reviewer",
+    "Additional Flavor Description", "Additional Flavor Notes From Reviews", "Additional Flavor Range Claim",
+    "Appearance Aroma", "Appearance Texture", "Aroma", "Aroma Level Rating", "Aroma Per Reviewer",
+    "Aroma Taste", "Body Umami", "Customer Review Tasting Notes", "Flavor", "Flavor Category",
+    "Flavor Claim", "Flavor Comparison", "Flavor Description", "Flavor Description On Page",
+    "Flavor Descriptors", "Flavor Lineup Referenced On Page", "Flavor Notes", "Flavor Profile",
+    "Flavor Profile Astringency", "Flavor Profile Chart Axes", "Flavor Profile Gauges Astringency",
+    "Flavor Profile Gauges Sweetness", "Flavor Profile Gauges Umami", "Flavor Profile General",
+    "Flavor Profile Ratings Body", "Flavor Profile Ratings Grassiness", "Flavor Profile Ratings Sweetness",
+    "Flavor Profile Ratings Umami", "Flavor Profile Sweetness", "Flavor Profile Tagline",
+    "Flavor Profile Tags", "Flavor Profile Umami", "Flavor Summary", "Flavors Seen",
+    "Flavour Descriptor On Page", "Live Page Description", "Mouthfeel", "Official Site Taste Index",
+    "Site Search Evidence Of Other Flavors", "Sweetness Level", "Taste", "Taste Notes",
+    "Taste Per Reviewer", "Tasting And Benefit Description", "Tasting Description", "Tasting Emphasis",
+    "Tasting Method Note", "Tasting Notes", "Tasting Notes Additional", "Tasting Notes Appearance",
+    "Tasting Notes Aroma", "Tasting Notes Aromas", "Tasting Notes Body", "Tasting Notes Character",
+    "Tasting Notes Chocolate", "Tasting Notes Color", "Tasting Notes Comparison",
+    "Tasting Notes Description", "Tasting Notes Descriptive", "Tasting Notes Descriptor",
+    "Tasting Notes Descriptors", "Tasting Notes Detail", "Tasting Notes Disclosed",
+    "Tasting Notes Dry Leaves", "Tasting Notes Flavor", "Tasting Notes Flavor Description",
+    "Tasting Notes Flavor Details", "Tasting Notes From Review Summary", "Tasting Notes General",
+    "Tasting Notes General Web", "Tasting Notes In The Cup", "Tasting Notes Koicha",
+    "Tasting Notes Latte", "Tasting Notes Liquor", "Tasting Notes Liquor Appearance",
+    "Tasting Notes Liquor Color", "Tasting Notes Mango", "Tasting Notes Notes",
+    "Tasting Notes Official Description", "Tasting Notes Official Page", "Tasting Notes Official Site",
+    "Tasting Notes Overall", "Tasting Notes Per Reviewer", "Tasting Notes Per Secondary Review",
+    "Tasting Notes Primary Flavors", "Tasting Notes Producer Notes", "Tasting Notes Profile",
+    "Tasting Notes Retailer Description", "Tasting Notes Sazen", "Tasting Notes Strength",
+    "Tasting Notes Summary", "Tasting Notes Taste", "Tasting Notes Texture",
+    "Tasting Notes Ujichamatcha", "Tasting Notes Usucha", "Tasting Profile", "Tasting Profile Aroma",
+    "Tasting Profile Body", "Tasting Profile Finish", "Tasting Profile Flavor",
+    "Tasting Profile Length", "Tasting Profile Mouthfeel", "Tasting Profile Taste",
+    "Tasting Profile Texture", "Tasting Scores Astringency", "Tasting Scores Color",
+    "Tasting Scores Detail Something Special", "Tasting Scores Detail Sweetness",
+    "Tasting Scores Detail Test Parameters", "Tasting Scores Detail Umami", "Tasting Scores Texture",
+    "Tasting Scores Umami", "Tasting Scores Umami Strength", "Texture", "Texture Appearance",
+    "Texture Color", "Texture Quality", "Third Party Tasting Notes", "Umami Claim",
+    "Yunomi Tasting Score",
   ].map((s) => s.toLowerCase())
 );
 
@@ -229,6 +252,7 @@ export default async function ProductDetailPage({
   const logoPath = getBrandLogoPath(product.brand_name);
   const factsLine = buildFactsLine(product);
   const hasCompounds = Boolean(product.l_theanine_note || product.egcg_note);
+  const regionInfo = getRegionInfo(product.region);
 
   const stats: { label: string; value: string }[] = [];
   if (product.grade) stats.push({ label: "Grade", value: gradeLabel(product.grade) });
@@ -430,6 +454,27 @@ export default async function ProductDetailPage({
           product during research. It may be discontinued, renamed, or the brand may not maintain
           a findable page for it. This entry is preserved for transparency rather than removed.
         </div>
+      )}
+
+      {regionInfo && (
+        <section className="mt-12">
+          <SectionLabel>Sourcing</SectionLabel>
+          <div className="relative w-full max-w-md aspect-[8/5] rounded-sm overflow-hidden border border-line">
+            <Image
+              src={`/region-thumbnails/${product.region}.png`}
+              alt={`Map highlighting ${regionInfo.name}, ${regionInfo.country}`}
+              fill
+              sizes="(min-width: 640px) 448px, 100vw"
+              className="object-cover"
+            />
+          </div>
+          <p className="text-sm text-ink-muted mt-2">
+            {regionInfo.name}, {regionInfo.country}
+          </p>
+          <Link href="/map" className="text-sm text-matcha hover:text-forest transition-colors">
+            View the full sourcing map &rarr;
+          </Link>
+        </section>
       )}
 
       {product.tasting_notes && (
