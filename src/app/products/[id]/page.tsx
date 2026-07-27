@@ -332,7 +332,7 @@ export default async function ProductDetailPage({
           }}
         >
           {logoPath ? (
-            <BrandLogo brandName={product.brand_name} size={72} maxWidth={220} />
+            <BrandLogo brandName={product.brand_name} size={72} maxWidth={220} allowTallerThanSize />
           ) : (
             <span className="font-display text-2xl font-semibold text-ink px-2 leading-snug">
               {product.brand_name}

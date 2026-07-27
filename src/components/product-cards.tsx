@@ -26,6 +26,7 @@ export function BrandLogo({
   brandName,
   size = 28,
   maxWidth,
+  allowTallerThanSize = false,
 }: {
   brandName: string;
   size?: number;
@@ -33,17 +34,42 @@ export function BrandLogo({
   // in a fixed-width column (a grid tile) rather than a free-flowing flex
   // row, so a wide wordmark can't overflow its container.
   maxWidth?: number;
+  // A genuinely narrow/portrait logo (ratio < 1 -- e.g. Gion Tsujiri's
+  // vertical wordmark, ratio 0.184) used to render at a fixed height with
+  // width floored at size*0.5: the BOX stopped being a sliver, but the
+  // actual image inside it (object-fit: contain preserves the real ratio
+  // regardless of box width) still rendered just as thin as ever, now
+  // centered in extra dead space -- looked "tiny" even though technically
+  // full-height. The real fix is letting the box grow TALLER so a narrow
+  // logo can scale up at all. Only safe where the logo has its own
+  // dedicated space (a hero panel, a brand-page header, a showcase tile) --
+  // never where it sits inline next to text at a fixed row height (the
+  // ProductCard/TieredPickCard chips), which is why this defaults to off.
+  allowTallerThanSize?: boolean;
 }) {
   const src = getBrandLogoPath(brandName);
   if (!src) return null;
   const invert = logoNeedsInvert(brandName);
   const ratio = getBrandLogoRatio(brandName);
   const cap = maxWidth ?? size * 4;
-  const width = Math.round(Math.min(Math.max(size * ratio, size * 0.5), cap));
+  let width: number;
+  let height: number;
+  if (allowTallerThanSize && ratio < 1) {
+    width = Math.max(Math.min(size, cap), size * 0.5);
+    height = Math.round(width / ratio);
+    const maxHeight = size * 2.5;
+    if (height > maxHeight) {
+      height = maxHeight;
+      width = Math.round(height * ratio);
+    }
+  } else {
+    height = size;
+    width = Math.round(Math.min(Math.max(size * ratio, size * 0.5), cap));
+  }
   return (
     <span
       className="inline-flex items-center justify-center rounded-sm shrink-0 border border-line-strong/40 bg-white"
-      style={{ height: size, width, color: "#1a1a1a" }}
+      style={{ height, width, color: "#1a1a1a" }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- local static
           file, no optimization to gain; plain img lets the container
