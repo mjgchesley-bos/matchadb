@@ -6,7 +6,7 @@
     "source_url": "https://www.wholefoodsmarket.com/grocery/product/365-by-whole-foods-market-organic-powdered-matcha-finely-ground-whole-leaf-green-tea-5-ounce-b07ylbfqj9",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:17.764Z",
+    "scrapedAt": "2026-08-31T16:37:13.328Z",
     "variants": [
       {
         "label": "Organic Powdered Matcha, Finely Ground Whole Leaf Green Tea, 5 Ounce",
@@ -23,7 +23,7 @@
     "source_url": "https://aiya-america.com/ceremonial-matcha-30g-tin/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:17.416Z",
+    "scrapedAt": "2026-08-31T16:37:13.430Z",
     "variants": [
       {
         "label": "Ceremonial Matcha (30g Tin)",
@@ -40,7 +40,7 @@
     "source_url": "https://aiya-america.com/ceremonial-matcha-100g-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:18.264Z",
+    "scrapedAt": "2026-08-31T16:37:14.509Z",
     "variants": [
       {
         "label": "Ceremonial Matcha (100g Bag)",
@@ -57,7 +57,7 @@
     "source_url": "https://aiya-america.com/culinary-grade-matcha-100g-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:19.157Z",
+    "scrapedAt": "2026-08-31T16:37:15.431Z",
     "variants": [
       {
         "label": "Culinary Grade Matcha (100g Bag)",
@@ -74,7 +74,7 @@
     "source_url": "https://aiya-america.com/matcha-to-go-sticks/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:20.045Z",
+    "scrapedAt": "2026-08-31T16:37:16.390Z",
     "variants": [
       {
         "label": "Matcha To Go Sticks",
@@ -91,7 +91,7 @@
     "source_url": "https://aiya-america.com/organic-ceremonial-matcha-30g-tin/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:20.917Z",
+    "scrapedAt": "2026-08-31T16:37:17.287Z",
     "variants": [
       {
         "label": "Organic Ceremonial Matcha (30g Tin)",
@@ -108,7 +108,7 @@
     "source_url": "https://aiya-america.com/organic-ceremonial-matcha-100g-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:21.810Z",
+    "scrapedAt": "2026-08-31T16:37:18.316Z",
     "variants": [
       {
         "label": "Organic Ceremonial Matcha (100g Bag)",
@@ -125,7 +125,7 @@
     "source_url": "https://aiya-america.com/organic-culinary-grade-matcha-50g-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:22.650Z",
+    "scrapedAt": "2026-08-31T16:37:19.320Z",
     "variants": [
       {
         "label": "Organic Culinary Grade Matcha (50g bag)",
@@ -142,7 +142,7 @@
     "source_url": "https://aiya-america.com/sugar-free-sweetened-matcha-to-go-sticks/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:23.580Z",
+    "scrapedAt": "2026-08-31T16:37:20.267Z",
     "variants": [
       {
         "label": "Sugar Free Sweetened Matcha To Go Sticks",
@@ -159,7 +159,7 @@
     "source_url": "https://aiya-america.com/sweetened-matcha-blend-1kg-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:24.494Z",
+    "scrapedAt": "2026-08-31T16:37:21.276Z",
     "variants": [
       {
         "label": "Sweetened Matcha Blend (1kg Bag)",
@@ -176,7 +176,7 @@
     "source_url": "https://aiya-america.com/sweetened-matcha-latte-pods/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:25.440Z",
+    "scrapedAt": "2026-08-31T16:37:22.178Z",
     "variants": [
       {
         "label": "Sweetened Matcha Latte Pods",
@@ -193,7 +193,7 @@
     "source_url": "https://aiya-america.com/sweetened-matcha-to-go-sticks/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:26.301Z",
+    "scrapedAt": "2026-08-31T16:37:23.147Z",
     "variants": [
       {
         "label": "Sweetened Matcha To Go Sticks",
@@ -367,7 +367,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-93",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:03.524Z",
+    "scrapedAt": "2026-08-31T16:38:00.720Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -408,7 +408,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-94",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:04.330Z",
+    "scrapedAt": "2026-08-31T16:38:01.519Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -449,7 +449,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-95",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:05.190Z",
+    "scrapedAt": "2026-08-31T16:38:02.340Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -490,7 +490,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-97",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:06.121Z",
+    "scrapedAt": "2026-08-31T16:38:03.156Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -531,7 +531,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-98",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:07.041Z",
+    "scrapedAt": "2026-08-31T16:38:04.012Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -572,7 +572,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-daphne",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:07.912Z",
+    "scrapedAt": "2026-08-31T16:38:04.842Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -601,7 +601,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-hikari",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:08.754Z",
+    "scrapedAt": "2026-08-31T16:38:05.726Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -630,7 +630,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-jizo",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:09.547Z",
+    "scrapedAt": "2026-08-31T16:38:06.598Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -659,7 +659,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-kamakura",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:10.731Z",
+    "scrapedAt": "2026-08-31T16:38:07.442Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -694,7 +694,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-rikyu",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:11.561Z",
+    "scrapedAt": "2026-08-31T16:38:08.360Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -723,7 +723,7 @@
     "source_url": "https://breakawaymatcha.com/products/blend-satoshi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:12.473Z",
+    "scrapedAt": "2026-08-31T16:38:09.215Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -752,7 +752,7 @@
     "source_url": "https://breakawaymatcha.com/products/coldbrew-organic",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:13.251Z",
+    "scrapedAt": "2026-08-31T16:38:10.007Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -793,7 +793,7 @@
     "source_url": "https://breakawaymatcha.com/products/coldbrew-original",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:14.097Z",
+    "scrapedAt": "2026-08-31T16:38:10.820Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -834,7 +834,7 @@
     "source_url": "https://breakawaymatcha.com/products/coldbrew-reserve",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:14.879Z",
+    "scrapedAt": "2026-08-31T16:38:11.641Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -875,7 +875,7 @@
     "source_url": "https://breakawaymatcha.com/products/culinary-organic",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:15.807Z",
+    "scrapedAt": "2026-08-31T16:38:12.441Z",
     "variants": [
       {
         "label": "100 Servings",
@@ -910,7 +910,7 @@
     "source_url": "https://breakawaymatcha.com/products/culinary-original",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:16.884Z",
+    "scrapedAt": "2026-08-31T16:38:13.221Z",
     "variants": [
       {
         "label": "100 Servings",
@@ -945,7 +945,7 @@
     "source_url": "https://breakawaymatcha.com/products/culinary-reserve",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:17.917Z",
+    "scrapedAt": "2026-08-31T16:38:14.021Z",
     "variants": [
       {
         "label": "100 Servings",
@@ -980,7 +980,7 @@
     "source_url": "https://breakawaymatcha.com/products/hyperpremium-organic",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:18.894Z",
+    "scrapedAt": "2026-08-31T16:38:14.815Z",
     "variants": [
       {
         "label": "30 Servings",
@@ -1021,7 +1021,7 @@
     "source_url": "https://www.capbeauty.com/products/the-big-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:03.413Z",
+    "scrapedAt": "2026-08-31T16:38:00.953Z",
     "variants": [
       {
         "label": "The Big Matcha",
@@ -1038,7 +1038,7 @@
     "source_url": "https://www.capbeauty.com/products/the-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:04.566Z",
+    "scrapedAt": "2026-08-31T16:38:01.981Z",
     "variants": [
       {
         "label": "The Matcha",
@@ -1055,7 +1055,7 @@
     "source_url": "https://www.capbeauty.com/products/the-neat-matcha-stick",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:05.366Z",
+    "scrapedAt": "2026-08-31T16:38:02.781Z",
     "variants": [
       {
         "label": "The Matcha Stick",
@@ -1072,7 +1072,7 @@
     "source_url": "https://chachamatcha.com/products/cha-cha-ceremonial-grade-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:03.582Z",
+    "scrapedAt": "2026-08-31T16:38:00.604Z",
     "variants": [
       {
         "label": "Asahi",
@@ -1089,7 +1089,7 @@
     "source_url": "https://chachamatcha.com/products/gokuo-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:04.661Z",
+    "scrapedAt": "2026-08-31T16:38:01.392Z",
     "variants": [
       {
         "label": "Gokou",
@@ -1106,7 +1106,7 @@
     "source_url": "https://chachamatcha.com/products/hojicha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:05.406Z",
+    "scrapedAt": "2026-08-31T16:38:02.158Z",
     "variants": [
       {
         "label": "Hojicha",
@@ -1123,7 +1123,7 @@
     "source_url": "https://chachamatcha.com/products/imperial-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:06.146Z",
+    "scrapedAt": "2026-08-31T16:38:02.886Z",
     "variants": [
       {
         "label": "Cha Cha Matcha Signature Blend",
@@ -1140,7 +1140,7 @@
     "source_url": "https://chachamatcha.com/products/somidori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:07.009Z",
+    "scrapedAt": "2026-08-31T16:38:03.598Z",
     "variants": [
       {
         "label": "Somidori",
@@ -1157,7 +1157,7 @@
     "source_url": "https://www.chalait.com/products/everyday-ceremonial-grade-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:03.814Z",
+    "scrapedAt": "2026-08-31T16:38:01.118Z",
     "variants": [
       {
         "label": "Everyday Ceremonial Grade Matcha",
@@ -1174,7 +1174,7 @@
     "source_url": "https://www.chalait.com/products/ceremonial-matcha-reserve-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:04.863Z",
+    "scrapedAt": "2026-08-31T16:38:02.014Z",
     "variants": [
       {
         "label": "Limited Release Ceremonial Grade Matcha",
@@ -1191,7 +1191,7 @@
     "source_url": "https://www.chalait.com/products/organic-ceremonial-grade-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:05.748Z",
+    "scrapedAt": "2026-08-31T16:38:03.126Z",
     "variants": [
       {
         "label": "Organic Ceremonial Grade Matcha",
@@ -1208,7 +1208,7 @@
     "source_url": "https://www.chalait.com/products/top-ceremonial-grade-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:06.632Z",
+    "scrapedAt": "2026-08-31T16:38:03.943Z",
     "variants": [
       {
         "label": "Top Ceremonial Grade Matcha",
@@ -1225,7 +1225,7 @@
     "source_url": "https://chamberlaincoffee.com/products/coconut-matcha",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:17.503Z",
+    "scrapedAt": "2026-08-31T16:37:13.268Z",
     "variants": [
       {
         "label": "Ceremonial Coconut Matcha Green Tea Powder",
@@ -1242,7 +1242,7 @@
     "source_url": "https://chamberlaincoffee.com/products/honey-matcha",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:18.189Z",
+    "scrapedAt": "2026-08-31T16:37:14.011Z",
     "variants": [
       {
         "label": "Ceremonial Honey Matcha Green Tea Powder",
@@ -1259,7 +1259,7 @@
     "source_url": "https://chamberlaincoffee.com/products/vanilla-matcha-green-tea-powder",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:18.930Z",
+    "scrapedAt": "2026-08-31T16:37:14.720Z",
     "variants": [
       {
         "label": "Ceremonial Vanilla Matcha Green Tea Powder",
@@ -1276,7 +1276,7 @@
     "source_url": "https://chamberlaincoffee.com/products/matcha-green-tea-powder",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:19.618Z",
+    "scrapedAt": "2026-08-31T16:37:15.416Z",
     "variants": [
       {
         "label": "Organic Ceremonial Matcha Green Tea Powder",
@@ -1293,12 +1293,12 @@
     "source_url": "https://kyo-chikiriya.shop/products/tales-of-uji-premium-matcha-tenarai-okumidori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:03.929Z",
+    "scrapedAt": "2026-08-31T16:38:00.888Z",
     "variants": [
       {
         "label": "Tales of Uji - Ceremonial Uji Matcha \"Tenarai\" - Single origin Okumidori",
         "grams": null,
-        "priceNative": 18.55,
+        "priceNative": 53,
         "currency": "USD"
       }
     ]
@@ -1310,7 +1310,7 @@
     "source_url": "https://ujichamatcha.com/products/uji-matcha-chikiriya-tea-house",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:03.825Z",
+    "scrapedAt": "2026-08-31T16:38:00.884Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -1327,12 +1327,12 @@
     "source_url": "https://kyo-chikiriya.shop/products/tales-of-uji-premium-matcha-roasted-ujihime",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:05.112Z",
+    "scrapedAt": "2026-08-31T16:38:01.990Z",
     "variants": [
       {
         "label": "Tales of Uji - Premium Uji Matcha Roasted \"Ujihime\"",
         "grams": null,
-        "priceNative": 14.35,
+        "priceNative": 41,
         "currency": "USD"
       }
     ]
@@ -1344,7 +1344,7 @@
     "source_url": "https://culinaryteas.com/products/black-matcha-kenya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:35.629Z",
+    "scrapedAt": "2026-08-31T16:38:31.686Z",
     "variants": [
       {
         "label": "1 oz loose tea powder sample",
@@ -1379,7 +1379,7 @@
     "source_url": "https://culinaryteas.com/products/earl-grey-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:36.549Z",
+    "scrapedAt": "2026-08-31T16:38:32.557Z",
     "variants": [
       {
         "label": "1 oz loose tea powder sample",
@@ -1414,7 +1414,7 @@
     "source_url": "https://culinaryteas.com/products/genmaicha_extra_green_with_matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:37.373Z",
+    "scrapedAt": "2026-08-31T16:38:33.537Z",
     "variants": [
       {
         "label": "1 oz loose tea sample",
@@ -1455,7 +1455,7 @@
     "source_url": "https://culinaryteas.com/products/matcha_green_tea_powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:38.419Z",
+    "scrapedAt": "2026-08-31T16:38:34.619Z",
     "variants": [
       {
         "label": "1 oz of tea powder",
@@ -1502,7 +1502,7 @@
     "source_url": "https://culinaryteas.com/products/matcha-latte-powder-1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:39.292Z",
+    "scrapedAt": "2026-08-31T16:38:35.536Z",
     "variants": [
       {
         "label": "5.3oz (150g) Bag of Loose Tea Powder",
@@ -1543,7 +1543,7 @@
     "source_url": "https://culinaryteas.com/products/matcha-sampler",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:40.328Z",
+    "scrapedAt": "2026-08-31T16:38:36.421Z",
     "variants": [
       {
         "label": "Matcha Sampler",
@@ -1566,7 +1566,7 @@
     "source_url": "https://culinaryteas.com/products/hibiscus-green-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:41.338Z",
+    "scrapedAt": "2026-08-31T16:38:37.263Z",
     "variants": [
       {
         "label": "1 oz bag of loose tea powder",
@@ -1619,7 +1619,7 @@
     "source_url": "https://culinaryteas.com/products/peppermint-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:42.234Z",
+    "scrapedAt": "2026-08-31T16:38:38.165Z",
     "variants": [
       {
         "label": "1 oz of tea powder",
@@ -1660,7 +1660,7 @@
     "source_url": "https://culinaryteas.com/products/rooibos-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:43.036Z",
+    "scrapedAt": "2026-08-31T16:38:39.026Z",
     "variants": [
       {
         "label": "1 oz of tea powder",
@@ -1695,7 +1695,7 @@
     "source_url": "https://culinaryteas.com/products/ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:43.923Z",
+    "scrapedAt": "2026-08-31T16:38:39.897Z",
     "variants": [
       {
         "label": "30g Loose Tea Sample",
@@ -1742,7 +1742,7 @@
     "source_url": "https://culinaryteas.com/products/white_rhino_matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:44.876Z",
+    "scrapedAt": "2026-08-31T16:38:40.787Z",
     "variants": [
       {
         "label": "1 oz loose tea sample",
@@ -1783,7 +1783,7 @@
     "source_url": "https://culinaryteas.com/products/yame-spring-blossom-first-flush-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:45.771Z",
+    "scrapedAt": "2026-08-31T16:38:41.636Z",
     "variants": [
       {
         "label": "30g Bag of Loose Tea Sample",
@@ -1830,7 +1830,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-grand-cru-matcha-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:36.176Z",
+    "scrapedAt": "2026-08-31T16:38:31.937Z",
     "variants": [
       {
         "label": "Organic Grand Cru Matcha",
@@ -1847,7 +1847,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-matcha-matsu-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:37.923Z",
+    "scrapedAt": "2026-08-31T16:38:33.267Z",
     "variants": [
       {
         "label": "Organic Matcha Matsu",
@@ -1864,7 +1864,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-banana-matcha-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:39.240Z",
+    "scrapedAt": "2026-08-31T16:38:34.614Z",
     "variants": [
       {
         "label": "Organic Banana Matcha",
@@ -1881,7 +1881,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-blueberry-matcha-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:40.829Z",
+    "scrapedAt": "2026-08-31T16:38:35.904Z",
     "variants": [
       {
         "label": "Organic Blueberry Matcha",
@@ -1898,7 +1898,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-cherry-blossom-matcha-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:41.955Z",
+    "scrapedAt": "2026-08-31T16:38:37.061Z",
     "variants": [
       {
         "label": "Organic Cherry Blossom Matcha",
@@ -1915,7 +1915,7 @@
     "source_url": "https://davidstea.com/en-us/products/cinnamon-bun-matcha-organic-50-grams-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:43.139Z",
+    "scrapedAt": "2026-08-31T16:38:38.264Z",
     "variants": [
       {
         "label": "Organic Cinnamon Bun Matcha",
@@ -1932,7 +1932,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-coffee-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:44.594Z",
+    "scrapedAt": "2026-08-31T16:38:39.541Z",
     "variants": [
       {
         "label": "Organic Coffee Matcha",
@@ -1949,7 +1949,7 @@
     "source_url": "https://davidstea.com/en-us/products/key-lime-matcha-organic-50-grams",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:45.895Z",
+    "scrapedAt": "2026-08-31T16:38:40.933Z",
     "variants": [
       {
         "label": "Organic Key Lime Matcha",
@@ -1966,7 +1966,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-lemonade-matcha-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:47.046Z",
+    "scrapedAt": "2026-08-31T16:38:42.207Z",
     "variants": [
       {
         "label": "Organic Lemonade Matcha",
@@ -2007,7 +2007,7 @@
     "source_url": "https://davidstea.com/en-us/products/organic-pina-colada-matcha-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:52.293Z",
+    "scrapedAt": "2026-08-31T16:38:47.951Z",
     "variants": [
       {
         "label": "Organic Piña Colada Matcha",
@@ -2056,7 +2056,7 @@
     "source_url": "https://davidstea.com/en-us/products/vanilla-matcha-us",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:57.057Z",
+    "scrapedAt": "2026-08-31T16:38:52.052Z",
     "variants": [
       {
         "label": "Vanilla Matcha",
@@ -2073,7 +2073,7 @@
     "source_url": "https://domatcha.com/products/ceremonial",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:35.600Z",
+    "scrapedAt": "2026-08-31T16:38:31.753Z",
     "variants": [
       {
         "label": "Ceremonial",
@@ -2090,7 +2090,7 @@
     "source_url": "https://domatcha.com/products/ceremonial-organic",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:36.468Z",
+    "scrapedAt": "2026-08-31T16:38:32.628Z",
     "variants": [
       {
         "label": "1oz",
@@ -2121,7 +2121,7 @@
     "source_url": "https://domatcha.com/products/masters-choice",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:38.535Z",
+    "scrapedAt": "2026-08-31T16:38:34.585Z",
     "variants": [
       {
         "label": "Master's Choice",
@@ -2138,7 +2138,7 @@
     "source_url": "https://domatcha.com/products/masters-decaf",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:39.725Z",
+    "scrapedAt": "2026-08-31T16:38:35.367Z",
     "variants": [
       {
         "label": "Master's Decaf",
@@ -2155,7 +2155,7 @@
     "source_url": "https://domatcha.com/products/summer-harvest",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:40.615Z",
+    "scrapedAt": "2026-08-31T16:38:36.209Z",
     "variants": [
       {
         "label": "Summer Harvest",
@@ -2172,7 +2172,7 @@
     "source_url": "https://drinkdona.com/products/ceremonial-grade-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:35.567Z",
+    "scrapedAt": "2026-08-31T16:38:31.526Z",
     "variants": [
       {
         "label": "30g Tin",
@@ -2195,7 +2195,7 @@
     "source_url": "https://encha.com/products/encha-matcha-barista-grade-latte-organic-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:36.437Z",
+    "scrapedAt": "2026-08-31T16:38:31.731Z",
     "variants": [
       {
         "label": "30g (1.06 oz) 15 cups",
@@ -2224,12 +2224,12 @@
     "source_url": "https://encha.com/products/vegan-latte-grade-organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:37.469Z",
+    "scrapedAt": "2026-08-31T16:38:32.626Z",
     "variants": [
       {
         "label": "30g (1.02oz) 15 cups",
         "grams": 30,
-        "priceNative": 19.99,
+        "priceNative": 18.99,
         "currency": "USD"
       },
       {
@@ -2259,7 +2259,7 @@
     "source_url": "https://encha.com/products/encha-ceremonial-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:38.523Z",
+    "scrapedAt": "2026-08-31T16:38:33.656Z",
     "variants": [
       {
         "label": "30g (1.06oz) 15 cups",
@@ -2294,7 +2294,7 @@
     "source_url": "https://encha.com/products/encha-matcha-latte-powder-keto-collagen-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:39.488Z",
+    "scrapedAt": "2026-08-31T16:38:34.579Z",
     "variants": [
       {
         "label": "150g (5.3oz) 23 Cups",
@@ -2311,7 +2311,7 @@
     "source_url": "https://encha.com/products/encha-matcha-latte-powder-reishi-mushroom",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:40.405Z",
+    "scrapedAt": "2026-08-31T16:38:35.522Z",
     "variants": [
       {
         "label": "60g (2.12oz) 30 cups",
@@ -2328,7 +2328,7 @@
     "source_url": "https://encha.com/products/encha-matcha-latte-powder-vanilla-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:41.289Z",
+    "scrapedAt": "2026-08-31T16:38:36.364Z",
     "variants": [
       {
         "label": "60g (2.12oz) 30 cups",
@@ -2345,7 +2345,7 @@
     "source_url": "https://encha.com/products/encha-matcha-latte-powder-sweetened-lightly-sweet-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:42.271Z",
+    "scrapedAt": "2026-08-31T16:38:37.347Z",
     "variants": [
       {
         "label": "150g (5.3oz) 15 Cups",
@@ -2368,7 +2368,7 @@
     "source_url": "https://encha.com/products/encha-okumidori-limited-edition-reserve-ceremonial-grade-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:43.273Z",
+    "scrapedAt": "2026-08-31T16:38:38.236Z",
     "variants": [
       {
         "label": "Encha Matcha Tea Okumidori Limited Edition Reserve - Ceremonial Grade Matcha Powder",
@@ -2385,7 +2385,7 @@
     "source_url": "https://encha.com/products/encha-saemidori-limited-edition-reserve-ceremonial-grade-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:44.379Z",
+    "scrapedAt": "2026-08-31T16:38:39.312Z",
     "variants": [
       {
         "label": "Encha Matcha Tea Saemidori Limited Edition Reserve - Ceremonial Grade Matcha Powder",
@@ -2402,7 +2402,7 @@
     "source_url": "https://global.fukujuen.com/en-us/products/banjo-no-mukashi-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:35.860Z",
+    "scrapedAt": "2026-08-31T16:38:31.976Z",
     "variants": [
       {
         "label": "Powdered Japanese tea Matcha \"Banjo-no-Mukashi\" 20g",
@@ -2419,7 +2419,7 @@
     "source_url": "https://global.fukujuen.com/en-us/products/eisho-no-mukashi-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:36.665Z",
+    "scrapedAt": "2026-08-31T16:38:32.813Z",
     "variants": [
       {
         "label": "Powdered Japanese tea Matcha \"Eisho-no-Mukashi\" 20g",
@@ -2436,7 +2436,7 @@
     "source_url": "https://global.fukujuen.com/en-us/products/powdered-japanese-tea-matcha-kotobuki-no-shiro-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:37.479Z",
+    "scrapedAt": "2026-08-31T16:38:33.668Z",
     "variants": [
       {
         "label": "Powdered Japanese Tea Matcha Kotobuki-no-Shiro 20g",
@@ -2453,7 +2453,7 @@
     "source_url": "https://global.fukujuen.com/en-us/products/matcha-powder-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:38.370Z",
+    "scrapedAt": "2026-08-31T16:38:34.456Z",
     "variants": [
       {
         "label": "Powdered Japanese tea Matcha Stick – Single-Serve Matcha Powder 10 Bags",
@@ -2470,7 +2470,7 @@
     "source_url": "https://global.fukujuen.com/en-us/products/matcha-seijin-no-shiro-20g-can",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:39.155Z",
+    "scrapedAt": "2026-08-31T16:38:35.324Z",
     "variants": [
       {
         "label": "Powdered Japanese Tea Matcha “Seijin no Shiro” – 20g Can",
@@ -2487,24 +2487,24 @@
     "source_url": "https://global.fukujuen.com/en-us/products/powdered-japanese-tea-stone-milled-matcha-kuro",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:39.987Z",
+    "scrapedAt": "2026-08-31T16:38:36.103Z",
     "variants": [
       {
         "label": "40g",
         "grams": 40,
-        "priceNative": 123,
+        "priceNative": 122,
         "currency": "USD"
       },
       {
         "label": "100g",
         "grams": 100,
-        "priceNative": 291,
+        "priceNative": 290,
         "currency": "USD"
       },
       {
         "label": "200g",
         "grams": 200,
-        "priceNative": 551,
+        "priceNative": 550,
         "currency": "USD"
       }
     ]
@@ -2516,7 +2516,7 @@
     "source_url": "https://global.fukujuen.com/en-us/products/powdered-japanese-tea-stone-milled-matcha-shiro",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:40.768Z",
+    "scrapedAt": "2026-08-31T16:38:36.967Z",
     "variants": [
       {
         "label": "40g",
@@ -2545,24 +2545,24 @@
     "source_url": "https://global.fukujuen.com/products/powdered-japanese-tea-stone-milled-matcha-syu",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:41.913Z",
+    "scrapedAt": "2026-08-31T16:38:38.206Z",
     "variants": [
       {
         "label": "40g",
         "grams": 40,
-        "priceNative": 62,
+        "priceNative": 61,
         "currency": "USD"
       },
       {
         "label": "100g",
         "grams": 100,
-        "priceNative": 146,
+        "priceNative": 145,
         "currency": "USD"
       },
       {
         "label": "200g",
         "grams": 200,
-        "priceNative": 276,
+        "priceNative": 275,
         "currency": "USD"
       }
     ]
@@ -2574,7 +2574,7 @@
     "source_url": "https://global.fukujuen.com/en-us/collections/frontpage/products/matcha-zuien-20g-can",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:42.800Z",
+    "scrapedAt": "2026-08-31T16:38:39.160Z",
     "variants": [
       {
         "label": "Powdered Japanese Tea Matcha Zuien 20g Can",
@@ -2591,7 +2591,7 @@
     "source_url": "https://ujichamatcha.com/products/chiyo-mukashi-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:04.672Z",
+    "scrapedAt": "2026-08-31T16:38:01.822Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2614,7 +2614,7 @@
     "source_url": "https://ujichamatcha.com/products/chokyu-no-shiro-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:05.472Z",
+    "scrapedAt": "2026-08-31T16:38:02.658Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2637,7 +2637,7 @@
     "source_url": "https://ujichamatcha.com/products/daiyu-no-shiro-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:06.345Z",
+    "scrapedAt": "2026-08-31T16:38:03.488Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2654,7 +2654,7 @@
     "source_url": "https://ujichamatcha.com/products/geishun-yo-koicha-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:07.366Z",
+    "scrapedAt": "2026-08-31T16:38:04.295Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -2671,7 +2671,7 @@
     "source_url": "https://ujichamatcha.com/products/hoei-no-mukashi-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:08.216Z",
+    "scrapedAt": "2026-08-31T16:38:05.172Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2694,7 +2694,7 @@
     "source_url": "https://ujichamatcha.com/products/iori-no-tomo-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:08.999Z",
+    "scrapedAt": "2026-08-31T16:38:06.008Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2717,7 +2717,7 @@
     "source_url": "https://ujichamatcha.com/products/jusho-no-shiro-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:09.892Z",
+    "scrapedAt": "2026-08-31T16:38:06.870Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2734,7 +2734,7 @@
     "source_url": "https://shop.giontsujiri.co.jp/products/21212",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:58.391Z",
+    "scrapedAt": "2026-08-31T16:38:54.355Z",
     "variants": [
       {
         "label": "抹茶 十徳 40g",
@@ -2751,7 +2751,7 @@
     "source_url": "https://shop.giontsujiri.co.jp/products/21102",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:59.342Z",
+    "scrapedAt": "2026-08-31T16:38:55.647Z",
     "variants": [
       {
         "label": "抹茶 建都の昔 40g",
@@ -2776,7 +2776,7 @@
     "source_url": "https://ujichamatcha.com/products/kochu-no-mukashi-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:11.602Z",
+    "scrapedAt": "2026-08-31T16:38:08.722Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -2799,7 +2799,7 @@
     "source_url": "https://ujichamatcha.com/products/kongo-no-shiro-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:12.423Z",
+    "scrapedAt": "2026-08-31T16:38:09.652Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2816,7 +2816,7 @@
     "source_url": "https://ujichamatcha.com/products/kyo-mukashi-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:13.324Z",
+    "scrapedAt": "2026-08-31T16:38:10.448Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -2839,7 +2839,7 @@
     "source_url": "https://shizukaliving.com/en-us/products/gion-tsujiri-manpu-no-mukashi-matcha-powder-40g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:58.100Z",
+    "scrapedAt": "2026-08-31T16:38:53.158Z",
     "variants": [
       {
         "label": "Matcha Powder Manpu no Mukashi from Gion Tsujiri 40g",
@@ -2856,7 +2856,7 @@
     "source_url": "https://ujichamatcha.com/products/manpu-no-shiro-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:14.283Z",
+    "scrapedAt": "2026-08-31T16:38:11.279Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2873,7 +2873,7 @@
     "source_url": "https://ujichamatcha.com/products/midori-no-shiro-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:15.198Z",
+    "scrapedAt": "2026-08-31T16:38:12.046Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2890,7 +2890,7 @@
     "source_url": "https://ujichamatcha.com/products/togano-no-mukashi-gion-tsujiri",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:16.018Z",
+    "scrapedAt": "2026-08-31T16:38:12.833Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -2907,7 +2907,7 @@
     "source_url": "https://golde.co/products/matcha-turmeric-latte-blend",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:58.120Z",
+    "scrapedAt": "2026-08-31T16:38:53.064Z",
     "variants": [
       {
         "label": "Matcha Turmeric Latte Blend",
@@ -2924,7 +2924,7 @@
     "source_url": "https://golde.co/products/new-pure-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:58.893Z",
+    "scrapedAt": "2026-08-31T16:38:53.816Z",
     "variants": [
       {
         "label": "30g tin",
@@ -2953,7 +2953,7 @@
     "source_url": "https://greenfoods.com/products/100-organic-pure-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:58.167Z",
+    "scrapedAt": "2026-08-31T16:38:53.054Z",
     "variants": [
       {
         "label": "100% Organic & Pure Ceremonial Grade Matcha Green Tea",
@@ -2970,7 +2970,7 @@
     "source_url": "https://greenfoods.com/products/matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:59.137Z",
+    "scrapedAt": "2026-08-31T16:38:53.962Z",
     "variants": [
       {
         "label": "5.5 oz",
@@ -3009,7 +3009,7 @@
     "source_url": "https://www.harney.com/products/culinary-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:58.373Z",
+    "scrapedAt": "2026-08-31T16:38:53.089Z",
     "variants": [
       {
         "label": "Loose / 1 lb. Bag",
@@ -3026,7 +3026,7 @@
     "source_url": "https://www.harney.com/products/earl-grey-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:59.178Z",
+    "scrapedAt": "2026-08-31T16:38:53.935Z",
     "variants": [
       {
         "label": "Loose / 3 oz. Tin",
@@ -3049,7 +3049,7 @@
     "source_url": "https://www.harney.com/products/matcha-thin-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:00.101Z",
+    "scrapedAt": "2026-08-31T16:38:54.797Z",
     "variants": [
       {
         "label": "Loose / 30 g. Tin",
@@ -3072,7 +3072,7 @@
     "source_url": "https://www.harney.com/products/matcha-iri-genmaicha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:00.944Z",
+    "scrapedAt": "2026-08-31T16:38:55.654Z",
     "variants": [
       {
         "label": "Sachets / Bag of 50 Sachets",
@@ -3101,7 +3101,7 @@
     "source_url": "https://www.harney.com/products/organic-ceremonial-grade-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:01.858Z",
+    "scrapedAt": "2026-08-31T16:38:56.493Z",
     "variants": [
       {
         "label": "Loose / 30 g. Tin",
@@ -3118,7 +3118,7 @@
     "source_url": "https://www.harney.com/products/organic-everyday-matcha-1-lb-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:02.788Z",
+    "scrapedAt": "2026-08-31T16:38:57.372Z",
     "variants": [
       {
         "label": "Loose / 1 lb. Bag",
@@ -3135,7 +3135,7 @@
     "source_url": "https://www.harney.com/products/organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:04.074Z",
+    "scrapedAt": "2026-08-31T16:38:58.179Z",
     "variants": [
       {
         "label": "Loose / 30 g. Tin",
@@ -3152,7 +3152,7 @@
     "source_url": "https://www.harney.com/products/roasted-buckwheat-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:04.970Z",
+    "scrapedAt": "2026-08-31T16:38:59.029Z",
     "variants": [
       {
         "label": "Sachets / Bag of 50 Sachets",
@@ -3181,7 +3181,7 @@
     "source_url": "https://www.harney.com/products/matcha-thick-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:06.063Z",
+    "scrapedAt": "2026-08-31T16:38:59.978Z",
     "variants": [
       {
         "label": "Loose / 30 g. Tin",
@@ -3198,7 +3198,7 @@
     "source_url": "https://www.harney.com/products/supreme-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:07.032Z",
+    "scrapedAt": "2026-08-31T16:39:00.917Z",
     "variants": [
       {
         "label": "Loose / 80 g. Tin",
@@ -3215,7 +3215,7 @@
     "source_url": "https://www.harney.com/products/unjonotomo-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:07.970Z",
+    "scrapedAt": "2026-08-31T16:39:01.848Z",
     "variants": [
       {
         "label": "Loose / 30 g. Tin",
@@ -3232,7 +3232,7 @@
     "source_url": "https://www.harney.com/products/very-berry-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:08.788Z",
+    "scrapedAt": "2026-08-31T16:39:02.759Z",
     "variants": [
       {
         "label": "Sachets / Bag of 50 Sachets",
@@ -3267,7 +3267,7 @@
     "source_url": "https://www.harney.com/products/white-peach-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:09.653Z",
+    "scrapedAt": "2026-08-31T16:39:03.659Z",
     "variants": [
       {
         "label": "Sachets / Bag of 50 Sachets",
@@ -3278,7 +3278,7 @@
       {
         "label": "Sachets / Tin of 20 Sachets",
         "grams": null,
-        "priceNative": 9.45,
+        "priceNative": 7.09,
         "currency": "USD"
       },
       {
@@ -3308,7 +3308,7 @@
     "source_url": "https://heapwellmatcha.com/products/japanese-matcha-green-tea-50g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:58.829Z",
+    "scrapedAt": "2026-08-31T16:38:53.768Z",
     "variants": [
       {
         "label": "Ceremonial A Grade Matcha 50g (1.76oz)",
@@ -3325,7 +3325,7 @@
     "source_url": "https://heapwellmatcha.com/products/finest-ceremonial-matcha-green-tea-30g-jas-organic",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:00.414Z",
+    "scrapedAt": "2026-08-31T16:38:54.788Z",
     "variants": [
       {
         "label": "Finest AAA Ceremonial Grade Matcha Tea (Kotobuki From Uji), 30g",
@@ -3342,7 +3342,7 @@
     "source_url": "https://heapwellmatcha.com/products/premium-grade-matcha-powder-113g-100-servings",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:01.394Z",
+    "scrapedAt": "2026-08-31T16:38:55.856Z",
     "variants": [
       {
         "label": "Premium A Grade Matcha 113g (4oz)",
@@ -3543,7 +3543,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-agatanoshiro",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:10.527Z",
+    "scrapedAt": "2026-08-31T16:39:04.768Z",
     "variants": [
       {
         "label": "30g",
@@ -3560,7 +3560,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-choukounomukashi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:11.125Z",
+    "scrapedAt": "2026-08-31T16:39:05.649Z",
     "variants": [
       {
         "label": "30g",
@@ -3577,7 +3577,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-homarenomukashi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:11.718Z",
+    "scrapedAt": "2026-08-31T16:39:06.298Z",
     "variants": [
       {
         "label": "30g",
@@ -3594,7 +3594,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-mumon",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:12.317Z",
+    "scrapedAt": "2026-08-31T16:39:07.224Z",
     "variants": [
       {
         "label": "20g",
@@ -3611,7 +3611,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-narino",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:12.934Z",
+    "scrapedAt": "2026-08-31T16:39:08.158Z",
     "variants": [
       {
         "label": "20g",
@@ -3628,7 +3628,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-okunoyama",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:13.618Z",
+    "scrapedAt": "2026-08-31T16:39:08.980Z",
     "variants": [
       {
         "label": "20g",
@@ -3645,7 +3645,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-premiumnarino",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:14.224Z",
+    "scrapedAt": "2026-08-31T16:39:09.632Z",
     "variants": [
       {
         "label": "20g",
@@ -3662,7 +3662,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-shichimeinomukashi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:14.894Z",
+    "scrapedAt": "2026-08-31T16:39:10.512Z",
     "variants": [
       {
         "label": "30g",
@@ -3679,7 +3679,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-todounomukashi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:15.531Z",
+    "scrapedAt": "2026-08-31T16:39:11.126Z",
     "variants": [
       {
         "label": "30g",
@@ -3696,7 +3696,7 @@
     "source_url": "https://horiishichimeien.com/en/products/matcha-ujimukashi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:16.901Z",
+    "scrapedAt": "2026-08-31T16:39:11.961Z",
     "variants": [
       {
         "label": "30g",
@@ -3713,7 +3713,7 @@
     "source_url": "https://horiishichimeien.com/en/products/reiwa-7-2025-kansai-tea-competition-award-winning-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:18.155Z",
+    "scrapedAt": "2026-08-31T16:39:12.889Z",
     "variants": [
       {
         "label": "30g",
@@ -3730,7 +3730,7 @@
     "source_url": "https://horiishichimeien.com/en/products/reiwa-7-2025-kansai-tea-competition-awarded-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:19.039Z",
+    "scrapedAt": "2026-08-31T16:39:13.726Z",
     "variants": [
       {
         "label": "30g",
@@ -3747,7 +3747,7 @@
     "source_url": "https://horiishichimeien.com/en/products/uji-fudo-terroir-of-uji-uji-of-uji",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:19.931Z",
+    "scrapedAt": "2026-08-31T16:39:14.558Z",
     "variants": [
       {
         "label": "30g",
@@ -3764,7 +3764,7 @@
     "source_url": "https://ujichamatcha.com/products/hoshi-no-tsuyu-hoshino-seichaen",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:16.877Z",
+    "scrapedAt": "2026-08-31T16:38:13.632Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -3793,7 +3793,7 @@
     "source_url": "https://ujichamatcha.com/products/ike-no-shiro-hoshino-seichaen",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:17.685Z",
+    "scrapedAt": "2026-08-31T16:38:14.456Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -3816,7 +3816,7 @@
     "source_url": "https://ujichamatcha.com/products/hoshino-seichaen-organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:18.513Z",
+    "scrapedAt": "2026-08-31T16:38:15.281Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -3839,7 +3839,7 @@
     "source_url": "https://ujichamatcha.com/products/seihou-hoshino-seichaen",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:19.339Z",
+    "scrapedAt": "2026-08-31T16:38:16.144Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -3862,7 +3862,7 @@
     "source_url": "https://ujichamatcha.com/products/seijyu-hoshino-seichaen",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:20.141Z",
+    "scrapedAt": "2026-08-31T16:38:17.000Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -3891,7 +3891,7 @@
     "source_url": "https://ujichamatcha.com/products/yame-no-hana-hoshino-seichaen",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:21.225Z",
+    "scrapedAt": "2026-08-31T16:38:17.833Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -3914,7 +3914,7 @@
     "source_url": "https://ujichamatcha.com/products/yame-no-tsuyu-hoshino-seichaen",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:22.105Z",
+    "scrapedAt": "2026-08-31T16:38:18.737Z",
     "variants": [
       {
         "label": "40 Gram Tin",
@@ -3943,7 +3943,7 @@
     "source_url": "https://shop.ikkyu-tea.com/products/miyuki",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:10.766Z",
+    "scrapedAt": "2026-08-31T16:39:04.628Z",
     "variants": [
       {
         "label": "Aluminum can 40 GR (1.41 OZ)",
@@ -3966,7 +3966,7 @@
     "source_url": "https://ippodotea.com/products/ikuyo-100",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:10.761Z",
+    "scrapedAt": "2026-08-31T16:39:04.613Z",
     "variants": [
       {
         "label": "Ikuyo Matcha (100g Bag)",
@@ -3983,7 +3983,7 @@
     "source_url": "https://ippodotea.com/products/kan-20",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:11.747Z",
+    "scrapedAt": "2026-08-31T16:39:05.497Z",
     "variants": [
       {
         "label": "Kan Matcha (20g Box)",
@@ -4000,7 +4000,7 @@
     "source_url": "https://ippodotea.com/products/kanza",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:12.855Z",
+    "scrapedAt": "2026-08-31T16:39:06.379Z",
     "variants": [
       {
         "label": "Kanza Matcha (20g Can)",
@@ -4017,7 +4017,7 @@
     "source_url": "https://ippodotea.com/products/kuon-eternity",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:13.840Z",
+    "scrapedAt": "2026-08-31T16:39:07.299Z",
     "variants": [
       {
         "label": "Kuon (Eternity) (20g Can)",
@@ -4034,7 +4034,7 @@
     "source_url": "https://ippodotea.com/products/matcha-to-go-packets",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:14.657Z",
+    "scrapedAt": "2026-08-31T16:39:08.227Z",
     "variants": [
       {
         "label": "Matcha To-Go Packets (10 × 2g)",
@@ -4051,7 +4051,7 @@
     "source_url": "https://ippodotea.com/products/new-harvest-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:15.519Z",
+    "scrapedAt": "2026-08-31T16:39:09.146Z",
     "variants": [
       {
         "label": "New Harvest 2026 Matcha (20g Can)",
@@ -4068,7 +4068,7 @@
     "source_url": "https://ippodotea.com/products/sayaka-no-mukashi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:16.617Z",
+    "scrapedAt": "2026-08-31T16:39:10.075Z",
     "variants": [
       {
         "label": "Sayaka Matcha (40g Can)",
@@ -4085,7 +4085,7 @@
     "source_url": "https://ippodotea.com/products/seiun",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:17.671Z",
+    "scrapedAt": "2026-08-31T16:39:10.930Z",
     "variants": [
       {
         "label": "Seiun Matcha (40g Can)",
@@ -4102,7 +4102,7 @@
     "source_url": "https://ippodotea.com/products/uji-shimizu-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:18.673Z",
+    "scrapedAt": "2026-08-31T16:39:11.815Z",
     "variants": [
       {
         "label": "Uji‑Shimizu Sweetened Matcha (12 Sticks)",
@@ -4119,7 +4119,7 @@
     "source_url": "https://ippodotea.com/products/ummon-no-mukashi-40g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:19.518Z",
+    "scrapedAt": "2026-08-31T16:39:12.723Z",
     "variants": [
       {
         "label": "Ummon Matcha (40g Can)",
@@ -4136,7 +4136,7 @@
     "source_url": "https://ippodotea.com/products/wakaki-20g-box",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:20.347Z",
+    "scrapedAt": "2026-08-31T16:39:13.611Z",
     "variants": [
       {
         "label": "Wakaki Matcha (20g Box)",
@@ -4153,7 +4153,7 @@
     "source_url": "https://itoen.com/products/matcha-green-tea-sweet-powder-bag-copy",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:10.907Z",
+    "scrapedAt": "2026-08-31T16:39:04.826Z",
     "variants": [
       {
         "label": "17.5 oz (500g)",
@@ -4170,7 +4170,7 @@
     "source_url": "https://itoen.com/products/barista-craft-blend-sweetened-powder-mix",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:11.788Z",
+    "scrapedAt": "2026-08-31T16:39:05.542Z",
     "variants": [
       {
         "label": "Barista Craft Blend Sweetened Matcha Powder Mix",
@@ -4187,7 +4187,7 @@
     "source_url": "https://itoen.com/products/matcha-love-culinary",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:12.524Z",
+    "scrapedAt": "2026-08-31T16:39:06.276Z",
     "variants": [
       {
         "label": "3.5 oz (100g) Tin",
@@ -4204,7 +4204,7 @@
     "source_url": "https://itoen.com/products/matcha-love-organic",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:13.339Z",
+    "scrapedAt": "2026-08-31T16:39:07.050Z",
     "variants": [
       {
         "label": "Organic Ceremonial Matcha Powder",
@@ -4221,7 +4221,7 @@
     "source_url": "https://itoen.com/products/single-serve-unsweetened-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:14.111Z",
+    "scrapedAt": "2026-08-31T16:39:07.776Z",
     "variants": [
       {
         "label": "Single-Serve Unsweetened Matcha Powder",
@@ -4238,7 +4238,7 @@
     "source_url": "https://itoen.com/products/green-tea-powder-with-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:14.843Z",
+    "scrapedAt": "2026-08-31T16:39:08.468Z",
     "variants": [
       {
         "label": "Green Tea Powder with Matcha",
@@ -4255,7 +4255,7 @@
     "source_url": "https://itoen.com/products/green-tea-powder-with-matcha-copy",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:15.566Z",
+    "scrapedAt": "2026-08-31T16:39:09.192Z",
     "variants": [
       {
         "label": "30g",
@@ -4278,7 +4278,7 @@
     "source_url": "https://itoen.com/products/ito-en-matcha-green-tea-sweet-powder-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:16.400Z",
+    "scrapedAt": "2026-08-31T16:39:09.916Z",
     "variants": [
       {
         "label": "Sweet Matcha Powder Sticks",
@@ -4295,7 +4295,7 @@
     "source_url": "https://ujichamatcha.com/products/ajirogi-itoh-kyuemon",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:22.981Z",
+    "scrapedAt": "2026-08-31T16:38:19.537Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -4312,7 +4312,7 @@
     "source_url": "https://ujichamatcha.com/products/hokyu-itoh-kyuemon",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:24.019Z",
+    "scrapedAt": "2026-08-31T16:38:20.386Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -4329,7 +4329,7 @@
     "source_url": "https://ujichamatcha.com/products/jukyu-itoh-kyuemon",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:24.850Z",
+    "scrapedAt": "2026-08-31T16:38:21.184Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -4346,7 +4346,7 @@
     "source_url": "https://ujichamatcha.com/products/seiju-no-mori-itoh-kyuemon",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:25.677Z",
+    "scrapedAt": "2026-08-31T16:38:22.017Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -4363,7 +4363,7 @@
     "source_url": "https://ujichamatcha.com/products/uji-midori-itoh-kyuemon",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:26.651Z",
+    "scrapedAt": "2026-08-31T16:38:22.880Z",
     "variants": [
       {
         "label": "20 Gram Tin",
@@ -4380,7 +4380,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/cafe-style-matcha-latte-mix-sugar-free",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:10.860Z",
+    "scrapedAt": "2026-08-31T16:39:04.905Z",
     "variants": [
       {
         "label": "5.3oz (15 servings)",
@@ -4397,7 +4397,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/collagen-matcha-latte-mix-sweetened-sugar-free",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:11.815Z",
+    "scrapedAt": "2026-08-31T16:39:05.660Z",
     "variants": [
       {
         "label": "5.3oz (15 servings)",
@@ -4414,7 +4414,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/collagen-matcha-latte-mix-unsweetened",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:12.751Z",
+    "scrapedAt": "2026-08-31T16:39:06.461Z",
     "variants": [
       {
         "label": "5.3oz (15 servings)",
@@ -4431,7 +4431,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/cafe-style-matcha-latte-mix",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:13.644Z",
+    "scrapedAt": "2026-08-31T16:39:07.290Z",
     "variants": [
       {
         "label": "5.3oz",
@@ -4460,7 +4460,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/organic-cafe-style-sweetened-matcha-latte-mix-strawberry",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:14.475Z",
+    "scrapedAt": "2026-08-31T16:39:08.047Z",
     "variants": [
       {
         "label": "5.3oz (15servings)",
@@ -4477,7 +4477,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/organic-cafe-style-sweetened-matcha-latte-mix-vanilla",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:15.264Z",
+    "scrapedAt": "2026-08-31T16:39:08.820Z",
     "variants": [
       {
         "label": "5.3oz (15 servings)",
@@ -4494,7 +4494,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/organic-barista-edition-ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:16.262Z",
+    "scrapedAt": "2026-08-31T16:39:09.615Z",
     "variants": [
       {
         "label": "30g Tin (15-30 Servings)",
@@ -4529,7 +4529,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/organic-teahouse-edition-ceremonial-matcha-tins-pouches",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:17.057Z",
+    "scrapedAt": "2026-08-31T16:39:10.831Z",
     "variants": [
       {
         "label": "30g Tin (15-30 Servings)",
@@ -4570,7 +4570,7 @@
     "source_url": "https://www.jadeleafmatcha.com/products/organic-culinary-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:17.823Z",
+    "scrapedAt": "2026-08-31T16:39:11.810Z",
     "variants": [
       {
         "label": "30g Pouch (15-30 Servings)",
@@ -4605,12 +4605,12 @@
     "source_url": "https://jingtea.com/products/matcha-latte",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:11.113Z",
+    "scrapedAt": "2026-08-31T16:39:05.269Z",
     "variants": [
       {
         "label": "100g",
         "grams": 100,
-        "priceNative": 40,
+        "priceNative": 39,
         "currency": "USD"
       }
     ]
@@ -4622,7 +4622,7 @@
     "source_url": "https://jingtea.com/products/ceremonial-matcha-loose-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:12.568Z",
+    "scrapedAt": "2026-08-31T16:39:06.331Z",
     "variants": [
       {
         "label": "30g",
@@ -5676,7 +5676,7 @@
     "source_url": "https://kenkomatcha.com/products/culinary-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:21.148Z",
+    "scrapedAt": "2026-08-31T16:39:15.438Z",
     "variants": [
       {
         "label": "1 Bag",
@@ -5705,7 +5705,7 @@
     "source_url": "https://kenkomatcha.com/products/organic-matcha-premium-ceremonial-grade-100g-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:22.275Z",
+    "scrapedAt": "2026-08-31T16:39:16.386Z",
     "variants": [
       {
         "label": "Organic Matcha Ceremonial Grade - 100g Bag (3.5oz)",
@@ -5722,7 +5722,7 @@
     "source_url": "https://kenkomatcha.com/products/organic-culinary-grade-matcha-powder-100g-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:23.202Z",
+    "scrapedAt": "2026-08-31T16:39:17.138Z",
     "variants": [
       {
         "label": "1 x 100g Bag",
@@ -5739,7 +5739,7 @@
     "source_url": "https://kenkomatcha.com/products/ceremonial-matcha-30g-tin",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:24.136Z",
+    "scrapedAt": "2026-08-31T16:39:17.871Z",
     "variants": [
       {
         "label": "1 Tin",
@@ -5762,7 +5762,7 @@
     "source_url": "https://kettl.co/products/fuujun-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:21.342Z",
+    "scrapedAt": "2026-08-31T16:39:15.540Z",
     "variants": [
       {
         "label": "20g",
@@ -5779,7 +5779,7 @@
     "source_url": "https://kettl.co/products/fuyou-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:22.224Z",
+    "scrapedAt": "2026-08-31T16:39:16.436Z",
     "variants": [
       {
         "label": "20g",
@@ -5796,7 +5796,7 @@
     "source_url": "https://kettl.co/products/gokasho-blended-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:23.136Z",
+    "scrapedAt": "2026-08-31T16:39:17.378Z",
     "variants": [
       {
         "label": "20g",
@@ -5813,7 +5813,7 @@
     "source_url": "https://kettl.co/products/saemidori-matcha-saemidorimo-cha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:24.186Z",
+    "scrapedAt": "2026-08-31T16:39:18.274Z",
     "variants": [
       {
         "label": "20g",
@@ -5830,7 +5830,7 @@
     "source_url": "https://kettl.co/products/organic-samidori-matcha-20g-%E6%9C%89%E6%A9%9F%E3%81%95%E3%81%BF%E3%81%A9%E3%82%8A",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:25.188Z",
+    "scrapedAt": "2026-08-31T16:39:19.236Z",
     "variants": [
       {
         "label": "20g",
@@ -5847,7 +5847,7 @@
     "source_url": "https://kettl.co/products/uji-hikari-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:26.568Z",
+    "scrapedAt": "2026-08-31T16:39:20.223Z",
     "variants": [
       {
         "label": "20g",
@@ -5864,7 +5864,7 @@
     "source_url": "https://kettl.co/products/hanaka-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:27.561Z",
+    "scrapedAt": "2026-08-31T16:39:21.095Z",
     "variants": [
       {
         "label": "20g",
@@ -5879,8 +5879,17 @@
     "brand": "Kettl",
     "product_name": "Hibiki",
     "source_url": "https://kettl.co/products/hibiki-matcha",
-    "status": "no_variants_found",
-    "httpStatus": 200
+    "status": "ok",
+    "method": "shopify_var_meta",
+    "scrapedAt": "2026-08-31T16:39:21.927Z",
+    "variants": [
+      {
+        "label": "20g",
+        "grams": 20,
+        "priceNative": 52,
+        "currency": "USD"
+      }
+    ]
   },
   "263": {
     "id": 263,
@@ -5889,7 +5898,7 @@
     "source_url": "https://kettl.co/products/hukuju-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:29.603Z",
+    "scrapedAt": "2026-08-31T16:39:22.754Z",
     "variants": [
       {
         "label": "100g",
@@ -5912,7 +5921,7 @@
     "source_url": "https://kettl.co/products/kasumi-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:30.479Z",
+    "scrapedAt": "2026-08-31T16:39:23.591Z",
     "variants": [
       {
         "label": "20g",
@@ -5929,7 +5938,7 @@
     "source_url": "https://kettl.co/products/kiyona-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:31.490Z",
+    "scrapedAt": "2026-08-31T16:39:24.441Z",
     "variants": [
       {
         "label": "40g",
@@ -5946,7 +5955,7 @@
     "source_url": "https://kettl.co/products/kogetsu-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:32.822Z",
+    "scrapedAt": "2026-08-31T16:39:25.286Z",
     "variants": [
       {
         "label": "20g",
@@ -5963,7 +5972,7 @@
     "source_url": "https://kettl.co/products/kouya-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:33.791Z",
+    "scrapedAt": "2026-08-31T16:39:26.132Z",
     "variants": [
       {
         "label": "20g",
@@ -5980,7 +5989,7 @@
     "source_url": "https://kettl.co/products/okuju-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:34.706Z",
+    "scrapedAt": "2026-08-31T16:39:27.075Z",
     "variants": [
       {
         "label": "30g",
@@ -5997,7 +6006,7 @@
     "source_url": "https://kettl.co/products/ousui-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:35.800Z",
+    "scrapedAt": "2026-08-31T16:39:27.916Z",
     "variants": [
       {
         "label": "20g",
@@ -6014,7 +6023,7 @@
     "source_url": "https://kettl.co/products/ryokuan-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:36.783Z",
+    "scrapedAt": "2026-08-31T16:39:28.882Z",
     "variants": [
       {
         "label": "100g",
@@ -6037,7 +6046,7 @@
     "source_url": "https://kettl.co/products/satsuma-organic-saemidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:37.763Z",
+    "scrapedAt": "2026-08-31T16:39:29.809Z",
     "variants": [
       {
         "label": "20g",
@@ -6054,7 +6063,7 @@
     "source_url": "https://kettl.co/products/seion-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:38.681Z",
+    "scrapedAt": "2026-08-31T16:39:30.762Z",
     "variants": [
       {
         "label": "40g",
@@ -6071,7 +6080,7 @@
     "source_url": "https://kettl.co/products/shirakawa-asahi-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:39.698Z",
+    "scrapedAt": "2026-08-31T16:39:31.723Z",
     "variants": [
       {
         "label": "20g",
@@ -6088,7 +6097,7 @@
     "source_url": "https://kettl.co/products/shirakawa-goukou-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:40.623Z",
+    "scrapedAt": "2026-08-31T16:39:32.726Z",
     "variants": [
       {
         "label": "20g",
@@ -6105,7 +6114,7 @@
     "source_url": "https://kettl.co/products/shirakawa-samidori-matcha-samidorimo-cha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:41.542Z",
+    "scrapedAt": "2026-08-31T16:39:33.644Z",
     "variants": [
       {
         "label": "20g",
@@ -6122,7 +6131,7 @@
     "source_url": "https://kettl.co/products/shunka-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:42.578Z",
+    "scrapedAt": "2026-08-31T16:39:34.562Z",
     "variants": [
       {
         "label": "20g",
@@ -6139,7 +6148,7 @@
     "source_url": "https://kettl.co/products/soukou-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:43.545Z",
+    "scrapedAt": "2026-08-31T16:39:35.365Z",
     "variants": [
       {
         "label": "20g",
@@ -6156,7 +6165,7 @@
     "source_url": "https://kettl.co/products/suiteki-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:44.493Z",
+    "scrapedAt": "2026-08-31T16:39:36.211Z",
     "variants": [
       {
         "label": "40g",
@@ -6185,7 +6194,7 @@
     "source_url": "https://kettl.co/products/tenkuu-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:45.473Z",
+    "scrapedAt": "2026-08-31T16:39:37.116Z",
     "variants": [
       {
         "label": "20g",
@@ -6202,7 +6211,7 @@
     "source_url": "https://kettl.co/products/tsuji-family-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:46.379Z",
+    "scrapedAt": "2026-08-31T16:39:38.075Z",
     "variants": [
       {
         "label": "20g",
@@ -6219,7 +6228,7 @@
     "source_url": "https://kettl.co/products/tsurukage-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:47.381Z",
+    "scrapedAt": "2026-08-31T16:39:39.028Z",
     "variants": [
       {
         "label": "40g",
@@ -6236,7 +6245,7 @@
     "source_url": "https://kettl.co/products/uji-homare-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:48.216Z",
+    "scrapedAt": "2026-08-31T16:39:39.918Z",
     "variants": [
       {
         "label": "100g",
@@ -6259,7 +6268,7 @@
     "source_url": "https://kettl.co/products/wakakusa-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:49.117Z",
+    "scrapedAt": "2026-08-31T16:39:40.878Z",
     "variants": [
       {
         "label": "20g",
@@ -6284,7 +6293,7 @@
     "source_url": "https://www.kusmitea.com/en/products/ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:21.817Z",
+    "scrapedAt": "2026-08-31T16:39:16.050Z",
     "variants": [
       {
         "label": "Ceremonial Matcha",
@@ -6301,7 +6310,7 @@
     "source_url": "https://www.kusmitea.com/en/products/matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:23.047Z",
+    "scrapedAt": "2026-08-31T16:39:17.264Z",
     "variants": [
       {
         "label": "30 g tea-filled tin",
@@ -6324,7 +6333,7 @@
     "source_url": "https://www.kusmitea.com/en/products/premium-matcha-1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:24.349Z",
+    "scrapedAt": "2026-08-31T16:39:18.350Z",
     "variants": [
       {
         "label": "Premium Matcha",
@@ -6341,7 +6350,7 @@
     "source_url": "https://www.kyotodewmatcha.net/product-page/premium-ceremonial-grade-organic-japanese-matcha",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:17.254Z",
+    "scrapedAt": "2026-08-31T16:37:15.032Z",
     "variants": [
       {
         "label": "Organic Premium Ceremonial Grade Japanese Matcha Green Tea Powder 1oz.(30g) Tin",
@@ -6366,7 +6375,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:21.361Z",
+    "scrapedAt": "2026-08-31T16:39:15.535Z",
     "variants": [
       {
         "label": "Ceremonial Matcha Green Tea Powder",
@@ -6383,7 +6392,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/culinary-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:22.362Z",
+    "scrapedAt": "2026-08-31T16:39:16.374Z",
     "variants": [
       {
         "label": "Culinary Matcha Green Tea Powder",
@@ -6400,7 +6409,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/kai-yo-no-mukashi",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:23.236Z",
+    "scrapedAt": "2026-08-31T16:39:17.283Z",
     "variants": [
       {
         "label": "Kai-yo no Mukashi Matcha",
@@ -6417,7 +6426,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/matchabooster-genmai",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:24.545Z",
+    "scrapedAt": "2026-08-31T16:39:18.107Z",
     "variants": [
       {
         "label": "MatchaBooster Genmai",
@@ -6434,7 +6443,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/matchabooster-sweetened",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:25.688Z",
+    "scrapedAt": "2026-08-31T16:39:18.959Z",
     "variants": [
       {
         "label": "MatchaBooster Sweetened",
@@ -6451,7 +6460,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/matchabooster-unsweetened",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:26.697Z",
+    "scrapedAt": "2026-08-31T16:39:19.737Z",
     "variants": [
       {
         "label": "MatchaBooster Unsweetened",
@@ -6468,7 +6477,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/matchabooster-yuzu",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:27.677Z",
+    "scrapedAt": "2026-08-31T16:39:20.547Z",
     "variants": [
       {
         "label": "MatchaBooster Yuzu",
@@ -6493,7 +6502,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/re-q-matcha-latte",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:29.361Z",
+    "scrapedAt": "2026-08-31T16:39:22.193Z",
     "variants": [
       {
         "label": "Re-Q Matcha Latte - 7pk.",
@@ -6510,7 +6519,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/shiki-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:30.326Z",
+    "scrapedAt": "2026-08-31T16:39:23.004Z",
     "variants": [
       {
         "label": "Shiki Matcha Green Tea Powder - Universal Quality",
@@ -6527,7 +6536,7 @@
     "source_url": "https://maeda-en.com/collections/matcha/products/tsuji-midori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:31.147Z",
+    "scrapedAt": "2026-08-31T16:39:23.835Z",
     "variants": [
       {
         "label": "Tsuji-Midori",
@@ -6544,7 +6553,7 @@
     "source_url": "https://mantramatcha.com/products/banana-cacao-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:21.962Z",
+    "scrapedAt": "2026-08-31T16:39:15.856Z",
     "variants": [
       {
         "label": "1 Pack",
@@ -6573,7 +6582,7 @@
     "source_url": "https://mantramatcha.com/products/cinnamon-goji-berry-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:23.093Z",
+    "scrapedAt": "2026-08-31T16:39:16.762Z",
     "variants": [
       {
         "label": "1 Pack",
@@ -6602,7 +6611,7 @@
     "source_url": "https://mantramatcha.com/products/ginger-beet-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:24.015Z",
+    "scrapedAt": "2026-08-31T16:39:17.614Z",
     "variants": [
       {
         "label": "1 Pack",
@@ -6631,7 +6640,7 @@
     "source_url": "https://mantramatcha.com/products/rose-hip-dragon-fruit-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:24.949Z",
+    "scrapedAt": "2026-08-31T16:39:18.583Z",
     "variants": [
       {
         "label": "1 Pack",
@@ -6660,7 +6669,7 @@
     "source_url": "https://mantramatcha.com/products/strawberry-lemon-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:25.809Z",
+    "scrapedAt": "2026-08-31T16:39:19.926Z",
     "variants": [
       {
         "label": "1 Pack",
@@ -6689,7 +6698,7 @@
     "source_url": "https://mantramatcha.com/products/super-premium-ceremonial-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:26.824Z",
+    "scrapedAt": "2026-08-31T16:39:20.800Z",
     "variants": [
       {
         "label": "1 Pack",
@@ -6718,7 +6727,7 @@
     "source_url": "https://mantramatcha.com/products/superfood-berry-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:27.867Z",
+    "scrapedAt": "2026-08-31T16:39:21.646Z",
     "variants": [
       {
         "label": "1 Pack",
@@ -7762,7 +7771,7 @@
     "source_url": "https://matchakonomi.com/products/akira-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:21.517Z",
+    "scrapedAt": "2026-08-31T16:39:15.582Z",
     "variants": [
       {
         "label": "30g (1oz)",
@@ -7791,7 +7800,7 @@
     "source_url": "https://matchakonomi.com/products/akira-tencha-50g-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:22.337Z",
+    "scrapedAt": "2026-08-31T16:39:16.294Z",
     "variants": [
       {
         "label": "Akira Tencha 50g Bag",
@@ -7808,7 +7817,7 @@
     "source_url": "https://matchakonomi.com/products/amaya-premium-ceremonial-japanese-matcha-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:23.210Z",
+    "scrapedAt": "2026-08-31T16:39:17.043Z",
     "variants": [
       {
         "label": "Amaya Matcha - Ceremonial Matcha",
@@ -7825,7 +7834,7 @@
     "source_url": "https://matchakonomi.com/products/ki-organic-ceremonial-matcha-3-sizes",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:23.932Z",
+    "scrapedAt": "2026-08-31T16:39:17.780Z",
     "variants": [
       {
         "label": "30g (1oz)",
@@ -7866,7 +7875,7 @@
     "source_url": "https://matchakonomi.com/products/miya-organic-ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:24.833Z",
+    "scrapedAt": "2026-08-31T16:39:18.497Z",
     "variants": [
       {
         "label": "30g (1oz)",
@@ -7895,7 +7904,7 @@
     "source_url": "https://matchakonomi.com/products/oishi-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:25.714Z",
+    "scrapedAt": "2026-08-31T16:39:19.221Z",
     "variants": [
       {
         "label": "30g (1oz)",
@@ -7924,7 +7933,7 @@
     "source_url": "https://matchakonomi.com/products/oka-organic-culinary-matcha-2-sizes",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:26.577Z",
+    "scrapedAt": "2026-08-31T16:39:20.008Z",
     "variants": [
       {
         "label": "100g (3.5oz)",
@@ -7947,7 +7956,7 @@
     "source_url": "https://matchamoon.com/products/ceremonial-gokuro-matcha-green-tea-powder-40g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.088Z",
+    "scrapedAt": "2026-08-31T16:39:44.183Z",
     "variants": [
       {
         "label": "***NEW*** Ceremonial Gyokuro Matcha Green Tea Powder 40g",
@@ -7964,7 +7973,7 @@
     "source_url": "https://matchamoon.com/products/daily-zen-organic-all-purpose-japanese-matcha-green-tea-powder-1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.942Z",
+    "scrapedAt": "2026-08-31T16:39:44.898Z",
     "variants": [
       {
         "label": "\"Daily Zen\" Organic All-purpose Japanese Matcha Green Tea Powder",
@@ -7981,7 +7990,7 @@
     "source_url": "https://matchamoon.com/products/organic-hojicha-roasted-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:54.944Z",
+    "scrapedAt": "2026-08-31T16:39:45.703Z",
     "variants": [
       {
         "label": "Organic Matcha-Style Hojicha Roasted Green Tea Powder",
@@ -7998,7 +8007,7 @@
     "source_url": "https://matchamoon.com/products/pure-zen-premium-japanese-uji-matcha-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:55.871Z",
+    "scrapedAt": "2026-08-31T16:39:46.647Z",
     "variants": [
       {
         "label": "30g",
@@ -8021,7 +8030,7 @@
     "source_url": "https://matchamoon.com/products/pure-zen-premium-organic-japanese-matcha-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:56.684Z",
+    "scrapedAt": "2026-08-31T16:39:47.399Z",
     "variants": [
       {
         "label": "30g",
@@ -8044,7 +8053,7 @@
     "source_url": "https://matchamoon.com/products/wakoucha-organic-matcha-style-black-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:57.422Z",
+    "scrapedAt": "2026-08-31T16:39:48.138Z",
     "variants": [
       {
         "label": "100g (3.5 oz.)",
@@ -8061,7 +8070,7 @@
     "source_url": "https://matchanude.com/products/first-whisk-50g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.149Z",
+    "scrapedAt": "2026-08-31T16:39:44.360Z",
     "variants": [
       {
         "label": "First Whisk Organic Matcha – 50g",
@@ -8078,7 +8087,7 @@
     "source_url": "https://matchanude.com/products/premium-50g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.927Z",
+    "scrapedAt": "2026-08-31T16:39:45.382Z",
     "variants": [
       {
         "label": "Premium Organic Matcha – 50g",
@@ -8095,7 +8104,7 @@
     "source_url": "https://matchaoutlet.com/products/private-reserve-matcha-d25",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.173Z",
+    "scrapedAt": "2026-08-31T16:39:44.213Z",
     "variants": [
       {
         "label": "1oz/30g",
@@ -8130,7 +8139,7 @@
     "source_url": "https://matchaoutlet.com/products/japanese-ryori-matcha-culinary-grade-1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.914Z",
+    "scrapedAt": "2026-08-31T16:39:44.936Z",
     "variants": [
       {
         "label": "1Bag (12oz)",
@@ -8165,7 +8174,7 @@
     "source_url": "https://matchaoutlet.com/products/starter-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:54.787Z",
+    "scrapedAt": "2026-08-31T16:39:45.708Z",
     "variants": [
       {
         "label": "1Bag (12oz)",
@@ -8200,7 +8209,7 @@
     "source_url": "https://matchaoutlet.com/products/best-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:55.529Z",
+    "scrapedAt": "2026-08-31T16:39:46.451Z",
     "variants": [
       {
         "label": "1 Bag (12oz)",
@@ -8251,7 +8260,7 @@
     "source_url": "https://matcha.com/products/ceremonial-grade-latte-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.186Z",
+    "scrapedAt": "2026-08-31T16:39:44.345Z",
     "variants": [
       {
         "label": "1-bag (60-servings)",
@@ -8280,7 +8289,7 @@
     "source_url": "https://matcha.com/products/organic-ceremonial-grade-flavored-matcha-chocolate-matcha-vanilla-matcha-mango",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:54.439Z",
+    "scrapedAt": "2026-08-31T16:39:45.500Z",
     "variants": [
       {
         "label": "Vanilla / One",
@@ -8339,7 +8348,7 @@
     "source_url": "https://matcha.com/products/daily-ritual",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:55.256Z",
+    "scrapedAt": "2026-08-31T16:39:46.411Z",
     "variants": [
       {
         "label": "30g (makes 30 servings)",
@@ -8362,7 +8371,7 @@
     "source_url": "https://matcha.com/products/first-harvest",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:56.108Z",
+    "scrapedAt": "2026-08-31T16:39:47.170Z",
     "variants": [
       {
         "label": "30g (makes 30 servings)",
@@ -8385,7 +8394,7 @@
     "source_url": "https://matcha.com/products/japanese-ceremonial-organic-usda",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:56.976Z",
+    "scrapedAt": "2026-08-31T16:39:48.178Z",
     "variants": [
       {
         "label": "30g (30 servings)",
@@ -8408,7 +8417,7 @@
     "source_url": "https://matcha.com/products/organic-ceremonial-grade-flavored-matcha-chocolate-matcha-vanilla-matcha-mango",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:57.916Z",
+    "scrapedAt": "2026-08-31T16:39:48.927Z",
     "variants": [
       {
         "label": "Vanilla / One",
@@ -8467,7 +8476,7 @@
     "source_url": "https://matcha.com/products/matcha-morning-roast",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:58.741Z",
+    "scrapedAt": "2026-08-31T16:39:49.742Z",
     "variants": [
       {
         "label": "50 serving (100g)",
@@ -8490,7 +8499,7 @@
     "source_url": "https://matcha.com/products/mighty-mushroom-matcha-latte",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:59.666Z",
+    "scrapedAt": "2026-08-31T16:39:50.552Z",
     "variants": [
       {
         "label": "1 Bag",
@@ -8519,7 +8528,7 @@
     "source_url": "https://matcha.com/products/organic-chefs-choice",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:00.805Z",
+    "scrapedAt": "2026-08-31T16:39:51.325Z",
     "variants": [
       {
         "label": "100g (makes 100 servings)",
@@ -8554,7 +8563,7 @@
     "source_url": "https://matcha.com/products/organic-decaf-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:01.557Z",
+    "scrapedAt": "2026-08-31T16:39:52.149Z",
     "variants": [
       {
         "label": "30 Servings (1 x 30g)",
@@ -8583,7 +8592,7 @@
     "source_url": "https://matcha.com/products/organic-matcha-latte-adaptogen-superfood-blend",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:02.333Z",
+    "scrapedAt": "2026-08-31T16:39:53.015Z",
     "variants": [
       {
         "label": "1-pack",
@@ -8606,7 +8615,7 @@
     "source_url": "https://matcha.com/products/organic-matcha-masala-chai",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:03.148Z",
+    "scrapedAt": "2026-08-31T16:39:53.805Z",
     "variants": [
       {
         "label": "1-pack",
@@ -8635,7 +8644,7 @@
     "source_url": "https://matcha.com/products/organic-single-estate",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:03.901Z",
+    "scrapedAt": "2026-08-31T16:39:54.662Z",
     "variants": [
       {
         "label": "30g (makes 30 servings)",
@@ -8658,7 +8667,7 @@
     "source_url": "https://matcha.com/products/organic-superior",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:04.751Z",
+    "scrapedAt": "2026-08-31T16:39:55.505Z",
     "variants": [
       {
         "label": "30g (makes 30 servings) / x 1",
@@ -8705,7 +8714,7 @@
     "source_url": "https://matcha.com/products/ceremonial-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:05.658Z",
+    "scrapedAt": "2026-08-31T16:39:56.341Z",
     "variants": [
       {
         "label": "30g (makes 30 servings)",
@@ -8728,7 +8737,7 @@
     "source_url": "https://matcha.com/products/masters-blend",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:06.432Z",
+    "scrapedAt": "2026-08-31T16:39:57.108Z",
     "variants": [
       {
         "label": "30g (makes 30 servings)",
@@ -8751,7 +8760,7 @@
     "source_url": "https://matcha.com/products/space-matcha-organic-matcha-instant-cubes",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:07.577Z",
+    "scrapedAt": "2026-08-31T16:39:58.241Z",
     "variants": [
       {
         "label": "Original (Pure) / 1-pack",
@@ -8786,7 +8795,7 @@
     "source_url": "https://matcha.com/products/summer-reserve",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:08.479Z",
+    "scrapedAt": "2026-08-31T16:39:59.031Z",
     "variants": [
       {
         "label": "30g (makes 30 servings)",
@@ -8809,7 +8818,7 @@
     "source_url": "https://matcha.com/products/tenchi-ceremonial-organic",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:09.310Z",
+    "scrapedAt": "2026-08-31T16:39:59.805Z",
     "variants": [
       {
         "label": "30g (makes 30 servings)",
@@ -8832,7 +8841,7 @@
     "source_url": "https://matcha.com/products/organic-ceremonial-grade-flavored-matcha-chocolate-matcha-vanilla-matcha-mango",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:10.042Z",
+    "scrapedAt": "2026-08-31T16:40:00.746Z",
     "variants": [
       {
         "label": "Vanilla / One",
@@ -8891,7 +8900,7 @@
     "source_url": "https://www.matchabar.co/products/ceremonial-grade-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.491Z",
+    "scrapedAt": "2026-08-31T16:39:44.399Z",
     "variants": [
       {
         "label": "80g",
@@ -8914,7 +8923,7 @@
     "source_url": "https://www.matchadna.com/products/the-milky-coconut-latte-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:53.438Z",
+    "scrapedAt": "2026-08-31T16:39:44.350Z",
     "variants": [
       {
         "label": "7 sticks",
@@ -8931,7 +8940,7 @@
     "source_url": "https://www.matchadna.com/products/the-milky-latte-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:54.442Z",
+    "scrapedAt": "2026-08-31T16:39:45.159Z",
     "variants": [
       {
         "label": "5.3OZ",
@@ -8954,7 +8963,7 @@
     "source_url": "https://www.matchadna.com/products/the-milky-latte-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:55.451Z",
+    "scrapedAt": "2026-08-31T16:39:46.110Z",
     "variants": [
       {
         "label": "7 sticks",
@@ -8971,7 +8980,7 @@
     "source_url": "https://www.matchadna.com/products/matchadna-matcha-green-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:56.482Z",
+    "scrapedAt": "2026-08-31T16:39:46.987Z",
     "variants": [
       {
         "label": "8OZ",
@@ -9012,7 +9021,7 @@
     "source_url": "https://www.matchadna.com/products/the-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:57.348Z",
+    "scrapedAt": "2026-08-31T16:39:47.747Z",
     "variants": [
       {
         "label": "15 sticks",
@@ -9035,7 +9044,7 @@
     "source_url": "https://www.matchadna.com/products/the-tin",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:58.178Z",
+    "scrapedAt": "2026-08-31T16:39:48.527Z",
     "variants": [
       {
         "label": "8OZ",
@@ -9058,7 +9067,7 @@
     "source_url": "https://www.matchaeologist.com/products/matsu-ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:11.045Z",
+    "scrapedAt": "2026-08-31T16:40:03.042Z",
     "variants": [
       {
         "label": "Intense with a mellow roasted flavor",
@@ -9075,7 +9084,7 @@
     "source_url": "https://www.matchaeologist.com/products/maya-ceremonial-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:12.061Z",
+    "scrapedAt": "2026-08-31T16:40:04.812Z",
     "variants": [
       {
         "label": "Balanced with refined bright notes",
@@ -9092,7 +9101,7 @@
     "source_url": "https://www.matchaeologist.com/products/meiko-ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:12.847Z",
+    "scrapedAt": "2026-08-31T16:40:06.094Z",
     "variants": [
       {
         "label": "Full-bodied with subtle floral aromas",
@@ -9109,7 +9118,7 @@
     "source_url": "https://www.matchaeologist.com/products/midori-culinary-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:13.736Z",
+    "scrapedAt": "2026-08-31T16:40:06.838Z",
     "variants": [
       {
         "label": "Rich with robust, well-rounded flavors",
@@ -9126,7 +9135,7 @@
     "source_url": "https://www.matchaeologist.com/products/mirai-culinary-matcha-1kg",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:14.788Z",
+    "scrapedAt": "2026-08-31T16:40:07.601Z",
     "variants": [
       {
         "label": "Vibrant with bright earthy undertones",
@@ -9143,7 +9152,7 @@
     "source_url": "https://www.matchaeologist.com/products/misaki-ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:15.755Z",
+    "scrapedAt": "2026-08-31T16:40:08.546Z",
     "variants": [
       {
         "label": "Ambrosial with sweet umami undertones",
@@ -9160,7 +9169,7 @@
     "source_url": "https://www.matchaful.com/products/hikari-single-origin-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:11.441Z",
+    "scrapedAt": "2026-08-31T16:40:02.217Z",
     "variants": [
       {
         "label": "Hikari Single Origin Matcha - 100g",
@@ -9177,7 +9186,7 @@
     "source_url": "https://www.matchaful.com/products/kiwami-single-cultivar-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:12.316Z",
+    "scrapedAt": "2026-08-31T16:40:03.352Z",
     "variants": [
       {
         "label": "Organic Kiwami Single Cultivar Matcha - 100g",
@@ -9194,7 +9203,7 @@
     "source_url": "https://www.matchaful.com/products/tsuyuhikari-limited-reserve-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:13.083Z",
+    "scrapedAt": "2026-08-31T16:40:04.103Z",
     "variants": [
       {
         "label": "Tsuyuhikari Limited Reserve Matcha - 100g",
@@ -9211,12 +9220,12 @@
     "source_url": "https://www.midorispring.com/products/conventional-ceremonial-matcha-emerald-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:11.471Z",
+    "scrapedAt": "2026-08-31T16:40:01.929Z",
     "variants": [
       {
         "label": "1 Tin (100g)",
         "grams": 100,
-        "priceNative": 35.5,
+        "priceNative": 36,
         "currency": "USD"
       },
       {
@@ -9234,7 +9243,7 @@
     "source_url": "https://www.midorispring.com/products/conventional-ceremonial-matcha-gold-no-2",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:12.495Z",
+    "scrapedAt": "2026-08-31T16:40:02.742Z",
     "variants": [
       {
         "label": "1 Tin 30g",
@@ -9257,7 +9266,7 @@
     "source_url": "https://www.midorispring.com/products/gem-premiere-organic-genmaicha-roasted-rice-matcha-blend",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:13.550Z",
+    "scrapedAt": "2026-08-31T16:40:03.653Z",
     "variants": [
       {
         "label": "1 Tin 100g | $24.00",
@@ -9280,7 +9289,7 @@
     "source_url": "https://www.midorispring.com/products/ceremonial-emerald-class-organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:14.592Z",
+    "scrapedAt": "2026-08-31T16:40:04.641Z",
     "variants": [
       {
         "label": "1 Tin (100g)",
@@ -9315,7 +9324,7 @@
     "source_url": "https://www.midorispring.com/products/ceremonial-gold-class-organic-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:15.663Z",
+    "scrapedAt": "2026-08-31T16:40:05.449Z",
     "variants": [
       {
         "label": "1 Tin 30g",
@@ -9350,7 +9359,7 @@
     "source_url": "https://www.midorispring.com/products/organic-culinary-grade-matcha-eco-class-100-g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:16.855Z",
+    "scrapedAt": "2026-08-31T16:40:06.442Z",
     "variants": [
       {
         "label": "1 Bag 100g",
@@ -9385,7 +9394,7 @@
     "source_url": "https://www.midorispring.com/products/ceremonial-kiyora-ujihikari-limited-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:17.802Z",
+    "scrapedAt": "2026-08-31T16:40:07.338Z",
     "variants": [
       {
         "label": "Rare Ceremonial Matcha - Kiyora UJIHIKARI Limited 30g",
@@ -9402,7 +9411,7 @@
     "source_url": "https://www.midorispring.com/products/rare-ceremonial-matcha-miru-limited-30g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:18.956Z",
+    "scrapedAt": "2026-08-31T16:40:08.216Z",
     "variants": [
       {
         "label": "Rare Ceremonial Matcha - Miru Limited 30g",
@@ -9419,7 +9428,7 @@
     "source_url": "https://www.midorispring.com/products/rei-cold-brew-matcha-conventional-smooth-creamy",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:20.156Z",
+    "scrapedAt": "2026-08-31T16:40:09.143Z",
     "variants": [
       {
         "label": "1 Tin 50g",
@@ -9442,7 +9451,7 @@
     "source_url": "https://www.peets.com/products/organic-ceremonial-matcha-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:11.148Z",
+    "scrapedAt": "2026-08-31T16:40:03.993Z",
     "variants": [
       {
         "label": "1.5oz Loose Leaf",
@@ -9475,7 +9484,7 @@
     "source_url": "https://www.peets.com/products/organic-spiced-turmeric-matcha-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:14.105Z",
+    "scrapedAt": "2026-08-31T16:40:07.397Z",
     "variants": [
       {
         "label": "1.5oz Loose Leaf",
@@ -9492,7 +9501,7 @@
     "source_url": "https://mizubatea.com/products/asahi-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:11.139Z",
+    "scrapedAt": "2026-08-31T16:40:01.925Z",
     "variants": [
       {
         "label": "Asahi Matcha",
@@ -9509,7 +9518,7 @@
     "source_url": "https://mizubatea.com/products/daily-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:12.370Z",
+    "scrapedAt": "2026-08-31T16:40:02.746Z",
     "variants": [
       {
         "label": "Daily Matcha Green Tea",
@@ -9526,7 +9535,7 @@
     "source_url": "https://mizubatea.com/products/house-organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:13.145Z",
+    "scrapedAt": "2026-08-31T16:40:03.566Z",
     "variants": [
       {
         "label": "House Organic Matcha Green Tea",
@@ -9543,7 +9552,7 @@
     "source_url": "https://mizubatea.com/products/kokoro-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:13.997Z",
+    "scrapedAt": "2026-08-31T16:40:06.548Z",
     "variants": [
       {
         "label": "Kokoro Ceremonial Matcha Green Tea",
@@ -9560,7 +9569,7 @@
     "source_url": "https://mizubatea.com/products/koshun-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:14.904Z",
+    "scrapedAt": "2026-08-31T16:40:08.906Z",
     "variants": [
       {
         "label": "Koshun Matcha Green Tea",
@@ -9577,7 +9586,7 @@
     "source_url": "https://mizubatea.com/products/nagomi-organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:15.761Z",
+    "scrapedAt": "2026-08-31T16:40:09.835Z",
     "variants": [
       {
         "label": "Nagomi Organic Matcha Green Tea",
@@ -9602,7 +9611,7 @@
     "source_url": "https://mizubatea.com/products/culinary-organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:17.905Z",
+    "scrapedAt": "2026-08-31T16:40:12.108Z",
     "variants": [
       {
         "label": "100 gram",
@@ -9625,7 +9634,7 @@
     "source_url": "https://mizubatea.com/products/samidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:18.709Z",
+    "scrapedAt": "2026-08-31T16:40:12.919Z",
     "variants": [
       {
         "label": "Samidori Matcha",
@@ -9642,10 +9651,10 @@
     "source_url": "https://mizubatea.com/products/shirakawa-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:19.761Z",
+    "scrapedAt": "2026-08-31T16:40:14.054Z",
     "variants": [
       {
-        "label": "Shirakawa Ceremonial Matcha Green Tea",
+        "label": "Shirakawa Matcha Green Tea",
         "grams": null,
         "priceNative": 55,
         "currency": "USD"
@@ -9659,7 +9668,7 @@
     "source_url": "https://mizubatea.com/products/tenryu-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:20.560Z",
+    "scrapedAt": "2026-08-31T16:40:14.848Z",
     "variants": [
       {
         "label": "Tenryu Matcha Green Tea",
@@ -9676,7 +9685,7 @@
     "source_url": "https://mizubatea.com/products/tsuyuhikari-organic-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:21.400Z",
+    "scrapedAt": "2026-08-31T16:40:15.679Z",
     "variants": [
       {
         "label": "Tsuyuhikari Matcha Green Tea",
@@ -9693,7 +9702,7 @@
     "source_url": "https://mizubatea.com/products/uji-hikari-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:22.187Z",
+    "scrapedAt": "2026-08-31T16:40:16.420Z",
     "variants": [
       {
         "label": "Uji Hikari Matcha",
@@ -9710,7 +9719,7 @@
     "source_url": "https://mizubatea.com/products/yama-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:23.050Z",
+    "scrapedAt": "2026-08-31T16:40:17.183Z",
     "variants": [
       {
         "label": "Yama Matcha Green Tea",
@@ -9727,7 +9736,7 @@
     "source_url": "https://mizubatea.com/products/yame-signature-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:23.859Z",
+    "scrapedAt": "2026-08-31T16:40:17.988Z",
     "variants": [
       {
         "label": "Yame Signature Matcha",
@@ -9744,7 +9753,7 @@
     "source_url": "https://mizubatea.com/products/yorokobi-ceremonial-organic-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:24.679Z",
+    "scrapedAt": "2026-08-31T16:40:18.873Z",
     "variants": [
       {
         "label": "Yorokobi Organic Matcha Green Tea",
@@ -9761,7 +9770,7 @@
     "source_url": "https://mizubatea.com/products/yugana-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:25.473Z",
+    "scrapedAt": "2026-08-31T16:40:19.706Z",
     "variants": [
       {
         "label": "Yūgana Matcha Green Tea",
@@ -9778,7 +9787,7 @@
     "source_url": "https://shop.mymatchalife.com/products/baristas-premium-matcha-latte",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:11.104Z",
+    "scrapedAt": "2026-08-31T16:40:01.981Z",
     "variants": [
       {
         "label": "Barista's Matcha Latte 3.7 oz - Vanilla",
@@ -9795,7 +9804,7 @@
     "source_url": "https://shop.mymatchalife.com/products/baristas-premium-matcha-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:11.854Z",
+    "scrapedAt": "2026-08-31T16:40:02.767Z",
     "variants": [
       {
         "label": "Barista's Premium Japanese Matcha Tea",
@@ -9812,7 +9821,7 @@
     "source_url": "https://shop.mymatchalife.com/products/baristas-strawberry-matcha-latte-4-8-oz-135g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:12.579Z",
+    "scrapedAt": "2026-08-31T16:40:03.489Z",
     "variants": [
       {
         "label": "Barista's Strawberry Matcha Latte - 4.8 oz (135g)",
@@ -9837,7 +9846,7 @@
     "source_url": "https://shop.mymatchalife.com/products/matcha-kik-performance-chews-30",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:14.348Z",
+    "scrapedAt": "2026-08-31T16:40:05.207Z",
     "variants": [
       {
         "label": "Matcha KiK Energy Chews 30 pk (Out of Stock  - Until Further Notice",
@@ -9854,7 +9863,7 @@
     "source_url": "https://shop.mymatchalife.com/products/tea-lovers-organic-ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:15.110Z",
+    "scrapedAt": "2026-08-31T16:40:06.130Z",
     "variants": [
       {
         "label": "Tea Lover's Organic Ceremonial Matcha 1 oz Tin",
@@ -9871,7 +9880,7 @@
     "source_url": "https://global.tokichi.jp/products/mc20",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:26.742Z",
+    "scrapedAt": "2026-08-31T16:40:20.796Z",
     "variants": [
       {
         "label": "Matcha Asagiri-no-Mukashi, 30g Can",
@@ -9888,7 +9897,7 @@
     "source_url": "https://global.tokichi.jp/products/mc11",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:27.698Z",
+    "scrapedAt": "2026-08-31T16:40:21.653Z",
     "variants": [
       {
         "label": "Matcha Ato-Mukashi, 30g Can",
@@ -9905,7 +9914,7 @@
     "source_url": "https://global.tokichi.jp/products/mc2",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:28.521Z",
+    "scrapedAt": "2026-08-31T16:40:22.608Z",
     "variants": [
       {
         "label": "Matcha Fuji-no-Shiro, 30g Can",
@@ -9922,7 +9931,7 @@
     "source_url": "https://global.tokichi.jp/products/mc7",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:29.587Z",
+    "scrapedAt": "2026-08-31T16:40:23.688Z",
     "variants": [
       {
         "label": "Matcha Hatsu-no-Mukashi, 30g Can",
@@ -9939,12 +9948,12 @@
     "source_url": "https://global.tokichi.jp/products/mc4",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:30.543Z",
+    "scrapedAt": "2026-08-31T16:40:24.592Z",
     "variants": [
       {
         "label": "Matcha Hiroha-no-Shiro, 30g Can",
         "grams": 30,
-        "priceNative": 23,
+        "priceNative": 22,
         "currency": "USD"
       }
     ]
@@ -9956,7 +9965,7 @@
     "source_url": "https://global.tokichi.jp/products/mc8",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:31.413Z",
+    "scrapedAt": "2026-08-31T16:40:25.499Z",
     "variants": [
       {
         "label": "Matcha Jingai-no-Mukashi, 30g Can",
@@ -9973,12 +9982,12 @@
     "source_url": "https://global.tokichi.jp/products/mc5",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:32.449Z",
+    "scrapedAt": "2026-08-31T16:40:26.402Z",
     "variants": [
       {
         "label": "Matcha Seikan-no-Shiro, 30g Can",
         "grams": 30,
-        "priceNative": 23,
+        "priceNative": 22,
         "currency": "USD"
       }
     ]
@@ -9990,7 +9999,7 @@
     "source_url": "https://global.tokichi.jp/products/mc9",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:33.337Z",
+    "scrapedAt": "2026-08-31T16:40:27.245Z",
     "variants": [
       {
         "label": "Matcha Seiko-no-Mukashi, 30g Can",
@@ -10007,12 +10016,12 @@
     "source_url": "https://global.tokichi.jp/products/mc3",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:34.341Z",
+    "scrapedAt": "2026-08-31T16:40:28.132Z",
     "variants": [
       {
         "label": "Matcha Senun-no-Shiro, 30g Can",
         "grams": 30,
-        "priceNative": 23,
+        "priceNative": 22,
         "currency": "USD"
       }
     ]
@@ -10024,7 +10033,7 @@
     "source_url": "https://global.tokichi.jp/products/mc6",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:35.186Z",
+    "scrapedAt": "2026-08-31T16:40:28.987Z",
     "variants": [
       {
         "label": "Matcha Sho-no-Mukashi, 30g Can",
@@ -10041,7 +10050,7 @@
     "source_url": "https://global.tokichi.jp/products/mc10",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:36.144Z",
+    "scrapedAt": "2026-08-31T16:40:29.919Z",
     "variants": [
       {
         "label": "Matcha Uji-no-Mukashi, 30g Can",
@@ -10058,7 +10067,7 @@
     "source_url": "https://global.tokichi.jp/products/mc1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:37.073Z",
+    "scrapedAt": "2026-08-31T16:40:30.961Z",
     "variants": [
       {
         "label": "Matcha Ukishima-no-Shiro, 30g Can",
@@ -10075,7 +10084,7 @@
     "source_url": "https://naokimatcha.com/products/barista-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:26.341Z",
+    "scrapedAt": "2026-08-31T16:40:20.523Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10098,7 +10107,7 @@
     "source_url": "https://naokimatcha.com/products/barista-pro-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:27.119Z",
+    "scrapedAt": "2026-08-31T16:40:21.305Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10121,7 +10130,7 @@
     "source_url": "https://naokimatcha.com/products/chiran-harvest-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:27.940Z",
+    "scrapedAt": "2026-08-31T16:40:22.095Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10138,7 +10147,7 @@
     "source_url": "https://naokimatcha.com/products/fragrant-yame-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:28.675Z",
+    "scrapedAt": "2026-08-31T16:40:22.833Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10161,7 +10170,7 @@
     "source_url": "https://naokimatcha.com/products/nishio-bloom-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:29.462Z",
+    "scrapedAt": "2026-08-31T16:40:23.624Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10178,7 +10187,7 @@
     "source_url": "https://naokimatcha.com/products/all-purpose-culinary-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:30.285Z",
+    "scrapedAt": "2026-08-31T16:40:24.405Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10201,7 +10210,7 @@
     "source_url": "https://naokimatcha.com/products/organic-first-spring-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:31.059Z",
+    "scrapedAt": "2026-08-31T16:40:25.213Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10230,7 +10239,7 @@
     "source_url": "https://naokimatcha.com/products/superior-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:31.861Z",
+    "scrapedAt": "2026-08-31T16:40:25.970Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10259,7 +10268,7 @@
     "source_url": "https://naokimatcha.com/products/ujitawara-special",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:32.629Z",
+    "scrapedAt": "2026-08-31T16:40:26.782Z",
     "variants": [
       {
         "label": "1.4 Ounce (Pack of 1)",
@@ -10276,7 +10285,7 @@
     "source_url": "https://naokimatcha.com/products/yame-single-cultivar-matcha-set",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:33.565Z",
+    "scrapedAt": "2026-08-31T16:40:27.559Z",
     "variants": [
       {
         "label": "Yame Single-Cultivar Matcha Set (4x20g)",
@@ -10293,7 +10302,7 @@
     "source_url": "https://navitasorganics.com/products/matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:26.332Z",
+    "scrapedAt": "2026-08-31T16:40:20.602Z",
     "variants": [
       {
         "label": "3 oz",
@@ -10310,7 +10319,7 @@
     "source_url": "https://navitasorganics.com/products/matcha-latte",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:27.084Z",
+    "scrapedAt": "2026-08-31T16:40:21.369Z",
     "variants": [
       {
         "label": "3.1oz",
@@ -10333,7 +10342,7 @@
     "source_url": "https://navitasorganics.com/products/lemon-cashew-matcha-bites",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:27.866Z",
+    "scrapedAt": "2026-08-31T16:40:22.103Z",
     "variants": [
       {
         "label": "8 oz",
@@ -10350,7 +10359,7 @@
     "source_url": "https://nioteas.com/products/matcha-tea-chanoka-yabu-30g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:26.710Z",
+    "scrapedAt": "2026-08-31T16:40:20.987Z",
     "variants": [
       {
         "label": "30g",
@@ -10373,7 +10382,7 @@
     "source_url": "https://nioteas.com/products/matcha-tea-sakamoto-sae",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:27.770Z",
+    "scrapedAt": "2026-08-31T16:40:21.896Z",
     "variants": [
       {
         "label": "30g",
@@ -10396,7 +10405,7 @@
     "source_url": "https://nioteas.com/products/kyoto-matcha-masudaen-30g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:28.742Z",
+    "scrapedAt": "2026-08-31T16:40:22.982Z",
     "variants": [
       {
         "label": "30g",
@@ -10419,7 +10428,7 @@
     "source_url": "https://nioteas.com/products/latte-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:29.953Z",
+    "scrapedAt": "2026-08-31T16:40:23.987Z",
     "variants": [
       {
         "label": "100g",
@@ -10442,7 +10451,7 @@
     "source_url": "https://nioteas.com/products/latte-matcha-basic-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:30.909Z",
+    "scrapedAt": "2026-08-31T16:40:24.861Z",
     "variants": [
       {
         "label": "100g",
@@ -10465,7 +10474,7 @@
     "source_url": "https://nioteas.com/products/premium-matcha-masudaen-30g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:32.009Z",
+    "scrapedAt": "2026-08-31T16:40:25.795Z",
     "variants": [
       {
         "label": "30g",
@@ -10488,7 +10497,7 @@
     "source_url": "https://nioteas.com/products/matcha-kiwami-sakamoto",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:33.019Z",
+    "scrapedAt": "2026-08-31T16:40:26.770Z",
     "variants": [
       {
         "label": "30g",
@@ -10511,7 +10520,7 @@
     "source_url": "https://nioteas.com/products/matcha-kyoto-okumidori-chanoka",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:34.346Z",
+    "scrapedAt": "2026-08-31T16:40:27.784Z",
     "variants": [
       {
         "label": "30g",
@@ -10534,7 +10543,7 @@
     "source_url": "https://nioteas.com/products/matcha-yame-okumidori-miyako",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:35.460Z",
+    "scrapedAt": "2026-08-31T16:40:28.730Z",
     "variants": [
       {
         "label": "30g",
@@ -10557,7 +10566,7 @@
     "source_url": "https://nioteas.com/products/matcha-zen-sakamoto",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:36.545Z",
+    "scrapedAt": "2026-08-31T16:40:29.645Z",
     "variants": [
       {
         "label": "30g",
@@ -10580,7 +10589,7 @@
     "source_url": "https://nioteas.com/products/oishi-ceremonial-matcha-saemidori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:37.636Z",
+    "scrapedAt": "2026-08-31T16:40:30.593Z",
     "variants": [
       {
         "label": "30g",
@@ -10603,7 +10612,7 @@
     "source_url": "https://nioteas.com/products/oishi-premium-matcha-saemidori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:38.621Z",
+    "scrapedAt": "2026-08-31T16:40:31.536Z",
     "variants": [
       {
         "label": "30g",
@@ -10626,7 +10635,7 @@
     "source_url": "https://nioteas.com/products/matcha-tea-noike",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:39.673Z",
+    "scrapedAt": "2026-08-31T16:40:32.491Z",
     "variants": [
       {
         "label": "30g",
@@ -10649,7 +10658,7 @@
     "source_url": "https://nioteas.com/products/premium-matcha-chiran-30g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:40.714Z",
+    "scrapedAt": "2026-08-31T16:40:33.423Z",
     "variants": [
       {
         "label": "30g",
@@ -10672,7 +10681,7 @@
     "source_url": "https://nioteas.com/products/latte-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:41.691Z",
+    "scrapedAt": "2026-08-31T16:40:34.045Z",
     "variants": [
       {
         "label": "100g",
@@ -10695,7 +10704,7 @@
     "source_url": "https://nioteas.com/products/matcha-tea-henta",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:42.720Z",
+    "scrapedAt": "2026-08-31T16:40:35.088Z",
     "variants": [
       {
         "label": "30g",
@@ -10718,7 +10727,7 @@
     "source_url": "https://nioteas.com/products/uji-chanoka-okumidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:43.740Z",
+    "scrapedAt": "2026-08-31T16:40:36.049Z",
     "variants": [
       {
         "label": "30g",
@@ -10741,7 +10750,7 @@
     "source_url": "https://nioteas.com/products/uji-okumidori-miyako",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:44.756Z",
+    "scrapedAt": "2026-08-31T16:40:37.102Z",
     "variants": [
       {
         "label": "30g",
@@ -10764,7 +10773,7 @@
     "source_url": "https://nioteas.com/products/matcha-tea-washimine",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:45.732Z",
+    "scrapedAt": "2026-08-31T16:40:38.226Z",
     "variants": [
       {
         "label": "30g",
@@ -10787,7 +10796,7 @@
     "source_url": "https://nioteas.com/products/matcha-tea-nakai-superior-30g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:46.746Z",
+    "scrapedAt": "2026-08-31T16:40:39.155Z",
     "variants": [
       {
         "label": "30g",
@@ -10810,7 +10819,7 @@
     "source_url": "https://numitea.com/products/matcha-maca-latte-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:26.796Z",
+    "scrapedAt": "2026-08-31T16:40:20.904Z",
     "variants": [
       {
         "label": "1 Pouch",
@@ -10833,7 +10842,7 @@
     "source_url": "https://numitea.com/products/matcha-toasted-rice",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:28.108Z",
+    "scrapedAt": "2026-08-31T16:40:21.829Z",
     "variants": [
       {
         "label": "1 Box",
@@ -10868,7 +10877,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/basic-cooking-matcha-100g-ziplock-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:30.405Z",
+    "scrapedAt": "2026-08-31T16:37:25.963Z",
     "variants": [
       {
         "label": "Basic Cooking Matcha - 100g ziplock bag",
@@ -10885,7 +10894,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/drinking-matcha-sampler-set/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:31.288Z",
+    "scrapedAt": "2026-08-31T16:37:29.726Z",
     "variants": [
       {
         "label": "Drinking Matcha Sampler Set (3 x 5g)",
@@ -10902,7 +10911,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/excellent-cooking-matcha-100g-ziplock-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:34.166Z",
+    "scrapedAt": "2026-08-31T16:37:30.685Z",
     "variants": [
       {
         "label": "Excellent Cooking Matcha - 100g Ziplock Bag",
@@ -10919,7 +10928,7 @@
     "source_url": "https://obubutea.com/shop/matcha/gokou-matcha/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:39.763Z",
+    "scrapedAt": "2026-08-31T16:37:35.145Z",
     "variants": [
       {
         "label": "Gokou Matcha - 100g ziplock bag",
@@ -10936,7 +10945,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/matcha-cultivars-comparison-set/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:42.608Z",
+    "scrapedAt": "2026-08-31T16:37:37.903Z",
     "variants": [
       {
         "label": "Matcha Cultivars Comparison Set",
@@ -10953,7 +10962,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/natural-okumidori-matcha-100g-ziplock-bag/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:45.477Z",
+    "scrapedAt": "2026-08-31T16:37:40.601Z",
     "variants": [
       {
         "label": "Natural Okumidori Matcha - 100g ziplock bag",
@@ -10970,7 +10979,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/natural-yabukita-matcha-100g/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:48.302Z",
+    "scrapedAt": "2026-08-31T16:37:43.548Z",
     "variants": [
       {
         "label": "Natural Yabukita Matcha - 100g",
@@ -10987,7 +10996,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/okumidori-matcha/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:50.907Z",
+    "scrapedAt": "2026-08-31T16:37:48.083Z",
     "variants": [
       {
         "label": "Okumidori Matcha - 100g ziplock bag",
@@ -11004,7 +11013,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/organic-matcha/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:53.782Z",
+    "scrapedAt": "2026-08-31T16:37:50.889Z",
     "variants": [
       {
         "label": "Organic Fine Matcha (25g)",
@@ -11021,7 +11030,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/samidori-matcha-tin/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:56.609Z",
+    "scrapedAt": "2026-08-31T16:37:53.645Z",
     "variants": [
       {
         "label": "Samidori Matcha - 25g tin",
@@ -11038,7 +11047,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/spring-blend-matcha-100g/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:59.469Z",
+    "scrapedAt": "2026-08-31T16:37:56.388Z",
     "variants": [
       {
         "label": "Spring Blend Matcha - 100g",
@@ -11055,7 +11064,7 @@
     "source_url": "https://obubutea.com/shop/green-tea/matcha/zairai-matcha-100g/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:41:02.321Z",
+    "scrapedAt": "2026-08-31T16:37:59.332Z",
     "variants": [
       {
         "label": "Zairai Matcha - 100g",
@@ -11072,7 +11081,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/kagoshima-matcha-japanese-green-tea-powder-copy",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:27.269Z",
+    "scrapedAt": "2026-08-31T16:40:21.246Z",
     "variants": [
       {
         "label": "Kagoshima Matcha Green Tea Powder",
@@ -11089,7 +11098,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/kyoto-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:28.278Z",
+    "scrapedAt": "2026-08-31T16:40:22.167Z",
     "variants": [
       {
         "label": "Kyoto Uji Matcha Green Tea Powder",
@@ -11106,7 +11115,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/japanese-matcha-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:29.220Z",
+    "scrapedAt": "2026-08-31T16:40:23.104Z",
     "variants": [
       {
         "label": "Matcha Green Tea Powder",
@@ -11123,7 +11132,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/matcha-wholesale-1kg-japanese-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:30.357Z",
+    "scrapedAt": "2026-08-31T16:40:23.981Z",
     "variants": [
       {
         "label": "Matcha Wholesale 1KG - Japanese Green Tea Powder",
@@ -11140,7 +11149,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/organic-japanese-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:31.401Z",
+    "scrapedAt": "2026-08-31T16:40:24.874Z",
     "variants": [
       {
         "label": "Organic Matcha Green Tea Powder",
@@ -11157,7 +11166,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/organic-single-cultivar-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:32.435Z",
+    "scrapedAt": "2026-08-31T16:40:25.802Z",
     "variants": [
       {
         "label": "Organic Single Cultivar Matcha - Japanese Green Tea Powder",
@@ -11174,7 +11183,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/shizuoka-matcha-japanese-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:33.370Z",
+    "scrapedAt": "2026-08-31T16:40:26.789Z",
     "variants": [
       {
         "label": "Shizuoka Matcha Green Tea Powder",
@@ -11191,7 +11200,7 @@
     "source_url": "https://www.ochaandco.com/en-us/products/yakubita-single-cultivar-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:34.226Z",
+    "scrapedAt": "2026-08-31T16:40:27.702Z",
     "variants": [
       {
         "label": "Yabukita Single Cultivar Matcha - Japanese Green Tea Powder",
@@ -11208,7 +11217,7 @@
     "source_url": "https://ooika.co/shop/p/ujihikari-matcha-yamazaki-gokasho-uji",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:28.066Z",
+    "scrapedAt": "2026-08-31T16:37:26.165Z",
     "variants": [
       {
         "label": "Ujihikari Matcha - Yamazakiさん Gokasho Uji — Ooika (覆い香)",
@@ -11225,7 +11234,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/us-organic-genmaicha-matcha-d3120am.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:29.472Z",
+    "scrapedAt": "2026-08-31T16:37:26.840Z",
     "variants": [
       {
         "label": "Organic Genmaicha Matcha",
@@ -11242,7 +11251,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/matcha-ichi.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:31.316Z",
+    "scrapedAt": "2026-08-31T16:37:28.908Z",
     "variants": [
       {
         "label": "Organic Ichi Matcha",
@@ -11259,7 +11268,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/matcha-kokoro.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:33.157Z",
+    "scrapedAt": "2026-08-31T16:37:30.461Z",
     "variants": [
       {
         "label": "Organic Kokoro Matcha",
@@ -11276,7 +11285,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/d500052am-en.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:35.952Z",
+    "scrapedAt": "2026-08-31T16:37:32.515Z",
     "variants": [
       {
         "label": "Organic Asanoka Matcha",
@@ -11293,7 +11302,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/d500019am-en.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:38.008Z",
+    "scrapedAt": "2026-08-31T16:37:33.860Z",
     "variants": [
       {
         "label": "Organic Kirishima Matcha",
@@ -11310,7 +11319,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/organic-mint-matcha.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:39.947Z",
+    "scrapedAt": "2026-08-31T16:37:35.555Z",
     "variants": [
       {
         "label": "Organic Mint Matcha",
@@ -11327,7 +11336,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/d100031am-en.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:41.510Z",
+    "scrapedAt": "2026-08-31T16:37:37.402Z",
     "variants": [
       {
         "label": "Organic Neko Matcha",
@@ -11344,7 +11353,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/organic-rose-matcha.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:43.149Z",
+    "scrapedAt": "2026-08-31T16:37:38.862Z",
     "variants": [
       {
         "label": "Organic Rose Matcha",
@@ -11361,7 +11370,7 @@
     "source_url": "https://us.palaisdesthes.com/en_us/organic-vanilla-matcha.html",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:44.700Z",
+    "scrapedAt": "2026-08-31T16:37:40.413Z",
     "variants": [
       {
         "label": "Organic Vanilla Matcha",
@@ -11378,7 +11387,7 @@
     "source_url": "https://paragontearoom.com/products/baking-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:47.633Z",
+    "scrapedAt": "2026-08-31T16:40:39.965Z",
     "variants": [
       {
         "label": "50g",
@@ -11407,7 +11416,7 @@
     "source_url": "https://paragontearoom.com/products/bogo-ceremonial-ginger-matcha-40g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:48.374Z",
+    "scrapedAt": "2026-08-31T16:40:40.752Z",
     "variants": [
       {
         "label": "Ceremonial Ginger Matcha | Seasonal ed.",
@@ -11424,7 +11433,7 @@
     "source_url": "https://paragontearoom.com/products/ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:49.119Z",
+    "scrapedAt": "2026-08-31T16:40:41.506Z",
     "variants": [
       {
         "label": "30g",
@@ -11447,7 +11456,7 @@
     "source_url": "https://www.piquelife.com/products/matcha-green-fasting-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:47.805Z",
+    "scrapedAt": "2026-08-31T16:40:40.185Z",
     "variants": [
       {
         "label": "Matcha Fasting Green Tea",
@@ -11464,7 +11473,7 @@
     "source_url": "https://www.piquelife.com/products/matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:48.724Z",
+    "scrapedAt": "2026-08-31T16:40:41.040Z",
     "variants": [
       {
         "label": "Sun Goddess Matcha",
@@ -11481,7 +11490,7 @@
     "source_url": "https://www.rishi-tea.com/products/organic-barista-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:48.009Z",
+    "scrapedAt": "2026-08-31T16:40:40.401Z",
     "variants": [
       {
         "label": "100 Grams",
@@ -11498,7 +11507,7 @@
     "source_url": "https://www.rishi-tea.com/products/kobayashi-sans-matcha-tsuyuhikari",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:49.204Z",
+    "scrapedAt": "2026-08-31T16:40:41.850Z",
     "variants": [
       {
         "label": "30 Grams",
@@ -11515,7 +11524,7 @@
     "source_url": "https://www.rishi-tea.com/products/matcha-hekisui",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:50.396Z",
+    "scrapedAt": "2026-08-31T16:40:43.303Z",
     "variants": [
       {
         "label": "30 Grams",
@@ -11532,7 +11541,7 @@
     "source_url": "https://www.rishi-tea.com/products/matcha-houju",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:51.517Z",
+    "scrapedAt": "2026-08-31T16:40:44.437Z",
     "variants": [
       {
         "label": "30 Grams",
@@ -11549,7 +11558,7 @@
     "source_url": "https://www.rishi-tea.com/products/organic-matcha-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:52.425Z",
+    "scrapedAt": "2026-08-31T16:40:46.081Z",
     "variants": [
       {
         "label": "30 Count",
@@ -11572,7 +11581,7 @@
     "source_url": "https://rishi-tea.com/products/matcha-ukitsu-gd23",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:53.955Z",
+    "scrapedAt": "2026-08-31T16:40:48.250Z",
     "variants": [
       {
         "label": "30 Grams",
@@ -11589,7 +11598,7 @@
     "source_url": "https://www.rishi-tea.com/products/nishi-sans-matcha-okumidori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:55.099Z",
+    "scrapedAt": "2026-08-31T16:40:49.435Z",
     "variants": [
       {
         "label": "30 Grams",
@@ -11606,7 +11615,7 @@
     "source_url": "https://www.rishi-tea.com/products/nishi-sans-matcha-saemidori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:56.081Z",
+    "scrapedAt": "2026-08-31T16:40:50.630Z",
     "variants": [
       {
         "label": "30 Grams",
@@ -11623,7 +11632,7 @@
     "source_url": "https://www.rishi-tea.com/products/nishi-sans-matcha-tsuyuhikari",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:57.177Z",
+    "scrapedAt": "2026-08-31T16:40:51.751Z",
     "variants": [
       {
         "label": "30 Grams",
@@ -11640,7 +11649,7 @@
     "source_url": "https://www.rishi-tea.com/products/sweet-matcha-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:58.461Z",
+    "scrapedAt": "2026-08-31T16:40:52.882Z",
     "variants": [
       {
         "label": "125 Grams",
@@ -11657,7 +11666,7 @@
     "source_url": "https://www.rishi-tea.com/products/organic-teahouse-ceremonial-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:59.586Z",
+    "scrapedAt": "2026-08-31T16:40:53.982Z",
     "variants": [
       {
         "label": "100 Grams",
@@ -11674,7 +11683,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-ceremonial-blend-matcha-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:47.776Z",
+    "scrapedAt": "2026-08-31T16:40:40.213Z",
     "variants": [
       {
         "label": "rocky's matcha Ceremonial Blend Matcha 20g",
@@ -11691,7 +11700,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-horii-shichimeien-ceremonial-blend-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:48.495Z",
+    "scrapedAt": "2026-08-31T16:40:41.030Z",
     "variants": [
       {
         "label": "rocky's matcha Horii Shichimeien Ceremonial Blend 20g",
@@ -11708,7 +11717,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-osada-ceremonial-blend-matcha-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:49.200Z",
+    "scrapedAt": "2026-08-31T16:40:41.823Z",
     "variants": [
       {
         "label": "rocky's matcha Osada Ceremonial Blend Matcha 20g",
@@ -11725,7 +11734,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-single-cultivar-narino-matcha-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:49.960Z",
+    "scrapedAt": "2026-08-31T16:40:42.586Z",
     "variants": [
       {
         "label": "rocky's matcha Single Cultivar Horii Shichimeien Narino Matcha 20g",
@@ -11742,7 +11751,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-single-cultivar-koshun-matcha-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:50.706Z",
+    "scrapedAt": "2026-08-31T16:40:43.307Z",
     "variants": [
       {
         "label": "rocky's matcha Single Cultivar Koshun Matcha 20g",
@@ -11759,7 +11768,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-single-cultivar-okumidori-matcha-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:51.441Z",
+    "scrapedAt": "2026-08-31T16:40:44.039Z",
     "variants": [
       {
         "label": "rocky's matcha Single Cultivar Okumidori Matcha 20g",
@@ -11782,17 +11791,8 @@
     "brand": "Rocky's",
     "product_name": "SC Samidori",
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-for-awake-ny-single-cultivar-samidori-matcha-20g",
-    "status": "ok",
-    "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:53.050Z",
-    "variants": [
-      {
-        "label": "rocky's matcha Single Cultivar Samidori Matcha 20g",
-        "grams": 20,
-        "priceNative": 88,
-        "currency": "USD"
-      }
-    ]
+    "status": "no_variants_found",
+    "httpStatus": 200
   },
   "572": {
     "id": 572,
@@ -11801,7 +11801,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-tsujiki-blend-matcha-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:53.826Z",
+    "scrapedAt": "2026-08-31T16:40:46.551Z",
     "variants": [
       {
         "label": "rocky's matcha Tsujiki Ceremonial Blend Matcha 20g",
@@ -11818,7 +11818,7 @@
     "source_url": "https://www.rockysmatcha.com/products/rockys-matcha-uji-premium-blend-matcha-100g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:54.591Z",
+    "scrapedAt": "2026-08-31T16:40:47.283Z",
     "variants": [
       {
         "label": "rocky's matcha Uji Premium Blend Matcha 100g",
@@ -11835,7 +11835,7 @@
     "source_url": "https://ujichamatcha.com/products/kirari-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:27.470Z",
+    "scrapedAt": "2026-08-31T16:38:23.740Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -11852,7 +11852,7 @@
     "source_url": "https://ujichamatcha.com/products/kokoro-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:28.286Z",
+    "scrapedAt": "2026-08-31T16:38:24.575Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -11869,7 +11869,7 @@
     "source_url": "https://ujichamatcha.com/products/kyo-midori-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:29.238Z",
+    "scrapedAt": "2026-08-31T16:38:25.549Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -11898,7 +11898,7 @@
     "source_url": "https://ujichamatcha.com/products/okumidori-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:30.058Z",
+    "scrapedAt": "2026-08-31T16:38:26.378Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -11927,7 +11927,7 @@
     "source_url": "https://ujichamatcha.com/products/pacific-sunrise-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:30.976Z",
+    "scrapedAt": "2026-08-31T16:38:27.174Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -11944,7 +11944,7 @@
     "source_url": "https://ujichamatcha.com/products/saemidori-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:31.819Z",
+    "scrapedAt": "2026-08-31T16:38:28.037Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -11973,7 +11973,7 @@
     "source_url": "https://ujichamatcha.com/products/samidori-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:32.730Z",
+    "scrapedAt": "2026-08-31T16:38:28.847Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -12002,7 +12002,7 @@
     "source_url": "https://ujichamatcha.com/products/rya-uji-midori",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:33.686Z",
+    "scrapedAt": "2026-08-31T16:38:29.819Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -12019,7 +12019,7 @@
     "source_url": "https://ujichamatcha.com/products/yabukita-rya",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:41:34.458Z",
+    "scrapedAt": "2026-08-31T16:38:30.638Z",
     "variants": [
       {
         "label": "30 Gram Tin",
@@ -12053,7 +12053,7 @@
     "source_url": "https://senchanaturals.com/products/emperors-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:47.968Z",
+    "scrapedAt": "2026-08-31T16:40:40.312Z",
     "variants": [
       {
         "label": "Emperor's Matcha - 1 oz (30g)",
@@ -12070,7 +12070,7 @@
     "source_url": "https://kettl.co/products/chikka-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:50.032Z",
+    "scrapedAt": "2026-08-31T16:39:41.939Z",
     "variants": [
       {
         "label": "20g",
@@ -12087,7 +12087,7 @@
     "source_url": "https://kettl.co/products/fuujun-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:50.995Z",
+    "scrapedAt": "2026-08-31T16:39:42.594Z",
     "variants": [
       {
         "label": "20g",
@@ -12104,12 +12104,12 @@
     "source_url": "https://yunomi.life/products/shogyokuen-matcha-hatsu-mukashi-imperial-ceremonial-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:48.397Z",
+    "scrapedAt": "2026-08-31T16:40:40.763Z",
     "variants": [
       {
         "label": "40g / 1.4 oz",
         "grams": 40,
-        "priceNative": 64.08,
+        "priceNative": 63.86,
         "currency": "USD"
       }
     ]
@@ -12121,24 +12121,24 @@
     "source_url": "https://yunomi.life/products/shogyokuen-matcha-iwai-no-shiro-premium-ceremonial-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:49.491Z",
+    "scrapedAt": "2026-08-31T16:40:41.919Z",
     "variants": [
       {
         "label": "40g / 1.4 oz",
         "grams": 40,
-        "priceNative": 55.11,
+        "priceNative": 54.92,
         "currency": "USD"
       },
       {
         "label": "400g (10 cans x 40g)",
         "grams": 400,
-        "priceNative": 512.61,
+        "priceNative": 510.84,
         "currency": "USD"
       },
       {
         "label": "1kg / 2.2 lbs (250g x 4 bags)",
         "grams": 250,
-        "priceNative": 1281.54,
+        "priceNative": 1277.11,
         "currency": "USD"
       }
     ]
@@ -12150,30 +12150,30 @@
     "source_url": "https://yunomi.life/products/shogyokuen-matcha-izumi-no-shiro",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:50.677Z",
+    "scrapedAt": "2026-08-31T16:40:42.995Z",
     "variants": [
       {
         "label": "40g / 1.4 oz (can)",
         "grams": 40,
-        "priceNative": 44.73,
+        "priceNative": 44.57,
         "currency": "USD"
       },
       {
         "label": "MULTIPACK (10 cans x 40g) / 0.9 lbs",
         "grams": 40,
-        "priceNative": 442.13,
+        "priceNative": 440.6,
         "currency": "USD"
       },
       {
         "label": "250g resealable bags) / 8.8 oz / Contact us to arrange production",
         "grams": 250,
-        "priceNative": 269.12,
+        "priceNative": 268.19,
         "currency": "USD"
       },
       {
         "label": "1kg (250g x 4 resealable bags) / 2.2 lbs / Contact us to arrange production",
         "grams": 250,
-        "priceNative": 1089.31,
+        "priceNative": 1085.54,
         "currency": "USD"
       }
     ]
@@ -12185,12 +12185,12 @@
     "source_url": "https://yunomi.life/products/shogyokuen-heritage-grade-matcha-kakuun-40g-can",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:51.801Z",
+    "scrapedAt": "2026-08-31T16:40:44.142Z",
     "variants": [
       {
         "label": "40g / 1.4 oz",
         "grams": 40,
-        "priceNative": 128.15,
+        "priceNative": 127.71,
         "currency": "USD"
       }
     ]
@@ -12202,7 +12202,7 @@
     "source_url": "https://kettl.co/products/ousui-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:42:52.083Z",
+    "scrapedAt": "2026-08-31T16:39:43.252Z",
     "variants": [
       {
         "label": "20g",
@@ -12219,18 +12219,18 @@
     "source_url": "https://yunomi.life/products/shogyokuen-matcha-shogyoku",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:52.882Z",
+    "scrapedAt": "2026-08-31T16:40:45.283Z",
     "variants": [
       {
         "label": "40g / 1.4 oz",
         "grams": 40,
-        "priceNative": 96.12,
+        "priceNative": 95.78,
         "currency": "USD"
       },
       {
         "label": "MULTIPACK 400g (40g x 10 cans) / 400g / 14 oz (Produced on demand. Yunomi label on multipack box.)",
         "grams": 400,
-        "priceNative": 909.89,
+        "priceNative": 906.75,
         "currency": "USD"
       }
     ]
@@ -12242,24 +12242,24 @@
     "source_url": "https://yunomi.life/products/shogyokuen-matcha-toyomukashi-premium-ceremonial-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:54.025Z",
+    "scrapedAt": "2026-08-31T16:40:46.431Z",
     "variants": [
       {
         "label": "40g / 1.4 oz (pull-top can with Yunomi.life label)",
         "grams": 40,
-        "priceNative": 58.95,
+        "priceNative": 58.75,
         "currency": "USD"
       },
       {
         "label": "MULTIPACK 400g (40g x 10 cans) / 14 oz",
         "grams": 400,
-        "priceNative": 576.69,
+        "priceNative": 574.7,
         "currency": "USD"
       },
       {
         "label": "MULTIPACK 1kg (250g x 4 bags) / 2.2 lbs / Please inquire for production",
         "grams": 250,
-        "priceNative": 1441.73,
+        "priceNative": 1436.75,
         "currency": "USD"
       }
     ]
@@ -12271,18 +12271,18 @@
     "source_url": "https://yunomi.life/products/shogyokuen-matcha-zuisho",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:55.206Z",
+    "scrapedAt": "2026-08-31T16:40:47.475Z",
     "variants": [
       {
         "label": "40g / 1.4 oz",
         "grams": 40,
-        "priceNative": 205.05,
+        "priceNative": 188.37,
         "currency": "USD"
       },
       {
         "label": "Multipack(40g can x 10 / 400g / 10.4 oz )",
         "grams": 40,
-        "priceNative": 1858.23,
+        "priceNative": 1787.95,
         "currency": "USD"
       }
     ]
@@ -12294,7 +12294,7 @@
     "source_url": "https://www.smithtea.com/products/matcha-latte-mix",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:00.592Z",
+    "scrapedAt": "2026-08-31T16:40:54.929Z",
     "variants": [
       {
         "label": "Loose Pouch [4.23 oz]",
@@ -12311,7 +12311,7 @@
     "source_url": "https://www.smithtea.com/products/matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:01.379Z",
+    "scrapedAt": "2026-08-31T16:40:55.739Z",
     "variants": [
       {
         "label": "Powdered Tea [40g]",
@@ -12328,7 +12328,7 @@
     "source_url": "https://www.smithtea.com/products/okumidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:02.178Z",
+    "scrapedAt": "2026-08-31T16:40:56.551Z",
     "variants": [
       {
         "label": "Powdered Tea [40g]",
@@ -12345,7 +12345,7 @@
     "source_url": "https://www.smithtea.com/products/stone-milled-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:02.979Z",
+    "scrapedAt": "2026-08-31T16:40:57.384Z",
     "variants": [
       {
         "label": "Powdered Tea [30g]",
@@ -12362,7 +12362,7 @@
     "source_url": "https://www.takaokayausa.com/collections/tea/products/culinary-grade-matcha-in-bulk",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:00.504Z",
+    "scrapedAt": "2026-08-31T16:40:54.894Z",
     "variants": [
       {
         "label": "Culinary Grade Matcha in Bulk",
@@ -12379,7 +12379,7 @@
     "source_url": "https://www.takaokayausa.com/products/green-breeze-organic-green-tea-powder",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:01.230Z",
+    "scrapedAt": "2026-08-31T16:40:55.646Z",
     "variants": [
       {
         "label": "Green Breeze Organic Matcha in Bulk",
@@ -12396,7 +12396,7 @@
     "source_url": "https://www.takaokayausa.com/products/green-breeze-organic-green-tea-powder-1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:02.069Z",
+    "scrapedAt": "2026-08-31T16:40:56.356Z",
     "variants": [
       {
         "label": "Green Breeze Organic Matcha Stick Type",
@@ -12413,7 +12413,7 @@
     "source_url": "https://www.takaokayausa.com/products/shizuoka-matcha-organic-silver-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:02.770Z",
+    "scrapedAt": "2026-08-31T16:40:57.098Z",
     "variants": [
       {
         "label": "Organic Matcha \"Silver\" Grade",
@@ -12430,7 +12430,7 @@
     "source_url": "https://www.takaokayausa.com/products/shizuoka-matcha-organic-gold-grade",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:03.569Z",
+    "scrapedAt": "2026-08-31T16:40:57.873Z",
     "variants": [
       {
         "label": "Organic Matcha Ceremonial \"Gold\" Grade",
@@ -12447,7 +12447,7 @@
     "source_url": "https://www.teadealers.com/products/japan-asahi-6007-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:00.705Z",
+    "scrapedAt": "2026-08-31T16:40:54.924Z",
     "variants": [
       {
         "label": "Japan: 2025 National Competition 7th Place Winner Asahi No. 6007 Matcha",
@@ -12464,7 +12464,7 @@
     "source_url": "https://www.teadealers.com/products/japan-genou-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:01.454Z",
+    "scrapedAt": "2026-08-31T16:40:55.724Z",
     "variants": [
       {
         "label": "Japan: Genou Matcha",
@@ -12481,7 +12481,7 @@
     "source_url": "https://www.teadealers.com/products/japan-shouraku-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:02.234Z",
+    "scrapedAt": "2026-08-31T16:40:56.476Z",
     "variants": [
       {
         "label": "Japan: Shouraku Matcha",
@@ -12498,7 +12498,7 @@
     "source_url": "https://www.teadealers.com/products/japan-shousui-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:02.966Z",
+    "scrapedAt": "2026-08-31T16:40:57.247Z",
     "variants": [
       {
         "label": "Japan: Shousui Matcha",
@@ -12515,7 +12515,7 @@
     "source_url": "https://www.teadealers.com/products/japan-sokuchouzan-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:03.774Z",
+    "scrapedAt": "2026-08-31T16:40:58.005Z",
     "variants": [
       {
         "label": "Japan: Sokuchouzan Matcha",
@@ -12532,7 +12532,7 @@
     "source_url": "https://teapigs.com/products/matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:00.711Z",
+    "scrapedAt": "2026-08-31T16:40:55.097Z",
     "variants": [
       {
         "label": "80g tin",
@@ -12549,7 +12549,7 @@
     "source_url": "https://tenzotea.co/products/organic-matcha-tenzo-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:00.630Z",
+    "scrapedAt": "2026-08-31T16:40:55.167Z",
     "variants": [
       {
         "label": "60 Grams",
@@ -12566,7 +12566,7 @@
     "source_url": "https://tenzotea.co/products/sweet-blend-single-serve-box",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:01.489Z",
+    "scrapedAt": "2026-08-31T16:40:55.976Z",
     "variants": [
       {
         "label": "10 Packets",
@@ -12583,7 +12583,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/ato-mukashi-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:00.922Z",
+    "scrapedAt": "2026-08-31T16:40:55.732Z",
     "variants": [
       {
         "label": "20g",
@@ -12600,7 +12600,7 @@
     "source_url": "https://tezumi.com/products/barista-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:02.068Z",
+    "scrapedAt": "2026-08-31T16:40:56.861Z",
     "variants": [
       {
         "label": "100g Bag",
@@ -12629,7 +12629,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/betsugi-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:03.137Z",
+    "scrapedAt": "2026-08-31T16:40:58.095Z",
     "variants": [
       {
         "label": "20g",
@@ -12646,7 +12646,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/chitose-yame-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:04.173Z",
+    "scrapedAt": "2026-08-31T16:40:59.155Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12663,7 +12663,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/chiyo-mukashi-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:05.202Z",
+    "scrapedAt": "2026-08-31T16:41:00.145Z",
     "variants": [
       {
         "label": "20g",
@@ -12680,7 +12680,7 @@
     "source_url": "https://tezumi.com/products/eiryoku-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:06.217Z",
+    "scrapedAt": "2026-08-31T16:41:01.286Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12721,7 +12721,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/goku-mukashi-nishio-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:07.276Z",
+    "scrapedAt": "2026-08-31T16:41:02.333Z",
     "variants": [
       {
         "label": "20g",
@@ -12738,7 +12738,7 @@
     "source_url": "https://tezumi.com/products/organic-haruto-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:08.345Z",
+    "scrapedAt": "2026-08-31T16:41:03.350Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12779,7 +12779,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/hatsu-mukashi-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:09.386Z",
+    "scrapedAt": "2026-08-31T16:41:04.356Z",
     "variants": [
       {
         "label": "20g",
@@ -12796,7 +12796,7 @@
     "source_url": "https://tezumi.com/products/hika-shiga-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:10.470Z",
+    "scrapedAt": "2026-08-31T16:41:05.573Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12819,7 +12819,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/hotaru-organic-isagawa-gokou-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:11.632Z",
+    "scrapedAt": "2026-08-31T16:41:06.840Z",
     "variants": [
       {
         "label": "50g Bag",
@@ -12836,7 +12836,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/kanoyama-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:12.651Z",
+    "scrapedAt": "2026-08-31T16:41:08.007Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12859,7 +12859,7 @@
     "source_url": "https://tezumi.com/products/kazan-kagoshima-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:13.755Z",
+    "scrapedAt": "2026-08-31T16:41:09.374Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12894,7 +12894,7 @@
     "source_url": "https://tezumi.com/products/uji-kiku-no-sono-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:14.772Z",
+    "scrapedAt": "2026-08-31T16:41:10.382Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12917,7 +12917,7 @@
     "source_url": "https://tezumi.com/products/komiya-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:16.050Z",
+    "scrapedAt": "2026-08-31T16:41:11.384Z",
     "variants": [
       {
         "label": "20g Can",
@@ -12958,7 +12958,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/kyotanabe-gokou-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:17.090Z",
+    "scrapedAt": "2026-08-31T16:41:12.353Z",
     "variants": [
       {
         "label": "20g",
@@ -12975,7 +12975,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/mare-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:18.130Z",
+    "scrapedAt": "2026-08-31T16:41:13.351Z",
     "variants": [
       {
         "label": "20g",
@@ -12992,12 +12992,18 @@
     "source_url": "https://tezumi.com/collections/matcha/products/miyama-shiga-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:19.158Z",
+    "scrapedAt": "2026-08-31T16:41:14.336Z",
     "variants": [
       {
         "label": "100g",
         "grams": 100,
         "priceNative": 48,
+        "currency": "USD"
+      },
+      {
+        "label": "1 kilogram",
+        "grams": 1000,
+        "priceNative": 288,
         "currency": "USD"
       }
     ]
@@ -13009,7 +13015,7 @@
     "source_url": "https://tezumi.com/products/moegi-yame-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:20.291Z",
+    "scrapedAt": "2026-08-31T16:41:15.323Z",
     "variants": [
       {
         "label": "20g Can",
@@ -13032,7 +13038,7 @@
     "source_url": "https://tezumi.com/products/organic-barista-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:21.303Z",
+    "scrapedAt": "2026-08-31T16:41:16.350Z",
     "variants": [
       {
         "label": "100g Bag",
@@ -13061,12 +13067,12 @@
     "source_url": "https://tezumi.com/collections/matcha/products/rikyu-nukata-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:22.414Z",
+    "scrapedAt": "2026-08-31T16:41:17.407Z",
     "variants": [
       {
         "label": "20g",
         "grams": 20,
-        "priceNative": 24,
+        "priceNative": 19.2,
         "currency": "USD"
       }
     ]
@@ -13078,7 +13084,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/seicho-no-mukashi-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:23.447Z",
+    "scrapedAt": "2026-08-31T16:41:18.434Z",
     "variants": [
       {
         "label": "20g",
@@ -13095,7 +13101,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/seika-no-mukashi-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:24.487Z",
+    "scrapedAt": "2026-08-31T16:41:19.421Z",
     "variants": [
       {
         "label": "20g",
@@ -13112,7 +13118,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/shirakawa-asahi-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:25.519Z",
+    "scrapedAt": "2026-08-31T16:41:20.570Z",
     "variants": [
       {
         "label": "20g",
@@ -13129,7 +13135,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/shirakawa-gokou-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:26.614Z",
+    "scrapedAt": "2026-08-31T16:41:21.573Z",
     "variants": [
       {
         "label": "20g",
@@ -13146,7 +13152,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/shirakawa-samidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:27.567Z",
+    "scrapedAt": "2026-08-31T16:41:22.585Z",
     "variants": [
       {
         "label": "20g",
@@ -13163,7 +13169,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/shirakawa-uji-hikari-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:28.620Z",
+    "scrapedAt": "2026-08-31T16:41:23.561Z",
     "variants": [
       {
         "label": "20g",
@@ -13180,7 +13186,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/shoyo-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:29.527Z",
+    "scrapedAt": "2026-08-31T16:41:24.657Z",
     "variants": [
       {
         "label": "30g",
@@ -13197,7 +13203,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/tokiwa-yame-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:30.520Z",
+    "scrapedAt": "2026-08-31T16:41:25.610Z",
     "variants": [
       {
         "label": "20g Can",
@@ -13214,7 +13220,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/tozan-organic-shizuoka-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:31.576Z",
+    "scrapedAt": "2026-08-31T16:41:26.604Z",
     "variants": [
       {
         "label": "50g Bag",
@@ -13231,7 +13237,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/tsuji-no-mukashi-shirakawa-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:32.526Z",
+    "scrapedAt": "2026-08-31T16:41:27.682Z",
     "variants": [
       {
         "label": "20g",
@@ -13248,7 +13254,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/uji-asahi-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:33.565Z",
+    "scrapedAt": "2026-08-31T16:41:28.685Z",
     "variants": [
       {
         "label": "20g",
@@ -13265,7 +13271,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/uji-hikari-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:34.635Z",
+    "scrapedAt": "2026-08-31T16:41:29.783Z",
     "variants": [
       {
         "label": "20g Can",
@@ -13288,7 +13294,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/uji-samidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:35.637Z",
+    "scrapedAt": "2026-08-31T16:41:30.825Z",
     "variants": [
       {
         "label": "20g",
@@ -13305,7 +13311,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/uji-no-mori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:36.676Z",
+    "scrapedAt": "2026-08-31T16:41:31.863Z",
     "variants": [
       {
         "label": "30g",
@@ -13322,7 +13328,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/umezuki-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:37.696Z",
+    "scrapedAt": "2026-08-31T16:41:32.895Z",
     "variants": [
       {
         "label": "20g Can",
@@ -13345,7 +13351,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/uta-no-mori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:38.744Z",
+    "scrapedAt": "2026-08-31T16:41:33.963Z",
     "variants": [
       {
         "label": "30g",
@@ -13362,7 +13368,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/wakatake-yame-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:39.754Z",
+    "scrapedAt": "2026-08-31T16:41:34.981Z",
     "variants": [
       {
         "label": "20g Can",
@@ -13385,7 +13391,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/wazuka-saemidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:40.756Z",
+    "scrapedAt": "2026-08-31T16:41:35.965Z",
     "variants": [
       {
         "label": "20g Can",
@@ -13408,7 +13414,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/yame-kirari-31-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:41.753Z",
+    "scrapedAt": "2026-08-31T16:41:37.072Z",
     "variants": [
       {
         "label": "20g",
@@ -13425,7 +13431,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/yame-okumidori-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:42.857Z",
+    "scrapedAt": "2026-08-31T16:41:38.191Z",
     "variants": [
       {
         "label": "20g",
@@ -13442,7 +13448,7 @@
     "source_url": "https://tezumi.com/collections/matcha/products/yuryo-uji-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:43.860Z",
+    "scrapedAt": "2026-08-31T16:41:39.223Z",
     "variants": [
       {
         "label": "20g",
@@ -13459,7 +13465,7 @@
     "source_url": "https://www.republicoftea.com/products/daily-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:45.182Z",
+    "scrapedAt": "2026-08-31T16:41:40.415Z",
     "variants": [
       {
         "label": "Tin 43g (1.50 oz) | 20+ cups",
@@ -13488,7 +13494,7 @@
     "source_url": "https://www.republicoftea.com/products/the-japanese-matcha-collection",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:46.443Z",
+    "scrapedAt": "2026-08-31T16:41:41.481Z",
     "variants": [
       {
         "label": "Sampler: 3 Traveler's Tins, 3 Taster Tins",
@@ -13505,7 +13511,7 @@
     "source_url": "https://www.republicoftea.com/products/get-matcha-organic-green-tea-for-daily-health",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:47.914Z",
+    "scrapedAt": "2026-08-31T16:41:42.640Z",
     "variants": [
       {
         "label": "Tin 36 Tea Bags",
@@ -13522,7 +13528,7 @@
     "source_url": "https://www.republicoftea.com/products/organic-full-leaf-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:48.991Z",
+    "scrapedAt": "2026-08-31T16:41:43.906Z",
     "variants": [
       {
         "label": "Tin 43g (1.5oz) | 30 cups",
@@ -13557,7 +13563,7 @@
     "source_url": "https://www.republicoftea.com/products/organic-double-green-matcha-lavender-tea-bags",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:50.212Z",
+    "scrapedAt": "2026-08-31T16:41:45.204Z",
     "variants": [
       {
         "label": "Tin 36 Tea Bags",
@@ -13574,7 +13580,7 @@
     "source_url": "https://www.republicoftea.com/products/organic-double-green-matcha-strawberry-tea-bags",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:52.020Z",
+    "scrapedAt": "2026-08-31T16:41:46.392Z",
     "variants": [
       {
         "label": "Tin 36 Tea Bags",
@@ -13603,7 +13609,7 @@
     "source_url": "https://www.republicoftea.com/products/organic-double-green-matcha-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:53.120Z",
+    "scrapedAt": "2026-08-31T16:41:47.617Z",
     "variants": [
       {
         "label": "Tin 50 Tea Bags",
@@ -13632,7 +13638,7 @@
     "source_url": "https://www.republicoftea.com/products/organic-double-green-matcha-yuzu-tea-bags",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:54.396Z",
+    "scrapedAt": "2026-08-31T16:41:48.662Z",
     "variants": [
       {
         "label": "Tin 36 Tea Bags",
@@ -13649,7 +13655,7 @@
     "source_url": "https://www.republicoftea.com/products/organic-matcha-concentrate",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:55.663Z",
+    "scrapedAt": "2026-08-31T16:41:49.892Z",
     "variants": [
       {
         "label": "Concentrate 64 oz Jug",
@@ -13666,7 +13672,7 @@
     "source_url": "https://www.republicoftea.com/products/organic-matcha-to-go",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:56.977Z",
+    "scrapedAt": "2026-08-31T16:41:51.151Z",
     "variants": [
       {
         "label": "Tin 14 Single Sips®",
@@ -13695,7 +13701,7 @@
     "source_url": "https://www.republicoftea.com/products/the-japanese-matcha-collection",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:57.583Z",
+    "scrapedAt": "2026-08-31T16:41:51.769Z",
     "variants": [
       {
         "label": "Sampler: 3 Traveler's Tins, 3 Taster Tins",
@@ -13712,7 +13718,7 @@
     "source_url": "https://www.republicoftea.com/products/u-matcha-natural",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:58.937Z",
+    "scrapedAt": "2026-08-31T16:41:52.910Z",
     "variants": [
       {
         "label": "Tin 43g (1.5 oz) | 30 cups",
@@ -13743,7 +13749,7 @@
     "source_url": "https://taooftea.com/product/matcha-ceremonial-grade/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:32.459Z",
+    "scrapedAt": "2026-08-31T16:37:29.630Z",
     "variants": [
       {
         "label": "Matcha, Ceremonial Grade",
@@ -13760,7 +13766,7 @@
     "source_url": "https://taooftea.com/product/matcha-grade-a/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:34.723Z",
+    "scrapedAt": "2026-08-31T16:37:31.667Z",
     "variants": [
       {
         "label": "Matcha, Grade A",
@@ -13777,7 +13783,7 @@
     "source_url": "https://taooftea.com/product/special-grade-matcha/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:36.709Z",
+    "scrapedAt": "2026-08-31T16:37:33.691Z",
     "variants": [
       {
         "label": "Special Grade Matcha",
@@ -13794,7 +13800,7 @@
     "source_url": "https://taooftea.com/product/sweet-matcha/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:39.056Z",
+    "scrapedAt": "2026-08-31T16:37:36.005Z",
     "variants": [
       {
         "label": "Sweet Matcha",
@@ -13811,7 +13817,7 @@
     "source_url": "https://taooftea.com/product/yame-matcha/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:41.088Z",
+    "scrapedAt": "2026-08-31T16:37:38.089Z",
     "variants": [
       {
         "label": "Yame Matcha",
@@ -13828,7 +13834,7 @@
     "source_url": "https://taooftea.com/product/yuzu-matcha/",
     "status": "ok",
     "method": "json_ld",
-    "scrapedAt": "2026-08-24T09:40:43.207Z",
+    "scrapedAt": "2026-08-31T16:37:40.250Z",
     "variants": [
       {
         "label": "Yuzu Matcha",
@@ -13845,7 +13851,7 @@
     "source_url": "https://theteaspot.com/collections/matcha/products/ceremonial-matcha-grade-a",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:45.149Z",
+    "scrapedAt": "2026-08-31T16:41:40.729Z",
     "variants": [
       {
         "label": "Yame Matcha, Japanese Ceremonial Grade-A",
@@ -13862,7 +13868,7 @@
     "source_url": "https://theteaspot.com/collections/matcha/products/ceremonial-matcha-to-go-sticks",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:46.186Z",
+    "scrapedAt": "2026-08-31T16:41:41.792Z",
     "variants": [
       {
         "label": "Ceremonial Matcha To Go Sticks",
@@ -13879,7 +13885,7 @@
     "source_url": "https://theteaspot.com/collections/matcha/products/keep-fit-organic-citrus-green",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:47.133Z",
+    "scrapedAt": "2026-08-31T16:41:42.690Z",
     "variants": [
       {
         "label": "Loose leaf sample",
@@ -13920,7 +13926,7 @@
     "source_url": "https://theteaspot.com/collections/matcha/products/organic-matcha-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:48.171Z",
+    "scrapedAt": "2026-08-31T16:41:43.655Z",
     "variants": [
       {
         "label": "Bulk, 1 LB",
@@ -13937,7 +13943,7 @@
     "source_url": "https://shopping.tokyoteatrading.com/products/the-jewels-of-tea2024_6016",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:45.127Z",
+    "scrapedAt": "2026-08-31T16:41:40.338Z",
     "variants": [
       {
         "label": "【THE JEWELS OF TEA】令和六年 全国茶品評会 農林水産大臣賞 受賞 抹茶 30g -山﨑一平｢てん茶部門｣(THREETEA)",
@@ -13962,12 +13968,12 @@
     "source_url": "https://yunomi.life/products/heritage-grade-uji-matcha-asahi-single-cultivar-by-master-kyoto-tea-farmer-tsuji-kiyoharu",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:56.345Z",
+    "scrapedAt": "2026-08-31T16:40:48.736Z",
     "variants": [
       {
         "label": "20g / 0.7 oz / Refill Bag in Gift Can (Nov 2025 grinding)",
         "grams": 20,
-        "priceNative": 76.89,
+        "priceNative": 76.63,
         "currency": "USD"
       }
     ]
@@ -13979,18 +13985,18 @@
     "source_url": "https://yunomi.life/products/heritage-grade-uji-matcha-samidori-single-cultivar-by-master-kyoto-tea-farmer-tsuji-kiyoharu",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:57.455Z",
+    "scrapedAt": "2026-08-31T16:40:49.941Z",
     "variants": [
       {
         "label": "20g / 0.7 oz / Refill Bag in Gift Can",
         "grams": 20,
-        "priceNative": 63.95,
+        "priceNative": 63.73,
         "currency": "USD"
       },
       {
         "label": "MULTIPACK 100g (20g x 5 refill bags) / 3.5 oz",
         "grams": 100,
-        "priceNative": 297.96,
+        "priceNative": 296.93,
         "currency": "USD"
       }
     ]
@@ -14002,12 +14008,12 @@
     "source_url": "https://yunomi.life/products/modern-heritage-grade-uji-matcha-uji-hikari-single-cultivar-by-master-kyoto-tea-farmer-tsuji-kiyoharu-20g",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:43:58.672Z",
+    "scrapedAt": "2026-08-31T16:40:51.040Z",
     "variants": [
       {
         "label": "20g / 0.7 oz / 2025",
         "grams": 20,
-        "priceNative": 64.08,
+        "priceNative": 63.86,
         "currency": "USD"
       }
     ]
@@ -14053,7 +14059,7 @@
     "source_url": "https://ujido.com/products/matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:44.817Z",
+    "scrapedAt": "2026-08-31T16:41:40.249Z",
     "variants": [
       {
         "label": "2oz",
@@ -14070,7 +14076,7 @@
       {
         "label": "12oz",
         "grams": 340.19399999999996,
-        "priceNative": 99.99,
+        "priceNative": 89.99,
         "currency": "USD"
       }
     ]
@@ -14082,7 +14088,7 @@
     "source_url": "https://ujido.com/products/ceremonial-grade-matcha-30g-1oz-1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:45.652Z",
+    "scrapedAt": "2026-08-31T16:41:40.970Z",
     "variants": [
       {
         "label": "Ceremonial Matcha 30g",
@@ -14099,12 +14105,12 @@
     "source_url": "https://ujido.com/products/matcha-summer-harvest",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:46.425Z",
+    "scrapedAt": "2026-08-31T16:41:41.712Z",
     "variants": [
       {
         "label": "Culinary Matcha (Barista Grade) 2oz",
         "grams": 56.699,
-        "priceNative": 19.99,
+        "priceNative": 18.99,
         "currency": "USD"
       }
     ]
@@ -14116,7 +14122,7 @@
     "source_url": "https://ujido.com/products/premium-ceremonial-grade-matcha-30g-1oz-1",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:47.181Z",
+    "scrapedAt": "2026-08-31T16:41:42.495Z",
     "variants": [
       {
         "label": "Premium Ceremonial Grade Matcha 30g",
@@ -14133,12 +14139,12 @@
     "source_url": "https://ujido.com/products/roasted-matcha-2oz",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:47.956Z",
+    "scrapedAt": "2026-08-31T16:41:43.253Z",
     "variants": [
       {
         "label": "Hojicha (Roasted Matcha) 2oz",
         "grams": 56.699,
-        "priceNative": 18.99,
+        "priceNative": 17.99,
         "currency": "USD"
       }
     ]
@@ -14150,7 +14156,7 @@
     "source_url": "https://ujido.com/products/sweet-matcha-16oz",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:48.675Z",
+    "scrapedAt": "2026-08-31T16:41:43.981Z",
     "variants": [
       {
         "label": "Sweet Matcha Latte 16oz",
@@ -14167,7 +14173,7 @@
     "source_url": "https://www.vahdam.com/products/authentic-japanese-matcha-green-tea-powder-3-53",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:45.203Z",
+    "scrapedAt": "2026-08-31T16:41:40.757Z",
     "variants": [
       {
         "label": "Pure Matcha Green Tea Powder, Culinary Grade, 3.53 oz",
@@ -14184,7 +14190,7 @@
     "source_url": "https://www.vahdam.com/products/turmeric-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:46.191Z",
+    "scrapedAt": "2026-08-31T16:41:41.552Z",
     "variants": [
       {
         "label": "Turmeric Matcha Green Tea Powder, 1.76 oz",
@@ -14201,7 +14207,7 @@
     "source_url": "https://www.vahdam.com/products/vanilla-matcha-green-tea",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:47.068Z",
+    "scrapedAt": "2026-08-31T16:41:42.369Z",
     "variants": [
       {
         "label": "Vanilla Matcha Green Tea Powder, 3.53 oz",
@@ -14286,7 +14292,7 @@
     "source_url": "https://yamamotoyama.com/products/iced-matcha-green-tea-sweetened",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:44.923Z",
+    "scrapedAt": "2026-08-31T16:41:40.430Z",
     "variants": [
       {
         "label": "Iced Matcha Green Tea, Sweetened",
@@ -14303,7 +14309,7 @@
     "source_url": "https://yamamotoyama.com/products/iced-matcha-green-tea-unsweetened",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:45.605Z",
+    "scrapedAt": "2026-08-31T16:41:41.203Z",
     "variants": [
       {
         "label": "Iced Matcha Green Tea, Unsweetened",
@@ -14328,7 +14334,7 @@
     "source_url": "https://yamamotoyama.com/products/matcha-genmai-green-tea-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:47.097Z",
+    "scrapedAt": "2026-08-31T16:41:42.976Z",
     "variants": [
       {
         "label": "Matcha Genmai Green Tea Bag",
@@ -14345,7 +14351,7 @@
     "source_url": "https://yamamotoyama.com/products/matcha-sencha-green-tea-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:47.802Z",
+    "scrapedAt": "2026-08-31T16:41:43.715Z",
     "variants": [
       {
         "label": "Matcha Sencha Green Tea Bag",
@@ -14362,7 +14368,7 @@
     "source_url": "https://yamamotoyama.com/products/organic-matcha-sencha-green-tea-bag",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:44:48.483Z",
+    "scrapedAt": "2026-08-31T16:41:44.475Z",
     "variants": [
       {
         "label": "Organic Matcha Sencha Green Tea Bag",
@@ -14387,7 +14393,7 @@
     "source_url": "https://zenkyumatcha.com/products/zenkyu-signature-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:45:01.713Z",
+    "scrapedAt": "2026-08-31T16:41:55.598Z",
     "variants": [
       {
         "label": "Zenkyu Signature Blend Matcha 30g",
@@ -14420,7 +14426,7 @@
     "source_url": "https://zenkyumatcha.com/products/uji-latte-blend-matcha",
     "status": "ok",
     "method": "shopify_var_meta",
-    "scrapedAt": "2026-08-24T09:45:04.975Z",
+    "scrapedAt": "2026-08-31T16:41:58.467Z",
     "variants": [
       {
         "label": "Uji Blend Matcha 50g",
