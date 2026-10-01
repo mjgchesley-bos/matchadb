@@ -1,7 +1,7 @@
 {
-  "usdToJpy": 157,
-  "gbpToUsd": 1.328639,
-  "eurToUsd": 1.135499,
-  "asOf": "2026-09-30",
+  "usdToJpy": 157.98,
+  "gbpToUsd": 1.323364,
+  "eurToUsd": 1.129803,
+  "asOf": "2026-10-01",
   "source": "Frankfurter API (ECB daily reference rates), frankfurter.dev"
 }
