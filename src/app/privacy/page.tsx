@@ -62,6 +62,14 @@ export default function PrivacyPage() {
         <a href="https://www.aboutads.info" rel="noopener noreferrer" target="_blank">
           aboutads.info
         </a>
+        . To learn how Google uses information from sites that use its services, see{" "}
+        <a
+          href="https://policies.google.com/technologies/partner-sites"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          How Google uses information from sites or apps that use our services
+        </a>
         .
       </p>
 
