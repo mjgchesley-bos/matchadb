@@ -15,6 +15,13 @@ const SERVING_AMOUNT_KEY_RE = /serving[_\s]?size|serving[_\s]?amount|serving[_\s
 // the "item count"/"pack count" keys that keyword was meant for.
 const DISCOUNT_AMOUNT_KEY_RE = /^discount$|^savings?$|discount[_\s]?amount|savings?[_\s]?amount/i;
 
+// Prose notes that quote OTHER products' prices ("Kagoshima ¥1,944 vs Uji
+// ¥2,916 vs ...") satisfy PRICE_KEY_RE through the word "price" but describe
+// the whole product line, not this product -- left in, every yen figure in
+// them became a competing price candidate for this product and falsely
+// flagged a conflict.
+const PRICE_COMMENTARY_KEY_RE = /^price_(comparison|ranking)_note$/i;
+
 // Is this key name clearly a monetary amount (so a bare number under it,
 // with no "$"/"¥"/"£" of its own, should be treated as a currency amount)?
 // Deliberately broad on "contains price/cost", since real key names vary a
@@ -243,12 +250,12 @@ function collectAmountsAndWeights(disclosed) {
   const allWeightsSeen = []; // every distinct weight mentioned anywhere, for fallback pairing
 
   for (const [key, value] of Object.entries(disclosed || {})) {
-    if (DISCOUNT_AMOUNT_KEY_RE.test(key)) continue;
+    if (DISCOUNT_AMOUNT_KEY_RE.test(key) || PRICE_COMMENTARY_KEY_RE.test(key)) continue;
 
     // A plain numeric value under a price-named key (e.g. price_usd: 9.99) has
     // no "$" for the regex to key off of — handle it directly as USD.
     if (isMoneyKey(key) && typeof value === "number") {
-      allUnpairedAmounts.push({ index: 0, amount: value, currency: "USD", priceType: priceTypeFromKey(key) });
+      allUnpairedAmounts.push({ index: 0, amount: value, currency: currencyHintFromKey(key) ?? "USD", priceType: priceTypeFromKey(key) });
       continue;
     }
 
@@ -474,7 +481,7 @@ function extractInferredFirstVariantPairs(disclosed) {
   const pairs = [];
   for (const [key, value] of Object.entries(disclosed || {})) {
     if (isMoneyKey(key) && typeof value === "number") {
-      pairs.push({ grams, amount: value, currency: "USD", priceType: priceTypeFromKey(key), inferred: true });
+      pairs.push({ grams, amount: value, currency: currencyHintFromKey(key) ?? "USD", priceType: priceTypeFromKey(key), inferred: true });
       continue;
     }
     if (!SINGLE_PRICE_KEY_RE.test(key) || typeof value !== "string") continue;
