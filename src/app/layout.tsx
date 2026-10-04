@@ -3,6 +3,7 @@ import { Fraunces, Manrope, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Script from "next/script";
 import { GoogleAnalyticsPageView } from "./google-analytics-pageview";
+import { ConsentBanner, CookieSettingsButton } from "@/components/ConsentBanner";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
@@ -62,6 +63,23 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              analytics_storage: 'denied',
+              wait_for_update: 500
+            });
+            try {
+              if (localStorage.getItem('matchadb-consent') === 'granted') {
+                gtag('consent', 'update', {
+                  ad_storage: 'granted',
+                  ad_user_data: 'granted',
+                  ad_personalization: 'granted',
+                  analytics_storage: 'granted'
+                });
+              }
+            } catch (e) {}
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
           `}
@@ -99,7 +117,13 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-3 text-xs text-ink-faint">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <span>MatchaDB &mdash; sourcing, pricing, and transparency data pulled directly from brand product pages.</span>
-              <span className="font-mono">Research build</span>
+              <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+                <Link href="/about" className="hover:text-ink-muted transition-colors">About</Link>
+                <Link href="/contact" className="hover:text-ink-muted transition-colors">Contact</Link>
+                <Link href="/privacy" className="hover:text-ink-muted transition-colors">Privacy</Link>
+                <Link href="/terms" className="hover:text-ink-muted transition-colors">Terms</Link>
+                <CookieSettingsButton />
+              </nav>
             </div>
             <p className="text-center sm:text-left text-[0.7rem] text-ink-faint/80 border-t border-line pt-3">
               Brand names, logos, and trademarks shown belong to their respective owners and are used solely to identify
@@ -108,6 +132,7 @@ export default function RootLayout({
             </p>
           </div>
         </footer>
+        <ConsentBanner />
       </body>
     </html>
   );
