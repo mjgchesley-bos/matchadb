@@ -368,6 +368,50 @@ export async function getFilterOptions() {
   return { brands, grades, regions, flavors, uses };
 }
 
+export type ComparablePrice = {
+  id: number;
+  brand: string;
+  region: string | null;
+  grade: string | null;
+  pricePerGram: number;
+};
+
+// Every product with a confirmed price AND a stated size, as price per gram.
+// Computed as price / size (not read from price_per_gram, which is null for
+// every yen/pound/euro-priced product) and limited to the same trustworthy
+// set the region pages use: unreviewed, weight-priced, not-unverifiable.
+// The database is read-only for the life of a server process, so this is
+// computed once and reused by every page that wants price context.
+let comparablePricesCache: ComparablePrice[] | null = null;
+
+export async function getComparablePrices(): Promise<ComparablePrice[]> {
+  if (comparablePricesCache) return comparablePricesCache;
+  const db = await getDb();
+  const rows = rowsToObjects<{
+    id: number;
+    brand: string;
+    region: string | null;
+    grade: string | null;
+    price_usd: number;
+    price_size_grams: number;
+  }>(
+    db.exec(
+      `SELECT p.id, b.name as brand, p.region, p.grade, p.price_usd, p.price_size_grams
+       FROM products p JOIN brands b ON p.brand_id = b.id
+       WHERE p.not_found = 0 AND p.price_needs_review = 0 AND p.price_link_only = 0
+         AND p.price_usd > 0 AND p.price_size_grams > 0`
+    )
+  );
+  comparablePricesCache = rows.map((r) => ({
+    id: r.id,
+    brand: r.brand,
+    region: r.region,
+    grade: r.grade,
+    pricePerGram: r.price_usd / r.price_size_grams,
+  }));
+  return comparablePricesCache;
+}
+
 export type RegionSummary = {
   region: string;
   productCount: number;

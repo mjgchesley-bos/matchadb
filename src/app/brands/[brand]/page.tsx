@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBrandProducts } from "@/lib/db";
+import { getBrandProducts, getComparablePrices } from "@/lib/db";
+import { getBrandSummary } from "@/lib/product-insight";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo } from "@/components/product-cards";
@@ -18,8 +19,17 @@ export async function generateMetadata({
   const products = await getBrandProducts(brandName);
   if (products.length === 0) return {};
 
-  const title = `${brandName} Matcha — ${products.length} Product${products.length === 1 ? "" : "s"}`;
-  const description = `Pricing, sourcing, cultivar, and tasting-note data for every ${brandName} matcha product in MatchaDB's research database.`;
+  const n = products.length;
+  const title = `${brandName} Matcha: ${n} Product${n === 1 ? "" : "s"}, Prices & Origins`;
+  const comparable = (await getComparablePrices())
+    .filter((c) => c.brand === brandName)
+    .map((c) => c.pricePerGram)
+    .sort((a, b) => a - b);
+  const priceBit =
+    comparable.length >= 3
+      ? ` Prices run $${comparable[0].toFixed(2)}–$${comparable[comparable.length - 1].toFixed(2)} per gram.`
+      : "";
+  const description = `Every ${brandName} matcha in MatchaDB: ${n} product${n === 1 ? "" : "s"} with grade, growing region, cultivar and tasting notes.${priceBit}`;
 
   return {
     title,
@@ -41,6 +51,8 @@ export default async function BrandPage({
   if (products.length === 0) notFound();
 
   const brandUrl = `${SITE_URL}/brands/${encodeURIComponent(brandName)}`;
+  const brandComparable = (await getComparablePrices()).filter((c) => c.brand === brandName);
+  const summary = getBrandSummary({ brand: brandName, products, comparable: brandComparable });
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
@@ -65,9 +77,10 @@ export default async function BrandPage({
         <BrandLogo brandName={brandName} size={56} allowTallerThanSize />
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{brandName}</h1>
       </div>
-      <p className="text-sm text-ink-muted mb-8">
+      <p className="text-sm text-ink-muted mb-3">
         {products.length} product{products.length === 1 ? "" : "s"} in the database
       </p>
+      <p className="text-ink-muted leading-relaxed max-w-2xl mb-8">{summary.join(" ")}</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {products.map((p) => {

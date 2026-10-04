@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProductById, getRelatedProducts, getBrandProducts } from "@/lib/db";
+import { getProductById, getRelatedProducts, getBrandProducts, getComparablePrices } from "@/lib/db";
+import { getPriceInsight } from "@/lib/product-insight";
 import { formatPrice, formatPriceVariant } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo, ProductCard, gradeLabel } from "@/components/product-cards";
@@ -26,16 +27,29 @@ function buildFactsLine(product: Product): string | null {
   return details.length > 0 ? details.join(", ") : null;
 }
 
-function buildProductDescription(product: Product | null): string {
+function buildProductDescription(product: Product | null, insightClause?: string): string {
   if (!product) return "";
   const parts: string[] = [`${product.product_name} by ${product.brand_name}`];
   const factsLine = buildFactsLine(product);
   if (factsLine) parts.push(factsLine);
   const price = formatPrice(product);
-  if (price.kind !== "unresolved" && price.kind !== "linkOnly") {
-    parts.push(price.text + (product.price_per_gram != null ? ` (~$${product.price_per_gram.toFixed(2)}/g)` : ""));
-  }
-  return parts.join(" — ") + " — pricing, sourcing, and tasting notes on MatchaDB.";
+  if (price.kind === "resolved") parts.push(price.text);
+  if (insightClause) parts.push(insightClause);
+  const body = parts.join(" — ");
+  const tail = " — pricing, sourcing & tasting notes on MatchaDB.";
+  const text = body.length + tail.length <= 160 ? body + tail : body + ".";
+  // Google shows roughly 160 characters; cut on a word boundary, not mid-word.
+  return text.length > 160 ? text.slice(0, 157).replace(/\s+\S*$/, "") + "…" : text;
+}
+
+// People search for "<product> matcha", and the product name alone often
+// doesn't say "matcha" (e.g. "Hukuju"). The layout appends " | MatchaDB" (11
+// chars); keep the whole title near 60 characters so it isn't truncated.
+function buildProductTitle(product: Product): string {
+  const hasMatcha = /matcha/i.test(product.product_name);
+  const base = `${product.product_name}${hasMatcha ? "" : " Matcha"} by ${product.brand_name}`;
+  const suffix = " — Price & Origin";
+  return base.length + suffix.length + 11 <= 60 ? base + suffix : base;
 }
 
 export async function generateMetadata({
@@ -49,8 +63,9 @@ export async function generateMetadata({
   const product = await getProductById(productId);
   if (!product) return {};
 
-  const title = `${product.product_name} by ${product.brand_name}`;
-  const description = buildProductDescription(product);
+  const insight = getPriceInsight(product.id, await getComparablePrices());
+  const title = buildProductTitle(product);
+  const description = buildProductDescription(product, insight?.shortClause);
 
   return {
     title,
@@ -254,6 +269,7 @@ export default async function ProductDetailPage({
   const factsLine = buildFactsLine(product);
   const hasCompounds = Boolean(product.l_theanine_note || product.egcg_note);
   const regionInfo = getRegionInfo(product.region);
+  const insight = getPriceInsight(product.id, await getComparablePrices());
 
   const stats: { label: string; value: string; href?: string }[] = [];
   if (product.grade) stats.push({ label: "Grade", value: gradeLabel(product.grade) });
@@ -282,7 +298,7 @@ export default async function ProductDetailPage({
           "@type": "Product",
           name: product.product_name,
           brand: { "@type": "Brand", name: product.brand_name },
-          description: buildProductDescription(product),
+          description: buildProductDescription(product, insight?.shortClause),
           url: productUrl,
           ...(product.price_usd != null
             ? {
@@ -462,6 +478,28 @@ export default async function ProductDetailPage({
           product during research. It may be discontinued, renamed, or the brand may not maintain
           a findable page for it. This entry is preserved for transparency rather than removed.
         </div>
+      )}
+
+      {insight && (
+        <section className="mt-12">
+          <SectionLabel>Price in context</SectionLabel>
+          <p className="text-ink-muted leading-relaxed max-w-2xl">{insight.sentences.join(" ")}</p>
+          <p className="text-xs text-ink-faint mt-3 max-w-2xl">
+            Compared across {insight.basis} products with a confirmed price and size, with yen, pound
+            and euro prices converted to dollars.{" "}
+            {insight.regionSlug && (
+              <>
+                <Link href={`/regions/${insight.regionSlug}`} className="underline">
+                  See how {product.region} compares
+                </Link>
+                {" · "}
+              </>
+            )}
+            <Link href="/about" className="underline">
+              How we research
+            </Link>
+          </p>
+        </section>
       )}
 
       {regionInfo && (
