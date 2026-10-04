@@ -8,6 +8,7 @@ import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo, ProductCard, gradeLabel } from "@/components/product-cards";
 import { getBrandLogoPath } from "@/lib/logos";
 import { getRegionInfo } from "@/lib/regions";
+import { REGION_CONTENT } from "@/lib/region-content";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 
@@ -188,7 +189,7 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function StatCard({ label, value }: { label: string; value: string }) {
+function StatCard({ label, value, href }: { label: string; value: string; href?: string }) {
   return (
     <div className="border border-line rounded-sm bg-paper-raised px-4 py-3">
       <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-ink-faint mb-1">
@@ -254,10 +255,17 @@ export default async function ProductDetailPage({
   const hasCompounds = Boolean(product.l_theanine_note || product.egcg_note);
   const regionInfo = getRegionInfo(product.region);
 
-  const stats: { label: string; value: string }[] = [];
+  const stats: { label: string; value: string; href?: string }[] = [];
   if (product.grade) stats.push({ label: "Grade", value: gradeLabel(product.grade) });
   if (product.cultivar) stats.push({ label: "Cultivar", value: product.cultivar });
-  if (product.region) stats.push({ label: "Region", value: product.region });
+  if (product.region) {
+    const regionContent = REGION_CONTENT[product.region];
+    stats.push({
+      label: "Region",
+      value: product.region,
+      href: regionContent ? `/regions/${regionContent.slug}` : undefined,
+    });
+  }
   if (product.organic_certified === 1) stats.push({ label: "Certification", value: "Organic" });
 
   const [relatedProducts, brandProducts] = await Promise.all([
@@ -441,7 +449,7 @@ export default async function ProductDetailPage({
           {stats.length > 0 && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mt-7">
               {stats.map((s) => (
-                <StatCard key={s.label} label={s.label} value={s.value} />
+                <StatCard key={s.label} label={s.label} value={s.value} href={s.href} />
               ))}
             </div>
           )}

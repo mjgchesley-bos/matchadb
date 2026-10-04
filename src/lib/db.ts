@@ -368,6 +368,110 @@ export async function getFilterOptions() {
   return { brands, grades, regions, flavors, uses };
 }
 
+export type RegionSummary = {
+  region: string;
+  productCount: number;
+  brandCount: number;
+  pricedCount: number;
+  // Medians and quartiles, never means: a handful of tiny competition-lot
+  // tins priced at hundreds of dollars drag a region's average (Uji's was
+  // ~$8.5/g) far above what a typical product costs.
+  medianPricePerGram: number | null;
+  p25PricePerGram: number | null;
+  p75PricePerGram: number | null;
+  grades: { grade: string; count: number }[];
+  organicShare: number;
+  topFlavors: { tag: string; share: number }[];
+  topBrands: { name: string; count: number }[];
+};
+
+function quantile(sorted: number[], q: number): number | null {
+  if (sorted.length === 0) return null;
+  const pos = (sorted.length - 1) * q;
+  const lo = Math.floor(pos);
+  const hi = Math.ceil(pos);
+  return sorted[lo] + (sorted[hi] - sorted[lo]) * (pos - lo);
+}
+
+export async function getRegionSummary(region: string): Promise<RegionSummary | null> {
+  const db = await getDb();
+  const rows = rowsToObjects<{
+    brand_name: string;
+    price_usd: number | null;
+    price_size_grams: number | null;
+    price_needs_review: number;
+    price_link_only: number;
+    grade: string | null;
+    organic_certified: number;
+    flavor_tags: string;
+  }>(
+    db.exec(
+      `SELECT b.name as brand_name, p.price_usd, p.price_size_grams, p.price_needs_review,
+              p.price_link_only, p.grade, p.organic_certified, p.flavor_tags
+       FROM products p JOIN brands b ON p.brand_id = b.id
+       WHERE p.region = ? AND p.not_found = 0`,
+      [region]
+    )
+  );
+  if (rows.length === 0) return null;
+
+  // Computed here as price / size rather than read from price_per_gram: that
+  // column is null for every yen/pound/euro-priced product (conversion
+  // happens after it's derived), which would silently drop all of them from
+  // a region's median. Unreviewed, weight-priced products only.
+  const prices = rows
+    .filter(
+      (r) =>
+        r.price_usd != null &&
+        r.price_usd > 0 &&
+        r.price_size_grams != null &&
+        r.price_size_grams > 0 &&
+        r.price_needs_review === 0 &&
+        r.price_link_only === 0
+    )
+    .map((r) => r.price_usd! / r.price_size_grams!)
+    .sort((a, b) => a - b);
+
+  const gradeCounts = new Map<string, number>();
+  const brandCounts = new Map<string, number>();
+  const flavorCounts = new Map<string, number>();
+  let withFlavors = 0;
+  let organic = 0;
+  for (const r of rows) {
+    if (r.grade) gradeCounts.set(r.grade, (gradeCounts.get(r.grade) ?? 0) + 1);
+    brandCounts.set(r.brand_name, (brandCounts.get(r.brand_name) ?? 0) + 1);
+    if (r.organic_certified === 1) organic++;
+    const tags = JSON.parse(r.flavor_tags) as string[];
+    if (tags.length > 0) withFlavors++;
+    for (const t of tags) flavorCounts.set(t, (flavorCounts.get(t) ?? 0) + 1);
+  }
+
+  return {
+    region,
+    productCount: rows.length,
+    brandCount: brandCounts.size,
+    pricedCount: prices.length,
+    medianPricePerGram: quantile(prices, 0.5),
+    p25PricePerGram: quantile(prices, 0.25),
+    p75PricePerGram: quantile(prices, 0.75),
+    grades: [...gradeCounts].map(([grade, count]) => ({ grade, count })).sort((a, b) => b.count - a.count),
+    organicShare: organic / rows.length,
+    topFlavors: [...flavorCounts]
+      .map(([tag, count]) => ({ tag, share: withFlavors ? count / withFlavors : 0 }))
+      .sort((a, b) => b.share - a.share)
+      .slice(0, 5),
+    topBrands: [...brandCounts]
+      .map(([name, count]) => ({ name, count }))
+      .sort(
+        (a, b) =>
+          getBrandRecognitionScore(b.name) - getBrandRecognitionScore(a.name) ||
+          b.count - a.count ||
+          a.name.localeCompare(b.name)
+      )
+      .slice(0, 8),
+  };
+}
+
 export async function getRegionCounts() {
   const db = await getDb();
   return rowsToObjects<{ region: string; count: number }>(

@@ -118,6 +118,7 @@ export default function RootLayout({
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <span>MatchaDB &mdash; sourcing, pricing, and transparency data pulled directly from brand product pages.</span>
               <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+                <Link href="/regions" className="hover:text-ink-muted transition-colors">Regions</Link>
                 <Link href="/about" className="hover:text-ink-muted transition-colors">About</Link>
                 <Link href="/contact" className="hover:text-ink-muted transition-colors">Contact</Link>
                 <Link href="/privacy" className="hover:text-ink-muted transition-colors">Privacy</Link>
