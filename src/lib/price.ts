@@ -1,11 +1,16 @@
 import type { ProductPriceRow, ProductRow } from "./db";
 
-// Cutoffs are the real 33rd/66th percentile of price_per_gram across the 427
-// products that have one (checked directly against the database, not
-// guessed round numbers) -- splits the priced catalog into roughly even
-// thirds rather than arbitrary "cheap"/"expensive" bands.
-export const PRICE_TIER_CHEAP_MAX = 0.7;
-export const PRICE_TIER_MID_MAX = 1.4;
+// Cutoffs are the 33rd/66th percentile of price_per_gram across the ~498
+// products that have one, weighted half by product and half by brand. Plain
+// product-level terciles let the largest catalogs (Tezumi, Marukyu Koyamaen,
+// Kettl) set the bands, which left only ~22% of brands in "premium";
+// weighting each brand equally alone overcorrects (only 24% of products
+// "cheap"). The blend lands within ~5 points of a third on both views and
+// splits ceremonial + usucha (what most people browse) 31/37/33. Koicha
+// landing mostly in "premium" and culinary in "cheap" is real, not a skew.
+// Re-derive when the catalog changes materially.
+export const PRICE_TIER_CHEAP_MAX = 0.63;
+export const PRICE_TIER_MID_MAX = 1.25;
 
 export type PriceTier = "cheap" | "mid" | "premium";
 

@@ -347,6 +347,7 @@ async function main() {
   let removedCount = 0;
   let liveDataCount = 0;
   let liveAttributesCount = 0;
+  let derivedPerGramCount = 0;
   let tastingNotesCount = 0;
   let flavorTagsCount = 0;
   let useTagsCount = 0;
@@ -410,6 +411,23 @@ async function main() {
       fields.priceCurrency = null;
       fields.priceNeedsReview = 0;
       fields.priceReviewReason = null;
+    }
+    // The extractor only reports a per-gram rate for prices quoted natively
+    // in USD, so yen/pound/euro products (converted to price_usd at the FX
+    // rate) arrived here with a dollar price and a size but no per-gram
+    // figure -- which hid the "per gram" line on their pages and dropped
+    // them from tier filters and cheapest-first sorting. Derive it from the
+    // two numbers we do have. Runs after the link-only override, and skips
+    // prices flagged for review, so it never resurrects a number we decided
+    // not to stand behind.
+    if (
+      fields.pricePerGram == null &&
+      !fields.priceNeedsReview &&
+      fields.priceUsd > 0 &&
+      fields.priceSizeGrams > 0
+    ) {
+      fields.pricePerGram = fields.priceUsd / fields.priceSizeGrams;
+      derivedPerGramCount++;
     }
     const notFound = p.source_url ? 0 : 1;
     let tastingNotes = consolidateTastingNotes(disclosed);
@@ -595,6 +613,7 @@ async function main() {
   console.log(`  missing grade / cultivar / region: ${gradeMissing} / ${cultivarMissing} / ${regionMissing}`);
   console.log(`  products with consolidated tasting notes: ${tastingNotesCount} (of which ${liveTasteCount} from live-scraped page descriptions)`);
   console.log(`  products with at least one flavor tag: ${flavorTagsCount}`);
+  console.log(`  products with per-gram derived from price / size: ${derivedPerGramCount}`);
   console.log(`  products with at least one use tag: ${useTagsCount}`);
   console.log(`  products with L-theanine data: ${theanineCount}`);
   console.log(`  products with EGCG data: ${egcgCount}`);
