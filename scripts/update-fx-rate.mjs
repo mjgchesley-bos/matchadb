@@ -13,13 +13,13 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FX_RATE_PATH = path.join(__dirname, "..", "data", "fx-rate.json");
 
-const res = await fetch("https://api.frankfurter.dev/v1/latest?base=USD&symbols=JPY,GBP,EUR");
+const res = await fetch("https://api.frankfurter.dev/v1/latest?base=USD&symbols=JPY,GBP,EUR,AUD,CAD");
 if (!res.ok) {
   throw new Error(`Frankfurter API request failed: ${res.status} ${res.statusText}`);
 }
 const data = await res.json();
-const { JPY, GBP, EUR } = data.rates;
-if (!JPY || !GBP || !EUR) {
+const { JPY, GBP, EUR, AUD, CAD } = data.rates;
+if (!JPY || !GBP || !EUR || !AUD || !CAD) {
   throw new Error(`Missing rate(s) in API response: ${JSON.stringify(data)}`);
 }
 
@@ -31,9 +31,11 @@ const fxRate = {
   usdToJpy: JPY,
   gbpToUsd: Math.round((1 / GBP) * 1e6) / 1e6,
   eurToUsd: Math.round((1 / EUR) * 1e6) / 1e6,
+  audToUsd: Math.round((1 / AUD) * 1e6) / 1e6,
+  cadToUsd: Math.round((1 / CAD) * 1e6) / 1e6,
   asOf: data.date,
   source: "Frankfurter API (ECB daily reference rates), frankfurter.dev",
 };
 
 fs.writeFileSync(FX_RATE_PATH, JSON.stringify(fxRate, null, 2) + "\n");
-console.log(`Updated data/fx-rate.json: 1 USD = ${JPY} JPY, 1 GBP = $${fxRate.gbpToUsd}, 1 EUR = $${fxRate.eurToUsd} (as of ${data.date})`);
+console.log(`Updated data/fx-rate.json: 1 USD = ${JPY} JPY, 1 GBP = $${fxRate.gbpToUsd}, 1 EUR = $${fxRate.eurToUsd}, 1 AUD = $${fxRate.audToUsd}, 1 CAD = $${fxRate.cadToUsd} (as of ${data.date})`);

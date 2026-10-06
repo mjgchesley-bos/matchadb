@@ -121,7 +121,13 @@ for (const entry of Object.values(liveTasteRaw)) {
   liveTasteByKey.set(`${entry.brand}||${entry.product_name}`, entry);
 }
 
+// MATCHA_LOCAL_DATA_DIR reads the same-named files from a local folder instead
+// of S3, so new products can be built and reviewed before the shared S3 copy
+// (which the scheduled CI rebuilds also read) is changed.
 async function getS3Json(key) {
+  if (process.env.MATCHA_LOCAL_DATA_DIR) {
+    return JSON.parse(fs.readFileSync(path.join(process.env.MATCHA_LOCAL_DATA_DIR, key), "utf-8"));
+  }
   const res = await s3.send(new GetObjectCommand({ Bucket: BUCKET, Key: key }));
   const body = await res.Body.transformToString("utf-8");
   return JSON.parse(body);
@@ -157,6 +163,8 @@ function convertToUsd(amount, currency) {
   if (currency === "JPY") return { usd: Math.round((amount / fxRate.usdToJpy) * 100) / 100, converted: 1 };
   if (currency === "GBP") return { usd: Math.round(amount * fxRate.gbpToUsd * 100) / 100, converted: 1 };
   if (currency === "EUR") return { usd: Math.round(amount * fxRate.eurToUsd * 100) / 100, converted: 1 };
+  if (currency === "AUD") return { usd: Math.round(amount * fxRate.audToUsd * 100) / 100, converted: 1 };
+  if (currency === "CAD") return { usd: Math.round(amount * fxRate.cadToUsd * 100) / 100, converted: 1 };
   return { usd: null, converted: 0 };
 }
 

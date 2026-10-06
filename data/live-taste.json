@@ -49,8 +49,9 @@
     "brand": "CAP Beauty",
     "product_name": "The Matcha Stick",
     "source_url": "https://www.capbeauty.com/products/the-neat-matcha-stick",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:24:23.257Z",
+    "description": "Our love and respect for japan knows no bounds. it a place we consistently look to inspiration: from beauty practices food preparation tea ceremonies more. sourced the Shizuoka region of Japan, our matcha is vibrant bright grassy bursting with antioxidants vitamins life force minerals. known enhance mood create relaxed yet focused alertness consumption improves everything appearance skin hair hormonal health cardiovascular immune response. these travel-friendly sticks you can bring power anywhere go enhancing your keeping energy in balance. few purse or them along on next big trip so never far feeling best. good health. grams high vibrational focus packet. 1.5g.\nGluten free. Vegan."
   },
   "65": {
     "id": 65,
@@ -176,16 +177,16 @@
     "brand": "Horii Shichimeien",
     "product_name": "Reiwa 7 (2025) Kansai Tea Competition Award-Winning Matcha",
     "source_url": "https://horiishichimeien.com/en/products/reiwa-7-2025-kansai-tea-competition-award-winning-matcha",
-    "status": "no_taste_content_found",
-    "httpStatus": 200
+    "status": "no_description_found",
+    "httpStatus": 404
   },
   "180": {
     "id": 180,
     "brand": "Horii Shichimeien",
     "product_name": "Reiwa 7 (2025) Kansai Tea Competition Prize-Winning Matcha",
     "source_url": "https://horiishichimeien.com/en/products/reiwa-7-2025-kansai-tea-competition-awarded-matcha",
-    "status": "no_taste_content_found",
-    "httpStatus": 200
+    "status": "no_description_found",
+    "httpStatus": 404
   },
   "181": {
     "id": 181,
@@ -443,87 +444,87 @@
     "brand": "Mantra Matcha",
     "product_name": "Superfood Berry Matcha",
     "source_url": "https://mantramatcha.com/products/superfood-berry-matcha",
-    "status": "blocked",
-    "httpStatus": 503
+    "status": "no_description_found",
+    "httpStatus": 200
   },
   "314": {
     "id": 314,
     "brand": "Marukyu Koyamaen",
     "product_name": "Ao no Mori",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1154020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "321": {
     "id": 321,
     "brand": "Marukyu Koyamaen",
     "product_name": "Hatsu no Mori",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1153020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "325": {
     "id": 325,
     "brand": "Marukyu Koyamaen",
     "product_name": "Keichi no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1112020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "327": {
     "id": 327,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kissho",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c2020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "328": {
     "id": 328,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kiun",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1122020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "330": {
     "id": 330,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kokonoe no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1183040c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "332": {
     "id": 332,
     "brand": "Marukyu Koyamaen",
     "product_name": "Miya no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c3020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "333": {
     "id": 333,
     "brand": "Marukyu Koyamaen",
     "product_name": "Myofu no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1192020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "345": {
     "id": 345,
     "brand": "Marukyu Koyamaen",
     "product_name": "Tenju",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1111020c1",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "356": {
     "id": 356,
     "brand": "Matcha Konomi",
     "product_name": "Akira Tencha",
     "source_url": "https://matchakonomi.com/products/akira-tencha-50g-bag",
-    "status": "no_description_found",
+    "status": "no_taste_content_found",
     "httpStatus": 200
   },
   "358": {
@@ -531,32 +532,36 @@
     "brand": "Matcha Konomi",
     "product_name": "Ki Matcha (Organic Ceremonial)",
     "source_url": "https://matchakonomi.com/products/ki-organic-ceremonial-matcha-3-sizes",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:24:27.924Z",
+    "description": "Description: Premium matcha green tea powder (stone-ground, ceremonial grade, USDA organic)\nHarvest: First (spring) harvest\nOrigin: From Fuji, Shizuoka Prefecture (Japan)\nUse: Unsweetened or sweetened matcha latte, and for sipping as tea (with water only). If you are looking for a more affordable matcha to use in smoothies or baking, try Oishi Matcha which is also organic and first harvest.\nIngredients: 100% Matcha green tea powder\nServing size: 1/2 tsp. (1g)\nNumber of servings: 30g tin contains 30 servings. 100g bag contains 100 servings. 1lb bag contains 454 servings. \nDirections: Sift 1/2-1 tsp. into a bowl or tea cup. Heat water to about 175 F (do not boil). Pour 3 oz of hot water, and w"
   },
   "359": {
     "id": 359,
     "brand": "Matcha Konomi",
     "product_name": "Miya Matcha (Organic Ceremonial)",
     "source_url": "https://matchakonomi.com/products/miya-organic-ceremonial-matcha",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:24:28.698Z",
+    "description": "Description: Premium matcha green tea powder (ceremonial grade, USDA organic)\nHarvest: First (spring) harvest\nOrigin: Miyazaki (Japan)\nUse: Unsweetened or sweetened matcha latte, and for sipping as tea (with water only). If you are looking for a more affordable matcha to use in smoothies or baking, try Oishi Matcha which is also organic and first harvest.\nIngredients: 100% Matcha green tea powder\nServing size: 1/2 tsp. (1g)\nNumber of servings: 30g tin contains 30 servings. 100g bag contains 100 servings. 1lb bag contains 454 servings. \nDirections: Sift 1/2-1 tsp. into a bowl or tea cup. Heat water to about 175 F (do not boil). Pour 3 oz of hot water, and whisk until frothy. Add more water to"
   },
   "360": {
     "id": 360,
     "brand": "Matcha Konomi",
     "product_name": "Oishi Organic Gourmet Matcha",
     "source_url": "https://matchakonomi.com/products/oishi-matcha",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:24:29.560Z",
+    "description": "Description: Organic Japanese Gourmet Matcha Green Tea Powder\nHarvest: First (spring) harvest\nOrigin: Uji, Kyoto\nUse: Sweetened matcha lattes, smoothies, and for creating food items. If you are looking for a matcha to drink as tea (with water only) or in unsweetened lattes, try Akira Matcha which is also organic and first harvest.\nIngredients: 100% Matcha green tea powder\nServing size: 1/2 tsp. (1g)\nNumber of servings: 30g tin contains 30 servings. 100g bag contains 100 servings. 1lb bag contains 454 servings. \nDirections: Sift 1/2-1 tsp. into a bowl or tea cup. Heat water to about 175 F (do not boil). Pour 3 oz of hot water, and whisk until frothy. Add more water to taste. Enjoy!\nPlease rea"
   },
   "361": {
     "id": 361,
     "brand": "Matcha Konomi",
     "product_name": "Oka Matcha (Premium Culinary)",
     "source_url": "https://matchakonomi.com/products/oka-organic-culinary-matcha-2-sizes",
-    "status": "no_description_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:24:30.333Z",
+    "description": "Description: Premium matcha green tea powder (culinary grade, USDA organic)\nHarvest: First (spring) and later harvests\nOrigin: Shizuoka (Japan)\nUse: Matcha latte, smoothies, and other culinary creations.\nIngredients: 100% Matcha green tea powder\nServing size: 1/2 tsp. (1g)\nNumber of servings: 100g bag contains 100 servings. 1lb bag contains 454 servings. \nDirections: Sift 1/2-1 tsp. into a bowl or tea cup. Heat water to about 175 F (do not boil). Pour 3 oz of hot water, and whisk until frothy. Add more water to taste. Enjoy!Buying Bulk Sizes:  Matcha powder is a very delicate and sensitive product. Please do not leave an open bag of matcha powder on your kitchen counter – when exposed to ele"
   },
   "386": {
     "id": 386,
@@ -747,8 +752,9 @@
     "brand": "Ocha & Co.",
     "product_name": "Organic Matcha Green Tea Powder",
     "source_url": "https://www.ochaandco.com/en-us/products/organic-japanese-matcha",
-    "status": "no_taste_content_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:22.311Z",
+    "description": "ORGANIC MATCHA GREEN TEA POWDER\nSpecifications:\nQuantity: 100g\nOrigin: Shizuoka\nCultivar: Single Gokou cultivar, traditionally stone-milled. Freshly prepared and shipped in small batches to ensure freshness\nCertifications: JAS / ECOCERT Organic Certification / Shizuoka Prefecture Certification\nPackaging: Reselable Pouches\nBlender: Suzuki-San, winner of the Japanese Ministry of Agriculture Tea Competition, the most prestigious tea competition for professionals in Japan.\nTasting Notes:\nThis Organic Matcha offers a vibrant green colour, a fresh aroma with subtle toasted and nori notes, and a smooth, mellow flavour. Fresh vegetal notes and gentle umami are balanced by very low bitterness and a c"
   },
   "536": {
     "id": 536,
@@ -829,8 +835,8 @@
     "brand": "Teapigs",
     "product_name": "Premium Organic Matcha Green Tea",
     "source_url": "https://teapigs.com/products/matcha",
-    "status": "blocked",
-    "httpStatus": 503
+    "status": "no_taste_content_found",
+    "httpStatus": 200
   },
   "659": {
     "id": 659,
@@ -1078,5 +1084,760 @@
     "source_url": "https://yamamotoyama.com/products/organic-matcha-sencha-green-tea-bag",
     "status": "no_description_found",
     "httpStatus": 200
+  },
+  "729": {
+    "id": 729,
+    "brand": "Howdy Matcha",
+    "product_name": "Uji Matcha",
+    "source_url": "https://howdymatcha.co/products/uji",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "730": {
+    "id": 730,
+    "brand": "Howdy Matcha",
+    "product_name": "Kagoshima Matcha",
+    "source_url": "https://howdymatcha.co/products/kagoshima",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "731": {
+    "id": 731,
+    "brand": "Howdy Matcha",
+    "product_name": "Ujimidori Matcha",
+    "source_url": "https://howdymatcha.co/products/ujimidori",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "732": {
+    "id": 732,
+    "brand": "Howdy Matcha",
+    "product_name": "Aichi Matcha",
+    "source_url": "https://howdymatcha.co/products/aichi",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "733": {
+    "id": 733,
+    "brand": "Howdy Matcha",
+    "product_name": "Kyoto Matcha",
+    "source_url": "https://howdymatcha.co/products/kyoto",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "734": {
+    "id": 734,
+    "brand": "Howdy Matcha",
+    "product_name": "Nishio Matcha",
+    "source_url": "https://howdymatcha.co/products/nishio",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "735": {
+    "id": 735,
+    "brand": "Howdy Matcha",
+    "product_name": "Hoshino Matcha",
+    "source_url": "https://howdymatcha.co/products/hoshino",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "736": {
+    "id": 736,
+    "brand": "Howdy Matcha",
+    "product_name": "Yame Matcha",
+    "source_url": "https://howdymatcha.co/products/yame",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "737": {
+    "id": 737,
+    "brand": "Howdy Matcha",
+    "product_name": "Yabukita Matcha",
+    "source_url": "https://howdymatcha.co/products/yabukita",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "738": {
+    "id": 738,
+    "brand": "Howdy Matcha",
+    "product_name": "Ujitawara Matcha",
+    "source_url": "https://howdymatcha.co/products/ujitawara",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "739": {
+    "id": 739,
+    "brand": "Howdy Matcha",
+    "product_name": "Year of the Horse Matcha",
+    "source_url": "https://howdymatcha.co/products/year-of-the-horse",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "740": {
+    "id": 740,
+    "brand": "Howdy Matcha",
+    "product_name": "Ujihikari Matcha",
+    "source_url": "https://howdymatcha.co/products/ujihikari",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "741": {
+    "id": 741,
+    "brand": "Howdy Matcha",
+    "product_name": "Signature Matcha",
+    "source_url": "https://howdymatcha.co/products/signature",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "742": {
+    "id": 742,
+    "brand": "Howdy Matcha",
+    "product_name": "Asahi Matcha",
+    "source_url": "https://howdymatcha.co/products/asahi",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "743": {
+    "id": 743,
+    "brand": "Howdy Matcha",
+    "product_name": "Okumidori Matcha",
+    "source_url": "https://howdymatcha.co/products/okumidori",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "744": {
+    "id": 744,
+    "brand": "Kiyo Matcha",
+    "product_name": "Signature Grade Shuga Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/signature-grade-shuga-ceremonial-uji-matcha-3-5oz-100g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:30.538Z",
+    "description": "Curious New Beginner\nKiyo’s Signature grade is crafted for those who are ready to move beyond entry-level matcha and discover a more elevated cup. A smooth, vibrant matcha offering rich umami balanced with gentle bitterness and a hint of astringency — ideal for those ready to move beyond beginner flavors into a more refined matcha experience."
+  },
+  "745": {
+    "id": 745,
+    "brand": "Kiyo Matcha",
+    "product_name": "Organic Classic Grade Chiba No Shiro Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/organic-classic-grade-chiba-no-shiro-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:31.259Z",
+    "description": "Best Value for Organic\nKiyo’s Classic Grade Organic Ceremonial Uji matcha is an excellent value for your money, striving to offer the best quality in its price range.\nOur goal is to make high-quality ceremonial grade Japanese matcha accessible and affordable to everyone, especially beginners.\nTry Kiyo Chiba no Shiro Organic Classic Grade for a rich and healthy matcha experience without breaking the bank."
+  },
+  "746": {
+    "id": 746,
+    "brand": "Kiyo Matcha",
+    "product_name": "Heritage Grade Densho Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/heritage-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:32.074Z",
+    "description": "Exemplary Grade for Tea Masters\nSourced from revered tea estates, it embodies the artistry of tea masters. With distinguished umami, delicate sweetness, and captivating aroma, it's a testament to the legacy of tea mastery.Ideal for the traditional cha-do tea ceremony, suitable for both koicha thick tea or usucha thin tea."
+  },
+  "747": {
+    "id": 747,
+    "brand": "Kiyo Matcha",
+    "product_name": "Imperial Grade Tenryu Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/imperial-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:32.841Z",
+    "description": "Connoisseur Grade for Matcha Critics\nExperience matcha at its finest with Kiyo Matcha Imperial Grade, the choice of connoisseurs. Known for its exceptional quality, it boasts pronounced umami, delicate sweetness, and a harmonious blend of flavors. Delight your discerning palate with this connoisseur grade."
+  },
+  "748": {
+    "id": 748,
+    "brand": "Kiyo Matcha",
+    "product_name": "Classic Grade Hatsumukashi Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/kiyo-matcha-classic-grade-ceremonial-uji-matcha-pure-japanese-first-harvest-ceremonial-grade-matcha-green-tea-powder-from-uji-japan-100g-3-5oz",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:33.661Z",
+    "description": "Best Value for Money\nKiyo’s Classic Grade Ceremonial Uji matcha is an excellent value for your money, striving to offer the best quality in its price range.\nOur goal is to make high-quality ceremonial grade Japanese matcha accessible and affordable to everyone, especially beginners.\nTry Kiyo Classic Grade for a rich and healthy matcha experience without breaking the bank."
+  },
+  "749": {
+    "id": 749,
+    "brand": "Kiyo Matcha",
+    "product_name": "Ritual Grade Wakyo Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/ritual-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:34.390Z",
+    "description": "Crafted for Matcha Enthusiasts\nIndulge in Kiyo Matcha Ritual Grade, crafted for gourmet matcha enthusiasts. It offers a sublime balance of rich umami flavors with subtle sweetness, complemented by a velvety texture and vibrant green color. Elevate your matcha experience with this exquisite grade."
+  },
+  "750": {
+    "id": 750,
+    "brand": "Kiyo Matcha",
+    "product_name": "Premium Grade Toyokage Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/premium-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:26:35.182Z",
+    "description": "Daily-Drinking for Seasoned Matcha Lovers\nKiyo Matcha Premium Grade is blended for more seasoned matcha lovers.\nCreated to have more umami flavour than bitterness or astringency. A medium-bodied matcha that has a smooth and creamy texture, making it easy to whisk and enjoy.\nThis is the start of a more refined taste."
+  },
+  "752": {
+    "id": 752,
+    "brand": "The Tea Makers of London",
+    "product_name": "Imperial Grade Matcha Powder",
+    "source_url": "https://www.theteamakers.co.uk/products/imperial-grade-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "755": {
+    "id": 755,
+    "brand": "Maison Koko",
+    "product_name": "Ceremonial Matcha Latte Mix",
+    "source_url": "https://maisonkoko.com/products/ceremonial-matcha-latte-mix",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "767": {
+    "id": 767,
+    "brand": "Maison Koko",
+    "product_name": "Premium Ceremonial Matcha (Gold Award)",
+    "source_url": "https://maisonkoko.com/products/premium-ceremonial-matcha-powder-gold-award",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "769": {
+    "id": 769,
+    "brand": "Maison Koko",
+    "product_name": "Ceremonial Matcha (Everyday Blend)",
+    "source_url": "https://maisonkoko.com/products/ceremonial-matcha-everyday",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "770": {
+    "id": 770,
+    "brand": "Maison Koko",
+    "product_name": "Ceremonial Matcha (Uji Blend)",
+    "source_url": "https://maisonkoko.com/products/ceremonial-matcha-uji",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "771": {
+    "id": 771,
+    "brand": "Maison Koko",
+    "product_name": "Ceremonial Matcha (Latte Blend)",
+    "source_url": "https://maisonkoko.com/products/premium-ceremonial-matcha-latte-blend",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "785": {
+    "id": 785,
+    "brand": "Maison Koko",
+    "product_name": "Premium Matcha (Superior)",
+    "source_url": "https://maisonkoko.com/products/premium-matcha-superior",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "788": {
+    "id": 788,
+    "brand": "Maison Koko",
+    "product_name": "Matcha Latte Mix",
+    "source_url": "https://maisonkoko.com/products/matcha-latte-mix",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "789": {
+    "id": 789,
+    "brand": "Maison Koko",
+    "product_name": "Premium Matcha (Uji)",
+    "source_url": "https://maisonkoko.com/products/uji-matcha-premium-grade",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "790": {
+    "id": 790,
+    "brand": "Wakokoro Tea",
+    "product_name": "Yame Matcha Yame no Hikari",
+    "source_url": "https://wakokoro-tea.com/products/yame-matcha-yame-no-hikari",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "791": {
+    "id": 791,
+    "brand": "Wakokoro Tea",
+    "product_name": "Kyushu Matcha B",
+    "source_url": "https://wakokoro-tea.com/products/kyushu-matcha-b-while-supply-lasts",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "792": {
+    "id": 792,
+    "brand": "Wakokoro Tea",
+    "product_name": "Mie Matcha Suigetsu",
+    "source_url": "https://wakokoro-tea.com/products/matcha-suigetsu",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "793": {
+    "id": 793,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Powder Ruri 1kg",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-powder-ruri-1kg",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "794": {
+    "id": 794,
+    "brand": "Wakokoro Tea",
+    "product_name": "Yame Matcha Yame no Shiro",
+    "source_url": "https://wakokoro-tea.com/products/matcha-yame-no-shiro",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "795": {
+    "id": 795,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Flavored Matcha Cocoa",
+    "source_url": "https://wakokoro-tea.com/products/flavored-matcha-cocoa",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "796": {
+    "id": 796,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Flavored Matcha Chocolate",
+    "source_url": "https://wakokoro-tea.com/products/flavored-matcha-chocolate",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "797": {
+    "id": 797,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Flavored Matcha Vanilla",
+    "source_url": "https://wakokoro-tea.com/products/flavored-matcha-vanilla",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "798": {
+    "id": 798,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Flavored Matcha Yuzu",
+    "source_url": "https://wakokoro-tea.com/products/flavored-matcha-yuzu",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "799": {
+    "id": 799,
+    "brand": "Wakokoro Tea",
+    "product_name": "Nishio Matcha Kaze",
+    "source_url": "https://wakokoro-tea.com/products/nishio-matcha-kaze-30g",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "800": {
+    "id": 800,
+    "brand": "Wakokoro Tea",
+    "product_name": "Nishio Organic Matcha Nami",
+    "source_url": "https://wakokoro-tea.com/products/nami-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "801": {
+    "id": 801,
+    "brand": "Wakokoro Tea",
+    "product_name": "Organic Matcha Tokiwa",
+    "source_url": "https://wakokoro-tea.com/products/matcha-tokiwa",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "802": {
+    "id": 802,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Kosen",
+    "source_url": "https://wakokoro-tea.com/products/matcha-kosen",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "803": {
+    "id": 803,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji & Yame Matcha Musuhi",
+    "source_url": "https://wakokoro-tea.com/products/matcha-musuhi",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "804": {
+    "id": 804,
+    "brand": "Wakokoro Tea",
+    "product_name": "Kyushu Okumidori Matcha Mizuho",
+    "source_url": "https://wakokoro-tea.com/products/matcha-mizuho",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "805": {
+    "id": 805,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Matcha Etenraku",
+    "source_url": "https://wakokoro-tea.com/products/matcha-etenraku",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "806": {
+    "id": 806,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Matcha Uji no Shiro",
+    "source_url": "https://wakokoro-tea.com/products/matcha-uji-no-shiro",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "807": {
+    "id": 807,
+    "brand": "Wakokoro Tea",
+    "product_name": "Shizuoka Matcha Sakuya",
+    "source_url": "https://wakokoro-tea.com/products/shizuoka-matcha-sakuya-30g",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "808": {
+    "id": 808,
+    "brand": "Wakokoro Tea",
+    "product_name": "Yame Matcha Yame no Tsuki",
+    "source_url": "https://wakokoro-tea.com/products/yame-matcha-yame-no-tsuki-30g",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "809": {
+    "id": 809,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Matcha Sagano",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-sagano-30g-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "810": {
+    "id": 810,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Gion",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-gion-30g-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "811": {
+    "id": 811,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Ohara",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-ohara-30g-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "812": {
+    "id": 812,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Momoyama",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-momoyama-30g-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "813": {
+    "id": 813,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Matcha Kannabi",
+    "source_url": "https://wakokoro-tea.com/products/uji-matcha-kannabi-30g-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "814": {
+    "id": 814,
+    "brand": "Wakokoro Tea",
+    "product_name": "Uji Matcha Iwakura",
+    "source_url": "https://wakokoro-tea.com/products/uji-matcha-iwakura-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "815": {
+    "id": 815,
+    "brand": "Wakokoro Tea",
+    "product_name": "Matcha Powder Uji no Mukashi",
+    "source_url": "https://wakokoro-tea.com/products/matcha-powder-uji-no-mukashi-from-jj-market-30g",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "816": {
+    "id": 816,
+    "brand": "Wakokoro Tea",
+    "product_name": "Kagoshima Matcha Renge",
+    "source_url": "https://wakokoro-tea.com/products/kagoshima-matcha-renge-kkm1-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "817": {
+    "id": 817,
+    "brand": "Wakokoro Tea",
+    "product_name": "Matcha Powder Matcha Yuzu Latte 1kg",
+    "source_url": "https://wakokoro-tea.com/products/matcha-powder-matcha-yuzu-latte-1kg",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "818": {
+    "id": 818,
+    "brand": "Wakokoro Tea",
+    "product_name": "Organic Kagoshima Matcha Wakei",
+    "source_url": "https://wakokoro-tea.com/products/organic-kagoshima-matcha-wakei-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "819": {
+    "id": 819,
+    "brand": "Wakokoro Tea",
+    "product_name": "Kagoshima Matcha Tsubaki",
+    "source_url": "https://wakokoro-tea.com/products/kagoshima-matcha-tsubaki-kkm2-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "820": {
+    "id": 820,
+    "brand": "Wakokoro Tea",
+    "product_name": "Kagoshima Matcha Kaede",
+    "source_url": "https://wakokoro-tea.com/products/kagoshima-matcha-kaede-knm2-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "821": {
+    "id": 821,
+    "brand": "Wakokoro Tea",
+    "product_name": "Organic Japanese Matcha Powder Kikyo",
+    "source_url": "https://wakokoro-tea.com/products/organic-japanese-matcha-powder-kikyo-jomd-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "822": {
+    "id": 822,
+    "brand": "Wakokoro Tea",
+    "product_name": "Yame Matcha Yame no Kaori",
+    "source_url": "https://wakokoro-tea.com/products/yame-matcha-yame-no-kaori-yom3-八女の香-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "823": {
+    "id": 823,
+    "brand": "Wakokoro Tea",
+    "product_name": "Yame Matcha Yame no Hana",
+    "source_url": "https://wakokoro-tea.com/products/yame-matcha-yame-no-hana-yom2-八女の華-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "824": {
+    "id": 824,
+    "brand": "Wakokoro Tea",
+    "product_name": "Shizuoka Matcha Hisui",
+    "source_url": "https://wakokoro-tea.com/products/enshu-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "825": {
+    "id": 825,
+    "brand": "Wakokoro Tea",
+    "product_name": "Matcha Powder Yame no Mukashi (Yame)",
+    "source_url": "https://wakokoro-tea.com/products/matcha-powder-yame-no-mukashi-from-jj-market-30g",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "826": {
+    "id": 826,
+    "brand": "Wakokoro Tea",
+    "product_name": "Matcha Powder Uji Matcha Latte 80g",
+    "source_url": "https://wakokoro-tea.com/products/matcha-uji-matcha-latte-from-tsuboichi-100g",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "827": {
+    "id": 827,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Yamekaze",
+    "source_url": "https://cultivatetea.com/products/matcha-yamekaze",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "835": {
+    "id": 835,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Hikari",
+    "source_url": "https://cultivatetea.com/products/matcha-hikari",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "836": {
+    "id": 836,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Hana",
+    "source_url": "https://cultivatetea.com/products/matcha-hana-for-matcha-latte",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "837": {
+    "id": 837,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Seihyo no Shiro",
+    "source_url": "https://cultivatetea.com/products/matcha-seihyo-no-shiro-shincha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "838": {
+    "id": 838,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Goku Mukashi Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-goku-mukashi",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "839": {
+    "id": 839,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Kotobuki Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-kotobuki",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "840": {
+    "id": 840,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Mare Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-mare",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "841": {
+    "id": 841,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Hatsumukashi Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-hatsu-mukashi",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "842": {
+    "id": 842,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Kakegawa",
+    "source_url": "https://cultivatetea.com/products/matcha-kakegawa-for-matcha-latte",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "844": {
+    "id": 844,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Uji 宇治 [Premium Ceremonial Grade -Competition Entry Tea]",
+    "source_url": "https://kimikuratea.com/products/uji-matcha-kyoto-premium-ceremonial-competition-top-grade",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:56.130Z",
+    "description": "This is the crown jewel of our Matcha selection, carefully crafted from Tencha (raw material of Matcha) produced in Uji, Kyoto, and presented at the National Tea Competition.It offers a rich umami flavor with an elegant and refined taste. Experience the essence of luxury in every sip.\nProduct details\nGrade  Competition Top Grade -Premium CeremonialPlace of Grown  Uji city, Kyoto prefecturePlace of Manufacture  Kakegawa, ShizuokaTexture  PowderPackage size  30g tin\nAbout this item\n・COMPETITION TOP GRADE -Carefully select and bid at the most prominent The National Tea Competition held once a year. -Only a handful of tea leaves produced in Kyoto, can be used to produce the ultimate matcha.\n・EXC"
+  },
+  "845": {
+    "id": 845,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Shizuoka 静岡 [Classic Culinary]",
+    "source_url": "https://kimikuratea.com/products/culinary-matcha-shizuoka",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:56.894Z",
+    "description": "Package size\n・30g tin\n・60g tin\nThis tin includes two 30g packs for freshness.Comes in a single-lid design. (not double lid)\nProduct details\nMatcha from Shizuoka, a well-known tea-producing region in Japan, is characterized by its clear and rich flavor. Its deep green color brings a vibrant accent to both everyday drinks and sweets.\nGrade  Classic CulinaryPlace of Grown  ShizuokaPlace of Manufacture  Kakegawa, ShizuokaTexture  Powder\n・CLASSIC CULINARY GRADE -Ideal to be used for everyday drinks, and is recommended for Matcha beginners. -The immaculate balance of clear bitterness and rich aroma.\n・AUTHENTIC MADE IN SHIZUOKA JAPAN -where we \"Japanese Tea KIMIKURA\" started, this tea has been bles"
+  },
+  "846": {
+    "id": 846,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea YUZU 柚子 Citrus [Organic Culinary]",
+    "source_url": "https://kimikuratea.com/products/organic-matcha-yuzu",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:57.693Z",
+    "description": "Product details\nPackage size  30g tin\nGrade  CulinaryCertification　JAS OrganicPlace of Grown  Kakegawa, ShizuokaPlace of Manufacture  Kakegawa, ShizuokaIngredients  Organic green tea, Organic Yuzu\n \nAbout this item\nBrand-new Matcha infused with the refreshing aroma of Yuzu citrus.We especially recommend enjoying it mixed with soda for a sparkling drink — and of course, it pairs wonderfully with milk for a latte and can even be enjoyed in cocktails.\n・ORGANIC -JAS Organic certified (Japanese Agricultural Standard) ・AUTHENTIC MADE IN SHIZUOKA JAPAN -where we \"Japanese Tea KIMIKURA\" started, this tea has been blessed with the gifts of nature.\n・CLASSIC CULINARY GRADE-Ideal to be used for everyday"
+  },
+  "847": {
+    "id": 847,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Shizuoka 静岡 [Organic Culinary]",
+    "source_url": "https://kimikuratea.com/products/organic-culinary-matcha-shizuoka",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:58.490Z",
+    "description": "Product details\nPackage size  30g tin\nGrade  Classic CulinaryCertification　JAS OrganicPlace of Grown  ShizuokaPlace of Manufacture  Kakegawa, ShizuokaTexture  Powder\nAbout this item\nAuthentic Japanese Organic Matcha  Crafted primarily from organically grown tea leaves harvested in the mountain regions of central Shizuoka, Japan, renowned for producing high-quality green tea.\n \nRich Aroma & Clean BitternessOffers a harmonious combination of rich matcha aroma and refreshing bitterness, making it easy to pair with milk, sweeteners, and various ingredients.\n \nVersatile for Matcha Drinks Ideal for matcha lattes, iced matcha, smoothies, sodas, and specialty beverages, delivering a bold and authent"
+  },
+  "848": {
+    "id": 848,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Kagoshima 鹿児島 [Organic Ceremonial Grade]",
+    "source_url": "https://kimikuratea.com/products/organic-ceremonial-matcha-kagoshima",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:59.272Z",
+    "description": "Product details\nGrade  CeremonialCertification  JAS organicPlace of Grown   KagoshimaPlace of Manufacture  Kakegawa, ShizuokaTexture  Powder\nSampler Set-Matcha Single Serve To Go Packets x 4schests-WAKATSUMI by KIMIKURA -Deep Steamed Green Tea x 1teabag-Hojicha Roasted Green Tea x 1teabag-Matcha Genmaicha Green Tea x 1teabag\nAbout this item\nCeremonial Grade Matcha from First Flush Tea LeavesMade exclusively from carefully selected first flush (Ichibancha) tea leaves.\nJAS Organic CertifiedOrganically grown and certified under Japanese Agricultural Standards (JAS), with organic equivalency recognized in the United States and Canada.\nKagoshima-Grown Matcha This matcha offers a well-balanced fla"
+  },
+  "849": {
+    "id": 849,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea KIMIKURA 貴美蔵 Japan-wide Blend [Ceremonial Grade]",
+    "source_url": "https://kimikuratea.com/products/ceremonial-matcha-kimikura",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:00.093Z",
+    "description": "Product details\nGrade  CeremonialPlace of Grown  JapanPlace of Manufacture  Kakegawa, ShizuokaTexture  PowderPackage size  30g(1oz) Tin / 100g(3.5oz) Value Pack / 100g(3.5oz) x 3packs Value Set\nSampler Set-Matcha Single Serve To Go Packets x 4schests-WAKATSUMI by KIMIKURA -Deep Steamed Green Tea x 1teabag-Hojicha Roasted Green Tea x 1teabag-Matcha Genmaicha Green Tea x 1teabag\nAbout this item\nCeremonial Grade Matcha from First Flush Tea Leaves Made exclusively from carefully selected first flush (Ichibancha) tea leaves and traditionally stone-ground to preserve its delicate flavor and vibrant green color.\nSignature Original Japan Blend by KIMIKURAA unique blend created by our tea master, usi"
+  },
+  "850": {
+    "id": 850,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Kyoto 京都 [Premium Ceremonial Grade -Competition Entry Tea]",
+    "source_url": "https://kimikuratea.com/products/matcha-kyoto-competition-top-grade-premium-ceremonial",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "851": {
+    "id": 851,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Nishio 西尾 [Premium Ceremonial Grade]",
+    "source_url": "https://kimikuratea.com/products/ceremonial-matcha-nishio",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:01.592Z",
+    "description": "Product detailsGrade  Premium CeremonialPlace of Grown   Nishio, AichiPlace of Manufacture  Kakegawa, ShizuokaTexture  PowderPackage size  30g tin\n \nAbout this item\nCeremonial Grade Matcha from First Flush Tea Leaves  Made exclusively from carefully selected first flush (Ichibancha) tea leaves and traditionally stone-ground to preserve its delicate flavor and vibrant green color.\n \nPremium Nishio Matcha with Exceptional Flavor, Aroma & ColorA high-grade Japanese matcha featuring a vibrant deep-green color, rich aroma, and a refined taste profile. Enjoy a perfect balance of pleasant astringency, full-bodied richness, and a subtle natural sweetness.\n \nSourced from Nishio, Japan's Renowned Matc"
+  },
+  "852": {
+    "id": 852,
+    "brand": "Kagoshima Tea",
+    "product_name": "Kagoshima Premium Matcha Bulk",
+    "source_url": "https://kagoshimatea.com/products/kagoshima-premium-matcha-bulk",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "853": {
+    "id": 853,
+    "brand": "Kagoshima Tea",
+    "product_name": "Organic Kagoshima Economical Matcha Bulk",
+    "source_url": "https://kagoshimatea.com/products/organic-kagoshima-economical-matcha-bulk",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "854": {
+    "id": 854,
+    "brand": "Kagoshima Tea",
+    "product_name": "Organic Kagoshima Ceremonial Matcha - Limited",
+    "source_url": "https://kagoshimatea.com/products/organic-kagoshima-ceremonial-matcha-limited",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:57.634Z",
+    "description": "Description\nOrganic Ceremonial Matcha - Available in limited quantity\nThis ceremonial Kagoshima organic matcha has been the top-selling product from GreenTea Merchant for years.\nWe are making this product available to the consumer for the first time in a limited quantity. \nSelect quality tencha tea leaves (which now you can purchase here) picked in the early spring are immediately steamed, dried, and stone-ground into a fine powder creating Matcha. Its exquisite natural sweetness enhances the slightly grassy tasting Sencha. This results in the excellent combination, Sencha Matcha, which will surely please the palate. \nMatcha is harvested in the Kirishima Mountains at an elevation of approxim"
+  },
+  "855": {
+    "id": 855,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Strawberry",
+    "source_url": "https://aoimatcha.com/products/matcha-strawberry-200g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:56.138Z",
+    "description": "Sweetened Matcha Strawberry Size: 200g (7.5oz) bag\nIngredients: Cane Sugar, Japanese Matcha Green Tea, Natural Strawberry Flavor\nCrafted using our matcha from Japan, our Sweetened Matcha Strawberry delivers a smooth and balanced matcha flavor blended with the sweet and refreshing taste of strawberry flavoring. Designed for easy preparation and everyday enjoyment, it can be enjoyed simply with water or made into your favorite strawberry matcha latte, smoothie, or blended beverage. Mix using a shaker, whisk, or blender for a smooth and refreshing drink experience."
+  },
+  "856": {
+    "id": 856,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Blueberry",
+    "source_url": "https://aoimatcha.com/products/matcha-blueberry-200g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:56.843Z",
+    "description": "Sweetened Matcha Blueberry\nSize: 200g (7.5oz) bag\nIngredients: Cane Sugar, Japanese Matcha Green Tea, Natural Blueberry Flavor\nCrafted using our matcha from Japan, our Sweetened Matcha Blueberry delivers a smooth and refreshing balance of rich matcha flavor and sweet blueberry taste. The fruity blueberry notes complement the gentle umami of matcha, creating an easy-to-enjoy beverage perfect for daily drinking. Enjoy with water, milk, or blended into your favorite smoothies and lattes. Mix using a shaker, whisk, or blender for a smooth drinking experience."
+  },
+  "857": {
+    "id": 857,
+    "brand": "AOI Matcha",
+    "product_name": "Sweet Matcha Green Tea",
+    "source_url": "https://aoimatcha.com/products/matcha-blueberry-200g-copy",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:57.631Z",
+    "description": "Sweet Matcha Green Tea \nSize: 200g (7.5oz) bag\nContent: Cane Sugar, Japanese Matcha Green Tea\nCreated using our matcha from Japan, our sweet matcha green tea has the smooth matcha flavor with just the right amount of sweetness to enjoy our matcha flavor and sweetness. Great for creating your favorite latte or drinking with only water. Shake it in a shaker, blender.\n--------------------------------------------------------------"
+  },
+  "858": {
+    "id": 858,
+    "brand": "AOI Matcha",
+    "product_name": "Chef’s Premium Matcha",
+    "source_url": "https://aoimatcha.com/products/chef-s-premium-matcha-100g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:34:58.382Z",
+    "description": "Chef's Premium Matcha, 100g\nSize: 100g Bag.\nHarvest: Blend of 1st harvest tencha.\nMilling Method: Machine-milled\nCultivar: Blended Cultivar.\nBalanced and smooth taste.  Well rounded balanced flavor profile (umami, bitter, sweetness) & minimal astringency with a verdent green color.\nVersatile for many applications.\n--------------------------------------------------------------\nProduct of Japan"
   }
 }

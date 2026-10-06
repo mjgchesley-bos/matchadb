@@ -45,7 +45,7 @@ export function formatPrice(p: ProductRow): PriceDisplay {
 
   if (p.fx_converted === 1 && p.price_native != null) {
     const symbol =
-      p.price_currency === "JPY" ? "¥" : p.price_currency === "GBP" ? "£" : p.price_currency === "EUR" ? "€" : "";
+      p.price_currency === "JPY" ? "¥" : p.price_currency === "GBP" ? "£" : p.price_currency === "EUR" ? "€" : p.price_currency === "AUD" ? "A$" : p.price_currency === "CAD" ? "C$" : "";
     const nativeAmount = p.price_currency === "JPY" ? trimNum(p.price_native) : p.price_native.toFixed(2);
     text = `${symbol}${nativeAmount}${size} — ~$${p.price_usd.toFixed(2)} USD (converted)`;
   }
@@ -58,7 +58,7 @@ function trimNum(n: number): string {
 }
 
 function currencySymbol(currency: string): string {
-  return currency === "JPY" ? "¥" : currency === "GBP" ? "£" : currency === "EUR" ? "€" : "$";
+  return currency === "JPY" ? "¥" : currency === "GBP" ? "£" : currency === "EUR" ? "€" : currency === "AUD" ? "A$" : currency === "CAD" ? "C$" : "$";
 }
 
 // One row of the full "every size actually disclosed" pricing table shown

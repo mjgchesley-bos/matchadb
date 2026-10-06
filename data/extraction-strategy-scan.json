@@ -40,7 +40,12 @@
     "count": 7,
     "url": "https://bluewillowtea.com/collections/matcha/products/ceremonial-matcha-harukasumi-spring-cloud",
     "status": "blocked",
-    "httpStatus": 429
+    "httpStatus": 429,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
   },
   {
     "domain": "breakawaymatcha.com",
@@ -64,7 +69,7 @@
     "hasVarMeta": true,
     "hasProductJsonTag": true,
     "hasShopifyMarker": true,
-    "hasJsonLdProduct": false
+    "hasJsonLdProduct": true
   },
   {
     "domain": "chachamatcha.com",
@@ -354,7 +359,7 @@
     "hasVarMeta": true,
     "hasProductJsonTag": false,
     "hasShopifyMarker": true,
-    "hasJsonLdProduct": false
+    "hasJsonLdProduct": true
   },
   {
     "domain": "itoen.com",
@@ -1004,6 +1009,12 @@
     "count": 2,
     "url": "https://tsukimatcha.com/en/products/original",
     "status": "error",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true,
     "detail": "fetch failed"
   },
   {
@@ -1058,6 +1069,109 @@
     "domain": "zenkyumatcha.com",
     "count": 5,
     "url": "https://zenkyumatcha.com/products/nishio-blend-asahi-samidori-20g",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "howdymatcha.co",
+    "count": 15,
+    "url": "https://howdymatcha.co/products/uji",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "kiyomatcha.com",
+    "count": 7,
+    "url": "https://kiyomatcha.com/products/signature-grade-shuga-ceremonial-uji-matcha-3-5oz-100g",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "theteamakers.co.uk",
+    "count": 4,
+    "url": "https://www.theteamakers.co.uk/products/matcha-latte",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": false
+  },
+  {
+    "domain": "maisonkoko.com",
+    "count": 35,
+    "url": "https://maisonkoko.com/products/ceremonial-matcha-latte-mix",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "wakokoro-tea.com",
+    "count": 37,
+    "url": "https://wakokoro-tea.com/products/yame-matcha-yame-no-hikari",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  {
+    "domain": "cultivatetea.com",
+    "count": 16,
+    "url": "https://cultivatetea.com/products/matcha-yamekaze",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "kimikuratea.com",
+    "count": 9,
+    "url": "https://kimikuratea.com/products/matcha-green-tea-kaze-ceremonial-grade",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "kagoshimatea.com",
+    "count": 3,
+    "url": "https://kagoshimatea.com/products/kagoshima-premium-matcha-bulk",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": true,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "aoimatcha.com",
+    "count": 8,
+    "url": "https://aoimatcha.com/products/matcha-strawberry-200g",
     "status": "ok",
     "httpStatus": 200,
     "strategy": "shopify_var_meta",

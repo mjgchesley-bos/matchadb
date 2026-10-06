@@ -36,10 +36,12 @@ function isMoneyKey(key) {
 }
 
 const WEIGHT_RE = /(\d+(?:\.\d+)?)\s?(kg|kilograms?|g\b|grams?|gram|oz\b|ounces?|lbs?\b|pounds?)\b/gi;
-const USD_RE = /(?:US\$|USD\s?\$?|\$)\s?([\d,]+(?:\.\d{1,2})?)/gi;
+const USD_RE = /(?<![A-Za-z])(?:US\$|USD\s?\$?|\$)\s?([\d,]+(?:\.\d{1,2})?)/gi;
 const JPY_RE = /(?:¥|JPY\s?|yen\s?)\s?([\d,]+)|([\d,]+)\s?(?:yen|¥|JPY)/gi;
 const GBP_RE = /(?:£|GBP\s?£?)\s?([\d,]+(?:\.\d{1,2})?)/gi;
 const EUR_RE = /(?:€|EUR\s?€?)\s?([\d,]+(?:\.\d{1,2})?)/gi;
+const AUD_RE = /(?<![A-Za-z])(?:A\$|AU\$|AUD\s?\$?)\s?([\d,]+(?:\.\d{1,2})?)/gi;
+const CAD_RE = /(?:C\$|CA\$|CAD\s?\$?)\s?([\d,]+(?:\.\d{1,2})?)/gi;
 
 function unitToGrams(value, unit) {
   const u = unit.toLowerCase();
@@ -112,6 +114,16 @@ function findAmounts(text, priceType) {
     if (isPerUnitRate(text, m.index + m[0].length)) continue;
     out.push({ index: m.index, amount: parseFloat(m[1].replace(/,/g, "")), currency: "EUR", priceType });
   }
+  const aud = new RegExp(AUD_RE.source, "gi");
+  while ((m = aud.exec(text))) {
+    if (isPerUnitRate(text, m.index + m[0].length)) continue;
+    out.push({ index: m.index, amount: parseFloat(m[1].replace(/,/g, "")), currency: "AUD", priceType });
+  }
+  const cad = new RegExp(CAD_RE.source, "gi");
+  while ((m = cad.exec(text))) {
+    if (isPerUnitRate(text, m.index + m[0].length)) continue;
+    out.push({ index: m.index, amount: parseFloat(m[1].replace(/,/g, "")), currency: "CAD", priceType });
+  }
   return out;
 }
 
@@ -134,11 +146,13 @@ function priceTypeFromKey(key) {
 // ever catch this on their own — the money-ness and currency both come from
 // the parent key name alone.
 const PRICE_OBJECT_KEY_RE = /price|cost/i;
-const CURRENCY_SYMBOL = { USD: "$", JPY: "¥", GBP: "£", EUR: "€" };
+const CURRENCY_SYMBOL = { USD: "$", JPY: "¥", GBP: "£", EUR: "€", AUD: "A$", CAD: "C$" };
 function currencyHintFromKey(key) {
   if (/jpy|yen|¥/i.test(key)) return "JPY";
   if (/gbp|£/i.test(key)) return "GBP";
   if (/eur|€/i.test(key)) return "EUR";
+  if (/aud|a\$/i.test(key)) return "AUD";
+  if (/cad|c\$/i.test(key)) return "CAD";
   if (/usd|\$/i.test(key)) return "USD";
   return null;
 }
@@ -592,7 +606,7 @@ export function hasAnyPriceAmount(disclosed) {
 // needed (unlike resolveCanonicalPrice, which has to reconcile ambiguity
 // out of free-form research text).
 export function pickCanonicalFromVariants(variants) {
-  const byCurrency = { USD: [], JPY: [], GBP: [], EUR: [] };
+  const byCurrency = { USD: [], JPY: [], GBP: [], EUR: [], AUD: [], CAD: [] };
   for (const v of variants) {
     if (v.priceNative == null || v.grams == null) continue;
     if (byCurrency[v.priceCurrency]) byCurrency[v.priceCurrency].push(v);
@@ -606,7 +620,7 @@ export function pickCanonicalFromVariants(variants) {
           ? "GBP"
           : byCurrency.EUR.length > 0
             ? "EUR"
-            : null;
+            : byCurrency.AUD.length > 0 ? "AUD" : byCurrency.CAD.length > 0 ? "CAD" : null;
   if (currency) {
     const candidates = byCurrency[currency];
     const smallest = candidates.reduce((min, v) => (v.grams < min.grams ? v : min), candidates[0]);
@@ -650,7 +664,7 @@ export function pickCanonicalFromVariants(variants) {
 export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
   const pairs = extractPricePairs(disclosed);
 
-  const byCurrency = { USD: [], JPY: [], GBP: [], EUR: [] };
+  const byCurrency = { USD: [], JPY: [], GBP: [], EUR: [], AUD: [], CAD: [] };
   for (const p of pairs) {
     if (byCurrency[p.currency]) byCurrency[p.currency].push(p);
   }
@@ -666,7 +680,7 @@ export function resolveCanonicalPrice(disclosed, contradictionsText = "") {
           ? "GBP"
           : byCurrency.EUR.length > 0
             ? "EUR"
-            : null;
+            : byCurrency.AUD.length > 0 ? "AUD" : byCurrency.CAD.length > 0 ? "CAD" : null;
 
   if (!currency) {
     return {

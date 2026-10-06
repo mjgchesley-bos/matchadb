@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (products.length === 0) return {};
 
   const n = products.length;
-  const title = `${brandName} Matcha: ${n} Product${n === 1 ? "" : "s"}, Prices & Origins`;
+  const title = `${brandName}${/matcha/i.test(brandName) ? "" : " Matcha"}: ${n} Product${n === 1 ? "" : "s"}, Prices & Origins`;
   const comparable = (await getComparablePrices())
     .filter((c) => c.brand === brandName)
     .map((c) => c.pricePerGram)

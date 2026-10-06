@@ -125,15 +125,15 @@
     "product_name": "Sweetened Roasted Matcha To Go Sticks",
     "source_url": "https://aiya-america.com/sweetened-roasted-matcha-to-go-sticks/",
     "status": "no_attributes_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "15": {
     "id": 15,
     "brand": "Blue Bottle",
     "product_name": "Craft Matcha",
     "source_url": "https://bluebottlecoffee.com/us/eng/product/craft-matcha",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "16": {
     "id": 16,
@@ -717,7 +717,7 @@
     "product_name": "Organic Key Lime Matcha",
     "source_url": "https://davidstea.com/en-us/products/key-lime-matcha-organic-50-grams",
     "status": "no_attributes_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "80": {
     "id": 80,
@@ -888,8 +888,11 @@
     "brand": "Encha",
     "product_name": "Barista Grade Latte Organic Matcha Powder",
     "source_url": "https://encha.com/products/encha-matcha-barista-grade-latte-organic-matcha-powder",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:25.334Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kagoshima"
   },
   "100": {
     "id": 100,
@@ -1284,15 +1287,18 @@
     "product_name": "Ceremonial Matcha",
     "source_url": "https://www.amazon.com/Greenergy-Ceremonial-Matcha-Premium-Japanese/dp/B0DNRKF7YW (Amazon US listing); also referenced: https://greenergymatcha.com/producto/matcha-calidad-ceremonial/ (Argentina brand site) and https://www.tienda.greenergymatcha.com/greenergy-matcha--ceremonial-30-gr--culinario-100-gr/up/MLAU280506792 (Argentina storefront, unreachable)",
     "status": "no_attributes_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "142": {
     "id": 142,
     "brand": "Greenergy Matcha",
     "product_name": "Culinary Matcha",
     "source_url": "https://www.amazon.com/Greenergy-Premium-Culinary-Japanese-Product/dp/B0DMXNHV72",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:27.965Z",
+    "grade": "culinary",
+    "cultivar": null,
+    "region": null
   },
   "143": {
     "id": 143,
@@ -1353,8 +1359,11 @@
     "brand": "Harney & Sons",
     "product_name": "Organic Everyday Matcha",
     "source_url": "https://www.harney.com/products/organic-everyday-matcha-1-lb-bag",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:39.830Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kagoshima"
   },
   "151": {
     "id": 151,
@@ -1579,16 +1588,22 @@
     "brand": "Ippodo",
     "product_name": "Ikuyo",
     "source_url": "https://ippodotea.com/products/ikuyo-100",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:43.434Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kyoto"
   },
   "191": {
     "id": 191,
     "brand": "Ippodo",
     "product_name": "Kan",
     "source_url": "https://ippodotea.com/products/kan-20",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:44.280Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kyoto"
   },
   "192": {
     "id": 192,
@@ -1611,16 +1626,22 @@
     "brand": "Ippodo",
     "product_name": "Matcha To-Go Packets (10 x 2g)",
     "source_url": "https://ippodotea.com/products/matcha-to-go-packets",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:46.961Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kyoto"
   },
   "195": {
     "id": 195,
     "brand": "Ippodo",
     "product_name": "New Harvest 2026",
     "source_url": "https://ippodotea.com/products/new-harvest-matcha",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:47.842Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kyoto"
   },
   "196": {
     "id": 196,
@@ -2337,8 +2358,11 @@
     "brand": "Kettl",
     "product_name": "Tsurukage",
     "source_url": "https://kettl.co/products/tsurukage-matcha",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:46.412Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "nagasaki"
   },
   "282": {
     "id": 282,
@@ -2516,7 +2540,7 @@
     "product_name": "NAKED MATCHA Organic Matcha Green Tea Powder",
     "source_url": "https://maeda-en.com/collections/matcha/products/naked-matcha-organic-matcha",
     "status": "no_attributes_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "304": {
     "id": 304,
@@ -2612,280 +2636,280 @@
     "brand": "Marukyu Koyamaen",
     "product_name": "Ao no Mori",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1154020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "315": {
     "id": 315,
     "brand": "Marukyu Koyamaen",
     "product_name": "Aoarashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11a1040c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "318": {
     "id": 318,
     "brand": "Marukyu Koyamaen",
     "product_name": "Chigi no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1181040c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "319": {
     "id": 319,
     "brand": "Marukyu Koyamaen",
     "product_name": "Choan",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1121020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "320": {
     "id": 320,
     "brand": "Marukyu Koyamaen",
     "product_name": "Eiju",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1131020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "321": {
     "id": 321,
     "brand": "Marukyu Koyamaen",
     "product_name": "Hatsu no Mori",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1153020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "323": {
     "id": 323,
     "brand": "Marukyu Koyamaen",
     "product_name": "Hekiun no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f52020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "324": {
     "id": 324,
     "brand": "Marukyu Koyamaen",
     "product_name": "Isuzu",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1191040c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "325": {
     "id": 325,
     "brand": "Marukyu Koyamaen",
     "product_name": "Keichi no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1112020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "326": {
     "id": 326,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kinrin",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1151020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "327": {
     "id": 327,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kissho",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c2020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "328": {
     "id": 328,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kiun",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1122020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "329": {
     "id": 329,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kiwami Choan",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1g36020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "330": {
     "id": 330,
     "brand": "Marukyu Koyamaen",
     "product_name": "Kokonoe no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1183040c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "331": {
     "id": 331,
     "brand": "Marukyu Koyamaen",
     "product_name": "Low Caffeine Matcha",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f94020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "332": {
     "id": 332,
     "brand": "Marukyu Koyamaen",
     "product_name": "Miya no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11c3020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "333": {
     "id": 333,
     "brand": "Marukyu Koyamaen",
     "product_name": "Myofu no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1192020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "335": {
     "id": 335,
     "brand": "Marukyu Koyamaen",
     "product_name": "Saihou no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f68020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "336": {
     "id": 336,
     "brand": "Marukyu Koyamaen",
     "product_name": "Sanyu no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11b2040c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "337": {
     "id": 337,
     "brand": "Marukyu Koyamaen",
     "product_name": "Seijo no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1182020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "338": {
     "id": 338,
     "brand": "Marukyu Koyamaen",
     "product_name": "Seiwa no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1144020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "339": {
     "id": 339,
     "brand": "Marukyu Koyamaen",
     "product_name": "Shofu",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1124020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "340": {
     "id": 340,
     "brand": "Marukyu Koyamaen",
     "product_name": "Shohaku",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1142020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "341": {
     "id": 341,
     "brand": "Marukyu Koyamaen",
     "product_name": "Shoka no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1172020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "342": {
     "id": 342,
     "brand": "Marukyu Koyamaen",
     "product_name": "Shoun no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1152020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "343": {
     "id": 343,
     "brand": "Marukyu Koyamaen",
     "product_name": "Suisho no Mukashi",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1114020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "344": {
     "id": 344,
     "brand": "Marukyu Koyamaen",
     "product_name": "Tama no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1132020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "345": {
     "id": 345,
     "brand": "Marukyu Koyamaen",
     "product_name": "Tenju",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1111020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "346": {
     "id": 346,
     "brand": "Marukyu Koyamaen",
     "product_name": "Tomo no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1d23040c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "348": {
     "id": 348,
     "brand": "Marukyu Koyamaen",
     "product_name": "Unkaku",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1141020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "349": {
     "id": 349,
     "brand": "Marukyu Koyamaen",
     "product_name": "Wakatake",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/11b1100c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "350": {
     "id": 350,
     "brand": "Marukyu Koyamaen",
     "product_name": "Wako",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1161020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "351": {
     "id": 351,
     "brand": "Marukyu Koyamaen",
     "product_name": "Yoyo no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f62020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "352": {
     "id": 352,
     "brand": "Marukyu Koyamaen",
     "product_name": "Yugen",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1171020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "353": {
     "id": 353,
     "brand": "Marukyu Koyamaen",
     "product_name": "Yukyu no Shiro",
     "source_url": "https://www.marukyu-koyamaen.co.jp/english/shop/products/1f78020c1",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "blocked",
+    "httpStatus": 403
   },
   "355": {
     "id": 355,
@@ -3047,8 +3071,11 @@
     "brand": "Matcha Outlet",
     "product_name": "Organic Starter Matcha",
     "source_url": "https://matchaoutlet.com/products/starter-matcha",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:43:33.518Z",
+    "grade": "culinary",
+    "cultivar": null,
+    "region": "china"
   },
   "373": {
     "id": 373,
@@ -3565,7 +3592,7 @@
     "product_name": "Hyo-Matcha Ryoryoku",
     "source_url": "https://tea-and-coffee.shop/view/item/000000000119",
     "status": "no_attributes_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "450": {
     "id": 450,
@@ -4498,8 +4525,11 @@
     "brand": "Shogyokuen",
     "product_name": "Chikka",
     "source_url": "https://kettl.co/products/chikka-matcha",
-    "status": "no_attributes_found",
-    "httpStatus": 200
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:35:47.334Z",
+    "grade": "usucha",
+    "cultivar": null,
+    "region": "uji"
   },
   "591": {
     "id": 591,
@@ -5313,5 +5343,758 @@
     "source_url": "https://yamamotoyama.com/products/organic-matcha-sencha-green-tea-bag",
     "status": "no_attributes_found",
     "httpStatus": 200
+  },
+  "729": {
+    "id": 729,
+    "brand": "Howdy Matcha",
+    "product_name": "Uji Matcha",
+    "source_url": "https://howdymatcha.co/products/uji",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:28.296Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "uji"
+  },
+  "730": {
+    "id": 730,
+    "brand": "Howdy Matcha",
+    "product_name": "Kagoshima Matcha",
+    "source_url": "https://howdymatcha.co/products/kagoshima",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:29.106Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kagoshima"
+  },
+  "731": {
+    "id": 731,
+    "brand": "Howdy Matcha",
+    "product_name": "Ujimidori Matcha",
+    "source_url": "https://howdymatcha.co/products/ujimidori",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:29.925Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kyoto"
+  },
+  "732": {
+    "id": 732,
+    "brand": "Howdy Matcha",
+    "product_name": "Aichi Matcha",
+    "source_url": "https://howdymatcha.co/products/aichi",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:30.785Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "aichi"
+  },
+  "733": {
+    "id": 733,
+    "brand": "Howdy Matcha",
+    "product_name": "Kyoto Matcha",
+    "source_url": "https://howdymatcha.co/products/kyoto",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:31.565Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kyoto"
+  },
+  "734": {
+    "id": 734,
+    "brand": "Howdy Matcha",
+    "product_name": "Nishio Matcha",
+    "source_url": "https://howdymatcha.co/products/nishio",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:32.307Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "nishio"
+  },
+  "735": {
+    "id": 735,
+    "brand": "Howdy Matcha",
+    "product_name": "Hoshino Matcha",
+    "source_url": "https://howdymatcha.co/products/hoshino",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:33.078Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "yame"
+  },
+  "736": {
+    "id": 736,
+    "brand": "Howdy Matcha",
+    "product_name": "Yame Matcha",
+    "source_url": "https://howdymatcha.co/products/yame",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:33.835Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "yame"
+  },
+  "738": {
+    "id": 738,
+    "brand": "Howdy Matcha",
+    "product_name": "Ujitawara Matcha",
+    "source_url": "https://howdymatcha.co/products/ujitawara",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:34.622Z",
+    "grade": "usucha",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "739": {
+    "id": 739,
+    "brand": "Howdy Matcha",
+    "product_name": "Year of the Horse Matcha",
+    "source_url": "https://howdymatcha.co/products/year-of-the-horse",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:35.405Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kyoto"
+  },
+  "741": {
+    "id": 741,
+    "brand": "Howdy Matcha",
+    "product_name": "Signature Matcha",
+    "source_url": "https://howdymatcha.co/products/signature",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:36.208Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "744": {
+    "id": 744,
+    "brand": "Kiyo Matcha",
+    "product_name": "Signature Grade Shuga Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/signature-grade-shuga-ceremonial-uji-matcha-3-5oz-100g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:28.079Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "745": {
+    "id": 745,
+    "brand": "Kiyo Matcha",
+    "product_name": "Organic Classic Grade Chiba No Shiro Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/organic-classic-grade-chiba-no-shiro-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:28.722Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "746": {
+    "id": 746,
+    "brand": "Kiyo Matcha",
+    "product_name": "Heritage Grade Densho Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/heritage-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:29.450Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "747": {
+    "id": 747,
+    "brand": "Kiyo Matcha",
+    "product_name": "Imperial Grade Tenryu Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/imperial-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:30.227Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "748": {
+    "id": 748,
+    "brand": "Kiyo Matcha",
+    "product_name": "Classic Grade Hatsumukashi Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/kiyo-matcha-classic-grade-ceremonial-uji-matcha-pure-japanese-first-harvest-ceremonial-grade-matcha-green-tea-powder-from-uji-japan-100g-3-5oz",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:30.952Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "749": {
+    "id": 749,
+    "brand": "Kiyo Matcha",
+    "product_name": "Ritual Grade Wakyo Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/ritual-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:31.726Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "750": {
+    "id": 750,
+    "brand": "Kiyo Matcha",
+    "product_name": "Premium Grade Toyokage Ceremonial Uji Matcha",
+    "source_url": "https://kiyomatcha.com/products/premium-grade-ceremonial-uji-matcha-1-4oz-40g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:32.417Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "751": {
+    "id": 751,
+    "brand": "The Tea Makers of London",
+    "product_name": "Creamy Matcha Latte Powder",
+    "source_url": "https://www.theteamakers.co.uk/products/matcha-latte",
+    "status": "no_attributes_found",
+    "httpStatus": 200
+  },
+  "752": {
+    "id": 752,
+    "brand": "The Tea Makers of London",
+    "product_name": "Imperial Grade Matcha Powder",
+    "source_url": "https://www.theteamakers.co.uk/products/imperial-grade-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:29.234Z",
+    "grade": null,
+    "cultivar": "okumidori",
+    "region": null
+  },
+  "753": {
+    "id": 753,
+    "brand": "The Tea Makers of London",
+    "product_name": "Organic Ceremonial Grade Matcha",
+    "source_url": "https://www.theteamakers.co.uk/products/organic-ceremonial-grade-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:30.309Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
+  },
+  "754": {
+    "id": 754,
+    "brand": "The Tea Makers of London",
+    "product_name": "Ceremonial Grade Matcha Powder",
+    "source_url": "https://www.theteamakers.co.uk/products/ceremonial-grade-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:31.418Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
+  },
+  "757": {
+    "id": 757,
+    "brand": "Maison Koko",
+    "product_name": "Premium Ceremonial Matcha (Ato Mukashi)",
+    "source_url": "https://maisonkoko.com/products/premium-ceremonial-matcha-ato-mukashi",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:37.551Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "763": {
+    "id": 763,
+    "brand": "Maison Koko",
+    "product_name": "Ceremonial Matcha (Shizuoka Blend)",
+    "source_url": "https://maisonkoko.com/products/ceremonial-matcha-shizuoka-blend",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:38.564Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "shizuoka"
+  },
+  "767": {
+    "id": 767,
+    "brand": "Maison Koko",
+    "product_name": "Premium Ceremonial Matcha (Gold Award)",
+    "source_url": "https://maisonkoko.com/products/premium-ceremonial-matcha-powder-gold-award",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:39.627Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
+  },
+  "769": {
+    "id": 769,
+    "brand": "Maison Koko",
+    "product_name": "Ceremonial Matcha (Everyday Blend)",
+    "source_url": "https://maisonkoko.com/products/ceremonial-matcha-everyday",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:40.661Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "771": {
+    "id": 771,
+    "brand": "Maison Koko",
+    "product_name": "Ceremonial Matcha (Latte Blend)",
+    "source_url": "https://maisonkoko.com/products/premium-ceremonial-matcha-latte-blend",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:41.801Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "785": {
+    "id": 785,
+    "brand": "Maison Koko",
+    "product_name": "Premium Matcha (Superior)",
+    "source_url": "https://maisonkoko.com/products/premium-matcha-superior",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:42.857Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "uji"
+  },
+  "788": {
+    "id": 788,
+    "brand": "Maison Koko",
+    "product_name": "Matcha Latte Mix",
+    "source_url": "https://maisonkoko.com/products/matcha-latte-mix",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:44.048Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
+  },
+  "789": {
+    "id": 789,
+    "brand": "Maison Koko",
+    "product_name": "Premium Matcha (Uji)",
+    "source_url": "https://maisonkoko.com/products/uji-matcha-premium-grade",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:45.044Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "uji"
+  },
+  "791": {
+    "id": 791,
+    "brand": "Wakokoro Tea",
+    "product_name": "Kyushu Matcha B",
+    "source_url": "https://wakokoro-tea.com/products/kyushu-matcha-b-while-supply-lasts",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "792": {
+    "id": 792,
+    "brand": "Wakokoro Tea",
+    "product_name": "Mie Matcha Suigetsu",
+    "source_url": "https://wakokoro-tea.com/products/matcha-suigetsu",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "793": {
+    "id": 793,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Powder Ruri 1kg",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-powder-ruri-1kg",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "811": {
+    "id": 811,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Ohara",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-ohara-30g-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "812": {
+    "id": 812,
+    "brand": "Wakokoro Tea",
+    "product_name": "Japanese Matcha Momoyama",
+    "source_url": "https://wakokoro-tea.com/products/japanese-matcha-momoyama-30g-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "817": {
+    "id": 817,
+    "brand": "Wakokoro Tea",
+    "product_name": "Matcha Powder Matcha Yuzu Latte 1kg",
+    "source_url": "https://wakokoro-tea.com/products/matcha-powder-matcha-yuzu-latte-1kg",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "821": {
+    "id": 821,
+    "brand": "Wakokoro Tea",
+    "product_name": "Organic Japanese Matcha Powder Kikyo",
+    "source_url": "https://wakokoro-tea.com/products/organic-japanese-matcha-powder-kikyo-jomd-sample",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "826": {
+    "id": 826,
+    "brand": "Wakokoro Tea",
+    "product_name": "Matcha Powder Uji Matcha Latte 80g",
+    "source_url": "https://wakokoro-tea.com/products/matcha-uji-matcha-latte-from-tsuboichi-100g",
+    "status": "blocked",
+    "httpStatus": 200
+  },
+  "827": {
+    "id": 827,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Yamekaze",
+    "source_url": "https://cultivatetea.com/products/matcha-yamekaze",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:36.974Z",
+    "grade": "latte grade",
+    "cultivar": null,
+    "region": "yame"
+  },
+  "828": {
+    "id": 828,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Velvet 7 Seimei",
+    "source_url": "https://cultivatetea.com/products/matcha-velvet-7-seimei",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:37.872Z",
+    "grade": null,
+    "cultivar": "seimei",
+    "region": "yame"
+  },
+  "829": {
+    "id": 829,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Velvet 7 Saeakari",
+    "source_url": "https://cultivatetea.com/products/matcha-velvet-7-saeakari",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:38.742Z",
+    "grade": null,
+    "cultivar": "saeakari",
+    "region": "yame"
+  },
+  "830": {
+    "id": 830,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Velvet 7 Tsuyu Hikari",
+    "source_url": "https://cultivatetea.com/products/matcha-velvet-7-tsuyu-hikari",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:39.579Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "yame"
+  },
+  "831": {
+    "id": 831,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Velvet 7 Ooiwase",
+    "source_url": "https://cultivatetea.com/products/matcha-velvet-7-ooiwase",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:40.471Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "yame"
+  },
+  "832": {
+    "id": 832,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Velvet 7 Oku Yutaka",
+    "source_url": "https://cultivatetea.com/products/matcha-velvet-7-oku-yutaka",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:41.426Z",
+    "grade": "usucha",
+    "cultivar": null,
+    "region": "yame"
+  },
+  "833": {
+    "id": 833,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Velvet 7 Kirari",
+    "source_url": "https://cultivatetea.com/products/matcha-velvet-7-kirari",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:42.318Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "yame"
+  },
+  "834": {
+    "id": 834,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Velvet 7 Saemidori",
+    "source_url": "https://cultivatetea.com/products/shincha-matcha-saemidori",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:43.351Z",
+    "grade": null,
+    "cultivar": "saemidori",
+    "region": "yame"
+  },
+  "835": {
+    "id": 835,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Hikari",
+    "source_url": "https://cultivatetea.com/products/matcha-hikari",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:44.191Z",
+    "grade": "latte grade",
+    "cultivar": null,
+    "region": "nishio"
+  },
+  "836": {
+    "id": 836,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Hana",
+    "source_url": "https://cultivatetea.com/products/matcha-hana-for-matcha-latte",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:45.065Z",
+    "grade": "latte grade",
+    "cultivar": null,
+    "region": "nishio"
+  },
+  "837": {
+    "id": 837,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Seihyo no Shiro",
+    "source_url": "https://cultivatetea.com/products/matcha-seihyo-no-shiro-shincha",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:45.904Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "838": {
+    "id": 838,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Goku Mukashi Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-goku-mukashi",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:46.798Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "839": {
+    "id": 839,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Kotobuki Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-kotobuki",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:47.721Z",
+    "grade": "ceremonial",
+    "cultivar": "kotobuki",
+    "region": "uji"
+  },
+  "840": {
+    "id": 840,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Mare Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-mare",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:48.620Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "841": {
+    "id": 841,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Hatsumukashi Shincha",
+    "source_url": "https://cultivatetea.com/products/matcha-hatsu-mukashi",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:49.482Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "842": {
+    "id": 842,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Kakegawa",
+    "source_url": "https://cultivatetea.com/products/matcha-kakegawa-for-matcha-latte",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:50.266Z",
+    "grade": "latte grade",
+    "cultivar": null,
+    "region": "shizuoka"
+  },
+  "843": {
+    "id": 843,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea KAZE 風 [Ceremonial Grade]",
+    "source_url": "https://kimikuratea.com/products/matcha-green-tea-kaze-ceremonial-grade",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:37.076Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "kakegawa"
+  },
+  "844": {
+    "id": 844,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Uji 宇治 [Premium Ceremonial Grade -Competition Entry Tea]",
+    "source_url": "https://kimikuratea.com/products/uji-matcha-kyoto-premium-ceremonial-competition-top-grade",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:37.856Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "uji"
+  },
+  "845": {
+    "id": 845,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Shizuoka 静岡 [Classic Culinary]",
+    "source_url": "https://kimikuratea.com/products/culinary-matcha-shizuoka",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:38.544Z",
+    "grade": "culinary",
+    "cultivar": null,
+    "region": "shizuoka"
+  },
+  "846": {
+    "id": 846,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea YUZU 柚子 Citrus [Organic Culinary]",
+    "source_url": "https://kimikuratea.com/products/organic-matcha-yuzu",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:39.313Z",
+    "grade": "culinary",
+    "cultivar": null,
+    "region": "shizuoka"
+  },
+  "847": {
+    "id": 847,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Shizuoka 静岡 [Organic Culinary]",
+    "source_url": "https://kimikuratea.com/products/organic-culinary-matcha-shizuoka",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:39.947Z",
+    "grade": "culinary",
+    "cultivar": null,
+    "region": "shizuoka"
+  },
+  "848": {
+    "id": 848,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Kagoshima 鹿児島 [Organic Ceremonial Grade]",
+    "source_url": "https://kimikuratea.com/products/organic-ceremonial-matcha-kagoshima",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:40.603Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "kagoshima"
+  },
+  "849": {
+    "id": 849,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea KIMIKURA 貴美蔵 Japan-wide Blend [Ceremonial Grade]",
+    "source_url": "https://kimikuratea.com/products/ceremonial-matcha-kimikura",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:41.392Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "shizuoka"
+  },
+  "850": {
+    "id": 850,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Kyoto 京都 [Premium Ceremonial Grade -Competition Entry Tea]",
+    "source_url": "https://kimikuratea.com/products/matcha-kyoto-competition-top-grade-premium-ceremonial",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:42.031Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "shizuoka"
+  },
+  "851": {
+    "id": 851,
+    "brand": "KIMIKURA",
+    "product_name": "Matcha Green Tea Nishio 西尾 [Premium Ceremonial Grade]",
+    "source_url": "https://kimikuratea.com/products/ceremonial-matcha-nishio",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:42.794Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": "nishio"
+  },
+  "852": {
+    "id": 852,
+    "brand": "Kagoshima Tea",
+    "product_name": "Kagoshima Premium Matcha Bulk",
+    "source_url": "https://kagoshimatea.com/products/kagoshima-premium-matcha-bulk",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:37.201Z",
+    "grade": null,
+    "cultivar": null,
+    "region": "kagoshima"
+  },
+  "855": {
+    "id": 855,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Strawberry",
+    "source_url": "https://aoimatcha.com/products/matcha-strawberry-200g",
+    "status": "no_attributes_found",
+    "httpStatus": 200
+  },
+  "856": {
+    "id": 856,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Blueberry",
+    "source_url": "https://aoimatcha.com/products/matcha-blueberry-200g",
+    "status": "no_attributes_found",
+    "httpStatus": 200
+  },
+  "857": {
+    "id": 857,
+    "brand": "AOI Matcha",
+    "product_name": "Sweet Matcha Green Tea",
+    "source_url": "https://aoimatcha.com/products/matcha-blueberry-200g-copy",
+    "status": "no_attributes_found",
+    "httpStatus": 200
+  },
+  "858": {
+    "id": 858,
+    "brand": "AOI Matcha",
+    "product_name": "Chef’s Premium Matcha",
+    "source_url": "https://aoimatcha.com/products/chef-s-premium-matcha-100g",
+    "status": "no_attributes_found",
+    "httpStatus": 200
+  },
+  "859": {
+    "id": 859,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Harmony (USDA Organic)",
+    "source_url": "https://aoimatcha.com/products/matcha-harmony-usda-organic-30g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:40.123Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
+  },
+  "860": {
+    "id": 860,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Serenity",
+    "source_url": "https://aoimatcha.com/products/matcha-serenity-30g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:40.859Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
+  },
+  "861": {
+    "id": 861,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Delight",
+    "source_url": "https://aoimatcha.com/products/matcha-delight-30g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:41.576Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
+  },
+  "862": {
+    "id": 862,
+    "brand": "AOI Matcha",
+    "product_name": "Matcha Supreme",
+    "source_url": "https://aoimatcha.com/products/matcha-supreme-30g",
+    "status": "ok",
+    "scrapedAt": "2026-10-06T01:44:42.347Z",
+    "grade": "ceremonial",
+    "cultivar": null,
+    "region": null
   }
 }
