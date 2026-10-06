@@ -1,0 +1,26 @@
+[
+  {
+    "brand": "Matcha Sense",
+    "product": "Ceremonial Grade Matcha — Signature Yame Blend (50g)",
+    "variants": { "1 Pack": 50, "2 Pack": 100, "6 Pack": 300, "12 Pack": 600 },
+    "evidence": "Product title states 50g; variant labels are multiples of one pack (matchasense.com, checked 2026-10-06)."
+  },
+  {
+    "brand": "Kyoto Yamasan",
+    "product": "Authentic Japanese Tea Ceremonial Grade Uji Matcha ASAGAO 50g(1.76oz)",
+    "variants": { "1 Bag": 50, "3 Bags": 150 },
+    "evidence": "Product title states 50g(1.76oz) per bag; variants are 1 bag and 3 bags (kyotoyamasan-onlinestore.com, checked 2026-10-06)."
+  },
+  {
+    "brand": "Matcha Maiden",
+    "product": "Supergreens Matcha Latte",
+    "variants": { "Supergreens Matcha Latte": 150 },
+    "evidence": "Product page states 150g per unit, 30 servings at 5g (matchamaiden.com, read 2026-10-06)."
+  },
+  {
+    "brand": "Matcha Maiden",
+    "product": "Strawberry Matcha Latte",
+    "variants": { "Strawberry Matcha Latte": 150 },
+    "evidence": "Product page states 150g per unit, 30 servings at 5g (matchamaiden.com, read 2026-10-06)."
+  }
+]

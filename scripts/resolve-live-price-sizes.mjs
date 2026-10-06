@@ -22,6 +22,18 @@ async function main() {
   const db = new SQL.Database(fs.readFileSync(DB_PATH));
   const live = JSON.parse(fs.readFileSync(LIVE_PATH, "utf-8"));
 
+  // Curated sizes for variants whose label carries no weight ("1 Pack", "1 Bag")
+  // but whose weight is explicitly stated elsewhere on the listing (usually the
+  // product title). Keyed by brand||product, then by the exact variant label.
+  // Each entry records the evidence; nothing here is inferred.
+  const overridesPath = path.join(__dirname, "..", "data", "price-size-overrides.json");
+  const overrides = new Map(
+    (fs.existsSync(overridesPath) ? JSON.parse(fs.readFileSync(overridesPath, "utf-8")) : []).map((o) => [
+      `${o.brand}||${o.product}`,
+      o,
+    ])
+  );
+  let overridden = 0;
   let resolved = 0;
   let stillUnresolved = 0;
 
@@ -37,6 +49,12 @@ async function main() {
 
     for (const v of entry.variants) {
       if (v.grams != null) continue;
+      const ov = overrides.get(`${entry.brand}||${entry.product_name}`);
+      if (ov && ov.variants[v.label] != null) {
+        v.grams = ov.variants[v.label];
+        overridden++;
+        continue;
+      }
       if (gramsPerServing != null) {
         const servings = parseServingsFromLabel(v.label);
         if (servings != null) {
@@ -50,6 +68,7 @@ async function main() {
   }
 
   fs.writeFileSync(LIVE_PATH, JSON.stringify(live, null, 2));
+  console.log(`Resolved via curated size overrides: ${overridden}`);
   console.log(`Resolved via servings-to-grams: ${resolved}`);
   console.log(`Still unresolved (excluded from product_prices): ${stillUnresolved}`);
 }

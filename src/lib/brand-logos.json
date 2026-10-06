@@ -378,5 +378,129 @@
   "zenkyu": {
     "file": "zenkyu.png",
     "ratio": 1.362
+  },
+  "ahista-tea": {
+    "file": "ahista-tea.png",
+    "ratio": 1
+  },
+  "aoi-matcha": {
+    "file": "aoi-matcha.png",
+    "ratio": 1.136
+  },
+  "ceremony-matcha": {
+    "file": "ceremony-matcha.png",
+    "ratio": 2.532
+  },
+  "chaism": {
+    "file": "chaism.png",
+    "ratio": 4.348
+  },
+  "cultivate-tea": {
+    "file": "cultivate-tea.png",
+    "ratio": 10.54
+  },
+  "fkro-matcha": {
+    "file": "fkro-matcha.png",
+    "ratio": 0.912
+  },
+  "funky-matcha": {
+    "file": "funky-matcha.svg",
+    "ratio": 5
+  },
+  "gotcha-matcha": {
+    "file": "gotcha-matcha.svg",
+    "ratio": 1.891
+  },
+  "howdy-matcha": {
+    "file": "howdy-matcha.png",
+    "ratio": 0.802
+  },
+  "kagoshima-tea": {
+    "file": "kagoshima-tea.png",
+    "ratio": 5.814
+  },
+  "kaju": {
+    "file": "kaju.png",
+    "ratio": 3.648
+  },
+  "kimikura": {
+    "file": "kimikura.png",
+    "ratio": 4.735
+  },
+  "kisshomori": {
+    "file": "kisshomori.png",
+    "ratio": 1
+  },
+  "kiyo-matcha": {
+    "file": "kiyo-matcha.png",
+    "ratio": 2.766
+  },
+  "kyoto-yamasan": {
+    "file": "kyoto-yamasan.png",
+    "ratio": 0.771
+  },
+  "maison-koko": {
+    "file": "maison-koko.png",
+    "ratio": 2.424
+  },
+  "matcha-botanicals": {
+    "file": "matcha-botanicals.svg",
+    "ratio": 7.91
+  },
+  "matcha-maiden": {
+    "file": "matcha-maiden.png",
+    "ratio": 8.414
+  },
+  "matcha-ninja": {
+    "file": "matcha-ninja.png",
+    "ratio": 10.667
+  },
+  "matcha-sense": {
+    "file": "matcha-sense.png",
+    "ratio": 3.03
+  },
+  "matcha-yu-tea": {
+    "file": "matcha-yu-tea.png",
+    "ratio": 3.164
+  },
+  "matchajp-selection": {
+    "file": "matchajp-selection.png",
+    "ratio": 3.623
+  },
+  "micro-ingredients": {
+    "file": "micro-ingredients.png",
+    "ratio": 4.303
+  },
+  "moocha-matcha": {
+    "file": "moocha-matcha.png",
+    "ratio": 2.571
+  },
+  "nami-matcha": {
+    "file": "nami-matcha.png",
+    "ratio": 1.041
+  },
+  "omgtea": {
+    "file": "omgtea.svg",
+    "ratio": 6.199
+  },
+  "paru-tea": {
+    "file": "paru-tea.png",
+    "ratio": 4
+  },
+  "river-and-stone-tea": {
+    "file": "river-and-stone-tea.png",
+    "ratio": 1.776
+  },
+  "the-tea-makers-of-london": {
+    "file": "the-tea-makers-of-london.svg",
+    "ratio": 1.711
+  },
+  "whisk-matcha": {
+    "file": "whisk-matcha.png",
+    "ratio": 1.818
+  },
+  "yunomi-matcha": {
+    "file": "yunomi-matcha.png",
+    "ratio": 0.963
   }
 }
