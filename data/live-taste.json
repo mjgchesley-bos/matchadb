@@ -68,7 +68,7 @@
     "product_name": "MatchaBiotics",
     "source_url": "https://www.amazon.com/MatchaBiotics-PRO-10-Organic-Matcha-Probiotics/dp/B0745SLQKP (Amazon listing found via search; direct fetch not completed due to dynamic-content/access limitations)",
     "status": "no_description_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "96": {
     "id": 96,
@@ -127,7 +127,7 @@
     "product_name": "Ceremonial Matcha",
     "source_url": "https://www.amazon.com/Greenergy-Ceremonial-Matcha-Premium-Japanese/dp/B0DNRKF7YW (Amazon US listing); also referenced: https://greenergymatcha.com/producto/matcha-calidad-ceremonial/ (Argentina brand site) and https://www.tienda.greenergymatcha.com/greenergy-matcha--ceremonial-30-gr--culinario-100-gr/up/MLAU280506792 (Argentina storefront, unreachable)",
     "status": "no_description_found",
-    "httpStatus": 200
+    "httpStatus": 404
   },
   "143": {
     "id": 143,
@@ -4096,5 +4096,76 @@
     "source_url": "https://republicoftea.com/products/organic-matcha-powder",
     "status": "no_description_found",
     "httpStatus": 200
+  },
+  "1176": {
+    "id": 1176,
+    "brand": "UnD",
+    "product_name": "Uji Matcha Rikou – Ceremonial Blend",
+    "source_url": "https://und-ny.com/shop/uji-matcha-ceremonial-blend-rikou/",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T02:05:27.954Z",
+    "description": "Rikou is an Uji, Kyoto ceremonial matcha blend made predominantly with Yabukita. Its matcha-forward bitterness, vivid green color, and compatibility with milk make it a practical choice for lattes and daily preparation."
+  },
+  "1177": {
+    "id": 1177,
+    "brand": "UnD",
+    "product_name": "Uji Matcha Shiun – Ceremonial Blend",
+    "source_url": "https://und-ny.com/shop/uji-matcha-shiun/",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T02:05:29.026Z",
+    "description": "Uji Matcha Shiun is a single-origin ceremonial matcha made entirely from tea leaves grown and processed in Uji, Kyoto, blended primarily with Okumidori. Refined umami, an elegant aroma, and a vivid green color."
+  },
+  "1178": {
+    "id": 1178,
+    "brand": "UnD",
+    "product_name": "Daily Matcha – Premium Blend",
+    "source_url": "https://und-ny.com/shop/matcha/",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T02:05:30.106Z",
+    "description": "Daily Matcha is a premium culinary matcha from Uji in Kyoto’s Yamashiro region. Vivid color and full aroma suit lattes, baking, desserts, and café recipes."
+  },
+  "1179": {
+    "id": 1179,
+    "brand": "UnD",
+    "product_name": "Uji Matcha Sui – Ceremonial Koicha Blend",
+    "source_url": "https://und-ny.com/shop/uji-matcha-sui/",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T02:05:31.178Z",
+    "description": "Sui is a koicha-grade Uji matcha—the highest grade of matcha—made only from first-flush Okumidori, Samidori, and Saemidori tencha. Shaded for 20 days and slowly stone-milled, it has pronounced sweetness, a dense texture, and a long, quiet finish."
+  },
+  "1181": {
+    "id": 1181,
+    "brand": "UnD",
+    "product_name": "Uji Matcha Samidori – Ceremonial Single Cultivar",
+    "source_url": "https://und-ny.com/shop/uji-matcha-samidori/",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T02:05:32.237Z",
+    "description": "Single-cultivar ceremonial matcha made from Samidori tencha, a cultivar developed in Uji, Kyoto. Gentle sweetness, restrained bitterness, and a clear green color with a clean finish."
+  },
+  "1182": {
+    "id": 1182,
+    "brand": "UnD",
+    "product_name": "Uji Matcha Ren – Ceremonial Reserve Blend",
+    "source_url": "https://und-ny.com/shop/uji-matcha-ren/",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1183": {
+    "id": 1183,
+    "brand": "UnD",
+    "product_name": "Yame Matcha – Ceremonial Single Cultivar",
+    "source_url": "https://und-ny.com/shop/yame-matcha/",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T02:05:34.289Z",
+    "description": "Single-cultivar first-flush Yabukita matcha from Yame, Fukuoka. A clean tea character, mellow sweetness, a light nutty note, and enough body for water or milk."
+  },
+  "1184": {
+    "id": 1184,
+    "brand": "UnD",
+    "product_name": "Organic Iga Matcha – Ceremonial Single Cultivar",
+    "source_url": "https://und-ny.com/shop/iga-matcha/",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T02:05:35.219Z",
+    "description": "Certified organic, single-cultivar Yabukita matcha from Iga, Mie. The inland growing environment includes morning mist, day-to-night temperature shifts, and producer-described clay-rich soil. The cup has a concentrated aroma and firm tea structure."
   }
 }

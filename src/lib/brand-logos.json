@@ -562,5 +562,13 @@
   "yoko-matcha": {
     "file": "yoko-matcha.png",
     "ratio": 1.941
+  },
+  "premium-health-japan": {
+    "file": "premium-health-japan.png",
+    "ratio": 1.582
+  },
+  "wakokoro-tea": {
+    "file": "wakokoro-tea.png",
+    "ratio": 1
   }
 }

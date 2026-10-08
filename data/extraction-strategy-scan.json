@@ -1527,5 +1527,18 @@
     "hasProductJsonTag": false,
     "hasShopifyMarker": true,
     "hasJsonLdProduct": true
+  },
+  {
+    "domain": "und-ny.com",
+    "count": 10,
+    "url": "https://und-ny.com/shop/uji-matcha-ceremonial-kirica/",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "json_ld",
+    "hasVarMeta": false,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true,
+    "note": "Classified manually: WooCommerce site whose product pages carry Product JSON-LD (no Shopify variants)."
   }
 ]

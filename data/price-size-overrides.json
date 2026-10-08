@@ -85,5 +85,437 @@
       "3 Tins": 90
     },
     "evidence": "Product title states 1.06oz (the standard 30g tin); variants are 1 tin and 3 tins (kenkomatcha.com, checked 2026-10-07)."
+  },
+  {
+    "brand": "Kusmi Tea",
+    "product": "Ceremonial Matcha",
+    "variants": {
+      "Ceremonial Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…– Organic Japanese, 30g…\"); verified against the page text (https://www.kusmitea.com/en/products/ceremonial-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Kusmi Tea",
+    "product": "Premium Matcha",
+    "variants": {
+      "Premium Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…ea Powder – Organic 30g Pack…\"); verified against the page text (https://www.kusmitea.com/en/products/premium-matcha-1, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "Ceremonial Matcha Green Tea Powder",
+    "variants": {
+      "Ceremonial Matcha Green Tea Powder": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…um quality you can taste from first sip Net Weight: 1.0oz (28g) Package Size: Dimension…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/ceremonial-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "Culinary Matcha Green Tea Powder",
+    "variants": {
+      "Culinary Matcha Green Tea Powder": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…en color and the full flavor of Matcha. Net Weight: 1.0oz (28g) Package Size: Dimension…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/culinary-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "Kai-yo no Mukashi Matcha",
+    "variants": {
+      "Kai-yo no Mukashi Matcha": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…g of this luxuriously exquisite Matcha. Net Weight: 1.0oz (28g) How to Prepare: Place 1…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/kai-yo-no-mukashi, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "MatchaBooster Genmai",
+    "variants": {
+      "MatchaBooster Genmai": 79.9
+    },
+    "evidence": "Product page states the package weight (\"…ed Rice) has savory and toasted flavor. Net Weight: 2.82oz / 80g Package Size: Dimension…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/matchabooster-genmai, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "MatchaBooster Sweetened",
+    "variants": {
+      "MatchaBooster Sweetened": 149.7
+    },
+    "evidence": "Product page states the package weight (\"…en tea flavor with a hint of sweetness. Net Weight: 5.28oz / 150g Package Size: Dimensio…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/matchabooster-sweetened, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "MatchaBooster Unsweetened",
+    "variants": {
+      "MatchaBooster Unsweetened": 79.9
+    },
+    "evidence": "Product page states the package weight (\"…st like traditional Japanese green tea. Net Weight: 2.82oz / 80g Package Size: Dimension…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/matchabooster-unsweetened, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "MatchaBooster Yuzu",
+    "variants": {
+      "MatchaBooster Yuzu": 119.9
+    },
+    "evidence": "Product page states the package weight (\"…ly refreshing with a hint of sweetness. Net Weight: 4.23oz / 120g Package Size: Dimensio…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/matchabooster-yuzu, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "Re-Q Matcha Latte",
+    "variants": {
+      "Re-Q Matcha Latte - 7pk.": 84
+    },
+    "evidence": "Product page states the package weight (\"…ng -Easy preparation -Lightly Sweetened Net Weight: 0.4oz x 7packets/ Net Wt. 2.8oz (84…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/re-q-matcha-latte, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "Shiki Matcha Green Tea Powder",
+    "variants": {
+      "Shiki Matcha Green Tea Powder - Universal Quality": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…ht or mixing into your favorite drinks. Net Weight: 1.0oz (28g) Package Size: Dimension…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/shiki-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Maeda-en",
+    "product": "Tsuji-Midori",
+    "variants": {
+      "Tsuji-Midori": 30.1
+    },
+    "evidence": "Product page states the package weight (\"…ed quantity available in special price. Net Weight: 1.06 oz (30g) Package Size: Dimension…\"); verified against the page text (https://maeda-en.com/collections/matcha/products/tsuji-midori, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matcha Konomi",
+    "product": "Amaya Matcha (Ceremonial)",
+    "variants": {
+      "Amaya Matcha - Ceremonial Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…on guarantee on the first purchase of a 30g tin. If you are not satisfied wit…\"); verified against the page text (https://matchakonomi.com/products/amaya-premium-ceremonial-japanese-matcha-green-tea-powder, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matchaeologist",
+    "product": "Matsu Ceremonial Matcha",
+    "variants": {
+      "Intense with a mellow roasted flavor": 20
+    },
+    "evidence": "Product page states the package weight (\"…™ Ceremonial Matcha 20g   Matchaeologist USA…\"); verified against the page text (https://www.matchaeologist.com/products/matsu-ceremonial-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matchaeologist",
+    "product": "Maya Ceremonial Matcha",
+    "variants": {
+      "Balanced with refined bright notes": 100
+    },
+    "evidence": "Product page states the package weight (\"…™ Ceremonial Matcha 100g   Matchaeologist US…\"); verified against the page text (https://www.matchaeologist.com/products/maya-ceremonial-matcha-100g, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matchaeologist",
+    "product": "Meiko Ceremonial Matcha",
+    "variants": {
+      "Full-bodied with subtle floral aromas": 20
+    },
+    "evidence": "Product page states the package weight (\"…™ Ceremonial Matcha 20g   Matchaeologist USA…\"); verified against the page text (https://www.matchaeologist.com/products/meiko-ceremonial-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matchaeologist",
+    "product": "Midori Culinary Matcha",
+    "variants": {
+      "Rich with robust, well-rounded flavors": 20
+    },
+    "evidence": "Product page states the package weight (\"…ri™ Culinary Matcha 20g   Matchaeologist USA…\"); verified against the page text (https://www.matchaeologist.com/products/midori-culinary-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matchaeologist",
+    "product": "Mirai Culinary Matcha",
+    "variants": {
+      "Vibrant with bright earthy undertones": 1000
+    },
+    "evidence": "Product page states the package weight (\"…ai™ Culinary Matcha 1kg   Matchaeologist USA…\"); verified against the page text (https://www.matchaeologist.com/products/mirai-culinary-matcha-1kg, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matchaeologist",
+    "product": "Misaki Ceremonial Matcha",
+    "variants": {
+      "Ambrosial with sweet umami undertones": 20
+    },
+    "evidence": "Product page states the package weight (\"…™ Ceremonial Matcha 20g   Matchaeologist USA…\"); verified against the page text (https://www.matchaeologist.com/products/misaki-ceremonial-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Mizuba Tea Co",
+    "product": "Yugana Matcha Green Tea",
+    "variants": {
+      "Yūgana Matcha Green Tea": 40
+    },
+    "evidence": "Product page states the package weight (\"…free. Suitable for koicha preparation. 40g tin. Store in the refrigerator on…\"); verified against the page text (https://mizubatea.com/products/yugana-matcha-green-tea, checked 2026-10-07)."
+  },
+  {
+    "brand": "Ocha & Co.",
+    "product": "Kagoshima Matcha Green Tea Powder",
+    "variants": {
+      "Kagoshima Matcha Green Tea Powder": 50
+    },
+    "evidence": "Product page states the package weight (\"…MATCHA GREEN TEA POWDER Specifications: Quantity: 50g Origin: Kagoshima Cultivar: 7…\"); verified against the page text (https://www.ochaandco.com/en-us/products/kagoshima-matcha-japanese-green-tea-powder-copy, checked 2026-10-07)."
+  },
+  {
+    "brand": "Ocha & Co.",
+    "product": "Kyoto Uji Matcha Green Tea Powder",
+    "variants": {
+      "Kyoto Uji Matcha Green Tea Powder": 50
+    },
+    "evidence": "Product page states the package weight (\"…MATCHA GREEN TEA POWDER Specifications: Quantity: 50g Origin: Uji, Kyoto Cultivar:…\"); verified against the page text (https://www.ochaandco.com/en-us/products/kyoto-uji-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Ocha & Co.",
+    "product": "Organic Matcha Green Tea Powder",
+    "variants": {
+      "Organic Matcha Green Tea Powder": 100
+    },
+    "evidence": "Product page states the package weight (\"…MATCHA GREEN TEA POWDER Specifications: Quantity: 100g Origin: Shizuoka Cultivar: Si…\"); verified against the page text (https://www.ochaandco.com/en-us/products/organic-japanese-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "Ocha & Co.",
+    "product": "Shizuoka Matcha Green Tea Powder",
+    "variants": {
+      "Shizuoka Matcha Green Tea Powder": 50
+    },
+    "evidence": "Product page states the package weight (\"…MATCHA GREEN TEA POWDER Specifications: Quantity: 50g Origin: Shizuoka Cultivar: 40…\"); verified against the page text (https://www.ochaandco.com/en-us/products/shizuoka-matcha-japanese-green-tea-powder, checked 2026-10-07)."
+  },
+  {
+    "brand": "Ooika",
+    "product": "Ujihikari",
+    "variants": {
+      "Ujihikari Matcha - Yamazakiさん Gokasho Uji — Ooika (覆い香)": 10
+    },
+    "evidence": "Product page states the package weight (\"…e-Milled: Fresh Ground in Princeton, NJ Amount: 10 grams Get notified by email when th…\"); verified against the page text (https://ooika.co/shop/p/ujihikari-matcha-yamazaki-gokasho-uji, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Ichi Matcha",
+    "variants": {
+      "Organic Ichi Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…ing matcha - Ceremonial Grade Packaging 30g Box $27.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/matcha-ichi.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Kokoro Matcha",
+    "variants": {
+      "Organic Kokoro Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…s - Premium ceremonial matcha Packaging 30g Box $38.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/matcha-kokoro.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Matcha Asanoka",
+    "variants": {
+      "Organic Asanoka Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…ed green tea – Ceremony grade Packaging 30g Box $50.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/d500052am-en.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Matcha Kirishima",
+    "variants": {
+      "Organic Kirishima Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…ed green tea – Ceremony grade Packaging 30g Box $59.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/d500019am-en.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Mint Matcha",
+    "variants": {
+      "Organic Mint Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…t Matcha Mint-flavored Matcha Packaging 30g Box $30.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/organic-mint-matcha.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Neko Matcha",
+    "variants": {
+      "Organic Neko Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…een tea from Kagoshima, Japan Packaging 30g Box $55.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/d100031am-en.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Rose Matcha",
+    "variants": {
+      "Organic Rose Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…e Matcha Rose-flavored Matcha Packaging 30g Box $30.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/organic-rose-matcha.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Palais des Thés",
+    "product": "Organic Vanilla Matcha",
+    "variants": {
+      "Organic Vanilla Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…atcha Vanilla-flavored Matcha Packaging 30g Box $30.00 Qty Add to Cart Organi…\"); verified against the page text (https://us.palaisdesthes.com/en_us/organic-vanilla-matcha.html, checked 2026-10-07)."
+  },
+  {
+    "brand": "Takaokaya",
+    "product": "Culinary Grade Matcha (Bulk)",
+    "variants": {
+      "Culinary Grade Matcha in Bulk": 400
+    },
+    "evidence": "Product page states the package weight (\"…imentation with matcha-infused recipes. Net weight: 400G Share 0 Tweet 0 Pin it 0 Fanc…\"); verified against the page text (https://www.takaokayausa.com/collections/tea/products/culinary-grade-matcha-in-bulk, checked 2026-10-07)."
+  },
+  {
+    "brand": "Takaokaya",
+    "product": "Green Breeze Organic Matcha (Bulk)",
+    "variants": {
+      "Green Breeze Organic Matcha in Bulk": 300
+    },
+    "evidence": "Product page states the package weight (\"…consistent flavor in larger quantities. Net weight: 300G Share 0 Tweet 0 Pin it 0 Fanc…\"); verified against the page text (https://www.takaokayausa.com/products/green-breeze-organic-green-tea-powder, checked 2026-10-07)."
+  },
+  {
+    "brand": "Takaokaya",
+    "product": "Organic Matcha \"Silver\" Grade",
+    "variants": {
+      "Organic Matcha \"Silver\" Grade": 30
+    },
+    "evidence": "Product page states the package weight (\"…cha is crafted for culinary excellence! Net weight: 30G Share 0 Tweet 0 Pin it 0 Fanc…\"); verified against the page text (https://www.takaokayausa.com/products/shizuoka-matcha-organic-silver-grade, checked 2026-10-07)."
+  },
+  {
+    "brand": "Takaokaya",
+    "product": "Organic Matcha Ceremonial \"Gold\" Grade",
+    "variants": {
+      "Organic Matcha Ceremonial \"Gold\" Grade": 30
+    },
+    "evidence": "Product page states the package weight (\"…tea preparation or elevated beverages. Net weight: 30G Share 0 Tweet 0 Pin it 0 Fanc…\"); verified against the page text (https://www.takaokayausa.com/products/shizuoka-matcha-organic-gold-grade, checked 2026-10-07)."
+  },
+  {
+    "brand": "TeaDealers",
+    "product": "Asahi 6007",
+    "variants": {
+      "Japan: 2025 National Competition 7th Place Winner Asahi No. 6007 Matcha": 20
+    },
+    "evidence": "Product page states the package weight (\"…aftertaste Servings: 4 x 5g for Koicha Net weight: 20g (0.71oz) *Matcha of this qual…\"); verified against the page text (https://www.teadealers.com/products/japan-asahi-6007-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "TeaDealers",
+    "product": "Genou",
+    "variants": {
+      "Japan: Genou Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…eet, tart green apple Servings: 15 x 2g Net weight: 30g (1.06oz) Shelf Life: Our fres…\"); verified against the page text (https://www.teadealers.com/products/japan-genou-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "TeaDealers",
+    "product": "Shouraku",
+    "variants": {
+      "Japan: Shouraku Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…itterness, deep green Servings: 15 x 2g Net weight: 30g (1.06oz) Shelf Life: Our fres…\"); verified against the page text (https://www.teadealers.com/products/japan-shouraku-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "TeaDealers",
+    "product": "Shousui",
+    "variants": {
+      "Japan: Shousui Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…al Lily of the Valley Servings: 15 x 2g Net weight: 30g (1.06oz) Shelf Life: Our fres…\"); verified against the page text (https://www.teadealers.com/products/japan-shousui-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "TeaDealers",
+    "product": "Sokuchouzan",
+    "variants": {
+      "Japan: Sokuchouzan Matcha": 30
+    },
+    "evidence": "Product page states the package weight (\"…tly baked, refreshing Servings: 15 x 2g Net weight: 30g (1.06oz) Shelf Life: Our fres…\"); verified against the page text (https://www.teadealers.com/products/japan-sokuchouzan-matcha, checked 2026-10-07)."
+  },
+  {
+    "brand": "The Tao of Tea",
+    "product": "Matcha Ceremonial Grade",
+    "variants": {
+      "Matcha, Ceremonial Grade": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…yle Green , Matcha Packaging Loose Leaf Size 1 ounce Palate Marine , Sweet About T…\"); verified against the page text (https://taooftea.com/product/matcha-ceremonial-grade/, checked 2026-10-07)."
+  },
+  {
+    "brand": "The Tao of Tea",
+    "product": "Matcha Grade A",
+    "variants": {
+      "Matcha, Grade A": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…yle Green , Matcha Packaging Loose Leaf Size 1 ounce Palate Marine , Sweet About T…\"); verified against the page text (https://taooftea.com/product/matcha-grade-a/, checked 2026-10-07)."
+  },
+  {
+    "brand": "The Tao of Tea",
+    "product": "Special Grade Matcha",
+    "variants": {
+      "Special Grade Matcha": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…yle Green , Matcha Packaging Loose Leaf Size 1 ounce Palate Sweet About This Produ…\"); verified against the page text (https://taooftea.com/product/special-grade-matcha/, checked 2026-10-07)."
+  },
+  {
+    "brand": "The Tao of Tea",
+    "product": "Sweet Matcha",
+    "variants": {
+      "Sweet Matcha": 136.1
+    },
+    "evidence": "Product page states the package weight (\"…Packaging Loose Leaf Size Classic Size Tin (4.8 oz) Palate Sweet , Vegetal About…\"); verified against the page text (https://taooftea.com/product/sweet-matcha/, checked 2026-10-07)."
+  },
+  {
+    "brand": "The Tao of Tea",
+    "product": "Yame Matcha",
+    "variants": {
+      "Yame Matcha": 28.3
+    },
+    "evidence": "Product page states the package weight (\"…yle Green , Matcha Packaging Loose Leaf Size 1 ounce Palate Sweet About This Produ…\"); verified against the page text (https://taooftea.com/product/yame-matcha/, checked 2026-10-07)."
+  },
+  {
+    "brand": "The Tao of Tea",
+    "product": "Yuzu Matcha",
+    "variants": {
+      "Yuzu Matcha": 85
+    },
+    "evidence": "Product page states the package weight (\"…. Add to cart DETAILS Size Classic Size Tin (3 oz) Packaging Loose Leaf Palate…\"); verified against the page text (https://taooftea.com/product/yuzu-matcha/, checked 2026-10-07)."
+  },
+  {
+    "brand": "KIMIKURA",
+    "product": "Matcha Green Tea YUZU 柚子 Citrus [Organic Culinary]",
+    "variants": {
+      "Matcha Green Tea YUZU 柚子 Citrus [Organic Culinary]": 30
+    },
+    "evidence": "Product page states the package weight (\"…increment\":1}}] Product details Package size 30g tin Grade Culinary Certificat…\"); verified against the page text (https://kimikuratea.com/products/organic-matcha-yuzu, checked 2026-10-07)."
+  },
+  {
+    "brand": "KIMIKURA",
+    "product": "Matcha Green Tea Nishio 西尾 [Premium Ceremonial Grade]",
+    "variants": {
+      "Matcha Green Tea Nishio 西尾 [Premium Ceremonial Grade]": 30
+    },
+    "evidence": "Product page states the package weight (\"…m Ceremonial Grade] 30g/1oz Tin | Japanese Tea KIM…\"); verified against the page text (https://kimikuratea.com/products/ceremonial-matcha-nishio, checked 2026-10-07)."
+  },
+  {
+    "brand": "Kusmi Tea",
+    "product": "Matcha premium",
+    "variants": {
+      "Matcha premium": 30
+    },
+    "evidence": "Product page states the package weight (\"…oudre   30g   Japon &…\"); verified against the page text (https://kusmitea.com/products/matcha-premium, checked 2026-10-07)."
+  },
+  {
+    "brand": "Kusmi Tea",
+    "product": "Matcha cérémonie",
+    "variants": {
+      "Matcha cérémonie": 30
+    },
+    "evidence": "Product page states the package weight (\"…oudre   30g   Japon &…\"); verified against the page text (https://kusmitea.com/products/matcha-ceremonie, checked 2026-10-07)."
+  },
+  {
+    "brand": "UnD",
+    "product": "Uji Matcha Kirica – Ceremonial Blend",
+    "variants": {
+      "Uji Matcha Kirica | Ceremonial Blend": 20
+    },
+    "evidence": "Product page Details block states \"Net Weight: 20g\" (und-ny.com, checked 2026-10-07)."
+  },
+  {
+    "brand": "UnD",
+    "product": "Uji Matcha Rikou – Ceremonial Blend",
+    "variants": {
+      "Uji Matcha Rikou | Ceremonial Blend": 20
+    },
+    "evidence": "Product page Details block states \"Net Weight: 20g\" (und-ny.com, checked 2026-10-07)."
   }
 ]
