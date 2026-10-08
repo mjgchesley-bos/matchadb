@@ -56,6 +56,7 @@ const NEEDS_INVERT = new Set([
   "chaism",
   "omgtea",
   "matcha-maiden",
+  "matcha-crew",
 ]);
 
 export function logoNeedsInvert(brandName: string): boolean {

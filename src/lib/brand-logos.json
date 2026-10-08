@@ -502,5 +502,65 @@
   "yunomi-matcha": {
     "file": "yunomi-matcha.png",
     "ratio": 0.963
+  },
+  "azuma-tea-garden": {
+    "file": "azuma-tea-garden.gif",
+    "ratio": 1
+  },
+  "cha-ginza": {
+    "file": "cha-ginza.png",
+    "ratio": 1.337
+  },
+  "furuichi-seicha": {
+    "file": "furuichi-seicha.png",
+    "ratio": 2.331
+  },
+  "kanes-tea": {
+    "file": "kanes-tea.png",
+    "ratio": 3.636
+  },
+  "kurihara-tea": {
+    "file": "kurihara-tea.png",
+    "ratio": 2.679
+  },
+  "nakai-tea-farm": {
+    "file": "nakai-tea-farm.png",
+    "ratio": 1
+  },
+  "oyaizu-tea": {
+    "file": "oyaizu-tea.svg",
+    "ratio": 4.237
+  },
+  "rokubei": {
+    "file": "rokubei.png",
+    "ratio": 1.911
+  },
+  "uejima-tea-farm": {
+    "file": "uejima-tea-farm.png",
+    "ratio": 1.5
+  },
+  "aprika-life": {
+    "file": "aprika-life.png",
+    "ratio": 3.729
+  },
+  "beautiful-taiwan-tea": {
+    "file": "beautiful-taiwan-tea.png",
+    "ratio": 1.786
+  },
+  "matcha-crew": {
+    "file": "matcha-crew.png",
+    "ratio": 2.323
+  },
+  "matcha-union": {
+    "file": "matcha-union.svg",
+    "ratio": 1.601
+  },
+  "wild-foods": {
+    "file": "wild-foods.png",
+    "ratio": 4.546
+  },
+  "yoko-matcha": {
+    "file": "yoko-matcha.png",
+    "ratio": 1.941
   }
 }

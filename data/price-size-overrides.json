@@ -2,25 +2,88 @@
   {
     "brand": "Matcha Sense",
     "product": "Ceremonial Grade Matcha — Signature Yame Blend (50g)",
-    "variants": { "1 Pack": 50, "2 Pack": 100, "6 Pack": 300, "12 Pack": 600 },
+    "variants": {
+      "1 Pack": 50,
+      "2 Pack": 100,
+      "6 Pack": 300,
+      "12 Pack": 600
+    },
     "evidence": "Product title states 50g; variant labels are multiples of one pack (matchasense.com, checked 2026-10-06)."
   },
   {
     "brand": "Kyoto Yamasan",
     "product": "Authentic Japanese Tea Ceremonial Grade Uji Matcha ASAGAO 50g(1.76oz)",
-    "variants": { "1 Bag": 50, "3 Bags": 150 },
+    "variants": {
+      "1 Bag": 50,
+      "3 Bags": 150
+    },
     "evidence": "Product title states 50g(1.76oz) per bag; variants are 1 bag and 3 bags (kyotoyamasan-onlinestore.com, checked 2026-10-06)."
   },
   {
     "brand": "Matcha Maiden",
     "product": "Supergreens Matcha Latte",
-    "variants": { "Supergreens Matcha Latte": 150 },
+    "variants": {
+      "Supergreens Matcha Latte": 150
+    },
     "evidence": "Product page states 150g per unit, 30 servings at 5g (matchamaiden.com, read 2026-10-06)."
   },
   {
     "brand": "Matcha Maiden",
     "product": "Strawberry Matcha Latte",
-    "variants": { "Strawberry Matcha Latte": 150 },
+    "variants": {
+      "Strawberry Matcha Latte": 150
+    },
     "evidence": "Product page states 150g per unit, 30 servings at 5g (matchamaiden.com, read 2026-10-06)."
+  },
+  {
+    "brand": "Mizuba Tea Co",
+    "product": "An Oh, How Civilized Organic Matcha!",
+    "variants": {
+      "An Oh, How Civilized Organic Matcha!": 30
+    },
+    "evidence": "Product description: 'Our 30g tin of organic, first-harvest matcha' (mizubatea.com, checked 2026-10-07)."
+  },
+  {
+    "brand": "Mizuba Tea Co",
+    "product": "Yabukita Matcha",
+    "variants": {
+      "Yabukita Matcha": 30
+    },
+    "evidence": "Product description: 'Size: 30g Tin (15 servings)' (mizubatea.com, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matcha Union",
+    "product": "Strawberry Matcha",
+    "variants": {
+      "Strawberry Matcha": 30
+    },
+    "evidence": "Product description: 'Net weight: 30g' (matchaunion.com, checked 2026-10-07)."
+  },
+  {
+    "brand": "Matcha Union",
+    "product": "Vanilla Matcha",
+    "variants": {
+      "Vanilla Matcha": 30
+    },
+    "evidence": "Product description: 'Net weight: 30g' (matchaunion.com, checked 2026-10-07)."
+  },
+  {
+    "brand": "Beautiful Taiwan Tea",
+    "product": "Premium Organic Matcha (Kagoshima)",
+    "variants": {
+      "40gr, (1 pouch) $23.99": 40,
+      "160gr, (4 pouches) $88.00": 160,
+      "320gr, (8 pouches) $160.00": 320
+    },
+    "evidence": "Variant labels state 40gr per pouch and the multi-pouch totals; listing title says 40g (beautifultaiwantea.com, checked 2026-10-07)."
+  },
+  {
+    "brand": "Kenko Tea",
+    "product": "Organic Matcha Ceremonial Grade 1.06oz",
+    "variants": {
+      "1 Tin": 30,
+      "3 Tins": 90
+    },
+    "evidence": "Product title states 1.06oz (the standard 30g tin); variants are 1 tin and 3 tins (kenkomatcha.com, checked 2026-10-07)."
   }
 ]

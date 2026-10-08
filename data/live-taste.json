@@ -68,7 +68,7 @@
     "product_name": "MatchaBiotics",
     "source_url": "https://www.amazon.com/MatchaBiotics-PRO-10-Organic-Matcha-Probiotics/dp/B0745SLQKP (Amazon listing found via search; direct fetch not completed due to dynamic-content/access limitations)",
     "status": "no_description_found",
-    "httpStatus": 404
+    "httpStatus": 200
   },
   "96": {
     "id": 96,
@@ -127,7 +127,7 @@
     "product_name": "Ceremonial Matcha",
     "source_url": "https://www.amazon.com/Greenergy-Ceremonial-Matcha-Premium-Japanese/dp/B0DNRKF7YW (Amazon US listing); also referenced: https://greenergymatcha.com/producto/matcha-calidad-ceremonial/ (Argentina brand site) and https://www.tienda.greenergymatcha.com/greenergy-matcha--ceremonial-30-gr--culinario-100-gr/up/MLAU280506792 (Argentina storefront, unreachable)",
     "status": "no_description_found",
-    "httpStatus": 404
+    "httpStatus": 200
   },
   "143": {
     "id": 143,
@@ -3275,5 +3275,826 @@
     "status": "ok",
     "scrapedAt": "2026-10-06T02:23:06.425Z",
     "description": "The pinnacle of the MEIYO collection\nMEIYO MATCHAIMPERIAL\nA distinguished matcha presented as Minister of Agriculture, Forestry and Fisheries Award-winning tea. Explore the highest tier in the MEIYO range, with a rich green color, deep body and remarkably low bitterness. Exceptional as koicha, it is a tea to savor on its own.\nAward-Winning Tea MEIYO's Highest Tier Rich Green Color Deep Body Low Bitterness Excellent for Koicha\nWhy choose IMPERIAL?\nA new pinnacle for MEIYO\nPositioned above Nyufune-no-Kaze, IMPERIAL is the most distinguished matcha in this collection.\nRecognized in Japan\nThe IMPERIAL can is marked “Minister of Agriculture, Forestry and Fisheries Award-winning tea” — a meaningfu"
+  },
+  "1072": {
+    "id": 1072,
+    "brand": "Matcha Union",
+    "product_name": "Strawberry Matcha",
+    "source_url": "https://matchaunion.com/products/strawberry-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:14.810Z",
+    "description": "Ceremonial matcha meets sweet strawberry\nOur Strawberry Matcha blends Ceremonial Grade matcha with natural strawberry flavouring for a fruity, refreshing take on your daily matcha. Light, sweet, and easy to drink, especially iced or as a latte.\nNo added sugar, no artificial flavouring. Just matcha and natural strawberry.\nBest for: Strawberry lattes, iced matcha, smoothies, something fun Net weight: 30g"
+  },
+  "1073": {
+    "id": 1073,
+    "brand": "Matcha Union",
+    "product_name": "Vanilla Matcha",
+    "source_url": "https://matchaunion.com/products/vanilla-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:15.730Z",
+    "description": "Ceremonial matcha with a vanilla twist\nOur Vanilla Matcha blends premium Japanese green tea powder with natural vanilla flavouring for a softer, sweeter take on your daily matcha. Creamy and easy to drink, especially as a latte or iced.\nNo added sugar, no artificial flavouring. Just matcha and natural vanilla.\nBest for: Vanilla lattes, iced matcha, something a little different Net weight: 30g"
+  },
+  "1074": {
+    "id": 1074,
+    "brand": "Matcha Union",
+    "product_name": "Premium Matcha 100g",
+    "source_url": "https://matchaunion.com/products/premium-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:16.556Z",
+    "description": "Your everyday matcha. Smooth, full-bodied, and made for lattes.\nSourced from Shizuoka, Japan's largest tea-growing region, our Premium Matcha combines first and second flush leaves for a fuller, bolder flavour that holds its own with milk. No added sugar, no additives, just 100% Japanese green tea powder.\nWhether you whisk it hot, blend it iced, or froth it into your morning latte, this is the matcha you'll come back to every day.\nOrigin: Shizuoka, Japan Cultivar: Samidori and YabukitaHarvest: First and second flush Best for: Matcha lattes, iced matcha, daily drinking Net weight: 100g"
+  },
+  "1075": {
+    "id": 1075,
+    "brand": "Matcha Union",
+    "product_name": "Ceremonial Matcha 30g",
+    "source_url": "https://matchaunion.com/products/ceremonial-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:17.504Z",
+    "description": "Smooth, mellow, naturally sweet.\nOur organic Ceremonial Grade is made from first-harvest Okumidori leaves from Uji, Kyoto, Japan's most ancient and celebrated tea region. Shade-grown and stone-ground within weeks of harvest, it has a delicate, rounded sweetness with rich umami and zero bitterness.\nEnjoy whisked with water for a quiet moment, or as the base of a delicious matcha latte.\nOrigin: Uji, Kyoto, Japan Cultivar: Okumidori Harvest: First flush Best for: Traditional tea, premium matcha lattesNet weight: 30g"
+  },
+  "1081": {
+    "id": 1081,
+    "brand": "Wild Foods",
+    "product_name": "Wild Matcha Green Tea Powder",
+    "source_url": "https://wildfoods.co/products/ceremonial-matcha-powder",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:14.996Z",
+    "description": "Ceremonial Matcha Powder offers the ultimate matcha experience. Vibrant green, finely milled, and rich in naturally sweet, umami flavor. Made from shade-grown Camellia sinensis tea leaves and stone-ground to a silky powder, this matcha is perfect for daily rituals or mindful moments.\nWhether whisked straight with hot water or blended into a creamy latte, it delivers smooth and sustained energy. Its balanced, gentle energy makes it both a wellness essential and a flavor-forward favorite\nSimple. Pure. Elevated."
+  },
+  "1082": {
+    "id": 1082,
+    "brand": "Beautiful Taiwan Tea",
+    "product_name": "Premium Organic Matcha (Kagoshima)",
+    "source_url": "https://beautifultaiwantea.com/products/kagoshima-matcha-green-tea",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1083": {
+    "id": 1083,
+    "brand": "Yōko Matcha",
+    "product_name": "Organic Ceremonial Grade Matcha",
+    "source_url": "https://yokomatcha.com/products/organic-ceremonial-grade-matcha-green-tea",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:15.026Z",
+    "description": "Yōko Matcha Organic Ceremonial Grade Matcha is made from first-harvest, single-cultivar Yabukita tea leaves shade-grown in Hon-Yama, Shizuoka, Japan. The leaves are processed into tencha and bead-milled in Japan, producing a smooth, naturally sweet matcha with a clean finish for traditional preparation or matcha lattes."
+  },
+  "1085": {
+    "id": 1085,
+    "brand": "Aprika Life",
+    "product_name": "Culinary Grade Matcha Powder for Latte, Smoothies and Recipes - 1.1 LB",
+    "source_url": "https://aprikamatcha.com/products/culinary-grade-matcha-powder-for-latte-smoothies-and-recipes-1-1-lb",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:15.012Z",
+    "description": "One of the best things about matcha is how easily it pairs with other ingredients. If you've been seeing matcha latte recipes all over TikTok and Instagram, this culinary grade matcha is a great place to start. Made from second-harvest Yabukita tea leaves, it has a bold, full-bodied flavor with no harsh bitterness, making it ideal for lattes, smoothies and other recipes. It holds its rich taste well when mixed with milk, honey, fruit, and other ingredients. USDA and JAS certified, it is grown and processed in Japan under strict quality and safety standards."
+  },
+  "1086": {
+    "id": 1086,
+    "brand": "Aprika Life",
+    "product_name": "Culinary Grade Matcha Powder for Latte, Smoothies and Recipes - 3.5 Oz",
+    "source_url": "https://aprikamatcha.com/products/culinary-grade-matcha-powder-for-latte-smoothies-and-recipes-3-5-oz",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:16.397Z",
+    "description": "One of the best things about matcha is how easily it pairs with other ingredients. If you've been seeing matcha latte recipes all over TikTok and Instagram, this culinary grade matcha is a great place to start. Made from second-harvest Yabukita tea leaves, it has a bold, full-bodied flavor with no harsh bitterness, making it ideal for lattes, smoothies and other recipes. It holds its rich taste well when mixed with milk, honey, fruit, and other ingredients. USDA and JAS certified, it is grown and processed in Japan under strict quality and safety standards."
+  },
+  "1087": {
+    "id": 1087,
+    "brand": "Aprika Life",
+    "product_name": "Culinary Grade Organic Matcha Powder",
+    "source_url": "https://aprikamatcha.com/products/culinary-grade-organic-matcha-powder",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1088": {
+    "id": 1088,
+    "brand": "Aprika Life",
+    "product_name": "Ceremonial Grade Matcha Latte Powder Mix with Natural Vanilla Flavor",
+    "source_url": "https://aprikamatcha.com/products/ceremonial-grade-matcha-latte-powder-mix-with-natural-vanilla-flavor",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1089": {
+    "id": 1089,
+    "brand": "Aprika Life",
+    "product_name": "Organic Japanese Ceremonial Grade Matcha Green Tea Powder",
+    "source_url": "https://aprikamatcha.com/products/organic-japanese-ceremonial-grade-matcha-green-tea-powder",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1090": {
+    "id": 1090,
+    "brand": "Aprika Life",
+    "product_name": "Organic Japanese Matcha Green Tea Powder",
+    "source_url": "https://aprikamatcha.com/products/matcha-green-tea-powder",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1091": {
+    "id": 1091,
+    "brand": "Tezumi",
+    "product_name": "Kotobuki - Uji Matcha",
+    "source_url": "https://tezumi.com/products/kotobuki-uji-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1092": {
+    "id": 1092,
+    "brand": "Tezumi",
+    "product_name": "Kyō-no-Homare - Uji Matcha",
+    "source_url": "https://tezumi.com/products/kyo-no-homare-uji-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1093": {
+    "id": 1093,
+    "brand": "Tezumi",
+    "product_name": "Tsuji-no-Shiro - Shirakawa Matcha",
+    "source_url": "https://tezumi.com/products/tsuji-no-shiro-shirakawa-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1094": {
+    "id": 1094,
+    "brand": "Tezumi",
+    "product_name": "Yame Saemidori Matcha",
+    "source_url": "https://tezumi.com/products/yame-shin-saemidori-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1095": {
+    "id": 1095,
+    "brand": "Tezumi",
+    "product_name": "Yūtei - Nishio Matcha",
+    "source_url": "https://tezumi.com/products/yutei-nishio-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1096": {
+    "id": 1096,
+    "brand": "Tezumi",
+    "product_name": "Ungetsu-no-Shiro - Uji Matcha",
+    "source_url": "https://tezumi.com/products/ungetsu-no-shiro-uji-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1097": {
+    "id": 1097,
+    "brand": "Tezumi",
+    "product_name": "Seifū-no-Shiro - Uji Matcha",
+    "source_url": "https://tezumi.com/products/seifu-no-shiro-uji-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1098": {
+    "id": 1098,
+    "brand": "Tezumi",
+    "product_name": "Seisei-no-Shiro - Uji Matcha",
+    "source_url": "https://tezumi.com/products/seisei-no-shiro-uji-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1099": {
+    "id": 1099,
+    "brand": "Tezumi",
+    "product_name": "Kiyo-Mukashi - Uji Matcha",
+    "source_url": "https://tezumi.com/products/kiyo-mukashi-uji-matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1100": {
+    "id": 1100,
+    "brand": "Ippodo",
+    "product_name": "Tsukikage Matcha",
+    "source_url": "https://ippodotea.com/products/tsukikage-special-autumn-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:23.535Z",
+    "description": "Available only in the fall, Tsukikage has a pleasant balance of umami and subtle sharpness."
+  },
+  "1101": {
+    "id": 1101,
+    "brand": "Ippodo",
+    "product_name": "Uji‑Shimizu Sweetened Matcha",
+    "source_url": "https://ippodotea.com/products/uji-shimizu-400g-bag",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1102": {
+    "id": 1102,
+    "brand": "Ippodo",
+    "product_name": "New Year's Matcha 2026 (Koma-mukashi)",
+    "source_url": "https://ippodotea.com/products/new-years-matcha-2026-koma-mukashi-20g",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1103": {
+    "id": 1103,
+    "brand": "Ippodo",
+    "product_name": "Ikuyo Matcha",
+    "source_url": "https://ippodotea.com/products/ikuyo-20",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:26.439Z",
+    "description": "Ikuyo is a medium-bodied matcha with a refreshing bitterness that is slightly more noticeable than its sweetness and umami."
+  },
+  "1104": {
+    "id": 1104,
+    "brand": "Ippodo",
+    "product_name": "Sayaka Matcha",
+    "source_url": "https://ippodotea.com/products/sayaka-40g-bag",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:27.465Z",
+    "description": "Our recommendation for people new to our matcha, Sayaka is a more light-hearted, smooth tea in the rich category. Its sweetness and umami are accompanied by a hint of bitterness.\n New package:\n Sayaka 40g is available in a\n zip bag or a\n can."
+  },
+  "1105": {
+    "id": 1105,
+    "brand": "Ippodo",
+    "product_name": "Ummon Matcha",
+    "source_url": "https://ippodotea.com/products/ummon-40g-bag",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:28.337Z",
+    "description": "Ummon has a powerful umami, deep emerald green color, and sweet aroma. This matcha is a treat to be savored.\n New package:\n Ummon 40g is available in a\n zip bag or a\n can."
+  },
+  "1106": {
+    "id": 1106,
+    "brand": "Ippodo",
+    "product_name": "Premium Organic Matcha",
+    "source_url": "https://ippodotea.com/products/premium-organic-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:29.273Z",
+    "description": "Our higher-grade organic matcha blend with a balance of sweet undertones and astringency."
+  },
+  "1107": {
+    "id": 1107,
+    "brand": "Ippodo",
+    "product_name": "Premium Select Matcha",
+    "source_url": "https://ippodotea.com/products/premium-select-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:30.214Z",
+    "description": "This matcha is our exclusive blend from the most prestigious farms in Kyoto. It offers high-class richness, delicate sweetness, and unique tasting notes each year."
+  },
+  "1108": {
+    "id": 1108,
+    "brand": "Ippodo",
+    "product_name": "Nodoka",
+    "source_url": "https://ippodotea.com/products/nodoka-special-spring-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:31.239Z",
+    "description": "Available only in spring, Nodoka has a pleasant balance of umami and subtle sharpness."
+  },
+  "1109": {
+    "id": 1109,
+    "brand": "Ippodo",
+    "product_name": "Organic Matcha",
+    "source_url": "https://ippodotea.com/products/organic-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:32.234Z",
+    "description": "Our organic matcha has a green, snappy character with more astringency than sweetness."
+  },
+  "1110": {
+    "id": 1110,
+    "brand": "Rocky's",
+    "product_name": "Single Cultivar Tenryu Okumidori",
+    "source_url": "https://rockysmatcha.com/products/rockys-matcha-single-cultivar-tenryu-okumidori-20g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:23.569Z",
+    "description": "rocky's matcha Single Cultivar Tenryu Okumidori is a ceremonial grade matcha sourced from the Tenryu region in Shizuoka, Japan, through our partners at Osada Tea. Tenryu's fertile soil, favorable climate, and long tea growing tradition make it a respected region in the world of Japanese tea. This single cultivar has a rich, nutty flavor and a deep green color, well suited for an everyday matcha at home.\n+ Ceremonial Grade Single Cultivar+ Cultivar: Okumidori+ Region: Tenryu, Shizuoka+ Net Weight: 20g"
+  },
+  "1111": {
+    "id": 1111,
+    "brand": "Rocky's",
+    "product_name": "Tsujiki Ceremonial Blend Matcha",
+    "source_url": "https://rockysmatcha.com/products/rockys-matcha-tsujiki-ceremonial-blend-matcha-100g",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1112": {
+    "id": 1112,
+    "brand": "Rocky's",
+    "product_name": "Ceremonial Blend Matcha",
+    "source_url": "https://rockysmatcha.com/products/rockys-matcha-ceremonial-blend-matcha-100g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:25.324Z",
+    "description": "rocky's matcha signature Ceremonial Blend Matcha consists of four cultivars: Okumidori, Saemidori, Okuyutaka, and Tsuyuhikari. It comes from Yame, Japan, where matcha is known to taste different from traditional matcha grown in Uji, Japan. Rich and savory with a vivid green color, it's a favorite for matcha lattes and a good fit for everyday drinkers.\n+ Blended Matcha\n+ Ceremonial Grade\n+ Cultivar: Okumidori, Saemidori, Okuyutaka, Tsuyuhikari\n+ Region: Yame, Japan\n+ Net Weight: 100g"
+  },
+  "1113": {
+    "id": 1113,
+    "brand": "Rocky's",
+    "product_name": "Horii Shichimeien Ceremonial Blend Matcha",
+    "source_url": "https://rockysmatcha.com/products/rockys-matcha-horii-shichimeien-ceremonial-blend-matcha-100g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:26.282Z",
+    "description": "rocky's matcha Horii Shichimeien Ceremonial Blend is a blend of Yabukita and Samidori cultivars grown in Uji, Japan, and is best characterized by its delicate sweetness. It’s smooth and light, creamy and nutty. An all-around easy to enjoy matcha no matter how you choose to prepare it.This exclusive ceremonial blend has been produced with a unique machine-milling process that results in a much finer powder. It's easier to whisk, making it more accessible for everyday at-home use. This, of course, is with careful intention, as Horii Shichimeien aims to create gateways for more and more people to enjoy authentic Uji matcha in the everlasting spirit of Hinshitsu-Hon’i (“Quality First”).\n+ Horii "
+  },
+  "1114": {
+    "id": 1114,
+    "brand": "Fukujuen",
+    "product_name": "Sangetsu no Shiro",
+    "source_url": "https://global.fukujuen.com/products/powdered-japanese-tea-matcha-sangetsu-no-shiro-200g-can",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:23.762Z",
+    "description": "Kindly note that, due to high demand, each customer is limited to purchasing 5 items.\nA high-quality usucha-style Uji Matcha, known for its rich umami and balanced bitterness—a favorite among tea enthusiasts.\nHow to Prepare (Hot Usucha):\nAdd 2g (about 2 teaspoons) of Matcha to a tea bowl.\nPour in 60ml of 80°C water.\nWhisk briskly with a chasen until frothy.\nHow to Prepare Cold Matcha:\nAdd 2–3g of Matcha and 50ml of hot water.\nWhisk well, then add 2–3 ice cubes.\nEnjoy once chilled.\nAlso great for iced Matcha lattes or a Matcha affogato using a stronger brew.\nProduct Dimensions: Diameter 9.0 cm x Height 12.0 cm\nBest before: - 240 days from production.- Freshness is essential to tea. Please con"
+  },
+  "1115": {
+    "id": 1115,
+    "brand": "Fukujuen",
+    "product_name": "Karei no Shiro",
+    "source_url": "https://global.fukujuen.com/products/powdered-japanese-tea-matcha-karei-no-shiro-100g-can",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:24.686Z",
+    "description": "This Matcha is made by grinding Tencha—the raw material for Matcha—with a traditional stone mill. By blending Tencha with a fresh, leafy aroma reminiscent of new greenery, it achieves a well-balanced flavor that combines deep umami and sweetness with a subtle refreshing note. Its vivid blue-green hue shines beautifully in the tea bowl. Suitable for tea ceremony, this Matcha is ideal for preparing both Koicha (thick tea) and Usucha (thin tea).\nHow to Prepare (Hot Usucha):\nAdd 2g (about 2 teaspoons) of Matcha to a tea bowl.\nPour in 60ml of 80°C water.\nWhisk briskly with a chasen until frothy.\nHow to Prepare (Hot Koicha):\nAdd 4g (about 4 teaspoons) of Matcha to a tea bowl.\nPour in 15ml of 80°C "
+  },
+  "1116": {
+    "id": 1116,
+    "brand": "Fukujuen",
+    "product_name": "IYEMON",
+    "source_url": "https://global.fukujuen.com/products/powdered-japanese-green-tea-matcha-iyemon-for-matcha-latte-30g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:25.612Z",
+    "description": "Perfect for Matcha Latte\nCreate café-quality Matcha lattes at home with authentic Uji Matcha. This smooth and vibrant green tea powder offers a balanced flavor with gentle bitterness and natural sweetness, making it perfect for milk-based drinks and everyday Matcha recipes.\nProduct Story\nFounded in Kyoto in 1790, Fukujuen has cultivated Japanese tea culture for over 230 years. Using carefully selected tea leaves, this Matcha delivers the refined aroma and vivid green color that authentic Japanese Matcha is known for. \nFlavor Profile\nSmooth and mellow taste\nRich matcha aroma\nMild bitterness with gentle sweetness\nCreamy finish when mixed with milk\nBright green color\nRecommended Uses\nPerfect fo"
+  },
+  "1117": {
+    "id": 1117,
+    "brand": "Fukujuen",
+    "product_name": "Eisho-no-Mukashi",
+    "source_url": "https://global.fukujuen.com/products/matcha-eisho-no-mukashi-200g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:26.535Z",
+    "description": "Product Details:\nDeep green in color with a rich and full-bodied flavor, this Uji Matcha is a true delight.This Matcha is ideal for making thick Matcha, but it is also recommended for making thin Matcha.If using this Matcha to make thick Matcha, use twice the amount of Matcha you would use for thin Matcha to enjoy a smooth and creamy texture.\nDimensions: Diameter 9.0 cm x Height 12.0 cm\nBest before: 240 days from the date of manufacture.\nDirections (For 1 Serving):\nRefer to our guide &gt;  How to make delicious Japanese Tea (Matcha).\n - Freshness is essential to tea. Please enjoy as soon as possible after opening.- Caution! Be careful of hot water.- Use up the contents as soon as possible.- "
+  },
+  "1118": {
+    "id": 1118,
+    "brand": "Fukujuen",
+    "product_name": "Senshu no Mukashi",
+    "source_url": "https://global.fukujuen.com/products/powdered-japanese-tea-matcha-senshu-no-mukashi-40g-can",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:27.487Z",
+    "description": "Product Details:\nThis Matcha is made by grinding Tencha (the raw material for Matcha) with a traditional stone mill. It harmonizes the distinctive umami and natural sweetness of Uji Matcha with a refreshing finish. When whisked in a chawan, its vibrant green color stands out, allowing you to enjoy not only the rich flavor but also its visual beauty. Ideal for preparing Usucha (thin tea) in tea ceremony.\nHow to Prepare (Hot Usucha):\nAdd 2g (about 2 teaspoons) of Matcha to a tea bowl.\nPour in 60ml of 80°C water.\nWhisk briskly with a chasen until frothy.\nHow to Prepare Cold Matcha:\nAdd 2–3g of Matcha and 50ml of hot water.\nWhisk well, then add 2–3 ice cubes.\nEnjoy once chilled.\nAlso great for i"
+  },
+  "1119": {
+    "id": 1119,
+    "brand": "Fukujuen",
+    "product_name": "Banjo-no-Mukashi",
+    "source_url": "https://global.fukujuen.com/products/copy-of-matcha-banjo-no-mukashi-100g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:28.408Z",
+    "description": "Product Details:\nThis is a recommended Uji matcha tea characterized by its deep green color and rich flavor.\nDimensions: Diameter 9.0 cm x Height 8.8 cm\nBest before: 240 days from the date of manufacture.\nDirections (For 1 Serving):\nRefer to our guide &gt;  How to make delicious Japanese Tea (Matcha).\n- Freshness is essential to tea. Please enjoy as soon as possible after opening.- Caution! Be careful of hot water.- Use up the contents as soon as possible.- Store in a cool, dry place and avoid other lingering scents.\nKindly note that this product is made to order. It may take approximately 2–3 weeks from the time of your order to shipment. We will ship your entire order once all items are re"
+  },
+  "1121": {
+    "id": 1121,
+    "brand": "Fukujuen",
+    "product_name": "Kotobuki-no-Shiro",
+    "source_url": "https://global.fukujuen.com/products/powdered-japanese-tea-matcha-kotobuki-no-shiro-20g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:29.363Z",
+    "description": "Kindly note that, due to high demand, each customer is limited to purchasing 5 items.\nA light and refined usucha-style Uji Matcha with a delicate bitterness and clean finish.\nPerfect for traditional tea preparation or modern Matcha recipes.\nHow to Prepare (Hot Usucha):\nAdd 2g (about 2 teaspoons) of Matcha to a tea bowl.\nPour in 60ml of 80°C water.\nWhisk briskly with a chasen until frothy.\nHow to Prepare Cold Matcha:\nAdd 2–3g of Matcha and 50ml of hot water.\nWhisk well, then add 2–3 ice cubes.\nEnjoy once chilled.\nAlso great for iced Matcha lattes or a Matcha affogato using a stronger brew.\nProduct Dimensions: Diameter: 5.7 cm × Height: 5.6 cm\nBest before: - 240 days from production.- Freshnes"
+  },
+  "1122": {
+    "id": 1122,
+    "brand": "Fukujuen",
+    "product_name": "Powdered Japanese Tea Stone-Milled Matcha Shiro",
+    "source_url": "https://global.fukujuen.com/products/powdered-japanese-tea-stone-milled-matcha-shiro",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:30.353Z",
+    "description": "Kindly note that, due to high demand, each customer is limited to purchasing 5 items.\n \nNamed “Shiro” — the origin of all colors — this Matcha embodies the spirit of Ichigo Ichie, the cherished tea ceremony concept of treasuring each encounter as a once-in-a-lifetime moment.It invites you to clear your mind and approach each bowl with openness and sincerity.\nStone-milled from select Uji tea leaves, “Shiro” offers a smooth, gentle umami followed by a refreshing, clean finish.Its gentle balance of richness and astringency makes it ideal for first-time Matcha drinkers as well as for those who enjoy Matcha in lattes or desserts.\nThe bright, refined flavor complements milk-based beverages, sweets"
+  },
+  "1123": {
+    "id": 1123,
+    "brand": "Fukujuen",
+    "product_name": "Powdered Japanese Tea Stone-Milled Matcha Kuro",
+    "source_url": "https://global.fukujuen.com/products/powdered-japanese-tea-stone-milled-matcha-kuro",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:31.272Z",
+    "description": "Kindly note that, due to high demand, each customer is limited to purchasing 5 items.\nInspired by the tea ceremony spirit of Wa-kei-sei-jaku — “Harmony, Respect, Purity, and Tranquility” — this Matcha embodies Jaku (Tranquility).“Kuro” reflects the quiet elegance and depth of wabi-sabi, the Japanese aesthetic of simplicity and stillness.\nCrafted from premium Uji tea leaves and stone-milled to perfection, this Matcha reveals a vivid deep green hue and rich and savory taste that unfolds gracefully on the palate.Rich umami and full-bodied harmonize beautifully, making it exceptional for koicha (thick tea) preparations.\nAmong our collection — Syu, Shiro, and Kuro — this variety offers the most p"
+  },
+  "1124": {
+    "id": 1124,
+    "brand": "Chikiriya Tea House",
+    "product_name": "Uji Jo no Mai - Golden Matcha",
+    "source_url": "https://kyo-chikiriya.shop/products/uji-jo-no-mai-golden-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:23.447Z",
+    "description": "Elevate any Occasions with Uji Matcha with Edible Gold Glitter Flakes\nStep into the poetic world of Uji, where centuries of tea tradition meet refined craftsmanship. This set celebrates the elegance of Kyoto's famed tea region. Each tea, whether vibrant, roasted, or delicately umami, tells a story of soil and skilled hands.\nThis Golden Matcha is perfect for special event such as receptions or celebrations\nGold has long symbolized prosperity and good fortune, making it a meaningful accent for special occasions. In Japan, gold-adorned tea is traditionally enjoyed on New Year’s Day, a moment to reflect on the past year and welcome happiness and prosperity for the future. Today, edible gold is a"
+  },
+  "1125": {
+    "id": 1125,
+    "brand": "Chikiriya Tea House",
+    "product_name": "Japanese Matcha for cooking",
+    "source_url": "https://kyo-chikiriya.shop/products/matcha-150g",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:24.383Z",
+    "description": "Versatile Matcha\nSimply mix with any type of milk and enjoy matcha latte anytime at home. This versatile matcha keeps its rich flavor even when heated, making it perfect not only for latte but also for baking, sweets, and bread. Packed with a resealable closure to maintain freshness and ensure easy storage.\nBlend of Shizuoka and Kagoshima matcha."
+  },
+  "1126": {
+    "id": 1126,
+    "brand": "Chikiriya Tea House",
+    "product_name": "Tales of Uji - Ceremonial Uji Matcha \"Yume no Ukihashi\" - Single origin Okumidori",
+    "source_url": "https://kyo-chikiriya.shop/products/tales-of-uji-premium-matcha-yume-no-ukihashi",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1127": {
+    "id": 1127,
+    "brand": "Chikiriya Tea House",
+    "product_name": "Stone Ground Sweetened Uji Matcha",
+    "source_url": "https://kyo-chikiriya.shop/products/stone_ground_sweetened_uji_matcha",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1128": {
+    "id": 1128,
+    "brand": "Chikiriya Tea House",
+    "product_name": "Uji Matcha for cooking",
+    "source_url": "https://kyo-chikiriya.shop/products/uji-matcha_cooking",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:27.096Z",
+    "description": "Let's cook!\nUnlock new culinary possibilities with our matcha designed specifically for confectionery making and cooking. Sourced from the renowned tea fields of Uji, it offers unparalleled quality and flavor for your kitchen endeavors. \nPerfect for Confectionery Making and Cooking\nWhether you're baking pastries, crafting desserts, or experimenting with savory dishes, our Uji Matcha is the ideal ingredient to elevate your creations. Its vibrant green color and rich flavor profile will add depth and complexity to your dishes.\nConvenient Packaging for Freshness \nPackaged in a tea packaging bag with a zipper closure, our Uji Matcha ensures convenient storage and maintains freshness for longer p"
+  },
+  "1129": {
+    "id": 1129,
+    "brand": "Chikiriya Tea House",
+    "product_name": "Stone ground Premium Uji Matcha",
+    "source_url": "https://kyo-chikiriya.shop/products/stone_ground_matcha_economy_size",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:27.993Z",
+    "description": "Matcha Bliss\nOur matcha is made from Tencha leaves, which are covered for about 30 days, steamed, and then dried without kneading. The final step to create this premium Kyoto Uji matcha involves carefully grinding the Tencha leaves with a stone mill. \nBy grinding the tea leaves with a millstone, we achieve an exceptionally fine grain, resulting in high-quality matcha with a pleasant, mellow taste that foams easily.\nExperience a rich, flavorful tea with a balanced umami flavor and astringency, providing a refreshing feel in the mouth.\nOur finely ground matcha may develop small lumps (grains) due to static electricity. This product serves as a convenient refill package for Uji Matcha with a te"
+  },
+  "1130": {
+    "id": 1130,
+    "brand": "Chikiriya Tea House",
+    "product_name": "Uji Matcha \"Jo no mai\" - Ceremonial Grade matcha",
+    "source_url": "https://kyo-chikiriya.shop/products/uji_matcha_jo_no_mai",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1131": {
+    "id": 1131,
+    "brand": "Mizuba Tea Co",
+    "product_name": "An Oh, How Civilized Organic Matcha!",
+    "source_url": "https://mizubatea.com/products/an-oh-how-civilized-organic-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:23.571Z",
+    "description": "A special collaboration between Mizuba Tea Co. and Oh, How Civilized by Jee Choe. Our 30g tin of organic, first-harvest matcha is grown in the mountains of the Southern Japanese Alps in Shizuoka. The producer carefully refines a blend of cultivars year after year to achieve a specific umami profile that captures the essence of mountain tea."
+  },
+  "1132": {
+    "id": 1132,
+    "brand": "Mizuba Tea Co",
+    "product_name": "Hinode Organic Matcha Green Tea",
+    "source_url": "https://mizubatea.com/products/hinode-organic-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:24.444Z",
+    "description": "Crafted for your first sip. One of our favorite morning matcha teas, our dynamic Hinode is a unique blend of tencha. Our producer artfully uses Yabukita, Tsuyuhikari, and Samidori cultivars to create a multi-layered cup that dances in your mouth, but with a signature sweetness that gently wakes you up."
+  },
+  "1133": {
+    "id": 1133,
+    "brand": "Mizuba Tea Co",
+    "product_name": "Yabukita Matcha",
+    "source_url": "https://mizubatea.com/products/yabukita-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:25.295Z",
+    "description": "Mizuba is honored to be one of the few tea companies to whom legendary matcha farmer and producer, Tsuji-san, sells his premier, hand-harvested matcha. We are excited to present you the opportunity to taste his single-estate, unblended, single-cultivar Yabukita Matcha. \nAbout the Yabukita Cultivar: \nFundamental to an understanding of Japanese green tea is knowing and appreciating the taste of the tea cultivar Yabukita. Yabukita is considered the cornerstone flavor of Japanese tea as its taste delivers a well-balanced flavor, elegant aroma, sweetness along with umami, and pleasant astringency. One of the oldest registered cultivars in Japan and most popularly grown (accounting for over 70% of"
+  },
+  "1134": {
+    "id": 1134,
+    "brand": "Mizuba Tea Co",
+    "product_name": "Gokou Matcha",
+    "source_url": "https://mizubatea.com/products/gokou-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:26.315Z",
+    "description": "Mizuba is honored to be one of the few tea companies to whom legendary matcha farmer and producer, Tsuji-san, sells his premier, hand-harvested matcha. With immense gratitude and care, we present you the opportunity to taste his single-estate, unblended, single-cultivar Gokou Matcha."
+  },
+  "1135": {
+    "id": 1135,
+    "brand": "Midori Spring",
+    "product_name": "Organic Ceremonial Matcha Emerald 50g Bag",
+    "source_url": "https://midorispring.com/products/organic-ceremonial-matcha-emerald-new",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:33.575Z",
+    "description": "Our beloved Organic Emerald is now available in efficient, resealable, and recyclable lightweight packaging. A delightful and easy-to-brew Matcha, our leaves were selected for the casual drinkers, beginners, and latte mixers alike, without any compromises."
+  },
+  "1136": {
+    "id": 1136,
+    "brand": "Nakamura Tokichi",
+    "product_name": "Matcha Premium Hatsu-Mukashi No.1",
+    "source_url": "https://global.tokichi.jp/products/bessei-hatsumukashi-matcha-uji-yi",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:33.301Z",
+    "description": "The first expression of the Bessei Hatsumukashi series.\nCrafted exclusively from the first and second tender leaves harvested by hand in the spring tea fields of Shirakawa, Uji, this exceptional matcha is slowly matured before being carefully stone-ground into an exquisite koicha (thick matcha).\nThe cultivar is Asahi, one of the most highly regarded varieties for tencha production. Frequently recognized at Japan's National Tea Competition, Asahi is celebrated for its remarkable harmony of sweetness, umami, aroma, and vibrant color.\nThrough careful maturation, the flavor becomes beautifully refined. A pure, elegant sweetness greets the palate first, followed by a deep, lingering umami that un"
+  },
+  "1137": {
+    "id": 1137,
+    "brand": "Nakamura Tokichi",
+    "product_name": "Matcha Premium Hatsu-Mukashi No.2",
+    "source_url": "https://global.tokichi.jp/products/bessei-hatsumukashi-matcha-uji-er",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:34.146Z",
+    "description": "The second expression of the Bessei Hatsumukashi series.\nWhile No.1 celebrates the delicate sweetness of the youngest tea leaves, No.2 explores another side of matcha—its profound richness, depth of umami, and full-bodied character, achieved by carefully selecting more mature leaves.\nCrafted from award-winning Asahi cultivar tencha grown in Shirakawa, Uji, this blend combines not only the first and second leaves but also the third and fourth leaves, which have accumulated abundant nutrients and develop a deeper, more concentrated flavor. After extended low-temperature maturation, the tea is stone-ground with exceptional care to create a harmonious balance of aroma and umami.\nPrepared as koic"
+  },
+  "1138": {
+    "id": 1138,
+    "brand": "Nakamura Tokichi",
+    "product_name": "Matcha Premium Hatsu-Mukashi No.3",
+    "source_url": "https://global.tokichi.jp/products/bessei-hatsumukashi-matcha-uji-can",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:35.017Z",
+    "description": "The third unique character to emerge in the \"Premium Hatsu-Mukashi\" series.\nWhile \"Premium Hatsu-Mukashi “ No.1 ”\" and \"Premium Hatsu-Mukashi “ No.2 ”\" pursued a multi-layered world of umami derived from \"Asahi\" cultivars grown in Shirakawa, \"Premium Hatsu-Mukashi “ No.3 ”\" is a matcha that focuses on the vibrant aroma and the lingering aftertaste of \"Asahi\" nurtured by the soil of Naka-Uji and Gokasho.Two types of \"Asahi\" that earned high acclaim at the 2025 National Tea Competition were meticulously blended (gogumi), aged to perfection, and then carefully stone-ground using a tea mortar.Rather than focusing solely on the volume of umami itself, this matcha is designed to accentuate the \"de"
+  },
+  "1139": {
+    "id": 1139,
+    "brand": "Nakamura Tokichi",
+    "product_name": "Matcha Premium",
+    "source_url": "https://global.tokichi.jp/products/m100-prm",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:35.842Z",
+    "description": "Extraordinary quality for your everyday rituals.Crafted from Kyoto-grown first flush tea leaves—including a portion of hand-picked tencha—this is our highest-grade matcha.\nA single sip reveals profound umami and elegant sweetness,while even the bitterness feels refined.The flavor lingers in gentle waves, leaving a graceful finish.\nGraded equivalent to Uji no Mukashi,this matcha is machine-ground for consistency,yet ideal for low-temperature use or straight preparation.\nWhether whisked, stirred, or simply savored,Matcha Premium invites you to experience matcha at its finest.\nContents\n100g\nExpiration Date\n3 months\nAllergens\nnone"
+  },
+  "1140": {
+    "id": 1140,
+    "brand": "Nakamura Tokichi",
+    "product_name": "Matcha Standard",
+    "source_url": "https://global.tokichi.jp/products/m100-std",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:36.663Z",
+    "description": "Elevate the everyday with a deeper matcha experience.Made exclusively from Kyoto-grown first flush tea leaves,this matcha offers a richer balance of umami, sweetness, and subtle astringency—a flavor profile with satisfying depth and clarity.\nGraded between our Seikō no Mukashi and Uji no Mukashi,Matcha Standard offers more complexity and intensity than the Starter class,with a bolder green hue and fuller flavor expression.Its vibrant color and presence shine even when paired with milk or granola—perfect from morning to night, in lattes, sweets, or your evening cup.\nLike our Starter, it is machine-groundto ensure consistency and everyday ease of use.While different from traditional stone mill"
+  },
+  "1141": {
+    "id": 1141,
+    "brand": "Nakamura Tokichi",
+    "product_name": "Matcha Starter",
+    "source_url": "https://global.tokichi.jp/products/m100-str",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:37.550Z",
+    "description": "Start your matcha journey, freely and effortlessly.Crafted exclusively from Kyoto-grown first flush tea leaves,this matcha delivers a smooth umami and gentle sweetness,balanced by a clean, refreshing bitterness that lingers softly on the palate. Graded between our Sen’un no Shiro and Sho no Mukashi,Matcha Starter offers the perfect harmony of ease and authenticity—ideal for making lattes, sweets, or simply enjoying on its own. Though ground by machine, the method differs from stone milling in process only,not in flavor.The true essence of matcha lies in the quality of the tea leaves themselves. Whisk it, mix it, shake it, or sprinkle it.Whatever the moment, Matcha Starter brings the taste of"
+  },
+  "1142": {
+    "id": 1142,
+    "brand": "Nakamura Tokichi",
+    "product_name": "Matcha Hatsu-Mukashi",
+    "source_url": "https://global.tokichi.jp/products/mc12",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:38.209Z",
+    "description": "Matcha can be prepared in two ways: \"usucha\" (thin tea) and \"koicha\" (thick tea), each bringing out different charms of matcha. \"Hatsu-Mukashi\" is recommended for koicha (thick tea).\n It offers a deep, rich flavor that lingers on the tongue with slight bitterness. It has a complex and elegant mouthfeel.\nContents\n30g can\nExpiration Date\n 3 months\nAllergens\nnone"
+  },
+  "1143": {
+    "id": 1143,
+    "brand": "Rishi Tea",
+    "product_name": "Matcha Asahi",
+    "source_url": "https://rishi-tea.com/products/matcha-asahi",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:33.861Z",
+    "description": "Known for the highest richness score of all Uji matcha, this highly sought after single cultivar Asahi matcha was grown by the award-winning Uji tea farmer, Kikuoka-san. This micro-lot has a deep and rich umami aromatic profile that is elegant and highly sought after."
+  },
+  "1144": {
+    "id": 1144,
+    "brand": "Rishi Tea",
+    "product_name": "Matcha Samidori",
+    "source_url": "https://rishi-tea.com/products/matcha-samidori",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:35.134Z",
+    "description": "A first-flush matcha, hand-picked, stone-milled and ready to be sipped at peak freshness. The leaves yield a vivid green infusion with Samidori’s signature flavor—smooth, sweet umami with an aromatic citrusy lift."
+  },
+  "1145": {
+    "id": 1145,
+    "brand": "Rishi Tea",
+    "product_name": "Ceremonial Matcha",
+    "source_url": "https://rishi-tea.com/products/organic-ceremonial-matcha-tin",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:36.357Z",
+    "description": "An exclusive blend of first-harvest tencha cultivated in Kagoshima, Japan, this top-grade organic matcha has a delicate, complex character and vibrant green hue—a beautiful choice for traditional preparation."
+  },
+  "1146": {
+    "id": 1146,
+    "brand": "Rishi Tea",
+    "product_name": "Everyday Matcha",
+    "source_url": "https://rishi-tea.com/products/organic-everday-matcha-tin",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:37.572Z",
+    "description": "A bespoke blend of first and second flush tea leaves, this organic matcha has a full-bodied flavor and silky finish that shines in tea lattes and café-style drinks. The most versatile matcha in our collection."
+  },
+  "1147": {
+    "id": 1147,
+    "brand": "Matcha.com",
+    "product_name": "Japanese Ceremonial Organic Matcha | USDA Organic",
+    "source_url": "https://matcha.com/products/japanese-ceremonial-organic",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1148": {
+    "id": 1148,
+    "brand": "Matcha Outlet",
+    "product_name": "Sweet Matcha Culinary Grade",
+    "source_url": "https://matchaoutlet.com/products/basic-matcha-latte-mix",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:33.267Z",
+    "description": "Sweet Matcha Culinary Grade is a basic, budget-focused latte mix for customers who prioritize a lower price over vibrant color and refined matcha flavor. For better color and flavor, choose Sweet Japanese Matcha."
+  },
+  "1149": {
+    "id": 1149,
+    "brand": "Matcha Outlet",
+    "product_name": "Sweet Japanese Matcha Green Tea Latte Mix",
+    "source_url": "https://matchaoutlet.com/products/sweet-japanese-matcha-latte-mix",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:34.042Z",
+    "description": "Sweet Japanese Matcha is an easy-to-mix matcha latte powder for smooth café-style hot or iced drinks at home or in cafés. No whisk or sifting is required. Quick Facts Best forHot and iced matcha lattesTasteSmooth, creamy and easy to enjoyPreparationMixes quickly with warm waterEquipmentNo bamboo whisk or sifter neededYieldAbout 23 lattes per 12 oz bagBusiness sizesBulk options are available for cafésWhat It Tastes Like A café-style matcha treat you can make at home. The flavor is smooth and ..."
+  },
+  "1151": {
+    "id": 1151,
+    "brand": "Culinary Teas",
+    "product_name": "Mocha Matcha Powder",
+    "source_url": "https://culinaryteas.com/products/mocha-matcha-powder",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:33.314Z",
+    "description": "Our Japanese green tea Matcha mixes with an all-natural Mocha flavor provides for a wonderful succulent treat.\nIngredients: Matcha, Mocha mix"
+  },
+  "1152": {
+    "id": 1152,
+    "brand": "Culinary Teas",
+    "product_name": "Pomegranate Matcha",
+    "source_url": "https://culinaryteas.com/products/pomegranate-green-tea-matcha",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1153": {
+    "id": 1153,
+    "brand": "Heapwell",
+    "product_name": "Okumidori First Harvest Matcha",
+    "source_url": "https://heapwellmatcha.com/products/okumidori-matcha",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:33.644Z",
+    "description": "Bright, Smooth & Refreshing\nOkumidori First Harvest Matcha is a smooth, vibrant and refreshing Japanese matcha crafted primarily from the Okumidori cultivar, lifted by Samidori as a secondary cultivar.\nThe result is a refreshing first harvest matcha with gentle umami, natural sweetness and very low bitterness. Best enjoyed as iced usucha, straight iced matcha or a refreshing iced latte.\nCultivar\nOkumidori is the primary cultivar in this matcha.\nIt brings smoothness, balance, fresh green depth and a clean refreshing finish.\nSamidori acts as the secondary cultivar, adding softness, brightness and a delicate elegance.\nTaste\nSmooth, bright and refreshing.\nExpect fresh green notes, gentle umami, "
+  },
+  "1154": {
+    "id": 1154,
+    "brand": "Heapwell",
+    "product_name": "Uji no Mori Matcha Green Tea",
+    "source_url": "https://heapwellmatcha.com/products/uji-no-mori-matcha-green-tea-30g-from-wazuka",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:34.715Z",
+    "description": "A calm, smooth Japanese matcha inspired by the shaded tea gardens of Uji and Wazuka.  Uji no Mori is Samidori-forward, with soft nuttiness, deep umami, a thick body, and minimal bitterness. It feels rounded, composed, and elegant on the palate.  Where Tenmyo is bold and complex, Uji no Mori is smoother, calmer, and more balanced.\n \nOrigin & Cultivar Origin: Wazuka, Kyoto  Uji no Mori comes from Wazuka, one of Kyoto’s most respected tea-growing regions, known for its misty hills, shaded tea fields, and deep connection to Uji matcha culture.  A carefully balanced selection of Samidori, Kyōken-283, Sayamakaori, Meiryoku, Saemidori, and others.\nProducer:\nUji no Mori is crafted by Naoki-san from "
+  },
+  "1155": {
+    "id": 1155,
+    "brand": "Heapwell",
+    "product_name": "Tenmyo Cultivar Uji Matcha",
+    "source_url": "https://heapwellmatcha.com/products/kyoto-uji-ceremonial-grade-matcha-30g-tenmyo-cultivar-limited-edition",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1156": {
+    "id": 1156,
+    "brand": "Heapwell",
+    "product_name": "Imperial First Harvest Matcha",
+    "source_url": "https://heapwellmatcha.com/products/ceremonial-matcha-green-tea-30g-imperial-aaa-grade",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:36.898Z",
+    "description": "Crafted by one of the finest tea masters, this matcha is refined, expressive, and beautifully balanced.\nSmooth and layered on the palate, it offers vibrant green character, rounded umami, gentle sweetness, and a clean polished finish that lingers softly.\nElegant enough for a pure bowl of usucha and versatile enough to pair beautifully with milk, it is a matcha made for those who appreciate depth, harmony, and quiet sophistication in every cup."
+  },
+  "1157": {
+    "id": 1157,
+    "brand": "Heapwell",
+    "product_name": "Saemidori First Harvest Matcha",
+    "source_url": "https://heapwellmatcha.com/products/ceremonial-matcha-green-tea-powder-30g-single-estate-edition-30-servings",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1158": {
+    "id": 1158,
+    "brand": "Kenko Tea",
+    "product_name": "Organic Matcha - Culinary Grade 250g bag",
+    "source_url": "https://kenkomatcha.com/products/organic-matcha-culinary-grade-250g-bag",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:39.019Z",
+    "description": "From a small Kagoshima based farming Co-op we offer a high quality culinary grade, USDA certified organic matcha tea. This grade is specially blended to make a great addition to all your favorite matcha recipes, with a rich green tea flavor and bold green color.\nBoost all your recipes with this antioxidant rich superfood!\nSuggested uses:\nGreen Smoothies\nMatcha lattes\nIced green tea\nGreen tea sweets and baking.\nKenko Organic Matcha Features: \n100% USDA Certified Organic\nHeavy Metal, Pesticide and Radiation tested\n100% Natural\nVegan Friendly\nGluten Free\nOrganic Matcha Benefits:\nIncredibly high antioxidant levels\nIncreased energy without the jittery feeling of caffeine\nHigh levels of L-theanine"
+  },
+  "1159": {
+    "id": 1159,
+    "brand": "Kenko Tea",
+    "product_name": "Organic Matcha Ceremonial Grade 1.06oz",
+    "source_url": "https://kenkomatcha.com/products/organic-matcha-premium-grade-30g-tin",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:40.109Z",
+    "description": "It's here at long last. After numerous requests for an organic matcha option, a long search and a lot of matcha sampling We now have an organic version of our Kenko Premium Ceremonial Grade Matcha. \nKeep it 100% organic with USDA certified Kenko Premium Ceremonial Organic Matcha Tea. Grown in the Kagoshima region of Southern Japan.\nThis ceremonial grade tea is an intense jade green powder with a delicate sweetness, grassy overtones, and very light astringency. It whisks to produce a creamy froth and is ideal for a morning energy lift or a calming afternoon treat.\nMatcha Benefits\nContains L-theanine, which helps relax the body and calm the mind\nIs a natural metabolism booster (up to 4x that o"
+  },
+  "1160": {
+    "id": 1160,
+    "brand": "Kenko Tea",
+    "product_name": "Ceremonial Grade Matcha Powder - 100g Bag",
+    "source_url": "https://kenkomatcha.com/products/ceremonial-grade-matcha-powder-100g-bag",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:40.888Z",
+    "description": "For the serious matcha lover. We now stock Kenko's best selling Premium Ceremonial Grade of matcha green tea powder in 100 gram resealable bags. Perfect for when you’re averaging more than one brew a day, the bags hold the exact same 100% natural Kenko Premium Ceremonial Matcha that is sold in our 30g tins.\nPacked with antioxidants, bursting with nutrients and the most vibrant green colour you will find in a matcha powder. The tea has a natural sweetness, without any bitterness. Packs an Intense 'green tea matcha' flavour, and whisks up a delightful and creamy layer of crema. The high levels of L-theanine combined with caffeine in the tea produce a calming, yet energising sensation, that las"
+  },
+  "1161": {
+    "id": 1161,
+    "brand": "Kusmi Tea",
+    "product_name": "Matcha premium",
+    "source_url": "https://kusmitea.com/products/matcha-premium",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:39.643Z",
+    "description": "Découvrez l’élégance du matcha premium : une poudre de thé vert unique qui invite la finesse du rituel japonais à sublimer chaque instant de votre quotidien.D’une couleur vert profond et d’un arôme végétal frais et équilibré, ce thé vert en poudre bio offre une dégustation riche et élégante. Un matcha au caractère affirmé, qui révèle toute la qualité du thé japonais.À savourer pur ou en latte, chaud comme glacé, ce matcha polyvalent s’adapte à toutes vos envies, du rituel quotidien aux créations plus gourmandes !Au-delà d’une boisson plaisir, le matcha est aussi traditionnellement reconnu pour ses propriétés et nombreux bienfaits :\nEnergie douce et durable\nRiche en antioxydants\nConcentration"
+  },
+  "1162": {
+    "id": 1162,
+    "brand": "Kusmi Tea",
+    "product_name": "Matcha cérémonie",
+    "source_url": "https://kusmitea.com/products/matcha-ceremonie",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:40.833Z",
+    "description": "Laissez vous séduire par l’excellence du matcha cérémonie : une poudre de thé vert d’une grande finesse qui invite la tradition japonaise au cœur de votre quotidien, en toute délicatesse.Sa couleur vert émeraude et son arôme végétal, doux et umami, offrent une dégustation à la fois subtile et intense, révélant toute la complexité d’un thé d’exception.Idéal pour s’initier à la cérémonie japonaise ou pour sublimer votre quotidien en pur ou en latte, à chaud comme en glacé, pour une expérience raffinée et unique.Au-delà d’une boisson plaisir, le matcha est aussi traditionnellement reconnu pour ses propriétés et nombreux bienfaits :\nEnergie douce et durable\nRiche en antioxydants\nConcentration am"
+  },
+  "1163": {
+    "id": 1163,
+    "brand": "Nio Teas",
+    "product_name": "Gokou Matcha Koiai",
+    "source_url": "https://nioteas.com/products/gokou-matcha-koiai",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1164": {
+    "id": 1164,
+    "brand": "Nio Teas",
+    "product_name": "Shizuoka Matcha Kakitsubata",
+    "source_url": "https://nioteas.com/products/matcha-tea-kakitsubata",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1165": {
+    "id": 1165,
+    "brand": "Nio Teas",
+    "product_name": "Japanese Matcha Tea Osada Okumidori",
+    "source_url": "https://nioteas.com/products/matcha-tea-osada-okumidori-40g",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1166": {
+    "id": 1166,
+    "brand": "Tsuki Matcha",
+    "product_name": "Le Miyazaki - Grade Cérémonial",
+    "source_url": "https://tsukimatcha.com/products/le-miyazaki-ceremonial",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1167": {
+    "id": 1167,
+    "brand": "My Matcha Life",
+    "product_name": "Barista's Premium Japanese Matcha",
+    "source_url": "https://shop.mymatchalife.com/products/baristas-premium-japanese-matcha-200g-7-oz",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:20:15.485Z",
+    "description": "Bulk Barista's Matcha offers great value for families or those who drink a lot of matcha! This 200 serving bag of premium quality matcha is the same great pure matcha as our Barista’s Matcha in the tin.\nUse it to refill your tin or on its own, just keep the bag tightly sealed after opening. 2 year shelf life after manufacture date. At $0.40 - $0.45 cents per serving this is a great deal.\nTested for lead and heavy metals.\nBarista’s Premium Matcha Green Tea is a blend of smooth tasting ceremonial matcha leaves and slightly bolder tasting midsummer ones, producing a matcha green tea with bold earthy tones and a well-balanced nutrient profile of L-theanine, catechin antioxidants, and caffeine.\nB"
+  },
+  "1168": {
+    "id": 1168,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Shoyo no Mukashi",
+    "source_url": "https://cultivatetea.com/products/matcha-shoyo-no-mukashi",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1169": {
+    "id": 1169,
+    "brand": "Cultivate Tea",
+    "product_name": "Matcha Yamabuki",
+    "source_url": "https://cultivatetea.com/products/yame-matcha-yamabuki",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1170": {
+    "id": 1170,
+    "brand": "Encha",
+    "product_name": "Matcha Latte Powder - Lavender",
+    "source_url": "https://encha.com/products/encha-matcha-latte-powder-lavender",
+    "status": "ok",
+    "scrapedAt": "2026-10-08T00:29:39.381Z",
+    "description": "The crafted taste of Japanese ceremonial grade matcha, blended for benefits beyond the cup. Encha Lavender starts with Ceremonial Grade Latte, first-harvest, shade-grown matcha, hand-picked and stone-ground into a whisper-fine powder, then infused with lavender for a natural, floral lift.\nFloral aroma. Slightly creamy. Gentle herbal finish. Smooth and full-bodied in milk, hot or iced.\nUSDA Certified Organic. Third-party tested for purity. L-theanine plus lavender's naturally calming character, suited to a slower moment in the day.\nOne sip and you'll get it. Then you'll take another."
+  },
+  "1171": {
+    "id": 1171,
+    "brand": "Steven Smith Teamaker",
+    "product_name": "Matcha",
+    "source_url": "https://smithtea.com/products/matcha-1",
+    "status": "no_description_found",
+    "httpStatus": 200
+  },
+  "1172": {
+    "id": 1172,
+    "brand": "Jade Leaf Matcha",
+    "product_name": "Artisanal Ceremonial Matcha - Barista Edition",
+    "source_url": "https://jadeleafmatcha.com/products/artisinal-ceremonial-matcha-barista-edition",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1173": {
+    "id": 1173,
+    "brand": "Jade Leaf Matcha",
+    "product_name": "Organic Ingredient Matcha",
+    "source_url": "https://jadeleafmatcha.com/products/ingredient-matcha",
+    "status": "no_taste_content_found",
+    "httpStatus": 200
+  },
+  "1174": {
+    "id": 1174,
+    "brand": "The Republic of Tea",
+    "product_name": "Organic Matcha Powder",
+    "source_url": "https://republicoftea.com/products/organic-matcha-powder",
+    "status": "no_description_found",
+    "httpStatus": 200
   }
 }

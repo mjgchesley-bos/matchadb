@@ -109,7 +109,7 @@
   },
   {
     "domain": "kyo-chikiriya.shop",
-    "count": 2,
+    "count": 9,
     "url": "https://kyo-chikiriya.shop/products/tales-of-uji-premium-matcha-tenarai-okumidori",
     "status": "ok",
     "httpStatus": 200,
@@ -133,7 +133,7 @@
   },
   {
     "domain": "culinaryteas.com",
-    "count": 12,
+    "count": 15,
     "url": "https://culinaryteas.com/products/black-matcha-kenya",
     "status": "ok",
     "httpStatus": 200,
@@ -193,7 +193,7 @@
   },
   {
     "domain": "encha.com",
-    "count": 9,
+    "count": 10,
     "url": "https://encha.com/products/encha-matcha-barista-grade-latte-organic-matcha-powder",
     "status": "ok",
     "httpStatus": 200,
@@ -219,7 +219,7 @@
   },
   {
     "domain": "global.fukujuen.com",
-    "count": 9,
+    "count": 19,
     "url": "https://global.fukujuen.com/en-us/products/banjo-no-mukashi-20g",
     "status": "ok",
     "httpStatus": 200,
@@ -303,7 +303,7 @@
   },
   {
     "domain": "heapwellmatcha.com",
-    "count": 3,
+    "count": 8,
     "url": "https://heapwellmatcha.com/products/japanese-matcha-green-tea-50g",
     "status": "ok",
     "httpStatus": 200,
@@ -351,7 +351,7 @@
   },
   {
     "domain": "ippodotea.com",
-    "count": 11,
+    "count": 21,
     "url": "https://ippodotea.com/products/ikuyo-100",
     "status": "ok",
     "httpStatus": 200,
@@ -375,7 +375,7 @@
   },
   {
     "domain": "jadeleafmatcha.com",
-    "count": 9,
+    "count": 11,
     "url": "https://www.jadeleafmatcha.com/products/cafe-style-matcha-latte-mix-sugar-free",
     "status": "ok",
     "httpStatus": 200,
@@ -399,7 +399,7 @@
   },
   {
     "domain": "kenkomatcha.com",
-    "count": 4,
+    "count": 7,
     "url": "https://kenkomatcha.com/products/culinary-matcha",
     "status": "ok",
     "httpStatus": 200,
@@ -442,7 +442,7 @@
   },
   {
     "domain": "kusmitea.com",
-    "count": 3,
+    "count": 5,
     "url": "https://www.kusmitea.com/en/products/ceremonial-matcha",
     "status": "ok",
     "httpStatus": 200,
@@ -550,7 +550,7 @@
   },
   {
     "domain": "matchaoutlet.com",
-    "count": 6,
+    "count": 8,
     "url": "https://matchaoutlet.com/products/private-reserve-matcha-d25",
     "status": "ok",
     "httpStatus": 200,
@@ -562,7 +562,7 @@
   },
   {
     "domain": "matcha.com",
-    "count": 20,
+    "count": 21,
     "url": "https://matcha.com/products/ceremonial-grade-latte-matcha",
     "status": "ok",
     "httpStatus": 200,
@@ -622,7 +622,7 @@
   },
   {
     "domain": "midorispring.com",
-    "count": 9,
+    "count": 10,
     "url": "https://www.midorispring.com/products/conventional-ceremonial-matcha-emerald-100g",
     "status": "ok",
     "httpStatus": 200,
@@ -646,7 +646,7 @@
   },
   {
     "domain": "mizubatea.com",
-    "count": 17,
+    "count": 21,
     "url": "https://mizubatea.com/products/asahi-matcha",
     "status": "ok",
     "httpStatus": 200,
@@ -670,7 +670,7 @@
   },
   {
     "domain": "shop.mymatchalife.com",
-    "count": 6,
+    "count": 7,
     "url": "https://shop.mymatchalife.com/products/baristas-premium-matcha-latte",
     "status": "ok",
     "httpStatus": 200,
@@ -682,7 +682,7 @@
   },
   {
     "domain": "global.tokichi.jp",
-    "count": 12,
+    "count": 19,
     "url": "https://global.tokichi.jp/products/mc20",
     "status": "ok",
     "httpStatus": 200,
@@ -718,7 +718,7 @@
   },
   {
     "domain": "nioteas.com",
-    "count": 20,
+    "count": 23,
     "url": "https://nioteas.com/products/matcha-tea-chanoka-yabu-30g",
     "status": "ok",
     "httpStatus": 200,
@@ -814,7 +814,7 @@
   },
   {
     "domain": "rishi-tea.com",
-    "count": 11,
+    "count": 15,
     "url": "https://www.rishi-tea.com/products/organic-barista-matcha",
     "status": "ok",
     "httpStatus": 200,
@@ -826,7 +826,7 @@
   },
   {
     "domain": "rockysmatcha.com",
-    "count": 10,
+    "count": 14,
     "url": "https://www.rockysmatcha.com/products/rockys-matcha-ceremonial-blend-matcha-20g",
     "status": "ok",
     "httpStatus": 200,
@@ -862,7 +862,7 @@
   },
   {
     "domain": "smithtea.com",
-    "count": 4,
+    "count": 5,
     "url": "https://www.smithtea.com/products/matcha-latte-mix",
     "status": "ok",
     "httpStatus": 200,
@@ -922,7 +922,7 @@
   },
   {
     "domain": "tezumi.com",
-    "count": 42,
+    "count": 51,
     "url": "https://tezumi.com/collections/matcha/products/ato-mukashi-uji-matcha",
     "status": "ok",
     "httpStatus": 200,
@@ -934,7 +934,7 @@
   },
   {
     "domain": "republicoftea.com",
-    "count": 12,
+    "count": 13,
     "url": "https://www.republicoftea.com/products/daily-matcha",
     "status": "ok",
     "httpStatus": 200,
@@ -1006,7 +1006,7 @@
   },
   {
     "domain": "tsukimatcha.com",
-    "count": 2,
+    "count": 3,
     "url": "https://tsukimatcha.com/en/products/original",
     "status": "error",
     "httpStatus": 200,
@@ -1134,7 +1134,7 @@
   },
   {
     "domain": "cultivatetea.com",
-    "count": 16,
+    "count": 18,
     "url": "https://cultivatetea.com/products/matcha-yamekaze",
     "status": "ok",
     "httpStatus": 200,
@@ -1454,6 +1454,78 @@
     "hasVarMeta": false,
     "hasProductJsonTag": false,
     "hasShopifyMarker": false,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "matchaunion.com",
+    "count": 4,
+    "url": "https://matchaunion.com/products/strawberry-matcha",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "matchacrew.com",
+    "count": 5,
+    "url": "https://matchacrew.com/products/ceremonial-matcha-powder-no-25-40g-in-can",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "wildfoods.co",
+    "count": 1,
+    "url": "https://wildfoods.co/products/ceremonial-matcha-powder",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "beautifultaiwantea.com",
+    "count": 1,
+    "url": "https://beautifultaiwantea.com/products/kagoshima-matcha-green-tea",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "yokomatcha.com",
+    "count": 1,
+    "url": "https://yokomatcha.com/products/organic-ceremonial-grade-matcha-green-tea",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
+    "hasJsonLdProduct": true
+  },
+  {
+    "domain": "aprikamatcha.com",
+    "count": 7,
+    "url": "https://aprikamatcha.com/products/aprika-life-orumi-japanese-ceremonial-grade-matcha-powder-100g-pouch",
+    "status": "ok",
+    "httpStatus": 200,
+    "strategy": "shopify_var_meta",
+    "hasVarMeta": true,
+    "hasProductJsonTag": false,
+    "hasShopifyMarker": true,
     "hasJsonLdProduct": true
   }
 ]
