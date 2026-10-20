@@ -15,6 +15,7 @@ import { ProductCard, TieredPickCard, BrandLogo } from "@/components/product-car
 import { MatchTool } from "@/components/MatchTool";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { getLibraryFacets } from "@/lib/studies";
 
 // Abbreviated relative to /browse's full result set + pagination -- the home
 // page shows a sample plus a link to the full database rather than paging.
@@ -153,6 +154,23 @@ export default async function Home({
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="max-w-5xl mx-auto px-6 pt-12">
+        <Link
+          href="/research"
+          className="block border border-line rounded-sm bg-paper-raised hover:border-matcha hover:bg-matcha-soft transition-colors p-6 sm:p-8"
+        >
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">New &middot; Research library</p>
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink text-balance">
+            Every scientific study on matcha, in one searchable place
+          </h2>
+          <p className="mt-3 text-ink-muted max-w-2xl leading-relaxed">
+            {getLibraryFacets(false).total.toLocaleString()}{" "}papers, trials and theses on matcha&apos;s chemistry, cultivation, safety and health effects &mdash; tagged by topic and study type, with
+            citations and links to every source.
+          </p>
+          <span className="inline-block mt-4 text-matcha">Explore the library &rarr;</span>
+        </Link>
       </section>
 
       <section className="max-w-4xl mx-auto px-6 py-10 text-center">

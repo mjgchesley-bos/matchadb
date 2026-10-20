@@ -551,6 +551,16 @@ export default async function ProductDetailPage({
               note={product.egcg_note}
             />
           </div>
+          <p className="text-xs text-ink-faint mt-3">
+            What does the science say?{" "}
+            <Link href="/research?topic=L-theanine%20and%20caffeine" className="text-matcha hover:text-forest">
+              Studies on L-theanine and caffeine
+            </Link>
+            {" "}&middot;{" "}
+            <Link href="/research?topic=Antioxidants%20and%20polyphenols" className="text-matcha hover:text-forest">
+              Studies on antioxidants and EGCG
+            </Link>
+          </p>
         </section>
       )}
 

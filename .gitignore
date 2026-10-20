@@ -50,3 +50,6 @@ data/price-conflicting.json
 data/price-contradiction-flagged.json
 data/price-needs-review.csv
 data/liveness-check.json
+
+# harvest cache
+.cache/

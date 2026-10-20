@@ -1,0 +1,52 @@
+name: Weekly research library refresh
+
+# Re-harvests the matcha research literature (PubMed, OpenAlex, Europe PMC) into
+# data/studies.json and commits it if anything changed -- new papers are added,
+# ids of existing ones never change (data/study-id-registry.json).
+#
+# If any source fails (OpenAlex, for instance, rate-limits keyless callers that
+# share an IP), the script exits non-zero BEFORE writing anything, so a bad run
+# can never shrink or corrupt the library; the next week's run simply tries again.
+# Optional repository secrets raise the limits: NCBI_API_KEY (PubMed) and
+# OPENALEX_API_KEY (OpenAlex, free at openalex.org/settings/api).
+on:
+  schedule:
+    - cron: "0 7 * * 0" # Sunday 07:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-studies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm ci
+
+      - name: Harvest studies
+        run: node scripts/harvest-studies.mjs
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+
+      - name: Commit and push if the library changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/studies.json data/studies-excluded.json data/study-id-registry.json
+          # generatedAt changes every run, so compare the studies themselves
+          if git diff --cached --quiet; then
+            echo "No changes."
+          elif [ "$(git diff --cached --numstat data/studies.json | awk '{print $1+$2}')" -le 2 ]; then
+            echo "Only the timestamp changed; skipping commit."
+            git reset -q
+          else
+            git commit -m "Automated weekly research library refresh"
+            git push
+          fi
