@@ -12,14 +12,7 @@ type Facets = ReturnType<typeof getLibraryFacets>;
 // URL is the state, so every filtered view is shareable and back-button safe.
 export function ResearchFilters({ filters, facets, clearHref }: { filters: StudyFilters; facets: Facets; clearHref: string }) {
   return (
-    <form method="get" className="flex flex-col gap-5 text-sm">
-      <div>
-        <label className={labelClass} htmlFor="q">
-          Search the library
-        </label>
-        <input id="q" name="q" defaultValue={filters.q} placeholder="Title, author, topic, keyword" className={fieldClass} />
-      </div>
-
+    <form id="research-filters" method="get" className="flex flex-col gap-5 text-sm">
       <div className="grid grid-cols-2 gap-3">
         <div>
           <label className={labelClass} htmlFor="from">
@@ -40,8 +33,8 @@ export function ResearchFilters({ filters, facets, clearHref }: { filters: Study
           Sort by
         </label>
         <select id="sort" name="sort" defaultValue={filters.sort || ""} className={fieldClass}>
-          <option value="">{filters.q ? "Best match" : "Newest first"}</option>
-          {filters.q && <option value="newest">Newest first</option>}
+          <option value="">{filters.q ? "Best match" : "Recommended"}</option>
+          <option value="newest">Newest first</option>
           <option value="oldest">Oldest first</option>
           <option value="cited">Most cited</option>
         </select>
@@ -95,10 +88,10 @@ export function ResearchFilters({ filters, facets, clearHref }: { filters: Study
 
       <div className="flex items-center gap-4">
         <button type="submit" className="rounded-full bg-matcha text-paper px-6 py-2.5 text-sm font-medium tracking-wide hover:bg-forest transition-colors">
-          Search
+          Apply filters
         </button>
         <Link href={clearHref} className="text-ink-faint hover:text-ink transition-colors">
-          Clear
+          Clear all
         </Link>
       </div>
     </form>

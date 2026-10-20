@@ -74,17 +74,75 @@ export type StudyFilters = {
   yearTo?: number;
   openAccessOnly?: boolean;
   includeMentions?: boolean;
-  sort?: "relevance" | "newest" | "oldest" | "cited";
+  sort?: "relevance" | "recommended" | "newest" | "oldest" | "cited";
   page?: number;
   pageSize?: number;
 };
 
-const tokens = (q: string) =>
-  q
-    .toLowerCase()
-    .replace(/[^\p{L}\p{N}\s-]/gu, " ")
-    .split(/\s+/)
-    .filter((t) => t.length > 1);
+// ---------------------------------------------------------------- search
+// Query syntax: words are ANDed; "quoted phrases" match exactly; OR separates
+// alternatives; a leading minus excludes a word (-tea). Common scientific
+// synonyms are matched too, so "egcg" also finds "epigallocatechin gallate".
+const SYNONYMS: Record<string, string[]> = {
+  egcg: ["epigallocatechin"],
+  epigallocatechin: ["egcg"],
+  catechin: ["catechins"],
+  catechins: ["catechin"],
+  theanine: ["l-theanine"],
+  antioxidant: ["antioxidants", "antioxidative", "antioxidation"],
+  antioxidants: ["antioxidant", "antioxidative"],
+  polyphenol: ["polyphenols", "polyphenolic", "phenolic"],
+  polyphenols: ["polyphenol", "phenolic"],
+  cognition: ["cognitive", "memory", "attention", "executive function"],
+  cognitive: ["cognition", "memory", "attention"],
+  stress: ["anxiety", "cortisol"],
+  anxiety: ["stress"],
+  microbiome: ["microbiota"],
+  microbiota: ["microbiome", "gut flora"],
+  obesity: ["overweight", "body weight", "weight loss", "adipose"],
+  weight: ["obesity", "body weight", "adipose"],
+  cancer: ["tumor", "tumour", "carcinoma", "neoplasm"],
+  caffeine: ["caffeinated"],
+  diabetes: ["glucose", "insulin", "glycemic", "glycaemic"],
+  cholesterol: ["lipid", "ldl"],
+  shading: ["shade", "shaded", "shade-grown", "covering"],
+  shade: ["shading", "shaded", "shade-grown"],
+  pesticide: ["pesticides", "residue", "residues"],
+  toxicity: ["toxic", "hepatotoxicity", "adverse"],
+  "heavy metals": ["lead", "cadmium", "arsenic", "mercury"],
+  sleep: ["insomnia", "sleep quality"],
+  dementia: ["alzheimer", "alzheimers", "cognitive impairment"],
+  alzheimer: ["alzheimers", "dementia"],
+  flavor: ["flavour", "taste", "aroma"],
+  flavour: ["flavor", "taste", "aroma"],
+  color: ["colour", "chlorophyll", "greenness"],
+  colour: ["color", "chlorophyll"],
+  dental: ["oral", "periodontal", "teeth"],
+  skin: ["dermal", "dermatology", "cosmetic"],
+};
+
+type Group = { must: string[]; not: string[] };
+export type ParsedQuery = { groups: Group[]; highlight: string[] };
+
+export function parseQuery(q: string): ParsedQuery {
+  const norm = q.replace(/[“”]/g, '"').toLowerCase();
+  const groups: Group[] = [];
+  const highlight = new Set<string>();
+  for (const part of norm.split(/\s+or\s+/)) {
+    const must: string[] = [];
+    const not: string[] = [];
+    for (const m of part.matchAll(/(-?)"([^"]+)"|(-?)([\p{L}\p{N}][\p{L}\p{N}'-]*)/gu)) {
+      const neg = (m[1] || m[3]) === "-";
+      const term = (m[2] || m[4] || "").trim();
+      if (term.length < 2) continue;
+      (neg ? not : must).push(term);
+      if (!neg) highlight.add(term);
+    }
+    if (must.length || not.length) groups.push({ must, not });
+  }
+  for (const g of groups) for (const t of g.must) for (const syn of SYNONYMS[t] ?? []) highlight.add(syn);
+  return { groups, highlight: [...highlight].sort((a, b) => b.length - a.length) };
+}
 
 function haystack(s: Study) {
   return {
@@ -94,6 +152,84 @@ function haystack(s: Study) {
   };
 }
 
+const variants = (t: string) => [t, ...(SYNONYMS[t] ?? []), ...(t.endsWith("s") && t.length > 4 ? [t.slice(0, -1)] : [])];
+
+// Score one study against the parsed query: 0 means no match. Each required term
+// must appear (itself or a synonym) in the title, keywords/authors/journal, or
+// abstract; excluded terms must not appear anywhere. Best OR-group wins.
+function scoreStudy(s: Study, parsed: ParsedQuery): number {
+  const h = haystack(s);
+  const all = `${h.title} ${h.meta} ${h.abstract}`;
+  let best = 0;
+  for (const g of parsed.groups) {
+    if (g.not.some((t) => variants(t).some((v) => all.includes(v)))) continue;
+    let score = 0;
+    let ok = true;
+    for (const t of g.must) {
+      let termScore = 0;
+      for (const v of variants(t)) {
+        const w = v === t ? 1 : 0.6;
+        if (h.title.includes(v)) termScore = Math.max(termScore, 5 * w);
+        if (h.meta.includes(v)) termScore = Math.max(termScore, 3 * w);
+        if (h.abstract.includes(v)) termScore = Math.max(termScore, 1 * w);
+      }
+      if (!termScore) { ok = false; break; }
+      score += termScore;
+    }
+    if (ok && (g.must.length || score === 0)) best = Math.max(best, score || 0.1);
+  }
+  return best;
+}
+
+// A short excerpt of the abstract around the first matched word, so each result
+// shows where the keyword appears.
+export function snippetFor(s: Study, highlight: string[], width = 240): string {
+  if (!s.abstract) return "";
+  const lower = s.abstract.toLowerCase();
+  let at = -1;
+  for (const t of highlight) {
+    const i = lower.indexOf(t);
+    if (i !== -1 && (at === -1 || i < at)) at = i;
+  }
+  if (at === -1) return s.abstract.length > width ? `${s.abstract.slice(0, width).replace(/\s+\S*$/, "")}…` : s.abstract;
+  const start = Math.max(0, at - Math.floor(width / 3));
+  const end = Math.min(s.abstract.length, start + width);
+  let body = s.abstract.slice(start, end);
+  if (start > 0) body = body.replace(/^\S*\s/, "");
+  if (end < s.abstract.length) body = body.replace(/\s\S*$/, "");
+  return `${start > 0 ? "… " : ""}${body.trim()}${end < s.abstract.length ? " …" : ""}`;
+}
+
+// Keyword suggestions for the search box: author keywords and subject terms that
+// appear in at least two studies, most common first.
+const GENERIC = new Set(["matcha", "humans", "animals", "male", "female", "adult", "adults", "tea", "plant extracts", "mice", "rats", "middle aged", "aged", "young adult"]);
+let keywordIndex: { name: string; count: number }[] | null = null;
+function keywordList() {
+  if (keywordIndex) return keywordIndex;
+  const m = new Map<string, number>();
+  for (const s of load().file.studies) {
+    if (s.relevance === "mention") continue;
+    const seen = new Set<string>();
+    for (const k of [...s.keywords, ...s.mesh]) {
+      const n = k.toLowerCase().trim();
+      if (n.length < 3 || n.length > 40 || GENERIC.has(n) || seen.has(n)) continue;
+      seen.add(n);
+      m.set(n, (m.get(n) ?? 0) + 1);
+    }
+  }
+  keywordIndex = [...m].filter(([, c]) => c >= 2).map(([name, count]) => ({ name, count })).sort((a, b) => b.count - a.count);
+  return keywordIndex;
+}
+
+export function suggestKeywords(prefix: string, limit = 8) {
+  const p = prefix.toLowerCase().trim();
+  if (p.length < 2) return [];
+  const list = keywordList();
+  const starts = list.filter((k) => k.name.startsWith(p));
+  const word = list.filter((k) => !k.name.startsWith(p) && k.name.split(/[\s-]+/).some((w) => w.startsWith(p)));
+  return [...starts, ...word].slice(0, limit);
+}
+
 // The library's default view hides studies that mention matcha only once in
 // passing (a coursework paper that lists it on a menu, say); a checkbox brings
 // them back for anyone who wants a literal "every mention" search.
@@ -101,9 +237,50 @@ function baseSet(includeMentions: boolean) {
   return load().file.studies.filter((s) => includeMentions || s.relevance !== "mention");
 }
 
+// "Recommended" ordering: how recent, how widely cited, how established the venue,
+// and how strong the study design is, each on a 0–1 scale. The library holds no
+// author-affiliation data, so organizational standing is judged by the venue:
+// MEDLINE/PubMed-indexed journals and a short list of major publishers and
+// flagship journals count most; repositories, theses and preprints count least.
+const MAJOR_VENUE =
+  /^(nature|science|cell|the lancet|lancet|jama|bmj|plos|elsevier|springer|wiley|american chemical|acs |journal of agricultural and food chemistry|food chemistry|nutrients|foods|molecules|lwt|scientific reports|frontiers|journal of the science of food|food research international|antioxidants|critical reviews|trends in|annual review|comprehensive reviews|international journal of|journal of nutrition|american journal of clinical|british journal of nutrition|european journal of|food & function|food hydrocolloids|journal of functional foods|phytomedicine|heliyon)/i;
+const REPOSITORY_VENUE = /(repositor|zenodo|ssrn|research square|preprint|irdb|doaj|digital library|e-commerce)/i;
+const EVIDENCE: Record<string, number> = {
+  "Systematic review / meta-analysis": 1,
+  "Randomized controlled trial": 0.9,
+  "Clinical trial (non-randomized)": 0.75,
+  Review: 0.6,
+  "Observational (human)": 0.6,
+  "Animal study": 0.5,
+  "Chemical / analytical": 0.5,
+  "Food science / processing": 0.5,
+  "Agronomy / cultivation": 0.5,
+  "Sensory / consumer": 0.45,
+  "In vitro / cell study": 0.4,
+};
+let maxCites = 0;
+const standingCache = new Map<number, number>();
+function standing(s: Study): number {
+  const hit = standingCache.get(s.id);
+  if (hit !== undefined) return hit;
+  if (!maxCites) maxCites = Math.max(1, ...load().file.studies.map((x) => x.citedBy));
+  const age = s.year ? Math.max(0, new Date().getFullYear() - s.year) : 20;
+  const recency = Math.max(0, 1 - age / 12);
+  const cites = Math.log1p(s.citedBy) / Math.log1p(maxCites);
+  let venue = 0.15;
+  if (s.kind === "article" && s.journal && !REPOSITORY_VENUE.test(s.journal)) {
+    venue = MAJOR_VENUE.test(s.journal) ? 1 : s.pmid ? 0.8 : s.doi ? 0.5 : 0.3;
+  }
+  const evidence = EVIDENCE[s.design] ?? 0.25;
+  const v = 0.3 * recency + 0.3 * cites + 0.25 * venue + 0.15 * evidence;
+  standingCache.set(s.id, v);
+  return v;
+}
+
 export function queryStudies(f: StudyFilters) {
   const pageSize = f.pageSize ?? 25;
-  const toks = f.q ? tokens(f.q) : [];
+  const parsed = f.q ? parseQuery(f.q) : { groups: [], highlight: [] };
+  const hasQuery = parsed.groups.length > 0;
   let rows = baseSet(!!f.includeMentions).filter((s) => {
     if (f.designs?.length && !f.designs.includes(s.design)) return false;
     if (f.topics?.length && !f.topics.some((t) => s.topics.includes(t))) return false;
@@ -115,25 +292,25 @@ export function queryStudies(f: StudyFilters) {
   });
 
   const scored = new Map<number, number>();
-  if (toks.length) {
+  if (hasQuery) {
     rows = rows.filter((s) => {
-      const h = haystack(s);
-      let score = 0;
-      for (const t of toks) {
-        const inTitle = h.title.includes(t);
-        const inMeta = h.meta.includes(t);
-        const inAbs = h.abstract.includes(t);
-        if (!inTitle && !inMeta && !inAbs) return false;
-        score += (inTitle ? 5 : 0) + (inMeta ? 3 : 0) + (inAbs ? 1 : 0);
-      }
+      const score = scoreStudy(s, parsed);
+      if (!score) return false;
       scored.set(s.id, score);
       return true;
     });
   }
 
-  const sort = f.sort ?? (toks.length ? "relevance" : "newest");
+  const sort = f.sort ?? (hasQuery ? "relevance" : "recommended");
+  const maxScore = Math.max(1, ...scored.values());
   rows = [...rows].sort((a, b) => {
-    if (sort === "relevance") return (scored.get(b.id) ?? 0) - (scored.get(a.id) ?? 0) || (b.year ?? 0) - (a.year ?? 0);
+    // Keyword searches blend how well the words match with how recent and recognized the study is,
+    // so a strong match from a leading journal outranks an equally good match from a repository.
+    if (sort === "relevance") {
+      const blend = (s: Study) => 0.55 * ((scored.get(s.id) ?? 0) / maxScore) + 0.45 * standing(s);
+      return blend(b) - blend(a) || (b.year ?? 0) - (a.year ?? 0);
+    }
+    if (sort === "recommended") return standing(b) - standing(a) || (b.year ?? 0) - (a.year ?? 0);
     if (sort === "oldest") return (a.year ?? 9999) - (b.year ?? 9999) || a.title.localeCompare(b.title);
     if (sort === "cited") return b.citedBy - a.citedBy || (b.year ?? 0) - (a.year ?? 0);
     return (b.year ?? 0) - (a.year ?? 0) || a.title.localeCompare(b.title);
@@ -142,7 +319,7 @@ export function queryStudies(f: StudyFilters) {
   const total = rows.length;
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
   const page = Math.min(Math.max(1, f.page ?? 1), totalPages);
-  return { studies: rows.slice((page - 1) * pageSize, page * pageSize), total, page, totalPages };
+  return { studies: rows.slice((page - 1) * pageSize, page * pageSize), total, page, totalPages, highlight: parsed.highlight };
 }
 
 export function getLibraryFacets(includeMentions = false) {

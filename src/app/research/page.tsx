@@ -3,11 +3,29 @@ import Link from "next/link";
 import { getLibraryFacets, getLibraryMeta, queryStudies, type StudyFilters } from "@/lib/studies";
 import { toArr, toNum, toStr } from "@/lib/searchParams";
 import { StudyCard } from "@/components/StudyCard";
+import { ResearchSearch } from "@/components/ResearchSearch";
 import { ResearchFilters } from "@/components/ResearchFilters";
 import { JsonLd } from "@/components/JsonLd";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 
 const PAGE_SIZE = 25;
+
+// One-click searches for the questions people most often bring to matcha research.
+// Each is an ordinary keyword query (the same syntax the search box accepts).
+const SEARCH_SHORTCUTS: [string, string][] = [
+  ["L-theanine", "theanine"],
+  ["EGCG and catechins", "egcg OR catechin"],
+  ["Caffeine", "caffeine"],
+  ["Focus and memory", "cognition"],
+  ["Stress and sleep", "stress OR sleep"],
+  ["Weight and metabolism", "obesity OR metabolism"],
+  ["Gut health", "microbiome"],
+  ["Heavy metals", '"heavy metals" OR cadmium OR arsenic'],
+  ["Pesticides", "pesticide"],
+  ["Shade-growing", "shading"],
+  ["Aroma and flavor", "aroma OR flavor"],
+  ["Tea ceremony", "ceremony"],
+];
 
 // Canonical is the bare library URL: filtered/searched views are re-slices of
 // the same set, and each study has its own page that carries the ranking.
@@ -40,7 +58,7 @@ export default async function ResearchPage({
 
   const facets = getLibraryFacets(filters.includeMentions);
   const meta = getLibraryMeta();
-  const { studies, total, page, totalPages } = queryStudies(filters);
+  const { studies, total, page, totalPages, highlight } = queryStudies(filters);
   const filtered = !!(filters.q || filters.designs?.length || filters.topics?.length || filters.kinds?.length || filters.yearFrom || filters.yearTo || filters.openAccessOnly);
   const maxYearCount = Math.max(...facets.byYear.map((y) => y.count));
   const recent = facets.byYear.filter((y) => y.year >= 2005);
@@ -76,6 +94,29 @@ export default async function ResearchPage({
           source. We keep abstracts and citations; the full text stays with its publisher.
         </p>
       </div>
+
+      <section className="mb-10 max-w-3xl" aria-label="Search the library">
+        <ResearchSearch defaultValue={filters.q} formId="research-filters" />
+        <p className="mt-3 text-xs text-ink-faint leading-relaxed">
+          Tip: use &quot;quotes&quot; for an exact phrase, <span className="font-mono">OR</span> between alternatives, and a minus to leave a word out, for example{" "}
+          <Link href={`/research?q=${encodeURIComponent('"heavy metals" OR cadmium OR pesticide')}`} className="text-matcha hover:text-forest">
+            &quot;heavy metals&quot; OR cadmium OR pesticide
+          </Link>
+          . Related words are matched too, so &ldquo;EGCG&rdquo; also finds &ldquo;epigallocatechin.&rdquo;
+        </p>
+        <div className="mt-4 flex flex-wrap gap-2 items-center">
+          <span className="text-xs uppercase tracking-wide text-ink-faint mr-1">Popular searches</span>
+          {SEARCH_SHORTCUTS.map(([label, q]) => (
+            <Link
+              key={label}
+              href={`/research?q=${encodeURIComponent(q)}`}
+              className="rounded-full border border-line-strong px-3 py-1.5 text-sm text-ink-muted hover:border-matcha hover:text-matcha transition-colors"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {!filtered && page === 1 && (
         <section className="mb-10 grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-6" aria-label="Library at a glance">
@@ -122,15 +163,16 @@ export default async function ResearchPage({
 
           <div className="flex flex-col gap-4">
             {studies.map((s) => (
-              <StudyCard key={s.id} study={s} />
+              <StudyCard key={s.id} study={s} terms={highlight} />
             ))}
           </div>
 
           {studies.length === 0 && (
             <p className="text-ink-muted mt-8">
-              No studies match those filters. Try fewer filters, or{" "}
-              <Link href="/research?mentions=1" className="text-matcha hover:text-forest">
-                include passing mentions
+              {filters.q ? <>Nothing matched &ldquo;{filters.q}&rdquo;. </> : "No studies match those filters. "}
+              Try a broader or single word, remove some filters, or{" "}
+              <Link href={filters.q ? `/research?q=${encodeURIComponent(filters.q)}&mentions=1` : "/research?mentions=1"} className="text-matcha hover:text-forest">
+                include papers that mention matcha only in passing
               </Link>
               .
             </p>
