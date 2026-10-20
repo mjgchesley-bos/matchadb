@@ -16,7 +16,7 @@ export default async function AboutPage() {
     <LegalPage eyebrow="About" title="What MatchaDB is, and how we research it">
       <p>
         MatchaDB is an independent database of matcha: {productCount.toLocaleString()} products from{" "}
-        {brandCount.toLocaleString()} brands, from historic Uji tea houses to grocery-store tins. It
+        {brandCount.toLocaleString()}{" "}brands, from historic Uji tea houses to grocery-store tins. It
         exists because matcha buying is hard. Labels like &ldquo;ceremonial&rdquo; aren&apos;t
         regulated, sourcing is often vague, and prices are listed in different sizes and currencies.
       </p>

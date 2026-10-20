@@ -636,7 +636,7 @@ export default async function ProductDetailPage({
             href={`/brands/${encodeURIComponent(product.brand_name)}`}
             className="inline-block mt-4 text-sm text-matcha hover:text-forest transition-colors"
           >
-            View all {product.brand_name} products &rarr;
+            View all {product.brand_name}{" "}products &rarr;
           </Link>
         </section>
       )}

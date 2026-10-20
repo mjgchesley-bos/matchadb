@@ -55,7 +55,7 @@ export default async function RegionsIndexPage() {
       </div>
 
       <p className="text-xs text-ink-faint mt-8">
-        Regions with fewer than {MIN_PRODUCTS_FOR_PAGE} products aren&apos;t summarized, since a
+        Regions with fewer than {MIN_PRODUCTS_FOR_PAGE}{" "}products aren&apos;t summarized, since a
         handful of products can&apos;t support a meaningful comparison.
       </p>
     </main>

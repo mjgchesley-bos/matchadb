@@ -91,7 +91,7 @@ export function SourcingMap({
 
     const map = new mapboxgl.Map({
       container: containerRef.current,
-      style: "mapbox://styles/mapbox/dark-v11",
+      style: "mapbox://styles/mapbox/light-v11",
       center: [125, 33],
       zoom: 3.2,
       attributionControl: true,
@@ -160,13 +160,13 @@ export function SourcingMap({
             id: `${sourceId}-fill`,
             type: "fill",
             source: sourceId,
-            paint: { "fill-color": "#8fe356", "fill-opacity": 0.12 },
+            paint: { "fill-color": "#3c7a2a", "fill-opacity": 0.16 },
           });
           map.addLayer({
             id: `${sourceId}-line`,
             type: "line",
             source: sourceId,
-            paint: { "line-color": "#8fe356", "line-width": 2 },
+            paint: { "line-color": "#3c7a2a", "line-width": 2 },
           });
 
           const popup = new mapboxgl.Popup({ closeButton: false }).setHTML(popupHtml);
@@ -193,13 +193,13 @@ export function SourcingMap({
         el.style.width = `${size}px`;
         el.style.height = `${size}px`;
         el.style.borderRadius = "9999px";
-        el.style.background = boundary ? "rgba(20, 22, 15, 0.85)" : "rgba(143, 227, 86, 0.35)";
-        el.style.border = "2px solid #8fe356";
+        el.style.background = boundary ? "rgba(246, 241, 228, 0.95)" : "rgba(60, 122, 42, 0.30)";
+        el.style.border = "2px solid #3c7a2a";
         el.style.cursor = "pointer";
         el.style.display = "flex";
         el.style.alignItems = "center";
         el.style.justifyContent = "center";
-        el.style.color = "#f1ede0";
+        el.style.color = "#222818";
         el.style.fontWeight = "600";
         el.style.fontSize = "10px";
         el.style.fontFamily = "var(--font-manrope), sans-serif";
@@ -244,13 +244,13 @@ export function SourcingMap({
             id: `${sourceId}-fill`,
             type: "fill",
             source: sourceId,
-            paint: { "fill-color": "#8fe356", "fill-opacity": 0.12 },
+            paint: { "fill-color": "#3c7a2a", "fill-opacity": 0.16 },
           });
           map.addLayer({
             id: `${sourceId}-line`,
             type: "line",
             source: sourceId,
-            paint: { "line-color": "#8fe356", "line-width": 2 },
+            paint: { "line-color": "#3c7a2a", "line-width": 2 },
           });
         }
 
@@ -270,12 +270,12 @@ export function SourcingMap({
         diamond.style.width = "100%";
         diamond.style.height = "100%";
         diamond.style.transform = "rotate(45deg)";
-        diamond.style.background = "#8fe356";
+        diamond.style.background = "#3c7a2a";
         diamond.style.border = "2px solid #fff6df";
         el.appendChild(diamond);
 
         const productLinks = farm.productIds
-          .map((id) => `<a href="/products/${id}" style="color:#8fe356;text-decoration:underline;">#${id}</a>`)
+          .map((id) => `<a href="/products/${id}" style="color:#2b5a20;text-decoration:underline;">#${id}</a>`)
           .join(", ");
 
         const popup = new mapboxgl.Popup({ offset: 16, closeButton: false }).setHTML(
@@ -284,7 +284,7 @@ export function SourcingMap({
              <span style="opacity:0.85;">${farm.brand}</span><br/>
              <span style="font-size:11px;opacity:0.8;">${farm.description}</span><br/>
              <span style="font-size:11px;">Products: ${productLinks}</span><br/>
-             <a href="${farm.sourceUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#8fe356;">
+             <a href="${farm.sourceUrl}" target="_blank" rel="noopener noreferrer" style="font-size:11px;color:#2b5a20;">
                Verified source &rarr;
              </a>
            </div>`

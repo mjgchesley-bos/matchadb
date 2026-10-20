@@ -116,7 +116,7 @@ export default async function Home({
           </h1>
           <p className="mt-7 text-lg text-ink-muted max-w-xl mx-auto leading-relaxed">
             A research database of {productCount.toLocaleString()} matcha products across{" "}
-            {brandCount.toLocaleString()} brands &mdash; pricing, grade, and sourcing pulled
+            {brandCount.toLocaleString()}{" "}brands &mdash; pricing, grade, and sourcing pulled
             directly from each brand&apos;s own product pages, kept current, and never smoothed
             over when the source contradicts itself.
           </p>

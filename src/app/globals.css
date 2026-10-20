@@ -1,31 +1,35 @@
 @import "tailwindcss";
 
 /*
-  Fixed dark theme -- this is the only theme the site shows, deliberately,
-  regardless of a visitor's system light/dark preference (explicit decision:
-  a consistent brand look mattered more here than following each visitor's
-  OS setting). Primary is a vibrant matcha green (buttons, links, badges,
-  the "DB" wordmark) against the deep charcoal-green ground; the muted
-  forest green is a deliberate second color used for hover states
-  (darkening on hover, not brightening) and quiet structural marks
-  (section-label kickers, the header's accent dot).
+  Fixed light theme ("cream and matcha") -- this is the only theme the site
+  shows, deliberately, regardless of a visitor's system light/dark
+  preference (explicit decision: a consistent brand look mattered more here
+  than following each visitor's OS setting). Warm cream paper with deep
+  matcha green as the primary (header, buttons, links, badges); the darker
+  forest green is the second color, used for hover states (darkening on
+  hover) and quiet structural marks (section-label kickers). Contrast was
+  checked for every text/background pairing: body and muted text, links,
+  and cream text on the green header and buttons all meet 4.5:1.
+  (The previous dark theme: paper #14160f, ink #f1ede0, matcha #8fe356.)
 */
 :root {
-  --color-paper: #14160f;
-  --color-paper-raised: #1c1e15;
-  --color-ink: #f1ede0;
-  --color-ink-muted: #a8a58f;
-  --color-ink-faint: #6f6c58;
-  --color-line: #2b2d21;
-  --color-line-strong: #3a3c2c;
+  color-scheme: light;
 
-  --color-matcha: #8fe356;
-  --color-forest: #5c9c4a;
-  --color-matcha-soft: #202b16;
-  --color-matcha-ink: #d8f4bd;
+  --color-paper: #f6f1e4;
+  --color-paper-raised: #fffdf7;
+  --color-ink: #222818;
+  --color-ink-muted: #5a5f49;
+  --color-ink-faint: #7d806b;
+  --color-line: #e2dccb;
+  --color-line-strong: #cfc8b2;
 
-  --color-gold: #d3ac5c;
-  --color-gold-soft: #2c2412;
+  --color-matcha: #3c7a2a;
+  --color-forest: #2b5a20;
+  --color-matcha-soft: #e4eed3;
+  --color-matcha-ink: #27561b;
+
+  --color-gold: #8c6418;
+  --color-gold-soft: #f3e7c8;
 }
 
 @theme inline {

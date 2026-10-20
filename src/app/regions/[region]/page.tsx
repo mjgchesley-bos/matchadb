@@ -114,7 +114,7 @@ export default async function RegionPage({
         <Stat label="Organic" value={`${Math.round(summary.organicShare * 100)}%`} sub="of products" />
       </div>
       <p className="text-xs text-ink-faint mt-2 max-w-2xl">
-        Price is the <em>median</em> across {summary.pricedCount} products with a confirmed price and size (yen, pound and euro prices converted to dollars), so a few
+        Price is the <em>median</em> across {summary.pricedCount}{" "}products with a confirmed price and size (yen, pound and euro prices converted to dollars), so a few
         very expensive competition-grade tins don&apos;t distort it. Products priced by count (sticks,
         tea bags) are excluded.
       </p>
@@ -202,7 +202,7 @@ export default async function RegionPage({
             href={`/browse?region=${encodeURIComponent(key)}`}
             className="inline-block mt-5 text-sm text-matcha hover:text-forest transition-colors"
           >
-            See all {summary.productCount} products from {info.name} &rarr;
+            See all {summary.productCount}{" "}products from {info.name} &rarr;
           </Link>
         )}
       </section>
