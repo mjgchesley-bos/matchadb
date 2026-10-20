@@ -7,6 +7,7 @@ import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
+import { ResearchLinks } from "@/components/ResearchLinks";
 import { SITE_URL } from "@/lib/site";
 
 export async function generateMetadata({
@@ -151,6 +152,11 @@ export default async function BrandPage({
           );
         })}
       </div>
+
+      <ResearchLinks
+        topics={["Antioxidants and polyphenols", "L-theanine and caffeine", "Authenticity and analytical methods"]}
+        blurb="Curious what the science says about matcha in general? These topics gather the published studies, linked to their sources."
+      />
     </main>
   );
 }

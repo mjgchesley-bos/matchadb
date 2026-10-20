@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-20T02:12:54.678Z",
- "count": 739,
+ "generatedAt": "2026-10-20T02:33:02.237Z",
+ "count": 737,
  "studies": [
   {
    "id": 2,
@@ -461,9 +461,9 @@
    "mentions": 3,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Inflammation and immunity",
-    "Processing, milling and quality"
+    "Processing, milling and quality",
+    "Food products and applications"
    ],
    "matchaIn": "keywords",
    "abstract": "Consumers are increasingly interested in natural, plant-based additives as alternatives to synthetic compounds in food products. This study investigated the polyphenolic profiles, total polyphenol content (TPC), total antioxidant capacity (TAC), and antibacterial activity of aqueous and 30% ethanolic extracts of green tea, matcha tea, black tea, and yerba mate. Commercial teas (Camellia sinensis) and mate (Ilex paraguariensis) were purchased in Tartu, Estonia. The tea and mate leaves were powdered (< 1 mm), and extracts prepared with water or 30% ethanol. Polyphenolic compounds were analysed using HPLC-DAD-MS, TPC was quantified as gallic acid equivalents, and TAC was determined spectrophotometrically using the Folin-Ciocalteu method. Minimum inhibitory concentrations (MICs) against Listeria monocytogenes, Staphylococcus aureus, Escherichia coli, and Campylobacter jejuni were determined by broth microdilution according to the EVS-EN ISO, 20776–1:2020 standard. In total, 28 polyphenolic compounds were detected, including hydroxybenzoic acids, hydroxycinnamic acids, flavanols, flavonols, and tea pigments. Mate extracts were rich in chlorogenic acids, while tea extracts contained higher proportions of flavanols, particularly epigallocatechin, epicatechin gallate, and epigallocatechin gallate. Ethanolic extracts of mate (5.16 ± 0.02 mg GAE/mL) and green tea (4.68 ± 0.08 mg GAE/mL) had the highest TPC, wheras matcha tea (5.50 ± 0.01 mg GAE/mL) and green tea (5.82 ± 0.00 mg GAE/mL) showed the strongest TAC. In aqueous extracts, mate and green tea had the highest TPC (3.02 ± 0.34 and 1.77 ± 0.03 mg GAE/mL, respectively), and the strongest TAC (4.05 ± 0.01 and 3.48 ± 0.10 mg GAE/mL). All extracts inhibited the growth of S. aureus, with MIC values ranging from 0.06 to 0.27 mg GAE/mL, and green tea extracts showed the strongest antibacterial activity. Mate extracts showed similar TAC and antibacterial activity in both aqueous and ethanolic extracts. TAC correlated most strongly with TPC (rS = 0.8), and among individual compounds, epicatechin gallate showed the strongest correlation (rS = 0.6). A moderate negative correlation (rS = − 0.6) between TPC and MICs indicated that higher polyphenolic content was linked to stronger antibacterial activity. In summary, ethanolic extracts of green tea were the most promising for further application in food composition due to their strong antioxidant and antibacterial properties. These findings highlight the potential of tea and mate extracts as natural alternatives to synthetic additives in the food industry.",
@@ -516,9 +516,9 @@
    "mentions": 6,
    "topics": [
     "Cognition, mood and stress",
-    "Safety, contaminants and toxicity",
     "Skin, oral and dental",
-    "Food products and applications"
+    "Food products and applications",
+    "Antioxidants and polyphenols"
    ],
    "matchaIn": "title",
    "abstract": "Background: This work presents the development of functional beverages for brain health support formulated with matcha, sugarcane juice, and medicinal plants chamomile (CT) and lemon balm (LB) tea extracts. Methods: For this, the anxiolytic-like effects were assessed using the in vivo adult zebrafish (Danio rerio) model for behavioral and toxicological analyses, as well as the in vitro bioactivity and total phenolic content TPC. Initially, three beverage bases with matcha and sugarcane juice were tested. Based on the positive anxiolytic-like effects, the prioritized beverage base BB3 (35% matcha and 65% sugarcane juice, v/v, 10.2 °Brix) was selected to produce three experimental beverages BBC (70% BB3, 30% CT), BBLB (70% BB3, 30% LB) and BBCLB (70% BB3, 15% LB and 15% CT). Results: Prioritized beverages BBLB and BBCLB had no effect on the adult zebrafish locomotion behavior and showed similar anxiolytic-like effects and phenolics bioaccessibility (29.8% and 30.8% for BBLB and BBCLB, respectively), as well as no toxicity. BBLB and BBCLB also showed similarly high phenolic content (669.84 ± 19.47 mg GAE/L and 729.43 ± 41.49 mg GAE/L, respectively). Conclusion: A complex phenolic profile was observed for both beverages and myricetin, and chlorogenic acid was the predominant phenolic compound detected. Overall, this study demonstrated the successful development of safe, functional polyphenol-rich beverages with anxiolytic-like effects using readily available plant-based materials.",
@@ -668,9 +668,9 @@
    "mentions": 9,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Gut and microbiome",
-    "Processing, milling and quality"
+    "Processing, milling and quality",
+    "Aroma, flavor and sensory"
    ],
    "matchaIn": "title",
    "abstract": "Matcha tea, a powdered green tea produced from shade-grown Camellia sinensis leaves, has gained increasing attention as both a traditional beverage and a functional food ingredient. While previous reviews have focused on its phytochemical profile and biological activities, less attention has been given to the effects of food processing and matrix interactions on matcha bioactives. This review critically synthesizes current evidence on the processing-induced transformation, stability, and digestive bioaccessibility of key matcha compounds in real food systems. The production methods, phytochemical compositions, and reported health effects are summarized, with a particular emphasis on matrix-dependent changes during processing, including catechin degradation and epimerization, caffeine retention, L-theanine stability, and chlorophyll loss. The implications of these alterations for sensory quality, safety, and gastrointestinal release are discussed. Emerging findings on gut microbiota modulation and omics-based approaches are also highlighted. Collectively, the available evidence indicates that the functional value of matcha in foods is strongly influenced by processing-matrix interactions rather than native composition alone, leading to trade-offs among health functionality, consumer acceptance, and safety. By integrating food chemistry, processing, and nutritional perspectives, this review proposes a framework to guide the rational formulation of matcha-enriched foods and align health claims with realistic processing outcomes.",
@@ -988,9 +988,9 @@
    "mentions": 5,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Skin, oral and dental",
-    "Authenticity and analytical methods"
+    "Authenticity and analytical methods",
+    "Cancer"
    ],
    "matchaIn": "title",
    "abstract": "Matcha (Camellia sinensis) and yerba mate (Ilex paraguariensis) are polyphenol-rich plants of growing interest for cosmetic applications, yet the influence of green extraction solvents on their cosmeceutical potential remains underexplored. In this study, aqueous, 20% (v/v) ethanol (EtOH) and 50% (v/v) propylene glycol (PG) extracts of both raw materials were prepared by ultrasound-assisted extraction and compared in terms of total phenolic and flavonoid content, antioxidant activity (DPPH and ABTS), tyrosinase inhibition, in vitro sun protection factor (SPF) and cytotoxicity towards human BJ fibroblasts and A375 melanoma cells. Phytochemical profiles were characterized by HPLC-ESI-QTOF-MS/MS, and phytochemistry-activity relationships were explored using hierarchical clustering, Czekanowski analysis and PCA-based regression modeling with leave-one-out cross-validation. Both botanical origin and extraction solvent markedly shaped the composition and biological activity of the extracts, and neither was universally optimal. The matcha 50% PG extract emerged as a promising ready-to-use extract for brightening- and photoprotection-oriented applications, combining strong tyrosinase inhibition with the highest in vitro SPF among the matcha preparations, whereas aqueous and ethanolic extracts showed stronger DPPH scavenging and the most favorable fibroblast safety. For yerba mate, the aqueous and ethanolic extracts were more cytotoxic towards A375 melanoma cells than the PG extract, suggesting a distinct application niche. Chemometric modeling linked biological responses to multivariate phytochemical patterns rather than single compounds, providing marker sets to guide green-solvent extract optimization and cosmetic formulation.",
@@ -1151,10 +1151,10 @@
    "relevance": "subject",
    "mentions": 3,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Aroma, flavor and sensory",
     "Food products and applications",
-    "Processing, milling and quality"
+    "Processing, milling and quality",
+    "Market, culture and sustainability"
    ],
    "matchaIn": "title",
    "abstract": "Experimental trials with different freeze-dried berries showed that freeze-dried raspberries had the best sensory compatibility with matcha tea flavour. They provided the product with balanced acidity, a distinctive aroma, and the highest sensory acceptability score. The results of the research confirmed that the dessert is of good quality, safe for consumption, and complies with food safety requirements. Economic analysis revealed that the product may be profitable for the company: the production cost of one dessert is EUR 4.35, and the established selling price ensures profitable production. It was calculated that at least 55 units must be sold to cover all production costs.",
@@ -1241,7 +1241,7 @@
     "Cancer",
     "Skin, oral and dental",
     "Food products and applications",
-    "Safety, contaminants and toxicity"
+    "Market, culture and sustainability"
    ],
    "matchaIn": "keywords",
    "abstract": "Background: Beverage consumption is a common, modifiable lifestyle factor with potential relevance to cutaneous health. Objective: To synthesize clinical and mechanistic evidence on commonly consumed beverages and dermatological outcomes. Methods: A narrative review was conducted using targeted PubMed/MEDLINE searches and supplementary screening of dermatology and nutrition sources, prioritizing randomized trials, prospective cohorts, systematic reviews, meta-analyses, and Mendelian randomization studies. Results: Alcohol has the most consistently reported adverse cutaneous associations, including rosacea triggering, psoriasis, urticaria, and skin cancer risk, although causal evidence is not uniform. Sugar-sweetened beverages and milk are associated with acne in observational studies, but current acne guidelines do not make formal dietary recommendations. Coffee shows mixed observational and Mendelian randomization findings for skin aging and melanoma. For green tea, randomized acne studies show benefit mainly with topical extract, whereas oral effects are limited; matcha remains supported mainly by mechanistic extrapolation. Spearmint tea lowers free testosterone in women with polycystic ovary syndrome, although objective clinical benefit remains unproven. Evidence for chamomile, rooibos, hibiscus, energy drinks, kombucha, and plant-based milk alternatives is limited or indirect. Citrus cocktails and St. John's Wort may cause clinically relevant photosensitization. Conclusions: Beverage-skin associations vary substantially in evidence strength and causality. Beverage assessment can support individualized counseling as a low-risk adjunct to standard dermatological therapy, while avoiding overstatement of findings derived from observational studies, extracts, or nutraceuticals rather than beverages as consumed.",
@@ -1596,7 +1596,6 @@
    "topics": [
     "Antioxidants and polyphenols",
     "Cultivation and shading",
-    "Safety, contaminants and toxicity",
     "Processing, milling and quality"
    ],
    "matchaIn": "abstract",
@@ -1640,14 +1639,14 @@
    "pmid": "41686841",
    "pmcid": "PMC12904406",
    "language": "eng",
-   "design": "Randomized controlled trial",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 17,
    "topics": [
     "Antioxidants and polyphenols",
     "L-theanine and caffeine",
-    "Safety, contaminants and toxicity",
-    "Authenticity and analytical methods"
+    "Authenticity and analytical methods",
+    "Metabolism and weight"
    ],
    "matchaIn": "title",
    "abstract": "The concurrent use of herbal dietary supplements with prescription medications raises safety concerns due to the potential for clinically significant interactions. Matcha, a shade-grown green tea consumed as an ultra-fine powder, is rich in catechins that may inhibit the transport of P-glycoprotein (P-gp) substrates such as nadolol. This study investigated the effects of administering single and multiple doses of matcha on the pharmacokinetics of nadolol in an in vivo animal model. Male Sprague-Dawley rats (n = 32) were randomly assigned to four groups. Group 1 (negative control) was administered normal saline followed by a single oral dose of nadolol (10 mg/kg). Group 2 (matcha single-dose) was administered a single dose of matcha (250 mg/kg) whisked in normal saline, followed by nadolol (10 mg/kg) after 30 min. Group 3 (positive control) received itraconazole (50 mg/kg), followed by nadolol (10 mg/kg) after 30 min. Group 4 (matcha multiple-dose) received matcha (250 mg/kg daily for 21 days) before administering nadolol (10 mg/kg) on day 21. Blood samples were collected at 0, 0.33, 0.66, 1, 1.5, 2, 3, 4, 5, 8 and 24 h. Nadolol concentrations in plasma were measured by a validated high-performance liquid chromatography with fluorescence detection (HPLC-FL) method. Pharmacokinetic parameters were estimated using the PK solver add-in for Microsoft Excel. To ensure quality control, caffeine, a key marker compound of matcha green tea, was quantified using HPLC with ultraviolet detection (HPLC-UV). A single oral dosage of matcha (250 mg/kg) had no statistically significant effects on the pharmacokinetics of nadolol compared to the control group (p > .05). Although the multiple-dose matcha group showed an increase in Cmax (~45%), AUC0-t (~18%), and AUC0-∞ (~22%) for nadolol compared to the control group, these differences were not statistically significant (p > .05). In contrast, the t½ (h) of nadolol increased significantly from 4.0 ± 1.6 in the control group to 7.7 ± 4.2 (p = .039) in the matcha multiple-dose group. Itraconazole co-administration significantly increased systemic exposure (AUC) of nadolol (p = .009), confirming the validity of the animal model. Caffeine, a key marker compound in matcha tea, was quantified at 4.18 ± 0.44% w/w of dry matcha tea powder, equivalent to 41.8 ± 4.4 mg/g. This is the first study to explore the potential pharmacokinetic interaction between matcha tea and nadolol. Single and multiple oral doses of matcha green tea had negligible effects on most pharmacokinetic parameters of nadolol, except for an increased half-life in the multiple-dose group. Further research is needed to establish the clinical relevance of this interaction before definitive recommendations on the safety of matcha tea and nadolol coadministration can be made.",
@@ -1899,7 +1898,7 @@
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
     "L-theanine and caffeine",
-    "Safety, contaminants and toxicity"
+    "Inflammation and immunity"
    ],
    "matchaIn": "title",
    "abstract": "",
@@ -1993,8 +1992,8 @@
    "topics": [
     "Metabolism and weight",
     "L-theanine and caffeine",
-    "Safety, contaminants and toxicity",
-    "Gut and microbiome"
+    "Gut and microbiome",
+    "Cultivation and shading"
    ],
    "matchaIn": "keywords",
    "abstract": "Plastic residues in agricultural production pose escalating risks to soil health and food security, yet the impacts of shade nets (SNs) residues in soil have received little attention. Here, we compared the effects of pristine and field-aged polyethylene SNs through a year-long exposure experiment with tea plants (Camellia sinensis). Both pristine and aged SNs impaired soil and plant health, but the adverse effects of aged SNs were more pronounced. Pristine SNs decreased soil pH and increased chromium content, while aged SNs further depleted soil available nitrogen, promoted stronger rhizosphere microbial restructuring, and induced ferroptosis-like lipid peroxidation in roots, leading to deterioration of tea quality. Beneficial rhizosphere groups such as Proteobacteria and Rozellomycota declined, while denitrifiers bacteria and saprotrophic fungi were enriched, aggravating nitrogen loss. These shifts disrupted the soil-plant C-N balance, impairing tea plant nitrogen metabolism, which in turn suppressed glutamate and theanine biosynthesis, reallocating metabolism toward bitter ester-type catechins, and ultimately reduced tea flavor and quality. Our findings show that aged SNs act as emerging agricultural pollutants, disrupting nitrogen metabolism across soil-root-leaf scales. Recognizing aged SNs as part of global plastic pollution highlights their dual agronomic and environmental risks, underscoring the need for sustainable management and recycling in high-value agriculture.",
@@ -2583,7 +2582,6 @@
    "relevance": "subject",
    "mentions": 2,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Processing, milling and quality",
     "Aroma, flavor and sensory",
     "Food products and applications"
@@ -2626,7 +2624,6 @@
    "relevance": "mention",
    "mentions": 1,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Food products and applications",
     "Processing, milling and quality"
    ],
@@ -3165,8 +3162,7 @@
    "mentions": 3,
    "topics": [
     "Cognition, mood and stress",
-    "Market, culture and sustainability",
-    "Safety, contaminants and toxicity"
+    "Market, culture and sustainability"
    ],
    "matchaIn": "keywords",
    "abstract": "Aotearoa New Zealand (NZ) and Japan are both grappling with the rapid growth of ageing populations, leading to significant health, societal, and economic challenges. Aged residential care facilities (ARCs) are essential for providing comprehensive health care, companionship, and safety for older people living with dementia (OPWD). However, ARCs face numerous challenges in delivering optimal care, including the unmet needs of care, such as residents’ loneliness and limited capacity and resources. Furthermore, nursing staff report high levels of stress and burnout in responding to responsive reactive behaviour of OPWD without effective training or support, leading to high turnover and workforce shortages. Researchers at Te Kura Tapuhi/School of Nursing at Waipapa Taumata Rau/University of Auckland are leading a project in partnership with experts from Kagawa University, Japan, titled Healing Effects of a Tea Ceremony in Green space for Older Adults with Dementia and Their Caregivers. This innovative project addresses the urgent need to support both OPWD and their carers. Evidence shows that greenspace exposure, Matcha consumption (green tea), and engaging in tea ceremonies can enhance physical, social, mental, and spiritual well-being. Our novel project brings these interventions together to support OPWD and carers’ well-being, through shared tea ceremonies, involving matcha intake and mindfulness of viewing greenspace such as a flower arrangement (ikebana) or Bonsai (a miniature tree). We will explore opportunities and challenges to undertaking this novel intervention in Japan and NZ. Evidence is needed to inform this research, and to help contextualise the study findings. In particular, robust information about how best to measure stress in OPWD is needed.",
@@ -3376,7 +3372,7 @@
     "Antioxidants and polyphenols",
     "Inflammation and immunity",
     "Cognition, mood and stress",
-    "Safety, contaminants and toxicity"
+    "Gut and microbiome"
    ],
    "matchaIn": "title",
    "abstract": "Matcha, a traditional Japanese tea, has been implicated in various health effects. Herein, we investigated the impact of Matcha on allergic rhinitis by employing an allergen-induced nasal inflammation model in mice. Allergen-induced immediate nasal response, represented by the evocation of sneezing in ovalbumin-immunized mice, and subsequent nasal hyperresponsiveness, assessed by enhanced histamine-triggered sneezes, were significantly suppressed by continuous intragastric administration of hot water-extracted Matcha (250 mg/kg) with its residue. However, accumulation of inflammatory cells, total and allergen-specific IgE production, and intestinal microbiota diversity were unaffected by Matcha. Histamine- and substance P-triggered sneezes, accompanied by c-Fos expression in relevant neurons, tended to be suppressed by Matcha, whereas anti-dinitrophenyl IgE-evoked passive cutaneous anaphylaxis was unaffected. T cell receptor-stimulated CD4 + T cell proliferation was slightly enhanced by ethanol-extracted Matcha. Accordingly, RNA-seq analysis demonstrated weak but significant upregulation of iron uptake- and proliferation-related genes in CD4 + T cells. Importantly, Matcha treatment nearly abolished histamine-induced c-Fos expression in the ventral spinal trigeminal nucleus caudalis (Sp5C), reducing it to basal levels, suggesting direct suppression of neural mechanisms underlying the sneezing reflex. Matcha potentially alleviates allergic rhinitis symptoms independent of IgE/mast cell- or T-cell-mediated cascades but through a direct down-regulation of the sneezing reflex.",
@@ -3627,14 +3623,14 @@
    "pmid": "42341430",
    "pmcid": null,
    "language": "eng",
-   "design": "Randomized controlled trial",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 4,
    "topics": [
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
-    "Cancer"
+    "Cancer",
+    "Inflammation and immunity"
    ],
    "matchaIn": "title",
    "abstract": "In industry, acrylamide (ACR) is generated by heating tobacco and carbohydrate-rich foods. In the past decade, ACR neurotoxicity has become a growing concern. This study examined matcha green tea (MAT)'s protective effect against cerebellar toxicity induced by ACR and its neuroprotective mechanisms in rats. Forty male albino rats were divided randomly into four experimental groups: control group, MAT group (150 mg/kg), ACR group (50 mg/kg), and ACR + MAT group. Oxidative stress and inflammatory biomarkers in cerebellar tissue (superoxide dismutase; SOD, catalase; CAT, glutathione peroxidase; GPx, malondialdehyde; MDA, tumor necrosis factor-alpha; TNF-α and Interleukin 6; IL-6) were assessed. Cerebellar tissues were exposed to histological, immunohistochemical, and ultrastructural evaluations. Significant decline in the SOD, CAT, and GPx levels together with significant rise in the levels of MDA, TNF-α, and IL-6 were observed in ACR group. Histologically, the ACR group showed variable degrees of cellular degeneration with marked reduction of Nissl's granules. This was verified by electron microscopic examination and strong positive reaction for GFAP, NF-κB and caspase -3. Rats treated by ACR + MAT showed improvement of the biochemical, histological and ultrastructural parameters. This was confirmed by the significant diminution in caspase-3, NF-κB & GFAP immunostaining. In conclusion, matcha green tea amended the alterations in the cerebellum induced by ACR through modulation of inflammation, oxidative stress and apoptosis.",
@@ -4056,7 +4052,7 @@
     "Processing, milling and quality",
     "Authenticity and analytical methods",
     "Metabolism and weight",
-    "Safety, contaminants and toxicity"
+    "Aroma, flavor and sensory"
    ],
    "matchaIn": "keywords",
    "abstract": "Tea quality evaluation is increasingly moving from subjective sensory assessment and destructive laboratory analysis toward rapid, non-destructive, and data-driven approaches. This review summarizes recent advances in multimodal sensing integrated with deep learning for tea quality evaluation, with emphasis on sensor complementarity, data-fusion strategies, representative applications, and deployment-related limitations. Major sensing modalities, including machine vision, near- and mid-infrared spectroscopy, Raman and fluorescence spectroscopy, hyperspectral imaging, and electronic nose/electronic tongue systems, are discussed in relation to their ability to characterize appearance, chemical composition, aroma, flavor, processing status, and safety-related attributes. Applications are examined for quality grading, chemical composition prediction, aroma and flavor characterization, fermentation monitoring, and safety-related extensions across representative tea products, including green tea, black tea, dark tea, matcha, and jasmine tea. Overall, multimodal approaches can outperform single-sensor systems only when the selected modalities provide complementary, rather than redundant, information layers. However, practical translation remains constrained by small and weakly standardized datasets, insufficient external validation, sensor instability, limited model transferability, high computational cost, and insufficient interpretability. Future research should prioritize standardized datasets, leakage-free validation protocols, interpretable multimodal modeling, truly independent external validation, interoperable multi-sensor platforms, and lightweight deployable models.",
@@ -4151,7 +4147,7 @@
    "pmid": "42359064",
    "pmcid": "PMC13290547",
    "language": "eng",
-   "design": "Randomized controlled trial",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 10,
    "topics": [
@@ -4446,10 +4442,10 @@
    "relevance": "studied",
    "mentions": 2,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Aroma, flavor and sensory",
     "Food products and applications",
-    "Market, culture and sustainability"
+    "Market, culture and sustainability",
+    "Processing, milling and quality"
    ],
    "matchaIn": "abstract",
    "abstract": "Pangsit roll lumer is an innovative food product that transforms traditional dumpling wrappers into a modern snack with flavor varieties applied on the outside, such as chocolate, matcha, and tiramisu. This study aims to analyze the product development process, sensory evaluation, and market competitiveness assessment of pangsit roll lumer. The methods employed include production, observation, and interviews. The results indicate that pangsit roll lumer with chocolate, matcha, and tiramisu flavors received positive responses from consumers in terms of taste, aroma, color, and texture. Physicochemical analysis shows that the product remains safe for consumption and has high economic value and market competitiveness. This innovation opens opportunities for the development of snack industries based on traditional foods and can inspire other MSMEs to create innovative and competitive products.",
@@ -4623,9 +4619,9 @@
    "mentions": 12,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Cognition, mood and stress",
-    "Processing, milling and quality"
+    "Processing, milling and quality",
+    "Food products and applications"
    ],
    "matchaIn": "title",
    "abstract": "Matcha is known to have a high content of bioactive compounds compared to regular green tea. This is because matcha is consumed in the form of a whole powder, so that all the compounds in tea leaves are also consumed. In Gorontalo City, matcha drinks are becoming more and more popular so KL, NK, and RHU were chosen as the sampling locations because they offer a variety of matcha products. The formulation of the problem in this study is what are the ingredients contained in matcha products in Gorontalo City. This study aims to identify and analyze the content contained in matcha products. This study uses a quantitative descriptive design to determine the content of matcha through phytochemical analysis. The study population included matcha drinks from 25 coffee shops and 8 street coffees in Gorontalo City, with samples taken from KL, RHU, and NK. The results showed that the RHU sample had the highest total phenol content of 209.34 mg GAE/g, followed by NK 184.64 mg GAE/g, and KL 149.30 mg GAE/g. The mean value of IC₅₀ showed that the antioxidant activity of RHU was very strong (34.87 ppm), strong NK (52.41 ppm), and moderate KL (109.32 ppm). In conclusion, KL, NK, and RHU matcha samples in Gorontalo City are still safe to consume based on their phenol content. The antioxidant activity of the KL sample is moderate, NK is strong, and RHU is very strong, it is recommended to consume matcha wisely and business actors need to pay attention to the quality of raw materials and processing processes to maintain the content of active compounds of the product.",
@@ -5447,8 +5443,7 @@
    "mentions": 3,
    "topics": [
     "Cognition, mood and stress",
-    "Market, culture and sustainability",
-    "Safety, contaminants and toxicity"
+    "Market, culture and sustainability"
    ],
    "matchaIn": "keywords",
    "abstract": "Aotearoa New Zealand (NZ) and Japan are both experiencing with the rapid growth of ageing populations, leading to significant health, societal, and economic challenges. Aged residential care facilities (ARCs) are essential for providing comprehensive health care, companionship, and safety for older people living with dementia (OPWD). However, ARCs face numerous challenges in delivering optimal care, including the unmet needs of care, such as residents’ loneliness and limited capacity and resources. Furthermore, nursing staff report high levels of stress and burnout in responding to responsive reactive behaviour of OPWD without effective training or support, leading to high turnover and workforce shortages. Our project addresses the urgent need to support both OPWD and carers. Evidence shows that greenspace exposure, Matcha consumption (green tea), and engaging in tea ceremonies can enhance physical, social, mental, and spiritual well-being. Our novel project brings these interventions together to support OPWD and carers’ well-being, through shared tea ceremonies, involving matcha intake and mindfulness of viewing greenspace such as a flower arrangement (ikebana) or Bonsai (a miniature tree)2. We will explore opportunities and challenges to undertaking this novel intervention in Japan and NZ. By exploring the existed literature of mindfulness-based intervention to reduce stress of OPWD and their caregivers, we will define how tea ceremony can be a potential mindfulness-based intervention for them as a dyadic application.",
@@ -5550,8 +5545,8 @@
    "topics": [
     "Cognition, mood and stress",
     "L-theanine and caffeine",
-    "Safety, contaminants and toxicity",
-    "Processing, milling and quality"
+    "Processing, milling and quality",
+    "Market, culture and sustainability"
    ],
    "matchaIn": "title",
    "abstract": "INTRODUCTION: One of the main signs of ADHD is issues with focus, which often lead people to turn to stimulants like coffee for help in concentration. However, the caffeine in coffee may trigger temporary spikes that result in crashes, which may make prolonged focus worse. Caffeine and L-theanine, a substance linked with reduced alertness and lowered jitteriness, are both found in matcha, a powdered green tea. Despite the fact both of the drinks are common, little research has been done to assess how they influence attention in people with ADHD. The objective of this study is to find out whether matcha, as compared to coffee, promotes and maintains attention in individuals with ADHD. METHOD: A convenience sample of 33 college students were asked to complete a Stroop task and then fill out a Google Form with corresponding questions. Participants were classified into a caffeine group (n=18) and a no-caffeine group (n=15) based on if they reported caffeine consumption that day. Additional self report variables assessed sleep and tiredness as potential factors of interference. Participants were recruited using social media and close family contacts. They completed the form online, where they documented their caffeine consumption, completed the Stroop task, recorded their completion time and answered questions about sleep. RESULTS: An independent samples t-test showed that participants who consumed caffeine (M=29.3, SD=8.39) had slightly longer stroop task completion times than those who did not consume caffeine (M=27.7, SD=7.66), but it was not statistically significant, (31) = -0.567, p=.575. DISCUSSION/CONCLUSION: Caffeine consumption was not associated with improved attentional performance, in this study because there was no noteworthy variation between the two groups. The results do not support the hypothesis because factors such as sleep, individual tolerance differences, and uncontrollable variables may have influenced the findings.",
@@ -5778,7 +5773,7 @@
    "pmid": null,
    "pmcid": null,
    "language": "en",
-   "design": "Randomized controlled trial",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 5,
    "topics": [
@@ -6037,9 +6032,9 @@
    "mentions": 6,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Cancer",
-    "Inflammation and immunity"
+    "Inflammation and immunity",
+    "Authenticity and analytical methods"
    ],
    "matchaIn": "title",
    "abstract": "This research demonstrates a green synthesis and subsequent functionalization process of copper oxide nanoparticles (CuO NPs) utilizing matcha green tea extract as a sustainable reducing and functionalizing agent. UPLC-MS analysis revealed the presence of significant bioactive phytochemicals, notably epigallocatechin gallate (EGCG), which is implicated in the reduction process. Thorough characterisation (XRD, FT-IR, SEM) verified the synthesis of pure, crystalline, monoclinic CuO NPs with an average size of 16-24 nm. The nanoparticles had considerable antibacterial activity, exhibiting robust efficacy against Escherichia coli and Staphylococcus aureus, with a minimum inhibitory concentration of 250 µg/ml. CuO NPs-matcha exhibited significant, dose-dependent cytotoxicity against MCF-7 and Caco-2 carcinoma cells, with IC₅₀ values of 122.1 and 161.9 µg/ml, respectively. Crucially, they demonstrated markedly reduced toxicity towards non-cancerous Vero cells (IC₅₀ = 333.2 µg/ml), yielding selectivity indices of 2.73 and 2.06, which confirms a favorable selective profile. Although the positive control doxorubicin showed greater potency (lower IC₅₀), the CuO NPs-Matcha demonstrated significantly higher selectivity for cancer cells, suggesting a potentially improved safety profile despite its lower efficacy. These findings underscore the matcha-synthesized CuO NPs as a highly promising and biocompatible nanomaterial for specific medicinal applications, particularly in antibacterial and anticancer therapies.",
@@ -6897,7 +6892,7 @@
     "Antioxidants and polyphenols",
     "Food products and applications",
     "Authenticity and analytical methods",
-    "Safety, contaminants and toxicity"
+    "Processing, milling and quality"
    ],
    "matchaIn": "keywords",
    "abstract": "Milk teas and fruit teas are popular as a refreshment, but their percent antioxidant properties need to be determined. In this study, the antioxidant activities of selected commercialized milk teas (Matcha, Okinawa, and Winter Melon) and fruit teas (Green Apple, Kiwi, and Lychee) were determined using the 2,2-diphenyl-1-picrylhydrazyl (DPPH) assay in terms of % scavenging activity. In that assay, the plates with milk teas and fruit teas were incubated in the dark and covered with aluminum foil for 30 minutes at room temperature before being measured for absorbance at 570 nm with a microplate reader. They were kept out of the light until they were evaluated for analysis. Within 30 minutes of incubation, the discoloration from purple to yellow was observed. Three (3) trials with three (3) replicates were carried out with negative control (water with sugar and creamer for milk tea and water with sugar for fruit tea) and positive control (Vitamin C). Using one-way ANOVA, the Matcha (mean = 62.9, sd = 2.6) Okinawa (mean = 46.4, sd = 5.9), and Winter Melon (mean = 61.6, sd = 2.8) milkteas have anti-oxidant activities when compared to the negative control (mean = 0.0, sd = 0.0) (p < .05) Both Matcha and Winter Melon have the best antioxidant activities, but not comparable to the positive control, Vitamin C (mean = 98.7; sd = 0.62) (p < .05). While the Green apple fruit tea (mean = 95.5; SD = 2.4) Kiwi fruit tea (mean = 97.3, SD = 1.5), and Lychee fruit tea (mean = 94.4; sd = 1.3) (p > .05) have comparable antioxidant activities when compared to the negative control (mean sd = 0.0). Kiwi fruit tea has the best antioxidant activity and comparable to Vitamin C (mean = 98.7; sd = 0.62). This study scientifically established that both Matcha and Winter Melon commercial milk teas have antioxidant activities of 61.6 to 62.9%. While the commercial Kiwi, Green apple, and Lychee fruit tea ranged from 94.4 to 97.3%. These antioxidant activities can be useful in preventing diseases brought by free radicals, which can be verified by conducting more studies.",
@@ -7107,8 +7102,8 @@
    "topics": [
     "Metabolism and weight",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
-    "Inflammation and immunity"
+    "Inflammation and immunity",
+    "Cancer"
    ],
    "matchaIn": "title",
    "abstract": "Background Numerous forms of cancer are frequently treated with radiation therapy, which provides substantial benefits in tumor control. However, adverse effects, particularly the development of severe hepatitis, may render radiation therapy ineffective. Purpose This study investigates the potential of matcha (M) green tea extract , a natural compound known for its high antioxidant properties and health-promoting properties, in a new approach to reduce radiation-induced liver damage. Study design and method In this experimental investigation, the administration of M was conducted on female Wistar rats for duration of two weeks after gamma-ray irradiation. Next, a series of biochemical experiments were conducted to examine the impact of M on lipid peroxidation levels, antioxidant enzyme activities, and pro-inflammatory cytokines (IL-6, IL-10, and TNF-α) in liver tissue. The Western blot method was employed for this analysis. Liver miR-122 expression levels were determined using real-time reverse transcription polymerase chain reaction. In addition, the present study investigated the mechanism by which M stops the inflammatory process's crucial NF-κB/MAPK signaling. Results This study suggests that the NF-κB/MAPK signaling pathway that triggers the radiation-induced inflammatory response is further inhibited by M making radiation therapy effective and safe. Conclusion Further research in this area may reveal the underlying mechanisms and pave the way for the development of novel therapies for radiation therapy patients.",
@@ -7494,8 +7489,7 @@
    "topics": [
     "Processing, milling and quality",
     "Food products and applications",
-    "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity"
+    "Antioxidants and polyphenols"
    ],
    "matchaIn": "title",
    "abstract": "Fermented foods are increasingly integrated into daily diets due to their health benefits. Among these, yoghurt is widely consumed and often enhanced with bioactive plant-based ingredients. This study investigates the impact of matcha tea powder, a green tea derivative known for its rich antioxidant profile, on the rheological and technological properties of yoghurt during storage. The following objectives have been set: to assess the influence of matcha tea concentration on yoghurt viscosity over the storage period; to analyse changes in pH, dry matter content, and whey separation in relation to matcha concentration and storage duration; and to evaluate the effect of matcha tea addition on yoghurt colour parameters. Yoghurts were prepared with varying concentrations of matcha powder (0%, 0.2%, 0.5%, and 1%). Afterwards, they were analysed over 27 days for viscosity, pH, dry matter, whey separation, and colour parameters. Results indicate that higher matcha concentrations lead to reduced viscosity from 1,771.52 cP (control sampla) to 705.39 cP (1% matcha), increased dry matter (from 13.50% in the control sample to 14.16% in the 1% matcha), greater whey separation (from 41.65% in the control sample to 46.07% in yogurt with 1% matcha), and intensified colour characteristics. These findings suggest that matcha can serve as a functional additive in yoghurt, though its concentration should be optimised to maintain quality during storage.",
@@ -9589,8 +9583,8 @@
    "topics": [
     "Metabolism and weight",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
-    "Gut and microbiome"
+    "Gut and microbiome",
+    "Cardiovascular and blood pressure"
    ],
    "matchaIn": "title",
    "abstract": "Metabolic dysfunction-associated fatty liver disease (MASLD) is a chronic, non-communicable spectrum of diseases characterized by lipid accumulation. It is often asymptomatic, and its prevalence varies by region, age, gender, and economic status. It is estimated that 25% of the world's population currently suffer from MAFLD, and 20 million patients will die from MAFLD-related diseases. In the last 20 years, tea and anti-obesity research have indicated that regularly consuming tea decreases the risk of cardiovascular disease, stroke, obesity, diabetes, and metabolic syndrome (MeS). In this review, we aimed to present studies concerning the influence of matcha extracts and epigallocatechin-3 gallate (EGCG) supplements on metabolic functions in the context of MAFLD in human and animal studies. The published data show promise. In both human and animal studies, the beneficial effects on body weight, cholesterol levels, and liver metabolism and function were noted, even in short-period experiments. The safety levels for EGCG and green tea extract consumption are marked. More experiments are needed to confirm the results observed in animal studies and to show the mechanisms by which green tea exerts its effects. The preliminary data from research concerning microbiota or epigenetic changes observed after polyphenols and green tea consumption need to be expanded. To improve the efficiency and availability of green tea or supplement consumption as a treatment for MAFLD patients, more research with larger groups and longer study durations is needed.",
@@ -10974,7 +10968,7 @@
     "Processing, milling and quality",
     "Food products and applications",
     "Cognition, mood and stress",
-    "Safety, contaminants and toxicity"
+    "Skin, oral and dental"
    ],
    "matchaIn": "keywords",
    "abstract": "The main purpose of the research conducted within the framework of this doctoral thesis was to investigate, develop, and optimize innovative techniques to enhance the quality, stability, and bioactivity of food and beverage products. The study covers several key areas that can be divided into three chapters. The first step is the electrochemical monitoring of food additives and contaminants, in this case carminic acid and chlorophenols where the primary goal of this chapter is to develop inexpensive and easy-to-use sensors to monitor these compounds. The second area of focus was to investigate the influence of processing techniques and storage on functional powders, where attention is given to the effect of storage humidity on moisture sorption and particle size distribution in matcha tea, as well as the role of vibratory grinding time on the physical characteristics and phenolic bioaccessibility of carob powder. The third and last area of focus was the impact of brewing and drying techniques on the quality of cascara beverages and linden syrup's chemical and physical properties. By integrating processing techniques with analytical approaches, this research contributes to a greater understanding of selected matrices, offering practical applications for quality control, product development, and consumer safety.",
@@ -11861,7 +11855,6 @@
    "relevance": "subject",
    "mentions": 3,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Processing, milling and quality",
     "Aroma, flavor and sensory",
     "Food products and applications"
@@ -11910,7 +11903,6 @@
    "mentions": 4,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Inflammation and immunity",
     "Authenticity and analytical methods"
    ],
@@ -11958,7 +11950,6 @@
    "relevance": "subject",
    "mentions": 2,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Food products and applications"
    ],
    "matchaIn": "title",
@@ -12085,9 +12076,7 @@
    "design": "Animal study",
    "relevance": "subject",
    "mentions": 2,
-   "topics": [
-    "Safety, contaminants and toxicity"
-   ],
+   "topics": [],
    "matchaIn": "title",
    "abstract": "",
    "keywords": [
@@ -12679,7 +12668,6 @@
    "mentions": 6,
    "topics": [
     "Inflammation and immunity",
-    "Safety, contaminants and toxicity",
     "Gut and microbiome"
    ],
    "matchaIn": "title",
@@ -13935,7 +13923,6 @@
    "relevance": "subject",
    "mentions": 2,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Cancer",
     "Skin, oral and dental"
    ],
@@ -14298,14 +14285,14 @@
    "pmid": null,
    "pmcid": null,
    "language": "ar",
-   "design": "Randomized controlled trial",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 8,
    "topics": [
     "Metabolism and weight",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
-    "Skin, oral and dental"
+    "Skin, oral and dental",
+    "Market, culture and sustainability"
    ],
    "matchaIn": "title",
    "abstract": "Fatty liver disease is characterized by a progressive pattern of intrahepatic fat accumulation that can lead to hepatocellular lipotoxicity. This study aims to show the effect of matcha tea aqueous extract on fatty liver in male rats. Forty adult male Wistar albino rats, weighing (150±10g) were randomly divided into four groups (10 rats each) as follows: Group (1): Comprised of normal rats as negative control group (-). Group (2): Comprised of rats that received oral administration of matcha tea aqueous extract (300 mg/kg/day). Group (3): Comprised of rats injected with Oxytetracycline (120 mg/kg body weight of rat for three consecutive days) as a control positive group (+). Group (4): Comprise of Oxytetracycline-induced fatty liver rats that were treated with oral matcha tea aqueous extract (300 mg/kg/day) for six weeks. At the end of the experiment, rats were sacrificed and serum was collected for biochemical analyses. Results revealed that the administration of Oxytetracycline in the positive control group revealed a significant reduction in body weight gain. Also, matcha tea aqueous extract showed a significant reduction of total cholesterol, triglycerides, LDL-c, VLDL-c, glucose and liver functionsALT, AST, ALP, GGT, LDH and Bilirubin besides a rise in HDL-c, proteins, albumin and globulin compared to the positive control group. In conclusion, matcha tea exhibits a high content of antioxidants that contribute to fat reduction in fatty liver rats. So, this study recommends that the consumption of matcha tea may be beneficial for individuals who suffer from fatty liver disease.",
@@ -14492,7 +14479,6 @@
    "relevance": "subject",
    "mentions": 4,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Cancer",
     "Antioxidants and polyphenols"
    ],
@@ -14660,9 +14646,9 @@
    "mentions": 1,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Cancer",
-    "Inflammation and immunity"
+    "Inflammation and immunity",
+    "Food products and applications"
    ],
    "matchaIn": "abstract",
    "abstract": "Background/Objectives: Plant-derived compounds are increasingly valued in drug discovery for their therapeutic potential. This study aims to examine the antimicrobial, antioxidant, and anticancer properties of kombucha beverages fermented with Gardenia jasminoides (GJ) and various types of Camellia sinensis teas: matcha green tea (MGT), organic green tea (OGT), and decaffeinated green tea (DGT). Methods: Two experimental designs were employed: (1) using black tea as a base substrate, infusing the four teas post-fermentation over 0–14 days, and (2) directly fermenting tea–herb combinations over 0–21 days. Antioxidant activity was assessed via the DPPH assay. Microbial dynamics were analyzed through total mesophilic bacteria and Lactobacillus counts. Antimicrobial potential was evaluated against E. coli, S. aureus, and S. enteritidis over 24 h. Cytotoxicity assays were conducted on Caco-2 and U251 cell lines to assess anticancer effects, with pH-adjusted controls used to differentiate bioactivity from acidity. Results: In the first experiment, GJ kombucha displayed the highest antioxidant potential (IC50: 14.04 µg/mL), followed by MGT (IC50: 32.85 µg/mL) and OGT (IC50: 98.21 µg/mL). In the second setup, unfermented GJ kombucha initially showed high antioxidant activity (IC50: 12.94 µg/mL), improving during fermentation to reach an IC50 of 18.26 µg/mL by day 21. Microbial analysis indicated moderate increases in total mesophilic bacteria and Lactobacillus in GJ kombucha after 14 days, while MGT, OGT, and DGT exhibited higher increments. GJ kombucha consistently demonstrated the highest antimicrobial activity against E. coli, S. aureus, and S. enteritidis, with significant inhibitory effects observed by 24 h. Cytotoxicity assays showed that GJ kombucha reduced Caco-2 cell viability to 20% at 800 µg/mL after 14 days, while U251 cells maintained 50% viability at the same concentration. Conclusions: This study highlights the antimicrobial, antioxidant, and anticancer potential of GJ kombucha, with fermentation enhancing bioactive metabolite production. Optimizing fermentation conditions, identifying specific bioactive compounds, expanding cytotoxicity testing, and exploring broader therapeutic applications of kombucha could maximize its health benefits and establish it as a natural antimicrobial and anticancer agent.",
@@ -15070,9 +15056,9 @@
    "mentions": 9,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Cognition, mood and stress",
-    "Food products and applications"
+    "Food products and applications",
+    "Market, culture and sustainability"
    ],
    "matchaIn": "keywords",
    "abstract": "In the packaging materials sector, increasing globalization has created the need for increased efforts to develop consumer protection measures. Consequently, new packaging materials are being sought to replace petroleum-based materials in the future. For this reason, global awareness of the environmental problems associated with the use of synthetic and non-degradable packaging has increased the attention paid to bio-packaging based on natural and biodegradable polymers. The bio-packaging sector is developing innovations to address the sustainability issues facing the food packaging industry. Our research has shown that green matcha extract can be a promising source of antioxidants for the production of bioactive pectin films. This study further confirmed that green matcha extract can be a promising source of antioxidants for the production of bioactive pectin films. The antioxidant activity test showed high activity of films containing matcha extract. The antioxidant activity of films without matcha addition, P, PJ, PC, PJC, was negligible. The addition of matcha to the polymer matrix did not significantly affect the mechanical properties (TS, EB) of the films obtained. The addition of cellulose had the greatest effect on changing the mechanical properties. It caused a twofold increase in the mechanical properties of the obtained packaging films. The addition of matcha significantly improved the barrier properties (for PM films, the WVTR was 3.40 [g/m2d]; for PJM films the WVTR was 1.70 [g/m2d]). The green packaging films showed no toxic effects on the plants (Phacelia tanacetifolia, Salvia hispanica, Brassica napus) and invertebrates (Daphnia pulex, Chaoborus, Chironomus aprilinus) tested. The half-solubility time of the membranes in a solution mimicking gastric acid was also determined. The longest half-dissolution time of the films was about 2 min. Our research has therefore shown that the biodegradable and environmentally safe green packaging films with antioxidant activity that we have developed can be used as edible functional casings in the future, e.g., for sausages and other food products.",
@@ -15199,7 +15185,6 @@
    "topics": [
     "Market, culture and sustainability",
     "Cognition, mood and stress",
-    "Safety, contaminants and toxicity",
     "Processing, milling and quality"
    ],
    "matchaIn": "abstract",
@@ -15575,7 +15560,6 @@
    "relevance": "mention",
    "mentions": 1,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Food products and applications",
     "Metabolism and weight"
    ],
@@ -15841,8 +15825,7 @@
    "topics": [
     "Cognition, mood and stress",
     "Metabolism and weight",
-    "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity"
+    "Antioxidants and polyphenols"
    ],
    "matchaIn": "title",
    "abstract": "",
@@ -16374,7 +16357,6 @@
    "relevance": "mention",
    "mentions": 1,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Gut and microbiome",
     "Aroma, flavor and sensory"
    ],
@@ -17386,14 +17368,14 @@
    "pmid": null,
    "pmcid": null,
    "language": "ar",
-   "design": "Randomized controlled trial",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 7,
    "topics": [
     "Cognition, mood and stress",
     "Metabolism and weight",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity"
+    "Skin, oral and dental"
    ],
    "matchaIn": "title",
    "abstract": "The present work aimed to investigate the effect of matcha and yerba mate tea aqueous extract on the oxidative stress status of obese rats. Thirty-five adult male Sprague-Dawley rats were divided randomly into 7 equal groups (n=5) as follow: Group 1: negative control, was fed on a basal diet. Groups 2-7 were given lead acetate (LA) (200mg/L) in drinking water for 4 weeks to induce oxidative stress. The rats were then rendered obese by feeding on HFD for 4 weeks. Group 2 was kept as a positive control group (HFD + LA). Groups 3 and 4 were administrated orally with 0.5 and 1 ml of match aqueous extract, whereas 0.5 and 1ml of yerba mate aqueous extract were given to groups 5 and 6, respectively. Group 7 was oral administered with 1 ml of a matcha and yerba mate aqueous extract mixture for 4 weeks. At the end of experiment, rats were scarified and serum was collected for biochemical analyses. Results showed that the administration of HFD-LA group (control positive) resulted in significant elevations in body weight gain, feed efficiency ratio, peritoneal fat pad, serum total cholesterol, triglyceride, low-density lipoprotein cholesterol (LDL-c), very low-density lipoprotein cholesterol (VLDL-c), leptin, nitric oxide (NO), malondialdehyde (MDA), alkaline phosphatase )ALP(, aspartate aminotransferase) AST(, alanine aminotransferase )ALT(, uric acid, urea and creatinine levels as compared to the negative control, and levels of serum high-density lipoprotein cholesterol (HDL-c( and glutathione peroxidase activity (GPx) were significantly decreased. On the other hand, oral administration with mate and matcha extract and their combination attenuated these adverse effects and biochemical alterations caused by HFD-LA administration. In conclusion, yerba mate and matcha exhibit antioxidants and hypolipidemic activity and are effective in reducing body weight in obese rats. The study recommends that consumption of yerba mate and matcha may be beneficial for individuals who suffer from obesity and hyperlipidemia.",
@@ -17445,7 +17427,7 @@
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
     "Food products and applications",
-    "Safety, contaminants and toxicity"
+    "Processing, milling and quality"
    ],
    "matchaIn": "title",
    "abstract": "Background: Matcha, a powdered form of green tea, is acclaimed for its high antioxidant content and numerous potential health benefits. This study aims to investigate the effects of regular Matcha consumption on mood, stress levels, and overall well-being among medicine students in Al-Madina Al-Munawara. Objective: To evaluate the impact of daily Matcha ingestion on mood enhancement, stress reduction, and overall well-being among medicine students in Al-Madina Al-Munawara. Methods: A study involving 200 medical students from Al-Madina Al-Munawara analyzed changes in mood, stress levels, and overall well-being after daily Matcha consumption.Data was collected through a structured questionnaire, focusing on demographics, consumption patterns, perceived effects, and academic performance.Statistical significance was determined at p < 0.05.Results: The analysis of the questionnaires revealed significant improvements in mood among participants who consumed Matcha.Specifically, there was an increase in reported calmness and happiness, and a reduction in anxiety levels (p < 0.05).Additionally, participants noted a significant decrease in perceived stress levels and an overall enhancement in their sense of well-being (p < 0.05).No adverse effects were reported by the participants throughout the study period. Conclusion: Regular consumption of Matcha has a positive impact on mood, reduces stress levels, and enhances overall well-being among medicine students in Al-Madina Al-Munawara. These findings suggest that incorporating Matcha into the daily diet may offer mental health benefits for students. Further research is needed to confirm these results and to explore the long-term effects and underlying mechanisms of Matcha's benefits.",
@@ -17588,10 +17570,10 @@
    "relevance": "subject",
    "mentions": 2,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Gut and microbiome",
     "Processing, milling and quality",
-    "Aroma, flavor and sensory"
+    "Aroma, flavor and sensory",
+    "Food products and applications"
    ],
    "matchaIn": "keywords",
    "abstract": "In the present study, the processing, characterization, and assessment of novel non-alcoholic and sugar-free drinks based on bioactive extracts from valuable natural sources, such as green tea enriched with Chios mastiha, are considered. Currently, the transition towards the consumption of healthy and sustainable food and beverages promoting human health and well-being is strongly encouraged and biologically active compounds from natural resources have a broad range of ap-plications in this sector. In this context, three beverages (all non-alcoholic, non-carbonated, and sugar-free) were created, including extracts of green tea with Chios mastiha, matcha green tea with Chios mastiha and louisa green tea with Chios mastiha, and an evaluation of their biological potential was performed. Specifically, an analysis of water, extracts, and additives for the beverage production was carried out. Microbiological and nutritional value determination was also conducted in samples of the three products. According to the experimental results, the novel health beverage produced from green tea enriched with Chios Mastiha extracts was found to have improved organoleptic characteristics and was microbiologically stable and safe for a period of 180 days from the production date at 25 °C. It is also considered stable and safe for 3 days after production, even if it remains open at 25 °C. In view of a possible scale-up of this application, safety, and preservation control should continue for at least 540 days from the date of production. In conclusion, the current research findings support the development of a novel non-alcoholic sugar-free health drink based on bioactive extracts from green tea enriched with Chios mastiha, to contribute to maintaining human health and also to strengthen the economy.",
@@ -18702,7 +18684,6 @@
    "mentions": 1,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Cancer"
    ],
    "matchaIn": "title",
@@ -19520,97 +19501,6 @@
    "kind": "article"
   },
   {
-   "id": 357,
-   "title": "Keto Matcha Blue Polska Opinie, Zalety i korzyści, Jak używać, gdzie kupić (2023)",
-   "authors": [
-    "Keto Matcha Blue"
-   ],
-   "journal": "Zenodo (CERN European Organization for Nuclear Research)",
-   "year": 2023,
-   "doi": "10.5281/zenodo.7807743",
-   "pmid": null,
-   "pmcid": null,
-   "language": "ro",
-   "design": "Animal study",
-   "relevance": "subject",
-   "mentions": 9,
-   "topics": [
-    "Metabolism and weight",
-    "Cardiovascular and blood pressure",
-    "Safety, contaminants and toxicity"
-   ],
-   "matchaIn": "title",
-   "abstract": "Keto Matcha Blue Recenzje: Keto Matcha to ponadczasowy suplement diety wspierający osoby walczące z nadwagą. Suplement jest pomocny w walce ze spowolnieniem funkcji metabolicznych, odkładaniem się tłuszczu i nadwagą. Keto Macha jest bezpiecznym i naturalnym dziełem przyrody.\\n\\n \\n\\nKliknij tutaj, aby kupić teraz z oficjalnej strony Keto Matcha Blue\\n\\n \\n\\nSuplimentul pentru slăbit naturist poate fi utilizat în siguranță, fără a-ți pune în pericol sănătatea și fără a fi nevoie să îți schimbi stilul de viață sau alimentația.În timp, inima devine mai slabă, articulațiile și cartilajul suferă, tensiunea arterială crește, iar nivelul zahărului în sânge crește și el. Cel mai adesea, excesul de greutate crește imperceptibil, fără să-ți dai seama. Cu Keto Matcha excesul de greutate va fi eliminat, și totul, într-un mod cât mai sănătos.\\n\\n \\n\\nPoți găsi în acest articol informații importante despre supliment, precum modul de utilizare, contraindicații, prețul produsului, prospectul, părerile utilizatoarelor, comentarii forum, ingredientele active din compoziția pudrei, reacții adverse, unde îl găsești în farmacii.\\n\\n \\n\\nÎncă de la începutul acestui articol trebuie să te informăm că Keto Matcha poate fi cumpărat în siguranță și într-un mod foarte ușor de pe site-ul producătorului.\\n\\n \\n\\nDe aici ai posibilitatea de a cumpăra produsul original și nu pe cel fals, cu o reducere de preț, de 50%, în cazul în care vei tine cont de decizia impusă de producător, de a plasa comanda din România. În farmaciile din România, precum Catena sau Tei produsul nu poate fi găsit.\\n\\n \\n\\nCum slabesti rapid si usor cu ajutorul pudrei Keto Matcha Blue\\n\\n \\n\\nChiar de la primele porții vei simți cum metabolismul tău se schimbă, se accelerează. Deasemenea vei mânca mai puțin și nu vei simți senzații acute de foame pe durata zilei.\\n\\n \\n\\nPe durata întregii zile, suplimentul crește viteza proceselor de descompunere a celulor grase și la eliminarea acestora din corp. În timpul nopții, efectul de detox ajuta la eliminarea toxinelor, făcând astfel să dispară excesul de apă și edemul.\\n\\n \\n\\nFormula activă a suplimentului este făcută pentru a acționa în sincron cu bioritmurile organismului tău. Pudra pentru slăbit normalizează acest ciclu de absorbție calorică, așa că vei pierde kilograme indiferent de modul în care mănânci sau cât de activ ești în viața de zi cu zi.\\n\\n \\n\\nÎmbunătățește descompunerea și excreția celulelor adipoase din țesutul subcutanat, promovează tranziția acestora în energie și consum prin creșterea schimbului de căldură. De asemenea, tonifică, crește vigoarea, accelerează metabolismul. Elimină rezervele de grăsime chiar și din cele mai îndepărtate zone, inclusiv grăsimea depusă pe organele interne.\\n\\nKliknij tutaj, aby kupić teraz z oficjalnej strony Keto Matcha Blue",
-   "keywords": [
-    "dietary supplements",
-    "weight loss",
-    "obesity",
-    "fat oxidation",
-    "metabolism",
-    "appetite suppression",
-    "detoxification",
-    "biological rhythms",
-    "energy expenditure",
-    "metabolic rate",
-    "matcha tea"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://zenodo.org/record/7807743",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 358,
-   "title": "Keto Matcha Blue Recenzje Cena i gdzie kupić Keto Matcha, zakup, Polska (2023)",
-   "authors": [
-    "Keto Matcha Blue"
-   ],
-   "journal": "Zenodo (CERN European Organization for Nuclear Research)",
-   "year": 2023,
-   "doi": "10.5281/zenodo.7674223",
-   "pmid": null,
-   "pmcid": null,
-   "language": "pl",
-   "design": "Other / not stated",
-   "relevance": "subject",
-   "mentions": 13,
-   "topics": [
-    "Metabolism and weight",
-    "Safety, contaminants and toxicity",
-    "Skin, oral and dental"
-   ],
-   "matchaIn": "title",
-   "abstract": "Keto Matcha Blue Recenzje: Way of Keto Matcha Polska to dynamiczne wsparcie redukcji wagi, mające na celu przyspieszenie redukcji wagi chwili i dźwięku bez powodowania jakichkolwiek skutków. Udoskonalenie oferuje krytyczne wyniki, gdy towarzyszy wadze kierownictwa, a plany redukcji masy ciała są nadzwyczajne i ukierunkowane na wyniki. Wzmocnienie towarzyszy silnej mieszance substancji stałych i klinicznie zatwierdzonych mocowań, które przenoszą wyniki redukcji wagi na inny poziom. Jest to wzmocnienie, które ogranicza zależność od węglowodanów jako energii. Zwiększa regularną redukcję masy ciała i pozwala organizmowi osiągnąć stan ketozy, w którym zużywa komórki tłuszczowe zamiast węglowodanów na energię.\\n\\nKliknij tutaj, aby kupić teraz z oficjalnej strony internetowej Keto Matcha Blue\\n\\nHerbata matcha: jej głównym działaniem jest zwiększenie funkcji metabolicznych i spalanie nadmiaru tłuszczu, ale ma również doskonałe właściwości energetyzujące i tonizujące;\\n\\nJagody Acai: te jagody są znane z wysokiego stężenia zawartej w nich cyjanidyny, substancji, która hamuje rozmnażanie komórek tłuszczowych;\\n\\nJagody Goji: ten składnik jest niezbędny do przygotowania organizmu do procesu odchudzania, normalizacji masy ciała oraz do działania spalającego tłuszcz;\\n\\nGrzyby Lingzhi: ten ekstrakt może zmniejszyć poziom złego cholesterolu we krwi, poprawić metabolizm i promować eliminację odpadów i toksyn z organizmu.\\n\\nKażdy składnik został wybrany ze względu na swoje dobroczynne cechy i właściwości, które aktywnie przyczyniają się do nadmiernej utraty wagi. Jednocześnie jednak ich działanie w organizmie jest w stanie sprzyjać ogólnemu dobrostanowi, poprawiając każdą funkcję organizmu.\\n\\nKeto Matcha Blue – Dawkowanie i przeciwwskazania\\n\\nSuplement Keto Matcha Blue występuje w wygodnym 150 gramowym opakowaniu z proszkiem do rozpuszczenia w szklance wody dwa razy dziennie. Jeśli to możliwe, najlepiej przyjmować go o tej samej porze co obiad i kolację. Bezsprzecznie, aby cieszyć się jego zaletami, należy przyjmować go codziennie.\\n\\nJeśli chodzi o czas przyjmowania preparatu, firma zaleca stosowanie diety ketogenicznej przez miesiąc w połączeniu ze stosowaniem Keto Matcha Blue. Po tym czasie dobrze jest przystąpić do okresu odstawienia, a następnie rozważyć drugi zabieg.\\n\\nJak wspomniano powyżej, aby osiągnąć najbardziej zauważalne rezultaty, zaleca się unikanie wysokokalorycznych, tłustych i cukrowych pokarmów, aby nie utrudniać działania aktywnych składników Keto Matcha Blue. W każdym razie wszelkie wskazówki dotyczące sposobu przyjmowania i najlepsze porady można znaleźć na samym opakowaniu produktu.\\n\\nKliknij tutaj, aby kupić teraz z oficjalnej strony internetowej Keto Matcha Blue\\n\\n",
-   "keywords": [
-    "dietary supplements",
-    "weight loss",
-    "obesity",
-    "fat oxidation",
-    "appetite suppression",
-    "metabolic rate",
-    "online reviews",
-    "product price",
-    "online purchase",
-    "counterfeit goods",
-    "adverse effects",
-    "active ingredients"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://zenodo.org/record/7674223",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 359,
    "title": "Keto Vitax Schweiz Kaufen- Test, Pries or Erfahrungen",
    "authors": [
@@ -19891,7 +19781,7 @@
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
     "Inflammation and immunity",
-    "Safety, contaminants and toxicity"
+    "Processing, milling and quality"
    ],
    "matchaIn": "title",
    "abstract": "Abstract The biogenic synthesis of nanoparticles has drawn significant attention. The spleen is the largest lymphatic organ that is adversely impacted during irradiation. The current study was designated to evaluate the possible anti‐inflammatory effect of matcha‐silver nanoparticles (M‐AgNPs) to reduce inflammation associated with γ‐radiation induced‐oxidative stress and inflammation in rats' spleen. Silver nanoparticles (AgNPs) were synthesized by biogenic synthesis using a green sonochemical method from matcha (M) green tea. The obtained M‐AgNPs were extensively characterized by dynamic light scattering, transmission electron microscopy, thermogravimetric analysis, and Fourier‐transform infrared spectroscopy. Using zetasizer analysis, the surface charge, particle size, and radical scavenging DPPH assay of M‐AgNPs were also examined. Biocompatibility and cytotoxicity were analyzed by MTT assay, and the IC 50 was calculated. Four groups of 24 Wistar rats each had an equal number of animals. The next step involved measuring the levels of oxidative stress markers in the rat splenic tissue. Additionally, the amounts of inflammatory protein expression were evaluated using the ELISA analysis. The results indicated the formation of spherical nanoparticles of pure Ag° coated with matcha polyphenols at the nanoscale, as well as uniform monodisperse particles suited for cellular absorption. Results revealed that M‐AgNPs improved all biochemical parameters. Furthermore, M‐AgNPs relieve inflammation by reducing the expression of NOD‐like receptor family pyrin domain‐containing 3 (NLRP3), interleukin‐1β (IL‐1β), and enhancing the levels of ileSnt information regulator 1 (SIRT1). Histopathological examinations demonstrated the ability of M‐AgNPs to overcome the damage consequent to irradiation and recover the spleen's cellular structure. These results confirmed that matcha is a potential biomaterial for synthesizing AgNPs, which can be exploited for their anti‐inflammatory activity.",
@@ -20567,8 +20457,7 @@
    "topics": [
     "Cognition, mood and stress",
     "L-theanine and caffeine",
-    "Market, culture and sustainability",
-    "Safety, contaminants and toxicity"
+    "Market, culture and sustainability"
    ],
    "matchaIn": "keywords",
    "abstract": "Introduction: Maternal caffeine consumption during pregnancy may confer developmental risk to the foetus due to caffeine’s ability to cross the blood brain barrier (BBB) and blood placental barrier (BPB). This literature review investigated caffeine’s properties and mechanism of passage through the BBB and BPB. The subsequent effects of moderate-to-excessive maternal caffeine consumption (≥ 200mg of caffeine daily) on physical development, cognition, and behaviour were further explored. Methods: The review was conducted using PubMED, NCBI, and Google Scholar, using key terms such as “pregnancy”, “caffeine”, “prenatal”, “adverse effect”, “development”, and “embryo development”. Articles selected were published within the last 15 years (2008-2023) and longitudinal studies, cohort studies, and experimental methods using animal models were included. Results: It was found prenatal caffeine exposure poses a variety of potential consequences for the infant prior to and after delivery. Notably, physical developmental risks include fetal growth restriction, birth defect(s), and changes in neuronal structure and blood flow. Cognitive and behavioural consequences include possible links to externalizing behaviour problems, decreased intelligence quotient (IQ), attentive deficit and hyperactivity disorder (ADHD), and autism spectrum disorder (ASD) during childhood. Discussion: This research is primarily restricted to animal models and cohort studies. Moroever, there were several conflicting conclusions surrounding behavioural and cognitive effects of prenatal caffeine exposure. This drives inquiry into how further research can both solidify causal relationships and be conducted ethically to help inform parents about the potential risks of prenatal caffeine exposure. Conclusion: With a global trend of increasing caffeine consumption, through coffee, black tea, and recently, matcha, this review provided insight into this ever-growing aspect of our lifestyles. It is paramount to understand the effect of caffeine on foetuses to promote safe and healthy pregnancy outcomes.",
@@ -20979,7 +20868,7 @@
    "pmid": null,
    "pmcid": null,
    "language": "en",
-   "design": "Observational (human)",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 7,
    "topics": [
@@ -22752,8 +22641,8 @@
    "topics": [
     "Authenticity and analytical methods",
     "Cognition, mood and stress",
-    "Safety, contaminants and toxicity",
-    "Cultivation and shading"
+    "Cultivation and shading",
+    "Processing, milling and quality"
    ],
    "matchaIn": "keywords",
    "abstract": "Green tea is a popular refreshing drink with several functional properties attributed to its bioactive compounds. The bioactive content and composition vary with several factors. Several advances in chromatographic studies have facilitated the study of chemical composition of green tea leaves; however, the content of organic acids, particularly quinic acid, has not been explored fully. Therefore, changes in the content of organic acids, including quinic acid, in green tea leaves, were investigated in this study. All the studied varieties contained large amounts of quinic and oxalic acids. Kukicha and Matcha contained the highest and lowest amounts of quinic acid, respectively. Furthermore, high-grade Matcha had a significantly lower quinic acid content than low-grade Matcha. The Asatsuyu sample had the lowest quinic acid content in 2018 and 2019 compared with the other green tea varieties. The content of quinic acid increased with maturity, but that of oxalic, malic, succinic, and citric acids decreased after a slight increase. Shading cultivation in Saeakari significantly lowered the quinic acid content and slightly increased the content of malic, citric, and oxalic acids. Malic acid and citric acid content in Yabukita changed with sunrise and sunset, but that of other organic acids did not show any considerable change. These results show that using an appropriate plucking time could lead to further improvement in the quality of green tea leaves. Overall, green tea is a good source of quinic acid, which will attract attention in future functional research on this drink.",
@@ -24289,8 +24178,8 @@
    "topics": [
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
-    "Metabolism and weight"
+    "Metabolism and weight",
+    "Cancer"
    ],
    "matchaIn": "title",
    "abstract": "&lt;b&gt;Background and Objective:&lt;/b&gt; Female infertility and reproductive problems have increased worldwide. Medical treatment of such conditions has high costs with various side effects. Alternative medicine, essentially herbal plants, has been projecting to improve female infertility and reproductive health. This study was aimed to evaluate the efficacy of single or combined administration of matcha and ashwagandha teas against H&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;-induced Utero-ovarian oxidative injury and cell death in female rats. &lt;b&gt;Materials and Methods:&lt;/b&gt; Fifty adult female rats were used. Ten rats were kept healthy while in others Utero-ovarian oxidative injury was induced by drinking 1% H&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt; water &lt;i&gt;ad libitum&lt;/i&gt;. Injured rats were divided into 4 groups (10 rats/each), one group set as injured control and the other 3 groups the doses of supplemented teas were 200 mg kg&lt;sup&gt;&lt;/sup&gt;&lt;sup&gt;1&lt;/sup&gt; b.wt. and 100 mg kg&lt;sup&gt;&lt;/sup&gt;&lt;sup&gt;1&lt;/sup&gt; b.wt. from each or both teas, respectively. &lt;b&gt;Results:&lt;/b&gt; The results displayed that both teas contain active components including flavonoids, polyphenols and possess antioxidant activity. Drinking 1% H&lt;sub&gt;2&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt; water significantly (p&lt;u&gt;<&lt;/u&gt;0.01)decreased the estrous cycle time, body, ovary and uterus weights, serum follicle-stimulating hormone (FSH), luteinizing hormone (LH), progesterone and estrogen (E2) levels, uterine and ovarian superoxide dismutase (SOD) activity and reduced glutathione (GSH) level while caused a substantial increase (p&lt;u&gt;<&lt;/u&gt;0.01) in uterine and ovarian malondialdehyde (MDA) level, DNA fragmentation percent, caspase-3 (Casp-3), 8-hydroxydeoxyguanosine (8-OHdG), tumour necrosis factor-α (TNF-α), prostaglandin E2 (PGE2) levels as well as cyclooxygenase-2 (COX-2) activity. Moreover, microscopic observations of uterine and ovarian tissues were consistent with the biochemical results. &lt;b&gt;Conclusion:&lt;/b&gt; Oral administration of tested teas improved and ameliorated all the biochemical and microscopic observations by restricting cellular DNA damage and protecting uterine and ovarian tissues from oxidative injury and cell death. The best improvement was observed in the matcha administered group.",
@@ -24391,14 +24280,14 @@
    "pmid": "33996977",
    "pmcid": "PMC8119902",
    "language": "eng",
-   "design": "Randomized controlled trial",
+   "design": "Animal study",
    "relevance": "subject",
    "mentions": 4,
    "topics": [
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
-    "Inflammation and immunity"
+    "Inflammation and immunity",
+    "Metabolism and weight"
    ],
    "matchaIn": "title",
    "abstract": "Schistosomiasis, a major parasitic illness, has high morbidity and negative financial effects in subtropical and tropical countries, including Egypt. The present study investigated the therapeutic effects of Spirulina platensis (SP) and matcha green tea (MGT) in Schistosoma mansoni- infected mice combined with tracing their possible antioxidant and anti-inflammatory impacts and their protective potency. A total of 60 Swiss albino mice were randomly allocated into six groups ( n = 10): control group (CNT, received normal saline); SP–MGT group [received oral SP (3 g/kg bodyweight/day) plus MGT (3 g/kg bodyweight/day)]; S. mansoni group (infected with S. mansoni cercariae, 100 ± 10/mouse, using the tail immersion method); SP-infected group (infected with S. mansoni and received oral SP); MGT-infected group (received oral MGT after S. mansoni infection); and SP–MGT-infected group (received combined treatment of SP and MGT after S. mansoni infection). Treatment with SP and MGT started 4 weeks after S. mansoni infection and ended 10 weeks after. SP and MGT treatment (SP-infected and MGT-infected groups) and the combined treatment (SP–MGT-infected group) minimized the hepatic damage induced by S. mansoni ; circulating alanine aminotransferase and aspartate transaminase decreased, and total protein, albumin, and globulin serum levels increased. The serum level of malondialdehyde significantly declined, and catalase, glutathione peroxidase, superoxide dismutase, and total antioxidant capacity increased in SP-infected, MGT-infected, and SP–MGT-infected groups compared with the infected group. Co-administration of SP and MGT reduced serum cytokine levels (tumor necrosis factor-alpha, interferon-gamma, and interleukin-13) and increased interleukin-10 levels after S. mansoni infection compared with the infected group. Moreover, treatment with SP and/or MGT decreased the number of granulomas in hepatic and splenic tissues compared with the infected group. Collectively, our results suggest that combined SP and MGT treatment is effective for S. mansoni infection. Liver and spleen tissue alterations were improved, the antioxidant systems were stimulated, and the inflammatory response was suppressed. Further research is recommended to investigate the mechanisms of the combined SP and MGT treatment effects to facilitate the development of novel therapies against this disease.",
@@ -24901,9 +24790,9 @@
    "mentions": 8,
    "topics": [
     "Metabolism and weight",
-    "Safety, contaminants and toxicity",
     "Inflammation and immunity",
-    "Antioxidants and polyphenols"
+    "Antioxidants and polyphenols",
+    "Food products and applications"
    ],
    "matchaIn": "title",
    "abstract": "Lately, matcha green tea has gained popularity as a beverage and food additive. It has proved to be effective in preventing obesity and related metabolic syndromes. However, the underlying mechanisms of its control effects against non-alcoholic fatty liver disease (NAFLD) are complicated and remain elusive. In the present study, we performed an in vivo experiment using male C57BL/6 mice fed with a high-fat diet and simultaneously treated with matcha for six weeks. Serum biochemical parameters, histological changes, lipid accumulation, inflammatory cytokines, and relevant indicators were examined. Dietary supplementation of matcha effectively prevented excessive accumulation of visceral and hepatic lipid, elevated blood glucose, dyslipidemia, abnormal liver function, and steatosis hepatitis. RNA sequencing analyses of differentially expressed genes in liver samples indicated that matcha treatment decreased the activity of lipid droplet-associated proteins and increased the activity of cytochrome P450 enzymes, suggesting improved metabolic capacity and liver function. The current study provided evidence for new dietary strategies based on matcha supplementation to ameliorate lipotoxicity-induced obesity and NALFD.",
@@ -25154,6 +25043,7 @@
    "relevance": "subject",
    "mentions": 7,
    "topics": [
+    "Safety, contaminants and toxicity",
     "Gut and microbiome"
    ],
    "matchaIn": "title",
@@ -26439,7 +26329,6 @@
    "mentions": 11,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Processing, milling and quality",
     "Aroma, flavor and sensory"
    ],
@@ -27205,7 +27094,7 @@
     "Antioxidants and polyphenols",
     "Processing, milling and quality",
     "Food products and applications",
-    "Safety, contaminants and toxicity"
+    "Market, culture and sustainability"
    ],
    "matchaIn": "title",
    "abstract": "Nowadays, matcha tea is a high quality ingredient due to its dietary fiber and antioxidant content, which lead to the development of a daily intake product such as cookies. In this case three types of flour were used: oat, almond and chia along with three different concentrations of matcha tea (0% w/w, 5% w/w, 10% w/w). In order to verify polyphenol, antioxidant and dietary fiber content a bibliographic research was implemented, providing data from different climatic conditions and processing. To evaluate the main physical properties of the cookies some tests such as moisture, hardness and shelf life were implemented, besides performing viscosity tests for each of the cookie doughs. In order to determinate the market and the customer profile...",
@@ -27443,7 +27332,6 @@
    "mentions": 7,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Processing, milling and quality"
    ],
    "matchaIn": "title",
@@ -28866,9 +28754,9 @@
    "mentions": 2,
    "topics": [
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Cancer",
-    "Inflammation and immunity"
+    "Inflammation and immunity",
+    "Authenticity and analytical methods"
    ],
    "matchaIn": "title",
    "abstract": "We investigated the anticarcinogenic potential of green tea and its components epigallocatechin gallate (EGCG) and quercetin, as well as tamoxifen, on MCF-7 and MDA-MB-23 breast cancer cells. Using high-performance liquid chromatography, the quantity of EGCG and quercetin in green tea was analyzed. The receptor status of the cells was confirmed immunohistochemically. Various viability and cytotoxicity tests were later performed to investigate the effects of the substances. After incubating the cells with green tea extract, EGCG, quercetin and tamoxifen, a decrease in viability (MTT test) or proliferation (BrdU assay) was found in all cell tests with varying effects, depending on the assay used. The effects were similar in both cell lines. This work confirmed that EGCG and quercetin are contained in green tea and that both substances in pure form and as green tea have an anticarcinogenic effect on both estrogen receptor-positive and -negative breast cancer cells. This effect could also be demonstrated with tamoxifen in both cell lines (MTT and BrdU assays). These results suggest that the effects observed in these experiments are not generated only via estrogen receptor-mediated pathways.",
@@ -29176,7 +29064,6 @@
    "relevance": "subject",
    "mentions": 5,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Processing, milling and quality",
     "Authenticity and analytical methods"
    ],
@@ -31643,7 +31530,6 @@
    "topics": [
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity",
     "Authenticity and analytical methods"
    ],
    "matchaIn": "title",
@@ -31928,7 +31814,7 @@
     "Cognition, mood and stress",
     "Antioxidants and polyphenols",
     "L-theanine and caffeine",
-    "Safety, contaminants and toxicity"
+    "Market, culture and sustainability"
    ],
    "matchaIn": "keywords",
    "abstract": "Background: Green tea is traditionally known to induce mental clarity, cognitive function, physical activation and relaxation. Recently, a special green tea, matcha tea, is rapidly gaining popularity throughout the world and is frequently referred to as a mood- and brain food. Matcha tea consumption leads to much higher intake of green tea phytochemicals compared to regular green tea. Previous research on tea constituents caffeine, L-theanine, and epigallocatechin gallate (EGCG) repeatedly demonstrated benefits on mood and cognitive performance. These effects were observed when these phytochemicals were consumed separately and in combination. Methods: A review was conducted on 49 human intervention studies to summarize the research on acute psychoactive effects of caffeine, L-theanine, and EGCG on different dimensions of mood and cognitive performance. Conclusion: Caffeine was found to mainly improve performance on demanding long-duration cognitive tasks and self-reported alertness, arousal, and vigor. Significant effects already occurred at low doses of 40 mg. L-theanine alone improved self-reported relaxation, tension, and calmness starting at 200 mg. L-theanine and caffeine combined were found to particularly improve performance in attention-switching tasks and alertness, but to a lesser extent than caffeine alone. No conclusive evidence relating to effects induced by EGCG could be given since the amount of intervention studies was limited. These studies provided reliable evidence showing that L-theanine and caffeine have clear beneficial effects on sustained attention, memory, and suppression of distraction. Moreover, L-theanine was found to lead to relaxation by reducing caffeine induced arousal.",
@@ -33367,7 +33253,7 @@
     "Cognition, mood and stress",
     "Metabolism and weight",
     "Antioxidants and polyphenols",
-    "Safety, contaminants and toxicity"
+    "Processing, milling and quality"
    ],
    "matchaIn": "title",
    "abstract": "Matcha is a kind of powdered green tea produced by grinding with a stone mill. In the present study, the preventive effects of the aqueous extract (water-soluble) and residue (water-insoluble) of Matcha on the antioxidant status and lipid and glucose levels in mice fed a high-fat diet were investigated. Mice were fed seven different experimental diets for 4 weeks: a normal diet control (NC), a high-fat diet (HF), a high-fat diet with 0.025% Matcha (MLD), a high-fat diet with 0.05% Matcha (MMD), a high-fat diet with 0.075% Matcha (MHD), a high-fat diet with 0.05% Matcha aqueous extracts (ME), and a high-fat diet with 0.05% Matcha residues (MR). It was found that serum total cholesterol (TC) and triglyceride (TG) levels of the MHD group were significantly decreased compared to those of the HF group. Furthermore, in the MHD group, the level of high-density lipoprotein-cholesterol (HDL-C) was elevated, on the contrary the level of low-density lipoprotein-cholesterol (LDL-C) was suppressed. Moreover, Matcha could significantly lower the blood glucose levels, and improve the superoxide dismutase (SOD) activity and malondialdehyde (MAD) contents both in serum and liver; besides, the serum GSH-Px activity indicated that the oxidative stress caused by HF could be reversed by administration of Matcha. These findings suggest that Matcha has beneficial effects through the suppression of the blood glucose (BG) accumulation and promotion of the lipid metabolism and antioxidant activities. Moreover, the water-insoluble part of Matcha is suggested to play an important role in the suppression of diet-induced high levels of lipid and glucose.",
@@ -35180,10 +35066,10 @@
    "relevance": "mention",
    "mentions": 1,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Inflammation and immunity",
     "Skin, oral and dental",
-    "Metabolism and weight"
+    "Metabolism and weight",
+    "Cardiovascular and blood pressure"
    ],
    "matchaIn": "abstract",
    "abstract": "Death (2003): Edwards IR, Lancet 361, 1240 (11 cases) Dysgeusia (2%) Foetor ex ore (halitosis) (<1%) Gingivitis (<1%) Glossitis (<1%) Gynecomastia (<1%) Headache Hyperesthesia (<1%) Mastodynia (1%) Myalgia Oral candidiasis (<1%) Oral ulceration (<1%) Paresthesias (4%) (1999): Litt JZ, Beachwood, OH (personal case) (observation) Priapism (<1%) (1999): Brodie-Meijer CC+, Int Clin Psychopharmacol 14, 257 (clitoral) Rhabdomyolysis (2002): Thompson M+, Am J Psychiatry 159(9), 1607 (with simvastatin) Sialorrhea (<1%) Stomatitis (<1%) Vaginitis (2%) Xerostomia (25%) Trade name: Viracept (Pfizer) Indications: HIV infection Category: Antiretroviral; Protease inhibitor Half-life: 3.5-5 hours Clinically important, potentially hazardous interactions with: benzodiazepines, chlordiazepoxide, clonazepam, clorazepate, diazepam, dihydroergotamine, ergot alkaloids, fentanyl, flurazepam, lorazepam, methysergide, midazolam, oral contraceptives, oxazepam, phenytoin, pimozide, quazepam, rifampin, sildenafil, St John’s wort, temazepam Reactions Skin Allergic reactions (sic) (<1%) Dermatitis (sic) (<1%) Diaphoresis (<1%) Exanthems (1998): Bourezane Y+, Clin Infect Dis 27(5), 1321 (with indinavir) Hyperhidrosis (2000): Bonfanti P+, J Acquir Immune Defic Syndr 23(3), 236 Lichenoid eruption (1998): Bourezane Y+, Clin Infect Dis 27(5), 1321 Palmar erythema (1998): Bourezane Y+, Clin Infect Dis 27(5), 1321 (with indinavir) Pruritus (<1%) Rash (sic) (1-10%) (2001): Abraham PE+, Ann Pharmacother 35(5), 553 (2000): Fortuny C+, AIDS 14, 335 Urticaria (<1%) (1998): Demoly P+, J Allergy Clin Immunol 102(5), 875 Vasculitis (1998): Bourezane Y+, Clin Infect Dis 27(5), 1321 Other DRESS syndrome (1998): Bourezane Y+, Clin Infect Dis 27, 1321 Gynecomastia (2001): Manfredi R+, Ann Pharmacother 35(4), 438 Headache Hypersensitivity (1999): Demoly P+, J Allergy Clin Immunol 104 (2 Pt 1), 504 Myalgia (<1%) Oral ulceration (<1%) Paresthesias (<1%) Perioral paresthesias (2001): McMahon D+, Antivir Ther 6(2), 105 Rhabdomyolysis (2002): Hare CB+, Clin Infect Dis 35(10), 111 (with simvastatin) *Note: Protease inhibitors cause dyslipidemia which includes elevated triglycerides and cholesterol and redistribution of body fat centrally to produce the so-called “protease paunch,” breast enlargement, facial atrophy, and “buffalo hump” Trade names: Cortosporin; Dexacine; Maxitrol (Monarch); Neosporin (Warner Lambert) (Monarch); Poly-Pred Other common trade names: Gemicina; Myciguent; Neomicina; Neomycine Diamant; Neosulf; Nivemycin Indications: Various infections caused by susceptible organisms Category: Aminoglycoside antibiotic Half-life: 3 hours Clinically important, potentially hazardous interactions with: aldesleukin, aminoglycosides, atracurium, bumetanide, doxacurium, ethacrynic acid, furosemide, methoxyflurane, pancuronium, polypeptide antibiotics, rocuronium, succinylcholine, torsemide, vecuronium Reactions Skin Allergic reactions (sic) Angioedema (1959): Pirilä V+, Acta Derm Venereol (Stockh) 39, 1470 Bullous eruption Dermatitis (sic) (1-10%) (2000): Hillen U+, Hautarzt 51, 239 (1999): Giordano-Labadie F+, Contact Dermatitis 40, 192 (2.6%) (in atopics) (1999): Lestringant GG+, Int J Dermatol 38, 181 (5.1%) (1998): Katsarou-Katsari A+, J Eur Acad Dermatol Venereol 11, 9 (1998): Kimura M+, Contact Dermatitis 39, 148 (1997): Dasaraju P+, Clin Infect Dis 25, 33 (1996): Sheretz EF, Arch Dermatol 132, 461 (1994): Fisher AA, Cutis 54, 300 (1993): Lipozencic J+, Arh Hig Rada Toksikol (Serbo-Croatian-Roman) 44, 173 (1991): Barros MA+, Contact Dermatitis 25, 156 (1991): Mariani R+, Contact Dermatitis 24, 227 (1990): Bouffioux B+, Nouv Dermatol (French) 9, 25 (1990): Grandinetti PJ+, J Am Acad Dermatol 23, 646 (1990): Smith IM+, Clin Otolaryngol 15, 155 (1989): Guin JD+, Cutis 43, 564 (1989): Massone L+, Contact Dermatitis 21, 344 (1988): Shupp DL+, Cutis 42, 528 (1987): Abdul-Gaffoor PM, Indian J Dermatol 32, 102 (1986): Bajaj AK+, Int J Dermatol 25, 103 (1986): Baldinger J+, Ann Ophthalmol 18, 95 (1986): Rebandel P+, Contact Dermatitis 15, 92 (1985): Fisher AA, Cutis 35, 315 (1985): Fraki JE+, Acta Otolaryngol Stockh 100, 414 (1985): Frenzel U +, Phlebologie (French) 38, 389 (1985): Szarmach H+, Przegl Dermatol (Polish) 72, 521 (disseminated) (1984): Menne T+, Hautarzt (German) 35, 319 (1983): Macdonald RH+, Clin Exp Dermatol 8, 249 (1982): Fisher AA, Ann Allergy 49, 97 (1981): Fisher AA+, Cutis 28, 491 (1981): Gordon W, S Afr Med J 59, 212 (1981): LeRoy R+, Derm Beruf Umwelt (German) 29, 168 (1980): Epstein E, Contact Dermatitis 6, 219 (1979): Leyden JJ+, JAMA 242, 1276 (1979): Prystowsky SD+, Arch Dermatol 115, 713 (1979): Prystowsky SD+, Arch Dermatol 115, 959 (1978): Durocher LP, Can Med Assoc J (French) 118, 162 (1978): Forstrom L+, Contact Dermatitis 4, 312 (1977): Shouji A, Nippon Rinsho (Japanese) 35, 210 (1977): Sinka L+, Bratisl Lek Listy (Slovak) 67, 59 (1976): Carruthers JA+, Contact Dermatitis 2, 269 (1976): Fisher AA+, Cutis 18, 637 (1974): Bandmann HJ+, Internist Berl (German) 15, 47 (1974): Malten KE+, Phlebologie (French) 27, 417 (1974): Peterkin GA, J Laryngol Otol 88, 15 (1973): Ebner H, Wien Klin Wochenschr (German) 85, 203 (1973): BMJ 1, 250 (1973): Naess K, Tidsskr Nor Laegeforen (Norwegian) 93, 2498 (1972): Hadida ME+, J Med Lyon (French) 53, 1093 (1972): Hattori S, Nippon Ika Daigaku Zasshi (Japanese) 39, 23 (1971): Bielicky T+, Z Haut Geschlechtskr (German) 46, 771 (1971): EpsteinE, Arch Dermatol 103, 562 (1971): Foussereau J+, Bull Soc Fr Dermatol Syphiligr (French) 78, 457 (1970): Bandmann HJ, Munch Med Wochenschr (German) 112, 1125 (1970): Bowczyc J+, Przegl Dermatol (Polish) 57, 763 (1970): Chilvers AS+, Lancet 1, 402 (1969): Matner T, Hautarzt (German) 20, 446 (1969): Novak M+, Cesk Dermatol (Czech) 44, 177 (1968): Bartova J, Cesk Dermatol (Czech) 43, 271 (1968): Hiemisch I+, Z Haut Geschlechtskr (German) 43, 49 (1968): Hjorth N+, Br J Dermatol 80, 163 (1967): Med Lett Drugs Ther 9, 71 (1967): Pirila V+, Acta Derm Venereol (Stockh) 47, 419 (1967): Schwank R, Cesk Dermatol 42, 341 (1966): Jensen OC+, JAMA 195, 131 (1966): Pirila V+, Acta Derm Venereol (Stockh) 46, 489 (1965): Kirton V+, Lancet 1, 138 (1959): Pirilä V+, Acta Derm Venereol (Stockh) 39, 1470 Eczema (sic) (1969): Ekelund A+, Acta Derm Venereol (Stockh) 49, 422 Erythema multiforme (1986): Fisher AA, Cutis 37, 158 Exanthems (1990): Bouffioux B+, Nouv Dermatol (French) 9, 25 Fixed eruption (1985): Gomez B+, Allergol Immunopathol Madr (Spanish) 13, 87 Pruritus Rash (sic) (1-10%) Toxic epidermal necrolysis (1969): Muresan D+, Viata Med (Romanian) 16, 731 (1959): Catto JVF, BMJ 2, 544 Ulcerations Urticaria (1-10%) (1959): Pirilä V+, Acta Derm Venereol (Stockh) 39, 1470 Hair Hair-alopecia Other Anaphylactoid reactions (1986): Goh CL, Australian J Dermatol 27, 125 Hypersensitivity (2001): Le Coz CJ, Ann Dermatol Venereol 128(12), 1359 Trade name: Natrecor (Scios) Indications: Acutely decompensated congestive heart failure Category: Human B-type natriuretic peptide; Vasodilator Half-life: 18 minutes Reaction Skin Diaphoresis (>1%) Pruritus (>1%) Rash (sic) (>1%) Other Back pain Cough (>1%) Headache Leg cramps (>1%) Paresthesias (>1%) Phlebitis Tremor (>1%) Trade name: Viramune (Boehringer Ingelheim) Indications: HIV infections Category: Antiretroviral non-nucleoside reverse transcriptase inhibitor (NNRTI) Half-life: 45 hours Clinically important, potentially hazardous interactions with: ketoconazole, midazolam, St John’s wort Reactions Skin Adverse effects (sic) (2001): MMWR 49, 1153 Exanthems (2000): Barreiro P+, AIDS 14(14), 2153 (2000): Palacios Munoz R+, Rev Clin Esp (Spanish) 200(11), 635 Pruritus Rash (sic) (<48%) (2001): Barreiro P+, Lancet 356(9239), 392 (2001): Bersoff-Matcha SJ+, Clin Infect Dis 32(1), 124 (2001): Colebundrs R+, Lancet 357, 392 (2001): Wong KH+, Clin Infect Dis 33(12), 2096 (2000): Bardsley-Elliot A+, Paediatr Drugs 2(5), 373 (1999): Anton P+, AIDS 13, 524 (1998): Barner A+, Lancet 351, 1133 (1998): Bourezane Y+, Clin Infect Dis 27, 1321 (1998): Ho TT+, AIDS 12, 2082 (1996): Luzuriaga K+, J Infect Dis 174, 713 (1995): Havlir D+, J Infect Dis 171, 537 (48%) Stevens-Johnson syndrome (<1%) (2002): Dodi F+, AIDS 16(8), 1197 (2 cases) (2001): Fagot JP+, AIDS 15(14), 1843 (2001): MMWR 49, 1153 (2001): Metry DW+, J Am Acad Dermatol 44, 354 (2001): Roujeau J-C+, AIDS 15, 1843 (2000): Bardsley-Elliot A+, Paediatr Drugs 2(5), 373 (2000): Garcia Fernandez D+, Rev Clin Esp (Spanish) 200, 179 (1999): Wetterwald E+, Br J Dermatol 140, 980 (SJS/TEN overlap syndrome) (1998): McClain SA, SUNY Stony Brook, NY (from Internet) (observation) (1998): Warren KJ+, Lancet 351-567 Toxic epidermal necrolysis (2001): Fagot JP+, AIDS 15(14), 1843 (2001): Roujeau J-C+, AIDS 15, 1843 (1999): Descamps V+, Lancet 353, 1855 (1999): Phan TG+, Australas J Dermatol 40, 153 (1999): Wetterwald E+, Br J Dermatol 140, 980 (SJS/TEN overlap syndrome) Other DRESS syndrome* (2001): Claudio GA+, Arch Intern Med 161(20), 2501 (2000): Sissoko D+, Presse Med (French) 29, 1041 (1998): Bourezane Y+, Clin Infect Dis 27(5), 1321 Gingivitis (1-3%) Headache Hypersensitivity (2001): Wit FW+, AIDS 15(18), 2423 (2000): Podzamczer D+, AIDS 14, 331 Lipodystrophy (2000): Lewis RH+, J Acquir Immune Defic Syndrom 23, 355 (1999): Aldeen T+, AIDS 13, 865 Myalgia (1-10%) Paresthesias (2%) Ulcerative stomatitis (4%) *Note: The DRESS syndrome consists of ‘drug rash with eosinophilia and systemic symptoms’ Synonym: nicotinic acid Trade names: Advicor (Kos); Niacor (Upsher-Smith); Niaspan (Kos); Nicobid; Nicolar (Aventis); Nicotinex; Slo-Niacin (UpsherSmith) Other common trade names: Apo-Nicotinamide; I*; IV; Nia-Bid; Niac; Niacels; Nicobion; Nicotinex; Nicovital; Pepeom Amide; Vitamin B3 Indications: Hyperlipidemia Category: Antihyperlipidemic Half-life: 45 minutes Clinically important, potentially hazardous interactions with: atorvastatin, selenium Reactions Skin Acanthosis nigricans (2002): Burrall BA, Sacramento, CA (from Internet) (observation) (2002): Eisner J, Mt. Vernon, WA (from Internet) (observation) (2002): Liss WA, Pleasanton, CA (from Internet) (observation) (2002): Marmelzat, JA, Los Angeles, CA (from Internet) (observation) (1994): McKenney JM+, JAMA 271, 672 (1994): Stals H+, Dermatology 189, 203 (1993): Stone OJ, Med Hypotheses 40, 154 (1992): Coates P+, Br J Dermatol 126, 412 (1990): Audicana M+, Contact Dermatitis 22, 60 (1990): Brown G+, N Engl J Med 323, 1289 (8.3%) (1989): Larmi E, Int J Dermatol 28, 609 (1989): Ylipieti S+, Contact Dermatitis 21, 105 (1981): Elgart ML, J Am Acad Dermatol 5, 709 (1974): Pedro S, N Engl J Med 29, 422 (1971): Curth HO, Birth Defects 7, 31 (1967): Branehog I+, Lakartidningen (Swedish) 64, 1449 (1964): Tromovitch TA+, Arch Dermatol 89, 222 Dermatitis (1995): Bilbao I+, Contact Dermatitis 33, 435 Erythema (1995): Fisher AA, Cutis 55, 132 Exanthems (1997): Blumenthal HL, Beachwood, OH (personal case) (observation) (1997): Litt JZ, Beachwood, OH (2 personal cases) (observation) (1990): Brown G+, N Engl J Med 323, 1289 (2.8%) Fixed eruption (<1%) (1992): de la Hoz-Caballer B+, Med Clin (Barc) (Spanish) 98, 357 Flushing (1-10%) (2002): Kashyap ML+, Am J Cardiol 89(6), 672 (10%) (with lovastatin) (2002): Litt JZ, Beachwood, OH (personal case) (observation) (1998): Capuzzi DM+, Am J Cardiol 82, 74U (1998): Guyton JR+, Am J Cardiol 82, 737 (4.8%) (1998): Knopp RH, Am J Cardiol 82, 24U (1998): Morgan JM+, Am J Cardiol 82, 29U (1997): Jungnickel PW+, J Gen Intern Med 12, 591 (1996): Crouse JR, Coron Artery 7, 321 (1996): Glen AI+, Prostaglandins Leukot Essent Fatty Acids 55, 9 (1994): Fivenson DP+, Arch Dermatol 130, 753 (1994): McKenney JM+, JAMA 271, 672 (1994): Sudan BJ, Ann Pharmacother 28, 1113 (1 993): Fisher AA, Cutis 51, 225 (1992): Breathnach SM+, Adverse Drug Reactions and the Skin Blackwell, Oxford, 265 (passim) (1992): Whelan AM+, J Fam Pract 34, 165 (passim) (1989): Warady B+, Perit Dial Int 9, 81 (1988): Figge HL+, Pharmacotherapy 8, 287 (1985): Mooney E, Int J Dermatol 24, 549 (1977): Estep DL+, Clin Toxicol 11, 325 (1973): Med Lett 15, 102 (1973): Levy RI+, Drugs 6, 12 Ichthyosis (1961): Berge KG+, Am J Med 31, 24 Keratoses, pigmented (1974): Wittenborn JR+, Adv Biochem Psychopharmacol 9, 295 Pigmentation (1992): Breathnach SM+, Adverse Drug Reactions and the Skin Blackwell, Oxford, 265 (passim) Pruritus (1-5%) (2002): Kashyap ML+, Am J Cardiol 89(6), 672 (with lovastatin) (1997): Blumenthal HL, Beachwood, OH (personal case) (observation) (1997): Jungnickel PW+, J Gen Intern Med 12, 591 (1994): Fivenson DP+, Arch Dermatol 130, 753 (1994): McKenney JM+, JAMA 271, 672 (1992): Breathnach SM+, Adverse Drug Reactions and the Skin (Oxford) 265 (passim) (1992): Whelan AM+, J Fam Pract 34, 165 (passim) (1977): Estep DL+, Clin Toxicol 11, 325 (1973): Med Lett 15, 102 (1973): Levy RI+, Drugs 6, 12 Rash (sic) (<1%) (2002): Kashyap ML+, Am J Cardiol 89(6), 672 (with lovastatin) (1994): McKenney JM+, JAMA 271, 672 (1992): Breathnach SM+, Adverse Drug Reactions and the Skin Blackwell, Oxford, 265 (passim) (1988): Figge HL+, Pharmacotherapy 8, 287 Scaling (sic) (1992): Breathnach SM+, Adverse Drug Reactions and the Skin Blackwell, Oxford, 265 (passim) Urticaria (1995): Fisher AA, Cutis 55, 132 Xerosis Other Anaphylactoid reactions Burning mouth syndrome (1988): Haustein UF, Contact Dermatitis 19, 225 Gingivitis (1998): Leighton RF+, Chest 114, 1472 Headache (2002): Kashyap ML+, Am J Cardiol 89(6), 672 (with lovastatin) Myopathy (1994): Gharavi AG+, Am J Cardiol 74, 841 (1989): Goldstein MR, Am J Med 87, 248 (1989): Litin SC+, Am J Med 86, 481 Paresthesias (1-10%) (1997): Jungnickel PW+, J Gen Intern Med 12, 591 (1992): Whelan AM+, J Fam Pract 34, 165 (passim) Toothache (sic) (1998): Leighton RF+, Chest 114, 1472 Xerostomia Synonyms: nicotinamide; vitamin B3 Trade name: Niacinamide Indications: Prophylaxis and treatment of pellagra Category: Water-soluble nutritional supplement Half-life: 45 minutes Clinically important, potentially hazardous interactions with: primidone Reactions Skin Acanthosis nigricans (1984): Papa CM, Arch Dermatol 120, 281 Pruritus (1-5%) (1981): Zackheim HS+, J Am Acad Dermatol 4, 736 (1980): Bures FA, J Am Acad Dermatol 3, 530 Rash (sic) Other Paresthesias (1-10%)",
@@ -35789,7 +35675,6 @@
    "relevance": "subject",
    "mentions": 7,
    "topics": [
-    "Safety, contaminants and toxicity",
     "Gut and microbiome",
     "Processing, milling and quality"
    ],

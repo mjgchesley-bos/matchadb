@@ -11,6 +11,7 @@ import {
 } from "@/lib/region-content";
 import { ProductCard, gradeLabel } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
+import { ResearchLinks } from "@/components/ResearchLinks";
 import { SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -206,6 +207,12 @@ export default async function RegionPage({
           </Link>
         )}
       </section>
+
+      <ResearchLinks
+        heading="Research on how matcha is grown and made"
+        topics={["Cultivation and shading", "Processing, milling and quality", "Aroma, flavor and sensory"]}
+        blurb="Plant scientists and food chemists have studied how shading, harvest and milling shape matcha's flavor and chemistry. Browse the studies behind it."
+      />
 
       <p className="text-xs text-ink-faint mt-12">
         Figures are computed from the product pages brands publish; see{" "}

@@ -16,6 +16,7 @@ import { StudyCard } from "@/components/StudyCard";
 import { CopyCitation } from "@/components/CopyCitation";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { topicHref } from "@/lib/research-topics";
 
 // The abstract is shown in full when it is short; very long abstracts are cut
 // with a pointer to the source, so the library stays a finding aid and the
@@ -163,7 +164,7 @@ export default async function StudyPage({ params }: { params: Promise<{ id: stri
           {s.topics.length ? (
             <div className="flex flex-wrap gap-1.5">
               {s.topics.map((t) => (
-                <Link key={t} href={`/research?topic=${encodeURIComponent(t)}`} className="rounded-full bg-matcha-soft text-matcha-ink px-2.5 py-0.5 text-sm hover:bg-matcha hover:text-paper transition-colors">
+                <Link key={t} href={topicHref(t)} className="rounded-full bg-matcha-soft text-matcha-ink px-2.5 py-0.5 text-sm hover:bg-matcha hover:text-paper transition-colors">
                   {t}
                 </Link>
               ))}

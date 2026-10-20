@@ -11,6 +11,7 @@ import { getBrandLogoPath } from "@/lib/logos";
 import { getRegionInfo } from "@/lib/regions";
 import { REGION_CONTENT } from "@/lib/region-content";
 import { JsonLd } from "@/components/JsonLd";
+import { ResearchLinks } from "@/components/ResearchLinks";
 import { SITE_URL } from "@/lib/site";
 
 type Product = NonNullable<Awaited<ReturnType<typeof getProductById>>>;
@@ -650,6 +651,11 @@ export default async function ProductDetailPage({
           </Link>
         </section>
       )}
+
+      <ResearchLinks
+        topics={["L-theanine and caffeine", "Processing, milling and quality", "Safety, contaminants and toxicity"]}
+        blurb="What published studies say about matcha's compounds, how it is made, and what has been tested for. Every study links back to its source."
+      />
     </main>
   );
 }

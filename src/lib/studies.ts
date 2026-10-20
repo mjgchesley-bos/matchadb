@@ -322,6 +322,38 @@ export function queryStudies(f: StudyFilters) {
   return { studies: rows.slice((page - 1) * pageSize, page * pageSize), total, page, totalPages, highlight: parsed.highlight };
 }
 
+// Numbers for a topic page, computed from the library (never typed in by hand).
+export function getTopicSummary(topic: string) {
+  const set = baseSet(false).filter((s) => s.topics.includes(topic));
+  const years = set.map((s) => s.year).filter((y): y is number => !!y);
+  const designs = new Map<string, number>();
+  const kw = new Map<string, number>();
+  for (const s of set) {
+    designs.set(s.design, (designs.get(s.design) ?? 0) + 1);
+    const seen = new Set<string>();
+    for (const k of [...s.keywords, ...s.mesh]) {
+      const n = k.toLowerCase().trim();
+      if (n.length < 3 || n.length > 40 || GENERIC.has(n) || seen.has(n)) continue;
+      seen.add(n);
+      kw.set(n, (kw.get(n) ?? 0) + 1);
+    }
+  }
+  const trials = (designs.get("Randomized controlled trial") ?? 0) + (designs.get("Clinical trial (non-randomized)") ?? 0);
+  const humanLevel = (designs.get("Systematic review / meta-analysis") ?? 0) + (designs.get("Review") ?? 0);
+  return {
+    total: set.length,
+    minYear: years.length ? Math.min(...years) : null,
+    maxYear: years.length ? Math.max(...years) : null,
+    recent: set.filter((s) => (s.year ?? 0) >= new Date().getFullYear() - 4).length,
+    openAccess: set.filter((s) => s.isOa).length,
+    trials,
+    reviews: humanLevel,
+    animal: designs.get("Animal study") ?? 0,
+    designs: [...designs].sort((a, b) => b[1] - a[1]).map(([name, count]) => ({ name, count })),
+    keywords: [...kw].filter(([, c]) => c >= 2).sort((a, b) => b[1] - a[1]).slice(0, 14).map(([name, count]) => ({ name, count })),
+  };
+}
+
 export function getLibraryFacets(includeMentions = false) {
   const set = baseSet(includeMentions);
   const count = (pick: (s: Study) => string[]) => {

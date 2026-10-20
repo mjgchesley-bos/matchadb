@@ -223,7 +223,7 @@ const TOPICS = [
   ["Cardiovascular and blood pressure", /(cardio|blood pressure|hypertens|vascular|endothelial|arterial|heart)/i],
   ["Antioxidants and polyphenols", /(antioxid|catechin|egcg|polyphenol|flavonoid|flavan|radical|oxidative)/i],
   ["L-theanine and caffeine", /(theanine|caffeine|amino acid|glutamic)/i],
-  ["Safety, contaminants and toxicity", /(lead\b|heavy metal|cadmium|arsenic|pesticide|residue|contaminat|toxic|hepatotox|liver injury|safety|adverse|radioactiv|cesium|aluminum|fluoride|mycotoxin)/i],
+  ["Safety, contaminants and toxicity", /(heavy metals?|cadmium|arsenic|mercury|pesticide|contaminat|mycotoxin|radioactiv|cesium|caesium|fluoride|microplastic|aluminum|aluminium|xylene|toluene|toxicolog|toxicity of|safety (of|assessment|profile|evaluation|concern)|adverse (effect|event|reaction)s?|\blead (content|level|concentration|exposure|contamination))/i],
   ["Cancer", /(cancer|tumou?r|carcinoma|apoptosis|chemoprevent|anti-?proliferat)/i],
   ["Gut and microbiome", /(microbio|gut\b|intestin|probiotic|colitis|short-chain|digest)/i],
   ["Inflammation and immunity", /(inflamm|immun|cytokine|allerg|antiviral|virus|infection|antimicrob|antibacterial)/i],
@@ -240,13 +240,28 @@ function classify(rec) {
   const text = `${rec.title} ${rec.abstract} ${(rec.keywords || []).join(" ")} ${(rec.mesh || []).join(" ")}`;
   const pt = rec.pubTypes || [];
   let design = null;
-  for (const [name, re, ptypes] of DESIGN) {
+  // Animal work describes "randomly assigned" rats, which is not a human randomized trial: if the
+  // text is about animals and never about people, it is an animal study unless it is a review.
+  const body = `${rec.title} ${rec.abstract}`;
+  const animals = /(\bmice\b|\bmouse\b|\brats?\b|zebrafish|murine|rodent|wistar|sprague|broiler|piglets?|\bbalb\/c)/i.test(body);
+  const people = /(participants?|volunteers?|patients?|subjects|healthy (men|women|adults|young)|\badults\b|children|students|humans?\b|older people|women|\bmen\b)/i.test(body);
+  const isReview = pt.some((p) => /^(Meta-Analysis|Systematic Review|Review)$/.test(p)) || /(systematic review|meta-?analys|\breview\b)/i.test(rec.title);
+  if (animals && !people && !isReview) design = "Animal study";
+  if (!design) for (const [name, re, ptypes] of DESIGN) {
     if (ptypes.some((p) => pt.includes(p))) { design = name; break; }
   }
   if (!design) for (const [name, re] of DESIGN) if (re.test(`${rec.title} ${rec.abstract}`)) { design = name; break; }
   const topics = TOPICS.filter(([, re]) => re.test(`${rec.title} ${(rec.keywords || []).join(" ")} ${(rec.mesh || []).join(" ")} ${rec.abstract}`)).map(([n]) => n);
   // keep the most specific few: topics matched in the TITLE/keywords come first
   const head = `${rec.title} ${(rec.keywords || []).join(" ")}`;
+  // "Safety" is a claim, so it needs real support: named in the title, keywords or subject
+  // terms, or repeated in the abstract (not one passing word in a product-development paper).
+  const safety = TOPICS.find((t) => t[0].startsWith("Safety"))[1];
+  const safetyIdx = topics.indexOf("Safety, contaminants and toxicity");
+  if (safetyIdx >= 0 && !safety.test(`${head} ${(rec.mesh || []).join(" ")}`)) {
+    const hits = (rec.abstract.match(new RegExp(safety.source, "gi")) || []).length;
+    if (hits < 2) topics.splice(safetyIdx, 1);
+  }
   topics.sort((a, b) => Number(TOPICS.find((t) => t[0] === b)[1].test(head)) - Number(TOPICS.find((t) => t[0] === a)[1].test(head)));
   const where = MATCHA.test(rec.title) ? "title" : MATCHA.test((rec.keywords || []).join(" ")) ? "keywords" : MATCHA.test(rec.abstract) ? "abstract" : MATCHA.test((rec.mesh || []).join(" ")) ? "subject terms" : null;
   // How central is matcha? "subject" = in the title or author keywords, or named 3+ times;
@@ -301,7 +316,7 @@ async function main() {
     const cls = classify(rec);
     const head = `${rec.title} ${(rec.keywords || []).join(" ")}`;
     const scandi = rec.language && /^(sv|no|nb|nn|da|swe|nor|dan)$/i.test(rec.language) || /\b(och|att|som|f(ö|o)r|med|studie|kvalitativ|av|till|det|inte)\b.{0,80}\b(och|att|som|f(ö|o)r|med|studie|kvalitativ|av|till|det|inte)\b/i.test(`${rec.title} ${(rec.abstract || "").slice(0, 300)}`);
-    const spam = (/zenodo/i.test(rec.journal || "") && /(slim|supplement|suplemento|buy|price|reviews?|t(é|e)l(é|e)charger|download|pdf)/i.test(rec.title)) || /(\[pdf\]|\[kindle\]|\[epub\]|t(é|e)l(é|e)charg|read online|free download)/i.test(rec.title);
+    const spam = (/zenodo/i.test(rec.journal || "") && /(slim|supplement|suplemento|buy|price|reviews?|t(é|e)l(é|e)charger|download|pdf)/i.test(rec.title)) || /(\[pdf\]|\[kindle\]|\[epub\]|t(é|e)l(é|e)charg|read online|free download|recenzje|opinie|gdzie kupi)/i.test(rec.title);
     const why = !cls.matchaIn ? "matcha not found in title/abstract/keywords/subject terms"
       : scandi && !TEA_CONTEXT.test(text) ? "non-English text where 'matcha' is the verb 'to match'"
       : spam ? "promotional / spam record"

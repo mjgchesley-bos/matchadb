@@ -7,6 +7,7 @@ import { ResearchSearch } from "@/components/ResearchSearch";
 import { ResearchFilters } from "@/components/ResearchFilters";
 import { JsonLd } from "@/components/JsonLd";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
+import { TOPICS } from "@/lib/research-topics";
 
 const PAGE_SIZE = 25;
 
@@ -20,7 +21,7 @@ const SEARCH_SHORTCUTS: [string, string][] = [
   ["Stress and sleep", "stress OR sleep"],
   ["Weight and metabolism", "obesity OR metabolism"],
   ["Gut health", "microbiome"],
-  ["Heavy metals", '"heavy metals" OR cadmium OR arsenic'],
+  ["Contaminants", "fluoride OR pesticide OR microplastics"],
   ["Pesticides", "pesticide"],
   ["Shade-growing", "shading"],
   ["Aroma and flavor", "aroma OR flavor"],
@@ -99,8 +100,8 @@ export default async function ResearchPage({
         <ResearchSearch defaultValue={filters.q} formId="research-filters" />
         <p className="mt-3 text-xs text-ink-faint leading-relaxed">
           Tip: use &quot;quotes&quot; for an exact phrase, <span className="font-mono">OR</span> between alternatives, and a minus to leave a word out, for example{" "}
-          <Link href={`/research?q=${encodeURIComponent('"heavy metals" OR cadmium OR pesticide')}`} className="text-matcha hover:text-forest">
-            &quot;heavy metals&quot; OR cadmium OR pesticide
+          <Link href={`/research?q=${encodeURIComponent('fluoride OR pesticide')}`} className="text-matcha hover:text-forest">
+            fluoride OR pesticide
           </Link>
           . Related words are matched too, so &ldquo;EGCG&rdquo; also finds &ldquo;epigallocatechin.&rdquo;
         </p>
@@ -146,6 +147,22 @@ export default async function ResearchPage({
               <span>{recent[0].year}</span>
               <span>{recent[recent.length - 1].year}</span>
             </div>
+          </div>
+        </section>
+      )}
+
+      {!filtered && page === 1 && (
+        <section className="mb-10" aria-label="Browse by topic">
+          <div className="flex items-baseline justify-between gap-4 mb-3">
+            <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest">Browse by topic</h2>
+            <Link href="/research/topics" className="text-sm text-matcha hover:text-forest">All topics &rarr;</Link>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {TOPICS.map((t) => (
+              <Link key={t.slug} href={`/research/topics/${t.slug}`} className="rounded-full bg-matcha-soft text-matcha-ink px-3.5 py-1.5 text-sm hover:bg-matcha hover:text-paper transition-colors">
+                {t.name}
+              </Link>
+            ))}
           </div>
         </section>
       )}
