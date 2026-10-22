@@ -101,7 +101,7 @@ export function ResearchSearch({ defaultValue, formId }: { defaultValue?: string
           aria-autocomplete="list"
           aria-activedescendant={active >= 0 ? `${listId}-${active}` : undefined}
           aria-label="Search the research library by keyword"
-          placeholder="Search studies by keyword — try theanine, sleep, lead, gut microbiota…"
+          placeholder="Search studies by keyword — try theanine, sleep, caffeine, gut microbiota…"
           className="flex-1 min-w-0 border border-line-strong rounded-full px-5 py-3.5 bg-paper-raised text-base text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors"
         />
         <button

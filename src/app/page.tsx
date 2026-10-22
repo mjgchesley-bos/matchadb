@@ -156,34 +156,6 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pt-12">
-        <div className="border border-line rounded-sm bg-paper-raised p-6 sm:p-8">
-          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">New &middot; Research library</p>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink text-balance">
-            Every scientific study on matcha, in one searchable place
-          </h2>
-          <p className="mt-3 text-ink-muted max-w-2xl leading-relaxed">
-            {getLibraryFacets(false).total.toLocaleString()}{" "}papers, trials and theses on matcha&apos;s chemistry, cultivation, safety and health effects &mdash; tagged by topic and study type, with
-            citations and links to every source.
-          </p>
-          <form action="/research" method="get" className="mt-5 flex gap-2 max-w-2xl">
-            <input
-              name="q"
-              type="search"
-              aria-label="Search the research library by keyword"
-              placeholder="Search studies — try theanine, sleep, lead, gut microbiota…"
-              className="flex-1 min-w-0 border border-line-strong rounded-full px-5 py-3 bg-paper text-base text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors"
-            />
-            <button type="submit" className="rounded-full bg-matcha text-paper px-6 py-3 text-sm font-medium tracking-wide hover:bg-forest transition-colors shrink-0">
-              Search
-            </button>
-          </form>
-          <Link href="/research" className="inline-block mt-4 text-matcha hover:text-forest">
-            Browse the whole library &rarr;
-          </Link>
-        </div>
-      </section>
-
       <section className="max-w-4xl mx-auto px-6 py-10 text-center">
         <p className="font-mono text-sm sm:text-base tracking-[0.2em] uppercase text-forest mb-6">Matcha, matched</p>
 
@@ -254,6 +226,34 @@ export default async function Home({
               </span>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="max-w-5xl mx-auto px-6 pb-20">
+        <div className="border border-line rounded-sm bg-paper-raised p-6 sm:p-8">
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">New &middot; Research library</p>
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink text-balance">
+            Every scientific study on matcha, in one searchable place
+          </h2>
+          <p className="mt-3 text-ink-muted max-w-2xl leading-relaxed">
+            {getLibraryFacets(false).total.toLocaleString()}{" "}papers, trials and theses on matcha&apos;s chemistry, cultivation, safety and health effects &mdash; tagged by topic and study type, with
+            citations and links to every source.
+          </p>
+          <form action="/research" method="get" className="mt-5 flex gap-2 max-w-2xl">
+            <input
+              name="q"
+              type="search"
+              aria-label="Search the research library by keyword"
+              placeholder="Search studies — try theanine, sleep, caffeine, gut microbiota…"
+              className="flex-1 min-w-0 border border-line-strong rounded-full px-5 py-3 bg-paper text-base text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors"
+            />
+            <button type="submit" className="rounded-full bg-matcha text-paper px-6 py-3 text-sm font-medium tracking-wide hover:bg-forest transition-colors shrink-0">
+              Search
+            </button>
+          </form>
+          <Link href="/research" className="inline-block mt-4 text-matcha hover:text-forest">
+            Browse the whole library &rarr;
+          </Link>
         </div>
       </section>
     </main>
