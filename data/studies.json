@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-10-20T02:33:02.237Z",
- "count": 737,
+ "generatedAt": "2026-10-25T12:19:26.384Z",
+ "count": 743,
  "studies": [
   {
    "id": 2,
@@ -389,6 +389,51 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://jurnal.ugj.ac.id/index.php/JPA/article/download/12429/5521",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 900,
+   "title": "Analisis Semiotika Representasi Produk Budaya Populer oleh Gen Z di TikTok",
+   "authors": [
+    "Bernice Stacia Lie",
+    "Riris Loisa"
+   ],
+   "journal": "Koneksi",
+   "year": 2026,
+   "doi": "10.24912/kn.v10i2.36384",
+   "pmid": null,
+   "pmcid": null,
+   "language": null,
+   "design": "Review",
+   "relevance": "subject",
+   "mentions": 12,
+   "topics": [
+    "Market, culture and sustainability"
+   ],
+   "matchaIn": "keywords",
+   "abstract": "The development of digital technology and social media, particularly TikTok, has shaped the lifestyle, self-identity, and consumption patterns of Generation Z. Matcha, originally a traditional Japanese drink, has evolved into a popular culture product frequently presented in digital content as a symbol of aesthetics, health, and modern youth lifestyle. This study aims to analyze how Generation Z represents matcha through TikTok content. It employs Stuart Hall’s representation theory to understand meaning construction and Charles Sanders Peirce’s semiotics to analyze visual signs, narratives, symbols, and audio elements in the content. The research uses a qualitative approach with a descriptive method. Data were collected through non-participant observation of matcha-related TikTok content, documentation, expert interviews, and literature review. The results show that matcha has experienced an evolution in meaning into a popular culture product, and Generation Z represents it as a lifestyle marker, self-identity, self-reward, and consumptive activities. Matcha is also represented as a digital trend used to gain social validation. Perkembangan teknologi digital dan media sosial, khususnya TikTok, telah membentuk gaya hidup, identitas diri, dan pola konsumsi generasi Z. Matcha, minuman tradisional Jepang, kini berkembang menjadi produk budaya populer yang sering ditampilkan dalam konten digital sebagai simbol estetika, kesehatan, dan gaya hidup anak muda. Penelitian ini bertujuan untuk menganalisis bagaimana generasi Z merepresentasikan matcha melalui konten TikTok. Penelitian ini menggunakan teori representasi Stuart Hall untuk memahami konstruksi makna, serta teori semiotika Charles Sanders Peirce untuk menganalisis tanda visual, narasi, simbol, dan audio yang terdapat dalam konten. Pendekatan penelitian yang digunakan adalah kualitatif dengan metode deskriptif. Data dikumpulkan melalui observasi nonpartisipan terhadap konten matcha di TikTok, dokumentasi, wawancara dengan ahli, dan studi pustaka. Hasil penelitian menunjukkan bahwa matcha mengalami pergeseran makna menjadi produk budaya populer dan generasi Z merepresentasikan matcha sebagai gaya hidup, identitas diri, self-reward, dan aktivitas konsumtif. Matcha juga direpresentasikan sebagai tren digital yang digunakan untuk memperoleh validasi sosial. Temuan ini menegaskan bahwa representasi budaya populer terbentuk melalui konstruksi makna yang dibangun secara berulang di media sosial.",
+   "keywords": [
+    "matcha",
+    "Generation Z",
+    "TikTok",
+    "popular culture",
+    "semiotics",
+    "Peircean semiotics",
+    "Stuart Hall representation theory",
+    "youth lifestyle",
+    "self-identity",
+    "social validation",
+    "digital trends",
+    "consumption"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://journal.untar.ac.id/index.php/koneksi/article/download/36384/23868",
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -968,6 +1013,54 @@
    "kind": "article"
   },
   {
+   "id": 901,
+   "title": "Contributions of Key Biochemical Constituents to Matcha Foam Stability: Foaming Properties, Component Partitioning, and Intermolecular Interactions",
+   "authors": [
+    "Jiaying Yang",
+    "Jiayi Chen",
+    "Jiaxin Wu",
+    "Wei Chen",
+    "Wangjing Wu",
+    "Junjie Dong",
+    "Yuefei Wang",
+    "Jihong Zhou"
+   ],
+   "journal": "Food Hydrocolloids",
+   "year": 2026,
+   "doi": "10.1016/j.foodhyd.2026.113522",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Not classified (no abstract)",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Metabolism and weight",
+    "Antioxidants and polyphenols"
+   ],
+   "matchaIn": "title",
+   "abstract": "",
+   "keywords": [
+    "matcha",
+    "foam stability",
+    "foaming properties",
+    "component partitioning",
+    "intermolecular interactions",
+    "tea catechins",
+    "green tea extract",
+    "protein-lipid interactions"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 16,
    "title": "Cosmeceutical Potential of Matcha (Camellia sinensis) and Yerba Mate (Ilex paraguariensis) Extracts Obtained with Green Solvents.",
    "authors": [
@@ -1222,7 +1315,7 @@
   },
   {
    "id": 21,
-   "title": "Dietary Beverages and Cutaneous Health: Mechanisms, Clinical Evidence, and Practical Implications for Dermatologists.",
+   "title": "Dietary beverages and cutaneous health: Mechanisms, clinical evidence, and practical implications for dermatologists.",
    "authors": [
     "Unsal G",
     "Karadag AS",
@@ -1244,20 +1337,20 @@
     "Market, culture and sustainability"
    ],
    "matchaIn": "keywords",
-   "abstract": "Background: Beverage consumption is a common, modifiable lifestyle factor with potential relevance to cutaneous health. Objective: To synthesize clinical and mechanistic evidence on commonly consumed beverages and dermatological outcomes. Methods: A narrative review was conducted using targeted PubMed/MEDLINE searches and supplementary screening of dermatology and nutrition sources, prioritizing randomized trials, prospective cohorts, systematic reviews, meta-analyses, and Mendelian randomization studies. Results: Alcohol has the most consistently reported adverse cutaneous associations, including rosacea triggering, psoriasis, urticaria, and skin cancer risk, although causal evidence is not uniform. Sugar-sweetened beverages and milk are associated with acne in observational studies, but current acne guidelines do not make formal dietary recommendations. Coffee shows mixed observational and Mendelian randomization findings for skin aging and melanoma. For green tea, randomized acne studies show benefit mainly with topical extract, whereas oral effects are limited; matcha remains supported mainly by mechanistic extrapolation. Spearmint tea lowers free testosterone in women with polycystic ovary syndrome, although objective clinical benefit remains unproven. Evidence for chamomile, rooibos, hibiscus, energy drinks, kombucha, and plant-based milk alternatives is limited or indirect. Citrus cocktails and St. John's Wort may cause clinically relevant photosensitization. Conclusions: Beverage-skin associations vary substantially in evidence strength and causality. Beverage assessment can support individualized counseling as a low-risk adjunct to standard dermatological therapy, while avoiding overstatement of findings derived from observational studies, extracts, or nutraceuticals rather than beverages as consumed.",
+   "abstract": "Beverage consumption is a common, modifiable lifestyle factor with potential relevance to cutaneous health. The aim of this study was to synthesize clinical and mechanistic evidence on commonly consumed beverages and dermatologic outcomes. A narrative review was conducted using targeted PubMed/MEDLINE searches and supplementary screening of dermatology and nutrition sources, prioritizing randomized trials, prospective cohorts, systematic reviews, meta-analyses, and Mendelian randomization studies. Alcohol has the most consistently reported adverse cutaneous associations, including rosacea triggering, psoriasis, urticaria, and skin cancer risk, although causal evidence is not uniform. Sugar-sweetened beverages and milk are associated with acne in observational studies, but current acne guidelines do not make formal dietary recommendations. Coffee shows mixed observational and Mendelian randomization findings for skin aging and melanoma. For green tea, randomized acne studies show benefit mainly with topical extract, whereas oral effects are limited; the effect of matcha remains supported mainly by mechanistic extrapolation. Spearmint tea lowers free testosterone in women with polycystic ovary syndrome, although objective clinical benefit remains unproven. Evidence for chamomile, rooibos, hibiscus, energy drinks, kombucha, and plant-based milk alternatives is limited or indirect. Citrus cocktails and St. John's wort may cause clinically relevant photosensitization. Beverage-skin associations vary substantially in evidence strength and causality. Beverage assessment can support individualized counseling as a low-risk adjunct to standard dermatologic therapy although avoiding overstatement of findings derived from observational studies, extracts, or nutraceuticals rather than beverages as consumed.",
    "keywords": [
-    "acne vulgaris",
     "alcohol",
-    "atopic dermatitis",
-    "beverages",
-    "photosensitization",
-    "psoriasis",
     "rosacea",
+    "psoriasis",
     "urticaria",
     "skin cancer risk",
     "sugar-sweetened beverages",
     "milk",
-    "acne"
+    "acne",
+    "coffee",
+    "skin aging",
+    "melanoma",
+    "green tea"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -1325,6 +1418,42 @@
     "europepmc"
    ],
    "kind": "article"
+  },
+  {
+   "id": 902,
+   "title": "Disseny i desenrotllament d'un electrodomèstic especialitzat per a la preparació automatitzada de té matcha",
+   "authors": [
+    "Carlota Ferrer Orts"
+   ],
+   "journal": "RiuNet (Universitat Politècnica de València)",
+   "year": 2026,
+   "doi": null,
+   "pmid": null,
+   "pmcid": null,
+   "language": "es",
+   "design": "Other / not stated",
+   "relevance": "subject",
+   "mentions": 6,
+   "topics": [
+    "Food products and applications"
+   ],
+   "matchaIn": "title",
+   "abstract": "[ES] Este proyecto propone el diseño de un electrodoméstico especializado en la preparación de té matcha. El objetivo del proyecto es simplificar y optimizar el proceso de elaboración de la bebida, reduciendo tanto el número de pasos necesarios como la cantidad de utensilios habitualmente empleados. La propuesta intenta integrar en un único dispositivo la función de calentamiento del agua, mezcla homogénea del matcha y preparación de la leche, permitiendo preparar bebidas como el matcha latte de manera rápida y cómoda. Así facilitando el consumo diario del té matcha en el ámbito doméstico.",
+   "keywords": [
+    "matcha tea",
+    "water heating",
+    "milk preparation",
+    "product design"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "thesis"
   },
   {
    "id": 23,
@@ -1927,6 +2056,57 @@
    "kind": "article"
   },
   {
+   "id": 903,
+   "title": "Fate and Antioxidant Activity of Matcha Catechins during Lactic Acid Bacteria Fermentation",
+   "authors": [
+    "Yong Xie",
+    "Feifeng Jiang",
+    "Yanan Wang",
+    "Mingxing Li"
+   ],
+   "journal": "Research Square",
+   "year": 2026,
+   "doi": "10.21203/rs.3.rs-11403610/v1",
+   "pmid": null,
+   "pmcid": null,
+   "language": null,
+   "design": "Agronomy / cultivation",
+   "relevance": "subject",
+   "mentions": 7,
+   "topics": [
+    "Antioxidants and polyphenols",
+    "Metabolism and weight",
+    "L-theanine and caffeine"
+   ],
+   "matchaIn": "title",
+   "abstract": "Abstract Matcha is widely applied in fermented foods because of its abundant catechins, dietary fiber and health effects, but the fate of catechins during lactic acid bacteria (LAB) fermentation and its underlying mechanisms remain poorly understood. Hence, the effects of LAB (Lactobacillus bulgaricus and Streptococcus thermophilus) fermentation on the catechins release from matcha, and its relationship with antioxidant capacity were investigated. The results showed that aqueous extraction yielded 43% free catechins, whereas 70% methanol recovered nearly 90%. LAB fermentation increased the concentrations of TPC, catechin, CG, GC, GCG, EGC, EGCG, gallic acid, and caffeine. Lactose co-fermentation dramatically elevated catechin release (230.8%) and gallic acid (127.4%) while reducing the proportion of total epicatechin-type catechins. Mechanistically, LAB fermentation promotes EGCG and ECG conversion into EGC, catechin, and gallic acid via multiple pathways. Antioxidant assays revealed that DPPH, •OH, and •O₂⁻ scavenging capacities and total reducing power correlated positively with the epicatechin-type catechins concentrations, especially EGCG and EGC. Overall, matcha catechins release during LAB fermentation is co-regulated by acidochemical desorption, dietary fiber degradation, and enzymatic bioconversion. Matcha dosage, lactose availability, and strain metabolic activity collectively determine the final catechins profile, release degree, and antioxidant performance. These findings provide a theoretical basis and practical guidance for fermented matcha products.",
+   "keywords": [
+    "matcha",
+    "catechins",
+    "lactic acid bacteria fermentation",
+    "Lactobacillus bulgaricus",
+    "Streptococcus thermophilus",
+    "epigallocatechin gallate",
+    "epicatechin",
+    "gallic acid",
+    "antioxidant activity",
+    "dietary fiber degradation",
+    "enzymatic bioconversion"
+   ],
+   "mesh": [],
+   "pubTypes": [
+    "Preprint"
+   ],
+   "isOa": true,
+   "oaUrl": "https://www.researchsquare.com/article/rs-11403610/latest.pdf",
+   "citedBy": 0,
+   "sources": [
+    "openalex",
+    "europepmc"
+   ],
+   "kind": "preprint"
+  },
+  {
    "id": 35,
    "title": "Fenomena Konsumsi Minuman Jepang di Indonesia: Kajian Budaya Jepang terhadap Ketertarikan Konsumen",
    "authors": [
@@ -2026,6 +2206,51 @@
    "sources": [
     "pubmed",
     "europepmc"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 904,
+   "title": "From Buffers to Food Matrices: tKeima-Based Fluorescent Biosensing of Metal Ions in Beverages",
+   "authors": [
+    "Yun Gyo Seo",
+    "In Jung Kim"
+   ],
+   "journal": "Biosensors",
+   "year": 2026,
+   "doi": "10.3390/bios16110592",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Food science / processing",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Food products and applications",
+    "Processing, milling and quality"
+   ],
+   "matchaIn": "keywords",
+   "abstract": "Metal ions such as iron and copper can affect the quality and stability of beverages, necessitating biosensor development. In this study, we evaluated the applicability of the fluorescent protein tKeima as a fluorescence-quenching platform for screening Fe2+, Fe3+, and Cu2+ in beverage matrices. tKeima showed concentration-dependent fluorescence quenching toward all three metal ions in soft drinks, ion drinks, vegetable juices, matcha, and milk. Analysis of the matrix effects of these beverages revealed that tKeima retained approximately 72–82% of the quenching response observed under buffer conditions, indicating that metal-responsive fluorescence was largely retained. Spike recovery analysis demonstrated that added Fe2+, Fe3+, and Cu2+ could be detected in the beverage matrices, with recovery values generally ranging from approximately 70 to 84% at higher spike concentrations. Overall, these findings suggest that tKeima retains measurable metal-responsive fluorescence quenching in complex beverage matrices and provide a basis for its use as a simple fluorescence-based platform for first-line screening of iron and copper ions in beverage samples. This study provides a first proof-of-concept evaluation of fluorescent protein-based metal-responsive sensing of real food matrices using pretreated commercial beverages.",
+   "keywords": [
+    "fluorescent protein biosensors",
+    "fluorescence quenching",
+    "metal ion sensing",
+    "iron",
+    "copper",
+    "beverages",
+    "food matrix effects",
+    "soft drinks",
+    "vegetable juice",
+    "matcha",
+    "milk"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://doi.org/10.3390/bios16110592",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
    ],
    "kind": "article"
   },
@@ -3244,53 +3469,6 @@
    "kind": "article"
   },
   {
-   "id": 59,
-   "title": "Matcha (Camellia sinensis): Bioactive Constituents, Pharmacological Activities, and Emerging Therapeutic Applications — A Comprehensive Review",
-   "authors": [
-    "Rohit Chavan*1, Rashmi Khairnar2, Pratiksha Aher2, Siddhi Avhad2"
-   ],
-   "journal": "Journal of Pharmaceutical Sciences",
-   "year": 2026,
-   "doi": "10.5281/zenodo.22071625",
-   "pmid": null,
-   "pmcid": null,
-   "language": null,
-   "design": "Review",
-   "relevance": "subject",
-   "mentions": 17,
-   "topics": [
-    "Cognition, mood and stress",
-    "Metabolism and weight",
-    "Cardiovascular and blood pressure",
-    "Antioxidants and polyphenols"
-   ],
-   "matchaIn": "title",
-   "abstract": "Matcha is not simply green tea in powdered form. It is the entire leaf — steamed, dried, deveined, and stone-ground from shade-grown Camellia sinensis (Theaceae) — consumed whole rather than steeped and discarded. That distinction turns out to matter more than most secondary literature acknowledges. Because the insoluble, fibre-bound fraction of the leaf never leaves the cup, matcha delivers a different catechin dose, and a different physical form of that dose, than a brewed infusion or a milligram-standardised green tea extract (GTE) capsule ever could. Most of what is written about matcha's pharmacology, however, was generated using one of those other two exposures. This review works through the peer-reviewed literature on matcha's botanical origin, cultivation, composition, and pharmacology with that distinction kept in view throughout, flagging section by section which claims rest on matcha itself and which are extrapolated from infusion or extract data. Shade cultivation for 20-35 days before harvest is the physiological event that makes matcha what it is: reduced light slows the enzymatic conversion of amino acids into catechins, so L-theanine accumulates instead of being consumed, while chlorophyll synthesis ramps up to compensate for the light lost. The result is the vivid colour, umami sweetness, and distinctive caffeine-to-theanine ratio that separate matcha from an ordinary green tea leaf — and, among the claims examined here, the ratio with the strongest direct trial support in matcha itself, rather than in a green tea proxy. Mechanistically, EGCG and the other catechins act on several fronts at once rather than through a single pathway: they scavenge reactive oxygen species directly and switch on the cell's own antioxidant machinery through Nrf2, they dampen NF-κB-driven inflammatory signalling, they push cancer cell lines toward apoptosis while sparing normal tissue at physiological concentrations, and they activate AMPK in ways that shift metabolism away from fat storage. These mechanisms are documented across ten pharmacological domains in this review — antioxidant, anti-inflammatory, anticancer, antidiabetic, cardioprotective, neuroprotective, hepatoprotective, anti-obesity, antimicrobial, and immunomodulatory — but matcha-specific human evidence backs only a handful of them. Most of the domain still rests on infusion or extract studies whose relevance to a bowl of whisked matcha has not been directly tested. Pharmacokinetic data tell a similar story: oral catechin bioavailability is low and highly variable between individuals, first-pass conjugation is extensive, and a large share of what is absorbed comes not from the small intestine but from gut-microbial metabolites formed in the colon — and again, these figures come almost entirely from infusion or extract studies rather than matcha itself. Safety data are more reassuring: at customary matcha intakes the profile looks favourable, and the hepatotoxicity signal seen in the literature is confined to concentrated-extract dosing above roughly 800 mg EGCG/day, a level ordinary matcha consumption does not approach. What the field needs next is not another mechanistic study but a direct comparison — whole-leaf matcha against dose-matched green tea infusion or extract, in the same participants, on the same outcome measure. Until that trial exists, the pharmacology reviewed here remains a reasonable proxy for matcha's effects, not a demonstration of them.",
-   "keywords": [
-    "matcha",
-    "Camellia sinensis",
-    "theanine",
-    "catechins",
-    "epigallocatechin gallate",
-    "green tea extract",
-    "pharmacokinetics",
-    "first-pass metabolism",
-    "Nrf2",
-    "NF-κB",
-    "AMPK",
-    "antioxidant activity"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://doi.org/10.5281/zenodo.22071625",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 60,
    "title": "Matcha (Japanese ground green tea) and cognitive function",
    "authors": [
@@ -4030,6 +4208,63 @@
    "kind": "article"
   },
   {
+   "id": 905,
+   "title": "Metabolic characteristics and chemical basis of matcha from cultivars with different leaf colors",
+   "authors": [
+    "Shiqi Ding",
+    "Dingding Liu",
+    "Haoran Liu",
+    "Yang Gong",
+    "Piao Mei",
+    "Yuanyuan Ye",
+    "P. Wang",
+    "Chenyu Zhang",
+    "Jiedan Chen",
+    "Chunlei Ma",
+    "Xuecheng Zhao"
+   ],
+   "journal": "Frontiers in Nutrition",
+   "year": 2026,
+   "doi": "10.3389/fnut.2026.1951952",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Chemical / analytical",
+   "relevance": "subject",
+   "mentions": 9,
+   "topics": [
+    "Metabolism and weight",
+    "Antioxidants and polyphenols",
+    "L-theanine and caffeine",
+    "Cultivation and shading"
+   ],
+   "matchaIn": "title",
+   "abstract": "Matcha is widely used in the food, health, and cosmetic industries due to its high nutritional value and distinctive sensory properties. However, traditional matcha products are predominantly produced from green-leaf tea cultivars, which greatly limits product diversity. This study systematically compared the sensory attributes, metabolite composition, and volatile metabolite profiles of matcha produced from green-, purple-, and yellow-leaf tea cultivars to explore the biochemical basis of flavor diversity. Principal component analysis of metabolite profiles clearly separated the samples according to leaf color phenotypes, confirming a strong chemical basis for sensory differentiation among the studied cultivar groups. Green matcha was characterized by higher levels of umami amino acids and lower contents of catechins and caffeine, resulting in a fresh taste with reduced bitterness and astringency. Purple matcha showed elevated levels of ester-type catechins, caffeine, and anthocyanin-related flavonoids, leading to pronounced astringency and lingering bitterness. Yellow matcha contained the highest levels of total amino acids and theanine, contributing to a mellow taste. KEGG pathway analysis revealed that flavonoid biosynthesis and amino acid metabolism are the major pathways associated with metabolic divergence among these cultivars. Volatile analysis indicated that dihydroactinidiolide and leaf alcohol derivatives were predominant volatile compounds potentially associated with the characteristic aroma profiles. These findings provide a biochemical foundation for developing novel matcha products based on cultivars displaying distinct leaf coloration.",
+   "keywords": [
+    "matcha",
+    "leaf color",
+    "umami amino acids",
+    "theanine",
+    "catechins",
+    "caffeine",
+    "flavonoid biosynthesis",
+    "amino acid metabolism",
+    "volatile compounds",
+    "dihydroactinidiolide",
+    "sensory properties",
+    "bitterness and astringency"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1951952/pdf",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 74,
    "title": "Multimodal Sensor Fusion for Non-Destructive Tea Quality Evaluation: Deep Learning-Enabled Methods, Applications, and Challenges.",
    "authors": [
@@ -4327,8 +4562,8 @@
    ],
    "mesh": [],
    "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
+   "isOa": true,
+   "oaUrl": "https://journal.ininnawaparaedu.com/dedikatif/article/download/803/527",
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -6171,7 +6406,7 @@
    ],
    "journal": "Journal of Nutrition Association of Thailand (Online)",
    "year": 2026,
-   "doi": "10.52653/ppi.2026.5.5.025",
+   "doi": "10.14457/tu.the.2025.1121",
    "pmid": null,
    "pmcid": null,
    "language": "th",
@@ -6253,7 +6488,7 @@
    "authors": [
     "Maëlle Féréroles"
    ],
-   "journal": "HAL (Le Centre pour la Communication Scientifique Directe)",
+   "journal": "HAL",
    "year": 2025,
    "doi": null,
    "pmid": null,
@@ -6639,7 +6874,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/pce.70000",
-   "citedBy": 10,
+   "citedBy": 11,
    "sources": [
     "pubmed",
     "openalex",
@@ -7377,6 +7612,49 @@
     "openalex"
    ],
    "kind": "article"
+  },
+  {
+   "id": 906,
+   "title": "Brownie nirvana / Nursyamimimurni Noor Hisham",
+   "authors": [
+    "Noor Hisham, Nursyamimimurni"
+   ],
+   "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
+   "year": 2025,
+   "doi": null,
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Food science / processing",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Processing, milling and quality",
+    "Food products and applications",
+    "Cognition, mood and stress",
+    "Aroma, flavor and sensory"
+   ],
+   "matchaIn": "keywords",
+   "abstract": "Nurulfara founded the Brownie Kedut Kukiss, a house-based business that sells cookies and desserts. Founded by Nurul Fara Binti Yasir. The brand aims to resolve logo issues. The logotype concept is complex and lacks consistency. This study is to rebrand the brownies made by Nurulfara products. The homemade dessert by Nurulfara is a dessert. Brownie nirvana represents the ultimate stale of indulgence and happiness through our signature brownie cookies as products. Combining the richness of traditional brownies with the delightful crunch of cookies, our product offers a perfect balance between taste and texture. \"Brownie Nirvana,\" meaning the state of happiness or perfection, is a very delicious, rich, flavourful. and satisfying brownie cookie. The term \"Nirvana\" means a state of joyful perfection that permeates every mouthful of our tasty meals. The logo combines the elements of a mark and a symbol. The brownie element represents a brownie cookie, while the wings and arrows symbolise nirvana and happiness. The tagline \"indulge in chocolate heaven\" while means whoever can enjoy amazing and blissful chocolate is like being in a state of heaven. \"Indulge\" means encouraging people to treat themselves or give in to a pleasurable experience without guilt. However, \"Chocolate Heaven\" combines the rich, tempting appeal of chocolate with the idea of \"heaven,\" symbolising perfection, happiness, and ultimate satisfaction. It suggests a brownie cookie is so delicious and luxurious. Brownie Nirvana products have three flavours: the first one is chocolate; the second one is matcha; and the third one is blueberry. The background in series advertising shows that whoever eats these brownies feels like they are sitting in heaven. The tagline \"Indulge in Chocolate Heaven\" uses evocative and abstract language to create a feeling of luxury, pleasure, and bliss. Here's what it conveys:. The logo for Brownie Nirvana has a carefully chosen colour palette that combines youthful dynamism with high-end appeal. We have carefully chosen each tone to appeal to the brand's target demographic of 15-21 -year-old young people while maintaining an expensive, decadent vibe. The colours reflect the mood of a contemporary, premium delight that is satisfying to the sight and the palate by reflecting luxury and brightness.",
+   "keywords": [
+    "rebranding",
+    "logo design",
+    "brand tagline",
+    "color palette",
+    "young adults",
+    "chocolate",
+    "matcha",
+    "blueberry"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://ir.uitm.edu.my/id/eprint/111249/1/111249.pdf",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "book"
   },
   {
    "id": 137,
@@ -8799,7 +9077,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 10,
+   "citedBy": 11,
    "sources": [
     "pubmed",
     "openalex",
@@ -8855,7 +9133,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/14/1/97/pdf?version=1735799340",
-   "citedBy": 6,
+   "citedBy": 7,
    "sources": [
     "pubmed",
     "openalex",
@@ -9235,7 +9513,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1177/09673911251320463",
-   "citedBy": 12,
+   "citedBy": 14,
    "sources": [
     "openalex"
    ],
@@ -9449,7 +9727,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 13,
+   "citedBy": 14,
    "sources": [
     "pubmed",
     "openalex",
@@ -10016,7 +10294,7 @@
    "authors": [
     "Omayma Ben Djemia"
    ],
-   "journal": "INRIA a CCSD electronic archive server",
+   "journal": "HAL",
    "year": 2025,
    "doi": null,
    "pmid": null,
@@ -10664,7 +10942,7 @@
    "authors": [
     "Léanne Coste"
    ],
-   "journal": "HAL (Le Centre pour la Communication Scientifique Directe)",
+   "journal": "HAL",
    "year": 2025,
    "doi": null,
    "pmid": null,
@@ -11144,7 +11422,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1422-0067/26/21/10631/pdf?version=1762156056",
-   "citedBy": 15,
+   "citedBy": 16,
    "sources": [
     "pubmed",
     "openalex",
@@ -11926,7 +12204,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.afres.2025.101080",
-   "citedBy": 17,
+   "citedBy": 18,
    "sources": [
     "openalex"
    ],
@@ -12801,62 +13079,6 @@
    "kind": "article"
   },
   {
-   "id": 231,
-   "title": "THE INFLUENCE OF MATCHA TEA ON THE ANTIOXIDANT ACTIVITYOF SPONGE CAKE SEMI-FINISHED PRODUCT",
-   "authors": [
-    "Ахмет Байтұрсынұлы атындағы Қостанай өңірлік университеті, Қостанай қ., Қазақстан",
-    "А.М. Саидов",
-    "Dmitriy Kalitka",
-    "Ахмет Байтұрсынұлы атындағы Қостанай өңірлік университеті, Қостанай қ., Қазақстан",
-    "Б. Аманжол",
-    "Алматы мемлекеттік бизнес колледжі, Алматы қ., Қазақстан",
-    "Gainiya Eseeva",
-    "М. Дулатов атындағы Қостанай инженерлік-экономикалық университеті, Қостанай қ., Қазақстан",
-    "Ж.Е. Балгужинова",
-    "Қостанай жоғары политехникалық колледжі, Қостанай қ., Қазақстан"
-   ],
-   "journal": "Mechanics and Technologies",
-   "year": 2025,
-   "doi": "10.55956/qhli8849",
-   "pmid": null,
-   "pmcid": null,
-   "language": "kk",
-   "design": "Other / not stated",
-   "relevance": "subject",
-   "mentions": 2,
-   "topics": [
-    "Antioxidants and polyphenols",
-    "Aroma, flavor and sensory",
-    "Food products and applications",
-    "Market, culture and sustainability"
-   ],
-   "matchaIn": "title",
-   "abstract": "Мақала матча шайымен байытылған бисквит жартылай фабрикатының антиоксиданттық қасиеттерін зерттеуге арналған, бұл дұрыс тамақтануға деген қызығушылықтың артуы аясында маңызды болып табылады. Зерттеудің мақсаты-матчаны пайдаланып оңтайлы рецептураны әзірлеу және оның антиоксиданттық қасиеттерін талдау. Жұмыстың негізгі бағыттары шайдың оңтайлы пропорцияларын анықтауды және оның сапа көрсеткіштеріне әсерін қамтиды. Жұмыс кондитерлік өнеркәсіпте табиғи антиоксиданттарды қолдану туралы білімді кеңейтеді және жоғары антиоксиданттық белсенділігі мен жақсы органолептикалық сипаттамалары бар жаңа өнімді ұсынады. Әдістеме потенциометриялық және спектрофотометриялық талдауды, ингредиенттердің пропорцияларын сәйкестендіру эксперименттерін және антиоксиданттық белсенділікті бағалауды қамтиды. Әзірленген формула пайдалы тамақтану саласындағы функционалды және пайдалы өнімдерге сұранысты қанағаттандыра отырып және осындай өнімдерді өндіруге ұсыныстар бере отырып, практикалық маңызы бар.",
-   "keywords": [
-    "matcha tea",
-    "sponge cake",
-    "antioxidant activity",
-    "natural antioxidants",
-    "functional bakery products",
-    "sensory evaluation",
-    "consumer acceptance",
-    "healthy eating promotion",
-    "food hygiene",
-    "food labeling",
-    "food marketing",
-    "dietary intake"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://doi.org/10.55956/qhli8849",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 232,
    "title": "The Neuroscience Behind Tea’s Effects on Mental Health",
    "authors": [
@@ -13044,7 +13266,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.hnm.2025.200302",
-   "citedBy": 5,
+   "citedBy": 6,
    "sources": [
     "openalex"
    ],
@@ -13436,7 +13658,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.fochx.2024.101234",
-   "citedBy": 38,
+   "citedBy": 40,
    "sources": [
     "pubmed",
     "openalex",
@@ -13506,7 +13728,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 33,
+   "citedBy": 35,
    "sources": [
     "pubmed",
     "openalex",
@@ -13649,7 +13871,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 17,
+   "citedBy": 18,
    "sources": [
     "openalex"
    ],
@@ -14036,7 +14258,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1007/s12161-024-02643-4",
-   "citedBy": 11,
+   "citedBy": 12,
    "sources": [
     "openalex"
    ],
@@ -15678,7 +15900,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.crfs.2024.100823",
-   "citedBy": 18,
+   "citedBy": 19,
    "sources": [
     "pubmed",
     "openalex",
@@ -15989,7 +16211,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/13/8/1167/pdf?version=1712828868",
-   "citedBy": 29,
+   "citedBy": 30,
    "sources": [
     "pubmed",
     "openalex",
@@ -16711,7 +16933,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.heliyon.2024.e31553",
-   "citedBy": 63,
+   "citedBy": 64,
    "sources": [
     "pubmed",
     "openalex",
@@ -18044,7 +18266,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 39,
+   "citedBy": 42,
    "sources": [
     "pubmed",
     "openalex",
@@ -18565,7 +18787,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s11130-023-01121-2.pdf",
-   "citedBy": 46,
+   "citedBy": 47,
    "sources": [
     "pubmed",
     "openalex",
@@ -20248,7 +20470,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 12,
+   "citedBy": 13,
    "sources": [
     "openalex"
    ],
@@ -20532,7 +20754,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.sciencedirect.com/science/article/pii/S2665927122002180/pdf",
-   "citedBy": 49,
+   "citedBy": 51,
    "sources": [
     "pubmed",
     "openalex",
@@ -20639,7 +20861,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.3389/fnut.2023.1153983",
-   "citedBy": 13,
+   "citedBy": 14,
    "sources": [
     "pubmed",
     "openalex",
@@ -20846,7 +21068,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s00289-021-03857-w.pdf",
-   "citedBy": 28,
+   "citedBy": 29,
    "sources": [
     "pubmed",
     "openalex",
@@ -21636,7 +21858,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 28,
+   "citedBy": 29,
    "sources": [
     "pubmed",
     "openalex",
@@ -22083,7 +22305,7 @@
    "sources": [
     "openalex"
    ],
-   "kind": "article"
+   "kind": "book"
   },
   {
    "id": 405,
@@ -22494,7 +22716,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.frontiersin.org/articles/10.3389/fnut.2022.931060/pdf",
-   "citedBy": 22,
+   "citedBy": 23,
    "sources": [
     "pubmed",
     "openalex",
@@ -22773,7 +22995,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 75,
+   "citedBy": 76,
    "sources": [
     "pubmed",
     "openalex",
@@ -23047,7 +23269,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 18,
+   "citedBy": 19,
    "sources": [
     "pubmed",
     "openalex",
@@ -23532,13 +23754,60 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 49,
+   "citedBy": 50,
    "sources": [
     "pubmed",
     "openalex",
     "europepmc"
    ],
    "kind": "article"
+  },
+  {
+   "id": 907,
+   "title": "Chá verde e matcha [camellia sinensis (l.) kuntze] : benefícios e riscos à saúde",
+   "authors": [
+    "Leticia Yumi Hayashi"
+   ],
+   "journal": "",
+   "year": 2021,
+   "doi": "10.11606/003066789",
+   "pmid": null,
+   "pmcid": null,
+   "language": null,
+   "design": "Other / not stated",
+   "relevance": "subject",
+   "mentions": 10,
+   "topics": [
+    "Antioxidants and polyphenols",
+    "L-theanine and caffeine",
+    "Authenticity and analytical methods",
+    "Market, culture and sustainability"
+   ],
+   "matchaIn": "title",
+   "abstract": "INTRODUÇÃO: Nos centros urbanos, observa-se aumento do consumo de alimentos com pretensas propriedades que beneficiam a saúde. O consumidor, em busca da promoção da saúde, é submetido às estratégias de divulgação nas mídias destacando os aspectos positivos de produtos. No Brasil, entre os muitos tipos de chás preparados com folhas e/ou caules de Camellia sinensis (L.) Kuntze (Theaceae), o chá verde e o matcha têm se popularizado nos últimos anos. Embora os alimentos no País não possam alegar uso terapêutico, encontram-se itens divulgados nas mídias em desacordo com a legislação. Em 2018, a ANVISA, considerando a segurança do consumidor, proibiu a comercialização de produtos em cápsulas contendo chá verde, importados mas não regularizados na agência. Pesquisas científicas têm discutido os supostos riscos desencadeados pelo consumo de produtos contendo chá verde. OBJETIVO. O objetivo deste Trabalho de Conclusão de Curso é a revisão de literatura, no período de 2015 a 2021, avaliando os prováveis benefícios e riscos à saúde ao consumir as duas formas de chás preparadas com C. sinensis - o chá verde e o matcha. MATERIAIS E MÉTODOS: Para a elaboração do trabalho, compilaram-se artigos científicos publicados em português e inglês no período de 2015 a 2021, cujos resumos foram indexados em bancos de dados, tais como: PubMed®, Google Scholar® e ScienceDirect®. Entre as palavras-chave de busca, destacam-se: Camellia sinensis, chá verde, matcha, benefícios, segurança, toxicidade, entre outras. RESULTADOS: Entre as áreas terapêuticas, em geral, há uma tendência favorável aos benefícios à saúde do chá verde e matcha na literatura. Entretanto, ainda são poucas as evidências envolvendo o matcha especificamente. A composição fitoquímica mostra a distinção entre o chá verde e matcha. Hoje, seus||benefícios e suas implicações no consumo são associados aos seus compostos, especialmente às catequinas. Entre os eventos adversos e possíveis riscos à saúde observados em revisão, podem ser inclusos: hepatotoxicidade, lesões gastrointestinais, dores de cabeça, insônia e taquicardia. O nível de consumo diário seguro do chá verde e do matcha ainda é incerto e não relatado pela legislação brasileira, o que pode causar grande impacto à saúde pública a médio e longo prazo dado o aumento de sua procura. CONCLUSÃO: É crítico que a população em geral tenha esclarecimentos dos benefícios e dos riscos à saúde em seu consumo diário, já que muitas vezes são desconsiderados os seus riscos por se enquadrar na categoria de alimento. O envolvimento do profissional da saúde nesse cenário é de grande importância para garantir a divulgação adequada da informação baseada em evidência científica e o fornecimento de orientações pertinentes à população, garantindo o uso seguro do chá verde e do matcha",
+   "keywords": [
+    "green tea",
+    "matcha",
+    "Camellia sinensis",
+    "health benefits",
+    "health risks",
+    "toxicity",
+    "phytochemical composition",
+    "functional foods",
+    "consumer health claims",
+    "ANVISA regulations",
+    "imported products",
+    "consumer safety"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://bdta.abcd.usp.br/directbitstream/c0637e7d-aa43-4b9c-9372-cb278aab9637/3066789.pdf",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "thesis"
   },
   {
    "id": 436,
@@ -24514,7 +24783,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 117,
+   "citedBy": 119,
    "sources": [
     "pubmed",
     "openalex",
@@ -25015,7 +25284,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 66,
+   "citedBy": 68,
    "sources": [
     "openalex",
     "europepmc"
@@ -25958,7 +26227,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0924224421005860-ga1_lrg.jpg",
-   "citedBy": 61,
+   "citedBy": 64,
    "sources": [
     "openalex",
     "europepmc"
@@ -26301,7 +26570,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/9/4/483/pdf?version=1586681729",
-   "citedBy": 124,
+   "citedBy": 125,
    "sources": [
     "pubmed",
     "openalex",
@@ -26333,7 +26602,7 @@
     "Aroma, flavor and sensory"
    ],
    "matchaIn": "title",
-   "abstract": "Serabi Solo is a traditional food made from rice flour, coconut milk, sugar, salt, water and other ingridients. Serabi is round, flat and porous. Coconut milk was used to develop serabi's taste making it sweet and savory. However, rancidity can decrease quality of serabi during shelf life. Mold growth also affects food safety of this perishable food. Serabi Solo is developing as gift that has longer shelf life beside flavor and appearance variations. Concrete solutions to inhibit rancidity were matcha green tea because of poliphenol as an antioxidant. Matcha green tea addition and pasteurization improved Serabi Solo quality and inhibited rancidity. Based on previous research, matcha green tea 1% made Serabi shelf life longer (24,66 hours). Other solution was coconut milk pretreatment. According to previous research, lemon juice pH 3 was used in coconut milk with hurdle technique made Serabi Solo has shelf life longer (32 hours). Therefore, this activity was to introduce matcha green tea 1% and lemon juice pH 3 to extend shelf of Serabi Solo in SME Linco's Solo. Bahasa Indonesia Abstrak: Kue serabi solo merupakan salah satu makanan tradisional yang terbuat dari tepung beras dan santan. Kue ini bulat, pipih dan berpori-pori. Penambahan santan saat memasak serabi membuat serabi terasa manis dan gurih. Namun, santan dalam serabi selain memberikan rasa gurih juga mudah mengalami kerusakan selama penyimpanan. Munculnya aroma dan rasa tengik yang tidak disukai menyebabkan penurunan kualitas dan daya simpan kue serabi. Selain itu, pertumbuhan kapang juga menjadi masalah keamanan pangan pada serabi. Padahal sebagai produk oleh-oleh, serabi diharapkan memiliki umur simpan lebih panjang selain variasi rasa dan tampilan yang menarik dan kekinian. Solusi aplikatif untuk menghambat ketengikan pada kue serabi solo adalah penggunaan matcha green tea karena mengandung polifenol sebagai antioksidan. Penambahan matcha green tea dan perlakuan pasteurisasi pada santan dapat memperbaiki mutu dan mampu menghambat proses ketengikan sehingga dapat memperpanjang umur simpan kue serabi. Hasil dari penelitian sebelumnya, pada uji ketengikan menunjukkan bahwa kue serabi dengan penambahan matcha green tea konsentrasi 1% memiliki umur simpan selama 24,66 jam. Selain penambahan, matcha green tea, upaya memperpanjang umur simpan serabi yaitu dengan mendesain pretreatment santan. Penelitian sebelumnya menggunakan jenis jeruk dan konsentrasi pH asam sitrat yang paling disukai konsumen dan pengaruh serta lama daya simpan serabi dengan pretreatment santan menggunakan teknik hurdle. Serabi yang paling disukai adalah serabi dengan formula pretreatment santan menggunakan air jeruk lemon dengan pH 3 yang memiliki umur simpan 32 jam. Oleh karena itu, pada kegiatan PkM ini mengaplikasikan matcha green tea 1% dan sari jeruk lemon dengan pH 3 untuk meningkatkan umur simpan serabi terhadap variabel ketengikan di UKM Lincos Solo.",
+   "abstract": "Serabi Solo is a traditional food made from rice flour, coconut milk, sugar, salt, water and other ingridients. Serabi is round, flat and porous. Coconut milk was used to develop serabi's taste making it sweet and savory. However, rancidity can decrease quality of serabi during shelf life. Mold growth also affects food safety of this perishable food. Serabi Solo is developing as gift that has longer shelf life beside flavor and appearance variations. Concrete solutions to inhibit rancidity were matcha green tea because of poliphenol as an antioxidant. Matcha green tea addition and pasteurization improved Serabi Solo quality and inhibited rancidity. Based on previous research, matcha green tea 1% made Serabi shelf life longer (24,66 hours). Other solution was coconut milk pretreatment. According to previous research, lemon juice pH 3 was used in coconut milk with hurdle technique made Serabi Solo has shelf life longer (32 hours). Therefore, this activity was to introduce matcha green tea 1% and lemon juice pH 3 to extend shelf of Serabi Solo in SME Linco's Solo.Bahasa Indonesia Abstrak: Kue serabi solo merupakan salah satu makanan tradisional yang terbuat dari tepung beras dan santan. Kue ini bulat, pipih dan berpori-pori. Penambahan santan saat memasak serabi membuat serabi terasa manis dan gurih. Namun, santan dalam serabi selain memberikan rasa gurih juga mudah mengalami kerusakan selama penyimpanan. Munculnya aroma dan rasa tengik yang tidak disukai menyebabkan penurunan kualitas dan daya simpan kue serabi. Selain itu, pertumbuhan kapang juga menjadi masalah keamanan pangan pada serabi. Padahal sebagai produk oleh-oleh, serabi diharapkan memiliki umur simpan lebih panjang selain variasi rasa dan tampilan yang menarik dan kekinian. Solusi aplikatif untuk menghambat ketengikan pada kue serabi solo adalah penggunaan matcha green tea karena mengandung polifenol sebagai antioksidan. Penambahan matcha green tea dan perlakuan pasteurisasi pada santan dapat memperbaiki mutu dan mampu menghambat proses ketengikan sehingga dapat memperpanjang umur simpan kue serabi. Hasil dari penelitian sebelumnya, pada uji ketengikan menunjukkan bahwa kue serabi dengan penambahan matcha green tea konsentrasi 1% memiliki umur simpan selama 24,66 jam. Selain penambahan, matcha green tea, upaya memperpanjang umur simpan serabi yaitu dengan mendesain pretreatment santan. Penelitian sebelumnya menggunakan jenis jeruk dan konsentrasi pH asam sitrat yang paling disukai konsumen dan pengaruh serta lama daya simpan serabi dengan pretreatment santan menggunakan teknik hurdle. Serabi yang paling disukai adalah serabi dengan formula pretreatment santan menggunakan air jeruk lemon dengan pH 3 yang memiliki umur simpan 32 jam. Oleh karena itu, pada kegiatan PkM ini mengaplikasikan matcha green tea 1% dan sari jeruk lemon dengan pH 3 untuk meningkatkan umur simpan serabi terhadap variabel ketengikan di UKM Lincos Solo.",
    "keywords": [
     "lemon juice",
     "shelf life extension",
@@ -26883,7 +27152,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/7406592",
-   "citedBy": 39,
+   "citedBy": 40,
    "sources": [
     "pubmed",
     "openalex",
@@ -27302,7 +27571,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/26/1/85/pdf?version=1609062695",
-   "citedBy": 321,
+   "citedBy": 324,
    "sources": [
     "pubmed",
     "openalex",
@@ -27631,7 +27900,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 79,
+   "citedBy": 80,
    "sources": [
     "pubmed",
     "openalex",
@@ -30564,7 +30833,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/7/2/17/pdf?version=1518599435",
-   "citedBy": 40,
+   "citedBy": 41,
    "sources": [
     "pubmed",
     "openalex",
@@ -30865,7 +31134,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://eprints.worc.ac.uk/6358/1/Willems%20et%20al%20Matcha%20submission%20accepted%20version.pdf",
-   "citedBy": 35,
+   "citedBy": 36,
    "sources": [
     "pubmed",
     "openalex",
@@ -31428,7 +31697,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/10/10/1468/pdf?version=1539162130",
-   "citedBy": 84,
+   "citedBy": 85,
    "sources": [
     "pubmed",
     "openalex",
@@ -33704,7 +33973,7 @@
    "sources": [
     "openalex"
    ],
-   "kind": "article"
+   "kind": "book"
   },
   {
    "id": 634,
@@ -35104,7 +35373,7 @@
     "Stuart Atkin",
     "洋子 豊崎"
    ],
-   "journal": "Medical Entomology and Zoology",
+   "journal": "",
    "year": 2004,
    "doi": null,
    "pmid": null,

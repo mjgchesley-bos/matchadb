@@ -240,6 +240,14 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "LigandPro/Matcha: Matcha 2.1.0",
+  "year": 2026,
+  "doi": "10.5281/zenodo.23568092",
+  "pmid": null,
+  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "matcha",
   "year": 2020,
   "doi": null,
@@ -253,6 +261,14 @@
   "doi": "10.34740/kaggle/dsv/19878238",
   "pmid": null,
   "journal": "Kaggle",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Matcha Weights",
+  "year": 2026,
+  "doi": "10.5281/zenodo.23569054",
+  "pmid": null,
+  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -280,12 +296,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Matcha-TTS: A Fast TTS Architecture with Conditional Flow Matching",
-  "year": 2024,
-  "doi": "10.1109/icassp48485.2024.10448291",
+  "title": "MATCHA: Towards Matching Anything",
+  "year": 2025,
+  "doi": "10.1109/cvpr52734.2025.02522",
   "pmid": null,
-  "journal": "IEEE International Conference on Acoustics Speech and Signal Processing",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Moonlight Matcha Process Book",
@@ -296,12 +312,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "MATCHA: Towards Matching Anything",
-  "year": 2025,
-  "doi": "10.1109/cvpr52734.2025.02522",
+  "title": "Matcha-TTS: A Fast TTS Architecture with Conditional Flow Matching",
+  "year": 2024,
+  "doi": "10.1109/icassp48485.2024.10448291",
   "pmid": null,
-  "journal": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
-  "excludedBecause": "no tea or food context"
+  "journal": "IEEE International Conference on Acoustics Speech and Signal Processing",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Hambatan dan Harapan Pelanggan pada Perjalanan Pembelian Matcha di Matcha Bar XYZ",
@@ -326,6 +342,14 @@
   "pmid": null,
   "journal": "Zenodo (CERN European Organization for Nuclear Research)",
   "excludedBecause": "promotional / spam record"
+ },
+ {
+  "title": "Matcha Powder Indonesian Opinion",
+  "year": 2026,
+  "doi": "10.5281/zenodo.23496643",
+  "pmid": null,
+  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "[Kindle] Matcha Lovers. 30 recettes de boissons et gourmandises à base de matcha téléchargement",
@@ -360,22 +384,6 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "[PDF] Matcha Lovers. 30 recettes de boissons et gourmandises à base de matcha par Chloé Josso",
-  "year": 2026,
-  "doi": "10.55277/researchhub.uaphp0p1.1",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "promotional / spam record"
- },
- {
-  "title": "The coach's support for participants in Rusta och matcha",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "Diva portal (Dalarna University Library)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Labour Market Integration : A Qualitative Study Of Rusta and Matcha",
   "year": 2026,
   "doi": null,
@@ -384,12 +392,20 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "MATCHA: Matching Text via Contrastive Semantic Alignment",
+  "title": "[PDF] Matcha Lovers. 30 recettes de boissons et gourmandises à base de matcha par Chloé Josso",
   "year": 2026,
-  "doi": "10.18653/v1/2026.findings-acl.1055",
+  "doi": "10.55277/researchhub.uaphp0p1.1",
   "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "",
+  "excludedBecause": "promotional / spam record"
+ },
+ {
+  "title": "The coach's support for participants in Rusta och Matcha",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Télécharger Pdf Un lundi parfum matcha",
@@ -400,14 +416,6 @@
   "excludedBecause": "promotional / spam record"
  },
  {
-  "title": "Matcha: A Language and Compiler for Backtracking-Based Subgraph Matching",
-  "year": 2025,
-  "doi": "10.1109/ipdps64566.2025.00105",
-  "pmid": null,
-  "journal": "Proceedings - IEEE International Parallel and Distributed Processing Symposium",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Properties and Shapes of Matcha with Various Milling Method",
   "year": 2010,
   "doi": "10.3136/nskkk.57.304",
@@ -416,27 +424,27 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "MATCHA: Matching Text via Contrastive Semantic Alignment",
+  "year": 2026,
+  "doi": "10.18653/v1/2026.findings-acl.1055",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
+  "title": "Matcha: A Language and Compiler for Backtracking-Based Subgraph Matching",
+  "year": 2025,
+  "doi": "10.1109/ipdps64566.2025.00105",
+  "pmid": null,
+  "journal": "Proceedings - IEEE International Parallel and Distributed Processing Symposium",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
   "title": "The Influence of e-WOM and Online Media Regarding the Dangers of Matcha Consumption on Matcha Drink Purchase Decisions in Mataram City Mediated by Health Awareness",
   "year": 2026,
   "doi": null,
   "pmid": null,
   "journal": "Al-Kharaj Journal of Islamic Economic and Business",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "TÉLÉCHARGER [PDF] {EPUB} Matcha Lovers. 30 recettes de boissons et gourmandises à base de matcha",
-  "year": 2026,
-  "doi": "10.55277/researchhub.38ex4kvm.1",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "promotional / spam record"
- },
- {
-  "title": "Fast Quantification of Matcha Adulterants with Laser-Induced Breakdown Spectroscopy Spectrum and Image",
-  "year": 2022,
-  "doi": "10.2139/ssrn.4272681",
-  "pmid": null,
-  "journal": "SSRN Electronic Journal",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -448,6 +456,14 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Fast Quantification of Matcha Adulterants with Laser-Induced Breakdown Spectroscopy Spectrum and Image",
+  "year": 2022,
+  "doi": "10.2139/ssrn.4272681",
+  "pmid": null,
+  "journal": "SSRN Electronic Journal",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Matcha repertoarerna och fånga pojkars läsintresse",
   "year": 2011,
   "doi": null,
@@ -456,12 +472,12 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Quantification of Matcha Adulterants with Laser-Induced Breakdown Spectroscopy",
-  "year": 2024,
-  "doi": "10.1007/978-1-0716-3938-2_6",
+  "title": "TÉLÉCHARGER [PDF] {EPUB} Matcha Lovers. 30 recettes de boissons et gourmandises à base de matcha",
+  "year": 2026,
+  "doi": "10.55277/researchhub.38ex4kvm.1",
   "pmid": null,
-  "journal": "Methods and protocols in food science",
-  "excludedBecause": "no tea or food context"
+  "journal": "",
+  "excludedBecause": "promotional / spam record"
  },
  {
   "title": "Matcha: Mitigating Graph Structure Shifts with Test-Time Adaptation",
@@ -472,28 +488,20 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
+  "title": "Quantification of Matcha Adulterants with Laser-Induced Breakdown Spectroscopy",
+  "year": 2024,
+  "doi": "10.1007/978-1-0716-3938-2_6",
+  "pmid": null,
+  "journal": "Methods and protocols in food science",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "MatCha: Enhancing Visual Language Pretraining with Math Reasoning and Chart Derendering",
   "year": 2023,
   "doi": "10.18653/v1/2023.acl-long.714",
   "pmid": null,
   "journal": "Annual Meeting of the Association for Computational Linguistics (ACL)",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
-  "title": "MatChA: Cross-Algorithm Matching with Feature Augmentation",
-  "year": 2025,
-  "doi": "10.48550/arxiv.2506.22336",
-  "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
-  "title": "Motility Analysis of T-Cell Histories in Activation (Matcha) v0.1.0",
-  "year": 2022,
-  "doi": "10.11578/dc.20240718.3",
-  "pmid": null,
-  "journal": "OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)",
-  "excludedBecause": "no tea or food context"
  },
  {
   "title": "A novel hyperspectral microscope imaging technology for rapid evaluation of particle size distribution in matcha",
@@ -504,11 +512,19 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Matcha: A Matching-Based Link Scheduling Strategy to Speed up Distributed Optimization",
+  "title": "Motility Analysis of T-Cell Histories in Activation (Matcha) v0.1.0",
   "year": 2022,
-  "doi": "10.1109/tsp.2022.3212536",
+  "doi": "10.11578/dc.20240718.3",
   "pmid": null,
-  "journal": "IEEE Transactions on Signal Processing",
+  "journal": "OSTI OAI (U.S. Department of Energy Office of Scientific and Technical Information)",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "MatChA: Cross-Algorithm Matching with Feature Augmentation",
+  "year": 2025,
+  "doi": "10.48550/arxiv.2506.22336",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
@@ -520,11 +536,43 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
+  "title": "Matcha: A Matching-Based Link Scheduling Strategy to Speed up Distributed Optimization",
+  "year": 2022,
+  "doi": "10.1109/tsp.2022.3212536",
+  "pmid": null,
+  "journal": "IEEE Transactions on Signal Processing",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
   "title": "MatCha: Enhancing Visual Language Pretraining with Math Reasoning and Chart Derendering",
   "year": 2022,
   "doi": "10.48550/arxiv.2212.09662",
   "pmid": null,
   "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
+  "title": "Matcha Slim: Un suplemento natural para el control de peso",
+  "year": 2026,
+  "doi": "10.5281/zenodo.21858987",
+  "pmid": null,
+  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+  "excludedBecause": "promotional / spam record"
+ },
+ {
+  "title": "Study on the High Fiber and Low Sugar Cake with Pumpkin and Matcha",
+  "year": 2016,
+  "doi": null,
+  "pmid": null,
+  "journal": "Shipin yanjiu yu kaifa",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Emotion-Controllable Zero-Shot Speech Synthesis with Matcha-TTS",
+  "year": 2026,
+  "doi": "10.1109/nnice68970.2026.11465487",
+  "pmid": null,
+  "journal": "International Conference on Neural Networks, Information and Communication Engineering (NNICE)",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
@@ -536,27 +584,19 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Matcha Slim: Un suplemento natural para el control de peso",
-  "year": 2026,
-  "doi": "10.5281/zenodo.21858987",
-  "pmid": null,
-  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
-  "excludedBecause": "promotional / spam record"
- },
- {
-  "title": "Emotion-Controllable Zero-Shot Speech Synthesis with Matcha-TTS",
-  "year": 2026,
-  "doi": "10.1109/nnice68970.2026.11465487",
-  "pmid": null,
-  "journal": "International Conference on Neural Networks, Information and Communication Engineering (NNICE)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
-  "title": "Study on the High Fiber and Low Sugar Cake with Pumpkin and Matcha",
-  "year": 2016,
+  "title": "Product Development of Jujube Matcha Energy Gel and Its Effect on Physical Endurance Performance",
+  "year": 2020,
   "doi": null,
   "pmid": null,
-  "journal": "Shipin yanjiu yu kaifa",
+  "journal": "",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Flowability Properties of Matcha Varying with Particle Size and Milling Method",
+  "year": 2009,
+  "doi": "10.3136/nskkk.56.103",
+  "pmid": null,
+  "journal": "NIPPON SHOKUHIN KOGYO GAKKAISHI",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -568,19 +608,11 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Flowability Properties of Matcha Varying with Particle Size and Milling Method",
-  "year": 2009,
-  "doi": "10.3136/nskkk.56.103",
+  "title": "Accurate discrimination and quantitative prediction of adulterants in matcha using multidimensional fusion information",
+  "year": 2026,
+  "doi": "10.1016/j.afres.2026.102188",
   "pmid": null,
-  "journal": "NIPPON SHOKUHIN KOGYO GAKKAISHI",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Product Development of Jujube Matcha Energy Gel and Its Effect on Physical Endurance Performance",
-  "year": 2020,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
+  "journal": "Applied Food Research",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -590,22 +622,6 @@
   "pmid": null,
   "journal": "The Japanese Society for Artificial Intelligence",
   "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Accurate discrimination and quantitative prediction of adulterants in matcha using multidimensional fusion information",
-  "year": 2026,
-  "doi": "10.1016/j.afres.2026.102188",
-  "pmid": null,
-  "journal": "Applied Food Research",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "MAtCha Gaussians: Atlas of Charts for High-Quality Geometry and Photorealism From Sparse Views",
-  "year": 2025,
-  "doi": "10.1109/cvpr52734.2025.00563",
-  "pmid": null,
-  "journal": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Penguatan Branding Produk Matcha Kaze melalui Strategi Integrated Marketing Communication",
@@ -624,20 +640,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "MAtCha Gaussians: Atlas of Charts for High-Quality Geometry and Photorealism From Sparse Views",
+  "year": 2025,
+  "doi": "10.1109/cvpr52734.2025.00563",
+  "pmid": null,
+  "journal": "IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings - IEEE Computer Society Conference on Computer Vision and Pattern Recognition/Proceedings",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
   "title": "Foaming Property and Foam Diameter of Matcha Varies with Particle Size",
   "year": 2012,
   "doi": "10.3136/nskkk.59.109",
   "pmid": null,
   "journal": "NIPPON SHOKUHIN KOGYO GAKKAISHI",
   "excludedBecause": "no tea or food context"
- },
- {
-  "title": "MATCHA: a toolkit for streamlining molecular property prediction for drug discovery applications",
-  "year": 2026,
-  "doi": "10.26434/chemrxiv.15006766/v1",
-  "pmid": null,
-  "journal": "ChemRxiv",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Keto Matcha Blue Polska Opinie, To korzyści, oficjalna cena, gdzie kupić 2023",
@@ -648,11 +664,11 @@
   "excludedBecause": "promotional / spam record"
  },
  {
-  "title": "‘Matcha-Act’ Website as Learning Media for Linear Equation in Junior High School",
+  "title": "MATCHA: a toolkit for streamlining molecular property prediction for drug discovery applications",
   "year": 2026,
-  "doi": "10.35194/jp.v15i1.6186",
+  "doi": "10.26434/chemrxiv.15006766/v1",
   "pmid": null,
-  "journal": "PRISMA",
+  "journal": "ChemRxiv",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -680,27 +696,19 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "‘Matcha-Act’ Website as Learning Media for Linear Equation in Junior High School",
+  "year": 2026,
+  "doi": "10.35194/jp.v15i1.6186",
+  "pmid": null,
+  "journal": "PRISMA",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
   "title": "Matcha mitigates metabolic and inflammatory disturbances induced by high-fat-sucrose diets in rats",
   "year": 2025,
   "doi": "10.1016/j.jff.2025.107112",
   "pmid": null,
   "journal": "Journal of Functional Foods",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "What is black sesame? Is it really the new matcha? An expert explains",
-  "year": 2026,
-  "doi": "10.64628/aa.q3t3v6pnu",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Effect of Matcha on Endoplasmic Reticulum Stress Markers in Monocytic Cells",
-  "year": 2018,
-  "doi": "10.1016/j.atherosclerosissup.2018.04.387",
-  "pmid": null,
-  "journal": "Atherosclerosis Supplements",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -712,20 +720,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Matcha-modified clay polyurethane coating: improving thermal, mechanical, antimicrobial, and anticorrosion performance",
-  "year": 2023,
-  "doi": "10.1007/s13726-023-01225-1",
+  "title": "Effect of Matcha on Endoplasmic Reticulum Stress Markers in Monocytic Cells",
+  "year": 2018,
+  "doi": "10.1016/j.atherosclerosissup.2018.04.387",
   "pmid": null,
-  "journal": "Iranian Polymer Journal",
+  "journal": "Atherosclerosis Supplements",
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "MATCHA: Efficient Deployment of Deep Neural Networks on Multi-Accelerator Heterogeneous Edge SoCs",
+  "title": "What is black sesame? Is it really the new matcha? An expert explains",
   "year": 2026,
-  "doi": "10.48550/arxiv.2604.09124",
+  "doi": "10.64628/aa.q3t3v6pnu",
   "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "PERAN QRIS DALAM MEMAJUKAN USAHA MINUMAN MATCHA DI WISMA 46 BNI",
@@ -733,6 +741,14 @@
   "doi": null,
   "pmid": null,
   "journal": "Jurnal Serina Abdimas",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "EFFORTLESS SIGNALING: HOW INSTAGRAMMABILITY AND SOCIAL CURRENCY DRIVE BRAND EVANGELISM IN MATCHA CAFES",
+  "year": 2026,
+  "doi": "10.14456/aamr.2026.20",
+  "pmid": null,
+  "journal": "Asian Administration and Management Review",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -744,14 +760,6 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "EFFORTLESS SIGNALING: HOW INSTAGRAMMABILITY AND SOCIAL CURRENCY DRIVE BRAND EVANGELISM IN MATCHA CAFES",
-  "year": 2026,
-  "doi": "10.14456/aamr.2026.20",
-  "pmid": null,
-  "journal": "Asian Administration and Management Review",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Some Elements of Matcha Mole's Adventure in Environmental Chemistry Land",
   "year": 2022,
   "doi": "10.1201/9781003006565-12",
@@ -760,19 +768,27 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "MATCHA: Efficient Deployment of Deep Neural Networks on Multi-Accelerator Heterogeneous Edge SoCs",
+  "year": 2026,
+  "doi": "10.48550/arxiv.2604.09124",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
+  "title": "Matcha-modified clay polyurethane coating: improving thermal, mechanical, antimicrobial, and anticorrosion performance",
+  "year": 2023,
+  "doi": "10.1007/s13726-023-01225-1",
+  "pmid": null,
+  "journal": "Iranian Polymer Journal",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "MATCHA: A Fast and Energy-Efficient Accelerator for Fully Homomorphic Encryption over the Torus",
   "year": 2022,
   "doi": "10.48550/arxiv.2202.08814",
   "pmid": null,
   "journal": "arXiv (Cornell University)",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Effect of storage and packaging conditions on physicochemical and bioactivity of matcha‐enriched muesli containing probiotic bacteria",
-  "year": 2022,
-  "doi": "10.1111/jfpp.16878",
-  "pmid": null,
-  "journal": "Journal of Food Processing and Preservation",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -792,6 +808,22 @@
   "excludedBecause": "promotional / spam record"
  },
  {
+  "title": "Effect of storage and packaging conditions on physicochemical and bioactivity of matcha‐enriched muesli containing probiotic bacteria",
+  "year": 2022,
+  "doi": "10.1111/jfpp.16878",
+  "pmid": null,
+  "journal": "Journal of Food Processing and Preservation",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Monitoring of carotenoids changes during the matcha drying process using a portable developed spectral analytical system",
+  "year": 2023,
+  "doi": "10.1016/j.jfca.2023.105849",
+  "pmid": null,
+  "journal": "Journal of Food Composition and Analysis",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Keto Matcha Blue Opinie, Korzyści & Zalety, Polska Oficjalna cena, Gdzie kupić 2023",
   "year": 2023,
   "doi": "10.5281/zenodo.7790835",
@@ -800,11 +832,11 @@
   "excludedBecause": "promotional / spam record"
  },
  {
-  "title": "Monitoring of carotenoids changes during the matcha drying process using a portable developed spectral analytical system",
-  "year": 2023,
-  "doi": "10.1016/j.jfca.2023.105849",
+  "title": "The Early Medieval Martshkat (Hisorak) in Upper Matcha and its Bactrian Connections",
+  "year": 2019,
+  "doi": "10.13173/9783447111690.333",
   "pmid": null,
-  "journal": "Journal of Food Composition and Analysis",
+  "journal": "Schriften zur vorderasiatischen Archäologie",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -840,11 +872,11 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "The Early Medieval Martshkat (Hisorak) in Upper Matcha and its Bactrian Connections",
-  "year": 2019,
-  "doi": "10.13173/9783447111690.333",
+  "title": "Analisis Pengaruh Kepuasan Konsumen Terhadap Loyalitas Pembelian Matcha pada Gen Z",
+  "year": 2025,
+  "doi": "10.71282/jurmie.v2i11.1213",
   "pmid": null,
-  "journal": "Schriften zur vorderasiatischen Archäologie",
+  "journal": "Jurnal Riset Multidisiplin Edukasi",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -856,19 +888,27 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Matcha (Camellia sinensis): Bioactive Constituents, Pharmacological Activities, and Emerging Therapeutic Applications — A Comprehensive Review",
+  "year": 2026,
+  "doi": "10.5281/zenodo.22071625",
+  "pmid": null,
+  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+  "excludedBecause": "promotional / spam record"
+ },
+ {
+  "title": "Is TikTok right? Should I avoid matcha if I have low iron?",
+  "year": 2025,
+  "doi": "10.64628/aa.apqf3efny",
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Production feasibility of functional probiotic muesli containing matcha and investigation of its physicochemical, microbial, and sensory properties",
   "year": 2021,
   "doi": "10.1007/s11694-021-01224-x",
   "pmid": null,
   "journal": "Journal of Food Measurement & Characterization",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Analisis Pengaruh Kepuasan Konsumen Terhadap Loyalitas Pembelian Matcha pada Gen Z",
-  "year": 2025,
-  "doi": "10.71282/jurmie.v2i11.1213",
-  "pmid": null,
-  "journal": "Jurnal Riset Multidisiplin Edukasi",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -896,22 +936,6 @@
   "excludedBecause": "promotional / spam record"
  },
  {
-  "title": "Keto Matcha Blue Polska Opinie, korzyści, Zalety (2023), Jak korzystać, gdzie kupić",
-  "year": 2023,
-  "doi": "10.5281/zenodo.7830600",
-  "pmid": null,
-  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
-  "excludedBecause": "promotional / spam record"
- },
- {
-  "title": "Is TikTok right? Should I avoid matcha if I have low iron?",
-  "year": 2025,
-  "doi": "10.64628/aa.apqf3efny",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "MATCHA: A Chinese Multi-Disease Mental Health Dataset with Cross-Lingual Analyses on Social Media",
   "year": 2025,
   "doi": "10.36227/techrxiv.176685818.81296428/v1",
@@ -920,19 +944,19 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
+  "title": "Keto Matcha Blue Polska Opinie, korzyści, Zalety (2023), Jak korzystać, gdzie kupić",
+  "year": 2023,
+  "doi": "10.5281/zenodo.7830600",
+  "pmid": null,
+  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+  "excludedBecause": "promotional / spam record"
+ },
+ {
   "title": "Fast identification of grade adulteration in matcha soup based on laser-induced breakdown spectroscopy and chemometrics",
   "year": 2025,
   "doi": "10.1016/j.foodcont.2025.111519",
   "pmid": null,
   "journal": "Food Control",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Development of jujube matcha energy gel and its effect on physical endurance performance of young active subjects",
-  "year": 2024,
-  "doi": "10.26656/fr.2017.8(2).628",
-  "pmid": null,
-  "journal": "Food Research",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -952,27 +976,27 @@
   "excludedBecause": "promotional / spam record"
  },
  {
-  "title": "Antioxidant capacity of matcha in syrnyky technology: improving the quality of fermented milk dishes",
-  "year": 2025,
-  "doi": "10.70286/eoss-21.07.2025",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Att matcha behovet : En studie om bemanningsbranschens syn på anställningsbarhet",
-  "year": 2015,
-  "doi": null,
-  "pmid": null,
-  "journal": "Publications (Mid Sweden University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Matcha latte for the likes: how ‘performative eating’ is changing our relationship with food",
   "year": 2025,
   "doi": "10.64628/aa.dstryewmd",
   "pmid": null,
   "journal": "",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Evaluation of the effect of arabinogalactans extracted from matcha on gamma radiation-induced brain damage in rats",
+  "year": 2025,
+  "doi": "10.15419/bmrat.v12i3.967",
+  "pmid": null,
+  "journal": "Biomedical Research and Therapy",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Development of jujube matcha energy gel and its effect on physical endurance performance of young active subjects",
+  "year": 2024,
+  "doi": "10.26656/fr.2017.8(2).628",
+  "pmid": null,
+  "journal": "Food Research",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -984,11 +1008,19 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Evaluation of the effect of arabinogalactans extracted from matcha on gamma radiation-induced brain damage in rats",
-  "year": 2025,
-  "doi": "10.15419/bmrat.v12i3.967",
+  "title": "Att matcha behovet : En studie om bemanningsbranschens syn på anställningsbarhet",
+  "year": 2015,
+  "doi": null,
   "pmid": null,
-  "journal": "Biomedical Research and Therapy",
+  "journal": "Publications (Mid Sweden University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Antioxidant capacity of matcha in syrnyky technology: improving the quality of fermented milk dishes",
+  "year": 2025,
+  "doi": "10.70286/eoss-21.07.2025",
+  "pmid": null,
+  "journal": "",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1008,11 +1040,11 @@
   "excludedBecause": "promotional / spam record"
  },
  {
-  "title": "Gaya Hidup Sehat atau Sekadar Tren? Studi Persepsi dan Minat Konsumsi Matcha pada Mahasiswa",
+  "title": "Propuesta de estrategia de comunicación para la fidelización de clientes en Maison Matcha",
   "year": 2026,
-  "doi": "10.47134/jpn.v3i3.2739",
+  "doi": null,
   "pmid": null,
-  "journal": "Jurnal Pendidikan Non formal",
+  "journal": "UVaDOC UVaDOC University of Valladolid Documentary Repository (University of Valladolid)",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1024,14 +1056,6 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Propuesta de estrategia de comunicación para la fidelización de clientes en Maison Matcha",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "UVaDOC UVaDOC University of Valladolid Documentary Repository (University of Valladolid)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "PERHITUNGAN HARGA POKOK PENJUALAN BERBAGAI VARIAN PRODUK MATCHA SEBAGAI DASAR PENETAPAN HARGA JUAL",
   "year": 2026,
   "doi": null,
@@ -1040,19 +1064,35 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Analysis of Key Low-Boiling-Point Odorants in Matcha by Solid-Phase Microextraction",
-  "year": 2019,
-  "doi": "10.5979/cha.2019.128_23",
-  "pmid": null,
-  "journal": "Chagyo Kenkyu Hokoku (Tea Research Journal)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Pengelolaan Unsur Sinematografi oleh Director of Photography pada Film Dokumenter “Mindful Sip: Matcha Beyond The Trend”",
   "year": 2026,
   "doi": "10.62383/ekspresi.v3i2.1083",
   "pmid": null,
   "journal": "Ekspresi",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Gaya Hidup Sehat atau Sekadar Tren? Studi Persepsi dan Minat Konsumsi Matcha pada Mahasiswa",
+  "year": 2026,
+  "doi": "10.47134/jpn.v3i3.2739",
+  "pmid": null,
+  "journal": "Jurnal Pendidikan Non formal",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Fenomena FoMO dan Self-Reward dalam Perilaku Konsumsi Generasi Z pada Tren Matcha Ube",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "Integrative Perspectives of Social and Science Journal",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Analysis of Key Low-Boiling-Point Odorants in Matcha by Solid-Phase Microextraction",
+  "year": 2019,
+  "doi": "10.5979/cha.2019.128_23",
+  "pmid": null,
+  "journal": "Chagyo Kenkyu Hokoku (Tea Research Journal)",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1088,19 +1128,19 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Is matcha the new margarita? Intergenerational differences in alcohol perceptions Singaporean students: a mixed-methods study",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "DR-NTU (Nanyang Technological University)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Wpływ udziału zielonej herbaty Matcha na wybrane wyróżniki jakości bezglutenowych biszkoptowo-tłuszczowych wyrobów ciastkarskich",
   "year": 2019,
   "doi": "10.15193/zntj/2019/118/275",
   "pmid": null,
   "journal": "Zywnosc-nauka Technologia Jakosc",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Is matcha the new margarita? Intergenerational differences in alcohol perceptions Singaporean students: a mixed-methods study",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "DR-NTU (Nanyang Technological University)",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1192,14 +1232,6 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Matcha, Pilates, Coffee Rave: The Media Stereotype of the Contemporary Varsovian in Instagram Reels and Short-Form Videos on TikTok",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "ReIn UW (University of Warsaw)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Green synthesis of PEI-functionalized matcha-derived carbon quantum dots for highly efficient corrosion inhibition of carbon steel in acidic media",
   "year": 2026,
   "doi": "10.1016/j.surfin.2026.110859",
@@ -1216,19 +1248,27 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Effect of Curdlan on the Quality of Frozen-Cooked Matcha-Fortified Glutinous Rice Flour Boba and its Stability in Freeze-Thaw Cycles",
-  "year": 2025,
-  "doi": "10.2139/ssrn.5174960",
-  "pmid": null,
-  "journal": "SSRN Electronic Journal",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "ETUDE DE LA FREQUENCE DES HELMINTHIASES CHEZ LA BÊTE PORCINE DANS LA LOCALITE MATCHA PROVINCE DU NORD-KIVU",
   "year": 2023,
   "doi": "10.53555/ar.v9i4.5637",
   "pmid": null,
   "journal": "IJRDO - Journal of Agriculture and Research",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Matcha, Pilates, Coffee Rave: The Media Stereotype of the Contemporary Varsovian in Instagram Reels and Short-Form Videos on TikTok",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "ReIn UW (University of Warsaw)",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Effect of Curdlan on the Quality of Frozen-Cooked Matcha-Fortified Glutinous Rice Flour Boba and its Stability in Freeze-Thaw Cycles",
+  "year": 2025,
+  "doi": "10.2139/ssrn.5174960",
+  "pmid": null,
+  "journal": "SSRN Electronic Journal",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1240,19 +1280,19 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Efeito da imersão contínua e intermitente em café e matcha sobre a microdureza de uma resina composta : estudo in vitro",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "Portuguese National Funding Agency for Science, Research and Technology (RCAAP Project by FCT)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Nitro matcha z Kopenhagi, Avobagiel z San Francisco, Kimchibowl z Berlina. Przyjemnościowa analiza zjawiska Global Brooklyn",
   "year": 2025,
   "doi": "10.18778/1689-4286.64.04",
   "pmid": null,
   "journal": "Hybris",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Efeito da imersão contínua e intermitente em café e matcha sobre a microdureza de uma resina composta : estudo in vitro",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "Portuguese National Funding Agency for Science, Research and Technology (RCAAP Project by FCT)",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1262,6 +1302,14 @@
   "pmid": null,
   "journal": "SSRN Electronic Journal",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Förslag till byggentreprenörer för att matcha beställare gällande hållbart byggande : En fallstudie med ByggTema i Örebro",
+  "year": 2019,
+  "doi": null,
+  "pmid": null,
+  "journal": "Publications (Mid Sweden University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "PELATIHAN PENGOLAHAN DESSERT BOX MATCHA LOKAL DARI DAUN SINGKONG SEBAGAI CULINARY SIGNATURE PRODUCT UMKM DI BAPPEDA KOTA DEPOK",
@@ -1278,14 +1326,6 @@
   "pmid": null,
   "journal": "Journal of Communication Design",
   "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Förslag till byggentreprenörer för att matcha beställare gällande hållbart byggande : En fallstudie med ByggTema i Örebro",
-  "year": 2019,
-  "doi": null,
-  "pmid": null,
-  "journal": "Publications (Mid Sweden University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "MENINGKATKAN KOMUNIKASI MATEMATIS DENGAN PBL BERBANTUAN MATCHA MATH CARD PADA MATERI FUNGSI KUADRAT SISWA X – 5 SMA NEGERI PAKUSARI",
@@ -1320,20 +1360,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Mineralogy and geochemistry of triassic carbonatites in the Matcha alkaline intrusive complex (Turkestan-Alai Ridge, Kyrgyz Southern Tien Shan), SW Central Asian orogenic belt",
-  "year": 2017,
-  "doi": "10.1016/j.jseaes.2017.11.004",
-  "pmid": null,
-  "journal": "Journal of Asian Earth Sciences",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Man får vad man betalar för : Ett arbete i hur visuell information bör matcha ett varumärkes budskap",
   "year": 2017,
   "doi": null,
   "pmid": null,
   "journal": "DiVA (Mälardalen University College)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Mineralogy and geochemistry of triassic carbonatites in the Matcha alkaline intrusive complex (Turkestan-Alai Ridge, Kyrgyz Southern Tien Shan), SW Central Asian orogenic belt",
+  "year": 2017,
+  "doi": "10.1016/j.jseaes.2017.11.004",
+  "pmid": null,
+  "journal": "Journal of Asian Earth Sciences",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Pengaruh Brand Image, Persepsi Harga dan eWOM Terhadap Minat Beli Ulang Minuman Matcha pada Generasi Z di DIY",
@@ -1368,19 +1408,19 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Ernährungssicherheit Anwendung der geographischen Basiskonzepte : Adipositas in Mexiko, Plantagen in Kenia, Land Grabbing in Brasilien, Superfood Quinoa, Matcha als Trend, Planspiel Zukunftshof",
-  "year": null,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "PERAN CONSUMER ATTITUDE SEBAGAI VARIABEL MEDIASI ANTARA HEALTH CONSCIOUSNESS DAN BRAND IMAGE TERHADAP PURCHASE ITENTION PRODUK PURE MATCHA DI KALANGAN GENERASI Y DAN Z",
   "year": 2026,
   "doi": "10.34127/jrlab.v15i2.2321",
   "pmid": null,
   "journal": "JURNAL LENTERA BISNIS",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Ernährungssicherheit Anwendung der geographischen Basiskonzepte : Adipositas in Mexiko, Plantagen in Kenia, Land Grabbing in Brasilien, Superfood Quinoa, Matcha als Trend, Planspiel Zukunftshof",
+  "year": null,
+  "doi": null,
+  "pmid": null,
+  "journal": "",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1480,20 +1520,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Fast Volume Alignment by Frequency-Marched Newton Method",
-  "year": 2026,
-  "doi": "10.48550/arxiv.2603.15285",
-  "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Vibrational contribution to molecular polarizabilities and hyperpolarizabilities",
   "year": 1980,
   "doi": "10.1063/1.440460",
   "pmid": null,
   "journal": "The Journal of Chemical Physics",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Fast Volume Alignment by Frequency-Marched Newton Method",
+  "year": 2026,
+  "doi": "10.48550/arxiv.2603.15285",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Exploring the Error-Runtime Trade-off in Decentralized Optimization",
@@ -1520,19 +1560,19 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Dedication",
-  "year": 2023,
-  "doi": "10.1093/oso/9780197623787.002.0004",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "MENELAAH SIGNIFIKANSI PENERAPAN BIAYA RELEVAN DALAM PENGAMBILAN KEPUTUSAN BRANDING BISNIS SPA",
   "year": 2025,
   "doi": "10.33366/ref.v13i1.6742",
   "pmid": null,
   "journal": "Referensi Jurnal Ilmu Manajemen dan Akuntansi",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Dedication",
+  "year": 2023,
+  "doi": "10.1093/oso/9780197623787.002.0004",
+  "pmid": null,
+  "journal": "",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1544,14 +1584,6 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "När styrning möter etablering",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Can Multimodal LLMs See Materials Clearly? A Multimodal Benchmark on Materials Characterization",
   "year": 2025,
   "doi": "10.18653/v1/2025.findings-emnlp.235",
@@ -1560,12 +1592,12 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Cosmological Studies Through Large-Scale Distributed Analysis of Chandra Observations",
-  "year": 2018,
+  "title": "När styrning möter etablering",
+  "year": 2026,
   "doi": null,
   "pmid": null,
-  "journal": "ProQuest Demo Repository",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Natural Therapeutic Agents’ Efficacy in Preventive Strategies against the Periodontal Pathogen Aggregatibacter actinomycetemcomitans: An In Vitro Study",
@@ -1574,6 +1606,14 @@
   "pmid": null,
   "journal": "Oral",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Cosmological Studies Through Large-Scale Distributed Analysis of Chandra Observations",
+  "year": 2018,
+  "doi": null,
+  "pmid": null,
+  "journal": "ProQuest Demo Repository",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "A Determination Method of Robot Motion from Language Instruction with Error Correction of Motion Generation by Large Language Model",
@@ -1592,12 +1632,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Synthesizing Norwegian Dialects in Low-Resource TTS",
-  "year": 2026,
-  "doi": "10.1007/978-981-95-6960-1_41",
+  "title": "Popiarity / Kasih Damia Sorfina Syahrul Nizam",
+  "year": 2025,
+  "doi": null,
   "pmid": null,
-  "journal": "Lecture notes in computer science",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+  "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Jetzt startet die lila Welle",
@@ -1608,20 +1648,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Popiarity / Kasih Damia Sorfina Syahrul Nizam",
-  "year": 2025,
-  "doi": null,
+  "title": "Synthesizing Norwegian Dialects in Low-Resource TTS",
+  "year": 2026,
+  "doi": "10.1007/978-981-95-6960-1_41",
   "pmid": null,
-  "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Woolies surprising tactic to topple Coles: interview with Vanessa Brown",
-  "year": 2018,
-  "doi": null,
-  "pmid": null,
-  "journal": "eCite Digital Repository (University of Tasmania)",
-  "excludedBecause": "no tea or food context"
+  "journal": "Lecture notes in computer science",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Measuring and reducing visibility in the infrared light spectrum through the use of thermal control",
@@ -1632,11 +1664,27 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Woolies surprising tactic to topple Coles: interview with Vanessa Brown",
+  "year": 2018,
+  "doi": null,
+  "pmid": null,
+  "journal": "eCite Digital Repository (University of Tasmania)",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Photoreceptive π-conjugated food derived biochromophores: exploring cone-inspired spectral responses towards future retinal applications",
   "year": 2026,
   "doi": "10.1039/d6ma00519e",
   "pmid": null,
   "journal": "Materials Advances",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Production posibilities of functional bread substitutes at UAB \"Maistas\".",
+  "year": 2017,
+  "doi": null,
+  "pmid": null,
+  "journal": "Institutional Repository of Klaipeda State University of Applied Sciences",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -1648,12 +1696,12 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Production posibilities of functional bread substitutes at UAB \"Maistas\".",
-  "year": 2017,
+  "title": "UTBILDNINGSNIVÅER OCH ÅLDERSSTRUKTURER I SVERIGE : En jämförelse av utbildningsnivåer och åldersstrukturer i Sverige år 2011 och år 2040 samt uppskattningar av dess effekter på BNP per capita",
+  "year": 2013,
   "doi": null,
   "pmid": null,
-  "journal": "Institutional Repository of Klaipeda State University of Applied Sciences",
-  "excludedBecause": "no tea or food context"
+  "journal": "",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Wenig Wissen über Wellnessprodukte",
@@ -1664,22 +1712,6 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "UTBILDNINGSNIVÅER OCH ÅLDERSSTRUKTURER I SVERIGE : En jämförelse av utbildningsnivåer och åldersstrukturer i Sverige år 2011 och år 2040 samt uppskattningar av dess effekter på BNP per capita",
-  "year": 2013,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Hur medarbetare erhåller kompetens som matchar organisationers behov",
-  "year": 2014,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Cysteamine-mediated upconversion sensor for lead ion detection in food",
   "year": 2021,
   "doi": "10.1007/s11694-021-01054-x",
@@ -1688,20 +1720,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Gymnasieskolans kursprov vt 2007 : En resultatredovisning",
-  "year": 2008,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Sensory Evaluation of Fuzzy Mathematics in Sticky Soup Food",
   "year": 2021,
   "doi": "10.1007/978-981-16-5963-8_26",
   "pmid": null,
   "journal": "Lecture notes in electrical engineering",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Gymnasieskolans kursprov vt 2007 : En resultatredovisning",
+  "year": 2008,
+  "doi": null,
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Long-range overlap dipoles for inert gas diatoms",
@@ -1714,6 +1746,14 @@
  {
   "title": "Allomsorg S&R Solna - Daglig verksamhet",
   "year": 2015,
+  "doi": null,
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Hur medarbetare erhåller kompetens som matchar organisationers behov",
+  "year": 2014,
   "doi": null,
   "pmid": null,
   "journal": "",
@@ -1752,27 +1792,19 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Information Entropy-Based Scheduling for Communication-Efficient Decentralized Learning",
-  "year": 2025,
-  "doi": "10.1109/mlsp62443.2025.11204341",
-  "pmid": null,
-  "journal": "IEEE International Workshop on Machine Learning for Signal Processing (MLSP)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
-  "title": "Toward Safe and Human-Aligned Game Conversational Recommendation via Multi-Agent Decomposition",
-  "year": 2026,
-  "doi": "10.18653/v1/2026.findings-eacl.238",
-  "pmid": null,
-  "journal": "Findings of the Association for Computational Linguistics: EACL",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Reply on AC1",
   "year": 2026,
   "doi": "10.5194/essd-2025-275-ac3",
   "pmid": null,
   "journal": "",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
+  "title": "Information Entropy-Based Scheduling for Communication-Efficient Decentralized Learning",
+  "year": 2025,
+  "doi": "10.1109/mlsp62443.2025.11204341",
+  "pmid": null,
+  "journal": "IEEE International Workshop on Machine Learning for Signal Processing (MLSP)",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
@@ -1784,11 +1816,11 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Reply on RC1",
+  "title": "Toward Safe and Human-Aligned Game Conversational Recommendation via Multi-Agent Decomposition",
   "year": 2026,
-  "doi": "10.5194/essd-2025-275-ac1",
+  "doi": "10.18653/v1/2026.findings-eacl.238",
   "pmid": null,
-  "journal": "",
+  "journal": "Findings of the Association for Computational Linguistics: EACL",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
@@ -1800,12 +1832,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Green silver nanoparticles ameliorate oxidative stress and apoptosis induced by gamma irradiation in rat pancreas",
-  "year": 2025,
-  "doi": "10.35495/ajab.2024.213",
+  "title": "Reply on RC1",
+  "year": 2026,
+  "doi": "10.5194/essd-2025-275-ac1",
   "pmid": null,
-  "journal": "Asian Journal of Agriculture and Biology",
-  "excludedBecause": "no tea or food context"
+  "journal": "",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Keto Blast Gummies Shark Tank Reviews Alert- Price or Scam",
@@ -1814,6 +1846,14 @@
   "pmid": null,
   "journal": "Zenodo (CERN European Organization for Nuclear Research)",
   "excludedBecause": "promotional / spam record"
+ },
+ {
+  "title": "Green silver nanoparticles ameliorate oxidative stress and apoptosis induced by gamma irradiation in rat pancreas",
+  "year": 2025,
+  "doi": "10.35495/ajab.2024.213",
+  "pmid": null,
+  "journal": "Asian Journal of Agriculture and Biology",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Calculated Collision-Induced Absorption Spectrum for He–Ar",
@@ -1829,6 +1869,14 @@
   "doi": "10.1109/taslpro.2025.3578779",
   "pmid": null,
   "journal": "IEEE Transactions on Audio Speech and Language Processing",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
+  "title": "Rethinking the connection between aerosols, meteorology, and snowmelt patterns in High Mountain Asia: Using a novel regional reanalysis",
+  "year": 2024,
+  "doi": "10.5194/egusphere-egu24-14639",
+  "pmid": null,
+  "journal": "",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
@@ -1848,28 +1896,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Rethinking the connection between aerosols, meteorology, and snowmelt patterns in High Mountain Asia: Using a novel regional reanalysis",
-  "year": 2024,
-  "doi": "10.5194/egusphere-egu24-14639",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "DriftTTS: Few-Step Text-to-Speech Without Distillation via Distribution-Matching Drift",
   "year": 2026,
   "doi": "10.48550/arxiv.2610.03390",
   "pmid": null,
   "journal": "arXiv (Cornell University)",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
-  "title": "Sex Differences in Nevirapine Rash",
-  "year": 2001,
-  "doi": "10.1086/324088",
-  "pmid": "11712101",
-  "journal": "Clinical Infectious Diseases",
-  "excludedBecause": "no tea or food context"
  },
  {
   "title": "MONTE CARLO TREE SEARCH AND MINIMAX : A comparison in time efficiency in a match-3-game",
@@ -1880,12 +1912,12 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "I Know You're Listening: Adaptive Voice for HRI",
-  "year": 2025,
-  "doi": "10.48550/arxiv.2506.15107",
-  "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "title": "Sex Differences in Nevirapine Rash",
+  "year": 2001,
+  "doi": "10.1086/324088",
+  "pmid": "11712101",
+  "journal": "Clinical Infectious Diseases",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Pengaruh Brand Image, Kualitas Produk, Harga, Dan Promosi Online Terhadap Keputusan Pembelian Produk Matchaboy Pada Generasi Z Di Kabupaten Sampang",
@@ -1902,6 +1934,14 @@
   "pmid": null,
   "journal": "Journal of Northwest Normal University",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "I Know You're Listening: Adaptive Voice for HRI",
+  "year": 2025,
+  "doi": "10.48550/arxiv.2506.15107",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Recommending Code Improvements Based on Stack Overflow Answer Edits",
@@ -1928,20 +1968,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Learning Cross-Model Activation Alignments with Explicit Many-to-Many Layer Maps",
-  "year": 2026,
-  "doi": "10.48550/arxiv.2610.09058",
-  "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Enumeration of anaerobic periodontal pathogens from tuberculosis and chronic periodontitis patients by paper points and curettes: CFU based evaluation",
   "year": 2014,
   "doi": null,
   "pmid": null,
   "journal": "",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Learning Cross-Model Activation Alignments with Explicit Many-to-Many Layer Maps",
+  "year": 2026,
+  "doi": "10.48550/arxiv.2610.09058",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Simple Basis Set for Molecular Wavefunctions Containing Third-Row Atoms",
@@ -1968,14 +2008,6 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Automatiserad matchning av relaterad data från olika datakällor",
-  "year": 2014,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Higher order molecular spectroscopic constants and dipole moment derivatives for diatomic alkali halides",
   "year": 1982,
   "doi": "10.1139/p82-162",
@@ -1984,20 +2016,28 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Throughput-Optimal Topology Design for Cross-Silo Federated Learning",
-  "year": 2020,
-  "doi": "10.48550/arxiv.2010.12229",
-  "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Burst Erasure Correction by 2D LDPC Codes",
   "year": 2019,
   "doi": "10.1109/globecom38437.2019.9013593",
   "pmid": null,
   "journal": "Globecom",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Automatiserad matchning av relaterad data från olika datakällor",
+  "year": 2014,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Throughput-Optimal Topology Design for Cross-Silo Federated Learning",
+  "year": 2020,
+  "doi": "10.48550/arxiv.2010.12229",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Hepatitis B Virus Reactivation Associated With Direct-Acting Antiviral Therapy for Chronic Hepatitis C Virus",
@@ -2016,28 +2056,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Rencontres de la Sociophotographie. Arles, 10 juillet 2026, Grand Amphithéâtre de l'Espace Van Gogh, 10h-13h.",
-  "year": 2026,
-  "doi": "10.58079/16ny9",
-  "pmid": null,
-  "journal": "Hypotheses (OpenEdition)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "IMPLEMENTASI ALGORITMA APRIORI UNTUK MENENTUKAN POLA PEMBELIAN PRODUK MINUMAN PADA WARALABA MINUMAN DI JOMBANG",
   "year": 2024,
   "doi": "10.33752/inovate.v9i1.7251",
   "pmid": null,
   "journal": "Inovate Jurnal Ilmiah Inovasi Teknologi Informasi",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
-  "title": "Rancang Bangun Mesin Pembuat Minuman Varian Rasa Berbahan Dasar Kopi Seacara Otomatis Berbasis Mikrokontroller",
-  "year": 2024,
-  "doi": "10.24036/voteteknika.v12i2.127335",
-  "pmid": null,
-  "journal": "Voteteknika (Vocational Teknik Elektronika dan Informatika)",
-  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Exploring indirect evidences of environmental change in the Pamir-Alai Mountains (Central Asia) during the last century",
@@ -2056,11 +2080,11 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "LUNG ABSCESS CAUSED Streptococcus intermedius: A FIRST CASE REPORT IN VIETNAM",
-  "year": 2021,
-  "doi": "10.59873/vjid.v4i36.203",
+  "title": "Rencontres de la Sociophotographie. Arles, 10 juillet 2026, Grand Amphithéâtre de l'Espace Van Gogh, 10h-13h.",
+  "year": 2026,
+  "doi": "10.58079/16ny9",
   "pmid": null,
-  "journal": "Tạp chí Truyền nhiễm Việt Nam",
+  "journal": "Hypotheses (OpenEdition)",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -2088,6 +2112,30 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
+  "title": "Rancang Bangun Mesin Pembuat Minuman Varian Rasa Berbahan Dasar Kopi Seacara Otomatis Berbasis Mikrokontroller",
+  "year": 2024,
+  "doi": "10.24036/voteteknika.v12i2.127335",
+  "pmid": null,
+  "journal": "Voteteknika (Vocational Teknik Elektronika dan Informatika)",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "LUNG ABSCESS CAUSED Streptococcus intermedius: A FIRST CASE REPORT IN VIETNAM",
+  "year": 2021,
+  "doi": "10.59873/vjid.v4i36.203",
+  "pmid": null,
+  "journal": "Tạp chí Truyền nhiễm Việt Nam",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Åtgärder till varslade : en effektutvärdering av extrainsatta utbildningsinsatser till varslade vid Volvo Cars och dess underleverantörer 2008/2009",
+  "year": 2015,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
   "title": "Analisis Break Even Point (BEP) Pada UMKM Javadwipa_Roastery Dan Kedai Kopi Di Masa Pendemi",
   "year": 2024,
   "doi": "10.61132/manufaktur.v2i1.233",
@@ -2102,14 +2150,6 @@
   "pmid": null,
   "journal": "Inorganica Chimica Acta",
   "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Åtgärder till varslade : en effektutvärdering av extrainsatta utbildningsinsatser till varslade vid Volvo Cars och dess underleverantörer 2008/2009",
-  "year": 2015,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Matchning av akustisk impedans för vätskor",
@@ -2128,20 +2168,20 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "ENT 530 Social Media Portfolio / Nurhazirah Md Hazir",
-  "year": 2019,
-  "doi": null,
-  "pmid": null,
-  "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
-  "excludedBecause": "unrelated coursework or business study"
- },
- {
   "title": "Magnetic dipole and one electron spin-orbit integrals over Slater functions",
   "year": 1974,
   "doi": "10.1063/1.1682007",
   "pmid": null,
   "journal": "The Journal of Chemical Physics",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "ENT 530 Social Media Portfolio / Nurhazirah Md Hazir",
+  "year": 2019,
+  "doi": null,
+  "pmid": null,
+  "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
+  "excludedBecause": "unrelated coursework or business study"
  },
  {
   "title": "Two-Center Hybrid Integrals",
@@ -2184,14 +2224,6 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Theoretical Compton profile anisotropies in molecules and solids. II. Application of the MSC procedure to lithium hydride",
-  "year": 1977,
-  "doi": "10.1063/1.433645",
-  "pmid": null,
-  "journal": "The Journal of Chemical Physics",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Reading for pleasure",
   "year": 2020,
   "doi": null,
@@ -2208,20 +2240,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Theoretical Compton profile anisotropies in molecules and solids. II. Application of the MSC procedure to lithium hydride",
+  "year": 1977,
+  "doi": "10.1063/1.433645",
+  "pmid": null,
+  "journal": "The Journal of Chemical Physics",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Dialog : - olika slags individuella samtal för arbetssökande",
   "year": 2026,
   "doi": null,
   "pmid": null,
   "journal": "Diva portal (Dalarna University Library)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Penerapan Algoritma Titik Interior dalam Optimasi Keuntungan pada Toko Churro.io",
-  "year": 2023,
-  "doi": "10.24036/unpjomath.v8i2.14468",
-  "pmid": null,
-  "journal": "Journal of Mathematics UNP",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "All Manners of Food in Japan: An Overview of the Civilising of Appetite from the Ancient Period to the Modern Period",
@@ -2240,12 +2272,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Strategi Peningkatan Kualitas, Inovasi Rasa, Dan Pemasaran Keripik Pisang UMKM Di Desa Lantasan Baru",
-  "year": 2025,
-  "doi": "10.32696/ajpkm.v9i1.4740",
+  "title": "Penerapan Algoritma Titik Interior dalam Optimasi Keuntungan pada Toko Churro.io",
+  "year": 2023,
+  "doi": "10.24036/unpjomath.v8i2.14468",
   "pmid": null,
-  "journal": "Amaliah Jurnal Pengabdian Kepada Masyarakat",
-  "excludedBecause": "no tea or food context"
+  "journal": "Journal of Mathematics UNP",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Chat with the Environment: Interactive Multimodal Perception Using Large Language Models",
@@ -2280,20 +2312,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Strategi Peningkatan Kualitas, Inovasi Rasa, Dan Pemasaran Keripik Pisang UMKM Di Desa Lantasan Baru",
+  "year": 2025,
+  "doi": "10.32696/ajpkm.v9i1.4740",
+  "pmid": null,
+  "journal": "Amaliah Jurnal Pengabdian Kepada Masyarakat",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Jag ska berätta en stund i boken om hur jag upplever att de i boken känner lycka",
   "year": 2011,
   "doi": null,
   "pmid": null,
   "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Optimering av boids med genetiska algoritmer",
-  "year": 2007,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Zero-Shot Ontology Alignment Without Tears: a Deterministic Pipeline, Its Limits, and What Structure Actually Buys You",
@@ -2304,12 +2336,12 @@
   "excludedBecause": "promotional / spam record"
  },
  {
-  "title": "Hierarchical Multimodal Sleep Representation Learning for Cross-Site Cognitive Impairment Prediction",
-  "year": 2026,
-  "doi": "10.13140/rg.2.2.35803.94248",
+  "title": "Optimering av boids med genetiska algoritmer",
+  "year": 2007,
+  "doi": null,
   "pmid": null,
-  "journal": "Diva portal (Dalarna University Library)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Multicriteria decision making-based approach to classify loose-leaf teas",
@@ -2320,6 +2352,22 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Arbetsförmedlares arbete med matchning",
+  "year": 2018,
+  "doi": null,
+  "pmid": null,
+  "journal": "Malmö University Publications (Malmö University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Hierarchical Multimodal Sleep Representation Learning for Cross-Site Cognitive Impairment Prediction",
+  "year": 2026,
+  "doi": "10.13140/rg.2.2.35803.94248",
+  "pmid": null,
+  "journal": "Diva portal (Dalarna University Library)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
   "title": "An Introduction to Heavy Metals and Oxidative Stress in Ageing and Cancer: A Role for Detoxification Through Diet",
   "year": 2024,
   "doi": "10.1007/978-3-031-53688-5_12",
@@ -2328,12 +2376,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Arbetsförmedlares arbete med matchning",
-  "year": 2018,
-  "doi": null,
+  "title": "DriftTTS: One-stage Single Step Text-to-Speech via Generative Drifting",
+  "year": 2026,
+  "doi": "10.48550/arxiv.2610.22960",
   "pmid": null,
-  "journal": "Malmö University Publications (Malmö University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Arbetsförmedlares arbete med matchning - En undersökning om hur matchningsarbetet påverkas av kompetens och digitalisering",
@@ -2352,28 +2400,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "The Student Movement Volume 110 Issue 12: Bundled Up and Unburdened",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "Digital Commons - Andrews University (Andrews University)",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Borrowed vocabulary as the result of language contacts between the Russian and Tatar people",
-  "year": 2020,
-  "doi": "10.24115/s2446-622020206extra-b587p.26-30",
-  "pmid": null,
-  "journal": "LAPLAGE EM REVISTA",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Anpassat kompetenshanteringssystem : Försvarsmaktens reformerade personalförsörjning ställer nya krav",
   "year": 2008,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "The Student Movement Volume 110 Issue 12: Bundled Up and Unburdened",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "Digital Commons - Andrews University (Andrews University)",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "NeSyMatch: A Neuro-Symbolic Approach for Knowledge Alignment",
@@ -2400,14 +2440,6 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Assessment and Tuition-related Learning from the Student-Facing Dashboard (SFD) - Short Report",
-  "year": 2026,
-  "doi": "10.21954/ou.se.34538922",
-  "pmid": null,
-  "journal": "Open Research Online (The Open University)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Consumer Acceptance of Three Risoles Variants Based on Organoleptic Evaluation",
   "year": 2026,
   "doi": "10.52465/jogasto.v4i2.4",
@@ -2416,11 +2448,11 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "The Student Movement Volume 110 Issue 3: Alumni Weekend was a Slam Dunk",
-  "year": 2025,
-  "doi": null,
+  "title": "Assessment and Tuition-related Learning from the Student-Facing Dashboard (SFD) - Short Report",
+  "year": 2026,
+  "doi": "10.21954/ou.se.34538922",
   "pmid": null,
-  "journal": "Digital Commons - Andrews University (Andrews University)",
+  "journal": "Open Research Online (The Open University)",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -2432,12 +2464,28 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Borrowed vocabulary as the result of language contacts between the Russian and Tatar people",
+  "year": 2020,
+  "doi": "10.24115/s2446-622020206extra-b587p.26-30",
+  "pmid": null,
+  "journal": "LAPLAGE EM REVISTA",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Harmonizing Spectral Evolution in Conditional Flow Matching for TTS",
   "year": 2026,
   "doi": "10.48550/arxiv.2609.34431",
   "pmid": null,
   "journal": "arXiv (Cornell University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "The Student Movement Volume 110 Issue 3: Alumni Weekend was a Slam Dunk",
+  "year": 2025,
+  "doi": null,
+  "pmid": null,
+  "journal": "Digital Commons - Andrews University (Andrews University)",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Product Development Strategy Of Traditional Snacks Klepon AT Klepon Legend Gianyar",
@@ -2448,22 +2496,6 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Web 2.0 i intranät - en studie om Web 2.0-funktioner i intranät",
-  "year": 2009,
-  "doi": null,
-  "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Lukters förmåga att påvera uppmärksamheten för emotionella ansikten",
-  "year": 2018,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
   "title": "Finansiell karaktäristika för det uppköpta bolaget",
   "year": 2006,
   "doi": null,
@@ -2472,12 +2504,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Youth Unemployment : A qualitative study of the Unemployment Agency’s administrators work with youths.",
-  "year": 2017,
+  "title": "Web 2.0 i intranät - en studie om Web 2.0-funktioner i intranät",
+  "year": 2009,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "Lund University Publications Student Papers (Lund University)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "EmojiVoice: Towards long-term controllable expressivity in robot speech",
@@ -2496,12 +2528,36 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Youth Unemployment : A qualitative study of the Unemployment Agency’s administrators work with youths.",
+  "year": 2017,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Lukters förmåga att påvera uppmärksamheten för emotionella ansikten",
+  "year": 2018,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
   "title": "Enhancing antibacterial and anticorrosive properties of 316L stainless steel with nanocoating of copper oxide nanoparticles",
   "year": 2023,
   "doi": "10.1016/j.matchemphys.2023.128265",
   "pmid": null,
   "journal": "Materials Chemistry and Physics",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "E2-ACE: An Energy-Efficient Reconfigurable Crypto-Accelerator with Agile End-to-End Toolchain",
+  "year": 2023,
+  "doi": "10.1109/icfpt59805.2023.00053",
+  "pmid": null,
+  "journal": "International Conference on Field-Programmable Technology (FPT)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Enhancing Question Answering on Charts Through Effective Pre-training Tasks",
@@ -2520,22 +2576,6 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Rekrytering i småföretag, ett stort problem? : – En kvalitativ studie som syftar till ökad förståelse för hur fyra småföretag matchar sina behov vid nyrekryteringar med krav på dubbla kompetenser.",
-  "year": 2007,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "E2-ACE: An Energy-Efficient Reconfigurable Crypto-Accelerator with Agile End-to-End Toolchain",
-  "year": 2023,
-  "doi": "10.1109/icfpt59805.2023.00053",
-  "pmid": null,
-  "journal": "International Conference on Field-Programmable Technology (FPT)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Chocolates enriched with seaweed: Sensory profiling and consumer segmentation",
   "year": 2023,
   "doi": "10.1016/j.ijgfs.2023.100747",
@@ -2544,11 +2584,11 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Att vidareutveckla en introduktionsprocess - En kvalitativ analys",
-  "year": 2020,
+  "title": "Rekrytering i småföretag, ett stort problem? : – En kvalitativ studie som syftar till ökad förståelse för hur fyra småföretag matchar sina behov vid nyrekryteringar med krav på dubbla kompetenser.",
+  "year": 2007,
   "doi": null,
   "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -2560,20 +2600,28 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "PENERAPAN ALGORITMA K-MEANS CLUSTERING UNTUK ANALISIS POLA PENJUALAN TOKO KUE DENGAN RAPIDMINER",
-  "year": 2025,
-  "doi": "10.24127/ilmukomputer.v6i1.7768",
-  "pmid": null,
-  "journal": "Jurnal Mahasiswa Ilmu Komputer",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Main trends and development forecast of bread and bakery products market",
   "year": 2022,
   "doi": "10.38188/2534-9228.22.3.11",
   "pmid": null,
   "journal": "VUZF REVIEW",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Att vidareutveckla en introduktionsprocess - En kvalitativ analys",
+  "year": 2020,
+  "doi": null,
+  "pmid": null,
+  "journal": "Lund University Publications Student Papers (Lund University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "PENERAPAN ALGORITMA K-MEANS CLUSTERING UNTUK ANALISIS POLA PENJUALAN TOKO KUE DENGAN RAPIDMINER",
+  "year": 2025,
+  "doi": "10.24127/ilmukomputer.v6i1.7768",
+  "pmid": null,
+  "journal": "Jurnal Mahasiswa Ilmu Komputer",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Comparing the Contents of Embedded Subtitles to Remove Duplicate Video",
@@ -2608,20 +2656,20 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "How Open Is Open TTS? A Practical Evaluation of Open Source TTS Tools",
-  "year": 2025,
-  "doi": "10.1109/access.2025.3637322",
-  "pmid": null,
-  "journal": "IEEE Access",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Säkerhetsanalys kring användning av mobilapplikationsteknik i Kriminalvårdens klientsystem",
   "year": 2014,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "How Open Is Open TTS? A Practical Evaluation of Open Source TTS Tools",
+  "year": 2025,
+  "doi": "10.1109/access.2025.3637322",
+  "pmid": null,
+  "journal": "IEEE Access",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "ЕЩЕ РАЗ О \"КАПЕЛЛАХ\" ПЕНДЖИКЕНТА И ВЕРХНЕГО ЗЕРАВШАНА",
@@ -2640,27 +2688,11 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Matchningen Miljöteknik - Venture Capital på den svenska marknaden",
-  "year": 2008,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Theory of the chemical bond. 2. Dipole moments of alkali halide molecules, bond polarity, and differential charge affinity",
   "year": 1976,
   "doi": "10.1021/ja00428a005",
   "pmid": null,
   "journal": "Journal of the American Chemical Society",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Restaurant Innovation: What Do Customers Want?",
-  "year": 2019,
-  "doi": null,
-  "pmid": null,
-  "journal": "RePEc: Research Papers in Economics",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -2672,20 +2704,28 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Förklaras fusion och fusionsvågor av felvärderingsteorin i Sverige under perioden 1986 till 2013",
-  "year": 2015,
+  "title": "Matchningen Miljöteknik - Venture Capital på den svenska marknaden",
+  "year": 2008,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Rooted and Exported: Marketing Culturally Embedded Products in International Markets : Sustaining Cultural Meaning in Modern Marketing",
-  "year": 2026,
+  "title": "Evolution av beteende för boids",
+  "year": 2008,
   "doi": null,
   "pmid": null,
   "journal": "Diva portal (Dalarna University Library)",
-  "excludedBecause": "no tea or food context"
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "The Student Movement Volume 110 Issue 10: Joy to the World Changers",
+  "year": 2025,
+  "doi": null,
+  "pmid": null,
+  "journal": "Digital Commons - Andrews University (Andrews University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Interpretation Checkpoint: LLM-Assisted Education for Detecting Deceptive Interpretations of Visual Data",
@@ -2696,12 +2736,12 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "The Student Movement Volume 110 Issue 10: Joy to the World Changers",
-  "year": 2025,
+  "title": "Restaurant Innovation: What Do Customers Want?",
+  "year": 2019,
   "doi": null,
   "pmid": null,
-  "journal": "Digital Commons - Andrews University (Andrews University)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "RePEc: Research Papers in Economics",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "“Det jag menar när jag pratar om Tinder” : en kvalitativ analys om dejtingappen Tinder",
@@ -2720,12 +2760,20 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Evolution av beteende för boids",
-  "year": 2008,
+  "title": "Förklaras fusion och fusionsvågor av felvärderingsteorin i Sverige under perioden 1986 till 2013",
+  "year": 2015,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Rooted and Exported: Marketing Culturally Embedded Products in International Markets : Sustaining Cultural Meaning in Modern Marketing",
+  "year": 2026,
   "doi": null,
   "pmid": null,
   "journal": "Diva portal (Dalarna University Library)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "iWAPT 2024 Keynote Talk: What Happens to a Dream Deferred? Chasing Automatic Offloading in Fortran 2023",
@@ -2736,14 +2784,6 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Strategi Pemasaran Pada UMKM Banana Crispy di Desa Gandatapa, Kabupaten Banyumas",
-  "year": 2025,
-  "doi": "10.67352/jomi.v3i1.101",
-  "pmid": null,
-  "journal": "Jurnal Organisasi dan Manajemen Indonesia",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Analisis Strategi Pemasaran Produk Roti Ganep’s dengan Metode SWOT dan QSPM pada Masa Pandemi COVID-19",
   "year": 2022,
   "doi": "10.20961/cosmed.v1i1.61958",
@@ -2752,11 +2792,19 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Digitalisation, COVID-19 and the future of banking",
-  "year": 2021,
+  "title": "Aesthetic pathfinding : Predictability in Genetic Algorithms and Theta* in dynamic environments",
+  "year": 2018,
   "doi": null,
   "pmid": null,
-  "journal": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Strategi Pemasaran Pada UMKM Banana Crispy di Desa Gandatapa, Kabupaten Banyumas",
+  "year": 2025,
+  "doi": "10.67352/jomi.v3i1.101",
+  "pmid": null,
+  "journal": "Jurnal Organisasi dan Manajemen Indonesia",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -2776,20 +2824,12 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "NYCKELN TILL ARBETSMARKNADEN : En kvalitativ studie om privata aktorers arbete med matchningsprocessen for lagutbildade individer",
-  "year": 2019,
+  "title": "Digitalisation, COVID-19 and the future of banking",
+  "year": 2021,
   "doi": null,
   "pmid": null,
-  "journal": "DiVA at Umeå University (Umeå University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Aesthetic pathfinding : Predictability in Genetic Algorithms and Theta* in dynamic environments",
-  "year": 2018,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "STRADA-koppling mellan polis- och sjukvårdsrapporterade data",
@@ -2798,22 +2838,6 @@
   "pmid": null,
   "journal": "Diva portal (Dalarna University Library)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "SOUND, NOISE AND THE PLAYER WHO LISTENS : Subjective player experience at different amplified frequencies using altered equalisation-filters",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "INCREASING THE COMPETITIVENESS OF WET CAKE SMEs THROUGH PRODUCT DIVERSIFICATION AND PACKAGING RE-BRANDING IN PANDANSARI VILLAGE",
-  "year": 2026,
-  "doi": null,
-  "pmid": null,
-  "journal": "International Journal of Engagement and Empowerment (IJE2)",
-  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Fight Clubs educational possibilities : A Study of Fight Club and its possibility to form critical readers",
@@ -2830,6 +2854,30 @@
   "pmid": null,
   "journal": "Indonesian Journal of Innovation Science and Knowledge",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "INCREASING THE COMPETITIVENESS OF WET CAKE SMEs THROUGH PRODUCT DIVERSIFICATION AND PACKAGING RE-BRANDING IN PANDANSARI VILLAGE",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "International Journal of Engagement and Empowerment (IJE2)",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "NYCKELN TILL ARBETSMARKNADEN : En kvalitativ studie om privata aktorers arbete med matchningsprocessen for lagutbildade individer",
+  "year": 2019,
+  "doi": null,
+  "pmid": null,
+  "journal": "DiVA at Umeå University (Umeå University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "SOUND, NOISE AND THE PLAYER WHO LISTENS : Subjective player experience at different amplified frequencies using altered equalisation-filters",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Därför blir det fel när projektet gör rätt! : Framgångsfaktorer vid projektstyrning",
@@ -2856,20 +2904,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Generació d'un dataset sintètic de parla artificial per entrenar un sistema de comprensió de la parla com a sistema de control d'un videojoc",
-  "year": 2025,
-  "doi": null,
-  "pmid": null,
-  "journal": "UPCommons institutional repository (Universitat Politècnica de Catalunya)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
-  "title": "Ett webbaserat beslutsstödsystem för lönsamhetsanalys i lastbilsplanering",
+  "title": "On the Human and Computer Alignment of Attribute-Based Music Matches",
   "year": 2026,
-  "doi": null,
+  "doi": "10.48550/arxiv.2609.00987",
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Kapitalism möter Kommunism - Att förstå svenska bankers affärsetablering i Kina",
@@ -2888,36 +2928,36 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Krom – erfarenheter från en ny matchningstjänst med fristående leverantörer inom arbetsmarknadspolitiken",
-  "year": 2021,
+  "title": "Generació d'un dataset sintètic de parla artificial per entrenar un sistema de comprensió de la parla com a sistema de control d'un videojoc",
+  "year": 2025,
   "doi": null,
   "pmid": null,
-  "journal": "",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "UPCommons institutional repository (Universitat Politècnica de Catalunya)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "\"Man försöker hitta personer med vilja och engagemang\" : En kvalitativ studie om konsultchefers upplevelse av att attrahera och rekrytera personal inom bemanningsbranschen",
-  "year": 2025,
+  "title": "Ett webbaserat beslutsstödsystem för lönsamhetsanalys i lastbilsplanering",
+  "year": 2026,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Ledarna om ledarskapet : En kvalitativ studie om ledarskapets verklighet 2008",
+  "year": 2008,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Comparative Study on the Different Performance of Tea Plants Cv. Longjing 43 and Cv. Yabukita Responding to Shade Based on the Key Metabolites and Transcriptome Profiles",
-  "year": 2024,
-  "doi": "10.2139/ssrn.4985719",
+  "title": "Krom – erfarenheter från en ny matchningstjänst med fristående leverantörer inom arbetsmarknadspolitiken",
+  "year": 2021,
+  "doi": null,
   "pmid": null,
-  "journal": "SSRN Electronic Journal",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "ANALISIS EFISIENSI OPERASIONAL AMM BURGER & COFFEE MELALUI PENDEKATAN LINEAR PROGRAMMING DAN ECONOMIC ORDER QUANTITY",
-  "year": 2026,
-  "doi": "10.54783/jser.v8i1.1322",
-  "pmid": null,
-  "journal": "Journal of Social and Economics Research",
-  "excludedBecause": "no tea or food context"
+  "journal": "",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "PELATIHAN TECHNOPRENEURSHIP PEMBUATAN YOGURT ‘GURLY’SISWA SISWI SMP A WAHID HASYIM 2 REJOSO",
@@ -2928,20 +2968,12 @@
   "excludedBecause": "unrelated coursework or business study"
  },
  {
-  "title": "Prestationsmåttens betydelse för den operativa nivån : Hur produktionsoptimering underlättar produktionsplaneringen i tillverkande företag",
-  "year": 2017,
+  "title": "\"Man försöker hitta personer med vilja och engagemang\" : En kvalitativ studie om konsultchefers upplevelse av att attrahera och rekrytera personal inom bemanningsbranschen",
+  "year": 2025,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Pelatihan dan Pendampingan Pengolahan Keripik Pisang, Keripik Pare dan Peyek dengan Varian Rasa Baru di KWT Rasa Saling Sayang Kuta Mandalika",
-  "year": 2024,
-  "doi": "10.29303/jsit.v5i2.157",
-  "pmid": null,
-  "journal": "Jurnal SIAR ILMUWAN TANI",
-  "excludedBecause": "unrelated coursework or business study"
  },
  {
   "title": "Mickiewicz, B., & Britchenko , I. (2022). Main trends and development forecast of bread and bakery products market. VUZF Review, 7(3), 113-123",
@@ -2960,22 +2992,6 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "”Det är därför jag går runt med en jävla hoodie liksom.” - En kvalitativ studie om socialsekreterares syn på att kommunicera med barn inom socialtjänstens utredningsarbete",
-  "year": 2025,
-  "doi": null,
-  "pmid": null,
-  "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Ledarna om ledarskapet : En kvalitativ studie om ledarskapets verklighet 2008",
-  "year": 2008,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Eating More Asian America",
   "year": 2025,
   "doi": "10.18574/nyu/9781479831357.001.0001",
@@ -2984,11 +3000,11 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Personalens kompetensprofil : nuläge och vägval framåt",
-  "year": 2022,
+  "title": "”Det är därför jag går runt med en jävla hoodie liksom.” - En kvalitativ studie om socialsekreterares syn på att kommunicera med barn inom socialtjänstens utredningsarbete",
+  "year": 2025,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3000,11 +3016,43 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Ledarskapsutbildning E.ON: En empirisk undersökning av utbildningsplanering och utveckling",
-  "year": 2009,
+  "title": "Pelatihan dan Pendampingan Pengolahan Keripik Pisang, Keripik Pare dan Peyek dengan Varian Rasa Baru di KWT Rasa Saling Sayang Kuta Mandalika",
+  "year": 2024,
+  "doi": "10.29303/jsit.v5i2.157",
+  "pmid": null,
+  "journal": "Jurnal SIAR ILMUWAN TANI",
+  "excludedBecause": "unrelated coursework or business study"
+ },
+ {
+  "title": "Comparative Study on the Different Performance of Tea Plants Cv. Longjing 43 and Cv. Yabukita Responding to Shade Based on the Key Metabolites and Transcriptome Profiles",
+  "year": 2024,
+  "doi": "10.2139/ssrn.4985719",
+  "pmid": null,
+  "journal": "SSRN Electronic Journal",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "ANALISIS EFISIENSI OPERASIONAL AMM BURGER & COFFEE MELALUI PENDEKATAN LINEAR PROGRAMMING DAN ECONOMIC ORDER QUANTITY",
+  "year": 2026,
+  "doi": "10.54783/jser.v8i1.1322",
+  "pmid": null,
+  "journal": "Journal of Social and Economics Research",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Prestationsmåttens betydelse för den operativa nivån : Hur produktionsoptimering underlättar produktionsplaneringen i tillverkande företag",
+  "year": 2017,
   "doi": null,
   "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Personalens kompetensprofil : nuläge och vägval framåt",
+  "year": 2022,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3024,11 +3072,11 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Hur stämmer det totala erbjudandet överrens med det valda kundsegmentet i butiker som säljer naturliga hudvårdsprodukter",
+  "title": "Ledarskapsutbildning E.ON: En empirisk undersökning av utbildningsplanering och utveckling",
   "year": 2009,
   "doi": null,
   "pmid": null,
-  "journal": "University Library of Skövde (University of Skövde)",
+  "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3040,12 +3088,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Deep Learning-Based Tea Fermentation Grading",
-  "year": 2024,
-  "doi": "10.1007/978-981-97-3591-4_14",
+  "title": "Hur stämmer det totala erbjudandet överrens med det valda kundsegmentet i butiker som säljer naturliga hudvårdsprodukter",
+  "year": 2009,
+  "doi": null,
   "pmid": null,
-  "journal": "Lecture notes in networks and systems",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+  "journal": "University Library of Skövde (University of Skövde)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "PatchGuard : Application for identifying security-vulnerable software",
@@ -3056,19 +3104,19 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "The Growth of Micro-Luxuries: Why Consumers Choose Affordable Indulgences Under Financial Constraint",
-  "year": 2026,
-  "doi": "10.38124/ijisrt/26aug1394",
-  "pmid": null,
-  "journal": "International Journal of Innovative Science and Research Technology (IJISRT)",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Relationella skillnader i anställningsrelationer",
   "year": 2018,
   "doi": null,
   "pmid": null,
   "journal": "",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Deep Learning-Based Tea Fermentation Grading",
+  "year": 2024,
+  "doi": "10.1007/978-981-97-3591-4_14",
+  "pmid": null,
+  "journal": "Lecture notes in networks and systems",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
@@ -3080,12 +3128,44 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
+  "title": "The Growth of Micro-Luxuries: Why Consumers Choose Affordable Indulgences Under Financial Constraint",
+  "year": 2026,
+  "doi": "10.38124/ijisrt/26aug1394",
+  "pmid": null,
+  "journal": "International Journal of Innovative Science and Research Technology (IJISRT)",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Fundamental of Entrepreneurship ENT300 : Matchalicious Cookies / Syaqirra Shahdan ... [et al.]",
   "year": 2019,
   "doi": null,
   "pmid": null,
   "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
   "excludedBecause": "unrelated coursework or business study"
+ },
+ {
+  "title": "Effektivare vård : en studie om åtgärder för att uppnå kortare köer och bättre flöde",
+  "year": 2016,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Peacocks Don't Carry Tote Bags: Cheap Signals and the Relocation of Honesty in the \"Performative Male\"",
+  "year": 2026,
+  "doi": "10.31234/osf.io/ntgz9_v1",
+  "pmid": null,
+  "journal": "PsyArXiv",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Vad påverkar din lön? : En studie om påverkansfaktorer som vanligtvis inte fångas upp av den traditionella lönekartläggningen",
+  "year": 2015,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Enhancing Trait Thesauri Interoperability Using a Manual and Automated Alignment Approach",
@@ -3101,38 +3181,6 @@
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Effektivare vård : en studie om åtgärder för att uppnå kortare köer och bättre flöde",
-  "year": 2016,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Vad påverkar din lön? : En studie om påverkansfaktorer som vanligtvis inte fångas upp av den traditionella lönekartläggningen",
-  "year": 2015,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Peacocks Don't Carry Tote Bags: Cheap Signals and the Relocation of Honesty in the \"Performative Male\"",
-  "year": 2026,
-  "doi": "10.31234/osf.io/ntgz9_v1",
-  "pmid": null,
-  "journal": "PsyArXiv",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Hållbar produktutveckling. Vilka metoder och verktyg kan företag använda vid hållbar produktutveckling?",
-  "year": 2023,
-  "doi": null,
-  "pmid": null,
-  "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3160,27 +3208,11 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "การออกแบบผลงานสรางสรรคจากความหมายของส โดยใชกระบวนทานาฏยศลปไทย",
-  "year": 2020,
+  "title": "Hållbar produktutveckling. Vilka metoder och verktyg kan företag använda vid hållbar produktutveckling?",
+  "year": 2023,
   "doi": null,
   "pmid": null,
-  "journal": "Academic Journal for the Humanities and Social Sciences Dhonburi Rajabhat University",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Vagdhenu: A Vrutta (Meter) Aware Shloka-to-Chant (TTS) System for Sanskrit",
-  "year": 2026,
-  "doi": "10.48550/arxiv.2608.26146",
-  "pmid": null,
-  "journal": "arXiv (Cornell University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Automatiserad matchning vid rekrytering",
-  "year": 2018,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3192,11 +3224,35 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "การออกแบบผลงานสรางสรรคจากความหมายของส โดยใชกระบวนทานาฏยศลปไทย",
+  "year": 2020,
+  "doi": null,
+  "pmid": null,
+  "journal": "Academic Journal for the Humanities and Social Sciences Dhonburi Rajabhat University",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Automatiserad matchning vid rekrytering",
+  "year": 2018,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
   "title": "Design och implementation av en Jabberklient i webbläsaren Opera",
   "year": 2009,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Vagdhenu: A Vrutta (Meter) Aware Shloka-to-Chant (TTS) System for Sanskrit",
+  "year": 2026,
+  "doi": "10.48550/arxiv.2608.26146",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3214,30 +3270,6 @@
   "pmid": "28437798",
   "journal": "Annals of Internal Medicine",
   "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Den sista magin : porträtteringen av kärlek som vetenskap i två svenska tv-produktioners sökande efter den perfekta matchningen",
-  "year": 2017,
-  "doi": null,
-  "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Analys av produktionskapacitet och kapacitetsutnyttjande : En fallstudie",
-  "year": 2011,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Utveckling av rapportering till CLRTAP NFR 1A och 5 map EMEP Guidebook 2013, steg 2",
-  "year": 2015,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Entrprenörer och stödorganisationer : En studie om entreprenörers behov av stöd",
@@ -3264,27 +3296,27 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Financial Accounting with International Financial Reporting Standards",
-  "year": 2021,
+  "title": "Den sista magin : porträtteringen av kärlek som vetenskap i två svenska tv-produktioners sökande efter den perfekta matchningen",
+  "year": 2017,
   "doi": null,
   "pmid": null,
-  "journal": "Medical Entomology and Zoology",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Upplevelsen av moderskapet : -En kvaliativ studie om moderskap, föräldraledighet och normer",
-  "year": 2011,
-  "doi": null,
-  "pmid": null,
-  "journal": "Diva portal (Dalarna University Library)",
+  "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Cyklisters upplevda otrygghet i urban miljö – En studie med klusteranalys",
-  "year": 2019,
+  "title": "Analys av produktionskapacitet och kapacitetsutnyttjande : En fallstudie",
+  "year": 2011,
   "doi": null,
   "pmid": null,
   "journal": "",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Utveckling av rapportering till CLRTAP NFR 1A och 5 map EMEP Guidebook 2013, steg 2",
+  "year": 2015,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3296,11 +3328,11 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Kan Gotland reducera en stor del av sina koldioxidutsläpp genom CCS",
+  "title": "Cyklisters upplevda otrygghet i urban miljö – En studie med klusteranalys",
   "year": 2019,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3312,12 +3344,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Towards high motivation in science : Science teachers' view of how they can promote the interest and motivation of vocationalstudents",
-  "year": 2025,
+  "title": "Financial Accounting with International Financial Reporting Standards",
+  "year": 2021,
   "doi": null,
   "pmid": null,
-  "journal": "Digitala vetenskapliga arkivet (Diva) (Karlstad University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Mer än bara nötter - Revitalisering av OLW:s nötmixer",
@@ -3328,11 +3360,11 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Familjehem - Nytta eller fördärv?",
-  "year": 2010,
+  "title": "Kan Gotland reducera en stor del av sina koldioxidutsläpp genom CCS",
+  "year": 2019,
   "doi": null,
   "pmid": null,
-  "journal": "Malmö University Publications (Malmö University)",
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3344,19 +3376,35 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Towards high motivation in science : Science teachers' view of how they can promote the interest and motivation of vocationalstudents",
+  "year": 2025,
+  "doi": null,
+  "pmid": null,
+  "journal": "Digitala vetenskapliga arkivet (Diva) (Karlstad University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Familjehem - Nytta eller fördärv?",
+  "year": 2010,
+  "doi": null,
+  "pmid": null,
+  "journal": "Malmö University Publications (Malmö University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "MixiSpeech: Progressive State Distillation for One-Step Vietnamese TTS",
+  "year": 2026,
+  "doi": "10.48550/arxiv.2610.25394",
+  "pmid": null,
+  "journal": "arXiv (Cornell University)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
   "title": "Pelatihan Branding, Labelling dan Digital Marketing pada UMKM Keripik Pisang Lumer di Desa Kendung, Kecamatan Padangan, Bojonegoro",
   "year": 2025,
   "doi": "10.32665/jarcoms.v4i3.4388",
   "pmid": null,
   "journal": "Journal of Research Applications in Community Service",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Pemberdayaan Umkm 'NOLi' Melalui Strategi Diversifikasi Produk dan Transformasi Digital Untuk Penguatan Ekonomi Lokal",
-  "year": 2025,
-  "doi": "10.30605/atjpm.v7i1.6857",
-  "pmid": null,
-  "journal": "Abdimas Toddopuli Jurnal Pengabdian Pada Masyarakat",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -3368,11 +3416,11 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "\"Sammanbrott är ju ett misslyckande från vuxenvärlden\" : En kvalitativ studie om socialsekreterares upplevelser av sammanbrott i familjehemsplaceringar",
-  "year": 2019,
+  "title": "Upplevelsen av moderskapet : -En kvaliativ studie om moderskap, föräldraledighet och normer",
+  "year": 2011,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "Diva portal (Dalarna University Library)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3400,6 +3448,22 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Pemberdayaan Umkm 'NOLi' Melalui Strategi Diversifikasi Produk dan Transformasi Digital Untuk Penguatan Ekonomi Lokal",
+  "year": 2025,
+  "doi": "10.30605/atjpm.v7i1.6857",
+  "pmid": null,
+  "journal": "Abdimas Toddopuli Jurnal Pengabdian Pada Masyarakat",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "\"Sammanbrott är ju ett misslyckande från vuxenvärlden\" : En kvalitativ studie om socialsekreterares upplevelser av sammanbrott i familjehemsplaceringar",
+  "year": 2019,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
   "title": "Hjälpmedel eller Stjälpmedel? : En studie av ungdomars attityd till intressetester",
   "year": 2009,
   "doi": null,
@@ -3414,14 +3478,6 @@
   "pmid": null,
   "journal": "Wichcha Journal Nakhon Si Thammarat Rajabhat University",
   "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Gymnasieskola i förändring : - En studie av synen på individ, lärande och kunskap 1965-2008",
-  "year": 2009,
-  "doi": null,
-  "pmid": null,
-  "journal": "Högskolan Kristianstad Publikationer",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Pengalaman dan Implementasi Kegiatan Statistik Selama Magang di Badan Pusat Statistik Kota Palangkaraya",
@@ -3440,12 +3496,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Apoteket AB:s utvecklingsmöjligheter på den nya apoteksmarknaden",
-  "year": 2010,
+  "title": "Gymnasieskola i förändring : - En studie av synen på individ, lärande och kunskap 1965-2008",
+  "year": 2009,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "Högskolan Kristianstad Publikationer",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Sosyal Medyada Trend Olan Kahvelerin Tüketici Davranışlarına Etkisi: Dijital Tüketicinin Dönüşümü",
@@ -3456,12 +3512,12 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Comment on egusphere-2025-4586",
-  "year": 2025,
-  "doi": "10.5194/egusphere-2025-4586-rc2",
+  "title": "Apoteket AB:s utvecklingsmöjligheter på den nya apoteksmarknaden",
+  "year": 2010,
+  "doi": null,
   "pmid": null,
-  "journal": "",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Association Rules Menggunakan Algoritma FP-Growth Untuk Tata Letak Di Koperasi IT DEL",
@@ -3480,20 +3536,28 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Revisiting black carbon emission estimates in the Third Pole: a hierarchical Bayesian synthesis inversion perspective",
-  "year": 2026,
-  "doi": "10.1088/2515-7620/ae4858",
-  "pmid": null,
-  "journal": "Environmental Research Communications",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Transformatorers beteende vid fasavbrott i matande spänning",
   "year": 2014,
   "doi": null,
   "pmid": null,
   "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Comment on egusphere-2025-4586",
+  "year": 2025,
+  "doi": "10.5194/egusphere-2025-4586-rc2",
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+ },
+ {
+  "title": "Revisiting black carbon emission estimates in the Third Pole: a hierarchical Bayesian synthesis inversion perspective",
+  "year": 2026,
+  "doi": "10.1088/2515-7620/ae4858",
+  "pmid": null,
+  "journal": "Environmental Research Communications",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Effekter av missbruksbehandling enligt Minnesotamodellen",
@@ -3520,22 +3584,6 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Arbetslivserfarenheters påverkan på framtida studie- och yrkesval",
-  "year": 2016,
-  "doi": null,
-  "pmid": null,
-  "journal": "Malmö University Publications (Malmö University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Does Visual Privacy Leakage Compromise Fairness in Multimodal Automated Feedback? Extending Group Fairness to Privacy Contexts",
-  "year": 2026,
-  "doi": "10.31234/osf.io/szk4m_v1",
-  "pmid": null,
-  "journal": "PsyArXiv",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
- },
- {
   "title": "Introduction",
   "year": 2024,
   "doi": "10.1017/9781009509527.002",
@@ -3552,12 +3600,28 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Implementasi Sensus dan Survei Statistik dalam Mendukung Penyediaan Data Pembangunan Daerah di Badan Pusat Statistik Kota Palangka Raya",
-  "year": 2026,
-  "doi": "10.31004/riggs.v5i2.9001",
+  "title": "Lojalitetsprogram som relationsskapande instrument ur ett kundperspektiv - en fallstudie av Sydkraft och Collect",
+  "year": 2002,
+  "doi": null,
   "pmid": null,
-  "journal": "RIGGS Journal of Artificial Intelligence and Digital Business",
-  "excludedBecause": "no tea or food context"
+  "journal": "Lund University Publications Student Papers (Lund University)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Arbetslivserfarenheters påverkan på framtida studie- och yrkesval",
+  "year": 2016,
+  "doi": null,
+  "pmid": null,
+  "journal": "Malmö University Publications (Malmö University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Does Visual Privacy Leakage Compromise Fairness in Multimodal Automated Feedback? Extending Group Fairness to Privacy Contexts",
+  "year": 2026,
+  "doi": "10.31234/osf.io/szk4m_v1",
+  "pmid": null,
+  "journal": "PsyArXiv",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Lovims Coffee",
@@ -3566,14 +3630,6 @@
   "pmid": null,
   "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
   "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Lojalitetsprogram som relationsskapande instrument ur ett kundperspektiv - en fallstudie av Sydkraft och Collect",
-  "year": 2002,
-  "doi": null,
-  "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Vad är nyttan med en ökad specialisering",
@@ -3592,12 +3648,28 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Upaya Peningkatan Ketrampilan Pengolahan Pisang Kelompok Tani Wonotirto di Desa Cerme Kecamatan Juwangi Kabupaten Boyolali",
+  "year": 2021,
+  "doi": "10.35870/jpni.v2i2.40",
+  "pmid": null,
+  "journal": "Jurnal Pengabdian Nasional (JPN) Indonesia",
+  "excludedBecause": "no tea or food context"
+ },
+ {
   "title": "Data om svenska fiskodlingar : Utveckling av metodik inför rapportering till HELCOM",
   "year": 2012,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Implementasi Sensus dan Survei Statistik dalam Mendukung Penyediaan Data Pembangunan Daerah di Badan Pusat Statistik Kota Palangka Raya",
+  "year": 2026,
+  "doi": "10.31004/riggs.v5i2.9001",
+  "pmid": null,
+  "journal": "RIGGS Journal of Artificial Intelligence and Digital Business",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "VALUTARISKHANTERING VID UTLÄNDSKA TRANSAKTIONER : En studie om hur företag hanterar valutarisker",
@@ -3608,14 +3680,6 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Upaya Peningkatan Ketrampilan Pengolahan Pisang Kelompok Tani Wonotirto di Desa Cerme Kecamatan Juwangi Kabupaten Boyolali",
-  "year": 2021,
-  "doi": "10.35870/jpni.v2i2.40",
-  "pmid": null,
-  "journal": "Jurnal Pengabdian Nasional (JPN) Indonesia",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Hydrologic implications of aerosol deposition on snow in High Mountain Asia river basins",
   "year": 2025,
   "doi": "10.5194/egusphere-2025-4586",
@@ -3624,11 +3688,19 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "On b-Matching and Fully-Dynamic Maximum k-Edge Coloring",
+  "title": "Children talk - do we listen? : A literature review on how economically disadvataged children's voices, needs, and experiences are expressed and seen in Swedish research",
   "year": 2025,
-  "doi": "10.4230/lipics.sand.2025.4",
+  "doi": null,
   "pmid": null,
-  "journal": "DROPS (Schloss Dagstuhl – Leibniz Center for Informatics)",
+  "journal": "DiVA at Umeå University (Umeå University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "SankeyQA, career-map Sankey diagrams with exact answers, benchmark data, model replies and code",
+  "year": 2026,
+  "doi": "10.5281/zenodo.23449062",
+  "pmid": null,
+  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
@@ -3648,20 +3720,20 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "SankeyQA, career-map Sankey diagrams with exact answers, benchmark data, model replies and code",
-  "year": 2026,
-  "doi": "10.5281/zenodo.23449062",
+  "title": "On b-Matching and Fully-Dynamic Maximum k-Edge Coloring",
+  "year": 2025,
+  "doi": "10.4230/lipics.sand.2025.4",
   "pmid": null,
-  "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+  "journal": "DROPS (Schloss Dagstuhl – Leibniz Center for Informatics)",
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Children talk - do we listen? : A literature review on how economically disadvataged children's voices, needs, and experiences are expressed and seen in Swedish research",
-  "year": 2025,
+  "title": "Språket, genus och den orena skulden. En feministisk och stämplingsteoretisk textanalys av Nordisk Kriminalkrönika 2000 - 2014.",
+  "year": 2014,
   "doi": null,
   "pmid": null,
-  "journal": "DiVA at Umeå University (Umeå University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Beslutet kring make or buy av en företagsfunktion - vilka faktorer ska tas med i beslutet?",
@@ -3688,22 +3760,6 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Idrott eller Hälsa? : en studie om hur läraren i idrott och hälsa arbetar med ämnet hälsa i sin undervisning.",
-  "year": 2017,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Språket, genus och den orena skulden. En feministisk och stämplingsteoretisk textanalys av Nordisk Kriminalkrönika 2000 - 2014.",
-  "year": 2014,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
   "title": "Match and Training Injuries in Rugby League",
   "year": 2010,
   "doi": "10.2165/11319740-000000000-00000",
@@ -3712,12 +3768,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "ATOMIC: A Domain-Specific Vision-Language Model for Transmission Electron Microscopy",
-  "year": 2026,
-  "doi": "10.1007/978-3-032-37132-4_24",
+  "title": "Idrott eller Hälsa? : en studie om hur läraren i idrott och hälsa arbetar med ämnet hälsa i sin undervisning.",
+  "year": 2017,
+  "doi": null,
   "pmid": null,
-  "journal": "Lecture notes in computer science",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Etablering av svensk bygg- och miljöindustri i Polen",
@@ -3728,19 +3784,19 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "ATOMIC: A Domain-Specific Vision-Language Model for Transmission Electron Microscopy",
+  "year": 2026,
+  "doi": "10.1007/978-3-032-37132-4_24",
+  "pmid": null,
+  "journal": "Lecture notes in computer science",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
   "title": "\"Det behövs först någon som kan hjälpa till, sen någon att prata och gråta med\" : En kvalitativ intervjustudie om erfarenheter och behovet av anhörigstöd för anhöriga till närstående med psykisk funktionsnedsättning",
   "year": 2017,
   "doi": null,
   "pmid": null,
   "journal": "Diva portal (Dalarna University Library)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Vad händer efter musikhögskolan? En studie om karriärövergång mellan musikhögskolan och musikeryrket",
-  "year": 2020,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
@@ -3752,6 +3808,14 @@
   "excludedBecause": "no tea or food context"
  },
  {
+  "title": "Vad händer efter musikhögskolan? En studie om karriärövergång mellan musikhögskolan och musikeryrket",
+  "year": 2020,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
   "title": "Sustainable freight transports on road",
   "year": 2026,
   "doi": null,
@@ -3760,12 +3824,52 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Itsuki and I",
-  "year": 2018,
-  "doi": "10.1353/ccr.2018.0078",
+  "title": "ENT Social Media Portfolio: Krunchy Kapit / Nur Farah Nabilah Ishak",
+  "year": 2020,
+  "doi": null,
   "pmid": null,
-  "journal": "Cream city review",
+  "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
   "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Digital varuutprovning - Effektivare processer i detaljhandelns försörjningskedjor",
+  "year": 2019,
+  "doi": null,
+  "pmid": null,
+  "journal": "Chalmers Research (Chalmers University of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "تطوير بيئة الواقع المعزز في ضوء تطبيق ployedres Augments- Mirag لتنمية مهارات التصور البصري ومهارات التفكير الرياضي لدى تلاميذ المرحلة الإعدادية",
+  "year": 2023,
+  "doi": "10.21608/maed.2023.303114",
+  "pmid": null,
+  "journal": "Maǧallaẗ Kulliyyaẗ Al-Tarbiyyaẗ Bil-Manṣūraẗ",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Elevers läsvanor och tidigare erfarenheter i undervisningen",
+  "year": 2015,
+  "doi": null,
+  "pmid": null,
+  "journal": "Malmö University Publications (Malmö University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "GhosTea: A multiple case study on Ghosting among Filipino young adults",
+  "year": 2023,
+  "doi": "10.31124/advance.23612205",
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Bränslehedging : Hur säkrar flygbolagen sig mot ett högt oljepris?",
+  "year": 2006,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Referenslandskap som förebild vid vegetationsdesign på golfbanor",
@@ -3774,22 +3878,6 @@
   "pmid": null,
   "journal": "Epsilon Archive for Student Projects (University of Southampton)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Cooler",
-  "year": 2023,
-  "doi": "10.1353/thr.2023.a911584",
-  "pmid": null,
-  "journal": "The Hopkins review/Hopkins review",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "ENT Social Media Portfolio: Krunchy Kapit / Nur Farah Nabilah Ishak",
-  "year": 2020,
-  "doi": null,
-  "pmid": null,
-  "journal": "UiTM Institutional Repositories (Universiti Teknologi MARA)",
-  "excludedBecause": "no tea or food context"
  },
  {
   "title": "\"Jag har ju inte riktigt sökt jobb – jag har mera fått\". Skärningspunkter mellan slump och hårt arbete - karriärskapande för medie- och kommunikationsvetare",
@@ -3816,30 +3904,6 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Bränslehedging : Hur säkrar flygbolagen sig mot ett högt oljepris?",
-  "year": 2006,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Elevers läsvanor och tidigare erfarenheter i undervisningen",
-  "year": 2015,
-  "doi": null,
-  "pmid": null,
-  "journal": "Malmö University Publications (Malmö University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "GhosTea: A multiple case study on Ghosting among Filipino young adults",
-  "year": 2023,
-  "doi": "10.31124/advance.23612205",
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Rangerbangårdars kapacitet i långsiktiga trafikprognoser",
   "year": 2025,
   "doi": null,
@@ -3848,28 +3912,20 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "تطوير بيئة الواقع المعزز في ضوء تطبيق ployedres Augments- Mirag لتنمية مهارات التصور البصري ومهارات التفكير الرياضي لدى تلاميذ المرحلة الإعدادية",
-  "year": 2023,
-  "doi": "10.21608/maed.2023.303114",
+  "title": "Itsuki and I",
+  "year": 2018,
+  "doi": "10.1353/ccr.2018.0078",
   "pmid": null,
-  "journal": "Maǧallaẗ Kulliyyaẗ Al-Tarbiyyaẗ Bil-Manṣūraẗ",
+  "journal": "Cream city review",
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Influencers - vägen till framgång? : En studie om företags arbete med influencers",
-  "year": 2017,
-  "doi": null,
+  "title": "Cooler",
+  "year": 2023,
+  "doi": "10.1353/thr.2023.a911584",
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Sensorfusion för ACC-System",
-  "year": 2007,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+  "journal": "The Hopkins review/Hopkins review",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Terrestrial photogrammetry for velocity measurement of Kronebreen calving front",
@@ -3888,27 +3944,27 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Influencers - vägen till framgång? : En studie om företags arbete med influencers",
+  "year": 2017,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Sensorfusion för ACC-System",
+  "year": 2007,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
   "title": "Intelligent student performance analytics system using Java APIs, PHP web dashboard, and MySQL: Predictive modeling with explainable AI",
   "year": 2026,
   "doi": "10.33545/27076571.2026.v7.i1b.248",
   "pmid": null,
   "journal": "International Journal of Computing and Artificial Intelligence",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Beteendemässig fokus: Låga bytesbarriärers påverkan på lojalitetsskapande CRM-arbete",
-  "year": 2010,
-  "doi": null,
-  "pmid": null,
-  "journal": "Hogskolan Ihalmstad (Halmstad University)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Desenvolvimento de Modelos de Visualização de Dados para Acompanhamento de Fenômenos Educacionais",
-  "year": 2023,
-  "doi": null,
-  "pmid": null,
-  "journal": "Anais da Mostra de Extensão, Inovação e Pesquisa",
   "excludedBecause": "no tea or food context"
  },
  {
@@ -3920,28 +3976,12 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Produktutveckling av nyckelhålsmärkt paj : En sensorisk studie om konsumenters acceptans av framtagen paj och färdigpaj",
-  "year": 2013,
+  "title": "Beteendemässig fokus: Låga bytesbarriärers påverkan på lojalitetsskapande CRM-arbete",
+  "year": 2010,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "Hogskolan Ihalmstad (Halmstad University)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Ledarskapsutbildningen STyrkelyftet Läkarnas räddning i strömmen av krav på ledarskapskompetens inom vården idag",
-  "year": 2004,
-  "doi": null,
-  "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Perencanaan home industry silky drink \"Soiky\" dengan kapasitas produksi 300 botol @ 350 mL per hari",
-  "year": 2017,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Jobbcoachers muntliga relationskompetens - En studie om jobbcoachers beskrivning av mötet med arbetssökande",
@@ -3952,11 +3992,27 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "ICU nurses’ reasoning and notions about donation aftercirculatory death",
-  "year": 2019,
+  "title": "Desenvolvimento de Modelos de Visualização de Dados para Acompanhamento de Fenômenos Educacionais",
+  "year": 2023,
   "doi": null,
   "pmid": null,
-  "journal": "Epubl LTU",
+  "journal": "Anais da Mostra de Extensão, Inovação e Pesquisa",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Perencanaan home industry silky drink \"Soiky\" dengan kapasitas produksi 300 botol @ 350 mL per hari",
+  "year": 2017,
+  "doi": null,
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "no tea or food context"
+ },
+ {
+  "title": "Ledarskapsutbildningen STyrkelyftet Läkarnas räddning i strömmen av krav på ledarskapskompetens inom vården idag",
+  "year": 2004,
+  "doi": null,
+  "pmid": null,
+  "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -3968,12 +4024,20 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Implementasi Kegiatan Sensus Ekonomi dan Pengolahan Data Statistik pada Badan Pusat Statistik Kota Palangka Raya",
-  "year": 2026,
-  "doi": "10.31004/riggs.v5i2.9005",
+  "title": "ICU nurses’ reasoning and notions about donation aftercirculatory death",
+  "year": 2019,
+  "doi": null,
   "pmid": null,
-  "journal": "RIGGS Journal of Artificial Intelligence and Digital Business",
-  "excludedBecause": "no tea or food context"
+  "journal": "Epubl LTU",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Produktutveckling av nyckelhålsmärkt paj : En sensorisk studie om konsumenters acceptans av framtagen paj och färdigpaj",
+  "year": 2013,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Konstruktionsstudie av sugkoppsmodul",
@@ -3982,6 +4046,14 @@
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Implementasi Kegiatan Sensus Ekonomi dan Pengolahan Data Statistik pada Badan Pusat Statistik Kota Palangka Raya",
+  "year": 2026,
+  "doi": "10.31004/riggs.v5i2.9005",
+  "pmid": null,
+  "journal": "RIGGS Journal of Artificial Intelligence and Digital Business",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Exploring and Rebuilding Reality : Learning 3D Reconstruction from Capturing Images to Building Photorealistic Representations",
@@ -4000,20 +4072,20 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Värdet av Personligheter i Front-End Innovation",
-  "year": 2016,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Internal communication and motivation",
   "year": 2014,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Värdet av Personligheter i Front-End Innovation",
+  "year": 2016,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Hub. 0813 2941 650, Rekomendasi restoran keluarga di Djoglo Bercakap Nganjuk",
@@ -4040,20 +4112,20 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Seasonal organizations – See you again next year? : A quantitative study about individual motivators in seasonal tourism organizations",
-  "year": 2016,
-  "doi": null,
-  "pmid": null,
-  "journal": "University Library of Skövde (University of Skövde)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Sjöfart mot svensk hamn 2007 till 2019 : förändringar i volym, struktur och rörelsemönster",
   "year": 2021,
   "doi": null,
   "pmid": null,
   "journal": "DiVA at Umeå University (Umeå University)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Seasonal organizations – See you again next year? : A quantitative study about individual motivators in seasonal tourism organizations",
+  "year": 2016,
+  "doi": null,
+  "pmid": null,
+  "journal": "University Library of Skövde (University of Skövde)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Populärfilm i undervisningen : en handledning",
@@ -4080,19 +4152,19 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Verksamhetsstyrning inom ett hotell",
-  "year": 2005,
-  "doi": null,
-  "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Native advertising på sociala medier: en explorativ jämförelse mellan Sverige och Bangladesh : En kvalitativ studie om unga vuxnas uppfattningar om transparens och trovärdighet",
   "year": 2026,
   "doi": null,
   "pmid": null,
   "journal": "DiVA (Södertörn University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Verksamhetsstyrning inom ett hotell",
+  "year": 2005,
+  "doi": null,
+  "pmid": null,
+  "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4120,14 +4192,6 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Modellering av Åkkomforten i en Skotare",
-  "year": 2011,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
   "title": "Maintenance fund in Housing Corporation : - a sustainable solution?",
   "year": 2009,
   "doi": null,
@@ -4144,20 +4208,12 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "S4123 A Not-So-Healthy Dose of Turmeric: An Unusual Cause of Iron Deficiency Anemia",
-  "year": 2025,
-  "doi": "10.14309/01.ajg.0001143952.96699.91",
-  "pmid": null,
-  "journal": "The American Journal of Gastroenterology",
-  "excludedBecause": "no tea or food context"
- },
- {
-  "title": "Skönmålning i personlighetstest",
-  "year": 2013,
+  "title": "Modellering av Åkkomforten i en Skotare",
+  "year": 2011,
   "doi": null,
   "pmid": null,
-  "journal": "RePEc: Research Papers in Economics",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Kritiska faktorer inom lojalitetsprogram",
@@ -4176,35 +4232,11 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Implementation av binary messages i AIS och användargränssnitt för egendefinierade meddelanden",
-  "year": 2016,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Optimeringsmodell för produktallokering : Baserat på processkartläggning och klassificering, en fallstudie",
-  "year": 2017,
-  "doi": null,
-  "pmid": null,
-  "journal": "Diva portal (Dalarna University Library)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Infrared Spectroscopy of Small Biomolecules in the Gas Phase",
   "year": 2025,
   "doi": null,
   "pmid": null,
   "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Beställarkompetens eller relationsbyggande? : Om begreppsförvirring i jakten på ett gott SAM-arbete",
-  "year": 2010,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4224,6 +4256,14 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Implementation av binary messages i AIS och användargränssnitt för egendefinierade meddelanden",
+  "year": 2016,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
   "title": "Styrningens roll vid en strategiförändring : - från eftermarknad till att inkludera serieproduktion",
   "year": 2019,
   "doi": null,
@@ -4238,6 +4278,38 @@
   "pmid": null,
   "journal": "DiVA (Linnaeus University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Optimeringsmodell för produktallokering : Baserat på processkartläggning och klassificering, en fallstudie",
+  "year": 2017,
+  "doi": null,
+  "pmid": null,
+  "journal": "Diva portal (Dalarna University Library)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Skönmålning i personlighetstest",
+  "year": 2013,
+  "doi": null,
+  "pmid": null,
+  "journal": "RePEc: Research Papers in Economics",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Beställarkompetens eller relationsbyggande? : Om begreppsförvirring i jakten på ett gott SAM-arbete",
+  "year": 2010,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "S4123 A Not-So-Healthy Dose of Turmeric: An Unusual Cause of Iron Deficiency Anemia",
+  "year": 2025,
+  "doi": "10.14309/01.ajg.0001143952.96699.91",
+  "pmid": null,
+  "journal": "The American Journal of Gastroenterology",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Rådgivare, vägledare och mäklare – om grundskolans roll och betydelse för gymnasievalet",
@@ -4296,22 +4368,6 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Jämförande livscykelanalys av motsvarande tegel- och träkonstruktioner",
-  "year": 2014,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Läkarbesök och läkemedelskonsumtion bland barn med astma, diabetes och andra kroniska sjukdomar : Ett metodexempel på hur journaldata kan omvandlas till epidemiologi och sjukvårdskostnader",
-  "year": 2017,
-  "doi": null,
-  "pmid": null,
-  "journal": "DiVA (Linkoping University)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
   "title": "Effektiva försvarsmakter? : Internationell benchmarkingstudie av försvarsmakter i länder med och utan värnplikt och med internationella insatser i fokus",
   "year": 2006,
   "doi": null,
@@ -4320,11 +4376,11 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Specifik värmeanvändning : Metod för framtagning av den specifika värmeanvändningen för fjärrvärmeanslutna flerbostadshus via Metrias fastighetsregister",
-  "year": 2013,
+  "title": "Jämförande livscykelanalys av motsvarande tegel- och träkonstruktioner",
+  "year": 2014,
   "doi": null,
   "pmid": null,
-  "journal": "Hogskolan Ihalmstad (Halmstad University)",
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
@@ -4352,6 +4408,30 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Läkarbesök och läkemedelskonsumtion bland barn med astma, diabetes och andra kroniska sjukdomar : Ett metodexempel på hur journaldata kan omvandlas till epidemiologi och sjukvårdskostnader",
+  "year": 2017,
+  "doi": null,
+  "pmid": null,
+  "journal": "DiVA (Linkoping University)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Specifik värmeanvändning : Metod för framtagning av den specifika värmeanvändningen för fjärrvärmeanslutna flerbostadshus via Metrias fastighetsregister",
+  "year": 2013,
+  "doi": null,
+  "pmid": null,
+  "journal": "Hogskolan Ihalmstad (Halmstad University)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Life Science på östgötska : förslag till Life science-satsning i Östergötland.",
+  "year": 2018,
+  "doi": null,
+  "pmid": null,
+  "journal": "DiVA (Linkoping University)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
   "title": "Provider Evaluation of a Novel Virtual Hybrid Hospital at Home Model",
   "year": 2022,
   "doi": null,
@@ -4365,14 +4445,6 @@
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Life Science på östgötska : förslag till Life science-satsning i Östergötland.",
-  "year": 2018,
-  "doi": null,
-  "pmid": null,
-  "journal": "DiVA (Linkoping University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4390,6 +4462,14 @@
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Some Items of Interest to Process R&D Chemists and Engineers",
+  "year": 2020,
+  "doi": "10.1021/acs.oprd.0c00290",
+  "pmid": null,
+  "journal": "Organic Process Research & Development",
+  "excludedBecause": "no tea or food context"
  },
  {
   "title": "Återtillverkning av fordonskomponenter : En komparativ studie av den svenska marknaden",
@@ -4416,28 +4496,28 @@
   "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
-  "title": "Not just clean and sober! : Employers view of aesthetic skill demands in the service sector.",
-  "year": 2005,
-  "doi": null,
-  "pmid": null,
-  "journal": "Diva portal (Dalarna University Library)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Some Items of Interest to Process R&D Chemists and Engineers",
-  "year": 2020,
-  "doi": "10.1021/acs.oprd.0c00290",
-  "pmid": null,
-  "journal": "Organic Process Research & Development",
-  "excludedBecause": "no tea or food context"
- },
- {
   "title": "Effektivisering av inköpsprocessen i modeföretag via olika styrmetoder i interorganisatoriska relationer",
   "year": 2013,
   "doi": null,
   "pmid": null,
   "journal": "Gothenburg University Publications Electronic Archive (Gothenburg University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Projektledning - Kompetens i utveckling : En kompetensutvecklingsmodell för projektledare",
+  "year": 2010,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "En innovationsmodell för ökad delaktighet",
+  "year": 2013,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Marknadsföringsstrategier inom fastighetsmäklarbranschen",
@@ -4480,20 +4560,20 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Projektledning - Kompetens i utveckling : En kompetensutvecklingsmodell för projektledare",
-  "year": 2010,
+  "title": "Användning av LiDAR och ArcGIS inom skogsbruk i Sverige",
+  "year": 2012,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "DiVA (University of Gävle)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "En innovationsmodell för ökad delaktighet",
-  "year": 2013,
+  "title": "Not just clean and sober! : Employers view of aesthetic skill demands in the service sector.",
+  "year": 2005,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+  "journal": "Diva portal (Dalarna University Library)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Fåglar i ett landskapsperspektiv – ett samarbete mellan Nationell Inventering av Landskapet i Sverige (NILS) och Svensk Fågeltaxering (SFT)",
@@ -4501,14 +4581,6 @@
   "doi": null,
   "pmid": null,
   "journal": "Epsilon Open Archive (Sveriges lantbruksuniversitet biblioteket (Swedish University of Agricultural Sciences))",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Användning av LiDAR och ArcGIS inom skogsbruk i Sverige",
-  "year": 2012,
-  "doi": null,
-  "pmid": null,
-  "journal": "DiVA (University of Gävle)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4528,19 +4600,19 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Kunskap om Kunskap - En fallstudie av Nationalencyklopedin AB",
-  "year": 2007,
-  "doi": null,
-  "pmid": null,
-  "journal": "Hogskolan Ihalmstad (Halmstad University)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Resilience of aquatic ecosystems",
   "year": 2013,
   "doi": null,
   "pmid": null,
   "journal": "Epsilon Open Archive (Sveriges lantbruksuniversitet biblioteket (Swedish University of Agricultural Sciences))",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Kunskap om Kunskap - En fallstudie av Nationalencyklopedin AB",
+  "year": 2007,
+  "doi": null,
+  "pmid": null,
+  "journal": "Hogskolan Ihalmstad (Halmstad University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4584,22 +4656,6 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Analys av skräddarsytt system för datainläsning",
-  "year": 2009,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Kursplanen-hur används den av lärare?",
-  "year": 2010,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Fournier’s gangrene in recent transplant recipient on empagliflozin",
   "year": 2024,
   "doi": "10.1016/j.jhlto.2024.100060",
@@ -4624,11 +4680,27 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Framtidens Projektledare, i en digital och global byggbransch",
-  "year": 2020,
+  "title": "Analys av skräddarsytt system för datainläsning",
+  "year": 2009,
   "doi": null,
   "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Kursplanen-hur används den av lärare?",
+  "year": 2010,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Employer branding och Corporate Social Responsibility : En studie om hur CSR kan stärka ett företags employer brand",
+  "year": 2019,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4640,11 +4712,11 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Employer branding och Corporate Social Responsibility : En studie om hur CSR kan stärka ett företags employer brand",
-  "year": 2019,
+  "title": "Framtidens Projektledare, i en digital och global byggbransch",
+  "year": 2020,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4653,22 +4725,6 @@
   "doi": null,
   "pmid": null,
   "journal": "",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
-  "title": "Betydelsen av position, sammanhang och relationen för svenska socialarbetare förståelse för unga män som utsatts för våld",
-  "year": 2014,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
-  "title": "Framtida möjligheter på den växtbaserade mejerimarknaden",
-  "year": 2015,
-  "doi": null,
-  "pmid": null,
-  "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4688,11 +4744,19 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Uthålliga alternativ till fossil olja som bränsle vid torkning av spannmål",
+  "title": "Betydelsen av position, sammanhang och relationen för svenska socialarbetare förståelse för unga män som utsatts för våld",
+  "year": 2014,
+  "doi": null,
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Framtida möjligheter på den växtbaserade mejerimarknaden",
   "year": 2015,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "Lund University Publications Student Papers (Lund University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
@@ -4704,8 +4768,8 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Beräkningsmetoder för formverifiering av friformsytor",
-  "year": 2011,
+  "title": "Uthålliga alternativ till fossil olja som bränsle vid torkning av spannmål",
+  "year": 2015,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
@@ -4720,6 +4784,14 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Beräkningsmetoder för formverifiering av friformsytor",
+  "year": 2011,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
   "title": "Den successiva vinstavräkningen : Ger den successiva vinstavräkningen en rättvisade bild av företagets resultat och ställning?",
   "year": 2006,
   "doi": null,
@@ -4728,12 +4800,12 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Java exception matching in real time using fuzzy logic",
-  "year": 2010,
+  "title": "Architectural visualization techniques : A case study on opportunities and challenges with visualizations as a source of information",
+  "year": 2021,
   "doi": null,
   "pmid": null,
-  "journal": "Chalmers Publication Library (Chalmers University of Technology)",
-  "excludedBecause": "unrelated computing paper (a model named Matcha)"
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Transporttjänsten",
@@ -4744,12 +4816,12 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
-  "title": "Architectural visualization techniques : A case study on opportunities and challenges with visualizations as a source of information",
-  "year": 2021,
+  "title": "Java exception matching in real time using fuzzy logic",
+  "year": 2010,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+  "journal": "Chalmers Publication Library (Chalmers University of Technology)",
+  "excludedBecause": "unrelated computing paper (a model named Matcha)"
  },
  {
   "title": "Revisionsteamets sammansättning : Rekryterare och teamsammansättares syn på individers personliga egenskaper",
@@ -4768,14 +4840,6 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Äldres vårdval och matchning av vård",
-  "year": 2018,
-  "doi": null,
-  "pmid": null,
-  "journal": "Lund University Publications (Lund University)",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
   "title": "Reply to Ozaras et al",
   "year": 2017,
   "doi": "10.1093/cid/cix213",
@@ -4784,11 +4848,11 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Lastbilsinvesteringar. : En fallstudie av två åkerier i Umeå.",
-  "year": 2009,
+  "title": "Äldres vårdval och matchning av vård",
+  "year": 2018,
   "doi": null,
   "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "journal": "Lund University Publications (Lund University)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
@@ -4800,6 +4864,14 @@
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
+  "title": "Att få ett riktigt jobb : En studie om att nå anställning på den reguljära arbetsmarknaden utifrån arbetstagares med funktionsnedsättning, arbetskonsulenters och arbetsgivares perspektiv",
+  "year": 2014,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
   "title": "Monkey Woman / Mujer mono",
   "year": 2006,
   "doi": "10.1353/sir.2006.0005",
@@ -4808,8 +4880,8 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Att få ett riktigt jobb : En studie om att nå anställning på den reguljära arbetsmarknaden utifrån arbetstagares med funktionsnedsättning, arbetskonsulenters och arbetsgivares perspektiv",
-  "year": 2014,
+  "title": "Lastbilsinvesteringar. : En fallstudie av två åkerier i Umeå.",
+  "year": 2009,
   "doi": null,
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
@@ -4824,20 +4896,20 @@
   "excludedBecause": "no tea or food context"
  },
  {
-  "title": "Konsten att göra Kimchi – Hur påverkar saltet fermenteringen?",
-  "year": 2019,
-  "doi": null,
-  "pmid": null,
-  "journal": "",
-  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
- },
- {
   "title": "Investeringsbedömning : En studie om investeringsbedömningen i ett antal svenska tillverkande företag",
   "year": 2007,
   "doi": null,
   "pmid": null,
   "journal": "Digitala vetenskapliga arkivet (Diva) (Karlstad University)",
   "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
+ },
+ {
+  "title": "Konsten att göra Kimchi – Hur påverkar saltet fermenteringen?",
+  "year": 2019,
+  "doi": null,
+  "pmid": null,
+  "journal": "",
+  "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
   "title": "Dream State (As Camouflage), and Dream State (As Strained Pineapple)",
@@ -4856,14 +4928,6 @@
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
  },
  {
-  "title": "Använding av geometrisk akustik för beräkning av efterklangstid i idrottshallar",
-  "year": 2015,
-  "doi": null,
-  "pmid": null,
-  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
-  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
- },
- {
   "title": "Annals On Call - SGLT2 Inhibitors: The Good, the Bad, and the Ugly",
   "year": 2019,
   "doi": "10.7326/a19-0011",
@@ -4878,6 +4942,14 @@
   "pmid": null,
   "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
   "excludedBecause": "matcha not found in title/abstract/keywords/subject terms"
+ },
+ {
+  "title": "Använding av geometrisk akustik för beräkning av efterklangstid i idrottshallar",
+  "year": 2015,
+  "doi": null,
+  "pmid": null,
+  "journal": "KTH Publication Database DiVA (KTH Royal Institute of Technology)",
+  "excludedBecause": "non-English text where 'matcha' is the verb 'to match'"
  },
  {
   "title": "Förstudie för att förbättra urpetare (beslutsunderlag)",
