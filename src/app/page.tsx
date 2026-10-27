@@ -157,7 +157,7 @@ export default async function Home({
       </section>
 
       <section className="max-w-6xl mx-auto px-6 pt-14 pb-2 text-center">
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">Popular brands in the database</h2>
+        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">Brands we track</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8 items-start">
           {POPULAR_BRANDS.map((b) => (
             <Link
