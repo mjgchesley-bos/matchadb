@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getRegionCounts, getStats } from "@/lib/db";
+import { getMapBreakdown, getRegionCounts, getStats } from "@/lib/db";
 import { SourcingMap } from "@/components/SourcingMap";
 import { FARM_LOCATIONS } from "@/lib/farms";
 import { SITE_URL } from "@/lib/site";
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function MapPage() {
-  const [regionCounts, stats] = await Promise.all([getRegionCounts(), getStats()]);
+  const [regionCounts, stats, breakdown] = await Promise.all([getRegionCounts(), getStats(), getMapBreakdown()]);
   const totalWithRegion = regionCounts.reduce((sum, r) => sum + r.count, 0);
 
   return (
@@ -32,7 +32,7 @@ export default async function MapPage() {
         </p>
       </div>
 
-      <SourcingMap regionCounts={regionCounts} farmLocations={FARM_LOCATIONS} />
+      <SourcingMap regionCounts={regionCounts} farmLocations={FARM_LOCATIONS} breakdown={breakdown} />
     </main>
   );
 }

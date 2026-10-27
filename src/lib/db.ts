@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { PRICE_TIER_CHEAP_MAX, PRICE_TIER_MID_MAX } from "./price";
 import { getExternalLinkInfo } from "./links";
+import { PLACES } from "./places";
 import { BRAND_RECOGNITION_SCORES, DEFAULT_RECOGNITION_SCORE, getBrandRecognitionScore } from "./brand-recognition";
 
 let dbPromise: Promise<Database> | null = null;
@@ -523,6 +524,65 @@ export async function getRegionCounts() {
       "SELECT region, COUNT(*) as count FROM products WHERE region IS NOT NULL GROUP BY region ORDER BY count DESC"
     )
   );
+}
+
+export type BrandCount = { brand: string; count: number };
+export type PlaceBreakdown = { key: string; count: number; brands: BrandCount[] };
+export type MapBreakdown = { regions: Record<string, BrandCount[]>; places: PlaceBreakdown[] };
+
+// The free-text fields where brands describe where a product's leaf comes from.
+const ORIGIN_FIELDS = [
+  "region_farm", "origin_region", "origin", "region_origin", "sourcing_region", "producer", "maker",
+  "tea_gardens", "tea_garden", "farm", "farm_region", "farm_location_detail", "origin_region_farm",
+  "sourcing", "region", "growing_details", "harvest_info", "origin_claim", "sourcing_details",
+  "region_of_origin", "origin_general", "leaf_sourcing_official_site", "farm_location",
+];
+
+let mapBreakdownCache: MapBreakdown | null = null;
+
+// Which brands sit behind each map number: per region, and per named district
+// (Ogura, Kirishima...) where a brand's own origin text names one. Places only
+// count when the product's region bucket matches, and a place needs two or more
+// products to appear, so one stray mention never makes a pin.
+export async function getMapBreakdown(): Promise<MapBreakdown> {
+  if (mapBreakdownCache) return mapBreakdownCache;
+  const db = await getDb();
+  const rows = rowsToObjects<{ brand: string; region: string; disclosed_json: string | null }>(
+    db.exec(
+      "SELECT b.name AS brand, p.region AS region, p.disclosed_json AS disclosed_json FROM products p JOIN brands b ON b.id = p.brand_id WHERE p.region IS NOT NULL"
+    )
+  );
+  const regions = new Map<string, Map<string, number>>();
+  const placeCounts = new Map<string, Map<string, number>>();
+  const matchers = PLACES.map((pl) => ({ pl, re: new RegExp(`(?<![A-Za-z])(?:${pl.terms.join("|")})(?![a-z])`, "i") }));
+  const bump = (m: Map<string, Map<string, number>>, key: string, brand: string) => {
+    const inner = m.get(key) ?? new Map<string, number>();
+    inner.set(brand, (inner.get(brand) ?? 0) + 1);
+    m.set(key, inner);
+  };
+  for (const row of rows) {
+    bump(regions, row.region, row.brand);
+    if (!row.disclosed_json) continue;
+    let o: Record<string, unknown>;
+    try {
+      o = JSON.parse(row.disclosed_json);
+    } catch {
+      continue;
+    }
+    const text = ORIGIN_FIELDS.map((f) => (typeof o[f] === "string" ? (o[f] as string) : "")).join(" | ");
+    for (const { pl, re } of matchers) {
+      if (pl.regions.includes(row.region) && re.test(text)) bump(placeCounts, pl.key, row.brand);
+    }
+  }
+  const toList = (m: Map<string, number>): BrandCount[] =>
+    [...m].map(([brand, count]) => ({ brand, count })).sort((a, b) => b.count - a.count || a.brand.localeCompare(b.brand));
+  mapBreakdownCache = {
+    regions: Object.fromEntries([...regions].map(([k, v]) => [k, toList(v)])),
+    places: [...placeCounts]
+      .map(([key, m]) => ({ key, brands: toList(m), count: [...m.values()].reduce((a, b) => a + b, 0) }))
+      .filter((p) => p.count >= 2),
+  };
+  return mapBreakdownCache;
 }
 
 export async function getProductById(id: number) {

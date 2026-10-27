@@ -1,13 +1,34 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { REGION_COORDINATES } from "@/lib/regions";
+import { PLACES } from "@/lib/places";
 import type { FarmLocation } from "@/lib/farms";
+import type { BrandCount, MapBreakdown } from "@/lib/db";
 
 export type RegionCount = { region: string; count: number };
+
+// One row of the "in view" list under the map: a region or a named district,
+// with the brands that source from it.
+type ViewEntry = { id: string; name: string; sub: string; count: number; brands: BrandCount[]; kind: "region" | "place"; href: string };
+
+const escapeHtml = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
+
+// Brand list for a popup: every brand, most products first, scrollable, each a
+// link to its brand page.
+function brandListHtml(brands: BrandCount[]): string {
+  if (!brands.length) return "";
+  const items = brands
+    .map(
+      (b) =>
+        `<li style="display:flex;justify-content:space-between;gap:12px;"><a href="/brands/${encodeURIComponent(b.brand)}" style="color:#2b5a20;text-decoration:underline;">${escapeHtml(b.brand)}</a><span style="opacity:0.65;">${b.count}</span></li>`
+    )
+    .join("");
+  return `<div style="margin-top:6px;font-size:12px;"><div style="opacity:0.7;margin-bottom:3px;">${brands.length} brand${brands.length === 1 ? "" : "s"}</div><ul style="list-style:none;margin:0;padding:0;max-height:170px;overflow:auto;display:flex;flex-direction:column;gap:2px;">${items}</ul></div>`;
+}
 
 // Small count-badge marker, not the primary region shape anymore -- kept
 // modest and only mildly size-scaled so it doesn't visually compete with
@@ -76,12 +97,15 @@ function boundsOf(geometry: GeoJSON.Geometry): mapboxgl.LngLatBounds {
 export function SourcingMap({
   regionCounts,
   farmLocations = [],
+  breakdown,
 }: {
   regionCounts: RegionCount[];
   farmLocations?: FarmLocation[];
+  breakdown: MapBreakdown;
 }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const [inView, setInView] = useState<{ zoom: number; entries: ViewEntry[] }>({ zoom: 3.2, entries: [] });
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
@@ -110,6 +134,20 @@ export function SourcingMap({
 
     const maxCount = Math.max(...regionCounts.map((r) => r.count));
     let active = true;
+
+    // Region count badges are large; zoomed in close they would sit on top of
+    // the district dots they contain (Uji's badge covers Ogura), so they fade
+    // out and the districts, labels and boundary shapes take over.
+    const badgeEls: HTMLElement[] = [];
+    const BADGE_FADE_ZOOM = 10.5;
+    function syncBadges() {
+      const hidden = map.getZoom() >= BADGE_FADE_ZOOM;
+      badgeEls.forEach((el) => {
+        // `visibility`, not `opacity`: Mapbox manages a marker's opacity itself and overwrites it.
+        el.style.visibility = hidden ? "hidden" : "visible";
+      });
+    }
+    map.on("zoom", syncBadges);
 
     async function setupRegions() {
       await waitForStyle(map);
@@ -140,6 +178,7 @@ export function SourcingMap({
         const popupHtml = `<div style="font-family: var(--font-manrope), sans-serif; padding: 2px; color: #1a1a1a;">
              <strong>${info.name}</strong>, ${info.country}<br/>
              ${count} product${count === 1 ? "" : "s"}
+             ${brandListHtml(breakdown.regions[region] ?? [])}
              ${
                boundary
                  ? info.precision === "country"
@@ -177,6 +216,8 @@ export function SourcingMap({
             map.getCanvas().style.cursor = "";
           });
           map.on("click", `${sourceId}-fill`, (e) => {
+            // A district dot sitting inside this outline gets the click, not the region.
+            if (map.getLayer("places-dot") && map.queryRenderedFeatures(e.point, { layers: ["places-dot"] }).length) return;
             popup.setLngLat(e.lngLat).addTo(map);
             // A town-sized region is only a few pixels across at the
             // map's default zoom -- zoom to its real extent so the
@@ -206,6 +247,7 @@ export function SourcingMap({
         el.textContent = String(count);
         el.setAttribute("role", "button");
         el.setAttribute("aria-label", `${region}: ${count} products`);
+        badgeEls.push(el);
 
         const badgePopup = new mapboxgl.Popup({ offset: size / 2 + 6, closeButton: false }).setHTML(popupHtml);
 
@@ -217,7 +259,7 @@ export function SourcingMap({
       });
     }
 
-    setupRegions();
+    setupRegions().then(syncBadges);
 
     // A second layer: real named farms/gardens, each independently
     // verified against the brand's own page (see src/lib/farms.ts for how
@@ -302,13 +344,149 @@ export function SourcingMap({
 
     setupFarms();
 
+    // Finer detail than the region level: named districts and towns that brands
+    // disclosed (see src/lib/places.ts), plus name labels for every region.
+    // Both are symbol layers, so Mapbox decides which names have room to show:
+    // zoom in and more of them appear, with no labels piled on top of each other.
+    const regionPts = regionCounts.flatMap(({ region, count }) => {
+      const info = REGION_COORDINATES[region];
+      if (!info) return [];
+      const entry: ViewEntry = {
+        id: `r-${region}`,
+        name: info.name,
+        sub: info.country,
+        count,
+        brands: breakdown.regions[region] ?? [],
+        kind: "region",
+        href: `/browse?region=${encodeURIComponent(region)}`,
+      };
+      return [{ lng: info.lng, lat: info.lat, entry }];
+    });
+    const placePts = breakdown.places.flatMap((bp) => {
+      const pl = PLACES.find((p) => p.key === bp.key);
+      if (!pl) return [];
+      const entry: ViewEntry = { id: `p-${pl.key}`, name: pl.name, sub: pl.area, count: bp.count, brands: bp.brands, kind: "place", href: `/browse?region=${encodeURIComponent(pl.regions[0])}` };
+      return [{ lng: pl.lng, lat: pl.lat, entry }];
+    });
+
+    function updateView() {
+      const bounds = map.getBounds();
+      const zoom = map.getZoom();
+      if (!bounds) return;
+      const entries = [...regionPts, ...(zoom >= 6.5 ? placePts : [])]
+        .filter((p) => bounds.contains([p.lng, p.lat]))
+        .map((p) => p.entry)
+        .sort((a, b) => (a.kind === b.kind ? b.count - a.count : a.kind === "region" ? -1 : 1));
+      setInView({ zoom, entries });
+    }
+
+    async function setupPlaces() {
+      await waitForStyle(map);
+      if (!active) return;
+
+      map.addSource("region-labels", {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: regionPts.map((p) => ({
+            type: "Feature" as const,
+            geometry: { type: "Point" as const, coordinates: [p.lng, p.lat] },
+            properties: { name: p.entry.name, count: p.entry.count },
+          })),
+        },
+      });
+      map.addLayer({
+        id: "region-labels",
+        type: "symbol",
+        source: "region-labels",
+        minzoom: 4.5,
+        layout: {
+          "text-field": ["get", "name"],
+          "text-size": 12,
+          "text-offset": [0, 1.7],
+          "text-anchor": "top",
+          "text-font": ["DIN Pro Medium", "Arial Unicode MS Regular"],
+          "symbol-sort-key": ["*", -1, ["get", "count"]],
+        },
+        paint: { "text-color": "#1f3d17", "text-halo-color": "#fff6df", "text-halo-width": 1.5 },
+      });
+
+      map.addSource("places", {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: placePts.map((p) => ({
+            type: "Feature" as const,
+            geometry: { type: "Point" as const, coordinates: [p.lng, p.lat] },
+            properties: { id: p.entry.id, name: p.entry.name, count: p.entry.count },
+          })),
+        },
+      });
+      map.addLayer({
+        id: "places-dot",
+        type: "circle",
+        source: "places",
+        minzoom: 6.5,
+        paint: {
+          "circle-radius": ["interpolate", ["linear"], ["get", "count"], 2, 5, 20, 9],
+          "circle-color": "#3c7a2a",
+          "circle-stroke-color": "#fff6df",
+          "circle-stroke-width": 2,
+        },
+      });
+      map.addLayer({
+        id: "places-label",
+        type: "symbol",
+        source: "places",
+        minzoom: 7,
+        layout: {
+          "text-field": ["concat", ["get", "name"], " · ", ["to-string", ["get", "count"]]],
+          "text-size": 12,
+          "text-offset": [0, 1],
+          "text-anchor": "top",
+          "text-font": ["DIN Pro Medium", "Arial Unicode MS Regular"],
+          "symbol-sort-key": ["*", -1, ["get", "count"]],
+        },
+        paint: { "text-color": "#1f3d17", "text-halo-color": "#fff6df", "text-halo-width": 1.5 },
+      });
+
+      const placeById = new Map(placePts.map((p) => [p.entry.id, p]));
+      map.on("mouseenter", "places-dot", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "places-dot", () => {
+        map.getCanvas().style.cursor = "";
+      });
+      map.on("click", "places-dot", (e) => {
+        const id = e.features?.[0]?.properties?.id as string | undefined;
+        const p = id ? placeById.get(id) : undefined;
+        if (!p) return;
+        new mapboxgl.Popup({ closeButton: false, maxWidth: "260px", offset: 10 })
+          .setLngLat([p.lng, p.lat])
+          .setHTML(
+            `<div style="font-family: var(--font-manrope), sans-serif; padding: 2px; color: #1a1a1a;">
+               <strong>${escapeHtml(p.entry.name)}</strong>, ${escapeHtml(p.entry.sub)}<br/>
+               ${p.entry.count} product${p.entry.count === 1 ? "" : "s"} name this place
+               ${brandListHtml(p.entry.brands)}
+               <span style="display:block;margin-top:6px;opacity:0.7;font-size:11px;">district or town named by the brand -- not a single farm</span>
+             </div>`
+          )
+          .addTo(map);
+      });
+
+      updateView();
+    }
+
+    setupPlaces();
+    map.on("moveend", updateView);
+
     return () => {
       active = false;
       resizeObserver.disconnect();
       map.remove();
       mapRef.current = null;
     };
-  }, [regionCounts, farmLocations]);
+  }, [regionCounts, farmLocations, breakdown]);
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   if (!token) {
@@ -322,6 +500,69 @@ export function SourcingMap({
   return (
     <div className="flex flex-col gap-3">
       <div ref={containerRef} className="w-full h-[520px] rounded-sm overflow-hidden border border-line" />
+
+      <ul className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-ink-muted" aria-label="Map legend">
+        <li className="flex items-center gap-2">
+          <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full border-2 border-matcha bg-paper-raised px-1 text-[10px] font-semibold text-ink">12</span>
+          Region, with its product count
+        </li>
+        <li className="flex items-center gap-2">
+          <span className="inline-block h-3 w-3 rounded-full border-2 border-paper-raised bg-matcha ring-1 ring-matcha" />
+          District or town a brand named (appears as you zoom in)
+        </li>
+        <li className="flex items-center gap-2">
+          <span className="inline-block h-3 w-3 rotate-45 border-2 border-paper-raised bg-matcha ring-1 ring-matcha" />
+          Verified single farm
+        </li>
+      </ul>
+
+      <section aria-label="Brands in the current view" className="border border-line rounded-sm bg-paper-raised">
+        <div className="px-4 py-3 border-b border-line">
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest">Brands in view</h2>
+          <p className="text-xs text-ink-faint mt-1">
+            {inView.zoom < 6.5
+              ? "Zoom in to see the districts and towns brands name, or click any region for its full brand list."
+              : "Showing every region and named district inside the map. Pan or zoom and this list follows."}
+          </p>
+        </div>
+        {inView.entries.length === 0 ? (
+          <p className="px-4 py-4 text-sm text-ink-muted">Nothing sourced from this part of the map yet. Zoom out, or drag toward Japan.</p>
+        ) : (
+          <ul className="divide-y divide-line max-h-[420px] overflow-y-auto">
+            {inView.entries.map((e) => (
+              <li key={e.id} className="px-4 py-3">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <p className="text-sm text-ink">
+                    <span className="font-medium">{e.name}</span>
+                    <span className="text-ink-faint">
+                      {", "}
+                      {e.sub}
+                      {e.kind === "place" ? " · district named by brands" : ""}
+                    </span>
+                  </p>
+                  <Link href={e.href} className="text-xs text-matcha hover:text-forest transition-colors tabular-nums">
+                    {e.count} product{e.count === 1 ? "" : "s"} &rarr;
+                  </Link>
+                </div>
+                <p className="mt-1.5 flex flex-wrap gap-x-1 gap-y-1 text-sm">
+                  {e.brands.slice(0, 12).map((b) => (
+                    <Link
+                      key={b.brand}
+                      href={`/brands/${encodeURIComponent(b.brand)}`}
+                      className="rounded-full border border-line-strong px-2.5 py-0.5 text-ink-muted hover:border-matcha hover:text-matcha transition-colors"
+                    >
+                      {b.brand}
+                      <span className="ml-1 text-ink-faint tabular-nums">{b.count}</span>
+                    </Link>
+                  ))}
+                  {e.brands.length > 12 && <span className="px-1 py-0.5 text-xs text-ink-faint">+{e.brands.length - 12} more brands</span>}
+                </p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
       <p className="text-xs text-ink-faint">
         Green outlines are real administrative boundaries -- towns and provinces where a brand's own
         disclosure (or another verified source) named one, plus a couple of countries small enough
@@ -329,7 +570,10 @@ export function SourcingMap({
         more specific than a country the size of China, or span multiple prefectures with no single
         administrative boundary at all, show only a small point badge instead -- an outline there would
         overstate how precisely the sourcing is actually known. Click a shape (or its count badge) to
-        see products from that region. Diamond markers are specific named farms we independently
+        see its brands and products. Zoom in and smaller dots appear for the districts and towns brands
+        named on at least two products (Ogura, Kirishima, Hoshino and others); click one for the
+        brands behind it. Those are places a brand named, not farm locations, and the list under the
+        map follows whatever part of the map you are looking at. Diamond markers are specific named farms we independently
         verified beyond the region level; click one for its source and the exact products it supplies.
         No farm property boundaries are shown anywhere -- there's no public registry of land-parcel
         outlines for private tea farms --{" "}

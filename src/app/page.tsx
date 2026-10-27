@@ -156,6 +156,29 @@ export default async function Home({
         </div>
       </section>
 
+      <section className="max-w-5xl mx-auto px-6 pt-14 pb-2 text-center">
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Brands in the record</p>
+        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
+          Home to the names serious matcha drinkers know
+        </h2>
+        <div className="flex flex-wrap justify-center gap-4">
+          {POPULAR_BRANDS.map((b) => (
+            <Link
+              key={b}
+              href={`/brands/${encodeURIComponent(b)}`}
+              className="group flex flex-col items-center gap-2.5 w-36 p-3 rounded-sm border border-transparent hover:border-line transition-colors"
+            >
+              <span className="transition-transform group-hover:-translate-y-0.5">
+                <BrandLogo brandName={b} size={64} maxWidth={120} allowTallerThanSize />
+              </span>
+              <span className="text-sm text-ink-muted text-center leading-snug group-hover:text-ink transition-colors">
+                {b}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="max-w-4xl mx-auto px-6 py-10 text-center">
         <p className="font-mono text-sm sm:text-base tracking-[0.2em] uppercase text-forest mb-6">Matcha, matched</p>
 
@@ -203,29 +226,6 @@ export default async function Home({
               </Link>
             </div>
           )}
-        </div>
-      </section>
-
-      <section className="max-w-5xl mx-auto px-6 py-20 text-center">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Brands in the record</p>
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
-          Home to the names serious matcha drinkers know
-        </h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          {POPULAR_BRANDS.map((b) => (
-            <Link
-              key={b}
-              href={`/brands/${encodeURIComponent(b)}`}
-              className="group flex flex-col items-center gap-2.5 w-36 p-3 rounded-sm border border-transparent hover:border-line transition-colors"
-            >
-              <span className="transition-transform group-hover:-translate-y-0.5">
-                <BrandLogo brandName={b} size={64} maxWidth={120} allowTallerThanSize />
-              </span>
-              <span className="text-sm text-ink-muted text-center leading-snug group-hover:text-ink transition-colors">
-                {b}
-              </span>
-            </Link>
-          ))}
         </div>
       </section>
 
