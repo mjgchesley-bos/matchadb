@@ -156,20 +156,17 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pt-14 pb-2 text-center">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Brands in the record</p>
-        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">
-          Home to the names serious matcha drinkers know
-        </h2>
-        <div className="flex flex-wrap justify-center gap-4">
+      <section className="max-w-6xl mx-auto px-6 pt-14 pb-2 text-center">
+        <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-8">Popular brands in the database</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8 items-start">
           {POPULAR_BRANDS.map((b) => (
             <Link
               key={b}
               href={`/brands/${encodeURIComponent(b)}`}
-              className="group flex flex-col items-center gap-2.5 w-36 p-3 rounded-sm border border-transparent hover:border-line transition-colors"
+              className="group flex flex-col items-center gap-3 p-3 rounded-sm"
             >
               <span className="transition-transform group-hover:-translate-y-0.5">
-                <BrandLogo brandName={b} size={64} maxWidth={120} allowTallerThanSize />
+                <BrandLogo brandName={b} size={88} maxWidth={150} allowTallerThanSize plain />
               </span>
               <span className="text-sm text-ink-muted text-center leading-snug group-hover:text-ink transition-colors">
                 {b}

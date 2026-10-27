@@ -27,6 +27,7 @@ export function BrandLogo({
   size = 28,
   maxWidth,
   allowTallerThanSize = false,
+  plain = false,
 }: {
   brandName: string;
   size?: number;
@@ -46,6 +47,9 @@ export function BrandLogo({
   // never where it sits inline next to text at a fixed row height (the
   // ProductCard/TieredPickCard chips), which is why this defaults to off.
   allowTallerThanSize?: boolean;
+  // Drops the white chip and border so the logo sits directly on the page. A logo file with a baked-in
+  // white background still blends into the cream page (multiply), instead of showing a white box.
+  plain?: boolean;
 }) {
   const src = getBrandLogoPath(brandName);
   if (!src) return null;
@@ -68,7 +72,7 @@ export function BrandLogo({
   }
   return (
     <span
-      className="inline-flex items-center justify-center rounded-sm shrink-0 border border-line-strong/40 bg-white"
+      className={`inline-flex items-center justify-center shrink-0 ${plain ? "" : "rounded-sm border border-line-strong/40 bg-white"}`}
       style={{ height, width, color: "#1a1a1a" }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element -- local static
@@ -85,6 +89,7 @@ export function BrandLogo({
           objectFit: "contain",
           padding: 2,
           filter: invert ? "invert(1)" : undefined,
+          mixBlendMode: plain ? "multiply" : undefined,
         }}
       />
     </span>
