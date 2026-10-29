@@ -8,6 +8,7 @@ import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
+import { ShippingNote } from "@/components/ShippingNote";
 import { SITE_URL } from "@/lib/site";
 
 export async function generateMetadata({
@@ -81,7 +82,9 @@ export default async function BrandPage({
       <p className="text-sm text-ink-muted mb-3">
         {products.length} product{products.length === 1 ? "" : "s"} in the database
       </p>
-      <p className="text-ink-muted leading-relaxed max-w-2xl mb-8">{summary.join(" ")}</p>
+      <p className="text-ink-muted leading-relaxed max-w-2xl">{summary.join(" ")}</p>
+      <ShippingNote brand={brandName} />
+      <div className="mb-8" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {products.map((p) => {

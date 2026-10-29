@@ -4,6 +4,7 @@ import path from "node:path";
 import { PRICE_TIER_CHEAP_MAX, PRICE_TIER_MID_MAX } from "./price";
 import { getExternalLinkInfo } from "./links";
 import { PLACES } from "./places";
+import { brandsNotShippingTo, type ShipRegion } from "./shipping";
 import { BRAND_RECOGNITION_SCORES, DEFAULT_RECOGNITION_SCORE, getBrandRecognitionScore } from "./brand-recognition";
 
 let dbPromise: Promise<Database> | null = null;
@@ -101,9 +102,33 @@ export type BrowseFilters = {
   hasContradictionsOnly?: boolean;
   minPrice?: number;
   maxPrice?: number;
+  // Hide products from brands that are verified not to ship to this region
+  // (see shipping.ts). Undefined = show everything.
+  shipsTo?: ShipRegion;
   page?: number;
   pageSize?: number;
 };
+
+// SQL fragment (plus params) excluding brands that don't ship to `region`.
+function notShippedClause(region: ShipRegion | undefined): { sql: string; params: string[] } | null {
+  if (!region) return null;
+  const brands = brandsNotShippingTo(region);
+  if (!brands.length) return null;
+  return { sql: `b.name NOT IN (${brands.map(() => "?").join(",")})`, params: brands };
+}
+
+// How many products a shopper in `region` is not shown because their brand
+// states it doesn't ship there -- surfaced on the page so nothing vanishes silently.
+export async function getHiddenByShippingCount(region: ShipRegion): Promise<number> {
+  const brands = brandsNotShippingTo(region);
+  if (!brands.length) return 0;
+  const db = await getDb();
+  const res = db.exec(
+    `SELECT COUNT(*) FROM products p JOIN brands b ON p.brand_id = b.id WHERE p.not_found = 0 AND b.name IN (${brands.map(() => "?").join(",")})`,
+    brands
+  );
+  return res.length ? (res[0].values[0][0] as number) : 0;
+}
 
 function buildWhereClause(filters: BrowseFilters): { where: string[]; params: (string | number)[] } {
   const where: string[] = [];
@@ -154,6 +179,11 @@ function buildWhereClause(filters: BrowseFilters): { where: string[]; params: (s
   if (filters.maxPrice != null) {
     where.push("p.price_usd <= ?");
     params.push(filters.maxPrice);
+  }
+  const shipping = notShippedClause(filters.shipsTo);
+  if (shipping) {
+    where.push(shipping.sql);
+    params.push(...shipping.params);
   }
 
   return { where, params };
@@ -251,8 +281,9 @@ const EXCLUDE_NOVELTY_FORMATS_SQL = `
 // e.g. anything sold as "10 sticks" instead of grams) first in plain SQLite
 // ASC order, which would make an unpriced product look like the cheapest --
 // the explicit IS NULL check forces real prices to sort ahead of that.
-export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
+export async function getPopularProducts(limit: number, shipsTo?: ShipRegion): Promise<ProductRow[]> {
   const db = await getDb();
+  const shipping = notShippedClause(shipsTo);
   const res = db.exec(
     `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
             p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
@@ -262,11 +293,12 @@ export async function getPopularProducts(limit: number): Promise<ProductRow[]> {
             p.tasting_notes, p.flavor_tags, p.use_tags
      FROM products p
      JOIN brands b ON p.brand_id = b.id
-     WHERE p.not_found = 0 AND ${EXCLUDE_NOVELTY_FORMATS_SQL}
+     WHERE p.not_found = 0 AND ${EXCLUDE_NOVELTY_FORMATS_SQL}${shipping ? ` AND ${shipping.sql}` : ""}
      ORDER BY
        (p.grade IS NOT NULL AND p.region IS NOT NULL AND p.flavor_tags != '[]') DESC,
        (p.price_per_gram IS NULL) ASC,
-       p.price_per_gram ASC`
+       p.price_per_gram ASC`,
+    shipping ? shipping.params : []
   );
   const rows = rowsToObjects<ProductRow>(res);
 

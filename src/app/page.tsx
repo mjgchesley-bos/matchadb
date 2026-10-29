@@ -10,7 +10,8 @@ import {
   POPULAR_BRANDS,
   type BrowseFilters,
 } from "@/lib/db";
-import { toArr } from "@/lib/searchParams";
+import { toArr, toStr } from "@/lib/searchParams";
+import { resolveShipsTo } from "@/lib/shipping";
 import { ProductCard, TieredPickCard, BrandLogo } from "@/components/product-cards";
 import { MatchTool } from "@/components/MatchTool";
 import { JsonLd } from "@/components/JsonLd";
@@ -40,6 +41,8 @@ export default async function Home({
     grades: toArr(sp.grade),
     flavors: toArr(sp.flavor),
     uses: toArr(sp.use),
+    // Shoppers see products they can actually buy: hides brands verified not to ship to the US.
+    shipsTo: resolveShipsTo(toStr(sp.ships)),
     page: 1,
     pageSize: HOME_PAGE_SIZE,
   };
@@ -56,7 +59,7 @@ export default async function Home({
     getProducts(filters),
     getFilterOptions(),
     getTieredPicks(filters),
-    noFiltersSelected ? getPopularProducts(HOME_PAGE_SIZE) : Promise.resolve(null),
+    noFiltersSelected ? getPopularProducts(HOME_PAGE_SIZE, filters.shipsTo) : Promise.resolve(null),
   ]);
   const products = popularProducts ?? defaultProducts;
 

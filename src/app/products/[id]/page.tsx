@@ -12,6 +12,7 @@ import { getRegionInfo } from "@/lib/regions";
 import { REGION_CONTENT } from "@/lib/region-content";
 import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
+import { ShippingNote } from "@/components/ShippingNote";
 import { SITE_URL } from "@/lib/site";
 
 type Product = NonNullable<Awaited<ReturnType<typeof getProductById>>>;
@@ -383,6 +384,7 @@ export default async function ProductDetailPage({
             {product.product_name}
           </h1>
           {factsLine && <p className="text-ink-muted mt-2">{factsLine}</p>}
+          <ShippingNote brand={product.brand_name} />
 
           {product.flavorTags.length > 0 && (
             <div className="flex flex-wrap gap-1.5 mt-4">

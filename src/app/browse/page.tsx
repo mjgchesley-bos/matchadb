@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getProducts, getFilterOptions, getTieredPicks, type BrowseFilters } from "@/lib/db";
+import { getProducts, getFilterOptions, getTieredPicks, getHiddenByShippingCount, type BrowseFilters } from "@/lib/db";
+import { SHIP_REGION_LABEL, resolveShipsTo } from "@/lib/shipping";
 import { toStr, toArr, toNum } from "@/lib/searchParams";
 import { ProductCard, TieredPickCard } from "@/components/product-cards";
 import { FilterForm } from "@/components/FilterForm";
@@ -40,15 +41,26 @@ export default async function BrowsePage({
     hasContradictionsOnly: toStr(sp.hasContradictionsOnly) === "1",
     minPrice: toNum(sp.minPrice),
     maxPrice: toNum(sp.maxPrice),
+    shipsTo: resolveShipsTo(toStr(sp.ships)),
     page: toNum(sp.page) || 1,
     pageSize: PAGE_SIZE,
   };
 
-  const [{ products, total, page, totalPages }, filterOptions, tieredPicks] = await Promise.all([
+  const [{ products, total, page, totalPages }, filterOptions, tieredPicks, hiddenByShipping] = await Promise.all([
     getProducts(filters),
     getFilterOptions(),
     getTieredPicks(filters),
+    filters.shipsTo ? getHiddenByShippingCount(filters.shipsTo) : Promise.resolve(0),
   ]);
+  const showAllHref = (() => {
+    const params = new URLSearchParams();
+    for (const [k, v] of Object.entries(sp)) {
+      if (k === "page" || k === "ships" || !v) continue;
+      for (const item of Array.isArray(v) ? v : [v]) params.append(k, item);
+    }
+    params.set("ships", "any");
+    return `/browse?${params.toString()}`;
+  })();
 
   function pageHref(p: number) {
     const params = new URLSearchParams();
@@ -88,9 +100,19 @@ export default async function BrowsePage({
             </div>
           )}
 
-          <p className="text-sm text-ink-muted mb-5">
+          <p className="text-sm text-ink-muted mb-2">
             {total.toLocaleString()} product{total === 1 ? "" : "s"} found
           </p>
+          {filters.shipsTo && hiddenByShipping > 0 && (
+            <p className="text-xs text-ink-faint mb-5">
+              Showing brands that ship to the {SHIP_REGION_LABEL[filters.shipsTo]}. {hiddenByShipping} product{hiddenByShipping === 1 ? "" : "s"} from brands that
+              don&apos;t ship there {hiddenByShipping === 1 ? "is" : "are"} hidden.{" "}
+              <Link href={showAllHref} className="text-matcha hover:text-forest underline">
+                Show all
+              </Link>
+            </p>
+          )}
+          {!(filters.shipsTo && hiddenByShipping > 0) && <div className="mb-3" />}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.map((p) => (

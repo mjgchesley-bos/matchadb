@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { BrowseFilters } from "@/lib/db";
 import { gradeLabel } from "./product-cards";
 import { PillCheckbox } from "./PillCheckbox";
+import { SHIP_REGIONS, SHIP_REGION_LABEL } from "@/lib/shipping";
 
 // Usucha/Koicha are brewing styles, not a quality tier -- both still filter
 // on the same underlying `grade` column, but get their own labeled section
@@ -149,6 +150,20 @@ export function FilterForm({
               {r}
             </option>
           ))}
+        </select>
+      </div>
+
+      <div>
+        <label className={labelClass} htmlFor="ships">
+          Ships to
+        </label>
+        <select id="ships" name="ships" defaultValue={filters.shipsTo || "any"} className={fieldClass}>
+          {SHIP_REGIONS.map((r) => (
+            <option key={r} value={r}>
+              {SHIP_REGION_LABEL[r]}
+            </option>
+          ))}
+          <option value="any">Anywhere (show all)</option>
         </select>
       </div>
 

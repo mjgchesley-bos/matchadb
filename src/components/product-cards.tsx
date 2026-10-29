@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ProductRow } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
+import { ShippingChip } from "./ShippingNote";
 import { getBrandLogoPath, getBrandLogoRatio, logoNeedsInvert } from "@/lib/logos";
 
 // A brand logo chip sized by HEIGHT, not a forced square -- real logos are
@@ -128,6 +129,7 @@ export function ProductCard({ product: p }: { product: ProductRow }) {
           {p.organic_certified === 1 && (
             <span className="rounded-full bg-gold-soft text-gold px-2 py-0.5">Organic</span>
           )}
+          <ShippingChip brand={p.brand_name} />
           {(JSON.parse(p.flavor_tags) as string[]).slice(0, 2).map((tag) => (
             <span
               key={tag}
