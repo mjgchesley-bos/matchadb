@@ -97,7 +97,7 @@ export default function RootLayout({
               </span>
               <span className="h-1.5 w-1.5 rounded-full bg-paper ml-0.5 mb-0.5 transition-transform group-hover:scale-125" />
             </Link>
-            <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-4 text-[0.9rem]">
+            <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-4 text-[0.9rem] lg:mr-12">
               <Link
                 href="/map"
                 className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
@@ -112,7 +112,10 @@ export default function RootLayout({
                 <span className="sm:hidden">Search</span>
                 <span className="hidden sm:inline">Search full database</span>
               </Link>
-              <HeaderMenu />
+              {/* On wide screens the menu sits at the far right edge of the header, like Chrome's own. */}
+              <div className="lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2">
+                <HeaderMenu />
+              </div>
             </nav>
           </div>
         </header>
