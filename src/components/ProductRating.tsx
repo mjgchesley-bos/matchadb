@@ -63,6 +63,7 @@ export function ProductRating({ productId, productName }: { productId: number; p
         if (!res.ok) throw new Error(json.error || "Couldn't save your rating.");
         setState(json as State);
         setDraft(null);
+        window.gtag?.("event", "rating_submit", { product_id: productId, rating });
         setMessage("Thanks, your rating is saved.");
       } catch (e) {
         setMessage(e instanceof Error ? e.message : "Couldn't save your rating.");
