@@ -570,5 +570,9 @@
   "wakokoro-tea": {
     "file": "wakokoro-tea.png",
     "ratio": 1
+  },
+  "ao-tea": {
+    "file": "ao-tea.png",
+    "ratio": 4.54
   }
 }

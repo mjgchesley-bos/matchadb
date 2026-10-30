@@ -82,7 +82,6 @@ export const BRAND_SHIPPING: Record<string, BrandShipping> = {
     source: "https://matchaninja.com/policies/shipping-policy",
     checked: "2026-10-29",
   },
-  // Not in the database yet; recorded so it is flagged the day it is added.
   "AO Tea": {
     only: ["EU"],
     note: "Ships from Portugal to EU countries and does not offer standard shipping worldwide.",
