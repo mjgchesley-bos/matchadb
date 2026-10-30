@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getProducts, getFilterOptions, getTieredPicks, getHiddenByShippingCount, type BrowseFilters } from "@/lib/db";
+import { getProducts, getFilterOptions, getTieredPicks, getHiddenMatches, type BrowseFilters } from "@/lib/db";
 import { SHIP_REGION_LABEL, resolveShipsTo } from "@/lib/shipping";
 import { toStr, toArr, toNum } from "@/lib/searchParams";
 import { ProductCard, TieredPickCard } from "@/components/product-cards";
@@ -50,8 +50,11 @@ export default async function BrowsePage({
     getProducts(filters),
     getFilterOptions(),
     getTieredPicks(filters),
-    filters.shipsTo ? getHiddenByShippingCount(filters.shipsTo) : Promise.resolve(0),
+    filters.shipsTo ? getHiddenMatches(filters) : Promise.resolve({ count: 0, brands: [] as string[] }),
   ]);
+  const hiddenCount = hiddenByShipping.count;
+  const hiddenBrands = hiddenByShipping.brands;
+  const brandList = hiddenBrands.length <= 3 ? hiddenBrands.join(", ") : `${hiddenBrands.slice(0, 3).join(", ")} and ${hiddenBrands.length - 3} more`;
   const showAllHref = (() => {
     const params = new URLSearchParams();
     for (const [k, v] of Object.entries(sp)) {
@@ -103,16 +106,29 @@ export default async function BrowsePage({
           <p className="text-sm text-ink-muted mb-2">
             {total.toLocaleString()} product{total === 1 ? "" : "s"} found
           </p>
-          {filters.shipsTo && hiddenByShipping > 0 && (
+          {filters.shipsTo && hiddenCount > 0 && total === 0 && (
+            <div className="mb-5 rounded-sm border border-line-strong bg-gold-soft px-4 py-3 text-sm text-ink-muted" role="status">
+              <p className="font-medium text-ink">
+                {hiddenCount} matching product{hiddenCount === 1 ? "" : "s"} from {brandList} {hiddenCount === 1 ? "doesn't" : "don't"} ship to the {SHIP_REGION_LABEL[filters.shipsTo]}.
+              </p>
+              <p className="mt-1">
+                {hiddenCount === 1 ? "It is" : "They are"} hidden because &ldquo;Ships to&rdquo; is set to {SHIP_REGION_LABEL[filters.shipsTo]}.{" "}
+                <Link href={showAllHref} className="text-matcha hover:text-forest underline">
+                  Show {hiddenCount === 1 ? "it" : "them"} anyway
+                </Link>
+              </p>
+            </div>
+          )}
+          {filters.shipsTo && hiddenCount > 0 && total > 0 && (
             <p className="text-xs text-ink-faint mb-5">
-              Showing brands that ship to the {SHIP_REGION_LABEL[filters.shipsTo]}. {hiddenByShipping} product{hiddenByShipping === 1 ? "" : "s"} from brands that
-              don&apos;t ship there {hiddenByShipping === 1 ? "is" : "are"} hidden.{" "}
+              Showing brands that ship to the {SHIP_REGION_LABEL[filters.shipsTo]}. {hiddenCount} more matching product{hiddenCount === 1 ? "" : "s"} from {brandList}{" "}
+              {hiddenCount === 1 ? "is" : "are"} hidden because {hiddenBrands.length === 1 ? "that brand doesn't" : "those brands don't"} ship there.{" "}
               <Link href={showAllHref} className="text-matcha hover:text-forest underline">
                 Show all
               </Link>
             </p>
           )}
-          {!(filters.shipsTo && hiddenByShipping > 0) && <div className="mb-3" />}
+          {!(filters.shipsTo && hiddenCount > 0) && <div className="mb-3" />}
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {products.map((p) => (
@@ -120,7 +136,7 @@ export default async function BrowsePage({
             ))}
           </div>
 
-          {products.length === 0 && (
+          {products.length === 0 && hiddenCount === 0 && (
             <p className="text-ink-muted mt-8">No products match those filters.</p>
           )}
 

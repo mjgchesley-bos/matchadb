@@ -130,6 +130,25 @@ export async function getHiddenByShippingCount(region: ShipRegion): Promise<numb
   return res.length ? (res[0].values[0][0] as number) : 0;
 }
 
+// Products that match the current search and filters but are left out because their
+// brand doesn't ship to the shopper's region -- with the brands behind them, so the
+// page can say exactly what is hidden (e.g. "AO Tea ships to the EU only") instead of
+// showing an empty result with no explanation.
+export async function getHiddenMatches(filters: BrowseFilters): Promise<{ count: number; brands: string[] }> {
+  const blocked = filters.shipsTo ? brandsNotShippingTo(filters.shipsTo) : [];
+  if (!blocked.length) return { count: 0, brands: [] };
+  const db = await getDb();
+  const { where, params } = buildWhereClause({ ...filters, shipsTo: undefined });
+  const res = db.exec(
+    `SELECT b.name, COUNT(*) FROM products p JOIN brands b ON p.brand_id = b.id
+     WHERE ${[...where, `b.name IN (${blocked.map(() => "?").join(",")})`].join(" AND ")}
+     GROUP BY b.name ORDER BY COUNT(*) DESC, b.name`,
+    [...params, ...blocked]
+  );
+  const rows = res.length ? (res[0].values as [string, number][]) : [];
+  return { count: rows.reduce((n, r) => n + r[1], 0), brands: rows.map((r) => r[0]) };
+}
+
 function buildWhereClause(filters: BrowseFilters): { where: string[]; params: (string | number)[] } {
   const where: string[] = [];
   const params: (string | number)[] = [];
