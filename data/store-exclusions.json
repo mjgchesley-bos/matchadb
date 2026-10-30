@@ -1,0 +1,19 @@
+{
+  "_note": "Place ids (name-city-state slug) that brand locators list but that failed checks, so the importer never re-adds them.",
+  "ids": [
+    "handles-coffee-silverlake-los-angeles-ca",
+    "station-ry-carmel-by-the-sea-ca",
+    "tend-coffee-san-antonio-tx",
+    "ampersand-dallas-tx",
+    "wellbean-baja-ca",
+    "sprouts-farmers-market-carlsbad-ca",
+    "health-by-design-natural-clinic-leola-pa",
+    "maroon-l-pte-ltd-milwaukee-wi",
+    "natural-grocers-dallas-richardson-tx",
+    "pharmaca-integrative-pharmacy-la-jolla-ca",
+    "real-foods-llc-san-francisco-ca",
+    "valley-natural-foods-burnsville-mn",
+    "whole-foods-wla-los-angeles-ca",
+    "whole-foods-jackson-jkn-jackson-ms"
+  ]
+}

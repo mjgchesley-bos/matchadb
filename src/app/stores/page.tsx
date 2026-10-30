@@ -21,7 +21,9 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
   const stores = getStores();
   const wanted = Array.isArray(sp.brand) ? sp.brand[0] : sp.brand;
   const initialBrand = wanted && stores.some((s) => s.brands.some((b) => b.name === wanted)) ? wanted : "";
-  const states = new Set(stores.map((s) => s.state)).size;
+  const stateSet = new Set(stores.map((s) => s.state));
+  const hasDc = stateSet.delete("DC");
+  const states = stateSet.size;
   const brands = new Set(stores.flatMap((s) => s.brands.map((b) => b.name))).size;
 
   return (
@@ -59,7 +61,7 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
           directions.
         </p>
         <p className="mt-3 text-sm text-ink-faint">
-          {stores.length} places in {states} states so far, covering {brands} brands. The list is new and growing.
+          {stores.length.toLocaleString()} places in {states} states{hasDc ? " and DC" : ""} so far, covering {brands} brands. The list is new and growing.
         </p>
       </header>
 

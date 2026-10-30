@@ -85,6 +85,7 @@ const key = (zip, address) => {
 const slug = (s) => s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 const cleanName = (n) => n.replace(/\s+-\s+/g, " ").replace(/\s+/g, " ").trim();
 
+const EXCLUDED = new Set(JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "store-exclusions.json"), "utf8")).ids);
 const stores = JSON.parse(fs.readFileSync(file, "utf8"));
 const byKey = new Map(stores.map((s) => [key(s.zip, s.address), s]));
 const ids = new Set(stores.map((s) => s.id));
@@ -92,6 +93,7 @@ const stats = {};
 const rejected = [];
 
 function add(brand, evidence, p, kind, note) {
+  for (const f of ["name", "address", "city", "state", "zip"]) p[f] = String(p[f]).replace(/\s+/g, " ").trim();
   const k = key(p.zip, p.address);
   const existing = byKey.get(k);
   if (existing) {
@@ -101,8 +103,13 @@ function add(brand, evidence, p, kind, note) {
     } else stats[brand].dupe++;
     return;
   }
-  let id = slug(`${p.name}-${p.city}-${p.state}`);
-  for (let i = 2; ids.has(id); i++) id = slug(`${p.name}-${p.city}-${p.state}`) + "-" + i;
+  const base = slug(`${p.name}-${p.city}-${p.state}`);
+  if (EXCLUDED.has(base)) {
+    stats[brand].skipped++;
+    return;
+  }
+  let id = base;
+  for (let i = 2; ids.has(id); i++) id = base + "-" + i;
   ids.add(id);
   const s = {
     id,
@@ -125,7 +132,7 @@ function add(brand, evidence, p, kind, note) {
   stats[brand].added++;
 }
 
-for (const src of STOCKIST) {
+for (const src of process.argv.includes("--skip-stockist") ? [] : STOCKIST) {
   stats[src.brand] = { raw: 0, added: 0, merged: 0, dupe: 0, skipped: 0 };
   const res = await fetch(`https://stockist.co/api/v1/${src.tag}/locations/all`);
   const list = await res.json();
