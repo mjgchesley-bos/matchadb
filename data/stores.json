@@ -522,5 +522,7495 @@
     "checked": "2026-10-30",
     "lat": 37.321769,
     "lng": -122.01813
+  },
+  {
+    "id": "ad-astra-bread-co-monterey-ca",
+    "name": "Ad Astra Bread Co.",
+    "kind": "cafe",
+    "address": "479 Alvarado St",
+    "city": "Monterey",
+    "state": "CA",
+    "zip": "93940",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.598167,
+    "lng": -121.894616
+  },
+  {
+    "id": "altadena-beverage-and-market-pasadena-ca",
+    "name": "Altadena Beverage and Market",
+    "kind": "retailer",
+    "address": "1850 Allen Avenue",
+    "city": "Pasadena",
+    "state": "CA",
+    "zip": "91104",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.177867,
+    "lng": -118.112084
+  },
+  {
+    "id": "andale-market-chicago-il",
+    "name": "Ándale Market",
+    "kind": "retailer",
+    "address": "5232 N Clark St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60640",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.977215,
+    "lng": -87.668637
+  },
+  {
+    "id": "apollo-bagels-hoboken-nj",
+    "name": "Apollo Bagels",
+    "kind": "cafe",
+    "address": "24 Washington St",
+    "city": "Hoboken",
+    "state": "NJ",
+    "zip": "07030",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.735917,
+    "lng": -74.031433
+  },
+  {
+    "id": "arc-coffee-buena-park-ca",
+    "name": "ARC Coffee",
+    "kind": "cafe",
+    "address": "10488 Valley View St Unit 6",
+    "city": "Buena Park",
+    "state": "CA",
+    "zip": "90620",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.810227,
+    "lng": -118.027481
+  },
+  {
+    "id": "arden-s-rowayton-norwalk-ct",
+    "name": "Arden's Rowayton",
+    "kind": "retailer",
+    "address": "158 Rowayton Ave",
+    "city": "Norwalk",
+    "state": "CT",
+    "zip": "06853",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.068467,
+    "lng": -73.443229
+  },
+  {
+    "id": "ase-coffee-grandview-mo",
+    "name": "ASE Coffee",
+    "kind": "cafe",
+    "address": "1800 Highgrove Rd",
+    "city": "Grandview",
+    "state": "MO",
+    "zip": "64030",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.887135,
+    "lng": -94.522697
+  },
+  {
+    "id": "awake-ny-new-york-ny",
+    "name": "Awake NY",
+    "kind": "cafe",
+    "address": "62 Orchard St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10002",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.716866,
+    "lng": -73.990759
+  },
+  {
+    "id": "ayu-bakehouse-new-orleans-la",
+    "name": "Ayu Bakehouse",
+    "kind": "cafe",
+    "address": "801 Frenchmen St",
+    "city": "New Orleans",
+    "state": "LA",
+    "zip": "70117",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 29.965738,
+    "lng": -90.057843
+  },
+  {
+    "id": "baby-s-kusina-and-market-philadelphia-pa",
+    "name": "Baby's Kusina and Market",
+    "kind": "cafe",
+    "address": "2816 W Girard Ave",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19130",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.974223,
+    "lng": -75.182547
+  },
+  {
+    "id": "bakers-and-baristas-superette-artesia-ca",
+    "name": "Bakers & Baristas Superette",
+    "kind": "retailer",
+    "address": "11688 South Street #103",
+    "city": "Artesia",
+    "state": "CA",
+    "zip": "90701",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.85764,
+    "lng": -118.084926
+  },
+  {
+    "id": "based-general-store-portland-or",
+    "name": "Based General Store",
+    "kind": "cafe",
+    "address": "1136 SW Alder St",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97205",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.520927,
+    "lng": -122.683565
+  },
+  {
+    "id": "better-days-centennial-las-vegas-nv",
+    "name": "Better Days Centennial",
+    "kind": "cafe",
+    "address": "8635 W Rome Blvd Suite 100",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89149",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.280852,
+    "lng": -115.284023
+  },
+  {
+    "id": "better-days-flamingo-las-vegas-nv",
+    "name": "Better Days Flamingo",
+    "kind": "cafe",
+    "address": "9516 W Flamingo Rd Ste 130",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89147",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.115907,
+    "lng": -115.29967
+  },
+  {
+    "id": "better-days-summerlin-las-vegas-nv",
+    "name": "Better Days Summerlin",
+    "kind": "cafe",
+    "address": "10595 Discovery Dr",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89135",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.121997,
+    "lng": -115.324948
+  },
+  {
+    "id": "bi-rite-market-18th-street-san-francisco-ca",
+    "name": "Bi-Rite Market 18th Street",
+    "kind": "retailer",
+    "address": "3639 18th Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94110",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.761304,
+    "lng": -122.424683
+  },
+  {
+    "id": "bi-rite-market-divisadero-san-francisco-ca",
+    "name": "Bi-Rite Market Divisadero",
+    "kind": "retailer",
+    "address": "550 Divisadero Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94117",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.774834,
+    "lng": -122.437469
+  },
+  {
+    "id": "bi-rite-market-polk-street-san-francisco-ca",
+    "name": "Bi-Rite Market Polk Street",
+    "kind": "retailer",
+    "address": "2140 Polk Street",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94109",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.796537,
+    "lng": -122.421592
+  },
+  {
+    "id": "billie-s-grocery-leawood-leawood-ks",
+    "name": "Billie's Grocery Leawood",
+    "kind": "retailer",
+    "address": "3614 W 95th St",
+    "city": "Leawood",
+    "state": "KS",
+    "zip": "66206",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.958112,
+    "lng": -94.627638
+  },
+  {
+    "id": "billie-s-grocery-kansas-city-mo",
+    "name": "Billie’s Grocery",
+    "kind": "retailer",
+    "address": "3216 Gillham Plaza Suite 100",
+    "city": "Kansas City",
+    "state": "MO",
+    "zip": "64109",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.067775,
+    "lng": -94.579333
+  },
+  {
+    "id": "birdies-bodega-costa-mesa-ca",
+    "name": "Birdies Bodega",
+    "kind": "retailer",
+    "address": "333 E 17th St #22",
+    "city": "Costa Mesa",
+    "state": "CA",
+    "zip": "92627",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.632338,
+    "lng": -117.914567
+  },
+  {
+    "id": "birds-bookstore-dallas-tx",
+    "name": "Birds Bookstore",
+    "kind": "cafe",
+    "address": "6025 Royal Ln Suite 207",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75230",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.896193,
+    "lng": -96.802321
+  },
+  {
+    "id": "black-bird-bookstore-and-cafe-san-francisco-ca",
+    "name": "Black Bird Bookstore and Café",
+    "kind": "cafe",
+    "address": "4541 Irving St",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94122",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.76207,
+    "lng": -122.506756
+  },
+  {
+    "id": "bon-specialty-coffee-boston-ma",
+    "name": "BON! Specialty Coffee",
+    "kind": "cafe",
+    "address": "22 Beacon St",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02108",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.357706,
+    "lng": -71.0629
+  },
+  {
+    "id": "botanica-restaurant-and-market-los-angeles-ca",
+    "name": "Botanica Restaurant and Market",
+    "kind": "retailer",
+    "address": "1620 Silver Lake Boulevard",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90026",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.088463,
+    "lng": -118.268793
+  },
+  {
+    "id": "bottega-louie-los-angeles-ca",
+    "name": "Bottega Louie",
+    "kind": "cafe",
+    "address": "700 S. Grand Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90017",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.047051,
+    "lng": -118.256586
+  },
+  {
+    "id": "broome-street-general-store-los-angeles-ca",
+    "name": "Broome Street General Store",
+    "kind": "retailer",
+    "address": "2912 Rowena Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90039",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.108164,
+    "lng": -118.268504
+  },
+  {
+    "id": "broome-street-general-store-platform-culver-city-ca",
+    "name": "Broome Street General Store Platform",
+    "kind": "retailer",
+    "address": "8840 Washington Blvd Suite 103",
+    "city": "Culver City",
+    "state": "CA",
+    "zip": "90232",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.027499,
+    "lng": -118.386938
+  },
+  {
+    "id": "bru-coffeebar-los-angeles-ca",
+    "name": "Bru Coffeebar",
+    "kind": "cafe",
+    "address": "1866 N Vermont Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90027",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.104984,
+    "lng": -118.291628
+  },
+  {
+    "id": "buena-bodega-ventura-ca",
+    "name": "Buena Bodega",
+    "kind": "retailer",
+    "address": "1803 E Main St",
+    "city": "Ventura",
+    "state": "CA",
+    "zip": "93001",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.279002,
+    "lng": -119.273184
+  },
+  {
+    "id": "bueno-days-chicago-il",
+    "name": "Bueno Days",
+    "kind": "retailer",
+    "address": "2901 W Cermak Rd",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60623",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.851769,
+    "lng": -87.699102
+  },
+  {
+    "id": "bums-coffee-downey-ca",
+    "name": "Bums Coffee",
+    "kind": "cafe",
+    "address": "9302 1/2 Firestone Blvd",
+    "city": "Downey",
+    "state": "CA",
+    "zip": "90241",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.932347,
+    "lng": -118.117933
+  },
+  {
+    "id": "burden-of-proof-south-pasadena-ca",
+    "name": "Burden of Proof",
+    "kind": "retailer",
+    "address": "1012 Mission St",
+    "city": "South Pasadena",
+    "state": "CA",
+    "zip": "91030",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.115938,
+    "lng": -118.15657
+  },
+  {
+    "id": "cafe-telegrama-los-angeles-ca",
+    "name": "Cafe Telegrama",
+    "kind": "cafe",
+    "address": "737 N Western Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90029",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.084463,
+    "lng": -118.309373
+  },
+  {
+    "id": "cafe-tondo-los-angeles-ca",
+    "name": "Café Tondo",
+    "kind": "cafe",
+    "address": "1135 North Alameda Street",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90012",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.062827,
+    "lng": -118.236293
+  },
+  {
+    "id": "cameron-marks-boutique-santa-cruz-ca",
+    "name": "Cameron Marks Boutique",
+    "kind": "retailer",
+    "address": "402 Ingalls St  #21",
+    "city": "Santa Cruz",
+    "state": "CA",
+    "zip": "95060",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.958941,
+    "lng": -122.04849
+  },
+  {
+    "id": "caracas-bakery-biscayne-miami-fl",
+    "name": "Caracas Bakery Biscayne",
+    "kind": "cafe",
+    "address": "7283 Biscayne Blvd",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33138",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.842201,
+    "lng": -80.184044
+  },
+  {
+    "id": "carbon-coffee-bar-aurora-co",
+    "name": "Carbon Coffee Bar",
+    "kind": "cafe",
+    "address": "12230 East Colfax Avenue Unit 120",
+    "city": "Aurora",
+    "state": "CO",
+    "zip": "80011",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.739891,
+    "lng": -104.845446
+  },
+  {
+    "id": "chainsaw-cafe-los-angeles-ca",
+    "name": "Chainsaw Café",
+    "kind": "cafe",
+    "address": "5022 Melrose Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90038",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.083367,
+    "lng": -118.30988
+  },
+  {
+    "id": "coffee-mco-los-angeles-ca",
+    "name": "Coffee MCO",
+    "kind": "cafe",
+    "address": "2580 W Olympic Blvd Unit 2",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90006",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.052192,
+    "lng": -118.287269
+  },
+  {
+    "id": "community-goods-los-angeles-ca",
+    "name": "Community Goods",
+    "kind": "cafe",
+    "address": "710 N Edinburgh Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90046",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.084147,
+    "lng": -118.363611
+  },
+  {
+    "id": "community-goods-pdc-los-angeles-ca",
+    "name": "Community Goods PDC",
+    "kind": "cafe",
+    "address": "Pacific Design Center - 8687 Melrose Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90069",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.082351,
+    "lng": -118.382416
+  },
+  {
+    "id": "cookbook-market-echo-park-los-angeles-ca",
+    "name": "Cookbook Market Echo Park",
+    "kind": "retailer",
+    "address": "1549 Echo Park Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90026",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.081222,
+    "lng": -118.254775
+  },
+  {
+    "id": "cookbook-market-highland-park-los-angeles-ca",
+    "name": "Cookbook Market Highland Park",
+    "kind": "retailer",
+    "address": "5611 N Figueroa Street",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90042",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.109426,
+    "lng": -118.193831
+  },
+  {
+    "id": "cookbook-market-larchmont-los-angeles-ca",
+    "name": "Cookbook Market Larchmont",
+    "kind": "cafe",
+    "address": "310 N Larchmont Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90004",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.076585,
+    "lng": -118.323318
+  },
+  {
+    "id": "courage-bagels-los-angeles-ca",
+    "name": "Courage Bagels",
+    "kind": "cafe",
+    "address": "777 Virgil Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90029",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.085447,
+    "lng": -118.287079
+  },
+  {
+    "id": "dada-market-los-angeles-ca",
+    "name": "DADA MARKET",
+    "kind": "retailer",
+    "address": "1606 Sunset Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90026",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.076654,
+    "lng": -118.257829
+  },
+  {
+    "id": "dolce-nonna-monroe-mi",
+    "name": "Dolce Nonna",
+    "kind": "cafe",
+    "address": "1233 Holiday Blvd",
+    "city": "Monroe",
+    "state": "MI",
+    "zip": "48162",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.938414,
+    "lng": -83.404843
+  },
+  {
+    "id": "dolcezza-gelato-and-coffee-bethesda-row-bethesda-md",
+    "name": "Dolcezza Gelato & Coffee Bethesda Row",
+    "kind": "cafe",
+    "address": "7111 Bethesda Lane",
+    "city": "Bethesda",
+    "state": "MD",
+    "zip": "20814",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.981475,
+    "lng": -77.097932
+  },
+  {
+    "id": "dolcezza-gelato-and-coffee-citycenterdc-washington-dc",
+    "name": "Dolcezza Gelato & Coffee CityCenterDC",
+    "kind": "cafe",
+    "address": "904 Palmer Alley NW (between H and I Street NW on 9th Street)",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20001",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.900285,
+    "lng": -77.024288
+  },
+  {
+    "id": "dolcezza-gelato-and-coffee-dupoint-circle-washington-dc",
+    "name": "Dolcezza Gelato & Coffee Dupoint Circle",
+    "kind": "cafe",
+    "address": "1704 Connecticut Ave NW",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20009",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.912855,
+    "lng": -77.045645
+  },
+  {
+    "id": "dolcezza-gelato-and-coffee-hirshhorn-museum-washington-dc",
+    "name": "Dolcezza Gelato & Coffee Hirshhorn Museum",
+    "kind": "cafe",
+    "address": "7th St. & Independence Ave. SW",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20013",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.909057,
+    "lng": -77.023137
+  },
+  {
+    "id": "dolcezza-gelato-and-coffee-mom-and-pop-fairfax-va",
+    "name": "Dolcezza Gelato & Coffee Mom & Pop",
+    "kind": "cafe",
+    "address": "2909 District Ave",
+    "city": "Fairfax",
+    "state": "VA",
+    "zip": "22031",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.872091,
+    "lng": -77.22965
+  },
+  {
+    "id": "dolcezza-gelato-and-coffee-mosaic-district-fairfax-va",
+    "name": "Dolcezza Gelato & Coffee Mosaic District",
+    "kind": "cafe",
+    "address": "2905 District Ave",
+    "city": "Fairfax",
+    "state": "VA",
+    "zip": "22031",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.873792,
+    "lng": -77.229456
+  },
+  {
+    "id": "dough-objects-ann-arbor-mi",
+    "name": "Dough Objects",
+    "kind": "cafe",
+    "address": "1116 S University Ave Ste A",
+    "city": "Ann Arbor",
+    "state": "MI",
+    "zip": "48104",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.274725,
+    "lng": -83.735305
+  },
+  {
+    "id": "down-to-earth-honolulu-honolulu-hi",
+    "name": "Down to Earth Honolulu",
+    "kind": "retailer",
+    "address": "2525 S King St",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "96826",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.292155,
+    "lng": -157.823263
+  },
+  {
+    "id": "down-to-earth-kahului-kahului-hi",
+    "name": "Down to Earth Kahului",
+    "kind": "retailer",
+    "address": "305 Dairy Rd",
+    "city": "Kahului",
+    "state": "HI",
+    "zip": "96732",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 20.883007,
+    "lng": -156.455331
+  },
+  {
+    "id": "down-to-earth-kailua-kailua-hi",
+    "name": "Down to Earth Kailua",
+    "kind": "retailer",
+    "address": "573 Kailua Road",
+    "city": "Kailua",
+    "state": "HI",
+    "zip": "96734",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.393355,
+    "lng": -157.741169
+  },
+  {
+    "id": "down-to-earth-kakaako-honolulu-hi",
+    "name": "Down to Earth Kakaako",
+    "kind": "retailer",
+    "address": "500 Keawe St",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "96813",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.300441,
+    "lng": -157.859889
+  },
+  {
+    "id": "down-to-earth-kapolei-kapolei-hi",
+    "name": "Down to Earth Kapolei",
+    "kind": "retailer",
+    "address": "4460 Kapolei Pkwy #320",
+    "city": "Kapolei",
+    "state": "HI",
+    "zip": "96707",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.329402,
+    "lng": -158.090349
+  },
+  {
+    "id": "down-to-earth-pearlridge-aiea-hi",
+    "name": "Down to Earth Pearlridge",
+    "kind": "retailer",
+    "address": "98-211 Pali Momi Street",
+    "city": "Aiea",
+    "state": "HI",
+    "zip": "96701",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.381756,
+    "lng": -157.939883
+  },
+  {
+    "id": "el-farm-southampton-ny",
+    "name": "El Farm",
+    "kind": "retailer",
+    "address": "101 Jobs Ln",
+    "city": "Southampton",
+    "state": "NY",
+    "zip": "11968",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.883529,
+    "lng": -72.392741
+  },
+  {
+    "id": "enjoy-coffee-vacaville-ca",
+    "name": "Enjoy Coffee",
+    "kind": "cafe",
+    "address": "897 Cotting Ln",
+    "city": "Vacaville",
+    "state": "CA",
+    "zip": "95688",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.397138,
+    "lng": -121.956003
+  },
+  {
+    "id": "enoki-saugerties-ny",
+    "name": "Enoki",
+    "kind": "retailer",
+    "address": "190 Main St",
+    "city": "Saugerties",
+    "state": "NY",
+    "zip": "12477",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.07789,
+    "lng": -73.951568
+  },
+  {
+    "id": "facade-bakery-coral-gables-fl",
+    "name": "Façade Bakery",
+    "kind": "cafe",
+    "address": "271 Giralda Ave",
+    "city": "Coral Gables",
+    "state": "FL",
+    "zip": "33131",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.751268,
+    "lng": -80.260216
+  },
+  {
+    "id": "fifth-vessel-coffee-co-houston-tx",
+    "name": "Fifth Vessel Coffee Co.",
+    "kind": "cafe",
+    "address": "104 N Main St",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "77002",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 29.763718,
+    "lng": -95.359911
+  },
+  {
+    "id": "foam-coffee-and-shop-gulf-shores-al",
+    "name": "Foam coffee and shop",
+    "kind": "cafe",
+    "address": "313 E 22nd Ave Ste B",
+    "city": "Gulf Shores",
+    "state": "AL",
+    "zip": "36542",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 30.275228,
+    "lng": -87.682094
+  },
+  {
+    "id": "forest-bakery-oak-park-mi",
+    "name": "Forest Bakery",
+    "kind": "retailer",
+    "address": "8140 W. 9 Mile Road",
+    "city": "Oak Park",
+    "state": "MI",
+    "zip": "48237",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.460403,
+    "lng": -83.154562
+  },
+  {
+    "id": "foxtrot-fulton-market-chicago-il",
+    "name": "Foxtrot Fulton Market",
+    "kind": "cafe",
+    "address": "171 N Green St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60607",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.885133,
+    "lng": -87.648291
+  },
+  {
+    "id": "foxtrot-gold-coast-chicago-il",
+    "name": "Foxtrot Gold Coast",
+    "kind": "cafe",
+    "address": "23 W Maple St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.901633,
+    "lng": -87.629295
+  },
+  {
+    "id": "foxtrot-hubbard-chicago-il",
+    "name": "Foxtrot Hubbard",
+    "kind": "cafe",
+    "address": "401 N Wells St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60654",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.889591,
+    "lng": -87.633558
+  },
+  {
+    "id": "foxtrot-knox-henderson-dallas-tx",
+    "name": "Foxtrot Knox-Henderson",
+    "kind": "cafe",
+    "address": "3130 Knox St",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75205",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.823306,
+    "lng": -96.788394
+  },
+  {
+    "id": "foxtrot-lincoln-park-chicago-il",
+    "name": "Foxtrot Lincoln Park",
+    "kind": "cafe",
+    "address": "935 W Webster Ave",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60614",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.921502,
+    "lng": -87.652489
+  },
+  {
+    "id": "foxtrot-milwaukee-and-damen-chicago-il",
+    "name": "Foxtrot Milwaukee & Damen",
+    "kind": "cafe",
+    "address": "1576 N Milwaukee Ave",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60622",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.910132,
+    "lng": -87.677239
+  },
+  {
+    "id": "foxtrot-old-town-chicago-il",
+    "name": "Foxtrot Old Town",
+    "kind": "cafe",
+    "address": "1562 N Wells St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60610",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.910961,
+    "lng": -87.635015
+  },
+  {
+    "id": "foxtrot-river-north-chicago-il",
+    "name": "Foxtrot River North",
+    "kind": "cafe",
+    "address": "704 N Wabash Ave",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60611",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.89512,
+    "lng": -87.626991
+  },
+  {
+    "id": "foxtrot-university-park-dallas-tx",
+    "name": "Foxtrot University Park",
+    "kind": "cafe",
+    "address": "6565 Hillcrest Ave",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75205",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.846438,
+    "lng": -96.787383
+  },
+  {
+    "id": "foxtrot-willis-tower-chicago-il",
+    "name": "Foxtrot Willis Tower",
+    "kind": "cafe",
+    "address": "236 S Franklin St Suite L1-16",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60606",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.878577,
+    "lng": -87.635294
+  },
+  {
+    "id": "fusion-coffee-fairfield-il",
+    "name": "Fusion Coffee",
+    "kind": "cafe",
+    "address": "207 East Main Street",
+    "city": "Fairfield",
+    "state": "IL",
+    "zip": "62837",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.379786,
+    "lng": -88.358459
+  },
+  {
+    "id": "gem-home-new-york-ny",
+    "name": "Gem Home",
+    "kind": "retailer",
+    "address": "181 Mott St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10012",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.720706,
+    "lng": -73.996088
+  },
+  {
+    "id": "general-sacramento-ca",
+    "name": "General",
+    "kind": "retailer",
+    "address": "907 20th St.",
+    "city": "Sacramento",
+    "state": "CA",
+    "zip": "95811",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.57736,
+    "lng": -121.479525
+  },
+  {
+    "id": "gentle-bull-shop-hartford-ct",
+    "name": "Gentle Bull Shop",
+    "kind": "retailer",
+    "address": "45 Pratt St",
+    "city": "Hartford",
+    "state": "CT",
+    "zip": "06103",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.767443,
+    "lng": -72.673983
+  },
+  {
+    "id": "good-friend-los-angeles-ca",
+    "name": "Good Friend",
+    "kind": "cafe",
+    "address": "874 N Virgil Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90029",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.087436,
+    "lng": -118.286575
+  },
+  {
+    "id": "good-neighbor-by-portland-ca-phe-portland-or",
+    "name": "Good Neighbor by Portland Ca Phe",
+    "kind": "cafe",
+    "address": "1650 NW 23rd Ave",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97210",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.534451,
+    "lng": -122.69867
+  },
+  {
+    "id": "goodthing-coffee-burlingame-ca",
+    "name": "Goodthing Coffee",
+    "kind": "cafe",
+    "address": "341 Primrose Rd",
+    "city": "Burlingame",
+    "state": "CA",
+    "zip": "94010",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.578152,
+    "lng": -122.348938
+  },
+  {
+    "id": "goodthing-coffee-palo-alto-ca",
+    "name": "Goodthing Coffee",
+    "kind": "cafe",
+    "address": "532 Ramona St",
+    "city": "Palo Alto",
+    "state": "CA",
+    "zip": "94301",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.444749,
+    "lng": -122.16167
+  },
+  {
+    "id": "grayhorse-mercantile-langley-wa",
+    "name": "Grayhorse Mercantile",
+    "kind": "retailer",
+    "address": "117 Anthes Ave",
+    "city": "Langley",
+    "state": "WA",
+    "zip": "98260",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 48.040111,
+    "lng": -122.409774
+  },
+  {
+    "id": "greenstar-food-co-op-ithaca-ny",
+    "name": "GreenStar Food Co+op",
+    "kind": "retailer",
+    "address": "770 Cascadilla Street",
+    "city": "Ithaca",
+    "state": "NY",
+    "zip": "14850",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.445539,
+    "lng": -76.509717
+  },
+  {
+    "id": "grove-grocer-miami-fl",
+    "name": "Grove Grocer",
+    "kind": "cafe",
+    "address": "3098 Fuller St Suite 11",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33133",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.727411,
+    "lng": -80.243477
+  },
+  {
+    "id": "grow-charlotte-nc",
+    "name": "Grow",
+    "kind": "retailer",
+    "address": "270 Camp Road Suite 101",
+    "city": "Charlotte",
+    "state": "NC",
+    "zip": "28206",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.246279,
+    "lng": -80.833283
+  },
+  {
+    "id": "handles-coffee-west-hollywood-west-hollywood-ca",
+    "name": "Handles Coffee West Hollywood",
+    "kind": "retailer",
+    "address": "8535 W Sunset Blvd",
+    "city": "West Hollywood",
+    "state": "CA",
+    "zip": "90069",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.093973,
+    "lng": -118.377573
+  },
+  {
+    "id": "happier-grocery-new-york-ny",
+    "name": "Happier Grocery",
+    "kind": "retailer",
+    "address": "365 Canal St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10013",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.721227,
+    "lng": -74.004159
+  },
+  {
+    "id": "heritage-goods-and-supply-carpinteria-ca",
+    "name": "Heritage Goods and Supply",
+    "kind": "retailer",
+    "address": "5100 Carpinteria Ave",
+    "city": "Carpinteria",
+    "state": "CA",
+    "zip": "93013",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.398074,
+    "lng": -119.51695
+  },
+  {
+    "id": "home-ec-san-diego-ca",
+    "name": "Home Ec",
+    "kind": "retailer",
+    "address": "4153 Adams Ave",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92116",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.763001,
+    "lng": -117.105831
+  },
+  {
+    "id": "hooley-market-chicago-il",
+    "name": "Hooley Market",
+    "kind": "retailer",
+    "address": "2947 N Broadway",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60657",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.936282,
+    "lng": -87.644091
+  },
+  {
+    "id": "house-coffee-los-angeles-ca",
+    "name": "House Coffee",
+    "kind": "cafe",
+    "address": "2516 Glen Green St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90068",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.116042,
+    "lng": -118.321149
+  },
+  {
+    "id": "house-roots-coffee-granada-hills-granada-hills-ca",
+    "name": "House Roots Coffee Granada Hills",
+    "kind": "cafe",
+    "address": "16155 San Fernando Mission Blvd",
+    "city": "Granada Hills",
+    "state": "CA",
+    "zip": "91344",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.272211,
+    "lng": -118.484365
+  },
+  {
+    "id": "house-roots-coffee-northridge-northridge-ca",
+    "name": "House Roots Coffee Northridge",
+    "kind": "cafe",
+    "address": "18401 Nordhoff St Suite A",
+    "city": "Northridge",
+    "state": "CA",
+    "zip": "91325",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.236018,
+    "lng": -118.534085
+  },
+  {
+    "id": "hq-coffee-oklahoma-city-ok",
+    "name": "HQ Coffee",
+    "kind": "cafe",
+    "address": "2600 N Classen Blvd",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "zip": "73106",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.495524,
+    "lng": -97.533424
+  },
+  {
+    "id": "hume-los-angeles-ca",
+    "name": "Hume",
+    "kind": "cafe",
+    "address": "205 Venice Way",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90291",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.987487,
+    "lng": -118.470302
+  },
+  {
+    "id": "hypnos-portland-or",
+    "name": "Hypnos",
+    "kind": "cafe",
+    "address": "3761 N Williams Ave",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97227",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.550103,
+    "lng": -122.666877
+  },
+  {
+    "id": "in-good-spirits-chicago-il",
+    "name": "In Good Spirits",
+    "kind": "retailer",
+    "address": "858 N. Ashland Ave",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60622",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.897715,
+    "lng": -87.667534
+  },
+  {
+    "id": "jon-and-vinny-s-los-angeles-ca",
+    "name": "Jon & Vinny's",
+    "kind": "cafe",
+    "address": "412 North Fairfax Avenue",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90036",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.078649,
+    "lng": -118.361216
+  },
+  {
+    "id": "jon-and-vinny-s-los-angeles-ca-2",
+    "name": "Jon & Vinny's",
+    "kind": "cafe",
+    "address": "4400 W Slauson Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90043",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.988484,
+    "lng": -118.352136
+  },
+  {
+    "id": "jon-and-vinny-s-beverly-hills-ca",
+    "name": "Jon & Vinny's",
+    "kind": "cafe",
+    "address": "456 N Bedford Dr.",
+    "city": "Beverly Hills",
+    "state": "CA",
+    "zip": "90210",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.069017,
+    "lng": -118.405712
+  },
+  {
+    "id": "jon-and-vinny-s-los-angeles-ca-3",
+    "name": "Jon & Vinny's",
+    "kind": "cafe",
+    "address": "11938 San Vicente Blvd.",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90049",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.052215,
+    "lng": -118.471294
+  },
+  {
+    "id": "joon-shoppe-san-diego-ca",
+    "name": "Joon Shoppe",
+    "kind": "retailer",
+    "address": "3992 30th Street",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92104",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      },
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.750198,
+    "lng": -117.130318
+  },
+  {
+    "id": "kilo-coffee-dallas-tx",
+    "name": "Kilo Coffee",
+    "kind": "cafe",
+    "address": "6600 Snider Plaza Ste 110",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75205",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.847009,
+    "lng": -96.787508
+  },
+  {
+    "id": "l-a-grocery-and-cafe-los-angeles-ca",
+    "name": "L.A. Grocery & Café",
+    "kind": "retailer",
+    "address": "5059 Melrose Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90038",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.083779,
+    "lng": -118.310646
+  },
+  {
+    "id": "la-home-farm-los-angeles-ca",
+    "name": "LA Home Farm",
+    "kind": "retailer",
+    "address": "3389 Eagle Rock Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90065",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.114464,
+    "lng": -118.23648
+  },
+  {
+    "id": "landdd-portland-or",
+    "name": "Landdd",
+    "kind": "retailer",
+    "address": "714 NW Glisan St",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97209",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.526454,
+    "lng": -122.677986
+  },
+  {
+    "id": "last-minute-market-montclair-nj",
+    "name": "Last Minute Market",
+    "kind": "retailer",
+    "address": "102 Walnut St",
+    "city": "Montclair",
+    "state": "NJ",
+    "zip": "07042",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.817364,
+    "lng": -74.211012
+  },
+  {
+    "id": "lau-lau-austin-tx",
+    "name": "Lau Lau",
+    "kind": "cafe",
+    "address": "3701 Guadalupe St Suite 106",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78705",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 30.302092,
+    "lng": -97.738163
+  },
+  {
+    "id": "lb-kitchen-portland-me",
+    "name": "LB Kitchen",
+    "kind": "retailer",
+    "address": "255 Congress St",
+    "city": "Portland",
+    "state": "ME",
+    "zip": "04101",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 43.662551,
+    "lng": -70.252173
+  },
+  {
+    "id": "lichen-queens-ny",
+    "name": "Lichen",
+    "kind": "retailer",
+    "address": "564 Woodward Avenue",
+    "city": "Queens",
+    "state": "NY",
+    "zip": "11385",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.706632,
+    "lng": -73.908982
+  },
+  {
+    "id": "little-king-beacon-ny",
+    "name": "Little King",
+    "kind": "retailer",
+    "address": "199 Main Street",
+    "city": "Beacon",
+    "state": "NY",
+    "zip": "12508",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.507503,
+    "lng": -73.97465
+  },
+  {
+    "id": "little-king-coffee-santa-barbara-ca",
+    "name": "Little King Coffee",
+    "kind": "cafe",
+    "address": "1801 E Cabrillo Blvd B",
+    "city": "Santa Barbara",
+    "state": "CA",
+    "zip": "93108",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.421817,
+    "lng": -119.656717
+  },
+  {
+    "id": "little-saint-healdsburg-ca",
+    "name": "Little Saint",
+    "kind": "cafe",
+    "address": "25 North St",
+    "city": "Healdsburg",
+    "state": "CA",
+    "zip": "95448",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.612024,
+    "lng": -122.871915
+  },
+  {
+    "id": "local-nomad-phoenix-az",
+    "name": "Local Nomad",
+    "kind": "retailer",
+    "address": "100 E Camelback Road #168",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85012",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.510599,
+    "lng": -112.073227
+  },
+  {
+    "id": "loose-cannon-cafe-glendale-ca",
+    "name": "Loose Cannon Cafe",
+    "kind": "cafe",
+    "address": "527 Canada Blvd",
+    "city": "Glendale",
+    "state": "CA",
+    "zip": "91208",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.179652,
+    "lng": -118.229016
+  },
+  {
+    "id": "ls-organics-tampa-fl",
+    "name": "LS Organics",
+    "kind": "retailer",
+    "address": "219 S Packwood Ave",
+    "city": "Tampa",
+    "state": "FL",
+    "zip": "33606",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 27.942329,
+    "lng": -82.478103
+  },
+  {
+    "id": "mad-dogs-and-englishmen-coffee-bar-carmel-by-the-sea-ca",
+    "name": "Mad Dogs & Englishmen Coffee Bar",
+    "kind": "cafe",
+    "address": "SW Corner of Ocean Ave and Mission Street Facing Red Eagle Lane",
+    "city": "Carmel-By-The-Sea",
+    "state": "CA",
+    "zip": "93923",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.555147,
+    "lng": -121.920957
+  },
+  {
+    "id": "mast-coffee-broadway-cafe-sacramento-ca",
+    "name": "Mast Coffee Broadway Cafe",
+    "kind": "cafe",
+    "address": "2421 17th St",
+    "city": "Sacramento",
+    "state": "CA",
+    "zip": "95818",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.561488,
+    "lng": -121.49036
+  },
+  {
+    "id": "mast-coffee-midtown-sacramento-ca",
+    "name": "Mast Coffee Midtown",
+    "kind": "cafe",
+    "address": "1430 28th St",
+    "city": "Sacramento",
+    "state": "CA",
+    "zip": "95816",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.568592,
+    "lng": -121.471808
+  },
+  {
+    "id": "menotti-s-coffee-stop-culver-city-los-angeles-ca",
+    "name": "Menotti's Coffee Stop Culver City",
+    "kind": "cafe",
+    "address": "12430 Washington Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90066",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.996629,
+    "lng": -118.42934
+  },
+  {
+    "id": "menotti-s-coffee-stop-venice-venice-ca",
+    "name": "Menotti's Coffee Stop Venice",
+    "kind": "cafe",
+    "address": "56 Windward Ave",
+    "city": "Venice",
+    "state": "CA",
+    "zip": "90291",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.987212,
+    "lng": -118.472598
+  },
+  {
+    "id": "monsoon-market-phoenix-az",
+    "name": "Monsoon Market",
+    "kind": "retailer",
+    "address": "3508 N 7th St #140",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85014",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.488706,
+    "lng": -112.065721
+  },
+  {
+    "id": "mont-coffee-chino-hills-ca",
+    "name": "Mont Coffee",
+    "kind": "cafe",
+    "address": "4183 Chino Hills Pkwy Suite B",
+    "city": "Chino Hills",
+    "state": "CA",
+    "zip": "91709",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.981312,
+    "lng": -117.714203
+  },
+  {
+    "id": "mr-baguette-miami-beach-miami-beach-fl",
+    "name": "Mr. Baguette Miami Beach",
+    "kind": "cafe",
+    "address": "910 West Ave Suite A",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33139",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.780024,
+    "lng": -80.14284
+  },
+  {
+    "id": "mr-baguette-wynwood-miami-fl",
+    "name": "Mr. Baguette Wynwood",
+    "kind": "cafe",
+    "address": "2601 N Miami Ave",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33137",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.801748,
+    "lng": -80.19489
+  },
+  {
+    "id": "neighbor-market-phoenix-az",
+    "name": "Neighbor Market",
+    "kind": "retailer",
+    "address": "901 N 1st St #109",
+    "city": "Phoenix",
+    "state": "AZ",
+    "zip": "85004",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.457827,
+    "lng": -112.072182
+  },
+  {
+    "id": "neighbors-general-store-arroyo-grande-ca",
+    "name": "Neighbors General Store",
+    "kind": "retailer",
+    "address": "119 East Branch Street",
+    "city": "Arroyo Grande",
+    "state": "CA",
+    "zip": "93420",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.123583,
+    "lng": -120.578539
+  },
+  {
+    "id": "noun-coffee-wine-marina-del-rey-ca",
+    "name": "noun coffee + wine",
+    "kind": "retailer",
+    "address": "4065 Glencoe Ave #100",
+    "city": "Marina del Rey",
+    "state": "CA",
+    "zip": "90292",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.990457,
+    "lng": -118.443727
+  },
+  {
+    "id": "nude-miami-miami-fl",
+    "name": "Nude Miami",
+    "kind": "cafe",
+    "address": "1100 Brickell Bay Dr STE #107",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33131",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.763098,
+    "lng": -80.190389
+  },
+  {
+    "id": "ojai-roots-ojai-ca",
+    "name": "Ojai Roots",
+    "kind": "retailer",
+    "address": "315 N Montgomery St",
+    "city": "Ojai",
+    "state": "CA",
+    "zip": "93023",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.451008,
+    "lng": -119.243159
+  },
+  {
+    "id": "old-city-java-knoxville-tn",
+    "name": "Old City Java",
+    "kind": "cafe",
+    "address": "109 S Central St",
+    "city": "Knoxville",
+    "state": "TN",
+    "zip": "37902",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.970084,
+    "lng": -83.918466
+  },
+  {
+    "id": "olive-wine-and-liquor-burbank-ca",
+    "name": "Olive Wine and Liquor",
+    "kind": "retailer",
+    "address": "3117 West Olive Ave",
+    "city": "Burbank",
+    "state": "CA",
+    "zip": "91505",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.156214,
+    "lng": -118.335151
+  },
+  {
+    "id": "olivia-s-market-chicago-il",
+    "name": "Olivia's Market",
+    "kind": "retailer",
+    "address": "2014 W Wabansia Ave",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60647",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.912526,
+    "lng": -87.678143
+  },
+  {
+    "id": "omoi-life-goods-philadelphia-pa",
+    "name": "Omoi Life Goods",
+    "kind": "retailer",
+    "address": "41 S 3rd St",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19106",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.949062,
+    "lng": -75.145739
+  },
+  {
+    "id": "ondo-bakery-ann-arbor-mi",
+    "name": "ONDO Bakery",
+    "kind": "cafe",
+    "address": "324 S State St",
+    "city": "Ann Arbor",
+    "state": "MI",
+    "zip": "48104",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.278515,
+    "lng": -83.741159
+  },
+  {
+    "id": "ondo-coffee-co-los-angeles-ca",
+    "name": "Ondo Coffee Co.",
+    "kind": "cafe",
+    "address": "710 Heliotrope Dr",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90029",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.083991,
+    "lng": -118.294776
+  },
+  {
+    "id": "onggi-ferments-and-foods-portland-me",
+    "name": "Onggi | Ferments & Foods",
+    "kind": "retailer",
+    "address": "131 Washington Ave",
+    "city": "Portland",
+    "state": "ME",
+    "zip": "04101",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 43.667696,
+    "lng": -70.252888
+  },
+  {
+    "id": "open-market-los-angeles-ca",
+    "name": "Open Market",
+    "kind": "retailer",
+    "address": "3339 Wilshire Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90010",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.061937,
+    "lng": -118.295814
+  },
+  {
+    "id": "other-avenues-san-francisco-ca",
+    "name": "Other Avenues",
+    "kind": "retailer",
+    "address": "3930 Judah St",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94122",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.760742,
+    "lng": -122.504339
+  },
+  {
+    "id": "out-the-window-los-angeles-ca",
+    "name": "Out the Window",
+    "kind": "cafe",
+    "address": "527 Molino St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90013",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.040966,
+    "lng": -118.234003
+  },
+  {
+    "id": "pasta-and-co-seattle-wa",
+    "name": "Pasta & Co",
+    "kind": "retailer",
+    "address": "4622 26th Ave NE",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98105",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.662417,
+    "lng": -122.299689
+  },
+  {
+    "id": "paulette-home-omaha-ne",
+    "name": "Paulette Home",
+    "kind": "retailer",
+    "address": "3737 Farnam St Ste 102",
+    "city": "Omaha",
+    "state": "NE",
+    "zip": "68131",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.257618,
+    "lng": -95.968333
+  },
+  {
+    "id": "persephone-bakery-jackson-wy",
+    "name": "Persephone Bakery",
+    "kind": "cafe",
+    "address": "145 E Broadway Ave",
+    "city": "Jackson",
+    "state": "WY",
+    "zip": "83001",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 43.479776,
+    "lng": -110.760023
+  },
+  {
+    "id": "pistacia-vera-columbus-oh",
+    "name": "Pistacia Vera",
+    "kind": "cafe",
+    "address": "541 S 3rd St",
+    "city": "Columbus",
+    "state": "OH",
+    "zip": "43215",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.951307,
+    "lng": -82.99598
+  },
+  {
+    "id": "poppy-s-brooklyn-ny",
+    "name": "Poppy's",
+    "kind": "retailer",
+    "address": "243 Degraw Street",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11231",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.684294,
+    "lng": -73.996812
+  },
+  {
+    "id": "portland-ca-phe-portland-or",
+    "name": "Portland Cà Phê",
+    "kind": "cafe",
+    "address": "2815 SE Holgate Blvd",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97202",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.490543,
+    "lng": -122.637212
+  },
+  {
+    "id": "potluck-local-los-angeles-ca",
+    "name": "Potluck Local",
+    "kind": "retailer",
+    "address": "4705 York Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90042",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.122699,
+    "lng": -118.213
+  },
+  {
+    "id": "prism-seattle-wa",
+    "name": "Prism",
+    "kind": "retailer",
+    "address": "5208 Ballard Avenue NW",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98107",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.665979,
+    "lng": -122.382431
+  },
+  {
+    "id": "prophet-coffee-north-charleston-sc",
+    "name": "Prophet Coffee",
+    "kind": "cafe",
+    "address": "411 Spruill Ave",
+    "city": "North Charleston",
+    "state": "SC",
+    "zip": "29405",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.857573,
+    "lng": -79.970728
+  },
+  {
+    "id": "providore-fine-foods-portland-or",
+    "name": "Providore Fine Foods",
+    "kind": "retailer",
+    "address": "2340 NE Sandy Blvd",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97232",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.527129,
+    "lng": -122.641714
+  },
+  {
+    "id": "randd-goods-brooklyn-ny",
+    "name": "R&D Goods",
+    "kind": "retailer",
+    "address": "600 Vanderbilt Ave",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11238",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.678432,
+    "lng": -73.968875
+  },
+  {
+    "id": "raf-s-new-york-ny",
+    "name": "Raf's",
+    "kind": "cafe",
+    "address": "290 Elizabeth St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10012",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.724686,
+    "lng": -73.993152
+  },
+  {
+    "id": "re-caphe-fountain-valley-ca",
+    "name": "Re Caphe",
+    "kind": "retailer",
+    "address": "9430 Warner Ave #N",
+    "city": "Fountain Valley",
+    "state": "CA",
+    "zip": "92708",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.715,
+    "lng": -117.964291
+  },
+  {
+    "id": "recital-denver-co",
+    "name": "Recital",
+    "kind": "retailer",
+    "address": "1362 27th Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80205",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.759647,
+    "lng": -104.984912
+  },
+  {
+    "id": "recuerdos-cafe-atlanta-ga",
+    "name": "Recuerdos Cafe",
+    "kind": "cafe",
+    "address": "939 Ponce De Leon Avenue Northeast",
+    "city": "Atlanta",
+    "state": "GA",
+    "zip": "30306",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.773515,
+    "lng": -84.35663
+  },
+  {
+    "id": "red-coffee-stand-brooklyn-ny",
+    "name": "Red Coffee Stand",
+    "kind": "cafe",
+    "address": "147 Front St",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11201",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.702532,
+    "lng": -73.987108
+  },
+  {
+    "id": "red-window-coffee-sherman-oaks-ca",
+    "name": "Red Window Coffee",
+    "kind": "cafe",
+    "address": "13365 Ventura Blvd",
+    "city": "Sherman Oaks",
+    "state": "CA",
+    "zip": "91423",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.147094,
+    "lng": -118.424588
+  },
+  {
+    "id": "reformation-refill-glendora-ca",
+    "name": "Reformation Refill",
+    "kind": "retailer",
+    "address": "177 North Glendora Avenue",
+    "city": "Glendora",
+    "state": "CA",
+    "zip": "91741",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.138069,
+    "lng": -117.865627
+  },
+  {
+    "id": "reunion-boston-ma",
+    "name": "Reunion",
+    "kind": "cafe",
+    "address": "75 W Broadway",
+    "city": "Boston",
+    "state": "MA",
+    "zip": "02127",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.3418,
+    "lng": -71.055752
+  },
+  {
+    "id": "reunion-and-company-los-angeles-ca",
+    "name": "Reunion & Company",
+    "kind": "cafe",
+    "address": "1903 Hyperion Avenue",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90027",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.097414,
+    "lng": -118.27581
+  },
+  {
+    "id": "rice-market-washington-dc",
+    "name": "Rice Market",
+    "kind": "retailer",
+    "address": "1608 14th Street Northwest",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20009",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.911505,
+    "lng": -77.032358
+  },
+  {
+    "id": "room-service-coffee-ventura-ca",
+    "name": "Room Service Coffee",
+    "kind": "cafe",
+    "address": "1155 E Thompson Blvd Ste 101",
+    "city": "Ventura",
+    "state": "CA",
+    "zip": "93001",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.277081,
+    "lng": -119.282978
+  },
+  {
+    "id": "rory-s-place-ojai-ca",
+    "name": "Rory’s Place",
+    "kind": "retailer",
+    "address": "139 E. Ojai Ave",
+    "city": "Ojai",
+    "state": "CA",
+    "zip": "93023",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.447412,
+    "lng": -119.246166
+  },
+  {
+    "id": "rose-bakery-dover-street-market-los-angeles-ca",
+    "name": "Rose Bakery (Dover Street Market)",
+    "kind": "cafe",
+    "address": "608 Imperial St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90021",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.037686,
+    "lng": -118.231256
+  },
+  {
+    "id": "rose-bakery-dover-street-market-new-york-ny",
+    "name": "Rose Bakery (Dover Street Market)",
+    "kind": "cafe",
+    "address": "160 Lexington Ave",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10016",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.744083,
+    "lng": -73.981745
+  },
+  {
+    "id": "rutina-coffee-palm-desert-ca",
+    "name": "Rutina Coffee",
+    "kind": "cafe",
+    "address": "44855 San Pablo Ave Suite 1",
+    "city": "Palm Desert",
+    "state": "CA",
+    "zip": "92260",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.722388,
+    "lng": -116.382822
+  },
+  {
+    "id": "sagaponack-general-store-sagaponack-ny",
+    "name": "Sagaponack General Store",
+    "kind": "retailer",
+    "address": "542 Sagg Main Street",
+    "city": "Sagaponack",
+    "state": "NY",
+    "zip": "11962",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.925105,
+    "lng": -72.280576
+  },
+  {
+    "id": "salt-and-sundry-washington-dc",
+    "name": "Salt & Sundry",
+    "kind": "retailer",
+    "address": "1301 4th Street Northeast",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20002",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.909092,
+    "lng": -76.998772
+  },
+  {
+    "id": "salty-horse-costa-mesa-ca",
+    "name": "Salty Horse",
+    "kind": "cafe",
+    "address": "2246 Newport Blvd",
+    "city": "Costa Mesa",
+    "state": "CA",
+    "zip": "92627",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.652785,
+    "lng": -117.906748
+  },
+  {
+    "id": "sandoitchi-dallas-tx",
+    "name": "Sandoitchi",
+    "kind": "cafe",
+    "address": "1604 Main St Suite 110",
+    "city": "Dallas",
+    "state": "TX",
+    "zip": "75201",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.780673,
+    "lng": -96.797954
+  },
+  {
+    "id": "sant-ambroeus-brookfield-place-new-york-ny",
+    "name": "Sant Ambroeus Brookfield Place",
+    "kind": "cafe",
+    "address": "230 Vesey Street (Entrance on West Street)",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10281",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.714064,
+    "lng": -74.015308
+  },
+  {
+    "id": "sant-ambroeus-coffee-bar-gelateria-new-york-ny",
+    "name": "Sant Ambroeus Coffee Bar Gelateria",
+    "kind": "cafe",
+    "address": "267 Lafayette Street",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10012",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.723491,
+    "lng": -73.996452
+  },
+  {
+    "id": "sant-ambroeus-coffee-bar-york-ave-new-york-ny",
+    "name": "Sant Ambroeus Coffee Bar York Ave",
+    "kind": "cafe",
+    "address": "1334 York Avenue",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10021",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.766424,
+    "lng": -73.953846
+  },
+  {
+    "id": "sant-ambroeus-hanley-new-york-ny",
+    "name": "Sant Ambroeus Hanley",
+    "kind": "cafe",
+    "address": "1136 3rd Avenue",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10065",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.766236,
+    "lng": -73.963406
+  },
+  {
+    "id": "sant-ambroeus-loews-regency-hotel-new-york-ny",
+    "name": "Sant Ambroeus Loews Regency Hotel",
+    "kind": "cafe",
+    "address": "540 Park Avenue",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10065",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.764417,
+    "lng": -73.969041
+  },
+  {
+    "id": "sant-ambroeus-madison-new-york-ny",
+    "name": "Sant Ambroeus Madison",
+    "kind": "cafe",
+    "address": "1000 Madison Avenue",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10075",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.775455,
+    "lng": -73.963072
+  },
+  {
+    "id": "sant-ambroeus-palm-beach-palm-beach-fl",
+    "name": "Sant Ambroeus Palm Beach",
+    "kind": "cafe",
+    "address": "340 Royal Poinciana Way",
+    "city": "Palm Beach",
+    "state": "FL",
+    "zip": "33480",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 26.717214,
+    "lng": -80.042191
+  },
+  {
+    "id": "sant-ambroeus-soho-new-york-ny",
+    "name": "Sant Ambroeus Soho",
+    "kind": "cafe",
+    "address": "265 Lafayette Street",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10012",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.723408,
+    "lng": -73.99652
+  },
+  {
+    "id": "sant-ambroeus-southampton-southampton-ny",
+    "name": "Sant Ambroeus Southampton",
+    "kind": "cafe",
+    "address": "30 Main Street",
+    "city": "Southampton",
+    "state": "NY",
+    "zip": "11968",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.885079,
+    "lng": -72.389102
+  },
+  {
+    "id": "sant-ambroeus-west-village-new-york-ny",
+    "name": "Sant Ambroeus West Village",
+    "kind": "cafe",
+    "address": "259 West 4th Street",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10014",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.735401,
+    "lng": -74.003133
+  },
+  {
+    "id": "sant-ambroues-aspen-aspen-co",
+    "name": "Sant Ambroues Aspen",
+    "kind": "cafe",
+    "address": "201 E Main Street",
+    "city": "Aspen",
+    "state": "CO",
+    "zip": "81611",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.190896,
+    "lng": -106.821303
+  },
+  {
+    "id": "semilla-coffee-mcallen-tx",
+    "name": "Semilla Coffee",
+    "kind": "cafe",
+    "address": "4715 N 10th St Suite 5",
+    "city": "McAllen",
+    "state": "TX",
+    "zip": "78504",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 26.246417,
+    "lng": -98.2234
+  },
+  {
+    "id": "seven-sisters-portland-or",
+    "name": "Seven Sisters",
+    "kind": "retailer",
+    "address": "811 E. Burnside Ste. 114",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97214",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.523151,
+    "lng": -122.657362
+  },
+  {
+    "id": "sip-snack-los-angeles-ca",
+    "name": "Sip Snack",
+    "kind": "retailer",
+    "address": "5110 York Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90042",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.12164,
+    "lng": -118.206609
+  },
+  {
+    "id": "six-over-coffee-co-monterey-ca",
+    "name": "Six Over Coffee Co",
+    "kind": "cafe",
+    "address": "160 Webster Street",
+    "city": "Monterey",
+    "state": "CA",
+    "zip": "93940",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.595996,
+    "lng": -121.894147
+  },
+  {
+    "id": "slo-ranch-market-san-luis-obispo-ca",
+    "name": "Slo Ranch Market",
+    "kind": "retailer",
+    "address": "851 Froom Ranch Way",
+    "city": "San Luis Obispo",
+    "state": "CA",
+    "zip": "93405",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.256402,
+    "lng": -120.677879
+  },
+  {
+    "id": "sparrow-meat-market-ann-arbor-mi",
+    "name": "Sparrow Meat Market",
+    "kind": "retailer",
+    "address": "407 N 5th Ave",
+    "city": "Ann Arbor",
+    "state": "MI",
+    "zip": "48104",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.284595,
+    "lng": -83.74641
+  },
+  {
+    "id": "sqirl-los-angeles-ca",
+    "name": "Sqirl",
+    "kind": "retailer",
+    "address": "720 Virgil Ave  #4",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90029",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.084279,
+    "lng": -118.286655
+  },
+  {
+    "id": "swedish-hill-austin-tx",
+    "name": "Swedish Hill",
+    "kind": "retailer",
+    "address": "1804 South 1st Street",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78704",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 30.247168,
+    "lng": -97.75618
+  },
+  {
+    "id": "tasty-cafe-and-kitchen-medford-ma",
+    "name": "Tasty Cafe & Kitchen",
+    "kind": "cafe",
+    "address": "321 Boston Ave",
+    "city": "Medford",
+    "state": "MA",
+    "zip": "02155",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.411754,
+    "lng": -71.122436
+  },
+  {
+    "id": "the-cooper-charleston-sc",
+    "name": "The Cooper",
+    "kind": "cafe",
+    "address": "176 Concord St",
+    "city": "Charleston",
+    "state": "SC",
+    "zip": "29401",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.779706,
+    "lng": -79.925336
+  },
+  {
+    "id": "the-eddy-santa-barbara-ca",
+    "name": "The Eddy",
+    "kind": "retailer",
+    "address": "137 E De La Guerra St",
+    "city": "Santa Barbara",
+    "state": "CA",
+    "zip": "93101",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.421906,
+    "lng": -119.697472
+  },
+  {
+    "id": "the-elk-coffee-new-york-ny",
+    "name": "THE ELK Coffee",
+    "kind": "retailer",
+    "address": "228 Mott Street",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10012",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.722347,
+    "lng": -73.994921
+  },
+  {
+    "id": "the-golden-poppy-market-los-angeles-ca",
+    "name": "The Golden Poppy Market",
+    "kind": "retailer",
+    "address": "1209 Cypress Avenue",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90065",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.095617,
+    "lng": -118.228014
+  },
+  {
+    "id": "the-good-day-birmingham-mi",
+    "name": "The Good Day",
+    "kind": "retailer",
+    "address": "528 North Old Woodward Avenue",
+    "city": "Birmingham",
+    "state": "MI",
+    "zip": "48009",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.550655,
+    "lng": -83.217296
+  },
+  {
+    "id": "the-green-ray-nashville-tn",
+    "name": "The Green Ray",
+    "kind": "retailer",
+    "address": "3237 B Gallatin Pike",
+    "city": "Nashville",
+    "state": "TN",
+    "zip": "37216",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.208152,
+    "lng": -86.735498
+  },
+  {
+    "id": "the-refreshery-cary-nc",
+    "name": "The Refreshery",
+    "kind": "retailer",
+    "address": "253 E Chatham St",
+    "city": "Cary",
+    "state": "NC",
+    "zip": "27511",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.787791,
+    "lng": -78.775735
+  },
+  {
+    "id": "the-roosevelt-market-boise-id",
+    "name": "The Roosevelt Market",
+    "kind": "retailer",
+    "address": "311 N Elm Ave",
+    "city": "Boise",
+    "state": "ID",
+    "zip": "83712",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 43.610262,
+    "lng": -116.183537
+  },
+  {
+    "id": "time-market-tucson-az",
+    "name": "Time Market",
+    "kind": "retailer",
+    "address": "444 E University Blvd",
+    "city": "Tucson",
+    "state": "AZ",
+    "zip": "85705",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.231462,
+    "lng": -110.96429
+  },
+  {
+    "id": "tiny-grocer-hyde-park-austin-tx",
+    "name": "Tiny Grocer Hyde Park",
+    "kind": "retailer",
+    "address": "4300 Speedway Suite 101",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78751",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 30.307049,
+    "lng": -97.729937
+  },
+  {
+    "id": "totto-s-market-chicago-il",
+    "name": "Totto’s Market",
+    "kind": "retailer",
+    "address": "751 S Dearborn St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60605",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.872737,
+    "lng": -87.628971
+  },
+  {
+    "id": "town-pump-bodega-denver-co",
+    "name": "Town Pump Bodega",
+    "kind": "retailer",
+    "address": "2810 E 3rd Ave",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80206",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.720846,
+    "lng": -104.954249
+  },
+  {
+    "id": "trilogy-coffee-and-tea-bar-kilauea-hi",
+    "name": "Trilogy Coffee & Tea Bar",
+    "kind": "retailer",
+    "address": "4270 Kilauea Rd Suite J",
+    "city": "Kilauea",
+    "state": "HI",
+    "zip": "96754",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 22.211807,
+    "lng": -159.408171
+  },
+  {
+    "id": "two-bunch-palms-desert-hot-springs-ca",
+    "name": "Two Bunch Palms",
+    "kind": "retailer",
+    "address": "67425 Two Bunch Palms Trail",
+    "city": "Desert Hot Springs",
+    "state": "CA",
+    "zip": "92240",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.945677,
+    "lng": -116.487746
+  },
+  {
+    "id": "village-market-grosse-pointe-farms-mi",
+    "name": "Village Market",
+    "kind": "retailer",
+    "address": "18330 Mack Ave",
+    "city": "Grosse Pointe Farms",
+    "state": "MI",
+    "zip": "48236",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.408413,
+    "lng": -82.913949
+  },
+  {
+    "id": "w206-claremont-ca",
+    "name": "W206",
+    "kind": "cafe",
+    "address": "206 W Bonita Ave Ste G",
+    "city": "Claremont",
+    "state": "CA",
+    "zip": "91711",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.096574,
+    "lng": -117.713582
+  },
+  {
+    "id": "westborn-market-plymouth-mi",
+    "name": "Westborn Market",
+    "kind": "retailer",
+    "address": "860 Penniman",
+    "city": "Plymouth",
+    "state": "MI",
+    "zip": "48170",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.371694,
+    "lng": -83.469697
+  },
+  {
+    "id": "windie-s-westerly-ri",
+    "name": "Windie's",
+    "kind": "retailer",
+    "address": "80 High St",
+    "city": "Westerly",
+    "state": "RI",
+    "zip": "02891",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.379705,
+    "lng": -71.829364
+  },
+  {
+    "id": "wine-and-eggs-los-angeles-ca",
+    "name": "Wine and Eggs",
+    "kind": "retailer",
+    "address": "3129 1/2 Glendale Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90039",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.11689,
+    "lng": -118.26272
+  },
+  {
+    "id": "wine-and-eggs-over-easy-wine-bar-culver-city-ca",
+    "name": "Wine and Eggs + Over Easy Wine Bar",
+    "kind": "retailer",
+    "address": "6142 Washington Blvd",
+    "city": "Culver City",
+    "state": "CA",
+    "zip": "90232",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.030858,
+    "lng": -118.378861
+  },
+  {
+    "id": "yama-sushi-marketplace-los-angeles-ca",
+    "name": "Yama Sushi Marketplace",
+    "kind": "retailer",
+    "address": "3178 W Olympic Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90006",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.05236,
+    "lng": -118.30561
+  },
+  {
+    "id": "yama-sushi-marketplace-san-gabriel-ca",
+    "name": "Yama Sushi Marketplace",
+    "kind": "retailer",
+    "address": "911 W Las Tunas Dr San Gabriel",
+    "city": "San Gabriel",
+    "state": "CA",
+    "zip": "91775",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.102061,
+    "lng": -118.11273
+  },
+  {
+    "id": "yama-sushi-marketplace-los-angeles-ca-2",
+    "name": "Yama Sushi Marketplace",
+    "kind": "retailer",
+    "address": "11709 National Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90064",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.022652,
+    "lng": -118.43922
+  },
+  {
+    "id": "your-choice-santa-barbara-ca",
+    "name": "Your Choice",
+    "kind": "cafe",
+    "address": "3404 State St",
+    "city": "Santa Barbara",
+    "state": "CA",
+    "zip": "93105",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.440705,
+    "lng": -119.736798
+  },
+  {
+    "id": "zen-cha-matcha-darien-ct",
+    "name": "Zen Cha Matcha",
+    "kind": "cafe",
+    "address": "130 Heights Rd",
+    "city": "Darien",
+    "state": "CT",
+    "zip": "06820",
+    "listedBy": "Rocky's",
+    "brands": [
+      {
+        "name": "Rocky's",
+        "evidence": "https://www.rockysmatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.069159,
+    "lng": -73.493531
+  },
+  {
+    "id": "h-mart-annandale-annandale-va",
+    "name": "H Mart Annandale",
+    "kind": "retailer",
+    "address": "7885 Heritage Dr",
+    "city": "Annandale",
+    "state": "VA",
+    "zip": "22003",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.82583,
+    "lng": -77.214269
+  },
+  {
+    "id": "h-mart-arcadia-arcadia-ca",
+    "name": "H Mart Arcadia",
+    "kind": "retailer",
+    "address": "1101 W Huntington Dr",
+    "city": "Arcadia",
+    "state": "CA",
+    "zip": "91007",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.131936,
+    "lng": -118.065812
+  },
+  {
+    "id": "h-mart-balboa-san-diego-ca",
+    "name": "H Mart Balboa",
+    "kind": "retailer",
+    "address": "7725 Balboa Ave",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92111",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.821655,
+    "lng": -117.157183
+  },
+  {
+    "id": "h-mart-ballard-seattle-wa-seattle-wa",
+    "name": "H Mart Ballard (Seattle WA)",
+    "kind": "retailer",
+    "address": "951 Nw Ballard Way",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98107",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.662608,
+    "lng": -122.370372
+  },
+  {
+    "id": "h-mart-bellevue-wa-bellevue-wa",
+    "name": "H Mart Bellevue (WA)",
+    "kind": "retailer",
+    "address": "100 108th Ave Ne",
+    "city": "Bellevue",
+    "state": "WA",
+    "zip": "98004",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.611298,
+    "lng": -122.195372
+  },
+  {
+    "id": "h-mart-belmont-portland-or-portland-or",
+    "name": "H Mart Belmont (Portland OR)",
+    "kind": "retailer",
+    "address": "3301 Se Belmont St",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97214",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.516543,
+    "lng": -122.630943
+  },
+  {
+    "id": "h-mart-buena-park-buena-park-ca",
+    "name": "H Mart Buena Park",
+    "kind": "retailer",
+    "address": "5111 Beach Blvd",
+    "city": "Buena Park",
+    "state": "CA",
+    "zip": "90621",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.886795,
+    "lng": -117.995256
+  },
+  {
+    "id": "h-mart-burke-burke-va",
+    "name": "H Mart Burke",
+    "kind": "retailer",
+    "address": "9550 Burke Rd",
+    "city": "Burke",
+    "state": "VA",
+    "zip": "22015",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.79488,
+    "lng": -77.272736
+  },
+  {
+    "id": "h-mart-cambridge-cambridge-ma",
+    "name": "H Mart Cambridge",
+    "kind": "retailer",
+    "address": "581 Massachusetts Ave",
+    "city": "Cambridge",
+    "state": "MA",
+    "zip": "02139",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.365227,
+    "lng": -71.102411
+  },
+  {
+    "id": "h-mart-cary-cary-nc",
+    "name": "H Mart Cary",
+    "kind": "retailer",
+    "address": "1961 High House Rd",
+    "city": "Cary",
+    "state": "NC",
+    "zip": "27519",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.788876,
+    "lng": -78.848821
+  },
+  {
+    "id": "h-mart-catonsville-catonsville-md",
+    "name": "H Mart Catonsville",
+    "kind": "retailer",
+    "address": "800 N Rolling Rd",
+    "city": "Catonsville",
+    "state": "MD",
+    "zip": "21228",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.282466,
+    "lng": -76.755311
+  },
+  {
+    "id": "h-mart-centreville-centreville-va",
+    "name": "H Mart Centreville",
+    "kind": "retailer",
+    "address": "13818 Braddock Rd",
+    "city": "Centreville",
+    "state": "VA",
+    "zip": "20121",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.837856,
+    "lng": -77.427141
+  },
+  {
+    "id": "h-mart-cerritos-lakewood-ca",
+    "name": "H Mart Cerritos",
+    "kind": "retailer",
+    "address": "20137 Pioneer Blvd",
+    "city": "Lakewood",
+    "state": "CA",
+    "zip": "90715",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.84746,
+    "lng": -118.082105
+  },
+  {
+    "id": "h-mart-cherry-hill-cherry-hill-nj",
+    "name": "H Mart Cherry Hill",
+    "kind": "retailer",
+    "address": "1720 Route 70 E",
+    "city": "Cherry Hill",
+    "state": "NJ",
+    "zip": "08003",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.90724,
+    "lng": -74.978423
+  },
+  {
+    "id": "h-mart-chino-chino-ca",
+    "name": "H Mart Chino",
+    "kind": "retailer",
+    "address": "3967 Grand Ave",
+    "city": "Chino",
+    "state": "CA",
+    "zip": "91710",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.992901,
+    "lng": -117.717356
+  },
+  {
+    "id": "h-mart-district-h-seattle-wa-seattle-wa",
+    "name": "H Mart District H (Seattle WA)",
+    "kind": "retailer",
+    "address": "101 Terry Ave N",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98109",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.618808,
+    "lng": -122.337432
+  },
+  {
+    "id": "h-mart-doraville-doraville-ga",
+    "name": "H Mart Doraville",
+    "kind": "retailer",
+    "address": "6035 Peachtree Rd Bldg B",
+    "city": "Doraville",
+    "state": "GA",
+    "zip": "30360",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.907519,
+    "lng": -84.288517
+  },
+  {
+    "id": "h-mart-duluth-duluth-ga",
+    "name": "H Mart Duluth",
+    "kind": "retailer",
+    "address": "2550 Pleasant Hill Rd Bldg 300",
+    "city": "Duluth",
+    "state": "GA",
+    "zip": "30096",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.969631,
+    "lng": -84.143003
+  },
+  {
+    "id": "h-mart-edison-edison-nj",
+    "name": "H Mart Edison",
+    "kind": "retailer",
+    "address": "1761 Nj-27",
+    "city": "Edison",
+    "state": "NJ",
+    "zip": "08817",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.51254,
+    "lng": -74.40649
+  },
+  {
+    "id": "h-mart-elkins-park-elkins-park-pa",
+    "name": "H Mart Elkins Park",
+    "kind": "retailer",
+    "address": "7320 Old York Rd Suite #110",
+    "city": "Elkins Park",
+    "state": "PA",
+    "zip": "19027",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.062807,
+    "lng": -75.137
+  },
+  {
+    "id": "h-mart-ellicott-city-ellicott-city-md",
+    "name": "H Mart Ellicott City",
+    "kind": "retailer",
+    "address": "3301 N Ridge Rd",
+    "city": "Ellicott City",
+    "state": "MD",
+    "zip": "21043",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.280896,
+    "lng": -76.816531
+  },
+  {
+    "id": "h-mart-fairfax-fairfax-va",
+    "name": "H Mart Fairfax",
+    "kind": "retailer",
+    "address": "11200 Fairfax Blvd",
+    "city": "Fairfax",
+    "state": "VA",
+    "zip": "22030",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.85779,
+    "lng": -77.331901
+  },
+  {
+    "id": "h-mart-falls-church-falls-church-va",
+    "name": "H Mart Falls Church",
+    "kind": "retailer",
+    "address": "8103 Lee Hwy",
+    "city": "Falls Church",
+    "state": "VA",
+    "zip": "22042",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.875471,
+    "lng": -77.223516
+  },
+  {
+    "id": "h-mart-federal-way-wa-federal-way-wa",
+    "name": "H Mart Federal Way (WA)",
+    "kind": "retailer",
+    "address": "31217 Pacific Hwy S",
+    "city": "Federal Way",
+    "state": "WA",
+    "zip": "98003",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.321848,
+    "lng": -122.315332
+  },
+  {
+    "id": "h-mart-fort-lee-fort-lee-nj",
+    "name": "H Mart Fort Lee",
+    "kind": "retailer",
+    "address": "130 Linwood Plaza",
+    "city": "Fort Lee",
+    "state": "NJ",
+    "zip": "07024",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.860827,
+    "lng": -73.971051
+  },
+  {
+    "id": "h-mart-frederick-frederick-md",
+    "name": "H Mart Frederick",
+    "kind": "retailer",
+    "address": "1063 W Patrick St",
+    "city": "Frederick",
+    "state": "MD",
+    "zip": "21702",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.417445,
+    "lng": -77.443892
+  },
+  {
+    "id": "h-mart-gaithersburg-gaithersburg-md",
+    "name": "H Mart Gaithersburg",
+    "kind": "retailer",
+    "address": "9639 Lost Knife Rd",
+    "city": "Gaithersburg",
+    "state": "MD",
+    "zip": "20877",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.154345,
+    "lng": -77.197369
+  },
+  {
+    "id": "h-mart-garden-grove-garden-grove-ca",
+    "name": "H Mart Garden Grove",
+    "kind": "retailer",
+    "address": "8911 Garden Grove Blvd",
+    "city": "Garden Grove",
+    "state": "CA",
+    "zip": "92844",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.774366,
+    "lng": -117.977242
+  },
+  {
+    "id": "h-mart-herndon-herndon-va",
+    "name": "H Mart Herndon",
+    "kind": "retailer",
+    "address": "1228 Elden St",
+    "city": "Herndon",
+    "state": "VA",
+    "zip": "20170",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.962789,
+    "lng": -77.400318
+  },
+  {
+    "id": "h-mart-irvine-irvine-ca",
+    "name": "H Mart Irvine",
+    "kind": "retailer",
+    "address": "2600 Alton Pkwy",
+    "city": "Irvine",
+    "state": "CA",
+    "zip": "92606",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.689334,
+    "lng": -117.834476
+  },
+  {
+    "id": "h-mart-irvine-northpark-irvine-ca",
+    "name": "H Mart Irvine NorthPark",
+    "kind": "retailer",
+    "address": "3931 Irvine Blvd",
+    "city": "Irvine",
+    "state": "CA",
+    "zip": "92602",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.724076,
+    "lng": -117.772132
+  },
+  {
+    "id": "h-mart-jericho-jericho-ny",
+    "name": "H Mart Jericho",
+    "kind": "retailer",
+    "address": "336 N Broadway",
+    "city": "Jericho",
+    "state": "NY",
+    "zip": "11753",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.780557,
+    "lng": -73.534011
+  },
+  {
+    "id": "h-mart-johns-creek-johns-creek-ga",
+    "name": "H Mart Johns Creek",
+    "kind": "retailer",
+    "address": "10820 Abbotts Bridge Rd",
+    "city": "Johns Creek",
+    "state": "GA",
+    "zip": "30097",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.045389,
+    "lng": -84.1789
+  },
+  {
+    "id": "h-mart-kakaako-honolulu-hi",
+    "name": "H Mart Kakaako",
+    "kind": "retailer",
+    "address": "458 Keawe St Floor 2",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "96813",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.299999,
+    "lng": -157.860432
+  },
+  {
+    "id": "h-mart-la-city-center-los-angeles-ca",
+    "name": "H Mart LA City Center",
+    "kind": "retailer",
+    "address": "3500 W 6th St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90020",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.063492,
+    "lng": -118.297925
+  },
+  {
+    "id": "h-mart-la-k-town-los-angeles-ca",
+    "name": "H Mart LA K-Town",
+    "kind": "retailer",
+    "address": "928 S Western Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90006",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.054438,
+    "lng": -118.308951
+  },
+  {
+    "id": "h-mart-las-vegas-las-vegas-nv",
+    "name": "H Mart Las Vegas",
+    "kind": "retailer",
+    "address": "2620 S Decatur Blvd",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89102",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.142279,
+    "lng": -115.208007
+  },
+  {
+    "id": "h-mart-levittown-levittown-pa",
+    "name": "H Mart Levittown",
+    "kind": "retailer",
+    "address": "1138 Bristol Oxford Valley Rd",
+    "city": "Levittown",
+    "state": "PA",
+    "zip": "19057",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.165517,
+    "lng": -74.875931
+  },
+  {
+    "id": "h-mart-long-island-city-long-island-city-ny",
+    "name": "H Mart Long Island City",
+    "kind": "retailer",
+    "address": "48-18 Northern Blvd",
+    "city": "Long Island City",
+    "state": "NY",
+    "zip": "11101",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.753324,
+    "lng": -73.913632
+  },
+  {
+    "id": "h-mart-lynnwood-wa-lynnwood-wa",
+    "name": "H Mart Lynnwood (WA)",
+    "kind": "retailer",
+    "address": "3301 184th St Sw",
+    "city": "Lynnwood",
+    "state": "WA",
+    "zip": "98037",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.833143,
+    "lng": -122.276843
+  },
+  {
+    "id": "h-mart-manassas-manassas-va",
+    "name": "H Mart Manassas",
+    "kind": "retailer",
+    "address": "8819 Centreville Rd",
+    "city": "Manassas",
+    "state": "VA",
+    "zip": "20110",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.763046,
+    "lng": -77.457481
+  },
+  {
+    "id": "h-mart-mesa-mesa-az",
+    "name": "H Mart Mesa",
+    "kind": "retailer",
+    "address": "1919 W Main St",
+    "city": "Mesa",
+    "state": "AZ",
+    "zip": "85201",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.413285,
+    "lng": -111.872612
+  },
+  {
+    "id": "h-mart-orlando-orlando-fl",
+    "name": "H Mart Orlando",
+    "kind": "retailer",
+    "address": "7501 W Colonial Dr",
+    "city": "Orlando",
+    "state": "FL",
+    "zip": "32818",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 28.552182,
+    "lng": -81.484204
+  },
+  {
+    "id": "h-mart-paramus-paramus-nj",
+    "name": "H Mart Paramus",
+    "kind": "retailer",
+    "address": "60 Nj-17",
+    "city": "Paramus",
+    "state": "NJ",
+    "zip": "07652",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.916024,
+    "lng": -74.071511
+  },
+  {
+    "id": "h-mart-pearl-city-pearl-city-hi",
+    "name": "H Mart Pearl City",
+    "kind": "retailer",
+    "address": "850 Kamehameha Hwy",
+    "city": "Pearl City",
+    "state": "HI",
+    "zip": "96782",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.394435,
+    "lng": -157.968326
+  },
+  {
+    "id": "h-mart-philadelphia-philadelphia-pa",
+    "name": "H Mart Philadelphia",
+    "kind": "retailer",
+    "address": "6201 N Front St #124",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19120",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.044466,
+    "lng": -75.119338
+  },
+  {
+    "id": "h-mart-quincy-quincy-ma",
+    "name": "H Mart Quincy",
+    "kind": "retailer",
+    "address": "101 Falls Blvd",
+    "city": "Quincy",
+    "state": "MA",
+    "zip": "02169",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.238007,
+    "lng": -70.983981
+  },
+  {
+    "id": "h-mart-redmond-wa-redmond-wa",
+    "name": "H Mart Redmond (WA)",
+    "kind": "retailer",
+    "address": "7589 170th Ave Ne",
+    "city": "Redmond",
+    "state": "WA",
+    "zip": "98052",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.670876,
+    "lng": -122.113508
+  },
+  {
+    "id": "h-mart-san-francisco-san-francisco-ca",
+    "name": "H Mart San Francisco",
+    "kind": "retailer",
+    "address": "3995 Alemany Blvd",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94132",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.710396,
+    "lng": -122.467652
+  },
+  {
+    "id": "h-mart-san-jose-de-anza-san-jose-ca",
+    "name": "H Mart San Jose De Anza",
+    "kind": "retailer",
+    "address": "1179 S De Anza Blvd",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95129",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.304136,
+    "lng": -122.033672
+  },
+  {
+    "id": "h-mart-schaumburg-ii-schaumburg-il",
+    "name": "H Mart Schaumburg II",
+    "kind": "retailer",
+    "address": "420 E Golf Rd",
+    "city": "Schaumburg",
+    "state": "IL",
+    "zip": "60173",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.048583,
+    "lng": -88.092931
+  },
+  {
+    "id": "h-mart-seattle-2nd-and-pine-wa-seattle-wa",
+    "name": "H Mart Seattle 2nd & Pine (WA)",
+    "kind": "retailer",
+    "address": "1601 2nd Ave",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98101",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.610348,
+    "lng": -122.340152
+  },
+  {
+    "id": "h-mart-somerville-somerville-ma",
+    "name": "H Mart Somerville",
+    "kind": "retailer",
+    "address": "240 Elm St",
+    "city": "Somerville",
+    "state": "MA",
+    "zip": "02144",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.395087,
+    "lng": -71.122091
+  },
+  {
+    "id": "h-mart-suwanee-suwanee-ga",
+    "name": "H Mart Suwanee",
+    "kind": "retailer",
+    "address": "2700 Lawrenceville-Suwanee Rd",
+    "city": "Suwanee",
+    "state": "GA",
+    "zip": "30024",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.022058,
+    "lng": -84.045067
+  },
+  {
+    "id": "h-mart-tacoma-wa-lakewood-wa",
+    "name": "H Mart Tacoma (WA)",
+    "kind": "retailer",
+    "address": "8720 S Tacoma Way",
+    "city": "Lakewood",
+    "state": "WA",
+    "zip": "98499",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.178654,
+    "lng": -122.485385
+  },
+  {
+    "id": "h-mart-tigard-or-tigard-or",
+    "name": "H Mart Tigard (OR)",
+    "kind": "retailer",
+    "address": "13600 Sw Pacific Hwy",
+    "city": "Tigard",
+    "state": "OR",
+    "zip": "97223",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.420887,
+    "lng": -122.782382
+  },
+  {
+    "id": "h-mart-torrance-torrance-ca",
+    "name": "H Mart Torrance",
+    "kind": "retailer",
+    "address": "4340 Pacific Coast Hwy",
+    "city": "Torrance",
+    "state": "CA",
+    "zip": "90505",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.807931,
+    "lng": -118.360523
+  },
+  {
+    "id": "h-mart-upper-darby-upper-darby-pa",
+    "name": "H Mart Upper Darby",
+    "kind": "retailer",
+    "address": "7050 Terminal Square",
+    "city": "Upper Darby",
+    "state": "PA",
+    "zip": "19082",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.961177,
+    "lng": -75.262841
+  },
+  {
+    "id": "h-mart-urbana-urbana-il",
+    "name": "H Mart Urbana",
+    "kind": "retailer",
+    "address": "220 N Broadway Ave",
+    "city": "Urbana",
+    "state": "IL",
+    "zip": "61801",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.114457,
+    "lng": -88.205841
+  },
+  {
+    "id": "h-mart-uw-seattle-wa-seattle-wa",
+    "name": "H Mart UW (Seattle WA)",
+    "kind": "retailer",
+    "address": "4216 University Way Ne",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98105",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.658898,
+    "lng": -122.312872
+  },
+  {
+    "id": "h-mart-west-jordan-ut-west-jordan-ut",
+    "name": "H Mart West Jordan (UT)",
+    "kind": "retailer",
+    "address": "1442 W 9000 S",
+    "city": "West Jordan",
+    "state": "UT",
+    "zip": "84088",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.589367,
+    "lng": -111.932782
+  },
+  {
+    "id": "h-mart-westminster-westminster-ca",
+    "name": "H Mart Westminster",
+    "kind": "retailer",
+    "address": "16450 Beach Blvd",
+    "city": "Westminster",
+    "state": "CA",
+    "zip": "92683",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.724216,
+    "lng": -117.987732
+  },
+  {
+    "id": "h-mart-wheaton-wheaton-md",
+    "name": "H Mart Wheaton",
+    "kind": "retailer",
+    "address": "12015 Georgia Ave",
+    "city": "Wheaton",
+    "state": "MD",
+    "zip": "20902",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.052376,
+    "lng": -77.049622
+  },
+  {
+    "id": "h-mart-woodside-woodside-ny",
+    "name": "H Mart Woodside",
+    "kind": "retailer",
+    "address": "59-18 Woodside Ave",
+    "city": "Woodside",
+    "state": "NY",
+    "zip": "11377",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.745088,
+    "lng": -73.90486
+  },
+  {
+    "id": "island-pacific-granada-hills-granada-hills-ca",
+    "name": "Island Pacific Granada Hills",
+    "kind": "retailer",
+    "address": "11130 Balboa Blvd #A",
+    "city": "Granada Hills",
+    "state": "CA",
+    "zip": "91344",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.273216,
+    "lng": -118.500422
+  },
+  {
+    "id": "island-pacific-las-vegas-nellis-las-vegas-nv",
+    "name": "Island Pacific Las Vegas Nellis",
+    "kind": "retailer",
+    "address": "317 N Nellis Blvd",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89110",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.167148,
+    "lng": -115.062282
+  },
+  {
+    "id": "island-pacific-las-vegas-tropicana-las-vegas-nv",
+    "name": "Island Pacific Las Vegas Tropicana",
+    "kind": "retailer",
+    "address": "8650 W Tropicana Ave",
+    "city": "Las Vegas",
+    "state": "NV",
+    "zip": "89147",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.100167,
+    "lng": -115.279822
+  },
+  {
+    "id": "island-pacific-santa-clarita-santa-clarita-ca",
+    "name": "Island Pacific Santa Clarita",
+    "kind": "retailer",
+    "address": "19387 Soledad Canyon Rd",
+    "city": "Santa Clarita",
+    "state": "CA",
+    "zip": "91351",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.415818,
+    "lng": -118.473233
+  },
+  {
+    "id": "lion-capitol-san-jose-ca",
+    "name": "Lion Capitol",
+    "kind": "retailer",
+    "address": "1031 E Capitol Expressway",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95121",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.299649,
+    "lng": -121.82249
+  },
+  {
+    "id": "lion-milpitas-milpitas-ca",
+    "name": "Lion Milpitas",
+    "kind": "retailer",
+    "address": "1838 N Milpitas Blvd",
+    "city": "Milpitas",
+    "state": "CA",
+    "zip": "95035",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.456506,
+    "lng": -121.910252
+  },
+  {
+    "id": "lion-saratoga-west-valley-san-jose-ca",
+    "name": "Lion Saratoga (West Valley)",
+    "kind": "retailer",
+    "address": "471 Saratoga Ave",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95129",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.319116,
+    "lng": -121.974602
+  },
+  {
+    "id": "lion-story-san-jose-ca",
+    "name": "Lion Story",
+    "kind": "retailer",
+    "address": "1070 Story Rd",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95122",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.331526,
+    "lng": -121.853852
+  },
+  {
+    "id": "marukai-costa-mesa-tokyo-central-costa-mesa-ca",
+    "name": "Marukai Costa Mesa (Tokyo Central)",
+    "kind": "retailer",
+    "address": "2975 Harbor Blvd",
+    "city": "Costa Mesa",
+    "state": "CA",
+    "zip": "92626",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.679438,
+    "lng": -117.92064
+  },
+  {
+    "id": "marukai-little-tokyo-los-angeles-ca",
+    "name": "Marukai Little Tokyo",
+    "kind": "retailer",
+    "address": "123 S Onizuka St #105",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90012",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.050376,
+    "lng": -118.242282
+  },
+  {
+    "id": "marukai-pacific-square-gardena-gardena-ca",
+    "name": "Marukai Pacific Square (Gardena)",
+    "kind": "retailer",
+    "address": "1620 W Redondo Beach Blvd",
+    "city": "Gardena",
+    "state": "CA",
+    "zip": "90247",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.889993,
+    "lng": -118.305071
+  },
+  {
+    "id": "marukai-san-diego-san-diego-ca",
+    "name": "Marukai San Diego",
+    "kind": "retailer",
+    "address": "8151 Balboa Ave",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92111",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.821702,
+    "lng": -117.147961
+  },
+  {
+    "id": "marukai-torrance-torrance-ca",
+    "name": "Marukai Torrance",
+    "kind": "retailer",
+    "address": "3832 W Sepulveda Blvd",
+    "city": "Torrance",
+    "state": "CA",
+    "zip": "90505",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.82555,
+    "lng": -118.352312
+  },
+  {
+    "id": "marukai-west-covina-tokyo-central-west-covina-ca",
+    "name": "Marukai West Covina (Tokyo Central)",
+    "kind": "retailer",
+    "address": "1420 S Azusa Ave",
+    "city": "West Covina",
+    "state": "CA",
+    "zip": "91791",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.048426,
+    "lng": -117.906562
+  },
+  {
+    "id": "marukai-west-la-los-angeles-ca",
+    "name": "Marukai West LA",
+    "kind": "retailer",
+    "address": "12121 W Pico Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90064",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.02935,
+    "lng": -118.450468
+  },
+  {
+    "id": "marukai-wholesale-mart-honolulu-honolulu-hi",
+    "name": "Marukai Wholesale Mart (Honolulu)",
+    "kind": "retailer",
+    "address": "2310 Kamehameha Hwy",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "96819",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.332843,
+    "lng": -157.885553
+  },
+  {
+    "id": "mitsuwa-costa-mesa-costa-mesa-ca",
+    "name": "Mitsuwa Costa Mesa",
+    "kind": "retailer",
+    "address": "665 Paularino Ave",
+    "city": "Costa Mesa",
+    "state": "CA",
+    "zip": "92626",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.681546,
+    "lng": -117.884052
+  },
+  {
+    "id": "mitsuwa-cypress-cypress-ca",
+    "name": "Mitsuwa Cypress",
+    "kind": "retailer",
+    "address": "4955 Katella Ave",
+    "city": "Cypress",
+    "state": "CA",
+    "zip": "90720",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.803999,
+    "lng": -118.045082
+  },
+  {
+    "id": "mitsuwa-irvine-irvine-ca",
+    "name": "Mitsuwa Irvine",
+    "kind": "retailer",
+    "address": "14230 Culver Dr",
+    "city": "Irvine",
+    "state": "CA",
+    "zip": "92604",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.706696,
+    "lng": -117.783292
+  },
+  {
+    "id": "mitsuwa-la-northridge-northridge-ca",
+    "name": "Mitsuwa LA Northridge",
+    "kind": "retailer",
+    "address": "8940 Tampa Ave",
+    "city": "Northridge",
+    "state": "CA",
+    "zip": "91324",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.233186,
+    "lng": -118.553458
+  },
+  {
+    "id": "mitsuwa-san-diego-san-diego-ca",
+    "name": "Mitsuwa San Diego",
+    "kind": "retailer",
+    "address": "4240 Kearny Mesa Rd",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92111",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.817784,
+    "lng": -117.149489
+  },
+  {
+    "id": "mitsuwa-san-gabriel-san-gabriel-ca",
+    "name": "Mitsuwa San Gabriel",
+    "kind": "retailer",
+    "address": "515 W Las Tunas Dr",
+    "city": "San Gabriel",
+    "state": "CA",
+    "zip": "91776",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.102736,
+    "lng": -118.106822
+  },
+  {
+    "id": "mitsuwa-santa-monica-west-la-mar-vista-los-angeles-ca",
+    "name": "Mitsuwa Santa Monica (West LA / Mar Vista)",
+    "kind": "retailer",
+    "address": "3760 S Centinela Ave",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90066",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.0047,
+    "lng": -118.43412
+  },
+  {
+    "id": "mitsuwa-texas-plano-plano-tx",
+    "name": "Mitsuwa Texas Plano",
+    "kind": "retailer",
+    "address": "100 Legacy Dr",
+    "city": "Plano",
+    "state": "TX",
+    "zip": "75023",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.066654,
+    "lng": -96.692916
+  },
+  {
+    "id": "mitsuwa-torrance-del-amo-torrance-ca",
+    "name": "Mitsuwa Torrance Del Amo",
+    "kind": "retailer",
+    "address": "3525 W Carson St Suite 164",
+    "city": "Torrance",
+    "state": "CA",
+    "zip": "90503",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.831022,
+    "lng": -118.345719
+  },
+  {
+    "id": "nijiya-ala-moana-honolulu-hi",
+    "name": "Nijiya Ala Moana",
+    "kind": "retailer",
+    "address": "1450 Ala Moana Blvd #1380",
+    "city": "Honolulu",
+    "state": "HI",
+    "zip": "96814",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 21.292523,
+    "lng": -157.846653
+  },
+  {
+    "id": "nijiya-little-tokyo-los-angeles-ca",
+    "name": "Nijiya Little Tokyo",
+    "kind": "retailer",
+    "address": "124 Japanese Village Plaza Mall",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90012",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.048723,
+    "lng": -118.240285
+  },
+  {
+    "id": "nijiya-mountain-view-mountain-view-ca",
+    "name": "Nijiya Mountain View",
+    "kind": "retailer",
+    "address": "143 E El Camino Real",
+    "city": "Mountain View",
+    "state": "CA",
+    "zip": "94040",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.378676,
+    "lng": -122.071442
+  },
+  {
+    "id": "nijiya-puente-hills-city-of-industry-ca",
+    "name": "Nijiya Puente Hills",
+    "kind": "retailer",
+    "address": "17869 Colima Rd",
+    "city": "City of Industry",
+    "state": "CA",
+    "zip": "91748",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.990611,
+    "lng": -117.923983
+  },
+  {
+    "id": "nijiya-rolling-hills-torrance-pch-torrance-ca",
+    "name": "Nijiya Rolling Hills (Torrance PCH)",
+    "kind": "retailer",
+    "address": "2533B Pacific Coast Hwy",
+    "city": "Torrance",
+    "state": "CA",
+    "zip": "90505",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.79118,
+    "lng": -118.329004
+  },
+  {
+    "id": "nijiya-san-diego-san-diego-ca",
+    "name": "Nijiya San Diego",
+    "kind": "retailer",
+    "address": "3860 Convoy St #109",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92111",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.813041,
+    "lng": -117.152776
+  },
+  {
+    "id": "nijiya-san-francisco-san-francisco-ca",
+    "name": "Nijiya San Francisco",
+    "kind": "retailer",
+    "address": "1737 Post St #333",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94115",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.784966,
+    "lng": -122.430722
+  },
+  {
+    "id": "nijiya-san-jose-san-jose-ca",
+    "name": "Nijiya San Jose",
+    "kind": "retailer",
+    "address": "240 Jackson St",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95112",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.349226,
+    "lng": -121.893582
+  },
+  {
+    "id": "nijiya-san-mateo-san-mateo-ca",
+    "name": "Nijiya San Mateo",
+    "kind": "retailer",
+    "address": "1956 S El Camino Real",
+    "city": "San Mateo",
+    "state": "CA",
+    "zip": "94403",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.548568,
+    "lng": -122.311316
+  },
+  {
+    "id": "nijiya-torrance-torrance-ca",
+    "name": "Nijiya Torrance",
+    "kind": "retailer",
+    "address": "2121 West 182nd St",
+    "city": "Torrance",
+    "state": "CA",
+    "zip": "90504",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.866116,
+    "lng": -118.316752
+  },
+  {
+    "id": "nijiya-west-l-a-sawtelle-los-angeles-ca",
+    "name": "Nijiya West L.A. (Sawtelle)",
+    "kind": "retailer",
+    "address": "2130 Sawtelle Blvd #105",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90025",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.038966,
+    "lng": -118.441642
+  },
+  {
+    "id": "uwajimaya-beaverton-beaverton-or",
+    "name": "Uwajimaya Beaverton",
+    "kind": "retailer",
+    "address": "10500 Sw Beaverton-Hillsdale Hwy",
+    "city": "Beaverton",
+    "state": "OR",
+    "zip": "97005",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 45.485587,
+    "lng": -122.784812
+  },
+  {
+    "id": "uwajimaya-bellevue-bellevue-wa",
+    "name": "Uwajimaya Bellevue",
+    "kind": "retailer",
+    "address": "699 120th Ave Ne",
+    "city": "Bellevue",
+    "state": "WA",
+    "zip": "98005",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.617159,
+    "lng": -122.180448
+  },
+  {
+    "id": "uwajimaya-renton-renton-wa",
+    "name": "Uwajimaya Renton",
+    "kind": "retailer",
+    "address": "501 S Grady Way",
+    "city": "Renton",
+    "state": "WA",
+    "zip": "98057",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.469918,
+    "lng": -122.212272
+  },
+  {
+    "id": "uwajimaya-seattle-seattle-wa",
+    "name": "Uwajimaya Seattle",
+    "kind": "retailer",
+    "address": "600 5th Ave S",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98104",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.597308,
+    "lng": -122.327032
+  },
+  {
+    "id": "zion-lewisville-tx-lewisville-tx",
+    "name": "Zion Lewisville (TX)",
+    "kind": "retailer",
+    "address": "2405 S Stemmons Fwy",
+    "city": "Lewisville",
+    "state": "TX",
+    "zip": "75067",
+    "listedBy": "Maeda-en",
+    "brands": [
+      {
+        "name": "Maeda-en",
+        "evidence": "https://maeda-en.com/pages/where-to-find"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.00358,
+    "lng": -96.97036
+  },
+  {
+    "id": "12hours-louisville-ky",
+    "name": "12hours",
+    "kind": "cafe",
+    "address": "1525 Bardstown Rd",
+    "city": "Louisville",
+    "state": "KY",
+    "zip": "40205",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.231796,
+    "lng": -85.707861
+  },
+  {
+    "id": "8th-symphony-coffee-cerritos-ca",
+    "name": "8th Symphony Coffee",
+    "kind": "cafe",
+    "address": "11818 South St Ste 102",
+    "city": "Cerritos",
+    "state": "CA",
+    "zip": "90703",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.857523,
+    "lng": -118.081135
+  },
+  {
+    "id": "ampersand-fort-worth-tx",
+    "name": "Ampersand",
+    "kind": "cafe",
+    "address": "3025 S. University St",
+    "city": "Fort Worth",
+    "state": "TX",
+    "zip": "76109",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.707042,
+    "lng": -97.360253
+  },
+  {
+    "id": "ampersand-fort-worth-tx-2",
+    "name": "Ampersand",
+    "kind": "cafe",
+    "address": "3009 Bledsoe St",
+    "city": "Fort Worth",
+    "state": "TX",
+    "zip": "76107",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.748075,
+    "lng": -97.360811
+  },
+  {
+    "id": "baladi-coffee-kennesaw-ga",
+    "name": "Baladi Coffee",
+    "kind": "cafe",
+    "address": "3061 George Busbee Pkwy NW Ste 2000",
+    "city": "Kennesaw",
+    "state": "GA",
+    "zip": "30144",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.028047,
+    "lng": -84.568698
+  },
+  {
+    "id": "bassi-doral-fl",
+    "name": "Bassi",
+    "kind": "cafe",
+    "address": "3530 NW 83rd Ave Ste 112",
+    "city": "Doral",
+    "state": "FL",
+    "zip": "33122",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.808573,
+    "lng": -80.33163
+  },
+  {
+    "id": "bijou-houston-tx",
+    "name": "Bijou",
+    "kind": "cafe",
+    "address": "9938 Bellaire Blvd Ste L",
+    "city": "Houston",
+    "state": "TX",
+    "zip": "77036",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 29.705079,
+    "lng": -95.555372
+  },
+  {
+    "id": "cafe-mako-chicago-il",
+    "name": "Cafe Mako",
+    "kind": "cafe",
+    "address": "2206 N Clark St",
+    "city": "Chicago",
+    "state": "IL",
+    "zip": "60614",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.922909,
+    "lng": -87.63898
+  },
+  {
+    "id": "cafe-on-me-wichita-ks",
+    "name": "Cafe On Me",
+    "kind": "cafe",
+    "address": "115 S Minneapolis Ave",
+    "city": "Wichita",
+    "state": "KS",
+    "zip": "67211",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.685947,
+    "lng": -97.314832
+  },
+  {
+    "id": "caffeine-bar-bentonville-ar",
+    "name": "Caffeine Bar",
+    "kind": "cafe",
+    "address": "813 W Central Ave #4",
+    "city": "Bentonville",
+    "state": "AR",
+    "zip": "72712",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.372886,
+    "lng": -94.223362
+  },
+  {
+    "id": "catche-orlando-fl",
+    "name": "Catche",
+    "kind": "cafe",
+    "address": "1220 E Colonial Dr",
+    "city": "Orlando",
+    "state": "FL",
+    "zip": "32803",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 28.55274,
+    "lng": -81.363433
+  },
+  {
+    "id": "chaand-new-york-ny",
+    "name": "Cha&",
+    "kind": "cafe",
+    "address": "51 Essex St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10002",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.716617,
+    "lng": -73.989371
+  },
+  {
+    "id": "coche-valley-dessert-cafe-seattle-wa",
+    "name": "Coche Valley Dessert Cafe",
+    "kind": "cafe",
+    "address": "1424 E Pine St",
+    "city": "Seattle",
+    "state": "WA",
+    "zip": "98122",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 47.615448,
+    "lng": -122.312962
+  },
+  {
+    "id": "coffeeism-palm-springs-ca",
+    "name": "Coffeeism",
+    "kind": "cafe",
+    "address": "110 E Tahquitz Canyon Way",
+    "city": "Palm Springs",
+    "state": "CA",
+    "zip": "92262",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.823276,
+    "lng": -116.546322
+  },
+  {
+    "id": "cove-cafe-st-louis-mo",
+    "name": "Cove Cafe",
+    "kind": "cafe",
+    "address": "6060 Telegraph Rd Ste B",
+    "city": "St. Louis",
+    "state": "MO",
+    "zip": "63129",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.454309,
+    "lng": -90.306209
+  },
+  {
+    "id": "easy-does-it-san-diego-ca",
+    "name": "Easy Does It",
+    "kind": "retailer",
+    "address": "5375 Kearny Villa Rd #113",
+    "city": "San Diego",
+    "state": "CA",
+    "zip": "92123",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.831005,
+    "lng": -117.138482
+  },
+  {
+    "id": "el-gallo-cape-charles-va",
+    "name": "El Gallo",
+    "kind": "cafe",
+    "address": "20498 Lankford Hwy",
+    "city": "Cape Charles",
+    "state": "VA",
+    "zip": "23310",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.296823,
+    "lng": -75.970862
+  },
+  {
+    "id": "elevated-coffee-and-tea-richardson-tx",
+    "name": "Elevated Coffee & Tea",
+    "kind": "cafe",
+    "address": "1251 State St #700",
+    "city": "Richardson",
+    "state": "TX",
+    "zip": "75082",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.001555,
+    "lng": -96.700912
+  },
+  {
+    "id": "elk-grove-donuts-elk-grove-ca",
+    "name": "Elk Grove Donuts",
+    "kind": "cafe",
+    "address": "10043 Bruceville Rd Ste 140",
+    "city": "Elk Grove",
+    "state": "CA",
+    "zip": "95757",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.39362,
+    "lng": -121.417281
+  },
+  {
+    "id": "espresso-west-west-yellowstone-mt",
+    "name": "Espresso West",
+    "kind": "cafe",
+    "address": "10 N Canyon Street",
+    "city": "West Yellowstone",
+    "state": "MT",
+    "zip": "59758",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 44.658778,
+    "lng": -111.099533
+  },
+  {
+    "id": "eternal-flavors-denver-co",
+    "name": "Eternal Flavors",
+    "kind": "cafe",
+    "address": "5600 W Dartmouth Ave #104",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80227",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.655397,
+    "lng": -105.056332
+  },
+  {
+    "id": "filo-cafe-north-bethesda-md",
+    "name": "Filo Cafe",
+    "kind": "cafe",
+    "address": "4836 Boiling Brook Pkwy",
+    "city": "North Bethesda",
+    "state": "MD",
+    "zip": "20852",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.046045,
+    "lng": -77.09903
+  },
+  {
+    "id": "floe-cafe-matcha-and-bingsoo-fullerton-ca",
+    "name": "floe cafe Matcha & Bingsoo",
+    "kind": "cafe",
+    "address": "1981 Sunny Crest Dr #200",
+    "city": "Fullerton",
+    "state": "CA",
+    "zip": "92835",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.894269,
+    "lng": -117.930449
+  },
+  {
+    "id": "floe-cafe-danville-e-danville-ca",
+    "name": "Floe Cafe Danville",
+    "kind": "cafe",
+    "address": "11000 Crow Canyon Rd",
+    "city": "E Danville",
+    "state": "CA",
+    "zip": "94506",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.798276,
+    "lng": -121.921965
+  },
+  {
+    "id": "floe-matcha-and-bingsoo-la-mirada-la-mirada-ca",
+    "name": "Floe Matcha & Bingsoo La Mirada",
+    "kind": "cafe",
+    "address": "13391 S Beach Blvd Ste B",
+    "city": "La Mirada",
+    "state": "CA",
+    "zip": "90638",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.910097,
+    "lng": -117.976809
+  },
+  {
+    "id": "go-go-avocado-tempe-az",
+    "name": "Go Go Avocado",
+    "kind": "cafe",
+    "address": "707 S Farmer Ave Ste 125",
+    "city": "Tempe",
+    "state": "AZ",
+    "zip": "85281",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.423101,
+    "lng": -111.944122
+  },
+  {
+    "id": "goldenrod-kitchen-charleston-wv",
+    "name": "Goldenrod Kitchen",
+    "kind": "cafe",
+    "address": "611 Tennessee Ave",
+    "city": "Charleston",
+    "state": "WV",
+    "zip": "25302",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.360524,
+    "lng": -81.64237
+  },
+  {
+    "id": "home-away-coffee-denver-co",
+    "name": "Home Away Coffee",
+    "kind": "cafe",
+    "address": "3501 Blake St Unit 106",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80205",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.768924,
+    "lng": -104.975656
+  },
+  {
+    "id": "house-of-crepes-mcallen-tx",
+    "name": "House of Crepes",
+    "kind": "cafe",
+    "address": "4400 Pecan Blvd Ste 30",
+    "city": "McAllen",
+    "state": "TX",
+    "zip": "78501",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 26.221802,
+    "lng": -98.267542
+  },
+  {
+    "id": "k-fe-7-coffee-indio-ca",
+    "name": "K-Fé 7 Coffee",
+    "kind": "cafe",
+    "address": "48575 Madison St",
+    "city": "Indio",
+    "state": "CA",
+    "zip": "92201",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.696845,
+    "lng": -116.254519
+  },
+  {
+    "id": "kalsang-pottery-new-york-ny",
+    "name": "Kalsang Pottery",
+    "kind": "retailer",
+    "address": "241 E 10th St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10003",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.729007,
+    "lng": -73.984721
+  },
+  {
+    "id": "kattea-boba-house-hoffman-estates-il",
+    "name": "Kattea Boba House",
+    "kind": "cafe",
+    "address": "2597 W Golf Rd",
+    "city": "Hoffman Estates",
+    "state": "IL",
+    "zip": "60169",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.046396,
+    "lng": -88.144452
+  },
+  {
+    "id": "kissaten-hifi-san-francisco-ca",
+    "name": "Kissaten HiFi",
+    "kind": "retailer",
+    "address": "189 6th Ave",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94118",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.785204,
+    "lng": -122.464726
+  },
+  {
+    "id": "kori-cafe-palos-hills-il",
+    "name": "Kōri Cafe",
+    "kind": "cafe",
+    "address": "8074 W 111th St",
+    "city": "Palos Hills",
+    "state": "IL",
+    "zip": "60465",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.690228,
+    "lng": -87.8196
+  },
+  {
+    "id": "lady-baker-pembroke-pines-fl",
+    "name": "Lady Baker",
+    "kind": "cafe",
+    "address": "14545 SW 5th St",
+    "city": "Pembroke Pines",
+    "state": "FL",
+    "zip": "33027",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 26.003731,
+    "lng": -80.336543
+  },
+  {
+    "id": "lb-eatery-and-wine-pembroke-pines-fl",
+    "name": "LB Eatery & Wine",
+    "kind": "cafe",
+    "address": "14543 SW 5th St",
+    "city": "Pembroke Pines",
+    "state": "FL",
+    "zip": "33027",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 26.004263,
+    "lng": -80.336076
+  },
+  {
+    "id": "liduvina-s-a-dwelling-place-palmetto-bay-fl",
+    "name": "Liduvina's a Dwelling Place",
+    "kind": "cafe",
+    "address": "17013 S Dixie Hwy",
+    "city": "Palmetto Bay",
+    "state": "FL",
+    "zip": "33157",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.611743,
+    "lng": -80.348079
+  },
+  {
+    "id": "liv-coffee-chino-ca",
+    "name": "Liv Coffee",
+    "kind": "cafe",
+    "address": "5370 Schaefer Ave g",
+    "city": "Chino",
+    "state": "CA",
+    "zip": "91710",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.00496,
+    "lng": -117.687781
+  },
+  {
+    "id": "loop-espresso-club-los-angeles-ca",
+    "name": "Loop Espresso Club",
+    "kind": "cafe",
+    "address": "1712 Colorado Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90041",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.13921,
+    "lng": -118.20414
+  },
+  {
+    "id": "luma-redwood-city-ca",
+    "name": "Luma",
+    "kind": "cafe",
+    "address": "1305 Middlefield Rd",
+    "city": "Redwood City",
+    "state": "CA",
+    "zip": "94063",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.483716,
+    "lng": -122.224442
+  },
+  {
+    "id": "melt-n-drizzle-mobile-al",
+    "name": "Melt n Drizzle",
+    "kind": "cafe",
+    "address": "330 S University Blvd",
+    "city": "Mobile",
+    "state": "AL",
+    "zip": "36609",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 30.672442,
+    "lng": -88.171786
+  },
+  {
+    "id": "mentosa-coffee-palm-springs-ca",
+    "name": "Mentosa Coffee",
+    "kind": "cafe",
+    "address": "383 N Indian Canyon Dr",
+    "city": "Palm Springs",
+    "state": "CA",
+    "zip": "92262",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.828234,
+    "lng": -116.54596
+  },
+  {
+    "id": "minimo-austin-tx",
+    "name": "Minimo",
+    "kind": "cafe",
+    "address": "508 West Ave",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78701",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 30.270095,
+    "lng": -97.751132
+  },
+  {
+    "id": "moments-cafe-west-newton-ma",
+    "name": "Moments Cafe",
+    "kind": "cafe",
+    "address": "1284 Washington St",
+    "city": "West Newton",
+    "state": "MA",
+    "zip": "02465",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 42.349269,
+    "lng": -71.225204
+  },
+  {
+    "id": "monstera-deliciosa-cafe-el-paso-tx",
+    "name": "Monstera Deliciosa Café",
+    "kind": "cafe",
+    "address": "2830 Yandell Dr Suite A",
+    "city": "El Paso",
+    "state": "TX",
+    "zip": "79903",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 31.781627,
+    "lng": -106.46204
+  },
+  {
+    "id": "mori-haus-los-angeles-ca",
+    "name": "Mori Haus",
+    "kind": "cafe",
+    "address": "2432 E. 8th St.",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90021",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.02943,
+    "lng": -118.22869
+  },
+  {
+    "id": "nur-house-minneapolis-mn",
+    "name": "Nur House",
+    "kind": "cafe",
+    "address": "515 S 4th St",
+    "city": "Minneapolis",
+    "state": "MN",
+    "zip": "55415",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 44.976788,
+    "lng": -93.263011
+  },
+  {
+    "id": "palmas-cafe-w-cranford-nj",
+    "name": "Palmas Cafe",
+    "kind": "cafe",
+    "address": "32 N Ave",
+    "city": "W Cranford",
+    "state": "NJ",
+    "zip": "07016",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.655858,
+    "lng": -74.304656
+  },
+  {
+    "id": "pan-pan-bakery-and-cafe-dalworthington-gardens-tx",
+    "name": "Pan Pan Bakery & Cafe",
+    "kind": "cafe",
+    "address": "2110 Roosevelt Dr A",
+    "city": "Dalworthington Gardens",
+    "state": "TX",
+    "zip": "76013",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 32.707354,
+    "lng": -97.155909
+  },
+  {
+    "id": "puce-patisserie-miramar-fl",
+    "name": "Puce Patisserie",
+    "kind": "cafe",
+    "address": "7150 Pembroke Rd",
+    "city": "Miramar",
+    "state": "FL",
+    "zip": "33023",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 25.994716,
+    "lng": -80.230206
+  },
+  {
+    "id": "raiz-coffee-bar-co-riverside-ca",
+    "name": "Raíz Coffee Bar Co.",
+    "kind": "cafe",
+    "address": "7495 River Glen Dr",
+    "city": "Riverside",
+    "state": "CA",
+    "zip": "92509",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.007523,
+    "lng": -117.446365
+  },
+  {
+    "id": "read-the-room-coffee-los-angeles-ca",
+    "name": "Read The Room Coffee",
+    "kind": "cafe",
+    "address": "6241 W 87th St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90045",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.958726,
+    "lng": -118.394382
+  },
+  {
+    "id": "remnant-coffee-co-franklin-tn",
+    "name": "Remnant Coffee Co",
+    "kind": "cafe",
+    "address": "320 Liberty Pike Ste 100",
+    "city": "Franklin",
+    "state": "TN",
+    "zip": "37064",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 35.930775,
+    "lng": -86.859042
+  },
+  {
+    "id": "reu-cafe-hawthorne-ca",
+    "name": "Reu Cafe",
+    "kind": "cafe",
+    "address": "12836 S Inglewood Ave",
+    "city": "Hawthorne",
+    "state": "CA",
+    "zip": "90250",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 33.91626,
+    "lng": -118.361387
+  },
+  {
+    "id": "seoulmate-kitchen-santa-barbara-ca",
+    "name": "Seoulmate Kitchen",
+    "kind": "cafe",
+    "address": "38 West Victoria Street Unit 115",
+    "city": "Santa Barbara",
+    "state": "CA",
+    "zip": "93101",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.423607,
+    "lng": -119.707042
+  },
+  {
+    "id": "sip-matcha-edinburg-tx",
+    "name": "Sip Matcha",
+    "kind": "cafe",
+    "address": "4113 S Sugar Rd Ste 16",
+    "city": "Edinburg",
+    "state": "TX",
+    "zip": "78539",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 26.264977,
+    "lng": -98.184924
+  },
+  {
+    "id": "sporty-and-rich-west-hollywood-ca",
+    "name": "Sporty & Rich",
+    "kind": "cafe",
+    "address": "8619 Melrose Ave",
+    "city": "West Hollywood",
+    "state": "CA",
+    "zip": "90069",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.082065,
+    "lng": -118.380593
+  },
+  {
+    "id": "spring-cafe-new-york-ny",
+    "name": "Spring Cafe",
+    "kind": "cafe",
+    "address": "153d Centre St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10013",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.717798,
+    "lng": -74.000269
+  },
+  {
+    "id": "teahee-denver-co",
+    "name": "Teahee",
+    "kind": "cafe",
+    "address": "333 S Federal Blvd #130",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80219",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.710598,
+    "lng": -105.025208
+  },
+  {
+    "id": "teamo-san-jose-ca",
+    "name": "TeaMo",
+    "kind": "cafe",
+    "address": "1661 Tully Rd",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95122",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.321945,
+    "lng": -121.827429
+  },
+  {
+    "id": "the-cado-cafe-clarksville-tn",
+    "name": "The Cado Cafe",
+    "kind": "cafe",
+    "address": "1508 Madison St Suite 1",
+    "city": "Clarksville",
+    "state": "TN",
+    "zip": "37040",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 36.518279,
+    "lng": -87.32716
+  },
+  {
+    "id": "the-lighthouse-campus-brooklyn-ny",
+    "name": "The Lighthouse Campus",
+    "kind": "cafe",
+    "address": "58 Kent St",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11222",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.73038,
+    "lng": -73.958955
+  },
+  {
+    "id": "the-motley-coffeehouse-claremont-ca",
+    "name": "The Motley Coffeehouse",
+    "kind": "cafe",
+    "address": "1030 N Columbia Ave",
+    "city": "Claremont",
+    "state": "CA",
+    "zip": "91711",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 34.103112,
+    "lng": -117.71135
+  },
+  {
+    "id": "twin-bean-cafe-olmsted-falls-oh",
+    "name": "Twin Bean Cafe",
+    "kind": "cafe",
+    "address": "8134 Columbia Rd",
+    "city": "Olmsted Falls",
+    "state": "OH",
+    "zip": "44138",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 41.373946,
+    "lng": -81.902086
+  },
+  {
+    "id": "uju-san-jose-ca",
+    "name": "UJU",
+    "kind": "cafe",
+    "address": "969 Story Rd Unit 6081",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95122",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.33197,
+    "lng": -121.857917
+  },
+  {
+    "id": "unbound-cafe-el-paso-tx",
+    "name": "Unbound Café",
+    "kind": "cafe",
+    "address": "602 Magoffin Ave",
+    "city": "El Paso",
+    "state": "TX",
+    "zip": "79901",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 31.759459,
+    "lng": -106.48239
+  },
+  {
+    "id": "vessel-coffee-collective-philadelphia-pa",
+    "name": "Vessel Coffee Collective",
+    "kind": "cafe",
+    "address": "2401 Frankford Ave",
+    "city": "Philadelphia",
+    "state": "PA",
+    "zip": "19125",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.981647,
+    "lng": -75.127221
+  },
+  {
+    "id": "wild-graze-charleston-wv",
+    "name": "Wild Graze",
+    "kind": "cafe",
+    "address": "1210 Smith St Ste 101",
+    "city": "Charleston",
+    "state": "WV",
+    "zip": "25301",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.350025,
+    "lng": -81.624891
+  },
+  {
+    "id": "yume-mori-matcha-berkeley-ca",
+    "name": "Yume Mori Matcha",
+    "kind": "cafe",
+    "address": "2319 Shattuck Ave",
+    "city": "Berkeley",
+    "state": "CA",
+    "zip": "94704",
+    "listedBy": "Nami Matcha",
+    "brands": [
+      {
+        "name": "Nami Matcha",
+        "evidence": "https://namimatcha.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 37.866559,
+    "lng": -122.267482
   }
 ]

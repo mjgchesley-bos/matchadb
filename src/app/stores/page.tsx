@@ -35,8 +35,8 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
           description,
           mainEntity: {
             "@type": "ItemList",
-            numberOfItems: stores.length,
-            itemListElement: stores.map((s, i) => ({
+            numberOfItems: stores.filter((s) => !s.listedBy).length,
+            itemListElement: stores.filter((s) => !s.listedBy).map((s, i) => ({
               "@type": "ListItem",
               position: i + 1,
               item: {
@@ -68,9 +68,11 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
       <section className="mt-14 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-stores">
         <h2 id="how-stores" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">How this list is built</h2>
         <p className="text-sm text-ink-muted leading-relaxed">
-          A place is listed only when its own website gives its address, and a brand is shown as carried only when that website (or the brand&apos;s own store page) says so. Each entry links
-          to the page we checked and shows the date. We do not list a store from memory or hearsay, and we do not claim a store carries a brand just because it sells matcha. Stock changes,
-          so call ahead before a special trip, especially for a specific product. A brand&apos;s own shop carries that brand&apos;s products; availability of particular items varies by location.
+          A place is listed only when its own website, or the store locator of a brand that sells through it, gives its address, and a brand is shown as carried only when one of those pages
+          says so. Places taken from a brand&apos;s locator are marked &ldquo;Brand&apos;s store locator&rdquo; and link to that page. Each entry shows the date we checked. We do not list a store from
+          memory or hearsay, and we do not claim a store carries a brand just because it sells matcha. Brands update their locators on their own schedule, so a place can close or change what
+          it stocks before the list does: call ahead before a special trip, especially for a specific product. A brand&apos;s own shop carries that brand&apos;s products; availability of particular
+          items varies by location.
         </p>
         <p className="mt-3 text-sm text-ink-muted leading-relaxed">
           Coverage is far from complete. Most stores that sell matcha do not publish which brands they stock, so an empty map does not mean a place has no matcha. Search results are not

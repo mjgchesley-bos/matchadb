@@ -65,7 +65,8 @@ export default async function BrandPage({
   const resellerNote = BRAND_RESELLER_NOTES[brandName];
   const onlineResellers = resellersForBrand(brandName);
   const ownShops = stockists.filter((s) => s.kind === "brand-shop");
-  const retailers = stockists.filter((s) => s.kind === "retailer");
+  const retailers = stockists.filter((s) => s.kind !== "brand-shop");
+  const MAX_CARDS = 12;
   const fmtChecked = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 
   return (
@@ -218,14 +219,14 @@ export default async function BrandPage({
           )}
           {[
             { title: `${brandName}'s own shops`, list: ownShops },
-            { title: "Retailers that stock it, in person", list: retailers },
+            { title: "Retailers and cafés, in person", list: retailers },
           ]
             .filter((g) => g.list.length > 0)
             .map((g) => (
               <div key={g.title} className="mt-5">
                 <h3 className="font-display text-lg font-semibold text-ink">{g.title}</h3>
                 <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {g.list.map((s) => {
+                  {g.list.slice(0, MAX_CARDS).map((s) => {
                     const claim = s.brands.find((b) => b.name === brandName);
                     return (
                       <li key={s.id} className="rounded-sm border border-line bg-paper-raised p-4">
@@ -238,17 +239,28 @@ export default async function BrandPage({
                         </p>
                         {s.note && <p className="mt-2 text-xs text-ink-faint leading-relaxed">{s.note}</p>}
                         <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                          <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
-                            Store website
-                          </a>
+                          {s.url && (
+                            <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
+                              Store website
+                            </a>
+                          )}
                           <a href={claim?.evidence ?? s.url} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
-                            Source, checked {fmtChecked(s.checked)}
+                            {s.listedBy ? "Brand's store locator" : "Source"}, checked {fmtChecked(s.checked)}
                           </a>
                         </p>
                       </li>
                     );
                   })}
                 </ul>
+                {g.list.length > MAX_CARDS && (
+                  <p className="mt-3 text-sm text-ink-muted">
+                    Plus {g.list.length - MAX_CARDS} more.{" "}
+                    <Link href={`/stores?brand=${encodeURIComponent(brandName)}`} className="text-matcha hover:text-forest underline">
+                      See them all on the store finder
+                    </Link>
+                    .
+                  </p>
+                )}
               </div>
             ))}
           {onlineResellers.length > 0 && (

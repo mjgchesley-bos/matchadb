@@ -41,6 +41,7 @@ async function geocode(query: string): Promise<Origin | null> {
   return f ? { lat: f.center[1], lng: f.center[0], label: f.place_name.replace(/, United States$/, "") } : null;
 }
 
+const LIST_CAP = 40;
 const fmtDate = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 const directionsUrl = (s: Store) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.address}, ${s.city}, ${s.state} ${s.zip}`)}`;
 
@@ -57,6 +58,7 @@ export function StoreFinder({ stores, contactEmail, initialBrand = "" }: { store
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [busy, setBusy] = useState<"search" | "locate" | null>(null);
   const [message, setMessage] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const brandOptions = useMemo(() => {
     const m = new Map<string, number>();
@@ -346,7 +348,7 @@ export function StoreFinder({ stores, contactEmail, initialBrand = "" }: { store
           )}
 
           <ul className="flex flex-col gap-3">
-            {listed.map(({ store: s, miles }) => (
+            {listed.filter((x, i) => showAll || i < LIST_CAP || x.store.id === selectedId).map(({ store: s, miles }) => (
               <li
                 key={s.id}
                 ref={(el) => {
@@ -377,16 +379,23 @@ export function StoreFinder({ stores, contactEmail, initialBrand = "" }: { store
                   <a href={directionsUrl(s)} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
                     Directions
                   </a>
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
-                    Store website
-                  </a>
+                  {s.url && (
+                    <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
+                      Store website
+                    </a>
+                  )}
                   <a href={s.brands[0]?.evidence ?? s.url} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
-                    Source, checked {fmtDate(s.checked)}
+                    {s.listedBy ? "Brand's store locator" : "Source"}, checked {fmtDate(s.checked)}
                   </a>
                 </p>
               </li>
             ))}
           </ul>
+          {!showAll && listed.length > LIST_CAP && (
+            <button type="button" onClick={() => setShowAll(true)} className="text-sm text-matcha hover:text-forest underline text-left">
+              Show all {listed.length} places
+            </button>
+          )}
           {!origin && totalForBrand === 0 && <p className="text-sm text-ink-muted">No stores listed for that brand yet.</p>}
         </section>
       </div>
