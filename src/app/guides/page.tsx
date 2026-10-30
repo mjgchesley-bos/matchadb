@@ -62,6 +62,16 @@ export default async function GuidesIndex() {
             </span>
           </Link>
         ))}
+        <Link
+          href="/guides/what-is-ceremonial-matcha"
+          className="border border-line rounded-sm bg-paper-raised p-5 hover:border-matcha hover:bg-matcha-soft transition-colors"
+        >
+          <span className="font-display text-xl font-semibold text-ink block">What is ceremonial matcha?</span>
+          <span className="text-sm text-ink-muted mt-2 block leading-relaxed">
+            Where the term came from, how it relates to the Japanese tea ceremony, and what it does and does not guarantee today.
+          </span>
+          <span className="text-xs text-ink-faint mt-3 block">Explainer</span>
+        </Link>
       </div>
     </main>
   );

@@ -125,9 +125,6 @@ export default async function Home({
             directly from each brand&apos;s own product pages, kept current, and never smoothed
             over when the source contradicts itself.
           </p>
-          <p className="mt-4 text-sm text-ink-faint">
-            A guided matching tool and sourcing map are coming in later phases.
-          </p>
         </div>
         <div className="max-w-4xl mx-auto px-6 pb-16">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { GoogleAnalyticsPageView } from "./google-analytics-pageview";
 import { ConsentBanner, CookieSettingsButton } from "@/components/ConsentBanner";
+import { HeaderMenu } from "@/components/HeaderMenu";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
@@ -98,13 +99,6 @@ export default function RootLayout({
             </Link>
             <nav className="flex flex-wrap items-center justify-end gap-2 sm:gap-4 text-[0.9rem]">
               <Link
-                href="/research"
-                className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <span className="sm:hidden">Research</span>
-                <span className="hidden sm:inline">Research library</span>
-              </Link>
-              <Link
                 href="/map"
                 className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
@@ -118,6 +112,7 @@ export default function RootLayout({
                 <span className="sm:hidden">Search</span>
                 <span className="hidden sm:inline">Search full database</span>
               </Link>
+              <HeaderMenu />
             </nav>
           </div>
         </header>

@@ -20,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...TOPICS.map((t) => ({ url: `${SITE_URL}/research/topics/${t.slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${SITE_URL}/guides`, changeFrequency: "weekly", priority: 0.8 },
     ...GUIDES.map((g) => ({ url: `${SITE_URL}/guides/${g.slug}`, changeFrequency: "weekly" as const, priority: 0.8 })),
+    { url: `${SITE_URL}/guides/what-is-ceremonial-matcha`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${SITE_URL}/cultivars`, changeFrequency: "weekly", priority: 0.8 },
     ...CULTIVARS.map((c) => ({ url: `${SITE_URL}/cultivars/${c.slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${SITE_URL}/compare`, changeFrequency: "weekly", priority: 0.8 },

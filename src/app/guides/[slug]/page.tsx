@@ -165,6 +165,15 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         </p>
       </section>
 
+      {guide.slug === "ceremonial-vs-culinary-matcha" && (
+        <p className="mt-10 max-w-3xl text-sm text-ink-muted">
+          Want the history behind the word?{" "}
+          <Link href="/guides/what-is-ceremonial-matcha" className="text-matcha hover:text-forest">
+            What is ceremonial matcha? &rarr;
+          </Link>
+        </p>
+      )}
+
       {related.length > 0 && (
         <section className="mt-12">
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">More guides</h2>
