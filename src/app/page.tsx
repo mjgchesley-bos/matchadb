@@ -181,7 +181,7 @@ export default async function Home({
 
       <section className="max-w-7xl mx-auto px-6 pt-12 pb-16">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
-          <aside className="lg:w-72 lg:shrink-0 lg:sticky lg:top-6">
+          <aside className="lg:w-72 lg:shrink-0 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
             <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-6">Matcha, matched</p>
             <MatchTool filters={filters} options={filterOptions} clearHref="/" compact />
           </aside>
