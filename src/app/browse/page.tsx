@@ -85,7 +85,7 @@ export default async function BrowsePage({
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-10">
-        <aside className="md:sticky md:top-24 h-fit">
+        <aside className="md:sticky md:top-24 md:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto md:overscroll-contain md:pr-2">
           <FilterForm filters={filters} options={filterOptions} clearHref="/browse" />
         </aside>
 
