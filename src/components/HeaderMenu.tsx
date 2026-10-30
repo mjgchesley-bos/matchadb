@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 const ITEMS: { href: string; label: string; note: string }[] = [
   { href: "/research", label: "Research library", note: "Every scientific study on matcha" },
   { href: "/cultivars", label: "Cultivars", note: "Yabukita, Okumidori, Samidori and more" },
-  { href: "/guides/what-is-ceremonial-matcha", label: "What is ceremonial matcha?", note: "Where the word came from and what it means today" },
+  { href: "/guides/what-is-ceremonial-matcha", label: "What is “ceremonial”?", note: "Where the word came from and what it means today" },
 ];
 
 export function HeaderMenu() {

@@ -112,7 +112,7 @@ export default async function WhatIsCeremonialPage() {
           "@graph": [
             {
               "@type": "Article",
-              headline: "What is ceremonial matcha?",
+              headline: "What is “ceremonial”?",
               description,
               url,
               mainEntityOfPage: url,
@@ -125,7 +125,7 @@ export default async function WhatIsCeremonialPage() {
               "@type": "BreadcrumbList",
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "Guides", item: `${SITE_URL}/guides` },
-                { "@type": "ListItem", position: 2, name: "What is ceremonial matcha?", item: url },
+                { "@type": "ListItem", position: 2, name: "What is “ceremonial”?", item: url },
               ],
             },
           ],
@@ -135,12 +135,12 @@ export default async function WhatIsCeremonialPage() {
       <nav aria-label="Breadcrumb" className="text-sm text-ink-faint mb-6">
         <Link href="/guides" className="hover:text-ink">Guides</Link>
         <span aria-hidden="true"> / </span>
-        <span className="text-ink-muted">What is ceremonial matcha?</span>
+        <span className="text-ink-muted">What is &ldquo;ceremonial&rdquo;?</span>
       </nav>
 
       <header className="max-w-3xl">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Explainer</p>
-        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">What is ceremonial matcha?</h1>
+        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">What is &ldquo;ceremonial&rdquo;?</h1>
       </header>
 
       <section className="mt-6 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-label="Short answer">

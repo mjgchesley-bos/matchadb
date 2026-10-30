@@ -169,7 +169,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         <p className="mt-10 max-w-3xl text-sm text-ink-muted">
           Want the history behind the word?{" "}
           <Link href="/guides/what-is-ceremonial-matcha" className="text-matcha hover:text-forest">
-            What is ceremonial matcha? &rarr;
+            What is &ldquo;ceremonial&rdquo;? &rarr;
           </Link>
         </p>
       )}
