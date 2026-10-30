@@ -17,12 +17,14 @@ function MatchPill({
   label,
   checked,
   onToggle,
+  compact,
 }: {
   name: string;
   value: string;
   label?: string;
   checked: boolean;
   onToggle: (name: string, value: string, checked: boolean) => void;
+  compact?: boolean;
 }) {
   return (
     // `relative` keeps the absolutely-positioned sr-only input's layout box
@@ -51,7 +53,7 @@ function MatchPill({
         onChange={(e) => onToggle(name, value, e.target.checked)}
         className="peer sr-only"
       />
-      <span className="inline-block rounded-full border-2 border-line-strong px-4 py-2 text-sm sm:text-base font-medium text-ink-muted transition-all duration-150 hover:-translate-y-0.5 hover:border-matcha hover:shadow-sm peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha peer-checked:-translate-y-0.5 peer-checked:shadow-md">
+      <span className={`inline-block rounded-full border-2 border-line-strong font-medium ${compact ? "px-3 py-1.5 text-sm" : "px-4 py-2 text-sm sm:text-base"} text-ink-muted transition-all duration-150 hover:-translate-y-0.5 hover:border-matcha hover:shadow-sm peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha peer-checked:-translate-y-0.5 peer-checked:shadow-md`}>
         {label || value}
       </span>
     </label>
@@ -61,11 +63,23 @@ function MatchPill({
 // Each prompt now carries the same size/weight/color the removed "Tell us
 // what you're after" section heading used to have -- so the four questions
 // read as a set of equal headings, not a heading plus sub-questions.
-function MatchGroup({ prompt, children }: { prompt: string; children: React.ReactNode }) {
+function MatchGroup({
+  prompt,
+  children,
+  compact,
+}: {
+  prompt: string;
+  children: React.ReactNode;
+  compact?: boolean;
+}) {
   return (
-    <div className="text-center">
-      <p className="font-display text-2xl sm:text-3xl font-semibold text-ink mb-3">{prompt}</p>
-      <div className="flex flex-wrap justify-center gap-2.5">{children}</div>
+    <div className={compact ? "" : "text-center"}>
+      <p
+        className={`font-display font-semibold text-ink mb-3 ${compact ? "text-lg" : "text-2xl sm:text-3xl"}`}
+      >
+        {prompt}
+      </p>
+      <div className={`flex flex-wrap ${compact ? "gap-2" : "justify-center gap-2.5"}`}>{children}</div>
     </div>
   );
 }
@@ -105,10 +119,13 @@ export function MatchTool({
   filters,
   options,
   clearHref,
+  compact,
 }: {
   filters: BrowseFilters;
   options: { grades: string[]; flavors: string[]; uses: string[] };
   clearHref: string;
+  // Sidebar rendering: left-aligned, smaller headings and pills.
+  compact?: boolean;
 }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -187,14 +204,21 @@ export function MatchTool({
   );
 
   return (
-    <div className={`flex flex-col gap-7 transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
-      <MatchGroup prompt="How will you use it?">
+    <div className={`flex flex-col ${compact ? "gap-6" : "gap-7"} transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
+      <MatchGroup prompt="How will you use it?" compact={compact}>
         {uses.map((u) => (
-          <MatchPill key={u} name="use" value={u} checked={filters.uses?.includes(u) ?? false} onToggle={handleToggle} />
+          <MatchPill
+            key={u}
+            name="use"
+            value={u}
+            checked={filters.uses?.includes(u) ?? false}
+            onToggle={handleToggle}
+            compact={compact}
+          />
         ))}
       </MatchGroup>
 
-      <MatchGroup prompt="What grade?">
+      <MatchGroup prompt="What grade?" compact={compact}>
         {qualityGrades.map((g) => (
           <MatchPill
             key={g}
@@ -203,12 +227,13 @@ export function MatchTool({
             label={gradeLabel(g)}
             checked={filters.grades?.includes(g) ?? false}
             onToggle={handleToggle}
+            compact={compact}
           />
         ))}
       </MatchGroup>
 
       {prepStyles.length > 0 && (
-        <MatchGroup prompt="Prepared thin or thick?">
+        <MatchGroup prompt="Prepared thin or thick?" compact={compact}>
           {prepStyles.map((g) => (
             <MatchPill
               key={g}
@@ -217,18 +242,26 @@ export function MatchTool({
               label={gradeLabel(g)}
               checked={filters.grades?.includes(g) ?? false}
               onToggle={handleToggle}
+              compact={compact}
             />
           ))}
         </MatchGroup>
       )}
 
-      <MatchGroup prompt="What flavor calls to you?">
+      <MatchGroup prompt="What flavor calls to you?" compact={compact}>
         {options.flavors.map((f) => (
-          <MatchPill key={f} name="flavor" value={f} checked={filters.flavors?.includes(f) ?? false} onToggle={handleToggle} />
+          <MatchPill
+            key={f}
+            name="flavor"
+            value={f}
+            checked={filters.flavors?.includes(f) ?? false}
+            onToggle={handleToggle}
+            compact={compact}
+          />
         ))}
       </MatchGroup>
 
-      <div className="flex justify-center">
+      <div className={compact ? "" : "flex justify-center"}>
         <Link href={clearHref} className="text-sm text-ink-faint hover:text-ink-muted transition-colors">
           Start over
         </Link>

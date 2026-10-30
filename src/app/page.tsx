@@ -20,7 +20,7 @@ import { getLibraryFacets } from "@/lib/studies";
 
 // Abbreviated relative to /browse's full result set + pagination -- the home
 // page shows a sample plus a link to the full database rather than paging.
-const HOME_PAGE_SIZE = 9;
+const HOME_PAGE_SIZE = 12;
 
 export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
@@ -179,53 +179,54 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-10 text-center">
-        <p className="font-mono text-sm sm:text-base tracking-[0.2em] uppercase text-forest mb-6">Matcha, matched</p>
+      <section className="max-w-7xl mx-auto px-6 pt-12 pb-16">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
+          <aside className="lg:w-72 lg:shrink-0 lg:sticky lg:top-6">
+            <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-6">Matcha, matched</p>
+            <MatchTool filters={filters} options={filterOptions} clearHref="/" compact />
+          </aside>
 
-        <MatchTool filters={filters} options={filterOptions} clearHref="/" />
-      </section>
+          <div className="min-w-0 flex-1">
+            {tieredPicks && !noFiltersSelected && (
+              <div className="mb-10">
+                <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-4">
+                  A pick at every price
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <TieredPickCard label="Budget pick" product={tieredPicks.cheap} />
+                  <TieredPickCard label="Mid-range pick" product={tieredPicks.mid} />
+                  <TieredPickCard label="Premium pick" product={tieredPicks.premium} />
+                </div>
+              </div>
+            )}
 
-      <section className="max-w-5xl mx-auto px-6 pb-16">
-        {tieredPicks && (
-          <div className="mt-10">
-            <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-4">
-              A pick at every price
+            <p className="text-sm text-ink-muted mb-5">
+              Showing {products.length} of {total.toLocaleString()} matching product
+              {total === 1 ? "" : "s"}
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <TieredPickCard label="Budget pick" product={tieredPicks.cheap} />
-              <TieredPickCard label="Mid-range pick" product={tieredPicks.mid} />
-              <TieredPickCard label="Premium pick" product={tieredPicks.premium} />
-            </div>
+
+            {products.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                {products.map((p) => (
+                  <ProductCard key={p.id} product={p} />
+                ))}
+              </div>
+            ) : (
+              <p className="text-ink-muted">No products match those filters.</p>
+            )}
+
+            {total > products.length && (
+              <div className="mt-8 text-center">
+                <Link
+                  href={seeAllHref}
+                  className="group inline-flex items-center gap-2 text-matcha hover:text-forest font-medium transition-colors"
+                >
+                  See all {total.toLocaleString()} results in the full database
+                  <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
+                </Link>
+              </div>
+            )}
           </div>
-        )}
-
-        <div className="mt-10">
-          <p className="text-sm text-ink-muted mb-5">
-            Showing {products.length} of {total.toLocaleString()} matching product
-            {total === 1 ? "" : "s"}
-          </p>
-
-          {products.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {products.map((p) => (
-                <ProductCard key={p.id} product={p} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-ink-muted">No products match those filters.</p>
-          )}
-
-          {total > products.length && (
-            <div className="mt-8 text-center">
-              <Link
-                href={seeAllHref}
-                className="group inline-flex items-center gap-2 text-matcha hover:text-forest font-medium transition-colors"
-              >
-                See all {total.toLocaleString()} results in the full database
-                <span className="transition-transform group-hover:translate-x-1">&rarr;</span>
-              </Link>
-            </div>
-          )}
         </div>
       </section>
 
