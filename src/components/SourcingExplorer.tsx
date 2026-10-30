@@ -6,6 +6,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import type { MapLocation } from "@/lib/map-data";
 import { BrandLogo, gradeLabel } from "@/components/product-cards";
+import { getBrandLogoPath, logoNeedsInvert } from "@/lib/logos";
 
 // Full-screen sourcing map: regions, named districts and verified farms as
 // pins; click one to fly in and open its detail panel. It shows where the
@@ -101,6 +102,129 @@ function locationsGeoJSON(locs: MapLocation[], f: Filters, selectedId: string | 
   return { regions: make(["region"]), pins: make(["place", "farm"]) };
 }
 
+// When a region or district is selected, the brands that source from it fan out
+// around the middle of the place as pins, each linking to that brand's page.
+// Brands almost always name only the region or district, not a farm, so the
+// pins deliberately share one point and fan out from it rather than being
+// scattered across the outline, which would invent locations nobody disclosed.
+// Fewer, tighter pins on a phone-width map so the fan stays on screen.
+const FAN_MAX = 30;
+const FAN_MAX_NARROW = 16;
+const FAN_RINGS = [
+  { r: 100, cap: 10 },
+  { r: 156, cap: 16 },
+  { r: 212, cap: 24 },
+];
+const FAN_RINGS_NARROW = [
+  { r: 62, cap: 7 },
+  { r: 102, cap: 10 },
+];
+
+function initialsOf(name: string): string {
+  const parts = name.replace(/[^\p{L}\p{N} ]/gu, "").split(" ").filter(Boolean);
+  return ((parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? parts[0]?.[1] ?? "")).toUpperCase();
+}
+
+function buildFan(brands: { name: string; count: number }[], overflow: number, onMore: () => void, narrow: boolean): HTMLElement {
+  type Item = { kind: "brand"; name: string; count: number } | { kind: "more"; n: number };
+  const items: Item[] = [...brands.map((b) => ({ kind: "brand" as const, name: b.name, count: b.count })), ...(overflow > 0 ? [{ kind: "more" as const, n: overflow }] : [])];
+
+  const root = document.createElement("div");
+  root.className = "matcha-fan";
+  root.style.cssText = "position:relative;width:0;height:0;pointer-events:none;";
+  // Keep clicks and touches on the pins from reaching the map underneath.
+  for (const type of ["mousedown", "touchstart", "pointerdown", "click", "dblclick"]) root.addEventListener(type, (e) => e.stopPropagation());
+
+  // A handful of brands sit on one small ring; more spill onto outer rings.
+  const rings: { r: number; items: Item[] }[] = [];
+  if (items.length <= 8) {
+    rings.push({ r: Math.max(narrow ? 56 : 66, items.length * (narrow ? 11 : 14)), items });
+  } else {
+    let i = 0;
+    for (const ring of narrow ? FAN_RINGS_NARROW : FAN_RINGS) {
+      if (i >= items.length) break;
+      rings.push({ r: ring.r, items: items.slice(i, i + ring.cap) });
+      i += ring.cap;
+    }
+  }
+
+  let order = 0;
+  rings.forEach((ring, ringIndex) => {
+    const step = (Math.PI * 2) / ring.items.length;
+    const start = -Math.PI / 2 + (ringIndex % 2 ? step / 2 : 0);
+    ring.items.forEach((item, k) => {
+      const theta = start + step * k;
+      const x = Math.cos(theta) * ring.r;
+      const y = Math.sin(theta) * ring.r;
+      const delay = order++ * 22;
+
+      const line = document.createElement("div");
+      line.style.cssText = `position:absolute;left:0;top:0;width:${ring.r}px;height:1px;background:rgba(43,90,32,0.28);transform-origin:0 50%;transform:rotate(${theta}rad);opacity:0;transition:opacity .3s ${delay}ms;`;
+      root.appendChild(line);
+
+      const el = (item.kind === "brand" ? document.createElement("a") : document.createElement("button")) as HTMLAnchorElement | HTMLButtonElement;
+      el.style.cssText = `position:absolute;left:${x}px;top:${y}px;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:9999px;background:#fff6df;border:2px solid #3c7a2a;box-shadow:0 2px 6px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;pointer-events:auto;cursor:pointer;opacity:0;transform:scale(0.4);transition:transform .35s cubic-bezier(.2,.9,.3,1.3),opacity .25s ${delay}ms,transform .35s ${delay}ms;font:700 12px var(--font-manrope), sans-serif;color:#1f3d17;text-decoration:none;padding:0;`;
+
+      let labelText: string;
+      if (item.kind === "brand") {
+        const a = el as HTMLAnchorElement;
+        a.href = `/brands/${encodeURIComponent(item.name)}`;
+        labelText = `${item.name} · ${item.count} product${item.count === 1 ? "" : "s"} here`;
+        a.setAttribute("aria-label", `${item.name}, ${item.count} product${item.count === 1 ? "" : "s"} from here. Open the brand page.`);
+        const logo = getBrandLogoPath(item.name);
+        if (logo) {
+          const img = document.createElement("img");
+          img.src = logo;
+          img.alt = "";
+          img.style.cssText = `width:100%;height:100%;object-fit:contain;padding:6px;border-radius:9999px;${logoNeedsInvert(item.name) ? "filter:invert(1);" : ""}`;
+          el.appendChild(img);
+        } else {
+          el.textContent = initialsOf(item.name);
+        }
+        if (item.count > 1) {
+          const badge = document.createElement("span");
+          badge.textContent = String(item.count);
+          badge.style.cssText = "position:absolute;top:-7px;right:-7px;min-width:18px;height:18px;padding:0 4px;border-radius:9999px;background:#3c7a2a;color:#fff6df;font:700 10px var(--font-manrope), sans-serif;display:flex;align-items:center;justify-content:center;border:1.5px solid #fff6df;";
+          el.appendChild(badge);
+        }
+      } else {
+        (el as HTMLButtonElement).type = "button";
+        el.textContent = `+${item.n}`;
+        el.style.background = "#3c7a2a";
+        el.style.color = "#fff6df";
+        labelText = `${item.n} more brand${item.n === 1 ? "" : "s"}: see the Brands tab`;
+        el.setAttribute("aria-label", labelText);
+        el.addEventListener("click", onMore);
+      }
+
+      const label = document.createElement("span");
+      label.textContent = labelText;
+      label.style.cssText = "display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:5px;white-space:nowrap;background:rgba(31,61,23,0.94);color:#fff6df;padding:3px 9px;border-radius:9999px;font:600 11px var(--font-manrope), sans-serif;pointer-events:none;z-index:5;";
+      el.appendChild(label);
+      const showLabel = () => {
+        label.style.display = "block";
+        el.style.zIndex = "3";
+      };
+      const hideLabel = () => {
+        label.style.display = "none";
+        el.style.zIndex = "";
+      };
+      el.addEventListener("mouseenter", showLabel);
+      el.addEventListener("mouseleave", hideLabel);
+      el.addEventListener("focus", showLabel);
+      el.addEventListener("blur", hideLabel);
+
+      root.appendChild(el);
+      setTimeout(() => {
+        line.style.opacity = "1";
+        el.style.opacity = "1";
+        el.style.transform = "scale(1)";
+      }, 30);
+    });
+  });
+  return root;
+}
+
 export function SourcingExplorer({ locations, totalProducts }: { locations: MapLocation[]; totalProducts: number }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
@@ -114,6 +238,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
   const [query, setQuery] = useState("");
   const [tab, setTab] = useState<Tab>("overview");
   const [view, setView] = useState<{ zoom: number; ids: string[] }>({ zoom: 4.5, ids: [] });
+  const [fanReady, setFanReady] = useState(false);
 
   const byId = useMemo(() => new Map(locations.map((l) => [l.id, l])), [locations]);
   const selected = selectedId ? (byId.get(selectedId) ?? null) : null;
@@ -339,6 +464,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
 
     const hitLayers = ["farm-pin", "place-dot", "reg-cluster", "reg-circle", "b-fill"];
     map.on("click", (e) => {
+      if ((e.originalEvent?.target as HTMLElement | null)?.closest?.(".matcha-fan")) return;
       const layers = hitLayers.filter((id) => map.getLayer(id));
       const feats = map.queryRenderedFeatures(e.point, { layers });
       if (!feats.length) return;
@@ -430,6 +556,37 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedId]);
+
+  // ---- brand pins for the selected place ----
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map || !selected) return;
+    const brands = filters.brand ? selected.brandCounts.filter((b) => b.name === filters.brand) : selected.brandCounts;
+    if (!brands.length) return;
+    let marker: mapboxgl.Marker | null = null;
+    let cancelled = false;
+    const show = () => {
+      if (cancelled || marker) return;
+      const narrow = (containerRef.current?.clientWidth ?? window.innerWidth) < 700;
+      const shown = brands.slice(0, narrow ? FAN_MAX_NARROW : FAN_MAX);
+      const el = buildFan(shown, brands.length - shown.length, () => setTab("brands"), narrow);
+      // Fan from the middle of the outline the map just flew to (or the point, for a district).
+      const boundary = boundariesRef.current.get(selected.id);
+      const center = boundary && selected.kind !== "place" ? boundsOf(boundary.geometry).getCenter() : new mapboxgl.LngLat(selected.lng, selected.lat);
+      // On a phone the map is short and the search controls sit along the top, so nudge the fan down.
+      marker = new mapboxgl.Marker({ element: el, anchor: "center", offset: narrow ? [0, 44] : [0, 0] }).setLngLat(center).addTo(map);
+      setFanReady(true);
+    };
+    map.once("moveend", show);
+    const timer = setTimeout(show, 2600);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+      map.off("moveend", show);
+      marker?.remove();
+      setFanReady(false);
+    };
+  }, [selected, filters.brand]);
 
   function switchStyle(next: MapStyle) {
     const map = mapRef.current;
@@ -588,6 +745,12 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
             </div>
           )}
         </div>
+
+        {fanReady && (
+          <p className="pointer-events-none absolute bottom-6 right-3 hidden max-w-[16rem] sm:block rounded-sm border border-line bg-paper-raised/95 px-3 py-2 text-xs text-ink-muted shadow-sm">
+            Pins fan out from the middle of the place. These brands name it as a source, not an exact farm. Click a pin for the brand page.
+          </p>
+        )}
 
         {/* Legend */}
         <ul className="absolute bottom-6 left-3 hidden sm:flex flex-col gap-1.5 rounded-sm border border-line bg-paper-raised/95 px-3 py-2 text-xs text-ink-muted shadow-sm" aria-label="Map legend">
