@@ -10,6 +10,7 @@ import { BrandLogo, ProductCard, gradeLabel } from "@/components/product-cards";
 import { getBrandLogoPath } from "@/lib/logos";
 import { getRegionInfo } from "@/lib/regions";
 import { REGION_CONTENT } from "@/lib/region-content";
+import { cultivarSlugFor } from "@/lib/cultivars";
 import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
@@ -212,7 +213,15 @@ function StatCard({ label, value, href }: { label: string; value: string; href?:
       <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-ink-faint mb-1">
         {label}
       </p>
-      <p className="text-sm font-medium text-ink">{value}</p>
+      <p className="text-sm font-medium text-ink">
+        {href ? (
+          <Link href={href} className="text-matcha hover:text-forest underline decoration-line-strong underline-offset-2">
+            {value}
+          </Link>
+        ) : (
+          value
+        )}
+      </p>
     </div>
   );
 }
@@ -275,7 +284,10 @@ export default async function ProductDetailPage({
 
   const stats: { label: string; value: string; href?: string }[] = [];
   if (product.grade) stats.push({ label: "Grade", value: gradeLabel(product.grade) });
-  if (product.cultivar) stats.push({ label: "Cultivar", value: product.cultivar });
+  if (product.cultivar) {
+    const cultivarSlug = cultivarSlugFor(product.cultivar);
+    stats.push({ label: "Cultivar", value: product.cultivar, href: cultivarSlug ? `/cultivars/${cultivarSlug}` : undefined });
+  }
   if (product.region) {
     const regionContent = REGION_CONTENT[product.region];
     stats.push({

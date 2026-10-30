@@ -40,6 +40,9 @@ export type GuideSpec = {
   // Grades to leave out (products with no grade stay in).
   excludeGrades?: string[];
   uses?: string[];
+  // Match on the cultivar a brand names (the first one found, for blends).
+  cultivars?: string[];
+  brands?: string[];
   organicOnly?: boolean;
   maxPrice?: number;
   // Price per gram bounds: exclusive lower, inclusive upper.
@@ -63,6 +66,14 @@ export async function getGuideRows(spec: GuideSpec, shipsTo: ShipRegion | undefi
   if (spec.uses?.length) {
     where.push(`(${spec.uses.map(() => "p.use_tags LIKE ?").join(" OR ")})`);
     params.push(...spec.uses.map((u) => `%"${u}"%`));
+  }
+  if (spec.cultivars?.length) {
+    where.push(`p.cultivar IN (${spec.cultivars.map(() => "?").join(",")})`);
+    params.push(...spec.cultivars);
+  }
+  if (spec.brands?.length) {
+    where.push(`b.name IN (${spec.brands.map(() => "?").join(",")})`);
+    params.push(...spec.brands);
   }
   if (spec.organicOnly) where.push("p.organic_certified = 1");
   if (spec.maxPrice != null) {
@@ -141,7 +152,7 @@ export type Group = Summary & { name: string };
 
 // Groups with fewer than `minCount` products are dropped: a median of two
 // products says nothing.
-export function groupBy(rows: ProductRow[], key: "grade" | "region", minCount = 3): Group[] {
+export function groupBy(rows: ProductRow[], key: "grade" | "region" | "brand_name", minCount = 3): Group[] {
   const buckets = new Map<string, ProductRow[]>();
   for (const r of rows) {
     const value = r[key];

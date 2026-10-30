@@ -5,6 +5,8 @@ import { SITE_URL } from "@/lib/site";
 import { getAllStudyIds } from "@/lib/studies";
 import { TOPICS } from "@/lib/research-topics";
 import { GUIDES } from "@/lib/guides";
+import { CULTIVARS } from "@/lib/cultivars";
+import { PAIRS, pairSlug } from "@/lib/compare";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { productIds, brands } = await getSitemapEntries();
@@ -18,6 +20,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...TOPICS.map((t) => ({ url: `${SITE_URL}/research/topics/${t.slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${SITE_URL}/guides`, changeFrequency: "weekly", priority: 0.8 },
     ...GUIDES.map((g) => ({ url: `${SITE_URL}/guides/${g.slug}`, changeFrequency: "weekly" as const, priority: 0.8 })),
+    { url: `${SITE_URL}/cultivars`, changeFrequency: "weekly", priority: 0.8 },
+    ...CULTIVARS.map((c) => ({ url: `${SITE_URL}/cultivars/${c.slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
+    { url: `${SITE_URL}/compare`, changeFrequency: "weekly", priority: 0.8 },
+    ...PAIRS.map(([a, b]) => ({ url: `${SITE_URL}/compare/${pairSlug(a, b)}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },

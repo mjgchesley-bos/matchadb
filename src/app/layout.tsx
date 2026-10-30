@@ -128,6 +128,8 @@ export default function RootLayout({
               <span>MatchaDB &mdash; sourcing, pricing, and transparency data pulled directly from brand product pages.</span>
               <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
                 <Link href="/guides" className="hover:text-ink-muted transition-colors">Guides</Link>
+                <Link href="/cultivars" className="hover:text-ink-muted transition-colors">Cultivars</Link>
+                <Link href="/compare" className="hover:text-ink-muted transition-colors">Compare</Link>
                 <Link href="/regions" className="hover:text-ink-muted transition-colors">Regions</Link>
                 <Link href="/research" className="hover:text-ink-muted transition-colors">Research</Link>
                 <Link href="/about" className="hover:text-ink-muted transition-colors">About</Link>

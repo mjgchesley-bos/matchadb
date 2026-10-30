@@ -9,6 +9,8 @@ import { BrandLogo } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
+import { getBrandLogoPath } from "@/lib/logos";
+import { comparisonsFor } from "@/lib/compare";
 import { SITE_URL } from "@/lib/site";
 
 export async function generateMetadata({
@@ -55,16 +57,48 @@ export default async function BrandPage({
   const brandUrl = `${SITE_URL}/brands/${encodeURIComponent(brandName)}`;
   const brandComparable = (await getComparablePrices()).filter((c) => c.brand === brandName);
   const summary = getBrandSummary({ brand: brandName, products, comparable: brandComparable });
+  const logoPath = getBrandLogoPath(brandName);
+  const comparisons = comparisonsFor(brandName);
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          itemListElement: [
-            { "@type": "ListItem", position: 1, name: "MatchaDB", item: SITE_URL },
-            { "@type": "ListItem", position: 2, name: brandName, item: brandUrl },
+          "@graph": [
+            {
+              "@type": "Brand",
+              "@id": `${brandUrl}#brand`,
+              name: brandName,
+              url: brandUrl,
+              ...(logoPath ? { logo: `${SITE_URL}${logoPath}` } : {}),
+            },
+            {
+              "@type": "CollectionPage",
+              "@id": brandUrl,
+              name: `${brandName} matcha products`,
+              url: brandUrl,
+              description: summary[0],
+              about: { "@id": `${brandUrl}#brand` },
+              isPartOf: { "@type": "WebSite", name: "MatchaDB", url: SITE_URL },
+              mainEntity: {
+                "@type": "ItemList",
+                numberOfItems: products.length,
+                itemListElement: products.map((p, i) => ({
+                  "@type": "ListItem",
+                  position: i + 1,
+                  url: `${SITE_URL}/products/${p.id}`,
+                  name: p.product_name,
+                })),
+              },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "MatchaDB", item: SITE_URL },
+                { "@type": "ListItem", position: 2, name: brandName, item: brandUrl },
+              ],
+            },
           ],
         }}
       />
@@ -155,6 +189,23 @@ export default async function BrandPage({
           );
         })}
       </div>
+
+      {comparisons.length > 0 && (
+        <section className="mt-12" aria-label={`Compare ${brandName} with other brands`}>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">Compare {brandName}</h2>
+          <div className="flex flex-wrap gap-2.5">
+            {comparisons.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/compare/${c.slug}`}
+                className="rounded-full border-2 border-line-strong px-4 py-2 text-sm font-medium text-ink-muted hover:border-matcha hover:text-matcha transition-colors"
+              >
+                {brandName} vs {c.other}
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <ResearchLinks
         topics={["Antioxidants and polyphenols", "L-theanine and caffeine", "Authenticity and analytical methods"]}
