@@ -730,7 +730,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
         </ul>
       </div>
 
-      <aside className="h-[46%] lg:h-auto lg:w-[26rem] shrink-0 overflow-y-auto border-t lg:border-t-0 lg:border-l border-line bg-paper-raised" aria-label="Location details">
+      <aside className="h-[46%] lg:h-auto lg:w-[20.8rem] shrink-0 overflow-y-auto border-t lg:border-t-0 lg:border-l border-line bg-paper-raised" aria-label="Location details">
         {selected ? (
           <DetailPanel loc={selected} tab={tab} setTab={setTab} filters={filters} onBack={() => select(null)} />
         ) : (
