@@ -6,6 +6,7 @@ import { getExternalLinkInfo } from "./links";
 import { PLACES } from "./places";
 import { brandsNotShippingTo, type ShipRegion } from "./shipping";
 import { BRAND_RECOGNITION_SCORES, DEFAULT_RECOGNITION_SCORE, getBrandRecognitionScore } from "./brand-recognition";
+import type { BrandMatchaInfo } from "./store-types";
 
 let dbPromise: Promise<Database> | null = null;
 
@@ -760,4 +761,35 @@ export async function getStats() {
   const retailerCount = hostnames.size;
 
   return { brandCount, productCount, retailerCount };
+}
+
+// A short "what kind of matcha does this brand make" summary for each brand name: how many
+// products we list, which grades they come in, and the range of listed prices per gram
+// (only prices that are verified, not flagged for review). Used by the store finder popup.
+export async function getBrandMatchaSummaries(names: string[]): Promise<Record<string, BrandMatchaInfo>> {
+  const out: Record<string, BrandMatchaInfo> = {};
+  if (!names.length) return out;
+  const db = await getDb();
+  const res = db.exec(
+    `SELECT b.name, p.grade, p.price_per_gram, p.price_needs_review, p.not_found
+     FROM products p JOIN brands b ON p.brand_id = b.id
+     WHERE b.name IN (${names.map(() => "?").join(",")})`,
+    names
+  );
+  const rows = rowsToObjects<{ name: string; grade: string | null; price_per_gram: number | null; price_needs_review: number; not_found: number }>(res);
+  const grades = new Map<string, Map<string, number>>();
+  for (const r of rows) {
+    const info = (out[r.name] ??= { products: 0, grades: [], perGram: null });
+    info.products++;
+    if (r.grade) {
+      const g = grades.get(r.name) ?? new Map<string, number>();
+      g.set(r.grade, (g.get(r.grade) ?? 0) + 1);
+      grades.set(r.name, g);
+    }
+    if (r.price_per_gram != null && !r.price_needs_review && !r.not_found) {
+      info.perGram = info.perGram ? [Math.min(info.perGram[0], r.price_per_gram), Math.max(info.perGram[1], r.price_per_gram)] : [r.price_per_gram, r.price_per_gram];
+    }
+  }
+  for (const [name, g] of grades) out[name].grades = [...g].sort((a, b) => b[1] - a[1]).map(([grade]) => grade);
+  return out;
 }

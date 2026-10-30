@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { KIND_LABEL, type Store } from "@/lib/store-types";
+import { KIND_LABEL, type BrandMatchaInfo, type Store } from "@/lib/store-types";
 
 // Search by ZIP code or city, or use your device's location, to find stores near
 // you that carry brands from the database. Your position is only used in your
@@ -45,9 +45,48 @@ const LIST_CAP = 40;
 const fmtDate = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 const directionsUrl = (s: Store) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.address}, ${s.city}, ${s.state} ${s.zip}`)}`;
 
-export function StoreFinder({ stores, contactEmail, initialBrand = "" }: { stores: Store[]; contactEmail: string; initialBrand?: string }) {
+const VERB: Record<Store["kind"], string> = { "brand-shop": "Its own shop", cafe: "Serves", retailer: "Sells" };
+
+// The popup shown over a pin: the place, and for each brand it carries, what that brand's
+// matcha is like (grades, product count, price per gram) from our product database. Built
+// with DOM nodes and textContent so store names from brand locators can never inject markup.
+function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>): HTMLElement {
+  const el = (tag: string, cls: string, text?: string) => {
+    const n = document.createElement(tag);
+    n.className = cls;
+    if (text) n.textContent = text;
+    return n;
+  };
+  const root = el("div", "store-pop");
+  root.appendChild(el("p", "font-display text-base font-semibold text-ink leading-snug", s.name));
+  root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", `${KIND_LABEL[s.kind]} · ${s.address}, ${s.city}, ${s.state}`));
+  const list = el("ul", "mt-2.5 flex flex-col gap-2");
+  for (const b of s.brands) {
+    const m = info[b.name];
+    const li = el("li", "rounded-sm bg-matcha-soft px-2.5 py-2");
+    const a = el("a", "text-sm font-medium text-matcha-ink underline underline-offset-2", b.name) as HTMLAnchorElement;
+    a.href = `/brands/${encodeURIComponent(b.name)}`;
+    const head = el("p", "text-xs text-ink-muted");
+    head.append(`${VERB[s.kind]} `, a);
+    li.appendChild(head);
+    if (m && m.products > 0) {
+      const bits: string[] = [];
+      if (m.grades.length) bits.push(`${m.grades.join(", ")} grade${m.grades.length > 1 ? "s" : ""}`);
+      bits.push(`${m.products} matcha product${m.products === 1 ? "" : "s"} listed`);
+      if (m.perGram) bits.push(m.perGram[0] === m.perGram[1] ? `$${m.perGram[0].toFixed(2)}/g` : `$${m.perGram[0].toFixed(2)}–$${m.perGram[1].toFixed(2)}/g`);
+      li.appendChild(el("p", "mt-1 text-xs text-ink leading-relaxed", bits.join(" · ")));
+    }
+    list.appendChild(li);
+  }
+  root.appendChild(list);
+  root.appendChild(el("p", "mt-2 text-[11px] text-ink-faint leading-snug", s.listedBy ? `From ${s.listedBy}'s store locator. Which products are in stock varies by store.` : "Which products are in stock varies by store."));
+  return root;
+}
+
+export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = "" }: { stores: Store[]; brandInfo: Record<string, BrandMatchaInfo>; contactEmail: string; initialBrand?: string }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
+  const popupRef = useRef<mapboxgl.Popup | null>(null);
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
   const cardRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
@@ -136,7 +175,10 @@ export function StoreFinder({ stores, contactEmail, initialBrand = "" }: { store
     map.on("click", (e) => {
       const feats = map.queryRenderedFeatures(e.point, { layers: ["store-cluster", "store-point"] });
       const f = feats[0];
-      if (!f) return;
+      if (!f) {
+        setSelectedId(null);
+        return;
+      }
       if (f.properties?.cluster) {
         const src = map.getSource("stores") as mapboxgl.GeoJSONSource;
         src.getClusterExpansionZoom(f.properties.cluster_id as number, (err, zoom) => {
@@ -201,6 +243,25 @@ export function StoreFinder({ stores, contactEmail, initialBrand = "" }: { store
     const s = stores.find((x) => x.id === id);
     if (s) mapRef.current?.flyTo({ center: [s.lng, s.lat], zoom: Math.max(mapRef.current.getZoom(), 13), duration: 800 });
   }
+
+  // The popup follows the selected place: opened by a pin click or a card click, closed by the
+  // X, a click on empty map, or a new search clearing the selection.
+  useEffect(() => {
+    const map = mapRef.current;
+    const prev = popupRef.current;
+    popupRef.current = null; // cleared first so removing the old popup is not read as a close click
+    prev?.remove();
+    const s = selectedId ? stores.find((x) => x.id === selectedId) : null;
+    if (!map || !s) return;
+    const popup = new mapboxgl.Popup({ offset: 14, maxWidth: "300px", closeButton: true, closeOnClick: false, className: "store-popup" })
+      .setLngLat([s.lng, s.lat])
+      .setDOMContent(buildPopup(s, brandInfo))
+      .addTo(map);
+    popup.on("close", () => {
+      if (popupRef.current === popup) setSelectedId(null);
+    });
+    popupRef.current = popup;
+  }, [selectedId, stores, brandInfo]);
 
   // Selecting a pin on the map scrolls its card into view.
   useEffect(() => {

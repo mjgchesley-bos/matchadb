@@ -3,6 +3,15 @@
 
 export type StoreKind = "brand-shop" | "cafe" | "retailer";
 
+// What a brand's matcha is like, summarized from our product database, for the map popup.
+export type BrandMatchaInfo = {
+  products: number;
+  // Grades the brand's products come in, most common first (Ceremonial, Koicha, ...).
+  grades: string[];
+  // Lowest and highest verified price per gram across the brand's products, if any.
+  perGram: [number, number] | null;
+};
+
 export type StoreBrand = {
   // Must match a brand name in the database, so it can link to the brand page.
   name: string;

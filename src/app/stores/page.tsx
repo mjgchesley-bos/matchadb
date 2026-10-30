@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStores } from "@/lib/stores";
+import { getBrandMatchaSummaries } from "@/lib/db";
 import { StoreFinder } from "@/components/StoreFinder";
 import { JsonLd } from "@/components/JsonLd";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
@@ -24,7 +25,9 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
   const stateSet = new Set(stores.map((s) => s.state));
   const hasDc = stateSet.delete("DC");
   const states = stateSet.size;
-  const brands = new Set(stores.flatMap((s) => s.brands.map((b) => b.name))).size;
+  const brandNames = [...new Set(stores.flatMap((s) => s.brands.map((b) => b.name)))];
+  const brands = brandNames.length;
+  const brandInfo = await getBrandMatchaSummaries(brandNames);
 
   return (
     <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
@@ -65,7 +68,7 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
         </p>
       </header>
 
-      <StoreFinder stores={stores} contactEmail={CONTACT_EMAIL} initialBrand={initialBrand} />
+      <StoreFinder stores={stores} brandInfo={brandInfo} contactEmail={CONTACT_EMAIL} initialBrand={initialBrand} />
 
       <section className="mt-14 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-stores">
         <h2 id="how-stores" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">How this list is built</h2>
