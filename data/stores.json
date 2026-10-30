@@ -37241,6 +37241,10 @@
       {
         "name": "Rishi Tea",
         "evidence": "https://www.rishi-tea.com/pages/store-locator"
+      },
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
       }
     ],
     "checked": "2026-10-30",
@@ -54977,5 +54981,2951 @@
     "checked": "2026-10-30",
     "lat": 40.751254,
     "lng": -73.978614
+  },
+  {
+    "id": "blue-willow-teaspot-berkeley-ca",
+    "name": "Blue Willow Teaspot",
+    "kind": "brand-shop",
+    "address": "1200 Tenth Street",
+    "city": "Berkeley",
+    "state": "CA",
+    "zip": "94710",
+    "url": "https://www.bluewillowtea.com/pages/visit-us",
+    "brands": [
+      {
+        "name": "Blue Willow Tea",
+        "evidence": "https://www.bluewillowtea.com/pages/visit-us"
+      }
+    ],
+    "note": "Blue Willow's Berkeley tea house: tea, matcha and teaware served and sold, with reservations for tastings.",
+    "checked": "2026-10-30",
+    "lat": 37.88176,
+    "lng": -122.297749
+  },
+  {
+    "id": "house-of-j-s-coffee-arvada-co",
+    "name": "House of J's Coffee",
+    "kind": "cafe",
+    "address": "12650 W. 64th Ave, Unit G",
+    "city": "Arvada",
+    "state": "CO",
+    "zip": "80004",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.811291,
+    "lng": -105.140709
+  },
+  {
+    "id": "the-bluegrass-lounge-arvada-co",
+    "name": "The Bluegrass Lounge",
+    "kind": "cafe",
+    "address": "7415 Grandview Ave",
+    "city": "Arvada",
+    "state": "CO",
+    "zip": "80002",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.799559,
+    "lng": -105.079595
+  },
+  {
+    "id": "balance-yoga-and-nutrition-aurora-co",
+    "name": "Balance Yoga & Nutrition",
+    "kind": "cafe",
+    "address": "6040 S Gun Club Rd Unit G2",
+    "city": "Aurora",
+    "state": "CO",
+    "zip": "80016",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.60538,
+    "lng": -104.714717
+  },
+  {
+    "id": "endless-grind-coffee-aurora-co",
+    "name": "Endless Grind Coffee",
+    "kind": "cafe",
+    "address": "17070 E Quincy Avenue",
+    "city": "Aurora",
+    "state": "CO",
+    "zip": "80015",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.637467,
+    "lng": -104.788587
+  },
+  {
+    "id": "jubilee-roasting-co-aurora-co",
+    "name": "Jubilee Roasting Co",
+    "kind": "cafe",
+    "address": "1452 Kenton St.",
+    "city": "Aurora",
+    "state": "CO",
+    "zip": "80010",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.739527,
+    "lng": -104.859715
+  },
+  {
+    "id": "park-hyatt-beaver-creek-resort-and-spa-beaver-creek-co",
+    "name": "Park Hyatt Beaver Creek Resort and Spa",
+    "kind": "cafe",
+    "address": "100 E Thomas Place",
+    "city": "Beaver Creek",
+    "state": "CO",
+    "zip": "81620",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.604606,
+    "lng": -106.515579
+  },
+  {
+    "id": "alfalfa-s-boulder-boulder-co",
+    "name": "Alfalfa's Boulder",
+    "kind": "retailer",
+    "address": "1645 Broadway St.",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.01348,
+    "lng": -105.279088
+  },
+  {
+    "id": "amante-coffee-boulder-co",
+    "name": "Amante Coffee",
+    "kind": "cafe",
+    "address": "1035 Walnut St.",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.016568,
+    "lng": -105.281822
+  },
+  {
+    "id": "ampersand-coffee-roasters-llc-boulder-co",
+    "name": "Ampersand Coffee Roasters, LLC",
+    "kind": "cafe",
+    "address": "6560 Odell Place, Unit C",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.073308,
+    "lng": -105.200892
+  },
+  {
+    "id": "aperitivo-boulder-co",
+    "name": "Aperitivo",
+    "kind": "cafe",
+    "address": "5530 Spine Road",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.0749,
+    "lng": -105.202108
+  },
+  {
+    "id": "arcana-boulder-co",
+    "name": "Arcana",
+    "kind": "cafe",
+    "address": "909 Walnut Street",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.016409,
+    "lng": -105.28327
+  },
+  {
+    "id": "avery-brewing-boulder-co",
+    "name": "Avery Brewing",
+    "kind": "cafe",
+    "address": "4910 Nautilus Ct.",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.062593,
+    "lng": -105.20476
+  },
+  {
+    "id": "breadworks-boulder-co",
+    "name": "Breadworks",
+    "kind": "cafe",
+    "address": "2644 Broadway",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80304",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.024921,
+    "lng": -105.28115
+  },
+  {
+    "id": "cafe-aion-boulder-co",
+    "name": "Cafe Aion",
+    "kind": "cafe",
+    "address": "1235 Pennsylvania Ave",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.008831,
+    "lng": -105.276586
+  },
+  {
+    "id": "fate-brewing-boulder-boulder-co",
+    "name": "Fate Brewing Boulder",
+    "kind": "cafe",
+    "address": "1600 38th St. #100",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.01502,
+    "lng": -105.245703
+  },
+  {
+    "id": "foolish-craig-s-cafe-boulder-co",
+    "name": "Foolish Craig's Cafe",
+    "kind": "cafe",
+    "address": "1611 Pearl Street",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.019313,
+    "lng": -105.274488
+  },
+  {
+    "id": "fresh-thymes-boulder-co",
+    "name": "Fresh Thymes",
+    "kind": "cafe",
+    "address": "2500 30th Street #101",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.026637,
+    "lng": -105.253366
+  },
+  {
+    "id": "hotel-boulderado-boulder-co",
+    "name": "Hotel Boulderado",
+    "kind": "cafe",
+    "address": "2115 13th Street",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.019434,
+    "lng": -105.279368
+  },
+  {
+    "id": "khozy-cup-boulder-co",
+    "name": "Khozy Cup",
+    "kind": "cafe",
+    "address": "1100 Balsam Avenue",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80304",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.026216,
+    "lng": -105.28382
+  },
+  {
+    "id": "le-french-boulder-co",
+    "name": "Le French",
+    "kind": "cafe",
+    "address": "4320 Monroe Drive Unit B",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80303",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.005332,
+    "lng": -105.240119
+  },
+  {
+    "id": "lucky-s-market-north-boulder-boulder-co",
+    "name": "Lucky's Market - North Boulder",
+    "kind": "retailer",
+    "address": "3960 Broadway #104",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80304",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.04742,
+    "lng": -105.280962
+  },
+  {
+    "id": "lucky-s-market-south-boulder-boulder-co",
+    "name": "Lucky's Market - South Boulder",
+    "kind": "retailer",
+    "address": "695 S Broadway",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.983042,
+    "lng": -105.248475
+  },
+  {
+    "id": "the-dairy-center-polk-cafe-boulder-co",
+    "name": "The Dairy Center - Polk Cafe",
+    "kind": "cafe",
+    "address": "2590 Walnut Street",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.019449,
+    "lng": -105.2612
+  },
+  {
+    "id": "shamane-s-bake-shoppe-boulder-co",
+    "name": "Shamane's Bake Shoppe",
+    "kind": "cafe",
+    "address": "2825 Wilderness Place",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.02568,
+    "lng": -105.249267
+  },
+  {
+    "id": "south-side-walnut-cafe-boulder-co",
+    "name": "South Side Walnut Cafe",
+    "kind": "cafe",
+    "address": "673 S. Broadway",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80305",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.98307,
+    "lng": -105.24948
+  },
+  {
+    "id": "tee-and-cakes-boulder-co",
+    "name": "Tee & Cakes",
+    "kind": "cafe",
+    "address": "1932 14th Street",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.018077,
+    "lng": -105.276999
+  },
+  {
+    "id": "the-specific-chiropractic-center-boulder-co",
+    "name": "The Specific Chiropractic Center",
+    "kind": "cafe",
+    "address": "2305 Canyon Boulevard Suit 102",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.017599,
+    "lng": -105.264427
+  },
+  {
+    "id": "the-unseen-bean-boulder-co",
+    "name": "The Unseen Bean",
+    "kind": "cafe",
+    "address": "2052 Broadway",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.018549,
+    "lng": -105.280018
+  },
+  {
+    "id": "tod-s-espresso-cafe-boulder-co",
+    "name": "Tod's Espresso Cafe",
+    "kind": "cafe",
+    "address": "3188 Wright Ave",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.030805,
+    "lng": -105.237269
+  },
+  {
+    "id": "university-of-colorado-the-village-boulder-co",
+    "name": "University of Colorado - The Village",
+    "kind": "cafe",
+    "address": "3300 Baseline Road",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.998851,
+    "lng": -105.251492
+  },
+  {
+    "id": "up-dog-cafe-boulder-co",
+    "name": "Up Dog Cafe",
+    "kind": "cafe",
+    "address": "6565 Gunpark Dr.",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.071063,
+    "lng": -105.200735
+  },
+  {
+    "id": "verde-boulder-co",
+    "name": "Verde",
+    "kind": "cafe",
+    "address": "2650 Iris Ave. Unit B12",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80304",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.036215,
+    "lng": -105.26174
+  },
+  {
+    "id": "walnut-cafe-boulder-co",
+    "name": "Walnut Cafe",
+    "kind": "cafe",
+    "address": "3073 Walnut St",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.02066,
+    "lng": -105.25266
+  },
+  {
+    "id": "whole-foods-ideal-market-boulder-co",
+    "name": "Whole Foods - Ideal Market",
+    "kind": "retailer",
+    "address": "1275 Alpine Ave.",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80304",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.025913,
+    "lng": -105.280919
+  },
+  {
+    "id": "whole-foods-pearl-boulder-co",
+    "name": "Whole Foods - Pearl",
+    "kind": "retailer",
+    "address": "2905 Pearl St",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80301",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.023832,
+    "lng": -105.256064
+  },
+  {
+    "id": "wonder-boulder-co",
+    "name": "Wonder",
+    "kind": "cafe",
+    "address": "946 Pearl St",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.017062,
+    "lng": -105.2832
+  },
+  {
+    "id": "loftea-cafe-broomfield-co",
+    "name": "Loftea Cafe",
+    "kind": "cafe",
+    "address": "11542 Colony Row",
+    "city": "Broomfield",
+    "state": "CO",
+    "zip": "80021",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.906176,
+    "lng": -105.089046
+  },
+  {
+    "id": "buena-vista-roastery-cafe-buena-vista-co",
+    "name": "Buena Vista Roastery Cafe",
+    "kind": "cafe",
+    "address": "409 E Main St",
+    "city": "Buena Vista",
+    "state": "CO",
+    "zip": "81211",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.842724,
+    "lng": -106.129068
+  },
+  {
+    "id": "303-cofee-co-centennial-co",
+    "name": "303 Cofee Co",
+    "kind": "cafe",
+    "address": "8283 South Akron Street",
+    "city": "Centennial",
+    "state": "CO",
+    "zip": "80112",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.56694,
+    "lng": -104.883198
+  },
+  {
+    "id": "rumors-coffee-and-tea-house-crested-butte-co",
+    "name": "Rumors Coffee and Tea House",
+    "kind": "cafe",
+    "address": "414 Elk Ave.",
+    "city": "Crested Butte",
+    "state": "CO",
+    "zip": "81224",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.869557,
+    "lng": -106.983461
+  },
+  {
+    "id": "2914-coffee-denver-co",
+    "name": "2914 Coffee",
+    "kind": "cafe",
+    "address": "2914 W. 25th Ave",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80211",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.753489,
+    "lng": -105.024121
+  },
+  {
+    "id": "cake-crumbs-llc-denver-co",
+    "name": "Cake Crumbs, LLC",
+    "kind": "cafe",
+    "address": "2216 Kearney St.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80207",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.749774,
+    "lng": -104.917313
+  },
+  {
+    "id": "capital-tea-denver-co",
+    "name": "Capital Tea",
+    "kind": "cafe",
+    "address": "1450 S. Broadway",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80210",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.690209,
+    "lng": -104.987318
+  },
+  {
+    "id": "cherry-bean-llc-denver-co",
+    "name": "Cherry Bean LLC",
+    "kind": "cafe",
+    "address": "4059 Tejon St.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80211",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.77281,
+    "lng": -105.011361
+  },
+  {
+    "id": "coffee-at-the-point-denver-co",
+    "name": "Coffee at The Point",
+    "kind": "cafe",
+    "address": "710 East 26th Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80205",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.754465,
+    "lng": -104.977859
+  },
+  {
+    "id": "devil-s-food-bakery-denver-co",
+    "name": "Devil's Food Bakery",
+    "kind": "cafe",
+    "address": "1004 S. Gaylord St.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80209",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.698209,
+    "lng": -104.9616
+  },
+  {
+    "id": "metropolis-coffee-denver-co",
+    "name": "Metropolis Coffee",
+    "kind": "cafe",
+    "address": "300 W. 11th Ave Suite B",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80204",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.7336,
+    "lng": -104.992025
+  },
+  {
+    "id": "mmm-coffee-denver-co",
+    "name": "Mmm Coffee",
+    "kind": "cafe",
+    "address": "910 Santa Fe Dr. Unit 6",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80204",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.73093,
+    "lng": -104.998436
+  },
+  {
+    "id": "nixon-s-coffee-house-denver-co",
+    "name": "Nixon's Coffee House",
+    "kind": "cafe",
+    "address": "695 E. Louisiana Ave.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80210",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.69313,
+    "lng": -104.97942
+  },
+  {
+    "id": "open-door-tea-shop-broomfield-co",
+    "name": "Open Door Tea Shop",
+    "kind": "cafe",
+    "address": "14701 Huron Street",
+    "city": "Broomfield",
+    "state": "CO",
+    "zip": "80023",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.96268,
+    "lng": -104.997493
+  },
+  {
+    "id": "steam-espresso-bar-denver-co",
+    "name": "Steam Espresso Bar",
+    "kind": "cafe",
+    "address": "1801 S. Pearl",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80210",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.683861,
+    "lng": -104.980731
+  },
+  {
+    "id": "steep-tea-and-coffee-denver-co",
+    "name": "Steep Tea and Coffee",
+    "kind": "cafe",
+    "address": "4100 E. 8th Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80220",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.7291,
+    "lng": -104.939293
+  },
+  {
+    "id": "the-showroom-at-furniture-row-denver-co",
+    "name": "The Showroom at Furniture Row",
+    "kind": "cafe",
+    "address": "5445 Bannock",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80216",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.795745,
+    "lng": -104.989256
+  },
+  {
+    "id": "wash-perk-denver-co",
+    "name": "Wash Perk",
+    "kind": "cafe",
+    "address": "853 East Ohio",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80209",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.702221,
+    "lng": -104.977102
+  },
+  {
+    "id": "24-carrot-bistro-erie-co",
+    "name": "24 Carrot Bistro",
+    "kind": "cafe",
+    "address": "578 Briggs Street",
+    "city": "Erie",
+    "state": "CO",
+    "zip": "80516",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.049928,
+    "lng": -105.047724
+  },
+  {
+    "id": "bird-and-jim-llc-estes-park-co",
+    "name": "Bird & Jim LLC",
+    "kind": "cafe",
+    "address": "915 Moraine Ave",
+    "city": "Estes Park",
+    "state": "CO",
+    "zip": "80517",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.364286,
+    "lng": -105.545336
+  },
+  {
+    "id": "inkwell-and-brew-estes-park-co",
+    "name": "Inkwell & Brew",
+    "kind": "cafe",
+    "address": "150 E Elkhorn",
+    "city": "Estes Park",
+    "state": "CO",
+    "zip": "80517",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.376201,
+    "lng": -105.522302
+  },
+  {
+    "id": "river-s-pointe-spa-estes-park-co",
+    "name": "River's Pointe Spa",
+    "kind": "cafe",
+    "address": "121 Wiest Dr.",
+    "city": "Estes Park",
+    "state": "CO",
+    "zip": "80517",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.375845,
+    "lng": -105.525216
+  },
+  {
+    "id": "happy-lucky-s-teahouse-and-treasures-fort-collins-co",
+    "name": "Happy Lucky's Teahouse & Treasures",
+    "kind": "retailer",
+    "address": "236 Walnut St.",
+    "city": "Fort Collins",
+    "state": "CO",
+    "zip": "80524",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.588679,
+    "lng": -105.075689
+  },
+  {
+    "id": "rainbow-restaurant-fort-collins-co",
+    "name": "Rainbow Restaurant",
+    "kind": "cafe",
+    "address": "212 W. Laurel",
+    "city": "Fort Collins",
+    "state": "CO",
+    "zip": "80521",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.578376,
+    "lng": -105.079753
+  },
+  {
+    "id": "backcountry-herbal-apothecary-frisco-co",
+    "name": "Backcountry Herbal Apothecary",
+    "kind": "retailer",
+    "address": "507 Main St.",
+    "city": "Frisco",
+    "state": "CO",
+    "zip": "80443",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.576382,
+    "lng": -106.096017
+  },
+  {
+    "id": "next-page-books-and-nosh-frisco-co",
+    "name": "Next Page Books and Nosh",
+    "kind": "cafe",
+    "address": "409 Main St. #101",
+    "city": "Frisco",
+    "state": "CO",
+    "zip": "80443",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.57623,
+    "lng": -106.09718
+  },
+  {
+    "id": "whole-foods-colfax-golden-co",
+    "name": "Whole Foods - Colfax",
+    "kind": "retailer",
+    "address": "14357 W. Colfax Avenue",
+    "city": "Golden",
+    "state": "CO",
+    "zip": "80401",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.73649,
+    "lng": -105.161336
+  },
+  {
+    "id": "illuminations-studio-greeley-co",
+    "name": "Illuminations Studio",
+    "kind": "cafe",
+    "address": "2131 73rd Avenue",
+    "city": "Greeley",
+    "state": "CO",
+    "zip": "80634",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.403092,
+    "lng": -104.797855
+  },
+  {
+    "id": "zoe-s-cafe-greeley-co",
+    "name": "Zoe's Cafe",
+    "kind": "cafe",
+    "address": "715 10th Street",
+    "city": "Greeley",
+    "state": "CO",
+    "zip": "80631",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.422894,
+    "lng": -104.689945
+  },
+  {
+    "id": "cannon-mine-coffee-lafayette-co",
+    "name": "Cannon Mine Coffee",
+    "kind": "cafe",
+    "address": "210 South Public Road",
+    "city": "Lafayette",
+    "state": "CO",
+    "zip": "80026",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.996441,
+    "lng": -105.090212
+  },
+  {
+    "id": "proper-grounds-coffee-lafayette-co",
+    "name": "Proper Grounds Coffee",
+    "kind": "cafe",
+    "address": "400 W South Boulder Rd Suite 1100",
+    "city": "Lafayette",
+    "state": "CO",
+    "zip": "80026",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.98575,
+    "lng": -105.094818
+  },
+  {
+    "id": "hello-coffee-lakewood-co",
+    "name": "Hello Coffee",
+    "kind": "cafe",
+    "address": "13701 W. Jewell Ave., #112",
+    "city": "Lakewood",
+    "state": "CO",
+    "zip": "80228",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.682768,
+    "lng": -105.156034
+  },
+  {
+    "id": "the-french-press-lakewood-co",
+    "name": "The French Press",
+    "kind": "cafe",
+    "address": "7323 W Alaska Dr",
+    "city": "Lakewood",
+    "state": "CO",
+    "zip": "80226",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.709415,
+    "lng": -105.078575
+  },
+  {
+    "id": "teaura-lakewood-co",
+    "name": "Teaura",
+    "kind": "cafe",
+    "address": "14500 West Colfax Avenue Unit 333",
+    "city": "Lakewood",
+    "state": "CO",
+    "zip": "80401",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.731858,
+    "lng": -105.159001
+  },
+  {
+    "id": "whole-foods-belmar-lakewood-co",
+    "name": "Whole Foods - Belmar",
+    "kind": "retailer",
+    "address": "444 S.Wadsworth Blvd",
+    "city": "Lakewood",
+    "state": "CO",
+    "zip": "80226",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.708542,
+    "lng": -105.080816
+  },
+  {
+    "id": "wystone-s-world-teas-lakewood-co",
+    "name": "Wystone's World Teas",
+    "kind": "cafe",
+    "address": "7150 W. Alaska Dr.",
+    "city": "Lakewood",
+    "state": "CO",
+    "zip": "80226",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.709046,
+    "lng": -105.075986
+  },
+  {
+    "id": "in-tea-littleton-co",
+    "name": "iN-TEA",
+    "kind": "cafe",
+    "address": "2440 West Main Street",
+    "city": "Littleton",
+    "state": "CO",
+    "zip": "80120",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.613505,
+    "lng": -105.016793
+  },
+  {
+    "id": "get-steap-d-loveland-co",
+    "name": "Get Steap'd",
+    "kind": "cafe",
+    "address": "528 N Cleveland Ave",
+    "city": "Loveland",
+    "state": "CO",
+    "zip": "80537",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.397211,
+    "lng": -105.07427
+  },
+  {
+    "id": "miramont-castle-manitou-springs-co",
+    "name": "Miramont Castle",
+    "kind": "cafe",
+    "address": "9 Capital Hill Avenue",
+    "city": "Manitou Springs",
+    "state": "CO",
+    "zip": "80829",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.859307,
+    "lng": -104.922452
+  },
+  {
+    "id": "wesley-owens-coffee-and-cafe-monument-co",
+    "name": "Wesley Owens Coffee and Cafe",
+    "kind": "cafe",
+    "address": "1744-1748 Lake Woodmoor Drive",
+    "city": "Monument",
+    "state": "CO",
+    "zip": "80132",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.095621,
+    "lng": -104.85974
+  },
+  {
+    "id": "happy-trails-cafe-nederland-co",
+    "name": "Happy Trails Cafe",
+    "kind": "cafe",
+    "address": "98 Highway 119 S",
+    "city": "Nederland",
+    "state": "CO",
+    "zip": "80466",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.960419,
+    "lng": -105.510605
+  },
+  {
+    "id": "new-moon-bakery-nederland-co",
+    "name": "New Moon Bakery",
+    "kind": "cafe",
+    "address": "One West First Street",
+    "city": "Nederland",
+    "state": "CO",
+    "zip": "80466",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.96156,
+    "lng": -105.514873
+  },
+  {
+    "id": "1914-house-niwot-co",
+    "name": "1914 House",
+    "kind": "cafe",
+    "address": "121 2nd Ave",
+    "city": "Niwot",
+    "state": "CO",
+    "zip": "80544",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.103335,
+    "lng": -105.172711
+  },
+  {
+    "id": "treppeda-s-italian-ristorante-niwot-co",
+    "name": "Treppeda's Italian Ristorante",
+    "kind": "cafe",
+    "address": "300 2nd Ave",
+    "city": "Niwot",
+    "state": "CO",
+    "zip": "80544",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.102417,
+    "lng": -105.170573
+  },
+  {
+    "id": "the-biker-and-the-baker-salida-co",
+    "name": "The Biker & The Baker",
+    "kind": "cafe",
+    "address": "124 F Street",
+    "city": "Salida",
+    "state": "CO",
+    "zip": "81201",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.53601,
+    "lng": -105.99232
+  },
+  {
+    "id": "grit-tea-steamboat-springs-co",
+    "name": "Grit Tea",
+    "kind": "retailer",
+    "address": "1744 Lincoln Avenue Suite 3",
+    "city": "Steamboat Springs",
+    "state": "CO",
+    "zip": "80487",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.497127,
+    "lng": -106.853
+  },
+  {
+    "id": "mambo-steamboat-springs-co",
+    "name": "Mambo",
+    "kind": "cafe",
+    "address": "521 Lincoln Avenue",
+    "city": "Steamboat Springs",
+    "state": "CO",
+    "zip": "80487",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.484378,
+    "lng": -106.832035
+  },
+  {
+    "id": "rootz-cafe-steamboat-springs-co",
+    "name": "Rootz Cafe",
+    "kind": "cafe",
+    "address": "737 Lincoln Avenue",
+    "city": "Steamboat Springs",
+    "state": "CO",
+    "zip": "80487",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.48584,
+    "lng": -106.834488
+  },
+  {
+    "id": "navah-coffee-house-westminster-co",
+    "name": "Navah Coffee House",
+    "kind": "cafe",
+    "address": "3013 W 104th Avenue",
+    "city": "Westminster",
+    "state": "CO",
+    "zip": "80031",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.885548,
+    "lng": -105.026178
+  },
+  {
+    "id": "the-bottled-olive-windsor-co",
+    "name": "The Bottled Olive",
+    "kind": "cafe",
+    "address": "1550 Main Street #130",
+    "city": "Windsor",
+    "state": "CO",
+    "zip": "80550",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.480468,
+    "lng": -104.928754
+  },
+  {
+    "id": "whole-foods-roaring-fork-basalt-co",
+    "name": "Whole Foods - Roaring Fork",
+    "kind": "retailer",
+    "address": "340 Reed Street",
+    "city": "Basalt",
+    "state": "CO",
+    "zip": "81621",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.386954,
+    "lng": -107.082686
+  },
+  {
+    "id": "whole-foods-southglenn-centennial-co",
+    "name": "Whole Foods - SouthGlenn",
+    "kind": "retailer",
+    "address": "6853 South York Street Suite 119",
+    "city": "Centennial",
+    "state": "CO",
+    "zip": "80122",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.592068,
+    "lng": -104.962071
+  },
+  {
+    "id": "barista-espresso-colorado-springs-co",
+    "name": "Barista Espresso",
+    "kind": "retailer",
+    "address": "625 W. Colorado Ave.",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "zip": "80905",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.832586,
+    "lng": -104.837334
+  },
+  {
+    "id": "ohana-kava-bar-colorado-springs-co",
+    "name": "Ohana Kava Bar",
+    "kind": "cafe",
+    "address": "4207 Leyden Ln",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "zip": "80907",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.89376,
+    "lng": -104.84137
+  },
+  {
+    "id": "r-and-r-coffee-cafe-colorado-springs-co",
+    "name": "R & R Coffee Cafe",
+    "kind": "cafe",
+    "address": "11424 Black Forest Rd.#6",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "zip": "80908",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.99684,
+    "lng": -104.700692
+  },
+  {
+    "id": "the-coffee-exchange-colorado-springs-co",
+    "name": "The Coffee Exchange",
+    "kind": "cafe",
+    "address": "526 South Tejon St.",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "zip": "80903",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.825995,
+    "lng": -104.824404
+  },
+  {
+    "id": "the-spa-at-garden-of-the-gods-colorado-springs-co",
+    "name": "The Spa at Garden of The Gods",
+    "kind": "cafe",
+    "address": "3320 Mesa Road",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "zip": "80904",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.879034,
+    "lng": -104.868475
+  },
+  {
+    "id": "whole-foods-pikes-peak-colorado-springs-co",
+    "name": "Whole Foods - Pikes Peak",
+    "kind": "retailer",
+    "address": "7635 North Academy Blvd",
+    "city": "Colorado Springs",
+    "state": "CO",
+    "zip": "80920",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 38.942219,
+    "lng": -104.797472
+  },
+  {
+    "id": "bellwether-denver-co",
+    "name": "Bellwether",
+    "kind": "cafe",
+    "address": "5126 East Colfax",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80220",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.739976,
+    "lng": -104.927437
+  },
+  {
+    "id": "byers-evans-house-history-museum-denver-co",
+    "name": "Byers-Evans House History Museum",
+    "kind": "retailer",
+    "address": "1310 Bannock Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80204",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.737093,
+    "lng": -104.989832
+  },
+  {
+    "id": "cafe-miriam-at-city-park-denver-co",
+    "name": "Cafe Miriam at City Park",
+    "kind": "cafe",
+    "address": "787 Josephine Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80206",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.728948,
+    "lng": -104.959359
+  },
+  {
+    "id": "coftea-denver-co",
+    "name": "Coftea",
+    "kind": "cafe",
+    "address": "8500 Peña Blvd",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80249",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.838152,
+    "lng": -104.670636
+  },
+  {
+    "id": "common-grounds-denver-co",
+    "name": "Common Grounds",
+    "kind": "cafe",
+    "address": "2139 W. 44th Ave.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80211",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.77669,
+    "lng": -105.013083
+  },
+  {
+    "id": "dazzle-jazz-inc-denver-co",
+    "name": "Dazzle Jazz inc.",
+    "kind": "cafe",
+    "address": "1512 Curtis Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.746392,
+    "lng": -104.9955
+  },
+  {
+    "id": "devils-food-denver-co",
+    "name": "Devils Food",
+    "kind": "cafe",
+    "address": "1020 S. Gaylord Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80209",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.697951,
+    "lng": -104.961612
+  },
+  {
+    "id": "downpours-coffee-denver-co",
+    "name": "Downpours Coffee",
+    "kind": "cafe",
+    "address": "1330 Zuni Unit F",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80204",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.737288,
+    "lng": -105.015224
+  },
+  {
+    "id": "drip-denver-denver-co",
+    "name": "Drip Denver",
+    "kind": "cafe",
+    "address": "955 Lincoln St. Unit G",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80203",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.731249,
+    "lng": -104.986424
+  },
+  {
+    "id": "emily-s-coffee-denver-co",
+    "name": "Emily's Coffee",
+    "kind": "cafe",
+    "address": "1860 Lincoln Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80203",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.745633,
+    "lng": -104.985875
+  },
+  {
+    "id": "europa-coffee-house-denver-co",
+    "name": "Europa Coffee House",
+    "kind": "cafe",
+    "address": "76 South Pennsylvania St.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80209",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.71509,
+    "lng": -104.981239
+  },
+  {
+    "id": "catering-by-design-fourfiveone-events-denver-co",
+    "name": "Catering by Design - FourFiveOne Events",
+    "kind": "cafe",
+    "address": "1005 York Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80206",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.73233,
+    "lng": -104.9607
+  },
+  {
+    "id": "grind-denver-denver-co",
+    "name": "Grind Denver",
+    "kind": "cafe",
+    "address": "300 Fillmore Street Unit K",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80206",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.721189,
+    "lng": -104.953168
+  },
+  {
+    "id": "hickey-s-teas-denver-co",
+    "name": "Hickey's Teas",
+    "kind": "cafe",
+    "address": "4800 West 31 Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80212",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.760973,
+    "lng": -105.048915
+  },
+  {
+    "id": "hope-tank-denver-co",
+    "name": "Hope Tank",
+    "kind": "retailer",
+    "address": "64 Broadway",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80203",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.717732,
+    "lng": -104.987111
+  },
+  {
+    "id": "hops-and-pie-denver-co",
+    "name": "Hops and Pie",
+    "kind": "cafe",
+    "address": "3920 Tennyson Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80212",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.771369,
+    "lng": -105.043748
+  },
+  {
+    "id": "hudson-hill-denver-denver-co",
+    "name": "Hudson Hill Denver",
+    "kind": "cafe",
+    "address": "619 E 13th Avenue",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80203",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.736955,
+    "lng": -104.97937
+  },
+  {
+    "id": "mercantile-dining-and-provision-denver-co",
+    "name": "Mercantile Dining and Provision",
+    "kind": "cafe",
+    "address": "1701 Wynkoop St. #155",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.75236,
+    "lng": -104.99884
+  },
+  {
+    "id": "metropolis-coffee-lo-hi-denver-co",
+    "name": "Metropolis Coffee - Lo-Hi",
+    "kind": "cafe",
+    "address": "1661 Central Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80211",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.759033,
+    "lng": -105.00868
+  },
+  {
+    "id": "onefold-restaurant-denver-co",
+    "name": "Onefold Restaurant",
+    "kind": "cafe",
+    "address": "30 Fairfax Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80220",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.716832,
+    "lng": -104.92779
+  },
+  {
+    "id": "prodigy-coffee-denver-co",
+    "name": "Prodigy Coffee",
+    "kind": "cafe",
+    "address": "3801 East 40th Ave.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80205",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.77309,
+    "lng": -104.94207
+  },
+  {
+    "id": "quinceessential-coffee-house-denver-co",
+    "name": "QuinceEssential Coffee House",
+    "kind": "cafe",
+    "address": "1447 Quince Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80220",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.739563,
+    "lng": -104.902478
+  },
+  {
+    "id": "rivers-and-roads-coffee-denver-co",
+    "name": "Rivers and Roads Coffee",
+    "kind": "cafe",
+    "address": "675 E Louisiana Ave Apt. 203",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80210",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.69319,
+    "lng": -104.979582
+  },
+  {
+    "id": "rock-on-minerals-and-design-denver-co",
+    "name": "Rock On Minerals and Design",
+    "kind": "cafe",
+    "address": "9821 E. Walsh Pl.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80247",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.702891,
+    "lng": -104.874141
+  },
+  {
+    "id": "rosemark-at-mayfair-park-denver-co",
+    "name": "Rosemark at Mayfair Park",
+    "kind": "cafe",
+    "address": "833 Jersey Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80220",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.729822,
+    "lng": -104.91996
+  },
+  {
+    "id": "sojourners-coffee-and-tea-denver-co",
+    "name": "Sojourners Coffee & Tea",
+    "kind": "cafe",
+    "address": "1501 South Holly Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80222",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.68923,
+    "lng": -104.92273
+  },
+  {
+    "id": "spavital-denver-co",
+    "name": "SPAVital",
+    "kind": "cafe",
+    "address": "2955 East 1st Avenue, Suite 200",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80206",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.718373,
+    "lng": -104.952663
+  },
+  {
+    "id": "stella-s-coffeehaus-denver-co",
+    "name": "Stella's Coffeehaus",
+    "kind": "cafe",
+    "address": "1476 S. Pearl",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80210",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.689708,
+    "lng": -104.980136
+  },
+  {
+    "id": "sugar-bakeshop-denver-co",
+    "name": "Sugar Bakeshop",
+    "kind": "cafe",
+    "address": "277 Broadway Unit B",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80203",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.720445,
+    "lng": -104.987839
+  },
+  {
+    "id": "the-crumb-cafe-denver-co",
+    "name": "The Crumb Cafe",
+    "kind": "cafe",
+    "address": "217 S. Holly Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80246",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.712805,
+    "lng": -104.922538
+  },
+  {
+    "id": "urban-mix-coffee-house-denver-co",
+    "name": "Urban Mix Coffee House",
+    "kind": "cafe",
+    "address": "2907 Huron St., Unit 101",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.758627,
+    "lng": -104.997398
+  },
+  {
+    "id": "whole-foods-cherry-creek-denver-co",
+    "name": "Whole Foods - Cherry Creek",
+    "kind": "retailer",
+    "address": "2375 E. First Ave.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80206",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.718514,
+    "lng": -104.95785
+  },
+  {
+    "id": "whole-foods-tamarac-denver-co",
+    "name": "Whole Foods - Tamarac",
+    "kind": "retailer",
+    "address": "7400 E. Hampden Ave. Unit D",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80231",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.651704,
+    "lng": -104.902774
+  },
+  {
+    "id": "whole-foods-union-station-denver-co",
+    "name": "Whole Foods - Union Station",
+    "kind": "retailer",
+    "address": "1701 Wewatta Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.754471,
+    "lng": -105.001369
+  },
+  {
+    "id": "whole-foods-wash-park-denver-co",
+    "name": "Whole Foods - Wash Park",
+    "kind": "retailer",
+    "address": "1111 S. Washington Street",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80210",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.695969,
+    "lng": -104.979895
+  },
+  {
+    "id": "whittier-cafe-denver-co",
+    "name": "Whittier Cafe",
+    "kind": "cafe",
+    "address": "1710 E 25th Ave.",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80205",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.753099,
+    "lng": -104.966764
+  },
+  {
+    "id": "happy-lucky-s-teahouse-and-treasures-fort-collins-co-2",
+    "name": "Happy Lucky's Teahouse & Treasures",
+    "kind": "retailer",
+    "address": "2720 Council Tree Ave #166",
+    "city": "Fort Collins",
+    "state": "CO",
+    "zip": "80525",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.525774,
+    "lng": -105.026057
+  },
+  {
+    "id": "suh-sushi-fort-collins-co",
+    "name": "Suh Sushi",
+    "kind": "cafe",
+    "address": "200 West Prospect Road",
+    "city": "Fort Collins",
+    "state": "CO",
+    "zip": "80526",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.56745,
+    "lng": -105.07934
+  },
+  {
+    "id": "the-spice-and-tea-exchange-fort-collins-co",
+    "name": "The Spice and Tea Exchange",
+    "kind": "retailer",
+    "address": "2924 Council Tree Ave #100",
+    "city": "Fort Collins",
+    "state": "CO",
+    "zip": "80525",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.527364,
+    "lng": -105.02398
+  },
+  {
+    "id": "whole-foods-fort-collins-fort-collins-co",
+    "name": "Whole Foods - Fort Collins",
+    "kind": "retailer",
+    "address": "2201 S College Ave",
+    "city": "Fort Collins",
+    "state": "CO",
+    "zip": "80525",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.558925,
+    "lng": -105.078596
+  },
+  {
+    "id": "whole-foods-frisco-frisco-co",
+    "name": "Whole Foods - Frisco",
+    "kind": "retailer",
+    "address": "261 Lusher Court",
+    "city": "Frisco",
+    "state": "CO",
+    "zip": "80443",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.588614,
+    "lng": -106.100439
+  },
+  {
+    "id": "whole-foods-colorado-blvd-glendale-co",
+    "name": "Whole Foods - Colorado Blvd",
+    "kind": "retailer",
+    "address": "870 S. Colorado Blvd.",
+    "city": "Glendale",
+    "state": "CO",
+    "zip": "80246",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.700612,
+    "lng": -104.939741
+  },
+  {
+    "id": "enchanted-grounds-highlands-ranch-co",
+    "name": "Enchanted Grounds",
+    "kind": "cafe",
+    "address": "8800 S. Colorado Unit A",
+    "city": "Highlands Ranch",
+    "state": "CO",
+    "zip": "80126",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.557562,
+    "lng": -104.941155
+  },
+  {
+    "id": "whole-foods-highlands-ranch-highlands-ranch-co",
+    "name": "Whole Foods - Highlands Ranch",
+    "kind": "retailer",
+    "address": "9366 S. Colorado Blvd.",
+    "city": "Highlands Ranch",
+    "state": "CO",
+    "zip": "80126",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.545617,
+    "lng": -104.942248
+  },
+  {
+    "id": "the-spice-and-tea-exchange-idaho-springs-co",
+    "name": "The Spice & Tea Exchange",
+    "kind": "retailer",
+    "address": "1634 Miner St",
+    "city": "Idaho Springs",
+    "state": "CO",
+    "zip": "80452",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.742145,
+    "lng": -105.515214
+  },
+  {
+    "id": "at-ease-stress-relief-and-wellness-lafayette-co",
+    "name": "At Ease Stress Relief and Wellness",
+    "kind": "cafe",
+    "address": "1225 Cimarron Drive Suite 201",
+    "city": "Lafayette",
+    "state": "CO",
+    "zip": "80026",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.987758,
+    "lng": -105.118256
+  },
+  {
+    "id": "button-rock-backery-lafayette-co",
+    "name": "Button Rock Backery",
+    "kind": "cafe",
+    "address": "1377 Forest Park Cir Suite 102",
+    "city": "Lafayette",
+    "state": "CO",
+    "zip": "80026",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.013988,
+    "lng": -105.129407
+  },
+  {
+    "id": "fate-brewing-lafayette-lafayette-co",
+    "name": "Fate Brewing - Lafayette",
+    "kind": "cafe",
+    "address": "400 W S Boulder Rd",
+    "city": "Lafayette",
+    "state": "CO",
+    "zip": "80026",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.98575,
+    "lng": -105.094818
+  },
+  {
+    "id": "whole-foods-governor-s-ranch-littleton-co",
+    "name": "Whole Foods - Governor's Ranch",
+    "kind": "retailer",
+    "address": "5155 S. Wadsworth Blvd.",
+    "city": "Littleton",
+    "state": "CO",
+    "zip": "80123",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.623057,
+    "lng": -105.092186
+  },
+  {
+    "id": "amore-hair-studio-boulder-co",
+    "name": "Amore Hair Studio",
+    "kind": "cafe",
+    "address": "950 Laramie Blvd Unit C",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80304",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.066016,
+    "lng": -105.28512
+  },
+  {
+    "id": "kafe-urban-longmont-co",
+    "name": "Kafe Urban",
+    "kind": "cafe",
+    "address": "700 Tenacity Suite 101",
+    "city": "Longmont",
+    "state": "CO",
+    "zip": "80504",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.135605,
+    "lng": -105.10382
+  },
+  {
+    "id": "lucky-s-market-longmont-longmont-co",
+    "name": "Lucky's Market - Longmont",
+    "kind": "retailer",
+    "address": "700 Ken Pratt Blvd #201",
+    "city": "Longmont",
+    "state": "CO",
+    "zip": "80501",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.153628,
+    "lng": -105.104325
+  },
+  {
+    "id": "red-frog-coffee-longmont-co",
+    "name": "Red Frog Coffee",
+    "kind": "cafe",
+    "address": "15 Ken Pratt Boulevard Suite 200",
+    "city": "Longmont",
+    "state": "CO",
+    "zip": "80501",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.151929,
+    "lng": -105.093786
+  },
+  {
+    "id": "whole-foods-longmont-longmont-co",
+    "name": "Whole Foods - Longmont",
+    "kind": "retailer",
+    "address": "1250 South Hover Road Suite 300",
+    "city": "Longmont",
+    "state": "CO",
+    "zip": "80501",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 40.145075,
+    "lng": -105.128607
+  },
+  {
+    "id": "alfalfa-s-louisville-louisville-co",
+    "name": "Alfalfa's Louisville",
+    "kind": "cafe",
+    "address": "785 E South Boulder Rd.",
+    "city": "Louisville",
+    "state": "CO",
+    "zip": "80027",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.987423,
+    "lng": -105.133812
+  },
+  {
+    "id": "whole-foods-superior-superior-co",
+    "name": "Whole Foods - Superior",
+    "kind": "retailer",
+    "address": "303 Marshall Rd.",
+    "city": "Superior",
+    "state": "CO",
+    "zip": "80027",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.956589,
+    "lng": -105.167773
+  },
+  {
+    "id": "whole-foods-bradburn-westminster-co",
+    "name": "Whole Foods - Bradburn",
+    "kind": "retailer",
+    "address": "4451 Main St.",
+    "city": "Westminster",
+    "state": "CO",
+    "zip": "80031",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.913215,
+    "lng": -105.044803
+  },
+  {
+    "id": "golden-bee-tea-wheat-ridge-co",
+    "name": "Golden Bee Tea",
+    "kind": "cafe",
+    "address": "9905 W 38th Ave",
+    "city": "Wheat Ridge",
+    "state": "CO",
+    "zip": "80033",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.769605,
+    "lng": -105.108685
+  },
+  {
+    "id": "unlisted-market-centennial-co",
+    "name": "Unlisted Market",
+    "kind": "cafe",
+    "address": "8262 S University Blvd Suite 120",
+    "city": "Centennial",
+    "state": "CO",
+    "zip": "80122",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.566606,
+    "lng": -104.958976
+  },
+  {
+    "id": "bad-ass-coffee-of-hawaii-centennial-co",
+    "name": "Bad Ass Coffee of Hawaii",
+    "kind": "cafe",
+    "address": "7347 S. Revere Parkway, Building A, Suite A",
+    "city": "Centennial",
+    "state": "CO",
+    "zip": "80112",
+    "listedBy": "The Tea Spot",
+    "brands": [
+      {
+        "name": "The Tea Spot",
+        "evidence": "https://www.theteaspot.com/pages/find-us-in-stores"
+      }
+    ],
+    "checked": "2026-10-30",
+    "lat": 39.582225,
+    "lng": -104.842509
   }
 ]

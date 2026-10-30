@@ -120,7 +120,7 @@ function add(brand, evidence, p, kind, note) {
     state: p.state,
     zip: p.zip,
     ...(p.url ? { url: p.url } : {}),
-    listedBy: brand,
+    ...(p.own ? {} : { listedBy: brand }),
     brands: [{ name: brand, evidence }],
     ...(note ? { note } : {}),
     checked: today,

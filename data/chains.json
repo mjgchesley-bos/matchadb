@@ -1,0 +1,39 @@
+[
+  {
+    "brand": "Aiya",
+    "evidence": "https://aiya-america.com/find-us/",
+    "evidenceLabel": "Aiya's Find Us page",
+    "checked": "2026-10-30",
+    "chains": [
+      { "name": "Whole Foods Market" },
+      { "name": "Sprouts Farmers Market" },
+      { "name": "Albertsons / Safeway", "select": true },
+      { "name": "H-E-B", "select": true },
+      { "name": "The Vitamin Shoppe" },
+      { "name": "Gelson's" },
+      { "name": "Natural Grocers", "select": true },
+      { "name": "Lucky Supermarkets / Save Mart", "select": true },
+      { "name": "Market Street", "select": true },
+      { "name": "United Supermarkets", "select": true },
+      { "name": "New Seasons Market / New Leaf Community Markets" },
+      { "name": "Lassens Natural Food" },
+      { "name": "Jimbo's" },
+      { "name": "Lazy Acres Market" },
+      { "name": "Metropolitan Market" },
+      { "name": "Martindale's Natural Market" },
+      { "name": "Co-op markets", "select": true }
+    ]
+  },
+  {
+    "brand": "Navitas Organics",
+    "evidence": "https://navitasorganics.com/pages/store-locator",
+    "evidenceLabel": "Navitas Organics' store locator page",
+    "checked": "2026-10-30",
+    "chains": [
+      { "name": "Whole Foods Market" },
+      { "name": "Sprouts Farmers Market" },
+      { "name": "Target" },
+      { "name": "Kroger" }
+    ]
+  }
+]

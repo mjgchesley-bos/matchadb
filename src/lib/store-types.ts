@@ -44,6 +44,16 @@ export type Reseller = {
   checked: string;
 };
 
+// National or regional chains a brand says it is sold through, from the brand's own page
+// (data/chains.json). Chain-level only: we do not know which individual stores stock it.
+export type ChainListing = {
+  brand: string;
+  evidence: string;
+  evidenceLabel: string;
+  checked: string;
+  chains: { name: string; select?: boolean }[];
+};
+
 export const KIND_LABEL: Record<StoreKind, string> = {
   "brand-shop": "Brand's own shop",
   cafe: "Café serving it",

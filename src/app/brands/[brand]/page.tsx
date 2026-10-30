@@ -11,7 +11,7 @@ import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { getBrandLogoPath } from "@/lib/logos";
 import { comparisonsFor } from "@/lib/compare";
-import { BRAND_RESELLER_NOTES, resellersForBrand, storesForBrand } from "@/lib/stores";
+import { BRAND_RESELLER_NOTES, chainsForBrand, resellersForBrand, storesForBrand } from "@/lib/stores";
 import { KIND_LABEL } from "@/lib/store-types";
 import { SITE_URL } from "@/lib/site";
 
@@ -64,6 +64,7 @@ export default async function BrandPage({
   const stockists = storesForBrand(brandName);
   const resellerNote = BRAND_RESELLER_NOTES[brandName];
   const onlineResellers = resellersForBrand(brandName);
+  const chainListing = chainsForBrand(brandName);
   const ownShops = stockists.filter((s) => s.kind === "brand-shop");
   const retailers = stockists.filter((s) => s.kind !== "brand-shop");
   const MAX_CARDS = 12;
@@ -199,7 +200,7 @@ export default async function BrandPage({
         })}
       </div>
 
-      {(stockists.length > 0 || onlineResellers.length > 0) && (
+      {(stockists.length > 0 || onlineResellers.length > 0 || chainListing) && (
         <section className="mt-12" aria-labelledby="where-to-buy">
           <h2 id="where-to-buy" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
             Verified resellers of {brandName}
@@ -288,6 +289,27 @@ export default async function BrandPage({
                   </li>
                 ))}
               </ul>
+            </div>
+          )}
+          {chainListing && (
+            <div className="mt-5">
+              <h3 className="font-display text-lg font-semibold text-ink">National chains</h3>
+              <p className="mt-1 text-sm text-ink-muted max-w-2xl leading-relaxed">
+                Chains {brandName} names as places to buy it. This is chain-level only: not every location carries every product, so check with your local store.
+              </p>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {chainListing.chains.map((c) => (
+                  <li key={c.name} className="rounded-full border border-line-strong px-3 py-1 text-sm text-ink-muted">
+                    {c.name}
+                    {c.select && <span className="text-ink-faint"> (select locations)</span>}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2 text-xs">
+                <a href={chainListing.evidence} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
+                  {chainListing.evidenceLabel}, checked {fmtChecked(chainListing.checked)}
+                </a>
+              </p>
             </div>
           )}
           {stockists.length > 0 && (

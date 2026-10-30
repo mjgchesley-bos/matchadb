@@ -1,14 +1,21 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Reseller, Store } from "./store-types";
+import type { ChainListing, Reseller, Store } from "./store-types";
 
 // In-person places to find the matcha brands in this database: a brand's own
-// shops and cafés, and independent retailers whose own website says they stock a
-// brand. Every brand claim carries the URL it came from and the date it was
-// checked, and nothing is listed from memory or hearsay. A store without a
-// verified address and coordinates is left out, because a wrong pin is worse than
-// a missing one. To add stores, edit data/stores.json and run
-// `node scripts/geocode-stores.mjs` to fill in coordinates.
+// shops and cafés, independent retailers whose own website says they stock a
+// brand, and places listed in a brand's own store locator (marked listedBy). Every
+// brand claim carries the URL it came from and the date it was checked, and nothing
+// is listed from memory or hearsay. A store without a verified address and
+// coordinates is left out, because a wrong pin is worse than a missing one. To add
+// stores, edit data/stores.json and run `node scripts/geocode-stores.mjs` to fill in
+// coordinates, or import a brand's locator with scripts/import-brand-locators.mjs.
+
+// Chains a brand says it is sold through (data/chains.json), without store addresses.
+export function chainsForBrand(name: string): ChainListing | undefined {
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "chains.json"), "utf8")) as ChainListing[];
+  return raw.find((c) => c.brand === name);
+}
 
 // Stores that carry a brand: the brand's own shops and independent retailers whose
 // own website says they stock it (see data/stores.json for the source of each claim).
