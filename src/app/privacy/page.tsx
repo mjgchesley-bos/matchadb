@@ -33,6 +33,12 @@ export default function PrivacyPage() {
           .
         </li>
         <li>
+          <strong>Store finder.</strong> If you press &ldquo;Use my location,&rdquo; your browser asks your
+          permission and your position is used only in your browser to sort and map nearby stores; we do not
+          send it to our servers or store it. If you type a ZIP code or city, that text is sent to
+          Mapbox&apos;s geocoding service to turn it into a point on the map.
+        </li>
+        <li>
           <strong>Server logs.</strong> Our hosting provider (AWS) records standard request logs such as
           IP address and timestamps for security and operations.
         </li>

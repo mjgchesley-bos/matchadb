@@ -1,0 +1,426 @@
+[
+  {
+    "id": "kettl-greenpoint",
+    "name": "Kettl Greenpoint",
+    "kind": "brand-shop",
+    "address": "70 Greenpoint Ave",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11222",
+    "url": "https://kettl.co/pages/locations",
+    "brands": [
+      {
+        "name": "Kettl",
+        "evidence": "https://kettl.co/pages/locations"
+      }
+    ],
+    "note": "Kettl's flagship: loose teas, matcha and ceramics, with a tasting counter.",
+    "checked": "2026-10-30",
+    "lat": 40.729648,
+    "lng": -73.958171
+  },
+  {
+    "id": "kettl-sen-mon-ten",
+    "name": "Kettl Matcha Sen Mon Ten",
+    "kind": "brand-shop",
+    "address": "38 Norman Ave",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11222",
+    "url": "https://kettl.co/pages/locations",
+    "brands": [
+      {
+        "name": "Kettl",
+        "evidence": "https://kettl.co/pages/locations"
+      }
+    ],
+    "note": "Kettl's matcha-focused shop, with to-go service and a private tasting counter.",
+    "checked": "2026-10-30",
+    "lat": 40.724524,
+    "lng": -73.953945
+  },
+  {
+    "id": "kettl-los-feliz",
+    "name": "Kettl Los Feliz",
+    "kind": "brand-shop",
+    "address": "4677 Hollywood Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90027",
+    "url": "https://kettl.co/pages/locations",
+    "brands": [
+      {
+        "name": "Kettl",
+        "evidence": "https://kettl.co/pages/locations"
+      }
+    ],
+    "note": "Kettl's Los Angeles shop: teas, sweets and ceramics, with a tasting counter.",
+    "checked": "2026-10-30",
+    "lat": 34.101005,
+    "lng": -118.291119
+  },
+  {
+    "id": "mem-tea-imports",
+    "name": "MEM Tea Imports",
+    "kind": "retailer",
+    "address": "196 Elm St",
+    "city": "Cambridge",
+    "state": "MA",
+    "zip": "02140",
+    "url": "https://memteaimports.com/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://memteaimports.com/pages/matcha"
+      }
+    ],
+    "note": "Tea importer and shop in Davis Square. Its matcha page lists Marukyu Koyamaen.",
+    "checked": "2026-10-30",
+    "lat": 42.393169,
+    "lng": -71.1207
+  },
+  {
+    "id": "luna-matcha-sawtelle",
+    "name": "Luna Matcha (inside Lune Noir)",
+    "kind": "retailer",
+    "address": "2003 Sawtelle Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90025",
+    "url": "https://lunamatcha.com/pages/contact",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://lunamatcha.com/"
+      },
+      {
+        "name": "Hoshino Seichaen",
+        "evidence": "https://lunamatcha.com/"
+      }
+    ],
+    "note": "Matcha and tea shop in Sawtelle Japantown; describes itself as an authorized U.S. importer and retailer of Marukyu Koyamaen.",
+    "checked": "2026-10-30",
+    "lat": 34.040708,
+    "lng": -118.443627
+  },
+  {
+    "id": "harney-soho",
+    "name": "Harney & Sons SoHo",
+    "kind": "brand-shop",
+    "address": "433 Broome St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10013",
+    "url": "https://www.harney.com/pages/the-soho-shop",
+    "brands": [
+      {
+        "name": "Harney & Sons",
+        "evidence": "https://www.harney.com/pages/the-soho-shop"
+      }
+    ],
+    "note": "Harney & Sons' SoHo tea shop and tasting bar.",
+    "checked": "2026-10-30",
+    "lat": 40.721407,
+    "lng": -73.99942
+  },
+  {
+    "id": "harney-millerton",
+    "name": "Harney & Sons Millerton",
+    "kind": "brand-shop",
+    "address": "13 Main St",
+    "city": "Millerton",
+    "state": "NY",
+    "zip": "12546",
+    "url": "https://www.harney.com/pages/the-millerton-shop",
+    "brands": [
+      {
+        "name": "Harney & Sons",
+        "evidence": "https://www.harney.com/pages/the-millerton-shop"
+      }
+    ],
+    "note": "Harney & Sons' Millerton tea shop and tasting bar. Open Friday to Sunday.",
+    "checked": "2026-10-30",
+    "lat": 41.953216,
+    "lng": -73.511936
+  },
+  {
+    "id": "tao-of-tea-belmont",
+    "name": "The Tao of Tea Belmont Teahouse",
+    "kind": "brand-shop",
+    "address": "3430 SE Belmont St",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97214",
+    "url": "https://taooftea.com/teahouses/",
+    "brands": [
+      {
+        "name": "The Tao of Tea",
+        "evidence": "https://taooftea.com/teahouses/"
+      }
+    ],
+    "note": "The original Tao of Tea teahouse and retail space.",
+    "checked": "2026-10-30",
+    "lat": 45.516269,
+    "lng": -122.628863
+  },
+  {
+    "id": "smith-teamaker-se-washington",
+    "name": "Smith Teamaker SE Washington",
+    "kind": "brand-shop",
+    "address": "110 SE Washington St",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97214",
+    "url": "https://www.smithtea.com/pages/tasting-rooms",
+    "brands": [
+      {
+        "name": "Steven Smith Teamaker",
+        "evidence": "https://www.smithtea.com/pages/tasting-rooms"
+      }
+    ],
+    "note": "Smith Teamaker's tasting room by its Portland production site.",
+    "checked": "2026-10-30",
+    "lat": 45.518502,
+    "lng": -122.664393
+  },
+  {
+    "id": "smith-teamaker-nw-23rd",
+    "name": "Smith Teamaker NW 23rd",
+    "kind": "brand-shop",
+    "address": "500 NW 23rd Ave",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97210",
+    "url": "https://www.smithtea.com/pages/tasting-rooms",
+    "brands": [
+      {
+        "name": "Steven Smith Teamaker",
+        "evidence": "https://www.smithtea.com/pages/tasting-rooms"
+      }
+    ],
+    "note": "Smith Teamaker tasting room on NW 23rd Avenue.",
+    "checked": "2026-10-30",
+    "lat": 45.52636,
+    "lng": -122.69832
+  },
+  {
+    "id": "cha-cha-nomad",
+    "name": "Cha Cha Matcha Nomad",
+    "kind": "brand-shop",
+    "address": "1158 Broadway",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "url": "https://chachamatcha.com/pages/location/nomad",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 40.744581,
+    "lng": -73.988654
+  },
+  {
+    "id": "cha-cha-noho",
+    "name": "Cha Cha Matcha NoHo",
+    "kind": "brand-shop",
+    "address": "327 Lafayette St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10012",
+    "url": "https://chachamatcha.com/pages/location/no-ho",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 40.725439,
+    "lng": -73.994803
+  },
+  {
+    "id": "cha-cha-bryant-park",
+    "name": "Cha Cha Matcha Bryant Park",
+    "kind": "brand-shop",
+    "address": "501 5th Ave",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10017",
+    "url": "https://chachamatcha.com/pages/location/bryant-park",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 40.753174,
+    "lng": -73.980752
+  },
+  {
+    "id": "cha-cha-madison",
+    "name": "Cha Cha Matcha Madison",
+    "kind": "brand-shop",
+    "address": "477 Madison Ave",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10022",
+    "url": "https://chachamatcha.com/pages/location/madison",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 40.758631,
+    "lng": -73.974761
+  },
+  {
+    "id": "cha-cha-moynihan",
+    "name": "Cha Cha Matcha Moynihan",
+    "kind": "brand-shop",
+    "address": "421 8th Ave Suite 40",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10001",
+    "url": "https://chachamatcha.com/pages/location/moynihan",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 40.751045,
+    "lng": -73.995014
+  },
+  {
+    "id": "cha-cha-flatiron",
+    "name": "Cha Cha Matcha Flatiron",
+    "kind": "brand-shop",
+    "address": "922 Broadway",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10010",
+    "url": "https://chachamatcha.com/pages/location/flatiron",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 40.73988,
+    "lng": -73.98931
+  },
+  {
+    "id": "cha-cha-dumbo",
+    "name": "Cha Cha Matcha Dumbo",
+    "kind": "brand-shop",
+    "address": "55 Water St",
+    "city": "Brooklyn",
+    "state": "NY",
+    "zip": "11201",
+    "url": "https://chachamatcha.com/pages/location/dumbo",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 40.703513,
+    "lng": -73.991893
+  },
+  {
+    "id": "cha-cha-venice",
+    "name": "Cha Cha Matcha Venice",
+    "kind": "brand-shop",
+    "address": "1401 Abbot Kinney Blvd",
+    "city": "Venice",
+    "state": "CA",
+    "zip": "90291",
+    "url": "https://chachamatcha.com/pages/location/venice",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 33.990722,
+    "lng": -118.465816
+  },
+  {
+    "id": "cha-cha-west-hollywood",
+    "name": "Cha Cha Matcha West Hollywood",
+    "kind": "brand-shop",
+    "address": "510 N Robertson Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90048",
+    "url": "https://chachamatcha.com/pages/location/we-ho",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 34.0804,
+    "lng": -118.38497
+  },
+  {
+    "id": "cha-cha-century-city",
+    "name": "Cha Cha Matcha Century City",
+    "kind": "brand-shop",
+    "address": "10250 Santa Monica Blvd Suite 1625",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90067",
+    "url": "https://chachamatcha.com/pages/location/century-city",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha café.",
+    "checked": "2026-10-30",
+    "lat": 34.058687,
+    "lng": -118.418968
+  },
+  {
+    "id": "cha-cha-beverly-hills",
+    "name": "Cha Cha Matcha Beverly Hills",
+    "kind": "brand-shop",
+    "address": "475 N Beverly Dr",
+    "city": "Beverly Hills",
+    "state": "CA",
+    "zip": "90210",
+    "url": "https://chachamatcha.com/pages/location/beverly-hills",
+    "brands": [
+      {
+        "name": "Cha Cha Matcha",
+        "evidence": "https://chachamatcha.com/pages/locations"
+      }
+    ],
+    "note": "Cha Cha Matcha flagship café.",
+    "checked": "2026-10-30",
+    "lat": 34.071291,
+    "lng": -118.40367
+  }
+]
