@@ -43,6 +43,12 @@ export default function PrivacyPage() {
           IP address and timestamps for security and operations.
         </li>
         <li>
+          <strong>Community ratings.</strong> If you rate a product, we store the rating together with a
+          one-way hash of a random identifier kept in a small cookie on your device. It lets us keep one
+          rating per browser and lets you change yours. It is not linked to your name, email or any
+          account, and it is separate from the analytics and advertising cookies above.
+        </li>
+        <li>
           <strong>Your cookie choice,</strong> stored in your browser&apos;s local storage so we
           remember it.
         </li>

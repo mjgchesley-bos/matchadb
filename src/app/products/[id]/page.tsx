@@ -14,6 +14,7 @@ import { cultivarSlugFor } from "@/lib/cultivars";
 import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
+import { ProductRating } from "@/components/ProductRating";
 import { SITE_URL } from "@/lib/site";
 
 type Product = NonNullable<Awaited<ReturnType<typeof getProductById>>>;
@@ -396,6 +397,7 @@ export default async function ProductDetailPage({
             {product.product_name}
           </h1>
           {factsLine && <p className="text-ink-muted mt-2">{factsLine}</p>}
+          <ProductRating productId={product.id} productName={product.product_name} />
           <ShippingNote brand={product.brand_name} />
 
           {product.flavorTags.length > 0 && (

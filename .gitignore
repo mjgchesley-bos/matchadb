@@ -53,3 +53,6 @@ data/liveness-check.json
 
 # harvest cache
 .cache/
+
+# local stand-in for community ratings storage
+/.ratings-dev/
