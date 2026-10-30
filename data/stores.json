@@ -422,5 +422,105 @@
     "checked": "2026-10-30",
     "lat": 34.071291,
     "lng": -118.40367
+  },
+  {
+    "id": "lyc-portland",
+    "name": "LYC Japanese Artisan Gifts",
+    "kind": "retailer",
+    "address": "904 NW 23rd Ave",
+    "city": "Portland",
+    "state": "OR",
+    "zip": "97210",
+    "url": "https://lyc23.com/collections/japanese-tea-matcha",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://lyc23.com/collections/japanese-tea-matcha"
+      }
+    ],
+    "note": "Japanese gift shop with an in-store matcha selection; says it is an official U.S. distributor of Marukyu Koyamaen through its Nara Tea Company house brand.",
+    "checked": "2026-10-30",
+    "lat": 45.529227,
+    "lng": -122.698418
+  },
+  {
+    "id": "bird-and-branch-hells-kitchen",
+    "name": "Bird & Branch Hell's Kitchen",
+    "kind": "retailer",
+    "address": "359 W 45th St",
+    "city": "New York",
+    "state": "NY",
+    "zip": "10036",
+    "url": "https://birdandbranch.com/pages/visit-us",
+    "brands": [
+      {
+        "name": "Ippodo",
+        "evidence": "https://birdandbranch.com/products/ippodo-matcha-tea"
+      }
+    ],
+    "note": "Tea shop. Its Ippodo matcha page offers pickup at this address.",
+    "checked": "2026-10-30",
+    "lat": 40.760314,
+    "lng": -73.990869
+  },
+  {
+    "id": "tortoise-general-store",
+    "name": "Tortoise General Store",
+    "kind": "retailer",
+    "address": "12701 Venice Blvd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90066",
+    "url": "https://shop.tortoisegeneralstore.com/pages/about-us",
+    "brands": [
+      {
+        "name": "Ippodo",
+        "evidence": "https://shop.tortoisegeneralstore.com/products/ippodo-matcha-tea"
+      }
+    ],
+    "note": "Japanese housewares store. Its shop lists two Ippodo matchas; call to confirm what is in stock in the store.",
+    "checked": "2026-10-30",
+    "lat": 34.001661,
+    "lng": -118.438322
+  },
+  {
+    "id": "izumi-matcha-san-jose",
+    "name": "Izumi Matcha San Jose",
+    "kind": "retailer",
+    "address": "3005 Silver Creek Rd Ste 142",
+    "city": "San Jose",
+    "state": "CA",
+    "zip": "95121",
+    "url": "https://izumimatcha.com/contact-us/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://izumimatcha.com/premium-matcha-powder/"
+      }
+    ],
+    "note": "Matcha café. Its website calls it an official retailer of Marukyu Koyamaen, sold in store only; ask which shop has your matcha in stock.",
+    "checked": "2026-10-30",
+    "lat": 37.309628,
+    "lng": -121.813693
+  },
+  {
+    "id": "izumi-matcha-cupertino",
+    "name": "Izumi Matcha Cupertino",
+    "kind": "retailer",
+    "address": "19740 Stevens Creek Blvd",
+    "city": "Cupertino",
+    "state": "CA",
+    "zip": "95014",
+    "url": "https://izumimatcha.com/contact-us/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://izumimatcha.com/premium-matcha-powder/"
+      }
+    ],
+    "note": "Matcha café. Its website calls it an official retailer of Marukyu Koyamaen, sold in store only; ask which shop has your matcha in stock.",
+    "checked": "2026-10-30",
+    "lat": 37.321769,
+    "lng": -122.01813
   }
 ]
