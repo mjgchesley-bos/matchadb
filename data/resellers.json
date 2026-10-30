@@ -1,0 +1,112 @@
+[
+  {
+    "brand": "Marukyu Koyamaen",
+    "name": "Nara Tea Co.",
+    "channel": "online",
+    "url": "https://narateacompany.com/",
+    "basis": "Calls itself an authorized retailer of Marukyu Koyamaen",
+    "evidence": "https://narateacompany.com/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Kanbayashi Shunsho",
+    "name": "Nara Tea Co.",
+    "channel": "online",
+    "url": "https://narateacompany.com/",
+    "basis": "Calls itself an authorized retailer of Kanbayashi Shunsho Honten",
+    "evidence": "https://narateacompany.com/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Marukyu Koyamaen",
+    "name": "SUGOi Sweets / MOKOMA Tea",
+    "channel": "online",
+    "url": "https://sugoisweets.com/",
+    "basis": "Says it is an authorized distributor of Marukyu Koyamaen (US-based)",
+    "evidence": "https://sugoisweets.com/blogs/japaneseteainsights/authorized-distributor-of-marukyu-koyamaen",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Kyoto Yamasan",
+    "name": "Amazon store",
+    "channel": "amazon",
+    "url": "https://www.amazon.com/stores/page/C046D02A-78DA-453E-9456-BDC2B451AE12",
+    "basis": "Brand's own website links to its Amazon store",
+    "evidence": "https://kyotoyamasan-onlinestore.com/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Matcha Konomi",
+    "name": "Amazon listing",
+    "channel": "amazon",
+    "url": "https://www.amazon.com/dp/B074TQ24SY",
+    "basis": "Brand's own website links to this Amazon listing",
+    "evidence": "https://matchakonomi.com/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Kagoshima Tea",
+    "name": "Amazon store",
+    "channel": "amazon",
+    "url": "https://www.amazon.com/stores/page/D2D3161F-041C-4BB4-B39F-73E3B4FBD048",
+    "basis": "Brand's own website links to its Amazon store",
+    "evidence": "https://kagoshimatea.com/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Chaism",
+    "name": "Amazon store",
+    "channel": "amazon",
+    "url": "https://www.amazon.com/stores/Chaism/page/27A1707E-9CD3-4FCA-A6CD-F8B90520597E",
+    "basis": "Brand's own website links to its Amazon store",
+    "evidence": "https://chaism.store/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Grin Mood",
+    "name": "Amazon listing",
+    "channel": "amazon",
+    "url": "https://www.amazon.com/dp/B0CQS7FHVX",
+    "basis": "Brand's own website links to this Amazon listing",
+    "evidence": "https://grinmoods.com/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Wild Foods",
+    "name": "Amazon store",
+    "channel": "amazon",
+    "url": "https://www.amazon.com/stores/WildFoods/page/928C843E-7C95-4963-8D8F-A8C1B83D6CC2",
+    "basis": "Brand's own website links to its Amazon store",
+    "evidence": "https://wildfoods.co/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Kyoto Dew",
+    "name": "Amazon listing",
+    "channel": "amazon",
+    "url": "https://www.amazon.com/dp/B01FE95IDU",
+    "basis": "Brand's own website links to this Amazon listing",
+    "evidence": "https://kyotodewmatcha.net/",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "uVernal",
+    "name": "uVernal",
+    "channel": "amazon",
+    "amazonOnly": true,
+    "url": "https://www.amazon.com/stores/uVernal/Homepage/page/9816C196-B67E-4639-9782-2DECF0E1263E",
+    "basis": "The only place we found this brand's products is its Amazon storefront",
+    "evidence": "https://www.amazon.com/stores/uVernal/Homepage/page/9816C196-B67E-4639-9782-2DECF0E1263E",
+    "checked": "2026-10-30"
+  },
+  {
+    "brand": "Distinctly Organic",
+    "name": "Distinctly Organic",
+    "channel": "amazon",
+    "amazonOnly": true,
+    "url": "https://www.amazon.com/Distinctly-Organic-Matcha-Green-Tea/dp/B01N7QYN6I",
+    "basis": "The only place we found this brand's products is this Amazon listing",
+    "evidence": "https://www.amazon.com/Distinctly-Organic-Matcha-Green-Tea/dp/B01N7QYN6I",
+    "checked": "2026-10-30"
+  }
+]

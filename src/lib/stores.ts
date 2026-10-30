@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { Store } from "./store-types";
+import type { Reseller, Store } from "./store-types";
 
 // In-person places to find the matcha brands in this database: a brand's own
 // shops and cafés, and independent retailers whose own website says they stock a
@@ -14,6 +14,14 @@ import type { Store } from "./store-types";
 // own website says they stock it (see data/stores.json for the source of each claim).
 export function storesForBrand(name: string): Store[] {
   return getStores().filter((s) => s.brands.some((b) => b.name === name));
+}
+
+// Online resellers and Amazon stores/listings for a brand, from data/resellers.json.
+// Listed only when the brand's own site, the reseller's own site, or the Amazon page
+// itself backs it up.
+export function resellersForBrand(name: string): Reseller[] {
+  const raw = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "resellers.json"), "utf8")) as Reseller[];
+  return raw.filter((r) => r.brand === name);
 }
 
 // Extra context shown above a brand's store list, only where the brand itself has said

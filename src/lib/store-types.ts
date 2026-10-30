@@ -26,6 +26,21 @@ export type Store = {
   checked: string;
 };
 
+// An online reseller, or an Amazon store/listing, for a brand. Each one carries the
+// page that backs it (data/resellers.json).
+export type Reseller = {
+  brand: string;
+  name: string;
+  channel: "online" | "amazon";
+  // True when Amazon is the only place we found the brand sold; the page shows "(Amazon)"
+  // next to the name.
+  amazonOnly?: boolean;
+  url: string;
+  basis: string;
+  evidence: string;
+  checked: string;
+};
+
 export const KIND_LABEL: Record<StoreKind, string> = {
   "brand-shop": "Brand's own shop",
   retailer: "Retailer",
