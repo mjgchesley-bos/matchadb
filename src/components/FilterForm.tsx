@@ -157,13 +157,13 @@ export function FilterForm({
         <label className={labelClass} htmlFor="ships">
           Ships to
         </label>
-        <select id="ships" name="ships" defaultValue={filters.shipsTo || "any"} className={fieldClass}>
+        <select id="ships" name="ships" defaultValue={filters.shipsTo || ""} className={fieldClass}>
+          <option value="">Any</option>
           {SHIP_REGIONS.map((r) => (
             <option key={r} value={r}>
               {SHIP_REGION_LABEL[r]}
             </option>
           ))}
-          <option value="any">Anywhere (show all)</option>
         </select>
       </div>
 

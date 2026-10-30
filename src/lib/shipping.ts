@@ -109,13 +109,12 @@ export function parseShipRegion(v: string | undefined): ShipRegion | undefined {
 }
 
 /**
- * The "ships to" choice from the URL. Shoppers are assumed to be in the US
- * (most of this site's traffic is) unless they pick another region; "any"
- * switches the filter off.
+ * The "ships to" choice from the URL. Nothing is hidden unless the visitor picks
+ * a region: an unset (or "any") value means every product is shown, so a brand
+ * that only ships to some regions, like AO Tea, still turns up in a general search.
  */
 export function resolveShipsTo(v: string | undefined): ShipRegion | undefined {
-  if (v === "any") return undefined;
-  return parseShipRegion(v) ?? "US";
+  return parseShipRegion(v);
 }
 
 /** Short label for a restricted brand, or null when no restriction is known. */

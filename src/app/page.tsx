@@ -42,7 +42,7 @@ export default async function Home({
     grades: toArr(sp.grade),
     flavors: toArr(sp.flavor),
     uses: toArr(sp.use),
-    // Shoppers see products they can actually buy: hides brands verified not to ship to the US.
+    // Only applied when the visitor picks a region; by default nothing is hidden.
     shipsTo: resolveShipsTo(toStr(sp.ships)),
     page: 1,
     pageSize: HOME_PAGE_SIZE,
