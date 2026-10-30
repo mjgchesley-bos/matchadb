@@ -65,23 +65,6 @@ async function fetchBoundary(key: string): Promise<GeoJSON.Feature | null> {
   }
 }
 
-function diamondImage(): { width: number; height: number; data: Uint8ClampedArray } {
-  const size = 36;
-  const c = document.createElement("canvas");
-  c.width = c.height = size;
-  const ctx = c.getContext("2d")!;
-  ctx.translate(size / 2, size / 2);
-  ctx.rotate(Math.PI / 4);
-  ctx.fillStyle = "#3c7a2a";
-  ctx.strokeStyle = "#fff6df";
-  ctx.lineWidth = 3;
-  const s = 15;
-  ctx.fillRect(-s / 2, -s / 2, s, s);
-  ctx.strokeRect(-s / 2, -s / 2, s, s);
-  const d = ctx.getImageData(0, 0, size, size);
-  return { width: size, height: size, data: d.data };
-}
-
 // Regions go in their own source so nearby ones (Uji, Kyoto, Wazuka, Nara...)
 // can cluster into one badge at low zoom; districts and farms are never clustered.
 function locationsGeoJSON(locs: MapLocation[], f: Filters, selectedId: string | null): { regions: GeoJSON.FeatureCollection; pins: GeoJSON.FeatureCollection } {
@@ -340,6 +323,8 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
       map.addSource("pins", { type: "geojson", data: geo.pins });
       const clustered: mapboxgl.Expression = ["has", "point_count"];
       const single: mapboxgl.Expression = ["!", ["has", "point_count"]];
+      // Districts, towns and verified farms all use the same dot: one shape for "a place inside a region".
+      const subRegion: mapboxgl.Expression = ["in", ["get", "kind"], ["literal", ["place", "farm"]]];
       map.addLayer({
         id: "reg-cluster",
         type: "circle",
@@ -402,7 +387,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
         id: "place-dot",
         type: "circle",
         source: "pins",
-        filter: ["==", ["get", "kind"], "place"],
+        filter: subRegion,
         minzoom: PLACE_MIN_ZOOM,
         paint: {
           "circle-radius": ["case", ["==", ["get", "sel"], 1], 10, ["interpolate", ["linear"], ["get", "count"], 2, 6, 20, 10]],
@@ -415,7 +400,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
         id: "place-label",
         type: "symbol",
         source: "pins",
-        filter: ["==", ["get", "kind"], "place"],
+        filter: subRegion,
         minzoom: 7,
         layout: {
           "text-field": ["concat", ["get", "name"], " · ", ["to-string", ["get", "count"]]],
@@ -424,26 +409,6 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
           "text-anchor": "top",
           "text-font": ["DIN Pro Medium", "Arial Unicode MS Regular"],
           "symbol-sort-key": ["*", -1, ["get", "count"]],
-        },
-        paint: { "text-color": text, "text-halo-color": halo, "text-halo-width": 1.6 },
-      });
-      if (!map.hasImage("farm-diamond")) map.addImage("farm-diamond", diamondImage());
-      map.addLayer({
-        id: "farm-pin",
-        type: "symbol",
-        source: "pins",
-        filter: ["==", ["get", "kind"], "farm"],
-        minzoom: 5,
-        layout: {
-          "icon-image": "farm-diamond",
-          "icon-size": ["case", ["==", ["get", "sel"], 1], 0.95, 0.7],
-          "icon-allow-overlap": true,
-          "text-field": ["get", "name"],
-          "text-size": 11,
-          "text-offset": [0, 1.4],
-          "text-anchor": "top",
-          "text-font": ["DIN Pro Medium", "Arial Unicode MS Regular"],
-          "text-optional": true,
         },
         paint: { "text-color": text, "text-halo-color": halo, "text-halo-width": 1.6 },
       });
@@ -462,7 +427,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
 
     map.on("style.load", setupLayers);
 
-    const hitLayers = ["farm-pin", "place-dot", "reg-cluster", "reg-circle", "b-fill"];
+    const hitLayers = ["place-dot", "reg-cluster", "reg-circle", "b-fill"];
     map.on("click", (e) => {
       if ((e.originalEvent?.target as HTMLElement | null)?.closest?.(".matcha-fan")) return;
       const layers = hitLayers.filter((id) => map.getLayer(id));
@@ -471,7 +436,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
       // Pins beat outlines; among overlapping outlines the smallest one wins (Uji inside Kyoto).
       const ranked = [...feats].sort((a, b) => hitLayers.indexOf(a.layer!.id) - hitLayers.indexOf(b.layer!.id));
       const cluster = ranked.find((f) => f.layer!.id === "reg-cluster");
-      if (cluster && !ranked.some((f) => f.layer!.id === "farm-pin" || f.layer!.id === "place-dot")) {
+      if (cluster && !ranked.some((f) => f.layer!.id === "place-dot")) {
         // A cluster of nearby regions: zoom in until they separate.
         const src = map.getSource("regions") as mapboxgl.GeoJSONSource;
         src.getClusterExpansionZoom(cluster.properties!.cluster_id as number, (err, zoom) => {
@@ -570,9 +535,9 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
       const narrow = (containerRef.current?.clientWidth ?? window.innerWidth) < 700;
       const shown = brands.slice(0, narrow ? FAN_MAX_NARROW : FAN_MAX);
       const el = buildFan(shown, brands.length - shown.length, () => setTab("brands"), narrow);
-      // Fan from the middle of the outline the map just flew to (or the point, for a district).
+      // Fan from the middle of the region outline the map just flew to, or from the point itself for a district or farm.
       const boundary = boundariesRef.current.get(selected.id);
-      const center = boundary && selected.kind !== "place" ? boundsOf(boundary.geometry).getCenter() : new mapboxgl.LngLat(selected.lng, selected.lat);
+      const center = boundary && selected.kind === "region" ? boundsOf(boundary.geometry).getCenter() : new mapboxgl.LngLat(selected.lng, selected.lat);
       // On a phone the map is short and the search controls sit along the top, so nudge the fan down.
       marker = new mapboxgl.Marker({ element: el, anchor: "center", offset: narrow ? [0, 44] : [0, 0] }).setLngLat(center).addTo(map);
       setFanReady(true);
@@ -760,11 +725,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
           </li>
           <li className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full border-2 border-paper bg-matcha ring-1 ring-matcha" />
-            District or town brands name (zoom in)
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="inline-block h-3 w-3 rotate-45 border-2 border-paper bg-matcha ring-1 ring-matcha" />
-            Verified single farm
+            District, town or farm (zoom in)
           </li>
         </ul>
       </div>
