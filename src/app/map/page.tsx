@@ -1,38 +1,56 @@
 import type { Metadata } from "next";
-import { getMapBreakdown, getRegionCounts, getStats } from "@/lib/db";
-import { SourcingMap } from "@/components/SourcingMap";
-import { FARM_LOCATIONS } from "@/lib/farms";
+import Link from "next/link";
+import { getMapLocations } from "@/lib/map-data";
+import { getRegionCounts, getStats } from "@/lib/db";
+import { SourcingExplorer } from "@/components/SourcingExplorer";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Sourcing Map — Where Matcha Comes From",
   description:
-    "An interactive map of matcha growing regions and named farms, built from sourcing disclosures on brands' own product pages — real administrative boundaries only, never fabricated farm outlines.",
+    "An interactive map of where matcha is grown: click a region, district or farm to fly in and see its brands, products, grades, cultivars and prices. Built from brands' own product pages, with real administrative boundaries only.",
   alternates: { canonical: `${SITE_URL}/map` },
 };
 
 export default async function MapPage() {
-  const [regionCounts, stats, breakdown] = await Promise.all([getRegionCounts(), getStats(), getMapBreakdown()]);
+  const [locations, regionCounts, stats] = await Promise.all([getMapLocations(), getRegionCounts(), getStats()]);
   const totalWithRegion = regionCounts.reduce((sum, r) => sum + r.count, 0);
 
   return (
-    <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
-      <div className="mb-8">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Sourcing</p>
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">
-          Where the matcha comes from
-        </h1>
-        <p className="text-ink-muted mt-2">
-          {totalWithRegion} of {stats.productCount}{" "}products have a disclosed growing region, pulled
-          directly from each brand&apos;s own product page. A diamond marker means a brand named a
-          specific farm and we independently verified its location; everything else is only as
-          precise as the city or prefecture the brand itself disclosed. No farm property boundaries
-          are shown -- there's no public registry of land-parcel outlines for private tea farms, so
-          we don't draw shapes that don't correspond to anything real.
-        </p>
-      </div>
+    <main className="flex-1 w-full">
+      <SourcingExplorer locations={locations} totalProducts={stats.productCount} />
 
-      <SourcingMap regionCounts={regionCounts} farmLocations={FARM_LOCATIONS} breakdown={breakdown} />
+      <section className="max-w-3xl mx-auto w-full px-6 py-12 text-sm text-ink-muted leading-relaxed flex flex-col gap-4">
+        <h2 className="font-display text-2xl font-semibold text-ink">How to read this map</h2>
+        <p>
+          {totalWithRegion.toLocaleString()} of {stats.productCount.toLocaleString()} products name a growing region on the brand&apos;s own product page. The map places each product where
+          the brand says the tea leaf is grown. It does not show where a company is based, and a brand headquartered in one country can sell matcha grown in another.
+        </p>
+        <p>
+          Numbers on the pins count products. Click a region, a district or a farm to fly in and open its panel: median price per gram, grade mix, cultivars and flavor notes brands report, and
+          the brands and sample products behind it. The Satellite view adds terrain so you can see the hills the tea grows on.
+        </p>
+        <p>
+          Green outlines are real administrative boundaries: towns and prefectures where a brand&apos;s disclosure (or another verified source) named one, plus Taiwan, a country small enough
+          that outlining it is still informative. Regions that never get more specific than a large country, or that span several prefectures with no single boundary, show only a point. Smaller
+          dots appear as you zoom in for districts and towns that brands name on at least two products (Ogura, Ujitawara, Kirishima, Hoshino and others); those are places a brand named, not farm
+          locations. Diamonds are specific named farms whose location we independently verified.
+        </p>
+        <p>
+          No farm property boundaries are shown anywhere. There is no public registry of land-parcel outlines for private tea farms, so drawing one would mean inventing a shape that does not
+          correspond to anything real.
+        </p>
+        <p>
+          <Link href="/browse" className="text-matcha hover:text-forest transition-colors">
+            Browse all products
+          </Link>{" "}
+          for full detail, or read about each region on the{" "}
+          <Link href="/regions" className="text-matcha hover:text-forest transition-colors">
+            regions pages
+          </Link>
+          .
+        </p>
+      </section>
     </main>
   );
 }
