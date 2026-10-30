@@ -44,7 +44,7 @@ async function geocode(query: string): Promise<Origin | null> {
 const fmtDate = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 const directionsUrl = (s: Store) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.address}, ${s.city}, ${s.state} ${s.zip}`)}`;
 
-export function StoreFinder({ stores, contactEmail }: { stores: Store[]; contactEmail: string }) {
+export function StoreFinder({ stores, contactEmail, initialBrand = "" }: { stores: Store[]; contactEmail: string; initialBrand?: string }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
@@ -52,7 +52,7 @@ export function StoreFinder({ stores, contactEmail }: { stores: Store[]; contact
 
   const [query, setQuery] = useState("");
   const [origin, setOrigin] = useState<Origin | null>(null);
-  const [brand, setBrand] = useState("");
+  const [brand, setBrand] = useState(initialBrand);
   const [radius, setRadius] = useState(50);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [busy, setBusy] = useState<"search" | "locate" | null>(null);

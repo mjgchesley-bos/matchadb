@@ -16,8 +16,11 @@ export const metadata: Metadata = {
   openGraph: { title, description, url: `${SITE_URL}/stores` },
 };
 
-export default function StoresPage() {
+export default async function StoresPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const sp = await searchParams;
   const stores = getStores();
+  const wanted = Array.isArray(sp.brand) ? sp.brand[0] : sp.brand;
+  const initialBrand = wanted && stores.some((s) => s.brands.some((b) => b.name === wanted)) ? wanted : "";
   const states = new Set(stores.map((s) => s.state)).size;
   const brands = new Set(stores.flatMap((s) => s.brands.map((b) => b.name))).size;
 
@@ -60,7 +63,7 @@ export default function StoresPage() {
         </p>
       </header>
 
-      <StoreFinder stores={stores} contactEmail={CONTACT_EMAIL} />
+      <StoreFinder stores={stores} contactEmail={CONTACT_EMAIL} initialBrand={initialBrand} />
 
       <section className="mt-14 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-stores">
         <h2 id="how-stores" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">How this list is built</h2>

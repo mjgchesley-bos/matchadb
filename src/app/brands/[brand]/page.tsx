@@ -11,6 +11,8 @@ import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { getBrandLogoPath } from "@/lib/logos";
 import { comparisonsFor } from "@/lib/compare";
+import { BRAND_RESELLER_NOTES, storesForBrand } from "@/lib/stores";
+import { KIND_LABEL } from "@/lib/store-types";
 import { SITE_URL } from "@/lib/site";
 
 export async function generateMetadata({
@@ -59,6 +61,11 @@ export default async function BrandPage({
   const summary = getBrandSummary({ brand: brandName, products, comparable: brandComparable });
   const logoPath = getBrandLogoPath(brandName);
   const comparisons = comparisonsFor(brandName);
+  const stockists = storesForBrand(brandName);
+  const resellerNote = BRAND_RESELLER_NOTES[brandName];
+  const ownShops = stockists.filter((s) => s.kind === "brand-shop");
+  const retailers = stockists.filter((s) => s.kind === "retailer");
+  const fmtChecked = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
@@ -189,6 +196,65 @@ export default async function BrandPage({
           );
         })}
       </div>
+
+      {stockists.length > 0 && (
+        <section className="mt-12" aria-labelledby="where-to-buy">
+          <h2 id="where-to-buy" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
+            Where to buy {brandName} in person
+          </h2>
+          <p className="text-sm text-ink-muted max-w-2xl leading-relaxed">
+            Places whose own websites say they carry {brandName}, each with the page we checked and the date. This is not an official authorization list, and stock changes, so call
+            ahead.
+          </p>
+          {resellerNote && (
+            <p className="mt-2 text-sm text-ink-muted max-w-2xl leading-relaxed">
+              {resellerNote.text}{" "}
+              <a href={resellerNote.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest underline">
+                {resellerNote.label}
+              </a>
+              .
+            </p>
+          )}
+          {[
+            { title: `${brandName}'s own shops`, list: ownShops },
+            { title: "Retailers that stock it", list: retailers },
+          ]
+            .filter((g) => g.list.length > 0)
+            .map((g) => (
+              <div key={g.title} className="mt-5">
+                <h3 className="font-display text-lg font-semibold text-ink">{g.title}</h3>
+                <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {g.list.map((s) => {
+                    const claim = s.brands.find((b) => b.name === brandName);
+                    return (
+                      <li key={s.id} className="rounded-sm border border-line bg-paper-raised p-4">
+                        <p className="font-medium text-ink">{s.name}</p>
+                        <p className="text-sm text-ink-muted">
+                          {s.address}, {s.city}, {s.state} {s.zip}
+                        </p>
+                        <p className="mt-1.5 text-xs">
+                          <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{KIND_LABEL[s.kind]}</span>
+                        </p>
+                        {s.note && <p className="mt-2 text-xs text-ink-faint leading-relaxed">{s.note}</p>}
+                        <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                          <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
+                            Store website
+                          </a>
+                          <a href={claim?.evidence ?? s.url} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
+                            Source, checked {fmtChecked(s.checked)}
+                          </a>
+                        </p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          <Link href={`/stores?brand=${encodeURIComponent(brandName)}`} className="inline-block mt-5 text-matcha hover:text-forest">
+            See these on the store finder map &rarr;
+          </Link>
+        </section>
+      )}
 
       {comparisons.length > 0 && (
         <section className="mt-12" aria-label={`Compare ${brandName} with other brands`}>
