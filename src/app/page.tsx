@@ -17,6 +17,7 @@ import { MatchTool } from "@/components/MatchTool";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getLibraryFacets } from "@/lib/studies";
+import { GUIDES } from "@/lib/guides";
 
 // Abbreviated relative to /browse's full result set + pagination -- the home
 // page shows a sample plus a link to the full database rather than paging.
@@ -227,6 +228,26 @@ export default async function Home({
               </div>
             )}
           </div>
+        </div>
+      </section>
+
+      <section className="max-w-5xl mx-auto px-6 pb-12">
+        <div className="flex items-baseline justify-between gap-4 mb-4">
+          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink">Matcha guides</h2>
+          <Link href="/guides" className="text-matcha hover:text-forest text-sm whitespace-nowrap">
+            All guides &rarr;
+          </Link>
+        </div>
+        <div className="flex flex-wrap gap-2.5">
+          {GUIDES.map((g) => (
+            <Link
+              key={g.slug}
+              href={`/guides/${g.slug}`}
+              className="rounded-full border-2 border-line-strong px-4 py-2 text-sm font-medium text-ink-muted hover:border-matcha hover:text-matcha transition-colors"
+            >
+              {g.h1}
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -259,7 +259,7 @@ export const POPULAR_BRANDS = ["Marukyu Koyamaen", "Ippodo", "Kettl", "Aiya", "R
 // Scoped to these two curation queries only: a shopper who searches
 // /browse for "sticks" should still find them, this just keeps them out
 // of the "here's what's good" picks.
-const EXCLUDE_NOVELTY_FORMATS_SQL = `
+export const EXCLUDE_NOVELTY_FORMATS_SQL = `
     p.product_name NOT LIKE '%stick%' AND p.product_name NOT LIKE '%pod%' AND
     p.product_name NOT LIKE '%packet%' AND p.product_name NOT LIKE '%sachet%' AND
     p.product_name NOT LIKE '%instant%' AND p.product_name NOT LIKE '%concentrate%' AND
