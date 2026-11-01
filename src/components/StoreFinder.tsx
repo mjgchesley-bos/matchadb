@@ -5,6 +5,7 @@ import Link from "next/link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { KIND_LABEL, type BrandMatchaInfo, type Store } from "@/lib/store-types";
+import { usd30 } from "@/lib/unit-price";
 
 // Search by ZIP code or city, or use your device's location, to find stores near
 // you that carry brands from the database. Your position is only used in your
@@ -48,7 +49,7 @@ const directionsUrl = (s: Store) => `https://www.google.com/maps/dir/?api=1&dest
 const VERB: Record<Store["kind"], string> = { "brand-shop": "Its own shop", cafe: "Serves", retailer: "Sells" };
 
 // The popup shown over a pin: the place, and for each brand it carries, what that brand's
-// matcha is like (grades, product count, price per gram) from our product database. Built
+// matcha is like (grades, product count, price per 30 g) from our product database. Built
 // with DOM nodes and textContent so store names from brand locators can never inject markup.
 function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>): HTMLElement {
   const el = (tag: string, cls: string, text?: string) => {
@@ -73,7 +74,7 @@ function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>): HTMLElemen
       const bits: string[] = [];
       if (m.grades.length) bits.push(`${m.grades.join(", ")} grade${m.grades.length > 1 ? "s" : ""}`);
       bits.push(`${m.products} matcha product${m.products === 1 ? "" : "s"} listed`);
-      if (m.perGram) bits.push(m.perGram[0] === m.perGram[1] ? `$${m.perGram[0].toFixed(2)}/g` : `$${m.perGram[0].toFixed(2)}–$${m.perGram[1].toFixed(2)}/g`);
+      if (m.perGram) bits.push(m.perGram[0] === m.perGram[1] ? `${usd30(m.perGram[0])} per 30 g` : `${usd30(m.perGram[0])}–${usd30(m.perGram[1])} per 30 g`);
       li.appendChild(el("p", "mt-1 text-xs text-ink leading-relaxed", bits.join(" · ")));
     }
     list.appendChild(li);

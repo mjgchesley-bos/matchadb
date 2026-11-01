@@ -1,5 +1,6 @@
 import type { ComparablePrice } from "./db";
 import { REGION_CONTENT } from "./region-content";
+import { usd30 } from "./unit-price";
 
 // "Price in context": plain-English comparisons computed from the database,
 // so each product page carries information that exists nowhere else (not on
@@ -13,10 +14,6 @@ const MIN_BRAND_PEERS = 3;
 function median(sorted: number[]): number {
   const mid = Math.floor(sorted.length / 2);
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
-}
-
-function usd(n: number): string {
-  return `$${n.toFixed(2)}`;
 }
 
 function ordinal(n: number): string {
@@ -66,14 +63,14 @@ export function getPriceInsight(
   let shortClause: string;
   if (moreThan >= 0.5) {
     sentences.push(
-      `At ${usd(t)} per gram, it costs more than ${pct(moreThan)}% of the other ${others.length} matchas in the database with a confirmed price and size.`
+      `At ${usd30(t)} per 30 g, it costs more than ${pct(moreThan)}% of the other ${others.length} matchas in the database with a confirmed price and size.`
     );
-    shortClause = `${usd(t)}/g, pricier than ${pct(moreThan)}% of matchas`;
+    shortClause = `${usd30(t)} per 30 g, pricier than ${pct(moreThan)}% of matchas`;
   } else {
     sentences.push(
-      `At ${usd(t)} per gram, it costs less than ${pct(lessThan)}% of the other ${others.length} matchas in the database with a confirmed price and size.`
+      `At ${usd30(t)} per 30 g, it costs less than ${pct(lessThan)}% of the other ${others.length} matchas in the database with a confirmed price and size.`
     );
-    shortClause = `${usd(t)}/g, cheaper than ${pct(lessThan)}% of matchas`;
+    shortClause = `${usd30(t)} per 30 g, cheaper than ${pct(lessThan)}% of matchas`;
   }
 
   // Region comparison (preferred), else grade.
@@ -84,7 +81,7 @@ export function getPriceInsight(
   if (target.region && regionPeers.length >= MIN_REGION_PEERS) {
     const med = median(regionPeers.map((p) => p.pricePerGram).sort((a, b) => a - b));
     sentences.push(
-      `Among the ${regionPeers.length} ${target.region} matchas with a confirmed price, the median is ${usd(med)} per gram, and this one is ${relationToMedian(t, med, "regional")}.`
+      `Among the ${regionPeers.length} ${target.region} matchas with a confirmed price, the median is ${usd30(med)} per 30 g, and this one is ${relationToMedian(t, med, "regional")}.`
     );
     regionSlug = REGION_CONTENT[target.region]?.slug ?? null;
   } else if (target.grade) {
@@ -92,7 +89,7 @@ export function getPriceInsight(
     if (gradePeers.length >= MIN_GRADE_PEERS) {
       const med = median(gradePeers.map((p) => p.pricePerGram).sort((a, b) => a - b));
       sentences.push(
-        `Among the ${gradePeers.length} ${target.grade.toLowerCase()}-grade matchas with a confirmed price, the median is ${usd(med)} per gram, and this one is ${relationToMedian(t, med, "grade")}.`
+        `Among the ${gradePeers.length} ${target.grade.toLowerCase()}-grade matchas with a confirmed price, the median is ${usd30(med)} per 30 g, and this one is ${relationToMedian(t, med, "grade")}.`
       );
     }
   }
@@ -111,7 +108,7 @@ export function getPriceInsight(
           ? `its most expensive`
           : `the ${ordinal(rank)}-cheapest`;
     sentences.push(
-      `Among ${brandPoss} ${brandPeers.length} matchas with a confirmed price, this is ${where} per gram.`
+      `Among ${brandPoss} ${brandPeers.length} matchas with a confirmed price, this is ${where} per 30 g.`
     );
   }
 
@@ -155,7 +152,7 @@ export function getBrandSummary({ brand, products, comparable }: BrandSummaryInp
   if (comparable.length >= 3) {
     const sorted = comparable.map((c) => c.pricePerGram).sort((a, b) => a - b);
     out.push(
-      `Across ${comparable.length} products with a confirmed price and size, cost runs from ${usd(sorted[0])} to ${usd(sorted[sorted.length - 1])} per gram, with a median of ${usd(median(sorted))}.`
+      `Across ${comparable.length} products with a confirmed price and size, cost runs from ${usd30(sorted[0])} to ${usd30(sorted[sorted.length - 1])} per 30 g, with a median of ${usd30(median(sorted))}.`
     );
   }
   return out;

@@ -420,6 +420,11 @@ async function main() {
       fields.priceNeedsReview = 0;
       fields.priceReviewReason = null;
     }
+    // A per-gram figure is only ever calculated from a size the seller states. A price
+    // flagged for review (size inferred from a listed option, or a contradiction found in the
+    // research) keeps the seller's price but gets no derived per-gram number, so nothing on the
+    // site compares or ranks on a guess.
+    if (fields.priceNeedsReview) fields.pricePerGram = null;
     // The extractor only reports a per-gram rate for prices quoted natively
     // in USD, so yen/pound/euro products (converted to price_usd at the FX
     // rate) arrived here with a dollar price and a size but no per-gram

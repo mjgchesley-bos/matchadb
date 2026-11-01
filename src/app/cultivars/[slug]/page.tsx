@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CULTIVARS, cultivarBySlug, loadCultivar, type LoadedCultivar } from "@/lib/cultivars";
-import { GroupTable, usd } from "@/components/GuideBlocks";
+import { GroupTable } from "@/components/GuideBlocks";
 import { ProductCard } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { usd30 } from "@/lib/unit-price";
 
 export function generateStaticParams() {
   return CULTIVARS.map((c) => ({ slug: c.slug }));
@@ -47,7 +48,7 @@ function faqFor(d: LoadedCultivar): { q: string; a: string }[] {
     const rel = all.median ? (s.median > all.median ? "above" : s.median < all.median ? "below" : "in line with") : null;
     out.push({
       q: `How much does ${c.name} matcha cost?`,
-      a: `Across ${s.count} ${c.name} matcha powders from ${s.brands} brands, the median is ${usd(s.median)} per gram and the middle half fall between ${usd(s.p25)} and ${usd(s.p75)}${rel && all.median ? `, ${rel} the ${usd(all.median)} median for all matcha powders on the site` : ""}.`,
+      a: `Across ${s.count} ${c.name} matcha powders from ${s.brands} brands, the median is ${usd30(s.median)} per 30 g and the middle half fall between ${usd30(s.p25)} and ${usd30(s.p75)}${rel && all.median ? `, ${rel} the ${usd30(all.median)} median for all matcha powders on the site` : ""}.`,
     });
   }
   return out;
@@ -66,8 +67,8 @@ export default async function CultivarPage({ params }: { params: Promise<{ slug:
   const stats: [string, string][] = [
     [s.count.toLocaleString(), `plain matcha powders naming ${cultivar.name}`],
     [s.brands.toLocaleString(), "brands"],
-    [usd(s.median), `median per gram${all.median ? ` (all matcha ${usd(all.median)})` : ""}`],
-    [s.p25 != null && s.p75 != null ? `${usd(s.p25)}–${usd(s.p75)}` : "n/a", "middle half of prices"],
+    [usd30(s.median), `median per 30 g${all.median ? ` (all matcha ${usd30(all.median)})` : ""}`],
+    [s.p25 != null && s.p75 != null ? `${usd30(s.p25)}–${usd30(s.p75)}` : "n/a", "middle half of prices"],
   ];
 
   return (
@@ -161,7 +162,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ slug:
         <GroupTable title="By growing region" rows={region} label="Region" />
         <GroupTable title="Brands naming this cultivar (up to eight)" rows={brands} label="Brand" showBrands={false} />
         <p className="text-xs text-ink-faint -mt-3">
-          Rows with fewer than three products (two for regions, one for brands) are left out. &ldquo;Middle half&rdquo; is the price-per-gram range from the 25th to the 75th percentile.
+          Rows with fewer than three products (two for regions, one for brands) are left out. &ldquo;Middle half&rdquo; is the per-30 g price range from the 25th to the 75th percentile.
           {organicShare > 0 ? ` ${Math.round(organicShare * 100)}% of these powders are listed as organic.` : ""}
         </p>
       </section>
@@ -228,7 +229,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ slug:
         <p className="text-sm text-ink-muted leading-relaxed">
           Counts and prices cover plain matcha powders whose own product page names {cultivar.name}: flavored blends, tea bags, sweetened mixes, packs under 20 grams and products without a
           verified price are excluded, and only brands that ship to the United States are included. A blend of several cultivars is counted once, under the first cultivar found on its page.
-          Prices are converted to US dollars and shown per gram. Descriptions of a cultivar&apos;s character come from published sources and sellers; we do not taste or rank products.
+          Prices are converted to US dollars and shown per 30 g. Descriptions of a cultivar&apos;s character come from published sources and sellers; we do not taste or rank products.
         </p>
       </section>
 

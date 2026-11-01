@@ -19,7 +19,7 @@ const PAGE_SIZE = 48;
 export const metadata: Metadata = {
   title: "Search the Matcha Database",
   description:
-    "Filter and compare matcha products by brand, grade, region, cultivar, flavor, and price per gram — full database search across every product MatchaDB has researched.",
+    "Filter and compare matcha products by brand, grade, region, cultivar, flavor, and price per 30 g — full database search across every product MatchaDB has researched.",
   alternates: { canonical: `${SITE_URL}/browse` },
 };
 

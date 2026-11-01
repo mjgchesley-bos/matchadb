@@ -11,6 +11,7 @@ import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { getBrandLogoPath } from "@/lib/logos";
 import { comparisonsFor } from "@/lib/compare";
+import { usd30 } from "@/lib/unit-price";
 import { BRAND_RESELLER_NOTES, chainsForBrand, resellersForBrand, storesForBrand } from "@/lib/stores";
 import { KIND_LABEL } from "@/lib/store-types";
 import { SITE_URL } from "@/lib/site";
@@ -33,7 +34,7 @@ export async function generateMetadata({
     .sort((a, b) => a - b);
   const priceBit =
     comparable.length >= 3
-      ? ` Prices run $${comparable[0].toFixed(2)}–$${comparable[comparable.length - 1].toFixed(2)} per gram.`
+      ? ` A standard 30 g tin runs ${usd30(comparable[0])}–${usd30(comparable[comparable.length - 1])}.`
       : "";
   const description = `Every ${brandName} matcha in MatchaDB: ${n} product${n === 1 ? "" : "s"} with grade, growing region, cultivar and tasting notes.${priceBit}`;
 

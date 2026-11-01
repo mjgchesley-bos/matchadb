@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getGuideRows, groupBy, summarize } from "@/lib/guide-data";
 import { getDb } from "@/lib/db";
-import { usd } from "@/components/GuideBlocks";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { usd30 } from "@/lib/unit-price";
 
 const url = `${SITE_URL}/guides/what-is-ceremonial-matcha`;
 const title = "What Is Ceremonial Matcha? Origin and Meaning";
@@ -96,7 +96,7 @@ export default async function WhatIsCeremonialPage() {
     },
     {
       q: "Is ceremonial matcha always the highest quality?",
-      a: `No. The label sets no floor and no ceiling. In our data, powders labeled ceremonial run from ${usd(cer.min)} to ${usd(cer.max)} per gram, with the middle half between ${usd(cer.p25)} and ${usd(cer.p75)}.`,
+      a: `No. The label sets no floor and no ceiling. In our data, powders labeled ceremonial run from ${usd30(cer.min)} to ${usd30(cer.max)} per 30 g, with the middle half between ${usd30(cer.p25)} and ${usd30(cer.p75)}.`,
     },
     {
       q: "Can I use ceremonial matcha for lattes or baking?",
@@ -227,10 +227,10 @@ export default async function WhatIsCeremonialPage() {
           </p>
           <div className="mt-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
             {[
-              [usd(cer.median), "median per gram, ceremonial"],
-              [culinary ? usd(culinary.median) : "n/a", "median per gram, culinary"],
-              [cer.p25 != null && cer.p75 != null ? `${usd(cer.p25)}–${usd(cer.p75)}` : "n/a", "middle half, ceremonial"],
-              [cer.min != null && cer.max != null ? `${usd(cer.min)}–${usd(cer.max)}` : "n/a", "full range, ceremonial"],
+              [usd30(cer.median), "median per 30 g, ceremonial"],
+              [culinary ? usd30(culinary.median) : "n/a", "median per 30 g, culinary"],
+              [cer.p25 != null && cer.p75 != null ? `${usd30(cer.p25)}–${usd30(cer.p75)}` : "n/a", "middle half, ceremonial"],
+              [cer.min != null && cer.max != null ? `${usd30(cer.min)}–${usd30(cer.max)}` : "n/a", "full range, ceremonial"],
             ].map(([v, l]) => (
               <div key={l} className="border border-line rounded-sm bg-paper-raised px-4 py-3">
                 <p className="font-display text-xl text-ink tabular-nums">{v}</p>
@@ -239,7 +239,7 @@ export default async function WhatIsCeremonialPage() {
             ))}
           </div>
           <p className="mt-5">
-            The spread is the point. Across all matcha powders in the database the median is {usd(all.median)} per gram, and the ceremonial label covers everything from the cheapest to the
+            The spread is the point. Across all matcha powders in the database the median is {usd30(all.median)} per 30 g, and the ceremonial label covers everything from the cheapest to the
             most expensive tins. On the brands&apos; own pages, {withRegion}% of ceremonial powders name a growing region and {withCultivar}% name a cultivar, so the label is the least
             informative thing about them. That is why we compare those details instead.
           </p>
@@ -250,7 +250,7 @@ export default async function WhatIsCeremonialPage() {
           <ul className="mt-3 flex flex-col gap-2 list-disc pl-5">
             <li>Treat &ldquo;ceremonial&rdquo; as the brand telling you what the powder is for, and look for the facts behind it.</li>
             <li>Check whether the brand names a region and cultivar, and when it was harvested.</li>
-            <li>Compare price per gram, not tin price. Our <Link href="/guides/how-much-does-matcha-cost" className="text-matcha hover:text-forest">cost guide</Link> shows typical ranges.</li>
+            <li>Compare price per 30 g, not tin price. Our <Link href="/guides/how-much-does-matcha-cost" className="text-matcha hover:text-forest">cost guide</Link> shows typical ranges.</li>
             <li>If you want the traditional framing, look for koicha and usucha lines from Japanese tea houses; see <Link href="/guides/usucha-vs-koicha-matcha" className="text-matcha hover:text-forest">usucha vs koicha</Link>.</li>
           </ul>
         </section>

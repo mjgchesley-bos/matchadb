@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PAIRS, loadComparison, pairSlug } from "@/lib/compare";
-import { usd } from "@/components/GuideBlocks";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { usd30 } from "@/lib/unit-price";
 
 const title = "Compare Matcha Brands: Price, Grade and Origin Side by Side";
-const description = "Head-to-head comparisons of popular matcha brands by price per gram, grade, growing region, cultivar and shipping, from each brand's own product pages.";
+const description = "Head-to-head comparisons of popular matcha brands by price per 30 g, grade, growing region, cultivar and shipping, from each brand's own product pages.";
 
 export const metadata: Metadata = {
   title,
@@ -37,7 +37,7 @@ export default async function CompareIndex() {
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Compare</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Compare matcha brands</h1>
         <p className="mt-5 text-lg text-ink-muted leading-relaxed">
-          Two brands, side by side: what their matcha costs per gram, how they grade it, where they say it is grown and where they ship. Facts from each brand&apos;s own product pages, with
+          Two brands, side by side: what their matcha costs per 30 g, how they grade it, where they say it is grown and where they ship. Facts from each brand&apos;s own product pages, with
           no taste scores.
         </p>
       </header>
@@ -49,7 +49,7 @@ export default async function CompareIndex() {
             <Link key={pairSlug(a, b)} href={`/compare/${pairSlug(a, b)}`} className="border border-line rounded-sm bg-paper-raised p-5 hover:border-matcha hover:bg-matcha-soft transition-colors">
               <span className="font-display text-xl font-semibold text-ink block">{a} vs {b}</span>
               <span className="text-xs text-ink-faint mt-3 block tabular-nums">
-                Median per gram: {usd(A.powders.median)} vs {usd(B.powders.median)} &middot; {A.total} vs {B.total} products
+                Median per 30 g: {usd30(A.powders.median)} vs {usd30(B.powders.median)} &middot; {A.total} vs {B.total} products
               </span>
             </Link>
           );

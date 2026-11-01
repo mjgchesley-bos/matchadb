@@ -1,8 +1,9 @@
 import type { Group } from "@/lib/guide-data";
+import { usd30 } from "@/lib/unit-price";
 
 export const usd = (n: number | null) => (n == null ? "n/a" : `$${n.toFixed(2)}`);
 
-// Median / middle-half price per gram for each group of products, with a bar
+// Median / middle-half price per 30 g for each group of products, with a bar
 // scaled to the largest median in the table. Shared by guide, cultivar and
 // comparison pages so they read as one family.
 export function GroupTable({ title, rows, label, showBrands = true }: { title: string; rows: Group[]; label: string; showBrands?: boolean }) {
@@ -33,11 +34,11 @@ export function GroupTable({ title, rows, label, showBrands = true }: { title: s
                     <span className="hidden sm:block h-2 w-24 rounded-full bg-matcha-soft overflow-hidden shrink-0" aria-hidden="true">
                       <span className="block h-full bg-matcha rounded-full" style={{ width: `${((r.median ?? 0) / max) * 100}%` }} />
                     </span>
-                    <span className="tabular-nums text-ink">{usd(r.median)}</span>
+                    <span className="tabular-nums text-ink">{usd30(r.median)}</span>
                   </span>
                 </td>
                 <td className="py-2 text-right tabular-nums text-ink-muted whitespace-nowrap">
-                  {usd(r.p25)}&ndash;{usd(r.p75)}
+                  {usd30(r.p25)}&ndash;{usd30(r.p75)}
                 </td>
               </tr>
             ))}

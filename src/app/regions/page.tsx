@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getRegionSummary } from "@/lib/db";
 import { getRegionInfo } from "@/lib/regions";
+import { usd30 } from "@/lib/unit-price";
 import { MIN_PRODUCTS_FOR_PAGE, REGION_CONTENT } from "@/lib/region-content";
 import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Matcha Growing Regions Compared",
   description:
-    "Compare matcha by where it's grown: Uji, Kagoshima, Nishio, Yame and more — product counts, typical price per gram, and the brands that source from each.",
+    "Compare matcha by where it's grown: Uji, Kagoshima, Nishio, Yame and more — product counts, typical price per 30 g, and the brands that source from each.",
   alternates: { canonical: `${SITE_URL}/regions` },
 };
 
@@ -27,7 +28,7 @@ export default async function RegionsIndexPage() {
       </h1>
       <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
         Origin shapes price and flavor. Each region below summarizes the products brands say come from
-        there: how many, what they typically cost per gram, and which brands source from them.
+        there: how many, what they typically cost per 30 g, and which brands source from them.
       </p>
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -46,7 +47,7 @@ export default async function RegionsIndexPage() {
               <span className="text-sm text-ink-muted mt-1">
                 {s.productCount} products · {s.brandCount} brands
                 {s.pricedCount >= MIN_PRODUCTS_FOR_PAGE && s.medianPricePerGram != null
-                  ? ` · typically $${s.medianPricePerGram.toFixed(2)}/g`
+                  ? ` · typically ${usd30(s.medianPricePerGram)} per 30 g`
                   : ""}
               </span>
             </Link>

@@ -27,7 +27,7 @@ export default async function MapPage() {
           the brand says the tea leaf is grown. It does not show where a company is based, and a brand headquartered in one country can sell matcha grown in another.
         </p>
         <p>
-          Numbers on the pins count products. Click a region, a district or a farm to fly in and open its panel: median price per gram, grade mix, cultivars and flavor notes brands report, and
+          Numbers on the pins count products. Click a region, a district or a farm to fly in and open its panel: median price per 30 g, grade mix, cultivars and flavor notes brands report, and
           the brands and sample products behind it. The Satellite view adds terrain so you can see the hills the tea grows on.
         </p>
         <p>

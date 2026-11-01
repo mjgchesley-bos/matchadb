@@ -4,9 +4,10 @@ import { notFound } from "next/navigation";
 import { GUIDES, guideBySlug, loadGuide } from "@/lib/guides";
 import { GUIDE_MIN_GRAMS } from "@/lib/guide-data";
 import { ProductCard } from "@/components/product-cards";
-import { GroupTable, usd } from "@/components/GuideBlocks";
+import { GroupTable } from "@/components/GuideBlocks";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { usd30 } from "@/lib/unit-price";
 
 export function generateStaticParams() {
   return GUIDES.map((g) => ({ slug: g.slug }));
@@ -37,8 +38,8 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
   const stats: [string, string][] = [
     [ctx.s.count.toLocaleString(), "matcha powders compared"],
     [ctx.s.brands.toLocaleString(), "brands"],
-    [usd(ctx.s.median), "median per gram"],
-    [ctx.s.p25 != null && ctx.s.p75 != null ? `${usd(ctx.s.p25)}–${usd(ctx.s.p75)}` : "n/a", "middle half of prices"],
+    [usd30(ctx.s.median), "median per 30 g"],
+    [ctx.s.p25 != null && ctx.s.p75 != null ? `${usd30(ctx.s.p25)}–${usd30(ctx.s.p75)}` : "n/a", "middle half of prices"],
   ];
   const featured = lists[0]?.products ?? [];
 
@@ -114,7 +115,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           {guide.tables.includes("grade") && <GroupTable title="By grade (as each brand labels it)" rows={ctx.grade} label="Grade" />}
           {guide.tables.includes("region") && <GroupTable title="By growing region" rows={ctx.region} label="Region" />}
           <p className="text-xs text-ink-faint -mt-3">
-            Groups with fewer than three products are left out. &ldquo;Middle half&rdquo; is the price-per-gram range from the 25th to the 75th percentile.
+            Groups with fewer than three products are left out. &ldquo;Middle half&rdquo; is the per-30 g price range from the 25th to the 75th percentile.
           </p>
         </section>
       )}
@@ -160,7 +161,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
         <p className="text-sm text-ink-muted leading-relaxed">
           Numbers come from each brand&apos;s own product page and are recalculated whenever the site is rebuilt. Guides compare plain matcha powder: flavored blends, tea bags,
           sweetened latte mixes and single-serve packs are excluded, as are products without a verified price (including any whose product page could not be read) or a pack of at least {GUIDE_MIN_GRAMS} grams. Prices are converted to US
-          dollars and shown per gram so tins of different sizes compare fairly. Only brands that ship to the United States are listed. Lists show well-known brands first by an editorial
+          dollars and shown per 30 g so tins of different sizes compare fairly. Only brands that ship to the United States are listed. Lists show well-known brands first by an editorial
           recognition score, not by quality or sales, and a product appearing here is not an endorsement. {guide.method}
         </p>
       </section>

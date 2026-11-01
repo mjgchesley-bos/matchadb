@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CULTIVARS, loadCultivar } from "@/lib/cultivars";
-import { usd } from "@/components/GuideBlocks";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { usd30 } from "@/lib/unit-price";
 
 const title = "Matcha Cultivars: Yabukita, Okumidori, Samidori and More";
 const description =
@@ -49,7 +49,7 @@ export default async function CultivarsIndex() {
             <span className="font-display text-xl font-semibold text-ink block">{cultivar.h1}</span>
             <span className="text-sm text-ink-muted mt-2 block leading-relaxed">{cultivar.description}</span>
             <span className="text-xs text-ink-faint mt-3 block tabular-nums">
-              {s.count.toLocaleString()} powders &middot; {s.brands} brands &middot; median {usd(s.median)} per gram
+              {s.count.toLocaleString()} powders &middot; {s.brands} brands &middot; median {usd30(s.median)} per 30 g
             </span>
           </Link>
         ))}

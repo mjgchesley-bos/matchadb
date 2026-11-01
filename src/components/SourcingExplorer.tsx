@@ -7,6 +7,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import type { MapLocation } from "@/lib/map-data";
 import { BrandLogo, gradeLabel } from "@/components/product-cards";
 import { getBrandLogoPath, logoNeedsInvert } from "@/lib/logos";
+import { usd30 } from "@/lib/unit-price";
 
 // Full-screen sourcing map: regions, named districts and verified farms as
 // pins; click one to fly in and open its detail panel. It shows where the
@@ -873,8 +874,8 @@ function DetailPanel({
             {loc.intro && <p className="text-sm text-ink-muted leading-relaxed">{loc.intro}</p>}
             {loc.note && <p className="text-xs text-ink-faint leading-relaxed">{loc.note}</p>}
             <div className="grid grid-cols-2 gap-2">
-              <Stat label="Median price" value={usd(loc.median)} sub={loc.pricedCount ? `per gram, ${loc.pricedCount} priced` : "no comparable prices"} />
-              <Stat label="Middle half" value={loc.p25 != null && loc.p75 != null ? `${usd(loc.p25)}–${usd(loc.p75)}` : "n/a"} sub="per gram" />
+              <Stat label="Median price" value={usd30(loc.median)} sub={loc.pricedCount ? `per 30 g, ${loc.pricedCount} priced` : "no comparable prices"} />
+              <Stat label="Middle half" value={loc.p25 != null && loc.p75 != null ? `${usd30(loc.p25)}–${usd30(loc.p75)}` : "n/a"} sub="per 30 g" />
               <Stat label="Organic" value={loc.products ? `${Math.round((loc.organicCount / loc.products) * 100)}%` : "n/a"} sub={`${loc.organicCount} of ${loc.products}`} />
               <Stat label="Brands" value={String(loc.brands)} sub="source from here" />
             </div>
@@ -961,7 +962,7 @@ function DetailPanel({
                     <Link href={`/products/${p.id}`} className="block py-2.5 hover:text-matcha">
                       <span className="flex items-baseline justify-between gap-3">
                         <span className="text-sm text-ink">{p.brand}</span>
-                        <span className="text-xs text-ink tabular-nums whitespace-nowrap">{usd(p.perGram)}/g</span>
+                        <span className="text-xs text-ink tabular-nums whitespace-nowrap">{usd30(p.perGram)} per 30 g</span>
                       </span>
                       <span className="block text-xs text-ink-muted">{p.name}</span>
                       <span className="block text-[0.7rem] text-ink-faint">

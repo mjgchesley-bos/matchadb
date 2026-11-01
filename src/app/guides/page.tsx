@@ -3,6 +3,7 @@ import Link from "next/link";
 import { GUIDES, loadGuide } from "@/lib/guides";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { usd30 } from "@/lib/unit-price";
 
 const title = "Matcha Guides: Lattes, Grades, Prices and More";
 const description =
@@ -15,7 +16,6 @@ export const metadata: Metadata = {
   openGraph: { title, description, url: `${SITE_URL}/guides` },
 };
 
-const usd = (n: number | null) => (n == null ? "n/a" : `$${n.toFixed(2)}`);
 
 export default async function GuidesIndex() {
   const loaded = await Promise.all(GUIDES.map((g) => loadGuide(g)));
@@ -44,7 +44,7 @@ export default async function GuidesIndex() {
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Guides</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Matcha guides</h1>
         <p className="mt-5 text-lg text-ink-muted leading-relaxed">
-          The questions people ask most about matcha, answered from the database: grades, uses, prices and origins, compared across brands by price per gram.
+          The questions people ask most about matcha, answered from the database: grades, uses, prices and origins, compared across brands by price per 30 g.
         </p>
       </header>
 
@@ -58,7 +58,7 @@ export default async function GuidesIndex() {
             <span className="font-display text-xl font-semibold text-ink block">{guide.h1}</span>
             <span className="text-sm text-ink-muted mt-2 block leading-relaxed">{guide.description}</span>
             <span className="text-xs text-ink-faint mt-3 block tabular-nums">
-              {ctx.s.count.toLocaleString()} powders &middot; median {usd(ctx.s.median)} per gram
+              {ctx.s.count.toLocaleString()} powders &middot; median {usd30(ctx.s.median)} per 30 g
             </span>
           </Link>
         ))}

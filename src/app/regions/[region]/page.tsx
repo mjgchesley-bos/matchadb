@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProducts, getRegionSummary } from "@/lib/db";
 import { getRegionInfo } from "@/lib/regions";
+import { usd30 } from "@/lib/unit-price";
 import {
   MIN_PRODUCTS_FOR_PAGE,
   REGION_CONTENT,
@@ -16,10 +17,6 @@ import { SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
   return Object.values(REGION_CONTENT).map((c) => ({ region: c.slug }));
-}
-
-function money(n: number | null): string {
-  return n == null ? "—" : `$${n.toFixed(2)}`;
 }
 
 function Stat({ label, value, sub }: { label: string; value: string; sub?: string }) {
@@ -44,7 +41,7 @@ export async function generateMetadata({
   const summary = await getRegionSummary(key);
   if (!summary) return {};
   const title = `${info.name} Matcha: Prices, Brands & Flavor Profile`;
-  const description = `${summary.productCount} matcha products from ${info.name}, ${info.country} across ${summary.brandCount} brands — typical price per gram, grade mix, flavor profile, and which brands source there.`;
+  const description = `${summary.productCount} matcha products from ${info.name}, ${info.country} across ${summary.brandCount} brands — typical price per 30 g, grade mix, flavor profile, and which brands source there.`;
   return {
     title,
     description,
@@ -104,11 +101,11 @@ export default async function RegionPage({
         <Stat label="Products" value={String(summary.productCount)} />
         <Stat label="Brands" value={String(summary.brandCount)} />
         <Stat
-          label="Typical price / g"
-          value={canShowPrice ? money(summary.medianPricePerGram) : "—"}
+          label="Typical price per 30 g"
+          value={canShowPrice ? usd30(summary.medianPricePerGram) : "—"}
           sub={
             canShowPrice
-              ? `middle half: ${money(summary.p25PricePerGram)}–${money(summary.p75PricePerGram)}`
+              ? `middle half: ${usd30(summary.p25PricePerGram)}–${usd30(summary.p75PricePerGram)}`
               : "too few priced products"
           }
         />

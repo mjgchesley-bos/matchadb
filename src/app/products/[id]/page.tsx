@@ -15,6 +15,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { ProductRating } from "@/components/ProductRating";
+import { usd30 } from "@/lib/unit-price";
 import { SITE_URL } from "@/lib/site";
 
 type Product = NonNullable<Awaited<ReturnType<typeof getProductById>>>;
@@ -438,7 +439,7 @@ export default async function ProductDetailPage({
                 </p>
                 {product.price_per_gram != null && (
                   <p className="text-sm text-ink-muted mt-1">
-                    ~${product.price_per_gram.toFixed(2)} per gram
+                    ≈ {usd30(product.price_per_gram)} per 30 g <span className="text-ink-faint">(calculated from the listed size)</span>
                   </p>
                 )}
                 {price.caution && (
@@ -451,12 +452,12 @@ export default async function ProductDetailPage({
           {product.price_link_only === 1 ? (
             <p className="mt-2 text-xs text-ink-faint">
               Priced by count (sticks, tea bags, or multi-pack bundles) rather than a package
-              weight, so there&apos;s no comparable per-gram figure here.
+              weight, so there&apos;s no comparable standard-size price here.
             </p>
           ) : product.price_usd != null && product.price_size_grams == null ? (
             <p className="mt-2 text-xs text-ink-faint">
               The price is confirmed, but package size isn&apos;t stated anywhere on the page, so
-              we can&apos;t show a per-gram figure.
+              we can&apos;t calculate a standard-size price.
             </p>
           ) : (
             product.priceVariants.length > 0 &&

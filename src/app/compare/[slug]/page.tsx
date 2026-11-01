@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PAIRS, loadComparison, pairBySlug, pairSlug, type BrandSide } from "@/lib/compare";
-import { usd } from "@/components/GuideBlocks";
 import { BrandLogo, ProductCard, gradeLabel } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
+import { usd30 } from "@/lib/unit-price";
 
 export function generateStaticParams() {
   return PAIRS.map(([a, b]) => ({ slug: pairSlug(a, b) }));
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!pair) return {};
   const [a, b] = pair;
   const title = `${a} vs ${b}: Matcha Price & Origin Compared`;
-  const description = `${a} and ${b} matcha compared side by side: price per gram, grades, growing regions, cultivars and shipping, calculated from each brand's own product pages.`;
+  const description = `${a} and ${b} matcha compared side by side: price per 30 g, grades, growing regions, cultivars and shipping, calculated from each brand's own product pages.`;
   const url = `${SITE_URL}/compare/${slug}`;
   return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } };
 }
@@ -31,11 +31,11 @@ function priceVerdict(a: BrandSide, b: BrandSide): string | null {
   const ma = a.powders.median;
   const mb = b.powders.median;
   if (ma == null || mb == null || a.powders.count < 3 || b.powders.count < 3) return null;
-  if (Math.abs(ma - mb) / Math.max(ma, mb) < 0.05) return `${a.name} and ${b.name} have almost the same median price per gram (${usd(ma)} and ${usd(mb)}).`;
+  if (Math.abs(ma - mb) / Math.max(ma, mb) < 0.05) return `${a.name} and ${b.name} have almost the same median price per 30 g (${usd30(ma)} and ${usd30(mb)}).`;
   const [lo, hi] = ma < mb ? [a, b] : [b, a];
   const drop = Math.round((1 - lo.powders.median! / hi.powders.median!) * 100);
   const small = Math.min(a.powders.count, b.powders.count) < 6 ? " With so few priced powders on one side, read the medians as rough." : "";
-  return `At the median, ${lo.name} costs about ${drop}% less per gram than ${hi.name} (${usd(lo.powders.median)} against ${usd(hi.powders.median)}), across ${lo.powders.count} and ${hi.powders.count} powders.${small}`;
+  return `At the median, ${lo.name} costs about ${drop}% less per 30 g than ${hi.name} (${usd30(lo.powders.median)} against ${usd30(hi.powders.median)}), across ${lo.powders.count} and ${hi.powders.count} powders.${small}`;
 }
 
 function faqFor(a: BrandSide, b: BrandSide): { q: string; a: string }[] {
@@ -43,8 +43,8 @@ function faqFor(a: BrandSide, b: BrandSide): { q: string; a: string }[] {
   const v = priceVerdict(a, b);
   if (v) {
     out.push({
-      q: `Which is cheaper per gram, ${a.name} or ${b.name}?`,
-      a: `${v} Medians describe typical pricing, not every product. Price per gram runs from ${usd(a.powders.min)} to ${usd(a.powders.max)} across ${a.name} powders and from ${usd(b.powders.min)} to ${usd(b.powders.max)} across ${b.name} powders. Price does not measure quality, and we do not rank taste.`,
+      q: `Which is cheaper per 30 g, ${a.name} or ${b.name}?`,
+      a: `${v} Medians describe typical pricing, not every product. Price per 30 g runs from ${usd30(a.powders.min)} to ${usd30(a.powders.max)} across ${a.name} powders and from ${usd30(b.powders.min)} to ${usd30(b.powders.max)} across ${b.name} powders. Price does not measure quality, and we do not rank taste.`,
     });
   }
   out.push({
@@ -77,10 +77,10 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
   const rows: [string, string, string][] = [
     ["Products in the database", String(a.total), String(b.total)],
     ["Plain powders compared", String(a.powders.count), String(b.powders.count)],
-    ["Median price per gram", usd(a.powders.median), usd(b.powders.median)],
-    ["Middle half of prices", a.powders.p25 != null ? `${usd(a.powders.p25)}–${usd(a.powders.p75)}` : "n/a", b.powders.p25 != null ? `${usd(b.powders.p25)}–${usd(b.powders.p75)}` : "n/a"],
-    ["Lowest price per gram", a.cheapest ? `${usd(a.cheapest.price_per_gram)} (${a.cheapest.product_name})` : "n/a", b.cheapest ? `${usd(b.cheapest.price_per_gram)} (${b.cheapest.product_name})` : "n/a"],
-    ["Highest price per gram", a.priciest ? `${usd(a.priciest.price_per_gram)} (${a.priciest.product_name})` : "n/a", b.priciest ? `${usd(b.priciest.price_per_gram)} (${b.priciest.product_name})` : "n/a"],
+    ["Median price per 30 g", usd30(a.powders.median), usd30(b.powders.median)],
+    ["Middle half of prices", a.powders.p25 != null ? `${usd30(a.powders.p25)}–${usd30(a.powders.p75)}` : "n/a", b.powders.p25 != null ? `${usd30(b.powders.p25)}–${usd30(b.powders.p75)}` : "n/a"],
+    ["Lowest price per 30 g", a.cheapest ? `${usd30(a.cheapest.price_per_gram)} (${a.cheapest.product_name})` : "n/a", b.cheapest ? `${usd30(b.cheapest.price_per_gram)} (${b.cheapest.product_name})` : "n/a"],
+    ["Highest price per 30 g", a.priciest ? `${usd30(a.priciest.price_per_gram)} (${a.priciest.product_name})` : "n/a", b.priciest ? `${usd30(b.priciest.price_per_gram)} (${b.priciest.product_name})` : "n/a"],
     ["Grades (as the brand labels them)", items(a.grades), items(b.grades)],
     ["Growing regions named", `${plain(a.regions)} · on ${pct(a.regionShare)} of products`, `${plain(b.regions)} · on ${pct(b.regionShare)} of products`],
     ["Cultivars named", plain(a.cultivars), plain(b.cultivars)],
@@ -98,7 +98,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
               "@type": "CollectionPage",
               name: `${nameA} vs ${nameB}`,
               url,
-              description: `${nameA} and ${nameB} matcha compared by price per gram, grade, growing region, cultivar and shipping.`,
+              description: `${nameA} and ${nameB} matcha compared by price per 30 g, grade, growing region, cultivar and shipping.`,
               isPartOf: { "@type": "WebSite", name: "MatchaDB", url: SITE_URL },
               mainEntity: {
                 "@type": "ItemList",
@@ -128,7 +128,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Brand comparison</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{nameA} vs {nameB}</h1>
         <p className="mt-5 text-lg text-ink-muted leading-relaxed">
-          {nameA} and {nameB} compared side by side from the database: what their matcha costs per gram, how they grade it, where they say it is grown and where they ship. {verdict ?? ""}
+          {nameA} and {nameB} compared side by side from the database: what their matcha costs per 30 g, how they grade it, where they say it is grown and where they ship. {verdict ?? ""}
         </p>
         <p className="mt-3 text-sm text-ink-faint">We compare facts from each brand&apos;s own product pages. We do not taste, score or rank brands.</p>
       </header>
@@ -167,7 +167,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
       {[a, b].map((side) => (
         <section key={side.name} className="mt-12">
           <h2 className="font-display text-2xl font-semibold text-ink">{side.name} across its price range</h2>
-          <p className="mt-1 text-sm text-ink-muted">Up to six plain powders, spread from the lowest to the highest price per gram.</p>
+          <p className="mt-1 text-sm text-ink-muted">Up to six plain powders, spread from the lowest to the highest price per 30 g.</p>
           {side.spread.length > 0 ? (
             <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {side.spread.map((p) => (
@@ -199,7 +199,7 @@ export default async function ComparePage({ params }: { params: Promise<{ slug: 
         <h2 id="how-compare" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">How this was compared</h2>
         <p className="text-sm text-ink-muted leading-relaxed">
           Price figures cover plain matcha powders with a verified price and a pack of at least 20 grams; flavored blends, tea bags, sweetened mixes and single-serve packs are excluded. Prices
-          are converted to US dollars and shown per gram, and medians are used instead of averages so a few expensive competition tins do not distort a brand&apos;s typical price. Grades are the
+          are converted to US dollars and shown per 30 g, and medians are used instead of averages so a few expensive competition tins do not distort a brand&apos;s typical price. Grades are the
           labels each brand uses, with no official standard behind them. Product counts, regions, cultivars and organic share cover every product catalogued for the brand. Both brands can
           change prices at any time; the numbers refresh whenever the site is rebuilt.
         </p>
