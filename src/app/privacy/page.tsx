@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Privacy Policy" updated="October 3, 2026">
+    <LegalPage eyebrow="Legal" title="Privacy Policy" updated="November 4, 2026">
       <p>
         MatchaDB (&ldquo;we,&rdquo; &ldquo;us&rdquo;) is a research database of matcha products. This
         policy explains what information is collected when you use matchadb.com and the choices you
-        have. We don&apos;t require an account, and we don&apos;t ask you for personal information to
-        browse.
+        have. You don&apos;t need an account to browse, and we don&apos;t ask you for personal information to
+        do so. Creating an account is optional.
       </p>
 
       <h2>Information collected</h2>
@@ -43,10 +43,15 @@ export default function PrivacyPage() {
           IP address and timestamps for security and operations.
         </li>
         <li>
-          <strong>Community ratings.</strong> If you rate a product, we store the rating together with a
-          one-way hash of a random identifier kept in a small cookie on your device. It lets us keep one
-          rating per browser and lets you change yours. It is not linked to your name, email or any
-          account, and it is separate from the analytics and advertising cookies above.
+          <strong>Accounts, saved products, ratings and reviews.</strong> Signing in is optional and uses
+          your Google account. We receive your email address and an account identifier and store them
+          with what you do while signed in: the products you save, the ratings you give and the reviews
+          you write. Ratings and reviews are shown with a public display name (a neutral default that you
+          can change in My matcha), never your email or real name. Accounts, sign-in and this data are
+          handled for us by Supabase. Signing in keeps a session token in your browser&apos;s local
+          storage so you stay signed in; it is separate from the analytics and advertising cookies above.
+          You can delete your own reviews and ratings at any time. To delete your account and everything
+          linked to it, email us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
         </li>
         <li>
           <strong>Your cookie choice,</strong> stored in your browser&apos;s local storage so we

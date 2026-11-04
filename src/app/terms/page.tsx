@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage eyebrow="Legal" title="Terms of Use" updated="October 3, 2026">
+    <LegalPage eyebrow="Legal" title="Terms of Use" updated="November 4, 2026">
       <p>By using matchadb.com you agree to these terms. If you don&apos;t agree, please don&apos;t use the site.</p>
 
       <h2>Informational use only</h2>
@@ -42,6 +42,18 @@ export default function TermsPage() {
         The site links to third-party websites and may show third-party ads or affiliate links. We
         aren&apos;t responsible for their content, products, or practices, and any transaction is
         between you and that seller.
+      </p>
+
+      <h2>Accounts and user content</h2>
+      <p>
+        You can use MatchaDB without an account. If you sign in and post ratings or reviews, you are
+        responsible for what you write. Reviews must be your own honest experience with the product.
+        They must not contain ads, links, personal information, hate or harassment, and must not be
+        posted by or for a brand about its own products or its competitors&apos; products. You keep
+        ownership of what you write and give MatchaDB a free, worldwide licence to display it on the
+        site. Reviews are checked before they appear. We may decline, hide or remove any content, or
+        close any account, at our discretion. Reviews are individual opinions of their authors, not
+        statements by MatchaDB.
       </p>
 
       <h2>Acceptable use</h2>

@@ -14,7 +14,9 @@ import { cultivarSlugFor } from "@/lib/cultivars";
 import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
+import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
+import { ProductReviews } from "@/components/ProductReviews";
 import { usd30 } from "@/lib/unit-price";
 import { SITE_URL } from "@/lib/site";
 
@@ -399,6 +401,7 @@ export default async function ProductDetailPage({
           </h1>
           {factsLine && <p className="text-ink-muted mt-2">{factsLine}</p>}
           <ProductRating productId={product.id} productName={product.product_name} />
+          <FavoriteButton productId={product.id} productName={product.product_name} />
           <ShippingNote brand={product.brand_name} />
 
           {product.flavorTags.length > 0 && (
@@ -634,6 +637,8 @@ export default async function ProductDetailPage({
           <p className="text-sm text-ink-muted leading-relaxed">{product.page_notes}</p>
         </section>
       )}
+
+      <ProductReviews productId={product.id} productName={product.product_name} />
 
       {relatedProducts.length > 0 && (
         <section className="mt-12">

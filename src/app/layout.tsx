@@ -4,6 +4,8 @@ import Link from "next/link";
 import Script from "next/script";
 import { GoogleAnalyticsPageView } from "./google-analytics-pageview";
 import { ConsentBanner, CookieSettingsButton } from "@/components/ConsentBanner";
+import { AuthProvider } from "@/components/AuthProvider";
+import { HeaderAccount } from "@/components/HeaderAccount";
 import { HeaderMenu } from "@/components/HeaderMenu";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import "./globals.css";
@@ -86,6 +88,7 @@ export default function RootLayout({
           `}
         </Script>
         <GoogleAnalyticsPageView />
+        <AuthProvider>
         <header className="sticky top-0 z-30 bg-matcha">
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-baseline gap-1.5 group">
@@ -119,6 +122,7 @@ export default function RootLayout({
                 <span className="lg:hidden">Stores</span>
                 <span className="hidden lg:inline">Find in stores</span>
               </Link>
+              <HeaderAccount />
               {/* On wide screens the menu sits at the far right edge of the header, like Chrome's own. */}
               <div className="lg:absolute lg:right-6 lg:top-1/2 lg:-translate-y-1/2">
                 <HeaderMenu />
@@ -154,6 +158,7 @@ export default function RootLayout({
           </div>
         </footer>
         <ConsentBanner />
+        </AuthProvider>
       </body>
     </html>
   );
