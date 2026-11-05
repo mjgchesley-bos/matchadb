@@ -136,3 +136,99 @@ alter table public.review_reports enable row level security;
 drop policy if exists "reports: file own" on public.review_reports;
 create policy "reports: file own" on public.review_reports for insert to authenticated
   with check (reporter_id = auth.uid());
+
+-- ====================================================================== community (comments, photos, favorite brands)
+-- ---------------------------------------------------------------- favorite brands
+create table if not exists public.favorite_brands (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  brand text not null check (char_length(brand) between 1 and 120),
+  created_at timestamptz not null default now(),
+  primary key (user_id, brand)
+);
+alter table public.favorite_brands enable row level security;
+drop policy if exists "favorite brands: read own" on public.favorite_brands;
+create policy "favorite brands: read own" on public.favorite_brands for select to authenticated using (user_id = auth.uid());
+drop policy if exists "favorite brands: add own" on public.favorite_brands;
+create policy "favorite brands: add own" on public.favorite_brands for insert to authenticated with check (user_id = auth.uid());
+drop policy if exists "favorite brands: remove own" on public.favorite_brands;
+create policy "favorite brands: remove own" on public.favorite_brands for delete to authenticated using (user_id = auth.uid());
+
+-- How many people saved each product or brand (counts only, never who).
+create or replace view public.favorite_counts with (security_invoker = false) as
+  select 'product'::text as kind, product_id::text as key, count(*)::integer as saves from public.favorites group by product_id
+  union all
+  select 'brand'::text, brand, count(*)::integer from public.favorite_brands group by brand;
+grant select on public.favorite_counts to anon, authenticated;
+
+-- ---------------------------------------------------------------- comments (with photos)
+create table if not exists public.comments (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  target_type text not null check (target_type in ('product', 'brand')),
+  target_key text not null check (char_length(target_key) between 1 and 120),
+  body text not null check (char_length(body) between 1 and 1500),
+  photos text[] not null default '{}' check (coalesce(array_length(photos, 1), 0) <= 3),
+  status text not null default 'approved' check (status in ('pending', 'approved', 'hidden')),
+  created_at timestamptz not null default now()
+);
+create index if not exists comments_target_idx on public.comments (target_type, target_key, created_at desc);
+alter table public.comments enable row level security;
+drop policy if exists "comments: read own" on public.comments;
+create policy "comments: read own" on public.comments for select to authenticated using (user_id = auth.uid());
+drop policy if exists "comments: write own" on public.comments;
+create policy "comments: write own" on public.comments for insert to authenticated with check (user_id = auth.uid());
+drop policy if exists "comments: delete own" on public.comments;
+create policy "comments: delete own" on public.comments for delete to authenticated using (user_id = auth.uid());
+
+-- The database decides the status: text-only comments publish at once, anything with photos waits
+-- for approval. Also caps comments per day and makes photos live in the author's own folder.
+create or replace function public.prepare_comment() returns trigger
+language plpgsql security definer set search_path = public as $$
+declare p text;
+begin
+  if (select count(*) from public.comments where user_id = new.user_id and created_at > now() - interval '1 day') >= 30 then
+    raise exception 'Too many comments today. Try again tomorrow.';
+  end if;
+  foreach p in array coalesce(new.photos, '{}') loop
+    if p not like new.user_id::text || '/%' then
+      raise exception 'Invalid photo path';
+    end if;
+  end loop;
+  new.status := case when coalesce(array_length(new.photos, 1), 0) > 0 then 'pending' else 'approved' end;
+  return new;
+end;
+$$;
+drop trigger if exists comments_prepare on public.comments;
+create trigger comments_prepare before insert on public.comments for each row execute function public.prepare_comment();
+
+create or replace view public.approved_comments with (security_invoker = false) as
+  select c.id, c.target_type, c.target_key, c.body, c.photos, c.created_at, p.display_name
+  from public.comments c
+  join public.profiles p on p.id = c.user_id
+  where c.status = 'approved';
+grant select on public.approved_comments to anon, authenticated;
+
+create table if not exists public.comment_reports (
+  id uuid primary key default gen_random_uuid(),
+  comment_id uuid not null references public.comments (id) on delete cascade,
+  reporter_id uuid not null references auth.users (id) on delete cascade,
+  reason text not null check (char_length(reason) between 3 and 500),
+  created_at timestamptz not null default now(),
+  unique (comment_id, reporter_id)
+);
+alter table public.comment_reports enable row level security;
+drop policy if exists "comment reports: file own" on public.comment_reports;
+create policy "comment reports: file own" on public.comment_reports for insert to authenticated with check (reporter_id = auth.uid());
+
+-- ---------------------------------------------------------------- photo storage
+-- Public bucket (files get random names), images only, 5 MB max; each member can only add or
+-- remove files in their own folder.
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('comment-photos', 'comment-photos', true, 5242880, array['image/jpeg', 'image/png', 'image/webp'])
+on conflict (id) do update set public = true, file_size_limit = 5242880, allowed_mime_types = excluded.allowed_mime_types;
+drop policy if exists "comment photos: upload own" on storage.objects;
+create policy "comment photos: upload own" on storage.objects for insert to authenticated
+  with check (bucket_id = 'comment-photos' and (storage.foldername(name))[1] = auth.uid()::text);
+drop policy if exists "comment photos: remove own" on storage.objects;
+create policy "comment photos: remove own" on storage.objects for delete to authenticated
+  using (bucket_id = 'comment-photos' and (storage.foldername(name))[1] = auth.uid()::text);

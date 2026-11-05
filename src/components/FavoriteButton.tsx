@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
+import { SaveCount } from "@/components/SaveCount";
 import { supabase } from "@/lib/supabase";
 
 // Heart button: save a product to "My matcha". Signed-out visitors are asked to sign in first.
@@ -12,6 +13,7 @@ export function FavoriteButton({ productId, productName }: { productId: number; 
   const setSaved = (value: boolean) => user && setState({ uid: user.id, saved: value });
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [bump, setBump] = useState(0);
 
   const uid = user?.id ?? null;
   useEffect(() => {
@@ -44,14 +46,15 @@ export function FavoriteButton({ productId, productName }: { productId: number; 
     if (error) {
       setSaved(!next);
       setFailed(true);
-    } else if (next) {
-      window.gtag?.("event", "favorite_add", { product_id: productId });
+    } else {
+      if (next) window.gtag?.("event", "favorite_add", { product_id: productId });
+      setBump((b) => b + 1);
     }
     setBusy(false);
   };
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 flex flex-wrap items-center gap-3">
       <button
         type="button"
         onClick={toggle}
@@ -66,7 +69,8 @@ export function FavoriteButton({ productId, productName }: { productId: number; 
         </svg>
         {saved ? "Saved" : "Save"}
       </button>
-      {failed && <span className="ml-3 text-xs text-red-700">Couldn&apos;t update your list. Try again.</span>}
+      <SaveCount kind="product" itemKey={String(productId)} refresh={bump} />
+      {failed && <span className="text-xs text-red-700">Couldn&apos;t update your list. Try again.</span>}
     </div>
   );
 }

@@ -46,8 +46,9 @@ export default function TermsPage() {
 
       <h2>Accounts and user content</h2>
       <p>
-        You can use MatchaDB without an account. If you sign in and post ratings or reviews, you are
-        responsible for what you write. Reviews must be your own honest experience with the product.
+        You can use MatchaDB without an account. If you sign in and post ratings, reviews, comments or
+        photos, you are responsible for what you write and upload. Photos must be yours to share and must
+        not show other people or private information. Reviews must be your own honest experience with the product.
         They must not contain ads, links, personal information, hate or harassment, and must not be
         posted by or for a brand about its own products or its competitors&apos; products. You keep
         ownership of what you write and give MatchaDB a free, worldwide licence to display it on the

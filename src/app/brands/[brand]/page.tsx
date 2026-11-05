@@ -5,6 +5,8 @@ import { getBrandProducts, getComparablePrices } from "@/lib/db";
 import { getBrandSummary } from "@/lib/product-insight";
 import { formatPrice } from "@/lib/price";
 import { getExternalLinkInfo } from "@/lib/links";
+import { Comments } from "@/components/Comments";
+import { FavoriteBrandButton } from "@/components/FavoriteBrandButton";
 import { BrandLogo } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
@@ -130,6 +132,7 @@ export default async function BrandPage({
         {products.length} product{products.length === 1 ? "" : "s"} in the database
       </p>
       <p className="text-ink-muted leading-relaxed max-w-2xl">{summary.join(" ")}</p>
+      <FavoriteBrandButton brand={brandName} />
       <ShippingNote brand={brandName} />
       {wholesale.length > 0 && (
         <p className="mt-3 text-sm text-ink-muted">
@@ -356,6 +359,7 @@ export default async function BrandPage({
         topics={["Antioxidants and polyphenols", "L-theanine and caffeine", "Authenticity and analytical methods"]}
         blurb="Curious what the science says about matcha in general? These topics gather the published studies, linked to their sources."
       />
+      <Comments targetType="brand" targetKey={brandName} subject={brandName} />
     </main>
   );
 }

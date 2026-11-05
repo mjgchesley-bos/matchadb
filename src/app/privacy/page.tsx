@@ -46,7 +46,9 @@ export default function PrivacyPage() {
           <strong>Accounts, saved products, ratings and reviews.</strong> Signing in is optional and uses
           your Google account. We receive your email address and an account identifier and store them
           with what you do while signed in: the products you save, the ratings you give and the reviews
-          you write. Ratings and reviews are shown with a public username (a neutral default until you
+          you write or the comments and photos you post. Photos are shrunk and re-saved in your browser
+          before upload, which removes hidden data such as the location a photo was taken, and are shown
+          publicly once approved. Ratings, reviews and comments are shown with a public username (a neutral default until you
           choose your own, which you can change in My matcha), never your email or real name. Accounts, sign-in and this data are
           handled for us by Supabase. Signing in keeps a session token in your browser&apos;s local
           storage so you stay signed in; it is separate from the analytics and advertising cookies above.

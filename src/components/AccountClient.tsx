@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { RESERVED_NAME, useAuth } from "@/components/AuthProvider";
+import { commentPhotoUrl, COMMENT_BUCKET } from "@/components/Comments";
+import { BrandLogo } from "@/components/product-cards";
 import { Stars } from "@/components/Stars";
 import { supabase } from "@/lib/supabase";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -10,6 +12,8 @@ import { CONTACT_EMAIL } from "@/lib/site";
 type Item = { id: number; name: string; brand: string; price: string | null };
 type Rated = { product_id: number; score: number };
 type Written = { id: string; product_id: number; body: string; status: "pending" | "approved" | "hidden" };
+
+type MyComment = { id: string; target_type: "product" | "brand"; target_key: string; body: string; photos: string[]; status: Written["status"]; created_at: string };
 
 const STATUS: Record<Written["status"], string> = { pending: "Awaiting approval", approved: "Published", hidden: "Removed by a moderator" };
 
@@ -28,6 +32,8 @@ export function AccountClient() {
   const [ratings, setRatings] = useState<Rated[] | null>(null);
   const [reviews, setReviews] = useState<Written[] | null>(null);
   const [items, setItems] = useState<Record<number, Item>>({});
+  const [brands, setBrands] = useState<string[] | null>(null);
+  const [comments, setComments] = useState<MyComment[] | null>(null);
   const [draft, setDraft] = useState<string | null>(null);
   const [nameMsg, setNameMsg] = useState<string | null>(null);
 
@@ -38,10 +44,12 @@ export function AccountClient() {
     let live = true;
     const sb = supabase();
     (async () => {
-      const [f, r, w] = await Promise.all([
+      const [f, r, w, fb, cm] = await Promise.all([
         sb.from("favorites").select("product_id").order("created_at", { ascending: false }),
         sb.from("ratings").select("product_id, score").order("updated_at", { ascending: false }),
         sb.from("reviews").select("id, product_id, body, status").order("created_at", { ascending: false }),
+        sb.from("favorite_brands").select("brand").order("created_at", { ascending: false }),
+        sb.from("comments").select("id, target_type, target_key, body, photos, status, created_at").order("created_at", { ascending: false }),
       ]);
       if (!live) return;
       const favs = (f.data ?? []).map((x) => x.product_id as number);
@@ -50,7 +58,11 @@ export function AccountClient() {
       setFavorites(favs);
       setRatings(rated);
       setReviews(written);
-      const ids = [...new Set([...favs, ...rated.map((x) => x.product_id), ...written.map((x) => x.product_id)])];
+      setBrands((fb.data ?? []).map((x) => x.brand as string));
+      const mine = (cm.data ?? []) as MyComment[];
+      setComments(mine);
+      const commentProducts = mine.filter((c) => c.target_type === "product").map((c) => Number(c.target_key)).filter((n) => Number.isInteger(n));
+      const ids = [...new Set([...favs, ...rated.map((x) => x.product_id), ...written.map((x) => x.product_id), ...commentProducts])];
       if (ids.length) {
         const list = (await fetch(`/api/products/lookup?ids=${ids.join(",")}`).then((res) => res.json())) as Item[];
         if (live) setItems(Object.fromEntries(list.map((i) => [i.id, i])));
@@ -71,6 +83,20 @@ export function AccountClient() {
     setDisplayName(next);
     setDraft(null);
     setNameMsg("Saved.");
+  };
+
+  const unsaveBrand = async (brand: string) => {
+    if (!user) return;
+    setBrands((b) => b?.filter((x) => x !== brand) ?? b);
+    await supabase().from("favorite_brands").delete().eq("user_id", user.id).eq("brand", brand);
+  };
+
+  const deleteComment = async (c: MyComment) => {
+    if (!confirm("Delete this comment?")) return;
+    const sb = supabase();
+    if (c.photos.length) await sb.storage.from(COMMENT_BUCKET).remove(c.photos);
+    const { error } = await sb.from("comments").delete().eq("id", c.id);
+    if (!error) setComments((list) => list?.filter((x) => x.id !== c.id) ?? list);
   };
 
   const unsave = async (id: number) => {
@@ -120,6 +146,31 @@ export function AccountClient() {
           </button>
           {nameMsg && <span className="text-sm text-ink-muted" aria-live="polite">{nameMsg}</span>}
         </div>
+      </section>
+
+      <section aria-labelledby="brands-h">
+        <h2 id="brands-h" className={h2}>Saved brands</h2>
+        {brands === null ? (
+          <p className="mt-2 text-sm text-ink-faint">Loading…</p>
+        ) : brands.length === 0 ? (
+          <p className="mt-2 text-sm text-ink-muted">
+            No brands saved yet. Tap <strong>Save brand</strong> on any brand page, or <Link href="/browse" className="text-matcha underline">browse the database</Link>.
+          </p>
+        ) : (
+          <ul className="mt-3 divide-y divide-line border-y border-line">
+            {brands.map((b) => (
+              <li key={b} className="flex items-center justify-between gap-4 py-3">
+                <Link href={`/brands/${encodeURIComponent(b)}`} className="flex items-center gap-3 text-ink hover:text-matcha">
+                  <BrandLogo brandName={b} size={32} maxWidth={96} />
+                  <span className="font-medium">{b}</span>
+                </Link>
+                <button type="button" onClick={() => void unsaveBrand(b)} className="text-sm text-ink-muted underline hover:text-ink">
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
 
       <section aria-labelledby="saved-h">
@@ -181,6 +232,46 @@ export function AccountClient() {
                   <span className="text-xs text-ink-faint">{STATUS[r.status]}</span>
                 </div>
                 <p className="mt-2 whitespace-pre-line text-sm text-ink-muted">{r.body}</p>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section aria-labelledby="comments-h">
+        <h2 id="comments-h" className={h2}>My comments &amp; photos</h2>
+        {comments === null ? (
+          <p className="mt-2 text-sm text-ink-faint">Loading…</p>
+        ) : comments.length === 0 ? (
+          <p className="mt-2 text-sm text-ink-muted">You haven&apos;t commented yet. Comments and photos can be added on any product or brand page.</p>
+        ) : (
+          <ul className="mt-3 flex flex-col gap-4">
+            {comments.map((c) => (
+              <li key={c.id} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
+                <div className="flex items-center justify-between gap-3">
+                  {c.target_type === "product" ? (
+                    <ProductLink id={Number(c.target_key)} item={items[Number(c.target_key)]} />
+                  ) : (
+                    <Link href={`/brands/${encodeURIComponent(c.target_key)}`} className="font-medium text-ink hover:text-matcha">
+                      {c.target_key}
+                    </Link>
+                  )}
+                  <span className="text-xs text-ink-faint">{STATUS[c.status]}</span>
+                </div>
+                <p className="mt-2 whitespace-pre-line text-sm text-ink-muted">{c.body}</p>
+                {c.photos.length > 0 && (
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    {c.photos.map((p) => (
+                      <a key={p} href={commentPhotoUrl(p)} target="_blank" rel="noopener noreferrer">
+                        {/* eslint-disable-next-line @next/next/no-img-element -- user photo from storage */}
+                        <img src={commentPhotoUrl(p)} alt="Your photo" loading="lazy" className="h-20 w-20 rounded-sm border border-line object-cover" />
+                      </a>
+                    ))}
+                  </div>
+                )}
+                <button type="button" onClick={() => void deleteComment(c)} className="mt-2 text-sm text-ink-muted underline hover:text-ink">
+                  Delete
+                </button>
               </li>
             ))}
           </ul>

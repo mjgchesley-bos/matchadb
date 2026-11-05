@@ -16,6 +16,7 @@ import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
+import { Comments } from "@/components/Comments";
 import { ProductReviews } from "@/components/ProductReviews";
 import { usd30 } from "@/lib/unit-price";
 import { SITE_URL } from "@/lib/site";
@@ -639,6 +640,7 @@ export default async function ProductDetailPage({
       )}
 
       <ProductReviews productId={product.id} productName={product.product_name} />
+      <Comments targetType="product" targetKey={String(product.id)} subject={product.product_name} />
 
       {relatedProducts.length > 0 && (
         <section className="mt-12">
