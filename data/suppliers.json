@@ -1743,54 +1743,34 @@
     ],
     "verified": "2026-11-05",
     "profile": {
-      "url": "https://www.purematchapartners.com",
-      "brands": [],
-      "tags": [
-        "bulk",
-        "cafe",
-        "private-label",
-        "ingredient",
-        "retail"
+      "origins": [
+        "Japan",
+        "China"
       ],
-      "how": [
-        "form",
-        "email"
+      "products": [
+        "Ceremonial grade matcha",
+        "Latte grade matcha",
+        "Culinary grade matcha",
+        "Hojicha powder",
+        "Flavored specials (for example mulberry, ube and oolong)"
       ],
-      "facts": [
-        "Bulk supply from 10 kg up to 1,000 kg or more per month",
-        "Certificate of analysis for every batch",
-        "Organic and conventional grades"
+      "organic": "Organic and conventional grades",
+      "minimumOrder": "From 10 kg, up to 1,000 kg or more per month",
+      "samples": "Samples chosen for your product are available on request",
+      "documentation": "Certificate of analysis for every batch, plus certificates of origin and quality",
+      "certifications": [
+        "JAS (Japanese Agricultural Standard)",
+        "EU Organic",
+        "USDA Organic",
+        "Organic certified by Skal (NL-BIO-01)",
+        "HACCP and FSSC 22000",
+        "Independent lab testing",
+        "Kosher"
       ],
-      "profile": {
-        "origins": [
-          "Japan",
-          "China"
-        ],
-        "products": [
-          "Ceremonial grade matcha",
-          "Latte grade matcha",
-          "Culinary grade matcha",
-          "Hojicha powder",
-          "Flavored specials (for example mulberry, ube and oolong)"
-        ],
-        "organic": "Organic and conventional grades",
-        "minimumOrder": "From 10 kg, up to 1,000 kg or more per month",
-        "samples": "Samples chosen for your product are available on request",
-        "documentation": "Certificate of analysis for every batch, plus certificates of origin and quality",
-        "certifications": [
-          "JAS (Japanese Agricultural Standard)",
-          "EU Organic",
-          "USDA Organic",
-          "Organic certified by Skal (NL-BIO-01)",
-          "HACCP and FSSC 22000",
-          "Independent lab testing",
-          "Kosher"
-        ],
-        "customers": "Cafés and hospitality, restaurants and foodservice, food and beverage brands, supplement producers, retail and gift stores, co-packers and distributors",
-        "privateLabel": "Focuses on bulk supply and says it can support private-label partners that need large-volume sourcing",
-        "shipping": "Ships worldwide",
-        "pricing": "Wholesale price list available on request"
-      }
+      "customers": "Cafés and hospitality, restaurants and foodservice, food and beverage brands, supplement producers, retail and gift stores, co-packers and distributors",
+      "privateLabel": "Focuses on bulk supply and says it can support private-label partners that need large-volume sourcing",
+      "shipping": "Ships worldwide",
+      "pricing": "Wholesale price list available on request"
     }
   },
   {
