@@ -104,10 +104,10 @@ export function AccountClient() {
       <section aria-labelledby="profile-h">
         <h2 id="profile-h" className={h2}>Profile</h2>
         <p className="mt-2 text-sm text-ink-muted">
-          Signed in as {user.email}. Only you can see your email. Your reviews show the display name below.
+          Signed in as {user.email}. Only you can see your email. Your reviews show the username below.
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-3">
-          <label htmlFor="display-name" className="sr-only">Display name</label>
+          <label htmlFor="display-name" className="sr-only">Username</label>
           <input
             id="display-name"
             value={name}
@@ -116,7 +116,7 @@ export function AccountClient() {
             className="w-64 rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink focus:outline-2 focus:outline-matcha"
           />
           <button type="button" onClick={saveName} disabled={!name.trim() || name.trim() === displayName} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">
-            Save name
+            Save username
           </button>
           {nameMsg && <span className="text-sm text-ink-muted" aria-live="polite">{nameMsg}</span>}
         </div>

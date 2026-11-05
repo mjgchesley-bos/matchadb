@@ -85,7 +85,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  // The public display name (never the email or real name) lives in the profiles table.
+  // The public username (never the email or real name) lives in the profiles table.
   const uid = user?.id ?? null;
   useEffect(() => {
     if (!uid) return;
@@ -213,10 +213,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/50 px-4">
           <div role="dialog" aria-modal="true" aria-labelledby="name-title" className="w-full max-w-sm rounded-md border border-line bg-paper-raised p-6 shadow-lg">
             <h2 id="name-title" className="font-display text-xl font-semibold text-ink">
-              Choose your name
+              Create a username
             </h2>
             <p className="mt-2 text-sm text-ink-muted">
-              This is the name shown next to your ratings and reviews. Your email and Google name stay private.
+              Shown next to your ratings and reviews. Your email and Google name stay private.
             </p>
             <form
               onSubmit={(e) => {
@@ -224,8 +224,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 void saveName();
               }}
             >
-              <label htmlFor="new-display-name" className="sr-only">
-                Display name
+              <label htmlFor="new-display-name" className="mt-4 block text-sm font-medium text-ink">
+                Username:
               </label>
               <input
                 id="new-display-name"
@@ -236,8 +236,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 }}
                 maxLength={30}
                 autoFocus
-                placeholder="For example: Kyoto Latte Fan"
-                className="mt-4 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
+                autoComplete="username"
+                className="mt-1.5 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
               />
               {nameMsg && <p className="mt-2 text-sm text-red-700">{nameMsg}</p>}
               <div className="mt-4 flex items-center gap-4">
@@ -246,7 +246,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                   disabled={savingName || nameDraft.trim().length < 2}
                   className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper transition-colors hover:bg-forest disabled:opacity-50"
                 >
-                  Save name
+                  Save
                 </button>
                 <button type="button" onClick={skipName} className="text-sm text-ink-muted underline hover:text-ink">
                   Skip for now
