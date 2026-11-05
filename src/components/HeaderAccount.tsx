@@ -2,12 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Avatar } from "@/components/Avatar";
 import { useAuth } from "@/components/AuthProvider";
 import { TierIcon } from "@/components/TierIcon";
 
 // "Sign in" in the header, or the person's initial with a small menu once signed in.
 export function HeaderAccount() {
-  const { ready, user, displayName, isPublic, stats, signIn, signOut } = useAuth();
+  const { ready, user, displayName, isPublic, avatar, stats, signIn, signOut } = useAuth();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
@@ -53,7 +54,7 @@ export function HeaderAccount() {
         aria-expanded={open}
         className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-paper text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:shadow-md"
       >
-        {initial}
+        {avatar.key || avatar.path ? <Avatar avatar={avatar.key} photoPath={avatar.path} name={displayName} size={36} /> : initial}
       </button>
       {open && (
         <div role="menu" className="absolute right-0 top-full z-40 mt-2 w-56 overflow-hidden rounded-md border border-line bg-paper-raised py-1 shadow-lg">

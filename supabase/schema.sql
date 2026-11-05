@@ -484,7 +484,7 @@ begin
   if not found then return null; end if;
   u := pr.id;
   return json_build_object(
-    'name', pr.display_name, 'bio', pr.bio, 'avatar', pr.avatar, 'how', pr.how_i_drink, 'since', pr.created_at, 'goal', pr.challenge_goal,
+    'name', pr.display_name, 'bio', pr.bio, 'avatar', pr.avatar, 'avatar_path', pr.avatar_path, 'how', pr.how_i_drink, 'since', pr.created_at, 'goal', pr.challenge_goal,
     'tried_this_year', (select count(*) from public.shelf where user_id = u and status = 'tried' and updated_at >= yr),
     'stats', public.member_stats_json(u),
     'shelf', coalesce((select json_agg(json_build_object('product_id', product_id, 'status', status) order by updated_at desc) from public.shelf where user_id = u), '[]'::json),
@@ -529,3 +529,18 @@ create or replace view public.approved_comments with (security_invoker = false) 
   join public.profiles p on p.id = c.user_id
   where c.status = 'approved';
 grant select on public.approved_comments to anon, authenticated;
+
+-- Profile photo: a public 'avatars' bucket (JPEG only, 1 MB; each member can only add or remove files in their
+-- own folder) and a pointer on the profile that must live in the member's own folder.
+alter table public.profiles add column if not exists avatar_path text;
+alter table public.profiles drop constraint if exists profiles_avatar_path_check;
+alter table public.profiles add constraint profiles_avatar_path_check check (avatar_path is null or avatar_path like id::text || '/%');
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+values ('avatars', 'avatars', true, 1048576, array['image/jpeg'])
+on conflict (id) do update set public = true, file_size_limit = 1048576, allowed_mime_types = excluded.allowed_mime_types;
+drop policy if exists "avatars: upload own" on storage.objects;
+create policy "avatars: upload own" on storage.objects for insert to authenticated
+  with check (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+drop policy if exists "avatars: remove own" on storage.objects;
+create policy "avatars: remove own" on storage.objects for delete to authenticated
+  using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);

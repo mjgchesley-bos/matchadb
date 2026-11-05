@@ -1,4 +1,8 @@
-// Matcha-themed avatars members can pick from, so nobody has to upload a photo of themselves.
+// Matcha-themed avatars members can pick from, so nobody has to upload a photo of themselves (a
+// photo is optional and takes priority when set).
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gropvtwigbddfikcujhz.supabase.co";
+export const avatarPhotoUrl = (path: string): string => `${SUPABASE_URL}/storage/v1/object/public/avatars/${path}`;
+
 export const AVATARS = ["cup", "whisk", "leaf", "tin", "kettle", "sprout", "bowl", "spoon", "bamboo", "blossom", "mountain", "teapot"] as const;
 export type AvatarKey = (typeof AVATARS)[number];
 export const AVATAR_LABELS: Record<AvatarKey, string> = {
@@ -133,7 +137,13 @@ function Glyph({ k, fg, bg }: { k: AvatarKey; fg: string; bg: string }) {
   }
 }
 
-export function Avatar({ avatar, name, size = 40 }: { avatar?: string | null; name?: string | null; size?: number }) {
+export function Avatar({ avatar, name, size = 40, photoPath }: { avatar?: string | null; name?: string | null; size?: number; photoPath?: string | null }) {
+  if (photoPath) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element -- member photo from storage, already cropped and shrunk
+      <img src={avatarPhotoUrl(photoPath)} alt={name ? `${name}'s photo` : "Profile photo"} width={size} height={size} className="shrink-0 rounded-full object-cover" style={{ width: size, height: size }} />
+    );
+  }
   const k = (AVATARS as readonly string[]).includes(avatar ?? "") ? (avatar as AvatarKey) : null;
   if (!k) {
     // No icon chosen: the first letter of the username.

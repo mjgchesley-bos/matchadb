@@ -20,10 +20,9 @@ type Profile = {
   name: string;
   bio: string;
   avatar: string | null;
+  avatar_path: string | null;
   how: string | null;
   since: string;
-  goal: number | null;
-  tried_this_year: number;
   stats: MemberStats;
   shelf: { product_id: number; status: "want" | "using" | "tried" }[];
   ratings: { product_id: number; score: number }[];
@@ -85,7 +84,6 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     if (reg) regionCount.set(reg, (regionCount.get(reg) ?? 0) + 1);
   }
   const favRegion = [...regionCount.entries()].sort((a, b) => b[1] - a[1]).find(([, n]) => n >= 3)?.[0] ?? null;
-  const year = new Date().getUTCFullYear();
   const earned = BADGES.filter((b) => b.test(p.stats));
 
   const row = (id: number, extra?: React.ReactNode) => {
@@ -108,7 +106,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
       <header className="flex flex-col gap-5 sm:flex-row sm:items-start">
-        <Avatar avatar={p.avatar} name={p.name} size={88} />
+        <Avatar avatar={p.avatar} photoPath={p.avatar_path} name={p.name} size={88} />
         <div className="min-w-0 flex-1">
           <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight">{p.name}</h1>
           <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-muted">
@@ -141,18 +139,6 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
           </div>
         ))}
       </dl>
-
-      {p.goal && (
-        <Section title={`Tasting challenge ${year}`}>
-          <p className="text-sm text-ink-muted tabular-nums">
-            Tried {p.tried_this_year} of {p.goal} new matchas this year
-            {p.tried_this_year >= p.goal ? ". Goal reached!" : ""}
-          </p>
-          <div className="mt-2 h-2 w-full max-w-md overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={p.goal} aria-valuenow={Math.min(p.tried_this_year, p.goal)} aria-label="Tasting challenge progress">
-            <div className="h-full rounded-full bg-matcha" style={{ width: `${Math.min(100, (p.tried_this_year / p.goal) * 100)}%` }} />
-          </div>
-        </Section>
-      )}
 
       {using.length > 0 && <Section title="Using now">{list(using.map((x) => row(x.product_id)))}</Section>}
 

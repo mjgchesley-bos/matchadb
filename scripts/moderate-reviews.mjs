@@ -14,7 +14,7 @@
 //
 // Profiles:
 //   node scripts/moderate-reviews.mjs profile-reports        list reported profiles
-//   node scripts/moderate-reviews.mjs unpublish <username>   make a profile private again and clear its bio
+//   node scripts/moderate-reviews.mjs unpublish <username>   make a profile private again, clear its bio and delete its photo
 import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
@@ -57,7 +57,12 @@ if (cmd === "profile-reports") {
   console.log(`\n${reports.length} profile report(s)\n`);
   for (const r of reports) console.log(`  ${r.profile_name}: ${r.reason} (${r.created_at.slice(0, 10)})  https://www.matchadb.com/u/${encodeURIComponent(r.profile_name)}`);
 } else if (cmd === "unpublish" && target) {
-  const rows = await api(`profiles?display_name=ilike.${encodeURIComponent(target)}`, { method: "PATCH", body: JSON.stringify({ is_public: false, bio: "" }) });
+  const before = await api(`profiles?display_name=ilike.${encodeURIComponent(target)}&select=avatar_path`);
+  const rows = await api(`profiles?display_name=ilike.${encodeURIComponent(target)}`, { method: "PATCH", body: JSON.stringify({ is_public: false, bio: "", avatar_path: null }) });
+  if (before[0]?.avatar_path) {
+    const res = await fetch(`${URL}/storage/v1/object/avatars`, { method: "DELETE", headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" }, body: JSON.stringify({ prefixes: [before[0].avatar_path] }) });
+    console.log(`Deleted profile photo: ${res.ok ? "ok" : "failed " + res.status}`);
+  }
   console.log(rows.length ? `${rows[0].display_name} is now private and the bio is cleared.` : "No profile with that username.");
 } else if (cmd === "comments") {
   const pending = await api("comments?status=eq.pending&order=created_at.asc&select=id,target_type,target_key,body,photos,created_at,user_id");

@@ -33,6 +33,8 @@ type Auth = {
   displayName: string | null;
   isPublic: boolean;
   setPublic: (v: boolean) => void;
+  avatar: { key: string | null; path: string | null };
+  setAvatar: (key: string | null, path: string | null) => void;
   stats: MemberStats | null;
   refreshStats: () => Promise<void>;
   signIn: (reason?: string) => void;
@@ -46,6 +48,8 @@ const AuthContext = createContext<Auth>({
   displayName: null,
   isPublic: false,
   setPublic: () => {},
+  avatar: { key: null, path: null },
+  setAvatar: () => {},
   stats: null,
   refreshStats: async () => {},
   signIn: () => {},
@@ -90,7 +94,7 @@ function GoogleMark() {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-  const [profile, setProfile] = useState<{ uid: string; name: string | null; isPublic: boolean } | null>(null);
+  const [profile, setProfile] = useState<{ uid: string; name: string | null; isPublic: boolean; avatar: string | null; avatarPath: string | null } | null>(null);
   const [dialog, setDialog] = useState<{ reason: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -125,10 +129,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let live = true;
     supabase()
       .from("profiles")
-      .select("display_name, is_public")
+      .select("display_name, is_public, avatar, avatar_path")
       .eq("id", uid)
       .maybeSingle()
-      .then(({ data }) => live && setProfile({ uid, name: data?.display_name ?? null, isPublic: !!data?.is_public }));
+      .then(({ data }) => live && setProfile({ uid, name: data?.display_name ?? null, isPublic: !!data?.is_public, avatar: data?.avatar ?? null, avatarPath: data?.avatar_path ?? null }));
     return () => {
       live = false;
     };
@@ -156,8 +160,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [uid]);
   const isPublic = profile && profile.uid === uid ? profile.isPublic : false;
-  const setDisplayName = useCallback((name: string) => uid && setProfile((p) => ({ uid, name, isPublic: p && p.uid === uid ? p.isPublic : false })), [uid]);
-  const setPublic = useCallback((v: boolean) => uid && setProfile((p) => ({ uid, name: p && p.uid === uid ? p.name : null, isPublic: v })), [uid]);
+  const mine = profile && profile.uid === uid ? profile : null;
+  const avatar = useMemo(() => ({ key: mine?.avatar ?? null, path: mine?.avatarPath ?? null }), [mine?.avatar, mine?.avatarPath]);
+  const patchProfile = useCallback(
+    (patch: Partial<{ name: string | null; isPublic: boolean; avatar: string | null; avatarPath: string | null }>) => {
+      if (!uid) return;
+      setProfile((p) => ({ name: null, isPublic: false, avatar: null, avatarPath: null, ...(p && p.uid === uid ? p : {}), ...patch, uid }));
+    },
+    [uid]
+  );
+  const setDisplayName = useCallback((name: string) => patchProfile({ name }), [patchProfile]);
+  const setPublic = useCallback((v: boolean) => patchProfile({ isPublic: v }), [patchProfile]);
+  const setAvatar = useCallback((key: string | null, path: string | null) => patchProfile({ avatar: key, avatarPath: path }), [patchProfile]);
 
   const signIn = useCallback((reason?: string) => {
     opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -222,8 +236,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const value = useMemo<Auth>(
-    () => ({ ready, user, displayName, isPublic, setPublic, stats, refreshStats, signIn, signOut, setDisplayName }),
-    [ready, user, displayName, isPublic, setPublic, stats, refreshStats, signIn, signOut, setDisplayName]
+    () => ({ ready, user, displayName, isPublic, setPublic, avatar, setAvatar, stats, refreshStats, signIn, signOut, setDisplayName }),
+    [ready, user, displayName, isPublic, setPublic, avatar, setAvatar, stats, refreshStats, signIn, signOut, setDisplayName]
   );
 
   return (
