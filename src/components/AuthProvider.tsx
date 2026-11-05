@@ -60,13 +60,20 @@ export const useAuth = () => useContext(AuthContext);
 // moderators are refused here and by a database constraint.
 export const DEFAULT_NAME = /^Matcha fan [0-9a-f]{5}$/;
 export const RESERVED_NAME = /matchadb|admin|moderator|official/i;
-const skipKey = (uid: string) => `mdb-name-skip:${uid}`;
-const hasSkipped = (uid: string): boolean => {
+// The username box is part of signing up: it is shown once, right after someone comes back from Google,
+// never on an ordinary page load. This flag lives in the browser tab only for that round trip.
+const FLOW_KEY = "mdb-name-prompt";
+const inSignupFlow = (): boolean => {
   try {
-    return localStorage.getItem(skipKey(uid)) === "1";
+    return sessionStorage.getItem(FLOW_KEY) === "1";
   } catch {
     return false;
   }
+};
+const endSignupFlow = () => {
+  try {
+    sessionStorage.removeItem(FLOW_KEY);
+  } catch {}
 };
 
 function GoogleMark() {
@@ -171,11 +178,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const google = async () => {
     setBusy(true);
     setError(null);
+    try {
+      sessionStorage.setItem(FLOW_KEY, "1");
+    } catch {}
     const { error: err } = await supabase().auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}${window.location.pathname}` },
     });
     if (err) {
+      endSignupFlow();
       setError("Google sign-in isn't available right now. Please try again later.");
       setBusy(false);
     }
@@ -188,14 +199,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [dialog, close]);
 
-  const needsName = !!user && !!displayName && DEFAULT_NAME.test(displayName) && skippedUid !== user.id && !hasSkipped(user.id);
+  const needsName = !!user && !!displayName && DEFAULT_NAME.test(displayName) && skippedUid !== user.id && inSignupFlow();
 
   const skipName = () => {
     if (!user) return;
     setSkippedUid(user.id);
-    try {
-      localStorage.setItem(skipKey(user.id), "1");
-    } catch {}
+    endSignupFlow();
   };
 
   const saveName = async () => {
@@ -209,6 +218,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setSavingName(false);
     if (err) return setNameMsg(err.code === "23505" ? "That name is taken. Try another." : "That name isn't available. Try another.");
     setDisplayName(next);
+    endSignupFlow();
   };
 
   const value = useMemo<Auth>(
