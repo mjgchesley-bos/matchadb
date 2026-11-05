@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useAuth } from "@/components/AuthProvider";
+import { RESERVED_NAME, useAuth } from "@/components/AuthProvider";
 import { Stars } from "@/components/Stars";
 import { supabase } from "@/lib/supabase";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -65,6 +65,7 @@ export function AccountClient() {
     if (!user) return;
     const next = name.trim();
     if (next.length < 2 || next.length > 30) return setNameMsg("Use 2 to 30 characters.");
+    if (RESERVED_NAME.test(next)) return setNameMsg("That name isn't available. Try another.");
     const { error } = await supabase().from("profiles").update({ display_name: next }).eq("id", user.id);
     if (error) return setNameMsg(error.code === "23505" ? "That name is taken. Try another." : "Couldn't save your name.");
     setDisplayName(next);

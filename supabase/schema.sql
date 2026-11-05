@@ -18,6 +18,10 @@ drop policy if exists "profiles: update own" on public.profiles;
 create policy "profiles: update own" on public.profiles for update to authenticated
   using (id = auth.uid()) with check (id = auth.uid());
 
+-- Names that could pass for the site or its moderators are not allowed.
+alter table public.profiles drop constraint if exists profiles_display_name_reserved;
+alter table public.profiles add constraint profiles_display_name_reserved check (display_name !~* '(matchadb|admin|moderator|official)');
+
 -- New sign-ups get a neutral public name, never their real name or email.
 create or replace function public.handle_new_user() returns trigger
 language plpgsql security definer set search_path = public as $$

@@ -29,6 +29,20 @@ const AuthContext = createContext<Auth>({
 
 export const useAuth = () => useContext(AuthContext);
 
+// New accounts start with a neutral public name (set by the database); the first time someone
+// signs in they are invited to pick their own. Names that could pass for the site or its
+// moderators are refused here and by a database constraint.
+export const DEFAULT_NAME = /^Matcha fan [0-9a-f]{5}$/;
+export const RESERVED_NAME = /matchadb|admin|moderator|official/i;
+const skipKey = (uid: string) => `mdb-name-skip:${uid}`;
+const hasSkipped = (uid: string): boolean => {
+  try {
+    return localStorage.getItem(skipKey(uid)) === "1";
+  } catch {
+    return false;
+  }
+};
+
 function GoogleMark() {
   return (
     <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
@@ -48,6 +62,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const opener = useRef<HTMLElement | null>(null);
+  const [skippedUid, setSkippedUid] = useState<string | null>(null);
+  const [nameDraft, setNameDraft] = useState("");
+  const [nameMsg, setNameMsg] = useState<string | null>(null);
+  const [savingName, setSavingName] = useState(false);
 
   useEffect(() => {
     const sb = supabase();
@@ -121,6 +139,29 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [dialog, close]);
 
+  const needsName = !!user && !!displayName && DEFAULT_NAME.test(displayName) && skippedUid !== user.id && !hasSkipped(user.id);
+
+  const skipName = () => {
+    if (!user) return;
+    setSkippedUid(user.id);
+    try {
+      localStorage.setItem(skipKey(user.id), "1");
+    } catch {}
+  };
+
+  const saveName = async () => {
+    if (!user) return;
+    const next = nameDraft.trim();
+    if (next.length < 2 || next.length > 30) return setNameMsg("Use 2 to 30 characters.");
+    if (RESERVED_NAME.test(next) || DEFAULT_NAME.test(next)) return setNameMsg("That name isn't available. Try another.");
+    setSavingName(true);
+    setNameMsg(null);
+    const { error: err } = await supabase().from("profiles").update({ display_name: next }).eq("id", user.id);
+    setSavingName(false);
+    if (err) return setNameMsg(err.code === "23505" ? "That name is taken. Try another." : "That name isn't available. Try another.");
+    setDisplayName(next);
+  };
+
   const value = useMemo<Auth>(
     () => ({ ready, user, displayName, signIn, signOut, setDisplayName }),
     [ready, user, displayName, signIn, signOut, setDisplayName]
@@ -165,6 +206,54 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             <button type="button" onClick={close} className="mt-4 text-sm text-ink-muted underline hover:text-ink">
               Not now
             </button>
+          </div>
+        </div>
+      )}
+      {needsName && !dialog && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/50 px-4">
+          <div role="dialog" aria-modal="true" aria-labelledby="name-title" className="w-full max-w-sm rounded-md border border-line bg-paper-raised p-6 shadow-lg">
+            <h2 id="name-title" className="font-display text-xl font-semibold text-ink">
+              Choose your name
+            </h2>
+            <p className="mt-2 text-sm text-ink-muted">
+              This is the name shown next to your ratings and reviews. Your email and Google name stay private.
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                void saveName();
+              }}
+            >
+              <label htmlFor="new-display-name" className="sr-only">
+                Display name
+              </label>
+              <input
+                id="new-display-name"
+                value={nameDraft}
+                onChange={(e) => {
+                  setNameDraft(e.target.value);
+                  setNameMsg(null);
+                }}
+                maxLength={30}
+                autoFocus
+                placeholder="For example: Kyoto Latte Fan"
+                className="mt-4 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
+              />
+              {nameMsg && <p className="mt-2 text-sm text-red-700">{nameMsg}</p>}
+              <div className="mt-4 flex items-center gap-4">
+                <button
+                  type="submit"
+                  disabled={savingName || nameDraft.trim().length < 2}
+                  className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper transition-colors hover:bg-forest disabled:opacity-50"
+                >
+                  Save name
+                </button>
+                <button type="button" onClick={skipName} className="text-sm text-ink-muted underline hover:text-ink">
+                  Skip for now
+                </button>
+              </div>
+            </form>
+            <p className="mt-4 text-xs text-ink-faint">You can change it any time under My matcha.</p>
           </div>
         </div>
       )}
