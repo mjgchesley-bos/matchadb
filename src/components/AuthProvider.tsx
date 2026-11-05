@@ -57,9 +57,9 @@ export const useAuth = () => useContext(AuthContext);
 
 // New accounts start with a neutral public name (set by the database); the first time someone
 // signs in they are invited to pick their own. Names that could pass for the site or its
-// moderators are refused here and by a database constraint.
+// moderators (admin, moderator, official, matchadb) are refused by the database unless the member
+// is on the private staff list.
 export const DEFAULT_NAME = /^Matcha fan [0-9a-f]{5}$/;
-export const RESERVED_NAME = /matchadb|admin|moderator|official/i;
 // The username box is part of signing up: it is shown once, right after someone comes back from Google,
 // never on an ordinary page load. This flag lives in the browser tab only for that round trip.
 const FLOW_KEY = "mdb-name-prompt";
@@ -211,7 +211,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     if (!user) return;
     const next = nameDraft.trim();
     if (next.length < 2 || next.length > 30) return setNameMsg("Use 2 to 30 characters.");
-    if (RESERVED_NAME.test(next) || DEFAULT_NAME.test(next)) return setNameMsg("That name isn't available. Try another.");
+    if (DEFAULT_NAME.test(next)) return setNameMsg("That name isn't available. Try another.");
     setSavingName(true);
     setNameMsg(null);
     const { error: err } = await supabase().from("profiles").update({ display_name: next }).eq("id", user.id);

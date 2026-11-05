@@ -19,8 +19,22 @@ create policy "profiles: update own" on public.profiles for update to authentica
   using (id = auth.uid()) with check (id = auth.uid());
 
 -- Names that could pass for the site or its moderators are not allowed.
+-- Names that could pass for the site or its moderators are reserved for members on the private staff list
+-- (a table with row level security and no policies: only the service role can read or write it).
+create table if not exists public.staff (user_id uuid primary key references auth.users (id) on delete cascade);
+alter table public.staff enable row level security;
+create or replace function public.guard_display_name() returns trigger
+language plpgsql security definer set search_path = public as $
+begin
+  if new.display_name ~* '(matchadb|admin|moderator|official)' and not exists (select 1 from public.staff where user_id = new.id) then
+    raise exception 'That name is reserved.' using errcode = '23514';
+  end if;
+  return new;
+end;
+$;
 alter table public.profiles drop constraint if exists profiles_display_name_reserved;
-alter table public.profiles add constraint profiles_display_name_reserved check (display_name !~* '(matchadb|admin|moderator|official)');
+drop trigger if exists profiles_guard_name on public.profiles;
+create trigger profiles_guard_name before insert or update of display_name on public.profiles for each row execute function public.guard_display_name();
 
 -- New sign-ups get a neutral public name, never their real name or email.
 create or replace function public.handle_new_user() returns trigger
