@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 // destinations that don't need a permanent button in the bar.
 const ITEMS: { href: string; label: string; note: string }[] = [
   { href: "/stores", label: "Find in stores", note: "Where to buy these brands in person" },
+  { href: "/wholesale", label: "Wholesale suppliers", note: "Bulk matcha for cafés, brands and private label" },
   { href: "/research", label: "Research library", note: "Every scientific study on matcha" },
   { href: "/cultivars", label: "Cultivars", note: "Yabukita, Okumidori, Samidori and more" },
   { href: "/guides/what-is-ceremonial-matcha", label: "What is “ceremonial”?", note: "Where the word came from and what it means today" },

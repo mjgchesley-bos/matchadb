@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "pure-matcha-partners",
+    "name": "Pure Matcha Partners",
+    "website": "https://www.purematchapartners.com",
+    "hq": "Hardenberg, Netherlands",
+    "summary": "B2B supplier of bulk matcha and hojicha powder from Japan and China, selling to cafés, food and beverage brands, manufacturers and distributors.",
+    "origins": ["Japan", "China"],
+    "products": [
+      "Ceremonial grade matcha",
+      "Latte grade matcha",
+      "Culinary grade matcha",
+      "Hojicha powder",
+      "Flavored specials (for example mulberry, ube and oolong)"
+    ],
+    "organic": "Organic and conventional grades",
+    "minimumOrder": "From 10 kg, up to 1,000 kg or more per month",
+    "samples": "Samples chosen for your product are available on request",
+    "documentation": "Certificate of analysis for every batch, plus certificates of origin and quality",
+    "certifications": [
+      "JAS (Japanese Agricultural Standard)",
+      "EU Organic",
+      "USDA Organic",
+      "Organic certified by Skal (NL-BIO-01)",
+      "HACCP and FSSC 22000",
+      "Independent lab testing",
+      "Kosher"
+    ],
+    "customers": "Cafés and hospitality, restaurants and foodservice, food and beverage brands, supplement producers, retail and gift stores, co-packers and distributors",
+    "privateLabel": "Focuses on bulk supply and says it can support private-label partners that need large-volume sourcing",
+    "shipping": "Ships worldwide",
+    "pricing": "Wholesale price list available on request",
+    "links": [
+      { "label": "Request wholesale pricing", "url": "https://www.purematchapartners.com/pricelist-request" },
+      { "label": "Request a sample", "url": "https://www.purematchapartners.com/sample-request" },
+      { "label": "Contact sales", "url": "https://www.purematchapartners.com/contact" }
+    ],
+    "sources": [
+      { "label": "Home page", "url": "https://www.purematchapartners.com" }
+    ],
+    "verified": "2026-11-05"
+  }
+]

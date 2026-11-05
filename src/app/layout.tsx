@@ -134,6 +134,7 @@ export default function RootLayout({
               <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
                 <Link href="/stores" className="hover:text-ink-muted transition-colors">Stores</Link>
                 <Link href="/guides" className="hover:text-ink-muted transition-colors">Guides</Link>
+                <Link href="/wholesale" className="hover:text-ink-muted transition-colors">Wholesale</Link>
                 <Link href="/cultivars" className="hover:text-ink-muted transition-colors">Cultivars</Link>
                 <Link href="/compare" className="hover:text-ink-muted transition-colors">Compare</Link>
                 <Link href="/regions" className="hover:text-ink-muted transition-colors">Regions</Link>
