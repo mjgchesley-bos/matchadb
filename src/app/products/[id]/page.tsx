@@ -16,6 +16,7 @@ import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
+import { ShelfButtons } from "@/components/ShelfButtons";
 import { Comments } from "@/components/Comments";
 import { ProductReviews } from "@/components/ProductReviews";
 import { usd30 } from "@/lib/unit-price";
@@ -403,6 +404,7 @@ export default async function ProductDetailPage({
           {factsLine && <p className="text-ink-muted mt-2">{factsLine}</p>}
           <ProductRating productId={product.id} productName={product.product_name} />
           <FavoriteButton productId={product.id} productName={product.product_name} />
+          <ShelfButtons productId={product.id} productName={product.product_name} />
           <ShippingNote brand={product.brand_name} />
 
           {product.flavorTags.length > 0 && (

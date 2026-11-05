@@ -232,3 +232,122 @@ create policy "comment photos: upload own" on storage.objects for insert to auth
 drop policy if exists "comment photos: remove own" on storage.objects;
 create policy "comment photos: remove own" on storage.objects for delete to authenticated
   using (bucket_id = 'comment-photos' and (storage.foldername(name))[1] = auth.uid()::text);
+
+-- ====================================================================== shelves, visits, research folder, member tiers
+create table if not exists public.shelf (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  product_id integer not null check (product_id between 1 and 100000),
+  status text not null check (status in ('want', 'using', 'tried')),
+  updated_at timestamptz not null default now(),
+  primary key (user_id, product_id)
+);
+alter table public.shelf enable row level security;
+drop policy if exists "shelf: read own" on public.shelf;
+create policy "shelf: read own" on public.shelf for select to authenticated using (user_id = auth.uid());
+drop policy if exists "shelf: add own" on public.shelf;
+create policy "shelf: add own" on public.shelf for insert to authenticated with check (user_id = auth.uid());
+drop policy if exists "shelf: change own" on public.shelf;
+create policy "shelf: change own" on public.shelf for update to authenticated using (user_id = auth.uid()) with check (user_id = auth.uid());
+drop policy if exists "shelf: remove own" on public.shelf;
+create policy "shelf: remove own" on public.shelf for delete to authenticated using (user_id = auth.uid());
+
+-- One row per member per day they visit while signed in (counts toward their tier).
+create table if not exists public.member_days (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  day date not null default ((now() at time zone 'utc')::date),
+  primary key (user_id, day)
+);
+alter table public.member_days enable row level security;
+drop policy if exists "member days: read own" on public.member_days;
+create policy "member days: read own" on public.member_days for select to authenticated using (user_id = auth.uid());
+drop policy if exists "member days: add own" on public.member_days;
+create policy "member days: add own" on public.member_days for insert to authenticated with check (user_id = auth.uid());
+
+create table if not exists public.research_bookmarks (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  study_id integer not null check (study_id between 1 and 1000000),
+  note text not null default '' check (char_length(note) <= 1000),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  primary key (user_id, study_id)
+);
+alter table public.research_bookmarks enable row level security;
+drop policy if exists "bookmarks: read own" on public.research_bookmarks;
+create policy "bookmarks: read own" on public.research_bookmarks for select to authenticated using (user_id = auth.uid());
+drop policy if exists "bookmarks: add own" on public.research_bookmarks;
+create policy "bookmarks: add own" on public.research_bookmarks for insert to authenticated with check (user_id = auth.uid());
+drop policy if exists "bookmarks: change own" on public.research_bookmarks;
+create policy "bookmarks: change own" on public.research_bookmarks for update to authenticated using (user_id = auth.uid()) with check (user_id = auth.uid());
+drop policy if exists "bookmarks: remove own" on public.research_bookmarks;
+create policy "bookmarks: remove own" on public.research_bookmarks for delete to authenticated using (user_id = auth.uid());
+
+-- Member points: each kind of activity is capped so nobody can farm a tier. Only approved reviews and
+-- comments count, so the top tiers need real contributions. Tiers: Seedling 0, Sprout 10, Shaded Leaf 40,
+-- Tencha 100, Matcha Master 220.
+create or replace function public.member_points(p_uid uuid) returns integer
+language sql stable security definer set search_path = public as $$
+  select (
+    least((select count(*) from public.ratings where user_id = p_uid), 50) * 2
+    + least((select count(*) from public.favorites where user_id = p_uid), 30)
+    + least((select count(*) from public.favorite_brands where user_id = p_uid), 20)
+    + least((select count(*) from public.shelf where user_id = p_uid), 50)
+    + least((select count(*) from public.reviews where user_id = p_uid and status = 'approved'), 10) * 10
+    + least((select count(*) from public.comments where user_id = p_uid and status = 'approved'), 20) * 3
+    + least((select coalesce(sum(coalesce(array_length(photos, 1), 0)), 0) from public.comments where user_id = p_uid and status = 'approved'), 20) * 2
+    + least((select count(*) from public.research_bookmarks where user_id = p_uid), 20)
+    + least((select count(*) from public.member_days where user_id = p_uid), 60)
+  )::integer;
+$$;
+
+create or replace function public.member_tier(p integer) returns text
+language sql immutable as $$
+  select case when p >= 220 then 'Matcha Master' when p >= 100 then 'Tencha' when p >= 40 then 'Shaded Leaf' when p >= 10 then 'Sprout' else 'Seedling' end;
+$$;
+
+create or replace function public.my_stats() returns json
+language plpgsql stable security definer set search_path = public as $$
+declare u uuid := auth.uid(); p integer;
+begin
+  if u is null then return null; end if;
+  p := public.member_points(u);
+  return json_build_object(
+    'points', p,
+    'tier', public.member_tier(p),
+    'next_tier', case when p < 10 then 'Sprout' when p < 40 then 'Shaded Leaf' when p < 100 then 'Tencha' when p < 220 then 'Matcha Master' end,
+    'next_at', case when p < 10 then 10 when p < 40 then 40 when p < 100 then 100 when p < 220 then 220 end,
+    'ratings', (select count(*) from public.ratings where user_id = u),
+    'reviews', (select count(*) from public.reviews where user_id = u and status = 'approved'),
+    'comments', (select count(*) from public.comments where user_id = u and status = 'approved'),
+    'photos', (select coalesce(sum(coalesce(array_length(photos, 1), 0)), 0) from public.comments where user_id = u and status = 'approved'),
+    'saves', (select count(*) from public.favorites where user_id = u),
+    'brands', (select count(*) from public.favorite_brands where user_id = u),
+    'shelf', (select count(*) from public.shelf where user_id = u),
+    'bookmarks', (select count(*) from public.research_bookmarks where user_id = u),
+    'days', (select count(*) from public.member_days where user_id = u)
+  );
+end;
+$$;
+-- Postgres checks function permission as the caller even inside a view, so the tier helpers are callable by everyone
+-- (they only reveal a tier for a user id, and user ids are never public).
+grant execute on function public.member_points(uuid) to anon, authenticated;
+grant execute on function public.member_tier(integer) to anon, authenticated;
+revoke execute on function public.my_stats() from public, anon;
+grant execute on function public.my_stats() to authenticated;
+
+-- Show the author's tier next to their name on public reviews and comments.
+create or replace view public.approved_reviews with (security_invoker = false) as
+  select r.id, r.product_id, r.body, r.created_at, p.display_name, rt.score as rating,
+         public.member_tier(public.member_points(r.user_id)) as tier
+  from public.reviews r
+  join public.profiles p on p.id = r.user_id
+  left join public.ratings rt on rt.user_id = r.user_id and rt.product_id = r.product_id
+  where r.status = 'approved';
+grant select on public.approved_reviews to anon, authenticated;
+
+create or replace view public.approved_comments with (security_invoker = false) as
+  select c.id, c.target_type, c.target_key, c.body, c.photos, c.created_at, p.display_name,
+         public.member_tier(public.member_points(c.user_id)) as tier
+  from public.comments c
+  join public.profiles p on p.id = c.user_id
+  where c.status = 'approved';
+grant select on public.approved_comments to anon, authenticated;

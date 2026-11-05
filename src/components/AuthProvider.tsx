@@ -9,10 +9,30 @@ import { supabase } from "@/lib/supabase";
 // Sign-in is Google only for now. The session lives in the browser, so the (static) pages
 // stay fast and cacheable and each signed-in widget loads its own data.
 
+// What My matcha and the header show about a member: tier, points and activity counts. The numbers and
+// tier thresholds come from the database (my_stats), the single source of truth.
+export type MemberStats = {
+  points: number;
+  tier: string;
+  next_tier: string | null;
+  next_at: number | null;
+  ratings: number;
+  reviews: number;
+  comments: number;
+  photos: number;
+  saves: number;
+  brands: number;
+  shelf: number;
+  bookmarks: number;
+  days: number;
+};
+
 type Auth = {
   ready: boolean;
   user: User | null;
   displayName: string | null;
+  stats: MemberStats | null;
+  refreshStats: () => Promise<void>;
   signIn: (reason?: string) => void;
   signOut: () => Promise<void>;
   setDisplayName: (name: string) => void;
@@ -22,6 +42,8 @@ const AuthContext = createContext<Auth>({
   ready: false,
   user: null,
   displayName: null,
+  stats: null,
+  refreshStats: async () => {},
   signIn: () => {},
   signOut: async () => {},
   setDisplayName: () => {},
@@ -101,6 +123,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     };
   }, [uid]);
   const displayName = profile && profile.uid === uid ? profile.name : null;
+
+  // Record today as a visit (once per day per member), then load tier and counts.
+  const [statsState, setStatsState] = useState<{ uid: string; value: MemberStats | null } | null>(null);
+  const stats = statsState && statsState.uid === uid ? statsState.value : null;
+  const refreshStats = useCallback(async () => {
+    if (!uid) return;
+    const { data } = await supabase().rpc("my_stats");
+    setStatsState({ uid, value: (data as MemberStats | null) ?? null });
+  }, [uid]);
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    const sb = supabase();
+    sb.from("member_days")
+      .upsert({ user_id: uid }, { onConflict: "user_id,day", ignoreDuplicates: true })
+      .then(() => sb.rpc("my_stats"))
+      .then(({ data }) => live && setStatsState({ uid, value: (data as MemberStats | null) ?? null }));
+    return () => {
+      live = false;
+    };
+  }, [uid]);
   const setDisplayName = useCallback((name: string) => uid && setProfile({ uid, name }), [uid]);
 
   const signIn = useCallback((reason?: string) => {
@@ -163,8 +206,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const value = useMemo<Auth>(
-    () => ({ ready, user, displayName, signIn, signOut, setDisplayName }),
-    [ready, user, displayName, signIn, signOut, setDisplayName]
+    () => ({ ready, user, displayName, stats, refreshStats, signIn, signOut, setDisplayName }),
+    [ready, user, displayName, stats, refreshStats, signIn, signOut, setDisplayName]
   );
 
   return (

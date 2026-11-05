@@ -14,6 +14,7 @@ import {
 } from "@/lib/studies";
 import { StudyCard } from "@/components/StudyCard";
 import { CopyCitation } from "@/components/CopyCitation";
+import { ResearchBookmark } from "@/components/ResearchBookmark";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 import { topicHref } from "@/lib/research-topics";
@@ -191,6 +192,11 @@ export default async function StudyPage({ params }: { params: Promise<{ id: stri
           </div>
         </section>
       )}
+
+      <section className="mt-10 max-w-3xl">
+        <Label>Your research folder</Label>
+        <ResearchBookmark studyId={s.id} />
+      </section>
 
       <section className="mt-10 max-w-3xl">
         <Label>Cite this study</Label>

@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { RESERVED_NAME, useAuth } from "@/components/AuthProvider";
+import { RESERVED_NAME, useAuth, type MemberStats } from "@/components/AuthProvider";
 import { commentPhotoUrl, COMMENT_BUCKET } from "@/components/Comments";
 import { BrandLogo } from "@/components/product-cards";
+import { SHELF_LABELS, type ShelfStatus } from "@/components/ShelfButtons";
 import { Stars } from "@/components/Stars";
 import { supabase } from "@/lib/supabase";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -12,6 +13,24 @@ import { CONTACT_EMAIL } from "@/lib/site";
 type Item = { id: number; name: string; brand: string; price: string | null };
 type Rated = { product_id: number; score: number };
 type Written = { id: string; product_id: number; body: string; status: "pending" | "approved" | "hidden" };
+
+type Shelved = { product_id: number; status: ShelfStatus };
+type Saved = { study_id: number; note: string };
+type StudyInfo = { id: number; title: string; journal: string; year: number | null };
+
+// Badges are earned from the activity counts the database reports for the member.
+const BADGES: { name: string; hint: string; test: (s: MemberStats) => boolean }[] = [
+  { name: "First rating", hint: "Rate a matcha", test: (s) => s.ratings >= 1 },
+  { name: "Taster", hint: "Rate 10 matchas", test: (s) => s.ratings >= 10 },
+  { name: "Reviewer", hint: "Get a review approved", test: (s) => s.reviews >= 1 },
+  { name: "In the conversation", hint: "Post a comment", test: (s) => s.comments >= 1 },
+  { name: "Photographer", hint: "Share a photo", test: (s) => s.photos >= 1 },
+  { name: "Brand collector", hint: "Save 5 brands", test: (s) => s.brands >= 5 },
+  { name: "Shelf builder", hint: "Put 10 matchas on your shelf", test: (s) => s.shelf >= 10 },
+  { name: "Researcher", hint: "Save 3 studies", test: (s) => s.bookmarks >= 3 },
+  { name: "Regular", hint: "Visit on 5 different days", test: (s) => s.days >= 5 },
+  { name: "Devoted", hint: "Visit on 30 different days", test: (s) => s.days >= 30 },
+];
 
 type MyComment = { id: string; target_type: "product" | "brand"; target_key: string; body: string; photos: string[]; status: Written["status"]; created_at: string };
 
@@ -27,12 +46,15 @@ function ProductLink({ item, id }: { item?: Item; id: number }) {
 }
 
 export function AccountClient() {
-  const { ready, user, displayName, setDisplayName, signIn, signOut } = useAuth();
+  const { ready, user, displayName, stats, refreshStats, setDisplayName, signIn, signOut } = useAuth();
   const [favorites, setFavorites] = useState<number[] | null>(null);
   const [ratings, setRatings] = useState<Rated[] | null>(null);
   const [reviews, setReviews] = useState<Written[] | null>(null);
   const [items, setItems] = useState<Record<number, Item>>({});
   const [brands, setBrands] = useState<string[] | null>(null);
+  const [shelved, setShelved] = useState<Shelved[] | null>(null);
+  const [saved, setSaved] = useState<Saved[] | null>(null);
+  const [studies, setStudies] = useState<Record<number, StudyInfo>>({});
   const [comments, setComments] = useState<MyComment[] | null>(null);
   const [draft, setDraft] = useState<string | null>(null);
   const [nameMsg, setNameMsg] = useState<string | null>(null);
@@ -44,12 +66,14 @@ export function AccountClient() {
     let live = true;
     const sb = supabase();
     (async () => {
-      const [f, r, w, fb, cm] = await Promise.all([
+      const [f, r, w, fb, cm, sh, bm] = await Promise.all([
         sb.from("favorites").select("product_id").order("created_at", { ascending: false }),
         sb.from("ratings").select("product_id, score").order("updated_at", { ascending: false }),
         sb.from("reviews").select("id, product_id, body, status").order("created_at", { ascending: false }),
         sb.from("favorite_brands").select("brand").order("created_at", { ascending: false }),
         sb.from("comments").select("id, target_type, target_key, body, photos, status, created_at").order("created_at", { ascending: false }),
+        sb.from("shelf").select("product_id, status").order("updated_at", { ascending: false }),
+        sb.from("research_bookmarks").select("study_id, note").order("updated_at", { ascending: false }),
       ]);
       if (!live) return;
       const favs = (f.data ?? []).map((x) => x.product_id as number);
@@ -62,7 +86,15 @@ export function AccountClient() {
       const mine = (cm.data ?? []) as MyComment[];
       setComments(mine);
       const commentProducts = mine.filter((c) => c.target_type === "product").map((c) => Number(c.target_key)).filter((n) => Number.isInteger(n));
-      const ids = [...new Set([...favs, ...rated.map((x) => x.product_id), ...written.map((x) => x.product_id), ...commentProducts])];
+      const onShelf = (sh.data ?? []) as Shelved[];
+      setShelved(onShelf);
+      const marks = (bm.data ?? []) as Saved[];
+      setSaved(marks);
+      if (marks.length) {
+        const sl = (await fetch(`/api/studies/lookup?ids=${marks.map((m) => m.study_id).join(",")}`).then((res) => res.json())) as StudyInfo[];
+        if (live) setStudies(Object.fromEntries(sl.map((x) => [x.id, x])));
+      }
+      const ids = [...new Set([...favs, ...rated.map((x) => x.product_id), ...written.map((x) => x.product_id), ...commentProducts, ...onShelf.map((x) => x.product_id)])];
       if (ids.length) {
         const list = (await fetch(`/api/products/lookup?ids=${ids.join(",")}`).then((res) => res.json())) as Item[];
         if (live) setItems(Object.fromEntries(list.map((i) => [i.id, i])));
@@ -83,6 +115,20 @@ export function AccountClient() {
     setDisplayName(next);
     setDraft(null);
     setNameMsg("Saved.");
+  };
+
+  const unshelve = async (id: number) => {
+    if (!user) return;
+    setShelved((s) => s?.filter((x) => x.product_id !== id) ?? s);
+    await supabase().from("shelf").delete().eq("user_id", user.id).eq("product_id", id);
+    void refreshStats();
+  };
+
+  const unbookmark = async (id: number) => {
+    if (!user) return;
+    setSaved((s) => s?.filter((x) => x.study_id !== id) ?? s);
+    await supabase().from("research_bookmarks").delete().eq("user_id", user.id).eq("study_id", id);
+    void refreshStats();
   };
 
   const unsaveBrand = async (brand: string) => {
@@ -127,6 +173,43 @@ export function AccountClient() {
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">My matcha</h1>
       </div>
 
+      {stats && (
+        <section aria-labelledby="tier-h" className="rounded-sm border border-line bg-paper-raised p-5">
+          <p className="text-xs font-medium uppercase tracking-wide text-ink-faint">Your membership</p>
+          <h2 id="tier-h" className="mt-1 font-display text-2xl font-semibold text-ink">
+            {stats.tier}
+          </h2>
+          <p className="mt-1 text-sm text-ink-muted tabular-nums">
+            {stats.points} points
+            {stats.next_tier && stats.next_at != null ? ` · ${stats.next_at - stats.points} more to reach ${stats.next_tier}` : " · you have reached the top tier"}
+          </p>
+          {stats.next_at != null && (
+            <div className="mt-3 h-2 w-full max-w-md overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={stats.next_at} aria-valuenow={stats.points} aria-label="Progress to next tier">
+              <div className="h-full rounded-full bg-matcha" style={{ width: `${Math.min(100, (stats.points / stats.next_at) * 100)}%` }} />
+            </div>
+          )}
+          <p className="mt-3 text-xs text-ink-faint">
+            Points come from rating, saving, shelving, commenting, reviewing, saving studies and visiting. Approved reviews and comments count the most.
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-2" aria-label="Badges">
+            {BADGES.map((b) => {
+              const earned = b.test(stats);
+              return (
+                <li
+                  key={b.name}
+                  title={earned ? "Earned" : b.hint}
+                  className={`rounded-full border px-3 py-1 text-xs ${earned ? "border-matcha bg-matcha-soft text-forest" : "border-line-strong text-ink-faint"}`}
+                >
+                  {earned ? "\u2713 " : ""}
+                  {b.name}
+                  {!earned && <span className="sr-only"> (not earned yet: {b.hint})</span>}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+
       <section aria-labelledby="profile-h">
         <h2 id="profile-h" className={h2}>Profile</h2>
         <p className="mt-2 text-sm text-ink-muted">
@@ -146,6 +229,42 @@ export function AccountClient() {
           </button>
           {nameMsg && <span className="text-sm text-ink-muted" aria-live="polite">{nameMsg}</span>}
         </div>
+      </section>
+
+      <section aria-labelledby="shelf-h">
+        <h2 id="shelf-h" className={h2}>My shelf</h2>
+        {shelved === null ? (
+          <p className="mt-2 text-sm text-ink-faint">Loading…</p>
+        ) : shelved.length === 0 ? (
+          <p className="mt-2 text-sm text-ink-muted">
+            Nothing on your shelf yet. On any product page, mark it <strong>Want to try</strong>, <strong>Using now</strong> or <strong>Tried it</strong>.
+          </p>
+        ) : (
+          <div className="mt-3 flex flex-col gap-5">
+            {(["using", "want", "tried"] as ShelfStatus[]).map((st) => {
+              const rows = shelved.filter((x) => x.status === st);
+              if (!rows.length) return null;
+              return (
+                <div key={st}>
+                  <h3 className="text-sm font-medium text-ink">
+                    {SHELF_LABELS[st]} <span className="font-normal text-ink-faint">({rows.length})</span>
+                  </h3>
+                  <ul className="mt-1 divide-y divide-line border-y border-line">
+                    {rows.map((x) => (
+                      <li key={x.product_id} className="flex items-center justify-between gap-4 py-3">
+                        <ProductLink id={x.product_id} item={items[x.product_id]} />
+                        <span className="flex items-center gap-4 text-sm text-ink-muted">
+                          {items[x.product_id]?.price}
+                          <button type="button" onClick={() => void unshelve(x.product_id)} className="underline hover:text-ink">Remove</button>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        )}
       </section>
 
       <section aria-labelledby="brands-h">
@@ -234,6 +353,41 @@ export function AccountClient() {
                 <p className="mt-2 whitespace-pre-line text-sm text-ink-muted">{r.body}</p>
               </li>
             ))}
+          </ul>
+        )}
+      </section>
+
+      <section aria-labelledby="folder-h">
+        <h2 id="folder-h" className={h2}>My research folder</h2>
+        {saved === null ? (
+          <p className="mt-2 text-sm text-ink-faint">Loading…</p>
+        ) : saved.length === 0 ? (
+          <p className="mt-2 text-sm text-ink-muted">
+            No studies saved yet. Open any study in the <Link href="/research" className="text-matcha underline">research library</Link> and save it here, with a private note.
+          </p>
+        ) : (
+          <ul className="mt-3 flex flex-col gap-4">
+            {saved.map((m) => {
+              const s = studies[m.study_id];
+              return (
+                <li key={m.study_id} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
+                  <Link href={`/research/${m.study_id}`} className="font-medium text-ink hover:text-matcha">
+                    {s?.title ?? `Study ${m.study_id}`}
+                  </Link>
+                  {s && (
+                    <p className="mt-0.5 text-xs text-ink-faint">
+                      {s.journal}
+                      {s.year ? ` · ${s.year}` : ""}
+                    </p>
+                  )}
+                  {m.note && <p className="mt-2 whitespace-pre-line border-l-2 border-matcha pl-3 text-sm text-ink-muted">{m.note}</p>}
+                  <div className="mt-2 flex gap-4 text-sm">
+                    <Link href={`/research/${m.study_id}`} className="text-matcha underline hover:text-forest">{m.note ? "Edit note" : "Add a note"}</Link>
+                    <button type="button" onClick={() => void unbookmark(m.study_id)} className="text-ink-muted underline hover:text-ink">Remove</button>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>

@@ -6,7 +6,7 @@ import { useAuth } from "@/components/AuthProvider";
 
 // "Sign in" in the header, or the person's initial with a small menu once signed in.
 export function HeaderAccount() {
-  const { ready, user, displayName, signIn, signOut } = useAuth();
+  const { ready, user, displayName, stats, signIn, signOut } = useAuth();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
@@ -57,7 +57,8 @@ export function HeaderAccount() {
       {open && (
         <div role="menu" className="absolute right-0 top-full z-40 mt-2 w-56 overflow-hidden rounded-md border border-line bg-paper-raised py-1 shadow-lg">
           <p className="px-4 pt-2 pb-1 text-xs text-ink-faint">Signed in as</p>
-          <p className="px-4 pb-2 text-sm font-medium text-ink truncate">{displayName ?? "…"}</p>
+          <p className="px-4 text-sm font-medium text-ink truncate">{displayName ?? "…"}</p>
+          <p className="px-4 pb-2 text-xs text-ink-faint">{stats ? `${stats.tier} · ${stats.points} points` : "\u00a0"}</p>
           <Link href="/account" role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
             My matcha
           </Link>

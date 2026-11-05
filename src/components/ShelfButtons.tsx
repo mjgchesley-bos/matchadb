@@ -1,0 +1,79 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useAuth } from "@/components/AuthProvider";
+import { supabase } from "@/lib/supabase";
+
+// "Want to try / Using now / Tried it": a personal shelf for each product. Picking the same
+// status again clears it.
+export type ShelfStatus = "want" | "using" | "tried";
+export const SHELF_LABELS: Record<ShelfStatus, string> = { want: "Want to try", using: "Using now", tried: "Tried it" };
+const ORDER: ShelfStatus[] = ["want", "using", "tried"];
+
+export function ShelfButtons({ productId, productName }: { productId: number; productName: string }) {
+  const { user, ready, signIn, refreshStats } = useAuth();
+  const uid = user?.id ?? null;
+  const [state, setState] = useState<{ uid: string; status: ShelfStatus | null } | null>(null);
+  const status = uid && state?.uid === uid ? state.status : null;
+  const [busy, setBusy] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    supabase()
+      .from("shelf")
+      .select("status")
+      .eq("product_id", productId)
+      .maybeSingle()
+      .then(({ data }) => live && setState({ uid, status: (data?.status as ShelfStatus | undefined) ?? null }));
+    return () => {
+      live = false;
+    };
+  }, [uid, productId]);
+
+  const pick = async (next: ShelfStatus) => {
+    if (!user) {
+      signIn(`Sign in to add ${productName} to your shelf.`);
+      return;
+    }
+    const clearing = status === next;
+    setBusy(true);
+    setFailed(false);
+    const sb = supabase();
+    const { error } = clearing
+      ? await sb.from("shelf").delete().eq("user_id", user.id).eq("product_id", productId)
+      : await sb.from("shelf").upsert({ user_id: user.id, product_id: productId, status: next, updated_at: new Date().toISOString() }, { onConflict: "user_id,product_id" });
+    if (error) {
+      setFailed(true);
+    } else {
+      setState({ uid: user.id, status: clearing ? null : next });
+      if (!clearing) window.gtag?.("event", "shelf_set", { product_id: productId, status: next });
+      void refreshStats();
+    }
+    setBusy(false);
+  };
+
+  return (
+    <div className="mt-3" role="group" aria-label={`Your shelf for ${productName}`}>
+      <div className="flex flex-wrap items-center gap-2">
+        {ORDER.map((s) => (
+          <button
+            key={s}
+            type="button"
+            onClick={() => void pick(s)}
+            disabled={busy || !ready}
+            aria-pressed={status === s}
+            className={`rounded-full border px-3.5 py-1.5 text-sm transition-colors disabled:opacity-60 ${
+              status === s ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"
+            }`}
+          >
+            {SHELF_LABELS[s]}
+          </button>
+        ))}
+      </div>
+      {status === "tried" && <p className="mt-1.5 text-xs text-ink-faint">How was it? Rate it with the stars above.</p>}
+      {failed && <p className="mt-1.5 text-xs text-red-700">Couldn&apos;t update your shelf. Try again.</p>}
+    </div>
+  );
+}

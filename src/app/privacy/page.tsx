@@ -49,7 +49,10 @@ export default function PrivacyPage() {
           you write or the comments and photos you post. Photos are shrunk and re-saved in your browser
           before upload, which removes hidden data such as the location a photo was taken, and are shown
           publicly once approved. Ratings, reviews and comments are shown with a public username (a neutral default until you
-          choose your own, which you can change in My matcha), never your email or real name. Accounts, sign-in and this data are
+          choose your own, which you can change in My matcha), never your email or real name. We also
+          record the days you visit while signed in, plus what you add to your shelves and research folder
+          (private notes there are visible only to you); these count toward your member tier, which is shown
+          next to your username. Accounts, sign-in and this data are
           handled for us by Supabase. Signing in keeps a session token in your browser&apos;s local
           storage so you stay signed in; it is separate from the analytics and advertising cookies above.
           You can delete your own reviews and ratings at any time. To delete your account and everything

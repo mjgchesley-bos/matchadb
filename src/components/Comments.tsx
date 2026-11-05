@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
+import { TierBadge } from "@/components/TierBadge";
 import { supabase } from "@/lib/supabase";
 
 // Comment section for a product or a brand page, with up to three photos per comment.
@@ -14,7 +15,7 @@ const MAX_PHOTOS = 3;
 const MAX_CHARS = 1500;
 const MAX_SIDE = 1600;
 
-type Pub = { id: string; body: string; photos: string[]; created_at: string; display_name: string };
+type Pub = { id: string; body: string; photos: string[]; created_at: string; display_name: string; tier?: string | null };
 type Mine = { id: string; body: string; photos: string[]; status: "pending" | "approved" | "hidden"; created_at: string };
 
 export const commentPhotoUrl = (path: string): string => supabase().storage.from(COMMENT_BUCKET).getPublicUrl(path).data.publicUrl;
@@ -68,7 +69,7 @@ export function Comments({ targetType, targetKey, subject }: { targetType: "prod
     let live = true;
     supabase()
       .from("approved_comments")
-      .select("id, body, photos, created_at, display_name")
+      .select("id, body, photos, created_at, display_name, tier")
       .eq("target_type", targetType)
       .eq("target_key", targetKey)
       .order("created_at", { ascending: false })
@@ -251,6 +252,7 @@ export function Comments({ targetType, targetKey, subject }: { targetType: "prod
           <article key={c.id} className="border-t border-line pt-4">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
               <span className="text-sm font-medium text-ink">{c.display_name}</span>
+              <TierBadge tier={c.tier} />
               <span className="text-xs text-ink-faint">{dateFmt.format(new Date(c.created_at))}</span>
             </div>
             <p className="mt-2 whitespace-pre-line text-sm text-ink leading-relaxed">{c.body}</p>
