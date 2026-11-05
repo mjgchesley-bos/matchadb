@@ -282,8 +282,8 @@ drop policy if exists "bookmarks: remove own" on public.research_bookmarks;
 create policy "bookmarks: remove own" on public.research_bookmarks for delete to authenticated using (user_id = auth.uid());
 
 -- Member points: each kind of activity is capped so nobody can farm a tier. Only approved reviews and
--- comments count, so the top tiers need real contributions. Tiers: Seedling 0, Sprout 10, Shaded Leaf 40,
--- Tencha 100, Matcha Master 220.
+-- comments count, so the top tiers need real contributions. Tiers: Member 0, Bronze 10, Silver 40,
+-- Gold 100, Matcha Master 220.
 create or replace function public.member_points(p_uid uuid) returns integer
 language sql stable security definer set search_path = public as $$
   select (
@@ -301,7 +301,7 @@ $$;
 
 create or replace function public.member_tier(p integer) returns text
 language sql immutable as $$
-  select case when p >= 220 then 'Matcha Master' when p >= 100 then 'Tencha' when p >= 40 then 'Shaded Leaf' when p >= 10 then 'Sprout' else 'Seedling' end;
+  select case when p >= 220 then 'Matcha Master' when p >= 100 then 'Gold' when p >= 40 then 'Silver' when p >= 10 then 'Bronze' else 'Member' end;
 $$;
 
 create or replace function public.my_stats() returns json
@@ -313,7 +313,7 @@ begin
   return json_build_object(
     'points', p,
     'tier', public.member_tier(p),
-    'next_tier', case when p < 10 then 'Sprout' when p < 40 then 'Shaded Leaf' when p < 100 then 'Tencha' when p < 220 then 'Matcha Master' end,
+    'next_tier', case when p < 10 then 'Bronze' when p < 40 then 'Silver' when p < 100 then 'Gold' when p < 220 then 'Matcha Master' end,
     'next_at', case when p < 10 then 10 when p < 40 then 40 when p < 100 then 100 when p < 220 then 220 end,
     'ratings', (select count(*) from public.ratings where user_id = u),
     'reviews', (select count(*) from public.reviews where user_id = u and status = 'approved'),

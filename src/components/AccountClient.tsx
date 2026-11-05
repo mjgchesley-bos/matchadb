@@ -6,6 +6,7 @@ import { RESERVED_NAME, useAuth, type MemberStats } from "@/components/AuthProvi
 import { commentPhotoUrl, COMMENT_BUCKET } from "@/components/Comments";
 import { BrandLogo } from "@/components/product-cards";
 import { SHELF_LABELS, type ShelfStatus } from "@/components/ShelfButtons";
+import { TierIcon } from "@/components/TierIcon";
 import { Stars } from "@/components/Stars";
 import { supabase } from "@/lib/supabase";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -176,7 +177,8 @@ export function AccountClient() {
       {stats && (
         <section aria-labelledby="tier-h" className="rounded-sm border border-line bg-paper-raised p-5">
           <p className="text-xs font-medium uppercase tracking-wide text-ink-faint">Your membership</p>
-          <h2 id="tier-h" className="mt-1 font-display text-2xl font-semibold text-ink">
+          <h2 id="tier-h" className="mt-1 flex items-center gap-2.5 font-display text-2xl font-semibold text-ink">
+            <TierIcon tier={stats.tier} size={34} />
             {stats.tier}
           </h2>
           <p className="mt-1 text-sm text-ink-muted tabular-nums">
