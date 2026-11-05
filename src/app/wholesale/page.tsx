@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 import { SUPPLIERS, verifiedOn } from "@/lib/suppliers";
 
-const title = "Wholesale Matcha Suppliers (B2B Directory)";
+const title = "Wholesale & Bulk Matcha Suppliers";
 const description =
   "Bulk and wholesale matcha suppliers for cafés, food and beverage brands and private-label customers, with minimum orders, origins and certifications as each supplier states them.";
 
