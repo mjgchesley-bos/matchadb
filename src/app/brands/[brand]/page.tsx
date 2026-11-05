@@ -13,6 +13,7 @@ import { getBrandLogoPath } from "@/lib/logos";
 import { comparisonsFor } from "@/lib/compare";
 import { usd30 } from "@/lib/unit-price";
 import { BRAND_RESELLER_NOTES, chainsForBrand, resellersForBrand, storesForBrand } from "@/lib/stores";
+import { suppliersForBrand } from "@/lib/suppliers";
 import { KIND_LABEL } from "@/lib/store-types";
 import { SITE_URL } from "@/lib/site";
 
@@ -66,6 +67,7 @@ export default async function BrandPage({
   const resellerNote = BRAND_RESELLER_NOTES[brandName];
   const onlineResellers = resellersForBrand(brandName);
   const chainListing = chainsForBrand(brandName);
+  const wholesale = suppliersForBrand(brandName);
   const ownShops = stockists.filter((s) => s.kind === "brand-shop");
   const retailers = stockists.filter((s) => s.kind !== "brand-shop");
   const MAX_CARDS = 12;
@@ -129,6 +131,18 @@ export default async function BrandPage({
       </p>
       <p className="text-ink-muted leading-relaxed max-w-2xl">{summary.join(" ")}</p>
       <ShippingNote brand={brandName} />
+      {wholesale.length > 0 && (
+        <p className="mt-3 text-sm text-ink-muted">
+          {wholesale.map((s, i) => (
+            <span key={s.slug}>
+              {i > 0 && " · "}
+              <Link href={`/wholesale#${s.slug}`} className="text-matcha underline hover:text-forest">
+                {s.name === brandName ? "Wholesale available" : `Wholesale available through ${s.name}`}
+              </Link>
+            </span>
+          ))}
+        </p>
+      )}
       <div className="mb-8" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -3,39 +3,43 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
-import { SUPPLIERS, supplierBySlug, verifiedOn } from "@/lib/suppliers";
+import { profiled, supplierBySlug, verifiedOn } from "@/lib/suppliers";
 
+// Full profiles exist only for suppliers whose own site gives enough detail to fill one in;
+// every other supplier is listed on /wholesale.
 export function generateStaticParams() {
-  return SUPPLIERS.map((s) => ({ slug: s.slug }));
+  return profiled().map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const s = supplierBySlug(slug);
-  if (!s) return {};
+  if (!s?.profile) return {};
   const url = `${SITE_URL}/wholesale/${s.slug}`;
   const title = `${s.name}: Wholesale Matcha Supplier`;
-  const description = `${s.name} (${s.hq}) supplies bulk matcha from ${s.origins.join(" and ")}. ${s.minimumOrder}. Terms and certifications as the supplier states them.`;
+  const description = `${s.name}${s.hq ? ` (${s.hq})` : ""} supplies bulk matcha from ${s.profile.origins.join(" and ")}. ${s.profile.minimumOrder}. Terms and certifications as the supplier states them.`;
   return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } };
 }
 
 export default async function SupplierPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const s = supplierBySlug(slug);
-  if (!s) notFound();
+  if (!s || !s.profile) notFound();
+  const p = s.profile;
   const url = `${SITE_URL}/wholesale/${s.slug}`;
+  const hq = s.hq ?? "";
 
   const rows: { label: string; value: React.ReactNode }[] = [
-    { label: "Based in", value: s.hq },
-    { label: "Sources from", value: s.origins.join(" and ") },
-    { label: "Grades", value: s.organic },
-    { label: "Minimum order", value: s.minimumOrder },
-    { label: "Documentation", value: s.documentation },
-    { label: "Samples", value: s.samples },
-    { label: "Private label", value: s.privateLabel },
-    { label: "Shipping", value: s.shipping },
-    { label: "Pricing", value: s.pricing },
-    { label: "Sells to", value: s.customers },
+    ...(hq ? [{ label: "Based in", value: hq }] : []),
+    { label: "Sources from", value: p.origins.join(" and ") },
+    { label: "Grades", value: p.organic },
+    { label: "Minimum order", value: p.minimumOrder },
+    { label: "Documentation", value: p.documentation },
+    { label: "Samples", value: p.samples },
+    { label: "Private label", value: p.privateLabel },
+    { label: "Shipping", value: p.shipping },
+    { label: "Pricing", value: p.pricing },
+    { label: "Sells to", value: p.customers },
   ];
 
   return (
@@ -47,7 +51,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ slug:
           name: s.name,
           url: s.website,
           description: s.summary,
-          address: { "@type": "PostalAddress", addressLocality: s.hq.split(",")[0].trim(), addressCountry: s.hq.split(",").pop()?.trim() },
+          ...(hq ? { address: { "@type": "PostalAddress", addressLocality: hq.split(",")[0].trim(), addressCountry: hq.split(",").pop()?.trim() } } : {}),
         }}
       />
       <JsonLd
@@ -82,7 +86,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ slug:
           >
             Visit {s.name}
           </a>
-          {s.links.map((l) => (
+          {(s.links ?? []).map((l) => (
             <a
               key={l.url}
               href={l.url}
@@ -112,15 +116,15 @@ export default async function SupplierPage({ params }: { params: Promise<{ slug:
         <div>
           <h2 className="font-display text-xl font-semibold text-ink">Products</h2>
           <ul className="mt-3 list-disc pl-5 flex flex-col gap-1.5 text-ink-muted">
-            {s.products.map((p) => (
-              <li key={p}>{p}</li>
+            {p.products.map((x) => (
+              <li key={x}>{x}</li>
             ))}
           </ul>
         </div>
         <div>
           <h2 className="font-display text-xl font-semibold text-ink">Certifications listed</h2>
           <ul className="mt-3 list-disc pl-5 flex flex-col gap-1.5 text-ink-muted">
-            {s.certifications.map((c) => (
+            {p.certifications.map((c) => (
               <li key={c}>{c}</li>
             ))}
           </ul>

@@ -7,7 +7,7 @@ import { TOPICS } from "@/lib/research-topics";
 import { GUIDES } from "@/lib/guides";
 import { CULTIVARS } from "@/lib/cultivars";
 import { PAIRS, pairSlug } from "@/lib/compare";
-import { SUPPLIERS } from "@/lib/suppliers";
+import { profiled } from "@/lib/suppliers";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { productIds, brands } = await getSitemapEntries();
@@ -28,7 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/compare`, changeFrequency: "weekly", priority: 0.8 },
     ...PAIRS.map(([a, b]) => ({ url: `${SITE_URL}/compare/${pairSlug(a, b)}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${SITE_URL}/wholesale`, changeFrequency: "weekly", priority: 0.7 },
-    ...SUPPLIERS.map((s) => ({ url: `${SITE_URL}/wholesale/${s.slug}`, changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...profiled().map((s) => ({ url: `${SITE_URL}/wholesale/${s.slug}`, changeFrequency: "monthly" as const, priority: 0.6 })),
     { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },
