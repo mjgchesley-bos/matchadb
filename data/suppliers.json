@@ -53,7 +53,10 @@
         "url": "https://aoimatcha.com/pages/business"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "aprika-life",
@@ -255,7 +258,10 @@
         "url": "https://culinaryteas.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "cultivate-tea",
@@ -277,7 +283,11 @@
         "url": "https://cultivatetea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "ca",
+      "us"
+    ]
   },
   {
     "slug": "davids-tea",
@@ -305,7 +315,11 @@
         "url": "https://davidstea.com/en-us/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "ca",
+      "us"
+    ]
   },
   {
     "slug": "dona",
@@ -385,7 +399,10 @@
         "url": "https://funky-matcha.com/pages/matcha-wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "intl"
+    ]
   },
   {
     "slug": "golde",
@@ -499,7 +516,10 @@
         "url": "https://shop.ikkyu-tea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "ippodo",
@@ -630,7 +650,10 @@
         "url": "https://kagoshimatea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "intl"
+    ]
   },
   {
     "slug": "kenko-tea",
@@ -657,7 +680,10 @@
         "url": "https://kenkomatcha.com/pages/wholesale-matcha"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "kettl",
@@ -719,7 +745,10 @@
         "url": "https://kiyomatcha.com/pages/b2b"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "intl"
+    ]
   },
   {
     "slug": "kyoto-yamasan",
@@ -748,7 +777,10 @@
         "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "intl"
+    ]
   },
   {
     "slug": "legion",
@@ -776,7 +808,10 @@
         "url": "https://legionathletics.com/wholesale/"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "intl"
+    ]
   },
   {
     "slug": "maeda-en",
@@ -831,7 +866,10 @@
         "url": "https://maisonkoko.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "au"
+    ]
   },
   {
     "slug": "mantra-matcha",
@@ -941,7 +979,11 @@
         "url": "https://matchakonomi.com/pages/wholesale-contact"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us",
+      "intl"
+    ]
   },
   {
     "slug": "matcha-maiden",
@@ -1052,7 +1094,10 @@
         "url": "https://matchaoutlet.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "matcha-sense",
@@ -1106,7 +1151,11 @@
         "url": "https://matchaunion.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "eu",
+      "intl"
+    ]
   },
   {
     "slug": "matcha-yu-tea",
@@ -1163,7 +1212,10 @@
         "url": "https://bulk.matcha.com/"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "matchabar",
@@ -1218,7 +1270,10 @@
         "url": "https://www.matchaeologist.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "matchaful",
@@ -1323,7 +1378,10 @@
         "url": "https://www.peets.com/pages/foodservice-program"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "mizuba-tea-co",
@@ -1380,7 +1438,10 @@
         "url": "https://moochamatcha.co/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "nami-matcha",
@@ -1407,7 +1468,10 @@
         "url": "https://namimatcha.com/pages/wholesale-application"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "naoki-matcha",
@@ -1475,7 +1539,10 @@
         "url": "https://numitea.com/pages/wholesale-access-form"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "obubu-tea-farms",
@@ -1532,7 +1599,11 @@
         "url": "https://www.ochaandco.com/en-us/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us",
+      "eu"
+    ]
   },
   {
     "slug": "omgtea",
@@ -1583,7 +1654,10 @@
         "url": "https://ooika.co/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "palais-des-thes",
@@ -1637,7 +1711,12 @@
         "url": "https://paragontearoom.com/pages/wholesale-partners"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "ca",
+      "us",
+      "intl"
+    ]
   },
   {
     "slug": "paru-tea",
@@ -1695,7 +1774,11 @@
         "url": "https://ujimatchatea.com/pages/wholesale-matcha"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us",
+      "intl"
+    ]
   },
   {
     "slug": "pure-matcha-partners",
@@ -1771,7 +1854,12 @@
       "privateLabel": "Focuses on bulk supply and says it can support private-label partners that need large-volume sourcing",
       "shipping": "Ships worldwide",
       "pricing": "Wholesale price list available on request"
-    }
+    },
+    "serves": [
+      "us",
+      "eu",
+      "intl"
+    ]
   },
   {
     "slug": "rishi-tea",
@@ -1799,7 +1887,11 @@
         "url": "https://www.rishi-tea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us",
+      "ca"
+    ]
   },
   {
     "slug": "river-and-stone-tea",
@@ -1885,7 +1977,10 @@
         "url": "https://senchanaturals.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "steven-smith-teamaker",
@@ -2044,7 +2139,11 @@
         "url": "https://www.tezumi.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us",
+      "intl"
+    ]
   },
   {
     "slug": "the-tao-of-tea",
@@ -2072,7 +2171,10 @@
         "url": "https://taooftea.com/wholesale/"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "the-tea-makers-of-london",
@@ -2092,7 +2194,11 @@
         "url": "https://www.theteamakers.co.uk/en-us/pages/trade"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "eu",
+      "us"
+    ]
   },
   {
     "slug": "the-tea-spot",
@@ -2148,7 +2254,11 @@
         "url": "https://tsukimatcha.com/pages/espace-pro"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "eu",
+      "intl"
+    ]
   },
   {
     "slug": "ujicha-matcha",
@@ -2182,7 +2292,10 @@
         "url": "https://ujichamatcha.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us"
+    ]
   },
   {
     "slug": "ujido",
@@ -2240,7 +2353,11 @@
         "url": "https://und-ny.com/services/wholesale/"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us",
+      "intl"
+    ]
   },
   {
     "slug": "wakokoro-tea",
@@ -2270,7 +2387,10 @@
         "url": "https://wakokoro-tea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "intl"
+    ]
   },
   {
     "slug": "whisk-matcha",
@@ -2353,7 +2473,11 @@
         "url": "https://yokomatcha.com/pages/wholesale-matcha-bulk-matcha"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "us",
+      "intl"
+    ]
   },
   {
     "slug": "yunomi",
@@ -2400,7 +2524,10 @@
         "url": "https://yunomi.life/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-05",
+    "serves": [
+      "intl"
+    ]
   },
   {
     "slug": "zenkyu",

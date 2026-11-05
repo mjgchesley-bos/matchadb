@@ -22,6 +22,16 @@ export const TAG_HINTS: Record<Tag, string> = {
   ingredient: "Serves manufacturers and ingredient buyers",
 };
 
+// Where a supplier says it sells or ships, only when its own wholesale page states it.
+export type Serves = "us" | "ca" | "eu" | "au" | "intl";
+export const SERVES_LABELS: Record<Serves, string> = {
+  us: "United States",
+  ca: "Canada",
+  eu: "UK & Europe",
+  au: "Australia",
+  intl: "Ships internationally",
+};
+
 export const HOW_LABELS: Record<How, string> = {
   form: "Apply or inquire online",
   email: "Inquire by email",
@@ -53,6 +63,7 @@ export type Supplier = {
   brands: string[]; // brands in the MatchaDB database that this supplier sells
   tags: Tag[];
   how: How[];
+  serves?: Serves[];
   summary: string;
   facts: string[];
   note?: string;
@@ -64,6 +75,16 @@ export type Supplier = {
 };
 
 export const SUPPLIERS = data as Supplier[];
+
+// What the database knows about the products behind a supplier (computed at build time from the
+// brands it sells), shown and filterable on the directory.
+export type ProductType = "ceremonial" | "culinary" | "organic";
+export const TYPE_LABELS: Record<ProductType, string> = {
+  ceremonial: "Ceremonial grade",
+  culinary: "Culinary & latte grade",
+  organic: "Organic-certified",
+};
+export type SupplierView = Supplier & { regions: string[]; types: ProductType[] };
 
 export const supplierBySlug = (slug: string): Supplier | undefined => SUPPLIERS.find((s) => s.slug === slug);
 export const suppliersForBrand = (brand: string): Supplier[] => SUPPLIERS.filter((s) => s.brands.includes(brand));

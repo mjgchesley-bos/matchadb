@@ -645,6 +645,27 @@ export async function getMapBreakdown(): Promise<MapBreakdown> {
   return mapBreakdownCache;
 }
 
+// Where a set of brands' products are grown and what grades they come in, from the products in
+// the database. Used to describe and filter wholesale suppliers.
+export type BrandFacets = { regions: string[]; grades: string[]; organic: boolean };
+export async function getBrandFacets(names: string[]): Promise<Record<string, BrandFacets>> {
+  if (!names.length) return {};
+  const db = await getDb();
+  const res = db.exec(
+    `SELECT b.name, p.region, p.grade, p.organic_certified FROM products p JOIN brands b ON p.brand_id = b.id
+     WHERE b.name IN (${names.map(() => "?").join(",")})`,
+    names
+  );
+  const acc: Record<string, { regions: Set<string>; grades: Set<string>; organic: boolean }> = {};
+  for (const [name, region, grade, organic] of (res.length ? res[0].values : []) as [string, string | null, string | null, number | null][]) {
+    const e = (acc[name] ??= { regions: new Set(), grades: new Set(), organic: false });
+    if (region) e.regions.add(region);
+    if (grade) e.grades.add(grade);
+    if (organic === 1) e.organic = true;
+  }
+  return Object.fromEntries(Object.entries(acc).map(([k, v]) => [k, { regions: [...v.regions], grades: [...v.grades], organic: v.organic }]));
+}
+
 export async function getProductById(id: number) {
   const db = await getDb();
   const productRes = db.exec(

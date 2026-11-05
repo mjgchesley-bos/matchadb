@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import { WholesaleDirectory } from "@/components/WholesaleDirectory";
+import { getBrandFacets } from "@/lib/db";
+import { REGION_CONTENT } from "@/lib/region-content";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
-import { SUPPLIERS } from "@/lib/suppliers";
+import { SUPPLIERS, type ProductType, type SupplierView } from "@/lib/suppliers";
 
 const title = "Wholesale & Bulk Matcha Suppliers";
 const description =
@@ -15,7 +17,38 @@ export const metadata: Metadata = {
   openGraph: { title, description, url: `${SITE_URL}/wholesale` },
 };
 
-export default function WholesalePage() {
+// Regions the site already has pages for; a few small neighbors fold into them, anything else is "Other".
+const KNOWN_REGIONS = Object.keys(REGION_CONTENT);
+const FOLD: Record<string, string> = { Kakegawa: "Shizuoka", Aichi: "Nishio", Zhejiang: "China" };
+const regionOf = (r: string): string => {
+  const k = FOLD[r] ?? r;
+  return KNOWN_REGIONS.includes(k) ? k : "Other";
+};
+
+export default async function WholesalePage() {
+  // Where the matcha is grown and which grades exist, from the products we list for each supplier's brands.
+  const facets = await getBrandFacets([...new Set(SUPPLIERS.flatMap((s) => s.brands))]);
+  const suppliers: SupplierView[] = SUPPLIERS.map((s) => {
+    const regions = new Set<string>();
+    const types = new Set<ProductType>();
+    for (const b of s.brands) {
+      const f = facets[b];
+      if (!f) continue;
+      f.regions.forEach((r) => regions.add(regionOf(r)));
+      if (f.grades.includes("Ceremonial")) types.add("ceremonial");
+      if (f.grades.includes("Culinary") || f.grades.includes("Latte grade")) types.add("culinary");
+      if (f.organic) types.add("organic");
+    }
+    if (s.profile) {
+      // No brand in the database: use what the supplier states.
+      if (s.profile.origins.includes("China")) regions.add("China");
+      const text = `${s.profile.products.join(" ")} ${s.profile.organic}`;
+      if (/ceremonial/i.test(text)) types.add("ceremonial");
+      if (/culinary|latte/i.test(text)) types.add("culinary");
+      if (/organic/i.test(text)) types.add("organic");
+    }
+    return { ...s, regions: [...regions], types: [...types] };
+  });
   const brandCount = new Set(SUPPLIERS.flatMap((s) => s.brands)).size;
   const fromBrands = SUPPLIERS.filter((s) => s.brands.length > 0).length;
   const independent = SUPPLIERS.length - fromBrands;
@@ -59,7 +92,7 @@ export default function WholesalePage() {
       </header>
 
       <div className="mt-8">
-        <WholesaleDirectory suppliers={SUPPLIERS} />
+        <WholesaleDirectory suppliers={suppliers} regionOrder={[...KNOWN_REGIONS, "Other"]} />
       </div>
 
       <section className="mt-14 max-w-3xl" aria-labelledby="list-h">
