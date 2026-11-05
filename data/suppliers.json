@@ -176,6 +176,33 @@
     "verified": "2026-11-05"
   },
   {
+    "slug": "chaism",
+    "name": "Chaism",
+    "website": "https://chaism.store",
+    "url": "https://chaism.store/pages/wholesale-contact",
+    "brands": [
+      "Chaism"
+    ],
+    "tags": [
+      "cafe",
+      "retail"
+    ],
+    "how": [
+      "form"
+    ],
+    "summary": "Form for cafés, restaurants and shops that want to carry Chaism.",
+    "facts": [
+      "Says it replies within two business days"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://chaism.store/pages/wholesale-contact"
+      }
+    ],
+    "verified": "2026-11-05"
+  },
+  {
     "slug": "chalait",
     "name": "Chalait",
     "website": "https://www.chalait.com",
@@ -328,6 +355,34 @@
       {
         "label": "Wholesale page",
         "url": "https://encha.com/pages/matcha-wholesale"
+      }
+    ],
+    "verified": "2026-11-05"
+  },
+  {
+    "slug": "funky-matcha",
+    "name": "Funky Matcha",
+    "website": "https://funky-matcha.com",
+    "url": "https://funky-matcha.com/pages/matcha-wholesale",
+    "brands": [
+      "Funky Matcha"
+    ],
+    "tags": [
+      "bulk",
+      "cafe"
+    ],
+    "how": [
+      "form"
+    ],
+    "summary": "Supplies ceremonial-grade matcha to businesses worldwide, as bulk powder or as Nespresso-compatible pods, shipped from Scandinavia.",
+    "facts": [
+      "Bulk powder in 500 g, 1 kg and 5 kg bags",
+      "Also offers matcha pods for business customers, and subscriptions"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://funky-matcha.com/pages/matcha-wholesale"
       }
     ],
     "verified": "2026-11-05"
@@ -691,6 +746,61 @@
       {
         "label": "Wholesale page",
         "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
+      }
+    ],
+    "verified": "2026-11-05"
+  },
+  {
+    "slug": "legion",
+    "name": "Legion",
+    "website": "https://legionathletics.com",
+    "url": "https://legionathletics.com/wholesale/",
+    "brands": [
+      "Legion"
+    ],
+    "tags": [
+      "retail"
+    ],
+    "how": [
+      "form"
+    ],
+    "summary": "Sports-nutrition brand with a wholesale application for retailers, including sellers on online marketplaces.",
+    "facts": [
+      "The application asks for a reseller certificate and up to two store locations",
+      "Says its current review time is 48 hours",
+      "International wholesale accounts are limited to DDP payment terms"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://legionathletics.com/wholesale/"
+      }
+    ],
+    "verified": "2026-11-05"
+  },
+  {
+    "slug": "maeda-en",
+    "name": "Maeda-en",
+    "website": "https://maeda-en.com",
+    "url": "https://maeda-en.com/pages/wholesale-registration-form",
+    "brands": [
+      "Maeda-en"
+    ],
+    "tags": [
+      "cafe"
+    ],
+    "how": [
+      "form",
+      "portal"
+    ],
+    "summary": "Matcha cafés can apply to become wholesale partners and then see a business price catalogue.",
+    "facts": [
+      "Says applications can take up to 7 business days"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://maeda-en.com/pages/wholesale-registration-form"
       }
     ],
     "verified": "2026-11-05"
@@ -1160,6 +1270,36 @@
     "verified": "2026-11-05"
   },
   {
+    "slug": "midori-spring",
+    "name": "Midori Spring",
+    "website": "https://www.midorispring.com",
+    "url": "https://www.midorispring.com/pages/matcha-wholesale-bulk",
+    "brands": [
+      "Midori Spring"
+    ],
+    "tags": [
+      "cafe",
+      "retail"
+    ],
+    "how": [
+      "form"
+    ],
+    "summary": "Currently accepting new wholesale applications, with a separate partners shop for approved businesses.",
+    "facts": [
+      "Says its team replies in 2-3 business days",
+      "Does not accept e-commerce businesses or unlicensed home-based cafés",
+      "Applying does not guarantee approval",
+      "Says wholesale members get free samples and bonuses"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.midorispring.com/pages/matcha-wholesale-bulk"
+      }
+    ],
+    "verified": "2026-11-05"
+  },
+  {
     "slug": "mighty-leaf",
     "name": "Mighty Leaf",
     "website": "https://www.peets.com",
@@ -1395,6 +1535,28 @@
     "verified": "2026-11-05"
   },
   {
+    "slug": "omgtea",
+    "name": "OMGTea",
+    "website": "https://omgteas.co.uk",
+    "url": "https://omgteas.co.uk/pages/wholesale-contact",
+    "brands": [
+      "OMGTea"
+    ],
+    "tags": [],
+    "how": [
+      "form"
+    ],
+    "summary": "Contact form for businesses that want to buy OMGTea matcha.",
+    "facts": [],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://omgteas.co.uk/pages/wholesale-contact"
+      }
+    ],
+    "verified": "2026-11-05"
+  },
+  {
     "slug": "ooika",
     "name": "Ooika",
     "website": "https://ooika.co",
@@ -1441,6 +1603,38 @@
       {
         "label": "Wholesale page",
         "url": "https://us.palaisdesthes.com/en_us/business/"
+      }
+    ],
+    "verified": "2026-11-05"
+  },
+  {
+    "slug": "paragon-tea-room",
+    "name": "Paragon Tea Room",
+    "website": "https://paragontearoom.com",
+    "url": "https://paragontearoom.com/pages/wholesale-partners",
+    "brands": [
+      "Paragon Tea Room"
+    ],
+    "tags": [
+      "cafe",
+      "retail",
+      "bulk"
+    ],
+    "how": [
+      "form",
+      "email"
+    ],
+    "summary": "Ceremonial matcha, hojicha and Japanese tea powders for cafés, restaurants and shops across Canada and the US.",
+    "facts": [
+      "Says to order at least 1 kg of each tea you stock",
+      "Says there is no minimum order when you collect from its Vancouver warehouse",
+      "Ships outside Canada and the US at a rate curated for your location",
+      "Download the application form and email it back"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://paragontearoom.com/pages/wholesale-partners"
       }
     ],
     "verified": "2026-11-05"
@@ -1549,34 +1743,54 @@
     ],
     "verified": "2026-11-05",
     "profile": {
-      "origins": [
-        "Japan",
-        "China"
+      "url": "https://www.purematchapartners.com",
+      "brands": [],
+      "tags": [
+        "bulk",
+        "cafe",
+        "private-label",
+        "ingredient",
+        "retail"
       ],
-      "products": [
-        "Ceremonial grade matcha",
-        "Latte grade matcha",
-        "Culinary grade matcha",
-        "Hojicha powder",
-        "Flavored specials (for example mulberry, ube and oolong)"
+      "how": [
+        "form",
+        "email"
       ],
-      "organic": "Organic and conventional grades",
-      "minimumOrder": "From 10 kg, up to 1,000 kg or more per month",
-      "samples": "Samples chosen for your product are available on request",
-      "documentation": "Certificate of analysis for every batch, plus certificates of origin and quality",
-      "certifications": [
-        "JAS (Japanese Agricultural Standard)",
-        "EU Organic",
-        "USDA Organic",
-        "Organic certified by Skal (NL-BIO-01)",
-        "HACCP and FSSC 22000",
-        "Independent lab testing",
-        "Kosher"
+      "facts": [
+        "Bulk supply from 10 kg up to 1,000 kg or more per month",
+        "Certificate of analysis for every batch",
+        "Organic and conventional grades"
       ],
-      "customers": "Cafés and hospitality, restaurants and foodservice, food and beverage brands, supplement producers, retail and gift stores, co-packers and distributors",
-      "privateLabel": "Focuses on bulk supply and says it can support private-label partners that need large-volume sourcing",
-      "shipping": "Ships worldwide",
-      "pricing": "Wholesale price list available on request"
+      "profile": {
+        "origins": [
+          "Japan",
+          "China"
+        ],
+        "products": [
+          "Ceremonial grade matcha",
+          "Latte grade matcha",
+          "Culinary grade matcha",
+          "Hojicha powder",
+          "Flavored specials (for example mulberry, ube and oolong)"
+        ],
+        "organic": "Organic and conventional grades",
+        "minimumOrder": "From 10 kg, up to 1,000 kg or more per month",
+        "samples": "Samples chosen for your product are available on request",
+        "documentation": "Certificate of analysis for every batch, plus certificates of origin and quality",
+        "certifications": [
+          "JAS (Japanese Agricultural Standard)",
+          "EU Organic",
+          "USDA Organic",
+          "Organic certified by Skal (NL-BIO-01)",
+          "HACCP and FSSC 22000",
+          "Independent lab testing",
+          "Kosher"
+        ],
+        "customers": "Cafés and hospitality, restaurants and foodservice, food and beverage brands, supplement producers, retail and gift stores, co-packers and distributors",
+        "privateLabel": "Focuses on bulk supply and says it can support private-label partners that need large-volume sourcing",
+        "shipping": "Ships worldwide",
+        "pricing": "Wholesale price list available on request"
+      }
     }
   },
   {
