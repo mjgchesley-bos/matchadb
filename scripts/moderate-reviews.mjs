@@ -11,6 +11,10 @@
 //   node scripts/moderate-reviews.mjs approve-comment <id>   publish a comment (id or its first 8 characters)
 //   node scripts/moderate-reviews.mjs approve-comment all    publish every waiting comment
 //   node scripts/moderate-reviews.mjs hide-comment <id>      take a comment down and delete its photos
+//
+// Profiles:
+//   node scripts/moderate-reviews.mjs profile-reports        list reported profiles
+//   node scripts/moderate-reviews.mjs unpublish <username>   make a profile private again and clear its bio
 import dotenv from "dotenv";
 dotenv.config({ path: ".env.local" });
 
@@ -48,7 +52,14 @@ async function resolveCommentId(t) {
   return hits[0].id;
 }
 
-if (cmd === "comments") {
+if (cmd === "profile-reports") {
+  const reports = await api("profile_reports?order=created_at.desc&select=profile_name,reason,created_at&limit=100");
+  console.log(`\n${reports.length} profile report(s)\n`);
+  for (const r of reports) console.log(`  ${r.profile_name}: ${r.reason} (${r.created_at.slice(0, 10)})  https://www.matchadb.com/u/${encodeURIComponent(r.profile_name)}`);
+} else if (cmd === "unpublish" && target) {
+  const rows = await api(`profiles?display_name=ilike.${encodeURIComponent(target)}`, { method: "PATCH", body: JSON.stringify({ is_public: false, bio: "" }) });
+  console.log(rows.length ? `${rows[0].display_name} is now private and the bio is cleared.` : "No profile with that username.");
+} else if (cmd === "comments") {
   const pending = await api("comments?status=eq.pending&order=created_at.asc&select=id,target_type,target_key,body,photos,created_at,user_id");
   const names = Object.fromEntries((await api("profiles?select=id,display_name")).map((p) => [p.id, p.display_name]));
   console.log(`\n${pending.length} comment(s) with photos waiting for approval\n`);
@@ -102,6 +113,6 @@ if (cmd === "comments") {
   await api(`reviews?id=eq.${id}`, { method: "PATCH", body: JSON.stringify({ status }) });
   console.log(`${id.slice(0, 8)} is now ${status}.`);
 } else {
-  console.error("Usage: node scripts/moderate-reviews.mjs [list | approve <id|all> | hide <id> | comments | approve-comment <id|all> | hide-comment <id>]");
+  console.error("Usage: node scripts/moderate-reviews.mjs [list | approve <id|all> | hide <id> | comments | approve-comment <id|all> | hide-comment <id> | profile-reports | unpublish <username>]");
   process.exit(1);
 }

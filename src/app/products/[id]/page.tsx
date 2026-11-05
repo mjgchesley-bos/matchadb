@@ -16,6 +16,7 @@ import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
+import { ListMenu } from "@/components/ListMenu";
 import { ShelfButtons } from "@/components/ShelfButtons";
 import { Comments } from "@/components/Comments";
 import { ProductReviews } from "@/components/ProductReviews";
@@ -405,6 +406,7 @@ export default async function ProductDetailPage({
           <ProductRating productId={product.id} productName={product.product_name} />
           <FavoriteButton productId={product.id} productName={product.product_name} />
           <ShelfButtons productId={product.id} productName={product.product_name} />
+          <ListMenu productId={product.id} productName={product.product_name} />
           <ShippingNote brand={product.brand_name} />
 
           {product.flavorTags.length > 0 && (

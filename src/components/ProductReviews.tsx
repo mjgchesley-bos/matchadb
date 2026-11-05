@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { Stars } from "@/components/Stars";
@@ -10,7 +11,7 @@ import { supabase } from "@/lib/supabase";
 // write one review per product. New and edited reviews wait for approval before they show
 // publicly, so spam never lands on pages that search engines index.
 
-type Review = { id: string; body: string; created_at: string; display_name: string; rating: number | null; tier?: string | null };
+type Review = { id: string; body: string; created_at: string; display_name: string; rating: number | null; tier?: string | null; public_profile?: boolean };
 type Mine = { id: string; body: string; status: "pending" | "approved" | "hidden" };
 
 const MIN = 20;
@@ -50,7 +51,7 @@ export function ProductReviews({ productId, productName }: { productId: number; 
     let live = true;
     supabase()
       .from("approved_reviews")
-      .select("id, body, created_at, display_name, rating, tier")
+      .select("id, body, created_at, display_name, rating, tier, public_profile")
       .eq("product_id", productId)
       .order("created_at", { ascending: false })
       .limit(50)
@@ -195,7 +196,13 @@ export function ProductReviews({ productId, productName }: { productId: number; 
         {reviews?.map((r) => (
           <article key={r.id} className="border-t border-line pt-4">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span className="text-sm font-medium text-ink">{r.display_name}</span>
+              {r.public_profile ? (
+                <Link href={`/u/${encodeURIComponent(r.display_name)}`} className="text-sm font-medium text-ink hover:text-matcha">
+                  {r.display_name}
+                </Link>
+              ) : (
+                <span className="text-sm font-medium text-ink">{r.display_name}</span>
+              )}
               <TierBadge tier={r.tier} />
               {r.rating != null && <Stars value={Number(r.rating)} size={14} />}
               <span className="text-xs text-ink-faint">{dateFmt.format(new Date(r.created_at))}</span>

@@ -31,6 +31,8 @@ type Auth = {
   ready: boolean;
   user: User | null;
   displayName: string | null;
+  isPublic: boolean;
+  setPublic: (v: boolean) => void;
   stats: MemberStats | null;
   refreshStats: () => Promise<void>;
   signIn: (reason?: string) => void;
@@ -42,6 +44,8 @@ const AuthContext = createContext<Auth>({
   ready: false,
   user: null,
   displayName: null,
+  isPublic: false,
+  setPublic: () => {},
   stats: null,
   refreshStats: async () => {},
   signIn: () => {},
@@ -79,7 +83,7 @@ function GoogleMark() {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   const [user, setUser] = useState<User | null>(null);
-  const [profile, setProfile] = useState<{ uid: string; name: string | null } | null>(null);
+  const [profile, setProfile] = useState<{ uid: string; name: string | null; isPublic: boolean } | null>(null);
   const [dialog, setDialog] = useState<{ reason: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
@@ -114,10 +118,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let live = true;
     supabase()
       .from("profiles")
-      .select("display_name")
+      .select("display_name, is_public")
       .eq("id", uid)
       .maybeSingle()
-      .then(({ data }) => live && setProfile({ uid, name: data?.display_name ?? null }));
+      .then(({ data }) => live && setProfile({ uid, name: data?.display_name ?? null, isPublic: !!data?.is_public }));
     return () => {
       live = false;
     };
@@ -144,7 +148,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       live = false;
     };
   }, [uid]);
-  const setDisplayName = useCallback((name: string) => uid && setProfile({ uid, name }), [uid]);
+  const isPublic = profile && profile.uid === uid ? profile.isPublic : false;
+  const setDisplayName = useCallback((name: string) => uid && setProfile((p) => ({ uid, name, isPublic: p && p.uid === uid ? p.isPublic : false })), [uid]);
+  const setPublic = useCallback((v: boolean) => uid && setProfile((p) => ({ uid, name: p && p.uid === uid ? p.name : null, isPublic: v })), [uid]);
 
   const signIn = useCallback((reason?: string) => {
     opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
@@ -206,8 +212,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const value = useMemo<Auth>(
-    () => ({ ready, user, displayName, stats, refreshStats, signIn, signOut, setDisplayName }),
-    [ready, user, displayName, stats, refreshStats, signIn, signOut, setDisplayName]
+    () => ({ ready, user, displayName, isPublic, setPublic, stats, refreshStats, signIn, signOut, setDisplayName }),
+    [ready, user, displayName, isPublic, setPublic, stats, refreshStats, signIn, signOut, setDisplayName]
   );
 
   return (

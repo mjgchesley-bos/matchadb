@@ -2,7 +2,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { RESERVED_NAME, useAuth, type MemberStats } from "@/components/AuthProvider";
+import { RESERVED_NAME, useAuth } from "@/components/AuthProvider";
+import { MyLists } from "@/components/MyLists";
+import { PublicProfileSettings } from "@/components/PublicProfileSettings";
+import { BADGES } from "@/lib/badges";
 import { commentPhotoUrl, COMMENT_BUCKET } from "@/components/Comments";
 import { BrandLogo } from "@/components/product-cards";
 import { SHELF_LABELS, type ShelfStatus } from "@/components/ShelfButtons";
@@ -18,20 +21,6 @@ type Written = { id: string; product_id: number; body: string; status: "pending"
 type Shelved = { product_id: number; status: ShelfStatus };
 type Saved = { study_id: number; note: string };
 type StudyInfo = { id: number; title: string; journal: string; year: number | null };
-
-// Badges are earned from the activity counts the database reports for the member.
-const BADGES: { name: string; hint: string; test: (s: MemberStats) => boolean }[] = [
-  { name: "First rating", hint: "Rate a matcha", test: (s) => s.ratings >= 1 },
-  { name: "Taster", hint: "Rate 10 matchas", test: (s) => s.ratings >= 10 },
-  { name: "Reviewer", hint: "Get a review approved", test: (s) => s.reviews >= 1 },
-  { name: "In the conversation", hint: "Post a comment", test: (s) => s.comments >= 1 },
-  { name: "Photographer", hint: "Share a photo", test: (s) => s.photos >= 1 },
-  { name: "Brand collector", hint: "Save 5 brands", test: (s) => s.brands >= 5 },
-  { name: "Shelf builder", hint: "Put 10 matchas on your shelf", test: (s) => s.shelf >= 10 },
-  { name: "Researcher", hint: "Save 3 studies", test: (s) => s.bookmarks >= 3 },
-  { name: "Regular", hint: "Visit on 5 different days", test: (s) => s.days >= 5 },
-  { name: "Devoted", hint: "Visit on 30 different days", test: (s) => s.days >= 30 },
-];
 
 type MyComment = { id: string; target_type: "product" | "brand"; target_key: string; body: string; photos: string[]; status: Written["status"]; created_at: string };
 
@@ -212,6 +201,8 @@ export function AccountClient() {
         </section>
       )}
 
+      <PublicProfileSettings />
+
       <section aria-labelledby="profile-h">
         <h2 id="profile-h" className={h2}>Profile</h2>
         <p className="mt-2 text-sm text-ink-muted">
@@ -268,6 +259,8 @@ export function AccountClient() {
           </div>
         )}
       </section>
+
+      <MyLists />
 
       <section aria-labelledby="brands-h">
         <h2 id="brands-h" className={h2}>Saved brands</h2>

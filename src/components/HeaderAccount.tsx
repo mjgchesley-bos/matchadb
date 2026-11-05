@@ -7,7 +7,7 @@ import { TierIcon } from "@/components/TierIcon";
 
 // "Sign in" in the header, or the person's initial with a small menu once signed in.
 export function HeaderAccount() {
-  const { ready, user, displayName, stats, signIn, signOut } = useAuth();
+  const { ready, user, displayName, isPublic, stats, signIn, signOut } = useAuth();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
 
@@ -72,6 +72,11 @@ export function HeaderAccount() {
           <Link href="/account" role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
             My matcha
           </Link>
+          {isPublic && displayName && (
+            <Link href={`/u/${encodeURIComponent(displayName)}`} role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
+              My public profile
+            </Link>
+          )}
           <button
             type="button"
             role="menuitem"

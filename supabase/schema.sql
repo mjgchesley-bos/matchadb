@@ -351,3 +351,167 @@ create or replace view public.approved_comments with (security_invoker = false) 
   join public.profiles p on p.id = c.user_id
   where c.status = 'approved';
 grant select on public.approved_comments to anon, authenticated;
+
+-- ====================================================================== public profiles, custom lists, tasting challenge
+alter table public.profiles add column if not exists is_public boolean not null default false;
+alter table public.profiles add column if not exists bio text not null default '';
+alter table public.profiles add column if not exists avatar text;
+alter table public.profiles add column if not exists how_i_drink text;
+alter table public.profiles add column if not exists challenge_goal integer;
+alter table public.profiles drop constraint if exists profiles_bio_check;
+alter table public.profiles add constraint profiles_bio_check check (char_length(bio) <= 140 and bio !~* '(https?://|www\.|\.com|\.net|\.org)');
+alter table public.profiles drop constraint if exists profiles_avatar_check;
+alter table public.profiles add constraint profiles_avatar_check check (avatar is null or avatar in ('cup', 'whisk', 'leaf', 'tin', 'kettle', 'sprout', 'bowl', 'spoon', 'bamboo', 'blossom', 'mountain', 'teapot'));
+alter table public.profiles drop constraint if exists profiles_how_check;
+alter table public.profiles add constraint profiles_how_check check (how_i_drink is null or how_i_drink in ('lattes', 'usucha', 'koicha', 'iced', 'baking', 'everything'));
+alter table public.profiles drop constraint if exists profiles_goal_check;
+alter table public.profiles add constraint profiles_goal_check check (challenge_goal is null or challenge_goal between 1 and 365);
+
+-- Custom lists ("Best for lattes", "Gift ideas"): up to 10 lists of up to 100 matchas each.
+create table if not exists public.custom_shelves (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  name text not null check (char_length(name) between 1 and 40),
+  created_at timestamptz not null default now(),
+  unique (user_id, name)
+);
+create table if not exists public.custom_shelf_items (
+  shelf_id uuid not null references public.custom_shelves (id) on delete cascade,
+  user_id uuid not null references auth.users (id) on delete cascade,
+  product_id integer not null check (product_id between 1 and 100000),
+  added_at timestamptz not null default now(),
+  primary key (shelf_id, product_id)
+);
+alter table public.custom_shelves enable row level security;
+alter table public.custom_shelf_items enable row level security;
+drop policy if exists "lists: read own" on public.custom_shelves;
+create policy "lists: read own" on public.custom_shelves for select to authenticated using (user_id = auth.uid());
+drop policy if exists "lists: add own" on public.custom_shelves;
+create policy "lists: add own" on public.custom_shelves for insert to authenticated with check (user_id = auth.uid());
+drop policy if exists "lists: rename own" on public.custom_shelves;
+create policy "lists: rename own" on public.custom_shelves for update to authenticated using (user_id = auth.uid()) with check (user_id = auth.uid());
+drop policy if exists "lists: delete own" on public.custom_shelves;
+create policy "lists: delete own" on public.custom_shelves for delete to authenticated using (user_id = auth.uid());
+drop policy if exists "list items: read own" on public.custom_shelf_items;
+create policy "list items: read own" on public.custom_shelf_items for select to authenticated using (user_id = auth.uid());
+drop policy if exists "list items: add own" on public.custom_shelf_items;
+create policy "list items: add own" on public.custom_shelf_items for insert to authenticated
+  with check (user_id = auth.uid() and exists (select 1 from public.custom_shelves s where s.id = shelf_id and s.user_id = auth.uid()));
+drop policy if exists "list items: remove own" on public.custom_shelf_items;
+create policy "list items: remove own" on public.custom_shelf_items for delete to authenticated using (user_id = auth.uid());
+
+create or replace function public.limit_lists() returns trigger
+language plpgsql security definer set search_path = public as $$
+begin
+  if (select count(*) from public.custom_shelves where user_id = new.user_id) >= 10 then
+    raise exception 'You can have up to 10 lists.';
+  end if;
+  return new;
+end;
+$$;
+drop trigger if exists custom_shelves_limit on public.custom_shelves;
+create trigger custom_shelves_limit before insert on public.custom_shelves for each row execute function public.limit_lists();
+create or replace function public.limit_list_items() returns trigger
+language plpgsql security definer set search_path = public as $$
+begin
+  if (select count(*) from public.custom_shelf_items where shelf_id = new.shelf_id) >= 100 then
+    raise exception 'A list can hold up to 100 matchas.';
+  end if;
+  return new;
+end;
+$$;
+drop trigger if exists custom_shelf_items_limit on public.custom_shelf_items;
+create trigger custom_shelf_items_limit before insert on public.custom_shelf_items for each row execute function public.limit_list_items();
+
+-- How many members have each product on a shelf (counts only).
+create or replace view public.shelf_counts with (security_invoker = false) as
+  select product_id, status, count(*)::integer as members from public.shelf group by product_id, status;
+grant select on public.shelf_counts to anon, authenticated;
+
+-- One place that computes a member's activity numbers; my_stats() and public_profile() both use it.
+create or replace function public.member_stats_json(u uuid) returns json
+language plpgsql stable security definer set search_path = public as $$
+declare p integer;
+begin
+  p := public.member_points(u);
+  return json_build_object(
+    'points', p,
+    'tier', public.member_tier(p),
+    'next_tier', case when p < 10 then 'Bronze' when p < 40 then 'Silver' when p < 100 then 'Gold' when p < 220 then 'Matcha Master' end,
+    'next_at', case when p < 10 then 10 when p < 40 then 40 when p < 100 then 100 when p < 220 then 220 end,
+    'ratings', (select count(*) from public.ratings where user_id = u),
+    'reviews', (select count(*) from public.reviews where user_id = u and status = 'approved'),
+    'comments', (select count(*) from public.comments where user_id = u and status = 'approved'),
+    'photos', (select coalesce(sum(coalesce(array_length(photos, 1), 0)), 0) from public.comments where user_id = u and status = 'approved'),
+    'saves', (select count(*) from public.favorites where user_id = u),
+    'brands', (select count(*) from public.favorite_brands where user_id = u),
+    'shelf', (select count(*) from public.shelf where user_id = u),
+    'bookmarks', (select count(*) from public.research_bookmarks where user_id = u),
+    'days', (select count(*) from public.member_days where user_id = u)
+  );
+end;
+$$;
+revoke execute on function public.member_stats_json(uuid) from public, anon, authenticated;
+create or replace function public.my_stats() returns json
+language plpgsql stable security definer set search_path = public as $$
+begin
+  if auth.uid() is null then return null; end if;
+  return public.member_stats_json(auth.uid());
+end;
+$$;
+
+-- The only way to read another member's profile: a member who switched "public profile" on. Returns
+-- nothing for anyone else, never exposes ids or email, and includes only what the profile page shows.
+create or replace function public.public_profile(p_name text) returns json
+language plpgsql stable security definer set search_path = public as $$
+declare pr record; u uuid; yr timestamptz := date_trunc('year', now());
+begin
+  select * into pr from public.profiles where lower(display_name) = lower(p_name) and is_public;
+  if not found then return null; end if;
+  u := pr.id;
+  return json_build_object(
+    'name', pr.display_name, 'bio', pr.bio, 'avatar', pr.avatar, 'how', pr.how_i_drink, 'since', pr.created_at, 'goal', pr.challenge_goal,
+    'tried_this_year', (select count(*) from public.shelf where user_id = u and status = 'tried' and updated_at >= yr),
+    'stats', public.member_stats_json(u),
+    'shelf', coalesce((select json_agg(json_build_object('product_id', product_id, 'status', status) order by updated_at desc) from public.shelf where user_id = u), '[]'::json),
+    'ratings', coalesce((select json_agg(json_build_object('product_id', product_id, 'score', score) order by score desc, updated_at desc)
+                         from (select product_id, score, updated_at from public.ratings where user_id = u order by score desc, updated_at desc limit 40) r), '[]'::json),
+    'brands', coalesce((select json_agg(brand order by created_at desc) from public.favorite_brands where user_id = u), '[]'::json),
+    'lists', coalesce((select json_agg(json_build_object('name', s.name, 'items', coalesce((select json_agg(i.product_id order by i.added_at desc) from public.custom_shelf_items i where i.shelf_id = s.id), '[]'::json)) order by s.created_at)
+                       from public.custom_shelves s where s.user_id = u), '[]'::json),
+    'reviews', coalesce((select json_agg(json_build_object('product_id', product_id, 'body', body, 'created_at', created_at) order by created_at desc)
+                         from (select product_id, body, created_at from public.reviews where user_id = u and status = 'approved' order by created_at desc limit 5) rv), '[]'::json),
+    'photos', coalesce((select json_agg(ph) from (select unnest(photos) as ph from (select photos from public.comments where user_id = u and status = 'approved' order by created_at desc limit 12) c) x), '[]'::json)
+  );
+end;
+$$;
+grant execute on function public.public_profile(text) to anon, authenticated;
+
+create table if not exists public.profile_reports (
+  id uuid primary key default gen_random_uuid(),
+  reporter_id uuid not null references auth.users (id) on delete cascade,
+  profile_name text not null check (char_length(profile_name) between 1 and 60),
+  reason text not null check (char_length(reason) between 3 and 500),
+  created_at timestamptz not null default now(),
+  unique (reporter_id, profile_name)
+);
+alter table public.profile_reports enable row level security;
+drop policy if exists "profile reports: file own" on public.profile_reports;
+create policy "profile reports: file own" on public.profile_reports for insert to authenticated with check (reporter_id = auth.uid());
+
+-- Link usernames to public profiles where the member has one.
+create or replace view public.approved_reviews with (security_invoker = false) as
+  select r.id, r.product_id, r.body, r.created_at, p.display_name, rt.score as rating,
+         public.member_tier(public.member_points(r.user_id)) as tier, p.is_public as public_profile
+  from public.reviews r
+  join public.profiles p on p.id = r.user_id
+  left join public.ratings rt on rt.user_id = r.user_id and rt.product_id = r.product_id
+  where r.status = 'approved';
+grant select on public.approved_reviews to anon, authenticated;
+create or replace view public.approved_comments with (security_invoker = false) as
+  select c.id, c.target_type, c.target_key, c.body, c.photos, c.created_at, p.display_name,
+         public.member_tier(public.member_points(c.user_id)) as tier, p.is_public as public_profile
+  from public.comments c
+  join public.profiles p on p.id = c.user_id
+  where c.status = 'approved';
+grant select on public.approved_comments to anon, authenticated;

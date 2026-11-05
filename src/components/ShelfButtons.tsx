@@ -17,6 +17,8 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
   const status = uid && state?.uid === uid ? state.status : null;
   const [busy, setBusy] = useState(false);
   const [failed, setFailed] = useState(false);
+  const [counts, setCounts] = useState<{ status: ShelfStatus; members: number }[]>([]);
+  const [bump, setBump] = useState(0);
 
   useEffect(() => {
     if (!uid) return;
@@ -31,6 +33,18 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
       live = false;
     };
   }, [uid, productId]);
+
+  useEffect(() => {
+    let live = true;
+    supabase()
+      .from("shelf_counts")
+      .select("status, members")
+      .eq("product_id", productId)
+      .then(({ data }) => live && setCounts((data as { status: ShelfStatus; members: number }[] | null) ?? []));
+    return () => {
+      live = false;
+    };
+  }, [productId, bump]);
 
   const pick = async (next: ShelfStatus) => {
     if (!user) {
@@ -50,6 +64,7 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
       setState({ uid: user.id, status: clearing ? null : next });
       if (!clearing) window.gtag?.("event", "shelf_set", { product_id: productId, status: next });
       void refreshStats();
+      setBump((b) => b + 1);
     }
     setBusy(false);
   };
@@ -72,6 +87,16 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
           </button>
         ))}
       </div>
+      {counts.some((c) => c.members > 0) && (
+        <p className="mt-1.5 text-xs text-ink-faint tabular-nums">
+          {ORDER.map((s) => {
+            const n = counts.find((c) => c.status === s)?.members ?? 0;
+            return n > 0 ? `${n} ${SHELF_LABELS[s].toLowerCase()}` : null;
+          })
+            .filter(Boolean)
+            .join(" · ")}
+        </p>
+      )}
       {status === "tried" && <p className="mt-1.5 text-xs text-ink-faint">How was it? Rate it with the stars above.</p>}
       {failed && <p className="mt-1.5 text-xs text-red-700">Couldn&apos;t update your shelf. Try again.</p>}
     </div>
