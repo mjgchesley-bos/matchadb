@@ -573,6 +573,26 @@
   },
   "ao-tea": {
     "file": "ao-tea.png",
-    "ratio": 4.54
+    "ratio": 4.536
+  },
+  "pure-matcha-partners": {
+    "file": "pure-matcha-partners.png",
+    "ratio": 2.4
+  },
+  "ujicha-matcha": {
+    "file": "ujicha-matcha.png",
+    "ratio": 2
+  },
+  "osada-tea": {
+    "file": "osada-tea.png",
+    "ratio": 3.38
+  },
+  "und": {
+    "file": "und.svg",
+    "ratio": 1.524
+  },
+  "yunomi": {
+    "file": "yunomi-matcha.png",
+    "ratio": 0.963
   }
 }

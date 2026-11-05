@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
+import { BrandLogo } from "@/components/product-cards";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 import { profiled, supplierBySlug, verifiedOn } from "@/lib/suppliers";
 
@@ -75,7 +76,10 @@ export default async function SupplierPage({ params }: { params: Promise<{ slug:
 
       <header className="mt-6 max-w-3xl">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Wholesale supplier</p>
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{s.name}</h1>
+        <div className="flex items-center gap-4">
+          <BrandLogo brandName={s.name} size={64} maxWidth={200} allowTallerThanSize />
+          <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{s.name}</h1>
+        </div>
         <p className="mt-4 text-lg text-ink-muted leading-relaxed">{s.summary}</p>
         <p className="mt-5 flex flex-wrap items-center gap-3">
           <a

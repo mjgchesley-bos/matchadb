@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { BrandLogo } from "@/components/product-cards";
 import {
   HOW_LABELS,
   SERVES_LABELS,
@@ -155,7 +156,10 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
       <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
         {shown.map((s) => (
           <li key={s.slug} id={s.slug} className="scroll-mt-24 flex flex-col rounded-sm border border-line bg-paper-raised p-5">
-            <h3 className="font-display text-xl font-semibold text-ink">{s.name}</h3>
+            <div className="flex items-center gap-3">
+              <BrandLogo brandName={s.name} size={44} maxWidth={132} />
+              <h3 className="font-display text-xl font-semibold text-ink">{s.name}</h3>
+            </div>
             {s.tags.length > 0 && (
               <p className="mt-2 flex flex-wrap gap-1.5">
                 {s.tags.map((t) => (
