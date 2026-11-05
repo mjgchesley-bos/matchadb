@@ -211,6 +211,17 @@ export function FilterForm({
         <label className="flex items-center gap-2.5 text-ink-muted">
           <input
             type="checkbox"
+            name="wholesaleOnly"
+            value="1"
+            defaultChecked={filters.wholesaleOnly}
+            className="accent-matcha"
+          />
+          Brand offers wholesale
+        </label>
+
+        <label className="flex items-center gap-2.5 text-ink-muted">
+          <input
+            type="checkbox"
             name="hasContradictionsOnly"
             value="1"
             defaultChecked={filters.hasContradictionsOnly}

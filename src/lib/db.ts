@@ -7,6 +7,7 @@ import { PLACES } from "./places";
 import { brandsNotShippingTo, type ShipRegion } from "./shipping";
 import { BRAND_RECOGNITION_SCORES, DEFAULT_RECOGNITION_SCORE, getBrandRecognitionScore } from "./brand-recognition";
 import type { BrandMatchaInfo } from "./store-types";
+import { SUPPLIERS } from "./suppliers";
 
 let dbPromise: Promise<Database> | null = null;
 
@@ -101,6 +102,8 @@ export type BrowseFilters = {
   uses?: string[];
   organicOnly?: boolean;
   hasContradictionsOnly?: boolean;
+  // Only brands that run a wholesale or trade program (see data/suppliers.json).
+  wholesaleOnly?: boolean;
   minPrice?: number;
   maxPrice?: number;
   // Hide products from brands that are verified not to ship to this region
@@ -191,6 +194,11 @@ function buildWhereClause(filters: BrowseFilters): { where: string[]; params: (s
   }
   if (filters.hasContradictionsOnly) {
     where.push("p.has_contradictions = 1");
+  }
+  if (filters.wholesaleOnly) {
+    const names = [...new Set(SUPPLIERS.flatMap((s) => s.brands))];
+    where.push(`b.name IN (${names.map(() => "?").join(",")})`);
+    params.push(...names);
   }
   if (filters.minPrice != null) {
     where.push("p.price_usd >= ?");

@@ -39,6 +39,7 @@ export default async function BrowsePage({
     uses: toArr(sp.use),
     organicOnly: toStr(sp.organicOnly) === "1",
     hasContradictionsOnly: toStr(sp.hasContradictionsOnly) === "1",
+    wholesaleOnly: toStr(sp.wholesaleOnly) === "1",
     minPrice: toNum(sp.minPrice),
     maxPrice: toNum(sp.maxPrice),
     shipsTo: resolveShipsTo(toStr(sp.ships)),
