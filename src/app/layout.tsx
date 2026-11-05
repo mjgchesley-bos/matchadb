@@ -90,14 +90,9 @@ export default function RootLayout({
         <GoogleAnalyticsPageView />
         <AuthProvider>
         <header className="sticky top-0 z-30 bg-matcha">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center gap-x-4 gap-y-3">
-            <Link href="/" className="flex items-baseline gap-1.5 group">
-              <span className="font-display text-[1.4rem] font-semibold tracking-tight text-paper">
-                Matcha
-              </span>
-              <span className="font-display text-[1.4rem] font-semibold tracking-tight text-paper">
-                DB
-              </span>
+          <div className="w-full px-4 sm:px-6 py-4 flex flex-wrap items-center gap-x-4 lg:gap-x-8 gap-y-3">
+            <Link href="/" className="flex items-baseline group">
+              <span className="font-display text-[1.4rem] font-semibold tracking-tight text-paper">MatchaDB</span>
               <span className="h-1.5 w-1.5 rounded-full bg-paper ml-0.5 mb-0.5 transition-transform group-hover:scale-125" />
             </Link>
             {/* Sign in and the menu sit together in the far top-right corner at every screen size. */}
@@ -105,7 +100,7 @@ export default function RootLayout({
               <HeaderAccount />
               <HeaderMenu />
             </div>
-            <nav className="order-3 flex w-full flex-wrap items-center gap-2 sm:gap-4 text-[0.9rem] lg:order-2 lg:ml-auto lg:mr-44 lg:w-auto lg:justify-end">
+            <nav className="order-3 flex w-full flex-wrap items-center gap-2 sm:gap-4 text-[0.9rem] lg:order-2 lg:w-auto lg:justify-start">
               <Link
                 href="/map"
                 className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
