@@ -555,3 +555,32 @@ create or replace view public.popular_products with (security_invoker = false) a
     union all select product_id, 3 from public.reviews where status = 'approved'
   ) t group by product_id order by score desc limit 12;
 grant select on public.popular_products to anon, authenticated;
+
+-- ---------------------------------------------------------------- cafes (matcha cafe finder)
+-- Cafes themselves live in data/cafes.json (ids are Overture place ids). Members rate them (here) and
+-- comment with photos (comments table, target_type 'cafe', target_key = cafe id).
+alter table public.comments drop constraint if exists comments_target_type_check;
+alter table public.comments add constraint comments_target_type_check check (target_type in ('product', 'brand', 'cafe'));
+
+create table if not exists public.cafe_ratings (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  cafe_id text not null check (char_length(cafe_id) between 8 and 60),
+  score numeric(2, 1) not null check (score >= 0.5 and score <= 5 and mod(score * 2, 1) = 0),
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now(),
+  primary key (user_id, cafe_id)
+);
+alter table public.cafe_ratings enable row level security;
+drop policy if exists "cafe_ratings: read own" on public.cafe_ratings;
+create policy "cafe_ratings: read own" on public.cafe_ratings for select to authenticated using (user_id = auth.uid());
+drop policy if exists "cafe_ratings: add own" on public.cafe_ratings;
+create policy "cafe_ratings: add own" on public.cafe_ratings for insert to authenticated with check (user_id = auth.uid());
+drop policy if exists "cafe_ratings: change own" on public.cafe_ratings;
+create policy "cafe_ratings: change own" on public.cafe_ratings for update to authenticated
+  using (user_id = auth.uid()) with check (user_id = auth.uid());
+drop policy if exists "cafe_ratings: remove own" on public.cafe_ratings;
+create policy "cafe_ratings: remove own" on public.cafe_ratings for delete to authenticated using (user_id = auth.uid());
+create or replace view public.cafe_rating_stats with (security_invoker = false) as
+  select cafe_id, count(*)::integer as rating_count, round(avg(score), 2)::float8 as average
+  from public.cafe_ratings group by cafe_id;
+grant select on public.cafe_rating_stats to anon, authenticated;

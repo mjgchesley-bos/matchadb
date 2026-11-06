@@ -11,6 +11,7 @@ import { BrandLogo } from "@/components/product-cards";
 import { SHELF_LABELS, type ShelfStatus } from "@/components/ShelfButtons";
 import { TierIcon } from "@/components/TierIcon";
 import { Stars } from "@/components/Stars";
+import { cafeSlug, type CafeSlim } from "@/lib/cafe-types";
 import { supabase } from "@/lib/supabase";
 import { CONTACT_EMAIL } from "@/lib/site";
 
@@ -22,7 +23,7 @@ type Shelved = { product_id: number; status: ShelfStatus };
 type Saved = { study_id: number; note: string };
 type StudyInfo = { id: number; title: string; journal: string; year: number | null };
 
-type MyComment = { id: string; target_type: "product" | "brand"; target_key: string; body: string; photos: string[]; status: Written["status"]; created_at: string };
+type MyComment = { id: string; target_type: "product" | "brand" | "cafe"; target_key: string; body: string; photos: string[]; status: Written["status"]; created_at: string };
 
 const STATUS: Record<Written["status"], string> = { pending: "Awaiting approval", approved: "Published", hidden: "Removed by a moderator" };
 
@@ -46,6 +47,7 @@ export function AccountClient() {
   const [saved, setSaved] = useState<Saved[] | null>(null);
   const [studies, setStudies] = useState<Record<number, StudyInfo>>({});
   const [comments, setComments] = useState<MyComment[] | null>(null);
+  const [cafeNames, setCafeNames] = useState<Record<string, { name: string; slug: string }>>({});
   const [draft, setDraft] = useState<string | null>(null);
   const [nameMsg, setNameMsg] = useState<string | null>(null);
 
@@ -75,6 +77,10 @@ export function AccountClient() {
       setBrands((fb.data ?? []).map((x) => x.brand as string));
       const mine = (cm.data ?? []) as MyComment[];
       setComments(mine);
+      if (mine.some((c) => c.target_type === "cafe")) {
+        const rows = (await fetch("/data/cafes-slim.json").then((res) => res.json())) as CafeSlim[];
+        if (live) setCafeNames(Object.fromEntries(rows.map((r) => [r[0], { name: r[1], slug: cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4] }) }])));
+      }
       const commentProducts = mine.filter((c) => c.target_type === "product").map((c) => Number(c.target_key)).filter((n) => Number.isInteger(n));
       const onShelf = (sh.data ?? []) as Shelved[];
       setShelved(onShelf);
@@ -391,7 +397,7 @@ export function AccountClient() {
         {comments === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : comments.length === 0 ? (
-          <p className="mt-2 text-sm text-ink-muted">You haven&apos;t commented yet. Comments and photos can be added on any product or brand page.</p>
+          <p className="mt-2 text-sm text-ink-muted">You haven&apos;t commented yet. Comments and photos can be added on any product, brand or café page.</p>
         ) : (
           <ul className="mt-3 flex flex-col gap-4">
             {comments.map((c) => (
@@ -399,6 +405,10 @@ export function AccountClient() {
                 <div className="flex items-center justify-between gap-3">
                   {c.target_type === "product" ? (
                     <ProductLink id={Number(c.target_key)} item={items[Number(c.target_key)]} />
+                  ) : c.target_type === "cafe" ? (
+                    <Link href={cafeNames[c.target_key] ? `/cafes/${cafeNames[c.target_key].slug}` : "/cafes"} className="font-medium text-ink hover:text-matcha">
+                      {cafeNames[c.target_key]?.name ?? "A café"}
+                    </Link>
                   ) : (
                     <Link href={`/brands/${encodeURIComponent(c.target_key)}`} className="font-medium text-ink hover:text-matcha">
                       {c.target_key}

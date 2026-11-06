@@ -122,6 +122,13 @@ export default function RootLayout({
                 <span className="lg:hidden">Stores</span>
                 <span className="hidden lg:inline">Find in stores</span>
               </Link>
+              <Link
+                href="/cafes"
+                className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span className="sm:hidden">Cafés</span>
+                <span className="hidden sm:inline">Matcha cafés</span>
+              </Link>
             </nav>
           </div>
         </header>
@@ -131,6 +138,7 @@ export default function RootLayout({
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <span>MatchaDB &mdash; sourcing, pricing, and transparency data pulled directly from brand product pages.</span>
               <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+                <Link href="/cafes" className="hover:text-ink-muted transition-colors">Cafés</Link>
                 <Link href="/stores" className="hover:text-ink-muted transition-colors">Stores</Link>
                 <Link href="/guides" className="hover:text-ink-muted transition-colors">Guides</Link>
                 <Link href="/wholesale" className="hover:text-ink-muted transition-colors">Wholesale</Link>

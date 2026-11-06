@@ -51,7 +51,19 @@ function Photos({ paths, who }: { paths: string[]; who: string }) {
   );
 }
 
-export function Comments({ targetType, targetKey, subject }: { targetType: "product" | "brand"; targetKey: string; subject: string }) {
+export function Comments({
+  targetType,
+  targetKey,
+  subject,
+  heading = "Comments & photos",
+  placeholder = "Tips, how you prepare it, where you bought it, how it compares…",
+}: {
+  targetType: "product" | "brand" | "cafe";
+  targetKey: string;
+  subject: string;
+  heading?: string;
+  placeholder?: string;
+}) {
   const { user, signIn } = useAuth();
   const uid = user?.id ?? null;
   const [pub, setPub] = useState<Pub[] | null>(null);
@@ -165,7 +177,7 @@ export function Comments({ targetType, targetKey, subject }: { targetType: "prod
   return (
     <section className="mt-12" aria-labelledby={`comments-${targetType}`}>
       <h2 id={`comments-${targetType}`} className="font-display text-xl font-semibold text-ink">
-        Comments &amp; photos
+        {heading}
       </h2>
 
       {!user ? (
@@ -185,7 +197,7 @@ export function Comments({ targetType, targetKey, subject }: { targetType: "prod
             value={text}
             onChange={(e) => setText(e.target.value.slice(0, MAX_CHARS))}
             rows={3}
-            placeholder="Tips, how you prepare it, where you bought it, how it compares…"
+            placeholder={placeholder}
             className="mt-2 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
           />
           {files.length > 0 && (

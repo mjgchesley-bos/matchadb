@@ -15,8 +15,13 @@ const MIN_TO_SHOW = 5;
 
 const fmt = (n: number) => (Number.isInteger(n) ? n.toFixed(1) : String(n));
 
-export function ProductRating({ productId, productName }: { productId: number; productName: string }) {
+// Rates a product (productId) or, with cafeId, a café.
+export function ProductRating({ productId, cafeId, productName }: { productId?: number; cafeId?: string; productName: string }) {
   const { user, signIn } = useAuth();
+  const table = cafeId ? "cafe_ratings" : "ratings";
+  const view = cafeId ? "cafe_rating_stats" : "rating_stats";
+  const col = cafeId ? "cafe_id" : "product_id";
+  const key: string | number = cafeId ?? productId ?? 0;
   const [stats, setStats] = useState<Stats | null | "error">(null);
   const [mineState, setMineState] = useState<{ uid: string; score: number | null } | null>(null);
   const mine = user && mineState?.uid === user.id ? mineState.score : null;
@@ -28,17 +33,17 @@ export function ProductRating({ productId, productName }: { productId: number; p
   const pad = useRef<HTMLDivElement | null>(null);
 
   const loadStats = useCallback(async () => {
-    const { data, error } = await supabase().from("rating_stats").select("rating_count, average").eq("product_id", productId).maybeSingle();
+    const { data, error } = await supabase().from(view).select("rating_count, average").eq(col, key).maybeSingle();
     if (error) return setStats("error");
     setStats({ count: data?.rating_count ?? 0, average: data?.average ?? null });
-  }, [productId]);
+  }, [view, col, key]);
 
   useEffect(() => {
     let live = true;
     supabase()
-      .from("rating_stats")
+      .from(view)
       .select("rating_count, average")
-      .eq("product_id", productId)
+      .eq(col, key)
       .maybeSingle()
       .then(({ data, error }) => {
         if (!live) return;
@@ -47,22 +52,22 @@ export function ProductRating({ productId, productName }: { productId: number; p
     return () => {
       live = false;
     };
-  }, [productId]);
+  }, [view, col, key]);
 
   const uid = user?.id ?? null;
   useEffect(() => {
     if (!uid) return;
     let live = true;
     supabase()
-      .from("ratings")
+      .from(table)
       .select("score")
-      .eq("product_id", productId)
+      .eq(col, key)
       .maybeSingle()
       .then(({ data }) => live && setMineState({ uid, score: data ? Number(data.score) : null }));
     return () => {
       live = false;
     };
-  }, [uid, productId]);
+  }, [uid, table, col, key]);
 
   const submit = useCallback(
     async (rating: number) => {
@@ -73,26 +78,26 @@ export function ProductRating({ productId, productName }: { productId: number; p
       setSaving(true);
       setMessage(null);
       const { error } = await supabase()
-        .from("ratings")
-        .upsert({ user_id: user.id, product_id: productId, score: rating, updated_at: new Date().toISOString() }, { onConflict: "user_id,product_id" });
+        .from(table)
+        .upsert({ user_id: user.id, [col]: key, score: rating, updated_at: new Date().toISOString() }, { onConflict: `user_id,${col}` });
       if (error) {
         setMessage("Couldn't save your rating. Please try again.");
       } else {
         setMineState({ uid: user.id, score: rating });
         setDraft(null);
-        window.gtag?.("event", "rating_submit", { product_id: productId, rating });
+        window.gtag?.("event", "rating_submit", { [col]: key, rating });
         setMessage("Thanks, your rating is saved.");
         void loadStats();
       }
       setSaving(false);
     },
-    [user, signIn, productId, productName, loadStats]
+    [user, signIn, table, col, key, productName, loadStats]
   );
 
   const clear = async () => {
     if (!user) return;
     setSaving(true);
-    const { error } = await supabase().from("ratings").delete().eq("user_id", user.id).eq("product_id", productId);
+    const { error } = await supabase().from(table).delete().eq("user_id", user.id).eq(col, key);
     if (!error) {
       setMine(null);
       setMessage("Your rating was removed.");

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 // The three-dots menu in the site header (like the one in Chrome): secondary
 // destinations that don't need a permanent button in the bar.
 const ITEMS: { href: string; label: string; note: string }[] = [
+  { href: "/cafes", label: "Matcha cafés", note: "Cafés near you with matcha on the menu" },
   { href: "/stores", label: "Find in stores", note: "Where to buy these brands in person" },
   { href: "/wholesale", label: "Wholesale suppliers", note: "Bulk matcha for cafés, brands and private label" },
   { href: "/research", label: "Research library", note: "Every scientific study on matcha" },
