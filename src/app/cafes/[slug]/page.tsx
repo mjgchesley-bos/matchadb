@@ -81,7 +81,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           )}
           {c.phone && (
             <a href={`tel:${c.phone}`} className="self-center text-matcha hover:text-forest underline">
-              {c.phone}
+              {c.phone.replace(/^\+?1?(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3")}
             </a>
           )}
         </p>
@@ -99,7 +99,12 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <ul className="mt-4 flex flex-col gap-3">
           {c.ev.map((e) => (
             <li key={e.u} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
-              {e.s.map((q) => (
+              {e.s.map((q) =>
+                e.st === 1 ? (
+                  <p key={q} className="text-sm text-ink leading-relaxed [&:not(:first-of-type)]:mt-2">
+                    Menu item: <strong>{q}</strong>
+                  </p>
+                ) : (
                 <p key={q} className="text-sm text-ink leading-relaxed [&:not(:first-of-type)]:mt-2">
                   &ldquo;&hellip;
                   {q
@@ -108,7 +113,8 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
                     .map((part, i) => (/^matchas?$/i.test(part) ? <strong key={i}>{part}</strong> : part))}
                   &hellip;&rdquo;
                 </p>
-              ))}
+                )
+              )}
               <p className="mt-1.5 text-xs text-ink-faint">
                 From the café&apos;s {PAGE_KIND[e.k]},{" "}
                 <a href={e.u} target="_blank" rel="noopener noreferrer" className={link}>

@@ -25,16 +25,26 @@ for line in open(CRAWL, encoding="utf8"):
     res[r["host"]] = r
 
 ITEM = re.compile(r'"(?:name|title|label|item_name)"\s*:\s*"[^"]*\bmatcha', re.I)
+ITEM_NAME = re.compile(r'"(?:name|title|label|item_name)"\s*:\s*"([^"]*\bmatchas?\b[^"]*)"', re.I)
+import html
 
 def evidence(r):
     """Best evidence hits first. strength: 3 menu page text, 2 other page text, 1 menu item in embedded data."""
     out = []
     for h in r.get("hits", []):
-        sn = [s for s in h.get("snippets", []) if re.search(r'\bmatchas?\b', s, re.I)]
+        sn = [html.unescape(s).encode("utf-8", "ignore").decode("utf-8") for s in h.get("snippets", []) if re.search(r'\bmatchas?\b', s, re.I)]
         if not sn: continue
         if h["visible"] and h["kind"] == "menu": st = 3
         elif h["visible"]: st = 2
-        elif any(ITEM.search(s) for s in sn): st = 1
+        elif any(ITEM.search(s) for s in sn):
+            st = 1
+            # embedded menu data: keep just the item name, not the JSON around it
+            names = []
+            for s in sn:
+                m = ITEM_NAME.search(s)
+                if m: names.append(m.group(1).replace("\\u0026", "&").replace("\\/", "/"))
+            if not names: continue
+            sn = names
         else: continue
         out.append({"u": h["url"], "k": h["kind"], "st": st, "n": h["count"], "s": sn[:2]})
     out.sort(key=lambda e: (-e["st"], -e["n"]))
