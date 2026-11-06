@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
 
@@ -80,6 +80,17 @@ const endSignupFlow = () => {
   } catch {}
 };
 
+// Google refuses to sign people in from inside another app's built-in browser (Instagram, Facebook,
+// TikTok and similar, which is also how many iPhone links open), and the page can end up blank.
+// Spot it so we can tell the person to open the site in Safari or Chrome instead.
+const inAppBrowser = (): boolean => {
+  const ua = navigator.userAgent;
+  if (/FBAN|FBAV|FB_IAB|Instagram|TikTok|musical_ly|BytedanceWebview|Snapchat|Line\/|LinkedInApp|Pinterest|MicroMessenger|Twitter/i.test(ua)) return true;
+  // An iPhone or iPad browser that is not Safari/Chrome/Firefox/Edge is an embedded web view.
+  return /iPhone|iPad|iPod/.test(ua) && !/Safari\//.test(ua);
+};
+const noopSubscribe = () => () => {};
+
 function GoogleMark() {
   return (
     <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
@@ -99,6 +110,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const opener = useRef<HTMLElement | null>(null);
+  const embedded = useSyncExternalStore(noopSubscribe, inAppBrowser, () => false);
   const [skippedUid, setSkippedUid] = useState<string | null>(null);
   const [nameDraft, setNameDraft] = useState("");
   const [nameMsg, setNameMsg] = useState<string | null>(null);
@@ -253,6 +265,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               Sign in to MatchaDB
             </h2>
             <p className="mt-2 text-sm text-ink-muted">{dialog.reason}</p>
+            {embedded && (
+              <p className="mt-3 rounded-sm border border-line-strong bg-matcha-soft px-3 py-2 text-sm text-ink">
+                You&apos;re in another app&apos;s built-in browser, and Google won&apos;t sign you in from here. Open
+                www.matchadb.com in Safari or Chrome (tap the share or menu button, then &quot;Open in Safari&quot;) and
+                sign in there.
+              </p>
+            )}
             <button
               type="button"
               onClick={google}
