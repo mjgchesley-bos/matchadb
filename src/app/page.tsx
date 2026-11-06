@@ -7,6 +7,7 @@ import {
   getFilterOptions,
   getTieredPicks,
   getPopularProducts,
+  getProductsByIds,
   POPULAR_BRANDS,
   type BrowseFilters,
 } from "@/lib/db";
@@ -14,6 +15,8 @@ import { toArr, toStr } from "@/lib/searchParams";
 import { resolveShipsTo } from "@/lib/shipping";
 import { ProductCard, TieredPickCard, BrandLogo } from "@/components/product-cards";
 import { MatchTool } from "@/components/MatchTool";
+import { PopularRail } from "@/components/PopularRail";
+import { getCommunityPopularIds } from "@/lib/popular";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getLibraryFacets } from "@/lib/studies";
@@ -22,6 +25,8 @@ import { GUIDES } from "@/lib/guides";
 // Abbreviated relative to /browse's full result set + pagination -- the home
 // page shows a sample plus a link to the full database rather than paging.
 const HOME_PAGE_SIZE = 12;
+// How many products the "Popular right now" column shows.
+const RAIL_SIZE = 4;
 
 export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
@@ -56,13 +61,26 @@ export default async function Home({
   const noFiltersSelected =
     filters.grades!.length === 0 && filters.flavors!.length === 0 && filters.uses!.length === 0;
 
-  const [{ products: defaultProducts, total }, filterOptions, tieredPicks, popularProducts] = await Promise.all([
+  const [{ products: defaultProducts, total }, filterOptions, tieredPicks, popularPool, communityIds] = await Promise.all([
     getProducts(filters),
     getFilterOptions(),
     getTieredPicks(filters),
-    noFiltersSelected ? getPopularProducts(HOME_PAGE_SIZE, filters.shipsTo) : Promise.resolve(null),
+    // A few extra beyond the grid, to top up the "Popular right now" column.
+    noFiltersSelected ? getPopularProducts(HOME_PAGE_SIZE + RAIL_SIZE, filters.shipsTo) : Promise.resolve(null),
+    noFiltersSelected ? getCommunityPopularIds() : Promise.resolve([] as number[]),
   ]);
-  const products = popularProducts ?? defaultProducts;
+  const products = popularPool ? popularPool.slice(0, HOME_PAGE_SIZE) : defaultProducts;
+
+  // "Popular right now": member favorites first, then well-known staples to fill the column. Only on
+  // the unfiltered home view; once someone filters, the results get the full width.
+  let rail: { products: typeof products; fromMembers: number } | null = null;
+  if (popularPool) {
+    const community = (await getProductsByIds(communityIds.slice(0, RAIL_SIZE * 2), filters.shipsTo)).slice(0, RAIL_SIZE);
+    const seen = new Set(community.map((p) => p.id));
+    const fill = popularPool.slice(HOME_PAGE_SIZE).filter((p) => !seen.has(p.id));
+    const railProducts = [...community, ...fill].slice(0, RAIL_SIZE);
+    if (railProducts.length > 0) rail = { products: railProducts, fromMembers: community.length };
+  }
 
   const seeAllParams = new URLSearchParams();
   for (const [k, v] of Object.entries(sp)) {
@@ -177,7 +195,7 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-6 pt-12 pb-16">
+      <section className={`${rail ? "max-w-[88rem]" : "max-w-7xl"} mx-auto px-6 pt-12 pb-16`}>
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
           <aside className="lg:w-72 lg:shrink-0 lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto">
             <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-6">Matcha, matched</p>
@@ -185,6 +203,11 @@ export default async function Home({
           </aside>
 
           <div className="min-w-0 flex-1">
+            {rail && (
+              <div className="mb-8 xl:hidden">
+                <PopularRail products={rail.products} fromMembers={rail.fromMembers} layout="strip" />
+              </div>
+            )}
             {tieredPicks && !noFiltersSelected && (
               <div className="mb-10">
                 <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-4">
@@ -204,7 +227,7 @@ export default async function Home({
             </p>
 
             {products.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+              <div className={`grid grid-cols-1 sm:grid-cols-2 ${rail ? "" : "xl:grid-cols-3"} gap-4`}>
                 {products.map((p) => (
                   <ProductCard key={p.id} product={p} />
                 ))}
@@ -225,6 +248,12 @@ export default async function Home({
               </div>
             )}
           </div>
+
+          {rail && (
+            <aside className="hidden xl:block xl:w-64 xl:shrink-0 xl:sticky xl:top-24">
+              <PopularRail products={rail.products} fromMembers={rail.fromMembers} layout="column" />
+            </aside>
+          )}
         </div>
       </section>
 

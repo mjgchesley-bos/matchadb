@@ -355,6 +355,28 @@ export async function getPopularProducts(limit: number, shipsTo?: ShipRegion): P
   return picks;
 }
 
+// Products by id, in the order given (used for the home page's "Popular right now" column).
+// Skips products that are unverifiable or that the shopper's region can't be shipped to.
+export async function getProductsByIds(ids: number[], shipsTo?: ShipRegion): Promise<ProductRow[]> {
+  if (!ids.length) return [];
+  const db = await getDb();
+  const shipping = notShippedClause(shipsTo);
+  const res = db.exec(
+    `SELECT p.id, p.brand_id, b.name as brand_name, p.product_name, p.price_usd, p.price_per_gram,
+            p.price_size_grams, p.price_native, p.price_currency, p.price_needs_review,
+            p.price_review_reason, p.fx_converted, p.fx_rate_date,
+            p.grade, p.cultivar, p.region, p.organic_certified, p.source_url,
+            p.has_contradictions, p.not_found, p.page_notes, p.price_link_only,
+            p.tasting_notes, p.flavor_tags, p.use_tags
+     FROM products p
+     JOIN brands b ON p.brand_id = b.id
+     WHERE p.not_found = 0 AND p.id IN (${ids.map(() => "?").join(",")})${shipping ? ` AND ${shipping.sql}` : ""}`,
+    [...ids, ...(shipping ? shipping.params : [])]
+  );
+  const byId = new Map(rowsToObjects<ProductRow>(res).map((r) => [r.id, r]));
+  return ids.map((id) => byId.get(id)).filter((r): r is ProductRow => !!r);
+}
+
 // One representative product per price tier (cheap/mid/premium) under the
 // current filters -- only returned when all three tiers actually have a
 // match, per the "present as a match when all 3 are applicable" brief.

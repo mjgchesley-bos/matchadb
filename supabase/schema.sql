@@ -544,3 +544,14 @@ create policy "avatars: upload own" on storage.objects for insert to authenticat
 drop policy if exists "avatars: remove own" on storage.objects;
 create policy "avatars: remove own" on storage.objects for delete to authenticated
   using (bucket_id = 'avatars' and (storage.foldername(name))[1] = auth.uid()::text);
+
+-- Home page "Popular right now": products ranked by member activity (saves 3, reviews 3, shelf adds 2,
+-- ratings 2). Only product ids and a score are exposed, never who did what.
+create or replace view public.popular_products with (security_invoker = false) as
+  select product_id, sum(w)::integer as score from (
+    select product_id, 3 as w from public.favorites
+    union all select product_id, 2 from public.shelf
+    union all select product_id, 2 from public.ratings
+    union all select product_id, 3 from public.reviews where status = 'approved'
+  ) t group by product_id order by score desc limit 12;
+grant select on public.popular_products to anon, authenticated;
