@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Comments } from "@/components/Comments";
+import { FavoriteCafeButton } from "@/components/FavoriteCafeButton";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { getCafeBySlug, nearbyCafes } from "@/lib/cafes";
@@ -87,6 +88,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         </p>
       </header>
 
+      <FavoriteCafeButton cafeId={c.id} name={c.name} />
       <ProductRating cafeId={c.id} productName={c.name} />
 
       <section className="mt-10" aria-labelledby="cafe-menu">

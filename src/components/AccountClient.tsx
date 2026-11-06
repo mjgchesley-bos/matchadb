@@ -43,11 +43,12 @@ export function AccountClient() {
   const [reviews, setReviews] = useState<Written[] | null>(null);
   const [items, setItems] = useState<Record<number, Item>>({});
   const [brands, setBrands] = useState<string[] | null>(null);
+  const [favCafes, setFavCafes] = useState<string[] | null>(null);
   const [shelved, setShelved] = useState<Shelved[] | null>(null);
   const [saved, setSaved] = useState<Saved[] | null>(null);
   const [studies, setStudies] = useState<Record<number, StudyInfo>>({});
   const [comments, setComments] = useState<MyComment[] | null>(null);
-  const [cafeNames, setCafeNames] = useState<Record<string, { name: string; slug: string }>>({});
+  const [cafeNames, setCafeNames] = useState<Record<string, { name: string; slug: string; place: string }>>({});
   const [draft, setDraft] = useState<string | null>(null);
   const [nameMsg, setNameMsg] = useState<string | null>(null);
 
@@ -58,7 +59,7 @@ export function AccountClient() {
     let live = true;
     const sb = supabase();
     (async () => {
-      const [f, r, w, fb, cm, sh, bm] = await Promise.all([
+      const [f, r, w, fb, cm, sh, bm, fc] = await Promise.all([
         sb.from("favorites").select("product_id").order("created_at", { ascending: false }),
         sb.from("ratings").select("product_id, score").order("updated_at", { ascending: false }),
         sb.from("reviews").select("id, product_id, body, status").order("created_at", { ascending: false }),
@@ -66,6 +67,7 @@ export function AccountClient() {
         sb.from("comments").select("id, target_type, target_key, body, photos, status, created_at").order("created_at", { ascending: false }),
         sb.from("shelf").select("product_id, status").order("updated_at", { ascending: false }),
         sb.from("research_bookmarks").select("study_id, note").order("updated_at", { ascending: false }),
+        sb.from("favorite_cafes").select("cafe_id").order("created_at", { ascending: false }),
       ]);
       if (!live) return;
       const favs = (f.data ?? []).map((x) => x.product_id as number);
@@ -77,9 +79,11 @@ export function AccountClient() {
       setBrands((fb.data ?? []).map((x) => x.brand as string));
       const mine = (cm.data ?? []) as MyComment[];
       setComments(mine);
-      if (mine.some((c) => c.target_type === "cafe")) {
+      const cafeIds = (fc.data ?? []).map((x) => x.cafe_id as string);
+      setFavCafes(cafeIds);
+      if (cafeIds.length > 0 || mine.some((c) => c.target_type === "cafe")) {
         const rows = (await fetch("/data/cafes-slim.json").then((res) => res.json())) as CafeSlim[];
-        if (live) setCafeNames(Object.fromEntries(rows.map((r) => [r[0], { name: r[1], slug: cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4] }) }])));
+        if (live) setCafeNames(Object.fromEntries(rows.map((r) => [r[0], { name: r[1], slug: cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4] }), place: `${r[3]}, ${r[4]}` }])));
       }
       const commentProducts = mine.filter((c) => c.target_type === "product").map((c) => Number(c.target_key)).filter((n) => Number.isInteger(n));
       const onShelf = (sh.data ?? []) as Shelved[];
@@ -130,6 +134,13 @@ export function AccountClient() {
     if (!user) return;
     setBrands((b) => b?.filter((x) => x !== brand) ?? b);
     await supabase().from("favorite_brands").delete().eq("user_id", user.id).eq("brand", brand);
+  };
+
+  const unsaveCafe = async (id: string) => {
+    if (!user) return;
+    setFavCafes((l) => l?.filter((x) => x !== id) ?? l);
+    await supabase().from("favorite_cafes").delete().eq("user_id", user.id).eq("cafe_id", id);
+    void refreshStats();
   };
 
   const deleteComment = async (c: MyComment) => {
@@ -284,6 +295,35 @@ export function AccountClient() {
                   <span className="font-medium">{b}</span>
                 </Link>
                 <button type="button" onClick={() => void unsaveBrand(b)} className="text-sm text-ink-muted underline hover:text-ink">
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+
+      <section aria-labelledby="cafes-h">
+        <h2 id="cafes-h" className={h2}>Favorite cafés</h2>
+        {favCafes === null ? (
+          <p className="mt-2 text-sm text-ink-faint">Loading…</p>
+        ) : favCafes.length === 0 ? (
+          <p className="mt-2 text-sm text-ink-muted">
+            No cafés saved yet. Tap <strong>Save café</strong> on any café page, or <Link href="/cafes" className="text-matcha underline">find matcha cafés near you</Link>. If your profile is public, your favorite cafés show on it.
+          </p>
+        ) : (
+          <ul className="mt-3 divide-y divide-line border-y border-line">
+            {favCafes.map((id) => (
+              <li key={id} className="flex items-center justify-between gap-4 py-3">
+                {cafeNames[id] ? (
+                  <Link href={`/cafes/${cafeNames[id].slug}`} className="text-ink hover:text-matcha">
+                    <span className="font-medium">{cafeNames[id].name}</span>
+                    <span className="ml-2 text-sm text-ink-faint">{cafeNames[id].place}</span>
+                  </Link>
+                ) : (
+                  <span className="text-ink-muted">A café</span>
+                )}
+                <button type="button" onClick={() => void unsaveCafe(id)} className="text-sm text-ink-muted underline hover:text-ink">
                   Remove
                 </button>
               </li>

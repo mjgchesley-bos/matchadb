@@ -127,7 +127,7 @@ export function PublicProfileSettings() {
         Public profile
       </h2>
       <p className="mt-2 text-sm text-ink-muted">
-        Private by default. Switch it on to get a page anyone can visit, showing your username, medal, what you&apos;re using now, your top ratings, lists, saved brands, reviews and photos. Your email is never shown.
+        Private by default. Switch it on to get a page anyone can visit, showing your username, medal, what you&apos;re using now, your top ratings, lists, saved brands, favorite cafés, reviews and photos. Your email is never shown.
       </p>
 
       <label className="mt-4 flex items-center gap-2.5 text-sm text-ink">

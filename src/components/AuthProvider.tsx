@@ -22,6 +22,7 @@ export type MemberStats = {
   photos: number;
   saves: number;
   brands: number;
+  cafes: number;
   shelf: number;
   bookmarks: number;
   days: number;

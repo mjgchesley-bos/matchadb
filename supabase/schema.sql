@@ -167,11 +167,28 @@ create policy "favorite brands: add own" on public.favorite_brands for insert to
 drop policy if exists "favorite brands: remove own" on public.favorite_brands;
 create policy "favorite brands: remove own" on public.favorite_brands for delete to authenticated using (user_id = auth.uid());
 
+-- ---------------------------------------------------------------- favorite cafés (ids from data/cafes)
+create table if not exists public.favorite_cafes (
+  user_id uuid not null references auth.users (id) on delete cascade,
+  cafe_id text not null check (cafe_id ~ '^[0-9a-f]{10}$'),
+  created_at timestamptz not null default now(),
+  primary key (user_id, cafe_id)
+);
+alter table public.favorite_cafes enable row level security;
+drop policy if exists "favorite cafes: read own" on public.favorite_cafes;
+create policy "favorite cafes: read own" on public.favorite_cafes for select to authenticated using (user_id = auth.uid());
+drop policy if exists "favorite cafes: add own" on public.favorite_cafes;
+create policy "favorite cafes: add own" on public.favorite_cafes for insert to authenticated with check (user_id = auth.uid());
+drop policy if exists "favorite cafes: remove own" on public.favorite_cafes;
+create policy "favorite cafes: remove own" on public.favorite_cafes for delete to authenticated using (user_id = auth.uid());
+
 -- How many people saved each product or brand (counts only, never who).
 create or replace view public.favorite_counts with (security_invoker = false) as
   select 'product'::text as kind, product_id::text as key, count(*)::integer as saves from public.favorites group by product_id
   union all
-  select 'brand'::text, brand, count(*)::integer from public.favorite_brands group by brand;
+  select 'brand'::text, brand, count(*)::integer from public.favorite_brands group by brand
+  union all
+  select 'cafe'::text, cafe_id, count(*)::integer from public.favorite_cafes group by cafe_id;
 grant select on public.favorite_counts to anon, authenticated;
 
 -- ---------------------------------------------------------------- comments (with photos)
@@ -304,6 +321,7 @@ language sql stable security definer set search_path = public as $$
     least((select count(*) from public.ratings where user_id = p_uid), 50) * 2
     + least((select count(*) from public.favorites where user_id = p_uid), 30)
     + least((select count(*) from public.favorite_brands where user_id = p_uid), 20)
+    + least((select count(*) from public.favorite_cafes where user_id = p_uid), 20)
     + least((select count(*) from public.shelf where user_id = p_uid), 50)
     + least((select count(*) from public.reviews where user_id = p_uid and status = 'approved'), 10) * 10
     + least((select count(*) from public.comments where user_id = p_uid and status = 'approved'), 20) * 3
@@ -459,6 +477,7 @@ begin
     'photos', (select coalesce(sum(coalesce(array_length(photos, 1), 0)), 0) from public.comments where user_id = u and status = 'approved'),
     'saves', (select count(*) from public.favorites where user_id = u),
     'brands', (select count(*) from public.favorite_brands where user_id = u),
+    'cafes', (select count(*) from public.favorite_cafes where user_id = u),
     'shelf', (select count(*) from public.shelf where user_id = u),
     'bookmarks', (select count(*) from public.research_bookmarks where user_id = u),
     'days', (select count(*) from public.member_days where user_id = u)
@@ -491,6 +510,7 @@ begin
     'ratings', coalesce((select json_agg(json_build_object('product_id', product_id, 'score', score) order by score desc, updated_at desc)
                          from (select product_id, score, updated_at from public.ratings where user_id = u order by score desc, updated_at desc limit 40) r), '[]'::json),
     'brands', coalesce((select json_agg(brand order by created_at desc) from public.favorite_brands where user_id = u), '[]'::json),
+    'cafes', coalesce((select json_agg(cafe_id order by created_at desc) from public.favorite_cafes where user_id = u), '[]'::json),
     'lists', coalesce((select json_agg(json_build_object('name', s.name, 'items', coalesce((select json_agg(i.product_id order by i.added_at desc) from public.custom_shelf_items i where i.shelf_id = s.id), '[]'::json)) order by s.created_at)
                        from public.custom_shelves s where s.user_id = u), '[]'::json),
     'reviews', coalesce((select json_agg(json_build_object('product_id', product_id, 'body', body, 'created_at', created_at) order by created_at desc)

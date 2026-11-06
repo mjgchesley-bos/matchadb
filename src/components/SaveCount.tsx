@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
 
-// "Saved by N people" for a product or a brand (counts only; never who). Pass a changing `refresh`
+// "Saved by N people" for a product, brand or café (counts only; never who). Pass a changing `refresh`
 // value to reload after the visitor saves or unsaves.
-export function SaveCount({ kind, itemKey, refresh = 0 }: { kind: "product" | "brand"; itemKey: string; refresh?: number }) {
+export function SaveCount({ kind, itemKey, refresh = 0 }: { kind: "product" | "brand" | "cafe"; itemKey: string; refresh?: number }) {
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {

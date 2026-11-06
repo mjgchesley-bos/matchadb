@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { parseCafeSlug, type Cafe } from "./cafe-types";
+import { parseCafeSlug, type Cafe, type CafeSlim } from "./cafe-types";
 
 // Cafés whose own website mentions matcha, by state (data/cafes/{ST}.json). Built by
 // scripts/cafes/ from open place data (Overture Maps) plus a check of each café's own site; a café
@@ -40,6 +40,19 @@ export function getCafeStates(): string[] {
   } catch {
     return [];
   }
+}
+
+// The slim map list indexed by café id (name, city, state), for pages that only have ids.
+let slimIndex: Map<string, CafeSlim> | null = null;
+export function getCafeSlimIndex(): Map<string, CafeSlim> {
+  if (slimIndex) return slimIndex;
+  try {
+    const rows = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "cafes-slim.json"), "utf8")) as CafeSlim[];
+    slimIndex = new Map(rows.map((r) => [r[0], r]));
+  } catch {
+    slimIndex = new Map();
+  }
+  return slimIndex;
 }
 
 export function getAllCafes(): Cafe[] {

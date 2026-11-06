@@ -8,6 +8,7 @@ export const BADGES: { name: string; hint: string; test: (s: MemberStats) => boo
   { name: "In the conversation", hint: "Post a comment", test: (s) => s.comments >= 1 },
   { name: "Photographer", hint: "Share a photo", test: (s) => s.photos >= 1 },
   { name: "Brand collector", hint: "Save 5 brands", test: (s) => s.brands >= 5 },
+  { name: "Café explorer", hint: "Save 3 cafés", test: (s) => (s.cafes ?? 0) >= 3 },
   { name: "Shelf builder", hint: "Put 10 matchas on your shelf", test: (s) => s.shelf >= 10 },
   { name: "Researcher", hint: "Save 3 studies", test: (s) => s.bookmarks >= 3 },
   { name: "Regular", hint: "Visit on 5 different days", test: (s) => s.days >= 5 },

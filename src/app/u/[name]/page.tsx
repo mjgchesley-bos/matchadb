@@ -7,6 +7,8 @@ import { BrandLogo } from "@/components/product-cards";
 import { Stars } from "@/components/Stars";
 import { TierIcon, hasTierIcon } from "@/components/TierIcon";
 import { getProductById } from "@/lib/db";
+import { getCafeSlimIndex } from "@/lib/cafes";
+import { cafeSlug } from "@/lib/cafe-types";
 import { BADGES, HOW_LABELS } from "@/lib/badges";
 import { formatPrice } from "@/lib/price";
 import { supabaseAnon } from "@/lib/supabase-server";
@@ -27,6 +29,7 @@ type Profile = {
   shelf: { product_id: number; status: "want" | "using" | "tried" }[];
   ratings: { product_id: number; score: number }[];
   brands: string[];
+  cafes?: string[];
   lists: { name: string; items: number[] }[];
   reviews: { product_id: number; body: string; created_at: string }[];
   photos: string[];
@@ -176,6 +179,28 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
           </ul>
         </Section>
       )}
+
+      {(() => {
+        const idx = getCafeSlimIndex();
+        const cafes = (p.cafes ?? []).map((id) => idx.get(id)).filter((r): r is NonNullable<typeof r> => !!r);
+        if (cafes.length === 0) return null;
+        return (
+          <Section title="Favorite cafés">
+            <ul className="flex flex-wrap gap-3">
+              {cafes.map((r) => (
+                <li key={r[0]}>
+                  <Link href={`/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4] })}`} className="inline-flex flex-col rounded-sm border border-line bg-paper-raised px-4 py-2 text-sm text-ink hover:border-matcha">
+                    <span className="font-medium">{r[1]}</span>
+                    <span className="text-xs text-ink-faint">
+                      {r[3]}, {r[4]}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </Section>
+        );
+      })()}
 
       {p.reviews.length > 0 && (
         <Section title="Reviews">
