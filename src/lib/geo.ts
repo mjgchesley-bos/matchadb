@@ -15,12 +15,12 @@ export const KM_PER_MILE = 1.609344;
 
 // A typed ZIP, postcode or city is sent to Mapbox's geocoder to turn it into a point. `countries` limits the
 // search (lower-case ISO codes).
-export async function geocode(query: string, countries: string[]): Promise<Origin | null> {
+export async function geocode(query: string, countries: string[], language = "en"): Promise<Origin | null> {
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   if (!token) return null;
   const q = query.trim();
   const types = "postcode,place,locality,neighborhood,address";
-  const res = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(q)}.json?access_token=${token}&country=${countries.join(",")}&types=${types}&limit=1&language=en`);
+  const res = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(q)}.json?access_token=${token}&country=${countries.join(",")}&types=${types}&limit=1&language=${encodeURIComponent(language)}`);
   if (!res.ok) throw new Error("geocoder");
   const json = (await res.json()) as { features?: { center: [number, number]; place_name: string; context?: { id: string; short_code?: string }[]; properties?: { short_code?: string } }[] };
   const f = json.features?.[0];

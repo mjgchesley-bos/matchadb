@@ -26,7 +26,7 @@ export type PriceDisplay =
   | { kind: "linkOnly" }
   | { kind: "unresolved" };
 
-export function formatPrice(p: ProductRow): PriceDisplay {
+export function formatPrice(p: ProductRow, convertedLabel = "converted"): PriceDisplay {
   // A real price is confirmed to exist (curated in
   // data/price-display-overrides.json), just not in a packaging format
   // (stick counts, tea-bag counts) that reduces to a comparable per-gram
@@ -47,7 +47,7 @@ export function formatPrice(p: ProductRow): PriceDisplay {
     const symbol =
       p.price_currency === "JPY" ? "¥" : p.price_currency === "GBP" ? "£" : p.price_currency === "EUR" ? "€" : p.price_currency === "AUD" ? "A$" : p.price_currency === "CAD" ? "C$" : "";
     const nativeAmount = p.price_currency === "JPY" ? trimNum(p.price_native) : p.price_native.toFixed(2);
-    text = `${symbol}${nativeAmount}${size} — ~$${p.price_usd.toFixed(2)} USD (converted)`;
+    text = `${symbol}${nativeAmount}${size} — ~$${p.price_usd.toFixed(2)} USD (${convertedLabel})`;
   }
 
   return { kind: "resolved", text, caution: p.price_needs_review === 1 };

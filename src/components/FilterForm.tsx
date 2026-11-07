@@ -1,8 +1,11 @@
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import type { BrowseFilters } from "@/lib/db";
 import { gradeLabel } from "./product-cards";
 import { PillCheckbox } from "./PillCheckbox";
-import { SHIP_REGIONS, SHIP_REGION_LABEL } from "@/lib/shipping";
+import { SHIP_REGIONS } from "@/lib/shipping";
+import { shipRegionLabel } from "./ShippingNote";
+import { getT, getTV } from "@/i18n/server";
+import type { Locale } from "@/i18n/config";
 
 // Usucha/Koicha are brewing styles, not a quality tier -- both still filter
 // on the same underlying `grade` column, but get their own labeled section
@@ -42,6 +45,7 @@ export function FilterForm({
   clearHref,
   formClassName = "flex flex-col gap-5 text-sm",
   wideClassName = "",
+  lang = "en",
 }: {
   filters: BrowseFilters;
   options: FilterOptions;
@@ -53,28 +57,31 @@ export function FilterForm({
   // no-op in the flex layout.
   formClassName?: string;
   wideClassName?: string;
+  lang?: Locale;
 }) {
+  const t = getT(lang);
+  const tv = getTV(lang);
   return (
     <form method="get" className={formClassName}>
       <div>
         <label className={labelClass} htmlFor="q">
-          Search
+          {t("f.search")}
         </label>
         <input
           id="q"
           name="q"
           defaultValue={filters.q}
-          placeholder="Brand or product name"
+          placeholder={t("f.searchPh")}
           className={fieldClass}
         />
       </div>
 
       <div>
         <label className={labelClass} htmlFor="brand">
-          Brand
+          {t("f.brand")}
         </label>
         <select id="brand" name="brand" defaultValue={filters.brand || ""} className={fieldClass}>
-          <option value="">All brands</option>
+          <option value="">{t("f.allBrands")}</option>
           {options.brands.map((b) => (
             <option key={b} value={b}>
               {b}
@@ -84,7 +91,7 @@ export function FilterForm({
       </div>
 
       <div>
-        <span className={labelClass}>Grade</span>
+        <span className={labelClass}>{t("f.grade")}</span>
         <div className="flex flex-wrap gap-2">
           {sortByOrder(
             options.grades.filter((g) => QUALITY_ORDER.includes(g)),
@@ -94,7 +101,7 @@ export function FilterForm({
               key={g}
               name="grade"
               value={g}
-              label={gradeLabel(g)}
+              label={gradeLabel(g, tv)}
               defaultChecked={filters.grades?.includes(g) ?? false}
             />
           ))}
@@ -103,7 +110,7 @@ export function FilterForm({
 
       {options.grades.some((g) => PREP_ORDER.includes(g)) && (
         <div>
-          <span className={labelClass}>Preparation style</span>
+          <span className={labelClass}>{t("f.prep")}</span>
           <div className="flex flex-wrap gap-2">
             {sortByOrder(
               options.grades.filter((g) => PREP_ORDER.includes(g)),
@@ -113,7 +120,7 @@ export function FilterForm({
                 key={g}
                 name="grade"
                 value={g}
-                label={gradeLabel(g)}
+                label={gradeLabel(g, tv)}
                 defaultChecked={filters.grades?.includes(g) ?? false}
               />
             ))}
@@ -122,32 +129,32 @@ export function FilterForm({
       )}
 
       <div>
-        <span className={labelClass}>Use</span>
+        <span className={labelClass}>{t("f.use")}</span>
         <div className="flex flex-wrap gap-2">
           {sortByOrder(options.uses, USE_ORDER).map((u) => (
-            <PillCheckbox key={u} name="use" value={u} defaultChecked={filters.uses?.includes(u) ?? false} />
+            <PillCheckbox key={u} name="use" value={u} label={tv("use", u)} defaultChecked={filters.uses?.includes(u) ?? false} />
           ))}
         </div>
       </div>
 
       <div>
-        <span className={labelClass}>Flavor</span>
+        <span className={labelClass}>{t("f.flavor")}</span>
         <div className="flex flex-wrap gap-2">
           {options.flavors.map((f) => (
-            <PillCheckbox key={f} name="flavor" value={f} defaultChecked={filters.flavors?.includes(f) ?? false} />
+            <PillCheckbox key={f} name="flavor" value={f} label={tv("flavor", f)} defaultChecked={filters.flavors?.includes(f) ?? false} />
           ))}
         </div>
       </div>
 
       <div>
         <label className={labelClass} htmlFor="region">
-          Region
+          {t("f.region")}
         </label>
         <select id="region" name="region" defaultValue={filters.region || ""} className={fieldClass}>
-          <option value="">Any region</option>
+          <option value="">{t("f.anyRegion")}</option>
           {options.regions.map((r) => (
             <option key={r} value={r}>
-              {r}
+              {tv("region", r)}
             </option>
           ))}
         </select>
@@ -155,13 +162,13 @@ export function FilterForm({
 
       <div>
         <label className={labelClass} htmlFor="ships">
-          Ships to
+          {t("f.ships")}
         </label>
         <select id="ships" name="ships" defaultValue={filters.shipsTo || ""} className={fieldClass}>
-          <option value="">Any</option>
+          <option value="">{t("f.any")}</option>
           {SHIP_REGIONS.map((r) => (
             <option key={r} value={r}>
-              {SHIP_REGION_LABEL[r]}
+              {shipRegionLabel(r, lang)}
             </option>
           ))}
         </select>
@@ -170,7 +177,7 @@ export function FilterForm({
       <div className={`flex gap-3 ${wideClassName}`}>
         <div className="flex-1">
           <label className={labelClass} htmlFor="minPrice">
-            Min $
+            {t("f.min")}
           </label>
           <input
             id="minPrice"
@@ -183,7 +190,7 @@ export function FilterForm({
         </div>
         <div className="flex-1">
           <label className={labelClass} htmlFor="maxPrice">
-            Max $
+            {t("f.max")}
           </label>
           <input
             id="maxPrice"
@@ -205,7 +212,7 @@ export function FilterForm({
             defaultChecked={filters.organicOnly}
             className="accent-matcha"
           />
-          Organic-certified only
+          {t("f.organic")}
         </label>
 
         <label className="flex items-center gap-2.5 text-ink-muted">
@@ -216,7 +223,7 @@ export function FilterForm({
             defaultChecked={filters.wholesaleOnly}
             className="accent-matcha"
           />
-          Brand offers wholesale
+          {t("f.wholesale")}
         </label>
 
         <label className="flex items-center gap-2.5 text-ink-muted">
@@ -227,7 +234,7 @@ export function FilterForm({
             defaultChecked={filters.hasContradictionsOnly}
             className="accent-matcha"
           />
-          Flag: has contradictions
+          {t("f.contradictions")}
         </label>
       </div>
 
@@ -236,10 +243,10 @@ export function FilterForm({
           type="submit"
           className="bg-matcha text-paper py-2.5 text-sm font-medium tracking-wide hover:bg-forest transition-colors"
         >
-          Apply filters
+          {t("f.apply")}
         </button>
         <Link href={clearHref} className="text-center text-ink-faint hover:text-ink-muted transition-colors">
-          Clear all
+          {t("f.clear")}
         </Link>
       </div>
     </form>

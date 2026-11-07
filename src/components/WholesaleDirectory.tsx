@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import { useMemo, useState } from "react";
 import { BrandLogo } from "@/components/product-cards";
 import {

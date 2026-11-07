@@ -1,20 +1,23 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import { useEffect, useRef, useState } from "react";
+import { useT } from "@/i18n/client";
+import type { Key } from "@/i18n/dictionaries";
 
 // The three-dots menu in the site header (like the one in Chrome): secondary
 // destinations that don't need a permanent button in the bar.
-const ITEMS: { href: string; label: string; note: string }[] = [
-  { href: "/cafes", label: "Matcha cafés", note: "Cafés near you with matcha on the menu" },
-  { href: "/stores", label: "Find in stores", note: "Where to buy these brands in person" },
-  { href: "/wholesale", label: "Wholesale suppliers", note: "Bulk matcha for cafés, brands and private label" },
-  { href: "/research", label: "Research library", note: "Every scientific study on matcha" },
-  { href: "/cultivars", label: "Cultivars", note: "Yabukita, Okumidori, Samidori and more" },
-  { href: "/guides/what-is-ceremonial-matcha", label: "What is “ceremonial”?", note: "Where the word came from and what it means today" },
+const ITEMS: { href: string; label: Key; note: Key }[] = [
+  { href: "/cafes", label: "c.menu.cafes.label", note: "c.menu.cafes.note" },
+  { href: "/stores", label: "c.menu.stores.label", note: "c.menu.stores.note" },
+  { href: "/wholesale", label: "c.menu.wholesale.label", note: "c.menu.wholesale.note" },
+  { href: "/research", label: "c.menu.research.label", note: "c.menu.research.note" },
+  { href: "/cultivars", label: "c.menu.cultivars.label", note: "c.menu.cultivars.note" },
+  { href: "/guides/what-is-ceremonial-matcha", label: "c.menu.ceremonial.label", note: "c.menu.ceremonial.note" },
 ];
 
 export function HeaderMenu() {
+  const t = useT();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -46,7 +49,7 @@ export function HeaderMenu() {
         ref={buttonRef}
         type="button"
         onClick={() => setOpen((o) => !o)}
-        aria-label="More"
+        aria-label={t("c.menu.more")}
         aria-haspopup="menu"
         aria-expanded={open}
         className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-paper text-ink transition-all hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-paper"
@@ -58,7 +61,7 @@ export function HeaderMenu() {
         </svg>
       </button>
       {open && (
-        <div role="menu" aria-label="More pages" className="absolute right-0 top-full z-40 mt-2 w-72 max-w-[calc(100vw-2rem)] overflow-hidden rounded-md border border-line bg-paper-raised py-1 shadow-lg">
+        <div role="menu" aria-label={t("c.menu.morePages")} className="absolute right-0 top-full z-40 mt-2 w-72 max-w-[calc(100vw-2rem)] overflow-hidden rounded-md border border-line bg-paper-raised py-1 shadow-lg">
           {ITEMS.map((item) => (
             <Link
               key={item.href}
@@ -67,8 +70,8 @@ export function HeaderMenu() {
               onClick={() => setOpen(false)}
               className="block px-4 py-3 hover:bg-matcha-soft focus-visible:bg-matcha-soft focus-visible:outline-none"
             >
-              <span className="block text-sm font-medium text-ink">{item.label}</span>
-              <span className="mt-0.5 block text-xs text-ink-faint">{item.note}</span>
+              <span className="block text-sm font-medium text-ink">{t(item.label)}</span>
+              <span className="mt-0.5 block text-xs text-ink-faint">{t(item.note)}</span>
             </Link>
           ))}
         </div>

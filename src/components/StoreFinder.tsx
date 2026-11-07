@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { KIND_LABEL, type BrandMatchaInfo, type Store } from "@/lib/store-types";
+import type { BrandMatchaInfo, Store } from "@/lib/store-types";
+import { useLang, useT } from "@/i18n/client";
+import { INTL_LANG, localePath, type Locale } from "@/i18n/config";
+import { rich } from "@/i18n/rich";
 import { usd30 } from "@/lib/unit-price";
 import { formatPlace } from "@/lib/cafe-types";
 import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, type RegionKey } from "@/lib/cafe-regions";
@@ -19,16 +22,15 @@ type Listed = { store: Store; dist: number | null };
 
 const RADII = [10, 25, 50, 100, 0]; // 0 = any distance
 const LIST_CAP = 40;
-const fmtDate = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-const directionsUrl = (s: Store) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.name}, ${formatPlace(s)}`)}`;
+const fmtDate = (iso: string, lang: Locale) => new Date(iso + "T12:00:00").toLocaleDateString(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric" });
+const directionsUrl = (s: Store, lang: Locale) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.name}, ${formatPlace(s, lang)}`)}`;
 const regionOf = (s: Store): RegionKey => regionForCountry(s.cc ?? "US") ?? "us";
 
-const VERB: Record<Store["kind"], string> = { "brand-shop": "Its own shop", cafe: "Serves", retailer: "Sells" };
 
 // The popup shown over a pin: the place, and for each brand it carries, what that brand's
 // matcha is like (grades, product count, price per 30 g) from our product database. Built
 // with DOM nodes and textContent so store names from brand locators can never inject markup.
-function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>): HTMLElement {
+function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>, lang: Locale, t: (key: string, vars?: Record<string, string | number>) => string): HTMLElement {
   const el = (tag: string, cls: string, text?: string) => {
     const n = document.createElement(tag);
     n.className = cls;
@@ -37,27 +39,27 @@ function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>): HTMLElemen
   };
   const root = el("div", "store-pop");
   root.appendChild(el("p", "font-display text-base font-semibold text-ink leading-snug", s.name));
-  root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", `${KIND_LABEL[s.kind]} · ${formatPlace(s)}`));
+  root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", `${t(`c.st.kind.${s.kind}`)} · ${formatPlace(s, lang)}`));
   const list = el("ul", "mt-2.5 flex flex-col gap-2");
   for (const b of s.brands) {
     const m = info[b.name];
     const li = el("li", "rounded-sm bg-matcha-soft px-2.5 py-2");
     const a = el("a", "text-sm font-medium text-matcha-ink underline underline-offset-2", b.name) as HTMLAnchorElement;
-    a.href = `/brands/${encodeURIComponent(b.name)}`;
+    a.href = localePath(lang, `/brands/${encodeURIComponent(b.name)}`);
     const head = el("p", "text-xs text-ink-muted");
-    head.append(`${VERB[s.kind]} `, a);
+    head.append(`${t(`c.st.verb.${s.kind}`)} `, a);
     li.appendChild(head);
     if (m && m.products > 0) {
       const bits: string[] = [];
-      if (m.grades.length) bits.push(`${m.grades.join(", ")} grade${m.grades.length > 1 ? "s" : ""}`);
-      bits.push(`${m.products} matcha product${m.products === 1 ? "" : "s"} listed`);
-      if (m.perGram) bits.push(m.perGram[0] === m.perGram[1] ? `${usd30(m.perGram[0])} per 30 g` : `${usd30(m.perGram[0])}–${usd30(m.perGram[1])} per 30 g`);
+      if (m.grades.length) bits.push(t(m.grades.length > 1 ? "c.st.grades.other" : "c.st.grades.one", { list: m.grades.join(", ") }));
+      bits.push(t(m.products === 1 ? "c.st.products.one" : "c.st.products.other", { n: m.products }));
+      if (m.perGram) bits.push(t("c.st.per30", { price: m.perGram[0] === m.perGram[1] ? usd30(m.perGram[0]) : `${usd30(m.perGram[0])}–${usd30(m.perGram[1])}` }));
       li.appendChild(el("p", "mt-1 text-xs text-ink leading-relaxed", bits.join(" · ")));
     }
     list.appendChild(li);
   }
   root.appendChild(list);
-  root.appendChild(el("p", "mt-2 text-[11px] text-ink-faint leading-snug", s.listedBy ? `From ${s.listedBy}'s store locator. Which products are in stock varies by store.` : "Which products are in stock varies by store."));
+  root.appendChild(el("p", "mt-2 text-[11px] text-ink-faint leading-snug", s.listedBy ? t("c.st.fromLocator", { brand: s.listedBy }) : t("c.st.stockVaries")));
   return root;
 }
 
@@ -74,6 +76,11 @@ export function StoreFinder({
   initialBrand?: string;
   initialRegion?: RegionKey;
 }) {
+  const lang = useLang();
+  const t = useT();
+  const ts = t as unknown as (key: string, vars?: Record<string, string | number>) => string;
+  const regionLabel = (k: RegionKey) => t(`c.region.${k}` as "c.region.us");
+  const nf = (n: number) => n.toLocaleString(INTL_LANG[lang]);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const popupRef = useRef<mapboxgl.Popup | null>(null);
@@ -83,7 +90,7 @@ export function StoreFinder({
   const [regionKey, setRegionKey] = useState<RegionKey>(initialRegion);
   const region = regionByKey(regionKey);
   const unit = region.unit;
-  const unitWord = unit === "mi" ? "miles" : "km";
+  const unitWord = unit === "mi" ? t("c.cf.unit.miles") : t("c.cf.unit.km");
   const [query, setQuery] = useState("");
   const [origin, setOrigin] = useState<Origin | null>(null);
   const [brand, setBrand] = useState(initialBrand);
@@ -228,7 +235,7 @@ export function StoreFinder({
     }
     const el = document.createElement("div");
     el.style.cssText = "width:16px;height:16px;border-radius:9999px;background:#2563eb;border:3px solid #fff;box-shadow:0 0 0 2px rgba(37,99,235,.35);";
-    el.setAttribute("aria-label", "Your search location");
+    el.setAttribute("aria-label", t("c.cf.marker"));
     userMarkerRef.current = new mapboxgl.Marker({ element: el }).setLngLat([origin.lng, origin.lat]).addTo(map);
     const near = listed.slice(0, 5);
     if (near.length === 0) {
@@ -258,13 +265,13 @@ export function StoreFinder({
     if (!map || !s) return;
     const popup = new mapboxgl.Popup({ offset: 14, maxWidth: "300px", closeButton: true, closeOnClick: false, className: "store-popup" })
       .setLngLat([s.lng, s.lat])
-      .setDOMContent(buildPopup(s, brandInfo))
+      .setDOMContent(buildPopup(s, brandInfo, lang, ts))
       .addTo(map);
     popup.on("close", () => {
       if (popupRef.current === popup) setSelectedId(null);
     });
     popupRef.current = popup;
-  }, [selectedId, stores, brandInfo]);
+  }, [selectedId, stores, brandInfo, lang, ts]);
 
   // Selecting a pin on the map scrolls its card into view.
   useEffect(() => {
@@ -290,8 +297,8 @@ export function StoreFinder({
     setBusy("search");
     setMessage(null);
     try {
-      const o = (await geocode(q, region.countries)) ?? (await geocode(q, ALL_COUNTRIES));
-      if (!o) setMessage("We couldn't find that place. Try a ZIP code or postcode, or a city and country.");
+      const o = (await geocode(q, region.countries, lang)) ?? (await geocode(q, ALL_COUNTRIES, lang));
+      if (!o) setMessage(t("c.cf.err.notFound"));
       else {
         const k = regionForCountry(o.country);
         setSelectedId(null);
@@ -299,7 +306,7 @@ export function StoreFinder({
         else setOrigin(o);
       }
     } catch {
-      setMessage("Search isn't available right now. Please try again in a moment.");
+      setMessage(t("c.cf.err.search"));
     } finally {
       setBusy(null);
     }
@@ -307,14 +314,14 @@ export function StoreFinder({
 
   function useMyLocation() {
     if (!navigator.geolocation) {
-      setMessage("Your browser can't share its location. Search by ZIP code, postcode or city instead.");
+      setMessage(t("c.cf.err.noGeo"));
       return;
     }
     setBusy("locate");
     setMessage(null);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" };
+        const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: t("c.cf.yourLocation") };
         const here = REGIONS.find((r) => o.lng >= r.bounds[0][0] && o.lng <= r.bounds[1][0] && o.lat >= r.bounds[0][1] && o.lat <= r.bounds[1][1]);
         setQuery("");
         setSelectedId(null);
@@ -324,7 +331,7 @@ export function StoreFinder({
       },
       (err) => {
         setBusy(null);
-        setMessage(err.code === 1 ? "Location access was blocked. Search by ZIP code, postcode or city instead." : "We couldn't get your location. Search by ZIP code, postcode or city instead.");
+        setMessage(err.code === 1 ? t("c.cf.err.blocked") : t("c.cf.err.fail"));
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
@@ -337,13 +344,13 @@ export function StoreFinder({
     setSelectedId(null);
   }
 
-  const fmtDist = (d: number) => (d < 10 ? d.toFixed(1) : Math.round(d).toLocaleString());
+  const fmtDist = (d: number) => (d < 10 ? d.toFixed(1) : Math.round(d).toLocaleString(INTL_LANG[lang]));
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const fieldClass = "border border-line-strong rounded-sm px-3 py-2.5 bg-paper text-sm text-ink focus:outline-none focus:border-matcha";
 
   return (
     <div>
-      <div role="tablist" aria-label="Region" className="mb-4 flex flex-wrap gap-2">
+      <div role="tablist" aria-label={t("c.region.label")} className="mb-4 flex flex-wrap gap-2">
         {REGIONS.filter((r) => (counts.get(r.key) ?? 0) > 0 || r.key === regionKey).map((r) => (
           <button
             key={r.key}
@@ -353,7 +360,7 @@ export function StoreFinder({
             onClick={() => changeRegion(r.key)}
             className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${r.key === regionKey ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"}`}
           >
-            {r.label}
+            {regionLabel(r.key)}
           </button>
         ))}
       </div>
@@ -361,24 +368,24 @@ export function StoreFinder({
       <form onSubmit={runSearch} className="flex flex-col gap-3 lg:flex-row lg:items-end">
         <div className="flex-1">
           <label htmlFor="store-q" className="block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5">
-            ZIP code, postcode or city
+            {t("c.cf.zip")}
           </label>
           <div className="flex gap-2">
-            <input id="store-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={region.placeholder} autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
+            <input id="store-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t(`c.region.${region.key}.ph` as "c.region.us.ph")} autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
             <button type="submit" disabled={busy !== null || !query.trim()} className="rounded-sm bg-matcha px-5 py-2.5 text-sm font-medium text-paper hover:bg-forest transition-colors disabled:opacity-50">
-              {busy === "search" ? "Searching…" : "Search"}
+              {busy === "search" ? t("c.cf.searching") : t("c.cf.search")}
             </button>
           </div>
         </div>
         <button type="button" onClick={useMyLocation} disabled={busy !== null} className="rounded-sm border border-line-strong bg-paper px-4 py-2.5 text-sm font-medium text-ink hover:border-matcha transition-colors disabled:opacity-50">
-          {busy === "locate" ? "Locating…" : "Use my location"}
+          {busy === "locate" ? t("c.cf.locating") : t("c.cf.locate")}
         </button>
         <div>
           <label htmlFor="store-brand" className="block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5">
-            Brand
+            {t("c.st.brandLabel")}
           </label>
           <select id="store-brand" value={brand} onChange={(e) => setBrand(e.target.value)} className={`${fieldClass} w-full lg:w-56`}>
-            <option value="">Any brand</option>
+            <option value="">{t("c.st.anyBrand")}</option>
             {brandOptions.map(([name, n]) => (
               <option key={name} value={name}>
                 {name} ({n})
@@ -388,18 +395,18 @@ export function StoreFinder({
         </div>
         <div>
           <label htmlFor="store-radius" className="block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5">
-            Within
+            {t("c.cf.within")}
           </label>
           <select id="store-radius" value={radius} onChange={(e) => setRadius(Number(e.target.value))} disabled={!origin} className={`${fieldClass} w-full lg:w-32 disabled:opacity-50`}>
             {RADII.map((r) => (
               <option key={r} value={r}>
-                {r === 0 ? "Any distance" : `${r} ${unitWord}`}
+                {r === 0 ? t("c.cf.anyDistance") : `${r} ${unitWord}`}
               </option>
             ))}
           </select>
         </div>
       </form>
-      <p className="mt-2 text-xs text-ink-faint">Your location is used only in your browser to sort this list. We don&apos;t send it anywhere or store it.</p>
+      <p className="mt-2 text-xs text-ink-faint">{t("c.cf.privacy")}</p>
       {message && (
         <p className="mt-3 rounded-sm border border-line bg-paper-raised px-3 py-2 text-sm text-ink-muted" role="status">
           {message}
@@ -411,36 +418,38 @@ export function StoreFinder({
           {token ? (
             <div ref={containerRef} className="h-full w-full" />
           ) : (
-            <div className="flex h-full items-center justify-center text-ink-muted">Map token not configured.</div>
+            <div className="flex h-full items-center justify-center text-ink-muted">{t("c.cf.noToken")}</div>
           )}
         </div>
 
-        <section aria-label="Stores" className="lg:h-[640px] lg:overflow-y-auto">
+        <section aria-label={t("c.st.listLabel")} className="lg:h-[640px] lg:overflow-y-auto">
           <p className="text-sm text-ink-muted mb-3" aria-live="polite">
             {origin
-              ? `${listed.length} store${listed.length === 1 ? "" : "s"}${radius > 0 ? ` within ${radius} ${unitWord} of` : " near"} ${origin.label}`
-              : `${listed.length} store${listed.length === 1 ? "" : "s"} listed in ${region.label}${brand ? ` for ${brand}` : ""}. Search a ZIP code or postcode or use your location to sort by distance.`}
+              ? radius > 0
+                ? t(listed.length === 1 ? "c.st.within.one" : "c.st.within.other", { count: nf(listed.length), radius, unit: unitWord, place: origin.label })
+                : t(listed.length === 1 ? "c.st.near.one" : "c.st.near.other", { count: nf(listed.length), place: origin.label })
+              : brand
+                ? t(listed.length === 1 ? "c.st.listedBrand.one" : "c.st.listedBrand.other", { count: nf(listed.length), region: regionLabel(region.key), brand })
+                : t(listed.length === 1 ? "c.st.listed.one" : "c.st.listed.other", { count: nf(listed.length), region: regionLabel(region.key) })}
             {origin && (
               <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
-                Clear
+                {t("c.cf.clear")}
               </button>
             )}
           </p>
 
           {origin && listed.length === 0 && (
             <div className="rounded-sm border border-line bg-paper-raised p-4 text-sm text-ink-muted">
-              <p>
-                No {brand ? `${brand} ` : ""}stores within {radius} {unitWord} yet.
-              </p>
+              <p>{brand ? t("c.st.noneBrand", { brand, radius, unit: unitWord }) : t("c.st.none", { radius, unit: unitWord })}</p>
               {nearest && (
                 <p className="mt-2">
-                  The nearest we have is <strong className="text-ink">{nearest.store.name}</strong> in {nearest.store.city}, about {Math.round(nearest.dist ?? 0).toLocaleString()} {unitWord} away.{" "}
+                  {rich(t("c.cf.nearest", { city: nearest.store.city, dist: nf(Math.round(nearest.dist ?? 0)), unit: unitWord }), { name: <strong className="text-ink">{nearest.store.name}</strong> })}{" "}
                   <button type="button" onClick={() => setRadius(0)} className="text-matcha hover:text-forest underline">
-                    Show all distances
+                    {t("c.cf.showAllDist")}
                   </button>
                 </p>
               )}
-              <p className="mt-2">Know a store near you that carries these brands? Tell us below.</p>
+              <p className="mt-2">{t("c.st.tellUs")}</p>
             </div>
           )}
 
@@ -463,28 +472,28 @@ export function StoreFinder({
                       </span>
                     )}
                   </span>
-                  <span className="mt-0.5 block text-sm text-ink-muted">{formatPlace(s)}</span>
+                  <span className="mt-0.5 block text-sm text-ink-muted">{formatPlace(s, lang)}</span>
                 </button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{KIND_LABEL[s.kind]}</span>
+                  <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{ts(`c.st.kind.${s.kind}`)}</span>
                   {s.brands.map((b) => (
                     <Link key={b.name} href={`/brands/${encodeURIComponent(b.name)}`} className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted hover:border-matcha hover:text-matcha transition-colors">
-                      Carries {b.name}
+                      {t("c.st.carries", { brand: b.name })}
                     </Link>
                   ))}
                 </p>
                 {s.note && <p className="mt-2 text-xs text-ink-faint leading-relaxed">{s.note}</p>}
                 <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                  <a href={directionsUrl(s)} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
-                    Directions
+                  <a href={directionsUrl(s, lang)} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
+                    {t("c.cf.directions")}
                   </a>
                   {s.url && (
                     <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
-                      Store website
+                      {t("c.st.website")}
                     </a>
                   )}
                   <a href={s.brands[0]?.evidence ?? s.url} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
-                    {s.listedBy ? "Brand's store locator" : "Source"}, checked {fmtDate(s.checked)}
+                    {s.listedBy ? t("c.st.locator", { date: fmtDate(s.checked, lang) }) : t("c.st.source", { date: fmtDate(s.checked, lang) })}
                   </a>
                 </p>
               </li>
@@ -492,20 +501,20 @@ export function StoreFinder({
           </ul>
           {!showAll && listed.length > LIST_CAP && (
             <button type="button" onClick={() => setShowAll(true)} className="text-sm text-matcha hover:text-forest underline text-left">
-              Show all {listed.length} places
+              {t("c.st.showAll", { count: nf(listed.length) })}
             </button>
           )}
-          {!origin && totalForBrand === 0 && <p className="text-sm text-ink-muted">No stores listed for that brand yet.</p>}
+          {!origin && totalForBrand === 0 && <p className="text-sm text-ink-muted">{t("c.st.noBrand")}</p>}
         </section>
       </div>
 
       <p className="mt-6 text-sm text-ink-muted">
-        Know a store that carries these brands, or spot something out of date?{" "}
+        {t("c.st.suggest")}{" "}
         <a
           href={`mailto:${contactEmail}?subject=${encodeURIComponent("MatchaDB store suggestion")}&body=${encodeURIComponent("Store name:\nAddress:\nWebsite:\nBrands carried (and a link showing it):\n")}`}
           className="text-matcha hover:text-forest underline"
         >
-          Email us
+          {t("c.cf.email")}
         </a>
         .
       </p>

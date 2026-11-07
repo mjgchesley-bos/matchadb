@@ -2,10 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { useLang, useT } from "@/i18n/client";
+import { INTL_LANG } from "@/i18n/config";
 
 // "Saved by N people" for a product, brand or café (counts only; never who). Pass a changing `refresh`
 // value to reload after the visitor saves or unsaves.
 export function SaveCount({ kind, itemKey, refresh = 0 }: { kind: "product" | "brand" | "cafe"; itemKey: string; refresh?: number }) {
+  const t = useT();
+  const lang = useLang();
   const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
@@ -25,7 +29,7 @@ export function SaveCount({ kind, itemKey, refresh = 0 }: { kind: "product" | "b
   if (!count) return null;
   return (
     <span className="text-sm text-ink-muted tabular-nums">
-      Saved by {count.toLocaleString()} {count === 1 ? "person" : "people"}
+      {t(count === 1 ? "c.save.count.one" : "c.save.count.other", { count: count.toLocaleString(INTL_LANG[lang]) })}
     </span>
   );
 }
