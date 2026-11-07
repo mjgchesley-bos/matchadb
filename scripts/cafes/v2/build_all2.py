@@ -15,7 +15,7 @@ from collections import Counter
 sys.stdout.reconfigure(encoding="utf-8")
 OUT_DIR = sys.argv[1]
 SLIM_DIR = sys.argv[2]
-CRAWL_FILES = [f"C:/temp/cafes/{n}" for n in ("crawl.jsonl", "crawl_intl.jsonl", "crawl_intl_retry.jsonl", "v2_a.jsonl", "v2_a2.jsonl", "v2_b.jsonl", "v2_c.jsonl", "v2_r1.jsonl", "v2_r2.jsonl", "v2_r3.jsonl", "v2_leads.jsonl")]
+CRAWL_FILES = [f"C:/temp/cafes/{n}" for n in ("crawl.jsonl", "crawl_intl.jsonl", "crawl_intl_retry.jsonl", "v2_a.jsonl", "v2_a2.jsonl", "v2_b.jsonl", "v2_c.jsonl", "v2_r1.jsonl", "v2_r2.jsonl", "v2_r3.jsonl", "v2_merit.jsonl", "v2_leads.jsonl")]
 PLACES = ["C:/temp/cafes/us_cafes.parquet", "C:/temp/cafes/intl_cafes.parquet", "C:/temp/cafes/ext_cands.parquet"]
 LEADS_FILE = "C:/temp/cafes/leads_venues.json"      # venues found through web leads (not in Overture): already in café shape
 # categories where "matcha" in the business name is enough to list it (the name is its own claim)
@@ -201,7 +201,7 @@ for k, cs in files.items():
     json.dump(cs, open(os.path.join(OUT_DIR, f"{k}.json"), "w", encoding="utf8"), separators=(",", ":"), ensure_ascii=False)
 slims = {}
 for c in cafes:
-    slims.setdefault(region_of(c["cc"]), []).append([c["id"], c["name"], c["address"], c["city"], c["state"], c["zip"], c["lat"], c["lng"], 1 if c["focus"] else 0, c["cc"]])
+    slims.setdefault(region_of(c["cc"]), []).append([c["id"], c["name"], c["address"], c["city"], c["state"], c["zip"], c["lat"], c["lng"], 2 if c.get("via") == "name" else (1 if c["focus"] else 0), c["cc"]])
 for reg in ("us", "ca", "eu", "jp", "kr"):
     json.dump(slims.get(reg, []), open(os.path.join(SLIM_DIR, f"cafes-slim-{reg}.json"), "w", encoding="utf8"), separators=(",", ":"), ensure_ascii=False)
 
