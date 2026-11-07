@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import { getTopicSummary } from "@/lib/studies";
 import { topicByName } from "@/lib/research-topics";
 

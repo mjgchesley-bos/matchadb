@@ -1,0 +1,145 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Link from "@/i18n/Link";
+import { LegalPage } from "@/components/LegalPage";
+import { isLocale, type Locale } from "@/i18n/config";
+import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description: "How MatchaDB handles analytics, cookies, advertising, and your choices.",
+  alternates: { canonical: `${SITE_URL}/privacy` },
+};
+
+export default async function PrivacyPage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang: raw } = await params;
+  if (!isLocale(raw)) notFound();
+  const lang: Locale = raw;
+  return (
+    <LegalPage lang={lang} englishOnly eyebrow="Legal" title="Privacy Policy" updated="November 4, 2026">
+      <p>
+        MatchaDB (&ldquo;we,&rdquo; &ldquo;us&rdquo;) is a research database of matcha products. This
+        policy explains what information is collected when you use matchadb.com and the choices you
+        have. You don&apos;t need an account to browse, and we don&apos;t ask you for personal information to
+        do so. Creating an account is optional.
+      </p>
+
+      <h2>Information collected</h2>
+      <ul>
+        <li>
+          <strong>Usage data</strong> (pages viewed, approximate location, device and browser type,
+          referring page) collected through Google Analytics, only if you accept cookies.
+        </li>
+        <li>
+          <strong>Map requests.</strong> The sourcing map loads map tiles from Mapbox, which receives
+          your IP address and browser details as part of serving those tiles. See{" "}
+          <a href="https://www.mapbox.com/legal/privacy" rel="noopener noreferrer" target="_blank">
+            Mapbox&apos;s privacy policy
+          </a>
+          .
+        </li>
+        <li>
+          <strong>Store finder.</strong> If you press &ldquo;Use my location,&rdquo; your browser asks your
+          permission and your position is used only in your browser to sort and map nearby stores; we do not
+          send it to our servers or store it. If you type a ZIP code or city, that text is sent to
+          Mapbox&apos;s geocoding service to turn it into a point on the map.
+        </li>
+        <li>
+          <strong>Server logs.</strong> Our hosting provider (AWS) records standard request logs such as
+          IP address and timestamps for security and operations.
+        </li>
+        <li>
+          <strong>Accounts, saved products, ratings and reviews.</strong> Signing in is optional and uses
+          your Google account. We receive your email address and an account identifier and store them
+          with what you do while signed in: the products you save, the ratings you give and the reviews
+          you write or the comments and photos you post. Photos are shrunk and re-saved in your browser
+          before upload, which removes hidden data such as the location a photo was taken, and are shown
+          publicly once approved. Ratings, reviews and comments are shown with a public username (a neutral default until you
+          choose your own, which you can change in My matcha), never your email or real name. We also
+          record the days you visit while signed in, plus what you add to your shelves and research folder
+          (private notes there are visible only to you); these count toward your member tier, which is shown
+          next to your username. Your profile is private unless you switch on a public profile in My matcha; if you do, anyone can see your username, avatar or profile photo, bio, tier, shelves, ratings, lists, saved brands, approved reviews and the photos you posted, and you can switch it off at any time. Public profile pages ask search engines not to list them. Accounts, sign-in and this data are
+          handled for us by Supabase. Signing in keeps a session token in your browser&apos;s local
+          storage so you stay signed in; it is separate from the analytics and advertising cookies above.
+          You can delete your own reviews and ratings at any time. To delete your account and everything
+          linked to it, email us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+        </li>
+        <li>
+          <strong>Your cookie choice,</strong> stored in your browser&apos;s local storage so we
+          remember it.
+        </li>
+      </ul>
+
+      <h2>Cookies and consent</h2>
+      <p>
+        Analytics and advertising storage are off by default. They turn on only if you choose Accept in
+        the cookie banner. You can change your mind at any time with the &ldquo;Cookie settings&rdquo;
+        link in the footer, or by clearing this site&apos;s data in your browser.
+      </p>
+
+      <h2>Advertising</h2>
+      <p>
+        MatchaDB may display advertising from third-party networks. Those vendors, including Google, may
+        use cookies and similar technologies to serve and measure ads, and, if you accept, to
+        personalize them based on your visits to this and other sites. You can opt out of personalized
+        advertising at{" "}
+        <a href="https://adssettings.google.com" rel="noopener noreferrer" target="_blank">
+          adssettings.google.com
+        </a>{" "}
+        or{" "}
+        <a href="https://www.aboutads.info" rel="noopener noreferrer" target="_blank">
+          aboutads.info
+        </a>
+        . To learn how Google uses information from sites that use its services, see{" "}
+        <a
+          href="https://policies.google.com/technologies/partner-sites"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          How Google uses information from sites or apps that use our services
+        </a>
+        .
+      </p>
+
+      <h2>Affiliate links</h2>
+      <p>
+        Some links to brand and retailer websites may be affiliate links. If you buy through one, we may
+        earn a commission at no extra cost to you. This never changes how products are listed or
+        ranked.
+      </p>
+
+      <h2>Third-party links</h2>
+      <p>
+        Product pages link to brand and retailer sites we don&apos;t control. Their privacy practices
+        are their own.
+      </p>
+
+      <h2>Your rights</h2>
+      <p>
+        Depending on where you live (for example the EEA, UK, or California), you may have the right to
+        access, correct, delete, or object to the use of personal data about you. Because we don&apos;t
+        keep accounts, most of this data sits with the analytics and advertising providers above;
+        you can also contact us and we&apos;ll help where we can.
+      </p>
+
+      <h2>Children</h2>
+      <p>MatchaDB is not directed to children under 13, and we don&apos;t knowingly collect their data.</p>
+
+      <h2>Changes</h2>
+      <p>We&apos;ll update this page when our practices change and revise the date above.</p>
+
+      <h2>Contact</h2>
+      <p>
+        {CONTACT_EMAIL ? (
+          <>
+            Questions: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          </>
+        ) : (
+          <>
+            Questions: see the <Link href="/contact">contact page</Link>.
+          </>
+        )}
+      </p>
+    </LegalPage>
+  );
+}

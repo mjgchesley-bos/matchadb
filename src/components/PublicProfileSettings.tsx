@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import { useEffect, useRef, useState } from "react";
 import { AVATARS, AVATAR_LABELS, Avatar, type AvatarKey } from "@/components/Avatar";
 import { useAuth } from "@/components/AuthProvider";

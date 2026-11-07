@@ -1,3 +1,5 @@
+import { INTL_LANG, type Locale } from "@/i18n/config";
+
 // Types and small helpers for the matcha café finder. Kept apart from cafes.ts, which reads
 // data/cafes/*.json from disk and so can only run on the server.
 
@@ -43,6 +45,7 @@ export type Cafe = {
 };
 
 // What the map and list need for each café: id, name, address, city, state, zip, lat, lng, focus (1/0), country code.
+// focus: 0 = matcha on their site, 1 = matcha-focused, 2 = listed because matcha is in the name.
 export type CafeSlim = [string, string, string, string, string, string, number, number, number, string?];
 
 export const CAT_LABEL: Record<string, string> = {
@@ -110,6 +113,16 @@ export const COUNTRY_NAME: Record<string, string> = {
   CY: "Cyprus",
 };
 
+// A country's name in the visitor's language (the browser knows them all; English falls back to the table above).
+export function countryName(cc: string, lang: Locale = "en"): string {
+  if (lang === "en") return COUNTRY_NAME[cc] ?? cc;
+  try {
+    return new Intl.DisplayNames([INTL_LANG[lang]], { type: "region" }).of(cc) ?? COUNTRY_NAME[cc] ?? cc;
+  } catch {
+    return COUNTRY_NAME[cc] ?? cc;
+  }
+}
+
 // Page addresses for places outside the US end in the three-letter country code; US ones end in the state.
 const CC3: Record<string, string> = {
   CA: "can", JP: "jpn", KR: "kor", GB: "gbr", IE: "irl", FR: "fra", DE: "deu", IT: "ita", ES: "esp", PT: "prt", NL: "nld", BE: "bel", LU: "lux", AT: "aut", CH: "che",
@@ -147,14 +160,14 @@ export function parseCafeSlug(slug: string): { key: string; id: string } | null 
 
 // "6801 Hollywood Blvd, Los Angeles, CA 90028" in the US; address, city, postcode and country elsewhere,
 // leaving out any part the address already contains.
-export function formatPlace(c: { address: string; city: string; state: string; zip: string; cc?: string }): string {
+export function formatPlace(c: { address: string; city: string; state: string; zip: string; cc?: string }, lang: Locale = "en"): string {
   if (!c.cc || c.cc === "US") return [c.address, c.city, `${c.state} ${c.zip}`.trim()].filter(Boolean).join(", ");
   const parts: string[] = [];
   for (const p of [c.address, c.city, c.zip]) {
     const t = (p ?? "").trim();
     if (t && !parts.some((x) => x.includes(t))) parts.push(t);
   }
-  return [...parts, COUNTRY_NAME[c.cc] ?? c.cc].join(", ");
+  return [...parts, countryName(c.cc, lang)].join(", ");
 }
 
 export const directionsUrl = (c: { name: string; address: string; city: string; state: string; zip: string; cc?: string }): string =>

@@ -1,29 +1,31 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { cafeSlug, directionsUrl, formatPlace, type CafeSlim } from "@/lib/cafe-types";
 import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, type RegionKey } from "@/lib/cafe-regions";
 import { KM_PER_MILE, geocode, haversineMiles, type Origin } from "@/lib/geo";
+import { useLang, useT } from "@/i18n/client";
+import { INTL_LANG, localePath, type Locale } from "@/i18n/config";
+import { rich } from "@/i18n/rich";
 
 // Find cafés near you whose own website lists matcha, in the US, Canada, Europe, Japan and South Korea.
 // Search by ZIP, postcode or city, or use your device's location. Your position is only used in your
 // browser to sort and map the list; nothing about it is sent to or stored by us. (A typed place is sent
 // to Mapbox's geocoder to turn it into a point.)
 
-type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; cc: string };
+type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; cc: string };
 type Listed = { cafe: Cafe; dist: number | null };
 
 const RADII = [5, 10, 25, 50, 0]; // 0 = any distance
 const LIST_CAP = 30;
 
-const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] === 1, cc: r[9] ?? "US" });
-const place = (c: Cafe) => formatPlace(c);
+const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] >= 1, nameOnly: r[8] === 2, cc: r[9] ?? "US" });
 
 // The popup over a pin. Built with DOM nodes and textContent so a café name can never inject markup.
-function buildPopup(c: Cafe): HTMLElement {
+function buildPopup(c: Cafe, lang: Locale, linkText: string): HTMLElement {
   const el = (tag: string, cls: string, text?: string) => {
     const n = document.createElement(tag);
     n.className = cls;
@@ -32,14 +34,18 @@ function buildPopup(c: Cafe): HTMLElement {
   };
   const root = el("div", "store-pop");
   root.appendChild(el("p", "font-display text-base font-semibold text-ink leading-snug", c.name));
-  root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", place(c)));
-  const a = el("a", "mt-2 inline-block text-sm font-medium text-matcha-ink underline underline-offset-2", "Menu, ratings and photos") as HTMLAnchorElement;
-  a.href = `/cafes/${cafeSlug(c)}`;
+  root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", formatPlace(c, lang)));
+  const a = el("a", "mt-2 inline-block text-sm font-medium text-matcha-ink underline underline-offset-2", linkText) as HTMLAnchorElement;
+  a.href = localePath(lang, `/cafes/${cafeSlug(c)}`);
   root.appendChild(a);
   return root;
 }
 
 export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmail: string; initialRegion?: RegionKey }) {
+  const lang = useLang();
+  const t = useT();
+  const place = (c: Cafe) => formatPlace(c, lang);
+  const regionLabel = (k: RegionKey) => t(`c.region.${k}` as "c.region.us");
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const popupRef = useRef<mapboxgl.Popup | null>(null);
@@ -189,7 +195,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     }
     const el = document.createElement("div");
     el.style.cssText = "width:16px;height:16px;border-radius:9999px;background:#2563eb;border:3px solid #fff;box-shadow:0 0 0 2px rgba(37,99,235,.35);";
-    el.setAttribute("aria-label", "Your search location");
+    el.setAttribute("aria-label", t("c.cf.marker"));
     userMarkerRef.current = new mapboxgl.Marker({ element: el }).setLngLat([origin.lng, origin.lat]).addTo(map);
     const near = listed.slice(0, 8);
     if (near.length === 0) {
@@ -215,12 +221,12 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     prev?.remove();
     const c = selectedId ? all?.find((x) => x.id === selectedId) : null;
     if (!map || !c) return;
-    const popup = new mapboxgl.Popup({ offset: 14, maxWidth: "300px", closeButton: true, closeOnClick: false, className: "store-popup" }).setLngLat([c.lng, c.lat]).setDOMContent(buildPopup(c)).addTo(map);
+    const popup = new mapboxgl.Popup({ offset: 14, maxWidth: "300px", closeButton: true, closeOnClick: false, className: "store-popup" }).setLngLat([c.lng, c.lat]).setDOMContent(buildPopup(c, lang, t("c.cf.menu"))).addTo(map);
     popup.on("close", () => {
       if (popupRef.current === popup) setSelectedId(null);
     });
     popupRef.current = popup;
-  }, [selectedId, all]);
+  }, [selectedId, all, lang, t]);
 
   useEffect(() => {
     if (selectedId) cardRefs.current.get(selectedId)?.scrollIntoView({ block: "nearest", behavior: "smooth" });
@@ -239,14 +245,14 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
 
   function locate(auto = false) {
     if (!navigator.geolocation) {
-      if (!auto) setMessage("Your browser can't share its location. Search by ZIP code, postcode or city instead.");
+      if (!auto) setMessage(t("c.cf.err.noGeo"));
       return;
     }
     setBusy("locate");
     setMessage(null);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" };
+        const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: t("c.cf.yourLocation") };
         // Pick the part of the world the visitor is in.
         const here = REGIONS.find((r) => o.lng >= r.bounds[0][0] && o.lng <= r.bounds[1][0] && o.lat >= r.bounds[0][1] && o.lat <= r.bounds[1][1]);
         setQuery("");
@@ -257,7 +263,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       },
       (err) => {
         setBusy(null);
-        if (!auto) setMessage(err.code === 1 ? "Location access was blocked. Search by ZIP code, postcode or city instead." : "We couldn't get your location. Search by ZIP code, postcode or city instead.");
+        if (!auto) setMessage(err.code === 1 ? t("c.cf.err.blocked") : t("c.cf.err.fail"));
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
@@ -284,8 +290,8 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     setMessage(null);
     try {
       // Look in the current region first, then anywhere we cover.
-      const o = (await geocode(q, region.countries)) ?? (await geocode(q, ALL_COUNTRIES));
-      if (!o) setMessage("We couldn't find that place. Try a ZIP code or postcode, or a city and country.");
+      const o = (await geocode(q, region.countries, lang)) ?? (await geocode(q, ALL_COUNTRIES, lang));
+      if (!o) setMessage(t("c.cf.err.notFound"));
       else {
         const k = regionForCountry(o.country);
         setSelectedId(null);
@@ -293,7 +299,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
         else setOrigin(o);
       }
     } catch {
-      setMessage("Search isn't available right now. Please try again in a moment.");
+      setMessage(t("c.cf.err.search"));
     } finally {
       setBusy(null);
     }
@@ -306,15 +312,16 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     setSelectedId(null);
   }
 
-  const fmtDist = (d: number) => (d < 10 ? d.toFixed(1) : Math.round(d).toLocaleString());
+  const fmtDist = (d: number) => (d < 10 ? d.toFixed(1) : Math.round(d).toLocaleString(INTL_LANG[lang]));
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const fieldClass = "border border-line-strong rounded-sm px-3 py-2.5 bg-paper text-sm text-ink focus:outline-none focus:border-matcha";
   const label = "block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5";
-  const unitWord = unit === "mi" ? "miles" : "km";
+  const unitWord = unit === "mi" ? t("c.cf.unit.miles") : t("c.cf.unit.km");
+  const nf = (n: number) => n.toLocaleString(INTL_LANG[lang]);
 
   return (
     <div>
-      <div role="tablist" aria-label="Region" className="mb-4 flex flex-wrap gap-2">
+      <div role="tablist" aria-label={t("c.region.label")} className="mb-4 flex flex-wrap gap-2">
         {REGIONS.map((r) => (
           <button
             key={r.key}
@@ -324,7 +331,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
             onClick={() => changeRegion(r.key)}
             className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${r.key === regionKey ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"}`}
           >
-            {r.label}
+            {regionLabel(r.key)}
           </button>
         ))}
       </div>
@@ -332,32 +339,32 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       <form onSubmit={runSearch} className="flex flex-col gap-3 lg:flex-row lg:items-end">
         <div className="flex-1">
           <label htmlFor="cafe-q" className={label}>
-            ZIP code, postcode or city
+            {t("c.cf.zip")}
           </label>
           <div className="flex gap-2">
-            <input id="cafe-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={region.placeholder} autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
+            <input id="cafe-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t(`c.region.${region.key}.ph` as "c.region.us.ph")} autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
             <button type="submit" disabled={busy !== null || !query.trim()} className="rounded-sm bg-matcha px-5 py-2.5 text-sm font-medium text-paper hover:bg-forest transition-colors disabled:opacity-50">
-              {busy === "search" ? "Searching…" : "Search"}
+              {busy === "search" ? t("c.cf.searching") : t("c.cf.search")}
             </button>
           </div>
         </div>
         <button type="button" onClick={() => locate()} disabled={busy !== null} className="rounded-sm border border-line-strong bg-paper px-4 py-2.5 text-sm font-medium text-ink hover:border-matcha transition-colors disabled:opacity-50">
-          {busy === "locate" ? "Locating…" : "Use my location"}
+          {busy === "locate" ? t("c.cf.locating") : t("c.cf.locate")}
         </button>
         <div>
           <label htmlFor="cafe-name" className={label}>
-            Café name
+            {t("c.cf.nameLabel")}
           </label>
-          <input id="cafe-name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Filter by name" className={`${fieldClass} w-full lg:w-44`} />
+          <input id="cafe-name" value={name} onChange={(e) => setName(e.target.value)} placeholder={t("c.cf.namePh")} className={`${fieldClass} w-full lg:w-44`} />
         </div>
         <div>
           <label htmlFor="cafe-radius" className={label}>
-            Within
+            {t("c.cf.within")}
           </label>
           <select id="cafe-radius" value={radius} onChange={(e) => setRadius(Number(e.target.value))} disabled={!origin} className={`${fieldClass} w-full lg:w-32 disabled:opacity-50`}>
             {RADII.map((r) => (
               <option key={r} value={r}>
-                {r === 0 ? "Any distance" : `${r} ${unitWord}`}
+                {r === 0 ? t("c.cf.anyDistance") : `${r} ${unitWord}`}
               </option>
             ))}
           </select>
@@ -366,9 +373,9 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
         <label className="flex items-center gap-2 text-sm text-ink">
           <input type="checkbox" checked={focusOnly} onChange={(e) => setFocusOnly(e.target.checked)} className="accent-matcha" />
-          Matcha-focused cafés only
+          {t("c.cf.focusOnly")}
         </label>
-        <p className="text-xs text-ink-faint">Your location is used only in your browser to sort this list. We don&apos;t send it anywhere or store it.</p>
+        <p className="text-xs text-ink-faint">{t("c.cf.privacy")}</p>
       </div>
       {message && (
         <p className="mt-3 rounded-sm border border-line bg-paper-raised px-3 py-2 text-sm text-ink-muted" role="status">
@@ -378,22 +385,24 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
 
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_24rem] gap-5">
         <div className="relative h-[360px] lg:h-[680px] rounded-sm overflow-hidden border border-line">
-          {token ? <div ref={containerRef} className="h-full w-full" /> : <div className="flex h-full items-center justify-center text-ink-muted">Map token not configured.</div>}
+          {token ? <div ref={containerRef} className="h-full w-full" /> : <div className="flex h-full items-center justify-center text-ink-muted">{t("c.cf.noToken")}</div>}
         </div>
 
-        <section aria-label="Cafés" className="lg:h-[680px] lg:overflow-y-auto">
+        <section aria-label={t("c.cf.listLabel")} className="lg:h-[680px] lg:overflow-y-auto">
           {loadError ? (
-            <p className="text-sm text-ink-muted">The café list couldn&apos;t be loaded. Please refresh the page.</p>
+            <p className="text-sm text-ink-muted">{t("c.cf.loadError")}</p>
           ) : all === null ? (
-            <p className="text-sm text-ink-muted">Loading cafés…</p>
+            <p className="text-sm text-ink-muted">{t("c.cf.loading")}</p>
           ) : (
             <p className="text-sm text-ink-muted mb-3" aria-live="polite">
               {origin
-                ? `${listed.length.toLocaleString()} café${listed.length === 1 ? "" : "s"}${radius > 0 ? ` within ${radius} ${unitWord} of` : " near"} ${origin.label}`
-                : `${listed.length.toLocaleString()} cafés listed in ${region.label}. Search or use your location to see the ones near you.`}
+                ? radius > 0
+                  ? t(listed.length === 1 ? "c.cf.withinOf.one" : "c.cf.withinOf.other", { count: nf(listed.length), radius, unit: unitWord, place: origin.label })
+                  : t(listed.length === 1 ? "c.cf.nearPlace.one" : "c.cf.nearPlace.other", { count: nf(listed.length), place: origin.label })
+                : t("c.cf.listed", { count: nf(listed.length), region: regionLabel(region.key) })}
               {origin && (
                 <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
-                  Clear
+                  {t("c.cf.clear")}
                 </button>
               )}
             </p>
@@ -401,18 +410,16 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
 
           {origin && all && listed.length === 0 && (
             <div className="rounded-sm border border-line bg-paper-raised p-4 text-sm text-ink-muted">
-              <p>
-                No cafés listed within {radius} {unitWord} yet.
-              </p>
+              <p>{t("c.cf.noneWithin", { radius, unit: unitWord })}</p>
               {nearest && (
                 <p className="mt-2">
-                  The nearest we have is <strong className="text-ink">{nearest.cafe.name}</strong> in {nearest.cafe.city}, about {Math.round(nearest.dist ?? 0).toLocaleString()} {unitWord} away.{" "}
+                  {rich(t("c.cf.nearest", { city: nearest.cafe.city, dist: nf(Math.round(nearest.dist ?? 0)), unit: unitWord }), { name: <strong className="text-ink">{nearest.cafe.name}</strong> })}{" "}
                   <button type="button" onClick={() => setRadius(0)} className="text-matcha hover:text-forest underline">
-                    Show all distances
+                    {t("c.cf.showAllDist")}
                   </button>
                 </p>
               )}
-              <p className="mt-2">Know a café near you with matcha on the menu? Tell us below.</p>
+              <p className="mt-2">{t("c.cf.tellUs")}</p>
             </div>
           )}
 
@@ -438,15 +445,15 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
                   <span className="mt-0.5 block text-sm text-ink-muted">{place(c)}</span>
                 </button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">Matcha on their site</span>
-                  {c.focus && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">Matcha-focused</span>}
+                  <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>
+                  {c.focus && !c.nameOnly && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{t("c.cf.focused")}</span>}
                 </p>
                 <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
                   <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-matcha hover:text-forest">
-                    Menu, ratings and photos
+                    {t("c.cf.menu")}
                   </Link>
                   <a href={directionsUrl(c)} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
-                    Directions
+                    {t("c.cf.directions")}
                   </a>
                 </p>
               </li>
@@ -454,17 +461,17 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
           </ul>
           {!showAll && listed.length > LIST_CAP && (
             <button type="button" onClick={() => setShowAll(true)} className="mt-3 text-sm text-matcha hover:text-forest underline text-left">
-              Show all {listed.length.toLocaleString()} cafés
+              {t("c.cf.showAll", { count: nf(listed.length) })}
             </button>
           )}
-          {!origin && all && total === 0 && <p className="text-sm text-ink-muted">No cafés match.</p>}
+          {!origin && all && total === 0 && <p className="text-sm text-ink-muted">{t("c.cf.noMatch")}</p>}
         </section>
       </div>
 
       <p className="mt-6 text-sm text-ink-muted">
-        Know a café with matcha that&apos;s missing, or see something out of date?{" "}
+        {t("c.cf.suggest")}{" "}
         <a href={`mailto:${contactEmail}?subject=${encodeURIComponent("MatchaDB café suggestion")}&body=${encodeURIComponent("Café name:\nAddress:\nWebsite or menu link showing matcha:\n")}`} className="text-matcha hover:text-forest underline">
-          Email us
+          {t("c.cf.email")}
         </a>
         .
       </p>

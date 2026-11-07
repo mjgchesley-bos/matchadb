@@ -1,10 +1,12 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useTransition } from "react";
 import type { BrowseFilters } from "@/lib/db";
 import { gradeLabel } from "./product-cards";
+import { useLang, useT, useTV } from "@/i18n/client";
+import { localePath } from "@/i18n/config";
 
 // Bigger, bouncier pill than the browse-page sidebar's PillCheckbox -- this
 // is the "fun matching tool" surface, not a dense search form, so it gets
@@ -128,6 +130,9 @@ export function MatchTool({
   compact?: boolean;
 }) {
   const router = useRouter();
+  const lang = useLang();
+  const t = useT();
+  const tv = useTV();
   const [isPending, startTransition] = useTransition();
   const lastUserGesture = useRef(0);
 
@@ -189,7 +194,7 @@ export function MatchTool({
     }
     const query = params.toString();
     startTransition(() => {
-      router.push(query ? `/?${query}` : "/", { scroll: false });
+      router.push(localePath(lang, query ? `/?${query}` : "/"), { scroll: false });
     });
   }
 
@@ -205,12 +210,13 @@ export function MatchTool({
 
   return (
     <div className={`flex flex-col ${compact ? "gap-6" : "gap-7"} transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
-      <MatchGroup prompt="How will you use it?" compact={compact}>
+      <MatchGroup prompt={t("c.match.use")} compact={compact}>
         {uses.map((u) => (
           <MatchPill
             key={u}
             name="use"
             value={u}
+            label={tv("use", u)}
             checked={filters.uses?.includes(u) ?? false}
             onToggle={handleToggle}
             compact={compact}
@@ -218,13 +224,13 @@ export function MatchTool({
         ))}
       </MatchGroup>
 
-      <MatchGroup prompt="What grade?" compact={compact}>
+      <MatchGroup prompt={t("c.match.grade")} compact={compact}>
         {qualityGrades.map((g) => (
           <MatchPill
             key={g}
             name="grade"
             value={g}
-            label={gradeLabel(g)}
+            label={gradeLabel(g, tv)}
             checked={filters.grades?.includes(g) ?? false}
             onToggle={handleToggle}
             compact={compact}
@@ -233,13 +239,13 @@ export function MatchTool({
       </MatchGroup>
 
       {prepStyles.length > 0 && (
-        <MatchGroup prompt="Prepared thin or thick?" compact={compact}>
+        <MatchGroup prompt={t("c.match.prep")} compact={compact}>
           {prepStyles.map((g) => (
             <MatchPill
               key={g}
               name="grade"
               value={g}
-              label={gradeLabel(g)}
+              label={gradeLabel(g, tv)}
               checked={filters.grades?.includes(g) ?? false}
               onToggle={handleToggle}
               compact={compact}
@@ -248,12 +254,13 @@ export function MatchTool({
         </MatchGroup>
       )}
 
-      <MatchGroup prompt="What flavor calls to you?" compact={compact}>
+      <MatchGroup prompt={t("c.match.flavor")} compact={compact}>
         {options.flavors.map((f) => (
           <MatchPill
             key={f}
             name="flavor"
             value={f}
+            label={tv("flavor", f)}
             checked={filters.flavors?.includes(f) ?? false}
             onToggle={handleToggle}
             compact={compact}
@@ -263,7 +270,7 @@ export function MatchTool({
 
       <div className={compact ? "" : "flex justify-center"}>
         <Link href={clearHref} className="text-sm text-ink-faint hover:text-ink-muted transition-colors">
-          Start over
+          {t("c.match.startOver")}
         </Link>
       </div>
     </div>

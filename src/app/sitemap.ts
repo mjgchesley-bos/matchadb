@@ -10,19 +10,27 @@ import { PAIRS, pairSlug } from "@/lib/compare";
 import { profiled } from "@/lib/suppliers";
 import { getAllCafes } from "@/lib/cafes";
 import { cafeSlug } from "@/lib/cafe-types";
+import { HTML_LANG, LOCALES, localePath } from "@/i18n/config";
+
+// Pages that exist in every language: one entry per language, each pointing at all the others.
+function multilingual(path: string, changeFrequency: "daily" | "weekly" | "monthly" | "yearly", priority: number): MetadataRoute.Sitemap {
+  const abs = (l: (typeof LOCALES)[number]) => SITE_URL + (path === "/" && l === "en" ? "" : localePath(l, path));
+  const languages = { ...Object.fromEntries(LOCALES.map((l) => [HTML_LANG[l], abs(l)])), "x-default": abs("en") };
+  return LOCALES.map((l) => ({ url: abs(l), changeFrequency, priority: l === "en" ? priority : Math.max(0.1, priority - 0.1), alternates: { languages } }));
+}
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { productIds, brands } = await getSitemapEntries();
 
   const staticEntries: MetadataRoute.Sitemap = [
-    { url: SITE_URL, changeFrequency: "weekly", priority: 1 },
-    { url: `${SITE_URL}/browse`, changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE_URL}/map`, changeFrequency: "monthly", priority: 0.7 },
+    ...multilingual("/", "weekly", 1),
+    ...multilingual("/browse", "daily", 0.9),
+    ...multilingual("/map", "monthly", 0.7),
     { url: `${SITE_URL}/research`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/research/topics`, changeFrequency: "weekly", priority: 0.8 },
     ...TOPICS.map((t) => ({ url: `${SITE_URL}/research/topics/${t.slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
-    { url: `${SITE_URL}/stores`, changeFrequency: "weekly", priority: 0.8 },
-    { url: `${SITE_URL}/cafes`, changeFrequency: "weekly", priority: 0.9 },
+    ...multilingual("/stores", "weekly", 0.8),
+    ...multilingual("/cafes", "weekly", 0.9),
     { url: `${SITE_URL}/guides`, changeFrequency: "weekly", priority: 0.8 },
     ...GUIDES.map((g) => ({ url: `${SITE_URL}/guides/${g.slug}`, changeFrequency: "weekly" as const, priority: 0.8 })),
     { url: `${SITE_URL}/guides/what-is-ceremonial-matcha`, changeFrequency: "monthly", priority: 0.8 },
@@ -32,8 +40,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...PAIRS.map(([a, b]) => ({ url: `${SITE_URL}/compare/${pairSlug(a, b)}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${SITE_URL}/wholesale`, changeFrequency: "weekly", priority: 0.7 },
     ...profiled().map((s) => ({ url: `${SITE_URL}/wholesale/${s.slug}`, changeFrequency: "monthly" as const, priority: 0.6 })),
-    { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${SITE_URL}/contact`, changeFrequency: "yearly", priority: 0.3 },
+    ...multilingual("/about", "monthly", 0.5),
+    ...multilingual("/contact", "yearly", 0.3),
     { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },
     { url: `${SITE_URL}/terms`, changeFrequency: "yearly", priority: 0.3 },
   ];
@@ -68,11 +76,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.4,
   }));
 
-  const cafeEntries: MetadataRoute.Sitemap = getAllCafes().map((c) => ({
-    url: `${SITE_URL}/cafes/${cafeSlug(c)}`,
-    changeFrequency: "monthly",
-    priority: 0.4,
-  }));
+  // Café pages: the English URL lists the other languages (a separate entry per language would be 200,000+ URLs).
+  const cafeEntries: MetadataRoute.Sitemap = getAllCafes().map((c) => {
+    const slug = cafeSlug(c);
+    return {
+      url: `${SITE_URL}/cafes/${slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.4,
+      alternates: { languages: Object.fromEntries(LOCALES.map((l) => [HTML_LANG[l], `${SITE_URL}${localePath(l, `/cafes/${slug}`)}`])) },
+    };
+  });
 
   return [...staticEntries, ...regionEntries, ...brandEntries, ...productEntries, ...studyEntries, ...cafeEntries];
 }

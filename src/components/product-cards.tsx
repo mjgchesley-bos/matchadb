@@ -1,8 +1,3 @@
-import Link from "next/link";
-import type { ProductRow } from "@/lib/db";
-import { formatPrice } from "@/lib/price";
-import { getExternalLinkInfo } from "@/lib/links";
-import { ShippingChip } from "./ShippingNote";
 import { getBrandLogoPath, getBrandLogoRatio, logoNeedsInvert } from "@/lib/logos";
 
 // A brand logo chip sized by HEIGHT, not a forced square -- real logos are
@@ -29,6 +24,7 @@ export function BrandLogo({
   maxWidth,
   allowTallerThanSize = false,
   plain = false,
+  logoAlt,
 }: {
   brandName: string;
   size?: number;
@@ -51,6 +47,8 @@ export function BrandLogo({
   // Drops the white chip and border so the logo sits directly on the page. A logo file with a baked-in
   // white background still blends into the cream page (multiply), instead of showing a white box.
   plain?: boolean;
+  // Translated alt text (defaults to English).
+  logoAlt?: string;
 }) {
   const src = getBrandLogoPath(brandName);
   if (!src) return null;
@@ -82,7 +80,7 @@ export function BrandLogo({
           width/height */}
       <img
         src={src}
-        alt={`${brandName} logo`}
+        alt={logoAlt ?? `${brandName} logo`}
         loading="lazy"
         style={{
           width: "100%",
@@ -100,115 +98,9 @@ export function BrandLogo({
 // Usucha/koicha are preparation styles (thin vs. thick tea), not
 // self-explanatory the way "Ceremonial"/"Culinary" are -- a short
 // parenthetical saves someone a trip to a glossary.
-export function gradeLabel(grade: string): string {
+export function gradeLabel(grade: string, tv?: (group: string, value: string) => string): string {
+  if (tv) return tv("gradeLabel", grade);
   if (grade === "Usucha") return "Usucha (standard)";
   if (grade === "Koicha") return "Koicha (thick)";
   return grade;
-}
-
-export function ProductCard({ product: p }: { product: ProductRow }) {
-  const link = getExternalLinkInfo(p.source_url);
-  return (
-    <div className="border border-line rounded-sm p-4 hover:border-matcha bg-paper-raised hover:bg-matcha-soft transition-colors flex flex-col gap-1">
-      <Link href={`/products/${p.id}`} className="flex flex-col gap-1">
-        <span className="flex items-center gap-2">
-          <BrandLogo brandName={p.brand_name} />
-          <span className="text-base font-bold text-ink">{p.brand_name}</span>
-        </span>
-        <span className="text-sm text-ink-muted leading-snug">{p.product_name}</span>
-        {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
-        <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
-          {p.grade && (
-            <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5">{p.grade}</span>
-          )}
-          {p.region && (
-            <span className="rounded-full bg-paper-raised border border-line text-ink-muted px-2 py-0.5">
-              {p.region}
-            </span>
-          )}
-          {p.organic_certified === 1 && (
-            <span className="rounded-full bg-gold-soft text-gold px-2 py-0.5">Organic</span>
-          )}
-          <ShippingChip brand={p.brand_name} />
-          {(JSON.parse(p.flavor_tags) as string[]).slice(0, 2).map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5"
-            >
-              {tag}
-            </span>
-          ))}
-          {p.not_found === 1 && (
-            <span className="rounded-full bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 px-2 py-0.5">
-              unverifiable
-            </span>
-          )}
-        </div>
-        {(() => {
-          const price = formatPrice(p);
-          if (price.kind === "unresolved") {
-            return (
-              <span className="text-sm mt-1.5 text-ink-faint italic">
-                {p.source_url ? "See website for pricing" : "Price not confirmed"}
-              </span>
-            );
-          }
-          if (price.kind === "linkOnly") {
-            return <span className="text-sm mt-1.5 text-ink-faint italic">Pricing on product page</span>;
-          }
-          return (
-            <span className="text-sm mt-1.5 tabular-nums text-ink">
-              {price.text}
-              {price.caution && <span className="text-amber-600 ml-1">&#9888;</span>}
-            </span>
-          );
-        })()}
-      </Link>
-      {link && (
-        <a
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-matcha hover:text-forest transition-colors mt-1.5"
-        >
-          {link.label} &rarr;
-        </a>
-      )}
-    </div>
-  );
-}
-
-// Same info as ProductCard, but as the featured "one per price tier" pick --
-// bolder border and a tier-name badge instead of the plain brand/grade line.
-export function TieredPickCard({ label, product: p }: { label: string; product: ProductRow }) {
-  const price = formatPrice(p);
-  const link = getExternalLinkInfo(p.source_url);
-  return (
-    <div className="border-2 border-matcha rounded-sm p-4 bg-paper hover:bg-matcha-soft transition-colors flex flex-col gap-1">
-      <Link href={`/products/${p.id}`} className="flex flex-col gap-1">
-        <span className="inline-block self-start rounded-full bg-matcha text-paper px-2.5 py-0.5 text-xs font-medium tracking-wide mb-1">
-          {label}
-        </span>
-        <span className="flex items-center gap-2">
-          <BrandLogo brandName={p.brand_name} />
-          <span className="text-base font-bold text-ink">{p.brand_name}</span>
-        </span>
-        <span className="text-sm text-ink-muted leading-snug">{p.product_name}</span>
-        {link && <span className="text-xs text-ink-faint truncate">{link.hostname}</span>}
-        {price.kind === "resolved" && (
-          <span className="text-sm mt-1.5 tabular-nums text-ink">{price.text}</span>
-        )}
-      </Link>
-      {link && (
-        <a
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-xs text-matcha hover:text-forest transition-colors mt-1.5"
-        >
-          {link.label} &rarr;
-        </a>
-      )}
-    </div>
-  );
 }

@@ -1,7 +1,9 @@
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import type { ProductRow } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
 import { BrandLogo } from "@/components/product-cards";
+import { getT } from "@/i18n/server";
+import type { Locale } from "@/i18n/config";
 
 // "Popular right now": a few products mirroring the filter column on the home page. Member favorites
 // come first (ranked by saves, shelf adds, ratings and reviews); well-known staples fill any gaps.
@@ -9,22 +11,25 @@ export function PopularRail({
   products,
   fromMembers,
   layout,
+  lang = "en",
 }: {
   products: ProductRow[];
   fromMembers: number;
   layout: "column" | "strip";
+  lang?: Locale;
 }) {
   if (products.length === 0) return null;
-  const sub = fromMembers >= products.length ? "Most saved and rated by members" : "Member favorites and well-known staples";
+  const t = getT(lang);
+  const sub = fromMembers >= products.length ? t("pop.sub.members") : t("pop.sub.mixed");
   return (
     <section aria-labelledby={`popular-h-${layout}`}>
       <h2 id={`popular-h-${layout}`} className="font-mono text-sm tracking-[0.2em] uppercase text-forest">
-        Popular right now
+        {t("pop.title")}
       </h2>
       <p className="mt-1.5 mb-4 text-xs text-ink-faint">{sub}</p>
       <ul className={layout === "column" ? "flex flex-col gap-3" : "flex snap-x gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4"}>
         {products.map((p, i) => {
-          const price = formatPrice(p);
+          const price = formatPrice(p, t("price.converted"));
           return (
             <li key={p.id} className={layout === "strip" ? "w-60 shrink-0 snap-start sm:w-auto" : undefined}>
               <Link

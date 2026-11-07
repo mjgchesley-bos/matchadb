@@ -1,13 +1,15 @@
 "use client";
 
-import Link from "next/link";
+import Link from "@/i18n/Link";
 import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@/components/Avatar";
 import { useAuth } from "@/components/AuthProvider";
 import { TierIcon } from "@/components/TierIcon";
+import { useT } from "@/i18n/client";
 
 // "Sign in" in the header, or the person's initial with a small menu once signed in.
 export function HeaderAccount() {
+  const t = useT();
   const { ready, user, displayName, isPublic, avatar, stats, signIn, signOut } = useAuth();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
@@ -38,7 +40,7 @@ export function HeaderAccount() {
         onClick={() => signIn()}
         className="inline-flex items-center rounded-full border border-paper/70 px-3.5 sm:px-5 py-2 sm:py-2.5 text-sm font-medium tracking-wide text-paper transition-all hover:bg-paper hover:text-ink"
       >
-        Sign in
+        {t("c.account.signIn")}
       </button>
     );
   }
@@ -49,7 +51,7 @@ export function HeaderAccount() {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
-        aria-label="Your account"
+        aria-label={t("c.account.yours")}
         aria-haspopup="menu"
         aria-expanded={open}
         className="inline-flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-full bg-paper text-sm font-semibold text-ink transition-all hover:-translate-y-0.5 hover:shadow-md"
@@ -58,24 +60,24 @@ export function HeaderAccount() {
       </button>
       {open && (
         <div role="menu" className="absolute right-0 top-full z-40 mt-2 w-56 overflow-hidden rounded-md border border-line bg-paper-raised py-1 shadow-lg">
-          <p className="px-4 pt-2 pb-1 text-xs text-ink-faint">Signed in as</p>
+          <p className="px-4 pt-2 pb-1 text-xs text-ink-faint">{t("c.account.signedInAs")}</p>
           <p className="px-4 text-sm font-medium text-ink truncate">{displayName ?? "…"}</p>
           <p className="flex items-center gap-1.5 px-4 pb-2 text-xs text-ink-faint">
             {stats ? (
               <>
                 <TierIcon tier={stats.tier} size={14} />
-                {`${stats.tier} · ${stats.points} points`}
+                {t("c.account.points", { tier: stats.tier, points: stats.points })}
               </>
             ) : (
               "\u00a0"
             )}
           </p>
           <Link href="/account" role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
-            My matcha
+            {t("c.account.mine")}
           </Link>
           {isPublic && displayName && (
             <Link href={`/u/${encodeURIComponent(displayName)}`} role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
-              My public profile
+              {t("c.account.profile")}
             </Link>
           )}
           <button
@@ -87,7 +89,7 @@ export function HeaderAccount() {
             }}
             className="block w-full px-4 py-2.5 text-left text-sm text-ink hover:bg-matcha-soft"
           >
-            Sign out
+            {t("c.account.signOut")}
           </button>
         </div>
       )}

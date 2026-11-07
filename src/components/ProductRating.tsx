@@ -4,6 +4,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { Stars } from "@/components/Stars";
 import { supabase } from "@/lib/supabase";
+import { useLang, useT } from "@/i18n/client";
+import { INTL_LANG } from "@/i18n/config";
 
 // Community star rating for one product. Hover to preview in half-star steps, click (or
 // tap) to rate; you need to be signed in, and each person has one rating they can change.
@@ -18,6 +20,8 @@ const fmt = (n: number) => (Number.isInteger(n) ? n.toFixed(1) : String(n));
 // Rates a product (productId) or, with cafeId, a café.
 export function ProductRating({ productId, cafeId, productName }: { productId?: number; cafeId?: string; productName: string }) {
   const { user, signIn } = useAuth();
+  const t = useT();
+  const lang = useLang();
   const table = cafeId ? "cafe_ratings" : "ratings";
   const view = cafeId ? "cafe_rating_stats" : "rating_stats";
   const col = cafeId ? "cafe_id" : "product_id";
@@ -72,7 +76,7 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
   const submit = useCallback(
     async (rating: number) => {
       if (!user) {
-        signIn(`Sign in to rate ${productName}.`);
+        signIn(t("c.rt.signIn", { name: productName }));
         return;
       }
       setSaving(true);
@@ -81,17 +85,17 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
         .from(table)
         .upsert({ user_id: user.id, [col]: key, score: rating, updated_at: new Date().toISOString() }, { onConflict: `user_id,${col}` });
       if (error) {
-        setMessage("Couldn't save your rating. Please try again.");
+        setMessage(t("c.rt.saveFail"));
       } else {
         setMineState({ uid: user.id, score: rating });
         setDraft(null);
         window.gtag?.("event", "rating_submit", { [col]: key, rating });
-        setMessage("Thanks, your rating is saved.");
+        setMessage(t("c.rt.saved"));
         void loadStats();
       }
       setSaving(false);
     },
-    [user, signIn, table, col, key, productName, loadStats]
+    [user, signIn, table, col, key, productName, loadStats, t]
   );
 
   const clear = async () => {
@@ -100,7 +104,7 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
     const { error } = await supabase().from(table).delete().eq("user_id", user.id).eq(col, key);
     if (!error) {
       setMine(null);
-      setMessage("Your rating was removed.");
+      setMessage(t("c.rt.removed"));
       void loadStats();
     }
     setSaving(false);
@@ -120,21 +124,21 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
   const remaining = Math.max(0, MIN_TO_SHOW - stats.count);
 
   return (
-    <section className="mt-4 rounded-sm border border-line bg-paper-raised px-4 py-3 max-w-md" aria-label="Community rating">
+    <section className="mt-4 rounded-sm border border-line bg-paper-raised px-4 py-3 max-w-md" aria-label={t("c.rt.label")}>
       <div className="flex items-center gap-3 flex-wrap">
         {stats.average != null && stats.count >= MIN_TO_SHOW ? (
           <>
             <span className="font-display text-2xl font-semibold text-ink tabular-nums">{stats.average.toFixed(1)}</span>
             <Stars value={stats.average} size={20} />
             <span className="text-sm text-ink-muted">
-              {stats.count.toLocaleString()} community rating{stats.count === 1 ? "" : "s"}
+              {t(stats.count === 1 ? "c.rt.count.one" : "c.rt.count.other", { count: stats.count.toLocaleString(INTL_LANG[lang]) })}
             </span>
           </>
         ) : (
           <span className="text-sm text-ink-muted">
             {stats.count === 0
-              ? "No community ratings yet. Be the first to rate it."
-              : `${stats.count} community rating${stats.count === 1 ? "" : "s"} so far. The score appears after ${MIN_TO_SHOW}${remaining > 0 ? ` (${remaining} more)` : ""}.`}
+              ? t("c.rt.none")
+              : t(stats.count === 1 ? "c.rt.sofar.one" : "c.rt.sofar.other", { count: stats.count, min: MIN_TO_SHOW, remaining })}
           </span>
         )}
       </div>
@@ -144,11 +148,11 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
           ref={pad}
           role="slider"
           tabIndex={0}
-          aria-label={`Rate ${productName}`}
+          aria-label={t("c.rt.rate", { name: productName })}
           aria-valuemin={0.5}
           aria-valuemax={5}
           aria-valuenow={shown || undefined}
-          aria-valuetext={shown ? `${fmt(shown)} out of 5 stars` : "not rated"}
+          aria-valuetext={shown ? t("c.rt.valuetext", { n: fmt(shown) }) : t("c.rt.notRated")}
           className="inline-flex cursor-pointer touch-none select-none rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-matcha"
           onPointerMove={(e) => setHover(valueAt(e.clientX))}
           onPointerLeave={() => setHover(null)}
@@ -175,12 +179,12 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
           {hover != null
             ? `${fmt(hover)} / 5`
             : draft != null
-              ? `${fmt(draft)} / 5, press Enter to save`
+              ? t("c.rt.draft", { n: fmt(draft) })
               : mine != null
-                ? `Your rating: ${fmt(mine)}. Click to change it.`
+                ? t("c.rt.mine", { n: fmt(mine) })
                 : user
-                  ? "Click a star to rate"
-                  : "Click a star to rate (sign in required)"}
+                  ? t("c.rt.click")
+                  : t("c.rt.clickSignIn")}
         </span>
       </div>
       {(message || mine != null) && (
@@ -188,7 +192,7 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
           {message}
           {mine != null && (
             <button type="button" onClick={clear} disabled={saving} className="ml-2 underline hover:text-ink-muted">
-              Remove my rating
+              {t("c.rt.remove")}
             </button>
           )}
         </p>
