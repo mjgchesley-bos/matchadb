@@ -6,8 +6,8 @@ export type CafeEvidence = {
   u: string;
   // menu = a menu / drinks / order page; home = the homepage; other = some other page.
   k: "menu" | "home" | "other";
-  // 3 = text on a menu page, 2 = text on another page, 1 = a menu item in the page's embedded data.
-  st: 1 | 2 | 3;
+  // 3 = text on a menu page, 2 = text on another page, 1 = a menu item in the page's embedded data, 0 = none (name only).
+  st: 0 | 1 | 2 | 3;
   n: number;
   // A short quote around the word "matcha" (or 抹茶 / 말차).
   s: string[];
@@ -31,6 +31,8 @@ export type Cafe = {
   // Matcha is front and centre (in the name, or mentioned a lot).
   focus: boolean;
   ev: CafeEvidence[];
+  // "name": listed because matcha is in the business's own name (no menu seen yet). "web": found on a web search lead and its own site.
+  via?: "name" | "web";
   menu: string | null;
   platform: string | null;
   pdf: string | null;
@@ -52,6 +54,22 @@ export const CAT_LABEL: Record<string, string> = {
   hong_kong_style_cafe: "Café",
   cat_cafe: "Cat café",
   dog_cafe: "Dog café",
+  dessert_shop: "Dessert shop",
+  ice_cream_shop: "Ice cream",
+  gelato_shop: "Gelato",
+  smoothie_juice_bar: "Juice and smoothie bar",
+  juice_bar: "Juice bar",
+  bakery: "Bakery",
+  donut_shop: "Donuts",
+  creperie: "Crêperie",
+  breakfast_and_brunch_restaurant: "Brunch spot",
+  health_food_restaurant: "Health food",
+  vegan_restaurant: "Vegan",
+  japanese_restaurant: "Japanese restaurant",
+  restaurant: "Restaurant",
+  food_truck_stand: "Food truck",
+  bagel_shop: "Bagels",
+  bar: "Bar",
 };
 
 export const COUNTRY_NAME: Record<string, string> = {

@@ -61,7 +61,7 @@ export default async function CafesPage({ searchParams }: { searchParams: Promis
           </Link>
           .
         </p>
-        <p className="mt-3 text-xs text-ink-faint">Place data: Overture Maps Foundation (CDLA Permissive 2.0), with contributions from Meta and Microsoft, among others.</p>
+        <p className="mt-3 text-xs text-ink-faint">Place data: Overture Maps Foundation (CDLA Permissive 2.0), with contributions from Meta and Microsoft, among others. A few venues found through web searches are placed using &copy; OpenStreetMap contributors (ODbL). Cafés whose own name says matcha are listed even when we haven&apos;t read their menu yet.</p>
       </section>
     </main>
   );

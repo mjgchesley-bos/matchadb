@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const c = getCafeBySlug(slug);
   if (!c) return { title: "Café not found", robots: { index: false } };
   const title = `${c.name}: Matcha in ${loc(c)}`;
-  const description = `${c.name} at ${where(c)} lists matcha on its own website. See where, get directions, and read member ratings, reviews and photos.`;
+  const description = `${c.name} at ${where(c)} ${c.via === "name" ? "is named for matcha." : "lists matcha on its own website."} See where, get directions, and read member ratings, reviews and photos.`;
   return { title, description, alternates: { canonical: `${SITE_URL}/cafes/${cafeSlug(c)}` }, openGraph: { title, description, url: `${SITE_URL}/cafes/${cafeSlug(c)}` } };
 }
 
@@ -70,7 +70,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <p className="mt-2 text-ink-muted">{where(c)}</p>
         <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
           <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ?? "Café"}</span>
-          <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">Matcha on their site</span>
+          <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? "Matcha in the name" : "Matcha on their site"}</span>
           {c.focus && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">Matcha-focused</span>}
         </p>
         <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
@@ -98,9 +98,11 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           Matcha on the menu
         </h2>
         <p className="mt-2 text-sm text-ink-muted">
-          We found matcha on this café&apos;s own website on {fmtDate(c.checked)}. We can&apos;t see what is in stock today, so check the menu or call ahead.
+          {c.via === "name"
+            ? "Matcha is in this business's own name, so we list it. We haven't been able to read a menu on its website yet, so check the menu or call ahead."
+            : `We found matcha on this café's own website on ${fmtDate(c.checked)}. We can't see what is in stock today, so check the menu or call ahead.`}
         </p>
-        <ul className="mt-4 flex flex-col gap-3">
+        {c.ev.length > 0 && (<ul className="mt-4 flex flex-col gap-3">
           {c.ev.map((e) => (
             <li key={e.u} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
               {e.s.map((q) =>
@@ -127,7 +129,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               </p>
             </li>
           ))}
-        </ul>
+        </ul>)}
         {(c.menu || c.platform || c.pdf) && (
           <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm">
             {c.menu && (
