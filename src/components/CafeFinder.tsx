@@ -4,22 +4,23 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
-import { cafeSlug, directionsUrl, type CafeSlim } from "@/lib/cafe-types";
-import { USA_BOUNDS, geocode, haversineMiles, type Origin } from "@/lib/geo";
+import { cafeSlug, directionsUrl, formatPlace, type CafeSlim } from "@/lib/cafe-types";
+import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, type RegionKey } from "@/lib/cafe-regions";
+import { KM_PER_MILE, geocode, haversineMiles, type Origin } from "@/lib/geo";
 
-// Find cafés near you whose own website lists matcha. Search by ZIP or city, or use your
-// device's location. Your position is only used in your browser to sort and map the list;
-// nothing about it is sent to or stored by us. (A typed ZIP or city is sent to Mapbox's
-// geocoder to turn it into a point.)
+// Find cafés near you whose own website lists matcha, in the US, Canada, Europe, Japan and South Korea.
+// Search by ZIP, postcode or city, or use your device's location. Your position is only used in your
+// browser to sort and map the list; nothing about it is sent to or stored by us. (A typed place is sent
+// to Mapbox's geocoder to turn it into a point.)
 
-type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean };
-type Listed = { cafe: Cafe; miles: number | null };
+type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; cc: string };
+type Listed = { cafe: Cafe; dist: number | null };
 
 const RADII = [5, 10, 25, 50, 0]; // 0 = any distance
 const LIST_CAP = 30;
 
-const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] === 1 });
-const place = (c: Cafe) => [c.address, c.city, `${c.state} ${c.zip}`.trim()].filter(Boolean).join(", ");
+const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] === 1, cc: r[9] ?? "US" });
+const place = (c: Cafe) => formatPlace(c);
 
 // The popup over a pin. Built with DOM nodes and textContent so a café name can never inject markup.
 function buildPopup(c: Cafe): HTMLElement {
@@ -38,14 +39,19 @@ function buildPopup(c: Cafe): HTMLElement {
   return root;
 }
 
-export function CafeFinder({ contactEmail }: { contactEmail: string }) {
+export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmail: string; initialRegion?: RegionKey }) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const popupRef = useRef<mapboxgl.Popup | null>(null);
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
   const cardRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
-  const [all, setAll] = useState<Cafe[] | null>(null);
+  const [regionKey, setRegionKey] = useState<RegionKey>(initialRegion);
+  const region = regionByKey(regionKey);
+  const unit = region.unit;
+  // The list that was loaded, and which region it belongs to (so a region switch never shows the old list).
+  const [loaded, setLoaded] = useState<{ region: RegionKey; list: Cafe[] } | null>(null);
+  const all = loaded && loaded.region === regionKey ? loaded.list : null;
   const [loadError, setLoadError] = useState(false);
   const [query, setQuery] = useState("");
   const [name, setName] = useState("");
@@ -59,28 +65,33 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
 
   useEffect(() => {
     let live = true;
-    fetch("/data/cafes-slim.json")
+    fetch(`/data/cafes-slim-${regionKey}.json`)
       .then((r) => (r.ok ? (r.json() as Promise<CafeSlim[]>) : Promise.reject(new Error("load"))))
-      .then((rows) => live && setAll(rows.map(fromSlim)))
+      .then((rows) => {
+        if (!live) return;
+        setLoadError(false);
+        setLoaded({ region: regionKey, list: rows.map(fromSlim) });
+      })
       .catch(() => live && setLoadError(true));
     return () => {
       live = false;
     };
-  }, []);
+  }, [regionKey]);
 
   const { listed, nearest, total } = useMemo(() => {
     const q = name.trim().toLowerCase();
+    const factor = unit === "km" ? KM_PER_MILE : 1;
     const matching: Listed[] = (all ?? [])
       .filter((c) => (!focusOnly || c.focus) && (!q || c.name.toLowerCase().includes(q) || c.city.toLowerCase().includes(q)))
-      .map((cafe) => ({ cafe, miles: origin ? haversineMiles(origin, cafe) : null }));
+      .map((cafe) => ({ cafe, dist: origin ? haversineMiles(origin, cafe) * factor : null }));
     if (!origin) {
-      matching.sort((a, b) => a.cafe.state.localeCompare(b.cafe.state) || a.cafe.city.localeCompare(b.cafe.city) || a.cafe.name.localeCompare(b.cafe.name));
+      matching.sort((a, b) => a.cafe.cc.localeCompare(b.cafe.cc) || a.cafe.state.localeCompare(b.cafe.state) || a.cafe.city.localeCompare(b.cafe.city) || a.cafe.name.localeCompare(b.cafe.name));
       return { listed: matching, nearest: null as Listed | null, total: matching.length };
     }
-    matching.sort((a, b) => (a.miles ?? 0) - (b.miles ?? 0));
-    const within = radius > 0 ? matching.filter((x) => (x.miles ?? 0) <= radius) : matching;
+    matching.sort((a, b) => (a.dist ?? 0) - (b.dist ?? 0));
+    const within = radius > 0 ? matching.filter((x) => (x.dist ?? 0) <= radius) : matching;
     return { listed: within, nearest: matching[0] ?? null, total: matching.length };
-  }, [all, name, focusOnly, origin, radius]);
+  }, [all, name, focusOnly, origin, radius, unit]);
 
   const currentFeatures = useRef<GeoJSON.FeatureCollection>({ type: "FeatureCollection", features: [] });
 
@@ -89,7 +100,7 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
     const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
     if (!containerRef.current || mapRef.current || !token) return;
     mapboxgl.accessToken = token;
-    const map = new mapboxgl.Map({ container: containerRef.current, style: "mapbox://styles/mapbox/light-v11", bounds: USA_BOUNDS, fitBoundsOptions: { padding: 20 } });
+    const map = new mapboxgl.Map({ container: containerRef.current, style: "mapbox://styles/mapbox/light-v11", bounds: regionByKey(initialRegion).bounds, fitBoundsOptions: { padding: 20 } });
     mapRef.current = map;
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
     const ro = new ResizeObserver(() => map.resize());
@@ -151,6 +162,7 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
       map.remove();
       mapRef.current = null;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -165,14 +177,14 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
     (mapRef.current?.getSource("cafes") as mapboxgl.GeoJSONSource | undefined)?.setData(currentFeatures.current);
   }, [listed, selectedId]);
 
-  // Frame the map: the whole country with no search, the area around you after one.
+  // Frame the map: the whole region with no search, the area around you after one.
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
     if (!origin) {
-      map.fitBounds(USA_BOUNDS, { padding: 20, duration: 800 });
+      map.fitBounds(region.bounds, { padding: 20, duration: 800 });
       return;
     }
     const el = document.createElement("div");
@@ -188,7 +200,7 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
     for (const { cafe } of near) b.extend([cafe.lng, cafe.lat]);
     map.fitBounds(b, { padding: 70, maxZoom: 13, duration: 900 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [origin, radius, all]);
+  }, [origin, radius, all, regionKey]);
 
   function select(id: string) {
     setSelectedId(id);
@@ -214,23 +226,38 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
     if (selectedId) cardRefs.current.get(selectedId)?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [selectedId]);
 
+  // Switch to another part of the world.
+  function changeRegion(k: RegionKey, keepOrigin?: Origin) {
+    if (k === regionKey && !keepOrigin) return;
+    setRegionKey(k);
+    setOrigin(keepOrigin ?? null);
+    setSelectedId(null);
+    setShowAll(false);
+    setMessage(null);
+    if (!keepOrigin) setQuery("");
+  }
+
   function locate(auto = false) {
     if (!navigator.geolocation) {
-      if (!auto) setMessage("Your browser can't share its location. Search by ZIP code or city instead.");
+      if (!auto) setMessage("Your browser can't share its location. Search by ZIP code, postcode or city instead.");
       return;
     }
     setBusy("locate");
     setMessage(null);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        setOrigin({ lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" });
+        const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" };
+        // Pick the part of the world the visitor is in.
+        const here = REGIONS.find((r) => o.lng >= r.bounds[0][0] && o.lng <= r.bounds[1][0] && o.lat >= r.bounds[0][1] && o.lat <= r.bounds[1][1]);
         setQuery("");
         setSelectedId(null);
         setBusy(null);
+        if (here && here.key !== regionKey) changeRegion(here.key, o);
+        else setOrigin(o);
       },
       (err) => {
         setBusy(null);
-        if (!auto) setMessage(err.code === 1 ? "Location access was blocked. Search by ZIP code or city instead." : "We couldn't get your location. Search by ZIP code or city instead.");
+        if (!auto) setMessage(err.code === 1 ? "Location access was blocked. Search by ZIP code, postcode or city instead." : "We couldn't get your location. Search by ZIP code, postcode or city instead.");
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
@@ -246,6 +273,7 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
     return () => {
       live = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function runSearch(e: React.FormEvent) {
@@ -255,11 +283,14 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
     setBusy("search");
     setMessage(null);
     try {
-      const o = await geocode(q);
-      if (!o) setMessage("We couldn't find that place. Try a 5-digit ZIP code, or a city and state.");
+      // Look in the current region first, then anywhere we cover.
+      const o = (await geocode(q, region.countries)) ?? (await geocode(q, ALL_COUNTRIES));
+      if (!o) setMessage("We couldn't find that place. Try a ZIP code or postcode, or a city and country.");
       else {
-        setOrigin(o);
+        const k = regionForCountry(o.country);
         setSelectedId(null);
+        if (k && k !== regionKey) changeRegion(k, o);
+        else setOrigin(o);
       }
     } catch {
       setMessage("Search isn't available right now. Please try again in a moment.");
@@ -275,19 +306,36 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
     setSelectedId(null);
   }
 
+  const fmtDist = (d: number) => (d < 10 ? d.toFixed(1) : Math.round(d).toLocaleString());
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const fieldClass = "border border-line-strong rounded-sm px-3 py-2.5 bg-paper text-sm text-ink focus:outline-none focus:border-matcha";
   const label = "block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5";
+  const unitWord = unit === "mi" ? "miles" : "km";
 
   return (
     <div>
+      <div role="tablist" aria-label="Region" className="mb-4 flex flex-wrap gap-2">
+        {REGIONS.map((r) => (
+          <button
+            key={r.key}
+            type="button"
+            role="tab"
+            aria-selected={r.key === regionKey}
+            onClick={() => changeRegion(r.key)}
+            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${r.key === regionKey ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"}`}
+          >
+            {r.label}
+          </button>
+        ))}
+      </div>
+
       <form onSubmit={runSearch} className="flex flex-col gap-3 lg:flex-row lg:items-end">
         <div className="flex-1">
           <label htmlFor="cafe-q" className={label}>
-            ZIP code or city
+            ZIP code, postcode or city
           </label>
           <div className="flex gap-2">
-            <input id="cafe-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="e.g. 90028 or Austin, TX" autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
+            <input id="cafe-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={region.placeholder} autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
             <button type="submit" disabled={busy !== null || !query.trim()} className="rounded-sm bg-matcha px-5 py-2.5 text-sm font-medium text-paper hover:bg-forest transition-colors disabled:opacity-50">
               {busy === "search" ? "Searching…" : "Search"}
             </button>
@@ -309,7 +357,7 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
           <select id="cafe-radius" value={radius} onChange={(e) => setRadius(Number(e.target.value))} disabled={!origin} className={`${fieldClass} w-full lg:w-32 disabled:opacity-50`}>
             {RADII.map((r) => (
               <option key={r} value={r}>
-                {r === 0 ? "Any distance" : `${r} miles`}
+                {r === 0 ? "Any distance" : `${r} ${unitWord}`}
               </option>
             ))}
           </select>
@@ -341,8 +389,8 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
           ) : (
             <p className="text-sm text-ink-muted mb-3" aria-live="polite">
               {origin
-                ? `${listed.length.toLocaleString()} café${listed.length === 1 ? "" : "s"}${radius > 0 ? ` within ${radius} miles of` : " near"} ${origin.label}`
-                : `${listed.length.toLocaleString()} cafés listed across the US. Search a ZIP code or use your location to see the ones near you.`}
+                ? `${listed.length.toLocaleString()} café${listed.length === 1 ? "" : "s"}${radius > 0 ? ` within ${radius} ${unitWord} of` : " near"} ${origin.label}`
+                : `${listed.length.toLocaleString()} cafés listed in ${region.label}. Search or use your location to see the ones near you.`}
               {origin && (
                 <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
                   Clear
@@ -353,10 +401,12 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
 
           {origin && all && listed.length === 0 && (
             <div className="rounded-sm border border-line bg-paper-raised p-4 text-sm text-ink-muted">
-              <p>No cafés listed within {radius} miles yet.</p>
+              <p>
+                No cafés listed within {radius} {unitWord} yet.
+              </p>
               {nearest && (
                 <p className="mt-2">
-                  The nearest we have is <strong className="text-ink">{nearest.cafe.name}</strong> in {nearest.cafe.city}, {nearest.cafe.state}, about {Math.round(nearest.miles ?? 0).toLocaleString()} miles away.{" "}
+                  The nearest we have is <strong className="text-ink">{nearest.cafe.name}</strong> in {nearest.cafe.city}, about {Math.round(nearest.dist ?? 0).toLocaleString()} {unitWord} away.{" "}
                   <button type="button" onClick={() => setRadius(0)} className="text-matcha hover:text-forest underline">
                     Show all distances
                   </button>
@@ -367,7 +417,7 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
           )}
 
           <ul className="flex flex-col gap-3">
-            {listed.filter((x, i) => showAll || i < LIST_CAP || x.cafe.id === selectedId).map(({ cafe: c, miles }) => (
+            {listed.filter((x, i) => showAll || i < LIST_CAP || x.cafe.id === selectedId).map(({ cafe: c, dist }) => (
               <li
                 key={c.id}
                 ref={(el) => {
@@ -379,7 +429,11 @@ export function CafeFinder({ contactEmail }: { contactEmail: string }) {
                 <button type="button" onClick={() => select(c.id)} className="block w-full text-left">
                   <span className="flex items-baseline justify-between gap-3">
                     <span className="font-display text-lg font-semibold text-ink">{c.name}</span>
-                    {miles != null && <span className="text-xs tabular-nums text-matcha whitespace-nowrap">{miles < 10 ? miles.toFixed(1) : Math.round(miles).toLocaleString()} mi</span>}
+                    {dist != null && (
+                      <span className="text-xs tabular-nums text-matcha whitespace-nowrap">
+                        {fmtDist(dist)} {unit}
+                      </span>
+                    )}
                   </span>
                   <span className="mt-0.5 block text-sm text-ink-muted">{place(c)}</span>
                 </button>

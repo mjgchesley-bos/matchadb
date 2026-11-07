@@ -57927,5 +57927,3656 @@
     "checked": "2026-10-30",
     "lat": 39.582225,
     "lng": -104.842509
+  },
+  {
+    "id": "davidstea-carrefour-laval-ca",
+    "name": "DAVIDsTEA Carrefour Laval",
+    "kind": "brand-shop",
+    "address": "3035 Boulevard le Carrefour, Unit M012",
+    "city": "Laval",
+    "state": "",
+    "zip": "H7T 1C7",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "note": "This store has a Matcha Bar.",
+    "checked": "2026-11-06",
+    "lat": 45.571177,
+    "lng": -73.753136
+  },
+  {
+    "id": "davidstea-centre-eaton-de-montreal-ca",
+    "name": "DAVIDsTEA Centre Eaton de Montreal",
+    "kind": "brand-shop",
+    "address": "705 Saint-Catherine St W, CRU# 2139",
+    "city": "Montréal",
+    "state": "",
+    "zip": "H3B 4G5",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "note": "This store has a Matcha Bar.",
+    "checked": "2026-11-06",
+    "lat": 45.502611,
+    "lng": -73.571183
+  },
+  {
+    "id": "davidstea-champlain-place-ca",
+    "name": "DAVIDsTEA Champlain Place",
+    "kind": "brand-shop",
+    "address": "477 Paul Street, Unit Q002",
+    "city": "Dieppe",
+    "state": "",
+    "zip": "E1A 4X5",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.096076,
+    "lng": -64.76084
+  },
+  {
+    "id": "davidstea-chinook-centre-ca",
+    "name": "DAVIDsTEA Chinook Centre",
+    "kind": "brand-shop",
+    "address": "6455 Macleod Trail Southwest, Unit 0259Z",
+    "city": "Calgary",
+    "state": "",
+    "zip": "T2H 0K3",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "note": "This store has a Matcha Bar.",
+    "checked": "2026-11-06",
+    "lat": 50.997882,
+    "lng": -114.074005
+  },
+  {
+    "id": "davidstea-dix30-ca",
+    "name": "DAVIDsTEA DIX30",
+    "kind": "brand-shop",
+    "address": "100 Prom. des Lanternes, #15",
+    "city": "Brossard",
+    "state": "",
+    "zip": "J4Y 0L1",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.44678,
+    "lng": -73.437258
+  },
+  {
+    "id": "davidstea-fairview-pointe-claire-ca",
+    "name": "DAVIDsTEA Fairview Pointe-Claire",
+    "kind": "brand-shop",
+    "address": "6801 Trans-Canada Highway, Unit E002E",
+    "city": "Pointe-Claire",
+    "state": "",
+    "zip": "H9R 5J2",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.462921,
+    "lng": -73.832328
+  },
+  {
+    "id": "davidstea-les-avenues-vaudreuil-ca",
+    "name": "DAVIDsTEA Les Avenues Vaudreuil",
+    "kind": "brand-shop",
+    "address": "3150 Boulevard de la Gare, Unit 124",
+    "city": "Vaudreuil-Dorion",
+    "state": "",
+    "zip": "J7V 8W5",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.403648,
+    "lng": -74.048451
+  },
+  {
+    "id": "davidstea-les-galeries-d-anjou-ca",
+    "name": "DAVIDsTEA Les Galeries d'Anjou",
+    "kind": "brand-shop",
+    "address": "7999 Boulevard les Galeries d'Anjou, Unit R003",
+    "city": "Montréal",
+    "state": "",
+    "zip": "H1M 1W6",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.600438,
+    "lng": -73.564571
+  },
+  {
+    "id": "davidstea-les-galeries-de-la-capitale-ca",
+    "name": "DAVIDsTEA Les Galeries de la Capitale",
+    "kind": "brand-shop",
+    "address": "5401 Boulevard des Galeries, Unit 184",
+    "city": "Québec",
+    "state": "",
+    "zip": "G2K 1N4",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.830814,
+    "lng": -71.299289
+  },
+  {
+    "id": "davidstea-limeridge-mall-ca",
+    "name": "DAVIDsTEA Limeridge Mall",
+    "kind": "brand-shop",
+    "address": "999 Upper Wentworth Street, Unit 0117",
+    "city": "Hamilton",
+    "state": "",
+    "zip": "L9A 4X5",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.217798,
+    "lng": -79.861655
+  },
+  {
+    "id": "davidstea-market-mall-ca",
+    "name": "DAVIDsTEA Market Mall",
+    "kind": "brand-shop",
+    "address": "3625 Shaganappi Trail Northwest, Unit R032",
+    "city": "Calgary",
+    "state": "",
+    "zip": "T3A 0E2",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.084278,
+    "lng": -114.155412
+  },
+  {
+    "id": "davidstea-masonville-place-ca",
+    "name": "DAVIDsTEA Masonville Place",
+    "kind": "brand-shop",
+    "address": "1680 Richmond Street, Unit U034A",
+    "city": "London",
+    "state": "",
+    "zip": "N6G 3Y9",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.025587,
+    "lng": -81.278698
+  },
+  {
+    "id": "davidstea-metropolis-at-metrotown-ca",
+    "name": "DAVIDsTEA Metropolis at Metrotown",
+    "kind": "brand-shop",
+    "address": "4720 Kingsway, Unit #F105C",
+    "city": "Burnaby",
+    "state": "",
+    "zip": "V5H",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.226312,
+    "lng": -122.999732
+  },
+  {
+    "id": "davidstea-oshawa-centre-ca",
+    "name": "DAVIDsTEA Oshawa Centre",
+    "kind": "brand-shop",
+    "address": "419 King Street West, Unit 4052",
+    "city": "Oshawa",
+    "state": "",
+    "zip": "L1J 2K5",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.890135,
+    "lng": -78.8798
+  },
+  {
+    "id": "davidstea-pacific-centre-ca",
+    "name": "DAVIDsTEA Pacific Centre",
+    "kind": "brand-shop",
+    "address": "701 W Georgia St, Unit 038D",
+    "city": "Vancouver",
+    "state": "",
+    "zip": "V7Y 1C5",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "note": "This store has a Matcha Bar.",
+    "checked": "2026-11-06",
+    "lat": 49.283752,
+    "lng": -123.116996
+  },
+  {
+    "id": "davidstea-polo-park-ca",
+    "name": "DAVIDsTEA Polo Park",
+    "kind": "brand-shop",
+    "address": "1485 Portage Avenue, 33004",
+    "city": "Winnipeg",
+    "state": "",
+    "zip": "R3G 0W4",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.883738,
+    "lng": -97.198462
+  },
+  {
+    "id": "davidstea-promenades-st-bruno-ca",
+    "name": "DAVIDsTEA Promenades St-Bruno",
+    "kind": "brand-shop",
+    "address": "246 Boulevard des Promenades, Unit K017A",
+    "city": "Saint-Bruno-de-Montarville",
+    "state": "",
+    "zip": "J3V 5K1",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.505175,
+    "lng": -73.378483
+  },
+  {
+    "id": "davidstea-rideau-centre-ca",
+    "name": "DAVIDsTEA Rideau Centre",
+    "kind": "brand-shop",
+    "address": "50 Rideau Street, Unit 294",
+    "city": "Ottawa",
+    "state": "",
+    "zip": "K1N 9J7",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.425658,
+    "lng": -75.691926
+  },
+  {
+    "id": "davidstea-royalmount-ca",
+    "name": "DAVIDsTEA Royalmount",
+    "kind": "brand-shop",
+    "address": "5050 Chem. de la Côte-de-Liesse, 2455",
+    "city": "Mont-Royal",
+    "state": "",
+    "zip": "H4P 0C9",
+    "cc": "CA",
+    "url": "https://davidstea.com/pages/store-locator",
+    "listedBy": "David's Tea",
+    "brands": [
+      {
+        "name": "David's Tea",
+        "evidence": "https://davidstea.com/pages/store-locator"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.494936,
+    "lng": -73.659483
+  },
+  {
+    "id": "tsujiri-manchester-gb-0e9fef9a",
+    "name": "Tsujiri",
+    "kind": "cafe",
+    "address": "Upper Ground Floor, 50 Faulkner St",
+    "city": "Manchester",
+    "state": "",
+    "zip": "M1 4FH",
+    "cc": "GB",
+    "url": "http://tsujiri-mcr.sumupstore.com/",
+    "brands": [
+      {
+        "name": "Gion Tsujiri",
+        "evidence": "https://tsujiri-mcr.sumupstore.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 53.478255,
+    "lng": -2.24044
+  },
+  {
+    "id": "krauterhaus-wurzelsepp-ohg-nurnberg-de-e20d048c",
+    "name": "Kräuterhaus Wurzelsepp OHG",
+    "kind": "retailer",
+    "address": "Hauptmarkt 1",
+    "city": "Nürnberg",
+    "state": "",
+    "zip": "90403",
+    "cc": "DE",
+    "url": "http://www.wurzelsepp.de/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://wurzelsepp.de/kategorie/tee/marken/david-rio-chai-tee/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.453392,
+    "lng": 11.076658
+  },
+  {
+    "id": "-x-jp-89c26ec5",
+    "name": "番茶のお店ふりゅう",
+    "kind": "cafe",
+    "address": "津福本町1863-3",
+    "city": "久留米市",
+    "state": "",
+    "zip": "830-0047",
+    "cc": "JP",
+    "url": "https://www.chahofuryu.com/",
+    "brands": [
+      {
+        "name": "Hoshino Seichaen",
+        "evidence": "https://www.chahofuryu.com/roasted"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 33.298772,
+    "lng": 130.497335
+  },
+  {
+    "id": "maccha-house-fukuoka-jp-eac90dac",
+    "name": "MACCHA HOUSE 抹茶館 天神地下街",
+    "kind": "cafe",
+    "address": "中央区天神2 地下1-028",
+    "city": "Fukuoka",
+    "state": "",
+    "zip": "810-0001",
+    "cc": "JP",
+    "url": "http://maccha-house.com",
+    "brands": [
+      {
+        "name": "Morihan",
+        "evidence": "https://maccha-house.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 33.588164,
+    "lng": 130.400917
+  },
+  {
+    "id": "fukuoka-japantea-studio-x-jp-ce4fdfad",
+    "name": "茶舗ふりゅうFukuoka Japantea Studio",
+    "kind": "cafe",
+    "address": "Kiyokawa, 1 Chome−6−9 2階",
+    "city": "福岡市中央区",
+    "state": "",
+    "zip": "810-0005",
+    "cc": "JP",
+    "url": "https://www.chahofuryu.com/",
+    "brands": [
+      {
+        "name": "Hoshino Seichaen",
+        "evidence": "https://www.chahofuryu.com/roasted"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 33.582233,
+    "lng": 130.407488
+  },
+  {
+    "id": "-x-jp-017614d0",
+    "name": "高田通泉園",
+    "kind": "cafe",
+    "address": "宇治田原町大字湯屋谷小字長通45",
+    "city": "綴喜郡宇治田原町",
+    "state": "",
+    "zip": "610-0221",
+    "cc": "JP",
+    "url": "http://chachabin.co.jp/",
+    "brands": [
+      {
+        "name": "Horii Shichimeien",
+        "evidence": "https://chachabin.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.856658,
+    "lng": 135.893516
+  },
+  {
+    "id": "-x-jp-7eda7ad3",
+    "name": "神山園",
+    "kind": "cafe",
+    "address": "中田町1175",
+    "city": "鹿沼市",
+    "state": "",
+    "zip": "322-0037",
+    "cc": "JP",
+    "url": "http://kamiyamaen.com",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://kamiyamaen.com/japanese_tea"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 36.564849,
+    "lng": 139.749254
+  },
+  {
+    "id": "best-health-food-shop-tunbridge-wells-gb-322006e0",
+    "name": "Best Health Food Shop",
+    "kind": "retailer",
+    "address": "10 High St",
+    "city": "Tunbridge Wells",
+    "state": "",
+    "zip": "TN1 1UX",
+    "cc": "GB",
+    "url": "http://www.besthealthfoodshop.com",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://besthealthfoodshop.com/shop/food-drink-groceries"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.129096,
+    "lng": 0.262531
+  },
+  {
+    "id": "safran-feinkost-tubingen-de-0f40717e",
+    "name": "Safran Feinkost",
+    "kind": "retailer",
+    "address": "Metzgergasse 13",
+    "city": "Tübingen",
+    "state": "",
+    "zip": "72070",
+    "cc": "DE",
+    "url": "https://www.safran-tuebingen.de/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.safran-tuebingen.de/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.521572,
+    "lng": 9.055973
+  },
+  {
+    "id": "the-gourmet-warehouse-vancouver-ca-7bbffe3d",
+    "name": "The Gourmet Warehouse",
+    "kind": "retailer",
+    "address": "1340 E Hastings St",
+    "city": "Vancouver",
+    "state": "",
+    "zip": "V5L 1S3",
+    "cc": "CA",
+    "url": "http://www.gourmetwarehouse.ca/",
+    "brands": [
+      {
+        "name": "The Republic of Tea",
+        "evidence": "https://gourmetwarehouse.ca/food/beverages/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.28118,
+    "lng": -123.076313
+  },
+  {
+    "id": "la-drogheria-di-strada-farini-parma-it-dcf0954e",
+    "name": "La Drogheria di Strada Farini",
+    "kind": "retailer",
+    "address": "Str. Luigi Carlo Farini, 11/a",
+    "city": "Parma",
+    "state": "",
+    "zip": "43121",
+    "cc": "IT",
+    "url": "http://www.ladrogheriaparma.it/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.ladrogheriaparma.it/sub/4/tea-nero/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 44.800094,
+    "lng": 10.327752
+  },
+  {
+    "id": "-x-jp-c9434a7e",
+    "name": "福寿園 京都本店",
+    "kind": "cafe",
+    "address": "下京区四条通富小路角",
+    "city": "京都市",
+    "state": "",
+    "zip": "600-8005",
+    "cc": "JP",
+    "url": "http://www.fukujuen-kyotohonten.com",
+    "brands": [
+      {
+        "name": "Fukujuen",
+        "evidence": "https://www.fukujuen-kyotohonten.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.003533,
+    "lng": 135.764832
+  },
+  {
+    "id": "marukyu-koyamaen-kyoto-takashimaya-x-jp-8c610204",
+    "name": "Marukyu Koyamaen Kyoto Takashimaya",
+    "kind": "cafe",
+    "address": "四条通河原町西入Shincho, 52",
+    "city": "京都市東山区",
+    "state": "",
+    "zip": "600-8001",
+    "cc": "JP",
+    "url": "http://www.marukyu-koyamaen.co.jp/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.marukyu-koyamaen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.003565,
+    "lng": 135.769072
+  },
+  {
+    "id": "-x-jp-7b57c574",
+    "name": "福寿園 抹茶ハウス",
+    "kind": "cafe",
+    "address": "Higashishiokoji Takakuracho, 8-3 京都駅八条口 アスティ京都「京都おもてなし小路」",
+    "city": "京都市南区",
+    "state": "",
+    "zip": "600-8215",
+    "cc": "JP",
+    "url": "http://www.fukujuen-kyotohonten.com/",
+    "brands": [
+      {
+        "name": "Fukujuen",
+        "evidence": "https://www.fukujuen-kyotohonten.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.984549,
+    "lng": 135.759576
+  },
+  {
+    "id": "-x-jp-56700861",
+    "name": "京町家茶屋 抹茶亭 福寿園",
+    "kind": "cafe",
+    "address": "下京区東塩小路高倉町8-3",
+    "city": "京都市",
+    "state": "",
+    "zip": "600-8214",
+    "cc": "JP",
+    "url": "http://www.fukujuen.com",
+    "brands": [
+      {
+        "name": "Fukujuen",
+        "evidence": "https://www.fukujuen.com/shop/default.aspx"
+      },
+      {
+        "name": "Ujinotsuyu",
+        "evidence": "https://www.fukujuen.com/shop/default.aspx"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.98457,
+    "lng": 135.758879
+  },
+  {
+    "id": "grampian-health-store-aberdeen-gb-c8a8ef31",
+    "name": "Grampian Health Store",
+    "kind": "retailer",
+    "address": "34 Market St",
+    "city": "Aberdeen",
+    "state": "",
+    "zip": "AB11 5PL",
+    "cc": "GB",
+    "url": "http://www.grampianhealthstore.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.grampianhealthstore.co.uk/category/6/19/drinks/?subcategory=Green%2B%2526%2BBlack%2BTea"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 57.145957,
+    "lng": -2.096585
+  },
+  {
+    "id": "imperial-avenue-of-teas-mulhouse-fr-f6fb39d9",
+    "name": "Imperial Avenue Of Teas",
+    "kind": "retailer",
+    "address": "4 rue Mercière",
+    "city": "Mulhouse",
+    "state": "",
+    "zip": "68100",
+    "cc": "FR",
+    "url": "http://matcha-boutique.fr/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://matcha-boutique.fr/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 47.747,
+    "lng": 7.339526
+  },
+  {
+    "id": "hornung-regensburg-de-46a51794",
+    "name": "Hornung",
+    "kind": "retailer",
+    "address": "Weichser Weg 5",
+    "city": "Regensburg",
+    "state": "",
+    "zip": "93059",
+    "cc": "DE",
+    "url": "https://hornung-shop.de/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://hornung-shop.de/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.026526,
+    "lng": 12.115752
+  },
+  {
+    "id": "steven-smith-teamaker-x-kr-9405f134",
+    "name": "Steven Smith Teamaker",
+    "kind": "cafe",
+    "address": "강남구 압구정로 417",
+    "city": "서울",
+    "state": "",
+    "zip": "06009",
+    "cc": "KR",
+    "url": "http://www.smithteakorea.com",
+    "brands": [
+      {
+        "name": "Steven Smith Teamaker",
+        "evidence": "https://smithteakorea.com/aboutbrand"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 37.527371,
+    "lng": 127.04304
+  },
+  {
+    "id": "smithtea-korea-seoul-kr-f0bb7637",
+    "name": "Smithtea Korea",
+    "kind": "cafe",
+    "address": "경기도 하남시 감일남로 44 트윈제이피빌딩",
+    "city": "Seoul",
+    "state": "",
+    "zip": "12993",
+    "cc": "KR",
+    "url": "http://www.smithteakorea.com/",
+    "brands": [
+      {
+        "name": "Steven Smith Teamaker",
+        "evidence": "https://smithteakorea.com/aboutbrand"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 37.527396,
+    "lng": 127.043136
+  },
+  {
+    "id": "-x-jp-c6a18a65",
+    "name": "千葉市　茶道会館",
+    "kind": "cafe",
+    "address": "天台5-22-12",
+    "city": "千葉市稲毛区",
+    "state": "",
+    "zip": "263-0016",
+    "cc": "JP",
+    "url": "http://www.sadokan.com/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.sadokan.com/fax-order"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.638677,
+    "lng": 140.112698
+  },
+  {
+    "id": "-x-jp-f425eb43",
+    "name": "茶寮 伊藤園",
+    "kind": "cafe",
+    "address": "大島田1-6-1",
+    "city": "柏市",
+    "state": "",
+    "zip": "277-0922",
+    "cc": "JP",
+    "url": "https://www.itoen.jp",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.itoen.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.833026,
+    "lng": 140.012501
+  },
+  {
+    "id": "-x-jp-99dd62c5",
+    "name": "茶の石橋園",
+    "kind": "cafe",
+    "address": "Tsutsudo, 1814-1 現在時短営業中",
+    "city": "つくばみらい市",
+    "state": "",
+    "zip": "300-2435",
+    "cc": "JP",
+    "url": "http://www.isibasien.gr.jp/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.isibasien.gr.jp/matchagenmai/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.971802,
+    "lng": 139.987144
+  },
+  {
+    "id": "best-health-food-shop-shoreham-by-sea-gb-c8d96d3e",
+    "name": "Best Health Food Shop",
+    "kind": "retailer",
+    "address": "33 East St",
+    "city": "Shoreham-by-Sea",
+    "state": "",
+    "zip": "BN43 5ZD",
+    "cc": "GB",
+    "url": "http://www.besthealthfoodshop.com/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://besthealthfoodshop.com/shop/food-drink-groceries"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.832958,
+    "lng": -0.273592
+  },
+  {
+    "id": "sumart-dagligvare-trondheim-no-ca2de78f",
+    "name": "Sumart Dagligvare",
+    "kind": "retailer",
+    "address": "Magnus Berrføtts veg 4A",
+    "city": "Trondheim",
+    "state": "",
+    "zip": "7046",
+    "cc": "NO",
+    "url": "https://sumart.no/",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://sumart.no/produktkategori/drinks_/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 63.421737,
+    "lng": 10.447043
+  },
+  {
+    "id": "-x-jp-a7db214d",
+    "name": "ひじかた園",
+    "kind": "cafe",
+    "address": "原町田4丁目3-6",
+    "city": "町田市",
+    "state": "",
+    "zip": "194-0013",
+    "cc": "JP",
+    "url": "http://www.hijikataen.com",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.hijikataen.com/matcha"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.541376,
+    "lng": 139.448093
+  },
+  {
+    "id": "-x-jp-fe9d9568",
+    "name": "山本山日本橋本店喫茶室",
+    "kind": "cafe",
+    "address": "日本橋2丁目5-2",
+    "city": "中央区",
+    "state": "",
+    "zip": "103-0027",
+    "cc": "JP",
+    "url": "http://www.yamamotoyama.co.jp/",
+    "brands": [
+      {
+        "name": "Yamamotoyama",
+        "evidence": "https://yamamotoyama.co.jp/tea/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.681577,
+    "lng": 139.773636
+  },
+  {
+    "id": "-x-jp-5901f3b0",
+    "name": "和の茶伊藤園",
+    "kind": "cafe",
+    "address": "日本橋室町1丁目4-1",
+    "city": "中央区",
+    "state": "",
+    "zip": "103-0027",
+    "cc": "JP",
+    "url": "https://www.itoen.co.jp/",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.itoen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.685567,
+    "lng": 139.773401
+  },
+  {
+    "id": "-x-jp-fa85991e",
+    "name": "東依（とうい） / 都市の茶室",
+    "kind": "cafe",
+    "address": "2 Chome-1-10 Sotokanda",
+    "city": "千代田区",
+    "state": "",
+    "zip": "101-0021",
+    "cc": "JP",
+    "url": "https://www.toui.tokyo/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.toui.tokyo/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.699201,
+    "lng": 139.767816
+  },
+  {
+    "id": "-x-jp-c5d8336c",
+    "name": "まとい",
+    "kind": "cafe",
+    "address": "浅草1丁目3-3",
+    "city": "台東区",
+    "state": "",
+    "zip": "111-0032",
+    "cc": "JP",
+    "url": "http://www.kaminarimon.jp",
+    "brands": [
+      {
+        "name": "Kanbayashi Shunsho",
+        "evidence": "http://www.kaminarimon.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.711159,
+    "lng": 139.795984
+  },
+  {
+    "id": "-x-jp-af8532d0",
+    "name": "常州園",
+    "kind": "cafe",
+    "address": "大町6-1",
+    "city": "一関市",
+    "state": "",
+    "zip": "021-0881",
+    "cc": "JP",
+    "url": "https://www.jyoshuen.co.jp/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.jyoshuen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 38.92964,
+    "lng": 141.136579
+  },
+  {
+    "id": "-x-jp-8360c905",
+    "name": "松本茶舗",
+    "kind": "cafe",
+    "address": "稲生町17-5",
+    "city": "十和田市",
+    "state": "",
+    "zip": "034-0011",
+    "cc": "JP",
+    "url": "http://www.towadachuo.com/matumoto/index.html",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "http://www.towadachuo.com/matumoto/products/index.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 40.613384,
+    "lng": 141.214185
+  },
+  {
+    "id": "kanes-tea-x-jp-203b75e7",
+    "name": "Kanes Tea",
+    "kind": "cafe",
+    "address": "834-1 Ushio",
+    "city": "島田市",
+    "state": "",
+    "zip": "428-0006",
+    "cc": "JP",
+    "url": "https://kanestea.com/",
+    "brands": [
+      {
+        "name": "Kanes Tea",
+        "evidence": "https://kanestea.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.846364,
+    "lng": 138.123477
+  },
+  {
+    "id": "raw-elements-inc-guelph-eramosa-ca-f743f3de",
+    "name": "Raw Elements Inc.",
+    "kind": "retailer",
+    "address": "8473 Wellington County Rd 50",
+    "city": "Guelph/Eramosa",
+    "state": "",
+    "zip": "N0B 2K0",
+    "cc": "CA",
+    "url": "http://www.rawelements.ca/",
+    "brands": [
+      {
+        "name": "My Matcha Life",
+        "evidence": "https://www.rawelements.ca/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.623606,
+    "lng": -80.131885
+  },
+  {
+    "id": "purity-life-health-products-halton-hills-ca-aa39a1b9",
+    "name": "Purity Life Health Products",
+    "kind": "retailer",
+    "address": "6 Commerce Crescent",
+    "city": "Halton Hills",
+    "state": "",
+    "zip": "L7J 2X3",
+    "cc": "CA",
+    "url": "http://www.puritylife.com/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://puritylife.com/brands/"
+      },
+      {
+        "name": "My Matcha Life",
+        "evidence": "https://puritylife.com/brands/"
+      },
+      {
+        "name": "Yamamotoyama",
+        "evidence": "https://puritylife.com/brands/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.639299,
+    "lng": -80.046315
+  },
+  {
+    "id": "oteka-the-cafe-chocolat-saint-maximin-la-sainte-baume-fr-e6c1a287",
+    "name": "ÔTEKA Thé Café Chocolat",
+    "kind": "retailer",
+    "address": "",
+    "city": "Saint-Maximin-la-Sainte-Baume",
+    "state": "",
+    "zip": "",
+    "cc": "FR",
+    "url": "https://oteka.fr/",
+    "brands": [
+      {
+        "name": "Matcha Konomi",
+        "evidence": "https://oteka.fr/collections/grands-crus"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.45214,
+    "lng": 5.85961
+  },
+  {
+    "id": "amalthe-the-cafe-antibes-antibes-fr-740922ec",
+    "name": "AMALTHÉ thé café Antibes",
+    "kind": "cafe",
+    "address": "13 Rue Sade",
+    "city": "Antibes",
+    "state": "",
+    "zip": "06600",
+    "cc": "FR",
+    "url": "http://www.amalthe.fr",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.amalthe.fr/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.581009,
+    "lng": 7.126522
+  },
+  {
+    "id": "aoi-matcha-halasztelek-hu-1713c163",
+    "name": "AOI Matcha",
+    "kind": "cafe",
+    "address": "",
+    "city": "Halásztelek",
+    "state": "",
+    "zip": "",
+    "cc": "HU",
+    "url": "https://aoimatcha.hu/",
+    "brands": [
+      {
+        "name": "AOI Matcha",
+        "evidence": "https://aoimatcha.hu/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 47.36086,
+    "lng": 18.987693
+  },
+  {
+    "id": "kobu-teehandel-wiesbaden-de-7a98425b",
+    "name": "Kobu Teehandel",
+    "kind": "retailer",
+    "address": "Niederwaldstraße 43",
+    "city": "Wiesbaden",
+    "state": "",
+    "zip": "65197",
+    "cc": "DE",
+    "url": "https://www.kobu-teeversand.de/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.kobu-teeversand.de/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.074071,
+    "lng": 8.226059
+  },
+  {
+    "id": "gaia-natural-foods-toronto-ca-ad5e8cd8",
+    "name": "Gaia Natural Foods",
+    "kind": "retailer",
+    "address": "20 Eglinton Ave E",
+    "city": "Toronto",
+    "state": "",
+    "zip": "M4P 1A9",
+    "cc": "CA",
+    "url": "http://gaianaturalfoods.ca/",
+    "brands": [
+      {
+        "name": "DoMatcha",
+        "evidence": "https://gaianaturalfoods.ca/product-category/health-wellness/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.70727,
+    "lng": -79.397633
+  },
+  {
+    "id": "porridge-brixham-gb-0d24f4bc",
+    "name": "Porridge",
+    "kind": "retailer",
+    "address": "13 Fore St",
+    "city": "Brixham",
+    "state": "",
+    "zip": "TQ5 8AA",
+    "cc": "GB",
+    "url": "https://www.porridgepantry.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.porridgepantry.co.uk/product-category/food-drink/drinks/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.394223,
+    "lng": -3.515051
+  },
+  {
+    "id": "palais-des-thes-chartres-fr-94372f82",
+    "name": "Palais des Thés",
+    "kind": "cafe",
+    "address": "49 Rue du Soleil d'Or",
+    "city": "Chartres",
+    "state": "",
+    "zip": "28000",
+    "cc": "FR",
+    "url": "https://www.vitrines-chartres.com/vitrines/palais-des-thes-864.html",
+    "brands": [
+      {
+        "name": "Palais des Thés",
+        "evidence": "https://www.vitrines-chartres.com/vitrines/palais-des-thes-864.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.445827,
+    "lng": 1.487053
+  },
+  {
+    "id": "boxtea-orbe-ch-0d324829",
+    "name": "Boxtea",
+    "kind": "retailer",
+    "address": "Place du Marché 7",
+    "city": "Orbe",
+    "state": "",
+    "zip": "1350",
+    "cc": "CH",
+    "url": "https://www.boxtea.ch/",
+    "brands": [
+      {
+        "name": "Palais des Thés",
+        "evidence": "https://www.boxtea.ch/https-www-boxtea-ch-palaisdesthes"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.724252,
+    "lng": 6.532636
+  },
+  {
+    "id": "wenger-tee-ag-thun-ch-15ff04b0",
+    "name": "Wenger Tee Ag",
+    "kind": "retailer",
+    "address": "Lerchenfeldstrasse 43",
+    "city": "Thun",
+    "state": "",
+    "zip": "3603",
+    "cc": "CH",
+    "url": "http://www.wengertee.ch/",
+    "brands": [
+      {
+        "name": "Matcha Konomi",
+        "evidence": "https://wengertee.ch/shop/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.7648,
+    "lng": 7.60092
+  },
+  {
+    "id": "organic-market-katowice-pl-faaf6941",
+    "name": "Organic Market",
+    "kind": "retailer",
+    "address": "Silesia City Center, Chorzowska 107",
+    "city": "Katowice",
+    "state": "",
+    "zip": "40-101",
+    "cc": "PL",
+    "url": "https://organic24.pl/",
+    "brands": [
+      {
+        "name": "Yōko Matcha",
+        "evidence": "https://organic24.pl/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.270947,
+    "lng": 19.005059
+  },
+  {
+    "id": "to-tsai-x-gr-6eb714ac",
+    "name": "To Tsai",
+    "kind": "cafe",
+    "address": "Al. Soutsou 19",
+    "city": "Αθήνα",
+    "state": "",
+    "zip": "106 71",
+    "cc": "GR",
+    "url": "https://www.tea.gr/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://tea.gr/product-category/matcha/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 37.978989,
+    "lng": 23.737146
+  },
+  {
+    "id": "duft-natur-din-helsekost-middelfart-dk-7bacade6",
+    "name": "Duft & Natur - din helsekost",
+    "kind": "retailer",
+    "address": "Østergade 6",
+    "city": "Middelfart",
+    "state": "",
+    "zip": "5500",
+    "cc": "DK",
+    "url": "http://shop.duft-natur.dk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://shop.duft-natur.dk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 55.504268,
+    "lng": 9.73623
+  },
+  {
+    "id": "-x-jp-b27d6af7",
+    "name": "金子園",
+    "kind": "cafe",
+    "address": "本町9-20",
+    "city": "富士市",
+    "state": "",
+    "zip": "416-0914",
+    "cc": "JP",
+    "url": "https://www.kanekoen-fuji.com/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.kanekoen-fuji.com/categories/1052746"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.153736,
+    "lng": 138.650553
+  },
+  {
+    "id": "-x-jp-6a0586fb",
+    "name": "富士山銘茶 山崎園",
+    "kind": "cafe",
+    "address": "14-20 Honcho",
+    "city": "富士市",
+    "state": "",
+    "zip": "416-0914",
+    "cc": "JP",
+    "url": "https://yamazakien.base.shop/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://yamazakien.base.shop/categories/2201113"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.156996,
+    "lng": 138.651548
+  },
+  {
+    "id": "-x-jp-ef635a43",
+    "name": "お茶の山大園 本店",
+    "kind": "cafe",
+    "address": "2 Chome-5-18 Chuocho",
+    "city": "富士市",
+    "state": "",
+    "zip": "417-0052",
+    "cc": "JP",
+    "url": "http://www.yamadaien.jp/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.yamadaien.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.1613,
+    "lng": 138.682674
+  },
+  {
+    "id": "tomiz-x-jp-c8cf1852",
+    "name": "TOMIZ 富澤商店",
+    "kind": "retailer",
+    "address": "浦和区高砂1-16-12",
+    "city": "さいたま市",
+    "state": "",
+    "zip": "330-0063",
+    "cc": "JP",
+    "url": "https://tomiz.com",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://tomiz.com/category/5630?bnrclick=ham-cat_5630"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.858514,
+    "lng": 139.657134
+  },
+  {
+    "id": "-x-jp-83e8fcad",
+    "name": "お茶の芳せん",
+    "kind": "cafe",
+    "address": "本町4-11-10",
+    "city": "戸田市",
+    "state": "",
+    "zip": "335-0023",
+    "cc": "JP",
+    "url": "http://www.hosen-tea.co.jp",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.hosen-tea.co.jp/product-ocha.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.806932,
+    "lng": 139.678129
+  },
+  {
+    "id": "fresh-st-market-vancouver-ca-764eee03",
+    "name": "Fresh St. Market",
+    "kind": "retailer",
+    "address": "1423 Continental St",
+    "city": "Vancouver",
+    "state": "",
+    "zip": "V6Z 0G3",
+    "cc": "CA",
+    "url": "https://www.freshstmarket.com/contact/vancouver-house/",
+    "brands": [
+      {
+        "name": "Jade Leaf Matcha",
+        "evidence": "https://www.freshstmarket.com/categories/beverages/tea-id-3577"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.275457,
+    "lng": -123.130512
+  },
+  {
+    "id": "the-bbt-shop-richmond-ca-28cb0e40",
+    "name": "The BBT Shop",
+    "kind": "cafe",
+    "address": "4651 No 3 Rd",
+    "city": "Richmond",
+    "state": "",
+    "zip": "V6X",
+    "cc": "CA",
+    "url": "http://www.thebbtshop.com/",
+    "brands": [
+      {
+        "name": "Harney & Sons",
+        "evidence": "https://www.thebbtshop.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.179776,
+    "lng": -123.139086
+  },
+  {
+    "id": "st-ermin-s-tea-lounge-london-gb-4f7798df",
+    "name": "St. Ermin's Tea Lounge",
+    "kind": "cafe",
+    "address": "Caxton St",
+    "city": "London",
+    "state": "",
+    "zip": "SW1H 0QW",
+    "cc": "GB",
+    "url": "http://www.sterminshotel.co.uk/eating-drinking/afternoon-tea",
+    "brands": [
+      {
+        "name": "The Tea Makers of London",
+        "evidence": "https://www.sterminshotel.co.uk/eating-drinking/afternoon-tea"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.499207,
+    "lng": -0.134628
+  },
+  {
+    "id": "lansdown-health-foods-lewes-gb-77bcfdac",
+    "name": "Lansdown Health Foods",
+    "kind": "retailer",
+    "address": "44 Cliffe High St",
+    "city": "Lewes",
+    "state": "",
+    "zip": "BN7 2AN",
+    "cc": "GB",
+    "url": "http://www.lansdownhealthstore.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://lansdownhealthstore.co.uk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.874245,
+    "lng": 0.018038
+  },
+  {
+    "id": "health-food-shop-uckfield-gb-1167d595",
+    "name": "Health Food Shop",
+    "kind": "retailer",
+    "address": "90 High St",
+    "city": "Uckfield",
+    "state": "",
+    "zip": "TN22 1PU",
+    "cc": "GB",
+    "url": "http://www.besthealthfoodshop.com",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://besthealthfoodshop.com/shop/food-drink-groceries"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.969263,
+    "lng": 0.096036
+  },
+  {
+    "id": "lansdown-health-store-uckfield-gb-61a50988",
+    "name": "Lansdown Health Store",
+    "kind": "retailer",
+    "address": "35 High St",
+    "city": "Uckfield",
+    "state": "",
+    "zip": "TN22 1AJ",
+    "cc": "GB",
+    "url": "https://lansdownhealthstore.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://lansdownhealthstore.co.uk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.970495,
+    "lng": 0.096172
+  },
+  {
+    "id": "frk-helsekost-haderslev-dk-5d8cc8bc",
+    "name": "Frk Helsekost",
+    "kind": "retailer",
+    "address": "NØRREGADE 28",
+    "city": "HADERSLEV",
+    "state": "",
+    "zip": "6100",
+    "cc": "DK",
+    "url": "http://www.naturoghelse.dk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.naturoghelse.dk/shop/frontpage.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 55.250987,
+    "lng": 9.488265
+  },
+  {
+    "id": "natur-helse-naturoghelse-dk-haderslev-dk-150e2605",
+    "name": "Natur & Helse - naturoghelse.dk",
+    "kind": "retailer",
+    "address": "Jomfrustien 2",
+    "city": "Haderslev",
+    "state": "",
+    "zip": "6100",
+    "cc": "DK",
+    "url": "https://www.naturoghelse.dk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.naturoghelse.dk/shop/frontpage.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 55.25092,
+    "lng": 9.48898
+  },
+  {
+    "id": "-x-jp-d615fef0",
+    "name": "茶寿",
+    "kind": "cafe",
+    "address": "819 Shinmachi",
+    "city": "松阪市",
+    "state": "",
+    "zip": "515-0075",
+    "cc": "JP",
+    "url": "https://www.cha-ju.com/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.cha-ju.com/brand"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.573436,
+    "lng": 136.530828
+  },
+  {
+    "id": "cafe-rico-coffee-wholesaler-weymouth-gb-d913c97b",
+    "name": "Café Rico Coffee Wholesaler",
+    "kind": "retailer",
+    "address": "Archard House, Waverley Road",
+    "city": "Weymouth",
+    "state": "",
+    "zip": "DT3 5HL",
+    "cc": "GB",
+    "url": "https://www.caferico.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.caferico.co.uk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.627463,
+    "lng": -2.460854
+  },
+  {
+    "id": "tea-company-torino-it-dfdcef45",
+    "name": "Tea & Company",
+    "kind": "cafe",
+    "address": "Via Giuseppe Mazzini, 22/g",
+    "city": "Torino",
+    "state": "",
+    "zip": "10123",
+    "cc": "IT",
+    "url": "http://www.teaecompany.it/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.teaecompany.it/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.062462,
+    "lng": 7.685147
+  },
+  {
+    "id": "teepalast-wilhelmshaven-de-25dcb13c",
+    "name": "Teepalast",
+    "kind": "cafe",
+    "address": "Marktstraße 34",
+    "city": "Wilhelmshaven",
+    "state": "",
+    "zip": "26382",
+    "cc": "DE",
+    "url": "https://www.teepalast.de/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.teepalast.de/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 53.519809,
+    "lng": 8.116186
+  },
+  {
+    "id": "shinzen-madrid-es-bfc035ac",
+    "name": "Shinzen",
+    "kind": "cafe",
+    "address": "Calle del Naranjo, 19",
+    "city": "Madrid",
+    "state": "",
+    "zip": "28039",
+    "cc": "ES",
+    "url": "https://www.shinzen.es/",
+    "brands": [
+      {
+        "name": "Kanbayashi Shunsho",
+        "evidence": "https://www.shinzen.es/tienda/te-puro/te-verde-japones/matcha-chiyomukashi-ceremonial/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 40.460808,
+    "lng": -3.700141
+  },
+  {
+    "id": "les-comptoirs-the-cafe-rioz-fr-8e4a315b",
+    "name": "Les Comptoirs Thé Café",
+    "kind": "cafe",
+    "address": "1 Rue Georges Stephenson",
+    "city": "Rioz",
+    "state": "",
+    "zip": "70190",
+    "cc": "FR",
+    "url": "http://www.comptoirs-the-cafe.com/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.comptoirs-the-cafe.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 47.433894,
+    "lng": 6.05573
+  },
+  {
+    "id": "les-comptoirs-the-cafe-audincourt-audincourt-fr-25adf962",
+    "name": "Les Comptoirs thé café - Audincourt",
+    "kind": "cafe",
+    "address": "35 Av. Aristide Briand",
+    "city": "Audincourt",
+    "state": "",
+    "zip": "25400",
+    "cc": "FR",
+    "url": "http://www.comptoirs-the-cafe.com",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.comptoirs-the-cafe.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 47.482189,
+    "lng": 6.84355
+  },
+  {
+    "id": "tee-tea-the-berlin-de-77492a4d",
+    "name": "Tee Tea Thé",
+    "kind": "cafe",
+    "address": "Goltzstraße 2",
+    "city": "Berlin",
+    "state": "",
+    "zip": "10781",
+    "cc": "DE",
+    "url": "http://www.teeteathe.de/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.teeteathe.de/produkt-kategorie/marimo-greentea/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 52.490307,
+    "lng": 13.353329
+  },
+  {
+    "id": "pasion-por-el-te-te-te-sevilla-es-e4fd6718",
+    "name": "Pasión Por El Té - Té&té",
+    "kind": "cafe",
+    "address": "Calle Angostillo 2",
+    "city": "Sevilla",
+    "state": "",
+    "zip": "41003",
+    "cc": "ES",
+    "url": "http://www.teyte.net/",
+    "brands": [
+      {
+        "name": "Palais des Thés",
+        "evidence": "https://www.teyte.net/shop/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 37.393997,
+    "lng": -5.993023
+  },
+  {
+    "id": "te-te-pasion-por-el-te-sevilla-es-2916c941",
+    "name": "té&té - Pasión por el Té",
+    "kind": "cafe",
+    "address": "C. Castelar, 5",
+    "city": "Sevilla",
+    "state": "",
+    "zip": "41001",
+    "cc": "ES",
+    "url": "http://www.teyte.net",
+    "brands": [
+      {
+        "name": "Palais des Thés",
+        "evidence": "https://www.teyte.net/shop/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 37.386407,
+    "lng": -5.996139
+  },
+  {
+    "id": "avril-supermarche-sante-longueuil-ca-c4c8dac5",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "1185 Ch. du Tremblay",
+    "city": "Longueuil",
+    "state": "",
+    "zip": "J4N 1R4",
+    "cc": "CA",
+    "url": "http://www.avril.ca/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.537651,
+    "lng": -73.465911
+  },
+  {
+    "id": "avril-supermarche-sante-repentigny-ca-123b1795",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "Galeries Rive Nord, 100 Boul. Brien local 067a",
+    "city": "Repentigny",
+    "state": "",
+    "zip": "J6A 5N4",
+    "cc": "CA",
+    "url": "https://avril.ca/fr/succursale-avril-repentigny",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.742704,
+    "lng": -73.459745
+  },
+  {
+    "id": "fairhaven-wholefoods-ltd-letchworth-gb-4cd8a82f",
+    "name": "Fairhaven Wholefoods Ltd",
+    "kind": "retailer",
+    "address": "Unit 27, Jubilee Trade Centre, Jubilee Rd",
+    "city": "Letchworth",
+    "state": "",
+    "zip": "SG6 1SP",
+    "cc": "GB",
+    "url": "http://www.fairhaven.co.uk",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.fairhaven.co.uk/hot-drinks/coffee-substitutes/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.985508,
+    "lng": -0.201732
+  },
+  {
+    "id": "-x-jp-e094b2fe",
+    "name": "茶師十段のかき氷",
+    "kind": "cafe",
+    "address": "北沢3-19-20 reload 1-11",
+    "city": "世田谷区",
+    "state": "",
+    "zip": "155-0031",
+    "cc": "JP",
+    "url": "http://shimokita-chaen.com/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://shimokita-chaen.com/shop/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.662683,
+    "lng": 139.667601
+  },
+  {
+    "id": "-x-jp-ef8acacd",
+    "name": "しもきた茶苑大山",
+    "kind": "cafe",
+    "address": "北沢2丁目30-2",
+    "city": "世田谷区",
+    "state": "",
+    "zip": "155-0031",
+    "cc": "JP",
+    "url": "http://shimokita-chaen.com/index.html",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://shimokita-chaen.com/shop/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.662725,
+    "lng": 139.667586
+  },
+  {
+    "id": "ocha-room-ashita-itoen-x-jp-6610ce3b",
+    "name": "Ocha Room Ashita Itoen",
+    "kind": "cafe",
+    "address": "Shibuya, 2 Chome−24−12 スクランブルスクエア 10F",
+    "city": "渋谷区",
+    "state": "",
+    "zip": "150-0002",
+    "cc": "JP",
+    "url": "https://www.itoen.co.jp",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.itoen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.658329,
+    "lng": 139.702306
+  },
+  {
+    "id": "niagara-kyo-mart-niagara-falls-ca-a60cde2f",
+    "name": "Niagara Kyo-Mart",
+    "kind": "retailer",
+    "address": "5701 Lewis Ave",
+    "city": "Niagara Falls",
+    "state": "",
+    "zip": "L2G 3R8",
+    "cc": "CA",
+    "url": "http://www.niagarakyomart.com/",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://niagarakyomart.com/Beverages-c51364116"
+      },
+      {
+        "name": "Maeda-en",
+        "evidence": "https://niagarakyomart.com/Beverages-c51364116"
+      },
+      {
+        "name": "Takaokaya",
+        "evidence": "https://niagarakyomart.com/Beverages-c51364116"
+      },
+      {
+        "name": "Yamamotoyama",
+        "evidence": "https://niagarakyomart.com/Beverages-c51364116"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.092865,
+    "lng": -79.081021
+  },
+  {
+    "id": "aiya-the-tea-vienna-at-21c59855",
+    "name": "Aiya – The Tea",
+    "kind": "retailer",
+    "address": "KOHLMARKT 16",
+    "city": "VIENNA",
+    "state": "",
+    "zip": "1010",
+    "cc": "AT",
+    "url": "https://aiyatea.com/en/contact/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://aiyatea.com/en/contact/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.208469,
+    "lng": 16.367001
+  },
+  {
+    "id": "tea-4-you-hof-de-5720d16d",
+    "name": "Tea 4 You",
+    "kind": "cafe",
+    "address": "Lorenzstraße 18",
+    "city": "Hof",
+    "state": "",
+    "zip": "95028",
+    "cc": "DE",
+    "url": "http://www.tea4you.de/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://tea4you.de/manufacturer/all/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.315535,
+    "lng": 11.916721
+  },
+  {
+    "id": "tehuset-java-stockholm-se-f8f2f008",
+    "name": "Tehuset Java",
+    "kind": "cafe",
+    "address": "Odengatan 29",
+    "city": "Stockholm",
+    "state": "",
+    "zip": "113 51",
+    "cc": "SE",
+    "url": "http://www.tehusetjava.se/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.tehusetjava.se/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 59.345328,
+    "lng": 18.061313
+  },
+  {
+    "id": "tehuset-java-lidingo-se-ddfb4d40",
+    "name": "Tehuset Java",
+    "kind": "cafe",
+    "address": "Stockholmsvägen 54",
+    "city": "Lidingö",
+    "state": "",
+    "zip": "181 32",
+    "cc": "SE",
+    "url": "http://www.tehusetjava.se",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.tehusetjava.se/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 59.36577,
+    "lng": 18.134859
+  },
+  {
+    "id": "-x-jp-abb2990c",
+    "name": "栗林茶舗",
+    "kind": "cafe",
+    "address": "江平西2丁目2-19",
+    "city": "宮崎市",
+    "state": "",
+    "zip": "880-0051",
+    "cc": "JP",
+    "url": "https://kuricha.com/",
+    "brands": [
+      {
+        "name": "Kanbayashi Shunsho",
+        "evidence": "https://kuricha.com/menu_chadougu.html"
+      },
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://kuricha.com/menu_chadougu.html"
+      },
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://kuricha.com/menu_chadougu.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 31.930539,
+    "lng": 131.42558
+  },
+  {
+    "id": "te-hong-x-jp-bcddacb3",
+    "name": "Te Hong",
+    "kind": "cafe",
+    "address": "南青山6-2-2",
+    "city": "港区",
+    "state": "",
+    "zip": "107-0062",
+    "cc": "JP",
+    "url": "http://www.te-hong.net",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "http://www.te-hong.net/tea.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.660934,
+    "lng": 139.714965
+  },
+  {
+    "id": "te-hong-x-jp-6c71a248",
+    "name": "茶葉販売 Te Hong 東京",
+    "kind": "cafe",
+    "address": "6 Chome-2-2 Minamiaoyama",
+    "city": "港区",
+    "state": "",
+    "zip": "107-0062",
+    "cc": "JP",
+    "url": "http://www.te-hong.net",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "http://www.te-hong.net/tea.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.661026,
+    "lng": 139.715101
+  },
+  {
+    "id": "-x-jp-dd762805",
+    "name": "藤美園 ふじみえん",
+    "kind": "cafe",
+    "address": "Kami, 440 児玉",
+    "city": "児玉郡上里町",
+    "state": "",
+    "zip": "369-0307",
+    "cc": "JP",
+    "url": "https://fujimienchaho.com/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.fujimienchaho.com/"
+      },
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.fujimienchaho.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 36.230718,
+    "lng": 139.146061
+  },
+  {
+    "id": "terrens-wellness-centre-clarington-ca-86c41e43",
+    "name": "Terrens Wellness Centre",
+    "kind": "retailer",
+    "address": "5314 Main St",
+    "city": "Clarington",
+    "state": "",
+    "zip": "L0B 1M0",
+    "cc": "CA",
+    "url": "http://terrenswellnesscentre.ca/",
+    "brands": [
+      {
+        "name": "Numi Organic Tea",
+        "evidence": "https://terrenswellnesscentre.ca/collections"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.976644,
+    "lng": -78.617229
+  },
+  {
+    "id": "maison-oteka-montfort-montfort-sur-meu-fr-bef0e29e",
+    "name": "Maison ÔTEKA Montfort",
+    "kind": "cafe",
+    "address": "5 Place Saint-Nicolas",
+    "city": "Montfort-sur-Meu",
+    "state": "",
+    "zip": "35160",
+    "cc": "FR",
+    "url": "https://oteka.fr/",
+    "brands": [
+      {
+        "name": "Matcha Konomi",
+        "evidence": "https://oteka.fr/collections/grands-crus"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.13811,
+    "lng": -1.95319
+  },
+  {
+    "id": "les-comptoirs-the-cafe-eurl-torrefacteur-arbois-fr-f63c1f28",
+    "name": "Les Comptoirs Thé Café / EURL Torréfacteur d'Arbois",
+    "kind": "cafe",
+    "address": "48 Grande Rue",
+    "city": "Arbois",
+    "state": "",
+    "zip": "39600",
+    "cc": "FR",
+    "url": "https://www.comptoirs-the-cafe.com/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.comptoirs-the-cafe.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.903581,
+    "lng": 5.772782
+  },
+  {
+    "id": "teaworld-ohg-zeilarn-de-c64fa373",
+    "name": "Teaworld Ohg",
+    "kind": "retailer",
+    "address": "Bildsberger Straße 4",
+    "city": "Zeilarn",
+    "state": "",
+    "zip": "84367",
+    "cc": "DE",
+    "url": "https://www.teaworld.de/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://www.teaworld.de/tee/gruener-tee/matcha-pulver/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.301371,
+    "lng": 12.84074
+  },
+  {
+    "id": "beeorganic-as-kristiansand-s-no-f62889a4",
+    "name": "BeeOrganic as",
+    "kind": "retailer",
+    "address": "Rigedalen 41",
+    "city": "Kristiansand S",
+    "state": "",
+    "zip": "4626",
+    "cc": "NO",
+    "url": "http://www.beeorganic.no/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.beeorganic.no/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 58.13899,
+    "lng": 7.935069
+  },
+  {
+    "id": "lifeplus-natural-health-richmond-ca-15f2f22e",
+    "name": "Lifeplus Natural Health",
+    "kind": "retailer",
+    "address": "4720 McClelland Rd #1825",
+    "city": "Richmond",
+    "state": "",
+    "zip": "V6X 0M8",
+    "cc": "CA",
+    "url": "http://lifepluscanada.com/",
+    "brands": [
+      {
+        "name": "DoMatcha",
+        "evidence": "https://lifepluscanada.com/en/tag/coffee-tea/190"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 49.177835,
+    "lng": -123.121092
+  },
+  {
+    "id": "tee-und-mehr-f-und-s-boger-teegeschaft-weissach-im-tal-de-bc2680a8",
+    "name": "Tee und mehr F. und S. Boger Teegeschäft",
+    "kind": "cafe",
+    "address": "Marktplatz 3",
+    "city": "Weissach im Tal",
+    "state": "",
+    "zip": "71554",
+    "cc": "DE",
+    "url": "https://www.teepalast.de",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.teepalast.de/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.929768,
+    "lng": 9.479682
+  },
+  {
+    "id": "-x-jp-a029d45b",
+    "name": "山本園",
+    "kind": "cafe",
+    "address": "大字駒越町10",
+    "city": "弘前市",
+    "state": "",
+    "zip": "036-8366",
+    "cc": "JP",
+    "url": "http://yamamotoen.ocnk.net/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://yamamotoen.ocnk.net/"
+      },
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://yamamotoen.ocnk.net/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 40.607027,
+    "lng": 140.454502
+  },
+  {
+    "id": "-x-jp-aabbff2a",
+    "name": "有)銘茶の玉雲堂",
+    "kind": "cafe",
+    "address": "田町4-11-13",
+    "city": "弘前市",
+    "state": "",
+    "zip": "036-8054",
+    "cc": "JP",
+    "url": "http://gyokuundou.com/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://gyokuundou.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 40.613667,
+    "lng": 140.480884
+  },
+  {
+    "id": "tehuset-java-lund-se-47f9f995",
+    "name": "Tehuset Java",
+    "kind": "cafe",
+    "address": "Västra Mårtensgatan 8A",
+    "city": "Lund",
+    "state": "",
+    "zip": "223 51",
+    "cc": "SE",
+    "url": "http://www.tehusetjava.se/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.tehusetjava.se/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 55.701503,
+    "lng": 13.193872
+  },
+  {
+    "id": "avril-supermarche-sante-brossard-ca-0f41c178",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "8600 Boul. Leduc",
+    "city": "Brossard",
+    "state": "",
+    "zip": "J4Y 0G6",
+    "cc": "CA",
+    "url": "http://www.avril.ca/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.450641,
+    "lng": -73.444379
+  },
+  {
+    "id": "avril-supermarche-sante-saint-bruno-de-montarville-ca-2cd3e4ae",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "500, boulevard des Promenades, Local Y102A",
+    "city": "Saint-Bruno-de-Montarville",
+    "state": "",
+    "zip": "J3V 5J5",
+    "cc": "CA",
+    "url": "https://www.avril.ca/fr/avril-saint-bruno/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.505347,
+    "lng": -73.379925
+  },
+  {
+    "id": "avril-supermarche-sante-quebec-ca-40b9c086",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "2600 Boulevard Laurier",
+    "city": "Québec",
+    "state": "",
+    "zip": "G1V 4T3",
+    "cc": "CA",
+    "url": "https://avril.ca/fr/succursale-avril-ste-foy",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.771427,
+    "lng": -71.281601
+  },
+  {
+    "id": "avril-supermarche-sante-levis-ca-86dafe0a",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "1218 Rue de la Concorde",
+    "city": "Lévis",
+    "state": "",
+    "zip": "G6W 0M7",
+    "cc": "CA",
+    "url": "http://www.avril.ca/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.729397,
+    "lng": -71.260309
+  },
+  {
+    "id": "cafe-richard-anthy-sur-leman-fr-8afab836",
+    "name": "Café Richard",
+    "kind": "cafe",
+    "address": "chemin du Pré Biollat",
+    "city": "Anthy sur Léman",
+    "state": "",
+    "zip": "74200",
+    "cc": "FR",
+    "url": "http://www.comptoirsrichard.fr",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://www.comptoirsrichard.fr/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 46.349551,
+    "lng": 6.435059
+  },
+  {
+    "id": "teawon-edinburgh-gb-6538b3ab",
+    "name": "Teawon",
+    "kind": "cafe",
+    "address": "125 LAURISTON PLACE",
+    "city": "EDINBURGH",
+    "state": "",
+    "zip": "EH3 9JN",
+    "cc": "GB",
+    "url": "http://www.teawon.co.uk/",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.teawon.co.uk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 55.943744,
+    "lng": -3.20305
+  },
+  {
+    "id": "les-comptoirs-the-cafe-dijon-fr-b95af9d8",
+    "name": "Les Comptoirs Thé Café",
+    "kind": "cafe",
+    "address": "7 Rue des Godrans",
+    "city": "Dijon",
+    "state": "",
+    "zip": "21000",
+    "cc": "FR",
+    "url": "http://www.comptoirs-the-cafe.com/Dijon-59.html",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.comptoirs-the-cafe.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 47.324978,
+    "lng": 5.039048
+  },
+  {
+    "id": "tehuset-java-stockholm-se-31c3ce10",
+    "name": "Tehuset Java",
+    "kind": "cafe",
+    "address": "Humlegårdsgatan 5",
+    "city": "Stockholm",
+    "state": "",
+    "zip": "114 46",
+    "cc": "SE",
+    "url": "http://www.tehusetjava.se/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.tehusetjava.se/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 59.336262,
+    "lng": 18.077253
+  },
+  {
+    "id": "-x-jp-0220bb90",
+    "name": "東京繁田園茶舗本店",
+    "kind": "cafe",
+    "address": "阿佐谷南1丁目14-16",
+    "city": "杉並区",
+    "state": "",
+    "zip": "166-0004",
+    "cc": "JP",
+    "url": "https://handaen.official.ec/",
+    "brands": [
+      {
+        "name": "Hoshino Seichaen",
+        "evidence": "https://handaen.official.ec/"
+      },
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://handaen.official.ec/categories/4263319"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.699698,
+    "lng": 139.637272
+  },
+  {
+    "id": "yoaxia-gmbh-niepars-martensdorf-de-4c347c47",
+    "name": "yoaxia GmbH",
+    "kind": "retailer",
+    "address": "Am Isinger Berg 17",
+    "city": "Niepars/Martensdorf",
+    "state": "",
+    "zip": "18442",
+    "cc": "DE",
+    "url": "https://www.yoaxia.de/",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.yoaxia.de/getraenke"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 54.29888,
+    "lng": 12.93399
+  },
+  {
+    "id": "kissabo-contemporary-tea-bar-berlin-de-52117e4f",
+    "name": "Kissabō - contemporary tea bar",
+    "kind": "cafe",
+    "address": "Kopenhagener Str. 16",
+    "city": "Berlin",
+    "state": "",
+    "zip": "10437",
+    "cc": "DE",
+    "url": "https://www.kissabo.com/",
+    "brands": [
+      {
+        "name": "Ippodo",
+        "evidence": "https://kissabo.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 52.549232,
+    "lng": 13.408271
+  },
+  {
+    "id": "la-amazonas-london-gb-2e0b7d40",
+    "name": "La Amazonas",
+    "kind": "retailer",
+    "address": "8 WESTOW HILL",
+    "city": "LONDON",
+    "state": "",
+    "zip": "SE19 1RX",
+    "cc": "GB",
+    "url": "http://laamazonas.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.laamazonas.co.uk/t%C3%A9"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.419681,
+    "lng": -0.082604
+  },
+  {
+    "id": "mei-leaf-teahouse-london-gb-933881aa",
+    "name": "Mei Leaf Teahouse",
+    "kind": "cafe",
+    "address": "97-99 CAMDEN HIGH STREET",
+    "city": "LONDON",
+    "state": "",
+    "zip": "NW1 7JN",
+    "cc": "GB",
+    "url": "https://meileaf.com/",
+    "brands": [
+      {
+        "name": "Jing Tea",
+        "evidence": "https://meileaf.com/teas/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.536861,
+    "lng": -0.14111
+  },
+  {
+    "id": "oteka-plan-de-campagne-cabries-cabries-fr-418390c9",
+    "name": "OTEKA Plan de Campagne Cabries",
+    "kind": "cafe",
+    "address": "My Expobat My Palmeraie, 40 Chem. des Bouscauds",
+    "city": "Cabriès",
+    "state": "",
+    "zip": "13480",
+    "cc": "FR",
+    "url": "https://oteka.fr/",
+    "brands": [
+      {
+        "name": "Matcha Konomi",
+        "evidence": "https://oteka.fr/collections/grands-crus"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.420818,
+    "lng": 5.359005
+  },
+  {
+    "id": "organic-market-galeria-batycka-gdansk-pl-9d4e2c06",
+    "name": "Organic Market Galeria Bałtycka",
+    "kind": "retailer",
+    "address": "aleja Grunwaldzka 141",
+    "city": "Gdańsk",
+    "state": "",
+    "zip": "80-264",
+    "cc": "PL",
+    "url": "https://organic24.pl/",
+    "brands": [
+      {
+        "name": "Yōko Matcha",
+        "evidence": "https://organic24.pl/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 54.382617,
+    "lng": 18.600761
+  },
+  {
+    "id": "-x-jp-d79b8b67",
+    "name": "年頭屋茶舗",
+    "kind": "cafe",
+    "address": "新潟県柏崎市藤元町２９−３１",
+    "city": "柏崎市",
+    "state": "",
+    "zip": "945-0026",
+    "cc": "JP",
+    "url": "http://www.nentouya.co.jp/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://nentouya.co.jp/category/item/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 37.381232,
+    "lng": 138.578678
+  },
+  {
+    "id": "tsujiri-matcha-house-liverpool-hope-stre-liverpool-gb-8ba6fbcf",
+    "name": "Tsujiri Matcha House 辻利茶铺 - Liverpool Hope Street",
+    "kind": "cafe",
+    "address": "29e Hope Street",
+    "city": "Liverpool",
+    "state": "",
+    "zip": "L1 9BQ",
+    "cc": "GB",
+    "url": "http://www.tsujiri.co.uk/",
+    "brands": [
+      {
+        "name": "Gion Tsujiri",
+        "evidence": "https://www.tsujiri.co.uk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 53.401908,
+    "lng": -2.970154
+  },
+  {
+    "id": "chabei-pessac-fr-81872185",
+    "name": "Chabei",
+    "kind": "cafe",
+    "address": "6 Rue des Poilus",
+    "city": "Pessac",
+    "state": "",
+    "zip": "33600",
+    "cc": "FR",
+    "url": "http://www.chabei-comptoir-de-thes.fr",
+    "brands": [
+      {
+        "name": "Palais des Thés",
+        "evidence": "https://www.chabei-comptoir-de-thes.fr/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 44.805288,
+    "lng": -0.631483
+  },
+  {
+    "id": "tsujiri-london-gb-825030af",
+    "name": "Tsujiri",
+    "kind": "cafe",
+    "address": "Great Eastern Road",
+    "city": "London",
+    "state": "",
+    "zip": "E15",
+    "cc": "GB",
+    "url": "http://tsujiri.co.uk",
+    "brands": [
+      {
+        "name": "Gion Tsujiri",
+        "evidence": "https://www.tsujiri.co.uk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.542038,
+    "lng": -0.001297
+  },
+  {
+    "id": "-x-jp-9e9aaffd",
+    "name": "西尾抹茶の西条園",
+    "kind": "cafe",
+    "address": "上町横町屋敷15",
+    "city": "西尾市",
+    "state": "",
+    "zip": "4450894",
+    "cc": "JP",
+    "url": "https://saijoen.jp/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://saijoen.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.877623,
+    "lng": 137.040018
+  },
+  {
+    "id": "seisho-en-shinjuku-store-x-jp-69677025",
+    "name": "Seishō-En Shinjuku Store",
+    "kind": "cafe",
+    "address": "1 Chome-5-1 Nishishinjuku",
+    "city": "Синдзюку",
+    "state": "",
+    "zip": "160-0023",
+    "cc": "JP",
+    "url": "http://seisyoen1947.jp",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.seisyoen1947.jp/tea"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.692717,
+    "lng": 139.697973
+  },
+  {
+    "id": "avril-supermarche-sante-magog-ca-7fbb7ced",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "2385 Rue Principale O",
+    "city": "Magog",
+    "state": "",
+    "zip": "J1X 0J4",
+    "cc": "CA",
+    "url": "http://www.avril.ca/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.281528,
+    "lng": -72.186055
+  },
+  {
+    "id": "teepolku-turku-fi-e5a0b774",
+    "name": "Teepolku",
+    "kind": "cafe",
+    "address": "Humalistonkatu 13",
+    "city": "Turku",
+    "state": "",
+    "zip": "20100",
+    "cc": "FI",
+    "url": "http://www.teepolku.fi/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://teepolku.fi/fi/"
+      },
+      {
+        "name": "Horii Shichimeien",
+        "evidence": "https://teepolku.fi/fi/teevalikoima/matcha"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 60.452752,
+    "lng": 22.256322
+  },
+  {
+    "id": "avril-supermarche-sante-montreal-ca-340f5fc8",
+    "name": "Avril Supermarché Santé",
+    "kind": "retailer",
+    "address": "375 Av. Viger O",
+    "city": "Montréal",
+    "state": "",
+    "zip": "H2Z 0C1",
+    "cc": "CA",
+    "url": "http://www.avril.ca/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.50344,
+    "lng": -73.562216
+  },
+  {
+    "id": "avril-sherbrooke-sherbrooke-ca-055b3b28",
+    "name": "Avril Sherbrooke",
+    "kind": "retailer",
+    "address": "35 Rue J.-A.-Bombardier",
+    "city": "Sherbrooke",
+    "state": "",
+    "zip": "J1L 0H8",
+    "cc": "CA",
+    "url": "http://www.avril.ca/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://avril.ca/fr/epicerie/boissons.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 45.391686,
+    "lng": -71.955056
+  },
+  {
+    "id": "farrer-s-tea-coffee-house-kendal-gb-4c9eee90",
+    "name": "Farrer's Tea & Coffee House",
+    "kind": "cafe",
+    "address": "13 Stricklandgate",
+    "city": "Kendal",
+    "state": "",
+    "zip": "LA9 4LY",
+    "cc": "GB",
+    "url": "http://www.farrers.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.farrers.co.uk/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 54.32789,
+    "lng": -2.747254
+  },
+  {
+    "id": "aiya-europe-gmbh-hamburg-de-c8ebf4f8",
+    "name": "AIYA Europe GmbH",
+    "kind": "cafe",
+    "address": "Poststr. 51",
+    "city": "Hamburg",
+    "state": "",
+    "zip": "20354",
+    "cc": "DE",
+    "url": "http://www.aiya-europe.com",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://aiya-europe.com/"
+      },
+      {
+        "name": "Tsuki Matcha",
+        "evidence": "https://aiya-europe.com/matcha-and-tea-range/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 53.554121,
+    "lng": 9.987621
+  },
+  {
+    "id": "marukyu-koyamaen-nishinotoin-sabo-moto-a-x-jp-381789c4",
+    "name": "Marukyu Koyamaen - Nishinotoin / Sabo Moto-an",
+    "kind": "cafe",
+    "address": "西洞院通御池下ルSanbonishitoincho, ５６１ 西側",
+    "city": "京都市中京区",
+    "state": "",
+    "zip": "604-8277",
+    "cc": "JP",
+    "url": "http://www.marukyu-koyamaen.co.jp/motoan.html",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.marukyu-koyamaen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.010147,
+    "lng": 135.755072
+  },
+  {
+    "id": "tokyo-jiyugaoka-x-jp-2dc8861a",
+    "name": "すすむ屋茶店 Tokyo Jiyugaoka",
+    "kind": "cafe",
+    "address": "東京都目黒区自由が丘１丁目２５−５",
+    "city": "目黒区",
+    "state": "",
+    "zip": "152-0035",
+    "cc": "JP",
+    "url": "http://susumuya.com/",
+    "brands": [
+      {
+        "name": "Ippodo",
+        "evidence": "https://susumuya.com/blog/japanese-tea/category/the-tea-today"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.60928,
+    "lng": 139.66949
+  },
+  {
+    "id": "la-chambre-aux-confitures-martyrs-paris-fr-31645cf0",
+    "name": "La Chambre aux Confitures Martyrs",
+    "kind": "retailer",
+    "address": "9 R. des Martyrs",
+    "city": "Paris",
+    "state": "",
+    "zip": "75009",
+    "cc": "FR",
+    "url": "https://www.la-chambre.com/",
+    "brands": [
+      {
+        "name": "Palais des Thés",
+        "evidence": "https://la-chambre.com/fr/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.877453,
+    "lng": 2.339312
+  },
+  {
+    "id": "japonshop-castellon-de-la-plana-es-df32a697",
+    "name": "Japonshop",
+    "kind": "retailer",
+    "address": "Carrer D'asensi 4",
+    "city": "Castellón De La Plana",
+    "state": "",
+    "zip": "12002",
+    "cc": "ES",
+    "url": "https://www.japonshop.com/",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.japonshop.com/bebidas"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 39.983295,
+    "lng": -0.037627
+  },
+  {
+    "id": "the-legend-gijon-es-7eaead8e",
+    "name": "Thè Legend",
+    "kind": "retailer",
+    "address": "Plaza San Miguel, C. Celestino Junquera, 2 Esquina",
+    "city": "Gijón",
+    "state": "",
+    "zip": "33202",
+    "cc": "ES",
+    "url": "http://www.thelegend.es/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://thelegend.es/categoria-producto/infusiones-y-tes/te-detox/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.539303,
+    "lng": -5.657988
+  },
+  {
+    "id": "foods-for-you-oficina-supermercat-orient-barcelona-es-ec2114ec",
+    "name": "Foods For You Oficina - Supermercat Oriental Online",
+    "kind": "retailer",
+    "address": "Passeig De Sant Joan 12",
+    "city": "Barcelona",
+    "state": "",
+    "zip": "08010",
+    "cc": "ES",
+    "url": "https://foodsforyou.es/",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://foodsforyou.es/bebidas/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 41.392335,
+    "lng": 2.179808
+  },
+  {
+    "id": "-x-jp-29212571",
+    "name": "菊屋茶舗",
+    "kind": "cafe",
+    "address": "大町1丁目2-21",
+    "city": "郡山市",
+    "state": "",
+    "zip": "963-8001",
+    "cc": "JP",
+    "url": "http://www.kikuyachaho.co.jp/",
+    "brands": [
+      {
+        "name": "Kanbayashi Shunsho",
+        "evidence": "https://www.kikuyachaho.co.jp/pages/30/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 37.398402,
+    "lng": 140.384546
+  },
+  {
+    "id": "the-koomon-tokyo-x-jp-daaa13ff",
+    "name": "茶友倶楽部 空門 / The Koomon, Tokyo",
+    "kind": "cafe",
+    "address": "Chuo-ku Nihonbashi 3-8-16",
+    "city": "中央区",
+    "state": "",
+    "zip": "103-0027",
+    "cc": "JP",
+    "url": "http://www.koomon.com/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "http://www.koomon.com/j_rental-html/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.680242,
+    "lng": 139.772872
+  },
+  {
+    "id": "-x-jp-7d3bc3d7",
+    "name": "山本山 ふじヱ茶房",
+    "kind": "cafe",
+    "address": "日本橋2丁目5-1",
+    "city": "中央区",
+    "state": "",
+    "zip": "103-0027",
+    "cc": "JP",
+    "url": "https://fujie.yamamotoyama.co.jp",
+    "brands": [
+      {
+        "name": "Yamamotoyama",
+        "evidence": "https://fujie.yamamotoyama.co.jp/sabo/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.681208,
+    "lng": 139.774249
+  },
+  {
+    "id": "-x-jp-2c4f8033",
+    "name": "茶寮伊藤園",
+    "kind": "cafe",
+    "address": "東京都江東区木場１丁目５−３０",
+    "city": "江東区",
+    "state": "",
+    "zip": "135-0042",
+    "cc": "JP",
+    "url": "https://www.itoen.jp/shopping/store/detail.php",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.itoen.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.665813,
+    "lng": 139.804252
+  },
+  {
+    "id": "asian-panier-paris-fr-a640f05e",
+    "name": "Asian Panier",
+    "kind": "retailer",
+    "address": "6 rue du Lunain",
+    "city": "Paris",
+    "state": "",
+    "zip": "75014",
+    "cc": "FR",
+    "url": "http://asianpanier.com/",
+    "brands": [
+      {
+        "name": "Gion Tsujiri",
+        "evidence": "https://asianpanier.com/categorie-produit/epicerie-japonaise/matcha-et-the-japonais/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.827351,
+    "lng": 2.329143
+  },
+  {
+    "id": "laika-bg-x-bg-75f89b46",
+    "name": "Laika.bg Студентски парк",
+    "kind": "retailer",
+    "address": "Улица Баку 5",
+    "city": "София",
+    "state": "",
+    "zip": "1700",
+    "cc": "BG",
+    "url": "http://www.Laika.bg/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://laika.bg/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 42.656715,
+    "lng": 23.351925
+  },
+  {
+    "id": "laika-x-bg-6bdd02dc",
+    "name": "LAIKA",
+    "kind": "retailer",
+    "address": "5, ul. Lachezar Stanchev str",
+    "city": "София",
+    "state": "",
+    "zip": "1797",
+    "cc": "BG",
+    "url": "http://Laika.bg/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://laika.bg/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 42.666021,
+    "lng": 23.356648
+  },
+  {
+    "id": "tea-more-dein-online-tee-shop-tee-online-worthsee-de-07c1161f",
+    "name": "Tea & More • Dein Online Tee Shop • Tee Online Kaufen • Teaandmore",
+    "kind": "retailer",
+    "address": "Etterschlager Straße 42",
+    "city": "Wörthsee",
+    "state": "",
+    "zip": "82237",
+    "cc": "DE",
+    "url": "https://www.teaandmore-online.com/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.teaandmore-online.com/"
+      },
+      {
+        "name": "Aiya",
+        "evidence": "https://www.teaandmore-online.com/menue.html"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.07335,
+    "lng": 11.203056
+  },
+  {
+    "id": "aiya-the-tea-wien-at-ac44466c",
+    "name": "aiya – THE TEA",
+    "kind": "cafe",
+    "address": "Rotenturmstraße 21",
+    "city": "Wien",
+    "state": "",
+    "zip": "1010",
+    "cc": "AT",
+    "url": "http://www.aiyatea.com/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://aiyatea.com/en/contact/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 48.210943,
+    "lng": 16.374861
+  },
+  {
+    "id": "aiya-europe-gmbh-hamburg-de-b96176df",
+    "name": "Aiya Europe Gmbh",
+    "kind": "retailer",
+    "address": "Am Sandtorkai 62",
+    "city": "Hamburg",
+    "state": "",
+    "zip": "20457",
+    "cc": "DE",
+    "url": "https://aiya-europe.com/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://aiya-europe.com/"
+      },
+      {
+        "name": "Tsuki Matcha",
+        "evidence": "https://aiya-europe.com/matcha-and-tea-range/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 53.54287,
+    "lng": 9.989783
+  },
+  {
+    "id": "-x-jp-f491fcc3",
+    "name": "ときわ園本店",
+    "kind": "cafe",
+    "address": "仲町1-15",
+    "city": "深谷市",
+    "state": "",
+    "zip": "366-0822",
+    "cc": "JP",
+    "url": "https://tokiwaen.thebase.in/",
+    "brands": [
+      {
+        "name": "Kanbayashi Shunsho",
+        "evidence": "https://tokiwaen.thebase.in/categories/6163616"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 36.195021,
+    "lng": 139.283072
+  },
+  {
+    "id": "moy-charcutaria-e-garrafeira-lisboa-pt-c78cb6d8",
+    "name": "Moy Charcutaria e Garrafeira",
+    "kind": "cafe",
+    "address": "R. Dom Pedro V 111",
+    "city": "Lisboa",
+    "state": "",
+    "zip": "1250-083",
+    "cc": "PT",
+    "url": "http://www.themoyshop.com/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://themoyshop.com/index.php?id_category=100&controller=category&id_lang=1"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 38.715938,
+    "lng": -9.147198
+  },
+  {
+    "id": "the-healthy-life-devizes-gb-a9ccb6f7",
+    "name": "The Healthy Life",
+    "kind": "retailer",
+    "address": "4 The Brittox",
+    "city": "Devizes",
+    "state": "",
+    "zip": "SN10 1AR",
+    "cc": "GB",
+    "url": "http://www.thehealthylife.co.uk/",
+    "brands": [
+      {
+        "name": "Teapigs",
+        "evidence": "https://www.thehealthylife.co.uk/shop/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 51.352095,
+    "lng": -1.994714
+  },
+  {
+    "id": "organic-market-ul-finska-tarnowskie-gory-pl-b1100661",
+    "name": "Organic Market ul. Fińska",
+    "kind": "retailer",
+    "address": "Fińska 53",
+    "city": "Tarnowskie Góry",
+    "state": "",
+    "zip": "42-612",
+    "cc": "PL",
+    "url": "https://organic24.pl/",
+    "brands": [
+      {
+        "name": "Yōko Matcha",
+        "evidence": "https://organic24.pl/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 50.443291,
+    "lng": 18.828997
+  },
+  {
+    "id": "tee-kontor-kiel-kiel-de-a317b0c4",
+    "name": "Tee Kontor Kiel",
+    "kind": "cafe",
+    "address": "Holtenauer Straße 126",
+    "city": "Kiel",
+    "state": "",
+    "zip": "24105",
+    "cc": "DE",
+    "url": "http://www.tee-kontor-kiel.de/",
+    "brands": [
+      {
+        "name": "Aiya",
+        "evidence": "https://www.tee-kontor-kiel.de/tee/gruener-tee/matcha-teepulver/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 54.33734,
+    "lng": 10.133839
+  },
+  {
+    "id": "-x-jp-20858e2a",
+    "name": "星野製茶園",
+    "kind": "cafe",
+    "address": "星野村8136-1",
+    "city": "八女市",
+    "state": "",
+    "zip": "834-0201",
+    "cc": "JP",
+    "url": "https://www.hoshitea.com",
+    "brands": [
+      {
+        "name": "Hoshino Seichaen",
+        "evidence": "https://www.hoshitea.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 33.263162,
+    "lng": 130.742555
+  },
+  {
+    "id": "lin-x-jp-63e1ec9e",
+    "name": "テーブルスタイル茶道  千種駅前サロン -Lin-",
+    "kind": "cafe",
+    "address": "東区葵3-14-20 エルシドビル",
+    "city": "名古屋市東区",
+    "state": "",
+    "zip": "461-0004",
+    "cc": "JP",
+    "url": "http://j-lifestyle.com/",
+    "brands": [
+      {
+        "name": "Nakamura Tokichi",
+        "evidence": "https://j-lifestyle.com/matcha-boom-sustainable/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.171731,
+    "lng": 136.930686
+  },
+  {
+    "id": "les-comptoirs-the-cafe-morteau-fr-6e70d034",
+    "name": "Les Comptoirs Thé Café",
+    "kind": "cafe",
+    "address": "19 Grande Rue",
+    "city": "Morteau",
+    "state": "",
+    "zip": "25500",
+    "cc": "FR",
+    "url": "http://www.comptoirs-the-cafe.com/",
+    "brands": [
+      {
+        "name": "Kusmi Tea",
+        "evidence": "https://www.comptoirs-the-cafe.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 47.056408,
+    "lng": 6.60539
+  },
+  {
+    "id": "-x-jp-81858464",
+    "name": "宇治茶レディ",
+    "kind": "cafe",
+    "address": "宇治折居25番",
+    "city": "宇治市",
+    "state": "",
+    "zip": "611-0021",
+    "cc": "JP",
+    "url": "http://www.kyocha.or.jp/",
+    "brands": [
+      {
+        "name": "Fukujuen",
+        "evidence": "https://www.kyocha.or.jp/"
+      },
+      {
+        "name": "Horii Shichimeien",
+        "evidence": "https://www.kyocha.or.jp/"
+      },
+      {
+        "name": "Ippodo",
+        "evidence": "https://www.kyocha.or.jp/"
+      },
+      {
+        "name": "Kanbayashi Shunsho",
+        "evidence": "https://www.kyocha.or.jp/"
+      },
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.kyocha.or.jp/"
+      },
+      {
+        "name": "Nakamura Tokichi",
+        "evidence": "https://www.kyocha.or.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.876153,
+    "lng": 135.805035
+  },
+  {
+    "id": "-x-jp-ae7ffa10",
+    "name": "宇治茶道場匠の館",
+    "kind": "cafe",
+    "address": "宇治又振17-1",
+    "city": "宇治市",
+    "state": "",
+    "zip": "611-0021",
+    "cc": "JP",
+    "url": "http://www.ujicha.or.jp",
+    "brands": [
+      {
+        "name": "Fukujuen",
+        "evidence": "https://ujicha.or.jp/knowledge/howto/drink/"
+      },
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://ujicha.or.jp/knowledge/howto/drink/"
+      },
+      {
+        "name": "Morihan",
+        "evidence": "https://ujicha.or.jp/knowledge/howto/drink/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.891791,
+    "lng": 135.808919
+  },
+  {
+    "id": "marukyu-koyamaen-main-plant-x-jp-32f0e6b9",
+    "name": "Marukyu Koyamaen Main Plant",
+    "kind": "cafe",
+    "address": "Terauchi-86 Oguracho",
+    "city": "宇治市",
+    "state": "",
+    "zip": "611-0042",
+    "cc": "JP",
+    "url": "http://www.marukyu-koyamaen.co.jp/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.marukyu-koyamaen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.895613,
+    "lng": 135.785459
+  },
+  {
+    "id": "-x-jp-52698aee",
+    "name": "山政小山園",
+    "kind": "cafe",
+    "address": "小倉町久保96",
+    "city": "宇治市",
+    "state": "",
+    "zip": "611-0042",
+    "cc": "JP",
+    "url": "https://www.yamamasa-koyamaen.co.jp/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://www.yamamasa-koyamaen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.895856,
+    "lng": 135.784552
+  },
+  {
+    "id": "tea-square-morihan-x-jp-4e857ce4",
+    "name": "Tea Square Morihan",
+    "kind": "cafe",
+    "address": "Kubo-78 Oguracho",
+    "city": "宇治市",
+    "state": "",
+    "zip": "611-0042",
+    "cc": "JP",
+    "url": "http://www.kyoeiseicha.co.jp/",
+    "brands": [
+      {
+        "name": "Morihan",
+        "evidence": "http://www.kyoeiseicha.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.896228,
+    "lng": 135.784431
+  },
+  {
+    "id": "tea-ceremony-nagomi-x-jp-0be97b8b",
+    "name": "Tea Ceremony Nagomi",
+    "kind": "cafe",
+    "address": "Masuyacho, 349-7 2 階",
+    "city": "京都市東山区",
+    "state": "",
+    "zip": "605-0826",
+    "cc": "JP",
+    "url": "http://kyoto-nagomi-tea.com/",
+    "brands": [
+      {
+        "name": "Gion Tsujiri",
+        "evidence": "https://kyoto-nagomi-tea.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.998424,
+    "lng": 135.780807
+  },
+  {
+    "id": "salon-de-kanbayashi-x-jp-cbc76bf0",
+    "name": "Salon de Kanbayashi",
+    "kind": "cafe",
+    "address": "400番1 Kinencho",
+    "city": "京都市東山区",
+    "state": "",
+    "zip": "605-0828",
+    "cc": "JP",
+    "url": "http://salondekanbayashi.com/",
+    "brands": [
+      {
+        "name": "Kanbayashi Shunsho",
+        "evidence": "https://www.salondekanbayashi.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.998925,
+    "lng": 135.778733
+  },
+  {
+    "id": "-x-jp-303c1d8c",
+    "name": "（有）矢田製茶",
+    "kind": "cafe",
+    "address": "4071-1 Suizawacho",
+    "city": "四日市市",
+    "state": "",
+    "zip": "512-1105",
+    "cc": "JP",
+    "url": "https://kaneya-yadaseicha.com/",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://kaneya-yadaseicha.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 34.971646,
+    "lng": 136.501098
+  },
+  {
+    "id": "-x-jp-8cb5a829",
+    "name": "茶寮 伊藤園",
+    "kind": "cafe",
+    "address": "関戸1-10-1",
+    "city": "多摩市",
+    "state": "",
+    "zip": "206-0011",
+    "cc": "JP",
+    "url": "https://www.itoen.co.jp",
+    "brands": [
+      {
+        "name": "Ito En",
+        "evidence": "https://www.itoen.co.jp/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.651196,
+    "lng": 139.446629
+  },
+  {
+    "id": "cafe-riq-x-jp-030d3bbf",
+    "name": "抹茶Cafe RIQ",
+    "kind": "cafe",
+    "address": "中央区南2条西5 T5ビル エリア: 札幌大通狸小路",
+    "city": "札幌市中央区",
+    "state": "",
+    "zip": "060-0062",
+    "cc": "JP",
+    "url": "https://www.riq-jp.com",
+    "brands": [
+      {
+        "name": "Marukyu Koyamaen",
+        "evidence": "https://www.riq-jp.com/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 43.057386,
+    "lng": 141.350453
+  },
+  {
+    "id": "-x-jp-0c5aa8b8",
+    "name": "すすむ屋茶店",
+    "kind": "cafe",
+    "address": "上之園町27-13",
+    "city": "鹿児島市",
+    "state": "",
+    "zip": "890-0052",
+    "cc": "JP",
+    "url": "http://susumuya.com/",
+    "brands": [
+      {
+        "name": "Ippodo",
+        "evidence": "https://susumuya.com/blog/japanese-tea/category/the-tea-today"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 31.580735,
+    "lng": 130.544069
+  },
+  {
+    "id": "-x-jp-eecd593c",
+    "name": "製造問屋ふるさと茶工房　杉田園",
+    "kind": "cafe",
+    "address": "今井2-913",
+    "city": "青梅市",
+    "state": "",
+    "zip": "198-0023",
+    "cc": "JP",
+    "url": "http://www.sugitaen.com/",
+    "brands": [
+      {
+        "name": "Yamamasa Koyamaen",
+        "evidence": "https://sugitaen.com/products/matcha/"
+      }
+    ],
+    "checked": "2026-11-06",
+    "lat": 35.80575,
+    "lng": 139.30996
   }
 ]

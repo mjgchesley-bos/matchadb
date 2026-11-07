@@ -82,8 +82,9 @@ export function AccountClient() {
       const cafeIds = (fc.data ?? []).map((x) => x.cafe_id as string);
       setFavCafes(cafeIds);
       if (cafeIds.length > 0 || mine.some((c) => c.target_type === "cafe")) {
-        const rows = (await fetch("/data/cafes-slim.json").then((res) => res.json())) as CafeSlim[];
-        if (live) setCafeNames(Object.fromEntries(rows.map((r) => [r[0], { name: r[1], slug: cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4] }), place: `${r[3]}, ${r[4]}` }])));
+        const lists = await Promise.all(["us", "ca", "eu", "jp", "kr"].map((k) => fetch(`/data/cafes-slim-${k}.json`).then((res) => (res.ok ? (res.json() as Promise<CafeSlim[]>) : []))));
+        const rows = lists.flat();
+        if (live) setCafeNames(Object.fromEntries(rows.map((r) => [r[0], { name: r[1], slug: cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] }), place: !r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3] }])));
       }
       const commentProducts = mine.filter((c) => c.target_type === "product").map((c) => Number(c.target_key)).filter((n) => Number.isInteger(n));
       const onShelf = (sh.data ?? []) as Shelved[];

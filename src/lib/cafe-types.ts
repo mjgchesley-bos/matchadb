@@ -9,7 +9,7 @@ export type CafeEvidence = {
   // 3 = text on a menu page, 2 = text on another page, 1 = a menu item in the page's embedded data.
   st: 1 | 2 | 3;
   n: number;
-  // A short quote around the word "matcha".
+  // A short quote around the word "matcha" (or 抹茶 / 말차).
   s: string[];
 };
 
@@ -17,8 +17,11 @@ export type Cafe = {
   id: string;
   name: string;
   cat: string;
+  // ISO 3166 alpha-2 country code; missing on the first US-only data means US.
+  cc?: string;
   address: string;
   city: string;
+  // US state; empty for other countries.
   state: string;
   zip: string;
   lat: number;
@@ -37,8 +40,8 @@ export type Cafe = {
   shared: number;
 };
 
-// What the map and list need for each café: id, name, address, city, state, zip, lat, lng, focus (1/0).
-export type CafeSlim = [string, string, string, string, string, string, number, number, number];
+// What the map and list need for each café: id, name, address, city, state, zip, lat, lng, focus (1/0), country code.
+export type CafeSlim = [string, string, string, string, string, string, number, number, number, string?];
 
 export const CAT_LABEL: Record<string, string> = {
   coffee_shop: "Coffee shop",
@@ -51,6 +54,52 @@ export const CAT_LABEL: Record<string, string> = {
   dog_cafe: "Dog café",
 };
 
+export const COUNTRY_NAME: Record<string, string> = {
+  US: "United States",
+  CA: "Canada",
+  JP: "Japan",
+  KR: "South Korea",
+  GB: "United Kingdom",
+  IE: "Ireland",
+  FR: "France",
+  DE: "Germany",
+  IT: "Italy",
+  ES: "Spain",
+  PT: "Portugal",
+  NL: "Netherlands",
+  BE: "Belgium",
+  LU: "Luxembourg",
+  AT: "Austria",
+  CH: "Switzerland",
+  SE: "Sweden",
+  NO: "Norway",
+  DK: "Denmark",
+  FI: "Finland",
+  IS: "Iceland",
+  PL: "Poland",
+  CZ: "Czechia",
+  SK: "Slovakia",
+  HU: "Hungary",
+  GR: "Greece",
+  RO: "Romania",
+  BG: "Bulgaria",
+  HR: "Croatia",
+  SI: "Slovenia",
+  EE: "Estonia",
+  LV: "Latvia",
+  LT: "Lithuania",
+  MT: "Malta",
+  CY: "Cyprus",
+};
+
+// Page addresses for places outside the US end in the three-letter country code; US ones end in the state.
+const CC3: Record<string, string> = {
+  CA: "can", JP: "jpn", KR: "kor", GB: "gbr", IE: "irl", FR: "fra", DE: "deu", IT: "ita", ES: "esp", PT: "prt", NL: "nld", BE: "bel", LU: "lux", AT: "aut", CH: "che",
+  SE: "swe", NO: "nor", DK: "dnk", FI: "fin", IS: "isl", PL: "pol", CZ: "cze", SK: "svk", HU: "hun", GR: "grc", RO: "rou", BG: "bgr", HR: "hrv", SI: "svn", EE: "est",
+  LV: "lva", LT: "ltu", MT: "mlt", CY: "cyp",
+};
+const FROM_CC3 = Object.fromEntries(Object.entries(CC3).map(([a, b]) => [b, a]));
+
 const slugify = (s: string) =>
   s
     .normalize("NFKD")
@@ -61,14 +110,34 @@ const slugify = (s: string) =>
     .replace(/^-+|-+$/g, "")
     .slice(0, 50);
 
-// /cafes/{name}-{city}-{state}-{id}; the state and id at the end are what the page looks the café up by.
-export const cafeSlug = (c: { name: string; city: string; state: string; id: string }): string =>
-  `${[slugify(c.name), slugify(c.city)].filter(Boolean).join("-")}-${c.state.toLowerCase()}-${c.id}`;
+// The data file a café lives in: its US state, or its three-letter country code.
+export const cafeFileKey = (c: { cc?: string; state: string }): string => (!c.cc || c.cc === "US" ? c.state.toUpperCase() : (CC3[c.cc] ?? "xxx").toUpperCase());
 
-export function parseCafeSlug(slug: string): { state: string; id: string } | null {
-  const m = /-([a-z]{2})-([0-9a-f]{10})$/.exec(slug);
-  return m ? { state: m[1].toUpperCase(), id: m[2] } : null;
+// /cafes/{name}-{city}-{state or country}-{id}; the part before the id is what the page looks the café up by.
+export const cafeSlug = (c: { name: string; city: string; state: string; id: string; cc?: string }): string => {
+  const base = [slugify(c.name), slugify(c.city)].filter(Boolean).join("-");
+  const where = !c.cc || c.cc === "US" ? c.state.toLowerCase() : (CC3[c.cc] ?? "xxx");
+  return `${base ? base + "-" : ""}${where}-${c.id}`;
+};
+
+export function parseCafeSlug(slug: string): { key: string; id: string } | null {
+  const m = /-([a-z]{2,3})-([0-9a-f]{10})$/.exec(slug) ?? /^([a-z]{2,3})-([0-9a-f]{10})$/.exec(slug);
+  if (!m) return null;
+  if (m[1].length === 3 && !FROM_CC3[m[1]]) return null;
+  return { key: m[1].toUpperCase(), id: m[2] };
 }
 
-export const directionsUrl = (c: { name: string; address: string; city: string; state: string; zip: string }): string =>
-  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${c.name}, ${[c.address, c.city, c.state, c.zip].filter(Boolean).join(", ")}`)}`;
+// "6801 Hollywood Blvd, Los Angeles, CA 90028" in the US; address, city, postcode and country elsewhere,
+// leaving out any part the address already contains.
+export function formatPlace(c: { address: string; city: string; state: string; zip: string; cc?: string }): string {
+  if (!c.cc || c.cc === "US") return [c.address, c.city, `${c.state} ${c.zip}`.trim()].filter(Boolean).join(", ");
+  const parts: string[] = [];
+  for (const p of [c.address, c.city, c.zip]) {
+    const t = (p ?? "").trim();
+    if (t && !parts.some((x) => x.includes(t))) parts.push(t);
+  }
+  return [...parts, COUNTRY_NAME[c.cc] ?? c.cc].join(", ");
+}
+
+export const directionsUrl = (c: { name: string; address: string; city: string; state: string; zip: string; cc?: string }): string =>
+  `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${c.name}, ${formatPlace(c)}`)}`;

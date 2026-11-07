@@ -27,6 +27,8 @@ export type Store = {
   city: string;
   state: string;
   zip: string;
+  // ISO 3166 alpha-2 country code; missing means US (the first stores were all US).
+  cc?: string;
   lat: number;
   lng: number;
   // The place's own website, when it has one. Left out rather than pointing at a social page.

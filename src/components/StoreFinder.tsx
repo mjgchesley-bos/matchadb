@@ -6,45 +6,22 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { KIND_LABEL, type BrandMatchaInfo, type Store } from "@/lib/store-types";
 import { usd30 } from "@/lib/unit-price";
+import { formatPlace } from "@/lib/cafe-types";
+import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, type RegionKey } from "@/lib/cafe-regions";
+import { KM_PER_MILE, geocode, haversineMiles, type Origin } from "@/lib/geo";
 
-// Search by ZIP code or city, or use your device's location, to find stores near
-// you that carry brands from the database. Your position is only used in your
-// browser to sort and map the list; nothing about it is sent to or stored by us.
-// (A typed ZIP or city is sent to Mapbox's geocoder to turn it into a point.)
+// Search by ZIP code, postcode or city, or use your device's location, to find stores near
+// you that carry brands from the database, in the US, Canada, Europe, Japan and South Korea. Your
+// position is only used in your browser to sort and map the list; nothing about it is sent to or
+// stored by us. (A typed place is sent to Mapbox's geocoder to turn it into a point.)
 
-type Origin = { lat: number; lng: number; label: string };
-type Listed = { store: Store; miles: number | null };
+type Listed = { store: Store; dist: number | null };
 
-const USA_BOUNDS: [[number, number], [number, number]] = [
-  [-125, 24.5],
-  [-66.5, 49.5],
-];
 const RADII = [10, 25, 50, 100, 0]; // 0 = any distance
-
-function haversineMiles(a: { lat: number; lng: number }, b: { lat: number; lng: number }): number {
-  const R = 3958.8;
-  const toRad = (d: number) => (d * Math.PI) / 180;
-  const dLat = toRad(b.lat - a.lat);
-  const dLng = toRad(b.lng - a.lng);
-  const x = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(a.lat)) * Math.cos(toRad(b.lat)) * Math.sin(dLng / 2) ** 2;
-  return 2 * R * Math.asin(Math.sqrt(x));
-}
-
-async function geocode(query: string): Promise<Origin | null> {
-  const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-  if (!token) return null;
-  const isZip = /^\d{5}$/.test(query.trim());
-  const types = isZip ? "postcode" : "postcode,place,locality,neighborhood,address";
-  const res = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(query)}.json?access_token=${token}&country=us&types=${types}&limit=1`);
-  if (!res.ok) throw new Error("geocoder");
-  const json = (await res.json()) as { features?: { center: [number, number]; place_name: string }[] };
-  const f = json.features?.[0];
-  return f ? { lat: f.center[1], lng: f.center[0], label: f.place_name.replace(/, United States$/, "") } : null;
-}
-
 const LIST_CAP = 40;
 const fmtDate = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
-const directionsUrl = (s: Store) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.address}, ${s.city}, ${s.state} ${s.zip}`)}`;
+const directionsUrl = (s: Store) => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${s.name}, ${formatPlace(s)}`)}`;
+const regionOf = (s: Store): RegionKey => regionForCountry(s.cc ?? "US") ?? "us";
 
 const VERB: Record<Store["kind"], string> = { "brand-shop": "Its own shop", cafe: "Serves", retailer: "Sells" };
 
@@ -60,7 +37,7 @@ function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>): HTMLElemen
   };
   const root = el("div", "store-pop");
   root.appendChild(el("p", "font-display text-base font-semibold text-ink leading-snug", s.name));
-  root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", `${KIND_LABEL[s.kind]} · ${s.address}, ${s.city}, ${s.state}`));
+  root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", `${KIND_LABEL[s.kind]} · ${formatPlace(s)}`));
   const list = el("ul", "mt-2.5 flex flex-col gap-2");
   for (const b of s.brands) {
     const m = info[b.name];
@@ -84,13 +61,29 @@ function buildPopup(s: Store, info: Record<string, BrandMatchaInfo>): HTMLElemen
   return root;
 }
 
-export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = "" }: { stores: Store[]; brandInfo: Record<string, BrandMatchaInfo>; contactEmail: string; initialBrand?: string }) {
+export function StoreFinder({
+  stores,
+  brandInfo,
+  contactEmail,
+  initialBrand = "",
+  initialRegion = "us",
+}: {
+  stores: Store[];
+  brandInfo: Record<string, BrandMatchaInfo>;
+  contactEmail: string;
+  initialBrand?: string;
+  initialRegion?: RegionKey;
+}) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const popupRef = useRef<mapboxgl.Popup | null>(null);
   const userMarkerRef = useRef<mapboxgl.Marker | null>(null);
   const cardRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
+  const [regionKey, setRegionKey] = useState<RegionKey>(initialRegion);
+  const region = regionByKey(regionKey);
+  const unit = region.unit;
+  const unitWord = unit === "mi" ? "miles" : "km";
   const [query, setQuery] = useState("");
   const [origin, setOrigin] = useState<Origin | null>(null);
   const [brand, setBrand] = useState(initialBrand);
@@ -100,24 +93,32 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
   const [message, setMessage] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
 
-  const brandOptions = useMemo(() => {
-    const m = new Map<string, number>();
-    for (const s of stores) for (const b of s.brands) m.set(b.name, (m.get(b.name) ?? 0) + 1);
-    return [...m].sort((a, b) => a[0].localeCompare(b[0]));
+  const regionStores = useMemo(() => stores.filter((s) => regionOf(s) === regionKey), [stores, regionKey]);
+  const counts = useMemo(() => {
+    const m = new Map<RegionKey, number>();
+    for (const s of stores) m.set(regionOf(s), (m.get(regionOf(s)) ?? 0) + 1);
+    return m;
   }, [stores]);
 
+  const brandOptions = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const s of regionStores) for (const b of s.brands) m.set(b.name, (m.get(b.name) ?? 0) + 1);
+    return [...m].sort((a, b) => a[0].localeCompare(b[0]));
+  }, [regionStores]);
+
   const { listed, nearest, totalForBrand } = useMemo(() => {
-    const matching: Listed[] = stores
+    const factor = unit === "km" ? KM_PER_MILE : 1;
+    const matching: Listed[] = regionStores
       .filter((s) => !brand || s.brands.some((b) => b.name === brand))
-      .map((store) => ({ store, miles: origin ? haversineMiles(origin, store) : null }));
+      .map((store) => ({ store, dist: origin ? haversineMiles(origin, store) * factor : null }));
     if (!origin) {
       matching.sort((a, b) => a.store.state.localeCompare(b.store.state) || a.store.city.localeCompare(b.store.city) || a.store.name.localeCompare(b.store.name));
       return { listed: matching, nearest: null as Listed | null, totalForBrand: matching.length };
     }
-    matching.sort((a, b) => (a.miles ?? 0) - (b.miles ?? 0));
-    const within = radius > 0 ? matching.filter((x) => (x.miles ?? 0) <= radius) : matching;
+    matching.sort((a, b) => (a.dist ?? 0) - (b.dist ?? 0));
+    const within = radius > 0 ? matching.filter((x) => (x.dist ?? 0) <= radius) : matching;
     return { listed: within, nearest: matching[0] ?? null, totalForBrand: matching.length };
-  }, [stores, brand, origin, radius]);
+  }, [regionStores, brand, origin, radius, unit]);
 
   // The features currently on the map, kept in a ref so a late style load can apply them.
   const currentFeatures = useRef<GeoJSON.FeatureCollection>({ type: "FeatureCollection", features: [] });
@@ -127,7 +128,7 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
     const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
     if (!containerRef.current || mapRef.current || !token) return;
     mapboxgl.accessToken = token;
-    const map = new mapboxgl.Map({ container: containerRef.current, style: "mapbox://styles/mapbox/light-v11", bounds: USA_BOUNDS, fitBoundsOptions: { padding: 20 } });
+    const map = new mapboxgl.Map({ container: containerRef.current, style: "mapbox://styles/mapbox/light-v11", bounds: regionByKey(initialRegion).bounds, fitBoundsOptions: { padding: 20 } });
     mapRef.current = map;
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }), "top-right");
     const ro = new ResizeObserver(() => map.resize());
@@ -199,6 +200,7 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
       map.remove();
       mapRef.current = null;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -214,14 +216,14 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
     src?.setData(currentFeatures.current);
   }, [listed, selectedId]);
 
-  // Frame the map: everything when there is no search, the area around you after one.
+  // Frame the map: the whole region when there is no search, the area around you after one.
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
     if (!origin) {
-      map.fitBounds(USA_BOUNDS, { padding: 20, duration: 800 });
+      map.fitBounds(region.bounds, { padding: 20, duration: 800 });
       return;
     }
     const el = document.createElement("div");
@@ -237,7 +239,7 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
     for (const { store } of near) b.extend([store.lng, store.lat]);
     map.fitBounds(b, { padding: 70, maxZoom: 12, duration: 900 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [origin, brand, radius]);
+  }, [origin, brand, radius, regionKey]);
 
   function select(id: string) {
     setSelectedId(id);
@@ -269,6 +271,18 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
     if (selectedId) cardRefs.current.get(selectedId)?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [selectedId]);
 
+  // Switch to another part of the world (a brand that isn't stocked there is cleared).
+  function changeRegion(k: RegionKey, keepOrigin?: Origin) {
+    if (k === regionKey && !keepOrigin) return;
+    setRegionKey(k);
+    setOrigin(keepOrigin ?? null);
+    setSelectedId(null);
+    setShowAll(false);
+    setMessage(null);
+    setBrand("");
+    if (!keepOrigin) setQuery("");
+  }
+
   async function runSearch(e: React.FormEvent) {
     e.preventDefault();
     const q = query.trim();
@@ -276,11 +290,13 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
     setBusy("search");
     setMessage(null);
     try {
-      const o = await geocode(q);
-      if (!o) setMessage("We couldn't find that place. Try a 5-digit ZIP code, or a city and state.");
+      const o = (await geocode(q, region.countries)) ?? (await geocode(q, ALL_COUNTRIES));
+      if (!o) setMessage("We couldn't find that place. Try a ZIP code or postcode, or a city and country.");
       else {
-        setOrigin(o);
+        const k = regionForCountry(o.country);
         setSelectedId(null);
+        if (k && k !== regionKey) changeRegion(k, o);
+        else setOrigin(o);
       }
     } catch {
       setMessage("Search isn't available right now. Please try again in a moment.");
@@ -291,21 +307,24 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
 
   function useMyLocation() {
     if (!navigator.geolocation) {
-      setMessage("Your browser can't share its location. Search by ZIP code or city instead.");
+      setMessage("Your browser can't share its location. Search by ZIP code, postcode or city instead.");
       return;
     }
     setBusy("locate");
     setMessage(null);
     navigator.geolocation.getCurrentPosition(
       (pos) => {
-        setOrigin({ lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" });
+        const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: "your location" };
+        const here = REGIONS.find((r) => o.lng >= r.bounds[0][0] && o.lng <= r.bounds[1][0] && o.lat >= r.bounds[0][1] && o.lat <= r.bounds[1][1]);
         setQuery("");
         setSelectedId(null);
         setBusy(null);
+        if (here && here.key !== regionKey) changeRegion(here.key, o);
+        else setOrigin(o);
       },
       (err) => {
         setBusy(null);
-        setMessage(err.code === 1 ? "Location access was blocked. Search by ZIP code or city instead." : "We couldn't get your location. Search by ZIP code or city instead.");
+        setMessage(err.code === 1 ? "Location access was blocked. Search by ZIP code, postcode or city instead." : "We couldn't get your location. Search by ZIP code, postcode or city instead.");
       },
       { enableHighAccuracy: false, timeout: 10000, maximumAge: 300000 }
     );
@@ -318,18 +337,34 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
     setSelectedId(null);
   }
 
+  const fmtDist = (d: number) => (d < 10 ? d.toFixed(1) : Math.round(d).toLocaleString());
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   const fieldClass = "border border-line-strong rounded-sm px-3 py-2.5 bg-paper text-sm text-ink focus:outline-none focus:border-matcha";
 
   return (
     <div>
+      <div role="tablist" aria-label="Region" className="mb-4 flex flex-wrap gap-2">
+        {REGIONS.filter((r) => (counts.get(r.key) ?? 0) > 0 || r.key === regionKey).map((r) => (
+          <button
+            key={r.key}
+            type="button"
+            role="tab"
+            aria-selected={r.key === regionKey}
+            onClick={() => changeRegion(r.key)}
+            className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${r.key === regionKey ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"}`}
+          >
+            {r.label}
+          </button>
+        ))}
+      </div>
+
       <form onSubmit={runSearch} className="flex flex-col gap-3 lg:flex-row lg:items-end">
         <div className="flex-1">
           <label htmlFor="store-q" className="block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5">
-            ZIP code or city
+            ZIP code, postcode or city
           </label>
           <div className="flex gap-2">
-            <input id="store-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="e.g. 02140 or Brooklyn, NY" autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
+            <input id="store-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={region.placeholder} autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
             <button type="submit" disabled={busy !== null || !query.trim()} className="rounded-sm bg-matcha px-5 py-2.5 text-sm font-medium text-paper hover:bg-forest transition-colors disabled:opacity-50">
               {busy === "search" ? "Searching…" : "Search"}
             </button>
@@ -358,7 +393,7 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
           <select id="store-radius" value={radius} onChange={(e) => setRadius(Number(e.target.value))} disabled={!origin} className={`${fieldClass} w-full lg:w-32 disabled:opacity-50`}>
             {RADII.map((r) => (
               <option key={r} value={r}>
-                {r === 0 ? "Any distance" : `${r} miles`}
+                {r === 0 ? "Any distance" : `${r} ${unitWord}`}
               </option>
             ))}
           </select>
@@ -383,8 +418,8 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
         <section aria-label="Stores" className="lg:h-[640px] lg:overflow-y-auto">
           <p className="text-sm text-ink-muted mb-3" aria-live="polite">
             {origin
-              ? `${listed.length} store${listed.length === 1 ? "" : "s"}${radius > 0 ? ` within ${radius} miles of` : " near"} ${origin.label}`
-              : `${listed.length} store${listed.length === 1 ? "" : "s"} listed${brand ? ` for ${brand}` : ""}. Search a ZIP code or use your location to sort by distance.`}
+              ? `${listed.length} store${listed.length === 1 ? "" : "s"}${radius > 0 ? ` within ${radius} ${unitWord} of` : " near"} ${origin.label}`
+              : `${listed.length} store${listed.length === 1 ? "" : "s"} listed in ${region.label}${brand ? ` for ${brand}` : ""}. Search a ZIP code or postcode or use your location to sort by distance.`}
             {origin && (
               <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
                 Clear
@@ -395,11 +430,11 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
           {origin && listed.length === 0 && (
             <div className="rounded-sm border border-line bg-paper-raised p-4 text-sm text-ink-muted">
               <p>
-                No {brand ? `${brand} ` : ""}stores within {radius} miles yet.
+                No {brand ? `${brand} ` : ""}stores within {radius} {unitWord} yet.
               </p>
               {nearest && (
                 <p className="mt-2">
-                  The nearest we have is <strong className="text-ink">{nearest.store.name}</strong> in {nearest.store.city}, {nearest.store.state}, about {Math.round(nearest.miles ?? 0).toLocaleString()} miles away.{" "}
+                  The nearest we have is <strong className="text-ink">{nearest.store.name}</strong> in {nearest.store.city}, about {Math.round(nearest.dist ?? 0).toLocaleString()} {unitWord} away.{" "}
                   <button type="button" onClick={() => setRadius(0)} className="text-matcha hover:text-forest underline">
                     Show all distances
                   </button>
@@ -410,7 +445,7 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
           )}
 
           <ul className="flex flex-col gap-3">
-            {listed.filter((x, i) => showAll || i < LIST_CAP || x.store.id === selectedId).map(({ store: s, miles }) => (
+            {listed.filter((x, i) => showAll || i < LIST_CAP || x.store.id === selectedId).map(({ store: s, dist }) => (
               <li
                 key={s.id}
                 ref={(el) => {
@@ -422,11 +457,13 @@ export function StoreFinder({ stores, brandInfo, contactEmail, initialBrand = ""
                 <button type="button" onClick={() => select(s.id)} className="block w-full text-left">
                   <span className="flex items-baseline justify-between gap-3">
                     <span className="font-display text-lg font-semibold text-ink">{s.name}</span>
-                    {miles != null && <span className="text-xs tabular-nums text-matcha whitespace-nowrap">{miles < 10 ? miles.toFixed(1) : Math.round(miles).toLocaleString()} mi</span>}
+                    {dist != null && (
+                      <span className="text-xs tabular-nums text-matcha whitespace-nowrap">
+                        {fmtDist(dist)} {unit}
+                      </span>
+                    )}
                   </span>
-                  <span className="mt-0.5 block text-sm text-ink-muted">
-                    {s.address}, {s.city}, {s.state} {s.zip}
-                  </span>
+                  <span className="mt-0.5 block text-sm text-ink-muted">{formatPlace(s)}</span>
                 </button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
                   <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{KIND_LABEL[s.kind]}</span>

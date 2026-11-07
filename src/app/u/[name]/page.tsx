@@ -189,10 +189,10 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             <ul className="flex flex-wrap gap-3">
               {cafes.map((r) => (
                 <li key={r[0]}>
-                  <Link href={`/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4] })}`} className="inline-flex flex-col rounded-sm border border-line bg-paper-raised px-4 py-2 text-sm text-ink hover:border-matcha">
+                  <Link href={`/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}`} className="inline-flex flex-col rounded-sm border border-line bg-paper-raised px-4 py-2 text-sm text-ink hover:border-matcha">
                     <span className="font-medium">{r[1]}</span>
                     <span className="text-xs text-ink-faint">
-                      {r[3]}, {r[4]}
+                      {!r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3]}
                     </span>
                   </Link>
                 </li>

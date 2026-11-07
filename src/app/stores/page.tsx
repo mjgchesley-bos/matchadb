@@ -3,12 +3,13 @@ import Link from "next/link";
 import { getStores } from "@/lib/stores";
 import { getBrandMatchaSummaries } from "@/lib/db";
 import { StoreFinder } from "@/components/StoreFinder";
+import { REGIONS, regionByKey, regionForCountry } from "@/lib/cafe-regions";
 import { JsonLd } from "@/components/JsonLd";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 
 const title = "Where to Buy Matcha in Person: Store Finder";
 const description =
-  "Find stores near you that sell the matcha brands in our database, with addresses, directions and which brands each carries. Search by ZIP code or use your location.";
+  "Find stores near you that sell the matcha brands in our database, in the US, Canada, Europe, Japan and South Korea, with addresses, directions and which brands each carries. Search by ZIP code or postcode or use your location.";
 
 export const metadata: Metadata = {
   title,
@@ -22,9 +23,11 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
   const stores = getStores();
   const wanted = Array.isArray(sp.brand) ? sp.brand[0] : sp.brand;
   const initialBrand = wanted && stores.some((s) => s.brands.some((b) => b.name === wanted)) ? wanted : "";
-  const stateSet = new Set(stores.map((s) => s.state));
-  const hasDc = stateSet.delete("DC");
-  const states = stateSet.size;
+  const countries = new Set(stores.map((s) => s.cc ?? "US")).size;
+  // Start in the region asked for; for a brand link, in a region that actually stocks it (the US first).
+  const asked = Array.isArray(sp.region) ? sp.region[0] : sp.region;
+  const stocked = REGIONS.map((r) => r.key).filter((k) => stores.some((s) => regionForCountry(s.cc ?? "US") === k && (!initialBrand || s.brands.some((b) => b.name === initialBrand))));
+  const initialRegion = asked ? regionByKey(asked).key : (stocked[0] ?? "us");
   const brandNames = [...new Set(stores.flatMap((s) => s.brands.map((b) => b.name)))];
   const brands = brandNames.length;
   const brandInfo = await getBrandMatchaSummaries(brandNames);
@@ -48,7 +51,7 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
                 "@type": "Store",
                 name: s.name,
                 url: s.url,
-                address: { "@type": "PostalAddress", streetAddress: s.address, addressLocality: s.city, addressRegion: s.state, postalCode: s.zip, addressCountry: "US" },
+                address: { "@type": "PostalAddress", streetAddress: s.address, addressLocality: s.city, addressRegion: s.state || undefined, postalCode: s.zip, addressCountry: s.cc ?? "US" },
                 geo: { "@type": "GeoCoordinates", latitude: s.lat, longitude: s.lng },
               },
             })),
@@ -64,11 +67,11 @@ export default async function StoresPage({ searchParams }: { searchParams: Promi
           directions.
         </p>
         <p className="mt-3 text-sm text-ink-faint">
-          {stores.length.toLocaleString()} places in {states} states{hasDc ? " and DC" : ""} so far, covering {brands} brands. The list is new and growing.
+          {stores.length.toLocaleString()} places in {countries} {countries === 1 ? "country" : "countries"} so far, covering {brands} brands. The list is new and growing.
         </p>
       </header>
 
-      <StoreFinder stores={stores} brandInfo={brandInfo} contactEmail={CONTACT_EMAIL} initialBrand={initialBrand} />
+      <StoreFinder stores={stores} brandInfo={brandInfo} contactEmail={CONTACT_EMAIL} initialBrand={initialBrand} initialRegion={initialRegion} />
 
       <section className="mt-14 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-stores">
         <h2 id="how-stores" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">How this list is built</h2>

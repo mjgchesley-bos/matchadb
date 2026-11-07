@@ -6,7 +6,7 @@ import { FavoriteCafeButton } from "@/components/FavoriteCafeButton";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { getCafeBySlug, nearbyCafes } from "@/lib/cafes";
-import { CAT_LABEL, cafeSlug, directionsUrl, type Cafe } from "@/lib/cafe-types";
+import { CAT_LABEL, COUNTRY_NAME, cafeSlug, directionsUrl, formatPlace, type Cafe } from "@/lib/cafe-types";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 
 // Café pages are built the first time someone asks for them, then kept for a day.
@@ -23,14 +23,16 @@ const hostOf = (u: string) => {
     return u;
   }
 };
-const where = (c: Cafe) => [c.address, c.city, `${c.state} ${c.zip}`.trim()].filter(Boolean).join(", ");
+const where = (c: Cafe) => formatPlace(c);
+// "Austin, TX" in the US, "Kyoto, Japan" elsewhere.
+const loc = (c: { city: string; state: string; cc?: string }) => (!c.cc || c.cc === "US" ? [c.city, c.state] : [c.city, COUNTRY_NAME[c.cc] ?? c.cc]).filter(Boolean).join(", ");
 const PAGE_KIND: Record<string, string> = { menu: "menu page", home: "homepage", other: "website" };
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const c = getCafeBySlug(slug);
   if (!c) return { title: "Café not found", robots: { index: false } };
-  const title = `${c.name}: Matcha in ${c.city}, ${c.state}`;
+  const title = `${c.name}: Matcha in ${loc(c)}`;
   const description = `${c.name} at ${where(c)} lists matcha on its own website. See where, get directions, and read member ratings, reviews and photos.`;
   return { title, description, alternates: { canonical: `${SITE_URL}/cafes/${cafeSlug(c)}` }, openGraph: { title, description, url: `${SITE_URL}/cafes/${cafeSlug(c)}` } };
 }
@@ -51,7 +53,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           name: c.name,
           url: c.url ?? undefined,
           telephone: c.phone ?? undefined,
-          address: { "@type": "PostalAddress", streetAddress: c.address, addressLocality: c.city, addressRegion: c.state, postalCode: c.zip, addressCountry: "US" },
+          address: { "@type": "PostalAddress", streetAddress: c.address, addressLocality: c.city, addressRegion: c.state || undefined, postalCode: c.zip, addressCountry: c.cc ?? "US" },
           geo: { "@type": "GeoCoordinates", latitude: c.lat, longitude: c.lng },
         }}
       />
@@ -60,7 +62,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <Link href="/cafes" className="hover:text-ink-muted">
           Matcha cafés
         </Link>{" "}
-        / {c.city}, {c.state}
+        / {loc(c)}
       </nav>
 
       <header className="mt-3">
@@ -160,11 +162,14 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               <li key={n.id} className="flex items-baseline justify-between gap-3 py-2.5">
                 <Link href={`/cafes/${cafeSlug(n)}`} className="text-ink hover:text-matcha">
                   {n.name}
-                  <span className="ml-2 text-sm text-ink-faint">
-                    {n.city}, {n.state}
-                  </span>
+                  <span className="ml-2 text-sm text-ink-faint">{loc(n)}</span>
                 </Link>
-                <span className="text-xs tabular-nums text-ink-faint whitespace-nowrap">{n.miles < 10 ? n.miles.toFixed(1) : Math.round(n.miles)} mi</span>
+                <span className="text-xs tabular-nums text-ink-faint whitespace-nowrap">
+                  {(() => {
+                    const d = !n.cc || n.cc === "US" ? n.miles : n.miles * 1.609344;
+                    return `${d < 10 ? d.toFixed(1) : Math.round(d)} ${!n.cc || n.cc === "US" ? "mi" : "km"}`;
+                  })()}
+                </span>
               </li>
             ))}
           </ul>
