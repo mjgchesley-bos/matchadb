@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026-11-01T14:01:04.199Z",
- "count": 754,
+ "generatedAt": "2026-11-08T14:05:34.173Z",
+ "count": 751,
  "studies": [
   {
    "id": 2,
@@ -27,11 +27,13 @@
    "matchaIn": "title",
    "abstract": "",
    "keywords": [
-    "hair health",
     "hair loss",
     "iron deficiency",
-    "antioxidants",
-    "hair growth"
+    "nonheme iron absorption",
+    "polyphenols",
+    "hair health",
+    "dietary iron",
+    "evidence-based counseling"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -307,6 +309,55 @@
    "kind": "article"
   },
   {
+   "id": 918,
+   "title": "Aktivitas Antibakteri Caspian sea yoghurt dengan Penambahan Matcha (Camellia sinensis L.) terhadap Propionibacterium acnes dan Staphylococcus aureus",
+   "authors": [
+    "Ing Mayfa Br Situmorang",
+    "Joy Chantika Dewi Gultom",
+    "Fatimah Syalwa",
+    "Dharma Yanti",
+    "Feronika Evma Rahayu",
+    "Feri Setiadi"
+   ],
+   "journal": "Jurnal Lmu Farmasi dan Kesehatan/",
+   "year": 2026,
+   "doi": "10.59841/an-najat.v4i3.3858",
+   "pmid": null,
+   "pmcid": null,
+   "language": "id",
+   "design": "Other / not stated",
+   "relevance": "subject",
+   "mentions": 9,
+   "topics": [
+    "Inflammation and immunity",
+    "Skin, oral and dental"
+   ],
+   "matchaIn": "title",
+   "abstract": "Matcha (Camellia sinensis L.) mengandung berbagai senyawa bioaktif yang berpotensi sebagai antibakteri dan dapat dikembangkan dalam bentuk pangan fungsional seperti Caspian Sea yoghurt. Bakteri penyebab kulit inflamasi disebabkan oleh Propionibacterium acnes dan Staphylococcus aureus. Penelitian ini bertujuan untuk mengetahui pengaruh penambahan matcha terhadap aktivitas antibakteri, karakteristik fisikokimia, dan kadar proksimat Caspian Sea yoghurt. Penelitian menggunakan metode eksperimen laboratorium dengan Rancangan Acak Lengkap (RAL) satu faktor berupa penambahan matcha 1,5%, 3%, dan 6%. Parameter yang diamati meliputi kadar proksimat, pH, total asam tertitrasi, sineresis, dan aktivitas antibakteri terhadap P. acnes dan S. aureus menggunakan metode difusi cakram. Data penelitian dianalisis menggunakan uji One-Way ANOVA yang dilanjutkan dengan uji DMRT pada taraf kepercayaan 95%. Penambahan matcha meningkatkan kadar protein, lemak, dan abu, tetapi menurunkan kadar air. Penambahan matcha mempengaruhi karakteristik fisikokimia Caspian sea yoghurt yang ditunjukkan oleh nilai pH 4,33-4,64, total asam tertitrasi 0,57-0,64%, dan sineresis 7,82-42,56%. Diameter zona hambat terhadap P. acnes dan S. aureus cenderung menurun seiring meningkatnya konsentrasi matcha. Konsentrasi matcha tidak berpengaruh signifikan terhadap aktivitas antibakteri S. aureus (p<0,05), tetapi berpengaruh signifikan terhadap aktivitas antibakteri P. acnes (p<0,05).",
+   "keywords": [
+    "matcha",
+    "Camellia sinensis",
+    "antibacterial activity",
+    "Propionibacterium acnes",
+    "Staphylococcus aureus",
+    "acne",
+    "skin inflammation",
+    "functional foods",
+    "syneresis",
+    "proximate composition",
+    "titratable acidity"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://doi.org/10.59841/an-najat.v4i3.3858",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 7,
    "title": "ANALISIS PENGEMBANGAN PRODUK PUDDING BALLS UNTUK MENINGKATKAN DAYA TARIK KONSUMEN",
    "authors": [
@@ -537,6 +588,51 @@
    "kind": "article"
   },
   {
+   "id": 919,
+   "title": "Antioxidative effect of Matcha extract on human peripheral blood lymphocytes under oxidative stress conditions",
+   "authors": [
+    "Mila Stojanovska",
+    "Iskra Davkova",
+    "Angela Joskovska",
+    "Dushko Shalabalija",
+    "Nadica Matevska Geshkovska",
+    "Marija Karapandzova",
+    "Ana Trajkovska Matevska"
+   ],
+   "journal": "DOAJ (DOAJ: Directory of Open Access Journals)",
+   "year": 2026,
+   "doi": "10.33320/maced.pharm.bull.2026.72.03.288",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Not classified (no abstract)",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Cognition, mood and stress",
+    "Antioxidants and polyphenols"
+   ],
+   "matchaIn": "title",
+   "abstract": "",
+   "keywords": [
+    "matcha",
+    "green tea extract",
+    "antioxidant activity",
+    "oxidative stress",
+    "peripheral blood lymphocytes",
+    "human lymphocytes"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 9,
    "title": "Anxiolytic-like effects using adult zebrafish, bioaccessibility and phenolic profile of matcha and sugarcane beverages.",
    "authors": [
@@ -603,6 +699,52 @@
     "pubmed",
     "openalex",
     "europepmc"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 920,
+   "title": "Association of Matcha Tea with Cognitive Function: A Systematic Review and Meta-Analysis",
+   "authors": [
+    "Min-Huei Huang",
+    "Hsien‐Yu Fan",
+    "Po-Lin Jen",
+    "Yi-Chun Chen",
+    "Lin Ping-han",
+    "Chien‐Hung Liu",
+    "Yun-Cheng Ke",
+    "Ya-Ling Chen"
+   ],
+   "journal": "Journal of Epidemiology",
+   "year": 2026,
+   "doi": "10.2188/jea.je20260229",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Systematic review / meta-analysis",
+   "relevance": "subject",
+   "mentions": 4,
+   "topics": [
+    "Cognition, mood and stress",
+    "Market, culture and sustainability",
+    "Processing, milling and quality"
+   ],
+   "matchaIn": "title",
+   "abstract": "Background: Cognitive decline may occur across the adult lifespan, particularly with aging, and may adversely affect daily functioning. Matcha, a powdered Japanese green tea rich in bioactive compounds, has been suggested to benefit cognitive function; however, current evidence remains limited and inconsistent. This systematic review and meta-analysis aimed to evaluate the effects of matcha consumption on cognitive function.",
+   "keywords": [
+    "matcha tea",
+    "cognitive function",
+    "tea consumption",
+    "cognitive performance",
+    "green tea"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://www.jstage.jst.go.jp/article/jea/advpub/0/advpub_JE20260229/_pdf",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
    ],
    "kind": "article"
   },
@@ -686,7 +828,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.58578/mikailalsys.v4i2.10040",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -740,7 +882,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.3390/foods15162782",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -1035,7 +1177,6 @@
    "relevance": "subject",
    "mentions": 2,
    "topics": [
-    "Metabolism and weight",
     "Antioxidants and polyphenols"
    ],
    "matchaIn": "title",
@@ -1043,12 +1184,16 @@
    "keywords": [
     "matcha",
     "foam stability",
-    "foaming properties",
-    "component partitioning",
-    "intermolecular interactions",
-    "tea catechins",
-    "green tea extract",
-    "protein-lipid interactions"
+    "foaming capacity",
+    "tea saponin",
+    "tea polyphenols",
+    "protein-polyphenol interactions",
+    "interfacial adsorption",
+    "hydrogen bonding",
+    "ionic interactions",
+    "foam rheology",
+    "surface tension",
+    "zeta potential"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -1120,7 +1265,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/31/16/2742/pdf?version=1786089106",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "pubmed",
     "openalex",
@@ -1172,6 +1317,50 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.17632/b88gg9dkr8",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 921,
+   "title": "Decoding Matcha: a deep dive into its phenolic and flavonoid secrets",
+   "authors": [
+    "Gala Stojanovska",
+    "Iskra Davkova",
+    "Veronika Stoilkovska Gjorgievska",
+    "Filip Todorov",
+    "Ivana Cvetkovikj Karanfilova",
+    "Gjoshe Stefkov",
+    "Marija Karapandzova",
+    "Ana Trajkovska Matevska"
+   ],
+   "journal": "DOAJ (DOAJ: Directory of Open Access Journals)",
+   "year": 2026,
+   "doi": "10.33320/maced.pharm.bull.2026.72.03.277",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Not classified (no abstract)",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Antioxidants and polyphenols"
+   ],
+   "matchaIn": "title",
+   "abstract": "",
+   "keywords": [
+    "matcha",
+    "phenolic compounds",
+    "flavonoids",
+    "green tea",
+    "tea bioactive compounds"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -1411,7 +1600,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/fsn3.71856",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -1547,6 +1736,50 @@
     "openalex"
    ],
    "kind": "article"
+  },
+  {
+   "id": 872,
+   "title": "Efeito da imersão contínua e intermitente em café e matcha sobre a microdureza de uma resina composta : estudo in vitro",
+   "authors": [
+    "Mélisse Hourdin"
+   ],
+   "journal": "Portuguese National Funding Agency for Science, Research and Technology (RCAAP Project by FCT)",
+   "year": 2026,
+   "doi": null,
+   "pmid": null,
+   "pmcid": null,
+   "language": "pt",
+   "design": "In vitro / cell study",
+   "relevance": "subject",
+   "mentions": 7,
+   "topics": [
+    "Skin, oral and dental",
+    "Food products and applications"
+   ],
+   "matchaIn": "title",
+   "abstract": "Objetivos: Avaliar a alteração da microdureza Vickers de uma resina composta, após protocolos de imersão contínua e intermitente em café e matcha ao longo de um período de 28 dias. Materiais e Métodos: Quarenta espécimes de resina composta NormoFill NanoCeramOne ® foram divididos em cinco grupos (n = 8): água destilada (controlo), imersão continua em café, imersão intermitente em café, imersão continua em matcha e imersão intermitente em matcha. Os grupos contínuos foram mantidos na sua respetiva solução durante 28 dias, enquanto os grupos intermitentes foram imersos três vezes por dia durante 15 min e conservados em água destilada entre os ciclos. As medições de microdureza Vickers foram realizadas no estado inicial (T0), após 24 h(T24h), 14 dias (T14d) e 28 dias (T28d). Os dados foram analisados através do software SPSS, com um nível de significância de 5 %. Resultados: Foi observado um aumento inicial da microdureza às 24 h em todos os grupos, seguido de uma diminuição progressiva até aos 28 dias. O tempo teve um efeito significativo na microdureza (p < 0,001), bem como a interação entre o tempo e a solução de imersão. Após 14 dias, o grupo café intermitente apresentou valores significativamente inferiores aos dos restantes grupos. Aos 28 dias, os grupos expostos ao café e ao matcha mostraram uma diminuição da microdureza em comparação com o grupo de controlo. O protocolo de imersão, considerado isoladamente, não teve um efeito significativo. Conclusão: A exposição prolongada ao café e ao matcha altera a microdureza da resina composta estudada, apresentando o café o efeito mais marcado. Estes resultados sugerem que certas bebidas comummente consumidas podem influenciar a durabilidade das restaurações em resina composta.",
+   "keywords": [
+    "composite resin",
+    "microhardness",
+    "Vickers microhardness",
+    "coffee",
+    "matcha",
+    "beverage exposure",
+    "dental restorations",
+    "restoration durability",
+    "dental adhesives",
+    "dental cements",
+    "in vitro studies"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "thesis"
   },
   {
    "id": 908,
@@ -1692,7 +1925,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -2444,21 +2677,26 @@
    "relevance": "subject",
    "mentions": 6,
    "topics": [
+    "Antioxidants and polyphenols",
     "Gut and microbiome",
     "Processing, milling and quality",
-    "Metabolism and weight",
-    "Antioxidants and polyphenols"
+    "Metabolism and weight"
    ],
    "matchaIn": "title",
    "abstract": "Green tea has traditionally been evaluated based on low-molecular-weight constituents such as catechins, caffeine, and theanine. However, tea leaves are structurally organized matrices comprising cellulose, hemicellulose, pectin, heterogeneous tea polysaccharides, proteins, and associated phenolic compounds. This natural polymer matrix regulates water penetration, swelling, diffusion, extraction, structural disruption, molecular interactions, and the gastrointestinal release of bioactive compounds. This review integrates green tea processing, brewing, matcha micronization, polymer-polyphenol interactions, and digestion from a matrix-centered perspective. Conventional green tea infusion is considered an extraction-based system in which soluble compounds are transferred into the beverage, while most of the insoluble cell-wall matrix remains in the spent leaves. In contrast, matcha is a whole-leaf particulate system in which both soluble constituents and the polymer-rich solid matrix are ingested. Particle size affects the accessibility and digestive release of polyphenols and polysaccharides, although finer particles do not necessarily provide greater bioaccessibility. Interactions between catechins and cell-wall polysaccharides, tea polysaccharides, and proteins may further influence their stability, solubility, aggregation, and release during digestion. Unreleased matrix-associated polyphenols may reach the colon and undergo microbial transformation, but direct evidence in matcha remains limited. A conceptual framework linking processing, matrix structure, molecular interactions, digestion, and bioaccessibility is proposed. Future research should directly compare infusions and matcha from identical raw materials and apply standardized gastrointestinal digestion, colonic fermentation, and mass-balance approaches to quantify the fate of free and matrix-associated bioactive compounds.",
    "keywords": [
     "green tea",
     "matcha",
+    "cell wall polysaccharides",
+    "tea polysaccharides",
+    "catechins",
+    "bioaccessibility",
+    "gastrointestinal digestion",
+    "colonic fermentation",
     "tea processing",
-    "bioactive compound release",
-    "digestion",
-    "tea powder",
-    "dietary fiber"
+    "brewing",
+    "particle size",
+    "polyphenol release"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -2499,6 +2737,104 @@
     "biocomposite films",
     "film characterization",
     "sustainable packaging"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 922,
+   "title": "From orange peel to sustainable biocomposite: production and characterization of pectin/CMC films with matcha tea extract",
+   "authors": [
+    "Ö. İpsalalı",
+    "B. Okyay",
+    "F. U. Nigiz"
+   ],
+   "journal": "Bulgarian Chemical Communications",
+   "year": 2026,
+   "doi": "10.34049/bcc.58.3.d017",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Agronomy / cultivation",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Market, culture and sustainability",
+    "Metabolism and weight"
+   ],
+   "matchaIn": "title",
+   "abstract": "This study aims to evaluate the production of polysaccharide-based films obtained from orange peel waste, combining pectin (P) and a synthesized carboxymethyl cellulose (C) matrix with matcha tea extract (M).P was recovered from orange peel waste using an acid extraction technique.The extraction yield has been established at 23.37% and 67.38% esterification (DE).Biopolymer films named C/P and C/P/M were produced using the solvent casting method.In the films, C and P solutions were employed at different concentrations (80/20 w/w C:P) to achieve a total biopolymer content of 2% by weight.M was included into the film at concentrations of 0.2%, 0.4%, and 0.6% (w/w relative to total biopolymer weight).This work proposes to develop biocomposite films from C-P and investigate the effect of M on their structural and functional characteristics.Evaluations of opacity, moisture content, thickness, and water vapour transfer rate (WVTR) were performed to describe the films.M in the films, opacity and film thickness increased, but moisture content and WVTR values diminished.The reduction in WVTR, along with diminished moisture content, indicates an improved water vapour barrier resulting from the establishment of a dense network of new hydrogen bonds between M and the C-P matrix.Moreover, the increased film thickness and compact internal structure significantly impeded the transfer of water molecules within the matrix.enhancedits barrier characteristics.These biocomposite films, distinguished by improved water vapour barrier characteristics and heightened opacity, have significant potential as environmentally acceptable, sustainable for synthetic plastics in the food packaging sector.",
+   "keywords": [
+    "orange peel waste",
+    "pectin",
+    "carboxymethyl cellulose",
+    "biocomposite films",
+    "polysaccharide films",
+    "water vapor barrier",
+    "food packaging",
+    "acid extraction",
+    "degree of esterification",
+    "hydrogen bonding",
+    "film opacity",
+    "moisture content"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://doi.org/10.34049/bcc.58.3.d017",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 923,
+   "title": "From specialty drink to functional food ingredients: A comprehensive review of physicochemical characterization, bioactivities, and industrial applications of matcha",
+   "authors": [
+    "Wan Zhu",
+    "Yiqin Chen",
+    "Jiaying Yang",
+    "Yuefei Wang",
+    "Jihong Zhou"
+   ],
+   "journal": "Trends in Food Science & Technology",
+   "year": 2026,
+   "doi": "10.1016/j.tifs.2026.106200",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Review",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Cognition, mood and stress",
+    "Metabolism and weight",
+    "Antioxidants and polyphenols",
+    "Inflammation and immunity"
+   ],
+   "matchaIn": "title",
+   "abstract": "",
+   "keywords": [
+    "matcha",
+    "green tea powder",
+    "milling conditions",
+    "particle size distribution",
+    "flowability",
+    "foaming properties",
+    "umami taste",
+    "aroma compounds",
+    "antioxidant activity",
+    "neuroprotection",
+    "immunomodulation",
+    "metabolic regulation"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -2713,7 +3049,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -3155,7 +3491,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.3390/foods15132323",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -3216,7 +3552,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://dmp.umw.edu.pl/ahead-of-print/205161.pdf",
-   "citedBy": 2,
+   "citedBy": 3,
    "sources": [
     "pubmed",
     "openalex",
@@ -3276,7 +3612,7 @@
    "authors": [
     "Pysmenna A."
    ],
-   "journal": "Zenodo (CERN European Organization for Nuclear Research)",
+   "journal": "CyberLeninK (CyberLeninka)",
    "year": 2026,
    "doi": "10.5281/zenodo.20456973",
    "pmid": null,
@@ -3303,7 +3639,7 @@
    "mesh": [],
    "pubTypes": [],
    "isOa": true,
-   "oaUrl": "https://doi.org/10.5281/zenodo.20456973",
+   "oaUrl": "https://cyberleninka.ru/article/n/yaponskie-tehnologii-uhoda-za-kozhey-filosofiya-i-prakticheskoe-primenenie",
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -3407,63 +3743,6 @@
    "kind": "thesis"
   },
   {
-   "id": 56,
-   "title": "Leaf-color-driven metabolic and volatile differences shape flavor characteristics of matcha",
-   "authors": [
-    "Xuecheng Zhao",
-    "Shiqi Ding",
-    "Dingding Liu",
-    "Haoran Liu",
-    "Yang Gong",
-    "Piao Mei",
-    "Yuanyuan Ye",
-    "Peixin Wang",
-    "Chenyu Zhang",
-    "Jiedan Chen",
-    "Chunlei Ma"
-   ],
-   "journal": "SSRN Electronic Journal",
-   "year": 2026,
-   "doi": "10.2139/ssrn.6415471",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Chemical / analytical",
-   "relevance": "subject",
-   "mentions": 2,
-   "topics": [
-    "Metabolism and weight",
-    "Antioxidants and polyphenols",
-    "L-theanine and caffeine",
-    "Processing, milling and quality"
-   ],
-   "matchaIn": "title",
-   "abstract": "",
-   "keywords": [
-    "matcha",
-    "leaf color",
-    "flavor",
-    "umami amino acids",
-    "theanine",
-    "catechins",
-    "caffeine",
-    "anthocyanins",
-    "flavonols",
-    "bitterness",
-    "astringency",
-    "sensory properties"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://doi.org/10.2139/ssrn.6415471",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 57,
    "title": "Literature review on measuring stress in older people with dementia",
    "authors": [
@@ -3558,7 +3837,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://apcz.umk.pl/QS/article/download/73802/47173",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -3716,7 +3995,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.nature.com/articles/s41538-026-00777-9_reference.pdf",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "pubmed",
     "openalex",
@@ -3923,7 +4202,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/18/10/1613/pdf?version=1779494963",
-   "citedBy": 2,
+   "citedBy": 3,
    "sources": [
     "pubmed",
     "openalex",
@@ -4044,6 +4323,57 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://apcz.umk.pl/QS/article/download/74051/47315",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 924,
+   "title": "Matcha leaf extract-loaded whey protein Nanofibrils: A potential dairy-based strategy for modulation of lipid metabolism and mitigating obesity in rats",
+   "authors": [
+    "Osama Magouz",
+    "Tarek Nour Soliman",
+    "Amira S. ‎ El-Rhmany",
+    "Lamiaa I. El‐Nawasany",
+    "Dina Mostafa Mohammed"
+   ],
+   "journal": "Food Research International",
+   "year": 2026,
+   "doi": "10.1016/j.foodres.2026.121093",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Animal study",
+   "relevance": "subject",
+   "mentions": 1,
+   "topics": [
+    "Metabolism and weight",
+    "Antioxidants and polyphenols",
+    "Inflammation and immunity",
+    "Food products and applications"
+   ],
+   "matchaIn": "title",
+   "abstract": "",
+   "keywords": [
+    "epigallocatechin gallate",
+    "encapsulation",
+    "obesity",
+    "lipid metabolism",
+    "yogurt fortification",
+    "functional dairy products",
+    "antioxidant capacity",
+    "inflammation",
+    "leptin",
+    "blood glucose",
+    "liver health",
+    "bioactive compound delivery"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -4352,29 +4682,29 @@
   },
   {
    "id": 905,
-   "title": "Metabolic characteristics and chemical basis of matcha from cultivars with different leaf colors",
+   "title": "Metabolic characteristics and chemical basis of matcha from cultivars with different leaf colors.",
    "authors": [
-    "Shiqi Ding",
-    "Dingding Liu",
-    "Haoran Liu",
-    "Yang Gong",
-    "Piao Mei",
-    "Yuanyuan Ye",
-    "P. Wang",
-    "Chenyu Zhang",
-    "Jiedan Chen",
-    "Chunlei Ma",
-    "Xuecheng Zhao"
+    "Ding S",
+    "Liu D",
+    "Liu H",
+    "Gong Y",
+    "Mei P",
+    "Ye Y",
+    "Wang P",
+    "Zhang C",
+    "Chen J",
+    "Ma C",
+    "Zhao X"
    ],
-   "journal": "Frontiers in Nutrition",
+   "journal": "Frontiers in nutrition",
    "year": 2026,
    "doi": "10.3389/fnut.2026.1951952",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
+   "pmid": "42973489",
+   "pmcid": "PMC13724418",
+   "language": "eng",
    "design": "Chemical / analytical",
    "relevance": "subject",
-   "mentions": 9,
+   "mentions": 10,
    "topics": [
     "Metabolism and weight",
     "Antioxidants and polyphenols",
@@ -4384,26 +4714,30 @@
    "matchaIn": "title",
    "abstract": "Matcha is widely used in the food, health, and cosmetic industries due to its high nutritional value and distinctive sensory properties. However, traditional matcha products are predominantly produced from green-leaf tea cultivars, which greatly limits product diversity. This study systematically compared the sensory attributes, metabolite composition, and volatile metabolite profiles of matcha produced from green-, purple-, and yellow-leaf tea cultivars to explore the biochemical basis of flavor diversity. Principal component analysis of metabolite profiles clearly separated the samples according to leaf color phenotypes, confirming a strong chemical basis for sensory differentiation among the studied cultivar groups. Green matcha was characterized by higher levels of umami amino acids and lower contents of catechins and caffeine, resulting in a fresh taste with reduced bitterness and astringency. Purple matcha showed elevated levels of ester-type catechins, caffeine, and anthocyanin-related flavonoids, leading to pronounced astringency and lingering bitterness. Yellow matcha contained the highest levels of total amino acids and theanine, contributing to a mellow taste. KEGG pathway analysis revealed that flavonoid biosynthesis and amino acid metabolism are the major pathways associated with metabolic divergence among these cultivars. Volatile analysis indicated that dihydroactinidiolide and leaf alcohol derivatives were predominant volatile compounds potentially associated with the characteristic aroma profiles. These findings provide a biochemical foundation for developing novel matcha products based on cultivars displaying distinct leaf coloration.",
    "keywords": [
-    "matcha",
+    "aroma",
+    "flavor",
     "leaf color",
+    "matcha",
+    "metabolites",
     "umami amino acids",
     "theanine",
     "catechins",
     "caffeine",
     "flavonoid biosynthesis",
     "amino acid metabolism",
-    "volatile compounds",
-    "dihydroactinidiolide",
-    "sensory properties",
-    "bitterness and astringency"
+    "volatile compounds"
    ],
    "mesh": [],
-   "pubTypes": [],
+   "pubTypes": [
+    "research-article"
+   ],
    "isOa": true,
    "oaUrl": "https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1951952/pdf",
    "citedBy": 0,
    "sources": [
-    "openalex"
+    "pubmed",
+    "openalex",
+    "europepmc"
    ],
    "kind": "article"
   },
@@ -4455,7 +4789,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.3390/foods15101810",
-   "citedBy": 6,
+   "citedBy": 7,
    "sources": [
     "pubmed",
     "openalex",
@@ -4938,7 +5272,7 @@
     "Koushiro Kurima",
     "Rita Massi"
    ],
-   "journal": "Diva portal (Dalarna University Library)",
+   "journal": "Jonkoping University Library (Jönköping University)",
    "year": 2026,
    "doi": null,
    "pmid": null,
@@ -5114,6 +5448,48 @@
    "kind": "article"
   },
   {
+   "id": 925,
+   "title": "Probability of Exceeding Body-Weight-Adjusted Caffeine Thresholds in Adolescents from",
+   "authors": [
+    "Rajit Chatterjea",
+    "Selynne Park"
+   ],
+   "journal": "Figshare",
+   "year": 2026,
+   "doi": "10.6084/m9.figshare.34938550",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Randomized controlled trial",
+   "relevance": "mention",
+   "mentions": 1,
+   "topics": [
+    "Metabolism and weight",
+    "L-theanine and caffeine",
+    "Market, culture and sustainability"
+   ],
+   "matchaIn": "abstract",
+   "abstract": "What is the safe amount of caffeine for teenagers? Official guidelines say it should be based on a teen's body weight—not a flat daily limit like adults get. For example, Health Canada recommends a safe limit of 2.5 milligrams of caffeine for every kilogram a teenager weighs, while Europe suggests 3 milligrams.The big problem: It is incredibly hard for scientists to figure out what percentage of teenagers actually go over these safe limits on any given day. Why? Because everybody is a different size, everyone drinks a different number of drinks, and the amount of caffeine in a single can or cup can vary wildly (a green tea has very little, but a large energy drink has a ton!). Because all of these moving parts are mixed together and affect one another, you can't just solve this with a simple math formula.What this paper does: We built a virtual \"simulation pipeline\" using a computer method called Monte Carlo simulation. Think of it like rolling digital dice to simulate thousands of different teenagers' days. The computer virtually chooses a random body weight, randomly picks how many drinks they have (0, 1, 2, or 3), randomly selects a category (like coffee, tea, matcha, or energy drinks), and then adds up the total caffeine to see if that virtual teenager went over their safe weight limit.To make sure the computer wasn't making mistakes, we double-checked the work using three extra math tools:Sandbox Bounding: Calculating the absolute best-case and worst-case scenarios (like a heavy teen drinking only tiny teas vs. a small teen drinking multiple massive energy drinks) to make sure the simulation numbers always stayed inside logical boundaries.Smart Guessing (Logistic Regression): A math tool to see exactly how much your odds of going over the limit change with every extra kilogram of body weight or every extra energy drink you add.Caffeine Decay (Pharmacokinetics): A realistic test that factor in how the body naturally breaks down caffeine over a 5-hour half-life, tracking peak caffeine levels in the body rather than just adding everything up at the end of the day.What we found: When we ran the simulation using our placeholder test numbers, anywhere from 12% to 55% of our virtual teens went over the safe limits. It turned out that the official rule you choose to follow (like 2.5 vs. 5 mg/kg) impacts the results more than anything else, followed by how old the teen is. Interestingly, tiny label errors on energy drink cans barely changed the final results at all.Why it matters: The final percentages in this paper are just test numbers meant to prove that our code works. The real achievement is the code blueprint itself. Now, other scientists can take this exact computer pipeline, plug in real-world health survey data (like the US NHANES data), and instantly get accurate, real-world answers to keep teenagers safe.",
+   "keywords": [
+    "caffeine consumption",
+    "adolescents",
+    "energy drinks",
+    "Monte Carlo simulation",
+    "caffeine pharmacokinetics",
+    "caffeine half-life",
+    "logistic regression"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://doi.org/10.6084/m9.figshare.34938550",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 86,
    "title": "PROGRAM PELATIHAN KETERAMPILAN PADA ANAK BINAAN DI LEMBAGA PEMBINAAN KHUSUS ANAK (LPKA) KELAS II PROVINSI BENGKULU",
    "authors": [
@@ -5158,6 +5534,111 @@
     "openalex"
    ],
    "kind": "thesis"
+  },
+  {
+   "id": 926,
+   "title": "Protective effect of matcha green tea (Camellia sinensis) against lead acetate-induced neurotoxicity in the cerebellum of male albino rats",
+   "authors": [
+    "Mona. M. Alkhudaidi",
+    "Fatma A. Al‐Nefeiy",
+    "E. A. Bawazir"
+   ],
+   "journal": "Journal of Animal Behaviour and Biometeorology",
+   "year": 2026,
+   "doi": "10.31893/jabb.2026028",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Animal study",
+   "relevance": "subject",
+   "mentions": 15,
+   "topics": [
+    "Cognition, mood and stress",
+    "Antioxidants and polyphenols",
+    "Skin, oral and dental",
+    "Processing, milling and quality"
+   ],
+   "matchaIn": "title",
+   "abstract": "Exposure to lead acetate can cause oxidative stress and neurotoxicity in the cerebellum. Matcha green tea (Camellia sinensis) has been investigated for potential antioxidant and neuroprotective effects. Therefore, this study investigated the effects of matcha administration on lead acetate-induced changes in the cerebellum of male albino rats. This study aimed to investigate the preventive effect of Matcha green tea pretreatment against lead acetate-induced neurotoxicity in male albino rats by assessing behavioral performance, oxidative stress-related parameters, and histological and ultrastructural changes in the cerebellum. Forty adult male albino rats weighing 200 g were assigned to four groups, with 10 rats per group. The control group received distilled water, while the lead group received lead acetate trihydrate orally at 0.2 mg/kg. The matcha group received aqueous Matcha extract prepared from organic matcha powder at 50 mg/kg, and the combined-treatment group received both lead acetate trihydrate and aqueous Matcha extract at the same doses. Matcha was administered 6 h before lead exposure as a preventive pretreatment. After six weeks, behavioral assessment of learning and memory was performed at the end of the experimental period. Biochemical, histopathological, and transmission electron microscopy assessments of the cerebellum were subsequently performed to evaluate the effects of matcha administration on lead acetate-induced neurotoxicity. Exposure to lead produced a significant reduction in performance on the memory test and the learning maze. Moreover, it caused a marked elevation in acetylcholinesterase levels, reductions in glutathione levels, and an increase in malondialdehyde levels. Histological examination of the cerebellum revealed apparent Purkinje cell loss in rats exposed to lead. In contrast, rats receiving both matcha and lead showed reduced histological damage, accompanied by improvements in behavioral, physiological parameters and favorable histological changes. Overall, Matcha pretreatment was associated with improvements in behavioral performance and biochemical and histological findings in lead acetate-exposed rats, suggesting a potential preventive effect of Matcha against lead acetate-induced alterations. However, the experimental Matcha material was not chemically characterized; therefore, the observed effects cannot be attributed to any specific Matcha constituent.",
+   "keywords": [
+    "Camellia sinensis",
+    "lead acetate",
+    "lead neurotoxicity",
+    "cerebellum",
+    "neuroprotection",
+    "oxidative stress",
+    "Purkinje cell degeneration",
+    "learning and memory",
+    "acetylcholinesterase",
+    "glutathione",
+    "malondialdehyde",
+    "antioxidant activity"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://malque.pub/ojs/index.php/jabb/article/download/19408/7760",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 927,
+   "title": "Review of Shading Cultivation and Quality Management Technologies for High-Quality Matcha Production",
+   "authors": [
+    "The Korean Tea Society",
+    "Yong-Hwi Son",
+    "Jihun Shin",
+    "Gwang Hui Jeong",
+    "Kyung Hwan Cho",
+    "Juwan Park",
+    "Jung–Gyu Hwang",
+    "Changhyun Sung",
+    "Se-Sil Hong",
+    "Doobo Shim"
+   ],
+   "journal": "한국차학회지",
+   "year": 2026,
+   "doi": "10.29225/jkts.2026.32.3.41",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Review",
+   "relevance": "subject",
+   "mentions": 5,
+   "topics": [
+    "Antioxidants and polyphenols",
+    "L-theanine and caffeine",
+    "Cultivation and shading",
+    "Processing, milling and quality"
+   ],
+   "matchaIn": "title",
+   "abstract": "The rapid expansion of the global matcha market has increased the need for sustainable production systems that ensure high quality and stable yield. This review critically examines the effects of shading on matcha production, focusing on the following four aspects: (1) effects of the shading intensity and duration on tea shoot growth and photosynthesis; (2) changes in quality-related components, including chlorophyll, theanine, free amino acids, catechins, caffeine, and sensory attributes; (3) trade-off between quality improvement and reductions in photosynthesis, growth, and yield; and (4) integrated management linking cultivar selection, cultivation, shading, nutrient and water management, processing, and storage. Shading generally enhances the green color and umami by increasing the chlorophyll and nitrogenous metabolites while reducing the levels of catechins and flavonoids. On the other hand, excessive or prolonged shading may reduce photosynthesis, carbohydrate reserves, growth, and yield. Therefore, high-quality matcha production requires balancing sensory and chemical quality with productivity and storage stability. Future research should develop data-driven, cultivar- and region-specific management strategies integrating cultivation, processing, and storage.",
+   "keywords": [
+    "matcha",
+    "shading intensity",
+    "photosynthesis",
+    "chlorophyll",
+    "theanine",
+    "free amino acids",
+    "catechins",
+    "caffeine",
+    "sensory quality",
+    "umami",
+    "green",
+    "yield"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
   },
   {
    "id": 735,
@@ -5452,7 +5933,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://journal.ijhba.com/index.php/ijbesa/article/download/214/215",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -5633,7 +6114,7 @@
    "authors": [
     "Michelle Liu Carriger"
    ],
-   "journal": "",
+   "journal": "Oxford University Press eBooks",
    "year": 2026,
    "doi": "10.1093/9780197852538.003.0250",
    "pmid": null,
@@ -5695,10 +6176,7 @@
     "Edo period commerce",
     "treaty ports",
     "black tea",
-    "Japanese national identity",
-    "cultural globalization",
-    "Japan-China relations",
-    "Western markets"
+    "Japanese national identity"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -5818,19 +6296,26 @@
    "pmcid": null,
    "language": "en",
    "design": "Randomized controlled trial",
-   "relevance": "mention",
-   "mentions": 1,
+   "relevance": "subject",
+   "mentions": 2,
    "topics": [
     "Metabolism and weight"
    ],
-   "matchaIn": "abstract",
+   "matchaIn": "keywords",
    "abstract": "This study assessed the effect of complete diets supplemented with selected phytogenic additives on chosen growth performance traits in fattened rabbits.A total of forty-eight 42-day old weaned HYLA rabbits were randomly assigned to four dietary groups.housed in loose group pens.The feeding trial lasted until 97 days of age.Four complete diets without coccidiostats were formulated: a control diet (C) without additives, and three experimental diets supplemented with 2.0 % Artemisia abrotanum (E1), a combination of 1.5 % Arthrospira platensis and 0.5 % Sencha green tea (E2), and a combination of 1.5 % Chlorella vulgaris and 0.5 % Matcha green tea (E3).Live weights weights and feed intake were recorded throughout the experimental period, thereafter feed concersion ratio (FCR) and average daily gain (ADG) were calculated.No statistically significant differences in the monitored growth performance traits were found.The results indicate that the inclusion of Artemisia abrotanum, microalgae, and green tea combinations at the tested levels does not negatively affect growth performance, feed palatability, or feed efficiency in growing rabbits.These findings can be used for further updating and optimizing of rabbit diets enriched with bioactive compounds with regard to metabolism and health evaluation of the rabbits.",
    "keywords": [
-    "phytoadditives",
-    "rabbit nutrition",
-    "fattening rabbits",
+    "phytogenic additives",
     "growth performance",
-    "feed additives"
+    "Artemisia abrotanum",
+    "Spirulina platensis",
+    "Chlorella vulgaris",
+    "green tea",
+    "matcha",
+    "feed conversion ratio",
+    "average daily gain",
+    "live weight",
+    "feed intake",
+    "rabbit nutrition"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -6136,6 +6621,54 @@
    "kind": "article"
   },
   {
+   "id": 928,
+   "title": "The Most Popular Dietary Beverages Among Orthodontic Patients: a Pilot Study",
+   "authors": [
+    "Gabrielė Trakinytė",
+    "D Trakinis",
+    "Arūnas Vasiliauskas",
+    "Giedrė Trakinienė"
+   ],
+   "journal": "Lithuanian University of Health Sciences",
+   "year": 2026,
+   "doi": null,
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Clinical trial (non-randomized)",
+   "relevance": "mention",
+   "mentions": 1,
+   "topics": [
+    "Food products and applications",
+    "Market, culture and sustainability",
+    "Skin, oral and dental"
+   ],
+   "matchaIn": "abstract",
+   "abstract": "Aim. To identify the most commonly consumed beverages among orthodontic patients. Materials and methods. In order to fi nd out what beverages were most commonly consumed, a pilot questionnaire study was conducted. The questionnaires were anonymous and consisted of 17 closed-ended questions with possible answers. The questionnaire listed the most popular beverages consumed in previous studies and provided possible answers about the frequency of consumption of these beverages, e.g., once a day, once a week, etc. The questionnaire was posted in the Facebook group “BRACKETS! And everything related to teeth!”. The survey was attended by 415 respondents. Descriptive statistics were performed for the study variables. A chi-square test was used to determine the difference in the prevalence of used beverages between the genders. A value of P<0.05 was considered significant. Results. The results of the study showed that cappuccino (23.40%) and black coffee (10.80%) and black (8.00%) and green (9.40%) tea were most commonly consumed at least once a day. Meanwhile, Coca-Cola (36.40%), orange (15.40%), Fanta (9.10%), apple juice (8.50%), dark beer (4.10%) and red wine (2.20%) were most commonly consumed at least once a week. Carrot, beetroot, tomato juice and Matcha were least commonly consumed during the week (about 2%). Women drank cappuccino and green tea, all juices and red wine statistically significantly more often than men (P<0.05), while men drank black coffee, black tea and dark beer more often (P<0.05). Conclusions. The following beverages were most commonly consumed among orthodontic patients: cappuccino, black coffee, black tea, green tea, Coca-Cola, Fanta, orange and apple juice, dark beer and red wine.",
+   "keywords": [
+    "orthodontic patients",
+    "beverage consumption",
+    "cappuccino",
+    "black coffee",
+    "green tea",
+    "black tea",
+    "Coca-Cola",
+    "soft drinks",
+    "fruit juice",
+    "alcohol consumption",
+    "gender differences"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": false,
+   "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 742,
    "title": "The Path to Matcha Repurchase: Ritual Attractiveness, Self-Congruence, and Preference",
    "authors": [
@@ -6260,7 +6793,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.22492/ijcs.11.1.12",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -6488,7 +7021,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.nature.com/articles/s41598-026-47252-9_reference.pdf",
-   "citedBy": 1,
+   "citedBy": 3,
    "sources": [
     "pubmed",
     "openalex",
@@ -6580,8 +7113,51 @@
    "kind": "article"
   },
   {
+   "id": 929,
+   "title": "Трансформация концепта «чай» в русской лингвокультуре начала XXI века",
+   "authors": [
+    "Латифжон Носиров"
+   ],
+   "journal": "Filologiya va pedagogika",
+   "year": 2026,
+   "doi": "10.68668/fvp/412",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Other / not stated",
+   "relevance": "mention",
+   "mentions": 1,
+   "topics": [
+    "Market, culture and sustainability",
+    "Food products and applications"
+   ],
+   "matchaIn": "abstract",
+   "abstract": "The article investigates the transformation of the concept of \"tea\" in the Russian linguaculture of the early 21st century under the inﬂuence of globalization, digital communication, and modern urban culture. Based on linguacultural, discursive, and content analysis, it has been established that the traditional image of tea as a symbol of home comfort and national identity is acquiring the characteristics of an aestheticized and globalized product. New nominations (\"matcha latte\", \"bubble tea\", \"tea tonic\") reﬂect the shift in the value orientations of youth, leading to the conclusion that the semantic ﬁeld of the \"tea\" concept is expanding and becoming integrated into the global gastronomic culture.",
+   "keywords": [
+    "Russian linguoculture",
+    "globalization",
+    "digital communication",
+    "urban culture",
+    "semantic field",
+    "youth values",
+    "bubble tea",
+    "national identity",
+    "gastronomic culture",
+    "conceptual transformation"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://filologiyavapedagogika.uz/index.php/fvp/article/download/412/388",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 112,
-   "title": "การเปรยบเทยบความสามารถตานอนมลอสระรวมของมทฉะลาเตทชงดวยนมประเภทตางๆ",
+   "title": "การเปรียบเทียบความสามารถต้านอนุมูลอิสระรวมของมัทฉะลาเต้ที่ชงด้วยนมประเภทต่างๆ",
    "authors": [
     "Ploypin Jurupan",
     "Akkarach Bumrungpert"
@@ -6633,7 +7209,7 @@
    "authors": [
     "Anthony Booker"
    ],
-   "journal": "",
+   "journal": "The Conversation",
    "year": 2025,
    "doi": "10.64628/aao.q5tgaymsd",
    "pmid": null,
@@ -6789,7 +7365,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "pubmed",
     "openalex",
@@ -6844,7 +7420,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2223-7747/14/11/1631/pdf?version=1748340667",
-   "citedBy": 7,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -6937,6 +7513,49 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": 930,
+   "title": "A Perfect Prelude: The Cultural Significance of Wagashi",
+   "authors": [
+    "Alexandre A. Avdulov"
+   ],
+   "journal": "The Kyoto Conference on Arts, Media & Culture official conference proceedings",
+   "year": 2025,
+   "doi": "10.22492/issn.2436-0503.2025.35",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Sensory / consumer",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Market, culture and sustainability",
+    "Processing, milling and quality",
+    "Aroma, flavor and sensory",
+    "Food products and applications"
+   ],
+   "matchaIn": "keywords",
+   "abstract": "The term wagashi refers to a traditional Japanese confectionary often connected with Chanoyu, commonly known as the Japanese tea ceremony.In a formal tea gathering it is served about half-an-hour before the tea is offered and its function is to prepare one's pallet for the slightly bitter taste of matcha, served in the form of thick tea, koicha, where powdered tea is blended by a bamboo whisk with a small amount of hot water.This tea, shared between a small number of guests, is the pinnacle of a chaji -a formal tea gathering, which includes serving of a kaiseki meal, the laying of two fires and the serving of two different kinds of tea preceded by two different types of okashi.This paper will focus on the history and cultural significance of wagashi in the context of Chanoyu, their seasonal poetic names and the art, practice and business of okashi making.Wagashi are not so much about taste as they are works of art.Meant to be consumed shortly after being made, they possess both historical and cultural significance that goes beyond their taste.Not a dessert at the end of a meal but rather a prelude to another experience, wagashi are a cultural universe in the form of edible sculptures.They are part of a tradition carefully passed from generation to generation, which is still very much alive in Japan today.",
+   "keywords": [
+    "wagashi",
+    "Japanese confectionery",
+    "tea ceremony",
+    "Japanese tea ceremony",
+    "food art",
+    "matcha",
+    "traditional food culture",
+    "intergenerational tradition"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://papers.iafor.org/wp-content/uploads/papers/kamc2025/KAMC2025_96655.pdf",
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -7186,7 +7805,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2218-0532/93/1/11/pdf?version=1739504536",
-   "citedBy": 2,
+   "citedBy": 3,
    "sources": [
     "openalex"
    ],
@@ -7364,9 +7983,12 @@
    "keywords": [
     "matcha",
     "antioxidant capacity",
-    "fermented milk",
-    "dairy product quality",
-    "functional food ingredients"
+    "green tea",
+    "functional food ingredients",
+    "sensory profile",
+    "fermented dairy products",
+    "Ukrainian cuisine",
+    "product formulation"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -7646,7 +8268,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 10,
+   "citedBy": 11,
    "sources": [
     "pubmed",
     "openalex",
@@ -7792,7 +8414,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1101/2025.01.29.635473",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex",
     "europepmc"
@@ -8110,7 +8732,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s44445-025-00035-w.pdf",
-   "citedBy": 5,
+   "citedBy": 7,
    "sources": [
     "pubmed",
     "openalex",
@@ -8215,44 +8837,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s11694-025-03448-7.pdf",
-   "citedBy": 3,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 143,
-   "title": "COMPARISON OF PHYSICOCHEMICAL AND SENSORY PROPERTIES OF MATCHA POWDERS FROM TÜRKİYE AND JAPAN",
-   "authors": [
-    "Melike Nur Tosun Demir",
-    "Fatma Korkmaz"
-   ],
-   "journal": "DergiPark (Istanbul University)",
-   "year": 2025,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Sensory / consumer",
-   "relevance": "subject",
-   "mentions": 1,
-   "topics": [
-    "Processing, milling and quality",
-    "Aroma, flavor and sensory"
-   ],
-   "matchaIn": "title",
-   "abstract": "",
-   "keywords": [
-    "physicochemical properties",
-    "sensory properties",
-    "tea powder"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
-   "citedBy": 0,
+   "citedBy": 5,
    "sources": [
     "openalex"
    ],
@@ -8314,7 +8899,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 1,
+   "citedBy": 3,
    "sources": [
     "pubmed",
     "openalex",
@@ -8436,7 +9021,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 9,
+   "citedBy": 10,
    "sources": [
     "pubmed",
     "openalex",
@@ -8772,7 +9357,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 3,
+   "citedBy": 4,
    "sources": [
     "openalex"
    ],
@@ -8860,7 +9445,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1088/1755-1315/1485/1/012006",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -9003,9 +9588,9 @@
     "Gene Expression Profiling"
    ],
    "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
-   "citedBy": 6,
+   "isOa": true,
+   "oaUrl": "https://doi.org/10.2139/ssrn.4985719",
+   "citedBy": 7,
    "sources": [
     "pubmed",
     "openalex",
@@ -9113,7 +9698,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12427095/",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -9302,7 +9887,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 11,
+   "citedBy": 13,
    "sources": [
     "pubmed",
     "openalex",
@@ -9358,7 +9943,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/14/1/97/pdf?version=1735799340",
-   "citedBy": 7,
+   "citedBy": 8,
    "sources": [
     "pubmed",
     "openalex",
@@ -9373,9 +9958,9 @@
     "Reno Fitri",
     "Diana Lo"
    ],
-   "journal": "BIO Web of Conferences",
+   "journal": "Springer Link (Chiba Institute of Technology)",
    "year": 2025,
-   "doi": "10.1051/bioconf/202519202002",
+   "doi": "10.1051/bioconf/202519202002/pdf",
    "pmid": null,
    "pmcid": null,
    "language": "en",
@@ -9401,7 +9986,7 @@
     "Lactobacillus bulgaricus",
     "Lactobacillus acidophilus",
     "Streptococcus thermophilus",
-    "mixed culture fermentation",
+    "probiotic fermentation",
     "functional beverages"
    ],
    "mesh": [],
@@ -9468,7 +10053,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 7,
+   "citedBy": 8,
    "sources": [
     "pubmed",
     "openalex",
@@ -9664,7 +10249,7 @@
    "authors": [
     "Rebecca Corbett"
    ],
-   "journal": "",
+   "journal": "The Conversation",
    "year": 2025,
    "doi": "10.64628/aai.k3j9xqt53",
    "pmid": null,
@@ -9738,7 +10323,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1177/09673911251320463",
-   "citedBy": 14,
+   "citedBy": 17,
    "sources": [
     "openalex"
    ],
@@ -9837,7 +10422,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2310-2861/11/10/800/pdf?version=1759661432",
-   "citedBy": 0,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -9927,9 +10512,13 @@
     "Seaweed-like aroma",
     "Tea steeping",
     "Volatile components",
-    "Aroma Recombination And Omission",
-    "Seaweed-like Aroma",
-    "Tea Steeping"
+    "key aroma compounds",
+    "dimethyl sulfide",
+    "α-ionone",
+    "hexanal",
+    "benzaldehyde",
+    "Camellia sinensis",
+    "tea brewing"
    ],
    "mesh": [
     "Odorants",
@@ -9948,9 +10537,10 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 6,
+   "citedBy": 15,
    "sources": [
     "pubmed",
+    "openalex",
     "europepmc"
    ],
    "kind": "article"
@@ -10003,7 +10593,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/14/9/1518/pdf?version=1745657933",
-   "citedBy": 5,
+   "citedBy": 6,
    "sources": [
     "pubmed",
     "openalex",
@@ -10118,7 +10708,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/17/15/2532/pdf?version=1753975115",
-   "citedBy": 5,
+   "citedBy": 8,
    "sources": [
     "pubmed",
     "openalex",
@@ -10228,7 +10818,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jsfa.14385",
-   "citedBy": 9,
+   "citedBy": 11,
    "sources": [
     "pubmed",
     "openalex",
@@ -10252,14 +10842,21 @@
    "relevance": "mention",
    "mentions": 1,
    "topics": [
+    "Market, culture and sustainability",
     "Cognition, mood and stress",
     "Cultivation and shading",
-    "Processing, milling and quality",
-    "Aroma, flavor and sensory"
+    "Processing, milling and quality"
    ],
    "matchaIn": "abstract",
    "abstract": "This work is a study of philosophy and aesthetics on the notion of waåi in the Japanese Way of Tea, chadô.In the following, in order to understand the historical background and context of this study, a sr¡mmary of the history of Tea is introduced.rThis historical overview as an introduction, focuses on the Mwomachi-Momoyama (1393-1602) period, the period of the Great Tea Masters Shukô, Jô-ô and Rikyû.To consider, in any detail, the historical development of the aesthetics of Tea beyond the limie of this period would broaden the scope of investigation far beyond my purpose.However, in order to explain the subject of this study, the philosophical and aesthetic aspects of wabi in the Way of Tea, some later sources (dated after 1602) have been seen as essential to the study.People had been drinking tea long before 772 when the 8th-centur¡' Chinese sage, Rilcu'u (E ¡¡), wrote the Classic of Tea, Chakyô (* #3F which contains information on the origins of tea' the tea utensils and on the etiquette of drinking, preparing and senring tea.According to Chaþô, tea came from Southern countries, and belongs to the camellia family.The first references to tea-drinking in Japanese records date to the early Heian period when Saichô (767- 822), Kûkai and other Buddhist monks went to China to study.The priest Eichfi , who studied Sanron (Mâdhyamilca) Buddhism in China and lived there for more than thirty years, brought tea back to Japan.The emperor of Japan at that time, Emperor Saga (r.810-823), was highly interested in things Chinese: civilisation in general, customs, manners, poetry and, of cou¡se, tea, which he was served by Eichû during the imperial excursion to Lake Biqa.Thereafter, tea was sewed at imperial banquets, poetry gatherings and after Buddhist ceremonies.Emperor Saga even had a tea garden built inside the imperial palace for the use of the nobility.The summary is based on the studies of Murai Yasuhiko, A Brief Hßtory of Tea in Japan in Chanoyu: the Urasenke Tradition (1988) and Herbert Plutschow, Hßtorical Chanoyu (1986).See Murai 1988, pp.3-35.For fi¡rther information on the history of Tea see, for example, Sadfer 1962 (Cha-no-yu: The Japanese Tea Ceremony): Kuwata 1958 (Nihon Chadô Shi); Kuwata 1987 (Chadô no Rekishí); Kumakura 1990 (Chanoyu no Rekishi: Sen no RilEti made);Tanaka and Tanaka 1998 (The Tea Ceremony); Sen 1998 (I7æ Japanese llay of Tea: From íts Origins in China to Sen Riþi).Chakyô inCKZ I, pp.3-118.See the original classical Chinese version with Japanese translation and some comments on the texl-See also Sen 1998, pp.l-30.z InrnooucuoN when the Heian aristocracy lost interest in tea, the habit of drinking tea continued among the Buddhist monks for its medical properties and alertness in meditation.The priest Eison (1201-1290) ftom saidaiji temple served rea while ravelling on the Tôkaidô road to Kamakura fying to cure the sick by means of tea.Eison is considered the first to introduce tea to ordinary people.3He was also the first to serve tea to a large public gathering in l28l for the celebration of deliverance from the Mongol invasion.This event, called ùhanori, still takes place at The Saidaiji temple in Nara.aThe custom of drinking tea varied during each chinese dynasty: the Tang dynasty preferred dancha tea balls, the song dynasty prefened the powdered te4 *ùile the Ming dynasty favoured the roasted green tea called, sencha in Japanese.A new era in tea culture sta¡ted when the priest Eisai (l l4l-1215), the founder of Rinzai zen in Japan, introduced powdered tea (matcha) to Japan.Eisai wrote the two-volume treatise Kissa YôjôkL 'Preservation of Health Through Drinking Tea',and it is said that he presented a copy to the shogun Minamoto no sanetomo in order to cure his hangovers with tea.Eisai brought some tea seeds from china and presented them to a temple in the northern part of Kyûshû.In 1207 he met the priest Myôe (1173-1232), who, like Eisai, was a rypical medieval eclectic trying to unite va¡ious Buddhist teachings,s and gave him some seeds for planting tea at his temple, Kôzanji, in the hills Northwest of Kyôto.Myôe is said to have established ten virtues oftea and had them inscribed on a tea kettle, which a¡e as follows: Tea has the blessing of all deities.It promotes filial piety and drives away evil spirits.Tea banishes drowsiness and keeps the five intemal organs in harmony.It wards offdiseases and strengthens friendship.In addition, it disciplines body and mind and destroys all passions, but gives a peacefrrl death.óMyôe is said have passed tea seeds to the powerful Konoe clan, who planted them in their lands in Uji, South-east of Kyôto, which established the famous Uji tea, highly esteemed even today, in Japan.Once the cultivation of tea and the custom of drinking was established in Japan, two more factors from the Zen tradition contributed to the development of chanoyu, Tea as an Art: one is the Tea etiquette, sarei, and the other the Tea taste, chasukí (the style of serving tea and selection of the utensils used).The Tea etiquette is based on the monastic codes observed in Chinese temples.Tllre Zen priest Dôgen7 çt200-tZSl), who conveyed the .Sófó school to Japan, wrote what 3 Plut.hoo'198ó, p. 50.Eison also started the custom of serving tea to the Shintô deiry Hachiman, a protector of .Saidaiji temple and this ceremonial service takes place.o S.n 1998, pp.80-82.5 Plut\"\"hot\" 198ó, p.42; Sen 1998,pp.75-78.6 Plutr.hot,1986, p. 43.According to Plutschow, these attributes clearly reveal traces of various traditions: Shinto, Confrrcianism, Taoism and Buddhism.He also sees them as a testimony to the cultural and religious eclecticism typical ofttre feudal period (l 185-1868).HnronrorCnroõ was probably the first monastic code in Japan called Eihei Shingi.Dôgen was so impressed by the use of ceremonial tea in Chinese 7-en temples that he made this custom one of the strictly regulated ceremonial events in monasteries.The Tea taste at that time was based on the Chinses style of the formal tea service at the Zen temples.Ceremonies involved Chinese scrolls of the porraits and calligraphy of high priests, monochrome ink landscapes infr¡sed with Zen spint, tenmoht tea bowls and other ceremonial articles.The tea gatherings, as well as the wakø gatherings, took place in the large banquet halls (called kaishô) of the villas and palatial residences.Early Muromachi penod tatami mats came into use as wall-towall coverings as did the custom of displaying Chinese art objects in the tolconoma.This new way of serving tea was called shoin style of chanoyu.The shoin style of Tea became especially popular among the warrior class and Ashikaga shoguns who had shown a great interest in collecting famous pieces of Chinese Art.Collecting Íeasures from the continent became so extensive that connoisseur attendants called dôbôshûwerc needed to take care ofevaluating the paintings and art objects imported ûom China.The dôbôshû were in charge of the displaying of the objects in a proper way.Those entrusted with such cultural affairs were, in general, artistically talented and discriminating men who were also on intimate terms with the shogunate.sThey were allowed to add the suffix ani (from Amida) to their names, such as Nôami , Geiami (1431-1485), and Sôami (lM5?-1525).This suffrx often appea¡s in the names of the famous Nó dramatists, such as Kanami and Zeami (1363-1443?) who both enjoyed Ashikaga Yoshimitsu favour.It is noted that there is no direct connection between Te4chadô, and Dôgen who was Sdld school of Zen Master, since Tea, chadô, is usually connected with the Ri¡uai school of Zen.However, later in Chapter 2 t shall cite some of Dôgen's texts to show that ideas similar to those in Tea were also taught by Dôgen earlier.Even though there might not have been any ¡nteraction between different schools, these ciations suggest that some of the central themes in Zen or in Tea were quite commonly recognised by the literati and cultural circles in the times of Shukô, Jô-ô and Riþrû.According to another theory, Dôgen would have even studied under lklq¡û, but there is not enough evidence 10 support this claim.Ikþú, on the other hand, did not leave behind written teachings that could be used here.See Matsunaga and Matsunaga 197 6, pp.230-231, 233-235.Varley 1986, pp.ll0-lll.See also Matsunaga and Matsunaga 1976, p. 134; Plutschow 1986, pp.62-64.According to Matsunag4 the suffix ami derives ñom the'Jiskî AniCulture'which has its roots in the early l5th century.The founder of the school was the monk Ippen (1239-1289), and he called his groupTrsåú (7i school).Tbey were originally wandering monks, but by the l5th century they had received protection from the Ashikaga government, which founded temples, and in return for the Ashikaga shogunate, they started to perform rituals for the peace and prosperity ofthe nation.They held an important cultural role during the Muromachi period.In addition, dôbóshús were attired as Buddhist priests and, were probably members of the Jishú.Plutschow remarks that dóbôshtûs were mostly men of the lower classes and had to enter the priesthood in order to s€rvc shoguns so intimately.",
-   "keywords": [],
+   "keywords": [
+    "tea ceremony",
+    "tea aesthetics",
+    "tea history",
+    "Momoyama period",
+    "Sen no Rikyū",
+    "tea utensils"
+   ],
    "mesh": [],
    "pubTypes": [],
    "isOa": true,
@@ -10312,7 +10909,7 @@
    "authors": [
     "Sol Jung"
    ],
-   "journal": "",
+   "journal": "Oxford University Press eBooks",
    "year": 2025,
    "doi": "10.1093/acrefore/9780197762530.013.171",
    "pmid": null,
@@ -10988,7 +11585,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/17/19/3051/pdf?version=1758719571",
-   "citedBy": 1,
+   "citedBy": 4,
    "sources": [
     "pubmed",
     "openalex",
@@ -11027,8 +11624,11 @@
     "matcha",
     "green tea",
     "cognitive function",
+    "cognitive impairment",
+    "Mini-Mental State Examination",
     "tea consumption",
-    "cognitive enhancement"
+    "cognitive health",
+    "dietary intervention"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -11056,10 +11656,10 @@
    "relevance": "subject",
    "mentions": 9,
    "topics": [
+    "Antioxidants and polyphenols",
+    "Inflammation and immunity",
     "Processing, milling and quality",
-    "Food products and applications",
-    "Cognition, mood and stress",
-    "Antioxidants and polyphenols"
+    "Food products and applications"
    ],
    "matchaIn": "title",
    "abstract": "У статті досліджено порошок зеленого чаю (матча) як перспективний функціональний інгредієнт у сучасній харчовій промисловості. Матча є джерелом біологічно активних речовин, зокрема катехінів, амінокислот, хлорофілу, кофеїну та L-теаніну, які зумовлюють її антиоксидантні, протизапальні, нейрозахисні та інші корисні властивості. У роботі проаналізовано основні напрями використання порошку зеленого чаю (матча) у виробництві функціональних продуктів у країнах із розвиненою харчовою індустрією, зокрема в Японії, Південній Кореї, США та країнах Європейського Союзу. Наведено приклади впровадження матча у різноманітні категорії харчових продуктів – від напоїв до десертів, випічки та дієтичних добавок. Особливу увагу приділено оцінці потенціалу використання порошку зеленого чаю (матча) в українському харчовому секторі з урахуванням національних смакових уподобань, тенденцій розвитку ринку функціональних продуктів та можливостей локального виробництва. Проаналізовано специфіку інтеграції інгредієнта у традиційні українські страви, зокрема сирники, йогурти, кондитерські вироби та хлібобулочну продукцію. Висвітлено як потенційні переваги використання матча (збагачення продукції корисними речовинами, диференціація товарів на ринку, формування здорового способу життя серед споживачів), так і наявні виклики, серед яких – висока собівартість сировини, обмеженість постачання, нестача обізнаності споживачів і потреба у нормативно-технічному регулюванні. Стаття базується на систематичному огляді сучасних міжнародних наукових публікацій, звітів, а також маркетингових досліджень. На основі проведеного аналізу зроблено висновок про доцільність і актуальність впровадження порошку зеленого чаю (матча) в українську харчову промисловість. Наголошено на важливості адаптації міжнародного досвіду до українських умов та розробки інноваційних продуктів, що поєднують глобальні інгредієнти з національними кулінарними традиціями. The article investigates matcha green tea powder as a promising functional ingredient in the modern food industry. Matcha is a source of bioactive compounds, including catechins, amino acids, chlorophyll, caffeine, and L-theanine, which contribute to its antioxidant, antiinflammatory, neuroprotective, and other beneficial properties. The study analyzes the main directions of matcha powder utilization in the production of functional foods in countries with advanced food industries, notably Japan, South Korea, the USA, and European Union member states. Examples of matcha incorporation across various food categories – from beverages to desserts, baked goods, and dietary supplements – are provided. Special attention is given to evaluating the potential for using matcha powder in the Ukrainian food sector, considering national taste preferences, functional food market trends, and local production capabilities. The specifics of integrating this ingredient into traditional Ukrainian dishes such as syrnyky (cottage cheese pancakes), yogurts, confectionery, and bakery products are examined. The article highlights both the potential benefits of matcha use (enriching products with health-promoting substances, product differentiation in the market, and promoting healthy lifestyles among consumers) and the existing challenges, including high raw material costs, limited supply, low consumer awareness, and the need for regulatory and technical standards. This study is based on a systematic review of recent international scientific publications, reports, and market research. Based on the analysis, the article concludes on the feasibility and relevance of introducing matcha green tea powder into the Ukrainian food industry. Emphasis is placed on the importance of adapting international experience to Ukrainian conditions and developing innovative products that combine global ingredients with national culinary traditions.",
@@ -11067,9 +11667,15 @@
     "matcha",
     "green tea powder",
     "functional food ingredients",
-    "sourdough",
+    "bioactive compounds",
+    "catechins",
+    "antioxidants",
+    "anti-inflammatory activity",
+    "functional foods",
+    "Ukrainian food industry",
     "food product development",
-    "Ukraine"
+    "market trends",
+    "consumer preferences"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -11125,7 +11731,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ccsenet.org/journal/index.php/jfr/article/download/0/0/52466/57140",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -11466,7 +12072,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 12,
+   "citedBy": 13,
    "sources": [
     "pubmed",
     "openalex",
@@ -11716,7 +12322,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1422-0067/26/21/10631/pdf?version=1762156056",
-   "citedBy": 17,
+   "citedBy": 19,
    "sources": [
     "pubmed",
     "openalex",
@@ -11806,7 +12412,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -11944,7 +12550,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://journals.yapilin.com/index.php/inta/article/download/26/22",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -12034,7 +12640,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://journal.ikmedia.id/index.php/jishum/article/download/698/515",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -12116,7 +12722,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://journal.awatarapublisher.com/index.php/dfame/article/view/323/242",
-   "citedBy": 0,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -12264,51 +12870,6 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ocs.polije.ac.id/index.php/pnacia/article/download/295/229",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 214,
-   "title": "Pengembangan media pembelajaran S-Matcha terintegrasi keislaman untuk meningkatkan literasi matematis siswa",
-   "authors": [
-    "Yasmine Az Zahra Awwalina Pramono",
-    "Avida Faustina Harithiya",
-    "Febri Lailatul Chusna",
-    "Nuril Huda",
-    "Laili Rahmawati",
-    "Lisa Amelia Karina"
-   ],
-   "journal": "Research Repository Universitas Islam Negeri Maulana Malik Ibrahim (University of Southampton)",
-   "year": 2025,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "id",
-   "design": "Other / not stated",
-   "relevance": "subject",
-   "mentions": 4,
-   "topics": [],
-   "matchaIn": "title",
-   "abstract": "Rendahnya literasi matematis siswa, terutama dalam materi statistika, menjadi tantangan dalam pembelajaran matematika. Penelitian ini bertujuan mengembangkan media pembelajaran interaktif berbasis gamifikasi, S-MATCHA (Statistic from Mathematics of Gacha), yang terintegrasi dengan nilainilai keislaman untuk meningkatkan literasi matematis siswa. Metode yang digunakan adalah Research and Development (R&D) dengan model ASSURE, mencakup analisis karakteristik siswa, perumusan tujuan, pemilihan metode dan media, serta implementasi dan evaluasi. Media ini fokus pada materi pengumpulan data seperti mean, median, modus, dan jangkauan. Keefektifan media diuji melalui eksperimen terbatas dengan siswa kelas IX di MTsN Kota Batu menggunakan desain pre-test dan posttest. Hasil validitas menunjukkan bahwa S-MATCHA sangat layak digunakan, dengan skor rata-rata 89,15% dari ahli materi, 97,3% dari ahli media, dan 95% dari praktisi. Kepraktisan media juga dinyatakan sangat baik. Hasil eksperimen menunjukkan peningkatan literasi matematis siswa dengan skor N-Gain sebesar 0,45, yang termasuk kategori sedang. Temuan ini menunjukkan bahwa S-MATCHA efektif dalam mendukung pembelajaran dan memberikan pengalaman bermakna melalui integrasi nilainilai keislaman, menjadikannya alternatif inovatif dalam pembelajaran matematika berbasis konteks.",
-   "keywords": [
-    "gamification",
-    "Islamic values integration",
-    "mathematical literacy",
-    "statistics education",
-    "interactive learning media",
-    "data collection",
-    "junior high school students",
-    "madrasah tsanawiyah",
-    "ASSURE model",
-    "media validity and practicality"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -12497,7 +13058,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.afres.2025.101080",
-   "citedBy": 18,
+   "citedBy": 21,
    "sources": [
     "openalex"
    ],
@@ -12623,7 +13184,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "http://perspectives.pp.ua/index.php/pis/article/download/27968/27932",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -12792,7 +13353,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://kgau.editorum.ru/en/nauka/article/6a9c15b032807fdbab86cf48/pdf",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -12911,7 +13472,7 @@
    "authors": [
     "P.K. Newby"
    ],
-   "journal": "",
+   "journal": "Oxford University Press eBooks",
    "year": 2025,
    "doi": "10.1093/wentk/9780197802816.003.0014",
    "pmid": null,
@@ -13116,7 +13677,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -13363,7 +13924,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2227-9059/13/7/1656/pdf?version=1751882507",
-   "citedBy": 7,
+   "citedBy": 8,
    "sources": [
     "pubmed",
     "openalex",
@@ -13615,7 +14176,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.hnm.2025.200302",
-   "citedBy": 6,
+   "citedBy": 9,
    "sources": [
     "openalex"
    ],
@@ -13676,7 +14237,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.nature.com/articles/s41598-024-82175-3.pdf",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -13879,28 +14440,18 @@
    "language": "uk",
    "design": "Not classified (no abstract)",
    "relevance": "subject",
-   "mentions": 2,
+   "mentions": 1,
    "topics": [
-    "Skin, oral and dental",
-    "Processing, milling and quality",
-    "Food products and applications",
-    "Market, culture and sustainability"
+    "Food products and applications"
    ],
    "matchaIn": "title",
    "abstract": "",
    "keywords": [
     "cosmetics",
-    "facial skin care",
-    "matcha",
+    "facial cosmetics",
     "green tea extract",
     "product line development",
-    "cosmetic formulation",
-    "natural cosmetic ingredients",
-    "skin care products",
-    "packaging design",
-    "product marketing strategy",
-    "product pricing strategy",
-    "product quality control"
+    "cosmetic formulation"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -13914,7 +14465,7 @@
   },
   {
    "id": 242,
-   "title": "การเปรยบเทยบตนทนและผลกำไรจากการจำหนายมจฉะ ในเขตตำบลเมองขอนแกน",
+   "title": "การเปรียบเทียบต้นทุนและผลกำไรจากการจำหน่ายมัจฉะ ในเขตตำบลเมืองขอนแก่น",
    "authors": [
     "รมิดา แก้ววิเชียร",
     "อมราลักษณ์ สิริทองสุข"
@@ -14007,7 +14558,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.fochx.2024.101234",
-   "citedBy": 40,
+   "citedBy": 45,
    "sources": [
     "pubmed",
     "openalex",
@@ -14077,7 +14628,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 35,
+   "citedBy": 39,
    "sources": [
     "pubmed",
     "openalex",
@@ -14097,7 +14648,7 @@
    "pmid": null,
    "pmcid": null,
    "language": "es",
-   "design": "Other / not stated",
+   "design": "Not classified (no abstract)",
    "relevance": "subject",
    "mentions": 2,
    "topics": [
@@ -14105,7 +14656,7 @@
     "Skin, oral and dental"
    ],
    "matchaIn": "title",
-   "abstract": "Seminario (Química Farmacéutica)",
+   "abstract": "",
    "keywords": [
     "matcha tea",
     "antioxidants",
@@ -14220,7 +14771,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 18,
+   "citedBy": 21,
    "sources": [
     "openalex"
    ],
@@ -14396,7 +14947,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 12,
+   "citedBy": 13,
    "sources": [
     "openalex"
    ],
@@ -14469,7 +15020,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 17,
+   "citedBy": 18,
    "sources": [
     "pubmed",
     "openalex",
@@ -14514,7 +15065,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://acdj.journals.ekb.eg/article_375105_2b5a93d482d43f9cfbd11de0e35d4547.pdf",
-   "citedBy": 0,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -14676,57 +15227,8 @@
    "pmcid": "PMC11584762",
    "language": "eng",
    "design": "Agronomy / cultivation",
-   "relevance": "mention",
-   "mentions": 1,
-   "topics": [
-    "Cultivation and shading",
-    "Processing, milling and quality",
-    "Aroma, flavor and sensory",
-    "Authenticity and analytical methods"
-   ],
-   "matchaIn": "abstract",
-   "abstract": "Color is critical factor in the commercialization of Matcha. In this study, sensory evaluation, color difference analysis, as well as targeted and non-targeted analyses were employed to investigate the impact of different drying temperature settings on the color characteristics of Tencha. The findings revealed that compared to a single drying temperature setting, a two-stage or multi-stage drying process more effectively preserved the color quality of Tencha. Specifically, a setting involving an initial period of high-temperature drying followed by low-temperature drying (samples T_6, T_7, T_10, and T_13) resulted in superior tea color quality, characterized by higher chlorophyll content and lower levels of lutein and β-carotene. Chemometric analysis identified chlorophylls and their derivatives (chlorophyll a/b, pheophytin a/b, pyropheophytin a/b) as the key factors influencing Tencha's color. These results can provide valuable insights for optimizing tea processing methods to enhance quality.",
-   "keywords": [
-    "Chlorophylls",
-    "Color",
-    "Drying",
-    "Pigments",
-    "Temperatures",
-    "Tencha"
-   ],
-   "mesh": [],
-   "pubTypes": [
-    "research-article"
-   ],
-   "isOa": true,
-   "oaUrl": null,
-   "citedBy": 1,
-   "sources": [
-    "pubmed",
-    "europepmc"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 257,
-   "title": "Effect of Drying Treatment on the Color Characteristics of Tencha",
-   "authors": [
-    "Ya-Lin Mao",
-    "Jieqiong Wang",
-    "Fang Wang",
-    "Qing-Qing Cao",
-    "Jun-Feng Yin",
-    "Yong‐Quan Xu"
-   ],
-   "journal": "SSRN Electronic Journal",
-   "year": 2024,
-   "doi": "10.2139/ssrn.4801943",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Agronomy / cultivation",
    "relevance": "subject",
-   "mentions": 1,
+   "mentions": 2,
    "topics": [
     "Cultivation and shading",
     "Processing, milling and quality",
@@ -14734,27 +15236,32 @@
     "Authenticity and analytical methods"
    ],
    "matchaIn": "keywords",
-   "abstract": "",
+   "abstract": "Color is critical factor in the commercialization of Matcha. In this study, sensory evaluation, color difference analysis, as well as targeted and non-targeted analyses were employed to investigate the impact of different drying temperature settings on the color characteristics of Tencha. The findings revealed that compared to a single drying temperature setting, a two-stage or multi-stage drying process more effectively preserved the color quality of Tencha. Specifically, a setting involving an initial period of high-temperature drying followed by low-temperature drying (samples T_6, T_7, T_10, and T_13) resulted in superior tea color quality, characterized by higher chlorophyll content and lower levels of lutein and β-carotene. Chemometric analysis identified chlorophylls and their derivatives (chlorophyll a/b, pheophytin a/b, pyropheophytin a/b) as the key factors influencing Tencha's color. These results can provide valuable insights for optimizing tea processing methods to enhance quality.",
    "keywords": [
+    "Chlorophylls",
+    "Color",
+    "Drying",
+    "Pigments",
+    "Temperatures",
+    "Tencha",
     "matcha",
-    "tea drying",
-    "drying temperature",
     "two-stage drying",
     "tea color",
     "chlorophyll",
     "pheophytin",
-    "lutein",
-    "beta-carotene",
-    "sensory evaluation",
-    "chemometrics"
+    "lutein"
    ],
    "mesh": [],
-   "pubTypes": [],
+   "pubTypes": [
+    "research-article"
+   ],
    "isOa": true,
-   "oaUrl": "https://doi.org/10.2139/ssrn.4801943",
-   "citedBy": 0,
+   "oaUrl": "https://doi.org/10.1016/j.fochx.2024.101963",
+   "citedBy": 19,
    "sources": [
-    "openalex"
+    "pubmed",
+    "openalex",
+    "europepmc"
    ],
    "kind": "article"
   },
@@ -14831,7 +15338,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1371/journal.pone.0309287",
-   "citedBy": 25,
+   "citedBy": 40,
    "sources": [
     "pubmed",
     "openalex",
@@ -15016,7 +15523,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://iopscience.iop.org/article/10.1088/1755-1315/1352/1/012085/pdf",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -15085,7 +15592,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s00404-023-07209-z.pdf",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "pubmed",
     "openalex",
@@ -15135,7 +15642,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.ffhdj.com/index.php/DietarySupplementsNutraceuticals/article/download/1230/2035",
-   "citedBy": 2,
+   "citedBy": 7,
    "sources": [
     "openalex"
    ],
@@ -15185,7 +15692,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1002/fsn3.4087",
-   "citedBy": 8,
+   "citedBy": 11,
    "sources": [
     "pubmed",
     "openalex",
@@ -15239,7 +15746,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2673-6411/4/4/18/pdf?version=1734242120",
-   "citedBy": 6,
+   "citedBy": 8,
    "sources": [
     "openalex"
    ],
@@ -15263,23 +15770,28 @@
    "pmcid": null,
    "language": "en",
    "design": "Observational (human)",
-   "relevance": "mention",
-   "mentions": 1,
+   "relevance": "subject",
+   "mentions": 2,
    "topics": [
     "L-theanine and caffeine",
-    "Processing, milling and quality",
     "Food products and applications",
-    "Market, culture and sustainability"
+    "Market, culture and sustainability",
+    "Metabolism and weight"
    ],
-   "matchaIn": "abstract",
+   "matchaIn": "keywords",
    "abstract": "The popular products (n=89 samples) of tea, coffee, and bottled beverages originated from tea, coffee, and energy drinks on the market today, were collected and analysed for caffeine content. Caffeine levels in tea products were in a range of 4.11 and 22.37 mg/g d.w (mean 12.67±4.90 mg/g d.w), with the caffeine levels decreasing in the order of matcha tea ~ green tea gt; black tea gt; oolong tea gt; fresh tea. Caffeine levels in coffee ranged from 3.32 to 21.17 mg/g d.w (mean 11.09±5.02 mg/g d.w) with higher caffeine amounts in instant coffee compared to roasted powdered coffee. This is particularly noteworthy for consumers because energy drinks and bottled coffee contain a caffeine amount 5-7 times higher than bottled tea water. According to the recommended value (lt;400 mg/day for adults), the maximum intake of tea and coffee was calculated to be 17-48 g of dried weight per day, depending on the type of product, while energy drinks and bottled coffee can be consumed at a rate of 3-6 packaging units per day. However, only using low doses of caffeine (lt;200 mg/day) is likely to have more positive health effects. Children and pregnant women should consider using these beverages and follow the manufacturer’s recommendations.",
    "keywords": [
-    "caffeine",
+    "caffeine content",
     "tea beverages",
     "coffee beverages",
     "energy drinks",
-    "caffeine content",
-    "beverage quality",
+    "bottled beverages",
+    "matcha tea",
+    "green tea",
+    "black tea",
+    "oolong tea",
+    "instant coffee",
+    "consumer health risk",
     "Vietnam market"
    ],
    "mesh": [],
@@ -15379,7 +15891,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://apcz.umk.pl/JEHS/article/download/51235/38543",
-   "citedBy": 1,
+   "citedBy": 3,
    "sources": [
     "openalex"
    ],
@@ -15435,7 +15947,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/13/8/1270/pdf?version=1713684135",
-   "citedBy": 13,
+   "citedBy": 16,
    "sources": [
     "pubmed",
     "openalex",
@@ -15600,7 +16112,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.jsr.org/hs/index.php/path/article/download/8262/4016",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -15659,7 +16171,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/29/19/4699/pdf?version=1728030277",
-   "citedBy": 23,
+   "citedBy": 26,
    "sources": [
     "pubmed",
     "openalex",
@@ -15918,53 +16430,61 @@
    "kind": "preprint"
   },
   {
-   "id": 279,
-   "title": "Improved Physicochemical and Functional Properties of Dietary Fiber from Matcha Tea Fermented by Trichoderma Viride",
+   "id": 881,
+   "title": "Improved physicochemical and functional properties of dietary fiber from matcha fermented by Trichoderma viride.",
    "authors": [
-    "Yanli Deng",
-    "Nanhuan Huang",
-    "Long Ruan",
-    "Guangqin Kuang",
-    "Yong Liu",
-    "Jing Zhang",
-    "Qiang Shen"
+    "Huang N",
+    "Ruan L",
+    "Zhang J",
+    "Wang Y",
+    "Shen Q",
+    "Deng Y",
+    "Liu Y"
    ],
-   "journal": "SSRN Electronic Journal",
+   "journal": "Food chemistry",
    "year": 2024,
-   "doi": "10.2139/ssrn.4814572",
-   "pmid": null,
+   "doi": "10.1016/j.foodchem.2024.140784",
+   "pmid": "39126952",
    "pmcid": null,
-   "language": "en",
-   "design": "Not classified (no abstract)",
+   "language": "eng",
+   "design": "Other / not stated",
    "relevance": "subject",
-   "mentions": 2,
+   "mentions": 5,
    "topics": [
     "Metabolism and weight",
-    "Antioxidants and polyphenols"
+    "Antioxidants and polyphenols",
+    "Processing, milling and quality"
    ],
    "matchaIn": "title",
-   "abstract": "",
+   "abstract": "The low-grade matcha is rich in insoluble dietary fiber. Trichoderma viride was used to increase the soluble dietary fiber to improve its functional properties. The soluble dietary fiber content increased from 6.74% to 15.24%. Pectin, hemicellulose, maltose, d-xylose, and glucose contents increased by 63.35% and 11.54%, 2.18, 0.11, and 7.04 mg/g, respectively. Trichoderma viride fermentation disrupted the dense structure of insoluble dietary fiber, resulting in a honeycomb structure and improving crystallinity by 22.75%. These structural changes led to an improved cation exchange capacity from 1.69 to 4.22 mmol/g, an increase in the inhibitory effect of α-amylase from 47.38% to 72.04%, and a 2.13-fold in the ferrous ion scavenging ability, and the IC50 values of superoxide anion was reduced from 7.00 to 1.54 mg/mL, respectively. Therefore, Trichoderma viride fermentation is an excellent method for improving the quality of dietary fiber in matcha processing by-products.",
    "keywords": [
+    "Dietary fiber",
+    "Functional properties",
+    "Matcha",
+    "Structural properties",
+    "Trichoderma viride",
     "matcha tea",
     "dietary fiber",
-    "Trichoderma viride",
     "fungal fermentation",
     "soluble dietary fiber",
     "insoluble dietary fiber",
     "pectin",
-    "hemicellulose",
-    "fiber crystallinity",
-    "hypolipidemic activity",
-    "hypoglycemic activity",
-    "antioxidant activity"
+    "hemicellulose"
    ],
-   "mesh": [],
+   "mesh": [
+    "Dietary Fiber",
+    "Fermentation",
+    "Hypocreales",
+    "alpha-Amylases"
+   ],
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.2139/ssrn.4814572",
-   "citedBy": 0,
+   "citedBy": 24,
    "sources": [
-    "openalex"
+    "pubmed",
+    "openalex",
+    "europepmc"
    ],
    "kind": "article"
   },
@@ -16014,7 +16534,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.sdentj.2023.11.008",
-   "citedBy": 7,
+   "citedBy": 8,
    "sources": [
     "pubmed",
     "openalex",
@@ -16106,7 +16626,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://pakisjournal.com/index.php/mestaka/article/download/264/140",
-   "citedBy": 1,
+   "citedBy": 0,
    "sources": [
     "openalex"
    ],
@@ -16147,7 +16667,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://annpublisher.org/ojs/index.php/legisci/article/download/542/511",
-   "citedBy": 0,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -16247,7 +16767,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.crfs.2024.100823",
-   "citedBy": 19,
+   "citedBy": 27,
    "sources": [
     "pubmed",
     "openalex",
@@ -16300,7 +16820,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/fft2.465",
-   "citedBy": 2,
+   "citedBy": 4,
    "sources": [
     "openalex"
    ],
@@ -16365,7 +16885,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/16/17/2907/pdf?version=1725066732",
-   "citedBy": 8,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -16416,7 +16936,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 0,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -16558,7 +17078,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/13/8/1167/pdf?version=1712828868",
-   "citedBy": 31,
+   "citedBy": 42,
    "sources": [
     "pubmed",
     "openalex",
@@ -16572,7 +17092,7 @@
    "authors": [
     "Evangeline Mantzioris"
    ],
-   "journal": "",
+   "journal": "The Conversation",
    "year": 2024,
    "doi": "10.64628/aa.5p3capqq5",
    "pmid": null,
@@ -16611,7 +17131,7 @@
     "Kinga Szymczykowska",
     "Katarzyna Janda"
    ],
-   "journal": "Tea in Health and Disease Prevention",
+   "journal": "Elsevier eBooks",
    "year": 2024,
    "doi": "10.1016/b978-0-443-14158-4.00082-8",
    "pmid": null,
@@ -16794,7 +17314,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1128/spectrum.03426-23",
-   "citedBy": 10,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -16946,7 +17466,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.30721/fsab2024.v7.i1.303",
-   "citedBy": 6,
+   "citedBy": 8,
    "sources": [
     "openalex"
    ],
@@ -17111,7 +17631,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ejournal.itn.ac.id/jati/article/download/9025/5245",
-   "citedBy": 1,
+   "citedBy": 5,
    "sources": [
     "openalex"
    ],
@@ -17201,7 +17721,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://jkn.unitri.ac.id/index.php/jkn/article/download/294/140",
-   "citedBy": 1,
+   "citedBy": 4,
    "sources": [
     "openalex"
    ],
@@ -17316,7 +17836,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.heliyon.2024.e31553",
-   "citedBy": 64,
+   "citedBy": 86,
    "sources": [
     "pubmed",
     "openalex",
@@ -17343,22 +17863,24 @@
    "mentions": 3,
    "topics": [
     "Aroma, flavor and sensory",
-    "Processing, milling and quality",
-    "Food products and applications"
+    "Food products and applications",
+    "Processing, milling and quality"
    ],
    "matchaIn": "keywords",
    "abstract": "Background: Milk is considered one of the most widely recognized natural nutritious drinks in the world due to its importance in growth and health. This study aimed to prepare new functional milk drink formulas rich in nutrients and natural energy sources. Methods: This experimental analytical study was conducted by the Faculty of Public Health, Aljemail, Libya. Four new milk drink formulas were prepared: Formula 1 (fresh cow milk, date honey, banana, matcha, peanut butter, and white oats), Formula 2 (fresh cow milk, date honey, avocado, dark chocolate, and whey protein), Formula 3 (fresh cow milk, date honey, ginger, banana, dark chocolate, peanut butter, and whey protein), and Formula 4 (fresh cow milk, date honey, avocado, ginger, matcha, and whey protein). These formulas were assessed for their chemical quality characteristics (carbohydrates, protein, fat, ash, moisture, pH, total acidity, and total soluble solids), energy content, and sensory evaluation. Results: The results of the chemical analysis revealed a significant increase in the average percentage of carbohydrates, protein, fat, and ash, particularly for Formula 3, which presented the highest values of carbohydrates, protein, and fat (22.01 ± 2.127%, 11.21 ± 0.030%, and 3.79 ± 0.061%, respectively). The study also demonstrated that the new milk formulas contained high levels of total energy, especially Formulas 1 and 3, which had energy content of 143.47 kcal and 184.13 kcal, respectively. Sensory evaluation revealed that the panelists preferred all formulas, with general ratings of \"excellent\" and \"very good.\" Conclusion: This study confirmed that natural additives can increase nutritional value and energy content. It is recommended to include these new milk drink formulas in the diets of youth, adolescents, and athletes as a healthy alternative to energy drinks.",
    "keywords": [
-    "natural food additives",
-    "nutritional value",
-    "energy content",
-    "proximate composition",
-    "sensory evaluation",
+    "cow's milk",
     "whey protein",
+    "energy content",
+    "nutritional value",
+    "sensory evaluation",
+    "carbohydrate content",
+    "protein content",
+    "fat content",
+    "matcha",
+    "avocado",
     "peanut butter",
-    "date syrup",
-    "matcha tea",
-    "energy drinks"
+    "ginger"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -17431,6 +17953,54 @@
    "kind": "article"
   },
   {
+   "id": 804,
+   "title": "Product Development Strategy Of Traditional Snacks Klepon AT Klepon Legend Gianyar",
+   "authors": [
+    "Gede Wahyu Wardana",
+    "Dewa Ayu Anom Yuarini",
+    "Cokorda Anom Bayu Sadyasmara"
+   ],
+   "journal": "JURNAL REKAYASA DAN MANAJEMEN AGROINDUSTRI",
+   "year": 2024,
+   "doi": "10.24843/jrma.2024.v12.i02.p03",
+   "pmid": null,
+   "pmcid": null,
+   "language": "en",
+   "design": "Observational (human)",
+   "relevance": "subject",
+   "mentions": 2,
+   "topics": [
+    "Processing, milling and quality",
+    "Food products and applications",
+    "Aroma, flavor and sensory"
+   ],
+   "matchaIn": "keywords",
+   "abstract": "In 2022-2023 Klepon Legend experienced a 15% decrease in sales. Based on interviews with business owners, one of the factors affecting this decline in sales is because there are competitors who offer similar products from Klepon Gianyar 1980 and also Klepon Gianyar Dayu Niang Eka. The purpose of this study is to determine the quality attributes of klepon products, determine the level of importance and consumer satisfaction, and formulate product development strategies at Klepon Legend. The analysis method used in the research is Quality Function Deployment (QFD) and the variables used are the quality attributes of klepon products, namely color, aroma, taste, texture, shape, size, portion. Based on QFD analysis, the product quality attribute with the highest importance value is the flavor attribute for attributes that get the highest satisfaction value is the menu portion and size. The product development strategy that can be recommended based on the characteristics of the respondents is that Klepon Legend can innovate klepon dough by adding flavor and aroma variants such as matcha, taro, red velvet and chocolate.",
+   "keywords": [
+    "klepon",
+    "traditional snacks",
+    "product development strategy",
+    "quality function deployment",
+    "product quality attributes",
+    "customer satisfaction",
+    "sales decline",
+    "competitive products",
+    "matcha",
+    "taro",
+    "Red Velvet",
+    "chocolate"
+   ],
+   "mesh": [],
+   "pubTypes": [],
+   "isOa": true,
+   "oaUrl": "https://doi.org/10.24843/jrma.2024.v12.i02.p03",
+   "citedBy": 0,
+   "sources": [
+    "openalex"
+   ],
+   "kind": "article"
+  },
+  {
    "id": 306,
    "title": "Quality analysis and antioxidant activity of different types of tea powder",
    "authors": [
@@ -17475,7 +18045,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://fppn.biomedcentral.com/counter/pdf/10.1186/s43014-023-00198-1",
-   "citedBy": 10,
+   "citedBy": 13,
    "sources": [
     "openalex"
    ],
@@ -17516,7 +18086,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 36,
+   "citedBy": 37,
    "sources": [
     "openalex"
    ],
@@ -17749,7 +18319,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/29/19/4553/pdf?version=1727261169",
-   "citedBy": 5,
+   "citedBy": 6,
    "sources": [
     "pubmed",
     "openalex",
@@ -17899,7 +18469,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://apcz.umk.pl/QS/article/download/55912/40354",
-   "citedBy": 2,
+   "citedBy": 3,
    "sources": [
     "openalex"
    ],
@@ -17951,7 +18521,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.crfs.2024.100843",
-   "citedBy": 4,
+   "citedBy": 5,
    "sources": [
     "pubmed",
     "openalex",
@@ -18244,7 +18814,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -18318,7 +18888,7 @@
    "authors": [
     "Yoshitake Baba"
    ],
-   "journal": "Tea in Health and Disease Prevention",
+   "journal": "Elsevier eBooks",
    "year": 2024,
    "doi": "10.1016/b978-0-443-14158-4.00023-3",
    "pmid": null,
@@ -18445,7 +19015,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1590/1519-6984.283740",
-   "citedBy": 1,
+   "citedBy": 3,
    "sources": [
     "pubmed",
     "openalex",
@@ -18497,7 +19067,7 @@
   },
   {
    "id": 326,
-   "title": "การพฒนาผลตภณฑจากกญชง: ภมทศนวฒนธรรมของชาตพนธมง อำเภอพบพระ จงหวดตาก",
+   "title": "การพัฒนาผลิตภัณฑ์จากกัญชง: ภูมิทัศน์วัฒนธรรมของชาติพันธุ์ม้ง อำเภอพบพระ จังหวัดตาก",
    "authors": [
     "Walailak Panturee"
    ],
@@ -18587,7 +19157,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.jstage.jst.go.jp/article/jcbn/advpub/0/advpub_22-81/_pdf",
-   "citedBy": 9,
+   "citedBy": 18,
    "sources": [
     "pubmed",
     "openalex",
@@ -18649,7 +19219,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 42,
+   "citedBy": 46,
    "sources": [
     "pubmed",
     "openalex",
@@ -18694,7 +19264,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.bio-conferences.org/articles/bioconf/pdf/2023/25/bioconf_icosia2023_04001.pdf",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -18834,7 +19404,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 49,
+   "citedBy": 50,
    "sources": [
     "pubmed",
     "openalex",
@@ -18984,7 +19554,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 7,
+   "citedBy": 8,
    "sources": [
     "openalex"
    ],
@@ -19110,7 +19680,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://msi.elpub.ru/jour/article/download/1455/1444",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -19170,7 +19740,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s11130-023-01121-2.pdf",
-   "citedBy": 50,
+   "citedBy": 59,
    "sources": [
     "pubmed",
     "openalex",
@@ -19412,7 +19982,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jsfa.12875",
-   "citedBy": 9,
+   "citedBy": 10,
    "sources": [
     "pubmed",
     "openalex",
@@ -19508,7 +20078,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -19751,7 +20321,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1021/acsomega.3c02574",
-   "citedBy": 5,
+   "citedBy": 6,
    "sources": [
     "pubmed",
     "openalex",
@@ -19803,7 +20373,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.jssas.2023.03.006",
-   "citedBy": 18,
+   "citedBy": 20,
    "sources": [
     "openalex"
    ],
@@ -19915,7 +20485,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.nature.com/articles/s41598-023-43563-3.pdf",
-   "citedBy": 14,
+   "citedBy": 20,
    "sources": [
     "pubmed",
     "openalex",
@@ -20008,7 +20578,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://jurnal.poltekkesgorontalo.ac.id/index.php/JNC/article/download/829/478",
-   "citedBy": 0,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -20055,7 +20625,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/12/19/3614/pdf?version=1695909742",
-   "citedBy": 10,
+   "citedBy": 11,
    "sources": [
     "pubmed",
     "openalex",
@@ -20212,7 +20782,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://nutritionj.biomedcentral.com/counter/pdf/10.1186/s12937-023-00859-4",
-   "citedBy": 23,
+   "citedBy": 35,
    "sources": [
     "pubmed",
     "openalex",
@@ -20279,7 +20849,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/15/3/581/pdf?version=1675391507",
-   "citedBy": 10,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -20294,7 +20864,7 @@
     "Justin Roberts",
     "Henry C. Chung"
    ],
-   "journal": "",
+   "journal": "The Conversation",
    "year": 2023,
    "doi": "10.64628/ab.akpnfv4dd",
    "pmid": null,
@@ -20421,7 +20991,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 11,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -20512,7 +21082,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 91,
+   "citedBy": 93,
    "sources": [
     "pubmed",
     "openalex",
@@ -20650,48 +21220,6 @@
     "openalex"
    ],
    "kind": "thesis"
-  },
-  {
-   "id": 819,
-   "title": "PENENTUAN BIAYA PRODUKSI DENGAN METODE FULL COSTING UNTUK MENETAPKAN HARGA JUAL PRODUK CAFE BUKAN RUANG",
-   "authors": [
-    "Maghfiroh Setiati",
-    "Rizka Ramayanti"
-   ],
-   "journal": "Jurnal Akuntansi dan Bisnis Krisnadwipayana",
-   "year": 2023,
-   "doi": "10.35137/jabk.v10i2.19",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Other / not stated",
-   "relevance": "mention",
-   "mentions": 1,
-   "topics": [
-    "Food products and applications",
-    "Authenticity and analytical methods"
-   ],
-   "matchaIn": "abstract",
-   "abstract": "The purpose of this study is to determine the cost of production at the Not Ruang Cafe using the full costing method to set the price. This type of quantitative descriptive with a comparative approach. The data used are primary data and secondary data to help researchers do the calculations. The results of this study indicate that the production costs determined by the company are lower than those determined using the full costing method, because the company has not included elements of direct labor costs and factory overhead costs into production costs. The current selling price of the product only uses estimates of production costs and competitors' selling prices. In contrast to the selling price determined by the cost plus pricing method, the selling price of Anteng's milk coffee, latte and pandan latte is higher than the company's selling price. However, Long Black, Taro Latte, Matcha Latte and Chocolate products are priced below the retail price set by the company. With the cost plus pricing method, a profit of Rp 1,520,491 is obtained, which is higher than the current selling price.",
-   "keywords": [
-    "production cost determination",
-    "full costing",
-    "cost-plus pricing",
-    "coffee shop",
-    "direct labor costs",
-    "manufacturing overhead",
-    "profit margin",
-    "coffee beverages"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://ojs.ekonomi-unkris.ac.id/index.php/jabk/article/download/19/14",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
   },
   {
    "id": 369,
@@ -20894,7 +21422,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 13,
+   "citedBy": 14,
    "sources": [
     "openalex"
    ],
@@ -20937,7 +21465,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://unars.ac.id/ojs/index.php/jme/article/download/3914/2810",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -20971,49 +21499,6 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 373,
-   "title": "The combined effects of L-Carnitine and matcha green tea in the formulation of effervescent powder for weight loss management as a dietary supplement",
-   "authors": [
-    "Ajay Ramdas Nannar",
-    "Raosaheb S. Shendge",
-    "K. S. Salunkhe"
-   ],
-   "journal": "BOHR Journal of Pharmaceutical Studies.",
-   "year": 2023,
-   "doi": "10.54646/bjops.2023.03",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Review",
-   "relevance": "subject",
-   "mentions": 2,
-   "topics": [
-    "Metabolism and weight",
-    "Processing, milling and quality",
-    "Food products and applications",
-    "Inflammation and immunity"
-   ],
-   "matchaIn": "title",
-   "abstract": "In our day-to-day lives, nutrition and dietary supplements are necessities for work balance and active energy in our bodies. Also, in homeopathic medicine, allopathic medicines are given, and in Ayurveda, herbal medicines are given. Nowadays, chemical medicines are used as supplements, like steroids, which increase the body’s immunity, but these chemicals have hazardous side effects on our body’s functioning. Thus, in this review, we discuss and study L-carnitine and matcha green tea as supplements without any side effects on our body.",
-   "keywords": [
-    "L-carnitine",
-    "effervescent powder",
-    "weight loss",
-    "dietary supplements",
-    "combination formulations",
-    "herbal supplements"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://journals.bohrpub.com/index.php/bijops/article/download/609/4231",
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -21076,7 +21561,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/28/20/7018/pdf?version=1696988942",
-   "citedBy": 31,
+   "citedBy": 37,
    "sources": [
     "pubmed",
     "openalex",
@@ -21178,7 +21663,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.sciencedirect.com/science/article/pii/S2665927122002180/pdf",
-   "citedBy": 51,
+   "citedBy": 69,
    "sources": [
     "pubmed",
     "openalex",
@@ -21229,7 +21714,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1088/1755-1315/1252/1/012135",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -21285,7 +21770,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.3389/fnut.2023.1153983",
-   "citedBy": 14,
+   "citedBy": 17,
    "sources": [
     "pubmed",
     "openalex",
@@ -21336,7 +21821,7 @@
   },
   {
    "id": 380,
-   "title": "ความแพรหลายของขนมและเครองดมททำจากมทฉะ",
+   "title": "ความแพร่หลายของขนมและเครื่องดื่มที่ทำจากมัทฉะ",
    "authors": [
     "Piyaporn Chanasuay"
    ],
@@ -21439,7 +21924,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s11130-022-00998-9.pdf",
-   "citedBy": 17,
+   "citedBy": 30,
    "sources": [
     "pubmed",
     "openalex",
@@ -21492,7 +21977,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s00289-021-03857-w.pdf",
-   "citedBy": 29,
+   "citedBy": 32,
    "sources": [
     "pubmed",
     "openalex",
@@ -21541,7 +22026,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.scielo.br/j/cta/a/nJDMVbLFF84zwjNJYrVZQGR/?lang=en&format=pdf",
-   "citedBy": 5,
+   "citedBy": 6,
    "sources": [
     "openalex"
    ],
@@ -21641,7 +22126,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/11/19/2964/pdf?version=1664206560",
-   "citedBy": 21,
+   "citedBy": 23,
    "sources": [
     "pubmed",
     "openalex",
@@ -21817,7 +22302,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "http://jurnal.fkip.unila.ac.id/index.php/jpmipa/article/download/24717/pdf",
-   "citedBy": 3,
+   "citedBy": 5,
    "sources": [
     "openalex"
    ],
@@ -21928,7 +22413,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 14,
+   "citedBy": 16,
    "sources": [
     "pubmed",
     "openalex",
@@ -22033,7 +22518,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 12,
+   "citedBy": 13,
    "sources": [
     "pubmed",
     "openalex",
@@ -22095,7 +22580,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.jstage.jst.go.jp/article/jcbn/advpub/0/advpub_21-110/_pdf",
-   "citedBy": 1,
+   "citedBy": 3,
    "sources": [
     "pubmed",
     "openalex",
@@ -22155,7 +22640,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 1,
+   "citedBy": 3,
    "sources": [
     "openalex"
    ],
@@ -22216,7 +22701,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1422-0067/23/22/14169/pdf?version=1668691029",
-   "citedBy": 43,
+   "citedBy": 51,
    "sources": [
     "pubmed",
     "openalex",
@@ -22282,7 +22767,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 29,
+   "citedBy": 34,
    "sources": [
     "pubmed",
     "openalex",
@@ -22388,7 +22873,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://doi.org/10.3389/fpls.2022.909765",
-   "citedBy": 22,
+   "citedBy": 25,
    "sources": [
     "pubmed",
     "openalex",
@@ -22454,7 +22939,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://link.springer.com/content/pdf/10.1007/s00404-021-06381-4.pdf",
-   "citedBy": 11,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -22511,7 +22996,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/11/6/858/pdf?version=1647590615",
-   "citedBy": 14,
+   "citedBy": 16,
    "sources": [
     "pubmed",
     "openalex",
@@ -22573,7 +23058,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/14/12/2550/pdf?version=1655807094",
-   "citedBy": 7,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -22636,58 +23121,11 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/27/8/2493/pdf?version=1649832924",
-   "citedBy": 25,
+   "citedBy": 28,
    "sources": [
     "pubmed",
     "openalex",
     "europepmc"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 403,
-   "title": "Geography And The Therapeutic Effect Of Matcha Tea In Drinks",
-   "authors": [
-    "Maulshree Bhandari , Surabhi Sharma , Riya Mishra , Lipi Nogai , Manju Bajaj , Rashmi Pathak"
-   ],
-   "journal": "Journal of Pharmaceutical Negative Results",
-   "year": 2022,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Review",
-   "relevance": "subject",
-   "mentions": 8,
-   "topics": [
-    "Antioxidants and polyphenols",
-    "L-theanine and caffeine",
-    "Safety, contaminants and toxicity",
-    "Inflammation and immunity"
-   ],
-   "matchaIn": "title",
-   "abstract": "Camellia sinensis belongs to family- Theaceae. It is commonly called as tea is the most widely used refreshing beverage accepted globally. It has two variety such as green tea and black depending upon its method of cultivation. Green teas are non-fermented minimally oxidized variety of tea. Green tea has also attracted the research limelight because of its variety of Phenols with versatile pharmacology and health effects. There are wide range of green tea some are Biluochun, Gunpowder, Genmaicha, Matcha, Sencha. Matcha which commonly originates in Japan and is a type of powdered green tea, cultivated and produced in a traditional way. Shading of the plants during the growth period enhances the processes of accumulation and synthesis of biologically active compounds, including caffeine, theanine, chlorophyll and various types of catechins. Retention of chlorophyll results in soothing green colour of tea and theanine for it non bitter taste. Green tea contains four main catechins, i.e., (−)-epicatechin-3-gallate (ECG), (−)-epicatechin (EC), (−)-epigallocatechin-3-gallate (EGCG) and (−)- epigallocatechin (EGC), of which (−)-epigallocatechin-3-gallate (EGCG) is the most active and is present in abundance and matcha is their best condensed source. Matcha tea is considered as highest quality tea Due to its unique chemical composition and texture, which also sets it apart from other tea beverages. Its high content of antioxidant and anti-inflammatory substances attributes the various health-promoting properties. Due to its potential for preventing many diseases and illness, regular consumption of matcha may have a positive effect on both physical and mental health. The aim of this review was to compile the native origin and health benefits of matcha tea along with its side effects.",
-   "keywords": [
-    "matcha tea",
-    "Camellia sinensis",
-    "green tea",
-    "catechins",
-    "epigallocatechin gallate",
-    "theanine",
-    "caffeine",
-    "chlorophyll",
-    "antioxidant activity",
-    "anti-inflammatory activity",
-    "health benefits",
-    "adverse effects"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://pnrjournal.com/index.php/home/article/download/9474/13096",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
    ],
    "kind": "article"
   },
@@ -22819,7 +23257,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/27/19/6171/pdf?version=1663841020",
-   "citedBy": 11,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -23001,7 +23439,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ijcsrr.org/wp-content/uploads/2022/02/05-05-2022.pdf",
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -23140,7 +23578,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.frontiersin.org/articles/10.3389/fnut.2022.931060/pdf",
-   "citedBy": 23,
+   "citedBy": 30,
    "sources": [
     "pubmed",
     "openalex",
@@ -23152,7 +23590,7 @@
    "id": 415,
    "title": "Matcha tea. Definition and characteristics",
    "authors": [],
-   "journal": "",
+   "journal": "BSI Standards",
    "year": 2022,
    "doi": "10.3403/30441355",
    "pmid": null,
@@ -23160,16 +23598,14 @@
    "language": "en",
    "design": "Other / not stated",
    "relevance": "subject",
-   "mentions": 3,
+   "mentions": 2,
    "topics": [],
    "matchaIn": "title",
    "abstract": "67.140.10",
    "keywords": [
-    "matcha",
-    "green tea",
-    "tea processing",
     "matcha tea",
-    "tea"
+    "tea",
+    "green tea"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -23187,7 +23623,7 @@
    "authors": [
     "Hoàng Mai Thảo",
     "Nguyễn Thị Thanh Tuyên",
-    "Nguyễn Ngọc Minh Tuấn"
+    "Ngoc Minh Tuan Nguyen"
    ],
    "journal": "Tạp chí Khoa học và Công nghệ Trường Đại học Hùng Vương",
    "year": 2022,
@@ -23419,7 +23855,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 76,
+   "citedBy": 78,
    "sources": [
     "pubmed",
     "openalex",
@@ -23474,7 +23910,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.frontiersin.org/articles/10.3389/fonc.2022.837408/pdf",
-   "citedBy": 10,
+   "citedBy": 13,
    "sources": [
     "pubmed",
     "openalex",
@@ -23551,7 +23987,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ejurnal.stmik-budidarma.ac.id/index.php/JSON/article/download/4241/2790",
-   "citedBy": 5,
+   "citedBy": 12,
    "sources": [
     "openalex"
    ],
@@ -23599,7 +24035,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 27,
+   "citedBy": 29,
    "sources": [
     "openalex"
    ],
@@ -23752,16 +24188,16 @@
    "kind": "article"
   },
   {
-   "id": 428,
+   "id": 373,
    "title": "The combined effects of L-Carnitine and matcha green tea in the formulation of effervescent powder for weight loss management as a dietary supplement",
    "authors": [
     "Ajay Ramdas Nannar",
     "Raosaheb S. Shendge",
     "K. S. Salunkhe"
    ],
-   "journal": "",
+   "journal": "BOHR Journal of Pharmaceutical Studies.",
    "year": 2022,
-   "doi": "10.54646/bijops.2023.03",
+   "doi": "10.54646/bjops.2023.03",
    "pmid": null,
    "pmcid": null,
    "language": "en",
@@ -23785,9 +24221,9 @@
    ],
    "mesh": [],
    "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
-   "citedBy": 2,
+   "isOa": true,
+   "oaUrl": "https://journals.bohrpub.com/index.php/bijops/article/download/609/4231",
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -23840,7 +24276,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2076-3921/11/5/889/pdf?version=1651286443",
-   "citedBy": 21,
+   "citedBy": 26,
    "sources": [
     "pubmed",
     "openalex",
@@ -23901,7 +24337,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/14/6/1197/pdf?version=1647322201",
-   "citedBy": 10,
+   "citedBy": 15,
    "sources": [
     "pubmed",
     "openalex",
@@ -24028,7 +24464,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://jsss.copernicus.org/articles/10/153/2021/jsss-10-153-2021.pdf",
-   "citedBy": 24,
+   "citedBy": 26,
    "sources": [
     "openalex"
    ],
@@ -24114,7 +24550,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://soas-repository.worktribe.com/output/381250",
-   "citedBy": 1,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -24178,7 +24614,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 50,
+   "citedBy": 52,
    "sources": [
     "pubmed",
     "openalex",
@@ -24431,7 +24867,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 20,
+   "citedBy": 21,
    "sources": [
     "openalex"
    ],
@@ -24497,7 +24933,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/13/5/1700/pdf?version=1621411382",
-   "citedBy": 32,
+   "citedBy": 42,
    "sources": [
     "pubmed",
     "openalex",
@@ -24631,7 +25067,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 33,
+   "citedBy": 37,
    "sources": [
     "pubmed",
     "openalex",
@@ -24697,7 +25133,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/26/19/5836/pdf?version=1632827888",
-   "citedBy": 78,
+   "citedBy": 83,
    "sources": [
     "pubmed",
     "openalex",
@@ -24844,7 +25280,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 5,
+   "citedBy": 6,
    "sources": [
     "pubmed",
     "openalex",
@@ -24904,7 +25340,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.3923/pjbs.2021.1256.1268",
-   "citedBy": 5,
+   "citedBy": 6,
    "sources": [
     "pubmed",
     "openalex",
@@ -25004,7 +25440,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.frontiersin.org/articles/10.3389/fvets.2021.650531/pdf",
-   "citedBy": 14,
+   "citedBy": 18,
    "sources": [
     "pubmed",
     "openalex",
@@ -25057,54 +25493,6 @@
    "kind": "article"
   },
   {
-   "id": 451,
-   "title": "Innovative Value Addition in Tea (Camellia sinensis): A Comparative Analysis between Sri Lanka and Japan",
-   "authors": [
-    "Chamila Pilapitiya",
-    "Saliya De Silva"
-   ],
-   "journal": "International Journal of Innovative Approaches in Agricultural Research",
-   "year": 2021,
-   "doi": "10.29329/ijiaar.2021.339.2",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Observational (human)",
-   "relevance": "mention",
-   "mentions": 1,
-   "topics": [
-    "Antioxidants and polyphenols",
-    "Cultivation and shading",
-    "Aroma, flavor and sensory",
-    "Food products and applications"
-   ],
-   "matchaIn": "abstract",
-   "abstract": "Sri Lanka is the third largest tea exporter in the world, but nearly 60% of its total exports are comprised of bulk tea. Bulk tea secures the lowest prices in world tea market. Sri Lanka earned an average value of US$4.83 per kilogram from 2014 to 2018 for its tea exports, compared to US$24.24 per kilogram over the same five-year period in Japan, a highly innovative tea-producing country. The objective of this study is to examine the root causes of product innovation in Sri Lanka, as compared to Japan, by conducting a historical analysis followed by a survey and key informant discussions. Sri Lanka has mainly focused on incremental innovations in blending, flavoring and packaging than radical innovations. About 98% of the tea produced in Sri Lanka is black tea, produced mainly in large scale-processing factories. The focus on economies of scale and heavy dependence on traditional product baskets and market destinations have bottlenecked product innovation capabilities in Sri Lanka. In contrast, Japan produces a large number of innovative beverage and non-non-beverage products. Their main beverage type is sencha (58%), followed by many other beverages including gyokuro, kabusecha, matcha, tamaryokucha, black tea, oolong tea, fermented teas and white tea. The Japanese produce a variety of non-beverage products including confectionaries, snacks and cosmetics made from same tea plant that beverage tea is made from. Having a large number of processing factories (4698), Japan’s product innovation capabilities are mainly attributed to firm-level factors and support services. This study recommends that Sri Lanka should link together farmer organizations, processing factories, research institutes and universities to make its tea industry more innovative and flexible and consequently more profitable and sustainable. Foreign direct investment and partnerships presumably would be instrumental in bringing in much needed funding, expertise and advanced technology to stimulate product innovation.",
-   "keywords": [
-    "tea industry",
-    "Camellia sinensis",
-    "product innovation",
-    "value addition",
-    "Sri Lanka",
-    "Japan",
-    "black tea",
-    "sencha",
-    "economies of scale",
-    "incremental innovation",
-    "radical innovation",
-    "foreign direct investment"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://doi.org/10.29329/ijiaar.2021.339.2",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 835,
    "title": "Inovasi Pengolahan Buah Pisang Sebagai Bentuk Pemberdayaan Masyarakat Dalam Mewujudkan Ketahanan Pangan Masyarakat",
    "authors": [
@@ -25144,7 +25532,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://journal.actual-insight.com/index.php/jpkm/article/download/450/769",
-   "citedBy": 1,
+   "citedBy": 11,
    "sources": [
     "openalex"
    ],
@@ -25388,7 +25776,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/8292538",
-   "citedBy": 31,
+   "citedBy": 32,
    "sources": [
     "pubmed",
     "openalex",
@@ -25454,7 +25842,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.sciencedirect.com/science/article/pii/S0271531720306084/pdf",
-   "citedBy": 29,
+   "citedBy": 41,
    "sources": [
     "pubmed",
     "openalex",
@@ -25522,7 +25910,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/13/6/1950/pdf?version=1622968698",
-   "citedBy": 48,
+   "citedBy": 54,
    "sources": [
     "pubmed",
     "openalex",
@@ -25583,7 +25971,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2079-6382/10/12/1550/pdf?version=1640169034",
-   "citedBy": 10,
+   "citedBy": 13,
    "sources": [
     "pubmed",
     "openalex",
@@ -25655,7 +26043,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/mnfr.202100371",
-   "citedBy": 10,
+   "citedBy": 11,
    "sources": [
     "pubmed",
     "openalex",
@@ -25708,7 +26096,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 68,
+   "citedBy": 70,
    "sources": [
     "openalex",
     "europepmc"
@@ -25770,9 +26158,10 @@
    "id": 463,
    "title": "National Treasure Tea Bowls as Cultural Icons in Modern Japan",
    "authors": [
-    "Meghen Jones"
+    "Meghen Jones",
+    "M. E. Jones"
    ],
-   "journal": "",
+   "journal": "Amsterdam University Press eBooks",
    "year": 2021,
    "doi": "10.1017/9789048550838.008",
    "pmid": null,
@@ -25803,11 +26192,11 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 0,
+   "citedBy": 1,
    "sources": [
     "openalex"
    ],
-   "kind": "article"
+   "kind": "book"
   },
   {
    "id": 464,
@@ -25867,7 +26256,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1016/j.foodchem.2021.129003",
-   "citedBy": 39,
+   "citedBy": 40,
    "sources": [
     "pubmed",
     "openalex",
@@ -25919,7 +26308,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/10/11/2531/pdf?version=1635307113",
-   "citedBy": 12,
+   "citedBy": 13,
    "sources": [
     "pubmed",
     "openalex",
@@ -25970,7 +26359,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://bioresources.cnr.ncsu.edu/wp-content/uploads/2021/03/BioRes_16_2_3255_18383_Sayuti_KSRE_Optimized_Extraction_Green_Tea_Polyphenol_Antioxidants-1.pdf",
-   "citedBy": 22,
+   "citedBy": 24,
    "sources": [
     "openalex"
    ],
@@ -26017,7 +26406,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ojs.unud.ac.id/index.php/itepa/article/download/82293/42714",
-   "citedBy": 3,
+   "citedBy": 4,
    "sources": [
     "openalex"
    ],
@@ -26064,7 +26453,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ojs.unud.ac.id/index.php/itepa/article/download/82283/42708",
-   "citedBy": 6,
+   "citedBy": 7,
    "sources": [
     "openalex"
    ],
@@ -26121,7 +26510,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2076-3921/10/12/1932/pdf?version=1638440572",
-   "citedBy": 34,
+   "citedBy": 38,
    "sources": [
     "pubmed",
     "openalex",
@@ -26300,7 +26689,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2076-3417/11/11/5087/pdf?version=1622437437",
-   "citedBy": 28,
+   "citedBy": 33,
    "sources": [
     "openalex"
    ],
@@ -26359,7 +26748,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 77,
+   "citedBy": 78,
    "sources": [
     "pubmed",
     "openalex",
@@ -26590,7 +26979,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 23,
+   "citedBy": 24,
    "sources": [
     "pubmed",
     "openalex",
@@ -26651,7 +27040,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ars.els-cdn.com/content/image/1-s2.0-S0924224421005860-ga1_lrg.jpg",
-   "citedBy": 64,
+   "citedBy": 69,
    "sources": [
     "openalex",
     "europepmc"
@@ -26715,7 +27104,7 @@
    ],
    "isOa": true,
    "oaUrl": "http://eprints.chi.ac.uk/id/eprint/5332/1/Willems%20et%20al%20Matcha%20walking%20R1%20ACCEPTED%20VERSION.pdf",
-   "citedBy": 10,
+   "citedBy": 13,
    "sources": [
     "pubmed",
     "openalex",
@@ -26856,7 +27245,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.spandidos-publications.com/10.3892/or.2019.7430/download",
-   "citedBy": 5,
+   "citedBy": 7,
    "sources": [
     "pubmed",
     "openalex",
@@ -26940,7 +27329,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://scholarlycommons.pacific.edu/cgi/viewcontent.cgi?article=1008&context=pjh",
-   "citedBy": 3,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -26994,7 +27383,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/9/4/483/pdf?version=1586681729",
-   "citedBy": 126,
+   "citedBy": 152,
    "sources": [
     "pubmed",
     "openalex",
@@ -27006,7 +27395,7 @@
    "id": 487,
    "title": "APLIKASI MATCHA GREEN TEA DAN SARI JERUK LEMON DALAM PRODUKSI SERABI SOLO DI UKM LINCO’S SOLO [MATCHA GREEN TEA AND LEMON JUICE APPLICATION OF SERABI SOLO PRODUCTION IN SME LINCO’S SOLO]",
    "authors": [
-    "Esti Widowati",
+    "Esti Wahyu Widowati",
     "Gusti Fauza",
     "Rizky Nugrahaningtyas",
     "Dinta Selma Petriani"
@@ -27102,56 +27491,6 @@
    "kind": "article"
   },
   {
-   "id": 489,
-   "title": "Avaliação da ingestão de chá-verde e matcha no perfil antropométrico e parâmetros bioquímicos",
-   "authors": [
-    "Ligia Prestes Fernandes",
-    "Humberto M. Spindola",
-    "Flavia Noeli de Souza Infante",
-    "Juliana Bürger Rodrigues"
-   ],
-   "journal": "DOAJ (DOAJ: Directory of Open Access Journals)",
-   "year": 2020,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "pt",
-   "design": "Other / not stated",
-   "relevance": "subject",
-   "mentions": 6,
-   "topics": [
-    "Metabolism and weight",
-    "Antioxidants and polyphenols",
-    "Gut and microbiome",
-    "Skin, oral and dental"
-   ],
-   "matchaIn": "title",
-   "abstract": "O estado obeso, caracterizado pelo excesso de acúmulo de gordura corporal, possui uma elevada incidência na população tornando-se problema de saúde pública. Diante disso, surge a necessidade de adotar estratégias para auxiliar no seu combate e das doenças crônicas não transmissíveis (DCNT) a ele associadas. Uma alternativa são os alimentos que possuem compostos bioativos como, por exemplo, o chá verde que pode auxiliar na oxidação de gordura, devido a concentração de catequinas. Além do chá verde - consumido apenas a infusão das folhas - outro tipo de chá também originário da Camellia sinensis ganha atenção na oxidação de lipídeos: o matcha, feito da maceração completa das folhas. Pesquisas mostraram que ele pode ter 137 vezes mais polifenóis, do tipo epigalocatequina-3-galato (EGCG), em relação ao chá verde tradicional. O objetivo desse trabalho é comparar a eficácia do matcha e chá verde como agentes lipolíticos, administrados diariamente em não praticantes de atividade física, sem dieta restrita, por 40 dias. Foram analisados dois grupos – chá verde (GCV) e matcha (GM), com dez pessoas cada. Foram realizadas análises bioquímicas e antropométricas dos participantes. Dentre os resultados, destaca-se a redução dos níveis séricos de glicose nos dois grupos, ambos com nível de significância **p < 0,01 para o teste t de student. Acredita-se que a EGCG iniba a atividade do transportador de glicose intestinal, levando a redução da captação de glicose no intestino. Logo, o chá verde e o matcha podem ser utilizados para diminuição de glicemia e outras complicações da obesidade. Em ambos os grupos, houve também diminuição de peso corporal, além de gordura livre, mas sem relevância estatística.",
-   "keywords": [
-    "green tea",
-    "matcha",
-    "obesity",
-    "catechins",
-    "epigallocatechin gallate",
-    "lipolysis",
-    "lipid oxidation",
-    "blood glucose",
-    "weight loss",
-    "free fat",
-    "anthropometric profile",
-    "bioactive compounds"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://doaj.org/article/c09f753f36de451baaddf53c629e8647",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 490,
    "title": "Changes in Intestinal Microbiota of Type 2 Diabetes in Mice in Response to Dietary Supplementation With Instant Tea or Matcha.",
    "authors": [
@@ -27211,7 +27550,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 68,
+   "citedBy": 69,
    "sources": [
     "pubmed",
     "openalex",
@@ -27300,7 +27639,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://ejournal.undip.ac.id/index.php/izumi/article/download/33442/pdf",
-   "citedBy": 3,
+   "citedBy": 4,
    "sources": [
     "openalex"
    ],
@@ -27458,21 +27797,27 @@
    "language": "pt",
    "design": "Sensory / consumer",
    "relevance": "subject",
-   "mentions": 8,
+   "mentions": 7,
    "topics": [
-    "Aroma, flavor and sensory",
-    "Food products and applications",
     "Antioxidants and polyphenols",
-    "Gut and microbiome"
+    "Processing, milling and quality",
+    "Aroma, flavor and sensory",
+    "Food products and applications"
    ],
    "matchaIn": "title",
    "abstract": "A Uprel é uma empresa produtora de refrigerantes que tem focado a sua atenção na produção de produtos inovadores de forma a contornar a competitividade e saturação do mercado de bebidas não alcoólicas. Neste trabalho realizado em ambiente empresarial, diversificou-se a produção de água tónica, criando uma água tónica rosé, e desenvolveu-se uma bebida à base de chá matcha. O desenvolvimento da água tónica rosé foi concebido pela adição de um extrato de antocianinas extraídas do vinho tinto. Este extrato, que correspondeu a um volume de 1/3 do vinho tinto inicial, foi obtido por ebulição e precipitação do material insolúvel resultante. A água tónica rosé manteve o sabor característico da água tónica, apresentando uma cor rosa estável durante os 20 dias em que decorreu o ensaio. A Camellia sinensis L. é a planta mais utilizada na produção de chá e, dependendo do processamento das folhas, podem ser distinguidas diferentes categorias, entre elas o chá verde. O chá matcha é um tipo de chá verde, tradicional da cultura japonesa e possui um perfil de compostos único, consequência do processamento típico ao qual as folhas são sujeitas, em que é efetuada a sua cobertura no campo, permitindo assim a proteção contra a radiação ultravioleta. Como resultado, é obtida uma bebida mais rica em teanina e clorofilas. Tratando-se de um pó muito fino, este produto permite ainda a obtenção de uma bebida de aspeto turvo rica em compostos antioxidantes. Durante o processo de desenvolvimento da bebida à base de chá matcha foi tido como critério de qualidade o sabor e a cor verde do chá. A filtração em pano permitiu obter produtos com melhor sabor e cor verde do que a filtração com filtros de celulose. Foram testadas diferentes temperaturas de pasteurização: 70˚C, 75˚C, 80˚C, 85˚C e 90˚C, evidenciando-se uma diminuição da intensidade da cor quando usadas temperaturas acima de 75˚C. Foi observada a inexistência de impacto significativo da pasteurização no teor em fenóis totais para todas as temperaturas de pasteurização testadas, variando entre 97 e 111 mg em equivalentes de ácido gálico (EAG)/L, em comparação com o chá não pasteurizado (102 mg EAG/L). A pasteurização revelou ter influência no desenvolvimento de bactérias viáveis totais, inibindo o seu crescimento em todas as temperaturas testadas. No entanto, a pasteurização utilizada pode não ser suficiente para a eliminação de bolores. Como o chá matcha preparado tinha adstringência muito elevada, a adição de extratos comerciais aromatizados de frutos como limão, açaí, framboesa, mirtilo e guaraná resolveu este problema. O chá matcha foi também aromatizado com sucesso utilizando um extrato de subproduto de erva príncipe (Cymbopogon citratus), preparado no laboratório. A adição de hidrodestilado inibiu o crescimento de bactérias viáveis totais, bolores e leveduras. Apesar de os resultados não poderem ser conclusivos devido à falta de réplicas, a combinação da pasteurização com a utilização do hidrodestilado de erva príncipe, manteve-se microbiologicamente estável durante 79 dias. O desenvolvimento do chá matcha e da água tónica vão ao encontro das tendências atuais de procura de produtos naturais, biológicos, pouco processados, seguros, com qualidade e oferecendo uma alternativa ao consumo de refrigerantes, proporcionando uma fonte de compostos com ação benéfica na saúde.",
    "keywords": [
-    "product development",
-    "soft drinks",
     "tonic water",
-    "matcha",
-    "beverage industry"
+    "Camellia sinensis",
+    "anthocyanin extract",
+    "red wine",
+    "non-alcoholic beverages",
+    "color stability",
+    "antioxidant activity",
+    "tea polyphenols",
+    "tea catechins",
+    "sensory evaluation",
+    "product innovation"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -27522,7 +27867,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://dergipark.org.tr/en/download/article-file/998404",
-   "citedBy": 4,
+   "citedBy": 6,
    "sources": [
     "openalex"
    ],
@@ -27578,7 +27923,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.ncbi.nlm.nih.gov/pmc/articles/7406592",
-   "citedBy": 41,
+   "citedBy": 50,
    "sources": [
     "pubmed",
     "openalex",
@@ -27630,7 +27975,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 46,
+   "citedBy": 48,
    "sources": [
     "openalex",
     "europepmc"
@@ -27700,7 +28045,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/12/12/3639/pdf?version=1606799387",
-   "citedBy": 46,
+   "citedBy": 58,
    "sources": [
     "pubmed",
     "openalex",
@@ -27762,7 +28107,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 30,
+   "citedBy": 31,
    "sources": [
     "pubmed",
     "openalex",
@@ -27861,7 +28206,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://publikace.k.utb.cz/bitstream/10563/1009769/3/Postprint_1009769.pdf",
-   "citedBy": 22,
+   "citedBy": 25,
    "sources": [
     "openalex",
     "europepmc"
@@ -27933,7 +28278,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.sciencedirect.com/science/article/pii/S2213231720309368/pdf",
-   "citedBy": 48,
+   "citedBy": 49,
    "sources": [
     "pubmed",
     "openalex",
@@ -27997,7 +28342,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/26/1/85/pdf?version=1609062695",
-   "citedBy": 326,
+   "citedBy": 370,
    "sources": [
     "pubmed",
     "openalex",
@@ -28051,7 +28396,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2076-0817/9/9/763/pdf?version=1600749582",
-   "citedBy": 9,
+   "citedBy": 10,
    "sources": [
     "pubmed",
     "openalex",
@@ -28156,7 +28501,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 30,
+   "citedBy": 34,
    "sources": [
     "pubmed",
     "openalex",
@@ -28225,7 +28570,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://downloads.hindawi.com/journals/omcl/2020/8882763.pdf",
-   "citedBy": 28,
+   "citedBy": 36,
    "sources": [
     "pubmed",
     "openalex",
@@ -28242,7 +28587,7 @@
    ],
    "journal": "",
    "year": 2020,
-   "doi": "10.1021/scimeetings.0c01232",
+   "doi": "10.1021/scimeetings.0c01233",
    "pmid": null,
    "pmcid": null,
    "language": "en",
@@ -28326,7 +28671,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 80,
+   "citedBy": 88,
    "sources": [
     "pubmed",
     "openalex",
@@ -28475,7 +28820,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.14710/halal.v3i2.10276",
-   "citedBy": 0,
+   "citedBy": 2,
    "sources": [
     "openalex"
    ],
@@ -28569,7 +28914,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://tsukuba.repo.nii.ac.jp/records/2001807",
-   "citedBy": 12,
+   "citedBy": 13,
    "sources": [
     "openalex",
     "europepmc"
@@ -28711,7 +29056,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 11,
+   "citedBy": 12,
    "sources": [
     "pubmed",
     "openalex",
@@ -28772,7 +29117,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 7,
+   "citedBy": 8,
    "sources": [
     "pubmed",
     "openalex",
@@ -28871,80 +29216,6 @@
    "kind": "article"
   },
   {
-   "id": 521,
-   "title": "20. The Fate of American Artists, 1955",
-   "authors": [],
-   "journal": "University of California Press eBooks",
-   "year": 2019,
-   "doi": "10.1515/9780520970922-026",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Sensory / consumer",
-   "relevance": "mention",
-   "mentions": 1,
-   "topics": [
-    "Market, culture and sustainability",
-    "Processing, milling and quality"
-   ],
-   "matchaIn": "abstract",
-   "abstract": "The Fate of American Artists Last spring, in March, a reporter from Time magazine responsible for its art column came to visit me at my personal exhibition (at the Contemporaries Gallery on Madison Avenue in New York) for an interview.At the end of the long chat, I confessed that in short, I am a man who has been agonizing between the Orient and the Occident for twenty years.One week later, I was embarrassed to see these words appear verbatim in the finished article and distributed all over America and the world.On reflection, though, this history of agony between the Orient and the Occident seemed to begin to stretch far longer than twenty years, now that I am forty-eight.One Sunday, then a pimply-faced boy, I grabbed my oil paint to go sketching in Nara Park.The next Sunday, I went out without carrying anything to sit in front of the principal Buddha image of the Yakushi-ji temple.I visited it so many times that the guard, a middle-aged man, started recognizing this peculiar middle school pupil.It was about the same time, I think, that my painting master Koide Narashige teased me, a precocious brat in a high schoolissued cap with a white line.Upon seeing my oil painting copy of a Hiroshige woodcut, he suggested the somewhat grandiose sobriquet Ichiritsusai Saburo for me to assume.Around Showa 5 or 6, the late Saburi Makoto, who looked after me in Paris, remarked that I was walking around with \"Japan\" written all over my face, which caught me completely unawares. 1After my return, I spent three years from Showa 7 to 9 copying Sesshu's \"Huike Offering His Arm to Bodhidharma\" in oil paint and in whole spectrum of colors.Even today I look back on this episode as a bit over-the-top.It was around the time when I sent my \"Trajectory of a Butterfly\" to the first Jiyu Bijutsu 2 exhibition in Showa 12 that I emulated the matcha 3 making procedure, with my shaving brash as the chasen. 4 This evolved (?) into the assiduous lesson-taking from a head tea master in Kyoto (the Kankyu-an Mushanokoji Sen-ke school) after I moved back to the Kansai region.Feeling that my tea lessons might be incomplete without a study of Zen Buddhism, I would go sitting in mediation at a temple called Hannya-rin in Hyogo.I got yelled at a lot by the monks.",
-   "keywords": [
-    "American artists",
-    "Zen Buddhism",
-    "tea ceremony",
-    "Sesshu",
-    "Kinki region",
-    "Nara Park"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://www.degruyter.com/document/doi/10.1515/9780520970922-026/pdf",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "book"
-  },
-  {
-   "id": 522,
-   "title": "Analysis of Key Low-Boiling-Point Odorants in Matcha by Solid-Phase Microextracton",
-   "authors": [
-    "Yuzo Mizukami"
-   ],
-   "journal": "Institutional Repositories DataBase (IRDB)",
-   "year": 2019,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "ja",
-   "design": "Not classified (no abstract)",
-   "relevance": "subject",
-   "mentions": 2,
-   "topics": [
-    "Aroma, flavor and sensory"
-   ],
-   "matchaIn": "title",
-   "abstract": "",
-   "keywords": [
-    "matcha",
-    "volatile compounds",
-    "aroma compounds",
-    "solid-phase microextraction",
-    "tea aroma"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://repository.naro.go.jp/records/5640",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 523,
    "title": "Anxiolytic activities of Matcha tea powder, extracts, and fractions in mice: Contribution of dopamine D1 receptor- and serotonin 5-HT1A receptor-mediated mechanisms",
    "authors": [
@@ -28987,7 +29258,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doaj.org/article/984ec60a50bc45caa84623f0c4c83bec",
-   "citedBy": 27,
+   "citedBy": 28,
    "sources": [
     "openalex"
    ],
@@ -29055,7 +29326,7 @@
     "Flavia Noeli de Souza Infante",
     "Juliana Bürger Rodrigues"
    ],
-   "journal": "RBONE - Revista Brasileira de Obesidade, NutriÃ§Ã£o e Emagrecimento",
+   "journal": "Americanae (AECID Library)",
    "year": 2019,
    "doi": null,
    "pmid": null,
@@ -29071,7 +29342,7 @@
     "Skin, oral and dental"
    ],
    "matchaIn": "title",
-   "abstract": "O estado obeso, caracterizado pelo excesso de acAomulo de gordura corporal, possui uma elevada incidAancia na populaA§A£o tornando-se problema de saAode pAoblica. Diante disso, surge a necessidade de adotar estratA©gias para auxiliar no seu combate e das doenA§as crA´nicas nA£o transmissA­veis (DCNT) a ele associadas. Uma alternativa sA£o os alimentos que possuem compostos bioativos como, por exemplo, o chAi verde que pode auxiliar na oxidaA§A£o de gordura, devido a concentraA§A£o de catequinas. AlA©m do chAi verde - consumido apenas a infusA£o das folhas - outro tipo de chAi tambA©m originAirio da Camellia sinensis ganha atenA§A£o na oxidaA§A£o de lipA­deos: o matcha, feito da maceraA§A£o completa das folhas. Pesquisas mostraram que ele pode ter 137 vezes mais polifenA³is, do tipo epigalocatequina-3-galato (EGCG), em relaA§A£o ao chAi verde tradicional. O objetivo desse trabalho A© comparar a eficAicia do matcha e chAi verde como agentes lipolA­ticos, administrados diariamente em nA£o praticantes de atividade fA­sica, sem dieta restrita, por 40 dias. Foram analisados dois grupos â€“ chAi verde (GCV) e matcha (GM), com dez pessoas cada. Foram realizadas anAilises bioquA­micas e antropomA©tricas dos participantes. Dentre os resultados, destaca-se a reduA§A£o dos nA­veis sA©ricos de glicose nos dois grupos, ambos com nA­vel de significA¢ncia **p < 0,01 para o teste t de student. Acredita-se que a EGCG iniba a atividade do transportador de glicose intestinal, levando a reduA§A£o da captaA§A£o de glicose no intestino. Logo, o chAi verde e o matcha podem ser utilizados para diminuiA§A£o de glicemia e outras complicaA§Aµes da obesidade. Em ambos os grupos, houve tambA©m diminuiA§A£o de peso corporal, alA©m de gordura livre, mas sem relevA¢ncia estatA­stica.",
+   "abstract": "O estado obeso, caracterizado pelo excesso de acúmulo de gordura corporal, possui uma elevada incidência na população tornando-se problema de saúde pública. Diante disso, surge a necessidade de adotar estratégias para auxiliar no seu combate e das doenças crônicas não transmissíveis (DCNT) a ele associadas. Uma alternativa são os alimentos que possuem compostos bioativos como, por exemplo, o chá verde que pode auxiliar na oxidação de gordura, devido a concentração de catequinas. Além do chá verde - consumido apenas a infusão das folhas - outro tipo de chá também originário da Camellia sinensis ganha atenção na oxidação de lipídeos: o matcha, feito da maceração completa das folhas. Pesquisas mostraram que ele pode ter 137 vezes mais polifenóis, do tipo epigalocatequina-3-galato (EGCG), em relação ao chá verde tradicional. O objetivo desse trabalho é comparar a eficácia do matcha e chá verde como agentes lipolíticos, administrados diariamente em não praticantes de atividade física, sem dieta restrita, por 40 dias. Foram analisados dois grupos – chá verde (GCV) e matcha (GM), com dez pessoas cada. Foram realizadas análises bioquímicas e antropométricas dos participantes. Dentre os resultados, destaca-se a redução dos níveis séricos de glicose nos dois grupos, ambos com nível de significância **p < 0,01 para o teste t de student. Acredita-se que a EGCG iniba a atividade do transportador de glicose intestinal, levando a redução da captação de glicose no intestino. Logo, o chá verde e o matcha podem ser utilizados para diminuição de glicemia e outras complicações da obesidade. Em ambos os grupos, houve também diminuição de peso corporal, além de gordura livre, mas sem relevância estatística.",
    "keywords": [
     "green tea",
     "matcha",
@@ -29079,17 +29350,17 @@
     "lipolysis",
     "catechins",
     "epigallocatechin gallate",
-    "blood glucose",
-    "glycemic control",
     "lipid oxidation",
+    "blood glucose",
+    "weight loss",
+    "free fat",
     "anthropometric profile",
-    "biochemical parameters",
-    "non-communicable diseases"
+    "bioactive compounds"
    ],
    "mesh": [],
    "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
+   "isOa": true,
+   "oaUrl": "http://www.rbone.com.br/index.php/rbone/article/view/1062",
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -29242,7 +29513,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 102,
+   "citedBy": 104,
    "sources": [
     "openalex",
     "europepmc"
@@ -29331,7 +29602,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://journals.scicell.org/index.php/NBC/article/download/518/422",
-   "citedBy": 6,
+   "citedBy": 7,
    "sources": [
     "openalex"
    ],
@@ -29486,7 +29757,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "http://www.spandidos-publications.com/10.3892/or.2018.6789/download",
-   "citedBy": 76,
+   "citedBy": 81,
    "sources": [
     "pubmed",
     "openalex",
@@ -29650,7 +29921,7 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 114,
+   "citedBy": 117,
    "sources": [
     "pubmed",
     "openalex",
@@ -29698,7 +29969,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://gradfoodstudies.pubpub.org/pub/5-1-food-from-nowhere/download/pdf",
-   "citedBy": 3,
+   "citedBy": 4,
    "sources": [
     "openalex"
    ],
@@ -29992,57 +30263,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.vestnik-vsuet.ru/vguit/article/download/2032/2814",
-   "citedBy": 7,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 543,
-   "title": "Matcha緑茶を含むクッキーのストレス低減効果:テアニン,アルギニン,カフェイン及びepigallocatechinカテキンガラート間の必須比率【JST・京大機械翻訳】",
-   "authors": [
-    "Keiko Unno",
-    "Furushima Daisuke",
-    "Shingo Hamamoto",
-    "Kazuaki Iguchi",
-    "Yamada Hiroshi",
-    "Morita Akio",
-    "Monira Pervin",
-    "Yoriyuki Nakamura"
-   ],
-   "journal": "Heliyon",
-   "year": 2019,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "ja",
-   "design": "Not classified (no abstract)",
-   "relevance": "subject",
-   "mentions": 2,
-   "topics": [
-    "Cognition, mood and stress",
-    "Antioxidants and polyphenols",
-    "L-theanine and caffeine",
-    "Food products and applications"
-   ],
-   "matchaIn": "title",
-   "abstract": "",
-   "keywords": [
-    "matcha",
-    "green tea",
-    "cookies",
-    "stress reduction",
-    "tea polyphenols",
-    "caffeine",
-    "L-arginine",
-    "theanine"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://jglobal.jst.go.jp/detail?JGLOBAL_ID=201902233387859401",
-   "citedBy": 0,
+   "citedBy": 8,
    "sources": [
     "openalex"
    ],
@@ -30425,7 +30646,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://academic.oup.com/jaoac/article-pdf/102/5/1365/36326494/jaoac1365.pdf",
-   "citedBy": 45,
+   "citedBy": 46,
    "sources": [
     "pubmed",
     "openalex",
@@ -30483,7 +30704,7 @@
    ],
    "isOa": true,
    "oaUrl": "http://www.cell.com/article/S2405844019303482/pdf",
-   "citedBy": 40,
+   "citedBy": 48,
    "sources": [
     "pubmed",
     "openalex",
@@ -30537,7 +30758,7 @@
    ],
    "journal": "Routledge eBooks",
    "year": 2019,
-   "doi": "10.4324/9780429470905-6",
+   "doi": "10.4324/9780429470905-4",
    "pmid": null,
    "pmcid": null,
    "language": "en",
@@ -30565,7 +30786,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.4324/9780429470905-6",
-   "citedBy": 7,
+   "citedBy": 9,
    "sources": [
     "openalex"
    ],
@@ -30587,7 +30808,9 @@
    "relevance": "studied",
    "mentions": 2,
    "topics": [
-    "Antioxidants and polyphenols"
+    "Cognition, mood and stress",
+    "Antioxidants and polyphenols",
+    "Aroma, flavor and sensory"
    ],
    "matchaIn": "abstract",
    "abstract": "Atualmente, os antioxidantes são tidos como compostos extremamente importantes e bioativos devido aos seus muitos benefícios comprovados para a saúde. Geralmente encontrados em vegetais e frutas, os polifenóis são um grupo complexo de moléculas às quais a ciência atribui propriedades antioxidantes. O desejo da descoberta da verdadeira capacidade antioxidante de vários produtos comestíveis tem crescido com o aumento da incidência de problemas de saúde complexos relacionados com a poluição e acumulação patológica de radicais livres. Neste trabalho experimental, a capacidade antioxidante de diferentes vinhos e chás, cinco e seis variedades respetivamente, é avaliada pelo método da quimioluminescência TRAP (Parâmetro antioxidante de captura total de radicais). A decomposição do ABAP [2,2’Azobis(2-methylpropionamidine)] produz radicais livres que interagem com o luminol, levando à quimioluminescência por este induzida. A luminescência formada é então extinta pela adição de amostras de antioxidantes ao meio reacional que suprimem o fenómeno de emissão de luz por um certo período (τlag). O Trolox, um análogo do tocoferol solúvel em água, é o inibidor de referência comumente empregue em ensaios de determinação antioxidante sendo portanto empregue como padrão. Os tempos de indução obtidos foram avaliados considerando a sua proporcionalidade em relação à concentração antioxidante e ao poder de neutralização radicalar dos compostos antioxidantes presentes, resultando na determinação da capacidade antioxidante total das amostras. As atividades antioxidantes das amostras foram expressas em equivalentes de Trolox micromolares. O vinho mostrou uma atividade antioxidante significativamente mais alta quando comparado ao chá de aproximadamente 82,2%. O melhor resultado entre os chás, pertencente ao sencha, está ainda aproximadamente 25% abaixo da menor atividade antioxidante obtida para o vinho. Foram discutidas como as variedades das uvas, tempo e processos de maturação podem afetar a capacidade antioxidante dos vinhos, bem como aspetos relativos ao tratamento das safras de chá, exposição a reações de fermentação e métodos de extração. A capacidade antioxidante total avaliada pela metodologia TRAP diminuiu na ordem: Syrah>Sangiovese>Cabernet Sauvignon>Cabernet Sauvignon + Merlot>Cascinello>sencha> bancha>verde>matcha> preto>rooibos. Foi também verificado o efeito do armazenamento do chá na perda de atividade antioxidante, na qual o matcha demonstrou ser o menos afetado entre as amostras.",
@@ -30595,8 +30818,15 @@
     "total antioxidant capacity",
     "wine",
     "tea",
-    "antioxidant activity",
-    "polyphenols"
+    "polyphenols",
+    "free radical scavenging",
+    "chemiluminescence",
+    "ABAP",
+    "Trolox equivalent antioxidant capacity",
+    "grape varieties",
+    "tea processing",
+    "fermentation",
+    "free radicals"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -30692,7 +30922,7 @@
   },
   {
    "id": 555,
-   "title": "หวโขน ในบทบาทการแสดงนาฏมวยไทย กรณศกษา: การแสดงนาฏมวยไทย ตอน วานรยทธฉดมจฉา",
+   "title": "หัวโขน ในบทบาทการแสดงนาฏมวยไทย กรณีศึกษา: การแสดงนาฏมวยไทย ตอน วานรยุทธ์ฉุดมัจฉา",
    "authors": [
     "Treethawat Meesomsak"
    ],
@@ -30752,14 +30982,15 @@
    "relevance": "studied",
    "mentions": 2,
    "topics": [
-    "Market, culture and sustainability",
-    "Processing, milling and quality"
+    "Processing, milling and quality",
+    "Market, culture and sustainability"
    ],
    "matchaIn": "abstract",
    "abstract": "In addition to the matcha tea ceremony, the sencha tea ceremony is another popular Japanese tea ceremony. In the matcha tea ceremony, tea leaves milled into powder are dissolved in hot water before drinking. In contrast, the sencha tea ceremony uses leaf tea instead of powdered tea. The sencha tea ceremony was introduced to Japan, during Nagasaki's Toojin trade with China in the Edo period. The ceremony was established by absorbing the fashionable tea culture of China during the Ming and Qing dynasties. There were about ten tea books written about sencha tea following the Edo period in Japan, which quoted several passages from Chinese tea books published during the Ming-Qing dynasties. The authors of these tea books agreed with some parts of the quotes, but refuted other parts according to their own experience or knowledge. These quotes provide several clues to the special characteristics of the Japanese sencha tea ceremony, which were studied by investigating the differences between the tea books of the Ming-Qing dynasties and Japanese sencha tea books.",
    "keywords": [
-    "Nagasaki",
-    "Japanese tea culture"
+    "Ming and Qing dynasties",
+    "Edo period",
+    "Nagasaki"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -30809,7 +31040,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "http://www.clausiuspress.com/conferences/AETP/ETMHS 2018/BCW368.pdf",
-   "citedBy": 1,
+   "citedBy": 0,
    "sources": [
     "openalex"
    ],
@@ -30852,7 +31083,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.24214/jcbps.b.8.3.57281",
-   "citedBy": 1,
+   "citedBy": 0,
    "sources": [
     "openalex"
    ],
@@ -30894,7 +31125,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.12944/crnfsj.6.1.04",
-   "citedBy": 51,
+   "citedBy": 58,
    "sources": [
     "openalex"
    ],
@@ -31088,7 +31319,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://www.jstage.jst.go.jp/article/jarq/52/2/52_143/_pdf",
-   "citedBy": 14,
+   "citedBy": 15,
    "sources": [
     "openalex"
    ],
@@ -31296,7 +31527,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2304-8158/7/2/17/pdf?version=1518599435",
-   "citedBy": 41,
+   "citedBy": 43,
    "sources": [
     "pubmed",
     "openalex",
@@ -31381,7 +31612,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 19,
+   "citedBy": 20,
    "sources": [
     "openalex"
    ],
@@ -31532,7 +31763,7 @@
    ],
    "isOa": true,
    "oaUrl": "http://europepmc.org/pmc/articles/PMC6128439",
-   "citedBy": 66,
+   "citedBy": 75,
    "sources": [
     "pubmed",
     "openalex",
@@ -31597,7 +31828,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://eprints.worc.ac.uk/6358/1/Willems%20et%20al%20Matcha%20submission%20accepted%20version.pdf",
-   "citedBy": 36,
+   "citedBy": 39,
    "sources": [
     "pubmed",
     "openalex",
@@ -31622,18 +31853,21 @@
    "mentions": 4,
    "topics": [
     "Metabolism and weight",
-    "Market, culture and sustainability",
     "Antioxidants and polyphenols",
-    "Cancer"
+    "Cancer",
+    "Processing, milling and quality"
    ],
    "matchaIn": "title",
    "abstract": "abstract: ABSTRACT \\n\\n \\n\\nMany natural interventions have been effective at lowering postprandial glucose concentrations (PPG) in research trials and, theoretically, should have favorable effects on the prevention and management of T2DM. Natural interventions include vinegar, nuts and exercise. Green tea has been demonstrated to also possessing antiglycemic effects. Thus, green tea, and its most abundant catechin EGCG, are being consumed for its potential health benefits in cancer prevention and in its inhibitory effects on α-amylase. Many studies have found EGCG to inhibit α-amylase an enzyme needed in the breakdown of carbohydrates (CHO). Other studies have looked at EGCG and its potential for lowering PPG concentrations due to its inhibitory effects on α-amylase in both mice and humans. Yet there is no research on Matcha tea specifically. Matcha tea is green tea in powder form; hence, it is consumed in its entirety unlike traditional teas which are steeped in bags. The purpose of this study was to determine whether Macha tea impacts PPG concentrations in healthy adults. Twelve subjects completed this randomized controlled, single blinded, crossover study. On three separate occasions the twelve subjects consumed a bagel and jam with either water, Lipton green tea, or Macha tea. Fasting blood glucose was taken upon their arrival. Once the tea or water and bagel with jam were consumed PPG concentrations were measured every 30 minutes until 120 minutes were reached. Results showed no statistically significant effects on PPG concentrations in either test groups (p=.960). However, this study did not measure EGCG levels in the tea provided. Therefore, further research should be done with known EGCG amounts to see its effects on PPG concentrations to fully rule out its potential.",
    "keywords": [
     "matcha tea",
     "postprandial blood glucose",
-    "acute effects",
-    "glycemic response",
-    "tea consumption"
+    "green tea",
+    "epigallocatechin gallate",
+    "α-amylase inhibition",
+    "type 2 diabetes prevention",
+    "dietary intervention",
+    "fasting blood glucose"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -31733,24 +31967,24 @@
    "id": 577,
    "title": "New green tea cultivar 'Seimei' for Sencha, Kabuse-cha, Matcha and powdered tea.",
    "authors": [
-    "Katsuyuki Yoshida",
-    "Atsushi Nesumi",
-    "Akifumi Ogino",
+    "克志 吉田",
+    "厚司 根角",
+    "暁子 荻野",
     "Fumiya Taniguchi",
-    "Tetsuji Saba",
-    "Hiroshi Yorozuya",
-    "Hideki Horie",
-    "J. Tanaka",
-    "Y. Takeda",
-    "Tamotsu Okamoto",
-    "Toshio Takyu",
-    "Hide Omae",
-    "Akiko Matsunaga",
+    "哲次 佐波",
+    "宏 萬屋",
+    "秀樹 堀江",
+    "淳一 田中",
+    "善行 武田",
+    "毅 岡本",
+    "利雄 武弓",
+    "英 大前",
+    "明子 松永",
     "均 吉冨"
    ],
-   "journal": "",
+   "journal": "Institutional Repositories DataBase (IRDB)",
    "year": 2018,
-   "doi": null,
+   "doi": "10.24514/00000267",
    "pmid": null,
    "pmcid": null,
    "language": "en",
@@ -31762,17 +31996,25 @@
     "Processing, milling and quality"
    ],
    "matchaIn": "title",
-   "abstract": "",
+   "abstract": "Seimei' is a new green tea (Camellia sinensis (L.) O. Kuntze) cultivar released in 2017 by the Institute of Fruit Tree and Tea Science, NARO (NIFTS), Japan.'Seimei' was selected from seedlings obtained from a cross between the tea cultivar 'Fushun' and 'Saemidori' in 1992.It was announced for application for variety registration as No. 31289 under the Plant Variety Protection and Seed Act of Japan on January 30, 2017.'Seimei' is semi-early budding, whose plucking period of the first crop was established to be four days earlier than that of 'Yabukita' at NIFTS, Makurazaki.The plant has an upright to semiupright shape, with a medium to strong growth.The yield of 'Seimei' has been found to be consistently higher than that of 'Yabukita' and 'Saemidori' at NIFTS, Makurazaki.The cold resistance of 'Seimei' is almost equal to that of 'Yabukita' and higher than that of 'Saemidori'.In addition, 'Seimei' has medium or higher disease resistance to anthracnose, gray blight, bacterial shoot blight, and blister blight.The green tea quality of this new cultivar was superior to those of 'Saemidori' and 'Yabukita' at all tea 農研機構報告 果樹茶部門 Bull.NARO, Fruit Tree and Tea Sci.2: 61 ～ 81, 2018 緒 言 茶はチャ(Camellia sinensis (L.) O. Kuntze)から生 産される飲料で，水に次いで，世界で二番目に消費量 が多い(FAO, 2017) ．国際連合農業食糧機関の調査で は，緑茶の生産量と輸出量は増加傾向にあり，2023 年 には 2013 年に比べ， ほぼ倍増すると予測されている (Chan, 2015) ．日本国内では，茶種の中で緑茶の生産量 (日本茶業中央会，2017a)および消費量(日本茶業中央 会，2017b)が最も多く，茶園面積の約 75％で緑茶用品 種'やぶきた'が栽培されている(農林水産省 a) ． 'や ぶきた'は民間育種家の杉山彦三郎により，20 世紀初 頭に在来種の実生茶園から選抜され，活着の良さ，多 収・高品質，地域適応性および茶種適応性の広さなど， 当時としては優れた栽培・加工特性を有していたため， 1970 年代に全国的に普及し，日本の茶業を支える基幹 品種となった(武田，2007b) ．しかし，1990 年代以降， 'やぶきた'単一栽培による病害虫の多発，摘採期の集",
    "keywords": [
+    "Camellia sinensis",
+    "Fushun",
+    "Yabukita",
+    "cold tolerance",
+    "disease resistance",
+    "anthracnose",
+    "gray blight",
+    "blister blight",
+    "tea yield",
+    "tea quality",
     "sencha",
-    "matcha",
-    "powdered tea",
-    "Camellia sinensis"
+    "matcha"
    ],
    "mesh": [],
    "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
+   "isOa": true,
+   "oaUrl": "https://repository.naro.go.jp/?action=repository_action_common_download&item_id=287&item_no=1&attribute_id=22&file_no=1",
    "citedBy": 1,
    "sources": [
     "openalex"
@@ -31953,7 +32195,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2305-6304/6/4/64/pdf?version=1540545862",
-   "citedBy": 18,
+   "citedBy": 19,
    "sources": [
     "pubmed",
     "openalex",
@@ -32004,53 +32246,6 @@
     "openalex"
    ],
    "kind": "thesis"
-  },
-  {
-   "id": 583,
-   "title": "Quare/Kuaer/Queer/(E)ntersectionality: An Invitational Rhetoric of Possibility",
-   "authors": [
-    "Amber Johnson"
-   ],
-   "journal": "CrossCurrents",
-   "year": 2018,
-   "doi": "10.1353/cro.2018.a783471",
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Review",
-   "relevance": "mention",
-   "mentions": 1,
-   "topics": [
-    "Cognition, mood and stress",
-    "Market, culture and sustainability",
-    "Antioxidants and polyphenols",
-    "Skin, oral and dental"
-   ],
-   "matchaIn": "abstract",
-   "abstract": "Quare/Kuaer/Queer/(E)ntersectionality: An Invitational Rhetoric of Possibility Amber Johnson I remember the first time someone called me queer. I smiled. Finally, someone recognized that my brain, mind, and desires were different, and accepted me because, not despite, those differences. My queerness may not have been written on my body explicitly back then, but some people saw it, despite my ability to pass… Invitational rhetoric calls for the inviting of the other into the world of the rhetor for the purpose of fostering dialogue, understanding, and possible shared meaning (Foss and Griffin ). Whether the rhetor invites others to share in ideas, perspectives, methodologies, epistemologies, or any category of difference, the goal is to not persuade or influence, but to understand each other. When discussing matters of sexuality and gender, entities as fluid as the water we drink, a space where difference manifests far beyond the essential categories available to avow or ascribe, it imperative that we foster a culture of understanding, engagement, and critical generosity (McCune ). Race, class, gender, and sexuality are complex, pervasive, variable, persistent, severe, and hierarchical systems of oppression (Weber , Yep ). Individuals located at the intersections must negotiate different histories, economic disparities, and sex/gender systems, and experience the violence of racism, sexism, classism, heteronormativity (Yep , 25), and homonormativity. Any type of normativity that privileges certain understandings of lived experiences over others creates an approach to difference that can be problematic, dismissive, and silencing. I want to reduce our reliance on the oppressor's language, troubling the way we talk about sexuality and difference within intercultural communication encounters. If matters of sex are involved, it is almost always intercultural. In this essay I invite you, the reader, to share in my story, my body, and my understanding of queer possibility. I invite you to enter a messy intersection of intr(a)disciplinary difference (performance, autoethnography, critical cultural analysis) where I expose the intersections of my body (black, center of masculine, sometimes feminine, queer, parent of a gender fluid child and a cisgender child) in attempt to problematize the way we talk about sexuality and emphasize the possibility of queering sexual discourse. I am queer. When I tell you about the way my mind perceives sexuality and gender as potential attractions (romantic and platonic), you may be slightly stunned. I am attracted to brain matter. I am attracted to rebellion. I am attracted to the open mind that can craft a radically imaginative, agentic, and inventive way to be sexed and gendered. I remember hearing “O.P.P.” by Naughty by Nature for the first time. I listen to the metaphors, figure out the acronyms: other people's Penises, other people's Pussies, other people's Property. It doesn't resonate. Penises can be tantalizing, beautiful in their erect glory. Pussy is sweet, inviting, open. But for me, the P that I want, that I crave, that I fantasize about most: perspicacity. I crave minds so open, and thoughts so generative that I can walk around, sit for hours, soak in the sex of learning, sharing, and thinking together of new ways to fuck gender. I am attracted to brains. Brain matters. The genitalia the brain sends signals to are merely fun extensions of my fantasy, and not necessarily a part of every fantasy, unless we are fucking the fuck parts into a different existence. Mindfucking to me is real. I fantasize about rubbing against E. Patrick Johnson's frontal lobe in a discussion of quare, or Robert Gutierrez’ occipital lobe during a critical performance of gender outside the confines of the binary. I imagine taking Omi Osun Joni Jones parietal lobe out to lunch, feeding her dark chocolate covered coffee beans sprinkled atop acai and blueberry sorbet with Matcha green Tea for desert because it just sounds gay. I give her brain food, she produces pleasure. I fantasize about massaging Brenda Allen's temporal lobe on a daily basis because Difference Matters, and that is hella queer. Intersectionality, What's So Queer about That? Queer theory's reliance on dominant cultural symbols, or what Adrienne Rich calls the oppressor's language, results in an omission of issues centering on other modes of oppression and...",
-   "keywords": [
-    "queer theory",
-    "intersectionality",
-    "invitational rhetoric",
-    "sexuality",
-    "gender",
-    "Black women",
-    "neurodivergence",
-    "gender fluidity",
-    "intercultural communication",
-    "autoethnography",
-    "queer pedagogy",
-    "normativity"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
   },
   {
    "id": 584,
@@ -32162,7 +32357,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/2072-6643/10/10/1468/pdf?version=1539162130",
-   "citedBy": 85,
+   "citedBy": 97,
    "sources": [
     "pubmed",
     "openalex",
@@ -32240,57 +32435,6 @@
    "kind": "thesis"
   },
   {
-   "id": 587,
-   "title": "動物実験におけるMatcha緑茶のストレス低減機能と臨床試験【JST・京大機械翻訳】",
-   "authors": [
-    "Keiko Unno",
-    "Furushima Daisuke",
-    "Shingo Hamamoto",
-    "Kazuaki Iguchi",
-    "Yamada Hiroshi",
-    "Morita Akio",
-    "Hideki Horie",
-    "Yoriyuki Nakamura"
-   ],
-   "journal": "Nutrients (Web)",
-   "year": 2018,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "ja",
-   "design": "Not classified (no abstract)",
-   "relevance": "subject",
-   "mentions": 2,
-   "topics": [
-    "Cognition, mood and stress",
-    "Antioxidants and polyphenols",
-    "Authenticity and analytical methods"
-   ],
-   "matchaIn": "title",
-   "abstract": "",
-   "keywords": [
-    "stress reduction",
-    "animal experimentation",
-    "clinical trials",
-    "green tea polyphenols",
-    "matcha",
-    "fungicides",
-    "fungicide residues",
-    "accelerated solvent extraction",
-    "ethyl acetate",
-    "liquid chromatography-tandem mass spectrometry"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
-   "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
    "id": 588,
    "title": "An intervention study on the effect of matcha tea, in drink and snack bar formats, on mood and cognitive performance.",
    "authors": [
@@ -32349,7 +32493,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://research.wur.nl/en/publications/an-intervention-study-on-the-effect-of-matcha-tea-in-drink-and-sn",
-   "citedBy": 66,
+   "citedBy": 71,
    "sources": [
     "pubmed",
     "openalex",
@@ -32439,7 +32583,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 63,
+   "citedBy": 62,
    "sources": [
     "pubmed",
     "openalex",
@@ -32583,7 +32727,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://research.wur.nl/en/publications/effect-of-green-tea-phytochemicals-on-mood-and-cognition",
-   "citedBy": 70,
+   "citedBy": 77,
    "sources": [
     "pubmed",
     "openalex",
@@ -33008,7 +33152,7 @@
    "id": 604,
    "title": "NutriNews Volume 28, May 2017",
    "authors": [
-    "University of North Florida Department of Nutrition and Dietetics"
+    "Dietetics"
    ],
    "journal": "University of North Florida Digital Commons (University of North Florida)",
    "year": 2017,
@@ -33133,7 +33277,7 @@
    "authors": [
     "Blanka Preslová"
    ],
-   "journal": "",
+   "journal": "Czech Technical University Digital Library (Czech Technical University in Prague)",
    "year": 2017,
    "doi": null,
    "pmid": null,
@@ -33147,7 +33291,7 @@
     "Market, culture and sustainability"
    ],
    "matchaIn": "title",
-   "abstract": "Tato diplomova prace se zabýva technicko–ekonomickou studii tzv. studii proveditelnosti, týkajici se založeni matcha pekarny na uzemi Ceske republiky. Prace se sklada ze dvou casti – teoreticke a prakticke. Cilem me prace je rozhodnout, zda je uvažovaný projekt zavedeni matcha pekarny životaschopný ci nikoliv. V teoreticke casti objasňuji zakladni pojmy v souvislosti s projektem, projektovým řizenim, detailně se věnuji popisu jednotlivých casti studie proveditelnosti a rozhodovani. Veskere tyto poznatky využiji pro praktickou cast, kde se v ramci studie proveditelnosti zpracovava analýza trhu, financni analýza a analýza rizik vse na obdobi 3 let. Výstupem studie proveditelnosti by mělo být rozhodnuti o ne/uskutecněni podnikatelskeho zaměru.",
+   "abstract": "Tato diplomová práce se zabývá technicko-ekonomickou studií tzv. studií proveditelností, týkající se založení matcha pekárny na území České republiky. Práce se skládá ze dvou částí - teoretické a praktické. Cílem mé práce je rozhodnout, zda je uvažovaný projekt zavedení matcha pekárny životaschopný či nikoliv. V teoretické části objasňuji základní pojmy v souvislosti s projektem, projektovým řízením, detailně se věnuji popisu jednotlivých částí studie proveditelnosti a rozhodování. Veškeré tyto poznatky využiji pro praktickou část, kde se v rámci studie proveditelnosti zpracovává analýza trhu, finanční analýza a analýza rizik vše na období 3 let. Výstupem studie proveditelnosti by mělo být rozhodnutí o ne/uskutečnění podnikatelského záměru.",
    "keywords": [
     "bakery",
     "bakery business plan",
@@ -33156,13 +33300,13 @@
     "market analysis",
     "financial analysis",
     "risk analysis",
-    "business viability",
-    "entrepreneurship"
+    "entrepreneurship",
+    "Czech Republic"
    ],
    "mesh": [],
    "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
+   "isOa": true,
+   "oaUrl": "http://hdl.handle.net/10467/69950",
    "citedBy": 0,
    "sources": [
     "openalex"
@@ -33288,7 +33432,7 @@
    "pubTypes": [],
    "isOa": true,
    "oaUrl": "https://doi.org/10.1167/17.3.1",
-   "citedBy": 109,
+   "citedBy": 108,
    "sources": [
     "pubmed",
     "openalex",
@@ -33379,9 +33523,9 @@
     "mineral content",
     "overrun",
     "viscosity",
+    "titratable acidity",
     "color",
-    "citric acid",
-    "lactic acid"
+    "acceptability"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -33490,7 +33634,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 22,
+   "citedBy": 25,
    "sources": [
     "openalex"
    ],
@@ -33567,7 +33711,7 @@
    "abstract": "Kakao adalah salah satu komoditas yang cukup banyak dijumpai di \\nIndonesia. Hampir seluruh kalangan menyukai hasil produk olahan dari kakao \\nseperti cokelat batang karena rasanya yang nikmat. Namun perannya dalam \\nmemenuhi kebutuhan gizi bagi konsumen belum sepenuhnya terpenuhi karena \\nbelum banyaknya produsen yang peduli dan masyarakat yang tau akan manfaat \\nmengkonsumsi cokelat. Untuk itu dengan penelitian ini akan diidentifikasi lebih \\njauh mengenai senyawa aktif yang terkandung dalam dark chocolate yang \\ndidiversifikasi dengan penambahan bahan baku yang mengandung banyak nilai \\nmanfaat seperti senyawa aktif catechin dari green tea matcha sebagai polifenol \\ndan genistein dari soy powder sebagai antioksidan. Dengan penelitian ini \\ndiharapkan menjadi benefit yang baik bagi Indonesia dalam pemanfaatan hasil \\nperkebunan kakao. Data analisis yang dilakukan menggunakan RAK \\n(Ranncangan Acak Kelompok), dimana faktor yang digunakan adalah \\nperbandingan antara soy powder dengansusu bubuk 100% : 0%, 50% : 50% dan \\n0% : 100% serta konsentrasi green tea matcha 6%, 8% dan 10%. Respon pada \\npenelitian ini adalah organoleptik yakni uji ranking dengan atribut tekstur, rasa, \\naroma dan after taste lalu dilanjutkan mengidentifikasi senyawa aktif alkaloid, \\ncatechin dan genistein dalam produk dark chocolate. \\nHasil dari penelitian tahap 1 adalah mendapatkan sampel terpilih dari uji \\norganoleptik ranking dimana pada atribut tekstur sampel terpilihnya adalah 165 \\n(perbandingan soy powder dan susu bubuk 100%: 0%, konsentrasi green tea 6%), \\natribut rasa sampel terbaiknya adalah 683 (perbandingan soy powder dan susu \\nbubuk 50% : 50%), atribut aroma sampel terbaiknya adalah 372 (perbandingan \\nsoy powder dan susu bubuk 100% : 0%, konsentrasi green tea 10%) dan atribut \\nafter taste sampel terbaiknya adalah 372 (perbandingan soy powder dan susu \\nbubuk 100% : 0%, konsentrasi green tea 10%). Selanjutnya penelelitian tahap 2 \\nyakni identifikasi senyawa aktif untuk kadar total alkaloid sampel dengan kadar \\ntotal alkaloid tertinggi adalah sampel 683 sebanyak 1,71%. Kadar total flavonoid \\nsampel dengan kadar total flavonoid tertinggi adalah sampel 683 sebanyak 1,19%, \\nhasil identifikasi menggunakan instrumen HPLC (High Performance Liquid \\nChromatography) didapat sampel terbaik untuk identifikasi catechin adalah \\nsampel 683 dengan kadar catechin 0,81% dan untuk identifikasi genistein adalah \\nsampel 372 dengan kadar genistein 0,20%. \\n \\n \\nKata Kunci : Alkaloid, Catechin, Dark chololate, Flavonoid, Genistein",
    "keywords": [
     "dark chocolate",
-    "cocoa powder",
+    "Theobroma cacao",
     "alkaloids",
     "catechins",
     "genistein",
@@ -33577,7 +33721,7 @@
     "chocolate texture",
     "chocolate aroma",
     "aftertaste",
-    "functional chocolate"
+    "soy milk"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -33786,7 +33930,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://downloads.hindawi.com/journals/scientifica/2016/2183623.pdf",
-   "citedBy": 17,
+   "citedBy": 19,
    "sources": [
     "pubmed",
     "openalex",
@@ -33821,7 +33965,10 @@
     "matcha",
     "Zen Buddhism",
     "tea utensils",
-    "tea ceremony history"
+    "tea ceremony history",
+    "tea ceremony etiquette",
+    "Japanese calligraphy",
+    "ikebana"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -34021,7 +34168,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 37,
+   "citedBy": 41,
    "sources": [
     "pubmed",
     "openalex",
@@ -34138,7 +34285,7 @@
    ],
    "isOa": true,
    "oaUrl": "https://www.mdpi.com/1420-3049/21/4/474/pdf?version=1460373631",
-   "citedBy": 47,
+   "citedBy": 49,
    "sources": [
     "pubmed",
     "openalex",
@@ -34691,18 +34838,27 @@
    "pmcid": null,
    "language": "es",
    "design": "Chemical / analytical",
-   "relevance": "mention",
-   "mentions": 1,
+   "relevance": "subject",
+   "mentions": 2,
    "topics": [
     "Antioxidants and polyphenols",
     "Authenticity and analytical methods"
    ],
-   "matchaIn": "abstract",
+   "matchaIn": "keywords",
    "abstract": "El té es la segunda bebida más consumida en el mundo después del agua. Multitud de estudios se están llevando a cabo sobre sus efectos beneficiosos en la salud humana y muchos de ellos son atribuidos a las catequinas, los polifenoles más abundantes que contiene el té. Todos los diferentes tipos de tés se obtienen de la infusión de la hoja de la misma planta Camelia sinensis, pero el contenido en polifenoles de las infusiones es variable. En nuestro estudio hemos querido analizar el contenido de dichas catequinas en diferentes tés de Asia y África. Así mismo hemos desarrollado y validado un nuevo método analítico basado en tricloruro de hierro que permite analizar de forma precisa y barata el contenido en polifenoles de las infusiones de té. Mediante los métodos espectrofotométricos de Folin-Ciocalteau, radical DPPH y CUPRAC analizamos respectivamente el contenido en polifenoles, la capacidad antirradicalaria y la capacidad antioxidante de 40 tés distintos de Asia y Äfrica. Los extractos se hicieron con 1g de té en 50 ml de agua caliente siguiendo las indicaciones de temperatura y tiempo dadas por el fabricante de cada té. El nuevo método de tricloruro de hierro se puso a punto analizando las condiciones óptimas de pH, concentración y longitud de onda y se procedió a su validación como método para el análisis de los polifenoles del té. Una vez validado se utilizó para analizar el contenido en polifenoles de los 40 tés estudiados. Se analizó la correlación entre los mencionados métodos y los resultados se compararon con los obtenidos en el análisis por HPLC de algunos de estos tés. Obteniéndose una alta correlación entre todos ellos. Los resultados obtenidos indican una alta correlación entre todos los métodos utilizados y ponen de manifiesto las grandes diferencias que existen entre los diferentes tipos de tés en cuanto al contenido en polifenoles. Los tés que presentan mayor contenido en polifenoles son los tés verdes japoneses de la variedad Matcha, Sencha y Gyokuro. Los tés negros, oolong y puerh tienen valores sustancialmente más bajos. Nuestros resultados indican que los valores obtenidos dependen de la transformación de las diferentes muestras de té y de las distintas partes del té, polvo, tallos y hojas; utilizadas en las muestras estudiadas. El método del Tricloruro de hierro es económico, muy reproducible y fiable.",
    "keywords": [
-    "antioxidant activity",
     "tea",
-    "tea polyphenols"
+    "Camellia sinensis",
+    "catechins",
+    "polyphenols",
+    "antioxidant capacity",
+    "free radical scavenging",
+    "polyphenol quantification",
+    "green tea",
+    "black tea",
+    "oolong tea",
+    "matcha",
+    "sencha"
    ],
    "mesh": [],
    "pubTypes": [],
@@ -35639,55 +35795,11 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 38,
+   "citedBy": 39,
    "sources": [
     "pubmed",
     "openalex",
     "europepmc"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 661,
-   "title": "粉砕方法および粒度の異なる抹茶の流動性",
-   "authors": [
-    "Shin‐ichi Sawamura",
-    "Yasuhiro Haraguchi",
-    "Yasuda, Masatoshi",
-    "Shuji Matsusaka"
-   ],
-   "journal": "Institutional Repositories DataBase (IRDB)",
-   "year": 2009,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "ja",
-   "design": "Food science / processing",
-   "relevance": "subject",
-   "mentions": 6,
-   "topics": [
-    "Processing, milling and quality",
-    "Authenticity and analytical methods"
-   ],
-   "matchaIn": "keywords",
-   "abstract": "Matcha, powdered green tea, is difficult to handle in the factory or manufacturing facilities due to its small particle size and low density. In the present study, the powder flowability properties of various matcha samples were investigated using a dynamic powder flow tester with high detection sensitivity to facilitate machine handling during matcha manufacturing. The sample powders were prepared from tea leaves picked during different seasons (i.e. the first, second, third, and fourth crops) using a stone mill or ball mill. Matcha ground with the electrostatically charged stone mill showed poor flowability, whereas that ground with the ball mill showed fairly good flowability. The fine and coarse powders classified after ball-milling had different characteristics. Furthermore, it was found that the electrostatic discharge of matcha can improve flowability, depending on humidity.",
-   "keywords": [
-    "matcha",
-    "powder flowability",
-    "particle size",
-    "stone mill",
-    "ball mill",
-    "electrostatic discharge",
-    "humidity",
-    "green tea powder"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://repository.kulib.kyoto-u.ac.jp/bitstreams/5946e349-4cd3-4e63-a703-534eb0dd1651/download",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
    ],
    "kind": "article"
   },
@@ -35766,7 +35878,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 87,
+   "citedBy": 91,
    "sources": [
     "openalex"
    ],
@@ -35855,7 +35967,7 @@
    "pubTypes": [],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 5,
+   "citedBy": 4,
    "sources": [
     "openalex"
    ],
@@ -35942,49 +36054,6 @@
    "isOa": false,
    "oaUrl": null,
    "citedBy": 0,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 668,
-   "title": "Production and characterization of fine matcha [powdered tea leaf] for processed food",
-   "authors": [
-    "Yasuhiro Haraguchi",
-    "Yukio Imada",
-    "Shin‐ichi Sawamura"
-   ],
-   "journal": "",
-   "year": 2003,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Food science / processing",
-   "relevance": "subject",
-   "mentions": 16,
-   "topics": [
-    "Processing, milling and quality",
-    "Food products and applications"
-   ],
-   "matchaIn": "title",
-   "abstract": "The production of Matcha for processed food is increasing in recent years. However, Matcha has many problems for use in processed food, such as bad suspension, color deterioration, and high costs. We developed fine Matcha to overcome these problems, and investigated its properties. Fine Matcha was produced by two methods : classification of normal Matcha, and crushing by jet-mill. The particle size of normal Matcha ranges widely from 1 micro m to 100 micro m, but that of fine Matcha has a narrow range of from 1 micro m to 20 micro m. The particle diameter of fine Matcha is 3.2 micro m, and that of normal Matcha is ll.5 micro m. Fine Matcha suspended in water has a smaller sedimentation rate than normal Matcha. In addition, fine Matcha used in buckwheat noodles (soba noodles) improved the colorimetry of the noodles in comparison with normal ones. Finally, fine Matcha added to dough was found to cause the bread to rise better than normal. Thus, fine Matcha is useful for processed food in producing less sedimentation, improving the colorimetry, and augmenting the rising of bread dough.",
-   "keywords": [
-    "matcha",
-    "fine particle size",
-    "jet milling",
-    "particle size classification",
-    "sedimentation",
-    "colorimetry",
-    "buckwheat noodles",
-    "bread dough"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
-   "citedBy": 1,
    "sources": [
     "openalex"
    ],
@@ -36079,55 +36148,6 @@
    "isOa": true,
    "oaUrl": "https://www.jstage.jst.go.jp/article/cha1953/2002/93/2002_93_1/_pdf",
    "citedBy": 2,
-   "sources": [
-    "openalex"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 670,
-   "title": "Effects of storage conditions on quality of matcha [powdered tea]",
-   "authors": [
-    "Yasuhiro Haraguchi",
-    "Hitoshi Sano",
-    "Kenichi NAKAZATO",
-    "Kazuo TOMARU",
-    "Masako YORISHITA",
-    "Masaaki Arakawa",
-    "Shin‐ichi Sawamura"
-   ],
-   "journal": "",
-   "year": 2002,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Food science / processing",
-   "relevance": "subject",
-   "mentions": 5,
-   "topics": [
-    "Processing, milling and quality",
-    "Aroma, flavor and sensory"
-   ],
-   "matchaIn": "title",
-   "abstract": "The effects of different storage conditions (temperature and period) on quality of Matcha have been studied by measuring the contents of chlorophyll and its derivatives, total vitamin C, the surface color value and the amount of oxygen in tea bag. Sensory test was used at the same time. As a result, it was found that the preservation of Matcha under low temperature (-70 and 4degC) kept its quality in good conditions during 24 weeks. Furthermore, the preservation at room temperature (25degC) kept the quality in the moderate conditions during 24 weeks. However, at the higher temperature of 37degC, the quality of Matcha resulted in fairly bad in 3 or 4 weeks. The cause of the changes in quality should be related to the decrease of the amount of oxygen in tea bag at the higher storage temperatures.",
-   "keywords": [
-    "matcha",
-    "powdered tea",
-    "storage conditions",
-    "storage temperature",
-    "storage time",
-    "chlorophyll degradation",
-    "vitamin C",
-    "surface color",
-    "oxygen concentration",
-    "sensory quality"
-   ],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": false,
-   "oaUrl": null,
-   "citedBy": 0,
    "sources": [
     "openalex"
    ],
@@ -36650,44 +36670,11 @@
    ],
    "isOa": false,
    "oaUrl": null,
-   "citedBy": 64,
+   "citedBy": 62,
    "sources": [
     "pubmed",
     "openalex",
     "europepmc"
-   ],
-   "kind": "article"
-  },
-  {
-   "id": 917,
-   "title": "Antioxidant properties of matcha in dry eye disease prevention: Can matcha polyphenols improve ocular hydration?",
-   "authors": [
-    "Maja Ćwiek",
-    "Bombuy Gimenez Jan",
-    "Łapiński Piotr"
-   ],
-   "journal": "CyberLeninK (CyberLeninka)",
-   "year": null,
-   "doi": null,
-   "pmid": null,
-   "pmcid": null,
-   "language": "en",
-   "design": "Not classified (no abstract)",
-   "relevance": "subject",
-   "mentions": 2,
-   "topics": [
-    "Antioxidants and polyphenols"
-   ],
-   "matchaIn": "title",
-   "abstract": "",
-   "keywords": [],
-   "mesh": [],
-   "pubTypes": [],
-   "isOa": true,
-   "oaUrl": "https://cyberleninka.ru/article/n/antioxidant-properties-of-matcha-in-dry-eye-disease-prevention-can-matcha-polyphenols-improve-ocular-hydration",
-   "citedBy": 0,
-   "sources": [
-    "openalex"
    ],
    "kind": "article"
   },
