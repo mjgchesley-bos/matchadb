@@ -22,8 +22,8 @@ Spanish, French and German (`/ja/browse`, `/ko/...`, `/zh/...`, `/es/...`, `/fr/
 
 ## Adding a language
 Add the code to `LOCALES`, `LOCALE_NAMES`, `HTML_LANG`, `INTL_LANG`, `OG_LOCALE` in `config.ts`, create `dictionaries/<code>.ts`,
-register it in `dictionaries/index.ts`, add it to the rewrite pattern in `next.config.ts`, to the `COPY` table in `LanguageSuggest.tsx`,
-and to the regular expressions in `LanguageMenu.tsx` / `config.ts` (`localePath`).
+register it in `dictionaries/index.ts`, add it to the rewrite pattern in `next.config.ts` and to the regular expressions in `config.ts` (`localePath`).
+There is deliberately no language button or translate pop-up: the browser's own "Translate this page" bubble does that, and the footer lists the languages.
 
 ## Long-form text (guides, region/cultivar write-ups, research topics, ...)
 Prose that is too long for the flat dictionaries lives in `src/i18n/content/{ja,ko,zh,es,fr,de}.ts` as `id -> translation`.

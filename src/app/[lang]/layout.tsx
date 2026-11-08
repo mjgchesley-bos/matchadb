@@ -9,7 +9,6 @@ import { HeaderAccount } from "@/components/HeaderAccount";
 import { HeaderMenu } from "@/components/HeaderMenu";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { I18nProvider } from "@/i18n/client";
-import { LanguageSuggest } from "@/i18n/LanguageSuggest";
 import { LOCALES, LOCALE_NAMES, HTML_LANG, OG_LOCALE, isLocale, localePath, type Locale } from "@/i18n/config";
 import { getT, clientMessages } from "@/i18n/server";
 import { notFound } from "next/navigation";
@@ -157,7 +156,6 @@ export default async function RootLayout({
             </nav>
           </div>
         </header>
-        <LanguageSuggest />
         {children}
         <footer className="border-t border-line bg-paper-raised mt-auto">
           <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-3 text-xs text-ink-faint">
