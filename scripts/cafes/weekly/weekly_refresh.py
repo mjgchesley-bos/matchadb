@@ -226,7 +226,8 @@ def publish(tmp_d, tmp_p, new, old):
     shutil.rmtree(f"{REPO}/data/cafes"); shutil.copytree(tmp_d, f"{REPO}/data/cafes")
     for f in glob.glob(f"{tmp_p}/cafes-slim-*.json"): shutil.copy(f, f"{REPO}/public/data/")
     for f in glob.glob(f"{HERE}/*"):                                    # keep the pipeline in git
-        if os.path.isfile(f): shutil.copy(f, f"{REPO}/scripts/cafes/weekly/")
+        dest = f"{REPO}/scripts/cafes/weekly/{os.path.basename(f)}"
+        if os.path.isfile(f) and os.path.abspath(f) != os.path.abspath(dest): shutil.copy(f, dest)
     r = run("npm run build", cwd=REPO, check=False, timeout=3600)
     if r.returncode:
         subprocess.run(["git", "checkout", "--", "data/cafes", "public/data"], cwd=REPO)

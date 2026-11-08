@@ -103,7 +103,7 @@ def merge_weekly(old, new):
     """Results from the weekly refresh. A failed fetch never removes anything. A fresh read that finds matcha replaces the old hits
     (menus change). A fresh read that finds none removes the listing only after TWO weekly reads in a row find none."""
     if old is None: return new
-    if new.get("status") != "ok": return old
+    if new.get("status") != "ok" or old.get("via") == "manual": return old     # hand-verified evidence is never overwritten by a crawl
     if new.get("matcha"): return {**new, "miss": 0, "platform": new.get("platform") or old.get("platform"), "pdf": new.get("pdf") or old.get("pdf")}
     if old.get("status") == "ok" and old.get("matcha"):
         miss = old.get("miss", 0) + 1
