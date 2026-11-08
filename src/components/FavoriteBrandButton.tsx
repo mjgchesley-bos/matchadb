@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { SaveCount } from "@/components/SaveCount";
 import { supabase } from "@/lib/supabase";
+import { useT } from "@/i18n/client";
 
 // Heart button on a brand page: follow a brand so it shows up in My matcha.
 export function FavoriteBrandButton({ brand }: { brand: string }) {
   const { user, ready, signIn } = useAuth();
+  const t = useT();
   const [state, setState] = useState<{ uid: string; saved: boolean } | null>(null);
   const saved = !!user && state?.uid === user.id && state.saved;
   const [busy, setBusy] = useState(false);
@@ -31,7 +33,7 @@ export function FavoriteBrandButton({ brand }: { brand: string }) {
 
   const toggle = async () => {
     if (!user) {
-      signIn(`Sign in to save ${brand} to your favorites.`);
+      signIn(t("c.fav.brand.signIn", { brand }));
       return;
     }
     const next = !saved;
@@ -66,10 +68,10 @@ export function FavoriteBrandButton({ brand }: { brand: string }) {
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
           <path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2 0 3.5 1.1 5.3 3 1.8-1.9 3.3-3 5.3-3 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z" />
         </svg>
-        {saved ? "Saved brand" : "Save brand"}
+        {saved ? t("c.fav.brand.saved") : t("c.fav.brand.save")}
       </button>
       <SaveCount kind="brand" itemKey={brand} refresh={bump} />
-      {failed && <span className="text-xs text-red-700">Couldn&apos;t update your list. Try again.</span>}
+      {failed && <span className="text-xs text-red-700">{t("c.fav.failed")}</span>}
     </div>
   );
 }

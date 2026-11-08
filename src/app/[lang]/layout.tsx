@@ -163,7 +163,7 @@ export default async function RootLayout({
           <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col gap-3 text-xs text-ink-faint">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <span>{t("footer.tagline")}</span>
-              <nav aria-label="Footer" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
+              <nav aria-label={t("footer.aria")} className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
                 <Link href="/cafes" className="hover:text-ink-muted transition-colors">{t("footer.cafes")}</Link>
                 <Link href="/stores" className="hover:text-ink-muted transition-colors">{t("footer.stores")}</Link>
                 <Link href="/guides" className="hover:text-ink-muted transition-colors">{t("footer.guides")}</Link>

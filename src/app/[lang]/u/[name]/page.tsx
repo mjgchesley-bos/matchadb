@@ -9,11 +9,13 @@ import { TierIcon, hasTierIcon } from "@/components/TierIcon";
 import { getProductById } from "@/lib/db";
 import { getCafeSlimIndex } from "@/lib/cafes";
 import { cafeSlug } from "@/lib/cafe-types";
-import { BADGES, HOW_LABELS } from "@/lib/badges";
+import { BADGES } from "@/lib/badges";
 import { formatPrice } from "@/lib/price";
 import { supabaseAnon } from "@/lib/supabase-server";
 import type { MemberStats } from "@/components/AuthProvider";
 import { langOf } from "@/i18n/params";
+import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
+import { getT, getTV } from "@/i18n/server";
 
 // A member's public page. It exists only if the member switched "public profile" on in My matcha;
 // otherwise the page is a plain 404, so nobody can tell whether a username exists.
@@ -43,14 +45,15 @@ async function load(name: string): Promise<Profile | null> {
 
 type Info = { name: string; brand: string; region: string | null; price: string | null };
 
-export async function generateMetadata({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {
-  const { name } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; name: string }> }): Promise<Metadata> {
+  const { name, lang: raw } = await params;
+  const lang: Locale = isLocale(raw) ? raw : "en";
+  const t = getT(lang);
   const p = await load(name);
   if (!p) return {};
-  return { title: `${p.name} on MatchaDB`, description: `${p.name}'s matcha shelf, ratings and lists.`, robots: { index: false, follow: false } };
+  return { title: t("u.title", { name: p.name }), description: t("u.desc", { name: p.name }), robots: { index: false, follow: false } };
 }
 
-const monthFmt = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", timeZone: "UTC" });
 const PHOTO_BASE = `${process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gropvtwigbddfikcujhz.supabase.co"}/storage/v1/object/public/comment-photos/`;
 
 function Section({ title, children, note }: { title: string; children: React.ReactNode; note?: string }) {
@@ -65,7 +68,10 @@ function Section({ title, children, note }: { title: string; children: React.Rea
 
 export default async function PublicProfilePage({ params }: { params: Promise<{ lang: string; name: string }> }) {
   const { name } = await params;
-  await langOf(params);
+  const lang = await langOf(params);
+  const t = getT(lang);
+  const tv = getTV(lang);
+  const monthFmt = new Intl.DateTimeFormat(INTL_LANG[lang], { year: "numeric", month: "long", timeZone: "UTC" });
   const p = await load(name);
   if (!p) notFound();
 
@@ -74,7 +80,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
   const info = new Map<number, Info>();
   for (const prod of found) {
     if (!prod) continue;
-    const price = formatPrice(prod);
+    const price = formatPrice(prod, t("price.converted"));
     info.set(prod.id, { name: prod.product_name, brand: prod.brand_name, region: prod.region, price: price.kind === "resolved" ? price.text : null });
   }
 
@@ -97,7 +103,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       <li key={id} className="flex items-center justify-between gap-4 py-3">
         <Link href={`/products/${id}`} className="text-ink hover:text-matcha">
           <span className="block text-xs text-ink-faint">{i?.brand ?? ""}</span>
-          <span className="font-medium">{i?.name ?? `Product ${id}`}</span>
+          <span className="font-medium">{i?.name ?? t("c.acct.product", { id })}</span>
         </Link>
         <span className="flex items-center gap-3 text-sm text-ink-muted">
           {extra}
@@ -118,11 +124,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             {hasTierIcon(p.stats.tier) && (
               <span className="inline-flex items-center gap-1.5 font-medium text-ink">
                 <TierIcon tier={p.stats.tier} size={20} />
-                {p.stats.tier}
+                {tv("tier", p.stats.tier)}
               </span>
             )}
-            <span>Member since {monthFmt.format(new Date(p.since))}</span>
-            {p.how && <span>Drinks: {HOW_LABELS[p.how] ?? p.how}</span>}
+            <span>{t("u.since", { date: monthFmt.format(new Date(p.since)) })}</span>
+            {p.how && <span>{t("u.drinks", { how: tv("how", p.how) })}</span>}
           </p>
           {p.bio && <p className="mt-3 max-w-xl text-ink-muted">{p.bio}</p>}
           <p className="mt-3">
@@ -133,10 +139,10 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
       <dl className="mt-8 grid grid-cols-2 gap-4 border-y border-line py-5 sm:grid-cols-4">
         {[
-          ["Tried", String(tried.length)],
-          ["Rated", String(p.stats.ratings)],
-          ["Average rating", avg != null ? avg.toFixed(1) : "–"],
-          ["Favorite region", favRegion ?? "–"],
+          [t("u.s.tried"), String(tried.length)],
+          [t("u.s.rated"), String(p.stats.ratings)],
+          [t("u.s.avg"), avg != null ? avg.toFixed(1) : "–"],
+          [t("u.s.region"), favRegion ? tv("region", favRegion) : "–"],
         ].map(([k, v]) => (
           <div key={k}>
             <dt className="text-xs uppercase tracking-wide text-ink-faint">{k}</dt>
@@ -145,18 +151,18 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         ))}
       </dl>
 
-      {using.length > 0 && <Section title="Using now">{list(using.map((x) => row(x.product_id)))}</Section>}
+      {using.length > 0 && <Section title={t("c.shelf.using")}>{list(using.map((x) => row(x.product_id)))}</Section>}
 
       {top.length > 0 && (
-        <Section title="Top rated">
+        <Section title={t("u.top")}>
           {list(top.map((r) => row(r.product_id, <span className="flex items-center gap-1.5 tabular-nums"><Stars value={Number(r.score)} size={14} />{Number(r.score).toFixed(1)}</span>)))}
         </Section>
       )}
 
-      {want.length > 0 && <Section title="Want to try">{list(want.slice(0, 12).map((x) => row(x.product_id)))}</Section>}
+      {want.length > 0 && <Section title={t("c.shelf.want")}>{list(want.slice(0, 12).map((x) => row(x.product_id)))}</Section>}
 
       {tried.length > 0 && (
-        <Section title="Tried it" note={tried.length > 12 ? `Showing 12 of ${tried.length}` : undefined}>
+        <Section title={t("c.shelf.tried")} note={tried.length > 12 ? t("u.showing", { n: tried.length }) : undefined}>
           {list(tried.slice(0, 12).map((x) => row(x.product_id)))}
         </Section>
       )}
@@ -168,7 +174,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       ))}
 
       {p.brands.length > 0 && (
-        <Section title="Favorite brands">
+        <Section title={t("u.brands")}>
           <ul className="flex flex-wrap gap-3">
             {p.brands.map((b) => (
               <li key={b}>
@@ -187,7 +193,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         const cafes = (p.cafes ?? []).map((id) => idx.get(id)).filter((r): r is NonNullable<typeof r> => !!r);
         if (cafes.length === 0) return null;
         return (
-          <Section title="Favorite cafés">
+          <Section title={t("c.acct.cafes")}>
             <ul className="flex flex-wrap gap-3">
               {cafes.map((r) => (
                 <li key={r[0]}>
@@ -205,12 +211,12 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       })()}
 
       {p.reviews.length > 0 && (
-        <Section title="Reviews">
+        <Section title={t("c.rv.heading")}>
           <ul className="flex flex-col gap-4">
             {p.reviews.map((r) => (
               <li key={r.product_id} className="border-t border-line pt-3">
                 <Link href={`/products/${r.product_id}`} className="font-medium text-ink hover:text-matcha">
-                  {info.get(r.product_id)?.name ?? `Product ${r.product_id}`}
+                  {info.get(r.product_id)?.name ?? t("c.acct.product", { id: r.product_id })}
                 </Link>
                 <p className="mt-1 whitespace-pre-line text-sm text-ink-muted">{r.body}</p>
               </li>
@@ -220,25 +226,25 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       )}
 
       {p.photos.length > 0 && (
-        <Section title="Photos">
+        <Section title={t("u.photos")}>
           <div className="flex flex-wrap gap-2">
             {p.photos.map((ph) => (
               <a key={ph} href={`${PHOTO_BASE}${ph}`} target="_blank" rel="noopener noreferrer">
                 {/* eslint-disable-next-line @next/next/no-img-element -- user photo from storage, already shrunk */}
-                <img src={`${PHOTO_BASE}${ph}`} alt={`Photo shared by ${p.name}`} loading="lazy" className="h-28 w-28 rounded-sm border border-line object-cover hover:opacity-90" />
+                <img src={`${PHOTO_BASE}${ph}`} alt={t("c.cm.photoBy", { who: p.name })} loading="lazy" className="h-28 w-28 rounded-sm border border-line object-cover hover:opacity-90" />
               </a>
             ))}
           </div>
         </Section>
       )}
 
-      <Section title="Badges">
+      <Section title={t("c.acct.badges")}>
         <ul className="flex flex-wrap gap-2">
-          {earned.length === 0 && <li className="text-sm text-ink-faint">No badges yet.</li>}
+          {earned.length === 0 && <li className="text-sm text-ink-faint">{t("u.noBadges")}</li>}
           {earned.map((b) => (
             <li key={b.name} className="rounded-full border border-matcha bg-matcha-soft px-3 py-1 text-xs text-forest">
               {"✓ "}
-              {b.name}
+              {t(`c.badge.${BADGES.indexOf(b)}.n` as "c.badge.0.n")}
             </li>
           ))}
         </ul>

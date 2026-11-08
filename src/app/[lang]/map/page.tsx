@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/i18n/Link";
 import { getMapLocations } from "@/lib/map-data";
+import { localizeLocations } from "@/lib/map-i18n";
 import { getRegionCounts, getStats } from "@/lib/db";
 import { SourcingExplorer } from "@/components/SourcingExplorer";
 import { getT } from "@/i18n/server";
@@ -27,7 +28,7 @@ export default async function MapPage({ params }: { params: Promise<{ lang: stri
 
   return (
     <main className="flex-1 w-full">
-      <SourcingExplorer locations={locations} totalProducts={stats.productCount} />
+      <SourcingExplorer locations={localizeLocations(locations, lang)} totalProducts={stats.productCount} />
 
       <section className="max-w-3xl mx-auto w-full px-6 py-12 text-sm text-ink-muted leading-relaxed flex flex-col gap-4">
         <h2 className="font-display text-2xl font-semibold text-ink">{t("map.h2")}</h2>

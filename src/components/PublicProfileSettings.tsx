@@ -2,10 +2,11 @@
 
 import Link from "@/i18n/Link";
 import { useEffect, useRef, useState } from "react";
-import { AVATARS, AVATAR_LABELS, Avatar, type AvatarKey } from "@/components/Avatar";
+import { AVATARS, Avatar, type AvatarKey } from "@/components/Avatar";
 import { useAuth } from "@/components/AuthProvider";
 import { HOW_LABELS } from "@/lib/badges";
 import { supabase } from "@/lib/supabase";
+import { useT, useTV } from "@/i18n/client";
 
 // My matcha: choose whether the profile is public, plus avatar (an icon or your own photo), bio and
 // how you drink it. Nothing is public until "public profile" is switched on.
@@ -30,6 +31,8 @@ async function squarePhoto(file: File): Promise<Blob> {
 }
 
 export function PublicProfileSettings() {
+  const t = useT();
+  const tv = useTV();
   const { user, displayName, setPublic, setAvatar } = useAuth();
   const uid = user?.id ?? null;
   const [loaded, setLoaded] = useState<{ uid: string; s: Settings } | null>(null);
@@ -76,7 +79,7 @@ export function PublicProfileSettings() {
 
   const uploadPhoto = async (file: File | undefined) => {
     if (!file) return;
-    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return setMsg("Please choose a JPG, PNG or WebP photo.");
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return setMsg(t("c.pp.badType"));
     setUploading(true);
     setMsg(null);
     try {
@@ -88,7 +91,7 @@ export function PublicProfileSettings() {
       pending.current = path;
       set({ avatar: null, avatar_path: path });
     } catch {
-      setMsg("Couldn't use that photo. Try a different one.");
+      setMsg(t("c.pp.badPhoto"));
     }
     setUploading(false);
     if (picker.current) picker.current.value = "";
@@ -103,7 +106,7 @@ export function PublicProfileSettings() {
       .eq("id", user.id);
     setSaving(false);
     if (error) {
-      setMsg(error.message.includes("bio") ? "Your bio can't contain links or website names." : "Couldn't save. Please try again.");
+      setMsg(error.message.includes("bio") ? t("c.pp.bioLinks") : t("c.pp.saveFail"));
       return;
     }
     // The photo replaced or removed here is no longer needed.
@@ -114,7 +117,7 @@ export function PublicProfileSettings() {
     setPublic(s.is_public);
     setAvatar(s.avatar, s.avatar_path);
     if (s.is_public) window.gtag?.("event", "profile_public");
-    setMsg("Saved.");
+    setMsg(t("c.acct.saved"));
   };
 
   const field = "w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink focus:outline-2 focus:outline-matcha";
@@ -124,37 +127,37 @@ export function PublicProfileSettings() {
   return (
     <section aria-labelledby="pp-h">
       <h2 id="pp-h" className="font-display text-xl font-semibold text-ink">
-        Public profile
+        {t("c.pp.h")}
       </h2>
       <p className="mt-2 text-sm text-ink-muted">
-        Private by default. Switch it on to get a page anyone can visit, showing your username, medal, what you&apos;re using now, your top ratings, lists, saved brands, favorite cafés, reviews and photos. Your email is never shown.
+        {t("c.pp.p")}
       </p>
 
       <label className="mt-4 flex items-center gap-2.5 text-sm text-ink">
         <input type="checkbox" checked={s.is_public} onChange={(e) => set({ is_public: e.target.checked })} className="accent-matcha" />
-        Make my profile public
+        {t("c.pp.make")}
       </label>
       {s.is_public && base?.is_public && displayName && (
         <p className="mt-2 text-sm">
           <Link href={`/u/${encodeURIComponent(displayName)}`} className="text-matcha underline hover:text-forest">
-            View your public profile
+            {t("c.pp.view")}
           </Link>
         </p>
       )}
 
       <div className="mt-5">
-        <span className={label}>Avatar</span>
-        <div className="mt-2 flex flex-wrap items-center gap-2" role="radiogroup" aria-label="Avatar">
+        <span className={label}>{t("c.pp.avatar")}</span>
+        <div className="mt-2 flex flex-wrap items-center gap-2" role="radiogroup" aria-label={t("c.pp.avatar")}>
           {s.avatar_path && (
-            <button type="button" role="radio" aria-checked aria-label="Your photo" title="Your photo" className={ring(true)}>
+            <button type="button" role="radio" aria-checked aria-label={t("c.pp.yourPhoto")} title={t("c.pp.yourPhoto")} className={ring(true)}>
               <Avatar photoPath={s.avatar_path} name={displayName} size={40} />
             </button>
           )}
-          <button type="button" role="radio" aria-checked={!s.avatar_path && s.avatar === null} aria-label="Use my first letter" onClick={() => void chooseIcon(null)} className={ring(!s.avatar_path && s.avatar === null)}>
+          <button type="button" role="radio" aria-checked={!s.avatar_path && s.avatar === null} aria-label={t("c.pp.letter")} onClick={() => void chooseIcon(null)} className={ring(!s.avatar_path && s.avatar === null)}>
             <Avatar avatar={null} name={displayName} size={40} />
           </button>
           {AVATARS.map((a: AvatarKey) => (
-            <button key={a} type="button" role="radio" aria-checked={!s.avatar_path && s.avatar === a} aria-label={AVATAR_LABELS[a]} title={AVATAR_LABELS[a]} onClick={() => void chooseIcon(a)} className={ring(!s.avatar_path && s.avatar === a)}>
+            <button key={a} type="button" role="radio" aria-checked={!s.avatar_path && s.avatar === a} aria-label={tv("avatar", a)} title={tv("avatar", a)} onClick={() => void chooseIcon(a)} className={ring(!s.avatar_path && s.avatar === a)}>
               <Avatar avatar={a} size={40} />
             </button>
           ))}
@@ -162,26 +165,26 @@ export function PublicProfileSettings() {
         <div className="mt-3 flex flex-wrap items-center gap-3">
           <input ref={picker} id="avatar-photo" type="file" accept="image/jpeg,image/png,image/webp" className="sr-only" onChange={(e) => void uploadPhoto(e.target.files?.[0])} />
           <label htmlFor="avatar-photo" className={`cursor-pointer rounded-full border border-line-strong bg-paper-raised px-4 py-2 text-sm text-ink hover:bg-matcha-soft ${uploading ? "pointer-events-none opacity-60" : ""}`}>
-            {uploading ? "Uploading…" : s.avatar_path ? "Upload a different photo" : "Upload a photo"}
+            {uploading ? t("c.pp.uploading") : s.avatar_path ? t("c.pp.uploadDiff") : t("c.pp.upload")}
           </label>
           {s.avatar_path && (
             <button type="button" onClick={() => void chooseIcon(null)} className="text-sm text-ink-muted underline hover:text-ink">
-              Remove photo
+              {t("c.pp.removePhoto")}
             </button>
           )}
         </div>
-        <p className="mt-1.5 text-xs text-ink-faint">Photos are cropped to a square and shown on your public profile. Please use a photo of your own that you&apos;re happy to share.</p>
+        <p className="mt-1.5 text-xs text-ink-faint">{t("c.pp.photoNote")}</p>
       </div>
 
       <div className="mt-5 max-w-sm">
         <label htmlFor="pp-how" className={label}>
-          How I drink it
+          {t("c.pp.how")}
         </label>
         <select id="pp-how" value={s.how_i_drink ?? ""} onChange={(e) => set({ how_i_drink: e.target.value || null })} className={`mt-1.5 ${field}`}>
-          <option value="">Not set</option>
-          {Object.entries(HOW_LABELS).map(([k, v]) => (
+          <option value="">{t("c.pp.notSet")}</option>
+          {Object.keys(HOW_LABELS).map((k) => (
             <option key={k} value={k}>
-              {v}
+              {tv("how", k)}
             </option>
           ))}
         </select>
@@ -189,15 +192,15 @@ export function PublicProfileSettings() {
 
       <div className="mt-4">
         <label htmlFor="pp-bio" className={label}>
-          Bio
+          {t("c.pp.bio")}
         </label>
-        <textarea id="pp-bio" value={s.bio} onChange={(e) => set({ bio: e.target.value.slice(0, 140) })} rows={2} placeholder="A line about you and matcha (no links)" className={`mt-1.5 ${field}`} />
+        <textarea id="pp-bio" value={s.bio} onChange={(e) => set({ bio: e.target.value.slice(0, 140) })} rows={2} placeholder={t("c.pp.bioPh")} className={`mt-1.5 ${field}`} />
         <p className="mt-1 text-xs text-ink-faint tabular-nums">{s.bio.length}/140</p>
       </div>
 
       <div className="mt-4 flex items-center gap-3">
         <button type="button" onClick={save} disabled={saving || uploading || !draft} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">
-          Save profile settings
+          {t("c.pp.save")}
         </button>
         {msg && (
           <span className="text-sm text-ink-muted" aria-live="polite">

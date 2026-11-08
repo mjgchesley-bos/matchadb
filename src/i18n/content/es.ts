@@ -322,6 +322,8 @@ const c: Record<string, string> = {
   "wc.src.p": "La historia resume relatos publicados, principalmente la historia citada en Wikipedia, y de ellos proceden las fechas del sombreado y del monopolio del período Edo. Los detalles difieren entre fuentes, así que indicamos las fechas con cautela. Los comentarios sobre la etiqueta proceden de las propias explicaciones de vendedores de té, y varios de ellos venden matcha, lo que conviene tener en cuenta. Las cifras de arriba proceden de la tabla de productos de MatchaDB y se actualizan cada vez que se reconstruye el sitio.",
   "wc.related": "Relacionado: {a}, {b}, {c}.",
   "wc.related.a": "matcha ceremonial vs culinario",
+  "mp.farm.farm-hattori-kikugawa": "Una finca familiar de una sola propiedad, de cuarta generación, en la ciudad de Kikugawa, Shizuoka, dirigida por Hattori-san.",
+  "mp.farm.farm-isagawa-tenryu": "Una remota plantación orgánica de montaña de 20 hectáreas, a 300-600 m de altitud, en la subregión de Haruno, en Tenryū, Shizuoka.",
   // @@END
 };
 

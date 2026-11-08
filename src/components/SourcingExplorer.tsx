@@ -8,6 +8,8 @@ import type { MapLocation } from "@/lib/map-data";
 import { BrandLogo, gradeLabel } from "@/components/product-cards";
 import { getBrandLogoPath, logoNeedsInvert } from "@/lib/logos";
 import { usd30 } from "@/lib/unit-price";
+import { useLang, useT, useTV } from "@/i18n/client";
+import { fmtNum } from "@/i18n/config";
 
 // Full-screen sourcing map: regions, named districts and verified farms as
 // pins; click one to fly in and open its detail panel. It shows where the
@@ -210,6 +212,8 @@ function buildFan(brands: { name: string; count: number }[], overflow: number, o
 }
 
 export function SourcingExplorer({ locations, totalProducts }: { locations: MapLocation[]; totalProducts: number }) {
+  const t = useT();
+  const tv = useTV();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<mapboxgl.Map | null>(null);
   const boundariesRef = useRef<Map<string, GeoJSON.Feature>>(new Map());
@@ -579,7 +583,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
   if (!token) {
-    return <div className="border border-line rounded-sm p-8 text-center text-ink-muted">Map token not configured.</div>;
+    return <div className="border border-line rounded-sm p-8 text-center text-ink-muted">{t("c.mp.noToken")}</div>;
   }
 
   const activeFilters = filters.grades.length + (filters.organic ? 1 : 0) + (filters.brand ? 1 : 0);
@@ -598,8 +602,8 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search regions, districts, brands…"
-              aria-label="Search the sourcing map"
+              placeholder={t("c.mp.ph")}
+              aria-label={t("c.mp.aria")}
               className="w-full rounded-full border border-line-strong bg-paper-raised/95 px-4 py-2.5 text-sm text-ink shadow-sm placeholder:text-ink-faint focus:outline-none focus:border-matcha"
             />
             {(results.places.length > 0 || results.brands.length > 0) && (
@@ -615,7 +619,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
                       className="flex w-full items-baseline justify-between gap-3 px-3 py-2 text-left hover:bg-matcha-soft"
                     >
                       <span className="text-ink">{l.name}<span className="text-ink-faint">, {l.sub}</span></span>
-                      <span className="text-xs text-ink-faint">{l.kind === "region" ? "region" : l.kind === "place" ? "district" : "farm"}</span>
+                      <span className="text-xs text-ink-faint">{t(`c.mp.k.${l.kind}` as "c.mp.k.region")}</span>
                     </button>
                   </li>
                 ))}
@@ -631,7 +635,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
                       className="flex w-full items-baseline justify-between gap-3 px-3 py-2 text-left hover:bg-matcha-soft"
                     >
                       <span className="text-ink">{b.name}</span>
-                      <span className="text-xs text-ink-faint">brand · grown in {b.where} region{b.where === 1 ? "" : "s"}</span>
+                      <span className="text-xs text-ink-faint">{t(b.where === 1 ? "c.mp.brandResult.one" : "c.mp.brandResult.other", { n: b.where })}</span>
                     </button>
                   </li>
                 ))}
@@ -646,9 +650,9 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
               aria-expanded={filtersOpen}
               className="rounded-full border border-line-strong bg-paper-raised/95 px-4 py-1.5 text-sm text-ink shadow-sm hover:border-matcha"
             >
-              Filters{activeFilters ? ` · ${activeFilters}` : ""}
+              {activeFilters ? t("c.mp.filtersN", { n: activeFilters }) : t("c.mp.filters")}
             </button>
-            <div className="inline-flex overflow-hidden rounded-full border border-line-strong bg-paper-raised/95 text-sm shadow-sm" role="group" aria-label="Map style">
+            <div className="inline-flex overflow-hidden rounded-full border border-line-strong bg-paper-raised/95 text-sm shadow-sm" role="group" aria-label={t("c.mp.style")}>
               {(["light", "satellite"] as MapStyle[]).map((s) => (
                 <button
                   key={s}
@@ -657,7 +661,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
                   aria-pressed={mapStyle === s}
                   className={`px-3.5 py-1.5 ${mapStyle === s ? "bg-matcha text-paper" : "text-ink-muted hover:text-ink"}`}
                 >
-                  {s === "light" ? "Map" : "Satellite"}
+                  {s === "light" ? t("c.mp.light") : t("c.mp.sat")}
                 </button>
               ))}
             </div>
@@ -668,14 +672,14 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
                 className="inline-flex items-center gap-1.5 rounded-full bg-matcha px-3 py-1.5 text-sm text-paper shadow-sm"
               >
                 {filters.brand} <span aria-hidden="true">✕</span>
-                <span className="sr-only">Clear brand filter</span>
+                <span className="sr-only">{t("c.mp.clearBrand")}</span>
               </button>
             )}
           </div>
 
           {filtersOpen && (
             <div className="rounded-sm border border-line bg-paper-raised/95 p-3 shadow-md text-sm">
-              <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-ink-faint mb-2">Grade</p>
+              <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-ink-faint mb-2">{t("c.mp.grade")}</p>
               <div className="flex flex-wrap gap-2">
                 {allGrades.map((g) => {
                   const on = filters.grades.includes(g);
@@ -688,7 +692,7 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
                       aria-pressed={on}
                       className={`rounded-full border px-3 py-1 disabled:opacity-40 ${on ? "border-matcha bg-matcha text-paper" : "border-line-strong text-ink-muted hover:border-matcha"}`}
                     >
-                      {gradeLabel(g)}
+                      {gradeLabel(g, tv)}
                     </button>
                   );
                 })}
@@ -701,11 +705,11 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
                   onChange={(e) => setFilters({ ...filters, organic: e.target.checked })}
                   className="accent-matcha"
                 />
-                Organic-certified only
+                {t("c.mp.organicOnly")}
               </label>
               {activeFilters > 0 && (
                 <button type="button" onClick={() => setFilters({ grades: [], organic: false, brand: null })} className="mt-3 text-matcha hover:text-forest">
-                  Clear filters
+                  {t("c.ws.clear")}
                 </button>
               )}
             </div>
@@ -714,24 +718,24 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
 
         {fanReady && (
           <p className="pointer-events-none absolute bottom-6 right-3 hidden max-w-[16rem] sm:block rounded-sm border border-line bg-paper-raised/95 px-3 py-2 text-xs text-ink-muted shadow-sm">
-            Pins fan out from the middle of the place. These brands name it as a source, not an exact farm. Click a pin for the brand page.
+            {t("c.mp.fan")}
           </p>
         )}
 
         {/* Legend */}
-        <ul className="absolute bottom-6 left-3 hidden sm:flex flex-col gap-1.5 rounded-sm border border-line bg-paper-raised/95 px-3 py-2 text-xs text-ink-muted shadow-sm" aria-label="Map legend">
+        <ul className="absolute bottom-6 left-3 hidden sm:flex flex-col gap-1.5 rounded-sm border border-line bg-paper-raised/95 px-3 py-2 text-xs text-ink-muted shadow-sm" aria-label={t("c.mp.legend")}>
           <li className="flex items-center gap-2">
             <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full border-2 border-matcha bg-paper px-1 text-[10px] font-semibold text-ink">12</span>
-            Growing region and its product count
+            {t("c.mp.l.region")}
           </li>
           <li className="flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full border-2 border-paper bg-matcha ring-1 ring-matcha" />
-            District, town or farm (zoom in)
+            {t("c.mp.l.place")}
           </li>
         </ul>
       </div>
 
-      <aside className="h-[46%] lg:h-auto lg:w-[20.8rem] shrink-0 overflow-y-auto border-t lg:border-t-0 lg:border-l border-line bg-paper-raised" aria-label="Location details">
+      <aside className="h-[46%] lg:h-auto lg:w-[20.8rem] shrink-0 overflow-y-auto border-t lg:border-t-0 lg:border-l border-line bg-paper-raised" aria-label={t("c.mp.detailsAria")}>
         {selected ? (
           <DetailPanel loc={selected} tab={tab} setTab={setTab} filters={filters} onBack={() => select(null)} />
         ) : (
@@ -767,20 +771,22 @@ function ExplorePanel({
   totalProducts: number;
   onPick: (id: string) => void;
 }) {
+  const t = useT();
+  const lang = useLang();
   return (
     <div>
       <div className="bg-matcha px-5 py-5 text-paper">
-        <p className="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-paper/80">Sourcing map</p>
-        <h1 className="mt-1 font-display text-2xl font-semibold leading-tight">Where the matcha is grown</h1>
+        <p className="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-paper/80">{t("c.mp.eyebrow")}</p>
+        <h1 className="mt-1 font-display text-2xl font-semibold leading-tight">{t("c.mp.h1")}</h1>
         <p className="mt-2 text-sm text-paper/85 leading-relaxed">
-          Growing regions as each brand&apos;s own page states them, out of {totalProducts.toLocaleString()} products. Click a region to fly in; zoom in for the districts and towns inside it.
+          {t("c.mp.lead", { n: fmtNum(lang, totalProducts) })}
         </p>
       </div>
       <p className="px-5 pt-4 pb-2 text-xs text-ink-faint">
-        {zoom < PLACE_MIN_ZOOM - 0.5 ? "Regions in view. Zoom in to add districts and towns." : "Regions and districts in view. Pan or zoom and this list follows."}
+        {zoom < PLACE_MIN_ZOOM - 0.5 ? t("c.mp.zoomFar") : t("c.mp.zoomNear")}
       </p>
       {locations.length === 0 ? (
-        <p className="px-5 pb-6 text-sm text-ink-muted">Nothing here matches. Zoom out, drag toward Japan, or clear the filters.</p>
+        <p className="px-5 pb-6 text-sm text-ink-muted">{t("c.mp.none")}</p>
       ) : (
         <ul className="divide-y divide-line border-t border-line">
           {locations.map((l) => (
@@ -791,12 +797,12 @@ function ExplorePanel({
                     <span className="font-medium">{l.name}</span>
                     <span className="text-ink-faint">, {l.sub}</span>
                   </span>
-                  <span className="text-xs text-matcha tabular-nums whitespace-nowrap">{countFor(l, filters)} products</span>
+                  <span className="text-xs text-matcha tabular-nums whitespace-nowrap">{t(countFor(l, filters) === 1 ? "c.mp.products.one" : "c.mp.products.other", { n: countFor(l, filters) })}</span>
                 </span>
                 <span className="mt-1 block text-xs text-ink-faint">
-                  {l.kind === "place" ? "District named by brands · " : l.kind === "farm" ? "Verified farm · " : ""}
+                  {l.kind === "place" ? t("c.mp.districtNamed") : l.kind === "farm" ? t("c.mp.verifiedFarm") : ""}
                   {l.brandCounts.slice(0, 4).map((b) => b.name).join(", ")}
-                  {l.brandCounts.length > 4 ? ` +${l.brandCounts.length - 4} more` : ""}
+                  {l.brandCounts.length > 4 ? t("c.mp.more", { n: l.brandCounts.length - 4 }) : ""}
                 </span>
               </button>
             </li>
@@ -820,6 +826,8 @@ function DetailPanel({
   filters: Filters;
   onBack: () => void;
 }) {
+  const t = useT();
+  const tv = useTV();
   const filteredCount = countFor(loc, filters);
   const tabs: Tab[] = loc.kind === "farm" ? ["overview", "products"] : ["overview", "brands", "products"];
   const maxGrade = Math.max(1, ...loc.grades.map((g) => g.count));
@@ -830,7 +838,7 @@ function DetailPanel({
   if (filters.brand) params.set("brand", filters.brand);
   params.set("ships", "any");
   const browseHref = `/browse?${params.toString()}`;
-  const kindLabel = loc.kind === "region" ? "Growing region" : loc.kind === "place" ? "District or town" : "Verified farm";
+  const kindLabel = t(`c.mp.kind.${loc.kind}` as "c.mp.kind.region");
   const shownPicks = loc.picks.filter((p) => {
     if (filters.brand) return p.brand === filters.brand;
     if (filters.grades.length && !filters.grades.includes(p.grade ?? "Not stated")) return false;
@@ -842,28 +850,28 @@ function DetailPanel({
     <div>
       <div className="bg-matcha px-5 pt-4 pb-5 text-paper">
         <button type="button" onClick={onBack} className="text-xs text-paper/80 hover:text-paper">
-          ← All locations
+          {t("c.mp.back")}
         </button>
         <p className="mt-3 inline-block rounded-full bg-paper/20 px-2.5 py-0.5 font-mono text-[0.6rem] tracking-[0.15em] uppercase">{kindLabel}</p>
         <h2 className="mt-1.5 font-display text-2xl font-semibold leading-tight">{loc.name}</h2>
         <p className="text-sm text-paper/85">{loc.sub}</p>
         <p className="mt-2 text-sm text-paper/90 tabular-nums">
-          {loc.products} product{loc.products === 1 ? "" : "s"} · {loc.brands} brand{loc.brands === 1 ? "" : "s"}
-          {filteredCount !== loc.products ? ` · ${filteredCount} match your filters` : ""}
+          {t(loc.products === 1 ? "c.mp.products.one" : "c.mp.products.other", { n: loc.products })} · {t(loc.brands === 1 ? "c.mp.brands.one" : "c.mp.brands.other", { n: loc.brands })}
+          {filteredCount !== loc.products ? t("c.mp.match", { n: filteredCount }) : ""}
         </p>
       </div>
 
       <div className="flex border-b border-line px-3 pt-2" role="tablist">
-        {tabs.map((t) => (
+        {tabs.map((tb) => (
           <button
-            key={t}
+            key={tb}
             type="button"
             role="tab"
-            aria-selected={tab === t}
-            onClick={() => setTab(t)}
-            className={`px-3 py-2 text-sm capitalize border-b-2 -mb-px ${tab === t ? "border-matcha text-ink font-medium" : "border-transparent text-ink-faint hover:text-ink"}`}
+            aria-selected={tab === tb}
+            onClick={() => setTab(tb)}
+            className={`px-3 py-2 text-sm capitalize border-b-2 -mb-px ${tab === tb ? "border-matcha text-ink font-medium" : "border-transparent text-ink-faint hover:text-ink"}`}
           >
-            {t}
+            {t(`c.mp.tab.${tb}` as "c.mp.tab.overview")}
           </button>
         ))}
       </div>
@@ -874,18 +882,18 @@ function DetailPanel({
             {loc.intro && <p className="text-sm text-ink-muted leading-relaxed">{loc.intro}</p>}
             {loc.note && <p className="text-xs text-ink-faint leading-relaxed">{loc.note}</p>}
             <div className="grid grid-cols-2 gap-2">
-              <Stat label="Median price" value={usd30(loc.median)} sub={loc.pricedCount ? `per 30 g, ${loc.pricedCount} priced` : "no comparable prices"} />
-              <Stat label="Middle half" value={loc.p25 != null && loc.p75 != null ? `${usd30(loc.p25)}–${usd30(loc.p75)}` : "n/a"} sub="per 30 g" />
-              <Stat label="Organic" value={loc.products ? `${Math.round((loc.organicCount / loc.products) * 100)}%` : "n/a"} sub={`${loc.organicCount} of ${loc.products}`} />
-              <Stat label="Brands" value={String(loc.brands)} sub="source from here" />
+              <Stat label={t("c.mp.s.median")} value={usd30(loc.median)} sub={loc.pricedCount ? t("c.mp.s.perPriced", { n: loc.pricedCount }) : t("c.mp.s.noPrice")} />
+              <Stat label={t("c.mp.s.mid")} value={loc.p25 != null && loc.p75 != null ? `${usd30(loc.p25)}–${usd30(loc.p75)}` : t("gt.na")} sub={t("c.mp.s.per30")} />
+              <Stat label={t("c.mp.s.organic")} value={loc.products ? `${Math.round((loc.organicCount / loc.products) * 100)}%` : t("gt.na")} sub={t("c.mp.s.ofN", { a: loc.organicCount, b: loc.products })} />
+              <Stat label={t("c.mp.s.brands")} value={String(loc.brands)} sub={t("c.mp.s.sourceHere")} />
             </div>
             {loc.grades.length > 0 && (
               <div>
-                <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-forest mb-2">Grades (as brands label them)</p>
+                <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-forest mb-2">{t("c.mp.gradesH")}</p>
                 <ul className="flex flex-col gap-1.5">
                   {loc.grades.map((g) => (
                     <li key={g.name} className="grid grid-cols-[7.5rem_1fr_2rem] items-center gap-2 text-sm">
-                      <span className="text-ink-muted truncate">{gradeLabel(g.name)}</span>
+                      <span className="text-ink-muted truncate">{gradeLabel(g.name, tv)}</span>
                       <span className="h-2 rounded-full bg-matcha-soft overflow-hidden">
                         <span className="block h-full rounded-full bg-matcha" style={{ width: `${(g.count / maxGrade) * 100}%` }} />
                       </span>
@@ -897,7 +905,7 @@ function DetailPanel({
             )}
             {loc.cultivars.length > 0 && (
               <div>
-                <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-forest mb-2">Cultivars named</p>
+                <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-forest mb-2">{t("c.mp.cultivars")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {loc.cultivars.map((c) => (
                     <span key={c.name} className="rounded-full border border-line-strong px-2.5 py-0.5 text-xs text-ink-muted">
@@ -909,18 +917,18 @@ function DetailPanel({
             )}
             {loc.flavors.length > 0 && (
               <div>
-                <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-forest mb-2">Flavor notes brands report</p>
+                <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-forest mb-2">{t("c.mp.flavors")}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {loc.flavors.map((f) => (
                     <span key={f.tag} className="rounded-full bg-matcha-soft px-2.5 py-0.5 text-xs text-matcha-ink">
-                      {f.tag} <span className="tabular-nums opacity-70">{Math.round(f.share * 100)}%</span>
+                      {tv("flavor", f.tag)} <span className="tabular-nums opacity-70">{Math.round(f.share * 100)}%</span>
                     </span>
                   ))}
                 </div>
               </div>
             )}
             <p className="rounded-sm border border-line bg-paper px-3 py-2.5 text-xs text-ink-faint leading-relaxed">
-              {loc.precision} This is where the brands say the leaf is grown, not where the company is based.
+              {loc.precision}{t("c.mp.precisionTail")}
             </p>
             {loc.source && (
               <a href={loc.source.url} target="_blank" rel="noopener noreferrer" className="text-sm text-matcha hover:text-forest">
@@ -929,7 +937,7 @@ function DetailPanel({
             )}
             {loc.regionSlug && (
               <Link href={`/regions/${loc.regionSlug}`} className="text-sm text-matcha hover:text-forest">
-                Full {loc.regionKey} region page &rarr;
+                {t("c.mp.regionPage", { region: tv("region", loc.regionKey ?? "") })} &rarr;
               </Link>
             )}
           </>
@@ -944,7 +952,7 @@ function DetailPanel({
                     <BrandLogo brandName={b.name} size={24} maxWidth={64} />
                     <span className="truncate text-sm text-ink">{b.name}</span>
                   </span>
-                  <span className="text-xs text-ink-faint tabular-nums whitespace-nowrap">{b.count} product{b.count === 1 ? "" : "s"}</span>
+                  <span className="text-xs text-ink-faint tabular-nums whitespace-nowrap">{t(b.count === 1 ? "c.mp.products.one" : "c.mp.products.other", { n: b.count })}</span>
                 </Link>
               </li>
             ))}
@@ -954,7 +962,7 @@ function DetailPanel({
         {tab === "products" && (
           <>
             {shownPicks.length === 0 ? (
-              <p className="text-sm text-ink-muted">No sample products match the current filters. Use the link below for the full list.</p>
+              <p className="text-sm text-ink-muted">{t("c.mp.noSamples")}</p>
             ) : (
               <ul className="flex flex-col divide-y divide-line">
                 {shownPicks.map((p) => (
@@ -962,12 +970,12 @@ function DetailPanel({
                     <Link href={`/products/${p.id}`} className="block py-2.5 hover:text-matcha">
                       <span className="flex items-baseline justify-between gap-3">
                         <span className="text-sm text-ink">{p.brand}</span>
-                        <span className="text-xs text-ink tabular-nums whitespace-nowrap">{usd30(p.perGram)} per 30 g</span>
+                        <span className="text-xs text-ink tabular-nums whitespace-nowrap">{t("c.mp.perGramLine", { price: usd30(p.perGram) })}</span>
                       </span>
                       <span className="block text-xs text-ink-muted">{p.name}</span>
                       <span className="block text-[0.7rem] text-ink-faint">
-                        {p.grade ? gradeLabel(p.grade) : "Grade not stated"}
-                        {p.organic ? " · Organic" : ""}
+                        {p.grade ? gradeLabel(p.grade, tv) : t("c.mp.gradeNotStated")}
+                        {p.organic ? t("c.mp.organicTag") : ""}
                         {p.grams ? ` · ${Math.round(p.grams)} g` : ""}
                         {p.priceUsd ? ` · ${usd(p.priceUsd)}` : ""}
                       </span>
@@ -976,12 +984,12 @@ function DetailPanel({
                 ))}
               </ul>
             )}
-            <p className="text-xs text-ink-faint">A sample: one product per brand first, best-known brands first. Prices converted to US dollars.</p>
+            <p className="text-xs text-ink-faint">{t("c.mp.sample")}</p>
           </>
         )}
 
         <Link href={browseHref} className="inline-block self-start rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest transition-colors">
-          {loc.kind === "place" ? `See all ${loc.regionKey} products` : `See all ${filteredCount} in the database`}
+          {loc.kind === "place" ? t("c.mp.seeAllRegion", { region: tv("region", loc.regionKey ?? "") }) : t("c.mp.seeAll", { n: filteredCount })}
         </Link>
       </div>
     </div>

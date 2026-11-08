@@ -4,6 +4,8 @@ import Link from "@/i18n/Link";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
+import { useT } from "@/i18n/client";
+import { rich } from "@/i18n/rich";
 
 // Who is signed in, plus the sign-in dialog any component can open with signIn("why").
 // Sign-in is Google only for now. The session lives in the browser, so the (static) pages
@@ -104,6 +106,7 @@ function GoogleMark() {
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const t = useT();
   const [ready, setReady] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<{ uid: string; name: string | null; isPublic: boolean; avatar: string | null; avatarPath: string | null } | null>(null);
@@ -189,8 +192,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signIn = useCallback((reason?: string) => {
     opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setError(null);
-    setDialog({ reason: reason ?? "Sign in to save products, rate them and write reviews." });
-  }, []);
+    setDialog({ reason: reason ?? t("c.auth.defaultReason") });
+  }, [t]);
 
   const close = useCallback(() => {
     setDialog(null);
@@ -214,7 +217,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     });
     if (err) {
       endSignupFlow();
-      setError("Google sign-in isn't available right now. Please try again later.");
+      setError(t("c.auth.googleFail"));
       setBusy(false);
     }
   };
@@ -237,13 +240,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const saveName = async () => {
     if (!user) return;
     const next = nameDraft.trim();
-    if (next.length < 2 || next.length > 30) return setNameMsg("Use 2 to 30 characters.");
-    if (DEFAULT_NAME.test(next)) return setNameMsg("That name isn't available. Try another.");
+    if (next.length < 2 || next.length > 30) return setNameMsg(t("c.auth.nameLen"));
+    if (DEFAULT_NAME.test(next)) return setNameMsg(t("c.auth.nameUnavailable"));
     setSavingName(true);
     setNameMsg(null);
     const { error: err } = await supabase().from("profiles").update({ display_name: next }).eq("id", user.id);
     setSavingName(false);
-    if (err) return setNameMsg(err.code === "23505" ? "That name is taken. Try another." : "That name isn't available. Try another.");
+    if (err) return setNameMsg(err.code === "23505" ? t("c.auth.nameTaken") : t("c.auth.nameUnavailable"));
     setDisplayName(next);
     endSignupFlow();
   };
@@ -263,14 +266,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         >
           <div role="dialog" aria-modal="true" aria-labelledby="signin-title" className="w-full max-w-sm rounded-md border border-line bg-paper-raised p-6 shadow-lg">
             <h2 id="signin-title" className="font-display text-xl font-semibold text-ink">
-              Sign in to MatchaDB
+              {t("c.auth.title")}
             </h2>
             <p className="mt-2 text-sm text-ink-muted">{dialog.reason}</p>
             {embedded && (
               <p className="mt-3 rounded-sm border border-line-strong bg-matcha-soft px-3 py-2 text-sm text-ink">
-                You&apos;re in another app&apos;s built-in browser, and Google won&apos;t sign you in from here. Open
-                www.matchadb.com in Safari or Chrome (tap the share or menu button, then &quot;Open in Safari&quot;) and
-                sign in there.
+                {t("c.auth.embedded")}
               </p>
             )}
             <button
@@ -281,23 +282,25 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               className="mt-5 flex w-full items-center justify-center gap-3 rounded-full border border-line-strong bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-matcha-soft disabled:opacity-60"
             >
               <GoogleMark />
-              Continue with Google
+              {t("c.auth.google")}
             </button>
             {error && <p className="mt-3 text-sm text-red-700">{error}</p>}
             <p className="mt-4 text-xs text-ink-faint">
-              We only use your Google account to sign you in. Your name and email are never shown publicly. By
-              continuing you agree to the{" "}
-              <Link href="/terms" className="underline">
-                Terms
-              </Link>{" "}
-              and{" "}
-              <Link href="/privacy" className="underline">
-                Privacy Policy
-              </Link>
-              .
+              {rich(t("c.auth.privacy", { terms: "{terms}", privacy: "{privacy}" }), {
+                terms: (
+                  <Link href="/terms" className="underline">
+                    {t("c.auth.terms")}
+                  </Link>
+                ),
+                privacy: (
+                  <Link href="/privacy" className="underline">
+                    {t("c.auth.privacyLink")}
+                  </Link>
+                ),
+              })}
             </p>
             <button type="button" onClick={close} className="mt-4 text-sm text-ink-muted underline hover:text-ink">
-              Not now
+              {t("c.auth.notNow")}
             </button>
           </div>
         </div>
@@ -306,10 +309,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-ink/50 px-4">
           <div role="dialog" aria-modal="true" aria-labelledby="name-title" className="w-full max-w-sm rounded-md border border-line bg-paper-raised p-6 shadow-lg">
             <h2 id="name-title" className="font-display text-xl font-semibold text-ink">
-              Create a username
+              {t("c.auth.nameTitle")}
             </h2>
             <p className="mt-2 text-sm text-ink-muted">
-              Shown next to your ratings and reviews. Your email and Google name stay private.
+              {t("c.auth.nameP")}
             </p>
             <form
               onSubmit={(e) => {
@@ -318,7 +321,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               }}
             >
               <label htmlFor="new-display-name" className="mt-4 block text-sm font-medium text-ink">
-                Username:
+                {t("c.auth.nameLabel")}
               </label>
               <input
                 id="new-display-name"
@@ -339,14 +342,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                   disabled={savingName || nameDraft.trim().length < 2}
                   className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper transition-colors hover:bg-forest disabled:opacity-50"
                 >
-                  Save
+                  {t("c.auth.save")}
                 </button>
                 <button type="button" onClick={skipName} className="text-sm text-ink-muted underline hover:text-ink">
-                  Skip for now
+                  {t("c.auth.skip")}
                 </button>
               </div>
             </form>
-            <p className="mt-4 text-xs text-ink-faint">You can change it any time under My matcha.</p>
+            <p className="mt-4 text-xs text-ink-faint">{t("c.auth.nameNote")}</p>
           </div>
         </div>
       )}

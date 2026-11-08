@@ -22,9 +22,17 @@ Spanish, French and German (`/ja/browse`, `/ko/...`, `/zh/...`, `/es/...`, `/fr/
 
 ## Adding a language
 Add the code to `LOCALES`, `LOCALE_NAMES`, `HTML_LANG`, `INTL_LANG`, `OG_LOCALE` in `config.ts`, create `dictionaries/<code>.ts`,
-register it in `dictionaries/index.ts`, add it to the rewrite pattern in `next.config.ts`, to the `LANG` copy in `LanguageSuggest.tsx`,
+register it in `dictionaries/index.ts`, add it to the rewrite pattern in `next.config.ts`, to the `COPY` table in `LanguageSuggest.tsx`,
 and to the regular expressions in `LanguageMenu.tsx` / `config.ts` (`localePath`).
 
-## Not translated yet
-Guides, research library text, cultivar / region / compare / wholesale pages, product and brand pages, the account page and the
-sourcing-map panel are still English (their navigation and cards are translated). Privacy and terms stay English on purpose.
+## Long-form text (guides, region/cultivar write-ups, research topics, ...)
+Prose that is too long for the flat dictionaries lives in `src/i18n/content/{ja,ko,zh,es,fr,de}.ts` as `id -> translation`.
+The English stays in the code that renders it: `const c = getC(lang); c("rc.uji.intro", content.intro)` returns the translation if one
+exists, otherwise the English text (server components only: nothing in `content/` is sent to the browser). Templates may use
+`{placeholders}`: `c("gd.matcha-for-lattes.faq.1.a", "…{median}…", { median })`. Id prefixes: `rc.` regions, `cvc.` cultivars,
+`rt.` research topics, `gd.` guides, `wc.` the "what is ceremonial" explainer, `mp.` map text.
+
+## Deliberately still English
+Privacy and terms (a notice says so), text copied from brand pages (tasting notes, "Full details" fields, product and brand names),
+study titles and abstracts, citation source labels, and the wholesale suppliers' own summaries and facts (they describe each
+supplier's site, which is in English).

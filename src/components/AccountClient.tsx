@@ -8,12 +8,14 @@ import { PublicProfileSettings } from "@/components/PublicProfileSettings";
 import { BADGES } from "@/lib/badges";
 import { commentPhotoUrl, COMMENT_BUCKET } from "@/components/Comments";
 import { BrandLogo } from "@/components/product-cards";
-import { SHELF_LABELS, type ShelfStatus } from "@/components/ShelfButtons";
+import { SHELF_KEYS, type ShelfStatus } from "@/components/ShelfButtons";
 import { TierIcon } from "@/components/TierIcon";
 import { Stars } from "@/components/Stars";
 import { cafeSlug, type CafeSlim } from "@/lib/cafe-types";
 import { supabase } from "@/lib/supabase";
 import { CONTACT_EMAIL } from "@/lib/site";
+import { useT, useTV } from "@/i18n/client";
+import { rich } from "@/i18n/rich";
 
 type Item = { id: number; name: string; brand: string; price: string | null };
 type Rated = { product_id: number; score: number };
@@ -25,19 +27,21 @@ type StudyInfo = { id: number; title: string; journal: string; year: number | nu
 
 type MyComment = { id: string; target_type: "product" | "brand" | "cafe"; target_key: string; body: string; photos: string[]; status: Written["status"]; created_at: string };
 
-const STATUS: Record<Written["status"], string> = { pending: "Awaiting approval", approved: "Published", hidden: "Removed by a moderator" };
 
 function ProductLink({ item, id }: { item?: Item; id: number }) {
+  const t = useT();
   return (
     <Link href={`/products/${id}`} className="text-ink hover:text-matcha">
       <span className="block text-xs text-ink-faint">{item?.brand ?? ""}</span>
-      <span className="font-medium">{item?.name ?? `Product ${id}`}</span>
+      <span className="font-medium">{item?.name ?? t("c.acct.product", { id })}</span>
     </Link>
   );
 }
 
 export function AccountClient() {
   const { ready, user, displayName, stats, refreshStats, setDisplayName, signIn, signOut } = useAuth();
+  const t = useT();
+  const tv = useTV();
   const [favorites, setFavorites] = useState<number[] | null>(null);
   const [ratings, setRatings] = useState<Rated[] | null>(null);
   const [reviews, setReviews] = useState<Written[] | null>(null);
@@ -109,12 +113,12 @@ export function AccountClient() {
   const saveName = async () => {
     if (!user) return;
     const next = name.trim();
-    if (next.length < 2 || next.length > 30) return setNameMsg("Use 2 to 30 characters.");
+    if (next.length < 2 || next.length > 30) return setNameMsg(t("c.auth.nameLen"));
     const { error } = await supabase().from("profiles").update({ display_name: next }).eq("id", user.id);
-    if (error) return setNameMsg(error.code === "23505" ? "That name is taken. Try another." : "Couldn't save your name.");
+    if (error) return setNameMsg(error.code === "23505" ? t("c.auth.nameTaken") : t("c.acct.nameFail"));
     setDisplayName(next);
     setDraft(null);
-    setNameMsg("Saved.");
+    setNameMsg(t("c.acct.saved"));
   };
 
   const unshelve = async (id: number) => {
@@ -145,7 +149,7 @@ export function AccountClient() {
   };
 
   const deleteComment = async (c: MyComment) => {
-    if (!confirm("Delete this comment?")) return;
+    if (!confirm(t("c.acct.confirmDelete"))) return;
     const sb = supabase();
     if (c.photos.length) await sb.storage.from(COMMENT_BUCKET).remove(c.photos);
     const { error } = await sb.from("comments").delete().eq("id", c.id);
@@ -163,10 +167,10 @@ export function AccountClient() {
   if (!user) {
     return (
       <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-12">
-        <h1 className="font-display text-3xl font-semibold text-ink">My matcha</h1>
-        <p className="mt-3 text-ink-muted">Sign in to see the products you saved, your ratings and your reviews.</p>
-        <button type="button" onClick={() => signIn("Sign in to see your saved products, ratings and reviews.")} className="mt-5 rounded-full bg-matcha px-6 py-2.5 text-sm font-medium text-paper hover:bg-forest">
-          Sign in
+        <h1 className="font-display text-3xl font-semibold text-ink">{t("c.acct.title")}</h1>
+        <p className="mt-3 text-ink-muted">{t("c.acct.signInP")}</p>
+        <button type="button" onClick={() => signIn(t("c.acct.signInMsg"))} className="mt-5 rounded-full bg-matcha px-6 py-2.5 text-sm font-medium text-paper hover:bg-forest">
+          {t("c.rv.signInLink")}
         </button>
       </main>
     );
@@ -176,41 +180,43 @@ export function AccountClient() {
   return (
     <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-12 flex flex-col gap-10">
       <div>
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Account</p>
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">My matcha</h1>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("c.acct.eyebrow")}</p>
+        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("c.acct.title")}</h1>
       </div>
 
       {stats && (
         <section aria-labelledby="tier-h" className="rounded-sm border border-line bg-paper-raised p-5">
-          <p className="text-xs font-medium uppercase tracking-wide text-ink-faint">Your membership</p>
+          <p className="text-xs font-medium uppercase tracking-wide text-ink-faint">{t("c.acct.membership")}</p>
           <h2 id="tier-h" className="mt-1 flex items-center gap-2.5 font-display text-2xl font-semibold text-ink">
             <TierIcon tier={stats.tier} size={34} />
-            {stats.tier}
+            {tv("tier", stats.tier)}
           </h2>
           <p className="mt-1 text-sm text-ink-muted tabular-nums">
-            {stats.points} points
-            {stats.next_tier && stats.next_at != null ? ` · ${stats.next_at - stats.points} more to reach ${stats.next_tier}` : " · you have reached the top tier"}
+            {t("c.acct.points", { n: stats.points })}
+            {stats.next_tier && stats.next_at != null ? t("c.acct.next", { n: stats.next_at - stats.points, tier: tv("tier", stats.next_tier) }) : t("c.acct.top")}
           </p>
           {stats.next_at != null && (
-            <div className="mt-3 h-2 w-full max-w-md overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={stats.next_at} aria-valuenow={stats.points} aria-label="Progress to next tier">
+            <div className="mt-3 h-2 w-full max-w-md overflow-hidden rounded-full bg-line" role="progressbar" aria-valuemin={0} aria-valuemax={stats.next_at} aria-valuenow={stats.points} aria-label={t("c.acct.progress")}>
               <div className="h-full rounded-full bg-matcha" style={{ width: `${Math.min(100, (stats.points / stats.next_at) * 100)}%` }} />
             </div>
           )}
           <p className="mt-3 text-xs text-ink-faint">
-            Points come from rating, saving, shelving, commenting, reviewing, saving studies and visiting. Approved reviews and comments count the most.
+            {t("c.acct.pointsNote")}
           </p>
-          <ul className="mt-4 flex flex-wrap gap-2" aria-label="Badges">
-            {BADGES.map((b) => {
+          <ul className="mt-4 flex flex-wrap gap-2" aria-label={t("c.acct.badges")}>
+            {BADGES.map((b, bi) => {
+              const bn = t(`c.badge.${bi}.n` as "c.badge.0.n");
+              const bh = t(`c.badge.${bi}.h` as "c.badge.0.h");
               const earned = b.test(stats);
               return (
                 <li
                   key={b.name}
-                  title={earned ? "Earned" : b.hint}
+                  title={earned ? t("c.acct.earned") : bh}
                   className={`rounded-full border px-3 py-1 text-xs ${earned ? "border-matcha bg-matcha-soft text-forest" : "border-line-strong text-ink-faint"}`}
                 >
                   {earned ? "\u2713 " : ""}
-                  {b.name}
-                  {!earned && <span className="sr-only"> (not earned yet: {b.hint})</span>}
+                  {bn}
+                  {!earned && <span className="sr-only">{t("c.acct.notEarned", { hint: bh })}</span>}
                 </li>
               );
             })}
@@ -221,12 +227,12 @@ export function AccountClient() {
       <PublicProfileSettings />
 
       <section aria-labelledby="profile-h">
-        <h2 id="profile-h" className={h2}>Profile</h2>
+        <h2 id="profile-h" className={h2}>{t("c.acct.profile")}</h2>
         <p className="mt-2 text-sm text-ink-muted">
-          Signed in as {user.email}. Only you can see your email. Your reviews show the username below.
+          {t("c.acct.signedAs", { email: user.email ?? "" })}
         </p>
         <div className="mt-3 flex flex-wrap items-center gap-3">
-          <label htmlFor="display-name" className="sr-only">Username</label>
+          <label htmlFor="display-name" className="sr-only">{t("c.acct.username")}</label>
           <input
             id="display-name"
             value={name}
@@ -235,19 +241,23 @@ export function AccountClient() {
             className="w-64 rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink focus:outline-2 focus:outline-matcha"
           />
           <button type="button" onClick={saveName} disabled={!name.trim() || name.trim() === displayName} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">
-            Save username
+            {t("c.acct.saveName")}
           </button>
           {nameMsg && <span className="text-sm text-ink-muted" aria-live="polite">{nameMsg}</span>}
         </div>
       </section>
 
       <section aria-labelledby="shelf-h">
-        <h2 id="shelf-h" className={h2}>My shelf</h2>
+        <h2 id="shelf-h" className={h2}>{t("c.acct.shelf")}</h2>
         {shelved === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : shelved.length === 0 ? (
           <p className="mt-2 text-sm text-ink-muted">
-            Nothing on your shelf yet. On any product page, mark it <strong>Want to try</strong>, <strong>Using now</strong> or <strong>Tried it</strong>.
+            {rich(t("c.acct.shelfEmpty", { want: "{want}", using: "{using}", tried: "{tried}" }), {
+              want: <strong>{t("c.shelf.want")}</strong>,
+              using: <strong>{t("c.shelf.using")}</strong>,
+              tried: <strong>{t("c.shelf.tried")}</strong>,
+            })}
           </p>
         ) : (
           <div className="mt-3 flex flex-col gap-5">
@@ -257,7 +267,7 @@ export function AccountClient() {
               return (
                 <div key={st}>
                   <h3 className="text-sm font-medium text-ink">
-                    {SHELF_LABELS[st]} <span className="font-normal text-ink-faint">({rows.length})</span>
+                    {t(SHELF_KEYS[st])} <span className="font-normal text-ink-faint">({rows.length})</span>
                   </h3>
                   <ul className="mt-1 divide-y divide-line border-y border-line">
                     {rows.map((x) => (
@@ -265,7 +275,7 @@ export function AccountClient() {
                         <ProductLink id={x.product_id} item={items[x.product_id]} />
                         <span className="flex items-center gap-4 text-sm text-ink-muted">
                           {items[x.product_id]?.price}
-                          <button type="button" onClick={() => void unshelve(x.product_id)} className="underline hover:text-ink">Remove</button>
+                          <button type="button" onClick={() => void unshelve(x.product_id)} className="underline hover:text-ink">{t("c.acct.remove")}</button>
                         </span>
                       </li>
                     ))}
@@ -280,12 +290,15 @@ export function AccountClient() {
       <MyLists />
 
       <section aria-labelledby="brands-h">
-        <h2 id="brands-h" className={h2}>Saved brands</h2>
+        <h2 id="brands-h" className={h2}>{t("c.acct.brands")}</h2>
         {brands === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : brands.length === 0 ? (
           <p className="mt-2 text-sm text-ink-muted">
-            No brands saved yet. Tap <strong>Save brand</strong> on any brand page, or <Link href="/browse" className="text-matcha underline">browse the database</Link>.
+            {rich(t("c.acct.brandsEmpty", { save: "{save}", link: "{link}" }), {
+              save: <strong>{t("c.fav.brand.save")}</strong>,
+              link: <Link href="/browse" className="text-matcha underline">{t("c.acct.browse")}</Link>,
+            })}
           </p>
         ) : (
           <ul className="mt-3 divide-y divide-line border-y border-line">
@@ -296,7 +309,7 @@ export function AccountClient() {
                   <span className="font-medium">{b}</span>
                 </Link>
                 <button type="button" onClick={() => void unsaveBrand(b)} className="text-sm text-ink-muted underline hover:text-ink">
-                  Remove
+                  {t("c.acct.remove")}
                 </button>
               </li>
             ))}
@@ -305,12 +318,15 @@ export function AccountClient() {
       </section>
 
       <section aria-labelledby="cafes-h">
-        <h2 id="cafes-h" className={h2}>Favorite cafés</h2>
+        <h2 id="cafes-h" className={h2}>{t("c.acct.cafes")}</h2>
         {favCafes === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : favCafes.length === 0 ? (
           <p className="mt-2 text-sm text-ink-muted">
-            No cafés saved yet. Tap <strong>Save café</strong> on any café page, or <Link href="/cafes" className="text-matcha underline">find matcha cafés near you</Link>. If your profile is public, your favorite cafés show on it.
+            {rich(t("c.acct.cafesEmpty", { save: "{save}", link: "{link}" }), {
+              save: <strong>{t("c.fav.cafe.save")}</strong>,
+              link: <Link href="/cafes" className="text-matcha underline">{t("c.acct.findCafes")}</Link>,
+            })}
           </p>
         ) : (
           <ul className="mt-3 divide-y divide-line border-y border-line">
@@ -322,10 +338,10 @@ export function AccountClient() {
                     <span className="ml-2 text-sm text-ink-faint">{cafeNames[id].place}</span>
                   </Link>
                 ) : (
-                  <span className="text-ink-muted">A café</span>
+                  <span className="text-ink-muted">{t("c.acct.aCafe")}</span>
                 )}
                 <button type="button" onClick={() => void unsaveCafe(id)} className="text-sm text-ink-muted underline hover:text-ink">
-                  Remove
+                  {t("c.acct.remove")}
                 </button>
               </li>
             ))}
@@ -334,12 +350,12 @@ export function AccountClient() {
       </section>
 
       <section aria-labelledby="saved-h">
-        <h2 id="saved-h" className={h2}>Saved products</h2>
+        <h2 id="saved-h" className={h2}>{t("c.acct.savedProducts")}</h2>
         {favorites === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : favorites.length === 0 ? (
           <p className="mt-2 text-sm text-ink-muted">
-            Nothing saved yet. Tap Save on any product page, or <Link href="/browse" className="text-matcha underline">browse the database</Link>.
+            {rich(t("c.acct.savedEmpty", { link: "{link}" }), { link: <Link href="/browse" className="text-matcha underline">{t("c.acct.browse")}</Link> })}
           </p>
         ) : (
           <ul className="mt-3 divide-y divide-line border-y border-line">
@@ -348,7 +364,7 @@ export function AccountClient() {
                 <ProductLink id={id} item={items[id]} />
                 <span className="flex items-center gap-4 text-sm text-ink-muted">
                   {items[id]?.price}
-                  <button type="button" onClick={() => void unsave(id)} className="underline hover:text-ink">Remove</button>
+                  <button type="button" onClick={() => void unsave(id)} className="underline hover:text-ink">{t("c.acct.remove")}</button>
                 </span>
               </li>
             ))}
@@ -357,11 +373,11 @@ export function AccountClient() {
       </section>
 
       <section aria-labelledby="ratings-h">
-        <h2 id="ratings-h" className={h2}>My ratings</h2>
+        <h2 id="ratings-h" className={h2}>{t("c.acct.ratings")}</h2>
         {ratings === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : ratings.length === 0 ? (
-          <p className="mt-2 text-sm text-ink-muted">You haven&apos;t rated anything yet.</p>
+          <p className="mt-2 text-sm text-ink-muted">{t("c.acct.ratingsEmpty")}</p>
         ) : (
           <ul className="mt-3 divide-y divide-line border-y border-line">
             {ratings.map((r) => (
@@ -378,18 +394,18 @@ export function AccountClient() {
       </section>
 
       <section aria-labelledby="reviews-h">
-        <h2 id="reviews-h" className={h2}>My reviews</h2>
+        <h2 id="reviews-h" className={h2}>{t("c.acct.reviews")}</h2>
         {reviews === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : reviews.length === 0 ? (
-          <p className="mt-2 text-sm text-ink-muted">You haven&apos;t written a review yet. You can write one on any product page.</p>
+          <p className="mt-2 text-sm text-ink-muted">{t("c.acct.reviewsEmpty")}</p>
         ) : (
           <ul className="mt-3 flex flex-col gap-4">
             {reviews.map((r) => (
               <li key={r.id} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
                 <div className="flex items-center justify-between gap-3">
                   <ProductLink id={r.product_id} item={items[r.product_id]} />
-                  <span className="text-xs text-ink-faint">{STATUS[r.status]}</span>
+                  <span className="text-xs text-ink-faint">{t(`c.acct.status.${r.status}` as "c.acct.status.pending")}</span>
                 </div>
                 <p className="mt-2 whitespace-pre-line text-sm text-ink-muted">{r.body}</p>
               </li>
@@ -399,12 +415,12 @@ export function AccountClient() {
       </section>
 
       <section aria-labelledby="folder-h">
-        <h2 id="folder-h" className={h2}>My research folder</h2>
+        <h2 id="folder-h" className={h2}>{t("c.acct.folder")}</h2>
         {saved === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : saved.length === 0 ? (
           <p className="mt-2 text-sm text-ink-muted">
-            No studies saved yet. Open any study in the <Link href="/research" className="text-matcha underline">research library</Link> and save it here, with a private note.
+            {rich(t("c.acct.folderEmpty", { link: "{link}" }), { link: <Link href="/research" className="text-matcha underline">{t("c.acct.researchLib")}</Link> })}
           </p>
         ) : (
           <ul className="mt-3 flex flex-col gap-4">
@@ -413,7 +429,7 @@ export function AccountClient() {
               return (
                 <li key={m.study_id} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
                   <Link href={`/research/${m.study_id}`} className="font-medium text-ink hover:text-matcha">
-                    {s?.title ?? `Study ${m.study_id}`}
+                    {s?.title ?? t("c.acct.study", { id: m.study_id })}
                   </Link>
                   {s && (
                     <p className="mt-0.5 text-xs text-ink-faint">
@@ -423,8 +439,8 @@ export function AccountClient() {
                   )}
                   {m.note && <p className="mt-2 whitespace-pre-line border-l-2 border-matcha pl-3 text-sm text-ink-muted">{m.note}</p>}
                   <div className="mt-2 flex gap-4 text-sm">
-                    <Link href={`/research/${m.study_id}`} className="text-matcha underline hover:text-forest">{m.note ? "Edit note" : "Add a note"}</Link>
-                    <button type="button" onClick={() => void unbookmark(m.study_id)} className="text-ink-muted underline hover:text-ink">Remove</button>
+                    <Link href={`/research/${m.study_id}`} className="text-matcha underline hover:text-forest">{m.note ? t("c.acct.editNote") : t("c.acct.addNote")}</Link>
+                    <button type="button" onClick={() => void unbookmark(m.study_id)} className="text-ink-muted underline hover:text-ink">{t("c.acct.remove")}</button>
                   </div>
                 </li>
               );
@@ -434,11 +450,11 @@ export function AccountClient() {
       </section>
 
       <section aria-labelledby="comments-h">
-        <h2 id="comments-h" className={h2}>My comments &amp; photos</h2>
+        <h2 id="comments-h" className={h2}>{t("c.acct.comments")}</h2>
         {comments === null ? (
           <p className="mt-2 text-sm text-ink-faint">Loading…</p>
         ) : comments.length === 0 ? (
-          <p className="mt-2 text-sm text-ink-muted">You haven&apos;t commented yet. Comments and photos can be added on any product, brand or café page.</p>
+          <p className="mt-2 text-sm text-ink-muted">{t("c.acct.commentsEmpty")}</p>
         ) : (
           <ul className="mt-3 flex flex-col gap-4">
             {comments.map((c) => (
@@ -448,14 +464,14 @@ export function AccountClient() {
                     <ProductLink id={Number(c.target_key)} item={items[Number(c.target_key)]} />
                   ) : c.target_type === "cafe" ? (
                     <Link href={cafeNames[c.target_key] ? `/cafes/${cafeNames[c.target_key].slug}` : "/cafes"} className="font-medium text-ink hover:text-matcha">
-                      {cafeNames[c.target_key]?.name ?? "A café"}
+                      {cafeNames[c.target_key]?.name ?? t("c.acct.aCafe")}
                     </Link>
                   ) : (
                     <Link href={`/brands/${encodeURIComponent(c.target_key)}`} className="font-medium text-ink hover:text-matcha">
                       {c.target_key}
                     </Link>
                   )}
-                  <span className="text-xs text-ink-faint">{STATUS[c.status]}</span>
+                  <span className="text-xs text-ink-faint">{t(`c.acct.status.${c.status}` as "c.acct.status.pending")}</span>
                 </div>
                 <p className="mt-2 whitespace-pre-line text-sm text-ink-muted">{c.body}</p>
                 {c.photos.length > 0 && (
@@ -463,13 +479,13 @@ export function AccountClient() {
                     {c.photos.map((p) => (
                       <a key={p} href={commentPhotoUrl(p)} target="_blank" rel="noopener noreferrer">
                         {/* eslint-disable-next-line @next/next/no-img-element -- user photo from storage */}
-                        <img src={commentPhotoUrl(p)} alt="Your photo" loading="lazy" className="h-20 w-20 rounded-sm border border-line object-cover" />
+                        <img src={commentPhotoUrl(p)} alt={t("c.acct.yourPhoto")} loading="lazy" className="h-20 w-20 rounded-sm border border-line object-cover" />
                       </a>
                     ))}
                   </div>
                 )}
                 <button type="button" onClick={() => void deleteComment(c)} className="mt-2 text-sm text-ink-muted underline hover:text-ink">
-                  Delete
+                  {t("c.cm.delete")}
                 </button>
               </li>
             ))}
@@ -479,14 +495,16 @@ export function AccountClient() {
 
       <section className="border-t border-line pt-6 text-sm text-ink-muted">
         <button type="button" onClick={() => void signOut()} className="underline hover:text-ink">
-          Sign out
+          {t("c.acct.signOut")}
         </button>
         <p className="mt-3">
-          To delete your account and everything linked to it, email{" "}
-          <a className="text-matcha underline" href={`mailto:${CONTACT_EMAIL}?subject=Delete%20my%20MatchaDB%20account`}>
-            {CONTACT_EMAIL}
-          </a>{" "}
-          from the address you signed in with.
+          {rich(t("c.acct.deleteAcct", { email: "{email}" }), {
+            email: (
+              <a className="text-matcha underline" href={`mailto:${CONTACT_EMAIL}?subject=Delete%20my%20MatchaDB%20account`}>
+                {CONTACT_EMAIL}
+              </a>
+            ),
+          })}
         </p>
       </section>
     </main>

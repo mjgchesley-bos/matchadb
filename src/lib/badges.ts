@@ -15,6 +15,7 @@ export const BADGES: { name: string; hint: string; test: (s: MemberStats) => boo
   { name: "Devoted", hint: "Visit on 30 different days", test: (s) => s.days >= 30 },
 ];
 
+// The labels are translated through the "v.how.*" keys; these are the English fallbacks.
 export const HOW_LABELS: Record<string, string> = {
   lattes: "Lattes",
   usucha: "Usucha (thin tea)",

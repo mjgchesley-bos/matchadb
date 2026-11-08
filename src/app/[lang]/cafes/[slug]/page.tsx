@@ -67,7 +67,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         }}
       />
 
-      <nav aria-label="Breadcrumb" className="text-sm text-ink-faint">
+      <nav aria-label={t("prod.crumb.aria")} className="text-sm text-ink-faint">
         <Link href="/cafes" className="hover:text-ink-muted">
           {t("cafe.crumb")}
         </Link>{" "}

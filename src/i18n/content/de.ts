@@ -322,6 +322,8 @@ const c: Record<string, string> = {
   "wc.src.p": "Die Geschichte fasst veröffentlichte Darstellungen zusammen, vor allem die in Wikipedia zitierte Geschichte; daraus stammen auch die Daten zu Beschattung und Edo-zeitlichem Monopol. Die Details unterscheiden sich zwischen den Quellen, daher nennen wir Daten vorsichtig. Die Kommentare zur Bezeichnung stammen aus den eigenen Erklärungen von Teeverkäufern, von denen mehrere Matcha verkaufen, was man im Hinterkopf behalten sollte. Die Zahlen oben stammen aus der Produkttabelle von MatchaDB und werden bei jedem Neuaufbau der Seite aktualisiert.",
   "wc.related": "Siehe auch: {a}, {b}, {c}.",
   "wc.related.a": "zeremonieller vs kulinarischer Matcha",
+  "mp.farm.farm-hattori-kikugawa": "Ein Familienbetrieb in vierter Generation, ein einzelnes Anwesen, in der Stadt Kikugawa, Shizuoka, geführt von Hattori-san.",
+  "mp.farm.farm-isagawa-tenryu": "Eine abgelegene, 20 Hektar große Bio-Bergplantage auf 300–600 m Höhe in der Unterregion Haruno in Tenryū, Shizuoka.",
   // @@END
 };
 
