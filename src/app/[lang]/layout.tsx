@@ -9,7 +9,6 @@ import { HeaderAccount } from "@/components/HeaderAccount";
 import { HeaderMenu } from "@/components/HeaderMenu";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { I18nProvider } from "@/i18n/client";
-import { LanguageMenu } from "@/i18n/LanguageMenu";
 import { LanguageSuggest } from "@/i18n/LanguageSuggest";
 import { LOCALES, LOCALE_NAMES, HTML_LANG, OG_LOCALE, isLocale, localePath, type Locale } from "@/i18n/config";
 import { getT, clientMessages } from "@/i18n/server";
@@ -121,9 +120,8 @@ export default async function RootLayout({
               <span className="font-display text-[1.4rem] font-semibold tracking-tight text-paper">MatchaDB</span>
               <span className="h-1.5 w-1.5 rounded-full bg-paper ml-0.5 mb-0.5 transition-transform group-hover:scale-125" />
             </Link>
-            {/* Sign in and the menu sit together in the far top-right corner at every screen size. */}
+            {/* Sign in and the menu sit together in the far top-right corner at every screen size. The language list lives in the footer. */}
             <div className="order-2 ml-auto flex items-center gap-2 lg:order-3 lg:shrink-0">
-              <LanguageMenu />
               <HeaderAccount />
               <HeaderMenu />
             </div>
