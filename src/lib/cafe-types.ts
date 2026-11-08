@@ -80,6 +80,7 @@ export const COUNTRY_NAME: Record<string, string> = {
   CA: "Canada",
   JP: "Japan",
   KR: "South Korea",
+  AU: "Australia",
   GB: "United Kingdom",
   IE: "Ireland",
   FR: "France",
@@ -125,7 +126,7 @@ export function countryName(cc: string, lang: Locale = "en"): string {
 
 // Page addresses for places outside the US end in the three-letter country code; US ones end in the state.
 const CC3: Record<string, string> = {
-  CA: "can", JP: "jpn", KR: "kor", GB: "gbr", IE: "irl", FR: "fra", DE: "deu", IT: "ita", ES: "esp", PT: "prt", NL: "nld", BE: "bel", LU: "lux", AT: "aut", CH: "che",
+  CA: "can", JP: "jpn", KR: "kor", AU: "aus", GB: "gbr", IE: "irl", FR: "fra", DE: "deu", IT: "ita", ES: "esp", PT: "prt", NL: "nld", BE: "bel", LU: "lux", AT: "aut", CH: "che",
   SE: "swe", NO: "nor", DK: "dnk", FI: "fin", IS: "isl", PL: "pol", CZ: "cze", SK: "svk", HU: "hun", GR: "grc", RO: "rou", BG: "bgr", HR: "hrv", SI: "svn", EE: "est",
   LV: "lva", LT: "ltu", MT: "mlt", CY: "cyp",
 };

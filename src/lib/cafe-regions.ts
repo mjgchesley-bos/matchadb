@@ -1,7 +1,7 @@
 // The parts of the world the café finder covers. Each region has its own map list
 // (public/data/cafes-slim-{key}.json), so visitors only download the part they look at.
 
-export type RegionKey = "us" | "ca" | "eu" | "jp" | "kr";
+export type RegionKey = "us" | "ca" | "eu" | "jp" | "kr" | "au";
 
 export type Region = {
   key: RegionKey;
@@ -22,6 +22,7 @@ export const REGIONS: Region[] = [
   { key: "eu", label: "Europe", countries: EUROPE, bounds: [[-11, 35], [32, 60]], unit: "km", placeholder: "e.g. London, Paris or 10115" },
   { key: "jp", label: "Japan", countries: ["jp"], bounds: [[129, 31], [146, 45.7]], unit: "km", placeholder: "e.g. Tokyo or Kyoto" },
   { key: "kr", label: "South Korea", countries: ["kr"], bounds: [[125.5, 33], [130, 38.7]], unit: "km", placeholder: "e.g. Seoul or Busan" },
+  { key: "au", label: "Australia", countries: ["au"], bounds: [[112, -44.5], [154.5, -10]], unit: "km", placeholder: "e.g. Sydney or 3000" },
 ];
 
 export const regionByKey = (k: string | undefined | null): Region => REGIONS.find((r) => r.key === k) ?? REGIONS[0];

@@ -7,7 +7,7 @@ outside git; everything needed to rebuild them is in this folder.
 ## What a run does
 
 1. **Sources (monthly, when a newer release exists).** Overture Maps places (`export.py`, `export_intl.py`, `export2.py`)
-   and Foursquare OS Places (`fsq_pull_all.py` every café-type venue, `fsq_pull.py` places with matcha in the name, then
+   Australia has its own one-file pull (`export_au.py`: Overture core + extra categories, and every café-type Foursquare venue; run with `overture`, `fsq` or `both`). Foursquare OS Places (`fsq_pull_all.py` every café-type venue, `fsq_pull.py` places with matcha in the name, then
    `fsq_all_to_cands.py` / `fsq_to_cands.py`). Release versions are remembered in `overture_release.txt` / `fsq_release.txt`.
 2. **Crawl.** `crawl2.cjs` reads each café's own website (homepage, menu/drinks pages, sitemap, PDF menus) and records whether it
    mentions matcha. Each week it re-reads: sites never checked, every site currently listed, sites that failed (until they fail

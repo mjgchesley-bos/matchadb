@@ -11,7 +11,7 @@ import { useLang, useT } from "@/i18n/client";
 import { INTL_LANG, localePath, type Locale } from "@/i18n/config";
 import { rich } from "@/i18n/rich";
 
-// Find cafés near you whose own website lists matcha, in the US, Canada, Europe, Japan and South Korea.
+// Find cafés near you whose own website lists matcha, in the US, Canada, Europe, Japan, South Korea and Australia.
 // Search by ZIP, postcode or city, or use your device's location. Your position is only used in your
 // browser to sort and map the list; nothing about it is sent to or stored by us. (A typed place is sent
 // to Mapbox's geocoder to turn it into a point.)

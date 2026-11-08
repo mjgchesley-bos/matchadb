@@ -87,6 +87,7 @@ def refresh_sources():
             tmp = f"{WORK}/_tmp_{script}"
             open(tmp, "w", encoding="utf-8").write(src)
             run([sys.executable, "-I", tmp], timeout=7200)
+        run([sys.executable, "-I", f"{HERE}/export_au.py", rel, "", "overture"], timeout=7200)      # Australia
         open(f"{WORK}/overture_release.txt", "w").write(rel)
     if "fsq" in changed:
         rel = changed["fsq"]
@@ -94,6 +95,7 @@ def refresh_sources():
             run([sys.executable, "-I", f"{HERE}/{script}", rel], timeout=7200)
         run([sys.executable, "-I", f"{HERE}/fsq_all_to_cands.py"])
         run([sys.executable, "-I", f"{HERE}/fsq_to_cands.py"])
+        run([sys.executable, "-I", f"{HERE}/export_au.py", "", rel, "fsq"], timeout=7200)           # Australia
         open(f"{WORK}/fsq_release.txt", "w").write(rel)
     return changed
 
@@ -122,7 +124,7 @@ def place_hosts():
     import duckdb
     con = duckdb.connect()
     urls, cnt = {}, collections.Counter()
-    for pq in ("us_cafes", "intl_cafes", "ext_cands", "fsq_cands", "fsq_all_cands"):
+    for pq in ("us_cafes", "intl_cafes", "ext_cands", "fsq_cands", "fsq_all_cands", "au_cafes", "au_ext", "fsq_au_cafes"):
         p = f"{WORK}/{pq}.parquet"
         if not os.path.exists(p): continue
         for (w,) in con.execute(f"select website from '{p}' where website is not null").fetchall():
@@ -187,7 +189,7 @@ def update_state(state, out):
 
 # ----------------------------------------------------------------------------------------------- 3-4. build + verify
 def count_slim(d):
-    return {k: len(json.load(open(f"{d}/cafes-slim-{k}.json", encoding="utf-8"))) for k in ("us", "ca", "eu", "jp", "kr")}
+    return {k: len(json.load(open(f"{d}/cafes-slim-{k}.json", encoding="utf-8"))) for k in ("us", "ca", "eu", "jp", "kr", "au") if os.path.exists(f"{d}/cafes-slim-{k}.json")}
 
 def build_and_verify():
     tmp_d, tmp_p = f"{WORK}/out_weekly/d", f"{WORK}/out_weekly/p"
@@ -198,7 +200,7 @@ def build_and_verify():
     problems = []
     for k in new:
         if new[k] < 50: problems.append(f"{k}: only {new[k]} cafés")
-        if old[k] and new[k] < old[k] * 0.97: problems.append(f"{k}: dropped from {old[k]} to {new[k]} (more than 3%)")
+        if old.get(k) and new[k] < old[k] * 0.97: problems.append(f"{k}: dropped from {old[k]} to {new[k]} (more than 3%)")
     ids = collections.Counter()
     for f in glob.glob(f"{tmp_d}/*.json"):
         try: data = json.load(open(f, encoding="utf-8"))

@@ -5,7 +5,7 @@ A café is included only when its OWN website (homepage or a menu / drinks / ord
 (Latin script, or 抹茶 / まっちゃ / マッチャ / 말차). Output:
   <out_dir>/{ST}.json      US states (2 letters), one file per state
   <out_dir>/{CCC}.json     every other country (ISO alpha-3), one file per country
-  <slim_dir>/cafes-slim-{region}.json   the map list per region: us, ca, eu, jp, kr
+  <slim_dir>/cafes-slim-{region}.json   the map list per region: us, ca, eu, jp, kr, au
 
 usage: python -I build_all.py OUT_DIR SLIM_DIR
 """
@@ -20,14 +20,15 @@ CRAWL_FILES = [f"C:/temp/cafes/{n}" for n in ("crawl.jsonl", "crawl_intl.jsonl",
 import glob as _glob
 for _f in sorted(_glob.glob("C:/temp/cafes/v2_*.jsonl") + _glob.glob("C:/temp/cafes/w_*.jsonl"), key=os.path.getmtime):
     if _f.replace("\\", "/") not in [x.replace("\\", "/") for x in CRAWL_FILES]: CRAWL_FILES.append(_f.replace("\\", "/"))
-PLACES = ["C:/temp/cafes/us_cafes.parquet", "C:/temp/cafes/intl_cafes.parquet", "C:/temp/cafes/ext_cands.parquet", "C:/temp/cafes/fsq_cands.parquet", "C:/temp/cafes/fsq_all_cands.parquet"]
+PLACES = ["C:/temp/cafes/us_cafes.parquet", "C:/temp/cafes/intl_cafes.parquet", "C:/temp/cafes/ext_cands.parquet", "C:/temp/cafes/fsq_cands.parquet", "C:/temp/cafes/fsq_all_cands.parquet",
+          "C:/temp/cafes/au_cafes.parquet", "C:/temp/cafes/au_ext.parquet", "C:/temp/cafes/fsq_au_cafes.parquet"]
 LEADS_FILE = "C:/temp/cafes/leads_venues.json"      # venues found through web leads (not in Overture): already in café shape
 # categories where "matcha" in the business name is enough to list it (the name is its own claim)
 NAME_CATS = {None, "cafe", "coffee_shop", "tea_room", "bubble_tea_shop", "coffee_roastery", "dessert_shop", "ice_cream_shop", "gelato_shop", "smoothie_juice_bar",
              "juice_bar", "bakery", "donut_shop", "creperie", "breakfast_and_brunch_restaurant", "restaurant", "japanese_restaurant", "food_truck_stand", "bar",
              "health_food_restaurant", "vegan_restaurant", "hong_kong_style_cafe", "bagel_shop"}
 
-CC3 = {"CA": "CAN", "JP": "JPN", "KR": "KOR", "GB": "GBR", "IE": "IRL", "FR": "FRA", "DE": "DEU", "IT": "ITA", "ES": "ESP", "PT": "PRT", "NL": "NLD", "BE": "BEL",
+CC3 = {"CA": "CAN", "JP": "JPN", "KR": "KOR", "AU": "AUS", "GB": "GBR", "IE": "IRL", "FR": "FRA", "DE": "DEU", "IT": "ITA", "ES": "ESP", "PT": "PRT", "NL": "NLD", "BE": "BEL",
        "LU": "LUX", "AT": "AUT", "CH": "CHE", "SE": "SWE", "NO": "NOR", "DK": "DNK", "FI": "FIN", "IS": "ISL", "PL": "POL", "CZ": "CZE", "SK": "SVK", "HU": "HUN",
        "GR": "GRC", "RO": "ROU", "BG": "BGR", "HR": "HRV", "SI": "SVN", "EE": "EST", "LV": "LVA", "LT": "LTU", "MT": "MLT", "CY": "CYP"}
 EU = {"GB", "IE", "FR", "DE", "IT", "ES", "PT", "NL", "BE", "LU", "AT", "CH", "SE", "NO", "DK", "FI", "IS", "PL", "CZ", "SK", "HU", "GR", "RO", "BG", "HR", "SI", "EE", "LV", "LT", "MT", "CY"}
@@ -37,6 +38,7 @@ def region_of(cc):
     if cc == "CA": return "ca"
     if cc == "JP": return "jp"
     if cc == "KR": return "kr"
+    if cc == "AU": return "au"
     return "eu" if cc in EU else None
 
 def host_of(u):
@@ -50,6 +52,7 @@ M_WORD = r'(?:\bmatchas?\b|\bmaccha\b|抹茶|まっちゃ|マッチャ|말차)'
 M_RE = re.compile(M_WORD, re.I)
 ITEM = re.compile(r'"(?:name|title|label|item_name|altText|headerImageAlt|imageAlt|alt)"\s*:\s*"[^"]*' + M_WORD, re.I)
 ITEM_NAME = re.compile(r'"(?:name|title|label|item_name|altText|headerImageAlt|imageAlt|alt)"\s*:\s*"([^"]*' + M_WORD + r'[^"]*)"', re.I)
+CJK_ADDR = re.compile(r"[぀-ヿ㐀-鿿가-힯]")
 NAME_FOCUS = re.compile(r'matcha|抹茶|まっちゃ|マッチャ|말차', re.I)
 
 def clean(s):
@@ -149,6 +152,9 @@ for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, c
     if conf is not None and conf < 0.3: continue
     name = clean(name)
     if not name: continue
+    # a street address written in Japanese / Korean / Chinese script outside Japan and Korea = the place data put the wrong country on it
+    if cc not in ("JP", "KR") and (CJK_ADDR.search(clean(address)) or (cc == "AU" and CJK_ADDR.search(clean(city) + clean(state)))):
+        stats["wrong_country"] += 1; continue
     if wd and brand_count[wd] >= 15: continue                       # big chains are handled separately
     h = host_of(website) if website else None
     if h and host_rows[h] >= 25: continue                           # one site shared by 25+ places = a chain
@@ -280,7 +286,7 @@ for k, cs in files.items():
 slims = {}
 for c in cafes:
     slims.setdefault(region_of(c["cc"]), []).append([c["id"], c["name"], c["address"], c["city"], c["state"], c["zip"], c["lat"], c["lng"], 2 if c.get("via") == "name" else (1 if c["focus"] else 0), c["cc"]])
-for reg in ("us", "ca", "eu", "jp", "kr"):
+for reg in ("us", "ca", "eu", "jp", "kr", "au"):
     json.dump(slims.get(reg, []), open(os.path.join(SLIM_DIR, f"cafes-slim-{reg}.json"), "w", encoding="utf8"), separators=(",", ":"), ensure_ascii=False)
 
 print(stats); print(f"hosts crawled {crawled}; cafés with matcha on their own site: {len(cafes)} (matcha-focused {sum(c['focus'] for c in cafes)})")
@@ -288,4 +294,4 @@ print("by region", {k: len(v) for k, v in slims.items()})
 print("by country", Counter(c["cc"] for c in cafes).most_common(14))
 print("evidence strength", Counter(max((e["st"] for e in c["ev"]), default=0) for c in cafes))
 print("files", len(files), "full KB", sum(os.path.getsize(os.path.join(OUT_DIR, f)) for f in os.listdir(OUT_DIR)) // 1024,
-      "slim KB", {k: os.path.getsize(os.path.join(SLIM_DIR, f"cafes-slim-{k}.json")) // 1024 for k in ("us", "ca", "eu", "jp", "kr")})
+      "slim KB", {k: os.path.getsize(os.path.join(SLIM_DIR, f"cafes-slim-{k}.json")) // 1024 for k in ("us", "ca", "eu", "jp", "kr", "au")})
