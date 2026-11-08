@@ -1,3 +1,4 @@
+import unicodedata
 """Build the café data for the site from Overture places + the menu crawls.
 
 A café is included only when its OWN website (homepage or a menu / drinks / order page) mentions matcha
@@ -15,7 +16,7 @@ from collections import Counter
 sys.stdout.reconfigure(encoding="utf-8")
 OUT_DIR = sys.argv[1]
 SLIM_DIR = sys.argv[2]
-CRAWL_FILES = [f"C:/temp/cafes/{n}" for n in ("crawl.jsonl", "crawl_intl.jsonl", "crawl_intl_retry.jsonl", "v2_a.jsonl", "v2_a2.jsonl", "v2_b.jsonl", "v2_c.jsonl", "v2_r1.jsonl", "v2_r2.jsonl", "v2_r3.jsonl", "v2_merit.jsonl", "v2_leads.jsonl", "v2_manual.jsonl")]
+CRAWL_FILES = [f"C:/temp/cafes/{n}" for n in ("crawl.jsonl", "crawl_intl.jsonl", "crawl_intl_retry.jsonl", "v2_a.jsonl", "v2_a2.jsonl", "v2_b.jsonl", "v2_c.jsonl", "v2_r1.jsonl", "v2_r2.jsonl", "v2_r3.jsonl", "v2_r4.jsonl", "v2_merit.jsonl", "v2_leads.jsonl", "v2_manual.jsonl")]
 PLACES = ["C:/temp/cafes/us_cafes.parquet", "C:/temp/cafes/intl_cafes.parquet", "C:/temp/cafes/ext_cands.parquet", "C:/temp/cafes/fsq_cands.parquet"]
 LEADS_FILE = "C:/temp/cafes/leads_venues.json"      # venues found through web leads (not in Overture): already in café shape
 # categories where "matcha" in the business name is enough to list it (the name is its own claim)
@@ -160,6 +161,39 @@ if os.path.exists(LEADS_FILE):
     leads = json.load(open(LEADS_FILE, encoding="utf-8"))
     cafes.extend(leads)
     stats["leads"] = len(leads)
+
+# a website shared by several places can be a wrong link in the place data (e.g. a London café listing Merit Coffee's site).
+# When one site clearly belongs to a group of places that carry its name, drop the ones that do not: other country, or a different name.
+GENERIC = {"coffee", "cafe", "caf", "co", "tea", "roasters", "roastery", "roasting", "the", "and", "company", "bar", "shop", "house", "kitchen", "bakery", "local"}
+def _label(h): return re.sub(r"[^a-z0-9]", "", h.lower().replace("www.", "").rsplit(".", 1)[0]) if h else ""
+def _core_label(lbl):
+    for g in sorted(GENERIC, key=len, reverse=True):
+        if len(lbl) - len(g) >= 4: lbl = lbl.replace(g, "")
+    return lbl
+def _matches(c, lbl):
+    core = _core_label(lbl)
+    nm = norm_name(c["name"])
+    return bool(core) and (core in nm or any(len(t) >= 4 and t in lbl for t in re.findall(r"[a-z0-9]+", c["name"].lower()) if t not in GENERIC))
+def norm_name(s): return re.sub(r"[\W_]+", "", unicodedata.normalize("NFKD", s.lower()).encode("ascii", "ignore").decode())
+_hg = {}
+for c in cafes:
+    if c.get("via") or not c["url"]: continue
+    hh = host_of(c["url"])
+    if hh and not AGG_HOST.search(hh): _hg.setdefault(hh, []).append(c)
+_drop = set()
+for hh, cs in _hg.items():
+    if len(cs) < 3: continue
+    lbl = _label(hh)
+    modal = Counter(c["cc"] for c in cs).most_common(1)[0][0]
+    core = [c for c in cs if _matches(c, lbl)]
+    for c in cs:
+        if c in core or len(core) < 3: continue
+        latin = all(ord(ch) < 0x250 for ch in c["name"])
+        on_core = any(abs(o["lat"] - c["lat"]) < 0.00008 and abs(o["lng"] - c["lng"]) < 0.00008 for o in core)
+        if (latin and c["cc"] != modal) or on_core: _drop.add(c["id"])
+if _drop:
+    print("dropped by shared-site check:", len(_drop))
+    cafes = [c for c in cafes if c["id"] not in _drop]
 
 # near-duplicates: same name within ~150 m
 def norm(s): return re.sub(r'[\W_]+', '', s.lower())

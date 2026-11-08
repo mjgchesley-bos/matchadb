@@ -76,16 +76,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.4,
   }));
 
-  // Café pages: the English URL lists the other languages (a separate entry per language would be 200,000+ URLs).
-  const cafeEntries: MetadataRoute.Sitemap = getAllCafes().map((c) => {
-    const slug = cafeSlug(c);
-    return {
-      url: `${SITE_URL}/cafes/${slug}`,
-      changeFrequency: "monthly" as const,
-      priority: 0.4,
-      alternates: { languages: Object.fromEntries(LOCALES.map((l) => [HTML_LANG[l], `${SITE_URL}${localePath(l, `/cafes/${slug}`)}`])) },
-    };
-  });
+  // Café pages: only the English URL is listed (a separate entry per language would be 200,000+ URLs). Each café page
+  // names its other-language versions in its own <head> (hreflang), so the sitemap does not repeat them; with them it was 30 MB.
+  const cafeEntries: MetadataRoute.Sitemap = getAllCafes().map((c) => ({
+    url: `${SITE_URL}/cafes/${cafeSlug(c)}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.4,
+  }));
 
   return [...staticEntries, ...regionEntries, ...brandEntries, ...productEntries, ...studyEntries, ...cafeEntries];
 }

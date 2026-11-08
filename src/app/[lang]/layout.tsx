@@ -34,11 +34,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Every language is built ahead of time; a language code that isn't in the list is a 404.
-export const dynamicParams = false;
+// English is built ahead of time. The other languages are built the first time someone asks for a page, then kept
+// (seven prebuilt copies of every page made the build too large for Amplify to deploy). A language code that isn't
+// in the list is a 404 (see the check in the layout below).
+export const dynamicParams = true;
 
 export function generateStaticParams() {
-  return LOCALES.map((lang) => ({ lang }));
+  return [{ lang: "en" }];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
