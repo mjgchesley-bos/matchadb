@@ -16,7 +16,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 OUT_DIR = sys.argv[1]
 SLIM_DIR = sys.argv[2]
 CRAWL_FILES = [f"C:/temp/cafes/{n}" for n in ("crawl.jsonl", "crawl_intl.jsonl", "crawl_intl_retry.jsonl", "v2_a.jsonl", "v2_a2.jsonl", "v2_b.jsonl", "v2_c.jsonl", "v2_r1.jsonl", "v2_r2.jsonl", "v2_r3.jsonl", "v2_merit.jsonl", "v2_leads.jsonl", "v2_manual.jsonl")]
-PLACES = ["C:/temp/cafes/us_cafes.parquet", "C:/temp/cafes/intl_cafes.parquet", "C:/temp/cafes/ext_cands.parquet"]
+PLACES = ["C:/temp/cafes/us_cafes.parquet", "C:/temp/cafes/intl_cafes.parquet", "C:/temp/cafes/ext_cands.parquet", "C:/temp/cafes/fsq_cands.parquet"]
 LEADS_FILE = "C:/temp/cafes/leads_venues.json"      # venues found through web leads (not in Overture): already in café shape
 # categories where "matcha" in the business name is enough to list it (the name is its own claim)
 NAME_CATS = {None, "cafe", "coffee_shop", "tea_room", "bubble_tea_shop", "coffee_roastery", "dessert_shop", "ice_cream_shop", "gelato_shop", "smoothie_juice_bar",
@@ -167,7 +167,10 @@ cafes.sort(key=lambda c: -c["conf"])
 kept, seen = [], {}
 for c in cafes:
     key = norm(c["name"]) or c["id"]
-    if any(abs(o["lat"] - c["lat"]) < 0.0015 and abs(o["lng"] - c["lng"]) < 0.002 for o in seen.get(key, [])): continue
+    def _near(o):
+        wide = c.get("via") or o.get("via")          # a name-only listing (e.g. Foursquare) can be ~1 km off the same café's other record
+        return abs(o["lat"] - c["lat"]) < (0.012 if wide else 0.0015) and abs(o["lng"] - c["lng"]) < (0.016 if wide else 0.002)
+    if any(_near(o) for o in seen.get(key, [])): continue
     seen.setdefault(key, []).append(c)
     kept.append(c)
 cafes = kept
