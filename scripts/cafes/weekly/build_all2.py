@@ -9,7 +9,7 @@ A café is included only when its OWN website (homepage or a menu / drinks / ord
 
 usage: python -I build_all.py OUT_DIR SLIM_DIR
 """
-import duckdb, json, re, sys, os, shutil, html
+import duckdb, json, re, sys, os, shutil, html, collections
 from urllib.parse import urlparse
 from collections import Counter
 
@@ -143,6 +143,26 @@ brand_count = Counter(r[13] for r in rows if r[13])
 # how many distinct outlets use a website (the same café listed by two sources counts once): 25+ = a chain
 host_rows = Counter(h for h, _, _ in {(host_of(r[10]), round(r[8], 3), round(r[9], 3)) for r in rows if r[10] and r[8] is not None and r[9] is not None})
 
+# a brand with a different website in every country (starbucks.be, starbucks.ie ...) never reaches 25 outlets on one site, so also count by NAME:
+# the same name at 25+ distinct outlets that share only a handful of websites is a chain (independents that share a name each have their own site).
+def _chain_key(name, city):
+    n = re.sub(r"[\W_]+", "", unicodedata.normalize("NFKD", (name or "").lower()).encode("ascii", "ignore").decode())
+    c = re.sub(r"[\W_]+", "", unicodedata.normalize("NFKD", (city or "").lower()).encode("ascii", "ignore").decode())
+    if c and n.endswith(c) and len(n) - len(c) >= 4: n = n[: -len(c)]
+    for g in ("coffee", "cafe", "caf"):
+        if n.endswith(g) and len(n) - len(g) >= 4: n = n[: -len(g)]
+    return n
+_outlets, _hosts, _site_outlets = collections.defaultdict(set), collections.defaultdict(set), collections.defaultdict(set)
+for r in rows:
+    if r[8] is None or r[9] is None: continue
+    k = _chain_key(r[1], r[5])
+    if len(k) < 4: continue
+    _outlets[k].add((round(r[8], 3), round(r[9], 3)))
+    if r[10]: _hosts[k].add(host_of(r[10])); _site_outlets[k].add((round(r[8], 3), round(r[9], 3)))
+NAME_CHAINS = {k for k, o in _outlets.items() if len(o) >= 25 and len(_site_outlets[k]) >= 15 and len(_hosts[k]) <= max(3, 0.15 * len(_site_outlets[k]))}
+CHAIN_HOSTS = {host_of(r[10]) for r in rows if r[10] and r[8] is not None and _chain_key(r[1], r[5]) in NAME_CHAINS}      # every website those chains use
+print("name-based chains:", len(NAME_CHAINS), sorted(NAME_CHAINS)[:60])
+
 AGG_HOST = re.compile(r"(yelp|facebook|instagram|tripadvisor|doordash|ubereats|grubhub|google|toasttab|clover|square\.site|linktr\.ee|tiktok|twitter|x\.com|youtube|opentable|postmates|seamless|menupix|allmenus|foursquare|zomato|tabelog|hotpepper|gnavi|retty|naver|kakao|placeweb|placestars)", re.I)
 for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, conf, wd, nm) in rows:
     if cat == "internet_cafe": continue
@@ -158,6 +178,7 @@ for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, c
     if wd and brand_count[wd] >= 15: continue                       # big chains are handled separately
     h = host_of(website) if website else None
     if h and host_rows[h] >= 25: continue                           # one site shared by 25+ places = a chain
+    if h and (h in CHAIN_HOSTS or _chain_key(name, city) in NAME_CHAINS): stats['name_chain'] += 1; continue   # same name at 25+ outlets with few websites = a chain
     r = res.get(h) if h else None
     ev = evidence(r) if r and r.get("status") == "ok" and r.get("matcha") else []
     via = None

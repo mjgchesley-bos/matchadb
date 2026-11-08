@@ -191,7 +191,7 @@ def update_state(state, out):
 def count_slim(d):
     return {k: len(json.load(open(f"{d}/cafes-slim-{k}.json", encoding="utf-8"))) for k in ("us", "ca", "eu", "jp", "kr", "au") if os.path.exists(f"{d}/cafes-slim-{k}.json")}
 
-def build_and_verify():
+def build_and_verify(allow_drop=None):
     tmp_d, tmp_p = f"{WORK}/out_weekly/d", f"{WORK}/out_weekly/p"
     shutil.rmtree(f"{WORK}/out_weekly", ignore_errors=True)
     os.makedirs(tmp_d); os.makedirs(tmp_p)
@@ -200,7 +200,10 @@ def build_and_verify():
     problems = []
     for k in new:
         if new[k] < 50: problems.append(f"{k}: only {new[k]} cafés")
-        if old.get(k) and new[k] < old[k] * 0.97: problems.append(f"{k}: dropped from {old[k]} to {new[k]} (more than 3%)")
+        if old.get(k) and new[k] < old[k] * 0.97:
+            msg = f"{k}: dropped from {old[k]} to {new[k]} (more than 3%)"
+            if allow_drop: log(f"ALLOWED (reason given: {allow_drop}): {msg}")      # a deliberate rule change, reviewed by hand; recorded in the report
+            else: problems.append(msg)
     ids = collections.Counter()
     for f in glob.glob(f"{tmp_d}/*.json"):
         try: data = json.load(open(f, encoding="utf-8"))
@@ -241,7 +244,7 @@ def publish(tmp_d, tmp_p, new, old):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--no-publish", action="store_true"); ap.add_argument("--no-crawl", action="store_true"); ap.add_argument("--max-hosts", type=int, default=0)
+    ap.add_argument("--no-publish", action="store_true"); ap.add_argument("--no-crawl", action="store_true"); ap.add_argument("--max-hosts", type=int, default=0); ap.add_argument("--allow-drop", default=None, help="reason: let a reviewed, deliberate drop of more than 3% through (e.g. a new chain rule)")
     a = ap.parse_args()
     report = {"date": str(TODAY), "ok": False}
     try:
@@ -251,7 +254,8 @@ def main():
             report["crawled_hosts"] = len(items)
             out = crawl(items)
             update_state(state, out)
-        tmp_d, tmp_p, new, old, problems, missing = build_and_verify()
+        tmp_d, tmp_p, new, old, problems, missing = build_and_verify(a.allow_drop)
+        report["allow_drop"] = a.allow_drop
         report.update({"before": old, "after": new, "problems": problems, "gold_missing": missing})
         log("before", old, "after", new)
         if problems:
