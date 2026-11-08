@@ -1,5 +1,7 @@
 import Link from "@/i18n/Link";
-import { KIND_LABEL, formatAuthors, snippetFor, type Study } from "@/lib/studies";
+import { snippetFor, type Study } from "@/lib/studies";
+import { getT, getTV } from "@/i18n/server";
+import { fmtNum, type Locale } from "@/i18n/config";
 
 const esc = (t: string) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -23,22 +25,25 @@ function Highlight({ text, terms }: { text: string; terms: string[] }) {
   );
 }
 
-export function StudyCard({ study: s, terms = [] }: { study: Study; terms?: string[] }) {
+export function StudyCard({ study: s, terms = [], lang = "en" }: { study: Study; terms?: string[]; lang?: Locale }) {
+  const t = getT(lang);
+  const tv = getTV(lang);
   const snippet = snippetFor(s, terms, 240);
+  const authors = !s.authors.length ? t("rs.noAuthors") : s.authors.length > 3 ? t("rs.etal", { list: s.authors.slice(0, 3).join(", ") }) : s.authors.join(", ");
   return (
     <article className="border border-line rounded-sm p-4 bg-paper-raised hover:border-matcha hover:bg-matcha-soft transition-colors">
       <Link href={`/research/${s.id}`} className="flex flex-col gap-1.5">
         <span className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-ink-faint">
-          <span className="font-mono tabular-nums text-forest">{s.year ?? "n.d."}</span>
+          <span className="font-mono tabular-nums text-forest">{s.year ?? t("rs.nd")}</span>
           <span aria-hidden="true">·</span>
-          <span>{KIND_LABEL[s.kind]}</span>
-          {s.isOa && <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5 ml-1">Free to read</span>}
+          <span>{t(`rs.kind.${s.kind}` as "rs.kind.article")}</span>
+          {s.isOa && <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5 ml-1">{t("rs.free")}</span>}
         </span>
         <h3 className="font-display text-lg leading-snug font-semibold text-ink">
           <Highlight text={s.title} terms={terms} />
         </h3>
         <span className="text-sm text-ink-muted">
-          {formatAuthors(s.authors)}
+          {authors}
           {s.journal ? <span className="text-ink-faint"> — {s.journal}</span> : null}
         </span>
         {snippet && (
@@ -47,14 +52,14 @@ export function StudyCard({ study: s, terms = [] }: { study: Study; terms?: stri
           </p>
         )}
         <span className="flex flex-wrap gap-1.5 mt-2 text-xs">
-          <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5">{s.design}</span>
-          {s.topics.slice(0, 3).map((t) => (
-            <span key={t} className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5">
-              {t}
+          <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5">{tv("design", s.design)}</span>
+          {s.topics.slice(0, 3).map((tp) => (
+            <span key={tp} className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5">
+              {tv("topic", tp)}
             </span>
           ))}
           {s.citedBy > 0 && (
-            <span className="rounded-full border border-line text-ink-faint px-2 py-0.5 tabular-nums">Cited {s.citedBy.toLocaleString()}×</span>
+            <span className="rounded-full border border-line text-ink-faint px-2 py-0.5 tabular-nums">{t("rs.cited", { n: fmtNum(lang, s.citedBy) })}</span>
           )}
         </span>
       </Link>

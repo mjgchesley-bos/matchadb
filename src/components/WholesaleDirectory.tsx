@@ -3,10 +3,11 @@
 import Link from "@/i18n/Link";
 import { useMemo, useState } from "react";
 import { BrandLogo } from "@/components/product-cards";
+import { useLang, useT, useTV } from "@/i18n/client";
+import { INTL_LANG } from "@/i18n/config";
 import {
   HOW_LABELS,
   SERVES_LABELS,
-  TAG_HINTS,
   TAG_LABELS,
   TYPE_LABELS,
   type ProductType,
@@ -18,7 +19,6 @@ import {
 const TAGS = Object.keys(TAG_LABELS) as Tag[];
 const TYPES = Object.keys(TYPE_LABELS) as ProductType[];
 const SERVES = Object.keys(SERVES_LABELS) as Serves[];
-const dateFmt = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
 
 // Filterable list of wholesale programs. Everything is rendered on the server too, so the full
 // list is readable without JavaScript and by search engines.
@@ -26,6 +26,16 @@ const dateFmt = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "shor
 // "Grown in" and the grade/organic options come from the products we list for the brands a
 // supplier sells; "Ships to" is only set when the supplier's own wholesale page says so.
 export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: SupplierView[]; regionOrder: string[] }) {
+  const t = useT();
+  const tv = useTV();
+  const lang = useLang();
+  const dateFmt = new Intl.DateTimeFormat(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" });
+  const sep = lang === "ja" || lang === "zh" ? "、" : ", ";
+  const tagLabel = (x: Tag) => t(`c.ws.tag.${x}` as "c.ws.tag.bulk");
+  const typeLabel = (x: ProductType) => t(`c.ws.type.${x}` as "c.ws.type.ceremonial");
+  const servesLabel = (x: Serves) => t(`c.ws.serves.${x}` as "c.ws.serves.us");
+  const howLabel = (x: keyof typeof HOW_LABELS) => t(`c.ws.how.${x}` as "c.ws.how.form");
+  const regionLabel = (r: string) => (r === "Other" ? t("c.ws.otherRegionsLc") : tv("region", r));
   const [tag, setTag] = useState<Tag | null>(null);
   const [region, setRegion] = useState("");
   const [serves, setServes] = useState<Serves | "">("");
@@ -44,9 +54,9 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
       if (tag && !s.tags.includes(tag)) return false;
       if (region && !s.regions.includes(region)) return false;
       if (serves && !(s.serves ?? []).includes(serves)) return false;
-      if (types.length && !types.every((t) => s.types.includes(t))) return false;
+      if (types.length && !types.every((ty) => s.types.includes(ty))) return false;
       if (!needle) return true;
-      return [s.name, s.summary, ...s.brands, ...s.facts].some((t) => t.toLowerCase().includes(needle));
+      return [s.name, s.summary, ...s.brands, ...s.facts].some((x) => x.toLowerCase().includes(needle));
     });
   }, [suppliers, tag, region, serves, types, q]);
 
@@ -70,14 +80,14 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
     <div>
       <div className="rounded-sm border border-line bg-paper-raised p-4 sm:p-5">
         <div>
-          <span className={label}>Program</span>
-          <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Program type">
+          <span className={label}>{t("c.ws.program")}</span>
+          <div className="flex flex-wrap items-center gap-2" role="group" aria-label={t("c.ws.programAria")}>
             <button type="button" onClick={() => setTag(null)} aria-pressed={tag === null} className={chip(tag === null)}>
-              All ({suppliers.length})
+              {t("c.ws.all", { n: suppliers.length })}
             </button>
-            {TAGS.map((t) => (
-              <button key={t} type="button" onClick={() => setTag(tag === t ? null : t)} aria-pressed={tag === t} title={TAG_HINTS[t]} className={chip(tag === t)}>
-                {TAG_LABELS[t]} ({suppliers.filter((s) => s.tags.includes(t)).length})
+            {TAGS.map((x) => (
+              <button key={x} type="button" onClick={() => setTag(tag === x ? null : x)} aria-pressed={tag === x} title={t(`c.ws.hint.${x}` as "c.ws.hint.bulk")} className={chip(tag === x)}>
+                {t("c.ws.chip", { label: tagLabel(x), n: suppliers.filter((s) => s.tags.includes(x)).length })}
               </button>
             ))}
           </div>
@@ -85,25 +95,25 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
 
         <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className={label} htmlFor="ws-region">Matcha grown in</label>
+            <label className={label} htmlFor="ws-region">{t("c.ws.grownIn")}</label>
             <select id="ws-region" value={region} onChange={(e) => setRegion(e.target.value)} className={select}>
-              <option value="">Any region</option>
+              <option value="">{t("c.ws.anyRegion")}</option>
               {regionOrder
                 .filter((r) => regionCounts.get(r))
                 .map((r) => (
                   <option key={r} value={r}>
-                    {r === "Other" ? "Other regions" : r} ({regionCounts.get(r)})
+                    {r === "Other" ? t("c.ws.otherRegions") : tv("region", r)} ({regionCounts.get(r)})
                   </option>
                 ))}
             </select>
           </div>
           <div>
-            <label className={label} htmlFor="ws-serves">Ships to (as stated)</label>
+            <label className={label} htmlFor="ws-serves">{t("c.ws.shipsTo")}</label>
             <select id="ws-serves" value={serves} onChange={(e) => setServes(e.target.value as Serves | "")} className={select}>
-              <option value="">Anywhere</option>
+              <option value="">{t("c.ws.anywhere")}</option>
               {SERVES.map((c) => (
                 <option key={c} value={c}>
-                  {SERVES_LABELS[c]} ({suppliers.filter((s) => (s.serves ?? []).includes(c)).length})
+                  {servesLabel(c)} ({suppliers.filter((s) => (s.serves ?? []).includes(c)).length})
                 </option>
               ))}
             </select>
@@ -111,45 +121,44 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
         </div>
 
         <div className="mt-5">
-          <span className={label}>Products</span>
-          <div className="flex flex-wrap gap-2" role="group" aria-label="Product types">
-            {TYPES.map((t) => (
+          <span className={label}>{t("c.ws.products")}</span>
+          <div className="flex flex-wrap gap-2" role="group" aria-label={t("c.ws.productsAria")}>
+            {TYPES.map((ty) => (
               <button
-                key={t}
+                key={ty}
                 type="button"
-                onClick={() => setTypes((cur) => (cur.includes(t) ? cur.filter((x) => x !== t) : [...cur, t]))}
-                aria-pressed={types.includes(t)}
-                className={chip(types.includes(t))}
+                onClick={() => setTypes((cur) => (cur.includes(ty) ? cur.filter((x) => x !== ty) : [...cur, ty]))}
+                aria-pressed={types.includes(ty)}
+                className={chip(types.includes(ty))}
               >
-                {TYPE_LABELS[t]} ({suppliers.filter((s) => s.types.includes(t)).length})
+                {t("c.ws.chip", { label: typeLabel(ty), n: suppliers.filter((s) => s.types.includes(ty)).length })}
               </button>
             ))}
           </div>
         </div>
 
         <div className="mt-5">
-          <label htmlFor="wholesale-search" className={label}>Search</label>
+          <label htmlFor="wholesale-search" className={label}>{t("c.ws.search")}</label>
           <input
             id="wholesale-search"
             type="search"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            placeholder="Supplier or brand name, or a word like hojicha, pallet or private label"
+            placeholder={t("c.ws.searchPh")}
             className="w-full max-w-md rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
           />
         </div>
 
         <p className="mt-4 text-xs text-ink-faint" aria-live="polite">
-          Showing {shown.length} of {suppliers.length}
+          {t("c.ws.showing", { n: shown.length, total: suppliers.length })}
           {active && (
             <button type="button" onClick={clear} className="ml-3 underline hover:text-ink-muted">
-              Clear filters
+              {t("c.ws.clear")}
             </button>
           )}
         </p>
         <p className="mt-1 text-xs text-ink-faint">
-          &ldquo;Matcha grown in&rdquo; and the product types come from the products we list for each supplier&apos;s brands. &ldquo;Ships to&rdquo; is
-          shown only when the supplier&apos;s own wholesale page says so, so many suppliers have no entry there and appear under &ldquo;Anywhere&rdquo; only.
+          {t("c.ws.filterNote")}
         </p>
       </div>
 
@@ -162,9 +171,9 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
             </div>
             {s.tags.length > 0 && (
               <p className="mt-2 flex flex-wrap gap-1.5">
-                {s.tags.map((t) => (
-                  <span key={t} className="rounded-full border border-line-strong bg-paper px-2.5 py-0.5 text-xs text-ink-muted">
-                    {TAG_LABELS[t]}
+                {s.tags.map((x) => (
+                  <span key={x} className="rounded-full border border-line-strong bg-paper px-2.5 py-0.5 text-xs text-ink-muted">
+                    {tagLabel(x)}
                   </span>
                 ))}
               </p>
@@ -179,7 +188,7 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
             )}
             {s.facts.length > 4 && (
               <details className="mt-1 text-sm text-ink-muted">
-                <summary className="cursor-pointer text-matcha hover:text-forest">{s.facts.length - 4} more</summary>
+                <summary className="cursor-pointer text-matcha hover:text-forest">{t("c.ws.more", { n: s.facts.length - 4 })}</summary>
                 <ul className="mt-1 list-disc pl-5 flex flex-col gap-1">
                   {s.facts.slice(4).map((f) => (
                     <li key={f}>{f}</li>
@@ -189,16 +198,16 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
             )}
             {(s.regions.length > 0 || s.types.length > 0) && (
               <p className="mt-3 text-xs text-ink-faint">
-                {s.regions.length > 0 && <>Grown in: {s.regions.map((r) => (r === "Other" ? "other regions" : r)).join(", ")}. </>}
-                {s.types.length > 0 && <>Products: {s.types.map((t) => TYPE_LABELS[t]).join(", ")}. </>}
-                <span className="italic">From the products in our database.</span>
+                {s.regions.length > 0 && <>{t("c.ws.grownList", { list: s.regions.map(regionLabel).join(sep) })} </>}
+                {s.types.length > 0 && <>{t("c.ws.typeList", { list: s.types.map(typeLabel).join(sep) })} </>}
+                <span className="italic">{t("c.ws.fromDb")}</span>
               </p>
             )}
-            {(s.serves ?? []).length > 0 && <p className="mt-1 text-xs text-ink-faint">Ships to: {(s.serves ?? []).map((c) => SERVES_LABELS[c]).join(", ")}</p>}
-            {s.how.length > 0 && <p className="mt-1 text-xs text-ink-faint">How to start: {s.how.map((h) => HOW_LABELS[h]).join(" · ")}</p>}
+            {(s.serves ?? []).length > 0 && <p className="mt-1 text-xs text-ink-faint">{t("c.ws.shipsList", { list: (s.serves ?? []).map(servesLabel).join(sep) })}</p>}
+            {s.how.length > 0 && <p className="mt-1 text-xs text-ink-faint">{t("c.ws.howList", { list: s.how.map(howLabel).join(" · ") })}</p>}
             {s.brands.length > 0 && (
               <p className="mt-2 text-xs text-ink-faint">
-                In our database:{" "}
+                {t("c.ws.inDb")}{" "}
                 {s.brands.map((b, i) => (
                   <span key={b}>
                     {i > 0 && ", "}
@@ -217,25 +226,25 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
                 rel="noopener noreferrer"
                 className="inline-flex items-center rounded-full bg-matcha px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-forest"
               >
-                Wholesale page
-                <span className="sr-only"> for {s.name} (opens in a new tab)</span>
+                {t("c.ws.page")}
+                <span className="sr-only">{t("c.ws.pageSr", { name: s.name })}</span>
                 <span aria-hidden="true" className="ml-1">↗</span>
               </a>
               {s.profile && (
                 <Link href={`/wholesale/${s.slug}`} className="text-sm text-matcha underline hover:text-forest">
-                  Full profile
+                  {t("c.ws.profile")}
                 </Link>
               )}
-              <span className="text-xs text-ink-faint">Checked {dateFmt.format(new Date(`${s.verified}T00:00:00Z`))}</span>
+              <span className="text-xs text-ink-faint">{t("c.ws.checked", { date: dateFmt.format(new Date(`${s.verified}T00:00:00Z`)) })}</span>
             </div>
           </li>
         ))}
       </ul>
       {shown.length === 0 && (
         <p className="mt-6 text-ink-muted">
-          No suppliers match.{" "}
+          {t("c.ws.noMatch")}{" "}
           <button type="button" onClick={clear} className="text-matcha underline hover:text-forest">
-            Clear the filters
+            {t("c.ws.clearAll")}
           </button>
           .
         </p>

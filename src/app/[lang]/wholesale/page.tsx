@@ -6,17 +6,19 @@ import { REGION_CONTENT } from "@/lib/region-content";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 import { SUPPLIERS, type ProductType, type SupplierView } from "@/lib/suppliers";
 import { langOf } from "@/i18n/params";
+import { isLocale, type Locale } from "@/i18n/config";
+import { getT } from "@/i18n/server";
+import { pageAlternates } from "@/i18n/seo";
 
-const title = "Wholesale & Bulk Matcha Suppliers";
-const description =
-  "Wholesale and bulk matcha programs for cafés, shops, food and drink makers and private-label brands, with minimum orders and how to apply, as each supplier states them.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/wholesale` },
-  openGraph: { title, description, url: `${SITE_URL}/wholesale` },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: raw } = await params;
+  const lang: Locale = isLocale(raw) ? raw : "en";
+  const t = getT(lang);
+  const alternates = pageAlternates(lang, "/wholesale");
+  const title = t("ws.title");
+  const description = t("ws.desc");
+  return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
+}
 
 // Regions the site already has pages for; a few small neighbors fold into them, anything else is "Other".
 const KNOWN_REGIONS = Object.keys(REGION_CONTENT);
@@ -27,7 +29,9 @@ const regionOf = (r: string): string => {
 };
 
 export default async function WholesalePage({ params }: { params: Promise<{ lang: string }> }) {
-  await langOf(params);
+  const lang = await langOf(params);
+  const t = getT(lang);
+  const description = t("ws.desc");
   // Where the matcha is grown and which grades exist, from the products we list for each supplier's brands.
   const facets = await getBrandFacets([...new Set(SUPPLIERS.flatMap((s) => s.brands))]);
   const suppliers: SupplierView[] = SUPPLIERS.map((s) => {
@@ -75,21 +79,15 @@ export default async function WholesalePage({ params }: { params: Promise<{ lang
         }}
       />
       <header className="max-w-3xl">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Wholesale</p>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.wholesale")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">
-          Wholesale matcha suppliers
+          {t("ws.h1")}
         </h1>
         <p className="mt-5 text-lg text-ink-muted leading-relaxed">
-          Where cafés, shops, food and drink makers and new brands can buy matcha in bulk. We checked every brand in the
-          database for a wholesale or trade program. {fromBrands} sellers have one, covering {brandCount} of the
-          brands in the main database, and we&apos;ve added {independent} independent bulk supplier{independent === 1 ? "" : "s"}.
+          {t(independent === 1 ? "ws.lead.one" : "ws.lead.other", { from: fromBrands, brands: brandCount, n: independent })}
         </p>
         <p className="mt-4 text-sm text-ink-muted leading-relaxed">
-          Wholesale prices are usually quoted privately, so none are shown here (a few suppliers publish some
-          prices, noted on their listing). Each listing links to the supplier&apos;s own wholesale page. Everything is
-          what the supplier says on its own website; we haven&apos;t tested the products or checked the
-          certificates, and programs change, so confirm the terms with the supplier. Some programs are invite-only,
-          have waitlists or are limited to one country, as noted. Listings are not endorsements.
+          {t("ws.lead2")}
         </p>
       </header>
 
@@ -99,21 +97,17 @@ export default async function WholesalePage({ params }: { params: Promise<{ lang
 
       <section className="mt-14 max-w-3xl" aria-labelledby="list-h">
         <h2 id="list-h" className="font-display text-2xl font-semibold text-ink">
-          Are you a matcha supplier?
+          {t("ws.supplier.h")}
         </h2>
         <p className="mt-3 text-ink-muted leading-relaxed">
-          We list wholesale suppliers of matcha and related powders such as hojicha. To be listed, you need a public
-          website that states what you sell, where it comes from and your ordering terms. We write the listing from
-          your own pages and show when we last checked them. Listing is free, and nobody can pay to be included or to
-          change what is shown. If something on your listing is out of date, tell us and we will check it against your
-          site.
+          {t("ws.supplier.p")}
         </p>
         <p className="mt-4">
           <a
             href={`mailto:${CONTACT_EMAIL}?subject=Wholesale%20listing%20request`}
             className="inline-flex items-center rounded-full bg-matcha px-6 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-forest"
           >
-            Request a listing
+            {t("ws.supplier.cta")}
           </a>
         </p>
       </section>

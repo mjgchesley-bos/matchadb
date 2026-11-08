@@ -10,15 +10,22 @@ import {
 } from "./guide-data";
 import type { ProductRow } from "./db";
 import { usd30 } from "./unit-price";
+import type { CFn } from "@/i18n/content";
 
 // Question-style pages ("best matcha for lattes", "matcha under $20") that
 // answer a search from live database numbers. Prose here is deliberately free
 // of figures -- every count, price and median shown on a page is computed from
 // the product table when the site builds (see guide-data.ts), and the FAQ
 // answers are functions of that same data so they cannot drift from it.
+//
+// Translations: the English text lives here. Each translatable string has an id
+// (gd.<slug>.…) that the translation files in src/i18n/content use; the answers
+// take a `k(id, english, vars)` function and fill in the numbers themselves.
 
 export type GuideList = {
   heading: string;
+  // Values to fill into a translated heading ({max}, {min}).
+  headingVars?: Record<string, string | number>;
   note?: string;
   // Defaults to the guide's own spec.
   spec?: GuideSpec;
@@ -46,7 +53,7 @@ export type Guide = {
   tables: ("grade" | "region")[];
   lists: GuideList[];
   method?: string;
-  faq: { q: string; a: (c: GuideCtx) => string }[];
+  faq: { q: string; a: (c: GuideCtx, k: CFn) => string }[];
   related: string[];
   browse: string;
 };
@@ -85,28 +92,48 @@ export const GUIDES: Guide[] = [
     faq: [
       {
         q: "What grade of matcha is best for lattes?",
-        a: (c) => {
+        a: (c, k) => {
           const cer = c.g("Ceremonial");
           const cul = c.g("Culinary");
           const bits =
             cer && cul
-              ? ` In this data, ${cer.count} latte-suited powders are labeled ceremonial (median ${usd30(cer.median)} per 30 g) and ${cul.count} culinary (median ${usd30(cul.median)} per 30 g).`
+              ? k("gd.matcha-for-lattes.faq.0.bits", " In this data, {cn} latte-suited powders are labeled ceremonial (median {cm} per 30 g) and {un} culinary (median {um} per 30 g).", {
+                  cn: cer.count,
+                  cm: usd30(cer.median),
+                  un: cul.count,
+                  um: usd30(cul.median),
+                })
               : "";
-          return `There is no official grade standard, so the labels are each brand's own.${bits} Culinary and "barista" grades cost less per 30 g and are made for mixing with milk, while ceremonial grade tastes smoother but costs more. Many people use either.`;
+          return k(
+            "gd.matcha-for-lattes.faq.0.a",
+            `There is no official grade standard, so the labels are each brand's own.{bits} Culinary and "barista" grades cost less per 30 g and are made for mixing with milk, while ceremonial grade tastes smoother but costs more. Many people use either.`,
+            { bits }
+          );
         },
       },
       {
         q: "How much matcha goes in a latte?",
-        a: (c) =>
-          `Recipes commonly use about 2 to 4 grams (roughly 1 to 2 teaspoons) per drink. At the median price of ${usd30(c.s.median)} per 30 g for the powders on this page, that is about ${grams(c, 2)} to ${grams(c, 4)} of matcha per latte.`,
+        a: (c, k) =>
+          k(
+            "gd.matcha-for-lattes.faq.1.a",
+            "Recipes commonly use about 2 to 4 grams (roughly 1 to 2 teaspoons) per drink. At the median price of {median} per 30 g for the powders on this page, that is about {lo} to {hi} of matcha per latte.",
+            { median: usd30(c.s.median), lo: grams(c, 2), hi: grams(c, 4) }
+          ),
       },
       {
         q: "Is ceremonial matcha worth using in a latte?",
-        a: (c) => {
+        a: (c, k) => {
           const cer = c.g("Ceremonial");
           const cul = c.g("Culinary");
-          const ratio = cer?.median && cul?.median ? ` In this data ceremonial costs about ${(cer.median / cul.median).toFixed(1)} times as much per 30 g as culinary.` : "";
-          return `It is a matter of taste and budget. Milk and sweetener mask some of the nuance that makes ceremonial grade expensive, so many people keep it for water-whisked tea.${ratio}`;
+          const ratio =
+            cer?.median && cul?.median
+              ? k("gd.matcha-for-lattes.faq.2.ratio", " In this data ceremonial costs about {x} times as much per 30 g as culinary.", { x: (cer.median / cul.median).toFixed(1) })
+              : "";
+          return k(
+            "gd.matcha-for-lattes.faq.2.a",
+            "It is a matter of taste and budget. Milk and sweetener mask some of the nuance that makes ceremonial grade expensive, so many people keep it for water-whisked tea.{ratio}",
+            { ratio }
+          );
         },
       },
     ],
@@ -132,31 +159,51 @@ export const GUIDES: Guide[] = [
     faq: [
       {
         q: "What is the difference between ceremonial and culinary matcha?",
-        a: (c) => {
+        a: (c, k) => {
           const cer = c.g("Ceremonial");
           const cul = c.g("Culinary");
-          const price = cer && cul ? ` In this data the median is ${usd30(cer.median)} per 30 g for ceremonial and ${usd30(cul.median)} for culinary.` : "";
-          return `Ceremonial is sold for drinking with water and usually tastes smoother and sweeter; culinary is sold for lattes and cooking and tastes stronger and more bitter.${price}`;
+          const price =
+            cer && cul
+              ? k("gd.ceremonial-vs-culinary-matcha.faq.0.price", " In this data the median is {cm} per 30 g for ceremonial and {um} for culinary.", { cm: usd30(cer.median), um: usd30(cul.median) })
+              : "";
+          return k(
+            "gd.ceremonial-vs-culinary-matcha.faq.0.a",
+            "Ceremonial is sold for drinking with water and usually tastes smoother and sweeter; culinary is sold for lattes and cooking and tastes stronger and more bitter.{price}",
+            { price }
+          );
         },
       },
       {
         q: "Is the ceremonial grade label regulated?",
-        a: () =>
-          "To our knowledge, no. The terms are marketing labels set by each brand, which is why this site records the grade as the brand states it and compares price per 30 g rather than trusting the label alone.",
+        a: (_c, k) =>
+          k(
+            "gd.ceremonial-vs-culinary-matcha.faq.1.a",
+            "To our knowledge, no. The terms are marketing labels set by each brand, which is why this site records the grade as the brand states it and compares price per 30 g rather than trusting the label alone."
+          ),
       },
       {
         q: "Can I use ceremonial matcha for baking?",
-        a: (c) => {
+        a: (c, k) => {
           const cer = c.g("Ceremonial");
           const cul = c.g("Culinary");
-          const ratio = cer?.median && cul?.median ? ` It costs about ${(cer.median / cul.median).toFixed(1)} times as much per 30 g in this data.` : "";
-          return `You can, but heat and other ingredients mute the delicate flavor that ceremonial grade is priced for, so most bakers use culinary grade.${ratio}`;
+          const ratio =
+            cer?.median && cul?.median
+              ? k("gd.ceremonial-vs-culinary-matcha.faq.2.ratio", " It costs about {x} times as much per 30 g in this data.", { x: (cer.median / cul.median).toFixed(1) })
+              : "";
+          return k(
+            "gd.ceremonial-vs-culinary-matcha.faq.2.a",
+            "You can, but heat and other ingredients mute the delicate flavor that ceremonial grade is priced for, so most bakers use culinary grade.{ratio}",
+            { ratio }
+          );
         },
       },
       {
         q: "Can I drink culinary matcha with water?",
-        a: () =>
-          "Yes. Expect a stronger, more bitter taste than a ceremonial grade. Some brands' culinary matcha is pleasant on its own, but it is formulated for mixing.",
+        a: (_c, k) =>
+          k(
+            "gd.ceremonial-vs-culinary-matcha.faq.3.a",
+            "Yes. Expect a stronger, more bitter taste than a ceremonial grade. Some brands' culinary matcha is pleasant on its own, but it is formulated for mixing."
+          ),
       },
     ],
     related: ["matcha-for-lattes", "matcha-for-baking-and-cooking", "usucha-vs-koicha-matcha"],
@@ -192,17 +239,27 @@ export const GUIDES: Guide[] = [
     faq: [
       {
         q: "Is matcha under $20 any good?",
-        a: (c) =>
-          `It can be. Among ${c.s.count} powders under $20 here, the median is ${usd30(c.s.median)} per 30 g. Price and quality are related but not tied together, and many cheaper powders are labeled culinary or standard grade. We list what brands state rather than ranking taste.`,
+        a: (c, k) =>
+          k(
+            "gd.matcha-under-20.faq.0.a",
+            "It can be. Among {n} powders under $20 here, the median is {median} per 30 g. Price and quality are related but not tied together, and many cheaper powders are labeled culinary or standard grade. We list what brands state rather than ranking taste.",
+            { n: c.s.count, median: usd30(c.s.median) }
+          ),
       },
       {
         q: "How much matcha do you get for $20?",
-        a: (c) => (c.s.median ? `At the median price per 30 g on this page, $20 buys about ${(20 / c.s.median).toFixed(0)} grams, and the lowest-priced powders go further.` : "It depends on the brand; compare price per 30 g."),
+        a: (c, k) =>
+          c.s.median
+            ? k("gd.matcha-under-20.faq.1.a", "At the median price per 30 g on this page, $20 buys about {g} grams, and the lowest-priced powders go further.", { g: (20 / c.s.median).toFixed(0) })
+            : k("gd.matcha-under-20.faq.1.none", "It depends on the brand; compare price per 30 g."),
       },
       {
         q: "Why do I see 20 gram minimums?",
-        a: () =>
-          "Sample sizes and tiny sachets make a standard-size price misleading, so guides only include products sold in packs of at least 20 grams with a verified price.",
+        a: (_c, k) =>
+          k(
+            "gd.matcha-under-20.faq.2.a",
+            "Sample sizes and tiny sachets make a standard-size price misleading, so guides only include products sold in packs of at least 20 grams with a verified price."
+          ),
       },
     ],
     related: ["how-much-does-matcha-cost", "matcha-for-lattes", "organic-matcha"],
@@ -232,15 +289,22 @@ export const GUIDES: Guide[] = [
     faq: [
       {
         q: "Does organic matcha cost more?",
-        a: (c) =>
+        a: (c, k) =>
           c.s.median != null && c.all.median != null
-            ? `Here the median organic powder is ${usd30(c.s.median)} per 30 g, against ${usd30(c.all.median)} for all matcha powders compared on this site (${c.s.count} organic of ${c.all.count}).`
-            : "Compare price per 30 g on the table above.",
+            ? k(
+                "gd.organic-matcha.faq.0.a",
+                "Here the median organic powder is {median} per 30 g, against {all} for all matcha powders compared on this site ({n} organic of {total}).",
+                { median: usd30(c.s.median), all: usd30(c.all.median), n: c.s.count, total: c.all.count }
+              )
+            : k("gd.organic-matcha.faq.0.none", "Compare price per 30 g on the table above."),
       },
       {
         q: "How do I know a matcha is really organic?",
-        a: () =>
-          "Look for the certification mark and certifier named on the product page or label. This site records the organic claim as the brand states it and does not verify certificates, so check the brand's page before relying on it.",
+        a: (_c, k) =>
+          k(
+            "gd.organic-matcha.faq.1.a",
+            "Look for the certification mark and certifier named on the product page or label. This site records the organic claim as the brand states it and does not verify certificates, so check the brand's page before relying on it."
+          ),
       },
     ],
     related: ["matcha-under-20", "how-much-does-matcha-cost", "matcha-for-lattes"],
@@ -270,16 +334,23 @@ export const GUIDES: Guide[] = [
     faq: [
       {
         q: "What kind of matcha is best for baking?",
-        a: (c) => {
+        a: (c, k) => {
           const cul = c.g("Culinary");
-          const price = cul ? ` Culinary-grade powders here have a median of ${usd30(cul.median)} per 30 g.` : "";
-          return `Most recipes use a culinary grade, which is cheaper and holds its flavor against sugar and heat.${price}`;
+          const price = cul ? k("gd.matcha-for-baking-and-cooking.faq.0.price", " Culinary-grade powders here have a median of {median} per 30 g.", { median: usd30(cul.median) }) : "";
+          return k(
+            "gd.matcha-for-baking-and-cooking.faq.0.a",
+            "Most recipes use a culinary grade, which is cheaper and holds its flavor against sugar and heat.{price}",
+            { price }
+          );
         },
       },
       {
         q: "Does baking change matcha's color?",
-        a: () =>
-          "Prolonged heat tends to turn matcha's bright green toward olive and mutes its flavor, which is another reason bakers rely on stronger, cheaper grades and add matcha in generous amounts.",
+        a: (_c, k) =>
+          k(
+            "gd.matcha-for-baking-and-cooking.faq.1.a",
+            "Prolonged heat tends to turn matcha's bright green toward olive and mutes its flavor, which is another reason bakers rely on stronger, cheaper grades and add matcha in generous amounts."
+          ),
       },
     ],
     related: ["ceremonial-vs-culinary-matcha", "matcha-for-lattes", "matcha-under-20"],
@@ -300,16 +371,19 @@ export const GUIDES: Guide[] = [
     lists: [
       {
         heading: `Budget: up to ${usd30(PRICE_TIER_CHEAP_MAX)} per 30 g`,
+        headingVars: { max: usd30(PRICE_TIER_CHEAP_MAX) },
         limit: 6,
         spec: { maxPerGram: PRICE_TIER_CHEAP_MAX },
       },
       {
         heading: `Mid-range: ${usd30(PRICE_TIER_CHEAP_MAX)} to ${usd30(PRICE_TIER_MID_MAX)} per 30 g`,
+        headingVars: { min: usd30(PRICE_TIER_CHEAP_MAX), max: usd30(PRICE_TIER_MID_MAX) },
         limit: 6,
         spec: { minPerGram: PRICE_TIER_CHEAP_MAX, maxPerGram: PRICE_TIER_MID_MAX },
       },
       {
         heading: `Premium: over ${usd30(PRICE_TIER_MID_MAX)} per 30 g`,
+        headingVars: { min: usd30(PRICE_TIER_MID_MAX) },
         limit: 6,
         spec: { minPerGram: PRICE_TIER_MID_MAX },
       },
@@ -319,22 +393,33 @@ export const GUIDES: Guide[] = [
     faq: [
       {
         q: "How much does a 30 g tin of matcha cost?",
-        a: (c) =>
+        a: (c, k) =>
           c.s.median != null && c.s.p25 != null && c.s.p75 != null
-            ? `Across ${c.s.count} matcha powders from ${c.s.brands} brands, the median is ${usd30(c.s.median)} per 30 g, and the middle half of products fall between ${usd30(c.s.p25)} and ${usd30(c.s.p75)}.`
-            : "See the table above.",
+            ? k(
+                "gd.how-much-does-matcha-cost.faq.0.a",
+                "Across {n} matcha powders from {b} brands, the median is {median} per 30 g, and the middle half of products fall between {lo} and {hi}.",
+                { n: c.s.count, b: c.s.brands, median: usd30(c.s.median), lo: usd30(c.s.p25), hi: usd30(c.s.p75) }
+              )
+            : k("gd.how-much-does-matcha-cost.faq.0.none", "See the table above."),
       },
       {
         q: "How much should a tin of matcha cost?",
-        a: (c) =>
+        a: (c, k) =>
           c.s.median != null
-            ? `At the median price, a 30 gram tin is about ${grams(c, 30)} and a 100 gram bag about ${grams(c, 100)}. Ceremonial grades cost more and culinary grades less.`
-            : "It depends on grade and size.",
+            ? k(
+                "gd.how-much-does-matcha-cost.faq.1.a",
+                "At the median price, a 30 gram tin is about {t30} and a 100 gram bag about {t100}. Ceremonial grades cost more and culinary grades less.",
+                { t30: grams(c, 30), t100: grams(c, 100) }
+              )
+            : k("gd.how-much-does-matcha-cost.faq.1.none", "It depends on grade and size."),
       },
       {
         q: "Why is matcha expensive?",
-        a: () =>
-          "Matcha comes from tea plants shaded before harvest, picked young, steamed, dried, de-stemmed and ground slowly in stone mills, so it is more labor-intensive than ordinary tea, and higher grades are made from the best leaves. Prices here are what each brand charges, not a verdict on value.",
+        a: (_c, k) =>
+          k(
+            "gd.how-much-does-matcha-cost.faq.2.a",
+            "Matcha comes from tea plants shaded before harvest, picked young, steamed, dried, de-stemmed and ground slowly in stone mills, so it is more labor-intensive than ordinary tea, and higher grades are made from the best leaves. Prices here are what each brand charges, not a verdict on value."
+          ),
       },
     ],
     related: ["matcha-under-20", "ceremonial-vs-culinary-matcha", "organic-matcha"],
@@ -359,22 +444,32 @@ export const GUIDES: Guide[] = [
     faq: [
       {
         q: "What is the difference between usucha and koicha?",
-        a: (c) => {
+        a: (c, k) => {
           const u = c.g("Usucha");
-          const k = c.g("Koicha");
-          const price = u && k ? ` In this data usucha-labeled matcha has a median of ${usd30(u.median)} per 30 g and koicha ${usd30(k.median)}.` : "";
-          return `Usucha is thin whisked tea; koicha is thick tea made with about twice the powder in much less water.${price}`;
+          const kc = c.g("Koicha");
+          const price =
+            u && kc
+              ? k("gd.usucha-vs-koicha-matcha.faq.0.price", " In this data usucha-labeled matcha has a median of {um} per 30 g and koicha {km}.", { um: usd30(u.median), km: usd30(kc.median) })
+              : "";
+          return k(
+            "gd.usucha-vs-koicha-matcha.faq.0.a",
+            "Usucha is thin whisked tea; koicha is thick tea made with about twice the powder in much less water.{price}",
+            { price }
+          );
         },
       },
       {
         q: "Can I make usucha with koicha matcha?",
-        a: () =>
-          "Yes. Koicha-labeled matcha is sweeter and gentler, so it works thin too; it just costs more per bowl.",
+        a: (_c, k) =>
+          k("gd.usucha-vs-koicha-matcha.faq.1.a", "Yes. Koicha-labeled matcha is sweeter and gentler, so it works thin too; it just costs more per bowl."),
       },
       {
         q: "Can I make koicha with usucha matcha?",
-        a: () =>
-          "You can, but more bitterness and astringency come through when the tea is thick, which is why matcha is labeled koicha in the first place.",
+        a: (_c, k) =>
+          k(
+            "gd.usucha-vs-koicha-matcha.faq.2.a",
+            "You can, but more bitterness and astringency come through when the tea is thick, which is why matcha is labeled koicha in the first place."
+          ),
       },
     ],
     related: ["ceremonial-vs-culinary-matcha", "how-much-does-matcha-cost", "matcha-under-20"],

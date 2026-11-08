@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useT } from "@/i18n/client";
 
 type Formats = { apa: string; bibtex: string; ris: string };
 
@@ -8,6 +9,7 @@ type Formats = { apa: string; bibtex: string; ris: string };
 // in as plain strings; this only handles format switching and copying. The text
 // is always rendered in full, so it stays readable and selectable with no JS.
 export function CopyCitation({ formats }: { formats: Formats }) {
+  const t = useT();
   const [fmt, setFmt] = useState<keyof Formats>("apa");
   const [copied, setCopied] = useState(false);
   const labels: Record<keyof Formats, string> = { apa: "APA", bibtex: "BibTeX", ris: "RIS" };
@@ -39,7 +41,7 @@ export function CopyCitation({ formats }: { formats: Formats }) {
           </button>
         ))}
         <button type="button" onClick={copy} className="ml-auto text-xs text-matcha hover:text-forest transition-colors">
-          {copied ? "Copied" : "Copy"}
+          {copied ? t("c.cc.copied") : t("c.cc.copy")}
         </button>
       </div>
       <pre className="whitespace-pre-wrap break-words text-xs leading-relaxed text-ink-muted bg-paper-raised border border-line rounded-sm p-3 font-mono">

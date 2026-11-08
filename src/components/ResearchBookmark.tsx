@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { supabase } from "@/lib/supabase";
+import { useT } from "@/i18n/client";
 
 // Save a study to your research folder, with a private note only you can see.
 export function ResearchBookmark({ studyId }: { studyId: number }) {
   const { user, ready, signIn, refreshStats } = useAuth();
+  const t = useT();
   const uid = user?.id ?? null;
   const [state, setState] = useState<{ uid: string; saved: boolean; note: string } | null>(null);
   const saved = !!uid && state?.uid === uid && state.saved;
@@ -31,7 +33,7 @@ export function ResearchBookmark({ studyId }: { studyId: number }) {
 
   const toggle = async () => {
     if (!user) {
-      signIn("Sign in to save studies to your research folder.");
+      signIn(t("c.rb.signIn"));
       return;
     }
     setBusy(true);
@@ -64,10 +66,10 @@ export function ResearchBookmark({ studyId }: { studyId: number }) {
       .eq("user_id", user.id)
       .eq("study_id", studyId);
     setBusy(false);
-    if (error) return setMessage("Couldn't save your note.");
+    if (error) return setMessage(t("c.rb.noteFail"));
     setState({ uid: user.id, saved: true, note });
     setDraft(null);
-    setMessage("Note saved. Only you can see it.");
+    setMessage(t("c.rb.noteSaved"));
   };
 
   return (
@@ -84,12 +86,12 @@ export function ResearchBookmark({ studyId }: { studyId: number }) {
         <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
           <path d="M6 3h12v18l-6-4-6 4V3z" />
         </svg>
-        {saved ? "In your research folder" : "Save to my research folder"}
+        {saved ? t("c.rb.inFolder") : t("c.rb.save")}
       </button>
       {saved && (
         <div className="mt-3 max-w-xl">
           <label htmlFor="research-note" className="block text-sm font-medium text-ink">
-            Private note
+            {t("c.rb.note")}
           </label>
           <textarea
             id="research-note"
@@ -99,12 +101,12 @@ export function ResearchBookmark({ studyId }: { studyId: number }) {
               setMessage(null);
             }}
             rows={3}
-            placeholder="Why this matters, what to follow up on…"
+            placeholder={t("c.rb.ph")}
             className="mt-1.5 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
           />
           <div className="mt-2 flex items-center gap-3">
             <button type="button" onClick={saveNote} disabled={busy || draft === null} className="rounded-full bg-matcha px-4 py-1.5 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">
-              Save note
+              {t("c.rb.saveNote")}
             </button>
             {message && (
               <span className="text-xs text-ink-faint" aria-live="polite">

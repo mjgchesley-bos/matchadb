@@ -5,21 +5,26 @@ import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 import { usd30 } from "@/lib/unit-price";
 import { langOf } from "@/i18n/params";
+import { fmtNum, isLocale, type Locale } from "@/i18n/config";
+import { getT } from "@/i18n/server";
+import { getC } from "@/i18n/content";
+import { pageAlternates } from "@/i18n/seo";
 
-const title = "Matcha Guides: Lattes, Grades, Prices and More";
-const description =
-  "Plain-English answers to common matcha questions, each backed by live price and grade data from brand product pages.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/guides` },
-  openGraph: { title, description, url: `${SITE_URL}/guides` },
-};
-
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: raw } = await params;
+  const lang: Locale = isLocale(raw) ? raw : "en";
+  const t = getT(lang);
+  const alternates = pageAlternates(lang, "/guides");
+  const title = t("g.idx.title");
+  const description = t("g.idx.desc");
+  return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
+}
 
 export default async function GuidesIndex({ params }: { params: Promise<{ lang: string }> }) {
-  await langOf(params);
+  const lang = await langOf(params);
+  const t = getT(lang);
+  const c = getC(lang);
+  const description = t("g.idx.desc");
   const loaded = await Promise.all(GUIDES.map((g) => loadGuide(g)));
 
   return (
@@ -43,10 +48,10 @@ export default async function GuidesIndex({ params }: { params: Promise<{ lang: 
         }}
       />
       <header className="max-w-3xl">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Guides</p>
-        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Matcha guides</h1>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.guides")}</p>
+        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{t("g.idx.h1")}</h1>
         <p className="mt-5 text-lg text-ink-muted leading-relaxed">
-          The questions people ask most about matcha, answered from the database: grades, uses, prices and origins, compared across brands by price per 30 g.
+          {t("g.idx.lead")}
         </p>
       </header>
 
@@ -57,10 +62,10 @@ export default async function GuidesIndex({ params }: { params: Promise<{ lang: 
             href={`/guides/${guide.slug}`}
             className="border border-line rounded-sm bg-paper-raised p-5 hover:border-matcha hover:bg-matcha-soft transition-colors"
           >
-            <span className="font-display text-xl font-semibold text-ink block">{guide.h1}</span>
-            <span className="text-sm text-ink-muted mt-2 block leading-relaxed">{guide.description}</span>
+            <span className="font-display text-xl font-semibold text-ink block">{c(`gd.${guide.slug}.h1`, guide.h1)}</span>
+            <span className="text-sm text-ink-muted mt-2 block leading-relaxed">{c(`gd.${guide.slug}.desc`, guide.description)}</span>
             <span className="text-xs text-ink-faint mt-3 block tabular-nums">
-              {ctx.s.count.toLocaleString()} powders &middot; median {usd30(ctx.s.median)} per 30 g
+              {t("g.idx.card", { n: fmtNum(lang, ctx.s.count), price: usd30(ctx.s.median) })}
             </span>
           </Link>
         ))}
@@ -68,11 +73,11 @@ export default async function GuidesIndex({ params }: { params: Promise<{ lang: 
           href="/guides/what-is-ceremonial-matcha"
           className="border border-line rounded-sm bg-paper-raised p-5 hover:border-matcha hover:bg-matcha-soft transition-colors"
         >
-          <span className="font-display text-xl font-semibold text-ink block">What is &ldquo;ceremonial&rdquo;?</span>
+          <span className="font-display text-xl font-semibold text-ink block">{t("g.idx.cer.h")}</span>
           <span className="text-sm text-ink-muted mt-2 block leading-relaxed">
-            Where the term came from, how it relates to the Japanese tea ceremony, and what it does and does not guarantee today.
+            {t("g.idx.cer.d")}
           </span>
-          <span className="text-xs text-ink-faint mt-3 block">Explainer</span>
+          <span className="text-xs text-ink-faint mt-3 block">{t("g.idx.cer.tag")}</span>
         </Link>
       </div>
     </main>

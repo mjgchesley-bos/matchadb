@@ -4,8 +4,12 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { BrandLogo } from "@/components/product-cards";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
-import { profiled, supplierBySlug, verifiedOn } from "@/lib/suppliers";
+import { profiled, supplierBySlug } from "@/lib/suppliers";
 import { langOf } from "@/i18n/params";
+import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
+import { getT } from "@/i18n/server";
+import { rich } from "@/i18n/rich";
+import { pageAlternates } from "@/i18n/seo";
 
 // Full profiles exist only for suppliers whose own site gives enough detail to fill one in;
 // every other supplier is listed on /wholesale.
@@ -13,36 +17,40 @@ export function generateStaticParams() {
   return profiled().map((s) => ({ slug: s.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
+  const { slug, lang: raw } = await params;
+  const lang: Locale = isLocale(raw) ? raw : "en";
+  const t = getT(lang);
   const s = supplierBySlug(slug);
   if (!s?.profile) return {};
-  const url = `${SITE_URL}/wholesale/${s.slug}`;
-  const title = `${s.name}: Wholesale Matcha Supplier`;
+  const alternates = pageAlternates(lang, `/wholesale/${s.slug}`);
+  const title = t("ws.slug.title", { name: s.name });
   const description = `${s.name}${s.hq ? ` (${s.hq})` : ""} supplies bulk matcha from ${s.profile.origins.join(" and ")}. ${s.profile.minimumOrder}. Terms and certifications as the supplier states them.`;
-  return { title, description, alternates: { canonical: url }, openGraph: { title, description, url } };
+  return { title, description: lang === "en" ? description : t("ws.desc"), alternates, openGraph: { title, description, url: alternates.canonical } };
 }
 
 export default async function SupplierPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { slug } = await params;
-  await langOf(params);
+  const lang = await langOf(params);
+  const t = getT(lang);
   const s = supplierBySlug(slug);
   if (!s || !s.profile) notFound();
   const p = s.profile;
-  const url = `${SITE_URL}/wholesale/${s.slug}`;
+  const url = pageAlternates(lang, `/wholesale/${s.slug}`).canonical;
+  const verified = new Intl.DateTimeFormat(INTL_LANG[lang], { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${s.verified}T00:00:00Z`));
   const hq = s.hq ?? "";
 
   const rows: { label: string; value: React.ReactNode }[] = [
-    ...(hq ? [{ label: "Based in", value: hq }] : []),
-    { label: "Sources from", value: p.origins.join(" and ") },
-    { label: "Grades", value: p.organic },
-    { label: "Minimum order", value: p.minimumOrder },
-    { label: "Documentation", value: p.documentation },
-    { label: "Samples", value: p.samples },
-    { label: "Private label", value: p.privateLabel },
-    { label: "Shipping", value: p.shipping },
-    { label: "Pricing", value: p.pricing },
-    { label: "Sells to", value: p.customers },
+    ...(hq ? [{ label: t("ws.slug.r.hq"), value: hq }] : []),
+    { label: t("ws.slug.r.src"), value: p.origins.join(" and ") },
+    { label: t("ws.slug.r.grades"), value: p.organic },
+    { label: t("ws.slug.r.min"), value: p.minimumOrder },
+    { label: t("ws.slug.r.docs"), value: p.documentation },
+    { label: t("ws.slug.r.samples"), value: p.samples },
+    { label: t("ws.slug.r.pl"), value: p.privateLabel },
+    { label: t("ws.slug.r.ship"), value: p.shipping },
+    { label: t("ws.slug.r.price"), value: p.pricing },
+    { label: t("ws.slug.r.sells"), value: p.customers },
   ];
 
   return (
@@ -63,21 +71,21 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
           "@type": "BreadcrumbList",
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "MatchaDB", item: SITE_URL },
-            { "@type": "ListItem", position: 2, name: "Wholesale", item: `${SITE_URL}/wholesale` },
+            { "@type": "ListItem", position: 2, name: t("footer.wholesale"), item: pageAlternates(lang, "/wholesale").canonical },
             { "@type": "ListItem", position: 3, name: s.name, item: url },
           ],
         }}
       />
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-ink-muted">
+      <nav aria-label={t("prod.crumb.aria")} className="flex items-center gap-1.5 text-sm text-ink-muted">
         <Link href="/" className="hover:text-matcha transition-colors">MatchaDB</Link>
         <span aria-hidden="true">/</span>
-        <Link href="/wholesale" className="hover:text-matcha transition-colors">Wholesale</Link>
+        <Link href="/wholesale" className="hover:text-matcha transition-colors">{t("footer.wholesale")}</Link>
         <span aria-hidden="true">/</span>
         <span className="text-ink-faint">{s.name}</span>
       </nav>
 
       <header className="mt-6 max-w-3xl">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Wholesale supplier</p>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("ws.slug.eyebrow")}</p>
         <div className="flex items-center gap-4">
           <BrandLogo brandName={s.name} size={64} maxWidth={200} allowTallerThanSize />
           <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{s.name}</h1>
@@ -90,7 +98,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-full bg-matcha px-6 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-forest"
           >
-            Visit {s.name}
+            {t("ws.slug.visit", { name: s.name })}
           </a>
           {(s.links ?? []).map((l) => (
             <a
@@ -107,7 +115,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
       </header>
 
       <section className="mt-10" aria-labelledby="terms-h">
-        <h2 id="terms-h" className="font-display text-xl font-semibold text-ink">Terms as the supplier states them</h2>
+        <h2 id="terms-h" className="font-display text-xl font-semibold text-ink">{t("ws.slug.terms")}</h2>
         <dl className="mt-4 border-y border-line divide-y divide-line">
           {rows.map((r) => (
             <div key={r.label} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-1 py-3">
@@ -120,7 +128,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
 
       <section className="mt-10 grid gap-10 sm:grid-cols-2">
         <div>
-          <h2 className="font-display text-xl font-semibold text-ink">Products</h2>
+          <h2 className="font-display text-xl font-semibold text-ink">{t("ws.slug.products")}</h2>
           <ul className="mt-3 list-disc pl-5 flex flex-col gap-1.5 text-ink-muted">
             {p.products.map((x) => (
               <li key={x}>{x}</li>
@@ -128,7 +136,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
           </ul>
         </div>
         <div>
-          <h2 className="font-display text-xl font-semibold text-ink">Certifications listed</h2>
+          <h2 className="font-display text-xl font-semibold text-ink">{t("ws.slug.certs")}</h2>
           <ul className="mt-3 list-disc pl-5 flex flex-col gap-1.5 text-ink-muted">
             {p.certifications.map((c) => (
               <li key={c}>{c}</li>
@@ -139,8 +147,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
 
       <section className="mt-12 rounded-sm border border-line bg-paper-raised px-5 py-4 text-sm text-ink-muted leading-relaxed">
         <p>
-          <strong className="text-ink">Where this comes from.</strong> Everything above is what {s.name} says on its
-          own website, last checked {verifiedOn(s)}:{" "}
+          <strong className="text-ink">{t("ws.slug.where")}</strong> {t("ws.slug.note", { name: s.name, date: verified })}{" "}
           {s.sources.map((src, i) => (
             <span key={src.url}>
               {i > 0 && ", "}
@@ -149,17 +156,19 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
               </a>
             </span>
           ))}
-          . MatchaDB has not tested the products or verified the certificates, and a listing is not an endorsement.
-          Confirm details with the supplier before you order. Spot something out of date?{" "}
-          <a href={`mailto:${CONTACT_EMAIL}?subject=Wholesale%20listing%20update:%20${encodeURIComponent(s.name)}`} className="text-matcha underline hover:text-forest">
-            Tell us
-          </a>
-          .
+          {lang === "ja" || lang === "zh" ? "。" : "."}{" "}
+          {rich(t("ws.slug.disclaimer", { link: "{link}" }), {
+            link: (
+              <a href={`mailto:${CONTACT_EMAIL}?subject=Wholesale%20listing%20update:%20${encodeURIComponent(s.name)}`} className="text-matcha underline hover:text-forest">
+                {t("ws.slug.tell")}
+              </a>
+            ),
+          })}
         </p>
       </section>
 
       <p className="mt-8 text-sm">
-        <Link href="/wholesale" className="text-matcha hover:text-forest">&larr; All wholesale suppliers</Link>
+        <Link href="/wholesale" className="text-matcha hover:text-forest">&larr; {t("ws.slug.all")}</Link>
       </p>
     </main>
   );

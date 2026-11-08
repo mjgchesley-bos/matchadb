@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { useT } from "@/i18n/client";
 
 type Suggestion = { name: string; count: number };
 
@@ -10,6 +11,7 @@ type Suggestion = { name: string; count: number };
 // set when a search is submitted. With JavaScript it also suggests keywords
 // as you type (from the library's own author keywords and subject terms).
 export function ResearchSearch({ defaultValue, formId }: { defaultValue?: string; formId: string }) {
+  const t = useT();
   const [value, setValue] = useState(defaultValue ?? "");
   const [items, setItems] = useState<Suggestion[]>([]);
   const [open, setOpen] = useState(false);
@@ -100,8 +102,8 @@ export function ResearchSearch({ defaultValue, formId }: { defaultValue?: string
           aria-controls={listId}
           aria-autocomplete="list"
           aria-activedescendant={active >= 0 ? `${listId}-${active}` : undefined}
-          aria-label="Search the research library by keyword"
-          placeholder="Search studies by keyword — try theanine, sleep, caffeine, gut microbiota…"
+          aria-label={t("c.rs.aria")}
+          placeholder={t("c.rs.ph")}
           className="flex-1 min-w-0 border border-line-strong rounded-full px-5 py-3.5 bg-paper-raised text-base text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors"
         />
         <button
@@ -109,7 +111,7 @@ export function ResearchSearch({ defaultValue, formId }: { defaultValue?: string
           form={formId}
           className="rounded-full bg-matcha text-paper px-6 sm:px-8 py-3.5 text-sm font-medium tracking-wide hover:bg-forest transition-colors shrink-0"
         >
-          Search
+          {t("c.rs.btn")}
         </button>
       </div>
       {open && items.length > 0 && (
@@ -131,7 +133,7 @@ export function ResearchSearch({ defaultValue, formId }: { defaultValue?: string
               className={`flex items-center justify-between gap-4 px-4 py-2.5 text-sm cursor-pointer ${i === active ? "bg-matcha-soft text-matcha-ink" : "text-ink-muted hover:bg-matcha-soft"}`}
             >
               <span>{it.name}</span>
-              <span className="text-xs text-ink-faint tabular-nums">{it.count} studies</span>
+              <span className="text-xs text-ink-faint tabular-nums">{t("c.rs.n", { n: it.count })}</span>
             </li>
           ))}
         </ul>
