@@ -5,19 +5,24 @@ import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 import { usd30 } from "@/lib/unit-price";
 import { langOf } from "@/i18n/params";
+import { isLocale, type Locale } from "@/i18n/config";
+import { getT } from "@/i18n/server";
+import { pageAlternates } from "@/i18n/seo";
 
-const title = "Compare Matcha Brands: Price, Grade and Origin Side by Side";
-const description = "Head-to-head comparisons of popular matcha brands by price per 30 g, grade, growing region, cultivar and shipping, from each brand's own product pages.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/compare` },
-  openGraph: { title, description, url: `${SITE_URL}/compare` },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: raw } = await params;
+  const lang: Locale = isLocale(raw) ? raw : "en";
+  const t = getT(lang);
+  const alternates = pageAlternates(lang, "/compare");
+  const title = t("cmp.idx.title");
+  const description = t("cmp.idx.desc");
+  return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
+}
 
 export default async function CompareIndex({ params }: { params: Promise<{ lang: string }> }) {
-  await langOf(params);
+  const lang = await langOf(params);
+  const t = getT(lang);
+  const description = t("cmp.idx.desc");
   const loaded = await Promise.all(PAIRS.map(([a, b]) => loadComparison(a, b)));
 
   return (
@@ -36,11 +41,10 @@ export default async function CompareIndex({ params }: { params: Promise<{ lang:
         }}
       />
       <header className="max-w-3xl">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Compare</p>
-        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Compare matcha brands</h1>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.compare")}</p>
+        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{t("cmp.idx.h1")}</h1>
         <p className="mt-5 text-lg text-ink-muted leading-relaxed">
-          Two brands, side by side: what their matcha costs per 30 g, how they grade it, where they say it is grown and where they ship. Facts from each brand&apos;s own product pages, with
-          no taste scores.
+          {t("cmp.idx.lead")}
         </p>
       </header>
 
@@ -51,7 +55,7 @@ export default async function CompareIndex({ params }: { params: Promise<{ lang:
             <Link key={pairSlug(a, b)} href={`/compare/${pairSlug(a, b)}`} className="border border-line rounded-sm bg-paper-raised p-5 hover:border-matcha hover:bg-matcha-soft transition-colors">
               <span className="font-display text-xl font-semibold text-ink block">{a} vs {b}</span>
               <span className="text-xs text-ink-faint mt-3 block tabular-nums">
-                Median per 30 g: {usd30(A.powders.median)} vs {usd30(B.powders.median)} &middot; {A.total} vs {B.total} products
+                {t("cmp.idx.card", { a: usd30(A.powders.median), b: usd30(B.powders.median), na: A.total, nb: B.total })}
               </span>
             </Link>
           );

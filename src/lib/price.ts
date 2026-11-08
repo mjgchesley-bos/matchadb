@@ -64,8 +64,17 @@ function currencySymbol(currency: string): string {
 // One row of the full "every size actually disclosed" pricing table shown
 // on the product detail page — as opposed to formatPrice's single collapsed
 // "from $X" figure used on browse/brand list pages.
+export type VariantLabels = { or: string; multi: string; inferred: string; usd: string };
+const EN_VARIANT: VariantLabels = {
+  or: " or ",
+  multi: "multiple prices listed on the page; unclear which is current",
+  inferred: "size inferred from the page's listed option — not explicitly stated for this price",
+  usd: "USD",
+};
+
 export function formatPriceVariant(
-  v: ProductPriceRow & { allAmounts: number[] }
+  v: ProductPriceRow & { allAmounts: number[] },
+  L: VariantLabels = EN_VARIANT
 ): { text: string; caution: boolean } {
   const size = `${trimNum(v.size_grams)}g`;
   const symbol = currencySymbol(v.price_currency);
@@ -73,17 +82,17 @@ export function formatPriceVariant(
   if (v.needs_review === 1 || v.price_native == null) {
     const amounts = v.allAmounts
       .map((a) => `${symbol}${v.price_currency === "JPY" ? trimNum(a) : a.toFixed(2)}`)
-      .join(" or ");
-    return { text: `${size} — ${amounts} (multiple prices listed on the page; unclear which is current)`, caution: true };
+      .join(L.or);
+    return { text: `${size} — ${amounts} (${L.multi})`, caution: true };
   }
 
   const nativeAmount = v.price_currency === "JPY" ? trimNum(v.price_native) : v.price_native.toFixed(2);
   let text = `${size} — ${symbol}${nativeAmount}`;
   if (v.fx_converted === 1 && v.price_usd != null) {
-    text += ` (~$${v.price_usd.toFixed(2)} USD)`;
+    text += ` (~$${v.price_usd.toFixed(2)} ${L.usd})`;
   }
   if (v.inferred === 1) {
-    text += " (size inferred from the page's listed option — not explicitly stated for this price)";
+    text += ` (${L.inferred})`;
     return { text, caution: true };
   }
   return { text, caution: false };

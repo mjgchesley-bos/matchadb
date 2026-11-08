@@ -3,15 +3,18 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { supabase } from "@/lib/supabase";
+import { useT } from "@/i18n/client";
 
 // "Want to try / Using now / Tried it": a personal shelf for each product. Picking the same
 // status again clears it.
 export type ShelfStatus = "want" | "using" | "tried";
 export const SHELF_LABELS: Record<ShelfStatus, string> = { want: "Want to try", using: "Using now", tried: "Tried it" };
+export const SHELF_KEYS = { want: "c.shelf.want", using: "c.shelf.using", tried: "c.shelf.tried" } as const;
 const ORDER: ShelfStatus[] = ["want", "using", "tried"];
 
 export function ShelfButtons({ productId, productName }: { productId: number; productName: string }) {
   const { user, ready, signIn, refreshStats } = useAuth();
+  const t = useT();
   const uid = user?.id ?? null;
   const [state, setState] = useState<{ uid: string; status: ShelfStatus | null } | null>(null);
   const status = uid && state?.uid === uid ? state.status : null;
@@ -48,7 +51,7 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
 
   const pick = async (next: ShelfStatus) => {
     if (!user) {
-      signIn(`Sign in to add ${productName} to your shelf.`);
+      signIn(t("c.shelf.signIn", { name: productName }));
       return;
     }
     const clearing = status === next;
@@ -70,7 +73,7 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
   };
 
   return (
-    <div className="mt-3" role="group" aria-label={`Your shelf for ${productName}`}>
+    <div className="mt-3" role="group" aria-label={t("c.shelf.aria", { name: productName })}>
       <div className="flex flex-wrap items-center gap-2">
         {ORDER.map((s) => (
           <button
@@ -83,7 +86,7 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
               status === s ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"
             }`}
           >
-            {SHELF_LABELS[s]}
+            {t(SHELF_KEYS[s])}
           </button>
         ))}
       </div>
@@ -91,14 +94,14 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
         <p className="mt-1.5 text-xs text-ink-faint tabular-nums">
           {ORDER.map((s) => {
             const n = counts.find((c) => c.status === s)?.members ?? 0;
-            return n > 0 ? `${n} ${SHELF_LABELS[s].toLowerCase()}` : null;
+            return n > 0 ? t(`c.shelf.n.${s}` as "c.shelf.n.want", { n }) : null;
           })
             .filter(Boolean)
             .join(" · ")}
         </p>
       )}
-      {status === "tried" && <p className="mt-1.5 text-xs text-ink-faint">How was it? Rate it with the stars above.</p>}
-      {failed && <p className="mt-1.5 text-xs text-red-700">Couldn&apos;t update your shelf. Try again.</p>}
+      {status === "tried" && <p className="mt-1.5 text-xs text-ink-faint">{t("c.shelf.rateHint")}</p>}
+      {failed && <p className="mt-1.5 text-xs text-red-700">{t("c.shelf.failed")}</p>}
     </div>
   );
 }

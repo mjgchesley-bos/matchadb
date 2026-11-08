@@ -1,3 +1,6 @@
+import { countryName } from "./cafe-types";
+import type { Locale } from "@/i18n/config";
+
 // Real-world coordinates for every distinct `region` value in the database.
 // Japanese entries are specific tea-growing towns/prefectures and are
 // precise. Zhejiang and Jeju are provinces -- one level less precise than a
@@ -46,4 +49,11 @@ export const REGION_COORDINATES: Record<string, RegionInfo> = {
 export function getRegionInfo(region: string | null): RegionInfo | null {
   if (!region) return null;
   return REGION_COORDINATES[region] ?? null;
+}
+
+// The country name used in REGION_COORDINATES, in the visitor's language.
+const COUNTRY_CC: Record<string, string> = { Japan: "JP", China: "CN", "South Korea": "KR", Taiwan: "TW" };
+export function regionCountry(country: string, lang: Locale): string {
+  const cc = COUNTRY_CC[country];
+  return cc ? countryName(cc, lang) : country;
 }

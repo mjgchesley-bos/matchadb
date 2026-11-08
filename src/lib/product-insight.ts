@@ -1,6 +1,8 @@
 import type { ComparablePrice } from "./db";
 import { REGION_CONTENT } from "./region-content";
 import { usd30 } from "./unit-price";
+import type { TFn, TVFn } from "@/i18n/server";
+import type { Locale } from "@/i18n/config";
 
 // "Price in context": plain-English comparisons computed from the database,
 // so each product page carries information that exists nowhere else (not on
@@ -26,13 +28,14 @@ function pct(share: number): number {
   return Math.min(99, Math.max(1, Math.round(share * 100)));
 }
 
-function relationToMedian(price: number, med: number, noun: string): string {
-  const ratio = price / med;
-  if (ratio >= 1.5) return `roughly ${ratio.toFixed(1)}× the ${noun} median`;
-  if (ratio <= 0.67) return `well under the ${noun} median`;
-  if (ratio > 1.15) return `above the ${noun} median`;
-  if (ratio < 0.85) return `below the ${noun} median`;
-  return `close to the ${noun} median`;
+function relationToMedian(t: TFn, price: number, medPrice: number, noun: "region" | "grade"): string {
+  const ratio = price / medPrice;
+  const med = t(noun === "region" ? "ins.med.region" : "ins.med.grade");
+  if (ratio >= 1.5) return t("ins.rel.x", { x: ratio.toFixed(1), med });
+  if (ratio <= 0.67) return t("ins.rel.well", { med });
+  if (ratio > 1.15) return t("ins.rel.above", { med });
+  if (ratio < 0.85) return t("ins.rel.below", { med });
+  return t("ins.rel.close", { med });
 }
 
 export type PriceInsight = {
@@ -48,29 +51,29 @@ export type PriceInsight = {
 
 export function getPriceInsight(
   productId: number,
-  all: ComparablePrice[]
+  all: ComparablePrice[],
+  lang: Locale,
+  t: TFn,
+  tv: TVFn
 ): PriceInsight | null {
   const target = all.find((p) => p.id === productId);
   if (!target) return null;
   const others = all.filter((p) => p.id !== productId);
   if (others.length < MIN_GRADE_PEERS) return null;
 
-  const t = target.pricePerGram;
-  const moreThan = others.filter((o) => o.pricePerGram < t).length / others.length;
-  const lessThan = others.filter((o) => o.pricePerGram > t).length / others.length;
+  const tp = target.pricePerGram;
+  const tr = t;
+  const moreThan = others.filter((o) => o.pricePerGram < tp).length / others.length;
+  const lessThan = others.filter((o) => o.pricePerGram > tp).length / others.length;
 
   const sentences: string[] = [];
   let shortClause: string;
   if (moreThan >= 0.5) {
-    sentences.push(
-      `At ${usd30(t)} per 30 g, it costs more than ${pct(moreThan)}% of the other ${others.length} matchas in the database with a confirmed price and size.`
-    );
-    shortClause = `${usd30(t)} per 30 g, pricier than ${pct(moreThan)}% of matchas`;
+    sentences.push(tr("ins.more", { price: usd30(tp), pct: pct(moreThan), n: others.length }));
+    shortClause = tr("ins.short.more", { price: usd30(tp), pct: pct(moreThan) });
   } else {
-    sentences.push(
-      `At ${usd30(t)} per 30 g, it costs less than ${pct(lessThan)}% of the other ${others.length} matchas in the database with a confirmed price and size.`
-    );
-    shortClause = `${usd30(t)} per 30 g, cheaper than ${pct(lessThan)}% of matchas`;
+    sentences.push(tr("ins.less", { price: usd30(tp), pct: pct(lessThan), n: others.length }));
+    shortClause = tr("ins.short.less", { price: usd30(tp), pct: pct(lessThan) });
   }
 
   // Region comparison (preferred), else grade.
@@ -81,7 +84,7 @@ export function getPriceInsight(
   if (target.region && regionPeers.length >= MIN_REGION_PEERS) {
     const med = median(regionPeers.map((p) => p.pricePerGram).sort((a, b) => a - b));
     sentences.push(
-      `Among the ${regionPeers.length} ${target.region} matchas with a confirmed price, the median is ${usd30(med)} per 30 g, and this one is ${relationToMedian(t, med, "regional")}.`
+      tr("ins.region", { n: regionPeers.length, region: tv("region", target.region), median: usd30(med), relation: relationToMedian(tr, tp, med, "region") })
     );
     regionSlug = REGION_CONTENT[target.region]?.slug ?? null;
   } else if (target.grade) {
@@ -89,7 +92,12 @@ export function getPriceInsight(
     if (gradePeers.length >= MIN_GRADE_PEERS) {
       const med = median(gradePeers.map((p) => p.pricePerGram).sort((a, b) => a - b));
       sentences.push(
-        `Among the ${gradePeers.length} ${target.grade.toLowerCase()}-grade matchas with a confirmed price, the median is ${usd30(med)} per 30 g, and this one is ${relationToMedian(t, med, "grade")}.`
+        tr("ins.grade", {
+          n: gradePeers.length,
+          grade: lang === "en" ? target.grade.toLowerCase() : tv("grade", target.grade),
+          median: usd30(med),
+          relation: relationToMedian(tr, tp, med, "grade"),
+        })
       );
     }
   }
@@ -100,19 +108,17 @@ export function getPriceInsight(
     .sort((a, b) => a.pricePerGram - b.pricePerGram);
   if (brandPeers.length >= MIN_BRAND_PEERS) {
     const rank = brandPeers.findIndex((p) => p.id === productId) + 1;
-    const brandPoss = /s$/i.test(target.brand) ? `${target.brand}'` : `${target.brand}'s`;
     const where =
       rank === 1
-        ? `its cheapest`
+        ? tr("ins.where.cheapest")
         : rank === brandPeers.length
-          ? `its most expensive`
-          : `the ${ordinal(rank)}-cheapest`;
-    sentences.push(
-      `Among ${brandPoss} ${brandPeers.length} matchas with a confirmed price, this is ${where} per 30 g.`
-    );
+          ? tr("ins.where.priciest")
+          : tr("ins.where.nth", { ord: lang === "en" ? ordinal(rank) : String(rank) });
+    const key = lang === "en" && /s$/i.test(target.brand) ? "ins.brand.s" : "ins.brand";
+    sentences.push(tr(key, { brand: target.brand, n: brandPeers.length, where }));
   }
 
-  return { pricePerGram: t, sentences, basis: others.length + 1, shortClause, regionSlug };
+  return { pricePerGram: tp, sentences, basis: others.length + 1, shortClause, regionSlug };
 }
 
 export type BrandSummaryInput = {
@@ -121,7 +127,7 @@ export type BrandSummaryInput = {
   comparable: ComparablePrice[]; // this brand's comparable-price products
 };
 
-export function getBrandSummary({ brand, products, comparable }: BrandSummaryInput): string[] {
+export function getBrandSummary({ brand, products, comparable }: BrandSummaryInput, lang: Locale, t: TFn, tv: TVFn): string[] {
   const n = products.length;
   const out: string[] = [];
 
@@ -129,13 +135,14 @@ export function getBrandSummary({ brand, products, comparable }: BrandSummaryInp
   for (const p of products) if (p.grade) gradeCounts.set(p.grade, (gradeCounts.get(p.grade) ?? 0) + 1);
   const topGrade = [...gradeCounts].sort((a, b) => b[1] - a[1])[0];
   const graded = [...gradeCounts.values()].reduce((a, b) => a + b, 0);
-  let first = `${brand} has ${n} matcha product${n === 1 ? "" : "s"} in our database`;
+  let first: string;
   if (topGrade && graded >= 3) {
-    first += topGrade[1] / graded >= 0.5
-      ? `, mostly ${topGrade[0].toLowerCase()} grade.`
-      : `, spanning ${gradeCounts.size} grades.`;
+    first =
+      topGrade[1] / graded >= 0.5
+        ? t("bs.b", { brand, n, grade: lang === "en" ? topGrade[0].toLowerCase() : tv("grade", topGrade[0]) })
+        : t("bs.c", { brand, n, g: gradeCounts.size });
   } else {
-    first += ".";
+    first = t(n === 1 ? "bs.a.one" : "bs.a.other", { brand, n });
   }
   out.push(first);
 
@@ -143,17 +150,13 @@ export function getBrandSummary({ brand, products, comparable }: BrandSummaryInp
   for (const p of products) if (p.region) regionCounts.set(p.region, (regionCounts.get(p.region) ?? 0) + 1);
   const regions = [...regionCounts].sort((a, b) => b[1] - a[1]);
   if (regions.length > 0) {
-    const shown = regions.slice(0, 3).map(([r, c]) => `${r} (${c})`).join(", ");
-    out.push(
-      `Growing regions it discloses: ${shown}${regions.length > 3 ? `, and ${regions.length - 3} more` : ""}.`
-    );
+    const shown = regions.slice(0, 3).map(([r, c]) => `${tv("region", r)} (${c})`).join(lang === "ja" || lang === "zh" ? "、" : ", ");
+    out.push(regions.length > 3 ? t("bs.regions.more", { list: shown, n: regions.length - 3 }) : t("bs.regions", { list: shown }));
   }
 
   if (comparable.length >= 3) {
     const sorted = comparable.map((c) => c.pricePerGram).sort((a, b) => a - b);
-    out.push(
-      `Across ${comparable.length} products with a confirmed price and size, cost runs from ${usd30(sorted[0])} to ${usd30(sorted[sorted.length - 1])} per 30 g, with a median of ${usd30(median(sorted))}.`
-    );
+    out.push(t("bs.price", { n: comparable.length, lo: usd30(sorted[0]), hi: usd30(sorted[sorted.length - 1]), med: usd30(median(sorted)) }));
   }
   return out;
 }

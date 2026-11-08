@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { getProducts, getRegionSummary } from "@/lib/db";
-import { getRegionInfo } from "@/lib/regions";
+import { getRegionInfo, regionCountry } from "@/lib/regions";
 import { usd30 } from "@/lib/unit-price";
 import {
   MIN_PRODUCTS_FOR_PAGE,
@@ -16,6 +16,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { ResearchLinks } from "@/components/ResearchLinks";
 import { SITE_URL } from "@/lib/site";
 import { langOf } from "@/i18n/params";
+import { isLocale, type Locale } from "@/i18n/config";
+import { getT, getTV } from "@/i18n/server";
+import { getC } from "@/i18n/content";
+import { rich } from "@/i18n/rich";
+import { pageAlternates } from "@/i18n/seo";
 
 export function generateStaticParams() {
   return Object.values(REGION_CONTENT).map((c) => ({ region: c.slug }));
@@ -34,21 +39,26 @@ function Stat({ label, value, sub }: { label: string; value: string; sub?: strin
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ region: string }>;
+  params: Promise<{ lang: string; region: string }>;
 }): Promise<Metadata> {
-  const { region: slug } = await params;
+  const { region: slug, lang: rawLang } = await params;
+  const lang: Locale = isLocale(rawLang) ? rawLang : "en";
+  const t = getT(lang);
+  const tv = getTV(lang);
   const key = regionFromSlug(slug);
   const info = key ? getRegionInfo(key) : null;
   if (!key || !info) return {};
   const summary = await getRegionSummary(key);
   if (!summary) return {};
-  const title = `${info.name} Matcha: Prices, Brands & Flavor Profile`;
-  const description = `${summary.productCount} matcha products from ${info.name}, ${info.country} across ${summary.brandCount} brands — typical price per 30 g, grade mix, flavor profile, and which brands source there.`;
+  const name = tv("region", key);
+  const title = t("rg.title", { name });
+  const description = t("rg.desc", { n: summary.productCount, name, country: regionCountry(info.country, lang), b: summary.brandCount });
+  const alternates = pageAlternates(lang, `/regions/${slug}`);
   return {
     title,
     description,
-    alternates: { canonical: `${SITE_URL}/regions/${slug}` },
-    openGraph: { title, description, url: `${SITE_URL}/regions/${slug}` },
+    alternates,
+    openGraph: { title, description, url: alternates.canonical },
   };
 }
 
@@ -59,6 +69,9 @@ export default async function RegionPage({
 }) {
   const { region: slug } = await params;
   const lang = await langOf(params);
+  const t = getT(lang);
+  const tv = getTV(lang);
+  const c = getC(lang);
   const key = regionFromSlug(slug);
   if (!key) notFound();
   const info = getRegionInfo(key);
@@ -68,7 +81,8 @@ export default async function RegionPage({
 
   const { products } = await getProducts({ region: key, page: 1, pageSize: 12 });
   const canShowPrice = summary.pricedCount >= MIN_PRODUCTS_FOR_PAGE;
-  const pageUrl = `${SITE_URL}/regions/${slug}`;
+  const pageUrl = pageAlternates(lang, `/regions/${slug}`).canonical;
+  const name = tv("region", key);
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
@@ -79,70 +93,68 @@ export default async function RegionPage({
           itemListElement: [
             { "@type": "ListItem", position: 1, name: "MatchaDB", item: SITE_URL },
             { "@type": "ListItem", position: 2, name: "Regions", item: `${SITE_URL}/regions` },
-            { "@type": "ListItem", position: 3, name: info.name, item: pageUrl },
+            { "@type": "ListItem", position: 3, name, item: pageUrl },
           ],
         }}
       />
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-ink-muted">
+      <nav aria-label={t("prod.crumb.aria")} className="flex items-center gap-1.5 text-sm text-ink-muted">
         <Link href="/" className="hover:text-matcha transition-colors">MatchaDB</Link>
         <span aria-hidden="true">/</span>
-        <Link href="/regions" className="hover:text-matcha transition-colors">Regions</Link>
+        <Link href="/regions" className="hover:text-matcha transition-colors">{t("footer.regions")}</Link>
         <span aria-hidden="true">/</span>
-        <span className="text-ink-faint">{info.name}</span>
+        <span className="text-ink-faint">{name}</span>
       </nav>
 
       <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mt-6 mb-2">
-        {info.country}
+        {regionCountry(info.country, lang)}
       </p>
       <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight">
-        {info.name} matcha
+        {t("rg.h1", { name })}
       </h1>
-      <p className="text-ink-muted text-lg leading-relaxed mt-4 max-w-2xl">{content.intro}</p>
-      {content.note && <p className="text-sm text-ink-faint mt-3 max-w-2xl">{content.note}</p>}
+      <p className="text-ink-muted text-lg leading-relaxed mt-4 max-w-2xl">{c(`rc.${content.slug}.intro`, content.intro)}</p>
+      {content.note && <p className="text-sm text-ink-faint mt-3 max-w-2xl">{c(`rc.${content.slug}.note`, content.note)}</p>}
 
       <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <Stat label="Products" value={String(summary.productCount)} />
-        <Stat label="Brands" value={String(summary.brandCount)} />
+        <Stat label={t("rg.stat.products")} value={String(summary.productCount)} />
+        <Stat label={t("rg.stat.brands")} value={String(summary.brandCount)} />
         <Stat
-          label="Typical price per 30 g"
+          label={t("rg.stat.price")}
           value={canShowPrice ? usd30(summary.medianPricePerGram) : "—"}
           sub={
             canShowPrice
-              ? `middle half: ${usd30(summary.p25PricePerGram)}–${usd30(summary.p75PricePerGram)}`
-              : "too few priced products"
+              ? t("rg.stat.mid", { lo: usd30(summary.p25PricePerGram), hi: usd30(summary.p75PricePerGram) })
+              : t("rg.stat.few")
           }
         />
-        <Stat label="Organic" value={`${Math.round(summary.organicShare * 100)}%`} sub="of products" />
+        <Stat label={t("rg.stat.organic")} value={`${Math.round(summary.organicShare * 100)}%`} sub={t("rg.stat.ofProducts")} />
       </div>
       <p className="text-xs text-ink-faint mt-2 max-w-2xl">
-        Price is the <em>median</em> across {summary.pricedCount}{" "}products with a confirmed price and size (yen, pound and euro prices converted to dollars), so a few
-        very expensive competition-grade tins don&apos;t distort it. Products priced by count (sticks,
-        tea bags) are excluded.
+        {t("rg.price.note", { n: summary.pricedCount })}
       </p>
 
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-8 items-start">
         <div className="flex flex-col gap-8">
           {summary.grades.length > 0 && (
             <section>
-              <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">Grades sold</h2>
+              <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rg.grades")}</h2>
               <div className="flex flex-wrap gap-2">
                 {summary.grades.map((g) => (
                   <span key={g.grade} className="rounded-full bg-matcha-soft text-matcha-ink px-3 py-1 text-sm">
-                    {gradeLabel(g.grade)} <span className="text-ink-faint">· {g.count}</span>
+                    {gradeLabel(g.grade, tv)} <span className="text-ink-faint">· {g.count}</span>
                   </span>
                 ))}
               </div>
-              <p className="text-xs text-ink-faint mt-2">Grade is as each brand labels it; the term isn&apos;t regulated.</p>
+              <p className="text-xs text-ink-faint mt-2">{t("rg.grades.note")}</p>
             </section>
           )}
 
           {summary.topFlavors.length > 0 && (
             <section>
-              <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">Flavor profile</h2>
+              <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rg.flavor")}</h2>
               <ul className="flex flex-col gap-2">
                 {summary.topFlavors.map((f) => (
                   <li key={f.tag} className="flex items-center gap-3 text-sm">
-                    <span className="w-24 text-ink">{f.tag}</span>
+                    <span className="w-24 text-ink">{tv("flavor", f.tag)}</span>
                     <span className="flex-1 h-2 bg-paper-raised border border-line rounded-full overflow-hidden">
                       <span
                         className="block h-full bg-matcha"
@@ -156,13 +168,13 @@ export default async function RegionPage({
                 ))}
               </ul>
               <p className="text-xs text-ink-faint mt-2">
-                Share of products here whose tasting notes mention each flavor.
+                {t("rg.flavor.note")}
               </p>
             </section>
           )}
 
           <section>
-            <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">Brands sourcing here</h2>
+            <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rg.brands")}</h2>
             <ul className="flex flex-wrap gap-2">
               {summary.topBrands.map((b) => (
                 <li key={b.name}>
@@ -181,7 +193,7 @@ export default async function RegionPage({
         <div className="relative w-full sm:w-72 aspect-[8/5] rounded-sm overflow-hidden border border-line">
           <Image
             src={`/region-thumbnails/${key}.png`}
-            alt={`Map highlighting ${info.name}, ${info.country}`}
+            alt={t("prod.map.alt", { name, country: regionCountry(info.country, lang) })}
             fill
             sizes="(min-width: 640px) 288px, 100vw"
             className="object-cover"
@@ -191,7 +203,7 @@ export default async function RegionPage({
 
       <section className="mt-12">
         <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">
-          Matcha from {info.name}
+          {t("rg.matchaFrom", { name })}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {products.map((p) => (
@@ -203,20 +215,20 @@ export default async function RegionPage({
             href={`/browse?region=${encodeURIComponent(key)}`}
             className="inline-block mt-5 text-sm text-matcha hover:text-forest transition-colors"
           >
-            See all {summary.productCount}{" "}products from {info.name} &rarr;
+            {t("rg.seeAll", { n: summary.productCount, name })} &rarr;
           </Link>
         )}
       </section>
 
       <ResearchLinks
-        heading="Research on how matcha is grown and made"
+        lang={lang}
+        heading={t("rg.research.heading")}
         topics={["Cultivation and shading", "Processing, milling and quality", "Aroma, flavor and sensory"]}
-        blurb="Plant scientists and food chemists have studied how shading, harvest and milling shape matcha's flavor and chemistry. Browse the studies behind it."
+        blurb={t("rg.research.blurb")}
       />
 
       <p className="text-xs text-ink-faint mt-12">
-        Figures are computed from the product pages brands publish; see{" "}
-        <Link href="/about" className="underline">how we research</Link>.
+        {rich(t("rg.foot", { link: "{link}" }), { link: <Link href="/about" className="underline">{t("prod.ctx.how")}</Link> })}
       </p>
     </main>
   );

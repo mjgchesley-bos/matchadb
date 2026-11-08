@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { supabase } from "@/lib/supabase";
+import { useT } from "@/i18n/client";
 
 // Product page: "Add to a list" menu showing the member's own lists with a check for the ones
 // that already hold this matcha, plus a quick way to start a new list.
@@ -10,6 +11,7 @@ type Row = { id: string; name: string; has: boolean };
 
 export function ListMenu({ productId, productName }: { productId: number; productName: string }) {
   const { user, signIn } = useAuth();
+  const t = useT();
   const uid = user?.id ?? null;
   const [rows, setRows] = useState<{ uid: string; list: Row[] } | null>(null);
   const list = uid && rows?.uid === uid ? rows.list : null;
@@ -52,7 +54,7 @@ export function ListMenu({ productId, productName }: { productId: number; produc
     const { error } = r.has
       ? await sb.from("custom_shelf_items").delete().eq("shelf_id", r.id).eq("product_id", productId)
       : await sb.from("custom_shelf_items").insert({ shelf_id: r.id, user_id: user.id, product_id: productId });
-    if (error) return setMsg(error.message.includes("up to 100") ? "That list is full." : "Couldn't update the list.");
+    if (error) return setMsg(error.message.includes("up to 100") ? t("c.lm.full") : t("c.lm.fail"));
     setTick((t) => t + 1);
   };
 
@@ -61,7 +63,7 @@ export function ListMenu({ productId, productName }: { productId: number; produc
     setMsg(null);
     const sb = supabase();
     const { data, error } = await sb.from("custom_shelves").insert({ user_id: user.id, name: name.trim() }).select("id").single();
-    if (error || !data) return setMsg(error?.message.includes("up to 10") ? "You can have up to 10 lists." : error?.code === "23505" ? "You already have a list with that name." : "Couldn't create the list.");
+    if (error || !data) return setMsg(error?.message.includes("up to 10") ? t("c.lm.max") : error?.code === "23505" ? t("c.lm.dup") : t("c.lm.createFail"));
     await sb.from("custom_shelf_items").insert({ shelf_id: data.id, user_id: user.id, product_id: productId });
     window.gtag?.("event", "list_create");
     setName("");
@@ -72,20 +74,20 @@ export function ListMenu({ productId, productName }: { productId: number; produc
     <div ref={root} className="relative mt-3">
       <button
         type="button"
-        onClick={() => (user ? setOpen((o) => !o) : signIn(`Sign in to add ${productName} to a list.`))}
+        onClick={() => (user ? setOpen((o) => !o) : signIn(t("c.lm.signIn", { name: productName })))}
         aria-haspopup="true"
         aria-expanded={open}
         className="rounded-full border border-line-strong bg-paper-raised px-3.5 py-1.5 text-sm text-ink hover:bg-matcha-soft"
       >
-        Add to a list
+        {t("c.lm.btn")}
       </button>
       {open && (
         <div className="absolute left-0 top-full z-30 mt-2 w-72 max-w-[calc(100vw-3rem)] rounded-md border border-line bg-paper-raised p-3 shadow-lg">
           {list === null ? (
-            <p className="text-sm text-ink-faint">Loading…</p>
+            <p className="text-sm text-ink-faint">{t("c.lm.loading")}</p>
           ) : (
             <>
-              {list.length === 0 && <p className="text-sm text-ink-muted">You have no lists yet. Name one below.</p>}
+              {list.length === 0 && <p className="text-sm text-ink-muted">{t("c.lm.none")}</p>}
               <ul className="flex max-h-48 flex-col gap-1 overflow-y-auto">
                 {list.map((r) => (
                   <li key={r.id}>
@@ -98,18 +100,18 @@ export function ListMenu({ productId, productName }: { productId: number; produc
               </ul>
               <div className="mt-2 flex gap-2 border-t border-line pt-2">
                 <label htmlFor="menu-new-list" className="sr-only">
-                  New list name
+                  {t("c.lm.newLabel")}
                 </label>
                 <input
                   id="menu-new-list"
                   value={name}
                   onChange={(e) => setName(e.target.value.slice(0, 40))}
                   onKeyDown={(e) => e.key === "Enter" && void create()}
-                  placeholder="New list"
+                  placeholder={t("c.lm.newPh")}
                   className="min-w-0 flex-1 rounded-sm border border-line-strong bg-paper px-2.5 py-1.5 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
                 />
                 <button type="button" onClick={create} disabled={!name.trim()} className="rounded-full bg-matcha px-3 py-1.5 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">
-                  Add
+                  {t("c.lm.add")}
                 </button>
               </div>
               {msg && <p className="mt-2 text-xs text-red-700">{msg}</p>}

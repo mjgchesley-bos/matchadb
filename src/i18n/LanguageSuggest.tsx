@@ -17,28 +17,6 @@ const COPY: Record<Locale, { text: string; yes: string; no: string; close: strin
   de: { text: "Diese Seite ins Deutsche übersetzen?", yes: "Übersetzen", no: "Nicht jetzt", close: "Schließen" },
 };
 
-// The visitor's country, guessed from their time zone, mapped to one of our languages. Only used when the
-// browser's own language list does not already point to a language we have.
-const ZONE_LANG: Record<string, Locale> = {
-  "Asia/Tokyo": "ja",
-  "Asia/Seoul": "ko",
-  "Asia/Shanghai": "zh",
-  "Asia/Chongqing": "zh",
-  "Asia/Harbin": "zh",
-  "Asia/Urumqi": "zh",
-  "Europe/Madrid": "es",
-  "Atlantic/Canary": "es",
-  "America/Mexico_City": "es",
-  "America/Bogota": "es",
-  "America/Lima": "es",
-  "America/Santiago": "es",
-  "America/Argentina/Buenos_Aires": "es",
-  "Europe/Paris": "fr",
-  "Europe/Berlin": "de",
-  "Europe/Vienna": "de",
-  "Europe/Zurich": "de",
-};
-
 function preferred(): Locale {
   const langs = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language]) || [];
   for (const raw of langs) {
@@ -46,14 +24,8 @@ function preferred(): Locale {
     const hit = LOCALES.find((l) => l === base);
     if (hit) {
       if (hit !== "en") return hit;
-      break; // their first supported choice is English: fall through to the country check
+      break; // their first supported choice is English: nothing to offer
     }
-  }
-  try {
-    const zone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    if (zone && ZONE_LANG[zone]) return ZONE_LANG[zone];
-  } catch {
-    // No time zone available: English.
   }
   return "en";
 }

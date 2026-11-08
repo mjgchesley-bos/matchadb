@@ -16,37 +16,43 @@ import { comparisonsFor } from "@/lib/compare";
 import { usd30 } from "@/lib/unit-price";
 import { BRAND_RESELLER_NOTES, chainsForBrand, resellersForBrand, storesForBrand } from "@/lib/stores";
 import { suppliersForBrand } from "@/lib/suppliers";
-import { KIND_LABEL } from "@/lib/store-types";
 import { SITE_URL } from "@/lib/site";
 import { langOf } from "@/i18n/params";
+import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
+import { getT, getTV } from "@/i18n/server";
+import { pageAlternates } from "@/i18n/seo";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ brand: string }>;
+  params: Promise<{ lang: string; brand: string }>;
 }): Promise<Metadata> {
-  const { brand } = await params;
+  const { brand, lang: rawLang } = await params;
+  const lang: Locale = isLocale(rawLang) ? rawLang : "en";
+  const t = getT(lang);
   const brandName = decodeURIComponent(brand);
   const products = await getBrandProducts(brandName);
   if (products.length === 0) return {};
 
   const n = products.length;
-  const title = `${brandName}${/matcha/i.test(brandName) ? "" : " Matcha"}: ${n} Product${n === 1 ? "" : "s"}, Prices & Origins`;
+  const plain = /matcha|抹茶|말차/i.test(brandName);
+  const title = t(`br.title.${plain ? "plain." : ""}${n === 1 ? "one" : "other"}` as "br.title.one", { brand: brandName, n });
   const comparable = (await getComparablePrices())
     .filter((c) => c.brand === brandName)
     .map((c) => c.pricePerGram)
     .sort((a, b) => a - b);
   const priceBit =
     comparable.length >= 3
-      ? ` A standard 30 g tin runs ${usd30(comparable[0])}–${usd30(comparable[comparable.length - 1])}.`
+      ? t("br.desc.price", { lo: usd30(comparable[0]), hi: usd30(comparable[comparable.length - 1]) })
       : "";
-  const description = `Every ${brandName} matcha in MatchaDB: ${n} product${n === 1 ? "" : "s"} with grade, growing region, cultivar and tasting notes.${priceBit}`;
+  const description = t(n === 1 ? "br.desc.one" : "br.desc.other", { brand: brandName, n, price: priceBit });
+  const alternates = pageAlternates(lang, `/brands/${encodeURIComponent(brandName)}`);
 
   return {
     title,
     description,
-    alternates: { canonical: `${SITE_URL}/brands/${encodeURIComponent(brandName)}` },
-    openGraph: { title, description, url: `${SITE_URL}/brands/${encodeURIComponent(brandName)}` },
+    alternates,
+    openGraph: { title, description, url: alternates.canonical },
   };
 }
 
@@ -57,14 +63,16 @@ export default async function BrandPage({
 }) {
   const { brand } = await params;
   const lang = await langOf(params);
+  const t = getT(lang);
+  const tv = getTV(lang);
   const brandName = decodeURIComponent(brand);
   const products = await getBrandProducts(brandName);
 
   if (products.length === 0) notFound();
 
-  const brandUrl = `${SITE_URL}/brands/${encodeURIComponent(brandName)}`;
+  const brandUrl = pageAlternates(lang, `/brands/${encodeURIComponent(brandName)}`).canonical;
   const brandComparable = (await getComparablePrices()).filter((c) => c.brand === brandName);
-  const summary = getBrandSummary({ brand: brandName, products, comparable: brandComparable });
+  const summary = getBrandSummary({ brand: brandName, products, comparable: brandComparable }, lang, t, tv);
   const logoPath = getBrandLogoPath(brandName);
   const comparisons = comparisonsFor(brandName);
   const stockists = storesForBrand(brandName);
@@ -75,7 +83,7 @@ export default async function BrandPage({
   const ownShops = stockists.filter((s) => s.kind === "brand-shop");
   const retailers = stockists.filter((s) => s.kind !== "brand-shop");
   const MAX_CARDS = 12;
-  const fmtChecked = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  const fmtChecked = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric" });
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
@@ -119,7 +127,7 @@ export default async function BrandPage({
           ],
         }}
       />
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-ink-muted">
+      <nav aria-label={t("prod.crumb.aria")} className="flex items-center gap-1.5 text-sm text-ink-muted">
         <Link href="/" className="hover:text-matcha transition-colors">
           MatchaDB
         </Link>
@@ -131,7 +139,7 @@ export default async function BrandPage({
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{brandName}</h1>
       </div>
       <p className="text-sm text-ink-muted mb-3">
-        {products.length} product{products.length === 1 ? "" : "s"} in the database
+        {t(products.length === 1 ? "br.count.one" : "br.count.other", { n: products.length })}
       </p>
       <p className="text-ink-muted leading-relaxed max-w-2xl">{summary.join(" ")}</p>
       <FavoriteBrandButton brand={brandName} />
@@ -142,7 +150,7 @@ export default async function BrandPage({
             <span key={s.slug}>
               {i > 0 && " · "}
               <Link href={`/wholesale#${s.slug}`} className="text-matcha underline hover:text-forest">
-                {s.name === brandName ? "Wholesale available" : `Wholesale available through ${s.name}`}
+                {s.name === brandName ? t("br.ws.own") : t("br.ws.via", { name: s.name })}
               </Link>
             </span>
           ))}
@@ -164,7 +172,7 @@ export default async function BrandPage({
                 <div className="flex flex-wrap gap-1.5 mt-1.5 text-xs">
                   {p.grade && (
                     <span className="rounded-full bg-matcha-soft text-matcha-ink px-2 py-0.5">
-                      {p.grade}
+                      {tv("grade", p.grade)}
                     </span>
                   )}
                   {(JSON.parse(p.flavor_tags) as string[]).slice(0, 2).map((tag) => (
@@ -172,28 +180,28 @@ export default async function BrandPage({
                       key={tag}
                       className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2 py-0.5"
                     >
-                      {tag}
+                      {tv("flavor", tag)}
                     </span>
                   ))}
                   {p.not_found === 1 && (
                     <span className="rounded-full bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 px-2 py-0.5">
-                      unverifiable
+                      {t("br.unverifiable")}
                     </span>
                   )}
                 </div>
                 {(() => {
-                  const price = formatPrice(p);
+                  const price = formatPrice(p, t("price.converted"));
                   if (price.kind === "unresolved") {
                     return (
                       <span className="text-sm mt-1.5 text-ink-faint italic">
-                        {p.source_url ? "See website for pricing" : "Price not confirmed"}
+                        {p.source_url ? t("prod.price.seeSite") : t("prod.price.notConfirmed")}
                       </span>
                     );
                   }
                   if (price.kind === "linkOnly") {
                     return (
                       <span className="text-sm mt-1.5 text-ink-faint italic">
-                        Pricing on product page
+                        {t("br.price.onPage")}
                       </span>
                     );
                   }
@@ -212,7 +220,7 @@ export default async function BrandPage({
                   rel="noopener noreferrer"
                   className="text-xs text-matcha hover:text-forest transition-colors mt-1.5"
                 >
-                  {link.label} &rarr;
+                  {link.amazon ? t("prod.link.amazon") : t("prod.link.view")} &rarr;
                 </a>
               )}
             </div>
@@ -223,11 +231,10 @@ export default async function BrandPage({
       {(stockists.length > 0 || onlineResellers.length > 0 || chainListing) && (
         <section className="mt-12" aria-labelledby="where-to-buy">
           <h2 id="where-to-buy" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
-            Verified resellers of {brandName}
+            {t("br.rs.heading", { brand: brandName })}
           </h2>
           <p className="text-sm text-ink-muted max-w-2xl leading-relaxed">
-            Stores, online shops and Amazon pages that sell {brandName}, each with the page we checked and the date. &ldquo;Verified&rdquo; here means we saw that page, not that the brand
-            has approved the seller. Stock changes, so check before a special trip.
+            {t("br.rs.intro", { brand: brandName })}
           </p>
           {resellerNote && (
             <p className="mt-2 text-sm text-ink-muted max-w-2xl leading-relaxed">
@@ -239,8 +246,8 @@ export default async function BrandPage({
             </p>
           )}
           {[
-            { title: `${brandName}'s own shops`, list: ownShops },
-            { title: "Retailers and cafés, in person", list: retailers },
+            { title: t("br.rs.own", { brand: brandName }), list: ownShops },
+            { title: t("br.rs.retail"), list: retailers },
           ]
             .filter((g) => g.list.length > 0)
             .map((g) => (
@@ -256,17 +263,17 @@ export default async function BrandPage({
                           {s.address}, {s.city}, {s.state} {s.zip}
                         </p>
                         <p className="mt-1.5 text-xs">
-                          <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{KIND_LABEL[s.kind]}</span>
+                          <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{t(`c.st.kind.${s.kind}` as "c.st.kind.cafe")}</span>
                         </p>
                         {s.note && <p className="mt-2 text-xs text-ink-faint leading-relaxed">{s.note}</p>}
                         <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
                           {s.url && (
                             <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
-                              Store website
+                              {t("br.rs.web")}
                             </a>
                           )}
                           <a href={claim?.evidence ?? s.url} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
-                            {s.listedBy ? "Brand's store locator" : "Source"}, checked {fmtChecked(s.checked)}
+                            {s.listedBy ? t("br.rs.src.locator", { date: fmtChecked(s.checked) }) : t("br.rs.src.plain", { date: fmtChecked(s.checked) })}
                           </a>
                         </p>
                       </li>
@@ -275,9 +282,9 @@ export default async function BrandPage({
                 </ul>
                 {g.list.length > MAX_CARDS && (
                   <p className="mt-3 text-sm text-ink-muted">
-                    Plus {g.list.length - MAX_CARDS} more.{" "}
+                    {t("br.rs.more", { n: g.list.length - MAX_CARDS })}{" "}
                     <Link href={`/stores?brand=${encodeURIComponent(brandName)}`} className="text-matcha hover:text-forest underline">
-                      See them all on the store finder
+                      {t("br.rs.seeAll")}
                     </Link>
                     .
                   </p>
@@ -286,24 +293,24 @@ export default async function BrandPage({
             ))}
           {onlineResellers.length > 0 && (
             <div className="mt-5">
-              <h3 className="font-display text-lg font-semibold text-ink">Online and Amazon</h3>
+              <h3 className="font-display text-lg font-semibold text-ink">{t("br.rs.online")}</h3>
               <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {onlineResellers.map((r) => (
                   <li key={r.url} className="rounded-sm border border-line bg-paper-raised p-4">
                     <p className="font-medium text-ink">
                       {r.name}
-                      {r.amazonOnly && <span className="text-ink-muted"> (Amazon)</span>}
+                      {r.amazonOnly && <span className="text-ink-muted"> {t("br.rs.amazonOnly")}</span>}
                     </p>
                     <p className="mt-1.5 text-xs">
-                      <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{r.channel === "amazon" ? "Amazon" : "Online"}</span>
+                      <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{r.channel === "amazon" ? t("br.rs.chAmazon") : t("br.rs.chOnline")}</span>
                     </p>
                     <p className="mt-2 text-xs text-ink-faint leading-relaxed">{r.basis}.</p>
                     <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
                       <a href={r.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
-                        {r.channel === "amazon" ? "View on Amazon" : "Visit website"}
+                        {r.channel === "amazon" ? t("br.rs.viewAmazon") : t("br.rs.visit")}
                       </a>
                       <a href={r.evidence} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
-                        Source, checked {fmtChecked(r.checked)}
+                        {t("br.rs.src.plain", { date: fmtChecked(r.checked) })}
                       </a>
                     </p>
                   </li>
@@ -313,36 +320,36 @@ export default async function BrandPage({
           )}
           {chainListing && (
             <div className="mt-5">
-              <h3 className="font-display text-lg font-semibold text-ink">National chains</h3>
+              <h3 className="font-display text-lg font-semibold text-ink">{t("br.rs.chains")}</h3>
               <p className="mt-1 text-sm text-ink-muted max-w-2xl leading-relaxed">
-                Chains {brandName} names as places to buy it. This is chain-level only: not every location carries every product, so check with your local store.
+                {t("br.rs.chainsIntro", { brand: brandName })}
               </p>
               <ul className="mt-2 flex flex-wrap gap-2">
                 {chainListing.chains.map((c) => (
                   <li key={c.name} className="rounded-full border border-line-strong px-3 py-1 text-sm text-ink-muted">
                     {c.name}
-                    {c.select && <span className="text-ink-faint"> (select locations)</span>}
+                    {c.select && <span className="text-ink-faint"> {t("br.rs.select")}</span>}
                   </li>
                 ))}
               </ul>
               <p className="mt-2 text-xs">
                 <a href={chainListing.evidence} target="_blank" rel="noopener noreferrer" className="text-ink-faint hover:text-ink-muted">
-                  {chainListing.evidenceLabel}, checked {fmtChecked(chainListing.checked)}
+                  {t("br.rs.checkedLbl", { label: chainListing.evidenceLabel, date: fmtChecked(chainListing.checked) })}
                 </a>
               </p>
             </div>
           )}
           {stockists.length > 0 && (
             <Link href={`/stores?brand=${encodeURIComponent(brandName)}`} className="inline-block mt-5 text-matcha hover:text-forest">
-              See the in-person places on the store finder map &rarr;
+              {t("br.rs.storeMap")} &rarr;
             </Link>
           )}
         </section>
       )}
 
       {comparisons.length > 0 && (
-        <section className="mt-12" aria-label={`Compare ${brandName} with other brands`}>
-          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">Compare {brandName}</h2>
+        <section className="mt-12" aria-label={t("br.cmp.aria", { brand: brandName })}>
+          <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("br.cmp.heading", { brand: brandName })}</h2>
           <div className="flex flex-wrap gap-2.5">
             {comparisons.map((c) => (
               <Link
@@ -350,7 +357,7 @@ export default async function BrandPage({
                 href={`/compare/${c.slug}`}
                 className="rounded-full border-2 border-line-strong px-4 py-2 text-sm font-medium text-ink-muted hover:border-matcha hover:text-matcha transition-colors"
               >
-                {brandName} vs {c.other}
+                {t("br.cmp.vs", { brand: brandName, other: c.other })}
               </Link>
             ))}
           </div>
@@ -358,8 +365,9 @@ export default async function BrandPage({
       )}
 
       <ResearchLinks
+        lang={lang}
         topics={["Antioxidants and polyphenols", "L-theanine and caffeine", "Authenticity and analytical methods"]}
-        blurb="Curious what the science says about matcha in general? These topics gather the published studies, linked to their sources."
+        blurb={t("br.research.blurb")}
       />
       <Comments targetType="brand" targetKey={brandName} subject={brandName} />
     </main>

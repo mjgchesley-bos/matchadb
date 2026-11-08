@@ -9,7 +9,7 @@ import { getExternalLinkInfo } from "@/lib/links";
 import { BrandLogo, gradeLabel } from "@/components/product-cards";
 import { ProductCard } from "@/components/ProductCard";
 import { getBrandLogoPath } from "@/lib/logos";
-import { getRegionInfo } from "@/lib/regions";
+import { getRegionInfo, regionCountry } from "@/lib/regions";
 import { REGION_CONTENT } from "@/lib/region-content";
 import { cultivarSlugFor } from "@/lib/cultivars";
 import { JsonLd } from "@/components/JsonLd";
@@ -24,6 +24,9 @@ import { ProductReviews } from "@/components/ProductReviews";
 import { usd30 } from "@/lib/unit-price";
 import { SITE_URL } from "@/lib/site";
 import { langOf } from "@/i18n/params";
+import { isLocale, type Locale } from "@/i18n/config";
+import { getT, getTV, type TFn, type TVFn } from "@/i18n/server";
+import { pageAlternates } from "@/i18n/seo";
 
 type Product = NonNullable<Awaited<ReturnType<typeof getProductById>>>;
 
@@ -31,24 +34,24 @@ type Product = NonNullable<Awaited<ReturnType<typeof getProductById>>>;
 // product name -- same real facts (grade, region, cultivar), just two
 // different renderings of one source of truth instead of two copies that
 // can drift.
-function buildFactsLine(product: Product): string | null {
+function buildFactsLine(product: Product, t: TFn, tv: TVFn, lang: Locale): string | null {
   const details: string[] = [];
-  if (product.grade) details.push(gradeLabel(product.grade));
-  if (product.region) details.push(`sourced from ${product.region}`);
-  if (product.cultivar) details.push(`${product.cultivar} cultivar`);
-  return details.length > 0 ? details.join(", ") : null;
+  if (product.grade) details.push(gradeLabel(product.grade, tv));
+  if (product.region) details.push(t("prod.facts.region", { region: tv("region", product.region) }));
+  if (product.cultivar) details.push(t("prod.facts.cultivar", { cultivar: product.cultivar }));
+  return details.length > 0 ? details.join(lang === "ja" || lang === "zh" ? "、" : ", ") : null;
 }
 
-function buildProductDescription(product: Product | null, insightClause?: string): string {
+function buildProductDescription(product: Product | null, t: TFn, tv: TVFn, lang: Locale, insightClause?: string): string {
   if (!product) return "";
-  const parts: string[] = [`${product.product_name} by ${product.brand_name}`];
-  const factsLine = buildFactsLine(product);
+  const parts: string[] = [t("prod.desc.by", { product: product.product_name, brand: product.brand_name })];
+  const factsLine = buildFactsLine(product, t, tv, lang);
   if (factsLine) parts.push(factsLine);
   const price = formatPrice(product);
   if (price.kind === "resolved") parts.push(price.text);
   if (insightClause) parts.push(insightClause);
   const body = parts.join(" — ");
-  const tail = " — pricing, sourcing & tasting notes on MatchaDB.";
+  const tail = t("prod.desc.tail");
   const text = body.length + tail.length <= 160 ? body + tail : body + ".";
   // Google shows roughly 160 characters; cut on a word boundary, not mid-word.
   return text.length > 160 ? text.slice(0, 157).replace(/\s+\S*$/, "") + "…" : text;
@@ -57,33 +60,37 @@ function buildProductDescription(product: Product | null, insightClause?: string
 // People search for "<product> matcha", and the product name alone often
 // doesn't say "matcha" (e.g. "Hukuju"). The layout appends " | MatchaDB" (11
 // chars); keep the whole title near 60 characters so it isn't truncated.
-function buildProductTitle(product: Product): string {
-  const hasMatcha = /matcha/i.test(product.product_name);
-  const base = `${product.product_name}${hasMatcha ? "" : " Matcha"} by ${product.brand_name}`;
-  const suffix = " — Price & Origin";
+function buildProductTitle(product: Product, t: TFn): string {
+  const hasMatcha = /matcha|抹茶|말차|맛차/i.test(product.product_name);
+  const base = t(hasMatcha ? "prod.title.plain" : "prod.title.matcha", { product: product.product_name, brand: product.brand_name });
+  const suffix = t("prod.title.suffix");
   return base.length + suffix.length + 11 <= 60 ? base + suffix : base;
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: Promise<{ lang: string; id: string }>;
 }): Promise<Metadata> {
-  const { id } = await params;
+  const { id, lang: rawLang } = await params;
+  const lang: Locale = isLocale(rawLang) ? rawLang : "en";
+  const t = getT(lang);
+  const tv = getTV(lang);
   const productId = Number(id);
   if (!Number.isFinite(productId)) return {};
   const product = await getProductById(productId);
   if (!product) return {};
 
-  const insight = getPriceInsight(product.id, await getComparablePrices());
-  const title = buildProductTitle(product);
-  const description = buildProductDescription(product, insight?.shortClause);
+  const insight = getPriceInsight(product.id, await getComparablePrices(), lang, t, tv);
+  const title = buildProductTitle(product, t);
+  const description = buildProductDescription(product, t, tv, lang, insight?.shortClause);
+  const alternates = pageAlternates(lang, `/products/${product.id}`);
 
   return {
     title,
     description,
-    alternates: { canonical: `${SITE_URL}/products/${product.id}` },
-    openGraph: { title, description, url: `${SITE_URL}/products/${product.id}` },
+    alternates,
+    openGraph: { title, description, url: alternates.canonical },
   };
 }
 
@@ -275,6 +282,8 @@ export default async function ProductDetailPage({
 }) {
   const { id } = await params;
   const lang = await langOf(params);
+  const t = getT(lang);
+  const tv = getTV(lang);
   const productId = Number(id);
   if (!Number.isFinite(productId)) notFound();
 
@@ -285,28 +294,28 @@ export default async function ProductDetailPage({
     ([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key)
   );
   const externalLink = getExternalLinkInfo(product.source_url);
-  const productUrl = `${SITE_URL}/products/${product.id}`;
+  const productUrl = pageAlternates(lang, `/products/${product.id}`).canonical;
   const logoPath = getBrandLogoPath(product.brand_name);
-  const factsLine = buildFactsLine(product);
+  const factsLine = buildFactsLine(product, t, tv, lang);
   const hasCompounds = Boolean(product.l_theanine_note || product.egcg_note);
   const regionInfo = getRegionInfo(product.region);
-  const insight = getPriceInsight(product.id, await getComparablePrices());
+  const insight = getPriceInsight(product.id, await getComparablePrices(), lang, t, tv);
 
   const stats: { label: string; value: string; href?: string }[] = [];
-  if (product.grade) stats.push({ label: "Grade", value: gradeLabel(product.grade) });
+  if (product.grade) stats.push({ label: t("prod.stat.grade"), value: gradeLabel(product.grade, tv) });
   if (product.cultivar) {
     const cultivarSlug = cultivarSlugFor(product.cultivar);
-    stats.push({ label: "Cultivar", value: product.cultivar, href: cultivarSlug ? `/cultivars/${cultivarSlug}` : undefined });
+    stats.push({ label: t("prod.stat.cultivar"), value: product.cultivar, href: cultivarSlug ? `/cultivars/${cultivarSlug}` : undefined });
   }
   if (product.region) {
     const regionContent = REGION_CONTENT[product.region];
     stats.push({
-      label: "Region",
-      value: product.region,
+      label: t("prod.stat.region"),
+      value: tv("region", product.region),
       href: regionContent ? `/regions/${regionContent.slug}` : undefined,
     });
   }
-  if (product.organic_certified === 1) stats.push({ label: "Certification", value: "Organic" });
+  if (product.organic_certified === 1) stats.push({ label: t("prod.stat.cert"), value: t("prod.stat.organic") });
 
   const [relatedProducts, brandProducts] = await Promise.all([
     getRelatedProducts({ id: product.id, region: product.region, grade: product.grade }, 4),
@@ -322,7 +331,7 @@ export default async function ProductDetailPage({
           "@type": "Product",
           name: product.product_name,
           brand: { "@type": "Brand", name: product.brand_name },
-          description: buildProductDescription(product, insight?.shortClause),
+          description: buildProductDescription(product, t, tv, lang, insight?.shortClause),
           url: productUrl,
           ...(product.price_usd != null
             ? {
@@ -352,7 +361,7 @@ export default async function ProductDetailPage({
           ],
         }}
       />
-      <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-ink-muted">
+      <nav aria-label={t("prod.crumb.aria")} className="flex items-center gap-1.5 text-sm text-ink-muted">
         <Link href="/" className="hover:text-matcha transition-colors">
           MatchaDB
         </Link>
@@ -388,7 +397,7 @@ export default async function ProductDetailPage({
           )}
           {product.grade && (
             <span className="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-matcha-ink/70">
-              {gradeLabel(product.grade)}
+              {gradeLabel(product.grade, tv)}
             </span>
           )}
         </div>
@@ -419,24 +428,24 @@ export default async function ProductDetailPage({
                   key={tag}
                   className="rounded-full bg-paper-raised border border-line-strong text-ink-muted px-2.5 py-0.5 text-xs"
                 >
-                  {tag}
+                  {tv("flavor", tag)}
                 </span>
               ))}
             </div>
           )}
 
           {(() => {
-            const price = formatPrice(product);
+            const price = formatPrice(product, t("price.converted"));
             const hasMultipleSizes = product.priceVariants.length > 1;
             if (price.kind === "unresolved") {
               return (
                 <p className="mt-5 text-ink-faint italic">
-                  {product.source_url ? "See website for pricing" : "Price not confirmed"}
+                  {product.source_url ? t("prod.price.seeSite") : t("prod.price.notConfirmed")}
                 </p>
               );
             }
             if (price.kind === "linkOnly") {
-              return <p className="mt-5 text-ink-faint italic">Pricing available on product page</p>;
+              return <p className="mt-5 text-ink-faint italic">{t("prod.price.onPage")}</p>;
             }
             return (
               <div className="mt-5">
@@ -445,16 +454,16 @@ export default async function ProductDetailPage({
                     price.caution ? "text-amber-400" : "text-ink"
                   }`}
                 >
-                  {hasMultipleSizes ? "From " : ""}
+                  {hasMultipleSizes ? t("prod.price.from") : ""}
                   {price.text}
                 </p>
                 {product.price_per_gram != null && (
                   <p className="text-sm text-ink-muted mt-1">
-                    ≈ {usd30(product.price_per_gram)} per 30 g <span className="text-ink-faint">(calculated from the listed size)</span>
+                    {t("prod.price.per30", { price: usd30(product.price_per_gram) })} <span className="text-ink-faint">{t("prod.price.per30note")}</span>
                   </p>
                 )}
                 {price.caution && (
-                  <p className="text-xs text-amber-400 mt-1">⚠ worth double-checking against the source</p>
+                  <p className="text-xs text-amber-400 mt-1">{t("prod.price.doubleCheck")}</p>
                 )}
               </div>
             );
@@ -462,20 +471,17 @@ export default async function ProductDetailPage({
 
           {product.price_link_only === 1 ? (
             <p className="mt-2 text-xs text-ink-faint">
-              Priced by count (sticks, tea bags, or multi-pack bundles) rather than a package
-              weight, so there&apos;s no comparable standard-size price here.
+              {t("prod.price.byCount")}
             </p>
           ) : product.price_usd != null && product.price_size_grams == null ? (
             <p className="mt-2 text-xs text-ink-faint">
-              The price is confirmed, but package size isn&apos;t stated anywhere on the page, so
-              we can&apos;t calculate a standard-size price.
+              {t("prod.price.noSize")}
             </p>
           ) : (
             product.priceVariants.length > 0 &&
             product.priceVariants.every((v) => v.needs_review === 1) && (
               <p className="mt-2 text-xs text-ink-faint">
-                We couldn&apos;t confidently pin down a price and package size from this
-                product&apos;s page.
+                {t("prod.price.unsure")}
               </p>
             )
           )}
@@ -487,7 +493,7 @@ export default async function ProductDetailPage({
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center justify-center rounded-full bg-matcha text-paper px-6 py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
             >
-              {externalLink.label} &rarr;
+              {externalLink.amazon ? t("prod.link.amazon") : t("prod.link.view")} &rarr;
             </a>
           )}
 
@@ -503,29 +509,26 @@ export default async function ProductDetailPage({
 
       {product.not_found === 1 && (
         <div className="mt-8 border border-red-300 dark:border-red-900 bg-red-50 dark:bg-red-950/40 p-4 text-sm text-red-800 dark:text-red-300">
-          <strong>Unverifiable:</strong> we could not locate a live, official page for this
-          product during research. It may be discontinued, renamed, or the brand may not maintain
-          a findable page for it. This entry is preserved for transparency rather than removed.
+          <strong>{t("prod.unverifiable.label")}</strong> {t("prod.unverifiable.body")}
         </div>
       )}
 
       {insight && (
         <section className="mt-12">
-          <SectionLabel>Price in context</SectionLabel>
+          <SectionLabel>{t("prod.sec.context")}</SectionLabel>
           <p className="text-ink-muted leading-relaxed max-w-2xl">{insight.sentences.join(" ")}</p>
           <p className="text-xs text-ink-faint mt-3 max-w-2xl">
-            Compared across {insight.basis} products with a confirmed price and size, with yen, pound
-            and euro prices converted to dollars.{" "}
+            {t("prod.ctx.basis", { n: insight.basis })}{" "}
             {insight.regionSlug && (
               <>
                 <Link href={`/regions/${insight.regionSlug}`} className="underline">
-                  See how {product.region} compares
+                  {t("prod.ctx.region", { region: tv("region", product.region ?? "") })}
                 </Link>
                 {" · "}
               </>
             )}
             <Link href="/about" className="underline">
-              How we research
+              {t("prod.ctx.how")}
             </Link>
           </p>
         </section>
@@ -533,28 +536,28 @@ export default async function ProductDetailPage({
 
       {regionInfo && (
         <section className="mt-12">
-          <SectionLabel>Sourcing</SectionLabel>
+          <SectionLabel>{t("prod.sec.sourcing")}</SectionLabel>
           <div className="relative w-full max-w-md aspect-[8/5] rounded-sm overflow-hidden border border-line">
             <Image
               src={`/region-thumbnails/${product.region}.png`}
-              alt={`Map highlighting ${regionInfo.name}, ${regionInfo.country}`}
+              alt={t("prod.map.alt", { name: tv("region", product.region ?? ""), country: regionCountry(regionInfo.country, lang) })}
               fill
               sizes="(min-width: 640px) 448px, 100vw"
               className="object-cover"
             />
           </div>
           <p className="text-sm text-ink-muted mt-2">
-            {regionInfo.name}, {regionInfo.country}
+            {tv("region", product.region ?? "")}, {regionCountry(regionInfo.country, lang)}
           </p>
           <Link href="/map" className="text-sm text-matcha hover:text-forest transition-colors">
-            View the full sourcing map &rarr;
+            {t("prod.map.full")} &rarr;
           </Link>
         </section>
       )}
 
       {product.tasting_notes && (
         <section className="mt-12">
-          <SectionLabel>Tasting notes</SectionLabel>
+          <SectionLabel>{t("prod.sec.tasting")}</SectionLabel>
           <div className="border-l-2 border-matcha bg-paper-raised/60 pl-5 py-4 pr-5 flex flex-col gap-2.5">
             {product.tasting_notes.split(" | ").map((line, i) => (
               <p key={i} className="font-display text-lg text-ink leading-relaxed">
@@ -567,7 +570,7 @@ export default async function ProductDetailPage({
 
       {hasCompounds && (
         <section className="mt-12">
-          <SectionLabel>Composition</SectionLabel>
+          <SectionLabel>{t("prod.sec.composition")}</SectionLabel>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <CompoundCard
               label="L-theanine"
@@ -581,13 +584,13 @@ export default async function ProductDetailPage({
             />
           </div>
           <p className="text-xs text-ink-faint mt-3">
-            What does the science say?{" "}
+            {t("prod.comp.science")}{" "}
             <Link href="/research?topic=L-theanine%20and%20caffeine" className="text-matcha hover:text-forest">
-              Studies on L-theanine and caffeine
+              {t("prod.comp.theanine")}
             </Link>
             {" "}&middot;{" "}
             <Link href="/research?topic=Antioxidants%20and%20polyphenols" className="text-matcha hover:text-forest">
-              Studies on antioxidants and EGCG
+              {t("prod.comp.egcg")}
             </Link>
           </p>
         </section>
@@ -595,10 +598,10 @@ export default async function ProductDetailPage({
 
       {product.priceVariants.length > 0 && (
         <section className="mt-12">
-          <SectionLabel>Pricing as disclosed</SectionLabel>
+          <SectionLabel>{t("prod.sec.pricing")}</SectionLabel>
           <div className="flex flex-col gap-2">
             {product.priceVariants.map((v) => {
-              const { text, caution } = formatPriceVariant(v);
+              const { text, caution } = formatPriceVariant(v, { or: t("prod.var.or"), multi: t("prod.var.multi"), inferred: t("prod.var.inferred"), usd: t("prod.var.usd") });
               return (
                 <div
                   key={v.id}
@@ -618,15 +621,15 @@ export default async function ProductDetailPage({
 
       {disclosedEntries.length > 0 && (
         <section className="mt-12">
-          <SectionLabel>Full details</SectionLabel>
+          <SectionLabel>{t("prod.sec.details")}</SectionLabel>
           <details className="group border border-line rounded-sm bg-paper-raised">
             <summary className="cursor-pointer select-none list-none px-4 py-3 text-sm text-ink-muted flex items-center justify-between">
               <span>
-                Everything disclosed on the product page ({disclosedEntries.length} field
-                {disclosedEntries.length === 1 ? "" : "s"})
+                {t(disclosedEntries.length === 1 ? "prod.details.summary.one" : "prod.details.summary.other", { n: disclosedEntries.length })}
               </span>
               <span className="text-ink-faint transition-transform group-open:rotate-180">&#9662;</span>
             </summary>
+            {lang !== "en" && <p className="border-t border-line px-4 pt-3 text-xs text-ink-faint">{t("prod.details.note")}</p>}
             <dl className="divide-y divide-line border-t border-line px-4">
               {disclosedEntries.map(([key, value]) => (
                 <div key={key} className="py-3.5 grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-1">
@@ -641,7 +644,7 @@ export default async function ProductDetailPage({
 
       {product.page_notes && (
         <section className="mt-8">
-          <SectionLabel>Research notes</SectionLabel>
+          <SectionLabel>{t("prod.sec.notes")}</SectionLabel>
           <p className="text-sm text-ink-muted leading-relaxed">{product.page_notes}</p>
         </section>
       )}
@@ -653,10 +656,10 @@ export default async function ProductDetailPage({
         <section className="mt-12">
           <SectionLabel>
             {product.region && product.grade
-              ? `More ${product.grade} matcha from ${product.region}`
+              ? t("prod.more.both", { grade: tv("grade", product.grade), region: tv("region", product.region) })
               : product.region
-                ? `More matcha from ${product.region}`
-                : `More ${product.grade} matcha`}
+                ? t("prod.more.region", { region: tv("region", product.region) })
+                : t("prod.more.grade", { grade: tv("grade", product.grade ?? "") })}
           </SectionLabel>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {relatedProducts.map((p) => (
@@ -668,7 +671,7 @@ export default async function ProductDetailPage({
 
       {moreFromBrand.length > 0 && (
         <section className="mt-12">
-          <SectionLabel>More from {product.brand_name}</SectionLabel>
+          <SectionLabel>{t("prod.more.brand", { brand: product.brand_name })}</SectionLabel>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {moreFromBrand.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
@@ -678,14 +681,15 @@ export default async function ProductDetailPage({
             href={`/brands/${encodeURIComponent(product.brand_name)}`}
             className="inline-block mt-4 text-sm text-matcha hover:text-forest transition-colors"
           >
-            View all {product.brand_name}{" "}products &rarr;
+            {t("prod.viewAll", { brand: product.brand_name })} &rarr;
           </Link>
         </section>
       )}
 
       <ResearchLinks
+        lang={lang}
         topics={["L-theanine and caffeine", "Processing, milling and quality", "Safety, contaminants and toxicity"]}
-        blurb="What published studies say about matcha's compounds, how it is made, and what has been tested for. Every study links back to its source."
+        blurb={t("prod.research.blurb")}
       />
     </main>
   );

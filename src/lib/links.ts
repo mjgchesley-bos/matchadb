@@ -12,6 +12,7 @@ export type ExternalLinkInfo = {
   url: string;
   hostname: string;
   label: string;
+  amazon: boolean;
 };
 
 export function getExternalLinkInfo(sourceUrl: string | null): ExternalLinkInfo | null {
@@ -24,6 +25,7 @@ export function getExternalLinkInfo(sourceUrl: string | null): ExternalLinkInfo 
   } catch {
     return null;
   }
-  const label = hostname.includes("amazon.") ? "View product on Amazon" : "View product";
-  return { url, hostname, label };
+  const amazon = hostname.includes("amazon.");
+  const label = amazon ? "View product on Amazon" : "View product";
+  return { url, hostname, label, amazon };
 }

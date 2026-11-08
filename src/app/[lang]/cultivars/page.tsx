@@ -5,20 +5,27 @@ import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 import { usd30 } from "@/lib/unit-price";
 import { langOf } from "@/i18n/params";
+import { fmtNum, isLocale, type Locale } from "@/i18n/config";
+import { getT } from "@/i18n/server";
+import { getC } from "@/i18n/content";
+import { rich } from "@/i18n/rich";
+import { pageAlternates } from "@/i18n/seo";
 
-const title = "Matcha Cultivars: Yabukita, Okumidori, Samidori and More";
-const description =
-  "Profiles of the tea cultivars behind matcha, with price, grade, growing region and flavor notes for each, computed from brands' own product pages.";
-
-export const metadata: Metadata = {
-  title,
-  description,
-  alternates: { canonical: `${SITE_URL}/cultivars` },
-  openGraph: { title, description, url: `${SITE_URL}/cultivars` },
-};
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang: raw } = await params;
+  const lang: Locale = isLocale(raw) ? raw : "en";
+  const t = getT(lang);
+  const alternates = pageAlternates(lang, "/cultivars");
+  const title = t("cv.idx.title");
+  const description = t("cv.idx.desc");
+  return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
+}
 
 export default async function CultivarsIndex({ params }: { params: Promise<{ lang: string }> }) {
-  await langOf(params);
+  const lang = await langOf(params);
+  const t = getT(lang);
+  const c = getC(lang);
+  const description = t("cv.idx.desc");
   const loaded = await Promise.all(CULTIVARS.map((c) => loadCultivar(c)));
 
   return (
@@ -37,31 +44,26 @@ export default async function CultivarsIndex({ params }: { params: Promise<{ lan
         }}
       />
       <header className="max-w-3xl">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Cultivars</p>
-        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Matcha cultivars</h1>
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.cultivars")}</p>
+        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{t("cv.idx.h1")}</h1>
         <p className="mt-5 text-lg text-ink-muted leading-relaxed">
-          A cultivar is the tea plant variety a matcha is made from. Brands name it on many product pages, and it can say as much about a matcha as its grade. Each profile pairs background
-          from published sources with price, grade and growing-region data from the database.
+          {t("cv.idx.lead")}
         </p>
       </header>
 
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
         {loaded.map(({ cultivar, s }) => (
           <Link key={cultivar.slug} href={`/cultivars/${cultivar.slug}`} className="border border-line rounded-sm bg-paper-raised p-5 hover:border-matcha hover:bg-matcha-soft transition-colors">
-            <span className="font-display text-xl font-semibold text-ink block">{cultivar.h1}</span>
-            <span className="text-sm text-ink-muted mt-2 block leading-relaxed">{cultivar.description}</span>
+            <span className="font-display text-xl font-semibold text-ink block">{lang === "en" ? cultivar.h1 : t("cv.h1", { name: cultivar.name })}</span>
+            <span className="text-sm text-ink-muted mt-2 block leading-relaxed">{c(`cvc.${cultivar.slug}.desc`, cultivar.description)}</span>
             <span className="text-xs text-ink-faint mt-3 block tabular-nums">
-              {s.count.toLocaleString()} powders &middot; {s.brands} brands &middot; median {usd30(s.median)} per 30 g
+              {t("cv.idx.card", { n: fmtNum(lang, s.count), b: s.brands, price: usd30(s.median) })}
             </span>
           </Link>
         ))}
       </div>
       <p className="mt-8 text-sm text-ink-muted">
-        New to matcha vocabulary? See the{" "}
-        <Link href="/guides" className="text-matcha hover:text-forest">
-          guides
-        </Link>{" "}
-        for grades, uses and prices.
+        {rich(t("cv.idx.new", { link: "{link}" }), { link: <Link href="/guides" className="text-matcha hover:text-forest">{t("cv.idx.guides")}</Link> })}
       </p>
     </main>
   );
