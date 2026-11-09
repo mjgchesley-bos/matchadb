@@ -107,6 +107,7 @@ def merge_weekly(old, new):
     (menus change). A fresh read that finds none removes the listing only after TWO weekly reads in a row find none."""
     if old is None: return new
     if new.get("status") != "ok" or old.get("via") == "manual": return old     # hand-verified evidence is never overwritten by a crawl
+    if new.get("via") != "render" and any(h.get("r") for h in old.get("hits", [])): return old      # a plain fetch cannot see a JavaScript menu, so it cannot contradict a rendered one
     if new.get("matcha"): return {**new, "miss": 0, "platform": new.get("platform") or old.get("platform"), "pdf": new.get("pdf") or old.get("pdf")}
     if old.get("status") == "ok" and old.get("matcha"):
         miss = old.get("miss", 0) + 1
@@ -121,6 +122,8 @@ for cf in CRAWL_FILES:
         if not line: continue
         try: r = json.loads(line)
         except Exception: continue
+        if r.get("via") == "render":
+            for _h in r.get("hits", []): _h["r"] = 1      # evidence read from a JavaScript-rendered ordering-platform menu
         res[r["host"]] = (merge_weekly if os.path.basename(cf).startswith("w_") else merge)(res.get(r["host"]), r)
 crawled = len(res)
 SKIP_HIT = re.compile(r"[/_-](cart|account|login|gift|careers|jobs|privacy|terms|policies|catering|blog|press|news|wholesale|franchise|investors?)", re.I)

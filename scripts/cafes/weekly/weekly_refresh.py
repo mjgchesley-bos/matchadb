@@ -3,7 +3,7 @@
 Run it weekly (see README.md in this folder). It never publishes anything unless every check passes.
 
   1. Sources   Once a month (when a newer release exists): re-export Overture places and Foursquare OS Places.
-  2. Crawl     Re-check cafés' own websites for matcha:
+  2. Crawl     Re-check cafés' own websites for matcha (then render_step.py reads JavaScript-built ordering-platform menus):
                  - every site never checked (new places)
                  - every site currently listed (menus change, items get dropped)
                  - sites that failed (blocked / timed out / connection error) -- until they fail 4 weeks in a row
@@ -244,7 +244,7 @@ def publish(tmp_d, tmp_p, new, old):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--no-publish", action="store_true"); ap.add_argument("--no-crawl", action="store_true"); ap.add_argument("--max-hosts", type=int, default=0); ap.add_argument("--allow-drop", default=None, help="reason: let a reviewed, deliberate drop of more than 3% through (e.g. a new chain rule)")
+    ap.add_argument("--no-publish", action="store_true"); ap.add_argument("--no-render", action="store_true"); ap.add_argument("--no-crawl", action="store_true"); ap.add_argument("--max-hosts", type=int, default=0); ap.add_argument("--allow-drop", default=None, help="reason: let a reviewed, deliberate drop of more than 3% through (e.g. a new chain rule)")
     a = ap.parse_args()
     report = {"date": str(TODAY), "ok": False}
     try:
@@ -254,6 +254,8 @@ def main():
             report["crawled_hosts"] = len(items)
             out = crawl(items)
             update_state(state, out)
+            if not a.no_render:
+                run([sys.executable, "-I", f"{HERE}/render_step.py"], timeout=60 * 60 * 12, check=False)      # JavaScript-built ordering-platform menus
         tmp_d, tmp_p, new, old, problems, missing = build_and_verify(a.allow_drop)
         report["allow_drop"] = a.allow_drop
         report.update({"before": old, "after": new, "problems": problems, "gold_missing": missing})

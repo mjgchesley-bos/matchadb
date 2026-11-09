@@ -1,0 +1,21 @@
+$ C:\Users\mjgch\AppData\Local\Programs\Python\Python313\python.exe -I C:\temp\weekly/build_all2.py C:/temp/cafes/out_weekly/d C:/temp/cafes/out_weekly/p
+fe.com.au')
+   DUP ('DE', '19grams', '19grams Schlesi', '19grams.coffee')
+   DUP ('GB', 'Cakes & Bakes', 'Cakes & Bakes Sutton', 'cakesandbakes.co.uk')
+   DUP ('JP', 'ドルチェ', 'Curry and Sweets Dolce', 'mojikodolce.shopinfo.jp')
+   DUP ('US', 'Brewbakers Cafe', 'Brewbakers Café', 'brewbakerskeene.com')
+   DUP ('CA', 'Artisan Eats', 'Artisan Eats Café & Fine Foods', 'artisaneats.ca')
+   DUP ('US', 'Goodman Coffee Roasters', 'Goodman Coffee Roasters - St. Elmo', 'goodmancoffeeroasters.com')
+   DUP ('JP', 'カフェ・ド・アン・ダニエルズ', "Cafe de UN Daniel's", 'cafedeun-daniels.com')
+   DUP ('GB', 'Karma Corner', 'Karma Corner: Coffee Shop', 'nearandfair.co.uk')
+   DUP ('US', 'Flagler Tea Co', 'Flagler Tea Company', 'flaglerteacompany.com')
+   DUP ('GB', 'Badiani Angel', 'Badiani1932', 'badiani1932.com')
+   DUP ('ES', 'Amaté', 'Amate', 'amate.es')
+dropped duplicate ids: 3
+Counter({'site': 58318, 'name_chain': 15966, 'name': 1097, 'wrong_country': 260, 'leads': 27})
+hosts crawled 499153; cafés with matcha on their own site: 43168 (matcha-focused 3717)
+by region {'us': 15182, 'au': 1877, 'eu': 11624, 'ca': 1913, 'jp': 12274, 'kr': 298}
+by country [('US', 15182), ('JP', 12274), ('GB', 2380), ('CA', 1913), ('AU', 1877), ('DE', 1686), ('FR', 1632), ('ES', 1033), ('NL', 656), ('PL', 543), ('IT', 477), ('CZ', 434), ('BE', 393), ('CH', 308)]
+evidence strength Counter({3: 21605, 2: 18938, 1: 1638, 0: 987})
+files 87 full KB 34544 slim KB {'us': 1586, 'ca': 199, 'eu': 1180, 'jp': 1475, 'kr': 32, 'au': 189}
+before {'us': 13176, 'ca': 1813, 'eu': 10956, 'jp': 11308, 'kr': 297, 'au': 1843} after {'us': 15182, 'ca': 1913, 'eu': 11624, 'jp': 12274, 'kr': 298, 'au': 1877}
