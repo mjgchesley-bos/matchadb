@@ -277,8 +277,6 @@ export const en = {
   "c.rt.count.one": "{count} community rating",
   "c.rt.count.other": "{count} community ratings",
   "c.rt.none": "No community ratings yet. Be the first to rate it.",
-  "c.rt.sofar.one": "{count} community rating so far. The score appears after {min} ({remaining} more).",
-  "c.rt.sofar.other": "{count} community ratings so far. The score appears after {min} ({remaining} more).",
   "c.rt.signIn": "Sign in to rate {name}.",
   "c.rt.saveFail": "Couldn't save your rating. Please try again.",
   "c.rt.saved": "Thanks, your rating is saved.",

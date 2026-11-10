@@ -295,8 +295,6 @@ export const zh: Partial<Record<Key, string>> = {
   "c.rt.count.one": "{count} 个社区评分",
   "c.rt.count.other": "{count} 个社区评分",
   "c.rt.none": "还没有社区评分，来做第一个评分的人吧。",
-  "c.rt.sofar.one": "目前有 {count} 个社区评分。集齐 {min} 个后才会显示分数（还差 {remaining} 个）。",
-  "c.rt.sofar.other": "目前有 {count} 个社区评分。集齐 {min} 个后才会显示分数（还差 {remaining} 个）。",
   "c.rt.signIn": "登录后即可为 {name} 评分。",
   "c.rt.saveFail": "无法保存你的评分，请重试。",
   "c.rt.saved": "谢谢，你的评分已保存。",

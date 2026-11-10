@@ -277,8 +277,6 @@ export const de: Partial<Record<Key, string>> = {
   "c.rt.count.one": "{count} Community-Bewertung",
   "c.rt.count.other": "{count} Community-Bewertungen",
   "c.rt.none": "Noch keine Community-Bewertungen. Seien Sie der Erste, der bewertet.",
-  "c.rt.sofar.one": "Bisher {count} Community-Bewertung. Die Gesamtnote erscheint ab {min} ({remaining} fehlen noch).",
-  "c.rt.sofar.other": "Bisher {count} Community-Bewertungen. Die Gesamtnote erscheint ab {min} ({remaining} fehlen noch).",
   "c.rt.signIn": "Melden Sie sich an, um {name} zu bewerten.",
   "c.rt.saveFail": "Ihre Bewertung konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.",
   "c.rt.saved": "Danke, Ihre Bewertung wurde gespeichert.",

@@ -9,11 +9,9 @@ import { INTL_LANG } from "@/i18n/config";
 
 // Community star rating for one product. Hover to preview in half-star steps, click (or
 // tap) to rate; you need to be signed in, and each person has one rating they can change.
-// The community score is only shown once enough people have rated, so one person's
-// opinion is never presented as the product's score.
+// The community score (the average, with the number of ratings beside it) shows from the first rating.
 
 type Stats = { count: number; average: number | null };
-const MIN_TO_SHOW = 5;
 
 const fmt = (n: number) => (Number.isInteger(n) ? n.toFixed(1) : String(n));
 
@@ -121,12 +119,11 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
   if (stats === "error") return null;
 
   const shown = hover ?? draft ?? mine ?? 0;
-  const remaining = Math.max(0, MIN_TO_SHOW - stats.count);
 
   return (
     <section className="mt-4 rounded-sm border border-line bg-paper-raised px-4 py-3 max-w-md" aria-label={t("c.rt.label")}>
       <div className="flex items-center gap-3 flex-wrap">
-        {stats.average != null && stats.count >= MIN_TO_SHOW ? (
+        {stats.average != null && stats.count >= 1 ? (
           <>
             <span className="font-display text-2xl font-semibold text-ink tabular-nums">{stats.average.toFixed(1)}</span>
             <Stars value={stats.average} size={20} />
@@ -135,11 +132,7 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
             </span>
           </>
         ) : (
-          <span className="text-sm text-ink-muted">
-            {stats.count === 0
-              ? t("c.rt.none")
-              : t(stats.count === 1 ? "c.rt.sofar.one" : "c.rt.sofar.other", { count: stats.count, min: MIN_TO_SHOW, remaining })}
-          </span>
+          <span className="text-sm text-ink-muted">{t("c.rt.none")}</span>
         )}
       </div>
 

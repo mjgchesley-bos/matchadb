@@ -295,8 +295,6 @@ export const ko: Partial<Record<Key, string>> = {
   "c.rt.count.one": "커뮤니티 평점 {count}개",
   "c.rt.count.other": "커뮤니티 평점 {count}개",
   "c.rt.none": "아직 커뮤니티 평점이 없습니다. 첫 평점을 남겨 보세요.",
-  "c.rt.sofar.one": "지금까지 커뮤니티 평점 {count}개. {min}개가 모이면 점수가 표시됩니다({remaining}개 남음).",
-  "c.rt.sofar.other": "지금까지 커뮤니티 평점 {count}개. {min}개가 모이면 점수가 표시됩니다({remaining}개 남음).",
   "c.rt.signIn": "{name}을(를) 평가하려면 로그인하세요.",
   "c.rt.saveFail": "평점을 저장하지 못했습니다. 다시 시도해 주세요.",
   "c.rt.saved": "감사합니다. 평점이 저장되었습니다.",

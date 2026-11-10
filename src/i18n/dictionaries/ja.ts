@@ -295,8 +295,6 @@ export const ja: Partial<Record<Key, string>> = {
   "c.rt.count.one": "ユーザー評価{count}件",
   "c.rt.count.other": "ユーザー評価{count}件",
   "c.rt.none": "ユーザー評価はまだありません。最初に評価してみませんか。",
-  "c.rt.sofar.one": "現在ユーザー評価は{count}件です。{min}件集まるとスコアが表示されます（あと{remaining}件）。",
-  "c.rt.sofar.other": "現在ユーザー評価は{count}件です。{min}件集まるとスコアが表示されます（あと{remaining}件）。",
   "c.rt.signIn": "{name}を評価するにはログインしてください。",
   "c.rt.saveFail": "評価を保存できませんでした。もう一度お試しください。",
   "c.rt.saved": "ありがとうございます。評価を保存しました。",

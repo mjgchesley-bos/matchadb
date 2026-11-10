@@ -279,8 +279,6 @@ export const fr: Partial<Record<Key, string>> = {
   "c.rt.count.one": "{count} note de la communauté",
   "c.rt.count.other": "{count} notes de la communauté",
   "c.rt.none": "Aucune note de la communauté pour l'instant. Soyez le premier à le noter.",
-  "c.rt.sofar.one": "{count} note de la communauté pour l'instant. Le score apparaît à partir de {min} (encore {remaining}).",
-  "c.rt.sofar.other": "{count} notes de la communauté pour l'instant. Le score apparaît à partir de {min} (encore {remaining}).",
   "c.rt.signIn": "Connectez-vous pour noter {name}.",
   "c.rt.saveFail": "Impossible d'enregistrer votre note. Veuillez réessayer.",
   "c.rt.saved": "Merci, votre note est enregistrée.",

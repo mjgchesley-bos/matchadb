@@ -279,8 +279,6 @@ export const es: Partial<Record<Key, string>> = {
   "c.rt.count.one": "{count} valoración de la comunidad",
   "c.rt.count.other": "{count} valoraciones de la comunidad",
   "c.rt.none": "Aún no hay valoraciones de la comunidad. Sé el primero en valorarlo.",
-  "c.rt.sofar.one": "{count} valoración de la comunidad por ahora. La puntuación aparece al llegar a {min} (faltan {remaining}).",
-  "c.rt.sofar.other": "{count} valoraciones de la comunidad por ahora. La puntuación aparece al llegar a {min} (faltan {remaining}).",
   "c.rt.signIn": "Inicia sesión para valorar {name}.",
   "c.rt.saveFail": "No se pudo guardar tu valoración. Inténtalo de nuevo.",
   "c.rt.saved": "Gracias, tu valoración se ha guardado.",
