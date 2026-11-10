@@ -64,6 +64,10 @@ export function getAllCafes(): Cafe[] {
   return getCafeFiles().flatMap((s) => getCafesInFile(s));
 }
 
+// The sitemap lists cafés in files of this many URLs (see app/cafes-sitemap/sitemap.ts).
+export const SITEMAP_CHUNK = 10000;
+export const cafeSitemapCount = (): number => Math.max(1, Math.ceil(getAllCafes().length / SITEMAP_CHUNK));
+
 // Other cafés near this one (same state or country), closest first.
 export function nearbyCafes(c: Cafe, limit = 5): (Cafe & { miles: number })[] {
   const R = 3958.8;

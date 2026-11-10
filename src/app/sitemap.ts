@@ -8,8 +8,6 @@ import { GUIDES } from "@/lib/guides";
 import { CULTIVARS } from "@/lib/cultivars";
 import { PAIRS, pairSlug } from "@/lib/compare";
 import { profiled } from "@/lib/suppliers";
-import { getAllCafes } from "@/lib/cafes";
-import { cafeSlug } from "@/lib/cafe-types";
 import { HTML_LANG, LOCALES, localePath } from "@/i18n/config";
 
 // Pages that exist in every language: one entry per language, each pointing at all the others.
@@ -76,13 +74,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.4,
   }));
 
-  // Café pages: only the English URL is listed (a separate entry per language would be 200,000+ URLs). Each café page
-  // names its other-language versions in its own <head> (hreflang), so the sitemap does not repeat them; with them it was 30 MB.
-  const cafeEntries: MetadataRoute.Sitemap = getAllCafes().map((c) => ({
-    url: `${SITE_URL}/cafes/${cafeSlug(c)}`,
-    changeFrequency: "monthly" as const,
-    priority: 0.4,
-  }));
+  // Café pages are in their own sitemap files (app/cafes-sitemap/sitemap.ts): all of them in this file made it ~6.5 MB, over the host's 6 MB limit.
 
-  return [...staticEntries, ...regionEntries, ...brandEntries, ...productEntries, ...studyEntries, ...cafeEntries];
+  return [...staticEntries, ...regionEntries, ...brandEntries, ...productEntries, ...studyEntries];
 }
