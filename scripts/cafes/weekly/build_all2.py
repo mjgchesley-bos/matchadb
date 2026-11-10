@@ -128,9 +128,13 @@ for cf in CRAWL_FILES:
 crawled = len(res)
 SKIP_HIT = re.compile(r"[/_-](cart|account|login|gift|careers|jobs|privacy|terms|policies|catering|blog|press|news|wholesale|franchise|investors?)\b", re.I)
 # Only the page PATH counts: a site whose domain contains 'catering' or 'blog' (paradise-catering.com, ryugetsudo-blog.com) is still the cafe's own site.
+# Ordering platforms put the cafe's own name in the path (order.toasttab.com/online/cafe-a-la-cart, /press-cafe): those URLs are real menus, never filtered.
+ORDER_HOSTS = ("toasttab.com", "square.site", "chownow.com", "order.online", "clover.com", "olo.com", "ubereats.com", "doordash.com", "grubhub.com", "slicelife.com", "ordering.app")
 def _skip_hit(u):
     import urllib.parse as _u
     p = _u.urlparse(u)
+    h = (p.netloc or "").lower()
+    if any(h == o or h.endswith("." + o) for o in ORDER_HOSTS): return False
     return bool(SKIP_HIT.search(p.path + ('?' + p.query if p.query else '')))
 # A recipe or cooking page says how to make matcha at home, not that the place SERVES it (home bakers' blogs, a brand's or manufacturer's
 # recipe pages shared by every place that stocks the brand). It is never evidence. Menus and home pages are judged by their own text.
