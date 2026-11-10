@@ -31,7 +31,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ lang: 
           referring page) collected through Google Analytics, only if you accept cookies.
         </li>
         <li>
-          <strong>Map requests.</strong> The sourcing map loads map tiles from Mapbox, which receives
+          <strong>Map requests.</strong> The cultivator map loads map tiles from Mapbox, which receives
           your IP address and browser details as part of serving those tiles. See{" "}
           <a href="https://www.mapbox.com/legal/privacy" rel="noopener noreferrer" target="_blank">
             Mapbox&apos;s privacy policy
