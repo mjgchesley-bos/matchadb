@@ -24,7 +24,8 @@ const nextConfig: NextConfig = {
         { source: "/research/topics/:path*", destination: "/en/research/by-topic/:path*" },
         { source: "/:lang(ja|ko|zh|es|fr|de)/research/topics/:path*", destination: "/:lang/research/by-topic/:path*" },
       ],
-      afterFiles: [{ source: "/:path((?!(?:en|ja|ko|zh|es|fr|de)(?:/|$)).*)", destination: "/en/:path" }],
+      // cafes-sitemap is the café sitemap files (a dynamic metadata route, which afterFiles rewrites would otherwise swallow).
+      afterFiles: [{ source: "/:path((?!(?:en|ja|ko|zh|es|fr|de|cafes-sitemap)(?:/|$)).*)", destination: "/en/:path" }],
       fallback: [],
     };
   },
