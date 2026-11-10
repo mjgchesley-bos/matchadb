@@ -126,10 +126,15 @@ for cf in CRAWL_FILES:
             for _h in r.get("hits", []): _h["r"] = 1      # evidence read from a JavaScript-rendered ordering-platform menu
         res[r["host"]] = (merge_weekly if os.path.basename(cf).startswith("w_") else merge)(res.get(r["host"]), r)
 crawled = len(res)
-SKIP_HIT = re.compile(r"[/_-](cart|account|login|gift|careers|jobs|privacy|terms|policies|catering|blog|press|news|wholesale|franchise|investors?)", re.I)
+SKIP_HIT = re.compile(r"[/_-](cart|account|login|gift|careers|jobs|privacy|terms|policies|catering|blog|press|news|wholesale|franchise|investors?)\b", re.I)
+# Only the page PATH counts: a site whose domain contains 'catering' or 'blog' (paradise-catering.com, ryugetsudo-blog.com) is still the cafe's own site.
+def _skip_hit(u):
+    import urllib.parse as _u
+    p = _u.urlparse(u)
+    return bool(SKIP_HIT.search(p.path + ('?' + p.query if p.query else '')))
 for _h, _r in res.items():
     if _r.get("hits"):
-        _r["hits"] = [x for x in _r["hits"] if not SKIP_HIT.search(x["url"])]
+        _r["hits"] = [x for x in _r["hits"] if not _skip_hit(x["url"])]
         _r["matcha"] = bool(_r["hits"])
 
 seen_ids, rows = set(), []

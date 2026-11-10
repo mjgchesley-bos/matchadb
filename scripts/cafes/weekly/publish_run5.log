@@ -1,0 +1,24 @@
+$ C:\Users\mjgch\AppData\Local\Programs\Python\Python313\python.exe -I C:/Users/mjgch/projects/matchadb/scripts/cafes/suggestions/review_prepare.py
+0 new suggestion(s)
+$ C:\Users\mjgch\AppData\Local\Programs\Python\Python313\python.exe -I C:/Users/mjgch/projects/matchadb/scripts/cafes/suggestions/review_decide.py
+ADDED 0
+$ C:\Users\mjgch\AppData\Local\Programs\Python\Python313\python.exe -I C:\temp\weekly/build_all2.py C:/temp/cafes/out_weekly/d C:/temp/cafes/out_weekly/p
+mi Cake', 'Hiromi Cake Milano', 'hiromicake.it')
+   DUP ('FR', 'Pâtisserie Grandin', 'Maison Grandin', 'patisserie-grandin.fr')
+   DUP ('JP', 'ドルチェ', 'Curry and Sweets Dolce', 'mojikodolce.shopinfo.jp')
+   DUP ('US', 'Vibe Coffee', 'Vibe Coffee Hodgenville', 'vibecoffeeshop.com')
+   DUP ('GB', 'Beijing Tong Ren Tang', 'Golden Gate Cake Shop | 金門餅家', 'chinatown.co.uk')
+   DUP ('CA', 'Palgong Tea 八公', 'Palgong Tea', 'palgongtea.ca')
+   DUP ('JP', 'ずんだ茶寮仙台駅ずんだ小径店', 'ずんだ茶寮', 'zundasaryo.com')
+   DUP ('CZ', 'District 25 specialty coffee & wine', 'District 25', '25coffeeroasters.com')
+   DUP ('US', 'Fairmount Coffee Co.', 'Fairmount Coffee Company', 'fairmountcoffee.com')
+   DUP ('GB', 'Badiani Angel', 'Badiani1932', 'badiani1932.com')
+   DUP ('ES', 'Maestro Food & More', 'Maestro Churrero', 'maestrochurrero.com')
+dropped duplicate ids: 15
+Counter({'site': 61487, 'name_chain': 15966, 'name': 1082, 'not_a_cafe': 448, 'wrong_country': 260, 'leads': 45})
+hosts crawled 639824; cafés with matcha on their own site: 46220 (matcha-focused 3838)
+by region {'us': 16362, 'au': 1874, 'eu': 12687, 'ca': 2061, 'jp': 12898, 'kr': 338}
+by country [('US', 16362), ('JP', 12898), ('GB', 2544), ('CA', 2061), ('AU', 1874), ('DE', 1872), ('FR', 1804), ('ES', 1124), ('NL', 725), ('PL', 556), ('IT', 509), ('CZ', 503), ('BE', 424), ('KR', 338)]
+evidence strength Counter({3: 22998, 2: 20502, 1: 1746, 0: 974})
+files 86 full KB 36877 slim KB {'us': 1708, 'ca': 214, 'eu': 1285, 'jp': 1545, 'kr': 37, 'au': 189}
+before {'us': 16409, 'ca': 2061, 'eu': 12712, 'jp': 12948, 'kr': 338, 'au': 1874} after {'us': 16362, 'ca': 2061, 'eu': 12687, 'jp': 12898, 'kr': 338, 'au': 1874}
