@@ -193,7 +193,7 @@ for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, c
     us = cc == "US"
     cafes.append({
         "id": id_.replace("-", "")[:10], "name": name, "cat": cat, "cc": cc,
-        "address": clean(address), "city": clean(city), "state": clean(state) if us else "", "zip": clean(zip_)[:5] if us else clean(zip_)[:12],
+        "address": clean(address), "city": clean(city), "state": (re.sub(r"[^A-Za-z]", "", clean(state)).upper() if len(re.sub(r"[^A-Za-z]", "", clean(state))) == 2 else clean(state)) if us else "", "zip": clean(zip_)[:5] if us else clean(zip_)[:12],
         "lat": round(lat, 5), "lng": round(lng, 5),
         "url": (None if (via and h and AGG_HOST.search(h)) else (website.split("?")[0] if website else None)), "phone": clean(phone) or None,
         "focus": focus, "ev": [{**e, "s": e["s"][: (3 if i == 0 else 1)]} for i, e in enumerate(ev[:2])],

@@ -154,7 +154,8 @@ export const cafeSlug = (c: { name: string; city: string; state: string; id: str
 };
 
 export function parseCafeSlug(slug: string): { key: string; id: string } | null {
-  const m = /-([a-z]{2,3})-([0-9a-f]{10})$/.exec(slug) ?? /^([a-z]{2,3})-([0-9a-f]{10})$/.exec(slug);
+  // Ids are 10 hex characters, or "fsq" plus 7 hex characters for places that came from Foursquare.
+  const m = /-([a-z]{2,3})-((?:fsq[0-9a-f]{7})|[0-9a-f]{10})$/.exec(slug) ?? /^([a-z]{2,3})-((?:fsq[0-9a-f]{7})|[0-9a-f]{10})$/.exec(slug);
   if (!m) return null;
   if (m[1].length === 3 && !FROM_CC3[m[1]]) return null;
   return { key: m[1].toUpperCase(), id: m[2] };
