@@ -309,7 +309,7 @@ for k, cs in files.items():
     json.dump(cs, open(os.path.join(OUT_DIR, f"{k}.json"), "w", encoding="utf8"), separators=(",", ":"), ensure_ascii=False)
 slims = {}
 for c in cafes:
-    slims.setdefault(region_of(c["cc"]), []).append([c["id"], c["name"], c["address"], c["city"], c["state"], c["zip"], c["lat"], c["lng"], 2 if c.get("via") == "name" else (1 if c["focus"] else 0), c["cc"]])
+    slims.setdefault(region_of(c["cc"]), []).append([c["id"], c["name"], c["address"], c["city"], c["state"], c["zip"], c["lat"], c["lng"], 2 if c.get("via") == "name" else (3 if c.get("via") == "reported" else (1 if c["focus"] else 0)), c["cc"]])
 for reg in ("us", "ca", "eu", "jp", "kr", "au"):
     json.dump(slims.get(reg, []), open(os.path.join(SLIM_DIR, f"cafes-slim-{reg}.json"), "w", encoding="utf8"), separators=(",", ":"), ensure_ascii=False)
 

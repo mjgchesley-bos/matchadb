@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const c = getCafeBySlug(slug);
   if (!c) return { title: t("cafe.notFound"), robots: { index: false } };
   const title = t("cafe.meta.title", { name: c.name, loc: loc(c, lang) });
-  const description = t(c.via === "name" ? "cafe.meta.desc.name" : "cafe.meta.desc.web", { name: c.name, where: formatPlace(c, lang) });
+  const description = t(c.via === "name" ? "cafe.meta.desc.name" : c.via === "reported" ? "cafe.meta.desc.reported" : "cafe.meta.desc.web", { name: c.name, where: formatPlace(c, lang) });
   const alternates = pageAlternates(lang, `/cafes/${cafeSlug(c)}`);
   return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
 }
@@ -79,7 +79,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <p className="mt-2 text-ink-muted">{where}</p>
         <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
           <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
-          <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : t("c.cf.onSite")}</span>
+          <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>
           {c.focus && c.via !== "name" && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{t("c.cf.focused")}</span>}
         </p>
         <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
@@ -107,7 +107,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           {t("cafe.menu.h2")}
         </h2>
         <p className="mt-2 text-sm text-ink-muted">
-          {c.via === "name" ? t("cafe.menu.name") : t("cafe.menu.web", { date: fmtDate(c.checked, lang) })}
+          {c.via === "name" ? t("cafe.menu.name") : c.via === "reported" ? t("cafe.menu.reported") : t("cafe.menu.web", { date: fmtDate(c.checked, lang) })}
         </p>
         {c.ev.length > 0 && (<ul className="mt-4 flex flex-col gap-3">
           {c.ev.map((e) => (

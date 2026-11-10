@@ -1298,6 +1298,9 @@ export const en = {
   "c.sg.thanks": "Thank you. We check every suggestion before it goes on the map.",
   "c.sg.err": "That didn't go through. Please try again, or email us at",
   "c.sg.privacy": "We use your email only to reply about this suggestion.",
+  "c.cf.reported": "Reported by locals",
+  "cafe.meta.desc.reported": "{name} at {where} is reported to serve matcha by independent local sources. See where, get directions, and read member ratings, reviews and photos.",
+  "cafe.menu.reported": "We couldn't read a menu on this café's own website, but at least two independent local sources (linked below) say it serves matcha. Check the menu or call ahead.",
   // @@END
 } as const;
 

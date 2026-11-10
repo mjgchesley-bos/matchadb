@@ -1282,5 +1282,8 @@ export const es: Partial<Record<Key, string>> = {
   "c.sg.thanks": "Gracias. Revisamos cada sugerencia antes de ponerla en el mapa.",
   "c.sg.err": "No se pudo enviar. Inténtalo de nuevo o escríbenos a",
   "c.sg.privacy": "Usamos tu correo solo para responder a esta sugerencia.",
+  "c.cf.reported": "Según fuentes locales",
+  "cafe.meta.desc.reported": "Fuentes locales independientes indican que {name}, en {where}, sirve matcha. Mira dónde está, cómo llegar y las valoraciones, reseñas y fotos de los miembros.",
+  "cafe.menu.reported": "No pudimos leer un menú en el sitio web propio de esta cafetería, pero al menos dos fuentes locales independientes (enlaces abajo) dicen que sirve matcha. Consulta el menú o llama antes de ir.",
   // @@END
 };

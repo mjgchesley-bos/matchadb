@@ -1,0 +1,20 @@
+$ C:\Users\mjgch\AppData\Local\Programs\Python\Python313\python.exe -I C:\temp\weekly/build_all2.py C:/temp/cafes/out_weekly/d C:/temp/cafes/out_weekly/p
+', 'Hiromi Cake Milano', 'hiromicake.it')
+   DUP ('FR', 'Dammann Frères', 'Dammann Frères Bercy', 'dammann.fr')
+   DUP ('JP', 'ドルチェ', 'Curry and Sweets Dolce', 'mojikodolce.shopinfo.jp')
+   DUP ('US', 'Strange Matter Coffee Co.', 'Strange Matter Coffee', 'strangemattercoffee.com')
+   DUP ('GB', 'The Breakfast Club London Bridge', 'The Breakfast Club', 'thebreakfastclubcafes.com')
+   DUP ('CA', 'CrepeStar Dessert Cafe & Bistro', 'CrepeStar Dessert Cafe and Bistro', 'crepestardessert.com')
+   DUP ('JP', 'ファソン・ドゥ・ドイ', 'ファソン ト ゥ ト イ', 'f-doi.com')
+   DUP ('CZ', 'Kafe Cihelna', 'Cafe Cihelna', 'cafecihelna.cz')
+   DUP ('US', 'Pressed for Juice - the District', 'Pressed For Juice', 'pressed4juice.com')
+   DUP ('GB', 'Badiani Angel', 'Badiani1932', 'badiani1932.com')
+   DUP ('ES', 'Tea time', 'Teterimundi Teatime', 'teterimundi.com')
+dropped duplicate ids: 15
+Counter({'site': 61773, 'name_chain': 15966, 'name': 1082, 'wrong_country': 260, 'leads': 45})
+hosts crawled 639824; cafés with matcha on their own site: 46444 (matcha-focused 3899)
+by region {'us': 16418, 'au': 1874, 'eu': 12790, 'ca': 2061, 'jp': 12963, 'kr': 338}
+by country [('US', 16418), ('JP', 12963), ('GB', 2553), ('CA', 2061), ('DE', 1884), ('AU', 1874), ('FR', 1811), ('ES', 1126), ('NL', 739), ('PL', 581), ('IT', 516), ('CZ', 504), ('BE', 424), ('CH', 340)]
+evidence strength Counter({3: 23142, 2: 20578, 1: 1751, 0: 973})
+files 87 full KB 37090 slim KB {'us': 1714, 'ca': 214, 'eu': 1296, 'jp': 1553, 'kr': 37, 'au': 189}
+before {'us': 16417, 'ca': 2061, 'eu': 12790, 'jp': 12963, 'kr': 338, 'au': 1874} after {'us': 16418, 'ca': 2061, 'eu': 12790, 'jp': 12963, 'kr': 338, 'au': 1874}

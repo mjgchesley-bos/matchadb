@@ -17,13 +17,13 @@ import { SuggestCafe } from "@/components/SuggestCafe";
 // browser to sort and map the list; nothing about it is sent to or stored by us. (A typed place is sent
 // to Mapbox's geocoder to turn it into a point.)
 
-type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; cc: string };
+type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string };
 type Listed = { cafe: Cafe; dist: number | null };
 
 const RADII = [5, 10, 25, 50, 0]; // 0 = any distance
 const LIST_CAP = 30;
 
-const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] >= 1, nameOnly: r[8] === 2, cc: r[9] ?? "US" });
+const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] === 1 || r[8] === 2, nameOnly: r[8] === 2, reported: r[8] === 3, cc: r[9] ?? "US" });
 
 // The popup over a pin. Built with DOM nodes and textContent so a café name can never inject markup.
 function buildPopup(c: Cafe, lang: Locale, linkText: string): HTMLElement {
@@ -446,7 +446,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
                   <span className="mt-0.5 block text-sm text-ink-muted">{place(c)}</span>
                 </button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>
+                  <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.reported ? t("c.cf.reported") : c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>
                   {c.focus && !c.nameOnly && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{t("c.cf.focused")}</span>}
                 </p>
                 <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">

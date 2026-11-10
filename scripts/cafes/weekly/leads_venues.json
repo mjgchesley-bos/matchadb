@@ -1786,5 +1786,50 @@
   "conf": 0.85,
   "shared": 0,
   "via": "web"
+ },
+ {
+  "name": "Leche Coffee",
+  "cat": "coffee_shop",
+  "cc": "US",
+  "address": "1915 East Martin Luther King Jr Boulevard",
+  "city": "Austin",
+  "state": "TX",
+  "zip": "78722",
+  "lat": 30.27966,
+  "lng": -97.72018,
+  "phone": null,
+  "focus": false,
+  "menu": null,
+  "pdf": null,
+  "checked": "2026-11-09",
+  "shared": 0,
+  "id": "f76fcac4c0",
+  "url": null,
+  "ev": [
+   {
+    "u": "https://www.yelp.com/biz/leche-coffee-austin",
+    "k": "report",
+    "st": 0,
+    "n": 0,
+    "s": []
+   },
+   {
+    "u": "https://www.instagram.com/lechecoffee_/",
+    "k": "report",
+    "st": 0,
+    "n": 0,
+    "s": []
+   },
+   {
+    "u": "https://www.tiktok.com/discover/leche-coffee-austin",
+    "k": "report",
+    "st": 0,
+    "n": 0,
+    "s": []
+   }
+  ],
+  "platform": null,
+  "conf": 0.6,
+  "via": "reported"
  }
 ]

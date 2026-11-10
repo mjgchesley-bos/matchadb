@@ -1298,5 +1298,8 @@ export const zh: Partial<Record<Key, string>> = {
   "c.sg.thanks": "谢谢。每条推荐在上地图前都会经过核实。",
   "c.sg.err": "提交失败。请重试，或发邮件给我们：",
   "c.sg.privacy": "我们只会用你的邮箱回复这条推荐。",
+  "c.cf.reported": "本地来源报道",
+  "cafe.meta.desc.reported": "多个独立的本地来源称，{name}（{where}）供应抹茶。查看位置、获取路线，并阅读会员评分、评论和照片。",
+  "cafe.menu.reported": "我们未能在这家咖啡店自己的网站上读到菜单，但至少有两个独立的本地来源（见下方链接）表示它供应抹茶。请查看菜单或提前致电确认。",
   // @@END
 };

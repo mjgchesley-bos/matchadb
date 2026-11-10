@@ -34,7 +34,8 @@ export type Cafe = {
   focus: boolean;
   ev: CafeEvidence[];
   // "name": listed because matcha is in the business's own name (no menu seen yet). "web": found on a web search lead and its own site.
-  via?: "name" | "web";
+  // "reported": its own site shows no matcha (or has no site), but 2+ independent local sources say it serves matcha; ev holds those sources.
+  via?: "name" | "web" | "reported";
   menu: string | null;
   platform: string | null;
   pdf: string | null;
@@ -45,7 +46,7 @@ export type Cafe = {
 };
 
 // What the map and list need for each café: id, name, address, city, state, zip, lat, lng, focus (1/0), country code.
-// focus: 0 = matcha on their site, 1 = matcha-focused, 2 = listed because matcha is in the name.
+// focus: 0 = matcha on their site, 1 = matcha-focused, 2 = listed because matcha is in the name, 3 = reported by local sources.
 export type CafeSlim = [string, string, string, string, string, string, number, number, number, string?];
 
 export const CAT_LABEL: Record<string, string> = {

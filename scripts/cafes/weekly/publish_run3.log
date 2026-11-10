@@ -18,3 +18,69 @@ by country [('US', 16417), ('JP', 12963), ('GB', 2553), ('CA', 2061), ('DE', 188
 evidence strength Counter({3: 23142, 2: 20578, 1: 1751, 0: 972})
 files 87 full KB 37089 slim KB {'us': 1714, 'ca': 214, 'eu': 1296, 'jp': 1553, 'kr': 37, 'au': 189}
 before {'us': 16400, 'ca': 2061, 'eu': 12790, 'jp': 12963, 'kr': 338, 'au': 1874} after {'us': 16417, 'ca': 2061, 'eu': 12790, 'jp': 12963, 'kr': 338, 'au': 1874}
+$ npm run build
+tact
+├ ● /[lang]/cultivars
+│ └ /en/cultivars
+├ ● /[lang]/cultivars/[slug]
+│ ├ /en/cultivars/yabukita
+│ ├ /en/cultivars/okumidori
+│ ├ /en/cultivars/samidori
+│ └ [+4 more paths]
+├ ● /[lang]/guides
+│ └ /en/guides
+├ ● /[lang]/guides/[slug]
+│ ├ /en/guides/matcha-for-lattes
+│ ├ /en/guides/ceremonial-vs-culinary-matcha
+│ ├ /en/guides/matcha-under-20
+│ └ [+4 more paths]
+├ ● /[lang]/guides/what-is-ceremonial-matcha
+│ └ /en/guides/what-is-ceremonial-matcha
+├ ● /[lang]/map
+│ └ /en/map
+├ ● /[lang]/privacy
+│ └ /en/privacy
+├ ƒ /[lang]/products/[id]
+├ ● /[lang]/regions
+│ └ /en/regions
+├ ● /[lang]/regions/[region]
+│ ├ /en/regions/uji
+│ ├ /en/regions/kyoto
+│ ├ /en/regions/shizuoka
+│ └ [+6 more paths]
+├ ƒ /[lang]/research
+├ ƒ /[lang]/research/[id]
+├ ● /[lang]/research/by-topic
+│ └ /en/research/by-topic
+├ ● /[lang]/research/by-topic/[slug]
+│ ├ /en/research/by-topic/l-theanine-and-caffeine
+│ ├ /en/research/by-topic/cognition-mood-and-stress
+│ ├ /en/research/by-topic/antioxidants-and-polyphenols
+│ └ [+13 more paths]
+├ ƒ /[lang]/stores
+├ ● /[lang]/terms
+│ └ /en/terms
+├ ƒ /[lang]/u/[name]
+├ ● /[lang]/wholesale
+│ └ /en/wholesale
+├ ● /[lang]/wholesale/[slug]
+│ └ /en/wholesale/pure-matcha-partners
+├ ƒ /ads.txt
+├ ƒ /api/products/lookup
+├ ƒ /api/research/suggest
+├ ƒ /api/studies/lookup
+├ ○ /apple-icon.png
+├ ○ /icon.svg
+├ ○ /robots.txt
+└ ○ /sitemap.xml
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+$ git add -A
+$ git commit -q -m Cafés weekly refresh 2026-11-09: 46426 -> 46443
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+$ git push -q origin main
+report written to C:/temp/cafes/weekly_report.json ok = True
