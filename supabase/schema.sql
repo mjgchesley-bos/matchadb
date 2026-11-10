@@ -386,6 +386,8 @@ grant select on public.approved_comments to anon, authenticated;
 
 -- ====================================================================== public profiles, custom lists, tasting challenge
 alter table public.profiles add column if not exists is_public boolean not null default false;
+-- Since 2026-11-10 new accounts are public by default (existing rows keep their choice); see profiles_public_default.sql.
+alter table public.profiles alter column is_public set default true;
 alter table public.profiles add column if not exists bio text not null default '';
 alter table public.profiles add column if not exists avatar text;
 alter table public.profiles add column if not exists how_i_drink text;

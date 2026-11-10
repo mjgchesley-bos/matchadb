@@ -58,7 +58,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ lang: 
           choose your own, which you can change in My matcha), never your email or real name. We also
           record the days you visit while signed in, plus what you add to your shelves and research folder
           (private notes there are visible only to you); these count toward your member tier, which is shown
-          next to your username. Your profile is private unless you switch on a public profile in My matcha; if you do, anyone can see your username, avatar or profile photo, bio, tier, shelves, ratings, lists, saved brands, approved reviews and the photos you posted, and you can switch it off at any time. Public profile pages ask search engines not to list them. Accounts, sign-in and this data are
+          next to your username. Profiles of accounts created from 10 November 2026 are public by default (earlier accounts stay private unless their owner switches a public profile on), and you can change this at any time in My matcha. Anyone can see a public profile&apos;s username, avatar or profile photo, bio, tier, shelves, ratings, lists, saved brands, favorite cafés, approved reviews and the photos posted. Public profile pages ask search engines not to list them. Accounts, sign-in and this data are
           handled for us by Supabase. Signing in keeps a session token in your browser&apos;s local
           storage so you stay signed in; it is separate from the analytics and advertising cookies above.
           You can delete your own reviews and ratings at any time. To delete your account and everything
