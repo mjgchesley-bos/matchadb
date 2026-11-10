@@ -132,9 +132,21 @@ def _skip_hit(u):
     import urllib.parse as _u
     p = _u.urlparse(u)
     return bool(SKIP_HIT.search(p.path + ('?' + p.query if p.query else '')))
+# A recipe or cooking page says how to make matcha at home, not that the place SERVES it (home bakers' blogs, a brand's or manufacturer's
+# recipe pages shared by every place that stocks the brand). It is never evidence. Menus and home pages are judged by their own text.
+RECIPE_PATH = re.compile(r"recipe|receta|recette|rezept|ricett|kochidee|how-to-make|%E3%83%AC%E3%82%B7%E3%83%94", re.I)
+RECIPE_SNIP = re.compile(r"(?<![\d.$])\d+(?:/\d+)?\s?(?:tbsp|tsp|tablespoons?|teaspoons?)\b|\bpreheat|レシピ|作り方", re.I)
+def _recipe_hit(x):
+    import urllib.parse as _u
+    if x.get("kind") == "menu": return False                      # a menu page is the place's own menu, whatever it is called
+    path = _u.urlparse(x["url"]).path
+    if RECIPE_PATH.search(path) and "menu" not in path.lower(): return True
+    if x.get("kind") == "home": return False
+    sn = [s for s in x.get("snippets", []) if M_RE.search(s)]
+    return bool(sn) and all(RECIPE_SNIP.search(s) for s in sn)
 for _h, _r in res.items():
     if _r.get("hits"):
-        _r["hits"] = [x for x in _r["hits"] if not _skip_hit(x["url"])]
+        _r["hits"] = [x for x in _r["hits"] if not _skip_hit(x["url"]) and not _recipe_hit(x)]
         _r["matcha"] = bool(_r["hits"])
 
 seen_ids, rows = set(), []
@@ -150,12 +162,25 @@ for pq in PLACES:
 brand_count = Counter(r[13] for r in rows if r[13])
 # ---- places that are not cafes, left off the map ----
 # Websites of businesses that are not cafes (convenience stores, groceries) or small chains the owner asked to leave out. A host here drops all its places (and its subdomains).
-NOT_CAFE_HOSTS = {"royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com"}
+NOT_CAFE_HOSTS = {"royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com",
+                  # home bakers, baking suppliers, ingredient makers, cooking classes and catering-only businesses (owner: no personal homes, no culinary use)
+                  "vanessamusi.com", "homebaker.ca", "biteunite.com", "matchamakingjapan.com", "lantmannenunibake.com", "amoretti.com", "rondo-online.com", "sosa.cat",
+                  "goodhartcoffeecatering.com", "wecatercoffee.com", "hovis.co.uk", "liquidline.co.uk"}
 # Source categories that are not cafes: the place data lists them, and their site mentions "matcha" because they sell it or it is a name (e.g. Swedish "matcha" = to match).
 NOT_CAFE_CATS = {"employment_agency", "pilates_studio", "equestrian_facility", "shopping", "warehouse_club_store", "grocery_store", "organic_grocery_store",
-                 "health_food_store", "coffee_and_tea_supplies", "tea_wholesaler", "massage_therapy"}
+                 "health_food_store", "coffee_and_tea_supplies", "tea_wholesaler", "massage_therapy",
+                 # businesses that are not places to drink or eat: suppliers, importers, studios, offices, classes
+                 "tattoo_and_piercing", "internet_marketing_service", "mobile_phone_accessory_store", "home_improvement_store", "vitamin_and_supplement_store", "warehouse",
+                 "importer", "b2b_food_products", "food_and_beverage_exporter", "food_and_beverage_consultant", "wholesale_grocer", "yoga_studio", "cooking_school"}
 # Names of things that are not cafes whatever the category says.
-NOT_CAFE_NAME = re.compile(r"rusta och matcha|match and move|guldjobbet|ecuries de mazan|\xe9curies de mazan|tanning salon|supermarket|food mart|ファミリーマート|セブンイレブン|ローソン|ミニストップ|\bcircle k\b|[żz]abka|a\.loacker spa|everton spa", re.I)
+NOT_CAFE_NAME = re.compile((r"rusta och matcha|match and move|guldjobbet|ecuries de mazan|\xe9curies de mazan|tanning salon|supermarket|food mart|ファミリーマート|セブンイレブン|ローソン|ミニストップ|\bcircle k\b|[żz]abka|a\.loacker spa|everton spa"
+                           # personal homes, baking/ingredient/bakery-supply makers, wholesale-only and head-office entries, cooking classes, commissaries, meal prep
+                           r"|home ?baker(?:y|s)?\b|unibake|\brondo\b|amoretti|sosa ingredients|\bbridor\b|pastry ingredient|production facility|bakery commissary|\(commissary|meal prep"
+                           r"|cooking (?:class|classes|school)|head ?office|franchising - headquarters|and catering kitchen|office coffee|coffee solutions|bar solutions|vending solutions"
+                           r"|groothandel|wholesale cafe suppliers|(?:cafe|coffee) distributors|brand roast supply|bubble tea supply|boba supply|restaurant supply|bakery supply|matchasupplier"
+                           r"|wholesale(?!.*(?:caf[eé]|coffee|retail))|no retail sales|online pre-?orders only|by appointment only"
+                           # catering-only businesses (a café that also caters stays)
+                           r"|\bhovis\b|british bakeries|zenergy matcha|yog&matcha|goodhart coffee catering|event espresso catering|creature coffee catering|mobile coffee caterer|(?:noveltea|b sweet|bee kind|instinct|manna made|mayfield ice cream) catering|^citizens \| catering|barcatering"), re.I)
 def not_a_cafe(name, cat, host):
     return (cat in NOT_CAFE_CATS or bool(NOT_CAFE_NAME.search(name or "")) or bool(host and any(host == x or host.endswith("." + x) for x in NOT_CAFE_HOSTS)))
 # how many distinct outlets use a website (the same café listed by two sources counts once): 25+ = a chain
