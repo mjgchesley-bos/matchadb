@@ -4,7 +4,8 @@ import Link from "@/i18n/Link";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "@/lib/supabase";
-import { useT } from "@/i18n/client";
+import { useT, useLang } from "@/i18n/client";
+import GoogleButton from "@/components/GoogleButton";
 import { rich } from "@/i18n/rich";
 
 // Who is signed in, plus the sign-in dialog any component can open with signIn("why").
@@ -107,6 +108,8 @@ function GoogleMark() {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const t = useT();
+  const lang = useLang();
+  const [gisFailed, setGisFailed] = useState(false);
   const [ready, setReady] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<{ uid: string; name: string | null; isPublic: boolean; avatar: string | null; avatarPath: string | null } | null>(null);
@@ -222,6 +225,22 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  // Google's own button hands back a signed token; Supabase turns it into a session. No redirect, so the
+  // person never sees the Supabase address.
+  const googleToken = async (idToken: string, nonce: string) => {
+    setBusy(true);
+    setError(null);
+    try {
+      sessionStorage.setItem(FLOW_KEY, "1");
+    } catch {}
+    const { error: err } = await supabase().auth.signInWithIdToken({ provider: "google", token: idToken, nonce });
+    if (err) {
+      endSignupFlow();
+      setError(t("c.auth.googleFail"));
+    }
+    setBusy(false);
+  };
+
   useEffect(() => {
     if (!dialog) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
@@ -274,16 +293,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                 {t("c.auth.embedded")}
               </p>
             )}
-            <button
-              type="button"
-              onClick={google}
-              disabled={busy}
-              autoFocus
-              className="mt-5 flex w-full items-center justify-center gap-3 rounded-full border border-line-strong bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-matcha-soft disabled:opacity-60"
-            >
-              <GoogleMark />
-              {t("c.auth.google")}
-            </button>
+            {!embedded && !gisFailed ? (
+              <GoogleButton locale={lang} onCredential={googleToken} onUnavailable={() => setGisFailed(true)} />
+            ) : (
+              <button
+                type="button"
+                onClick={google}
+                disabled={busy}
+                autoFocus
+                className="mt-5 flex w-full items-center justify-center gap-3 rounded-full border border-line-strong bg-paper px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-matcha-soft disabled:opacity-60"
+              >
+                <GoogleMark />
+                {t("c.auth.google")}
+              </button>
+            )}
             {error && <p className="mt-3 text-sm text-red-700">{error}</p>}
             <p className="mt-4 text-xs text-ink-faint">
               {rich(t("c.auth.privacy", { terms: "{terms}", privacy: "{privacy}" }), {
