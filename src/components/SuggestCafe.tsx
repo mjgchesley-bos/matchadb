@@ -3,25 +3,27 @@
 import { useEffect, useRef, useState } from "react";
 import { useLang, useT } from "@/i18n/client";
 import { submitCafeSuggestion } from "@/lib/cafe-suggest";
+import { useAuth } from "@/components/AuthProvider";
 
 const field = "border border-line-strong rounded-sm px-3 py-2.5 bg-paper text-sm text-ink focus:outline-none focus:border-matcha w-full";
 const label = "block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5";
 
-// "Suggest a café": a short form that stores the suggestion for review. Nothing is published from it
-// directly; each café is checked against its own menu before it goes on the map.
+// "Suggest a café": members only. A short form that stores the suggestion; the review checks that the place is real
+// and then puts it on the map. Visitors who are not signed in see a one-line invitation to create an account instead.
 export function SuggestCafe({ contactEmail }: { contactEmail: string }) {
   const t = useT();
   const lang = useLang();
+  const { user, signIn } = useAuth();
   const ref = useRef<HTMLDetailsElement | null>(null);
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   // The "tell us" link elsewhere on the page points at #suggest-cafe: open the form when it is used.
   useEffect(() => {
     const open = () => {
-      if (window.location.hash === "#suggest-cafe" && ref.current) {
-        ref.current.open = true;
-        ref.current.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
+      if (window.location.hash !== "#suggest-cafe") return;
+      const box = ref.current ?? document.getElementById("suggest-cafe");
+      if (ref.current) ref.current.open = true;
+      box?.scrollIntoView({ behavior: "smooth", block: "center" });
     };
     open();
     window.addEventListener("hashchange", open);
@@ -37,11 +39,20 @@ export function SuggestCafe({ contactEmail }: { contactEmail: string }) {
       name: String(f.get("name") ?? ""),
       address: String(f.get("address") ?? ""),
       link: String(f.get("link") ?? ""),
-      note: String(f.get("note") ?? ""),
-      email: String(f.get("email") ?? ""),
       locale: lang,
     });
     setState(ok ? "done" : "error");
+  }
+
+  // Not signed in: one line that opens the account dialog. The form itself is for members.
+  if (!user) {
+    return (
+      <div id="suggest-cafe" className="mt-6 max-w-2xl border border-line rounded-sm bg-paper-raised">
+        <button type="button" onClick={() => signIn(t("c.sg.signupWhy"))} className="w-full text-left px-5 py-3 text-sm font-medium text-matcha hover:text-forest">
+          {t("c.sg.signup")}
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -66,14 +77,6 @@ export function SuggestCafe({ contactEmail }: { contactEmail: string }) {
             <div>
               <label htmlFor="sg-link" className={label}>{t("c.sg.link")}</label>
               <input id="sg-link" name="link" type="text" inputMode="url" maxLength={300} className={field} />
-            </div>
-            <div>
-              <label htmlFor="sg-note" className={label}>{t("c.sg.note")}</label>
-              <input id="sg-note" name="note" maxLength={500} className={field} />
-            </div>
-            <div>
-              <label htmlFor="sg-email" className={label}>{t("c.sg.email")}</label>
-              <input id="sg-email" name="email" type="email" maxLength={200} autoComplete="email" className={field} />
             </div>
             {/* trap field for bots; hidden from people and from assistive tech */}
             <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", width: 1, height: 1, overflow: "hidden" }}>

@@ -1,7 +1,7 @@
 """Pull new "Suggest a café" submissions from Supabase for checking (read-only).
 
-Suggestions are only leads. Each one is looked up and added to the map only after its own site or menu shows matcha
-(see guides/verify_leads.py for the same check run on guide leads).
+Suggestions come only from signed-in members. The review (scripts/cafes/suggestions: review_prepare.py + review_decide.py, run by
+weekly_refresh.py) confirms the place is real and adds it; this script just lists what is waiting.
 Uses the secret key from the repo's .env.local on this machine; the key is never printed or sent anywhere but Supabase.
 usage: python -I pull_suggestions.py   ->  C:/temp/cafes/suggestions_new.json
 """

@@ -1,14 +1,14 @@
 """Step 1 of the automatic review of "Suggest a café" submissions (everything that needs no web search).
 
-For each new suggestion:
-  - sanity checks (spam, chains), geocode the address, look for the same place in our datasets within ~350 m,
+Suggestions come only from signed-in members, whose word that the café serves matcha is trusted. This step confirms the PLACE:
+  - sanity checks (spam, chains, already on the map), geocode the address, look for the same place in our datasets within ~350 m,
   - find the café's OWN website (the place record, or the submitter's link if it is not a social/review page),
-  - read that site like a visitor (headless browser, robots honoured) and look for matcha.
+  - read that site like a visitor (headless browser, robots honoured); if it shows matcha it is listed as a normal "on their site" café.
 Outcome per suggestion:
-  list_own_site   its own site shows matcha          -> listed straight away (normal "matcha on their site" listing)
-  needs_channels  no site / unreadable / no proof    -> Claude searches Reddit, Yelp, Instagram, guides for independent mentions,
-                                                       then review_decide.py applies the rules
-  reject          chain, spam, or address not found
+  list_own_site   its own site shows matcha                    -> listed as a normal "matcha on their site" café
+  list_reported   street-level address or a known place        -> listed as "Reported by locals" (review_decide.py)
+  needs_address   the address is too vague to plot (a city)    -> look the street address up on the web, then review_decide.py
+  reject          chain, spam, already listed, or address not found
 usage: python -I review_prepare.py   ->  C:/temp/cafes/suggest/dossier.json
 """
 import asyncio, collections, datetime, hashlib, json, os, re, sys, time, unicodedata, urllib.parse, urllib.request
@@ -163,11 +163,14 @@ async def main():
                 elif pr["state"] == "ok":
                     d["reason"] = "own site was read and shows no matcha"
             loc = f"{geo['city']} {geo['state']}".strip()
-            d["queries"] = [f'site:reddit.com "{d["name"]}" {loc} matcha', f'"{d["name"]}" {loc} yelp matcha', f'site:instagram.com "{d["name"]}" {loc}', f'"{d["name"]}" {loc} matcha']
-            d["outcome"] = "needs_channels"
             d["own_site_no_matcha"] = d["reason"] == "own site was read and shows no matcha"
+            if geo["address"] or near:
+                d["outcome"] = "list_reported"
+            else:
+                d["outcome"] = "needs_address"
+                d["queries"] = [f'"{d["name"]}" {loc} address']
         await b.close()
-    task.update(done=len(rows), detail=f"{sum(1 for x in dossier if x['outcome'] == 'needs_channels')} need web-search checks", force=True)
+    task.update(done=len(rows), detail=f"{sum(1 for x in dossier if x['outcome'] == 'needs_address')} need an address lookup", force=True)
     json.dump(dossier, open(f"{OUT_DIR}/dossier.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     for d in dossier:
         print(f"- {d['name']} | {d['address'][:40]} | {d['outcome']} | {d['reason']}")

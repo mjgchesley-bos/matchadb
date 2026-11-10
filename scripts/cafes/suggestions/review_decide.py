@@ -1,21 +1,16 @@
 """Step 2 of the automatic suggestion review: apply the rules, add to the venue list, record the outcome.
 
-Input: C:/temp/cafes/suggest/dossier.json (from review_prepare.py) and C:/temp/cafes/suggest/findings.json, written by the
-web-search step (Claude searches Reddit / Yelp / Instagram / local guides and records only what the results say):
-  { "<suggestion id>": { "closed": false, "site": null,
-        "sources": [ {"url": "...", "channel": "reddit|yelp|instagram|guide|news|other", "names_place": true, "says_matcha": true, "quote": "<=15 words, optional"} ] } }
-
-THE RULES (code-enforced; nothing here is a judgement call):
+Suggestions come only from signed-in members, so the member's word that a café serves matcha is trusted. The review
+only has to confirm that the PLACE is real and where it is. THE RULES (code-enforced):
   1. Its own site shows matcha                       -> listed normally ("Matcha on their site").
-  2. Otherwise it is listed as "Reported by locals" only if ALL of:
-       - the address geocodes, it is not a chain, and it is not already listed;
-       - it is not reported closed;
-       - its own site (if it has one) was not read and found free of matcha;
-       - it is real: matched to a place in our datasets within 350 m, OR >= 2 sources name it;
-       - >= 2 sources on DIFFERENT websites each name the place AND say it serves matcha,
-         none of them its own site or the submitter's own link site.
-  3. Anything else is rejected with a reason (the submitter is never told, and email is never published).
-Only a link and the host name of each source are published, never the source's text.
+  2. Otherwise it is listed as "Reported by locals" when ALL of:
+       - it can be placed at a street address (the address geocodes to a street, or it matches a known place within 350 m);
+       - it is not a chain, not already listed, not spam, and not reported closed.
+     No second source is needed. (Its own site not mentioning matcha does not block it: menus on websites go stale.)
+  3. Anything else is rejected with a reason. The submitter's email is never published.
+Optional: C:/temp/cafes/suggest/findings.json can hold, per suggestion id, { "address": "<street address found by a web search>",
+  "closed": false, "sources": [ {"url", "channel", "names_place", "says_matcha"} ] }. It is used only to find a street address for a
+  vague submission, to flag a closed place, and to attach extra links. Only a link and its host are ever published, never source text.
 usage: python -I review_decide.py [--dry]   ->  updates leads_venues.json (+ copies), cafe_suggestions.status, suggest/review_log.jsonl
 """
 import collections, datetime, hashlib, json, math, os, re, shutil, sys, unicodedata, urllib.parse, urllib.request
@@ -39,6 +34,9 @@ def secret():
     for l in open(ENV, encoding="utf-8"):
         if l.startswith("SUPABASE_SECRET_KEY="):
             return l.split("=", 1)[1].strip().strip("\"'")
+
+
+WAIT = "waiting for an address lookup"
 
 
 def set_status(sid, status, note):
@@ -92,7 +90,7 @@ def valid_sources(d, f):
     if d.get("link") and not re.search(r"yelp|instagram|facebook|reddit|tiktok|google|linktr", d["link"], re.I):
         own.add(host(d["link"]))
     seen, out = set(), []
-    for s in f.get("sources", []):
+    for s in (f or {}).get("sources", []):
         h = host(s.get("url", ""))
         if not h or h in own or h in seen or not s.get("names_place") or not s.get("says_matcha"):
             continue
@@ -109,29 +107,20 @@ def decide(d, f):
         return "rejected", d["reason"], None
     g = precise_location(d, f)
     if g is None:
-        if d["outcome"] == "needs_channels" and f is None:
-            return "checking", "waiting for the web-search check", None
+        if f is None:
+            return "checking", WAIT, None
         return "rejected", "no street address: could not place it on the map precisely", None
     base = {"name": d["name"], "cat": "coffee_shop", "cc": g["cc"] or "US", "address": g["address"] or d["address"], "city": g["city"], "state": g["state"], "zip": g["zip"],
             "lat": g["lat"], "lng": g["lng"], "phone": None, "focus": False, "menu": None, "pdf": None, "checked": TODAY, "shared": 0}
     base["id"] = hashlib.md5(f"{d['name']}|{g['lat']}|{g['lng']}".encode()).hexdigest()[:10]
     if d["outcome"] == "list_own_site":
         return "added", "listed: its own site shows matcha", dict(base, url=d["site"], ev=d["ev"], platform=d.get("platform"), conf=0.85, via="web")
-    # needs_channels
-    if f is None:
-        return "checking", "waiting for the web-search check", None
-    if f.get("closed"):
+    if f and f.get("closed"):
         return "rejected", "reported permanently closed", None
-    if d.get("own_site_no_matcha"):
-        return "checking", "its own site was read and shows no matcha: needs a human look", None
-    src = valid_sources(d, f)
-    real = bool(d.get("place_matches")) or len(src) >= 2
-    if not real:
-        return "rejected", "could not confirm the place exists", None
-    if len(src) < 2:
-        return "rejected", f"only {len(src)} independent source(s) mention matcha there (need 2)", None
-    site = d.get("site") or f.get("site")
-    return "added", "listed as reported by locals: " + ", ".join(host(s["u"]) for s in src), dict(base, url=site, ev=src, platform=None, conf=0.6, via="reported")
+    src = valid_sources(d, f)                       # optional extra links found by a web search; not required
+    why = "matched to a known place" if d.get("place_matches") else "address resolves to a street"
+    site = d.get("site") or (f or {}).get("site")
+    return "added", f"listed on the member's word ({why})", dict(base, url=site, ev=src, platform=None, conf=0.6, via="reported")
 
 
 def main():
@@ -148,7 +137,7 @@ def main():
                 added.append(v)
         log.append({"t": TODAY, "id": d["id"], "name": d["name"], "status": status, "note": note})
         print(f"{status:9} {d['name']} : {note}")
-        if note != "waiting for the web-search check":
+        if note != WAIT:
             set_status(d["id"], status, note)
     if added and not DRY:
         shutil.copy(VENUES[0], VENUES[0] + ".bak3")

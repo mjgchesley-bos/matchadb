@@ -54,3 +54,4 @@ data/liveness-check.json
 # harvest cache
 .cache/
 
+__pycache__/

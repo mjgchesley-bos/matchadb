@@ -242,6 +242,16 @@ def publish(tmp_d, tmp_p, new, old):
     run(["git", "commit", "-q", "-m", msg], cwd=REPO)
     run(["git", "push", "-q", "origin", "main"], cwd=REPO)
 
+def review_suggestions():
+    """Members' "Suggest a café" submissions: confirm the place is real and add it to the venue list (scripts/cafes/suggestions).
+    Never blocks the weekly run. Suggestions too vague to place stay 'checking' for a human look."""
+    S = f"{REPO}/scripts/cafes/suggestions"
+    try:
+        run([sys.executable, "-I", f"{S}/review_prepare.py"], timeout=3600, check=False)
+        run([sys.executable, "-I", f"{S}/review_decide.py"], timeout=900, check=False)
+    except Exception as e:
+        log("suggestion review skipped:", repr(e))
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--no-publish", action="store_true"); ap.add_argument("--no-render", action="store_true"); ap.add_argument("--no-crawl", action="store_true"); ap.add_argument("--max-hosts", type=int, default=0); ap.add_argument("--allow-drop", default=None, help="reason: let a reviewed, deliberate drop of more than 3% through (e.g. a new chain rule)")
@@ -249,6 +259,7 @@ def main():
     report = {"date": str(TODAY), "ok": False}
     try:
         report["sources_changed"] = refresh_sources()
+        review_suggestions()
         if not a.no_crawl:
             items, state = pick_hosts(a.max_hosts)
             report["crawled_hosts"] = len(items)
