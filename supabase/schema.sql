@@ -170,7 +170,7 @@ create policy "favorite brands: remove own" on public.favorite_brands for delete
 -- ---------------------------------------------------------------- favorite cafés (ids from data/cafes)
 create table if not exists public.favorite_cafes (
   user_id uuid not null references auth.users (id) on delete cascade,
-  cafe_id text not null check (cafe_id ~ '^[0-9a-f]{10}$'),
+  cafe_id text not null check (cafe_id ~ '^([0-9a-f]{10}|fsq[0-9a-f]{7})$'),
   created_at timestamptz not null default now(),
   primary key (user_id, cafe_id)
 );
