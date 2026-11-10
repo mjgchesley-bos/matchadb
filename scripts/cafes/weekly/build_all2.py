@@ -143,6 +143,8 @@ for pq in PLACES:
         if r[0] in seen_ids: continue
         seen_ids.add(r[0]); rows.append(r)
 brand_count = Counter(r[13] for r in rows if r[13])
+# Websites of businesses that are not cafes (corner stores etc.) or small chains, left off the map by hand. Add a host here to drop all its places.
+NOT_CAFE_HOSTS = {"royalbluegrocery.com"}
 # how many distinct outlets use a website (the same café listed by two sources counts once): 25+ = a chain
 host_rows = Counter(h for h, _, _ in {(host_of(r[10]), round(r[8], 3), round(r[9], 3)) for r in rows if r[10] and r[8] is not None and r[9] is not None})
 
@@ -182,6 +184,7 @@ for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, c
     h = host_of(website) if website else None
     if h and host_rows[h] >= 25: continue                           # one site shared by 25+ places = a chain
     if h and (h in CHAIN_HOSTS or _chain_key(name, city) in NAME_CHAINS): stats['name_chain'] += 1; continue   # same name at 25+ outlets with few websites = a chain
+    if h in NOT_CAFE_HOSTS: stats['not_a_cafe'] += 1; continue      # shops that are not cafes / small chains the owner asked to leave out
     r = res.get(h) if h else None
     ev = evidence(r) if r and r.get("status") == "ok" and r.get("matcha") else []
     via = None
