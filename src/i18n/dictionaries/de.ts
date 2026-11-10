@@ -1268,5 +1268,17 @@ export const de: Partial<Record<Key, string>> = {
   "mp.supplies": "Beliefert {brand}",
   "mp.verifiedSource": "Geprüfte Quelle",
   "footer.aria": "Fußbereich",
+  "c.sg.btn": "Café vorschlagen",
+  "c.sg.intro": "Sag uns, welches Café Matcha serviert und noch nicht auf der Karte ist. Wir nehmen es auf, sobald wir den Matcha auf der eigenen Speisekarte oder Website bestätigt haben.",
+  "c.sg.name": "Name des Cafés",
+  "c.sg.addr": "Straße und Stadt",
+  "c.sg.link": "Link zu Website, Speisekarte oder Instagram (optional)",
+  "c.sg.note": "Welche Matcha-Getränke gibt es? (optional)",
+  "c.sg.email": "Deine E-Mail, falls du erfahren möchtest, wann es aufgenommen wird (optional)",
+  "c.sg.send": "Vorschlag senden",
+  "c.sg.sending": "Wird gesendet…",
+  "c.sg.thanks": "Danke. Wir prüfen jeden Vorschlag, bevor er auf die Karte kommt.",
+  "c.sg.err": "Das hat nicht geklappt. Bitte versuche es erneut oder schreib uns an",
+  "c.sg.privacy": "Wir verwenden deine E-Mail nur, um auf diesen Vorschlag zu antworten.",
   // @@END
 };

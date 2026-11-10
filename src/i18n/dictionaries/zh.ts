@@ -1286,5 +1286,17 @@ export const zh: Partial<Record<Key, string>> = {
   "mp.supplies": "供货给{brand}",
   "mp.verifiedSource": "已核实的来源",
   "footer.aria": "页脚",
+  "c.sg.btn": "推荐咖啡馆",
+  "c.sg.intro": "告诉我们哪家供应抹茶的咖啡馆还没有上地图。我们会在它自己的菜单或网站上确认有抹茶后再收录。",
+  "c.sg.name": "咖啡馆名称",
+  "c.sg.addr": "街道地址和城市",
+  "c.sg.link": "网站、菜单或 Instagram 链接（选填）",
+  "c.sg.note": "他们有哪些抹茶饮品？（选填）",
+  "c.sg.email": "如果希望收录后收到通知，请填写邮箱（选填）",
+  "c.sg.send": "提交推荐",
+  "c.sg.sending": "提交中…",
+  "c.sg.thanks": "谢谢。每条推荐在上地图前都会经过核实。",
+  "c.sg.err": "提交失败。请重试，或发邮件给我们：",
+  "c.sg.privacy": "我们只会用你的邮箱回复这条推荐。",
   // @@END
 };

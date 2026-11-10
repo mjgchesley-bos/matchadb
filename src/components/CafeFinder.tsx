@@ -10,6 +10,7 @@ import { KM_PER_MILE, geocode, haversineMiles, type Origin } from "@/lib/geo";
 import { useLang, useT } from "@/i18n/client";
 import { INTL_LANG, localePath, type Locale } from "@/i18n/config";
 import { rich } from "@/i18n/rich";
+import { SuggestCafe } from "@/components/SuggestCafe";
 
 // Find cafés near you whose own website lists matcha, in the US, Canada, Europe, Japan, South Korea and Australia.
 // Search by ZIP, postcode or city, or use your device's location. Your position is only used in your
@@ -468,13 +469,8 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
         </section>
       </div>
 
-      <p className="mt-6 text-sm text-ink-muted">
-        {t("c.cf.suggest")}{" "}
-        <a href={`mailto:${contactEmail}?subject=${encodeURIComponent("MatchaDB café suggestion")}&body=${encodeURIComponent("Café name:\nAddress:\nWebsite or menu link showing matcha:\n")}`} className="text-matcha hover:text-forest underline">
-          {t("c.cf.email")}
-        </a>
-        .
-      </p>
+      <p className="mt-6 text-sm text-ink-muted">{t("c.cf.suggest")}</p>
+      <SuggestCafe contactEmail={contactEmail} />
     </div>
   );
 }

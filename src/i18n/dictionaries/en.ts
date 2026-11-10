@@ -1286,6 +1286,18 @@ export const en = {
   "mp.supplies": "Supplies {brand}",
   "mp.verifiedSource": "Verified source",
   "footer.aria": "Footer",
+  "c.sg.btn": "Suggest a café",
+  "c.sg.intro": "Tell us about a café that serves matcha and isn't on the map. We add it once we've confirmed the matcha on its own menu or site.",
+  "c.sg.name": "Café name",
+  "c.sg.addr": "Street address and city",
+  "c.sg.link": "Website, menu or Instagram link (optional)",
+  "c.sg.note": "Which matcha drinks do they serve? (optional)",
+  "c.sg.email": "Your email, if you'd like to hear when it's added (optional)",
+  "c.sg.send": "Send suggestion",
+  "c.sg.sending": "Sending…",
+  "c.sg.thanks": "Thank you. We check every suggestion before it goes on the map.",
+  "c.sg.err": "That didn't go through. Please try again, or email us at",
+  "c.sg.privacy": "We use your email only to reply about this suggestion.",
   // @@END
 } as const;
 

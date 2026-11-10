@@ -1270,5 +1270,17 @@ export const fr: Partial<Record<Key, string>> = {
   "mp.supplies": "Fournit {brand}",
   "mp.verifiedSource": "Source vérifiée",
   "footer.aria": "Pied de page",
+  "c.sg.btn": "Suggérer un café",
+  "c.sg.intro": "Parlez-nous d'un café qui sert du matcha et ne figure pas sur la carte. Nous l'ajoutons une fois le matcha confirmé sur son propre menu ou site.",
+  "c.sg.name": "Nom du café",
+  "c.sg.addr": "Adresse et ville",
+  "c.sg.link": "Lien vers son site, son menu ou Instagram (facultatif)",
+  "c.sg.note": "Quelles boissons au matcha propose-t-il ? (facultatif)",
+  "c.sg.email": "Votre e-mail, si vous voulez être prévenu de l'ajout (facultatif)",
+  "c.sg.send": "Envoyer la suggestion",
+  "c.sg.sending": "Envoi…",
+  "c.sg.thanks": "Merci. Nous vérifions chaque suggestion avant de la publier sur la carte.",
+  "c.sg.err": "L'envoi a échoué. Réessayez ou écrivez-nous à",
+  "c.sg.privacy": "Nous n'utilisons votre e-mail que pour répondre à cette suggestion.",
   // @@END
 };

@@ -1286,5 +1286,17 @@ export const ko: Partial<Record<Key, string>> = {
   "mp.supplies": "{brand}에 공급",
   "mp.verifiedSource": "확인된 출처",
   "footer.aria": "푸터",
+  "c.sg.btn": "카페 제안하기",
+  "c.sg.intro": "말차를 파는데 지도에 없는 카페를 알려주세요. 카페의 자체 메뉴나 사이트에서 말차를 확인한 뒤 추가합니다.",
+  "c.sg.name": "카페 이름",
+  "c.sg.addr": "도로명 주소와 도시",
+  "c.sg.link": "웹사이트, 메뉴 또는 인스타그램 링크 (선택)",
+  "c.sg.note": "어떤 말차 메뉴가 있나요? (선택)",
+  "c.sg.email": "추가되면 알려드릴 이메일 (선택)",
+  "c.sg.send": "제안 보내기",
+  "c.sg.sending": "보내는 중…",
+  "c.sg.thanks": "감사합니다. 지도에 올리기 전에 모든 제안을 확인합니다.",
+  "c.sg.err": "전송되지 않았습니다. 다시 시도하시거나 이메일로 보내 주세요:",
+  "c.sg.privacy": "이메일은 이 제안에 대한 답변에만 사용합니다.",
   // @@END
 };

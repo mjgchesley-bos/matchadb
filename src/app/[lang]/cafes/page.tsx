@@ -60,7 +60,7 @@ export default async function CafesPage({ params, searchParams }: { params: Prom
         <p className="mt-3 text-sm text-ink-muted leading-relaxed">
           {rich(t("cafes.how.p2", { tell: "{tell}", search: "{search}" }), {
             tell: (
-              <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("MatchaDB café suggestion")}`} className="text-matcha hover:text-forest underline">
+              <a href="#suggest-cafe" className="text-matcha hover:text-forest underline">
                 {t("cafes.how.tell")}
               </a>
             ),
