@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { Avatar } from "@/components/Avatar";
+import { FollowBar } from "@/components/Friends";
 import { ProfileActions } from "@/components/ProfileActions";
 import { BrandLogo } from "@/components/product-cards";
 import { Stars } from "@/components/Stars";
@@ -141,6 +142,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
               ))}
             </ul>
           )}
+          <FollowBar name={p.name} />
           <p className="mt-3">
             <ProfileActions name={p.name} />
           </p>

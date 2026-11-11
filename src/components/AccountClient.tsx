@@ -3,6 +3,7 @@
 import Link from "@/i18n/Link";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
+import { FriendsSection } from "@/components/Friends";
 import { MyLists } from "@/components/MyLists";
 import { PublicProfileSettings } from "@/components/PublicProfileSettings";
 import { BADGES } from "@/lib/badges";
@@ -223,6 +224,8 @@ export function AccountClient() {
           </ul>
         </section>
       )}
+
+      <FriendsSection />
 
       <PublicProfileSettings />
 

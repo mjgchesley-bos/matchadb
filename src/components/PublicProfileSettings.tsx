@@ -10,7 +10,7 @@ import { useT, useTV } from "@/i18n/client";
 
 // My matcha: choose whether the profile is public, plus avatar (an icon or your own photo), bio and
 // how you drink it. Nothing is public until "public profile" is switched on.
-type Settings = { is_public: boolean; bio: string; avatar: string | null; avatar_path: string | null; how_i_drink: string | null };
+type Settings = { is_public: boolean; find_by_contact: boolean; bio: string; avatar: string | null; avatar_path: string | null; how_i_drink: string | null };
 
 const BUCKET = "avatars";
 
@@ -48,7 +48,7 @@ export function PublicProfileSettings() {
     let live = true;
     supabase()
       .from("profiles")
-      .select("is_public, bio, avatar, avatar_path, how_i_drink")
+      .select("is_public, find_by_contact, bio, avatar, avatar_path, how_i_drink")
       .eq("id", uid)
       .maybeSingle()
       .then(({ data }) => live && data && setLoaded({ uid, s: data as Settings }));
@@ -102,7 +102,7 @@ export function PublicProfileSettings() {
     setMsg(null);
     const { error } = await supabase()
       .from("profiles")
-      .update({ is_public: s.is_public, bio: s.bio.trim(), avatar: s.avatar, avatar_path: s.avatar_path, how_i_drink: s.how_i_drink })
+      .update({ is_public: s.is_public, find_by_contact: s.find_by_contact, bio: s.bio.trim(), avatar: s.avatar, avatar_path: s.avatar_path, how_i_drink: s.how_i_drink })
       .eq("id", user.id);
     setSaving(false);
     if (error) {
@@ -136,6 +136,10 @@ export function PublicProfileSettings() {
       <label className="mt-4 flex items-center gap-2.5 text-sm text-ink">
         <input type="checkbox" checked={s.is_public} onChange={(e) => set({ is_public: e.target.checked })} className="accent-matcha" />
         {t("c.pp.make")}
+      </label>
+      <label className="mt-2 flex items-start gap-2.5 text-sm text-ink">
+        <input type="checkbox" checked={s.find_by_contact} onChange={(e) => set({ find_by_contact: e.target.checked })} className="mt-0.5 accent-matcha" />
+        {t("c.pp.find")}
       </label>
       {s.is_public && base?.is_public && displayName && (
         <p className="mt-2 text-sm">
