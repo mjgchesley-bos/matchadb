@@ -51,7 +51,7 @@ function OutboundClickTracker() {
     const onClick = (e: MouseEvent) => {
       if (e.button > 1 || typeof window.gtag !== "function") return;
       const a = (e.target as Element | null)?.closest?.("a[href]") as HTMLAnchorElement | null;
-      if (!a) return;
+      if (!a || a.hasAttribute("data-notrack")) return;
       let url: URL;
       try {
         url = new URL(a.href, window.location.href);

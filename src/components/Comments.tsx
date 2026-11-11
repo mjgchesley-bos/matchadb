@@ -44,15 +44,23 @@ const REPORT_REASONS = [
   { value: "Other", key: "c.cm.reason.other" },
 ] as const;
 
+// Photos show at a readable size with their own proportions (not a cropped thumbnail); a click opens the full-size file.
+// data-notrack: opening a member's photo is not an outbound click for the analytics.
 function Photos({ paths, who }: { paths: string[]; who: string }) {
   const t = useT();
   if (!paths.length) return null;
+  const single = paths.length === 1;
   return (
-    <div className="mt-2 flex flex-wrap gap-2">
+    <div className="mt-3 flex flex-wrap items-start gap-3">
       {paths.map((p) => (
-        <a key={p} href={commentPhotoUrl(p)} target="_blank" rel="noopener noreferrer" className="block">
+        <a key={p} href={commentPhotoUrl(p)} target="_blank" rel="noopener noreferrer" data-notrack className="block max-w-full">
           {/* eslint-disable-next-line @next/next/no-img-element -- user photo from storage, already shrunk */}
-          <img src={commentPhotoUrl(p)} alt={t("c.cm.photoBy", { who })} loading="lazy" className="h-28 w-28 rounded-sm border border-line object-cover hover:opacity-90" />
+          <img
+            src={commentPhotoUrl(p)}
+            alt={t("c.cm.photoBy", { who })}
+            loading="lazy"
+            className={`${single ? "max-h-[28rem]" : "h-52 sm:h-64"} w-auto max-w-full rounded-sm border border-line hover:opacity-90`}
+          />
         </a>
       ))}
     </div>
