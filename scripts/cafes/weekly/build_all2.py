@@ -166,7 +166,7 @@ for pq in PLACES:
 brand_count = Counter(r[13] for r in rows if r[13])
 # ---- places that are not cafes, left off the map ----
 # Websites of businesses that are not cafes (convenience stores, groceries) or small chains the owner asked to leave out. A host here drops all its places (and its subdomains).
-NOT_CAFE_HOSTS = {"royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com",
+NOT_CAFE_HOSTS = {"cuddlytimes.com", "coffeestrangers.com", "charlesandroncafe.com", "royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com",
                   # home bakers, baking suppliers, ingredient makers, cooking classes and catering-only businesses (owner: no personal homes, no culinary use)
                   "vanessamusi.com", "homebaker.ca", "biteunite.com", "matchamakingjapan.com", "lantmannenunibake.com", "amoretti.com", "rondo-online.com", "sosa.cat",
                   "goodhartcoffeecatering.com", "wecatercoffee.com", "hovis.co.uk", "liquidline.co.uk"}
@@ -179,7 +179,7 @@ NOT_CAFE_CATS = {"employment_agency", "pilates_studio", "equestrian_facility", "
 # Names of things that are not cafes whatever the category says.
 NOT_CAFE_NAME = re.compile((r"rusta och matcha|match and move|guldjobbet|ecuries de mazan|\xe9curies de mazan|tanning salon|supermarket|food mart|ファミリーマート|セブンイレブン|ローソン|ミニストップ|\bcircle k\b|[żz]abka|a\.loacker spa|everton spa"
                            # personal homes, baking/ingredient/bakery-supply makers, wholesale-only and head-office entries, cooking classes, commissaries, meal prep
-                           r"|home ?baker(?:y|s)?\b|unibake|\brondo\b|amoretti|sosa ingredients|\bbridor\b|pastry ingredient|production facility|bakery commissary|\(commissary|meal prep"
+                           r"|pickup point|home ?baker(?:y|s)?\b|unibake|\brondo\b|amoretti|sosa ingredients|\bbridor\b|pastry ingredient|production facility|bakery commissary|\(commissary|meal prep"
                            r"|cooking (?:class|classes|school)|head ?office|franchising - headquarters|and catering kitchen|office coffee|coffee solutions|bar solutions|vending solutions"
                            r"|groothandel|wholesale cafe suppliers|(?:cafe|coffee) distributors|brand roast supply|bubble tea supply|boba supply|restaurant supply|bakery supply|matchasupplier"
                            r"|wholesale(?!.*(?:caf[eé]|coffee|retail))|no retail sales|online pre-?orders only|by appointment only"
@@ -211,7 +211,9 @@ CHAIN_HOSTS = {host_of(r[10]) for r in rows if r[10] and r[8] is not None and _c
 print("name-based chains:", len(NAME_CHAINS), sorted(NAME_CHAINS)[:60])
 
 AGG_HOST = re.compile(r"(yelp|facebook|instagram|tripadvisor|doordash|ubereats|grubhub|google|toasttab|clover|square\.site|linktr\.ee|tiktok|twitter|x\.com|youtube|opentable|postmates|seamless|menupix|allmenus|foursquare|zomato|tabelog|hotpepper|gnavi|retty|naver|kakao|placeweb|placestars)", re.I)
+SITE_OVERRIDES = {"fsq6a36b1e826853143d41f3bfe": "https://www.matchariacafe.com/"}      # Matcharia (Malta): Foursquare has no website; menu verified by hand
 for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, conf, wd, nm) in rows:
+    website = SITE_OVERRIDES.get(id_, website)
     if cat == "internet_cafe": continue
     if lat is None or lng is None: continue
     if cc == "US" and not state: continue
