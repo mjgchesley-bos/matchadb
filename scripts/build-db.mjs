@@ -539,7 +539,12 @@ async function main() {
           }))
       : extractPriceVariants(disclosed);
 
+    // The same size at the same price can arrive twice (two source fields or passes); store it once.
+    const seenPrices = new Set();
     for (const variant of priceVariants) {
+      const dupKey = `${variant.grams}|${variant.priceCurrency}|${variant.priceNative}`;
+      if (seenPrices.has(dupKey)) continue;
+      seenPrices.add(dupKey);
       const converted = convertToUsd(variant.priceNative, variant.priceCurrency);
       db.run(
         `INSERT INTO product_prices

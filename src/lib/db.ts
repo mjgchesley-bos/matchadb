@@ -718,7 +718,9 @@ export async function getProductById(id: number) {
 
   const priceVariants = rowsToObjects<ProductPriceRow>(
     db.exec("SELECT * FROM product_prices WHERE product_id = ? ORDER BY size_grams", [id])
-  ).map((r) => ({ ...r, allAmounts: JSON.parse(r.all_amounts_json) as number[] }));
+  )
+    .filter((r, i, all) => all.findIndex((x) => x.size_grams === r.size_grams && x.price_native === r.price_native && x.price_currency === r.price_currency) === i)
+    .map((r) => ({ ...r, allAmounts: JSON.parse(r.all_amounts_json) as number[] }));
 
   return {
     ...product,
