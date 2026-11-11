@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
@@ -106,66 +107,59 @@ function humanizeKey(key: string): string {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-// tasting_notes was consolidated from ~70 differently-named source fields
-// (see the products table's own tasting_notes column comment), and roughly
-// half the rows still carry that original field name as a literal leading
-// "Label: " prefix in the text -- e.g. "Tasting Notes: Bright green,
-// fresh..." Harmless in the old small-text list, but glaring now that this
-// renders as a large quote. This is the exact, closed set of leading labels
-// found across every line of every one of the 646 tasting_notes rows, after
-// splitting on " | " the same way the renderer below does -- checking only
-// the string's first segment (an earlier pass here) missed labels that
-// leak in on a later line, e.g. "Tasting Notes Texture:" as the second of
-// three " | "-joined lines. Stripping only an exact match here can't eat
-// real content that happens to contain a colon.
-const TASTING_NOTES_NOISE_LABELS = new Set(
-  [
-    "Additional Flavor Description", "Additional Flavor Notes From Reviews", "Additional Flavor Range Claim",
-    "Appearance Aroma", "Appearance Texture", "Aroma", "Aroma Level Rating", "Aroma Per Reviewer",
-    "Aroma Taste", "Body Umami", "Customer Review Tasting Notes", "Flavor", "Flavor Category",
-    "Flavor Claim", "Flavor Comparison", "Flavor Description", "Flavor Description On Page",
-    "Flavor Descriptors", "Flavor Lineup Referenced On Page", "Flavor Notes", "Flavor Profile",
-    "Flavor Profile Astringency", "Flavor Profile Chart Axes", "Flavor Profile Gauges Astringency",
-    "Flavor Profile Gauges Sweetness", "Flavor Profile Gauges Umami", "Flavor Profile General",
-    "Flavor Profile Ratings Body", "Flavor Profile Ratings Grassiness", "Flavor Profile Ratings Sweetness",
-    "Flavor Profile Ratings Umami", "Flavor Profile Sweetness", "Flavor Profile Tagline",
-    "Flavor Profile Tags", "Flavor Profile Umami", "Flavor Summary", "Flavors Seen",
-    "Flavour Descriptor On Page", "Live Page Description", "Mouthfeel", "Official Site Taste Index",
-    "Site Search Evidence Of Other Flavors", "Sweetness Level", "Taste", "Taste Notes",
-    "Taste Per Reviewer", "Tasting And Benefit Description", "Tasting Description", "Tasting Emphasis",
-    "Tasting Method Note", "Tasting Notes", "Tasting Notes Additional", "Tasting Notes Appearance",
-    "Tasting Notes Aroma", "Tasting Notes Aromas", "Tasting Notes Body", "Tasting Notes Character",
-    "Tasting Notes Chocolate", "Tasting Notes Color", "Tasting Notes Comparison",
-    "Tasting Notes Description", "Tasting Notes Descriptive", "Tasting Notes Descriptor",
-    "Tasting Notes Descriptors", "Tasting Notes Detail", "Tasting Notes Disclosed",
-    "Tasting Notes Dry Leaves", "Tasting Notes Flavor", "Tasting Notes Flavor Description",
-    "Tasting Notes Flavor Details", "Tasting Notes From Review Summary", "Tasting Notes General",
-    "Tasting Notes General Web", "Tasting Notes In The Cup", "Tasting Notes Koicha",
-    "Tasting Notes Latte", "Tasting Notes Liquor", "Tasting Notes Liquor Appearance",
-    "Tasting Notes Liquor Color", "Tasting Notes Mango", "Tasting Notes Notes",
-    "Tasting Notes Official Description", "Tasting Notes Official Page", "Tasting Notes Official Site",
-    "Tasting Notes Overall", "Tasting Notes Per Reviewer", "Tasting Notes Per Secondary Review",
-    "Tasting Notes Primary Flavors", "Tasting Notes Producer Notes", "Tasting Notes Profile",
-    "Tasting Notes Retailer Description", "Tasting Notes Sazen", "Tasting Notes Strength",
-    "Tasting Notes Summary", "Tasting Notes Taste", "Tasting Notes Texture",
-    "Tasting Notes Ujichamatcha", "Tasting Notes Usucha", "Tasting Profile", "Tasting Profile Aroma",
-    "Tasting Profile Body", "Tasting Profile Finish", "Tasting Profile Flavor",
-    "Tasting Profile Length", "Tasting Profile Mouthfeel", "Tasting Profile Taste",
-    "Tasting Profile Texture", "Tasting Scores Astringency", "Tasting Scores Color",
-    "Tasting Scores Detail Something Special", "Tasting Scores Detail Sweetness",
-    "Tasting Scores Detail Test Parameters", "Tasting Scores Detail Umami", "Tasting Scores Texture",
-    "Tasting Scores Umami", "Tasting Scores Umami Strength", "Texture", "Texture Appearance",
-    "Texture Color", "Texture Quality", "Third Party Tasting Notes", "Umami Claim",
-    "Yunomi Tasting Score",
-  ].map((s) => s.toLowerCase())
-);
+// tasting_notes was consolidated from ~70 differently-named source fields: each " | "-separated line is
+// usually "Some Label: text" ("Tasting Notes Flavor: ...", "Aroma: ...", "Texture: ...", "Flavor Profile Tags:
+// Earthy, Umami") and the label spelling varies. This turns the lines into two things the page can show at a
+// glance: short descriptor words as chips, and longer sentences under a canonical label (Flavor, Aroma,
+// Texture...). Junk lines ("... Disclosed: true", "conflicting descriptions found") are dropped.
+const TASTE_ORDER = ["flavor", "aroma", "texture", "finish", "sweetness", "bitterness", "umami", "appearance", "notes"] as const;
+type TasteKey = (typeof TASTE_ORDER)[number];
+const TASTE_LABELS: [RegExp, TasteKey][] = [
+  [/aroma|fragrance|scent|smell/, "aroma"],
+  [/texture|mouthfeel|body|froth|foam/, "texture"],
+  [/finish|aftertaste|length/, "finish"],
+  [/sweet/, "sweetness"],
+  [/bitter|astring/, "bitterness"],
+  [/umami/, "umami"],
+  [/colou?r|appearance|liquor/, "appearance"],
+  [/flavou?r|taste|tasting|profile|description|character/, "flavor"],
+];
 
-function stripTastingNotesLabel(line: string): string {
-  const match = line.match(/^([^:]{2,50}):\s*/);
-  if (match && TASTING_NOTES_NOISE_LABELS.has(match[1].trim().toLowerCase())) {
-    return line.slice(match[0].length);
+function parseTasting(raw: string): { chips: string[]; rows: { key: TasteKey; items: string[] }[] } {
+  const chips: string[] = [];
+  const seen = new Set<string>();
+  const rows = new Map<TasteKey, string[]>();
+  const cap = (x: string) => x.charAt(0).toUpperCase() + x.slice(1);
+  const addChip = (c: string) => {
+    const k = c.toLowerCase();
+    if (!seen.has(k) && chips.length < 14) {
+      seen.add(k);
+      chips.push(cap(c));
+    }
+  };
+  for (const line of raw.split(" | ")) {
+    const m = line.match(/^([^:]{2,60}):\s*(.+)$/);
+    const label = (m ? m[1] : "").trim().toLowerCase();
+    const value = (m ? m[2] : line).trim();
+    if (!value || /^(true|false|n\/a|none|unknown|not disclosed)$/i.test(value)) continue;
+    if (/disclosed/.test(label) || /conflicting descriptions|see contradictions/i.test(value)) continue;
+    const tagLabel = /tags|category|descriptors?/.test(label);
+    let key: TasteKey = "notes";
+    if (!label) key = "flavor";
+    else for (const [re, k] of TASTE_LABELS) if (re.test(label)) { key = k; break; }
+    // Short descriptive phrases become chips (flavor lines only); longer ones become bullets under the label.
+    const bullets: string[] = [];
+    for (const seg of value.split(/;\s*/).map((x) => x.trim()).filter(Boolean)) {
+      const quoted = /["\u201c\u201d]|'\w[^']*\w'/.test(seg);
+      const parts = seg.split(/,\s*/).map((x) => x.trim()).filter(Boolean);
+      const shortList = !quoted && parts.length >= 2 && parts.length <= 10 && parts.every((x) => x.length <= 42 && !/[.!?]$/.test(x));
+      if ((tagLabel || key === "flavor") && shortList) parts.forEach(addChip);
+      else if ((tagLabel || key === "flavor") && !quoted && seg.length <= 42 && !/[.!?]$/.test(seg)) addChip(seg);
+      else bullets.push(cap(seg));
+    }
+    if (bullets.length) rows.set(key, [...(rows.get(key) ?? []), ...bullets]);
   }
-  return line;
+  return { chips, rows: TASTE_ORDER.filter((k) => rows.has(k)).map((k) => ({ key: k, items: rows.get(k) as string[] })) };
 }
 
 // "disclosed" fields were extracted by many independent research passes
@@ -298,6 +292,7 @@ export default async function ProductDetailPage({
   const logoPath = getBrandLogoPath(product.brand_name);
   const factsLine = buildFactsLine(product, t, tv, lang);
   const hasCompounds = Boolean(product.l_theanine_note || product.egcg_note);
+  const taste = product.tasting_notes ? parseTasting(product.tasting_notes) : null;
   const regionInfo = getRegionInfo(product.region);
   const insight = getPriceInsight(product.id, await getComparablePrices(), lang, t, tv);
 
@@ -555,15 +550,42 @@ export default async function ProductDetailPage({
         </section>
       )}
 
-      {product.tasting_notes && (
+      {taste && (taste.chips.length > 0 || taste.rows.length > 0) && (
         <section className="mt-12">
           <SectionLabel>{t("prod.sec.tasting")}</SectionLabel>
-          <div className="border-l-2 border-matcha bg-paper-raised/60 pl-5 py-4 pr-5 flex flex-col gap-2.5">
-            {product.tasting_notes.split(" | ").map((line, i) => (
-              <p key={i} className="font-display text-lg text-ink leading-relaxed">
-                {stripTastingNotesLabel(line)}
-              </p>
-            ))}
+          <div className="rounded-sm border border-line bg-paper-raised p-5 sm:p-6">
+            {taste.chips.length > 0 && (
+              <ul className="flex flex-wrap gap-2">
+                {taste.chips.map((c) => (
+                  <li key={c} className="rounded-full bg-matcha-soft px-3.5 py-1.5 text-sm font-medium text-forest">
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {taste.rows.length > 0 && (
+              <dl className={`${taste.chips.length > 0 ? "mt-5 border-t border-line pt-5 " : ""}grid gap-x-6 gap-y-4 sm:grid-cols-[7.5rem_1fr]`}>
+                {taste.rows.map((r) => (
+                  <Fragment key={r.key}>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-matcha sm:pt-1">{t(`prod.taste.${r.key}` as "prod.taste.flavor")}</dt>
+                    <dd className="text-base leading-relaxed text-ink">
+                      {r.items.length === 1 ? (
+                        r.items[0]
+                      ) : (
+                        <ul className="flex flex-col gap-1.5">
+                          {r.items.map((it) => (
+                            <li key={it} className="flex gap-2.5">
+                              <span aria-hidden="true" className="mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full bg-matcha" />
+                              <span>{it}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </dd>
+                  </Fragment>
+                ))}
+              </dl>
+            )}
           </div>
         </section>
       )}
