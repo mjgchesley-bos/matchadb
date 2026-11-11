@@ -166,7 +166,7 @@ for pq in PLACES:
 brand_count = Counter(r[13] for r in rows if r[13])
 # ---- places that are not cafes, left off the map ----
 # Websites of businesses that are not cafes (convenience stores, groceries) or small chains the owner asked to leave out. A host here drops all its places (and its subdomains).
-NOT_CAFE_HOSTS = {"cuddlytimes.com", "coffeestrangers.com", "charlesandroncafe.com", "royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com",
+NOT_CAFE_HOSTS = {"loafmalta.com", "cuddlytimes.com", "coffeestrangers.com", "charlesandroncafe.com", "royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com",
                   # home bakers, baking suppliers, ingredient makers, cooking classes and catering-only businesses (owner: no personal homes, no culinary use)
                   "vanessamusi.com", "homebaker.ca", "biteunite.com", "matchamakingjapan.com", "lantmannenunibake.com", "amoretti.com", "rondo-online.com", "sosa.cat",
                   "goodhartcoffeecatering.com", "wecatercoffee.com", "hovis.co.uk", "liquidline.co.uk"}
