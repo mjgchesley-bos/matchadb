@@ -28,6 +28,8 @@ export function isHealthText(s: string): boolean {
 /** Keeps the sentences without health language; returns "" when nothing is left. */
 export function stripHealth(text: string): string {
   return text
+    // "(rated 5 out of 5 stars on the page's scale)" is the brand's own unexplained rating; it says nothing, so it goes.
+    .replace(/\s*\((?:rated|scored)[^)]*\)/gi, "")
     .split(/(?<=[.!?;])\s+|\n+/)
     .map((p) => p.trim())
     .filter((p) => p && !isHealthText(p))
