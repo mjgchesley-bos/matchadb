@@ -421,7 +421,7 @@ export const en = {
   "about.h.order": "How results are ordered",
   "about.p.order": "With hundreds of products, order matters. Default results favor brands with a genuine reputation for matcha craft, such as long-established Japanese tea houses and careful direct-sourcing importers, over mass-market private-label tins and generic resellers. This is an editorial judgment, not a sales or paid ranking, and no brand can pay to move up.",
   "about.h.comp": "Composition figures",
-  "about.p.comp": "We don't publish health claims. Where a brand states a nutrient figure on its own product page, we show it and label it as the brand's statement; we don't estimate or add figures of our own.",
+  "about.p.comp": "Anything a brand says about a product's contents or effects is the brand's own statement from its product page. MatchaDB hasn't verified it and makes no health claims of its own.",
   "about.h.indep": "Independence and money",
   "about.p.indep": "MatchaDB isn't affiliated with any brand listed. The site may show ads or use affiliate links to cover its costs; we disclose that on the pages involved and in our {privacy}, and it doesn't change how products are listed.",
   "about.privacy": "privacy policy",

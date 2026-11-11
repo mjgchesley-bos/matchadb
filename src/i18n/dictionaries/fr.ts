@@ -423,7 +423,7 @@ export const fr: Partial<Record<Key, string>> = {
   "about.h.order": "Comment les résultats sont classés",
   "about.p.order": "Avec des centaines de produits, l'ordre compte. Les résultats par défaut favorisent les marques ayant une vraie réputation dans l'art du matcha, comme les maisons de thé japonaises établies de longue date et les importateurs qui s'approvisionnent directement avec soin, plutôt que les boîtes de marque blanche de grande distribution et les revendeurs génériques. C'est un jugement éditorial, pas un classement par les ventes ou payant, et aucune marque ne peut payer pour monter.",
   "about.h.comp": "Chiffres de composition",
-  "about.p.comp": "Nous ne publions aucune allégation de santé. Lorsqu'une marque indique une valeur nutritionnelle sur sa propre page produit, nous l'affichons en la présentant comme une déclaration de la marque ; nous n'estimons ni n'ajoutons aucun chiffre de notre côté.",
+  "about.p.comp": "Tout ce qu'une marque affirme sur la composition ou les effets d'un produit est une déclaration de la marque elle-même sur sa page produit ; MatchaDB ne l'a pas vérifiée et ne formule aucune allégation de santé de son côté.",
   "about.h.indep": "Indépendance et argent",
   "about.p.indep": "MatchaDB n'est affilié à aucune des marques citées. Le site peut afficher des publicités ou utiliser des liens d'affiliation pour couvrir ses coûts ; nous l'indiquons sur les pages concernées et dans notre {privacy}, et cela ne change pas la façon dont les produits sont présentés.",
   "about.privacy": "politique de confidentialité",

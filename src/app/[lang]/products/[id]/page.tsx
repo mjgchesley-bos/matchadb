@@ -14,7 +14,6 @@ import { getRegionInfo, regionCountry } from "@/lib/regions";
 import { REGION_CONTENT } from "@/lib/region-content";
 import { cultivarSlugFor } from "@/lib/cultivars";
 import { JsonLd } from "@/components/JsonLd";
-import { isHealthKey, isHealthText, sanitizeValue, stripHealth } from "@/lib/health-filter";
 import { ShippingNote } from "@/components/ShippingNote";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
@@ -150,7 +149,6 @@ function parseTasting(raw: string): { chips: string[]; rows: { key: TasteKey; it
     // Short descriptive phrases become chips (flavor lines only); longer ones become bullets under the label.
     const bullets: string[] = [];
     for (const seg of value.split(/;\s*/).map((x) => x.trim()).filter(Boolean)) {
-      if (isHealthText(seg)) continue;
       const quoted = /["\u201c\u201d]|'\w[^']*\w'/.test(seg);
       const parts = seg.split(/,\s*/).map((x) => x.trim()).filter(Boolean);
       const shortList = !quoted && parts.length >= 2 && parts.length <= 10 && parts.every((x) => x.length <= 42 && !/[.!?]$/.test(x));
@@ -285,12 +283,9 @@ export default async function ProductDetailPage({
   const product = await getProductById(productId);
   if (!product) notFound();
 
-  const disclosedEntries = Object.entries(product.disclosed || {})
-    .filter(([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key) && !isHealthKey(key))
-    // What a Japanese name means ("longevity and white", "serene silence") is culture, not a claim, so those fields pass through.
-    .map(([key, value]) => [key, /meaning|etymolog|kanji|origin_of_name/i.test(key) ? value : sanitizeValue(value)] as [string, unknown])
-    .filter(([, value]) => value != null && value !== "");
-  const pageNotes = product.page_notes ? stripHealth(product.page_notes) : "";
+  const disclosedEntries = Object.entries(product.disclosed || {}).filter(
+    ([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key)
+  );
   const externalLink = getExternalLinkInfo(product.source_url);
   const productUrl = pageAlternates(lang, `/products/${product.id}`).canonical;
   const logoPath = getBrandLogoPath(product.brand_name);
@@ -663,10 +658,10 @@ export default async function ProductDetailPage({
         </section>
       )}
 
-      {pageNotes && (
+      {product.page_notes && (
         <section className="mt-8">
           <SectionLabel>{t("prod.sec.notes")}</SectionLabel>
-          <p className="text-sm text-ink-muted leading-relaxed">{pageNotes}</p>
+          <p className="text-sm text-ink-muted leading-relaxed">{product.page_notes}</p>
         </section>
       )}
 

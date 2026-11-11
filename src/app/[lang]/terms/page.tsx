@@ -22,10 +22,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
       <p>
         MatchaDB compiles pricing, sourcing, grade, and tasting information from brands&apos; own
         product pages and published research. It is provided for general information, not as
-        professional, medical, or purchasing advice. MatchaDB does not make health or medical claims
-        about any product. Where a brand states a nutrient figure on its own product page we may show it, labeled as the
-        brand&apos;s statement; we do not estimate or add figures of our own. The research library describes what
-        published studies examine and is not medical advice.
+        professional, medical, or purchasing advice. Statements about what a product contains or does come from the brand&apos;s own pages; they are the brand&apos;s claims, not ours, and MatchaDB has not verified them. We make no health or medical claims of our own and do not estimate composition figures. The research library describes what published studies examine and is not medical advice.
       </p>
 
       <h2>Accuracy and prices</h2>

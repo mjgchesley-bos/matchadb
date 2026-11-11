@@ -421,7 +421,7 @@ export const de: Partial<Record<Key, string>> = {
   "about.h.order": "Wie Ergebnisse sortiert werden",
   "about.p.order": "Bei Hunderten von Produkten kommt es auf die Reihenfolge an. Standardmäßig bevorzugen die Ergebnisse Marken mit echtem Ruf für Matcha-Handwerk – etwa seit Langem etablierte japanische Teehäuser und sorgfältig direkt einkaufende Importeure –, gegenüber Massenware-Eigenmarken in Dosen und beliebigen Wiederverkäufern. Das ist eine redaktionelle Einschätzung, kein Verkaufs- oder bezahltes Ranking, und keine Marke kann sich einen besseren Platz erkaufen.",
   "about.h.comp": "Angaben zur Zusammensetzung",
-  "about.p.comp": "Wir veröffentlichen keine gesundheitsbezogenen Aussagen. Nennt eine Marke auf ihrer eigenen Produktseite einen Nährstoffwert, zeigen wir ihn als Angabe der Marke gekennzeichnet an; eigene Schätzwerte fügen wir nicht hinzu.",
+  "about.p.comp": "Alles, was eine Marke über Inhaltsstoffe oder Wirkungen eines Produkts sagt, ist eine Aussage der Marke auf ihrer eigenen Produktseite; MatchaDB hat sie nicht geprüft und macht selbst keine gesundheitsbezogenen Aussagen.",
   "about.h.indep": "Unabhängigkeit und Geld",
   "about.p.indep": "MatchaDB ist mit keiner der aufgeführten Marken verbunden. Die Website kann Werbung zeigen oder Affiliate-Links nutzen, um ihre Kosten zu decken; das legen wir auf den betreffenden Seiten und in unserer {privacy} offen, und es ändert nichts daran, wie Produkte gelistet werden.",
   "about.privacy": "Datenschutzerklärung",
