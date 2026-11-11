@@ -287,7 +287,8 @@ export default async function ProductDetailPage({
 
   const disclosedEntries = Object.entries(product.disclosed || {})
     .filter(([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key) && !isHealthKey(key))
-    .map(([key, value]) => [key, /name/i.test(key) ? value : sanitizeValue(value)] as [string, unknown])
+    // What a Japanese name means ("longevity and white", "serene silence") is culture, not a claim, so those fields pass through.
+    .map(([key, value]) => [key, /meaning|etymolog|kanji|origin_of_name/i.test(key) ? value : sanitizeValue(value)] as [string, unknown])
     .filter(([, value]) => value != null && value !== "");
   const pageNotes = product.page_notes ? stripHealth(product.page_notes) : "";
   const externalLink = getExternalLinkInfo(product.source_url);

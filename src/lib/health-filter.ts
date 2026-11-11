@@ -13,14 +13,15 @@ const TERMS = [
   "science-backed", "proven",
 ];
 const HEALTH_RE = new RegExp(`\\b(?:${TERMS.join("|")})\\b`, "gi");
-// Growing-conditions language that happens to use a nutrition word ("nutrient-rich volcanic soil") is a fact about the farm, not a claim.
+// "Nutrient-rich volcanic soil" or "a nutrient-denser fertilizer" describe the farm, not the cup. The nutrition word must sit
+// right next to soil or fertilizer, so "preserving flavor and nutrients all the way to your cup" is still dropped.
 const SOIL_WORDS = /\b(?:nutrient|nutrition)\w*/i;
-const GROWING = /\b(?:soils?|earth|terroir|volcanic|farm\w*|field\w*|grown|grow\w*|harvest\w*|fertili[sz]\w*)\b/i;
+const FARM_CONTEXT = /\b(?:nutrient|nutrition)\w*\b[^.;]{0,30}\b(?:soils?|fertili[sz]\w*)\b|\b(?:soils?|fertili[sz]\w*)\b[^.;]{0,30}\b(?:nutrient|nutrition)\w*/i;
 
 export function isHealthText(s: string): boolean {
   const hits = s.match(HEALTH_RE);
   if (!hits) return false;
-  if (hits.every((h) => SOIL_WORDS.test(h)) && GROWING.test(s)) return false;
+  if (hits.every((h) => SOIL_WORDS.test(h)) && FARM_CONTEXT.test(s)) return false;
   return true;
 }
 
