@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: "Terms for using MatchaDB, including data accuracy and trademark notices.",
+  description: "Terms for using MatchaDB, including data accuracy, trademark notices, and our affiliate, advertising and sponsorship disclosures.",
   alternates: { canonical: `${SITE_URL}/terms` },
 };
 
@@ -15,7 +15,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
   if (!isLocale(raw)) notFound();
   const lang: Locale = raw;
   return (
-    <LegalPage lang={lang} englishOnly eyebrow="Legal" title="Terms of Use" updated="November 4, 2026">
+    <LegalPage lang={lang} englishOnly eyebrow="Legal" title="Terms of Use" updated="November 10, 2026">
       <p>By using matchadb.com you agree to these terms. If you don&apos;t agree, please don&apos;t use the site.</p>
 
       <h2>Informational use only</h2>
@@ -42,11 +42,34 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         judgment and are not endorsements.
       </p>
 
-      <h2>Links, ads, and affiliate relationships</h2>
+      <h2>Links, ads, affiliate relationships, and sponsored content</h2>
       <p>
         The site links to third-party websites and may show third-party ads or affiliate links. We
         aren&apos;t responsible for their content, products, or practices, and any transaction is
         between you and that seller.
+      </p>
+      <p>
+        <strong>Affiliate links.</strong> Some links to brand, retailer, or other websites may be
+        affiliate links. If you click one and make a purchase, MatchaDB may earn a commission from the
+        seller. This costs you nothing extra, and the price you pay is the same as without the link. We
+        aim to mark pages and links that contain affiliate links.
+      </p>
+      <p>
+        <strong>Independence.</strong> Commissions, advertising, and any other compensation do not decide
+        which products, brands, stores, or cafés we list, how we describe them, or how they are ordered.
+        Product, brand, store, and café information comes from the seller&apos;s own published pages and
+        other public sources, as described on each page, and a listing is not an endorsement or a
+        recommendation.
+      </p>
+      <p>
+        <strong>Sponsored content.</strong> If a brand, store, or café ever pays for placement, a featured
+        listing, or other promotion, we will label it clearly as sponsored or an ad. Ratings and reviews
+        written by members are never edited or ranked in exchange for payment.
+      </p>
+      <p>
+        <strong>Advertising and your choices.</strong> Ads and advertising cookies are used only if you
+        choose Accept in the cookie banner; see our Privacy Policy for how data is handled and how to opt
+        out.
       </p>
 
       <h2>Accounts and user content</h2>
