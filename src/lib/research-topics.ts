@@ -21,7 +21,7 @@ export const TOPICS: TopicContent[] = [
     name: "L-theanine and caffeine",
     slug: "l-theanine-and-caffeine",
     heading: "Matcha, L-theanine and caffeine: the research",
-    title: "Matcha L-theanine and caffeine research — studies on calm focus",
+    title: "Matcha L-theanine and caffeine research — studies library",
     description: "Peer-reviewed studies on matcha's L-theanine and caffeine content, how they interact, and what trials report about attention, alertness and calm.",
     intro: [
       "Matcha is shade-grown, which raises its L-theanine, an amino acid found almost only in tea, and it is eaten as the whole ground leaf, so it also delivers caffeine. A large share of the matcha literature asks how those two compounds behave together.",
@@ -35,7 +35,7 @@ export const TOPICS: TopicContent[] = [
     name: "Cognition, mood and stress",
     slug: "cognition-mood-and-stress",
     heading: "Matcha and cognition, mood and stress: the research",
-    title: "Matcha, focus, mood and stress — what the studies show",
+    title: "Matcha, focus, mood and stress — what the studies examine",
     description: "Clinical trials, observational studies and reviews on matcha and green tea for attention, memory, mood, stress and sleep, with links to every source.",
     intro: [
       "This is the human-facing side of matcha research: randomized trials and observational studies that measure attention, memory, mood, stress hormones or sleep after people drink matcha, take matcha extracts, or eat matcha foods.",

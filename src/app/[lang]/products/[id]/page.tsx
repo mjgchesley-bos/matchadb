@@ -14,7 +14,7 @@ import { getRegionInfo, regionCountry } from "@/lib/regions";
 import { REGION_CONTENT } from "@/lib/region-content";
 import { cultivarSlugFor } from "@/lib/cultivars";
 import { JsonLd } from "@/components/JsonLd";
-import { ResearchLinks } from "@/components/ResearchLinks";
+import { isHealthKey, isHealthText, sanitizeValue, stripHealth } from "@/lib/health-filter";
 import { ShippingNote } from "@/components/ShippingNote";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
@@ -150,6 +150,7 @@ function parseTasting(raw: string): { chips: string[]; rows: { key: TasteKey; it
     // Short descriptive phrases become chips (flavor lines only); longer ones become bullets under the label.
     const bullets: string[] = [];
     for (const seg of value.split(/;\s*/).map((x) => x.trim()).filter(Boolean)) {
+      if (isHealthText(seg)) continue;
       const quoted = /["\u201c\u201d]|'\w[^']*\w'/.test(seg);
       const parts = seg.split(/,\s*/).map((x) => x.trim()).filter(Boolean);
       const shortList = !quoted && parts.length >= 2 && parts.length <= 10 && parts.every((x) => x.length <= 42 && !/[.!?]$/.test(x));
@@ -284,14 +285,21 @@ export default async function ProductDetailPage({
   const product = await getProductById(productId);
   if (!product) notFound();
 
-  const disclosedEntries = Object.entries(product.disclosed || {}).filter(
-    ([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key)
-  );
+  const disclosedEntries = Object.entries(product.disclosed || {})
+    .filter(([key]) => !REDUNDANT_DISCLOSED_KEYS.has(key) && !isHealthKey(key))
+    .map(([key, value]) => [key, /name/i.test(key) ? value : sanitizeValue(value)] as [string, unknown])
+    .filter(([, value]) => value != null && value !== "");
+  const pageNotes = product.page_notes ? stripHealth(product.page_notes) : "";
   const externalLink = getExternalLinkInfo(product.source_url);
   const productUrl = pageAlternates(lang, `/products/${product.id}`).canonical;
   const logoPath = getBrandLogoPath(product.brand_name);
   const factsLine = buildFactsLine(product, t, tv, lang);
-  const hasCompounds = Boolean(product.l_theanine_note || product.egcg_note);
+  // Only a figure the brand states on its own product page is shown. Grade- or cultivar-level research estimates are
+  // not measurements of this product, so they are never displayed.
+  const brandStated = (n?: string | null) => (n && n.startsWith("Disclosed on the brand") ? n : null);
+  const theanineNote = brandStated(product.l_theanine_note);
+  const egcgNote = brandStated(product.egcg_note);
+  const hasCompounds = Boolean(theanineNote || egcgNote);
   const taste = product.tasting_notes ? parseTasting(product.tasting_notes) : null;
   const regionInfo = getRegionInfo(product.region);
   const insight = getPriceInsight(product.id, await getComparablePrices(), lang, t, tv);
@@ -597,24 +605,14 @@ export default async function ProductDetailPage({
             <CompoundCard
               label="L-theanine"
               mgPerGram={product.l_theanine_mg_g}
-              note={product.l_theanine_note}
+              note={theanineNote}
             />
             <CompoundCard
               label="EGCG"
               mgPerGram={product.egcg_mg_g}
-              note={product.egcg_note}
+              note={egcgNote}
             />
           </div>
-          <p className="text-xs text-ink-faint mt-3">
-            {t("prod.comp.science")}{" "}
-            <Link href="/research?topic=L-theanine%20and%20caffeine" className="text-matcha hover:text-forest">
-              {t("prod.comp.theanine")}
-            </Link>
-            {" "}&middot;{" "}
-            <Link href="/research?topic=Antioxidants%20and%20polyphenols" className="text-matcha hover:text-forest">
-              {t("prod.comp.egcg")}
-            </Link>
-          </p>
         </section>
       )}
 
@@ -664,10 +662,10 @@ export default async function ProductDetailPage({
         </section>
       )}
 
-      {product.page_notes && (
+      {pageNotes && (
         <section className="mt-8">
           <SectionLabel>{t("prod.sec.notes")}</SectionLabel>
-          <p className="text-sm text-ink-muted leading-relaxed">{product.page_notes}</p>
+          <p className="text-sm text-ink-muted leading-relaxed">{pageNotes}</p>
         </section>
       )}
 
@@ -708,11 +706,6 @@ export default async function ProductDetailPage({
         </section>
       )}
 
-      <ResearchLinks
-        lang={lang}
-        topics={["L-theanine and caffeine", "Processing, milling and quality", "Safety, contaminants and toxicity"]}
-        blurb={t("prod.research.blurb")}
-      />
     </main>
   );
 }

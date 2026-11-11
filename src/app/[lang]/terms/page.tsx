@@ -15,16 +15,17 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
   if (!isLocale(raw)) notFound();
   const lang: Locale = raw;
   return (
-    <LegalPage lang={lang} englishOnly eyebrow="Legal" title="Terms of Use" updated="November 10, 2026">
+    <LegalPage lang={lang} englishOnly eyebrow="Legal" title="Terms of Use" updated="November 11, 2026">
       <p>By using matchadb.com you agree to these terms. If you don&apos;t agree, please don&apos;t use the site.</p>
 
       <h2>Informational use only</h2>
       <p>
         MatchaDB compiles pricing, sourcing, grade, and tasting information from brands&apos; own
         product pages and published research. It is provided for general information, not as
-        professional, medical, or purchasing advice. The composition figures shown (L-theanine, EGCG)
-        are either what a brand states or published grade- or cultivar-level estimates, not lab results
-        for a specific product.
+        professional, medical, or purchasing advice. MatchaDB does not make health or medical claims
+        about any product. Where a brand states a nutrient figure on its own product page we may show it, labeled as the
+        brand&apos;s statement; we do not estimate or add figures of our own. The research library describes what
+        published studies examine and is not medical advice.
       </p>
 
       <h2>Accuracy and prices</h2>
@@ -77,7 +78,8 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         You can use MatchaDB without an account. If you sign in and post ratings, reviews, comments or
         photos, you are responsible for what you write and upload. Photos must be yours to share and must
         not show other people or private information. Reviews must be your own honest experience with the product.
-        They must not contain ads, links, personal information, hate or harassment, and must not be
+        They must not contain ads, links, personal information, hate or harassment, or health or medical claims (for example
+        that a product treats, cures or prevents a condition), and must not be
         posted by or for a brand about its own products or its competitors&apos; products. You keep
         ownership of what you write and give MatchaDB a free, worldwide licence to display it on the
         site. Reviews are checked before they appear. We may decline, hide or remove any content, or

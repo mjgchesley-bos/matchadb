@@ -9,7 +9,6 @@ import { Comments } from "@/components/Comments";
 import { FavoriteBrandButton } from "@/components/FavoriteBrandButton";
 import { BrandLogo } from "@/components/product-cards";
 import { JsonLd } from "@/components/JsonLd";
-import { ResearchLinks } from "@/components/ResearchLinks";
 import { ShippingNote } from "@/components/ShippingNote";
 import { getBrandLogoPath } from "@/lib/logos";
 import { comparisonsFor } from "@/lib/compare";
@@ -364,11 +363,6 @@ export default async function BrandPage({
         </section>
       )}
 
-      <ResearchLinks
-        lang={lang}
-        topics={["Antioxidants and polyphenols", "L-theanine and caffeine", "Authenticity and analytical methods"]}
-        blurb={t("br.research.blurb")}
-      />
       <Comments targetType="brand" targetKey={brandName} subject={brandName} />
     </main>
   );

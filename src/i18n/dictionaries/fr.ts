@@ -423,7 +423,7 @@ export const fr: Partial<Record<Key, string>> = {
   "about.h.order": "Comment les résultats sont classés",
   "about.p.order": "Avec des centaines de produits, l'ordre compte. Les résultats par défaut favorisent les marques ayant une vraie réputation dans l'art du matcha, comme les maisons de thé japonaises établies de longue date et les importateurs qui s'approvisionnent directement avec soin, plutôt que les boîtes de marque blanche de grande distribution et les revendeurs génériques. C'est un jugement éditorial, pas un classement par les ventes ou payant, et aucune marque ne peut payer pour monter.",
   "about.h.comp": "Chiffres de composition",
-  "about.p.comp": "Les valeurs de L-théanine et d'EGCG sont indiquées soit telles que la marque les énonce, soit comme des estimations de recherche publiées par grade ou par cultivar, avec l'étude citée. Ce ne sont pas des résultats de laboratoire pour la boîte en question.",
+  "about.p.comp": "Nous ne publions aucune allégation de santé. Lorsqu'une marque indique une valeur nutritionnelle sur sa propre page produit, nous l'affichons en la présentant comme une déclaration de la marque ; nous n'estimons ni n'ajoutons aucun chiffre de notre côté.",
   "about.h.indep": "Indépendance et argent",
   "about.p.indep": "MatchaDB n'est affilié à aucune des marques citées. Le site peut afficher des publicités ou utiliser des liens d'affiliation pour couvrir ses coûts ; nous l'indiquons sur les pages concernées et dans notre {privacy}, et cela ne change pas la façon dont les produits sont présentés.",
   "about.privacy": "politique de confidentialité",
