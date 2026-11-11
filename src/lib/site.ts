@@ -7,4 +7,4 @@ export const SITE_NAME = "MatchaDB";
 // Public contact address shown on /contact and /privacy, as chosen by the
 // site owner. Setting NEXT_PUBLIC_CONTACT_EMAIL in Amplify overrides it, e.g.
 // to move to a matchadb.com address later.
-export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "mjgchesley@gmail.com";
+export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@matchadb.com";
