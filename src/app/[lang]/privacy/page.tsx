@@ -54,7 +54,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ lang: 
           with what you do while signed in: the products you save, the ratings you give and the reviews
           you write or the comments and photos you post. Photos are shrunk and re-saved in your browser
           before upload, which removes hidden data such as the location a photo was taken, and are shown
-          publicly once approved. Ratings, reviews and comments are shown with a public username (a neutral default until you
+          publicly as soon as you post them. Ratings, reviews and comments are shown with a public username (a neutral default until you
           choose your own, which you can change in My matcha), never your email or real name. We also
           record the days you visit while signed in, plus what you add to your shelves and research folder
           (private notes there are visible only to you); these count toward your member tier, which is shown

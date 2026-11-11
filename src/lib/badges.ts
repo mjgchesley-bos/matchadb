@@ -4,7 +4,7 @@ import type { MemberStats } from "@/components/AuthProvider";
 export const BADGES: { name: string; hint: string; test: (s: MemberStats) => boolean }[] = [
   { name: "First rating", hint: "Rate a matcha", test: (s) => s.ratings >= 1 },
   { name: "Taster", hint: "Rate 10 matchas", test: (s) => s.ratings >= 10 },
-  { name: "Reviewer", hint: "Get a review approved", test: (s) => s.reviews >= 1 },
+  { name: "Reviewer", hint: "Post a review", test: (s) => s.reviews >= 1 },
   { name: "In the conversation", hint: "Post a comment", test: (s) => s.comments >= 1 },
   { name: "Photographer", hint: "Share a photo", test: (s) => s.photos >= 1 },
   { name: "Brand collector", hint: "Save 5 brands", test: (s) => s.brands >= 5 },

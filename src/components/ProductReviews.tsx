@@ -89,7 +89,7 @@ export function ProductReviews({ productId, productName }: { productId: number; 
     setMessage(null);
     const sb = supabase();
     const { data, error } = mine
-      ? await sb.from("reviews").update({ body, status: "pending", updated_at: new Date().toISOString() }).eq("id", mine.id).select("id, body, status").single()
+      ? await sb.from("reviews").update({ body, updated_at: new Date().toISOString() }).eq("id", mine.id).select("id, body, status").single()
       : await sb.from("reviews").insert({ user_id: user.id, product_id: productId, body }).select("id, body, status").single();
     if (error) {
       setMessage(error.message.includes("Too many") ? t("c.rv.tooMany") : t("c.rv.saveFail"));

@@ -79,7 +79,7 @@ export default async function TermsPage({ params }: { params: Promise<{ lang: st
         that a product treats, cures or prevents a condition), and must not be
         posted by or for a brand about its own products or its competitors&apos; products. You keep
         ownership of what you write and give MatchaDB a free, worldwide licence to display it on the
-        site. Reviews are checked before they appear. We may decline, hide or remove any content, or
+        site. Reviews, comments and photos appear as soon as you post them; we look at activity afterwards. We may decline, hide or remove any content, or
         close any account, at our discretion. Reviews are individual opinions of their authors, not
         statements by MatchaDB.
       </p>
