@@ -126,18 +126,18 @@ export default async function RootLayout({
             </div>
             <nav className="order-3 flex w-full flex-wrap items-center gap-2 sm:gap-3 xl:gap-4 text-[0.9rem] lg:order-2 lg:w-auto lg:min-w-0 lg:flex-1 lg:justify-start">
               <Link
-                href="/map"
-                className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <span className="sm:hidden">{t("nav.map.short")}</span>
-                <span className="hidden sm:inline">{t("nav.map.long")}</span>
-              </Link>
-              <Link
                 href="/browse"
                 className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <span className="sm:hidden">{t("nav.search.short")}</span>
                 <span className="hidden sm:inline">{t("nav.search.long")}</span>
+              </Link>
+              <Link
+                href="/map"
+                className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span className="sm:hidden">{t("nav.map.short")}</span>
+                <span className="hidden sm:inline">{t("nav.map.long")}</span>
               </Link>
               <Link
                 href="/stores"
