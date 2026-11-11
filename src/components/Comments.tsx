@@ -277,18 +277,18 @@ export function Comments({
         </article>
       ))}
 
-      <div className="mt-6 flex flex-col gap-5">
+      <div className="mt-6 flex flex-col gap-4">
         {pub === null && <p className="text-sm text-ink-faint">{t("c.cm.loading")}</p>}
         {pub?.length === 0 && waiting.length === 0 && <p className="text-sm text-ink-muted">{t("c.cm.none")}</p>}
         {pub?.map((c) => (
-          <article key={c.id} className="border-t border-line pt-4">
+          <article key={c.id} className="rounded-sm border border-line bg-paper-raised px-4 py-3.5">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
               {c.public_profile ? (
-                <Link href={`/u/${encodeURIComponent(c.display_name)}`} className="text-sm font-medium text-ink hover:text-matcha">
+                <Link href={`/u/${encodeURIComponent(c.display_name)}`} className="text-base font-semibold text-matcha hover:text-forest hover:underline">
                   {c.display_name}
                 </Link>
               ) : (
-                <span className="text-sm font-medium text-ink">{c.display_name}</span>
+                <span className="text-base font-semibold text-matcha">{c.display_name}</span>
               )}
               <TierBadge tier={c.tier} />
               <span className="text-xs text-ink-faint">{dateFmt.format(new Date(c.created_at))}</span>
