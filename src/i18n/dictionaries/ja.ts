@@ -58,7 +58,7 @@ export const ja: Partial<Record<Key, string>> = {
   "c.lang.label": "言語",
   "c.lang.change": "言語を変更",
   "h.hero.eyebrow": "抹茶を、記録する",
-  "h.hero.title": "世界の抹茶データベース",
+  "h.hero.title": "世界をリードする抹茶データベース",
   "h.hero.lede": "{brands}ブランド、{products}品の抹茶を収録したリサーチ用データベース。価格・グレード・産地は各ブランド自身の商品ページから直接取得し、常に最新の状態に保ちます。情報源どうしが食い違う場合も、うやむやにはしません。",
   "h.photo.harvest": "夜明けの日本の段々茶畑を、竹かごを手に歩く茶農家",
   "h.photo.afternoon": "日本庭園の見える窓辺のカフェで、アイス抹茶ラテを楽しむ友人たち",

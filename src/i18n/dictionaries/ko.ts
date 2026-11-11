@@ -58,7 +58,7 @@ export const ko: Partial<Record<Key, string>> = {
   "c.lang.label": "언어",
   "c.lang.change": "언어 변경",
   "h.hero.eyebrow": "말차를 기록하다",
-  "h.hero.title": "글로벌 말차 데이터베이스",
+  "h.hero.title": "세계를 선도하는 말차 데이터베이스",
   "h.hero.lede": "{brands}개 브랜드의 말차 제품 {products}개를 담은 리서치 데이터베이스입니다. 가격, 등급, 산지는 각 브랜드의 제품 페이지에서 직접 가져와 최신 상태로 유지하며, 출처끼리 모순될 때도 그냥 넘어가지 않습니다.",
   "h.photo.harvest": "해 뜰 무렵 일본의 계단식 차밭 사이를 대바구니를 들고 걷는 농부",
   "h.photo.afternoon": "일본식 정원이 보이는 창가 카페 테이블에서 아이스 말차 라떼를 나눠 마시는 친구들",

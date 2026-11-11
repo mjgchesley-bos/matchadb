@@ -58,7 +58,7 @@ export const zh: Partial<Record<Key, string>> = {
   "c.lang.label": "语言",
   "c.lang.change": "切换语言",
   "h.hero.eyebrow": "抹茶，全面收录",
-  "h.hero.title": "全球抹茶数据库",
+  "h.hero.title": "全球领先的抹茶数据库",
   "h.hero.lede": "一个收录 {brands} 个品牌、{products} 款抹茶产品的研究数据库。价格、等级和产区直接取自各品牌自己的产品页面，持续更新；当信息来源自相矛盾时，我们也不会含糊带过。",
   "h.photo.harvest": "日出时分，农夫提着竹篮走过日本的梯田茶垄",
   "h.photo.afternoon": "朋友们在日式庭园窗边的咖啡馆里分享冰抹茶拿铁",

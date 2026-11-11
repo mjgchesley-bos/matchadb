@@ -58,7 +58,7 @@ export const de: Partial<Record<Key, string>> = {
   "c.lang.label": "Sprache",
   "c.lang.change": "Sprache ändern",
   "h.hero.eyebrow": "Matcha, katalogisiert",
-  "h.hero.title": "Die globale Matcha-Datenbank",
+  "h.hero.title": "Die weltweit führende Matcha-Datenbank",
   "h.hero.lede": "Eine Recherchedatenbank mit {products} Matcha-Produkten von {brands} Marken – Preis, Qualitätsstufe und Herkunft direkt von den Produktseiten der jeweiligen Marke, stets aktuell und ohne Beschönigung, wenn sich die Quelle selbst widerspricht.",
   "h.photo.harvest": "Ein Bauer mit einem geflochtenen Korb geht bei Sonnenaufgang durch terrassierte Teereihen in Japan",
   "h.photo.afternoon": "Freunde teilen sich Matcha-Eislattes an einem Caféfenster mit Blick auf einen japanischen Garten",

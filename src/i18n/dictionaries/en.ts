@@ -58,7 +58,7 @@ export const en = {
   "c.lang.change": "Change language",
   "c.consent.after": ".",
   "h.hero.eyebrow": "Matcha, catalogued",
-  "h.hero.title": "The Global Matcha Database",
+  "h.hero.title": "The World's Leading Matcha Database",
   "h.hero.lede": "A research database of {products} matcha products across {brands} brands — pricing, grade, and sourcing pulled directly from each brand's own product pages, kept current, and never smoothed over when the source contradicts itself.",
   "h.photo.harvest": "A farmer with a woven basket walking through terraced tea rows in Japan at sunrise",
   "h.photo.afternoon": "Friends sharing iced matcha lattes at a café table beside a Japanese garden window",
