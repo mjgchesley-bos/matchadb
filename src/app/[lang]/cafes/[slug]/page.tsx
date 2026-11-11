@@ -28,6 +28,7 @@ const hostOf = (u: string) => {
   }
 };
 // "Austin, TX" in the US, "Kyoto, Japan" elsewhere.
+const SOCIAL: Record<string, string> = { "instagram.com": "Instagram", "facebook.com": "Facebook", "tiktok.com": "TikTok", "yelp.com": "Yelp", "x.com": "X", "twitter.com": "X", "youtube.com": "YouTube", "tripadvisor.com": "Tripadvisor" };
 const loc = (c: { city: string; state: string; cc?: string }, lang: Locale) => (!c.cc || c.cc === "US" ? [c.city, c.state] : [c.city, countryName(c.cc, lang)]).filter(Boolean).join(", ");
 
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
@@ -52,6 +53,9 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const where = formatPlace(c, lang);
   const near = nearbyCafes(c, 5);
   const link = "text-matcha hover:text-forest underline";
+  // The café's other pages and handles (Instagram, Yelp, TikTok...): every source host that is not its own website.
+  const ownHost = c.url ? hostOf(c.url) : "";
+  const socials = [...new Map(c.ev.filter((e) => hostOf(e.u) !== ownHost).map((e) => [hostOf(e.u), e.u] as const)).entries()].map(([host, url]) => ({ host, url, label: SOCIAL[host] ?? host }));
 
   return (
     <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-10">
@@ -77,6 +81,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       <header className="mt-3">
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{c.name}</h1>
         <p className="mt-2 text-ink-muted">{where}</p>
+        <ProductRating cafeId={c.id} productName={c.name} />
         <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
           <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
           <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>
@@ -91,22 +96,50 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               {t("cafe.website", { host: hostOf(c.url) })}
             </a>
           )}
+          {c.menu && (
+            <a href={c.menu} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
+              {t("cafe.fullMenu")}
+            </a>
+          )}
+          {c.platform && (
+            <a href={c.platform} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
+              {t("cafe.order")}
+            </a>
+          )}
+          {c.pdf && (
+            <a href={c.pdf} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
+              {t("cafe.pdf")}
+            </a>
+          )}
           {c.phone && (
             <a href={`tel:${c.phone}`} className="self-center text-matcha hover:text-forest underline">
               {c.phone.replace(/^\+?1?(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3")}
             </a>
           )}
         </p>
+        {socials.length > 0 && (
+          <p className="mt-3 flex flex-wrap gap-2 text-sm">
+            {socials.map((x) => (
+              <a key={x.host} href={x.url} target="_blank" rel="noopener noreferrer" className="rounded-full border border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">
+                {x.label}
+              </a>
+            ))}
+          </p>
+        )}
+        <FavoriteCafeButton cafeId={c.id} name={c.name} />
       </header>
 
-      <FavoriteCafeButton cafeId={c.id} name={c.name} />
-      <ProductRating cafeId={c.id} productName={c.name} />
+      <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} />
 
-      <section className="mt-10" aria-labelledby="cafe-menu">
-        <h2 id="cafe-menu" className="font-display text-xl font-semibold text-ink">
-          {t("cafe.menu.h2")}
-        </h2>
-        <p className="mt-2 text-sm text-ink-muted">
+      <details className="group mt-10 rounded-sm border border-line bg-paper-raised">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+          <h2 id="cafe-menu" className="font-display text-lg font-semibold text-ink">
+            {t("cafe.menu.h2")}
+          </h2>
+          <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 shrink-0 text-ink-muted transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 8l5 5 5-5" /></svg>
+        </summary>
+        <div className="px-4 pb-4">
+        <p className="text-sm text-ink-muted">
           {c.via === "name" ? t("cafe.menu.name") : c.via === "reported" ? t("cafe.menu.reported") : t("cafe.menu.web", { date: fmtDate(c.checked, lang) })}
         </p>
         {c.ev.length > 0 && (<ul className="mt-4 flex flex-col gap-3">
@@ -140,29 +173,10 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
             </li>
           ))}
         </ul>)}
-        {(c.menu || c.platform || c.pdf) && (
-          <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm">
-            {c.menu && (
-              <a href={c.menu} target="_blank" rel="noopener noreferrer" className={link}>
-                {t("cafe.fullMenu")}
-              </a>
-            )}
-            {c.platform && (
-              <a href={c.platform} target="_blank" rel="noopener noreferrer" className={link}>
-                {t("cafe.order")}
-              </a>
-            )}
-            {c.pdf && (
-              <a href={c.pdf} target="_blank" rel="noopener noreferrer" className={link}>
-                {t("cafe.pdf")}
-              </a>
-            )}
-          </p>
-        )}
         {c.shared > 1 && <p className="mt-3 text-xs text-ink-faint">{t("cafe.shared", { count: c.shared })}</p>}
-      </section>
+        </div>
+      </details>
 
-      <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} />
 
       {near.length > 0 && (
         <section className="mt-12" aria-labelledby="cafe-near">
