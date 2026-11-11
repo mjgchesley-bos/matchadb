@@ -4,6 +4,13 @@
 // Usage: node scripts/build-db.mjs
 
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
+
+// A trailing marketing tagline that makes a health claim ("... - For Immunity and Energy") is not part of the product's name.
+// The stable id is still derived from the original name; only the displayed name is cleaned.
+function stripClaimTail(name) {
+  return String(name).replace(/\s+[-–—]\s*for\s+[a-z ,&]*(immunity|energy|focus|health|weight|sleep|stress|detox)[a-z ,&]*$/i, "").trim();
+}
+
 import initSqlJs from "sql.js";
 import fs from "node:fs";
 import path from "node:path";
@@ -473,7 +480,7 @@ async function main() {
       [
         productId,
         brandId,
-        product,
+        stripClaimTail(product),
         fields.priceUsd,
         fields.pricePerGram,
         fields.priceSizeGrams,
