@@ -131,6 +131,16 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             {p.how && <span>{t("u.drinks", { how: tv("how", p.how) })}</span>}
           </p>
           {p.bio && <p className="mt-3 max-w-xl text-ink-muted">{p.bio}</p>}
+          {earned.length > 0 && (
+            <ul className="mt-3 flex flex-wrap gap-2" aria-label={t("c.acct.badges")}>
+              {earned.map((b) => (
+                <li key={b.name} className="rounded-full border border-matcha bg-matcha-soft px-3 py-1 text-sm font-medium text-forest">
+                  {"✓ "}
+                  {t(`c.badge.${BADGES.indexOf(b)}.n` as "c.badge.0.n")}
+                </li>
+              ))}
+            </ul>
+          )}
           <p className="mt-3">
             <ProfileActions name={p.name} />
           </p>
@@ -237,18 +247,6 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
           </div>
         </Section>
       )}
-
-      <Section title={t("c.acct.badges")}>
-        <ul className="flex flex-wrap gap-2">
-          {earned.length === 0 && <li className="text-sm text-ink-faint">{t("u.noBadges")}</li>}
-          {earned.map((b) => (
-            <li key={b.name} className="rounded-full border border-matcha bg-matcha-soft px-3 py-1 text-xs text-forest">
-              {"✓ "}
-              {t(`c.badge.${BADGES.indexOf(b)}.n` as "c.badge.0.n")}
-            </li>
-          ))}
-        </ul>
-      </Section>
     </main>
   );
 }
