@@ -359,6 +359,18 @@ def _evhost(c):
 cafes = [c for c in cafes if _LEDGER.get(c["id"], {}).get("d") != "REMOVE" and not (not c.get("via") and any(_evhost(c) == x or _evhost(c).endswith("." + x) for x in EV_BAD_HOSTS))]
 print("audit ledger removed", _before - len(cafes), "venues")
 json.dump(sorted(c["id"] for c in cafes if c["id"] not in _LEDGER), open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "unaudited_ids.json"), "w"))
+# Restaurant rule (owner, 2026-11-12): a restaurant/bar is listed only if it serves matcha TEA or LATTES (drinks), not just matcha-flavoured food, desserts or cocktails.
+# Venues already judged are in restaurant_ok.json (pass) or the ledger (removed); a restaurant not yet judged needs drink evidence in its own matcha snippets.
+import importlib.util as _iu
+_spec = _iu.spec_from_file_location("restaurant_rule", os.path.join(os.path.dirname(os.path.abspath(__file__)), "restaurant_rule.py"))
+_rr = _iu.module_from_spec(_spec); _spec.loader.exec_module(_rr)
+_ROK = set(json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "restaurant_ok.json")))) if os.path.exists(os.path.join(os.path.dirname(os.path.abspath(__file__)), "restaurant_ok.json")) else set()
+def _rest_ok(c):
+    if not _rr.RESTAURANT(c.get("cat")) or c.get("focus") or c.get("via") or c["id"] in _ROK: return True
+    return any(_rr.drink_ctx(x) for e in (c.get("ev") or []) for x in (e.get("s") or []))
+_b4 = len(cafes)
+cafes = [c for c in cafes if _rest_ok(c)]
+print("restaurant rule removed", _b4 - len(cafes), "venues")
 # Verified corrections (corrections.json, keyed by the venue's output id): renames, new website/phone/address confirmed by us. They survive every rebuild.
 _CORR_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "corrections.json")
 _CORR = json.load(open(_CORR_FILE, encoding="utf-8")).get("corrections", {}) if os.path.exists(_CORR_FILE) else {}
