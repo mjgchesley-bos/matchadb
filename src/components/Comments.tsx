@@ -67,6 +67,36 @@ function Photos({ paths, who }: { paths: string[]; who: string }) {
   );
 }
 
+// A small heart with the count. Your own comment shows the count but cannot be clicked (the database also refuses it).
+function HeartButton({ count, on, own, label, labelOn, onClick }: { count: number; on: boolean; own: boolean; label: string; labelOn: string; onClick: () => void }) {
+  const icon = (
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill={on ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
+      <path d="M12 20.5s-7.5-4.6-9.2-9.3C1.7 8 3.4 5 6.6 5c2 0 3.6 1.2 5.4 3.2C13.8 6.2 15.4 5 17.4 5c3.2 0 4.9 3 3.8 6.2-1.7 4.7-9.2 9.3-9.2 9.3z" />
+    </svg>
+  );
+  if (own) {
+    return count > 0 ? (
+      <span className="ml-auto inline-flex items-center gap-1 text-sm tabular-nums text-ink-faint" title={label}>
+        {icon}
+        {count}
+      </span>
+    ) : null;
+  }
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={on}
+      aria-label={on ? labelOn : label}
+      title={on ? labelOn : label}
+      className={`ml-auto inline-flex items-center gap-1 rounded-full px-2 py-1 text-sm tabular-nums transition-colors hover:bg-matcha-soft ${on ? "text-rose-600" : "text-ink-faint hover:text-rose-600"}`}
+    >
+      {icon}
+      {count > 0 && <span>{count}</span>}
+    </button>
+  );
+}
+
 export function Comments({
   targetType,
   targetKey,
@@ -95,6 +125,8 @@ export function Comments({
   const [message, setMessage] = useState<string | null>(null);
   const [reporting, setReporting] = useState<string | null>(null);
   const [reported, setReported] = useState<Set<string>>(new Set());
+  const [hearts, setHearts] = useState<Record<string, number>>({});
+  const [myHearts, setMyHearts] = useState<Set<string>>(new Set());
   const picker = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
@@ -111,6 +143,30 @@ export function Comments({
       live = false;
     };
   }, [targetType, targetKey, tick]);
+
+  const pubIds = useMemo(() => (pub ?? []).map((c) => c.id), [pub]);
+  useEffect(() => {
+    if (!pubIds.length) return;
+    let live = true;
+    const sb = supabase();
+    sb.from("comment_heart_counts")
+      .select("comment_id, hearts")
+      .in("comment_id", pubIds)
+      .then(({ data }) => {
+        if (!live || !data) return;
+        const m: Record<string, number> = {};
+        for (const r of data as { comment_id: string; hearts: number }[]) m[r.comment_id] = r.hearts;
+        setHearts(m);
+      });
+    if (uid)
+      sb.from("comment_hearts")
+        .select("comment_id")
+        .in("comment_id", pubIds)
+        .then(({ data }) => live && data && setMyHearts(new Set((data as { comment_id: string }[]).map((r) => r.comment_id))));
+    return () => {
+      live = false;
+    };
+  }, [pubIds, uid]);
 
   useEffect(() => {
     if (!uid) return;
@@ -190,7 +246,33 @@ export function Comments({
     }
   };
 
+  const toggleHeart = async (id: string) => {
+    if (!user) return signIn(t("c.cm.heartSignIn"));
+    const had = myHearts.has(id);
+    const bump = (n: number) => {
+      setMyHearts((s) => {
+        const x = new Set(s);
+        if (n > 0) x.add(id);
+        else x.delete(id);
+        return x;
+      });
+      setHearts((h) => ({ ...h, [id]: Math.max(0, (h[id] ?? 0) + n) }));
+    };
+    bump(had ? -1 : 1);                       // show the change at once, undo it if the database says no
+    const sb = supabase();
+    const { error } = had
+      ? await sb.from("comment_hearts").delete().eq("comment_id", id).eq("user_id", user.id)
+      : await sb.from("comment_hearts").insert({ comment_id: id, user_id: user.id });
+    if (error && error.code !== "23505") bump(had ? 1 : -1);
+    else if (!had) window.gtag?.("event", "comment_heart", { target_type: targetType });
+  };
+
   const mineIds = new Set(mine.map((m) => m.id));
+  // Most-hearted first (like Reddit's "top"); ties keep the newest first.
+  const ranked = useMemo(
+    () => [...(pub ?? [])].sort((a, b) => (hearts[b.id] ?? 0) - (hearts[a.id] ?? 0) || +new Date(b.created_at) - +new Date(a.created_at)),
+    [pub, hearts],
+  );
   const waiting = mine.filter((m) => m.status === "pending");
 
   return (
@@ -280,7 +362,7 @@ export function Comments({
       <div className="mt-6 flex flex-col gap-4">
         {pub === null && <p className="text-sm text-ink-faint">{t("c.cm.loading")}</p>}
         {pub?.length === 0 && waiting.length === 0 && <p className="text-sm text-ink-muted">{t("c.cm.none")}</p>}
-        {pub?.map((c) => (
+        {ranked.map((c) => (
           <article key={c.id} className="rounded-sm border border-line bg-paper-raised px-4 py-3.5">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
               {c.public_profile ? (
@@ -292,6 +374,14 @@ export function Comments({
               )}
               <TierBadge tier={c.tier} />
               <span className="text-xs text-ink-faint">{dateFmt.format(new Date(c.created_at))}</span>
+              <HeartButton
+                count={hearts[c.id] ?? 0}
+                on={myHearts.has(c.id)}
+                own={mineIds.has(c.id)}
+                label={t("c.cm.heart")}
+                labelOn={t("c.cm.unheart")}
+                onClick={() => void toggleHeart(c.id)}
+              />
             </div>
             <p className="mt-2 whitespace-pre-line text-sm text-ink leading-relaxed">{c.body}</p>
             <Photos paths={c.photos} who={c.display_name} />
