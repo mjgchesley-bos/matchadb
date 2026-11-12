@@ -29,7 +29,7 @@ def shared_evidence(cafes):
         if len({f(i) for i in range(len(v))}) >= 3: bad.append((u, [c["name"] for c in v][:3], len(v)))
     return bad
 
-ADDR_BAD = re.compile(r"[${}<>^`]|undefined|null|nan", re.I)
+ADDR_BAD = re.compile(r"[${}<>^`]|\bundefined\b|\bnull\b|\bnan\b", re.I)
 def address_sanity(cafes):
     """LESSON 2026-11-12 ("3701$ Guadalupe Street" came through from a source record): addresses must not carry junk characters."""
     return [(c["id"], c["name"], c["address"]) for c in cafes if c.get("address") and ADDR_BAD.search(c["address"])]
