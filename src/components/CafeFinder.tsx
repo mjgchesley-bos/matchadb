@@ -72,7 +72,6 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   const visibleSugg = suggOpen && query.trim().length >= 2 ? sugg : [];
   const [origin, setOrigin] = useState<Origin | null>(null);
   const [radius, setRadius] = useState(10);
-  const [focusOnly, setFocusOnly] = useState(false);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [busy, setBusy] = useState<"search" | "locate" | null>(null);
   const [message, setMessage] = useState<string | null>(null);
@@ -96,7 +95,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   const { listed, nearest, total } = useMemo(() => {
     const factor = unit === "km" ? KM_PER_MILE : 1;
     const matching: Listed[] = (all ?? [])
-      .filter((c) => (!focusOnly || c.focus) && (!nameFilter || nameFilter.ids.has(c.id)))
+      .filter((c) => !nameFilter || nameFilter.ids.has(c.id))
       .map((cafe) => ({ cafe, dist: origin ? haversineMiles(origin, cafe) * factor : null }));
     if (!origin) {
       matching.sort((a, b) => a.cafe.cc.localeCompare(b.cafe.cc) || a.cafe.state.localeCompare(b.cafe.state) || a.cafe.city.localeCompare(b.cafe.city) || a.cafe.name.localeCompare(b.cafe.name));
@@ -105,7 +104,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     matching.sort((a, b) => (a.dist ?? 0) - (b.dist ?? 0));
     const within = radius > 0 ? matching.filter((x) => (x.dist ?? 0) <= radius) : matching;
     return { listed: within, nearest: matching[0] ?? null, total: matching.length };
-  }, [all, nameFilter, focusOnly, origin, radius, unit]);
+  }, [all, nameFilter, origin, radius, unit]);
 
   // Normalized names, computed once per loaded list, for fast matching.
   const normNames = useMemo(() => (all ?? []).map((c) => norm(c.name)), [all]);
@@ -147,7 +146,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
         filter: ["!", ["has", "point_count"]],
         paint: {
           "circle-radius": ["case", ["==", ["get", "sel"], 1], 11, 8],
-          "circle-color": ["case", ["==", ["get", "sel"], 1], "#2b5a20", ["==", ["get", "focus"], 1], "#1f6b3a", "#6aa84f"],
+          "circle-color": ["case", ["==", ["get", "sel"], 1], "#2b5a20", "#6aa84f"],
           "circle-stroke-color": "#fff6df",
           "circle-stroke-width": 2.5,
         },
@@ -520,10 +519,6 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
         </div>
       </form>
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
-        <label className="flex items-center gap-2 text-sm text-ink">
-          <input type="checkbox" checked={focusOnly} onChange={(e) => setFocusOnly(e.target.checked)} className="accent-matcha" />
-          {t("c.cf.focusOnly")}
-        </label>
         <p className="text-xs text-ink-faint">{t("c.cf.privacy")}</p>
       </div>
       {message && (
@@ -615,7 +610,6 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
                 </button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
                   <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.reported ? t("c.cf.reported") : c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>
-                  {c.focus && !c.nameOnly && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{t("c.cf.focused")}</span>}
                 </p>
                 <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
                   <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-matcha hover:text-forest">

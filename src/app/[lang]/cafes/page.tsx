@@ -30,7 +30,6 @@ export default async function CafesPage({ params, searchParams }: { params: Prom
   const initial = regionByKey(wanted).key;
   const cafes = getAllCafes();
   const countries = new Set(cafes.map((c) => c.cc ?? "US")).size;
-  const focused = cafes.filter((c) => c.focus).length;
   const regionNames = REGIONS.map((r) => t(`c.region.${r.key}` as "c.region.us"));
   // English keeps its plain "A, B and C" wording; other languages use their own list style.
   const covered = lang === "en" ? `${regionNames.slice(0, -1).join(", ")} and ${regionNames[regionNames.length - 1]}` : new Intl.ListFormat(INTL_LANG[lang], { type: "conjunction" }).format(regionNames);
@@ -44,7 +43,7 @@ export default async function CafesPage({ params, searchParams }: { params: Prom
           {t("cafes.lede")}
         </p>
         <p className="mt-3 text-sm text-ink-faint">
-          {t("cafes.count", { count: fmtNum(lang, cafes.length), countries, focused: fmtNum(lang, focused), regions: covered })}
+          {t("cafes.count", { count: fmtNum(lang, cafes.length), countries, regions: covered })}
         </p>
       </header>
 

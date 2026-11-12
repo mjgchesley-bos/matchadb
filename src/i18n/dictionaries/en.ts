@@ -320,7 +320,7 @@ export const en = {
   "cafes.eyebrow": "Matcha cafés",
   "cafes.h1": "Matcha cafés near you",
   "cafes.lede": "Cafés whose own website lists matcha. Pick a region, search by ZIP code, postcode or city or use your location, open a café to see where it mentions matcha, then rate it and share a photo of your drink.",
-  "cafes.count": "{count} cafés in {countries} countries so far, {focused} of them matcha-focused. Covering {regions}. The list is new and growing.",
+  "cafes.count": "{count} cafés in {countries} countries so far. Covering {regions}. The list is new and growing.",
   "cafes.how.h2": "How this list is built",
   "cafes.how.p1": "We start from open map data on cafés, coffee shops, boba shops and tea rooms. We then read each place's own website, its homepage and its menu, drinks and order pages, and list it only when that site says matcha (in English or the local language, including 抹茶 in Japan and 말차 in Korea). Each café page shows the page and the words we found, and the date we checked. Cafés whose own name says matcha are listed even when we haven't read their menu yet. A café that doesn't publish a menu online, or whose menu is only an image, may not appear, so a missing café doesn't mean it has no matcha.",
   "cafes.how.p2": "We can't see what is in stock today, and menus change, so check the menu or call ahead. Large chains aren't on the map yet. Ratings and reviews come from MatchaDB members, and listing is not an endorsement. Spot a mistake or a missing café? {tell}. Looking for matcha to buy and make at home? {search}.",

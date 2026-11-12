@@ -85,7 +85,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
           <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
           <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>
-          {c.focus && c.via !== "name" && <span className="rounded-full bg-gold-soft px-2 py-0.5 text-gold">{t("c.cf.focused")}</span>}
         </p>
         <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
           <a href={directionsUrl(c)} target="_blank" rel="noopener noreferrer" className="rounded-full bg-matcha px-5 py-2 font-medium text-paper hover:bg-forest transition-colors">

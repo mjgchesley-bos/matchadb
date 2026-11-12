@@ -322,7 +322,7 @@ export const es: Partial<Record<Key, string>> = {
   "cafes.eyebrow": "Cafés con matcha",
   "cafes.h1": "Cafés con matcha cerca de ti",
   "cafes.lede": "Cafés cuya propia web incluye matcha. Elige una región, busca por código postal o ciudad o usa tu ubicación, abre un café para ver dónde menciona el matcha y luego valóralo y comparte una foto de tu bebida.",
-  "cafes.count": "{count} cafés en {countries} países por ahora, {focused} de ellos especializados en matcha. Cubre {regions}. La lista es nueva y sigue creciendo.",
+  "cafes.count": "{count} cafés en {countries} países por ahora. Cubre {regions}. La lista es nueva y sigue creciendo.",
   "cafes.how.h2": "Cómo se elabora esta lista",
   "cafes.how.p1": "Partimos de datos abiertos de mapas sobre cafés, cafeterías, tiendas de boba y casas de té. Después leemos la web propia de cada lugar, su página de inicio y las de carta, bebidas y pedidos, y solo lo incluimos cuando ese sitio dice matcha (en inglés o en el idioma local, incluido 抹茶 en Japón y 말차 en Corea). Cada página de café muestra la página y las palabras que encontramos, y la fecha en que lo comprobamos. Los cafés cuyo propio nombre dice matcha se incluyen aunque todavía no hayamos leído su carta. Un café que no publica su carta en línea, o cuya carta es solo una imagen, puede no aparecer, así que la ausencia de un café no significa que no tenga matcha.",
   "cafes.how.p2": "No podemos ver qué hay hoy en existencias y las cartas cambian, así que consulta la carta o llama antes de ir. Las grandes cadenas aún no están en el mapa. Las valoraciones y reseñas provienen de miembros de MatchaDB, y aparecer en la lista no es un respaldo. ¿Has visto un error o falta algún café? {tell}. ¿Buscas matcha para comprar y preparar en casa? {search}.",
