@@ -49,6 +49,10 @@ Done by hand for a country the owner cares about: every listing checked live, th
 - City audit found ~20 real matcha cafés missing (CaPhê.in, Black Fox, Terrible Love, Desnudo, Civil Goat, Neon Belly...). The reliable discovery sources are local "best matcha in <city>" roundups (food-blog guides, newspaper lists, Yelp top-10), each venue then verified on its own menu or ordering page.
 - Mobile carts and pop-ups with no fixed address (Matchara, Joy(n) Handcrafted) and closed businesses (Freewheelin') stay off the map.
 
+## Select chains and image-only menus (Caffe Medici, 2026-11-12)
+- The owner can ask for specific chains on the map. They go in `scripts/cafes/weekly/select_chains.json` (website host per brand): the host is exempt from the three chain filters in `build_all2.py`, but every outlet still needs matcha evidence. Outlets the place data lacks are added as leads. The "no chains" rule stays the default.
+- I wrongly removed Caffe Medici in the Austin audit: its own site menu is an image, so a text search found no matcha. Its own Instagram/Facebook menu posts (Cherry Blossom Matcha, White Pumpkin Matcha Latte) are valid evidence. Rule: before removing a venue for "no matcha on site", check its own social menu posts and online-order page, not only the website text.
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
