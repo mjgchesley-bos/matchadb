@@ -1,0 +1,12 @@
+{
+ "_note": "Verified corrections applied on every build. Add an entry whenever a venue/owner reports a change and we confirm it independently (never from the email alone).",
+ "corrections": {
+  "6480dbbb21": {
+   "set": {
+    "name": "Omega Tea Lab - Anaheim Hills"
+   },
+   "why": "Rebranded from Ding Tea - Anaheim Hills; owner emailed 2026-11-12 and confirmed independently (DoorDash, order.online, Instagram location, the shop's own online menu all say Omega Tea Lab, same address 5620 E Santa Ana Canyon Rd).",
+   "at": "2026-11-12"
+  }
+ }
+}
