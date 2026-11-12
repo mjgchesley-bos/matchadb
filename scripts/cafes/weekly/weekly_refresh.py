@@ -213,6 +213,21 @@ def build_and_verify(allow_drop=None):
             if not (-90 <= c["lat"] <= 90 and -180 <= c["lng"] <= 180): problems.append(f"bad coordinates {c['id']}")
     dups = [i for i, n in ids.items() if n > 1]
     if dups: problems.append(f"{len(dups)} duplicate ids")
+    # PERMANENT INVARIANTS: lessons learned from hand audits, enforced on every build (invariants.py, regression_cases.json; see scripts/cafes/LESSONS.md)
+    try:
+        sys.path.insert(0, HERE); import invariants as INV
+        built = []
+        for f in glob.glob(f"{tmp_d}/*.json"): built += json.load(open(f, encoding="utf-8"))
+        _sh = INV.shared_evidence(built)
+        if _sh: problems.append(f"{len(_sh)} evidence pages shared by unrelated venues: {_sh[:3]}")
+        _ad = INV.address_sanity(built)
+        if _ad: problems.append(f"{len(_ad)} addresses with junk characters: {_ad[:3]}")
+        _rc = f"{HERE}/regression_cases.json"
+        if os.path.exists(_rc): problems += INV.regression(built, json.load(open(_rc, encoding="utf-8")))
+        _un = f"{HERE}/unaudited_ids.json"
+        if os.path.exists(_un): log(f"{len(json.load(open(_un)))} venues are not in the audit ledger yet (the weekly task reviews them)")
+    except Exception as e:
+        problems.append(f"invariant check failed to run: {e}")
     # known cafés that must stay listed (name fragment, city fragment)
     gold_file = f"{HERE}/gold_cafes.json"
     missing = []

@@ -1,0 +1,11 @@
+{"_note": "Hand-reviewed bad listings that must never come back. Add an entry every time a wrong listing is removed (name fragment + city fragment, or website host).",
+ "must_exclude": [
+  {"name": "Rompetrol", "city": "Urziceni", "why": "gas station (2026-11-12 Romania audit)"},
+  {"name": "Mediplus Clinic", "why": "medical clinic"},
+  {"name": "pickup point", "why": "parcel pickup point, not a venue"},
+  {"name": "Reparatii espressor", "why": "espresso machine repair"},
+  {"name": "Beans & Dots", "city": "Bucharest", "why": "only a tasting-menu dessert, no matcha drink"},
+  {"host": "mapsu.me", "why": "scraped directory"}, {"host": "lominu.com", "why": "scraped directory"}, {"host": "bizsite.link", "why": "scraped directory"},
+  {"host": "shop.joe.coffee", "why": "multi-tenant ordering platform"}, {"host": "meniudigital.ro", "why": "multi-tenant menu platform"},
+  {"host": "loafmalta.com", "why": "matcha only as an online-shop nav link"}, {"host": "coffeestrangers.com", "why": "matcha only in a brand blurb"}
+ ]}

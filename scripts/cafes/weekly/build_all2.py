@@ -348,6 +348,17 @@ if dups:
     print("dropped duplicate ids:", len(dups))
 
 for c in cafes: c["_key"] = c["state"] if c["cc"] == "US" else CC3[c["cc"]]
+# Audit ledger (audit_ledger.json): every venue a reviewer decided REMOVE stays off the map for good, whichever source re-supplies it.
+# Venues with no decision yet are written to unaudited_ids.json; the weekly task must review them before they are trusted.
+_LEDGER_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "audit_ledger.json")
+_LEDGER = json.load(open(_LEDGER_FILE, encoding="utf-8")).get("decisions", {}) if os.path.exists(_LEDGER_FILE) else {}
+_before = len(cafes)
+EV_BAD_HOSTS = {"localcraft.app", "menupages.com", "joinoko.com", "bizsite.link", "seedsheets.com", "emmidesserts.com", "ircagroup.com", "liquidline.co.uk", "inspiration-thes.com", "thecateredaffair.com", "marriott.com"}   # evidence that is a directory/blog/supplier/hotel-group page, never the venue's own menu
+def _evhost(c):
+    u = (c.get("ev") or [{}])[0].get("u", ""); h = urlparse(u).netloc.lower().replace("www.", ""); return h
+cafes = [c for c in cafes if _LEDGER.get(c["id"], {}).get("d") != "REMOVE" and not (not c.get("via") and any(_evhost(c) == x or _evhost(c).endswith("." + x) for x in EV_BAD_HOSTS))]
+print("audit ledger removed", _before - len(cafes), "venues")
+json.dump(sorted(c["id"] for c in cafes if c["id"] not in _LEDGER), open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "unaudited_ids.json"), "w"))
 cafes.sort(key=lambda c: (c["_key"], c["city"], c["name"]))
 if os.path.isdir(OUT_DIR): shutil.rmtree(OUT_DIR)
 os.makedirs(OUT_DIR)
