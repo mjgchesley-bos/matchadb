@@ -30,6 +30,15 @@ Where permanent rules live:
 - 961 name-only listings (the name says matcha, nothing on a site) need a web check.
 - 39 listings have coordinates far from their own city.
 
+## Country audits (Slovenia, 2026-11-12)
+Done by hand for a country the owner cares about: every listing checked live, then web search for venues we were missing. Findings and permanent rules:
+- A festival / event organiser (Karavana okusov, a travelling food-truck festival) was listed as a venue: events, pop-up stands and market stalls (amaii.matcha) are never listed, only fixed addresses.
+- A factory's local arm (Loison, Italian panettone bakery) was listed: bakery/food producers are not cafés unless the page shows a drink menu.
+- One shop appeared twice (CHA / Čajna Hiša Pod Velbom, Stari most) because two sources gave it different names: same site + same street = one listing.
+- A social-feed teaser ("everyone talks about matcha lattes…") is not menu evidence (Green Republic): unsure -> remove.
+- Our data MISSED 4 real matcha cafés in a 20-listing country (Munchies x2, TINK, Kavarna Midva) plus Rooster Coffee and M&K Matcha Kava: place data under-covers small countries. Before announcing a country, search "matcha latte <city>" per main city and add what is verified (leads_venues.json, via "audit").
+- Two venues on neighbouring street numbers geocoded to the same point: always look each venue up separately (OSM POI) so two pins never sit on one spot.
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
