@@ -1546,7 +1546,7 @@
 },
 "ebcea1b76d": {
 "d": "REMOVE",
-"r": "restaurant: matcha only in food/desserts/cocktails, no matcha tea or latte (owner rule 2026-11-12)",
+"r": "spot-check: Customer review; says no matcha ice cream",
 "at": "2026-11-12"
 },
 "cdc87b8601": {
@@ -1841,7 +1841,7 @@
 },
 "8d064c87fd": {
 "d": "REMOVE",
-"r": "restaurant: matcha only in food/desserts/cocktails, no matcha tea or latte (owner rule 2026-11-12)",
+"r": "spot-check: venue is Sonali, but site and menu belong to Miku",
 "at": "2026-11-12"
 },
 "fsq5e2254e": {
@@ -2366,7 +2366,7 @@
 },
 "aa97c10c93": {
 "d": "REMOVE",
-"r": "restaurant: matcha only in food/desserts/cocktails, no matcha tea or latte (owner rule 2026-11-12)",
+"r": "spot-check: Matcha Cake Kissa is a sister house; navigation text only",
 "at": "2026-11-12"
 },
 "9fee1e60be": {
@@ -18846,7 +18846,7 @@
 },
 "7ac90df629": {
 "d": "REMOVE",
-"r": "restaurant: matcha only in food/desserts/cocktails, no matcha tea or latte (owner rule 2026-11-12)",
+"r": "spot-check: website is Mirai-zaka izakaya, not the listed Watami",
 "at": "2026-11-12"
 },
 "003661e7ac": {
@@ -34102,6 +34102,211 @@
 "fsq6a67946": {
 "d": "KEEP",
 "r": "name-only web check: Banana Daddy pop-up inside Alma Matcha at 701 NW 5th Ave; own site, HappyCow",
+"at": "2026-11-12"
+},
+"634ab7f7e4": {
+"d": "REMOVE",
+"r": "spot-check: Linked site is Jane in San Francisco, not this Tiburon venue",
+"at": "2026-11-12"
+},
+"11fb5c34c7": {
+"d": "REMOVE",
+"r": "spot-check: Ice cream ingredient manufacturer; no retail venue",
+"at": "2026-11-12"
+},
+"fsq577ce3b": {
+"d": "REMOVE",
+"r": "spot-check: Paris guide article mention only, not venue's own menu",
+"at": "2026-11-12"
+},
+"fsq0d9200a": {
+"d": "REMOVE",
+"r": "spot-check: Big Cat Coffees store page; drink mix, ownership unclear",
+"at": "2026-11-12"
+},
+"fsqc4954ca": {
+"d": "REMOVE",
+"r": "spot-check: Supplier online store selling matcha powder; not venue",
+"at": "2026-11-12"
+},
+"fsq617f820": {
+"d": "REMOVE",
+"r": "spot-check: Aggregator directory page plus customer review mention only",
+"at": "2026-11-12"
+},
+"10310d0830": {
+"d": "REMOVE",
+"r": "spot-check: Customer review of coworking coffee; name mismatch",
+"at": "2026-11-12"
+},
+"d53b028bd2": {
+"d": "REMOVE",
+"r": "spot-check: matcha only a BIA event pop-up listing, not venue menu",
+"at": "2026-11-12"
+},
+"fsq4aa73b8": {
+"d": "REMOVE",
+"r": "spot-check: event-only mobile coffee cart; site belongs to Calgary cart",
+"at": "2026-11-12"
+},
+"dc0c7f1434": {
+"d": "REMOVE",
+"r": "spot-check: no matcha text in any context; nothing shows a matcha item",
+"at": "2026-11-12"
+},
+"029d88e9e3": {
+"d": "REMOVE",
+"r": "spot-check: matcha only in a blog article about ceremony tea",
+"at": "2026-11-12"
+},
+"564f404dbe": {
+"d": "REMOVE",
+"r": "spot-check: Wholesale supplier page; matcha is a product it stocks",
+"at": "2026-11-12"
+},
+"91a8120d99": {
+"d": "REMOVE",
+"r": "spot-check: Matcha latte belongs to tenant tea shop, not this venue",
+"at": "2026-11-12"
+},
+"3c89aaa223": {
+"d": "REMOVE",
+"r": "spot-check: Matcha appears only in a customer review",
+"at": "2026-11-12"
+},
+"f6a1366084": {
+"d": "REMOVE",
+"r": "spot-check: Unit has no matcha text; cannot confirm",
+"at": "2026-11-12"
+},
+"1660e586d7": {
+"d": "REMOVE",
+"r": "spot-check: Matcha only in brand blog article, not venue menu",
+"at": "2026-11-12"
+},
+"7433a48606": {
+"d": "REMOVE",
+"r": "spot-check: Matcha only in customer review text",
+"at": "2026-11-12"
+},
+"801b14629a": {
+"d": "REMOVE",
+"r": "spot-check: Matcha only in a workshop event listing",
+"at": "2026-11-12"
+},
+"3f07048245": {
+"d": "REMOVE",
+"r": "spot-check: Matcha cheesecake only in an event/press post",
+"at": "2026-11-12"
+},
+"fsq4b84799": {
+"d": "REMOVE",
+"r": "spot-check: Event-only mobile coffee cart",
+"at": "2026-11-12"
+},
+"b254f8679d": {
+"d": "REMOVE",
+"r": "spot-check: Matcha only in customer testimonials",
+"at": "2026-11-12"
+},
+"077f55f8ef": {
+"d": "REMOVE",
+"r": "spot-check: B2B cold brew supplier page; matcha latte product line",
+"at": "2026-11-12"
+},
+"8fa94e692e": {
+"d": "REMOVE",
+"r": "spot-check: blog article only; no matcha product or drink shown",
+"at": "2026-11-12"
+},
+"2eceaf35bd": {
+"d": "REMOVE",
+"r": "spot-check: matcha mentioned only in a customer review",
+"at": "2026-11-12"
+},
+"44b1ef449c": {
+"d": "REMOVE",
+"r": "spot-check: tea store page is a recipe; no matcha product shown",
+"at": "2026-11-12"
+},
+"fd0f0e9487": {
+"d": "REMOVE",
+"r": "spot-check: recipe on a pastry school's blog, different business",
+"at": "2026-11-12"
+},
+"c7bb223b95": {
+"d": "REMOVE",
+"r": "spot-check: Matcha only in skincare product names",
+"at": "2026-11-12"
+},
+"68a07d67ca": {
+"d": "REMOVE",
+"r": "spot-check: Wholesale vending topping online shop; not public venue",
+"at": "2026-11-12"
+},
+"fsq505340b": {
+"d": "REMOVE",
+"r": "spot-check: Recipe blog post; matcha version not made",
+"at": "2026-11-12"
+},
+"0c2d7cfbfe": {
+"d": "REMOVE",
+"r": "spot-check: Brand online store; no physical venue or menu shown",
+"at": "2026-11-12"
+},
+"048ac53349": {
+"d": "REMOVE",
+"r": "spot-check: Multi-location restaurant chain, not independent",
+"at": "2026-11-12"
+},
+"e9cca37195": {
+"d": "REMOVE",
+"r": "spot-check: Matcha only in customer review text",
+"at": "2026-11-12"
+},
+"740836d8be": {
+"d": "REMOVE",
+"r": "spot-check: Franchise chain with multiple stores, not independent",
+"at": "2026-11-12"
+},
+"ccbd32fef5": {
+"d": "REMOVE",
+"r": "spot-check: Blog review, not venue's own menu",
+"at": "2026-11-12"
+},
+"8ebc6d1af7": {
+"d": "REMOVE",
+"r": "spot-check: Matcha only in merch shirt name",
+"at": "2026-11-12"
+},
+"dd3e016ce1": {
+"d": "REMOVE",
+"r": "spot-check: National restaurant chain, not independent",
+"at": "2026-11-12"
+},
+"fsq4f5abd9": {
+"d": "REMOVE",
+"r": "spot-check: Multi-branch restaurant chain, not independent",
+"at": "2026-11-12"
+},
+"a7d8839a01": {
+"d": "REMOVE",
+"r": "spot-check: Food blog article, unrelated business name",
+"at": "2026-11-12"
+},
+"270cf7d167": {
+"d": "REMOVE",
+"r": "spot-check: Group blog article only; no venue menu item",
+"at": "2026-11-12"
+},
+"fsqbfa0bb4": {
+"d": "REMOVE",
+"r": "spot-check: Matcha mention refers to another venue on RACV page",
+"at": "2026-11-12"
+},
+"0a3b8b9d86": {
+"d": "REMOVE",
+"r": "spot-check: FAQ recipe questions only; no menu item",
 "at": "2026-11-12"
 }
 }
