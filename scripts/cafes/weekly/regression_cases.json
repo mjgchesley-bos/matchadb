@@ -1,11 +1,95 @@
-{"_note": "Hand-reviewed bad listings that must never come back. Add an entry every time a wrong listing is removed (name fragment + city fragment, or website host).",
+{
+ "_note": "Hand-reviewed bad listings that must never come back. Add an entry every time a wrong listing is removed (name fragment + city fragment, or website host).",
  "must_exclude": [
-  {"name": "Rompetrol", "city": "Urziceni", "why": "gas station (2026-11-12 Romania audit)"},
-  {"name": "Mediplus Clinic", "why": "medical clinic"},
-  {"name": "pickup point", "why": "parcel pickup point, not a venue"},
-  {"name": "Reparatii espressor", "why": "espresso machine repair"},
-  {"name": "Beans & Dots", "city": "Bucharest", "why": "only a tasting-menu dessert, no matcha drink"},
-  {"host": "mapsu.me", "why": "scraped directory"}, {"host": "lominu.com", "why": "scraped directory"}, {"host": "bizsite.link", "why": "scraped directory"},
-  {"host": "shop.joe.coffee", "why": "multi-tenant ordering platform"}, {"host": "meniudigital.ro", "why": "multi-tenant menu platform"},
-  {"host": "loafmalta.com", "why": "matcha only as an online-shop nav link"}, {"host": "coffeestrangers.com", "why": "matcha only in a brand blurb"}
- ]}
+  {
+   "name": "Rompetrol",
+   "city": "Urziceni",
+   "why": "gas station (2026-11-12 Romania audit)"
+  },
+  {
+   "name": "Mediplus Clinic",
+   "why": "medical clinic"
+  },
+  {
+   "name": "pickup point",
+   "why": "parcel pickup point, not a venue"
+  },
+  {
+   "name": "Reparatii espressor",
+   "why": "espresso machine repair"
+  },
+  {
+   "name": "Beans & Dots",
+   "city": "Bucharest",
+   "why": "only a tasting-menu dessert, no matcha drink"
+  },
+  {
+   "host": "mapsu.me",
+   "why": "scraped directory"
+  },
+  {
+   "host": "lominu.com",
+   "why": "scraped directory"
+  },
+  {
+   "host": "bizsite.link",
+   "why": "scraped directory"
+  },
+  {
+   "host": "shop.joe.coffee",
+   "why": "multi-tenant ordering platform"
+  },
+  {
+   "host": "meniudigital.ro",
+   "why": "multi-tenant menu platform"
+  },
+  {
+   "host": "loafmalta.com",
+   "why": "matcha only as an online-shop nav link"
+  },
+  {
+   "host": "coffeestrangers.com",
+   "why": "matcha only in a brand blurb"
+  },
+  {
+   "name": "Karavana okusov",
+   "why": "travelling food-truck festival (Slovenia audit)"
+  },
+  {
+   "name": "Loison Slovenija",
+   "why": "panettone bakery arm (Slovenia audit)"
+  },
+  {
+   "name": "Mochinut",
+   "city": "Austin",
+   "why": "100+ outlet chain (Austin audit)"
+  },
+  {
+   "name": "Sharetea",
+   "city": "Austin",
+   "why": "chain (Austin audit)"
+  },
+  {
+   "name": "Happy Lemon",
+   "city": "Austin",
+   "why": "chain (Austin audit)"
+  },
+  {
+   "name": "Jester Java",
+   "why": "only evidence was a UT housing page about Up and Atom (Austin audit)"
+  },
+  {
+   "name": "Cypress Bend Cafe",
+   "why": "only evidence was a UT housing page about Up and Atom (Austin audit)"
+  },
+  {
+   "name": "Littlefield Patio Cafe",
+   "why": "only evidence was a UT housing page about Up and Atom (Austin audit)"
+  },
+  {
+   "name": "Anderson's Coffee Company",
+   "city": "Austin",
+   "why": "retail matcha powder/whisk only (Austin audit)"
+  }
+ ]
+}
