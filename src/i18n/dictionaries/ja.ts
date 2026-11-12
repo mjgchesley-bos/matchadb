@@ -294,6 +294,7 @@ export const ja: Partial<Record<Key, string>> = {
   "c.cm.heart": "このコメントにいいね",
   "c.cm.unheart": "いいねを取り消す",
   "c.cm.heartSignIn": "コメントにいいねするにはログインしてください。",
+  "c.cm.loadMore": "コメントをもっと見る",
   "c.rt.label": "ユーザー評価",
   "c.rt.count.one": "ユーザー評価{count}件",
   "c.rt.count.other": "ユーザー評価{count}件",

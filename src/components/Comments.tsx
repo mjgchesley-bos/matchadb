@@ -17,8 +17,9 @@ export const COMMENT_BUCKET = "comment-photos";
 const MAX_PHOTOS = 3;
 const MAX_CHARS = 1500;
 const MAX_SIDE = 1600;
+const PAGE = 15; // comments shown at first, and added by each "Load more"
 
-type Pub = { id: string; body: string; photos: string[]; created_at: string; display_name: string; tier?: string | null; public_profile?: boolean };
+type Pub = { id: string; body: string; photos: string[]; created_at: string; display_name: string; tier?: string | null; public_profile?: boolean; hearts?: number };
 type Mine = { id: string; body: string; photos: string[]; status: "pending" | "approved" | "hidden"; created_at: string };
 
 export const commentPhotoUrl = (path: string): string => supabase().storage.from(COMMENT_BUCKET).getPublicUrl(path).data.publicUrl;
@@ -116,6 +117,8 @@ export function Comments({
   const dateFmt = useMemo(() => new Intl.DateTimeFormat(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric" }), [lang]);
   const uid = user?.id ?? null;
   const [pub, setPub] = useState<Pub[] | null>(null);
+  const [hasMore, setHasMore] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [mineState, setMineState] = useState<{ uid: string; list: Mine[] } | null>(null);
   const mine = uid && mineState?.uid === uid ? mineState.list : [];
   const [tick, setTick] = useState(0);
@@ -129,35 +132,53 @@ export function Comments({
   const [myHearts, setMyHearts] = useState<Set<string>>(new Set());
   const picker = useRef<HTMLInputElement | null>(null);
 
-  useEffect(() => {
-    let live = true;
-    supabase()
+  // The database ranks the comments (most hearts first, then newest) so the top ones are on the first page whatever their age.
+  const fetchPage = async (offset: number) => {
+    const sb = supabase();
+    const ranked = await sb.rpc("ranked_comments", { p_type: targetType, p_key: targetKey, p_limit: PAGE + 1, p_offset: offset });
+    if (!ranked.error) return ranked;
+    // Fallback (if the ranking function is unavailable): plain newest-first pages, so comments never disappear.
+    return sb
       .from("approved_comments")
       .select("id, body, photos, created_at, display_name, tier, public_profile")
       .eq("target_type", targetType)
       .eq("target_key", targetKey)
       .order("created_at", { ascending: false })
-      .limit(50)
-      .then(({ data }) => live && setPub((data as Pub[] | null) ?? []));
+      .range(offset, offset + PAGE);
+  };
+
+  const absorb = (rows: Pub[], replace: boolean) => {
+    const page = rows.slice(0, PAGE);
+    setHasMore(rows.length > PAGE);
+    setPub((cur) => (replace || !cur ? page : [...cur, ...page.filter((r) => !cur.some((c) => c.id === r.id))]));
+    setHearts((h) => {
+      const m = replace ? {} : { ...h };
+      for (const r of page) m[r.id] = r.hearts ?? 0;
+      return m;
+    });
+  };
+
+  useEffect(() => {
+    let live = true;
+    fetchPage(0).then(({ data }) => live && absorb((data as Pub[] | null) ?? [], true));
     return () => {
       live = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetType, targetKey, tick]);
+
+  const loadMore = async () => {
+    setLoadingMore(true);
+    const { data } = await fetchPage(pub?.length ?? 0);
+    absorb((data as Pub[] | null) ?? [], false);
+    setLoadingMore(false);
+  };
 
   const pubIds = useMemo(() => (pub ?? []).map((c) => c.id), [pub]);
   useEffect(() => {
     if (!pubIds.length) return;
     let live = true;
     const sb = supabase();
-    sb.from("comment_heart_counts")
-      .select("comment_id, hearts")
-      .in("comment_id", pubIds)
-      .then(({ data }) => {
-        if (!live || !data) return;
-        const m: Record<string, number> = {};
-        for (const r of data as { comment_id: string; hearts: number }[]) m[r.comment_id] = r.hearts;
-        setHearts(m);
-      });
     if (uid)
       sb.from("comment_hearts")
         .select("comment_id")
@@ -268,11 +289,7 @@ export function Comments({
   };
 
   const mineIds = new Set(mine.map((m) => m.id));
-  // Most-hearted first (like Reddit's "top"); ties keep the newest first.
-  const ranked = useMemo(
-    () => [...(pub ?? [])].sort((a, b) => (hearts[b.id] ?? 0) - (hearts[a.id] ?? 0) || +new Date(b.created_at) - +new Date(a.created_at)),
-    [pub, hearts],
-  );
+  const ranked = pub ?? [];   // already ordered by the database: most hearts first, ties newest first
   const waiting = mine.filter((m) => m.status === "pending");
 
   return (
@@ -412,6 +429,16 @@ export function Comments({
             </div>
           </article>
         ))}
+        {hasMore && (
+          <button
+            type="button"
+            onClick={() => void loadMore()}
+            disabled={loadingMore}
+            className="self-center rounded-full border border-line-strong bg-paper-raised px-5 py-2 text-sm text-ink hover:bg-matcha-soft disabled:opacity-50"
+          >
+            {loadingMore ? t("c.cm.loading") : t("c.cm.loadMore")}
+          </button>
+        )}
       </div>
     </section>
   );

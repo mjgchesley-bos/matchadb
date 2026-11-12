@@ -294,6 +294,7 @@ export const ko: Partial<Record<Key, string>> = {
   "c.cm.heart": "이 댓글에 좋아요",
   "c.cm.unheart": "좋아요 취소",
   "c.cm.heartSignIn": "댓글에 좋아요를 누르려면 로그인하세요.",
+  "c.cm.loadMore": "댓글 더 보기",
   "c.rt.label": "커뮤니티 평점",
   "c.rt.count.one": "커뮤니티 평점 {count}개",
   "c.rt.count.other": "커뮤니티 평점 {count}개",

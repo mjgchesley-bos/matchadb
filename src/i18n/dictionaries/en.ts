@@ -276,6 +276,7 @@ export const en = {
   "c.cm.heart": "Like this comment",
   "c.cm.unheart": "Remove your like",
   "c.cm.heartSignIn": "Sign in to like comments.",
+  "c.cm.loadMore": "Load more comments",
   "c.rt.label": "Community rating",
   "c.rt.count.one": "{count} community rating",
   "c.rt.count.other": "{count} community ratings",

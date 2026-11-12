@@ -278,6 +278,7 @@ export const fr: Partial<Record<Key, string>> = {
   "c.cm.heart": "J’aime ce commentaire",
   "c.cm.unheart": "Retirer le j’aime",
   "c.cm.heartSignIn": "Connectez-vous pour aimer les commentaires.",
+  "c.cm.loadMore": "Afficher plus de commentaires",
   "c.rt.label": "Note de la communauté",
   "c.rt.count.one": "{count} note de la communauté",
   "c.rt.count.other": "{count} notes de la communauté",

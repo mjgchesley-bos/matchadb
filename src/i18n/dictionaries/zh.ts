@@ -294,6 +294,7 @@ export const zh: Partial<Record<Key, string>> = {
   "c.cm.heart": "给这条评论点赞",
   "c.cm.unheart": "取消点赞",
   "c.cm.heartSignIn": "登录后即可为评论点赞。",
+  "c.cm.loadMore": "加载更多评论",
   "c.rt.label": "社区评分",
   "c.rt.count.one": "{count} 个社区评分",
   "c.rt.count.other": "{count} 个社区评分",
