@@ -39,6 +39,16 @@ Done by hand for a country the owner cares about: every listing checked live, th
 - Our data MISSED 4 real matcha cafés in a 20-listing country (Munchies x2, TINK, Kavarna Midva) plus Rooster Coffee and M&K Matcha Kava: place data under-covers small countries. Before announcing a country, search "matcha latte <city>" per main city and add what is verified (leads_venues.json, via "audit").
 - Two venues on neighbouring street numbers geocoded to the same point: always look each venue up separately (OSM POI) so two pins never sit on one spot.
 
+## City audit (Austin, 2026-11-12)
+134 listings checked, 21 removed, 21 added, 5 pins/names corrected. Permanent rules:
+- A page that names ONE venue (a university "guide to campus coffee shops") must never be evidence for every venue it links to: five UT dining cafes were listed on the strength of a sentence about Up and Atom. The shared-evidence invariant now has a regression case; add the real venue instead (Up and Atom added).
+- Franchise chains slip through the name-frequency chain rule when each outlet has a different suffix ("Sharetea - Austin", "Mochinut Cedar Park"): check real-world outlet counts for franchise brands (Mochinut, Happy Lemon, Sharetea) by hand.
+- A supplier or "current partners" banner (Míra Matcha on Lone Man's home page) is not evidence either way: check the venue's online-order menu before deciding. Lone Man does list a matcha latte, so it stays.
+- Retail matcha powder or whisk on a roaster's shop page (Anderson's, Medici) is not a matcha drink: remove unless a drink menu shows one.
+- Rebrands and moved venues leave wrong names/addresses: Mañana's second shop is now Mattina; Paperboy's real shops are 1401 S Lamar and 1203 E 11th, not a Menchaca trailer; Matcha Boys moved into The LOOP in Hyde Park.
+- City audit found ~20 real matcha cafés missing (CaPhê.in, Black Fox, Terrible Love, Desnudo, Civil Goat, Neon Belly...). The reliable discovery sources are local "best matcha in <city>" roundups (food-blog guides, newspaper lists, Yelp top-10), each venue then verified on its own menu or ordering page.
+- Mobile carts and pop-ups with no fixed address (Matchara, Joy(n) Handcrafted) and closed businesses (Freewheelin') stay off the map.
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
