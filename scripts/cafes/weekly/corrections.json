@@ -2408,6 +2408,22 @@
    },
    "why": "Austin audit: Mañana's second location (111 Sandra Muraida Way) is now called Mattina; own site mattinaatx.com open daily with matcha menu.",
    "at": "2026-11-12"
+  },
+  "3c82288657": {
+   "set": {
+    "name": "Caffe Medici - Springdale",
+    "address": "1023 Springdale Rd #1A",
+    "zip": "78721"
+   },
+   "why": "Medici's own locations page: Springdale General.",
+   "at": "2026-11-12"
+  },
+  "711608cd39": {
+   "set": {
+    "name": "Caffe Medici - Airport (Gate 7)"
+   },
+   "why": "Medici's own locations page: Airport, Gate 7.",
+   "at": "2026-11-12"
   }
  }
 }

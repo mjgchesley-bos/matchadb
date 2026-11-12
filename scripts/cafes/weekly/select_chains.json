@@ -1,0 +1,12 @@
+{
+ "_note": "Chains the owner wants listed despite having many outlets. A brand's website host here exempts it from the chain filters in build_all2.py; each outlet still needs matcha evidence. Add leads for outlets the place data lacks.",
+ "brands": [
+  {
+   "name": "Caffe Medici (Austin)",
+   "hosts": [
+    "mediciroasting.com"
+   ],
+   "why": "owner request 2026-11-12; 7 Austin cafes, matcha on seasonal menus"
+  }
+ ]
+}

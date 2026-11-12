@@ -211,6 +211,10 @@ CHAIN_HOSTS = {host_of(r[10]) for r in rows if r[10] and r[8] is not None and _c
 print("name-based chains:", len(NAME_CHAINS), sorted(NAME_CHAINS)[:60])
 
 AGG_HOST = re.compile(r"(yelp|facebook|instagram|tripadvisor|doordash|ubereats|grubhub|google|toasttab|clover|square\.site|linktr\.ee|tiktok|twitter|x\.com|youtube|opentable|postmates|seamless|menupix|allmenus|foursquare|zomato|tabelog|hotpepper|gnavi|retty|naver|kakao|placeweb|placestars)", re.I)
+# Select chains: brands the owner wants on the map even though they have many outlets. List the website host in select_chains.json.
+try: SELECT_HOSTS = {h.lower() for b in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "select_chains.json"), encoding="utf-8"))["brands"] for h in b["hosts"]}
+except Exception: SELECT_HOSTS = set()
+print("select chains:", sorted(SELECT_HOSTS))
 SITE_OVERRIDES = {"fsq6a36b1e826853143d41f3bfe": "https://www.matchariacafe.com/"}      # Matcharia (Malta): Foursquare has no website; menu verified by hand
 for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, conf, wd, nm) in rows:
     website = SITE_OVERRIDES.get(id_, website)
@@ -224,10 +228,11 @@ for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, c
     # a street address written in Japanese / Korean / Chinese script outside Japan and Korea = the place data put the wrong country on it
     if cc not in ("JP", "KR") and (CJK_ADDR.search(clean(address)) or (cc == "AU" and CJK_ADDR.search(clean(city) + clean(state)))):
         stats["wrong_country"] += 1; continue
-    if wd and brand_count[wd] >= 15: continue                       # big chains are handled separately
     h = host_of(website) if website else None
-    if h and host_rows[h] >= 25: continue                           # one site shared by 25+ places = a chain
-    if h and (h in CHAIN_HOSTS or _chain_key(name, city) in NAME_CHAINS): stats['name_chain'] += 1; continue   # same name at 25+ outlets with few websites = a chain
+    _sel = bool(h) and h in SELECT_HOSTS                            # owner-chosen "select chain": exempt from the chain filters below, still needs matcha evidence
+    if wd and brand_count[wd] >= 15 and not _sel: continue          # big chains are handled separately
+    if h and host_rows[h] >= 25 and not _sel: continue              # one site shared by 25+ places = a chain
+    if h and not _sel and (h in CHAIN_HOSTS or _chain_key(name, city) in NAME_CHAINS): stats['name_chain'] += 1; continue   # same name at 25+ outlets with few websites = a chain
     if not_a_cafe(name, cat, h): stats['not_a_cafe'] += 1; continue      # shops, agencies, studios and convenience chains that are not cafes
     r = res.get(h) if h else None
     ev = evidence(r) if r and r.get("status") == "ok" and r.get("matcha") else []
