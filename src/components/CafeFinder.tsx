@@ -6,7 +6,8 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { cafeSlug, directionsUrl, formatPlace, type CafeSlim } from "@/lib/cafe-types";
 import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, type RegionKey } from "@/lib/cafe-regions";
-import { KM_PER_MILE, geocode, haversineMiles, type Origin } from "@/lib/geo";
+import { KM_PER_MILE, geocodeMany, haversineMiles, type Origin } from "@/lib/geo";
+import { nameScore, norm } from "@/lib/cafe-search";
 import { useLang, useT } from "@/i18n/client";
 import { INTL_LANG, localePath, type Locale } from "@/i18n/config";
 import { rich } from "@/i18n/rich";
@@ -19,6 +20,7 @@ import { SuggestCafe } from "@/components/SuggestCafe";
 
 type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string };
 type Listed = { cafe: Cafe; dist: number | null };
+type Opt = { kind: "cafe"; cafe: Cafe; dist: number | null } | { kind: "place"; origin: Origin };
 
 const RADII = [5, 10, 25, 50, 0]; // 0 = any distance
 const LIST_CAP = 30;
@@ -61,7 +63,13 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   const all = loaded && loaded.region === regionKey ? loaded.list : null;
   const [loadError, setLoadError] = useState(false);
   const [query, setQuery] = useState("");
-  const [name, setName] = useState("");
+  // One search bar: a café name narrows the list to those cafés (nameFilter); a place sets the origin.
+  const [nameFilter, setNameFilter] = useState<{ label: string; ids: Set<string> } | null>(null);
+  const [myLoc, setMyLoc] = useState<Origin | null>(null); // the visitor's own position, once known (for "closest to you")
+  const [options, setOptions] = useState<{ q: string; list: Opt[] } | null>(null); // "did you mean" choices after a miss
+  const [sugg, setSugg] = useState<Opt[]>([]); // live suggestions while typing
+  const [suggOpen, setSuggOpen] = useState(false);
+  const visibleSugg = suggOpen && query.trim().length >= 2 ? sugg : [];
   const [origin, setOrigin] = useState<Origin | null>(null);
   const [radius, setRadius] = useState(10);
   const [focusOnly, setFocusOnly] = useState(false);
@@ -86,10 +94,9 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   }, [regionKey]);
 
   const { listed, nearest, total } = useMemo(() => {
-    const q = name.trim().toLowerCase();
     const factor = unit === "km" ? KM_PER_MILE : 1;
     const matching: Listed[] = (all ?? [])
-      .filter((c) => (!focusOnly || c.focus) && (!q || c.name.toLowerCase().includes(q) || c.city.toLowerCase().includes(q)))
+      .filter((c) => (!focusOnly || c.focus) && (!nameFilter || nameFilter.ids.has(c.id)))
       .map((cafe) => ({ cafe, dist: origin ? haversineMiles(origin, cafe) * factor : null }));
     if (!origin) {
       matching.sort((a, b) => a.cafe.cc.localeCompare(b.cafe.cc) || a.cafe.state.localeCompare(b.cafe.state) || a.cafe.city.localeCompare(b.cafe.city) || a.cafe.name.localeCompare(b.cafe.name));
@@ -98,7 +105,10 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     matching.sort((a, b) => (a.dist ?? 0) - (b.dist ?? 0));
     const within = radius > 0 ? matching.filter((x) => (x.dist ?? 0) <= radius) : matching;
     return { listed: within, nearest: matching[0] ?? null, total: matching.length };
-  }, [all, name, focusOnly, origin, radius, unit]);
+  }, [all, nameFilter, focusOnly, origin, radius, unit]);
+
+  // Normalized names, computed once per loaded list, for fast matching.
+  const normNames = useMemo(() => (all ?? []).map((c) => norm(c.name)), [all]);
 
   const currentFeatures = useRef<GeoJSON.FeatureCollection>({ type: "FeatureCollection", features: [] });
 
@@ -241,6 +251,8 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     setSelectedId(null);
     setShowAll(false);
     setMessage(null);
+    setNameFilter(null);
+    setOptions(null);
     if (!keepOrigin) setQuery("");
   }
 
@@ -254,6 +266,9 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: t("c.cf.yourLocation") };
+        setMyLoc(o);
+        setNameFilter(null);
+        setOptions(null);
         // Pick the part of the world the visitor is in.
         const here = REGIONS.find((r) => o.lng >= r.bounds[0][0] && o.lng <= r.bounds[1][0] && o.lat >= r.bounds[0][1] && o.lat <= r.bounds[1][1]);
         setQuery("");
@@ -283,39 +298,94 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Cafés (current region) whose name matches `qn` (already normalized), best first; closest first when a position is known.
+  function matchCafes(qn: string, minScore: number, from: { lat: number; lng: number } | null): { cafe: Cafe; score: number; dist: number | null }[] {
+    const out: { cafe: Cafe; score: number; dist: number | null }[] = [];
+    (all ?? []).forEach((cafe, i) => {
+      const score = nameScore(qn, normNames[i]);
+      if (score >= minScore) out.push({ cafe, score, dist: from ? haversineMiles(from, cafe) : null });
+    });
+    out.sort((x, y) => (from ? (x.dist ?? 0) - (y.dist ?? 0) : y.score - x.score || x.cafe.name.localeCompare(y.cafe.name)));
+    return out;
+  }
+
+  const knownPosition = () => myLoc ?? (origin && origin.label === t("c.cf.yourLocation") ? origin : null);
+
+  function goToPlace(o: Origin) {
+    const k = regionForCountry(o.country);
+    setSelectedId(null);
+    setNameFilter(null);
+    setOptions(null);
+    setSuggOpen(false);
+    setQuery(o.label);
+    if (k && k !== regionKey) changeRegion(k, o);
+    else setOrigin(o);
+  }
+
+  // Show the cafés named like `label` (closest to the visitor first) and bring them to the closest one.
+  function goToCafes(label: string, hits: { cafe: Cafe; dist: number | null }[], from: Origin | null) {
+    setOptions(null);
+    setSuggOpen(false);
+    setQuery(label);
+    setNameFilter({ label, ids: new Set(hits.map((h) => h.cafe.id)) });
+    setMessage(from ? null : hits.length > 1 ? t("c.cf.closestHint") : null);
+    if (from) setOrigin(from);
+    const first = hits[0].cafe;
+    window.setTimeout(() => {
+      const map = mapRef.current;
+      if (hits.length === 1 || from) select(first.id);
+      else if (map) {
+        const bnd = new mapboxgl.LngLatBounds([first.lng, first.lat], [first.lng, first.lat]);
+        for (const h of hits.slice(0, 200)) bnd.extend([h.cafe.lng, h.cafe.lat]);
+        map.fitBounds(bnd, { padding: 70, maxZoom: 13, duration: 900 });
+      }
+    }, 80);
+  }
+
+  function pick(o: Opt) {
+    if (o.kind === "place") return goToPlace(o.origin);
+    const from = knownPosition();
+    setNameFilter(null);
+    setOptions(null);
+    setSuggOpen(false);
+    setQuery(o.cafe.name);
+    if (from) setOrigin(from);
+    select(o.cafe.id);
+  }
+
   async function runSearch(e: React.FormEvent) {
     e.preventDefault();
     const q = query.trim();
     if (!q) return;
     setBusy("search");
     setMessage(null);
+    setOptions(null);
+    setSuggOpen(false);
     try {
-      // Look in the current region first, then anywhere we cover.
-      const o = (await geocode(q, region.countries, lang)) ?? (await geocode(q, ALL_COUNTRIES, lang));
-      // People often type a café's name into this box. If it matches a café we list and is not clearly a place (a weak geocoder match, or none),
-      // treat it as a name search: filter by that name and show those cafés instead of jumping to some similarly named town.
-      const qn = q.toLowerCase();
-      const nameHits = qn.length >= 3 && !/\d/.test(qn) ? (all ?? []).filter((c) => c.name.toLowerCase().includes(qn)) : [];
-      if (nameHits.length && (!o || (o.relevance ?? 1) < 0.9)) {
-        setOrigin(null);
-        setName(q);
-        setSelectedId(null);
-        const map = mapRef.current;
-        if (nameHits.length === 1) select(nameHits[0].id);
-        else if (map && nameHits.length <= 200) {
-          const b = new mapboxgl.LngLatBounds([nameHits[0].lng, nameHits[0].lat], [nameHits[0].lng, nameHits[0].lat]);
-          for (const c of nameHits) b.extend([c.lng, c.lat]);
-          map.fitBounds(b, { padding: 70, maxZoom: 13, duration: 900 });
-        }
-        return;
+      const qn = norm(q);
+      const from = knownPosition();
+      const exact = !/\d/.test(qn) ? matchCafes(qn, 1.2, from) : []; // a café with exactly this name
+      const places = await geocodeMany(q, region.countries, lang, 5).then((r) => (r.length ? r : geocodeMany(q, ALL_COUNTRIES, lang, 5)));
+      const place = places[0];
+      const placeStrong = !!place && (place.relevance ?? 0) >= 0.9;
+      if (exact.length) return goToCafes(exact[0].cafe.name, exact, from); // the name of a venue: its closest outlet first
+      if (placeStrong) return goToPlace(place); // a city, ZIP or postcode
+      const inside = !/\d/.test(qn) && qn.length >= 3 ? matchCafes(qn, 1.0, from) : []; // the text is part of a café name
+      if (inside.length) return goToCafes(q, inside, from);
+      // Nothing matched well (a typo, probably): offer the closest cafés and places to choose from.
+      const fuzzy = qn.length >= 4 ? matchCafes(qn, 0.62, from) : [];
+      const seen = new Set<string>();
+      const list: Opt[] = [];
+      for (const f of fuzzy) {
+        const k = norm(f.cafe.name);
+        if (seen.has(k)) continue;
+        seen.add(k);
+        list.push({ kind: "cafe", cafe: f.cafe, dist: f.dist });
+        if (list.length >= 4) break;
       }
-      if (!o) setMessage(t("c.cf.err.notFound"));
-      else {
-        const k = regionForCountry(o.country);
-        setSelectedId(null);
-        if (k && k !== regionKey) changeRegion(k, o);
-        else setOrigin(o);
-      }
+      for (const p of places.slice(0, 4)) list.push({ kind: "place", origin: p });
+      if (!list.length) setMessage(t("c.cf.err.notFound"));
+      else setOptions({ q, list });
     } catch {
       setMessage(t("c.cf.err.search"));
     } finally {
@@ -323,8 +393,44 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     }
   }
 
+  // Live suggestions while typing: cafés whose name contains the text, plus places (debounced).
+  useEffect(() => {
+    const q = query.trim();
+    const qn = norm(q);
+    if (qn.length < 2 || !suggOpen) return;
+    let live = true;
+    const timer = window.setTimeout(async () => {
+      const from = knownPosition();
+      const seen = new Set<string>();
+      const list: Opt[] = [];
+      if (!/\d/.test(qn)) {
+        for (const h of matchCafes(qn, 1.0, from)) {
+          const k = norm(h.cafe.name);
+          if (seen.has(k)) continue;
+          seen.add(k);
+          list.push({ kind: "cafe", cafe: h.cafe, dist: h.dist });
+          if (list.length >= 4) break;
+        }
+      }
+      try {
+        const places = await geocodeMany(q, region.countries, lang, 4, true);
+        for (const p of places) list.push({ kind: "place", origin: p });
+      } catch {
+        /* suggestions are optional */
+      }
+      if (live) setSugg(list);
+    }, 250);
+    return () => {
+      live = false;
+      window.clearTimeout(timer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [query, suggOpen, all]);
+
   function clearSearch() {
     setOrigin(null);
+    setNameFilter(null);
+    setOptions(null);
     setQuery("");
     setMessage(null);
     setSelectedId(null);
@@ -357,24 +463,49 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       <form onSubmit={runSearch} className="flex flex-col gap-3 lg:flex-row lg:items-end">
         <div className="flex-1">
           <label htmlFor="cafe-q" className={label}>
-            {t("c.cf.zip")}
+            {t("c.cf.searchLabel")}
           </label>
-          <div className="flex gap-2">
-            <input id="cafe-q" value={query} onChange={(e) => setQuery(e.target.value)} placeholder={t(`c.region.${region.key}.ph` as "c.region.us.ph")} autoComplete="postal-code" className={`${fieldClass} flex-1 min-w-0`} />
+          <div className="relative flex gap-2">
+            <input
+              id="cafe-q"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setSuggOpen(true);
+              }}
+              onFocus={() => setSuggOpen(true)}
+              onBlur={() => window.setTimeout(() => setSuggOpen(false), 150)}
+              onKeyDown={(e) => e.key === "Escape" && setSuggOpen(false)}
+              placeholder={t("c.cf.searchPh")}
+              autoComplete="off"
+              role="combobox"
+              aria-expanded={visibleSugg.length > 0}
+              aria-controls="cafe-q-list"
+              className={`${fieldClass} flex-1 min-w-0`}
+            />
             <button type="submit" disabled={busy !== null || !query.trim()} className="rounded-sm bg-matcha px-5 py-2.5 text-sm font-medium text-paper hover:bg-forest transition-colors disabled:opacity-50">
               {busy === "search" ? t("c.cf.searching") : t("c.cf.search")}
             </button>
+            {visibleSugg.length > 0 && (
+              <ul id="cafe-q-list" role="listbox" className="absolute left-0 right-24 top-full z-20 mt-1 overflow-hidden rounded-sm border border-line-strong bg-paper shadow-lg">
+                {visibleSugg.map((o, i) => (
+                  <li key={i} role="option" aria-selected={false}>
+                    <button type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => pick(o)} className="flex w-full items-baseline justify-between gap-3 px-3 py-2 text-left text-sm hover:bg-matcha-soft">
+                      <span className="min-w-0 truncate">
+                        <span className="font-medium text-ink">{o.kind === "cafe" ? o.cafe.name : o.origin.label}</span>
+                        {o.kind === "cafe" && <span className="text-ink-muted"> · {place(o.cafe)}</span>}
+                      </span>
+                      <span className="shrink-0 text-xs text-ink-faint">{o.kind === "place" ? t("c.cf.optPlace") : o.dist != null ? `${fmtDist(o.dist * (unit === "km" ? KM_PER_MILE : 1))} ${unit}` : t("c.cf.optCafe")}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
         <button type="button" onClick={() => locate()} disabled={busy !== null} className="rounded-sm border border-line-strong bg-paper px-4 py-2.5 text-sm font-medium text-ink hover:border-matcha transition-colors disabled:opacity-50">
           {busy === "locate" ? t("c.cf.locating") : t("c.cf.locate")}
         </button>
-        <div>
-          <label htmlFor="cafe-name" className={label}>
-            {t("c.cf.nameLabel")}
-          </label>
-          <input id="cafe-name" value={name} onChange={(e) => setName(e.target.value)} placeholder={t("c.cf.namePh")} className={`${fieldClass} w-full lg:w-44`} />
-        </div>
         <div>
           <label htmlFor="cafe-radius" className={label}>
             {t("c.cf.within")}
@@ -400,6 +531,21 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
           {message}
         </p>
       )}
+      {options && (
+        <div className="mt-3 rounded-sm border border-line bg-paper-raised px-3 py-3 text-sm text-ink-muted" role="status">
+          <p>{t("c.cf.didYouMean", { q: options.q })}</p>
+          <ul className="mt-2 flex flex-wrap gap-2">
+            {options.list.map((o, i) => (
+              <li key={i}>
+                <button type="button" onClick={() => pick(o)} className="rounded-full border border-line-strong bg-paper px-3 py-1.5 text-left text-ink hover:border-matcha hover:bg-matcha-soft">
+                  <span className="font-medium">{o.kind === "cafe" ? o.cafe.name : o.origin.label}</span>
+                  <span className="text-ink-muted">{o.kind === "cafe" ? ` · ${place(o.cafe)}` : ` · ${t("c.cf.optPlace")}`}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_24rem] gap-5">
         <div className="relative h-[360px] lg:h-[680px] rounded-sm overflow-hidden border border-line">
@@ -418,6 +564,11 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
                   ? t(listed.length === 1 ? "c.cf.withinOf.one" : "c.cf.withinOf.other", { count: nf(listed.length), radius, unit: unitWord, place: origin.label })
                   : t(listed.length === 1 ? "c.cf.nearPlace.one" : "c.cf.nearPlace.other", { count: nf(listed.length), place: origin.label })
                 : t("c.cf.listed", { count: nf(listed.length), region: regionLabel(region.key) })}
+              {nameFilter && !origin && (
+                <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
+                  {t("c.cf.clear")}
+                </button>
+              )}
               {origin && (
                 <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
                   {t("c.cf.clear")}
