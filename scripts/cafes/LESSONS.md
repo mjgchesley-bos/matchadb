@@ -18,6 +18,7 @@ Where permanent rules live:
 | 2026-11-12 | Matcha evidence that was only a whisk, a blog post, a review quote, an ingredient, a hotel-group page, or a Swedish verb ("matcha" = to match) | `audit/classify.py` + `REVIEW_PROMPT.md` rules; every reviewer REMOVE is stored in `audit_ledger.json` | Yes: all 45.8k listings re-read live; 247 of 253 review batches applied |
 | 2026-11-12 | Non-venues listed (clinic, gas station, supplier, equipment repair, parcel pickup point, clothing colour "Matcha") | `NOT_CAFE_NAME`/`NOT_CAFE_HOSTS` additions, `regression_cases.json` entries; ledger removals | Yes |
 | 2026-11-12 | A member's suggestion sat for hours: suggestions were only reviewed in the weekly run | Daily suggestion review task (`matchadb-daily-suggestion-review`) | n/a |
+| 2026-11-12 | Café rebranded (Ding Tea -> Omega Tea Lab, Anaheim Hills); owner emailed a correction; source data still had the old name | `weekly/corrections.json` (verified renames/website/phone/address applied on every build). Rule: confirm independently before applying; never act on the email alone | Searched for the new name across sources; no other listing affected |
 | 2026-11-11 | Evidence from an online shop's navigation link ("Ceremonial Matcha") counted as a café menu (Loaf, Malta) | Rule: nav/category links, whisks, blog posts, reviews and ingredients are not evidence | Yes, via the full audit |
 
 ## Open items from the full audit (not yet applied)
