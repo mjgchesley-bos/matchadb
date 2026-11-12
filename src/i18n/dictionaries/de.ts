@@ -283,6 +283,8 @@ export const de: Partial<Record<Key, string>> = {
   "c.cm.unheart": "Gefällt mir zurücknehmen",
   "c.cm.heartSignIn": "Melde dich an, um Kommentare zu liken.",
   "c.cm.loadMore": "Weitere Kommentare laden",
+  "c.cm.fromLoc": "Diese Bewertung stammt aus dem Standort {where}",
+  "c.cm.othersNote": "Dieser Standort hat noch nicht viele eigene Bewertungen – deshalb hier einige von den anderen Standorten dieses Cafés.",
   "c.nt.bell": "Benachrichtigungen",
   "c.nt.bellUnread": "Benachrichtigungen, {count} neu",
   "c.nt.title": "Benachrichtigungen",

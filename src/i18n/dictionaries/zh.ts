@@ -301,6 +301,8 @@ export const zh: Partial<Record<Key, string>> = {
   "c.cm.unheart": "取消点赞",
   "c.cm.heartSignIn": "登录后即可为评论点赞。",
   "c.cm.loadMore": "加载更多评论",
+  "c.cm.fromLoc": "这条评价来自{where}分店",
+  "c.cm.othersNote": "这家分店自己的评价还不多，所以这里显示这家咖啡馆其他分店的评价。",
   "c.nt.bell": "通知",
   "c.nt.bellUnread": "通知，{count}条新通知",
   "c.nt.title": "通知",

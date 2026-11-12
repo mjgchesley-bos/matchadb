@@ -301,6 +301,8 @@ export const ko: Partial<Record<Key, string>> = {
   "c.cm.unheart": "좋아요 취소",
   "c.cm.heartSignIn": "댓글에 좋아요를 누르려면 로그인하세요.",
   "c.cm.loadMore": "댓글 더 보기",
+  "c.cm.fromLoc": "이 리뷰는 {where} 지점에서 작성되었습니다",
+  "c.cm.othersNote": "이 지점에는 아직 리뷰가 많지 않아, 같은 카페의 다른 지점 리뷰를 함께 보여드려요.",
   "c.nt.bell": "알림",
   "c.nt.bellUnread": "알림, 새 알림 {count}개",
   "c.nt.title": "알림",

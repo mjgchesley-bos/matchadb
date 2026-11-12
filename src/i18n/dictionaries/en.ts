@@ -283,6 +283,8 @@ export const en = {
   "c.cm.unheart": "Remove your like",
   "c.cm.heartSignIn": "Sign in to like comments.",
   "c.cm.loadMore": "Load more comments",
+  "c.cm.fromLoc": "This review came from the {where} location",
+  "c.cm.othersNote": "This location doesn’t have many reviews of its own yet, so here are some from this café’s other locations.",
   "c.nt.bell": "Notifications",
   "c.nt.bellUnread": "Notifications, {count} new",
   "c.nt.title": "Notifications",

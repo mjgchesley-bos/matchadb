@@ -5,7 +5,7 @@ import { Comments } from "@/components/Comments";
 import { FavoriteCafeButton } from "@/components/FavoriteCafeButton";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
-import { getCafeBySlug, nearbyCafes } from "@/lib/cafes";
+import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
 import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { getT } from "@/i18n/server";
@@ -52,6 +52,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   if (!c) notFound();
   const where = formatPlace(c, lang);
   const near = nearbyCafes(c, 5);
+  const siblings = chainSiblings(c);
   const link = "text-matcha hover:text-forest underline";
   // The café's other pages and handles (Instagram, Yelp, TikTok...): every source host that is not its own website.
   const ownHost = c.url ? hostOf(c.url) : "";
@@ -128,7 +129,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <FavoriteCafeButton cafeId={c.id} name={c.name} />
       </header>
 
-      <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} />
+      <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
 
       <details className="group mt-10 rounded-sm border border-line bg-paper-raised">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">

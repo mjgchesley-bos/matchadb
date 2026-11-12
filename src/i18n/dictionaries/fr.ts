@@ -285,6 +285,8 @@ export const fr: Partial<Record<Key, string>> = {
   "c.cm.unheart": "Retirer le j’aime",
   "c.cm.heartSignIn": "Connectez-vous pour aimer les commentaires.",
   "c.cm.loadMore": "Afficher plus de commentaires",
+  "c.cm.fromLoc": "Cet avis vient de l’adresse {where}",
+  "c.cm.othersNote": "Cette adresse n’a pas encore beaucoup d’avis, voici donc quelques avis des autres adresses de ce café.",
   "c.nt.bell": "Notifications",
   "c.nt.bellUnread": "Notifications, {count} nouvelles",
   "c.nt.title": "Notifications",

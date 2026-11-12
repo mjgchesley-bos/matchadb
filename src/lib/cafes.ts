@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { cafeFileKey, parseCafeSlug, type Cafe, type CafeSlim } from "./cafe-types";
+import { cafeFileKey, cafeSlug, parseCafeSlug, type Cafe, type CafeSlim } from "./cafe-types";
 import { REGIONS } from "./cafe-regions";
 
 // Cafés whose own website mentions matcha, by US state or by country (data/cafes/{ST or CCC}.json).
@@ -82,4 +82,48 @@ export function nearbyCafes(c: Cafe, limit = 5): (Cafe & { miles: number })[] {
     })
     .sort((a, b) => a.miles - b.miles)
     .slice(0, limit);
+}
+
+// "Select chains" the owner chose to list (scripts/cafes/weekly/select_chains.json): outlets of one brand share a website host.
+let selectHosts: Set<string> | null = null;
+function getSelectHosts(): Set<string> {
+  if (selectHosts) return selectHosts;
+  const set = new Set<string>();
+  try {
+    const j = JSON.parse(fs.readFileSync(path.join(process.cwd(), "scripts", "cafes", "weekly", "select_chains.json"), "utf8")) as { brands: { hosts: string[] }[] };
+    for (const b of j.brands) for (const h of b.hosts) set.add(h.toLowerCase());
+  } catch {
+    // no list: no select chains
+  }
+  selectHosts = set;
+  return set;
+}
+const hostKey = (u?: string | null): string => {
+  try {
+    return u ? new URL(u).hostname.replace(/^www\./, "").toLowerCase() : "";
+  } catch {
+    return "";
+  }
+};
+let chainIndex: Map<string, Cafe[]> | null = null;
+
+export type ChainSibling = { id: string; label: string; slug: string };
+
+// The other locations of a select chain (same website host), for showing their reviews on a location that has few of its own.
+// label = the part of the name after " - " (e.g. "West Lynn"), else the city.
+export function chainSiblings(c: Cafe): ChainSibling[] {
+  const h = hostKey(c.url);
+  if (!h || !getSelectHosts().has(h)) return [];
+  if (!chainIndex) {
+    chainIndex = new Map();
+    const hosts = getSelectHosts();
+    for (const f of getCafeFiles())
+      for (const x of getCafesInFile(f)) {
+        const k = hostKey(x.url);
+        if (k && hosts.has(k)) chainIndex.set(k, [...(chainIndex.get(k) ?? []), x]);
+      }
+  }
+  return (chainIndex.get(h) ?? [])
+    .filter((x) => x.id !== c.id)
+    .map((x) => ({ id: x.id, label: x.name.includes(" - ") ? x.name.split(" - ").pop()!.trim() : x.city, slug: cafeSlug(x) }));
 }

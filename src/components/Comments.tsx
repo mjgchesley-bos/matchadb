@@ -18,8 +18,10 @@ const MAX_PHOTOS = 3;
 const MAX_CHARS = 1500;
 const MAX_SIDE = 1600;
 const PAGE = 15; // comments shown at first, and added by each "Load more"
+const MIN_OWN = 5; // a location with fewer reviews of its own also shows some from the chain's other locations
+const FROM_OTHERS = 10; // how many of those
 
-type Pub = { id: string; body: string; photos: string[]; created_at: string; display_name: string; tier?: string | null; public_profile?: boolean; hearts?: number };
+type Pub = { target_key?: string; id: string; body: string; photos: string[]; created_at: string; display_name: string; tier?: string | null; public_profile?: boolean; hearts?: number };
 type Mine = { id: string; body: string; photos: string[]; status: "pending" | "approved" | "hidden"; created_at: string };
 
 export const commentPhotoUrl = (path: string): string => supabase().storage.from(COMMENT_BUCKET).getPublicUrl(path).data.publicUrl;
@@ -104,12 +106,14 @@ export function Comments({
   subject,
   heading,
   placeholder,
+  siblings = [],
 }: {
   targetType: "product" | "brand" | "cafe";
   targetKey: string;
   subject: string;
   heading?: string;
   placeholder?: string;
+  siblings?: { id: string; label: string; slug: string }[]; // other locations of a select chain
 }) {
   const { user, signIn } = useAuth();
   const t = useT();
@@ -167,6 +171,35 @@ export function Comments({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetType, targetKey, tick]);
 
+  // Few reviews of its own: borrow some from the chain's other locations (each is labelled with where it came from).
+  const [others, setOthers] = useState<Pub[]>([]);
+  const sibKey = siblings.map((x) => x.id).join(",");
+  const needOthers = targetType === "cafe" && sibKey !== "" && pub !== null && pub.length < MIN_OWN;
+  useEffect(() => {
+    if (!needOthers) return;
+    let live = true;
+    const sb = supabase();
+    sb.from("approved_comments")
+      .select("id, body, photos, created_at, display_name, tier, public_profile, target_key")
+      .eq("target_type", "cafe")
+      .in("target_key", sibKey.split(","))
+      .order("created_at", { ascending: false })
+      .limit(FROM_OTHERS)
+      .then(async ({ data }) => {
+        const rows = (data as Pub[] | null) ?? [];
+        if (!live || !rows.length) return;
+        const counts = await sb.from("comment_heart_counts").select("comment_id, hearts").in("comment_id", rows.map((r) => r.id));
+        if (!live) return;
+        const hc = new Map(((counts.data as { comment_id: string; hearts: number }[] | null) ?? []).map((r) => [r.comment_id, r.hearts]));
+        setOthers(rows.map((r) => ({ ...r, hearts: hc.get(r.id) ?? 0 })).sort((a, b) => (b.hearts ?? 0) - (a.hearts ?? 0) || b.created_at.localeCompare(a.created_at)));
+        setHearts((h) => ({ ...h, ...Object.fromEntries(rows.map((r) => [r.id, hc.get(r.id) ?? 0])) }));
+      });
+    return () => {
+      live = false;
+    };
+  }, [needOthers, sibKey]);
+  const sibById = useMemo(() => new Map(siblings.map((x) => [x.id, x])), [siblings]);
+
   const loadMore = async () => {
     setLoadingMore(true);
     const { data } = await fetchPage(pub?.length ?? 0);
@@ -174,7 +207,7 @@ export function Comments({
     setLoadingMore(false);
   };
 
-  const pubIds = useMemo(() => (pub ?? []).map((c) => c.id), [pub]);
+  const pubIds = useMemo(() => [...(pub ?? []), ...others].map((c) => c.id), [pub, others]);
   useEffect(() => {
     if (!pubIds.length) return;
     let live = true;
@@ -292,6 +325,64 @@ export function Comments({
   const ranked = pub ?? [];   // already ordered by the database: most hearts first, ties newest first
   const waiting = mine.filter((m) => m.status === "pending");
 
+  const card = (c: Pub, from?: { label: string; slug: string }) => (
+          <article key={c.id} className="rounded-sm border border-line bg-paper-raised px-4 py-3.5">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              {c.public_profile ? (
+                <Link href={`/u/${encodeURIComponent(c.display_name)}`} className="text-base font-semibold text-matcha hover:text-forest hover:underline">
+                  {c.display_name}
+                </Link>
+              ) : (
+                <span className="text-base font-semibold text-matcha">{c.display_name}</span>
+              )}
+              <TierBadge tier={c.tier} />
+              <span className="text-xs text-ink-faint">{dateFmt.format(new Date(c.created_at))}</span>
+              {from && (
+                <span className="inline-flex items-center rounded-full border border-line-strong bg-paper px-2.5 py-0.5 text-xs text-ink-muted sm:ml-auto">
+                  <Link href={`/cafes/${from.slug}`} className="hover:underline">
+                    {t("c.cm.fromLoc", { where: from.label })}
+                  </Link>
+                </span>
+              )}
+              <HeartButton
+                count={hearts[c.id] ?? 0}
+                on={myHearts.has(c.id)}
+                own={mineIds.has(c.id)}
+                label={t("c.cm.heart")}
+                labelOn={t("c.cm.unheart")}
+                onClick={() => void toggleHeart(c.id)}
+              />
+            </div>
+            <p className="mt-2 whitespace-pre-line text-sm text-ink leading-relaxed">{c.body}</p>
+            <Photos paths={c.photos} who={c.display_name} />
+            <div className="mt-2 text-xs text-ink-faint">
+              {mineIds.has(c.id) ? (
+                <button type="button" onClick={() => void remove(mine.find((m) => m.id === c.id)!)} className="underline hover:text-ink-muted">
+                  {t("c.cm.delete")}
+                </button>
+              ) : reported.has(c.id) ? (
+                t("c.cm.reported")
+              ) : reporting === c.id ? (
+                <span className="inline-flex flex-wrap items-center gap-2">
+                  {t("c.cm.why")}
+                  {REPORT_REASONS.map((reason) => (
+                    <button key={reason.value} type="button" onClick={() => void report(c.id, reason.value)} className="rounded-full border border-line-strong px-2.5 py-0.5 hover:bg-matcha-soft">
+                      {t(reason.key)}
+                    </button>
+                  ))}
+                  <button type="button" onClick={() => setReporting(null)} className="underline">
+                    {t("c.cm.cancel")}
+                  </button>
+                </span>
+              ) : (
+                <button type="button" onClick={() => (user ? setReporting(c.id) : signIn(t("c.cm.signInReport")))} className="underline hover:text-ink-muted">
+                  {t("c.cm.report")}
+                </button>
+              )}
+            </div>
+          </article>
+  );
+
   return (
     <section className="mt-12" aria-labelledby={`comments-${targetType}`}>
       <h2 id={`comments-${targetType}`} className="font-display text-xl font-semibold text-ink">
@@ -379,56 +470,13 @@ export function Comments({
       <div className="mt-6 flex flex-col gap-4">
         {pub === null && <p className="text-sm text-ink-faint">{t("c.cm.loading")}</p>}
         {pub?.length === 0 && waiting.length === 0 && <p className="text-sm text-ink-muted">{t("c.cm.none")}</p>}
-        {ranked.map((c) => (
-          <article key={c.id} className="rounded-sm border border-line bg-paper-raised px-4 py-3.5">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-              {c.public_profile ? (
-                <Link href={`/u/${encodeURIComponent(c.display_name)}`} className="text-base font-semibold text-matcha hover:text-forest hover:underline">
-                  {c.display_name}
-                </Link>
-              ) : (
-                <span className="text-base font-semibold text-matcha">{c.display_name}</span>
-              )}
-              <TierBadge tier={c.tier} />
-              <span className="text-xs text-ink-faint">{dateFmt.format(new Date(c.created_at))}</span>
-              <HeartButton
-                count={hearts[c.id] ?? 0}
-                on={myHearts.has(c.id)}
-                own={mineIds.has(c.id)}
-                label={t("c.cm.heart")}
-                labelOn={t("c.cm.unheart")}
-                onClick={() => void toggleHeart(c.id)}
-              />
-            </div>
-            <p className="mt-2 whitespace-pre-line text-sm text-ink leading-relaxed">{c.body}</p>
-            <Photos paths={c.photos} who={c.display_name} />
-            <div className="mt-2 text-xs text-ink-faint">
-              {mineIds.has(c.id) ? (
-                <button type="button" onClick={() => void remove(mine.find((m) => m.id === c.id)!)} className="underline hover:text-ink-muted">
-                  {t("c.cm.delete")}
-                </button>
-              ) : reported.has(c.id) ? (
-                t("c.cm.reported")
-              ) : reporting === c.id ? (
-                <span className="inline-flex flex-wrap items-center gap-2">
-                  {t("c.cm.why")}
-                  {REPORT_REASONS.map((reason) => (
-                    <button key={reason.value} type="button" onClick={() => void report(c.id, reason.value)} className="rounded-full border border-line-strong px-2.5 py-0.5 hover:bg-matcha-soft">
-                      {t(reason.key)}
-                    </button>
-                  ))}
-                  <button type="button" onClick={() => setReporting(null)} className="underline">
-                    {t("c.cm.cancel")}
-                  </button>
-                </span>
-              ) : (
-                <button type="button" onClick={() => (user ? setReporting(c.id) : signIn(t("c.cm.signInReport")))} className="underline hover:text-ink-muted">
-                  {t("c.cm.report")}
-                </button>
-              )}
-            </div>
-          </article>
-        ))}
+        {ranked.map((c) => card(c))}
+        {needOthers && others.length > 0 && (
+          <div className="mt-2 flex flex-col gap-4">
+            <p className="text-sm text-ink-muted">{t("c.cm.othersNote")}</p>
+            {others.map((c) => card(c, sibById.get(c.target_key ?? "")))}
+          </div>
+        )}
         {hasMore && (
           <button
             type="button"

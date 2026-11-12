@@ -301,6 +301,8 @@ export const ja: Partial<Record<Key, string>> = {
   "c.cm.unheart": "いいねを取り消す",
   "c.cm.heartSignIn": "コメントにいいねするにはログインしてください。",
   "c.cm.loadMore": "コメントをもっと見る",
+  "c.cm.fromLoc": "このレビューは{where}店のものです",
+  "c.cm.othersNote": "この店舗にはまだレビューが少ないため、同じカフェの他の店舗のレビューを表示しています。",
   "c.nt.bell": "通知",
   "c.nt.bellUnread": "通知（新着{count}件）",
   "c.nt.title": "通知",
