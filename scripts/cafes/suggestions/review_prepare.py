@@ -55,6 +55,14 @@ def same(a, b):
     return a == b or (len(a) >= 5 and len(b) >= 5 and (a in b or b in a)) or difflib.SequenceMatcher(None, a, b).ratio() >= 0.88
 
 
+def clean_addr(a):
+    """Drop unit/suite/floor designators so the building itself can be found."""
+    a = re.sub(r"\s*#\s*[\w-]+", "", a)
+    a = re.sub(r"\b(?:suite|ste|unit|apt|apartment|floor|fl|room|rm)\.?\s*#?\s*[\w-]+", "", a, flags=re.I)
+    a = re.sub(r"\s{2,}", " ", a)
+    return re.sub(r"\s+,", ",", a).strip(" ,")
+
+
 def geocode(q):
     time.sleep(1.1)
     try:
@@ -129,7 +137,8 @@ async def main():
             task.update(done=i, detail=f"{d['name']}: locating", force=True)
             if re.search(r"https?://|www\.|\.com\b", d["name"], re.I) or len(re.findall(r"[A-Za-zÀ-￿]", d["name"])) < 2:
                 d.update(outcome="reject", reason="name looks like spam or a link"); continue
-            geo = geocode(f"{d['name']}, {d['address']}") or geocode(d["address"])
+            ca = clean_addr(d["address"])           # unit numbers ("#106", "Suite 100 Suite 100") make the street geocoder miss the building
+            geo = geocode(f"{d['name']}, {ca}") or geocode(ca) or geocode(d["address"])
             if not geo:
                 d.update(outcome="reject", reason="address could not be located"); continue
             d["geo"] = geo

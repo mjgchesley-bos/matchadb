@@ -1831,5 +1831,28 @@
   "platform": null,
   "conf": 0.6,
   "via": "reported"
+ },
+ {
+  "name": "Lau Lau",
+  "cat": "coffee_shop",
+  "cc": "US",
+  "address": "3701$ Guadalupe Street",
+  "city": "Austin",
+  "state": "TX",
+  "zip": "78705",
+  "lat": 30.30189,
+  "lng": -97.73811,
+  "phone": null,
+  "focus": false,
+  "menu": null,
+  "pdf": null,
+  "checked": "2026-11-12",
+  "shared": 0,
+  "id": "2b459541a4",
+  "url": null,
+  "ev": [],
+  "platform": null,
+  "conf": 0.6,
+  "via": "reported"
  }
 ]
