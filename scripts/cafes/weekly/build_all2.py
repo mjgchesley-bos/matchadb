@@ -166,7 +166,7 @@ for pq in PLACES:
 brand_count = Counter(r[13] for r in rows if r[13])
 # ---- places that are not cafes, left off the map ----
 # Websites of businesses that are not cafes (convenience stores, groceries) or small chains the owner asked to leave out. A host here drops all its places (and its subdomains).
-NOT_CAFE_HOSTS = {"loafmalta.com", "cuddlytimes.com", "coffeestrangers.com", "charlesandroncafe.com", "royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com",
+NOT_CAFE_HOSTS = {"meniudigital.ro", "mapsu.me", "lominu.com", "esplaces.me", "clickplace.me", "usmapz.me", "mapzer.info", "layo.me", "mapra.me", "mapbon.com", "robunz.com", "yulni.com", "lomyu.net", "usmapy.com", "mapz5.com", "bizsite.link", "shop.joe.coffee", "shunan.mypl.net", "kodaira-net.jp", "renovationplanning.co.jp", "machikuru.jp", "tokyu-dept.co.jp", "loafmalta.com", "cuddlytimes.com", "coffeestrangers.com", "charlesandroncafe.com", "royalbluegrocery.com", "zabka.pl", "family.co.jp", "sej.co.jp", "circlek.ie", "lawson.co.jp", "hmart.com", "highlandparkcornerstore.com",
                   # home bakers, baking suppliers, ingredient makers, cooking classes and catering-only businesses (owner: no personal homes, no culinary use)
                   "vanessamusi.com", "homebaker.ca", "biteunite.com", "matchamakingjapan.com", "lantmannenunibake.com", "amoretti.com", "rondo-online.com", "sosa.cat",
                   "goodhartcoffeecatering.com", "wecatercoffee.com", "hovis.co.uk", "liquidline.co.uk"}
@@ -289,6 +289,10 @@ if _drop:
     cafes = [c for c in cafes if c["id"] not in _drop]
 
 # near-duplicates: same name within ~150 m
+# Hand-reviewed removals (2026-11-11, Romania audit): clinics, gas stations, equipment/tea wholesalers, venues whose only matcha mention is a whisk, a blog post, an ingredient or a
+# clothing colour, and a name-only listing that nothing on the web confirms.
+DROP_IDS = {"e954a130b5", "ec78dcf276", "fsq4e5aac6", "d0672fc10f", "da0d167240", "ea2070aacc", "e9aebff31e", "16f2713516", "90d942707d", "9b938ab915", "fsq60f95cb", "fsq5856a4b", "fsq5decb16", "a1ad906ac1", "fsq5f0fee6", "b2d640b355", "ae24767709", "fsq57f0d49", "fsq4e00995", "db322ea80f", "89fd16c765", "37ee2cb22d", "9a169454ea", "3df1f02497", "f2293958a4", "0cb79a48c2", "1336dd1b90", "fsq4e90c1d", "95741c9c15"}
+cafes = [c for c in cafes if c["id"] not in DROP_IDS]
 def norm(s): return re.sub(r'[\W_]+', '', s.lower())
 cafes.sort(key=lambda c: -c["conf"])
 kept, seen = [], {}
