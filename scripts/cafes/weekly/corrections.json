@@ -1671,9 +1671,13 @@
   },
   "fsq6352b24": {
    "set": {
-    "url": "https://www.magickmatcha.com/"
+    "address": "1516 S Congress Ave",
+    "zip": "78704",
+    "city": "Austin",
+    "lat": 30.24828,
+    "lng": -97.75052
    },
-   "why": "website found by name-only web check",
+   "why": "Austin audit: Magick Matcha: own site/IG/Yelp give 1516 S Congress Ave",
    "at": "2026-11-12"
   },
   "fsq6aaaffb": {
@@ -2351,6 +2355,58 @@
     "url": "https://www.sladolednivrt.si/"
    },
    "why": "Slovenia audit: own site lists Rimska cesta 98a, 3311 Sempeter v Savinjski dolini; Matcha Cremiso ice cream + bubble tea on its own site.",
+   "at": "2026-11-12"
+  },
+  "51920a3eb3": {
+   "set": {
+    "address": "1401 S Lamar Blvd",
+    "zip": "78704",
+    "city": "Austin",
+    "lat": 30.2531,
+    "lng": -97.7629
+   },
+   "why": "Austin audit: Paperboy South is a brick-and-mortar at 1401 S Lamar, not a Menchaca trailer",
+   "at": "2026-11-12"
+  },
+  "fsq63d2ca9": {
+   "set": {
+    "address": "1203 E 11th St",
+    "zip": "78702",
+    "city": "Austin",
+    "lat": 30.26845,
+    "lng": -97.72757
+   },
+   "why": "Austin audit: Paperboy East at 1203 E 11th St",
+   "at": "2026-11-12"
+  },
+  "8f16a63ad7": {
+   "set": {
+    "address": "5201 N Lamar Blvd",
+    "zip": "78751",
+    "city": "Austin",
+    "lat": 30.31961,
+    "lng": -97.73007
+   },
+   "why": "Austin audit: Muse Coffee fixed address from its own site",
+   "at": "2026-11-12"
+  },
+  "fsq6a204c9": {
+   "set": {
+    "address": "108 W 43rd St",
+    "zip": "78751",
+    "city": "Austin",
+    "lat": 30.30687,
+    "lng": -97.73027
+   },
+   "why": "Austin audit: Matcha Boys now at The LOOP, Hyde Park (own Instagram)",
+   "at": "2026-11-12"
+  },
+  "d6ead183fa": {
+   "set": {
+    "name": "Mattina Coffee + Wine",
+    "url": "https://mattinaatx.com/"
+   },
+   "why": "Austin audit: Mañana's second location (111 Sandra Muraida Way) is now called Mattina; own site mattinaatx.com open daily with matcha menu.",
    "at": "2026-11-12"
   }
  }

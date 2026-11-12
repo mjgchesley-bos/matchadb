@@ -23616,12 +23616,12 @@
 },
 "6cb2b47906": {
 "d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "a6f29ce79a": {
 "d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "9107b5294c": {
@@ -23631,7 +23631,7 @@
 },
 "8f16a63ad7": {
 "d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "fsq6a9e01a": {
@@ -28291,27 +28291,27 @@
 },
 "fsq69864b4": {
 "d": "KEEP",
-"r": "name-only web check: Kriya Matcha Cafe at 2512 Rio Grande, UT area; Austin Chronicle 2026 pick",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "fsq6a05ea3": {
 "d": "KEEP",
-"r": "name-only web check: Drink cart inside salon at 1607 E Cesar Chavez; espresso and matcha",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "fsq6352b24": {
 "d": "KEEP",
-"r": "name-only web check: Woman-owned matcha shop at 1516 S Congress per own site and Yelp",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "fsq6a204c9": {
 "d": "KEEP",
-"r": "name-only web check: Matcha Boys matcha-only spot inside The Loop, Hyde Park; Wed-Sun",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "fsq69864a7": {
 "d": "KEEP",
-"r": "name-only web check: Minimo matcha and coffee cafe at 508 West Ave; own Instagram and listings",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "fsq69406c0": {
@@ -33305,18 +33305,18 @@
 "at": "2026-11-12"
 },
 "1d14fd6ee7": {
-"d": "KEEP",
-"r": "second pass: Sells Morning Matcha chocolate product",
+"d": "REMOVE",
+"r": "Austin audit: chocolatier; no matcha on its own site (vendor product)",
 "at": "2026-11-12"
 },
 "fsq6aa6ebd": {
-"d": "KEEP",
-"r": "second pass: Shop category Matcha on venue site",
+"d": "REMOVE",
+"r": "Austin audit: own site and IG menu show no matcha drink",
 "at": "2026-11-12"
 },
 "fc603fe9a1": {
 "d": "KEEP",
-"r": "matcha in the venue's own name: weak-evidence removal reversed",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 },
 "ae7319b200": {
@@ -34402,6 +34402,136 @@
 "23ef4615ef": {
 "d": "KEEP",
 "r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"fsq0e81b83": {
+"d": "REMOVE",
+"r": "Austin audit: only evidence is a shared UT housing page naming one other cafe (Up and Atom) as serving matcha",
+"at": "2026-11-12"
+},
+"d9539d50c0": {
+"d": "REMOVE",
+"r": "Austin audit: shared UT housing page names Up and Atom only",
+"at": "2026-11-12"
+},
+"5c844cb976": {
+"d": "REMOVE",
+"r": "Austin audit: shared UT housing page names Up and Atom only",
+"at": "2026-11-12"
+},
+"e31684fa1d": {
+"d": "REMOVE",
+"r": "Austin audit: shared UT housing page names Up and Atom only",
+"at": "2026-11-12"
+},
+"5461f07126": {
+"d": "REMOVE",
+"r": "Austin audit: shared UT housing page names Up and Atom only",
+"at": "2026-11-12"
+},
+"b371136e34": {
+"d": "REMOVE",
+"r": "Austin audit: Mochinut is a 100+ outlet chain",
+"at": "2026-11-12"
+},
+"6415dbc266": {
+"d": "REMOVE",
+"r": "Austin audit: Happy Lemon is a 25+ outlet chain",
+"at": "2026-11-12"
+},
+"73b26eb7bd": {
+"d": "REMOVE",
+"r": "Austin audit: Sharetea is a 25+ outlet chain",
+"at": "2026-11-12"
+},
+"fbdd6044ae": {
+"d": "REMOVE",
+"r": "Austin audit: roaster sells matcha powder and a whisk only; no matcha drink on its site",
+"at": "2026-11-12"
+},
+"2ef76c7d39": {
+"d": "REMOVE",
+"r": "Austin audit: matcha only as a KROMA supplement product, not a drink",
+"at": "2026-11-12"
+},
+"8102737edd": {
+"d": "REMOVE",
+"r": "Austin audit: matcha only as a drink-cream topping at a sandwich shop",
+"at": "2026-11-12"
+},
+"fsq52d5833": {
+"d": "REMOVE",
+"r": "Austin audit: tea/matcha powder retailer, no drinks, no address",
+"at": "2026-11-12"
+},
+"6459df8627": {
+"d": "REMOVE",
+"r": "Austin audit: restaurant dessert mention only (matcha kisses garnish)",
+"at": "2026-11-12"
+},
+"fsq6032de6": {
+"d": "REMOVE",
+"r": "Austin audit: duplicate of Jo's Coffee Red River (same address)",
+"at": "2026-11-12"
+},
+"fsq6264491": {
+"d": "REMOVE",
+"r": "Austin audit: duplicate of Juiced Up (same address)",
+"at": "2026-11-12"
+},
+"fsq5990930": {
+"d": "REMOVE",
+"r": "Austin audit: duplicate of The Hive (same address)",
+"at": "2026-11-12"
+},
+"711608cd39": {
+"d": "REMOVE",
+"r": "Austin audit: no matcha drink on Medici's own site (retail Kodemari powder only); unsure -> remove",
+"at": "2026-11-12"
+},
+"0efda70602": {
+"d": "REMOVE",
+"r": "Austin audit: duplicate Medici listing, no matcha drink on own site",
+"at": "2026-11-12"
+},
+"3c82288657": {
+"d": "REMOVE",
+"r": "Austin audit: no matcha drink on Medici's own site; unsure -> remove",
+"at": "2026-11-12"
+},
+"e2a6439d6c": {
+"d": "KEEP",
+"r": "Austin audit: live/ordering menu or own post verified",
+"at": "2026-11-12"
+},
+"fsq6ac140a": {
+"d": "KEEP",
+"r": "Austin audit: live/ordering menu or own post verified",
+"at": "2026-11-12"
+},
+"51920a3eb3": {
+"d": "KEEP",
+"r": "Austin audit: live/ordering menu or own post verified",
+"at": "2026-11-12"
+},
+"fsq63d2ca9": {
+"d": "KEEP",
+"r": "Austin audit: live/ordering menu or own post verified",
+"at": "2026-11-12"
+},
+"493c67664b": {
+"d": "KEEP",
+"r": "Austin audit: live/ordering menu or own post verified",
+"at": "2026-11-12"
+},
+"c33029bd90": {
+"d": "KEEP",
+"r": "Austin audit: live/ordering menu or own post verified",
+"at": "2026-11-12"
+},
+"d6ead183fa": {
+"d": "KEEP",
+"r": "Austin audit: live/ordering menu or own post verified",
 "at": "2026-11-12"
 }
 }
