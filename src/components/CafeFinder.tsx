@@ -292,6 +292,23 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     try {
       // Look in the current region first, then anywhere we cover.
       const o = (await geocode(q, region.countries, lang)) ?? (await geocode(q, ALL_COUNTRIES, lang));
+      // People often type a café's name into this box. If it matches a café we list and is not clearly a place (a weak geocoder match, or none),
+      // treat it as a name search: filter by that name and show those cafés instead of jumping to some similarly named town.
+      const qn = q.toLowerCase();
+      const nameHits = qn.length >= 3 && !/\d/.test(qn) ? (all ?? []).filter((c) => c.name.toLowerCase().includes(qn)) : [];
+      if (nameHits.length && (!o || (o.relevance ?? 1) < 0.9)) {
+        setOrigin(null);
+        setName(q);
+        setSelectedId(null);
+        const map = mapRef.current;
+        if (nameHits.length === 1) select(nameHits[0].id);
+        else if (map && nameHits.length <= 200) {
+          const b = new mapboxgl.LngLatBounds([nameHits[0].lng, nameHits[0].lat], [nameHits[0].lng, nameHits[0].lat]);
+          for (const c of nameHits) b.extend([c.lng, c.lat]);
+          map.fitBounds(b, { padding: 70, maxZoom: 13, duration: 900 });
+        }
+        return;
+      }
       if (!o) setMessage(t("c.cf.err.notFound"));
       else {
         const k = regionForCountry(o.country);

@@ -1,6 +1,6 @@
 // Small location helpers shared by the café finder.
 
-export type Origin = { lat: number; lng: number; label: string; country?: string };
+export type Origin = { lat: number; lng: number; label: string; country?: string; relevance?: number };
 
 export function haversineMiles(a: { lat: number; lng: number }, b: { lat: number; lng: number }): number {
   const R = 3958.8;
@@ -22,9 +22,9 @@ export async function geocode(query: string, countries: string[], language = "en
   const types = "postcode,place,locality,neighborhood,address";
   const res = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(q)}.json?access_token=${token}&country=${countries.join(",")}&types=${types}&limit=1&language=${encodeURIComponent(language)}`);
   if (!res.ok) throw new Error("geocoder");
-  const json = (await res.json()) as { features?: { center: [number, number]; place_name: string; context?: { id: string; short_code?: string }[]; properties?: { short_code?: string } }[] };
+  const json = (await res.json()) as { features?: { relevance?: number; center: [number, number]; place_name: string; context?: { id: string; short_code?: string }[]; properties?: { short_code?: string } }[] };
   const f = json.features?.[0];
   if (!f) return null;
   const country = f.context?.find((c) => c.id.startsWith("country"))?.short_code ?? f.properties?.short_code;
-  return { lat: f.center[1], lng: f.center[0], label: f.place_name.replace(/, United States$/, ""), country };
+  return { lat: f.center[1], lng: f.center[0], label: f.place_name.replace(/, United States$/, ""), country, relevance: f.relevance };
 }
