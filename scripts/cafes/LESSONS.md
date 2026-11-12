@@ -19,6 +19,7 @@ Where permanent rules live:
 | 2026-11-12 | Non-venues listed (clinic, gas station, supplier, equipment repair, parcel pickup point, clothing colour "Matcha") | `NOT_CAFE_NAME`/`NOT_CAFE_HOSTS` additions, `regression_cases.json` entries; ledger removals | Yes |
 | 2026-11-12 | A member's suggestion sat for hours: suggestions were only reviewed in the weekly run | Daily suggestion review task (`matchadb-daily-suggestion-review`) | n/a |
 | 2026-11-12 | Café rebranded (Ding Tea -> Omega Tea Lab, Anaheim Hills); owner emailed a correction; source data still had the old name | `weekly/corrections.json` (verified renames/website/phone/address applied on every build). Rule: confirm independently before applying; never act on the email alone | Searched for the new name across sources; no other listing affected |
+| 2026-11-12 | Restaurants (esp. Japanese) listed because matcha appeared only as ice cream, dessert, cocktail or flavour (e.g. a sushi place's mochi ice cream) | Owner rule: a restaurant/bar is listed only if it serves matcha tea or lattes. `weekly/restaurant_rule.py` (drink detector) + `restaurant_ok.json` + build step; 4,620 restaurant listings removed via the ledger | Yes, all 7,388 restaurant-type venues |
 | 2026-11-11 | Evidence from an online shop's navigation link ("Ceremonial Matcha") counted as a café menu (Loaf, Malta) | Rule: nav/category links, whisks, blog posts, reviews and ingredients are not evidence | Yes, via the full audit |
 
 ## Open items from the full audit (not yet applied)
