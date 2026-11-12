@@ -33255,8 +33255,8 @@
 "at": "2026-11-12"
 },
 "d7ab152957": {
-"d": "KEEP",
-"r": "second pass: Venue promotes its matcha lattes on Instagram text",
+"d": "REMOVE",
+"r": "Slovenia audit: Green Republic page only has a social-feed mention of matcha lattes, no menu item; unsure -> remove",
 "at": "2026-11-12"
 },
 "fsq50252d1": {
@@ -34307,6 +34307,101 @@
 "0a3b8b9d86": {
 "d": "REMOVE",
 "r": "spot-check: FAQ recipe questions only; no menu item",
+"at": "2026-11-12"
+},
+"7b1c401170": {
+"d": "REMOVE",
+"r": "Slovenia audit: Karavana okusov is a travelling food-truck festival, not a venue; no matcha",
+"at": "2026-11-12"
+},
+"88ccb9bdf4": {
+"d": "REMOVE",
+"r": "Slovenia audit: Loison is an Italian panettone bakery's local arm, not a matcha venue",
+"at": "2026-11-12"
+},
+"a0958f1ca4": {
+"d": "REMOVE",
+"r": "Slovenia audit: duplicate of Cajna Hisa Pod Velbom (same cha.si shop, same address)",
+"at": "2026-11-12"
+},
+"fsq4bf79bf": {
+"d": "REMOVE",
+"r": "Slovenia audit: duplicate of Stari most, cajarna in delikatesa (same shop, same site)",
+"at": "2026-11-12"
+},
+"921d41672b": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"9588443757": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"68dec11923": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"fsq60f8458": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"fsq4bdd571": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"a3c1c7a8b5": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"4bafbcdd7e": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"8f56b14b7b": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"0d4a27ed1e": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"8a59f4f266": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"c637500d5d": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"c118769833": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"4621a8803a": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"a33343308f": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
+"at": "2026-11-12"
+},
+"23ef4615ef": {
+"d": "KEEP",
+"r": "Slovenia audit: live site verified; own matcha evidence",
 "at": "2026-11-12"
 }
 }

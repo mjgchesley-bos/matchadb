@@ -2340,6 +2340,18 @@
    },
    "why": "website found by name-only web check",
    "at": "2026-11-12"
+  },
+  "23ef4615ef": {
+   "set": {
+    "address": "Rimska cesta 98a",
+    "city": "Šempeter v Savinjski dolini",
+    "zip": "3311",
+    "lat": 46.25762,
+    "lng": 15.11602,
+    "url": "https://www.sladolednivrt.si/"
+   },
+   "why": "Slovenia audit: own site lists Rimska cesta 98a, 3311 Sempeter v Savinjski dolini; Matcha Cremiso ice cream + bubble tea on its own site.",
+   "at": "2026-11-12"
   }
  }
 }
