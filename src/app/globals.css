@@ -87,3 +87,14 @@ body {
 .store-popup.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip { border-top-color: var(--color-paper-raised); }
 .store-popup.mapboxgl-popup-anchor-left .mapboxgl-popup-tip { border-right-color: var(--color-paper-raised); }
 .store-popup.mapboxgl-popup-anchor-right .mapboxgl-popup-tip { border-left-color: var(--color-paper-raised); }
+
+/* Fraunces at display sizes (optical size above ~40) draws a long hook on "f" that runs into the accent of the next letter ("cafés" looks like one
+   blob). Big headings keep the optical size at 36, where the letters stay clean; smaller text keeps the automatic size. */
+.font-display[class*="text-4xl"],
+.font-display[class*="text-5xl"],
+.font-display[class*="text-6xl"],
+.font-display[class*="text-7xl"],
+.font-display[class*="text-8xl"] {
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 36;
+}
