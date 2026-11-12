@@ -7,6 +7,134 @@
    },
    "why": "Rebranded from Ding Tea - Anaheim Hills; owner emailed 2026-11-12 and confirmed independently (DoorDash, order.online, Instagram location, the shop's own online menu all say Omega Tea Lab, same address 5620 E Santa Ana Canyon Rd).",
    "at": "2026-11-12"
+  },
+  "7a9c78902a": {
+   "set": {
+    "lat": 34.25378,
+    "lng": -88.7191
+   },
+   "why": "pin was 993 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
+  },
+  "2bb00b374d": {
+   "set": {
+    "lat": -33.7903,
+    "lng": 151.20095
+   },
+   "why": "pin was 868 km from its own address/city; moved to the address geocode (relevance 0.862963)",
+   "at": "2026-11-12"
+  },
+  "fe187ed1c8": {
+   "set": {
+    "lat": 50.78582,
+    "lng": -1.08533
+   },
+   "why": "pin was 603 km from its own address/city; moved to the address geocode (relevance 0.953704)",
+   "at": "2026-11-12"
+  },
+  "f3774079f6": {
+   "set": {
+    "lat": 39.47283,
+    "lng": -0.37758
+   },
+   "why": "pin was 424 km from its own address/city; moved to the address geocode (relevance 0.858444)",
+   "at": "2026-11-12"
+  },
+  "8ad3623101": {
+   "set": {
+    "lat": 52.15295,
+    "lng": 21.02034
+   },
+   "why": "pin was 276 km from its own address/city; moved to the address geocode (relevance 0.772593)",
+   "at": "2026-11-12"
+  },
+  "ff6ec4e518": {
+   "set": {
+    "lat": 42.7757,
+    "lng": -73.89834
+   },
+   "why": "pin was 244 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
+  },
+  "fsq5ef778f": {
+   "set": {
+    "lat": 51.39673,
+    "lng": -2.34513
+   },
+   "why": "pin was 158 km from its own address/city; moved to the address geocode (relevance 0.729577)",
+   "at": "2026-11-12"
+  },
+  "cfda552f26": {
+   "set": {
+    "lat": 43.77721,
+    "lng": -79.41553
+   },
+   "why": "pin was 111 km from its own address/city; moved to the address geocode (relevance 0.833333)",
+   "at": "2026-11-12"
+  },
+  "ad47f66f48": {
+   "set": {
+    "lat": 40.69796,
+    "lng": -111.88985
+   },
+   "why": "pin was 106 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
+  },
+  "90c0d3558d": {
+   "set": {
+    "lat": 33.45295,
+    "lng": -84.50812
+   },
+   "why": "pin was 105 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
+  },
+  "ea238b1948": {
+   "set": {
+    "lat": 36.09841,
+    "lng": -80.24491
+   },
+   "why": "pin was 101 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
+  },
+  "b13559eb22": {
+   "set": {
+    "lat": 49.86251,
+    "lng": -97.31188
+   },
+   "why": "pin was 96 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
+  },
+  "ef8f9f35ec": {
+   "set": {
+    "lat": 47.07095,
+    "lng": 15.43772
+   },
+   "why": "pin was 67 km from its own address/city; moved to the address geocode (relevance 0.851852)",
+   "at": "2026-11-12"
+  },
+  "91022dc044": {
+   "set": {
+    "lat": 50.83036,
+    "lng": -0.1473
+   },
+   "why": "pin was 67 km from its own address/city; moved to the address geocode (relevance 0.754444)",
+   "at": "2026-11-12"
+  },
+  "cd7719ca8f": {
+   "set": {
+    "lat": 41.88195,
+    "lng": -87.63236
+   },
+   "why": "pin was 66 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
+  },
+  "fsq6ab4976": {
+   "set": {
+    "lat": 38.74835,
+    "lng": -121.28306
+   },
+   "why": "pin was 65 km from its own address/city; moved to the address geocode (relevance 1)",
+   "at": "2026-11-12"
   }
  }
 }

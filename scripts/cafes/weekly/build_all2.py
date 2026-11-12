@@ -364,7 +364,7 @@ _CORR_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "correctio
 _CORR = json.load(open(_CORR_FILE, encoding="utf-8")).get("corrections", {}) if os.path.exists(_CORR_FILE) else {}
 for c in cafes:
     for k, v in (_CORR.get(c["id"], {}).get("set") or {}).items():
-        if k in ("name", "url", "phone", "address", "city", "zip"): c[k] = v
+        if k in ("name", "url", "phone", "address", "city", "zip", "lat", "lng"): c[k] = v
 cafes.sort(key=lambda c: (c["_key"], c["city"], c["name"]))
 if os.path.isdir(OUT_DIR): shutil.rmtree(OUT_DIR)
 os.makedirs(OUT_DIR)

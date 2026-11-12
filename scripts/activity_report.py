@@ -54,7 +54,7 @@ for pid, name, brand in db.execute("select p.id, p.product_name, b.name from pro
 cafes = {}
 for f in glob.glob(str(ROOT / "public/data/cafes-slim-*.json")):
     for r in json.load(open(f, encoding="utf-8")):
-        cafes[r[0]] = f"{r[1]}, {r[3]}"
+        cafes[r[0]] = r[1] if (r[3] or "").lower() in r[1].lower() else f"{r[1]}, {r[3]}"      # "Sharetea - Austin", not "Sharetea - Austin, Austin"
 
 def where(e):
     t, k = e.get("target_type"), e.get("target_key")

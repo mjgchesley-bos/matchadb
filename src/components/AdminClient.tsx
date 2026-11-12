@@ -81,7 +81,7 @@ function targetOf(e: { target_type: string | null; target_key: string | null }, 
   }
   if (t === "cafe") {
     const c = names.cafes[k];
-    return { label: c ? `${c.name}${c.city ? `, ${c.city}` : ""}` : `café ${k}`, href: c ? `/cafes/${c.slug}` : undefined };
+    return { label: c ? `${c.name}${c.city && !c.name.toLowerCase().includes(c.city.toLowerCase()) ? `, ${c.city}` : ""}` : `café ${k}`, href: c ? `/cafes/${c.slug}` : undefined };
   }
   if (t === "brand") return { label: k, href: `/brands/${encodeURIComponent(k)}` };
   if (t === "member") return { label: k };

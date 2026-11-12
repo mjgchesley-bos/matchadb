@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@/components/Avatar";
 import { useAuth } from "@/components/AuthProvider";
 import { TierIcon } from "@/components/TierIcon";
+import { NotificationBell } from "@/components/NotificationBell";
 import { useT } from "@/i18n/client";
 
 // "Sign in" in the header, or the person's initial with a small menu once signed in.
@@ -47,6 +48,8 @@ export function HeaderAccount() {
 
   const initial = (displayName ?? user.email ?? "M").trim().charAt(0).toUpperCase();
   return (
+    <div className="flex items-center gap-1.5">
+    <NotificationBell />
     <div ref={rootRef} className="relative">
       <button
         type="button"
@@ -93,6 +96,7 @@ export function HeaderAccount() {
           </button>
         </div>
       )}
+    </div>
     </div>
   );
 }
