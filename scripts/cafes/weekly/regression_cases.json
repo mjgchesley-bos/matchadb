@@ -90,6 +90,38 @@
    "name": "Anderson's Coffee Company",
    "city": "Austin",
    "why": "retail matcha powder/whisk only (Austin audit)"
+  },
+  {
+   "name": "Xing Fu Tang",
+   "why": "chain (NYC audit)"
+  },
+  {
+   "name": "Fay Da Bakery",
+   "why": "chain (NYC audit)"
+  },
+  {
+   "name": "T-Swirl",
+   "why": "chain (NYC audit)"
+  },
+  {
+   "name": "Yaya Tea",
+   "why": "chain (NYC audit)"
+  },
+  {
+   "name": "Ellary's Greens",
+   "why": "permanently closed (NYC audit)"
+  },
+  {
+   "name": "Gertie",
+   "why": "closed (NYC audit)"
+  },
+  {
+   "name": "Studio Sweetly",
+   "why": "cottage bakery, no storefront (NYC audit)"
+  },
+  {
+   "name": "Ginvee Matcha",
+   "why": "food truck/pop-up (NYC audit)"
   }
  ]
 }

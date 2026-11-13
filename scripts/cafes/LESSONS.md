@@ -53,6 +53,18 @@ Done by hand for a country the owner cares about: every listing checked live, th
 - The owner can ask for specific chains on the map. They go in `scripts/cafes/weekly/select_chains.json` (website host per brand): the host is exempt from the three chain filters in `build_all2.py`, but every outlet still needs matcha evidence. Outlets the place data lacks are added as leads. The "no chains" rule stays the default.
 - I wrongly removed Caffe Medici in the Austin audit: its own site menu is an image, so a text search found no matcha. Its own Instagram/Facebook menu posts (Cherry Blossom Matcha, White Pumpkin Matcha Latte) are valid evidence. Rule: before removing a venue for "no matcha on site", check its own social menu posts and online-order page, not only the website text.
 
+## City audit (New York City, 2026-11-12)
+820 listings inside the five boroughs: 123 removed, 11 added, 4 addresses fixed. Permanent rules:
+- Closed businesses stay on the map until someone checks: at least 9 listings were marked permanently closed on Yelp or the venue's own site (Gertie, Paper Plane, Ellary's Greens, Brooklyn Whiskers...). A closed-business check (own-site "permanently closed" text, Yelp CLOSED label) belongs in the weekly review of any city we promote.
+- Venues in other places sat inside the NYC box because the place data put the wrong city on them (Warwick, Hempstead, Pelham and Port Washington listings shown in Brooklyn/Queens). Check that the street address's own town matches the pin's town before trusting a pin.
+- Stale branch lists: three Madman Espresso locations and one Matchaful location were not on the brand's current location list. For multi-outlet local brands, compare each outlet with the brand's own location page.
+- Restaurants: matcha as a cocktail, a dessert, a curry or a packaged mochi is not a matcha tea/latte (Double Knot, Ootoya, Peacefood, Davelle, Dr. Clark, Wasabi Sushi, Sake Bar Hagi).
+- Chocolatiers and patisseries whose only matcha is a chocolate flavour or a loaf slice (Chocolat Moderne, Stick With Me, Colson) are not matcha venues; retail powder on a tea seller's site (Harney, Felix, Ants, Bird and Branch) is not a drink.
+- Food trucks, carts and pop-ups (Ginvee, DewMatcha) and cottage bakeries with no storefront (Studio Sweetly) stay off the map.
+- Local multi-outlet brands over 25 outlets (Fay Da, T-Swirl, Yaya Tea, Xing Fu Tang, Royce, Läderach, Yi Fang, Fresh & Co, Café Kitsuné) are chains.
+- Many NYC venues keep their menu as an image or on an ordering platform: text re-checks wrongly flagged them, so a haiku agent verified each flagged venue through search and the ordering page. Verdicts the agent could not confirm ("unsure") were removed unless a stored own-site menu line plus confirmed-open status existed.
+- Discovery: local roundups (Eater, Time Out, Reddit, Yelp top-10) mostly named venues we already had; the new ones came from brand location pages (Matchaful, Rhythm Zero) rather than roundups.
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
