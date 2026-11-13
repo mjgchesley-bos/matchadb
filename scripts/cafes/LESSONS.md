@@ -73,6 +73,12 @@ z_super.py` pattern: 25 hosts per process, 150 s limit, singles retried at 60 s,
 - A regression case that names a chain must be backed by a whole-map sweep of that chain, or the publish gate (correctly) blocks: the NYC audit removed Xing Fu Tang / Fay Da / T-Swirl / Yaya Tea only in NYC; the gate caught the other 35 outlets worldwide.
 - Discovery for a small country is thin without own-site menus: tourism boards (christchurchnz.com, wellingtonnz.com) and the Urban List publish matcha guides that name venues, but the venue's address and menu still need confirming (OpenStreetMap POI check worked well for addresses).
 
+## Small-town audit (Tauranga NZ, 2026-11-13)
+- Stored crawl evidence can be stale even when it was captured this week: the Café Botannix menu with a matcha latte came from another location's page that no longer mentions matcha, and the same page was reused as evidence for three Tauranga cafés. Confirm each listing on ITS OWN live menu page before trusting it; a sibling location's page is not evidence.
+- JavaScript menus: a plain fetch sees nothing, so use the in-app browser (read `document.body.innerText`) to check them. It confirmed Kneed Bakery, Pearl Kitchen and Soul Boul in one batch of calls.
+- A site that now redirects to a different business (vitalityorganics.nz to vitalitykitchen.co.nz) means the old listing is merged or closed: remove it unless the new site shows matcha.
+- Directory sites (MyLocalMatcha, matchanearme) are leads only: all 15 Tauranga candidates from them failed the own-menu test or lacked a street address.
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
