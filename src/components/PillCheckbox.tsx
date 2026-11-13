@@ -34,7 +34,7 @@ export function PillCheckbox({
       }}
     >
       <input type="checkbox" name={name} value={value} defaultChecked={defaultChecked} className="peer sr-only" />
-      <span className="inline-block rounded-full border border-line-strong px-3 py-1.5 text-sm text-ink-muted transition-colors peer-hover:border-matcha peer-checked:bg-matcha peer-checked:text-paper peer-checked:border-matcha">
+      <span className="inline-block rounded-full border border-line-strong bg-paper px-3 py-1.5 text-sm font-medium text-ink transition-colors peer-hover:border-matcha peer-hover:bg-matcha-soft peer-focus-visible:outline-2 peer-focus-visible:outline-matcha peer-checked:border-matcha peer-checked:bg-matcha peer-checked:text-paper">
         {label || value}
       </span>
     </label>

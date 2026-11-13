@@ -25,8 +25,11 @@ function sortByOrder(values: string[], order: string[]): string[] {
 }
 
 const fieldClass =
-  "w-full border border-line-strong rounded-sm px-3 py-2 bg-paper text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors";
-const labelClass = "block text-xs font-medium tracking-wide uppercase text-ink-faint mb-1.5";
+  "w-full border border-line-strong rounded-sm px-3 py-2.5 bg-paper text-sm text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha focus:ring-2 focus:ring-matcha/20 transition-colors";
+// Group headings: the site's green monospace eyebrow style, so they read as headings and not as more content.
+const labelClass = "block font-mono text-[0.7rem] font-medium tracking-[0.18em] uppercase text-forest mb-2.5";
+// One filter group: padded, separated from the next by a thin rule.
+const groupClass = "px-4 py-4";
 
 export type FilterOptions = {
   brands: string[];
@@ -43,7 +46,7 @@ export function FilterForm({
   filters,
   options,
   clearHref,
-  formClassName = "flex flex-col gap-5 text-sm",
+  formClassName = "rounded-sm border border-line bg-paper-raised text-sm",
   wideClassName = "",
   lang = "en",
 }: {
@@ -63,7 +66,14 @@ export function FilterForm({
   const tv = getTV(lang);
   return (
     <form method="get" className={formClassName}>
-      <div>
+      <h2 className="flex items-center gap-2 rounded-t-sm border-b border-line bg-matcha-soft px-4 py-3 font-display text-lg font-semibold text-ink">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true" className="text-matcha">
+          <path d="M2 4h12M4.5 8h7M7 12h2" />
+        </svg>
+        {t("f.title")}
+      </h2>
+      <div className="divide-y divide-line">
+      <div className={groupClass}>
         <label className={labelClass} htmlFor="q">
           {t("f.search")}
         </label>
@@ -76,7 +86,7 @@ export function FilterForm({
         />
       </div>
 
-      <div>
+      <div className={groupClass}>
         <label className={labelClass} htmlFor="brand">
           {t("f.brand")}
         </label>
@@ -90,7 +100,7 @@ export function FilterForm({
         </select>
       </div>
 
-      <div>
+      <div className={groupClass}>
         <span className={labelClass}>{t("f.grade")}</span>
         <div className="flex flex-wrap gap-2">
           {sortByOrder(
@@ -109,7 +119,7 @@ export function FilterForm({
       </div>
 
       {options.grades.some((g) => PREP_ORDER.includes(g)) && (
-        <div>
+        <div className={groupClass}>
           <span className={labelClass}>{t("f.prep")}</span>
           <div className="flex flex-wrap gap-2">
             {sortByOrder(
@@ -128,7 +138,7 @@ export function FilterForm({
         </div>
       )}
 
-      <div>
+      <div className={groupClass}>
         <span className={labelClass}>{t("f.use")}</span>
         <div className="flex flex-wrap gap-2">
           {sortByOrder(options.uses, USE_ORDER).map((u) => (
@@ -137,7 +147,7 @@ export function FilterForm({
         </div>
       </div>
 
-      <div>
+      <div className={groupClass}>
         <span className={labelClass}>{t("f.flavor")}</span>
         <div className="flex flex-wrap gap-2">
           {options.flavors.map((f) => (
@@ -146,7 +156,7 @@ export function FilterForm({
         </div>
       </div>
 
-      <div>
+      <div className={groupClass}>
         <label className={labelClass} htmlFor="region">
           {t("f.region")}
         </label>
@@ -160,7 +170,7 @@ export function FilterForm({
         </select>
       </div>
 
-      <div>
+      <div className={groupClass}>
         <label className={labelClass} htmlFor="ships">
           {t("f.ships")}
         </label>
@@ -174,9 +184,11 @@ export function FilterForm({
         </select>
       </div>
 
-      <div className={`flex gap-3 ${wideClassName}`}>
+      <div className={`${groupClass} ${wideClassName}`}>
+        <span className={labelClass}>{t("f.price")}</span>
+        <div className="flex gap-3">
         <div className="flex-1">
-          <label className={labelClass} htmlFor="minPrice">
+          <label className="mb-1 block text-xs text-ink-muted" htmlFor="minPrice">
             {t("f.min")}
           </label>
           <input
@@ -189,7 +201,7 @@ export function FilterForm({
           />
         </div>
         <div className="flex-1">
-          <label className={labelClass} htmlFor="maxPrice">
+          <label className="mb-1 block text-xs text-ink-muted" htmlFor="maxPrice">
             {t("f.max")}
           </label>
           <input
@@ -201,51 +213,55 @@ export function FilterForm({
             className={fieldClass}
           />
         </div>
+        </div>
       </div>
 
-      <div className={`flex flex-col gap-3 ${wideClassName}`}>
-        <label className="flex items-center gap-2.5 text-ink-muted">
+      <div className={`${groupClass} flex flex-col gap-3 ${wideClassName}`}>
+        <span className={`${labelClass} mb-0`}>{t("f.only")}</span>
+        <label className="flex items-center gap-2.5 text-ink">
           <input
             type="checkbox"
             name="organicOnly"
             value="1"
             defaultChecked={filters.organicOnly}
-            className="accent-matcha"
+            className="h-4 w-4 accent-matcha"
           />
           {t("f.organic")}
         </label>
 
-        <label className="flex items-center gap-2.5 text-ink-muted">
+        <label className="flex items-center gap-2.5 text-ink">
           <input
             type="checkbox"
             name="wholesaleOnly"
             value="1"
             defaultChecked={filters.wholesaleOnly}
-            className="accent-matcha"
+            className="h-4 w-4 accent-matcha"
           />
           {t("f.wholesale")}
         </label>
 
-        <label className="flex items-center gap-2.5 text-ink-muted">
+        <label className="flex items-center gap-2.5 text-ink">
           <input
             type="checkbox"
             name="hasContradictionsOnly"
             value="1"
             defaultChecked={filters.hasContradictionsOnly}
-            className="accent-matcha"
+            className="h-4 w-4 accent-matcha"
           />
           {t("f.contradictions")}
         </label>
       </div>
 
-      <div className={`flex flex-col gap-3 ${wideClassName}`}>
+      </div>
+
+      <div className={`sticky bottom-0 flex flex-col gap-2.5 rounded-b-sm border-t border-line bg-paper-raised px-4 py-4 ${wideClassName}`}>
         <button
           type="submit"
-          className="bg-matcha text-paper py-2.5 text-sm font-medium tracking-wide hover:bg-forest transition-colors"
+          className="rounded-full bg-matcha py-2.5 text-sm font-medium tracking-wide text-paper transition-colors hover:bg-forest"
         >
           {t("f.apply")}
         </button>
-        <Link href={clearHref} className="text-center text-ink-faint hover:text-ink-muted transition-colors">
+        <Link href={clearHref} className="text-center text-sm text-matcha underline underline-offset-2 transition-colors hover:text-forest">
           {t("f.clear")}
         </Link>
       </div>
