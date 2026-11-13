@@ -61578,5 +61578,21 @@
     "checked": "2026-11-06",
     "lat": 35.80575,
     "lng": 139.30996
+  },
+  {
+    "id": "lunatea-szczecinek",
+    "name": "Lunatea",
+    "kind": "retailer",
+    "address": "ul. W. Bartoszewskiego 22/24",
+    "city": "Szczecinek",
+    "state": "",
+    "zip": "78-400",
+    "cc": "PL",
+    "url": "https://lunatea.pl/",
+    "brands": [],
+    "note": "Tea and coffee shop that sells its own packaged matcha (\"Japan Style\", 18 zł per 50 g). No drink menu found, so it is listed here as a shop, not a café.",
+    "checked": "2026-11-14",
+    "lat": 53.70969,
+    "lng": 16.69609
   }
 ]
