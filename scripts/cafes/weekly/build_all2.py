@@ -21,7 +21,8 @@ import glob as _glob
 for _f in sorted(_glob.glob("C:/temp/cafes/v2_*.jsonl") + _glob.glob("C:/temp/cafes/w_*.jsonl"), key=os.path.getmtime):
     if _f.replace("\\", "/") not in [x.replace("\\", "/") for x in CRAWL_FILES]: CRAWL_FILES.append(_f.replace("\\", "/"))
 PLACES = ["C:/temp/cafes/us_cafes.parquet", "C:/temp/cafes/intl_cafes.parquet", "C:/temp/cafes/ext_cands.parquet", "C:/temp/cafes/fsq_cands.parquet", "C:/temp/cafes/fsq_all_cands.parquet",
-          "C:/temp/cafes/au_cafes.parquet", "C:/temp/cafes/au_ext.parquet", "C:/temp/cafes/fsq_au_cafes.parquet"]
+          "C:/temp/cafes/au_cafes.parquet", "C:/temp/cafes/au_ext.parquet", "C:/temp/cafes/fsq_au_cafes.parquet",
+          "C:/temp/cafes/nz_cafes.parquet", "C:/temp/cafes/nz_ext.parquet", "C:/temp/cafes/fsq_nz_cafes.parquet"]
 LEADS_FILE = "C:/temp/cafes/leads_venues.json"      # venues found through web leads (not in Overture): already in café shape
 # categories where "matcha" in the business name is enough to list it (the name is its own claim)
 NAME_CATS = {None, "cafe", "coffee_shop", "tea_room", "bubble_tea_shop", "coffee_roastery", "dessert_shop", "ice_cream_shop", "gelato_shop", "smoothie_juice_bar",
@@ -30,7 +31,7 @@ NAME_CATS = {None, "cafe", "coffee_shop", "tea_room", "bubble_tea_shop", "coffee
 
 CC3 = {"CA": "CAN", "JP": "JPN", "KR": "KOR", "AU": "AUS", "GB": "GBR", "IE": "IRL", "FR": "FRA", "DE": "DEU", "IT": "ITA", "ES": "ESP", "PT": "PRT", "NL": "NLD", "BE": "BEL",
        "LU": "LUX", "AT": "AUT", "CH": "CHE", "SE": "SWE", "NO": "NOR", "DK": "DNK", "FI": "FIN", "IS": "ISL", "PL": "POL", "CZ": "CZE", "SK": "SVK", "HU": "HUN",
-       "GR": "GRC", "RO": "ROU", "BG": "BGR", "HR": "HRV", "SI": "SVN", "EE": "EST", "LV": "LVA", "LT": "LTU", "MT": "MLT", "CY": "CYP"}
+       "GR": "GRC", "RO": "ROU", "BG": "BGR", "HR": "HRV", "SI": "SVN", "NZ": "NZL", "EE": "EST", "LV": "LVA", "LT": "LTU", "MT": "MLT", "CY": "CYP"}
 EU = {"GB", "IE", "FR", "DE", "IT", "ES", "PT", "NL", "BE", "LU", "AT", "CH", "SE", "NO", "DK", "FI", "IS", "PL", "CZ", "SK", "HU", "GR", "RO", "BG", "HR", "SI", "EE", "LV", "LT", "MT", "CY"}
 
 def region_of(cc):
@@ -39,6 +40,7 @@ def region_of(cc):
     if cc == "JP": return "jp"
     if cc == "KR": return "kr"
     if cc == "AU": return "au"
+    if cc == "NZ": return "nz"
     return "eu" if cc in EU else None
 
 def host_of(u):
@@ -395,7 +397,7 @@ for k, cs in files.items():
 slims = {}
 for c in cafes:
     slims.setdefault(region_of(c["cc"]), []).append([c["id"], c["name"], c["address"], c["city"], c["state"], c["zip"], c["lat"], c["lng"], 2 if c.get("via") == "name" else (3 if c.get("via") == "reported" else (1 if c["focus"] else 0)), c["cc"]])
-for reg in ("us", "ca", "eu", "jp", "kr", "au"):
+for reg in ("us", "ca", "eu", "jp", "kr", "au", "nz"):
     json.dump(slims.get(reg, []), open(os.path.join(SLIM_DIR, f"cafes-slim-{reg}.json"), "w", encoding="utf8"), separators=(",", ":"), ensure_ascii=False)
 
 print(stats); print(f"hosts crawled {crawled}; cafés with matcha on their own site: {len(cafes)} (matcha-focused {sum(c['focus'] for c in cafes)})")
@@ -403,4 +405,4 @@ print("by region", {k: len(v) for k, v in slims.items()})
 print("by country", Counter(c["cc"] for c in cafes).most_common(14))
 print("evidence strength", Counter(max((e["st"] for e in c["ev"]), default=0) for c in cafes))
 print("files", len(files), "full KB", sum(os.path.getsize(os.path.join(OUT_DIR, f)) for f in os.listdir(OUT_DIR)) // 1024,
-      "slim KB", {k: os.path.getsize(os.path.join(SLIM_DIR, f"cafes-slim-{k}.json")) // 1024 for k in ("us", "ca", "eu", "jp", "kr", "au")})
+      "slim KB", {k: os.path.getsize(os.path.join(SLIM_DIR, f"cafes-slim-{k}.json")) // 1024 for k in ("us", "ca", "eu", "jp", "kr", "au", "nz")})

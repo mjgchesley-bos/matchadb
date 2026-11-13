@@ -80,7 +80,7 @@ function snippets(txt) {
 }
 function links(html, base) {
   const res = [];
-  const re = /<a\b[^>]*?href=["']([^"'#]+)["'][^>]*>([\s\S]*?)<\/a>/gi;
+  const re = /<a\b[^>]{0,600}?href=["']([^"'#]+)["'][^>]{0,600}>([\s\S]{0,400}?)<\/a>/gi;   // bounded: an unclosed <a in a huge page made the old pattern rescan the whole page for every <a (a CPU hang)
   let m;
   while ((m = re.exec(html)) && res.length < 300) {
     let u;

@@ -34905,9 +34905,9 @@
 "at": "2026-11-12"
 },
 "24e7c42a87": {
-"d": "KEEP",
-"r": "NYC audit: Matcha on Tap Our house made Matcha Latte on Nitro draft!",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "closed (NYC audit)",
+"at": "2026-11-13"
 },
 "8fbd51044f": {
 "d": "KEEP",
@@ -35568,5 +35568,1465 @@
 "d": "REMOVE",
 "r": "NYC audit: evidence page belongs to Bagels & Co, shared with unrelated shops",
 "at": "2026-11-12"
+},
+"fsq695fedf": {
+"d": "REMOVE",
+"r": "NZ audit: retail matcha powder only",
+"at": "2026-11-13"
+},
+"342e22e0a0": {
+"d": "REMOVE",
+"r": "NZ audit: chain with 25+ outlets worldwide",
+"at": "2026-11-13"
+},
+"2886a16d24": {
+"d": "REMOVE",
+"r": "NZ audit: chain with 25+ outlets worldwide",
+"at": "2026-11-13"
+},
+"8b62a3a413": {
+"d": "REMOVE",
+"r": "NZ audit: retail matcha blend only",
+"at": "2026-11-13"
+},
+"f527689d20": {
+"d": "REMOVE",
+"r": "NZ audit: no matcha evidence; social-media link only",
+"at": "2026-11-13"
+},
+"fsq4d3a9b7": {
+"d": "REMOVE",
+"r": "NZ audit: no matcha text on its own site",
+"at": "2026-11-13"
+},
+"4820943dd6": {
+"d": "REMOVE",
+"r": "NZ audit: chain with 25+ outlets worldwide",
+"at": "2026-11-13"
+},
+"3f84ce6e03": {
+"d": "REMOVE",
+"r": "NZ audit: chain with 25+ outlets worldwide",
+"at": "2026-11-13"
+},
+"fsq696008b": {
+"d": "REMOVE",
+"r": "NZ audit: wholesale matcha powder, not a venue serving drinks",
+"at": "2026-11-13"
+},
+"d13fe462da": {
+"d": "REMOVE",
+"r": "NZ audit: retail matcha powder only",
+"at": "2026-11-13"
+},
+"b102a6ed87": {
+"d": "REMOVE",
+"r": "NZ audit: indoor playground chain, not a cafe",
+"at": "2026-11-13"
+},
+"e568fcb4c7": {
+"d": "REMOVE",
+"r": "NZ audit: recipe pages only",
+"at": "2026-11-13"
+},
+"fsq4c805f6": {
+"d": "REMOVE",
+"r": "NZ audit: retail matcha whisks only",
+"at": "2026-11-13"
+},
+"1702211955": {
+"d": "REMOVE",
+"r": "NZ audit: indoor playground chain, not a cafe",
+"at": "2026-11-13"
+},
+"6e5b908b6c": {
+"d": "REMOVE",
+"r": "NZ audit: indoor playground chain, not a cafe",
+"at": "2026-11-13"
+},
+"fsq6960000": {
+"d": "REMOVE",
+"r": "NZ audit: indoor playground chain, not a cafe",
+"at": "2026-11-13"
+},
+"fsq4bafb87": {
+"d": "REMOVE",
+"r": "NZ audit: roaster sells a matcha whisk only; no matcha drink",
+"at": "2026-11-13"
+},
+"d2e424a789": {
+"d": "REMOVE",
+"r": "NZ audit: no matcha text on its own site",
+"at": "2026-11-13"
+},
+"7a1b249752": {
+"d": "REMOVE",
+"r": "NZ audit: no matcha text on its own site",
+"at": "2026-11-13"
+},
+"de3c66be39": {
+"d": "REMOVE",
+"r": "NZ audit: retail coffee/clothing brand; matcha only in a product menu",
+"at": "2026-11-13"
+},
+"fsq4e05180": {
+"d": "REMOVE",
+"r": "NZ audit: duplicate of Kohu Road Ice Cream",
+"at": "2026-11-13"
+},
+"fsq4d48c90": {
+"d": "REMOVE",
+"r": "NZ audit: duplicate of Ollies Ice Cream & Eatin' House",
+"at": "2026-11-13"
+},
+"fsq698a62f": {
+"d": "REMOVE",
+"r": "NZ audit: duplicate of Outset - Cafe & Coffee",
+"at": "2026-11-13"
+},
+"82ebfc05f4": {
+"d": "REMOVE",
+"r": "NZ audit: duplicate of Teasme Riccarton",
+"at": "2026-11-13"
+},
+"fsq4efe4d4": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7c089f436c": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq50e101a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4bae914": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5201945": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"f9b5eabae5": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"68844ff112": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq6960197": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"23ba4b3019": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq695ffdc": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7506cc9627": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"47abf9e0a4": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"11b9c6f1c1": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"a6f9689787": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"a3a57f2285": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b1ad346920": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0a7c480343": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e77be8847b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"332afd3931": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"c80948eae2": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"502960bbfb": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4be7254": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5a53ed0": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"2c50d7eaa5": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"382c66c4e7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"57b161c387": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"687b932d1f": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b706342353": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"91ed7196f1": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0d1436f453": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"dc3e431e5b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"add6cb0dfc": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"17c7d70378": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"4e0e296ca3": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"2eee96637a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"9d0f55a6fc": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"58b97b4392": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"961b5c6054": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq63cb17a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"aba9f1b835": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e4be963cba": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"5518b0811b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fab6fede1a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"909ccf3381": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0b0931a57c": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"98fb611a96": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e38383388f": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"52f3d79632": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"4dbf707651": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"505afbd492": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"42bb77277b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3901d30293": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"cc6ecbc8d3": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0a5ea6be44": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"8118e338c8": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"15514f7ede": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7e3f2ffc51": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"a0172fa8b5": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7cf8c812a7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7bd039e565": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7a20b79141": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"76b279bd0d": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"d53826dd9a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"41ee85cf12": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq695ff15": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"5df2e3b86a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5de6ee8": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"28136b222e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"142264c03e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e8d42e4472": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7b8d62f01f": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"988ace8317": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"962a64ea6a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"9ab130b3eb": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"a26fc24540": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"2e955505a9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b5a848e0b1": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3f87c498da": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3bbc07bba3": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"232a7d1767": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5bd3ad0": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"73bcf7f989": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq6030454": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"32ade7a657": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"87236b3eb7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4be4a6a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq51d0d64": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"1b5474d824": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b337cddf79": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"a68a699b25": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq600c805": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"279e78649c": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3d239922b6": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0ffb2793cc": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"02ae3c3f68": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"6ea22e287c": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"64b0872ed4": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4b5ce36": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"6f601e0de9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fcfd91a79e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"bc232351fc": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"92c9c0e80f": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"2fdbd8852e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"56830b69f9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3717188471": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq68e0609": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"1c116521b9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"5e1c2e5768": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"d682493ff3": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"15dae43ea3": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0a0a03551d": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"d3717c9641": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3b5a5dd4cb": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"6dd9d3f473": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b18f1708e1": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"64e7ed9e30": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"5815840a2e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5eae13a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4ef2835": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"4e8bad8fd6": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5c14578": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"bfb3700ca4": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4c4b931": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"1bf8220ed9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq698a675": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"96fd769d1c": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"c3ed7de823": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"8b74b7a2d7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"510b0c0c3f": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"228ee317e7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5a56742": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e742850497": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq598a453": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5494a44": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"03ae7032b6": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e9ba1836d4": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"774a6b4d92": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e58ff949f7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"9519add491": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"76ab37ce30": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"6bdda06bf6": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"d32bc8a356": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7927b4636c": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq563a995": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"55c59864ea": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"cb296eb5f7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b9ae3fcce0": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5bcd17b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"72ad4aed31": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq56feeaa": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"505d1c2920": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"d4b68df338": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5a4ffd5": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4bb67db": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"92fd2eec3a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"d59d6edae6": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"6c44f427ab": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5cae5f7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"397bf3f1a9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"dd6e1b50d5": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"89687bf852": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"df37e980a8": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq694f9c8": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"9751bbccb7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"af6e82f057": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq6565809": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"ed33bc4c2e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"9d491d87df": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"476dd3d2c0": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"51203a5dc4": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"49b2b027c3": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"caa80b97d5": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"744b6dffbb": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5d955ab": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5ef8f0a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5f1cf04": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"34420dbd48": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7f753adb4b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq696af1f": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"ed316d8939": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"ae52de4ff5": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e6bb90ec08": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4eb3439": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"92a5e727c4": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"a0622b9d7e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"cdffd2cb1b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"85536e97e6": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3c8699ec93": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"cad15def83": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"42a595a32b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"4a05031bad": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq532deb1": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fd0deb490b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"430ca08e26": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"abff7c7b9d": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"c8dda187fa": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e9d3d28420": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"4366476ab7": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"ad97090ba3": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"af7a0d9ddb": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"5cf72a7dd6": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"c7ba241e88": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b5481f006f": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"da3d900726": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"bcdbd11dc1": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0c9db997ce": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq68a67bc": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e65c0cbef0": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq5f7f965": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"1540af606d": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"d2ffca3861": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3c8370654a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e1e0e75eb2": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4d1bff0": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"8bd67652af": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"484e00458e": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7216feabf8": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"95fd307159": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"b02a40ce1d": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"59dc05d6db": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq6a2de45": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"8ffd11e0b9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"e45226f66a": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4ca3efe": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"5bc542012b": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"8180efc4eb": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"0caaf01558": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"edeadb7c15": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"246a0661f2": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"3875cfda10": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"ffbeddbc32": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"40585bde1d": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"7627f00add": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"fsq4f457a9": {
+"d": "KEEP",
+"r": "NZ audit: live own-site matcha text this week; triaged for retail/chain/dessert-only",
+"at": "2026-11-13"
+},
+"01ec17f73e": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"8d13d0ee4b": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"6a26866fb6": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"d9868351aa": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5f2a8e4": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq6935f2c": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"dbdffd938c": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"22ca22f502": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5ce9d0a": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq650badb": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"817cc159be": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq594ff53": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq4d8f91a": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq611d884": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"3092f0762f": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"4eed16d018": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"5940c501b7": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"ac2317db9b": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5ce9901": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"a0b4645fc8": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq63d57e4": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"6a0259e420": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"9fe80a0ddb": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"b284bcf4ed": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"71c42d5e5f": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5b6a25b": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"43a12f563e": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5ef3a28": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"a34fa48d5c": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5bd3c19": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5865929": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq55be417": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"fsq5a33f1c": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"c5dd1ba3f8": {
+"d": "REMOVE",
+"r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
 }
 }

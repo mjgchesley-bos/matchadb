@@ -88,6 +88,7 @@ def refresh_sources():
             open(tmp, "w", encoding="utf-8").write(src)
             run([sys.executable, "-I", tmp], timeout=7200)
         run([sys.executable, "-I", f"{HERE}/export_au.py", rel, "", "overture"], timeout=7200)      # Australia
+        run([sys.executable, "-I", f"{HERE}/export_nz.py", rel, "", "overture"], timeout=7200)      # New Zealand
         open(f"{WORK}/overture_release.txt", "w").write(rel)
     if "fsq" in changed:
         rel = changed["fsq"]
@@ -96,6 +97,7 @@ def refresh_sources():
         run([sys.executable, "-I", f"{HERE}/fsq_all_to_cands.py"])
         run([sys.executable, "-I", f"{HERE}/fsq_to_cands.py"])
         run([sys.executable, "-I", f"{HERE}/export_au.py", "", rel, "fsq"], timeout=7200)           # Australia
+        run([sys.executable, "-I", f"{HERE}/export_nz.py", "", rel, "fsq"], timeout=7200)           # New Zealand
         open(f"{WORK}/fsq_release.txt", "w").write(rel)
     return changed
 
@@ -124,7 +126,7 @@ def place_hosts():
     import duckdb
     con = duckdb.connect()
     urls, cnt = {}, collections.Counter()
-    for pq in ("us_cafes", "intl_cafes", "ext_cands", "fsq_cands", "fsq_all_cands", "au_cafes", "au_ext", "fsq_au_cafes"):
+    for pq in ("us_cafes", "intl_cafes", "ext_cands", "fsq_cands", "fsq_all_cands", "au_cafes", "au_ext", "fsq_au_cafes", "nz_cafes", "nz_ext", "fsq_nz_cafes"):
         p = f"{WORK}/{pq}.parquet"
         if not os.path.exists(p): continue
         for (w,) in con.execute(f"select website from '{p}' where website is not null").fetchall():
@@ -189,7 +191,7 @@ def update_state(state, out):
 
 # ----------------------------------------------------------------------------------------------- 3-4. build + verify
 def count_slim(d):
-    return {k: len(json.load(open(f"{d}/cafes-slim-{k}.json", encoding="utf-8"))) for k in ("us", "ca", "eu", "jp", "kr", "au") if os.path.exists(f"{d}/cafes-slim-{k}.json")}
+    return {k: len(json.load(open(f"{d}/cafes-slim-{k}.json", encoding="utf-8"))) for k in ("us", "ca", "eu", "jp", "kr", "au", "nz") if os.path.exists(f"{d}/cafes-slim-{k}.json")}
 
 def build_and_verify(allow_drop=None):
     tmp_d, tmp_p = f"{WORK}/out_weekly/d", f"{WORK}/out_weekly/p"

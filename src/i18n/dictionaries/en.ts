@@ -196,6 +196,8 @@ export const en = {
   "c.region.jp.ph": "e.g. Tokyo or Kyoto",
   "c.region.kr.ph": "e.g. Seoul or Busan",
   "c.region.au.ph": "e.g. Sydney or 3000",
+  "c.region.nz": "New Zealand",
+  "c.region.nz.ph": "e.g. Auckland or Wellington",
   "c.cf.zip": "ZIP code, postcode or city",
   "c.cf.searchLabel": "Search by café name, city, ZIP or postcode",
   "c.cf.searchPh": "Café name, city, ZIP or postcode",

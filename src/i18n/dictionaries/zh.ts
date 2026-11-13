@@ -214,6 +214,8 @@ export const zh: Partial<Record<Key, string>> = {
   "c.region.jp.ph": "例如 东京 或 京都",
   "c.region.kr.ph": "例如 首尔 或 釜山",
   "c.region.au.ph": "例如 悉尼 或 墨尔本",
+  "c.region.nz": "新西兰",
+  "c.region.nz.ph": "例如：奥克兰或惠灵顿",
   "c.cf.zip": "邮编或城市",
   "c.cf.searchLabel": "按咖啡馆名称、城市或邮政编码搜索",
   "c.cf.searchPh": "咖啡馆名称、城市或邮政编码",

@@ -198,6 +198,8 @@ export const fr: Partial<Record<Key, string>> = {
   "c.region.jp.ph": "p. ex. Tokyo ou Kyoto",
   "c.region.kr.ph": "p. ex. Séoul ou Busan",
   "c.region.au.ph": "p. ex. Sydney ou Melbourne",
+  "c.region.nz": "Nouvelle-Zélande",
+  "c.region.nz.ph": "p. ex. Auckland ou Wellington",
   "c.cf.zip": "Code postal ou ville",
   "c.cf.searchLabel": "Recherchez par nom de café, ville ou code postal",
   "c.cf.searchPh": "Nom du café, ville ou code postal",

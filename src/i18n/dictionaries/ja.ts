@@ -214,6 +214,8 @@ export const ja: Partial<Record<Key, string>> = {
   "c.region.jp.ph": "例：東京、京都",
   "c.region.kr.ph": "例：ソウル、釜山",
   "c.region.au.ph": "例：シドニー、メルボルン",
+  "c.region.nz": "ニュージーランド",
+  "c.region.nz.ph": "例：オークランド、ウェリントン",
   "c.cf.zip": "郵便番号または地名",
   "c.cf.searchLabel": "カフェ名・市区町村・郵便番号で検索",
   "c.cf.searchPh": "カフェ名、市区町村、郵便番号",
