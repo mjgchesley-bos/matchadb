@@ -23750,9 +23750,9 @@
 "at": "2026-11-12"
 },
 "8447d245ea": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
 },
 "1ee81a6651": {
 "d": "KEEP",
@@ -23765,14 +23765,14 @@
 "at": "2026-11-12"
 },
 "a613d4b472": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
 },
 "e7fb27f8ba": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
 },
 "4956b53fb4": {
 "d": "KEEP",
@@ -23780,9 +23780,9 @@
 "at": "2026-11-12"
 },
 "babb525a7e": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
 },
 "fsq6463f2c": {
 "d": "KEEP",
@@ -23795,14 +23795,14 @@
 "at": "2026-11-12"
 },
 "34fad9ebd2": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
 },
 "f8f4485f12": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
 },
 "83b7417f94": {
 "d": "KEEP",
@@ -40402,6 +40402,3276 @@
 "fa7ac3bc51": {
 "d": "REMOVE",
 "r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"db5c106406": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"33ae59ba55": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"6f652219c0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"6b66b7765d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"5f0474c086": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"327d043dc1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"a6e3ca72d3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"1ec80e78f8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"c1d240614a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"1f1beb3b70": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"c8f2cd2344": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"8c996ebbcd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"e43f2f94df": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"1e71237605": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"eea253623f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"ccb9fff6df": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"ebc95e6bcb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"a52197d874": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"d9861ebb69": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"26478bc687": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"36462ad932": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"df772f2d14": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"92277f74e4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"65753d6aa7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"378291cbb6": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"53e4685151": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"062df29ed0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"ba5d6f2703": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"3342f0f557": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"de1d3f031d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"bb02a5cf3a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"ec6ae06486": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"5beb1dd199": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"e832520a75": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"893e4da91a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"9def8c0cfc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"3b75edcdaf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"fb59fb4dae": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"5b54bc6bfa": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"cbb0528925": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"4294eaed0a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"4efd3b73d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"fsq4fbd10f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: L\u00e4derach (~250 outlets)",
+"at": "2026-11-14"
+},
+"5929cc2396": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"91a18fd9e6": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"840773f914": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"fa9ab63370": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"21b85635e4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"2fd98b9a7e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"b8934dce3f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"c2f881efe3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"0bc09b55ed": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"9fdcaa4558": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"cf512b9bbf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq68e45bb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"b890912dfb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"25c34adb22": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"64ebfe9abf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"c2d75e19a1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"db3d17fa43": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"d4c17191ae": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"516f027875": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"fde5527726": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"cd34f73a0c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"6b16cfe731": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"3c8dfc13c8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"f682bc9c1a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq66e58fd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Paper And Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"4c964fb1fc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"7374ad604a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"ac07dfcb7e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"43d5dab74c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"ce6e810347": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"7fdbba091b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"df108b3d44": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"a2949b6e7e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"a40f93af24": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"21dbe7194d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"631f85adab": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"75b54ed28a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"c0a13e9c9c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"0549db01a5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"753c998f37": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"c7f5c8fb60": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"6ff1a2ce1c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"7f7e12bec5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"433335545f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"45eb211cc0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"c5dbdecffe": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"32b019a642": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"cf91824426": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: \u4e80\u5c4b\u4e07\u5e74\u5802 (~30 outlets)",
+"at": "2026-11-14"
+},
+"4bfef1458e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"fsq519e07a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"463795683f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"d904e01a65": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"fsq5a00093": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"682c19b8b1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"e373f6df87": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"1ab8a8a56a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"d1d2287bab": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"860b76ef86": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"62b449c489": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"1b403708b1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"f6bd994f27": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"384f1cc46e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"be7e8a25c3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"e4b63e120d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"576da1b972": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"fsq5d9c4f4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"439bb110f7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"de3c0c20a3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"9e8e49b39a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"8aac7742cf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"2ae850167d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Coco di Mama - Italian To Go - MFG Brighton (~140 outlets)",
+"at": "2026-11-14"
+},
+"16b6e2324d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Laderach Chocolatier Suisse (~220 outlets)",
+"at": "2026-11-14"
+},
+"8a0f0a872b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Laderach Chocolatier Suisse (~220 outlets)",
+"at": "2026-11-14"
+},
+"899262b890": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Laderach Chocolatier Suisse (~220 outlets)",
+"at": "2026-11-14"
+},
+"fsq26cee13": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Laderach Chocolatier Suisse (~220 outlets)",
+"at": "2026-11-14"
+},
+"fsq5433fc3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: P & T - Paper & Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"b6c14e68dc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: P & T - Paper & Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq61c481c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: P & T - Paper & Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"b49943ebc4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"1ae678fe00": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"6ad255b032": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"9f4a51fff7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"fsq56a4ccd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"04692ac55b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"5ba585f5d4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"d491ed6677": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"fsq62f7534": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Caffeine (~140 outlets)",
+"at": "2026-11-14"
+},
+"c3adda360e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"fsq5d99045": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"bef11df325": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"b90949891d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"6b1a729933": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"74a8bea26c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"6af68f21b6": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"7b4273f73e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Sweethoney Dessert (~600 outlets)",
+"at": "2026-11-14"
+},
+"38863cb4f5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
+},
+"f06d75686e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: One Zo Boba (~169 outlets)",
+"at": "2026-11-14"
+},
+"c28de51d17": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"fsq5f6313e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"c32fa163f3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"fsq66a0fc6": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"fsq5bf2486": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"f5373adeb5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"65e714c18f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"03bc5d3af5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: KOI Th\u00e9 (~700 outlets)",
+"at": "2026-11-14"
+},
+"752fdf571e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"4abe30807d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"1905bd2716": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"f9a6c7ca11": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq67f688b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"5231f56661": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq61f4097": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq5abe37d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"5338a494d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"67c0721040": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"e7e4d05572": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"a74c5336bd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"84cb456a3c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"3ead87e4de": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"7e1a329e03": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"f94bf94b9a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"54db71ea24": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"8543c448ad": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fuwa Fuwa (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq5604266": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5867cb4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5de6a3a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5315bca": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5a4fa20": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq4c2f889": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq514b807": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"047beda1a5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsqd673d1a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq55167c3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq4b9a2d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq4eca488": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq54c1228": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5c3ed23": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq582dd2d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq621a47a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5d1b84c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsqe70c3fd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cr\u00eapeaffaire (~30 outlets)",
+"at": "2026-11-14"
+},
+"b7f493b011": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"a46acf98b7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"1a4ac97ef9": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"5ac56219e1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"96da31ec2a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"13bf3374af": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"6915cf69b7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"19aacc4afd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"a20a951ecd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"1efa859dd2": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"523700e2fb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"179a17e82c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"532e2a70dd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"3d33615e20": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"235d14fa76": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"01c33a20d1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"6432126e95": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Wasabi Sushi & Bento (~41 outlets)",
+"at": "2026-11-14"
+},
+"bda62431c0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"1ab09d2bd4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"499ea74a79": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"db39cf6d04": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"c69ec4f22c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"516629db27": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"d3a492881c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"2870f038ae": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"9abbb61656": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"ca086d2081": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"6efbf8b7b7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"d05033fdb0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"ab15d23ea2": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"3b9f564357": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"44caa1b03d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"a5d4505e42": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"2921f15205": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' Chocolate in The Shops at Santa Anita (~53 outlets)",
+"at": "2026-11-14"
+},
+"dde9026775": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq61a8ee9": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq594d89b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"6cd1f2d9b8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq61f910f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq62d18ea": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5c7294a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq678273d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq60d47ad": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"d7e32f9759": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"67c3ef862a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"9d186d0df8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq6740aeb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq62c561e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq68c034c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"17c8603684": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq694091d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bird & Blend Tea Co. (~30 outlets)",
+"at": "2026-11-14"
+},
+"239315ab96": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"2a4994b2e1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"79f08d4500": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"e028e7fa71": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"f75be96593": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"dc4f294ae3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"fe42363ecf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"5dc6fa9410": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"fa87cf6c57": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"5fb9da3742": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"0284a9c7f0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"c965350f00": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"321831f9ca": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"2ba7fd2770": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"f9baef31b7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Itsu (~81 outlets)",
+"at": "2026-11-14"
+},
+"fsq68bb3ee": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq5b7bf81": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"3b6f8bf479": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"952e4564ea": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"9d948490d2": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq4b22039": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq526971f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"7137d21307": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq5c348ee": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"8da8c04ee4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"a300a88a18": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"fsq5a2e7cc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"5609f4b543": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"2dd6c19635": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"a1a3f7f841": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Cojean Masl\u00f6 (~40 outlets)",
+"at": "2026-11-14"
+},
+"af8871613b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"a8014fe885": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"3092b715a0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"521216a679": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"de07af0fbc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"fsq07d5ba0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"7573eeabaf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"5c846b90b2": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"f751786bcb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"c186dd75e2": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"813d47ca04": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"a48b197557": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"ab634ea7a1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"c591c726d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Dubble (~41 outlets)",
+"at": "2026-11-14"
+},
+"ef4a451b89": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"5a3b4bdfb3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"3600dfc950": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"a68b4e9f35": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"fsq5a4f764": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"fsq57e275d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"ab1e40d8aa": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"d594de9e64": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"fsq64a412e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"1fcff0a400": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"d23dc8d1e9": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"31f7d2ba6e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"c4d26a02ea": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"a7431d25af": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Bagel Corner (~42 outlets)",
+"at": "2026-11-14"
+},
+"b3ecd69913": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"3589551a2d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"1d2e9c8033": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"e3140a3dc4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"c62deb455e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"c8ba0ab78c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"0ace40a1da": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq58b1bc8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"a67fdb36ea": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"7a670dc2cb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"2196d6b529": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"443bd52171": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq59d7215": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"fsq5b66b2d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: 12oz Street Coffee (~30 outlets)",
+"at": "2026-11-14"
+},
+"c3a172958e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"fsq6a90bb5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"fsq6a45cbc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"134672ba38": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"65c6982f29": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"d0f7efcca4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"debf8d68f9": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"6f284b0f24": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"412dae0a7b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"fsq64f31a3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"fsq6a53ec4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"97dd63855b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"065980a27a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"f50a23e356": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Fluffy Fluffy Cafe (~70 outlets)",
+"at": "2026-11-14"
+},
+"a291933066": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"f06112b06c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"4218f4837e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"b0c1c07efc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"cae6a02f9a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"b212a538ba": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"c97baa834d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"32b72e277d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"33d4a932a0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"486b0e00d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"2855b4882e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Really Awesome Coffee (~100 outlets)",
+"at": "2026-11-14"
+},
+"fsq695fffa": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsq6960112": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsq69600f0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsqb85f3a8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsq0968304": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsq0959538": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"cf66a8c38c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsq0e2bbfd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsqe815461": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsq642a144": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"fsq69600f3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Otr (~193 outlets)",
+"at": "2026-11-14"
+},
+"ad2a308299": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"41aa364637": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"a77e7e0a93": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"60edeafedb": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"1b6f5f0d27": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"ed05e276de": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"e60c728099": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"aee295959c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"8275ab373e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"64f8a4fb84": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: COMEBUY Berlin City West (~300 outlets)",
+"at": "2026-11-14"
+},
+"674edb9b7d": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"6268748450": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"81c84f8a73": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"1eaca0611b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"7a2d1b4faa": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"14e84c42f3": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"0b82e9d3bd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"7103756405": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"49ab06abdf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: UMe | Tea & Snacks (~37 outlets)",
+"at": "2026-11-14"
+},
+"0cf10facd7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"0d3a253d4e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"f999918fe7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"50388b73ab": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"cb030f217b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"9b1e51325b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"f140ce2e59": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"c2b22411de": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"d64d331416": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: The Whale Tea (~30 outlets)",
+"at": "2026-11-14"
+},
+"de9e907e66": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"1025cb781e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"e8a8bda23c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"11044d1ed1": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"f5ebe9b47f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"2d9ae60b81": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"bc1241e0db": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"abba8489b7": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"7185e187a5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: ROYCE' \u3042\u3044\u306e\u91cc\u516c\u5712\u5e97 (~42 outlets)",
+"at": "2026-11-14"
+},
+"dc81538c72": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"b0822b1961": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"fsq6430fac": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"b0fe740ae8": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"877d3ee683": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"8543b9b954": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"19dc940af5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"8e1d816ca6": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"9e4425f49a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"fsq365e8a6": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: MeetFresh \u9bae\u828b\u4ed9 (~800 outlets)",
+"at": "2026-11-14"
+},
+"477eb4afa4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"89e83d03d2": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"f5382fb101": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"556cdaeb6b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"bf7e45f30b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"4f30a202b4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"ff3017b7cf": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"8656c2f9cc": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"59e6c982fd": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain: Marugame Udon (~707 outlets)",
+"at": "2026-11-14"
+},
+"fsq555519c": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Perkup Espresso",
+"at": "2026-11-14"
+},
+"fsq6a1f4b2": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Karma's Coffee House",
+"at": "2026-11-14"
+},
+"496ff91a7a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Nirvana Latte",
+"at": "2026-11-14"
+},
+"fsq50e4c25": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of REDBAR Espresso & Market LLC",
+"at": "2026-11-14"
+},
+"fsq4b8933f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Moka's Coffee House",
+"at": "2026-11-14"
+},
+"91be404081": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Vegas & Rose",
+"at": "2026-11-14"
+},
+"d693786c1e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Pass Cafe",
+"at": "2026-11-14"
+},
+"1f546b600a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Ma Blend Cafe + Co",
+"at": "2026-11-14"
+},
+"eab421feec": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Baker's Duck",
+"at": "2026-11-14"
+},
+"6ceca5fbad": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of haepinest",
+"at": "2026-11-14"
+},
+"8b815a9988": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fresh Sugarcane and Boba Juice Bar",
+"at": "2026-11-14"
+},
+"a0c9946484": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Honeymee SanTan Village",
+"at": "2026-11-14"
+},
+"82e74da530": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fair Trade Cafe",
+"at": "2026-11-14"
+},
+"fsq526167a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sip Coffee and Beer",
+"at": "2026-11-14"
+},
+"fsq6139e8a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kafeino",
+"at": "2026-11-14"
+},
+"524172bfcc": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Magnolia Kitchen",
+"at": "2026-11-14"
+},
+"48ca934355": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bundts & Crumpets Specialty Tea",
+"at": "2026-11-14"
+},
+"fsq5938b94": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sanctuary Coffee",
+"at": "2026-11-14"
+},
+"fsq5a511e8": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Two Cities Coffee Roasters",
+"at": "2026-11-14"
+},
+"e58698a5b9": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Marmalade Cafe",
+"at": "2026-11-14"
+},
+"5e381d1df8": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Red White and Badass Brew",
+"at": "2026-11-14"
+},
+"fsq4a302c6": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bloom Restaurant",
+"at": "2026-11-14"
+},
+"294ca5fbd6": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe de Leche",
+"at": "2026-11-14"
+},
+"d759c84571": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fox and Moon Tea",
+"at": "2026-11-14"
+},
+"340f932f8b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Marmalade Cafe",
+"at": "2026-11-14"
+},
+"5e93c6a619": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Shades of Sugar Bakeshop",
+"at": "2026-11-14"
+},
+"a78a7448b9": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caf\u00e9 La Jefa",
+"at": "2026-11-14"
+},
+"db468c5c4d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of ZoomCaffe",
+"at": "2026-11-14"
+},
+"4a07c71326": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of iSee Cream",
+"at": "2026-11-14"
+},
+"640a729b30": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Branch House Riverfront Bistro",
+"at": "2026-11-14"
+},
+"0f078998a2": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Good Stuff",
+"at": "2026-11-14"
+},
+"34fa48362a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Old Soul at the Airport",
+"at": "2026-11-14"
+},
+"fsq58fd076": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Val's Coffee Corner",
+"at": "2026-11-14"
+},
+"bd8bfcd169": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe Madeleine",
+"at": "2026-11-14"
+},
+"f6c8e66166": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Juniper Cafe",
+"at": "2026-11-14"
+},
+"fsq5aa4307": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Wooly Pig",
+"at": "2026-11-14"
+},
+"d18fa7f4d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Hat Cafe",
+"at": "2026-11-14"
+},
+"fsq4a6a580": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Ryan Bros Coffee",
+"at": "2026-11-14"
+},
+"8a1222eceb": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Tuscany Espresso And Coffee",
+"at": "2026-11-14"
+},
+"fsq6a00b57": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Laidrey Coffee Roasters",
+"at": "2026-11-14"
+},
+"fsq610645a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Meet Tea",
+"at": "2026-11-14"
+},
+"fsq4cbf6e6": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Mountain Juice Cafe",
+"at": "2026-11-14"
+},
+"c33a61cf3d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of UVIHouse Tea \u2022 Coffee \u2022 Wellness",
+"at": "2026-11-14"
+},
+"fsq6994337": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Craveables Cafe - Breakfast Brunch & Dessert",
+"at": "2026-11-14"
+},
+"fb9ba0e54f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Les Givr\u00e9s",
+"at": "2026-11-14"
+},
+"9dc0e95971": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Mango Yummy",
+"at": "2026-11-14"
+},
+"fsq5ca7367": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Old Church Bakery",
+"at": "2026-11-14"
+},
+"62484f872b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Boom Breakfast & Co. St. Clair Ave. West",
+"at": "2026-11-14"
+},
+"fsq654a6a7": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Dark Horse Espresso Bar",
+"at": "2026-11-14"
+},
+"fsq5d466bd": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Buttermere Patisserie",
+"at": "2026-11-14"
+},
+"96e01c664a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cultivate Tea",
+"at": "2026-11-14"
+},
+"d6c45c788d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of L'Atelier Patisserie",
+"at": "2026-11-14"
+},
+"bd9d4566b0": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Queen's TEApothecary",
+"at": "2026-11-14"
+},
+"fsq62f2770": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Simple Coffee Co.",
+"at": "2026-11-14"
+},
+"fsq51c7058": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Me Oh My Coffee and Pie",
+"at": "2026-11-14"
+},
+"4fbb27859e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of CFCF Coffee",
+"at": "2026-11-14"
+},
+"fsq54c25e4": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Green & Tonic",
+"at": "2026-11-14"
+},
+"5243a7ee93": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Queen B Coffee Company",
+"at": "2026-11-14"
+},
+"a0295a804f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Haniell - superpr\u00e9miov\u00e9 k\u00e1vy a \u010daje",
+"at": "2026-11-14"
+},
+"43b55a0ec2": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Airstream Caf\u00e9 Uzl\u00edk Un-di",
+"at": "2026-11-14"
+},
+"fsq5f8ef7e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kofio",
+"at": "2026-11-14"
+},
+"0a97a3108f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Drifting Grounds Coffee House",
+"at": "2026-11-14"
+},
+"fsq5d97771": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Viet Kafe",
+"at": "2026-11-14"
+},
+"fcfc791804": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fruitisimo.de",
+"at": "2026-11-14"
+},
+"2621325d21": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Chaya",
+"at": "2026-11-14"
+},
+"b749cbb456": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kasada",
+"at": "2026-11-14"
+},
+"89126c7995": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of FAR's DRENG",
+"at": "2026-11-14"
+},
+"d8e9dea640": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fru Hurup",
+"at": "2026-11-14"
+},
+"312f6b56b0": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe Restaurante Munich Classic",
+"at": "2026-11-14"
+},
+"fe10321851": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bubble Tai",
+"at": "2026-11-14"
+},
+"fb08e13c33": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Wagaya",
+"at": "2026-11-14"
+},
+"189794a474": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe Dromedario",
+"at": "2026-11-14"
+},
+"fsq61193b9": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Santa Soho | Specialty Coffee M\u00e1laga",
+"at": "2026-11-14"
+},
+"f30aeb079c": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sweetland Caf\u00e9",
+"at": "2026-11-14"
+},
+"777e08f07c": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Aura Perk",
+"at": "2026-11-14"
+},
+"5aa7bfc3fc": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of European-American Bakery Cafe",
+"at": "2026-11-14"
+},
+"fsq5b533d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Surfinista",
+"at": "2026-11-14"
+},
+"f9a672c3d3": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Oldays - Midtown, Miami",
+"at": "2026-11-14"
+},
+"f2588a99b2": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Miu's Tea",
+"at": "2026-11-14"
+},
+"9ac7b12aee": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Carmela Coffee - Pompano Beach",
+"at": "2026-11-14"
+},
+"966e9dd400": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Berry Fresh Cafe",
+"at": "2026-11-14"
+},
+"a03bd90f4a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Beach Happy Cafe",
+"at": "2026-11-14"
+},
+"e1422551a8": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sweeteria",
+"at": "2026-11-14"
+},
+"fsq3ea528b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caf\u00e9s Henri",
+"at": "2026-11-14"
+},
+"2c3736c28e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Torr\u00e9faction Jaune Cerise",
+"at": "2026-11-14"
+},
+"a8560e6f62": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Nobi Nobi Marseille",
+"at": "2026-11-14"
+},
+"e6e222b914": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Coffee Lab",
+"at": "2026-11-14"
+},
+"e0cba355a5": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Krogen",
+"at": "2026-11-14"
+},
+"fsq4de7ec3": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of King of Pops",
+"at": "2026-11-14"
+},
+"5ec5e9077d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Toast Noir Cafe",
+"at": "2026-11-14"
+},
+"fsq59050f4": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sweet Hut Bakery & Cafe",
+"at": "2026-11-14"
+},
+"da1af4b377": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Candy's Cupcakes",
+"at": "2026-11-14"
+},
+"5fe7f84303": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Studio Black",
+"at": "2026-11-14"
+},
+"7749a01ab3": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Nocturne",
+"at": "2026-11-14"
+},
+"48d0b265f5": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Yakinori",
+"at": "2026-11-14"
+},
+"1f0b1d2b83": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Passage House",
+"at": "2026-11-14"
+},
+"cde50f958a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Cafe Life",
+"at": "2026-11-14"
+},
+"74edf73908": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe Joon",
+"at": "2026-11-14"
+},
+"ff0aac50b7": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Better Beverage Company",
+"at": "2026-11-14"
+},
+"fsq5764109": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Milk",
+"at": "2026-11-14"
+},
+"874a092a37": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caf\u00e9 Kraken",
+"at": "2026-11-14"
+},
+"df84f45055": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Mission Coffee Works",
+"at": "2026-11-14"
+},
+"debdf6d03a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sexy Berry",
+"at": "2026-11-14"
+},
+"fsq5e523d1": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of 2 Love Tea and Coffee House",
+"at": "2026-11-14"
+},
+"86e9c861b7": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Beeyond Cafe",
+"at": "2026-11-14"
+},
+"fsq69187ce": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe Seek",
+"at": "2026-11-14"
+},
+"fsq6696dd3": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Chinatown Bakery",
+"at": "2026-11-14"
+},
+"5ef8541da5": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Friends of Ours",
+"at": "2026-11-14"
+},
+"6ca7aae401": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Parish Coffee Balham",
+"at": "2026-11-14"
+},
+"fsq628df84": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Pearl Lemon Boba",
+"at": "2026-11-14"
+},
+"cf23266a7d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Spagnoletti",
+"at": "2026-11-14"
+},
+"a62fd5109d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Verdict Bakery & Restaurant",
+"at": "2026-11-14"
+},
+"1443885492": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bubble O",
+"at": "2026-11-14"
+},
+"12f632d4a5": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kardoma Coffee",
+"at": "2026-11-14"
+},
+"fefa6dba78": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kardoma Coffee",
+"at": "2026-11-14"
+},
+"04d470dd84": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sea Thrift Coffee",
+"at": "2026-11-14"
+},
+"af4c717311": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Dyrrah Coffee",
+"at": "2026-11-14"
+},
+"fsq698a641": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Green Kitchen",
+"at": "2026-11-14"
+},
+"4d72389f4e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caffe and Co",
+"at": "2026-11-14"
+},
+"842b597d8b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Mini Dunes",
+"at": "2026-11-14"
+},
+"c9ff044aed": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Gilbertine Kitchen",
+"at": "2026-11-14"
+},
+"c6d3c94d55": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Joni",
+"at": "2026-11-14"
+},
+"bf244fc033": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of BOBA SHACK Crystal Peaks",
+"at": "2026-11-14"
+},
+"11080770ad": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kibou Japanese Kitchen & Bar",
+"at": "2026-11-14"
+},
+"b8d83ab0e2": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Totally Delicious - Lakeside Cafe",
+"at": "2026-11-14"
+},
+"fsq551bb70": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fausto Coffee",
+"at": "2026-11-14"
+},
+"fsq5bf8b2d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe Boba",
+"at": "2026-11-14"
+},
+"fsq515f771": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Brug",
+"at": "2026-11-14"
+},
+"fsq5001c39": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Via Gelato @ Kahala",
+"at": "2026-11-14"
+},
+"fsq547ba5e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Gypsea Gelato",
+"at": "2026-11-14"
+},
+"e03f4f7878": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Lappert's Hawaii",
+"at": "2026-11-14"
+},
+"fsq5299cfd": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cupcake Tortam\u0171hely",
+"at": "2026-11-14"
+},
+"7bede3f8cc": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kavegourmet.hu",
+"at": "2026-11-14"
+},
+"6b8afef37c": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Silos & Social",
+"at": "2026-11-14"
+},
+"7268420dad": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Werewolf Coffee Bar",
+"at": "2026-11-14"
+},
+"fsq5988985": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Stefari Coffee House",
+"at": "2026-11-14"
+},
+"fsq5962c81": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of YoYo's Coffee & Bar",
+"at": "2026-11-14"
+},
+"fsq4c75cd1": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fusion Brew",
+"at": "2026-11-14"
+},
+"24cefdc9c4": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Firecakes Donuts",
+"at": "2026-11-14"
+},
+"fsq66eafea": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Daily Drip",
+"at": "2026-11-14"
+},
+"fsq4b63154": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Mocha Lounge",
+"at": "2026-11-14"
+},
+"c48446f567": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Baked by Vi",
+"at": "2026-11-14"
+},
+"fsq6a45be2": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Koffie Haus",
+"at": "2026-11-14"
+},
+"e5f4c9a862": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Three Crowns Coffee",
+"at": "2026-11-14"
+},
+"fsq4c0d09b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Walsh's Bakery and Coffee Shop",
+"at": "2026-11-14"
+},
+"fsq674c828": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Valu Bakery and Cakes",
+"at": "2026-11-14"
+},
+"c3f57e9678": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Teashop Meran",
+"at": "2026-11-14"
+},
+"bf4a233295": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Morettino Lab | Specialty Coffee - Brunch - Aperit",
+"at": "2026-11-14"
+},
+"79bc2a3bbe": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Morettino Lab",
+"at": "2026-11-14"
+},
+"ff7ae5816b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bocchia Caffe",
+"at": "2026-11-14"
+},
+"fsq4e1c7ea": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Il Gianfornaio",
+"at": "2026-11-14"
+},
+"7c5382be96": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Milkygreek \u6075\u6bd4\u5bff\u5e97",
+"at": "2026-11-14"
+},
+"2f53891afe": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of POKE FRESH",
+"at": "2026-11-14"
+},
+"dd5e575891": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Hole In One Bakery and Coffee Shop",
+"at": "2026-11-14"
+},
+"2768c8ef8b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Crust Artisan Bakeshop",
+"at": "2026-11-14"
+},
+"219211c056": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bon App\u00e9tit at Goucher College",
+"at": "2026-11-14"
+},
+"fsq5332b6a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cunningham's Cafe & Bakery",
+"at": "2026-11-14"
+},
+"f12e2c4e22": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Aubrey's Coffee House And Bakery",
+"at": "2026-11-14"
+},
+"169c908a29": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Breadless",
+"at": "2026-11-14"
+},
+"c2deeff72e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Colby's Cafe and Brew",
+"at": "2026-11-14"
+},
+"fsq9d148c6": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sweet Treasures",
+"at": "2026-11-14"
+},
+"b1e73e80aa": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cold Press Cafe",
+"at": "2026-11-14"
+},
+"5673879b93": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Cheesecake Ninja",
+"at": "2026-11-14"
+},
+"fsq5335741": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Pharaohs Donuts",
+"at": "2026-11-14"
+},
+"fsq4ba021f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Finest Grind Coffee House",
+"at": "2026-11-14"
+},
+"fsq5c5f80b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Hop Black Mountain",
+"at": "2026-11-14"
+},
+"567fd43c11": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Open Eye Cafe",
+"at": "2026-11-14"
+},
+"6be3c3e034": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Meg-A-Latte | Coffee House (Watford City Location)",
+"at": "2026-11-14"
+},
+"fsq6564db9": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe Botanica",
+"at": "2026-11-14"
+},
+"b115d273ad": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Kombucha Bar Llc",
+"at": "2026-11-14"
+},
+"54422a4098": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Jersey Java and Tea Co.",
+"at": "2026-11-14"
+},
+"6461096234": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Absolute Zero Ice Cream",
+"at": "2026-11-14"
+},
+"e363c3f6fc": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sweet Kitchen",
+"at": "2026-11-14"
+},
+"3b06652aaf": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Marigold Market & Cafe",
+"at": "2026-11-14"
+},
+"fsq6560797": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Have a Roll - Amsterdam",
+"at": "2026-11-14"
+},
+"ee8c03d305": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of JuiceBrothers",
+"at": "2026-11-14"
+},
+"fsq5876e4b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Coffee Press",
+"at": "2026-11-14"
+},
+"fsq5e47337": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Blue Eyed Baker",
+"at": "2026-11-14"
+},
+"fsq5b23d44": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Alley Cat Cafe",
+"at": "2026-11-14"
+},
+"bcb535a83d": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Java Blue Coffee And Market",
+"at": "2026-11-14"
+},
+"5fde60e5ef": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Effy's Cafe",
+"at": "2026-11-14"
+},
+"fsq66e8b8e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Serendipity 3",
+"at": "2026-11-14"
+},
+"fsq5d4f085": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Tidal Tea",
+"at": "2026-11-14"
+},
+"1c8c1c2a22": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Happy Earth Tea",
+"at": "2026-11-14"
+},
+"49e6e1fa89": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Stella's Creamery & Cakes",
+"at": "2026-11-14"
+},
+"fsq57dd75b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Ohio Tea Company",
+"at": "2026-11-14"
+},
+"2ffcc71c9a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Good Earth Market Cafe",
+"at": "2026-11-14"
+},
+"f81712ba63": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caffeine Lakewood",
+"at": "2026-11-14"
+},
+"9068eff0e9": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Viridian Coffee - Chickasha",
+"at": "2026-11-14"
+},
+"fsq57b03ae": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Viridian Coffee - Chickasha",
+"at": "2026-11-14"
+},
+"ff77b23956": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Viridian Coffee - Duncan",
+"at": "2026-11-14"
+},
+"fsq4b58b29": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Jackson's Corner - Old Bend",
+"at": "2026-11-14"
+},
+"fsq509889a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fressen Artisan Bakery and Cafe",
+"at": "2026-11-14"
+},
+"fab67a7790": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Brew Ha Ha at the Colony",
+"at": "2026-11-14"
+},
+"27de1f61e9": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Anna D's Cafe",
+"at": "2026-11-14"
+},
+"25c4b38f87": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Small Point Cafe",
+"at": "2026-11-14"
+},
+"d278802527": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of D U L C E L L E",
+"at": "2026-11-14"
+},
+"641fb8977f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Dream Dose Caf\u00e9",
+"at": "2026-11-14"
+},
+"8ba371dbda": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Miss Lucille's Cafe",
+"at": "2026-11-14"
+},
+"1df57ce6dd": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of INSPIRE Community Cafe",
+"at": "2026-11-14"
+},
+"f910cd6e1f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Podium Finish Coffee and Bikes",
+"at": "2026-11-14"
+},
+"fsq6a1f4c0": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fruitealicious",
+"at": "2026-11-14"
+},
+"894f605357": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Wicked Voodoo Espresso",
+"at": "2026-11-14"
+},
+"7612cbc514": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Tea Zaanti",
+"at": "2026-11-14"
+},
+"fsq57e689e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sweet Tooth Cafe",
+"at": "2026-11-14"
+},
+"fsq6266195": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Qahwa Cafe",
+"at": "2026-11-14"
+},
+"5f88ce433f": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Hideaway Cafe",
+"at": "2026-11-14"
+},
+"fsq6a1f4b6": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Dawn's Delectables",
+"at": "2026-11-14"
+},
+"e14d630b6b": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Early Bird",
+"at": "2026-11-14"
+},
+"fsq6aa1cc5": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Lovely and Dapper Bakery",
+"at": "2026-11-14"
+},
+"0b464b30ba": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Vale Matcha & Coffee",
+"at": "2026-11-14"
+},
+"fsq60bff96": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Sencha Tea Bar",
+"at": "2026-11-14"
+},
+"c16ed3a5b8": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bella Goose Coffee",
+"at": "2026-11-14"
+},
+"59e637b3e0": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Cupcakerie",
+"at": "2026-11-14"
+},
+"fsq5db0939": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Crooked Creek Coffee Roasters",
+"at": "2026-11-14"
+},
+"fsq5c61687": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caf\u00e9 Tulipant",
+"at": "2026-11-14"
+},
+"fsq4bc1010": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Tea & Coffee Exchange",
+"at": "2026-11-14"
+},
+"fsq61745c1": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Superba Food and Bread",
+"at": "2026-11-14"
+},
+"fsq5a6002e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Lodge Coffee Shop",
+"at": "2026-11-14"
+},
+"fsq4c796b9": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Denver Tea Room",
+"at": "2026-11-14"
+},
+"fsq53e23ff": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Penerini coffee shop",
+"at": "2026-11-14"
+},
+"fsq4b78075": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Chocco Caff\u00e9",
+"at": "2026-11-14"
+},
+"fsq568c338": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Bunca Barista and Caterer",
+"at": "2026-11-14"
+},
+"fsq4c4c079": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kran-Cafe",
+"at": "2026-11-14"
+},
+"fsq56f26b8": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caf\u00e9 No. 11",
+"at": "2026-11-14"
+},
+"fsq5804f00": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Caf\u00e9s Pozo",
+"at": "2026-11-14"
+},
+"fsq4df4ed7": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of La Oca en el Oceano",
+"at": "2026-11-14"
+},
+"fsq5a9320e": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Pa de sucre - Sant Celoni",
+"at": "2026-11-14"
+},
+"7a391a0618": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of La Guashira Specialty Coffee Experience",
+"at": "2026-11-14"
+},
+"f1e47c0c07": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Convention restaurant",
+"at": "2026-11-14"
+},
+"fsq57037c2": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Nata and Co Bakery",
+"at": "2026-11-14"
+},
+"61d7bb5493": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Kuro Coffee",
+"at": "2026-11-14"
+},
+"fsq4be1709": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of The Dell",
+"at": "2026-11-14"
+},
+"fsq562f8ca": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Vinyl and Wood",
+"at": "2026-11-14"
+},
+"fsq6255b06": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Mandaracha",
+"at": "2026-11-14"
+},
+"fsq6043184": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Cafe & Bar CARESS",
+"at": "2026-11-14"
+},
+"fsq5442de6": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Fran's Chocolates - Georgetown",
+"at": "2026-11-14"
+},
+"fsq504f6a0": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Lee's Coffee and Tea",
+"at": "2026-11-14"
+},
+"7a9c78902a": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Lost + Found Coffee Company",
+"at": "2026-11-14"
+},
+"fsq56c7a0c": {
+"d": "REMOVE",
+"r": "Whole-database audit: duplicate of Jitter House",
+"at": "2026-11-14"
+},
+"e0eefb5e8e": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Comebuytea",
+"at": "2026-11-14"
+},
+"a654018d9c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: La La Land Kind Cafe",
+"at": "2026-11-14"
+},
+"83f4ab187c": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: La La Land Kind Cafe",
+"at": "2026-11-14"
+},
+"c95f2b45f5": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Comebuy - Kerrisdale",
+"at": "2026-11-14"
+},
+"fsq16d7df0": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Confiseur L\u00e4derach AG",
+"at": "2026-11-14"
+},
+"9a62a4b8d4": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: L\u00e4derach Chocolatier Suisse",
+"at": "2026-11-14"
+},
+"fsq5c0188a": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Comebuy",
+"at": "2026-11-14"
+},
+"41d2f98712": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Comebuy",
+"at": "2026-11-14"
+},
+"5b9a91ebec": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Comebuy Bubble Tea",
+"at": "2026-11-14"
+},
+"f7fb68a643": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Laderach_na",
+"at": "2026-11-14"
+},
+"d7cf72638b": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: L\u00e4derach Chocolatier",
+"at": "2026-11-14"
+},
+"e8a5a2ee2f": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Wasabi Sushi Hibachi Bar",
+"at": "2026-11-14"
+},
+"fsq6354492": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: Fuwa Fuwa Pancakes",
+"at": "2026-11-14"
+},
+"cc5e72b0ab": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: La La Land Kind Cafe",
+"at": "2026-11-14"
+},
+"12109c5528": {
+"d": "REMOVE",
+"r": "Whole-database audit: chain variant name: ComeBuyTEA Seattle",
 "at": "2026-11-14"
 }
 }
