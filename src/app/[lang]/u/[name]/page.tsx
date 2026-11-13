@@ -91,13 +91,10 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
   const want = p.shelf.filter((x) => x.status === "want");
   const tried = p.shelf.filter((x) => x.status === "tried");
   const top = p.ratings.slice(0, 10);
-  const avg = p.stats.ratings > 0 && p.ratings.length === p.stats.ratings ? p.ratings.reduce((n, r) => n + Number(r.score), 0) / p.ratings.length : null;
-  const regionCount = new Map<string, number>();
-  for (const r of p.ratings.filter((x) => Number(x.score) >= 4)) {
-    const reg = info.get(r.product_id)?.region;
-    if (reg) regionCount.set(reg, (regionCount.get(reg) ?? 0) + 1);
-  }
-  const favRegion = [...regionCount.entries()].sort((a, b) => b[1] - a[1]).find(([, n]) => n >= 3)?.[0] ?? null;
+  // Average of every rating we have for the member, matcha products and cafés together, from the first one.
+  // (A member with more than 40 product ratings only has their 40 highest here, so that average is a little high.)
+  const allScores = [...p.ratings.map((r) => Number(r.score)), ...(p.cafe_ratings ?? []).map((r) => Number(r.score))];
+  const avg = allScores.length > 0 ? allScores.reduce((n, x) => n + x, 0) / allScores.length : null;
   const earned = BADGES.filter((b) => b.test(p.stats));
 
   const row = (id: number, extra?: React.ReactNode) => {
@@ -151,12 +148,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         </div>
       </header>
 
-      <dl className="mt-8 grid grid-cols-2 gap-4 border-y border-line py-5 sm:grid-cols-4">
+      <dl className="mt-8 grid grid-cols-3 gap-4 border-y border-line py-5">
         {[
           [t("u.s.tried"), String(tried.length)],
           [t("u.s.rated"), String(p.stats.ratings + Number(p.cafe_rating_count ?? 0))],
           [t("u.s.avg"), avg != null ? avg.toFixed(1) : "–"],
-          [t("u.s.region"), favRegion ? tv("region", favRegion) : "–"],
         ].map(([k, v]) => (
           <div key={k}>
             <dt className="text-xs uppercase tracking-wide text-ink-faint">{k}</dt>
@@ -233,13 +229,16 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         if (rated.length === 0) return null;
         return (
           <Section title={t("u.cafeRatings")}>
-            <ul className="flex flex-wrap gap-3">
+            <ul className="grid gap-4 sm:grid-cols-2">
               {rated.map(({ r, score }) => (
                 <li key={r[0]}>
-                  <Link href={`/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}`} className="inline-flex flex-col rounded-sm border border-line bg-paper-raised px-4 py-2 text-sm text-ink hover:border-matcha">
-                    <span className="font-medium">{r[1]}</span>
-                    <span className="text-xs text-ink-faint">{!r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3]}</span>
-                    <span className="mt-1 text-xs tabular-nums text-matcha" aria-label={`${score} / 5`}>{"★".repeat(Math.floor(score))}{score % 1 ? "½" : ""} {score}</span>
+                  <Link href={`/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}`} className="flex h-full flex-col gap-1.5 rounded-sm border border-line bg-paper-raised p-5 text-ink transition-colors hover:border-matcha hover:bg-matcha-soft">
+                    <span className="font-display text-xl font-semibold leading-snug">{r[1]}</span>
+                    <span className="text-sm text-ink-muted">{!r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3]}</span>
+                    <span className="mt-2 flex items-center gap-2 text-lg tabular-nums text-ink">
+                      <Stars value={score} size={22} />
+                      {score.toFixed(1)}
+                    </span>
                   </Link>
                 </li>
               ))}
@@ -265,11 +264,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
       {p.photos.length > 0 && (
         <Section title={t("u.photos")}>
-          <div className="flex flex-wrap gap-2">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {p.photos.map((ph) => (
-              <a key={ph} href={`${PHOTO_BASE}${ph}`} target="_blank" rel="noopener noreferrer">
+              <a key={ph} href={`${PHOTO_BASE}${ph}`} target="_blank" rel="noopener noreferrer" className="block">
                 {/* eslint-disable-next-line @next/next/no-img-element -- user photo from storage, already shrunk */}
-                <img src={`${PHOTO_BASE}${ph}`} alt={t("c.cm.photoBy", { who: p.name })} loading="lazy" className="h-28 w-28 rounded-sm border border-line object-cover hover:opacity-90" />
+                <img src={`${PHOTO_BASE}${ph}`} alt={t("c.cm.photoBy", { who: p.name })} loading="lazy" className="aspect-square w-full rounded-sm border border-line object-cover transition-opacity hover:opacity-90" />
               </a>
             ))}
           </div>
