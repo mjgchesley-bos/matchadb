@@ -79,6 +79,18 @@ z_super.py` pattern: 25 hosts per process, 150 s limit, singles retried at 60 s,
 - A site that now redirects to a different business (vitalityorganics.nz to vitalitykitchen.co.nz) means the old listing is merged or closed: remove it unless the new site shows matcha.
 - Directory sites (MyLocalMatcha, matchanearme) are leads only: all 15 Tauranga candidates from them failed the own-menu test or lacked a street address.
 
+## City audit (Boston and the North Shore to Haverhill, 2026-11-13)
+254 listings in the Boston to Haverhill box: 119 removed, 22 added, 4 addresses fixed (248 verified one by one; 6 chains/dessert shops dropped up front). Permanent rules:
+- A shared WebFetch rate limit and Toast 403s left 92 of 248 verdicts "unsure". Do not leave unsure to the agents: re-check them yourself. A plain Python fetch (browser User-Agent, no rate limit) resolved about 60 of them in one pass; the built-in browser (`document.body.innerText` on the venue's order.toasttab.com page) resolved most of the rest, because Toast order pages load fine there.
+- The venue's own Toast/Square/Clover ordering page is the best matcha evidence: Euphoria, Common Ground, Grounder, La Qchara, Olga's and Ripple only showed matcha there, never on the plain website.
+- Closed or replaced businesses again sat on the map: Home.stead (closed June 2026), Short Stop Cafe (closed 2022), Knight Moves Somerville, Dudley Cafe Cambridge, Reign Drink Lab (domain now another business), Matcha Loves Boba (rebranded), Atomic Café Marblehead (Blue Canoe took the address).
+- Wrong business on the pin: Mizu Matcha Cambridge was Moge Tee; Monkey Business Cafe's site is a California business; The Cloud at The Waterfront is in Bermuda; Mia's Brooklyn Bakery only has NYC shops; Quench Juicery's site is a Scituate shop. Check that the venue's own site lists that address.
+- Stale branches again: Kaffmandu lists only Danvers; Atomic Café lists only Beverly; swissbakers has two shops; PS Gourmet's Dorchester shop is 514 Gallivan Blvd, not Adams St.
+- Dessert/ice-cream/chocolate shops with matcha only as a flavor or a cake (Toscanini's, Honeycomb Creamery, Far Out, Boston Bonbon, Oakleaf Cakes, New Ginza) were removed again. Smoothie bars where matcha is only an ingredient (Grind and Go) were removed; a menu item named for matcha (Juicery "Mint Matcha Chip") was kept.
+- Discovery: Toast "local" order pages found by searching "matcha latte <town> MA" produced 22 venues the place data missed. Corporate cafeterias (225 Cafe), museum concessions (PEM Atrium), catering-only menus (The Fika Spot) and shops marked not accepting orders were skipped.
+- Danvers (the owner's hometown) has only one confirmed matcha venue (Kaffmandu); Rebel Coffee, Maple St Cafe and Daily Harvest have no matcha menu on their own pages yet.
+- After editing manual_decisions.json, rebuild `audit_ledger.json` (`C:	emp\cafesudituild_ledger.py`) and copy it to `C:	emp\weekly` and the repo before running weekly_refresh, or the regression gate reports the removals as "back on the map".
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
