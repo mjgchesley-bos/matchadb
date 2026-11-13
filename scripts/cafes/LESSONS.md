@@ -65,6 +65,14 @@ Done by hand for a country the owner cares about: every listing checked live, th
 - Many NYC venues keep their menu as an image or on an ordering platform: text re-checks wrongly flagged them, so a haiku agent verified each flagged venue through search and the ordering page. Verdicts the agent could not confirm ("unsure") were removed unless a stored own-site menu line plus confirmed-open status existed.
 - Discovery: local roundups (Eater, Time Out, Reddit, Yelp top-10) mostly named venues we already had; the new ones came from brand location pages (Matchaful, Rhythm Zero) rather than roundups.
 
+## Adding a country (New Zealand, 2026-11-13)
+- A new country = a new region in four places: `export_<cc>.py` (Overture + Foursquare pull) and its parquet names in `build_all2.py` / `weekly_refresh.py`, `region_of` + `CC3` in `build_all2.py`, `src/lib/cafe-regions.ts` + `CC3` in `src/lib/cafe-types.ts`, and `c.region.<key>` / `.ph` in all 7 dictionaries (plus the slim-file lists in `build_all2.py`, `weekly_refresh.py`, `AccountClient.tsx`).
+- The crawler (`crawl2.cjs`) hung at 100% CPU on large pages: the link regex `<a ...>([\s\S]*?)</a>` rescanned the whole page for every unclosed `<a`. The pattern is now bounded. Still, a single hanging site can freeze every worker, so crawl new countries with a supervisor that runs small batches in separate processes and kills any batch that stalls (`C:	emp
+z_super.py` pattern: 25 hosts per process, 150 s limit, singles retried at 60 s, then recorded as status "hang").
+- Many NZ sites time out when fetched from outside NZ (about a third failed first time): re-crawl the failures once before judging coverage.
+- A regression case that names a chain must be backed by a whole-map sweep of that chain, or the publish gate (correctly) blocks: the NYC audit removed Xing Fu Tang / Fay Da / T-Swirl / Yaya Tea only in NYC; the gate caught the other 35 outlets worldwide.
+- Discovery for a small country is thin without own-site menus: tourism boards (christchurchnz.com, wellingtonnz.com) and the Urban List publish matcha guides that name venues, but the venue's address and menu still need confirming (OpenStreetMap POI check worked well for addresses).
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
