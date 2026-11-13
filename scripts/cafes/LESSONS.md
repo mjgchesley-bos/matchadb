@@ -101,6 +101,13 @@ z_super.py` pattern: 25 hosts per process, 150 s limit, singles retried at 60 s,
 - My first duplicate check keyed on the first 10 characters of an address and wrongly flagged different venues (Starowiślna 1 vs 82; two shops in one courtyard at Próżna 7). Dedupe on street name AND number, and never reuse the same text-match to "restore" rows.
 - Mixed-language data: "Warsaw" and "Warszawa" are separate city strings (and one listing was in Cyrillic): normalise before counting or de-duplicating.
 
+## Whole-database root-cause audit (2026-11-14)
+Full numbers in `ROOT_CAUSES.md`. Applied: 30 chain brands with 30+ real outlets (found by looking up the real outlet count of every brand with 8+ rows) removed everywhere (about 420 outlets, plus variant names such as "Läderach Chocolatier Suisse"), and 240 same-name duplicates. Rules learned:
+- A brand with 8 to 24 rows in our data can still be a 50-outlet chain (we only list the outlets that serve matcha). Look up real counts; do not rely on our own row counts.
+- Closed businesses are mostly invisible from their own websites (only about 20% showed any signal) and the signals that exist false-alarm (a redirect or dead site was truly closed only about 14% of the time). Source staleness is the best predictor (Foursquare `date_refreshed` older than 12 months: about 6x lift; 1,582 listings). Own-site scanning is a prioritiser, never a reason to remove.
+- The regression gate caught chain variant names and over-short names ("Itsu" matches "Mitsu"): use the full brand name or a host.
+- Web-search budget: a session allows about 200 WebSearch calls, shared by all agents. Big lookups must be sized to that (or the limit raised) before launching; 12 agents exhausted it after about 200 brands and left most brands "unknown".
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
