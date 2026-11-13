@@ -2556,5 +2556,56 @@
       }
     ],
     "verified": "2026-11-05"
+  },
+  {
+    "slug": "european-matcha-supplier",
+    "name": "European Matcha Supplier",
+    "website": "https://www.europeanmatchasupplier.com",
+    "url": "https://www.europeanmatchasupplier.com/wholesalecatalog",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label"
+    ],
+    "how": [
+      "form"
+    ],
+    "serves": [
+      "eu"
+    ],
+    "summary": "Sells matcha wholesale and offers private-label matcha, shipped from a warehouse in Spain to businesses in Europe.",
+    "facts": [
+      "Wholesale formats from 1 kg to tonnes, on request",
+      "Says its single-farm matcha comes from three family-run farms in Kagoshima, Shizuoka and Uji, Japan; it also lists organic-compliant matcha from Guizhou, China",
+      "Offers private-label matcha sourced from Japan and distributed across the EU (see its White Labelling page)",
+      "States delivery to Spain, France, the United Kingdom, Italy and Germany",
+      "Contact is through its Contact page or a customer-service WhatsApp line; the site recommends contacting them directly"
+    ],
+    "hq": "Marbella, Spain (also lists an address in Kyoto, Japan)",
+    "links": [
+      {
+        "label": "Contact",
+        "url": "https://www.europeanmatchasupplier.com/contact"
+      },
+      {
+        "label": "White labelling",
+        "url": "https://www.europeanmatchasupplier.com/whitelabelling"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Home page",
+        "url": "https://www.europeanmatchasupplier.com"
+      },
+      {
+        "label": "Wholesale catalogue",
+        "url": "https://www.europeanmatchasupplier.com/wholesalecatalog"
+      },
+      {
+        "label": "White labelling",
+        "url": "https://www.europeanmatchasupplier.com/whitelabelling"
+      }
+    ],
+    "verified": "2026-11-13"
   }
 ]
