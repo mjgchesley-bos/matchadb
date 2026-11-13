@@ -91,6 +91,16 @@ z_super.py` pattern: 25 hosts per process, 150 s limit, singles retried at 60 s,
 - Danvers (the owner's hometown) has only one confirmed matcha venue (Kaffmandu); Rebel Coffee, Maple St Cafe and Daily Harvest have no matcha menu on their own pages yet.
 - After editing manual_decisions.json, rebuild `audit_ledger.json` (`C:	emp\cafesudituild_ledger.py`) and copy it to `C:	emp\weekly` and the repo before running weekly_refresh, or the regression gate reports the removals as "back on the map".
 
+## Country audit (Poland, 2026-11-14)
+492 listings: 76 chain/dessert listings removed up front, 416 verified one by one (95 kept, 170 removed, 151 unsure), then the 151 unsure resolved by direct re-checks. Result 138 listings remain; 6 verified venues added. Permanent rules:
+- Poland's biggest false-positive family is the tea shop (sklep z herbatą): its "Matcha" category is powder for sale, not a drink. A herbaciarnia or café counts only if it prepares matcha to drink. Online tea shops, roasters and wholesalers with a "Matcha" product (Czajownia, Five O'Clock, Coffeedesk online, Moya Matcha, JAVA) are removed.
+- Bakeries and pastry shops (cukiernia) list "tort matcha", "sernik matcha" or a matcha sorbet: dessert only, removed unless a matcha drink is on their menu (Melba does list "Kawa i matcha").
+- Polish chains: Czas na Herbatę (50+), BuBu Tea (40+), Lody Bosko, Karmello, Comebuy are chains. White Bear Coffee (about 23 outlets and growing) had no matcha on its own menus: removed. Lajkonik (about 14 bakery-cafés, Kraków and Katowice only) is allowed under the 25-outlet rule; its outlets in Skawina and Sosnowiec are not on its own site and were removed.
+- 151 of 416 were "unsure" because of shared rate limits, expired certificates, 403s and sites that are Instagram-only. Re-checking each own site with a plain fetch resolved about 60%; venues with no website and no traceable web presence (many small Warsaw "matcha bars" from place data) were removed under the rule "unverifiable = off the map".
+- Discovery in Poland found only 9 new candidates, all with menus only on Wolt/Glovo/Pyszne.pl (delivery marketplaces). A live Wolt/Glovo menu was accepted as evidence for 6 independent venues; Crazy Bubble branches (chain size unknown) and a venue with an ambiguous drink name were skipped.
+- My first duplicate check keyed on the first 10 characters of an address and wrongly flagged different venues (Starowiślna 1 vs 82; two shops in one courtyard at Próżna 7). Dedupe on street name AND number, and never reuse the same text-match to "restore" rows.
+- Mixed-language data: "Warsaw" and "Warszawa" are separate city strings (and one listing was in Cyrillic): normalise before counting or de-duplicating.
+
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
