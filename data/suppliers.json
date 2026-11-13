@@ -1822,9 +1822,13 @@
       {
         "label": "Home page",
         "url": "https://www.purematchapartners.com"
+      },
+      {
+        "label": "All products",
+        "url": "https://www.purematchapartners.com/collections/all-products"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "profile": {
       "origins": [
         "Japan",
@@ -1859,7 +1863,111 @@
       "us",
       "eu",
       "intl"
-    ]
+    ],
+    "catalog": [
+      {
+        "name": "Ceremonial Matcha",
+        "origin": "Japan and China",
+        "uses": [
+          "Tea",
+          "Cold brew",
+          "Over ice"
+        ],
+        "badges": [
+          "Organic and conventional"
+        ],
+        "notes": "Sold for traditional brewing with warm water, cold-brewing or over ice. The home page describes it as smooth, vibrant green and naturally sweet, made from first-harvest leaves.",
+        "options": [
+          "Bulk supply from 10 kg"
+        ],
+        "price": "Price list sent on request",
+        "url": "https://www.purematchapartners.com/collections/ceremonial-matcha"
+      },
+      {
+        "name": "Premium (latte grade) Matcha",
+        "origin": "Japan and China",
+        "uses": [
+          "Lattes",
+          "Cappuccinos",
+          "Juices",
+          "RTD drinks"
+        ],
+        "badges": [
+          "Organic and conventional"
+        ],
+        "notes": "Sold for blended drinks. The home page describes a balanced taste and creamy mouthfeel that mixes smoothly and keeps a vibrant colour in hot or cold drinks.",
+        "options": [
+          "Bulk supply from 10 kg"
+        ],
+        "price": "Price list sent on request",
+        "url": "https://www.purematchapartners.com/collections/latte-grade-matcha"
+      },
+      {
+        "name": "Culinary Matcha",
+        "origin": "China and Japan",
+        "uses": [
+          "Baking",
+          "Cooking",
+          "RTD drinks",
+          "Dairy"
+        ],
+        "badges": [
+          "Organic and conventional"
+        ],
+        "notes": "Sold for baking, cooking and dairy products. The home page describes a robust, earthy taste and bold colour that is stable at high temperatures.",
+        "options": [
+          "Bulk supply from 10 kg"
+        ],
+        "price": "Price list sent on request",
+        "url": "https://www.purematchapartners.com/collections/culinary-matcha"
+      },
+      {
+        "name": "Hojicha powder",
+        "origin": "Japan and China",
+        "uses": [
+          "Lattes",
+          "Iced drinks",
+          "Creamy blends"
+        ],
+        "badges": [
+          "Organic and conventional"
+        ],
+        "notes": "Roasted green tea powder with a nutty flavour, warm brown colour and low caffeine, for specialty drinks and desserts.",
+        "options": [
+          "Bulk supply from 10 kg"
+        ],
+        "price": "Price list sent on request",
+        "url": "https://www.purematchapartners.com/collections/hojicha"
+      },
+      {
+        "name": "Mulberry Matcha",
+        "origin": "Japan",
+        "uses": [
+          "Tea",
+          "Iced drinks",
+          "Desserts"
+        ],
+        "badges": [
+          "Organic",
+          "Caffeine-free"
+        ],
+        "notes": "Finely ground Japanese mulberry leaf with a soft, calming aroma, gentle sweetness and a clean finish.",
+        "options": [
+          "Bulk supply from 10 kg"
+        ],
+        "price": "Price list sent on request",
+        "url": "https://www.purematchapartners.com/collections/mulberry-matcha"
+      },
+      {
+        "name": "Accessories",
+        "origin": "Accessory",
+        "uses": [],
+        "notes": "A plastic whisk, a 1-gram scoop and a bowl.",
+        "price": "See the supplier's site",
+        "url": "https://www.purematchapartners.com/collections/hardware"
+      }
+    ],
+    "catalogNote": "Samples chosen for your product are available on request. Prices are sent on request rather than published."
   },
   {
     "slug": "rishi-tea",
@@ -2575,6 +2683,7 @@
     ],
     "summary": "Sells matcha wholesale and offers private-label matcha, shipped from a warehouse in Spain to businesses in Europe.",
     "facts": [
+      "Public shop shows each matcha with its price, from €0.089 per gram for Matcha Standard in 1 kg",
       "Wholesale formats from 1 kg to tonnes, on request",
       "Says its single-farm matcha comes from three family-run farms in Kagoshima, Shizuoka and Uji, Japan; it also lists organic-compliant matcha from Guizhou, China",
       "Offers private-label matcha sourced from Japan and distributed across the EU (see its White Labelling page)",
@@ -2604,6 +2713,14 @@
       {
         "label": "White labelling",
         "url": "https://www.europeanmatchasupplier.com/whitelabelling"
+      },
+      {
+        "label": "Shop (all products)",
+        "url": "https://www.europeanmatchasupplier.com/category/all-products"
+      },
+      {
+        "label": "FAQ",
+        "url": "https://www.europeanmatchasupplier.com/faq"
       }
     ],
     "verified": "2026-11-13",
@@ -2613,12 +2730,13 @@
         "China (Guizhou)"
       ],
       "products": [
-        "Matcha Gokō, Asahi x Gokō and Yabukita (Japan)",
+        "Matcha Asahi x Gokō, Gokō and Yabukita (Japan)",
         "Matcha Supreme, Premium and Standard (China, Guizhou)",
+        "Matcha samples and a storage box",
         "Private-label matcha"
       ],
       "organic": "Says its Japanese matcha is 100% organic and its Chinese matcha complies with EU organic standards (no certificate is shown on the site)",
-      "minimumOrder": "From 1 kg to tonnes, on request",
+      "minimumOrder": "The FAQ says the minimum order is 250 g; the home page says wholesale runs from 1 kg to tonnes. Bulk orders go to its B2B email address",
       "samples": "10 g samples are available for each matcha",
       "documentation": "Not stated on the site",
       "certifications": [
@@ -2627,7 +2745,166 @@
       "customers": "Businesses that want wholesale or private-label matcha",
       "privateLabel": "Offers private-label (white-label) matcha sourced from Japan and distributed across the EU; see its White Labelling page",
       "shipping": "Delivers to Spain, France, the United Kingdom, Italy and Germany; packed in its warehouse in Spain",
-      "pricing": "Quoted on request; the site recommends contacting them directly"
-    }
+      "pricing": "Public shop prices are shown below (from €89 to €289 per item). Bulk orders are by email; the FAQ says bulk orders need 50% upfront and 50% before shipment"
+    },
+    "catalog": [
+      {
+        "name": "Matcha Asahi x Gokō",
+        "origin": "Uji City, Kyoto, Japan",
+        "cultivar": "Blend of Asahi and Gokō",
+        "shading": "Direct shading, 36 days",
+        "uses": [
+          "Usucha",
+          "Koicha",
+          "Latte"
+        ],
+        "notes": "A rare blend of two Uji cultivars: Asahi brings creaminess and sweetness, Gokō brings umami and aromatic depth. The site describes notes of sweet cream, fresh butter and tender greens with a silky, lingering finish.",
+        "flavor": {
+          "sweetness": 5,
+          "bitterness": 1,
+          "aroma": 5,
+          "foam": 5,
+          "finish": 5
+        },
+        "price": "€289",
+        "priceNote": "Pack size is not stated on this product page. The site quotes wholesale matcha from €0.089 per gram, so confirm the size before ordering.",
+        "url": "https://www.europeanmatchasupplier.com/product-page/matcha-asahi-gokō"
+      },
+      {
+        "name": "Matcha Gokō",
+        "origin": "Uji City, Kyoto, Japan",
+        "cultivar": "Gokō",
+        "shading": "Direct shading, 36 days",
+        "uses": [
+          "Usucha",
+          "Latte"
+        ],
+        "notes": "Gokō is described as a prestigious Uji cultivar historically used for high-end ceremonial matcha: deep umami, minimal bitterness, a smooth round mouthfeel, with notes of cooked greens, hazelnut and sweet cream.",
+        "flavor": {
+          "sweetness": 5,
+          "bitterness": 2,
+          "aroma": 4,
+          "foam": 4,
+          "finish": 5
+        },
+        "price": "€179",
+        "priceNote": "Pack size is not stated on this product page. The site quotes wholesale matcha from €0.089 per gram, so confirm the size before ordering.",
+        "url": "https://www.europeanmatchasupplier.com/product-page/matcha-gokō"
+      },
+      {
+        "name": "Matcha Yabukita",
+        "origin": "Kirishima area, Kagoshima, Japan",
+        "cultivar": "Yabukita blend",
+        "shading": "Indirect (kabuse) shading, 25 days",
+        "picking": "Handpicked",
+        "uses": [
+          "Latte",
+          "Food"
+        ],
+        "notes": "A smooth, well-rounded matcha with clean umami, mild vegetal notes, a subtle floral note and a gentle bitterness. The site says it holds its character with milk and other ingredients and turns brighter green in food.",
+        "flavor": {
+          "sweetness": 3,
+          "bitterness": 1,
+          "aroma": 4,
+          "foam": 3,
+          "finish": 3
+        },
+        "price": "€99",
+        "priceNote": "Pack size is not stated on this product page. The site quotes wholesale matcha from €0.089 per gram, so confirm the size before ordering.",
+        "url": "https://www.europeanmatchasupplier.com/product-page/okumidori-samidori"
+      },
+      {
+        "name": "Matcha Supreme",
+        "origin": "Guizhou, China",
+        "shading": "Direct shading, 36 days",
+        "badges": [
+          "Listed as “Supreme Organic” in its sample list"
+        ],
+        "uses": [
+          "Usucha",
+          "Koicha",
+          "Latte"
+        ],
+        "notes": "Described as deeply umami with strong character and minimal bitterness: a smooth, round mouthfeel with notes of cooked greens, hazelnut and sweet cream.",
+        "flavor": {
+          "sweetness": 4,
+          "bitterness": 1,
+          "aroma": 5,
+          "foam": 3,
+          "finish": 5
+        },
+        "price": "€169",
+        "priceNote": "Pack size is not stated on this product page. The site quotes wholesale matcha from €0.089 per gram, so confirm the size before ordering.",
+        "url": "https://www.europeanmatchasupplier.com/product-page/matcha-supreme"
+      },
+      {
+        "name": "Matcha Premium",
+        "origin": "Guizhou, China",
+        "shading": "Direct shading, 36 days",
+        "uses": [
+          "Usucha",
+          "Koicha",
+          "Latte"
+        ],
+        "notes": "Described as deeply umami and very green, with a very good foam, a round mouthfeel and subtle vegetal notes.",
+        "flavor": {
+          "sweetness": 4,
+          "bitterness": 3,
+          "aroma": 4,
+          "foam": 5,
+          "finish": 3
+        },
+        "price": "€159",
+        "priceNote": "Pack size is not stated on this product page. The site quotes wholesale matcha from €0.089 per gram, so confirm the size before ordering.",
+        "url": "https://www.europeanmatchasupplier.com/product-page/matcha-premium-ultra-green"
+      },
+      {
+        "name": "Matcha Standard",
+        "origin": "Guizhou, China",
+        "shading": "Indirect shading, 25 days",
+        "harvest": "June harvest",
+        "badges": [
+          "Listed as “Standard Organic” in its sample list"
+        ],
+        "uses": [
+          "Latte",
+          "Food"
+        ],
+        "notes": "Clean umami, mild vegetal notes and a pleasant bitterness. The site positions it as the balance of quality and value for sweetened lattes, desserts and food; the dry colour is less vibrant than its higher grades but brightens in recipes.",
+        "flavor": {
+          "sweetness": 3,
+          "bitterness": 0,
+          "aroma": 5,
+          "foam": 4,
+          "finish": 4
+        },
+        "options": [
+          "Size: 1 kg"
+        ],
+        "price": "€89 for 1 kg (€0.089 per gram)",
+        "url": "https://www.europeanmatchasupplier.com/product-page/matcha-premium"
+      },
+      {
+        "name": "Matcha sample",
+        "origin": "Any of the matchas above",
+        "uses": [],
+        "notes": "A 10 g sample of any of the matchas, as a one-time trial. The site suggests 2 g per serving, so about 5 servings.",
+        "options": [
+          "Choose the matcha: Asahi x Gokō, Gokō, Yabukita, Supreme, Premium or Standard",
+          "Size: 10 g"
+        ],
+        "price": "€4.99",
+        "url": "https://www.europeanmatchasupplier.com/product-page/sample-matcha"
+      },
+      {
+        "name": "Matcha Fresh Box (1200 ml)",
+        "origin": "Accessory",
+        "uses": [],
+        "notes": "A 1200 ml storage container with a press-to-vacuum lid, to keep matcha away from air and moisture.",
+        "price": "€49",
+        "url": "https://www.europeanmatchasupplier.com/product-page/matcha-fresh-box-1200ml"
+      }
+    ],
+    "catalogNote": "Storage advice on every product page: keep in a cool, dry place away from light, refrigerate before and after opening, and use within 3 months of opening. The wholesale catalogue itself is behind a sign-up form, so only its public shop items are shown."
   }
 ]

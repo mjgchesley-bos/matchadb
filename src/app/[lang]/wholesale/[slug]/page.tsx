@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { BrandLogo } from "@/components/product-cards";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
-import { profiled, supplierBySlug } from "@/lib/suppliers";
+import { profiled, supplierBySlug, type CatalogItem } from "@/lib/suppliers";
 import { langOf } from "@/i18n/params";
 import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
 import { getT } from "@/i18n/server";
@@ -27,6 +27,76 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const title = t("ws.slug.title", { name: s.name });
   const description = `${s.name}${s.hq ? ` (${s.hq})` : ""} supplies bulk matcha from ${s.profile.origins.join(" and ")}. ${s.profile.minimumOrder}. Terms and certifications as the supplier states them.`;
   return { title, description: lang === "en" ? description : t("ws.desc"), alternates, openGraph: { title, description, url: alternates.canonical } };
+}
+
+// One supplier product or option as a card, in the style of the consumer product cards: what it is, where it is from,
+// what the supplier says it is for, its own taste ratings, the options and price it states, and a link to its page.
+function CatalogCard({ item, t }: { item: CatalogItem; t: ReturnType<typeof getT> }) {
+  const chip = "rounded-full px-2 py-0.5 text-xs";
+  const flavor = item.flavor
+    ? ([
+        [t("ws.slug.f.sweet"), item.flavor.sweetness],
+        [t("ws.slug.f.bitter"), item.flavor.bitterness],
+        [t("ws.slug.f.aroma"), item.flavor.aroma],
+        [t("ws.slug.f.foam"), item.flavor.foam],
+        [t("ws.slug.f.finish"), item.flavor.finish],
+      ] as [string, number][])
+    : null;
+  return (
+    <li className="flex flex-col gap-3 rounded-sm border border-line bg-paper p-4">
+      <h3 className="text-base font-bold leading-snug text-ink">{item.name}</h3>
+      <div className="flex flex-wrap gap-1.5">
+        {item.origin && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.origin}</span>}
+        {item.cultivar && <span className={`${chip} bg-matcha-soft text-matcha-ink`}>{item.cultivar}</span>}
+        {item.shading && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.shading}</span>}
+        {item.harvest && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.harvest}</span>}
+        {item.picking && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.picking}</span>}
+        {(item.badges ?? []).map((b) => (
+          <span key={b} className={`${chip} bg-gold-soft text-gold`}>{b}</span>
+        ))}
+        {(item.uses ?? []).map((u) => (
+          <span key={u} className={`${chip} border border-line-strong bg-paper-raised text-ink-muted`}>{u}</span>
+        ))}
+      </div>
+      <p className="text-sm leading-relaxed text-ink-muted">{item.notes}</p>
+      {flavor && (
+        <dl className="grid grid-cols-[auto_1fr] items-center gap-x-4 gap-y-1 text-xs text-ink-faint">
+          {flavor.map(([label, n]) => (
+            <div key={label} className="contents">
+              <dt>{label}</dt>
+              <dd className="flex gap-1" role="img" aria-label={`${label}: ${n} / 5`}>
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <span key={i} aria-hidden="true" className={`h-2 w-2 rounded-full border ${i <= n ? "border-matcha bg-matcha" : "border-line-strong"}`} />
+                ))}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )}
+      {item.options && item.options.length > 0 && (
+        <div className="text-sm">
+          <p className="text-xs font-medium uppercase tracking-wide text-ink-faint">{t("ws.slug.p.opts")}</p>
+          <ul className="mt-1 flex flex-col gap-0.5 text-ink-muted">
+            {item.options.map((o) => (
+              <li key={o}>{o}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+      <div className="mt-auto border-t border-line pt-3">
+        <p className="flex items-baseline justify-between gap-3 text-sm">
+          <span className="text-xs font-medium uppercase tracking-wide text-ink-faint">{t("ws.slug.p.price")}</span>
+          <span className="tabular-nums font-medium text-ink">{item.price ?? t("ws.slug.p.onReq")}</span>
+        </p>
+        {item.priceNote && <p className="mt-1 text-xs leading-snug text-ink-faint">{item.priceNote}</p>}
+        {item.url && (
+          <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs font-medium text-matcha hover:text-forest">
+            {t("ws.slug.p.view")} &rarr;
+          </a>
+        )}
+      </div>
+    </li>
+  );
 }
 
 export default async function SupplierPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
@@ -114,6 +184,22 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         </p>
       </header>
 
+      {s.catalog && s.catalog.length > 0 && (
+        <section className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised" aria-labelledby="catalog-h">
+          <h2 id="catalog-h" className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.catalog")}</h2>
+          <p className="px-5 pt-4 text-sm text-ink-faint">{t("ws.slug.catalogNote", { name: s.name, date: verified })}</p>
+          <ul className="grid gap-4 p-5 sm:grid-cols-2">
+            {s.catalog.map((item) => (
+              <CatalogCard key={item.name} item={item} t={t} />
+            ))}
+          </ul>
+          <p className="border-t border-line px-5 py-3 text-xs leading-relaxed text-ink-faint">
+            {s.catalog.some((c) => c.flavor) && <>{t("ws.slug.f.note")} </>}
+            {s.catalogNote}
+          </p>
+        </section>
+      )}
+
       <section className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised" aria-labelledby="terms-h">
         <h2 id="terms-h" className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.terms")}</h2>
         <dl className="divide-y divide-line px-5">
@@ -126,7 +212,8 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         </dl>
       </section>
 
-      <section className="mt-6 grid gap-6 sm:grid-cols-2">
+      <section className={`mt-6 grid gap-6 ${s.catalog?.length ? "" : "sm:grid-cols-2"}`}>
+        {!s.catalog?.length && (
         <div className="overflow-hidden rounded-sm border border-line bg-paper-raised">
           <h2 className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.products")}</h2>
           <ul className="list-disc pl-10 pr-5 py-4 flex flex-col gap-1.5 text-ink-muted">
@@ -135,6 +222,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
             ))}
           </ul>
         </div>
+        )}
         <div className="overflow-hidden rounded-sm border border-line bg-paper-raised">
           <h2 className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.certs")}</h2>
           <ul className="list-disc pl-10 pr-5 py-4 flex flex-col gap-1.5 text-ink-muted">

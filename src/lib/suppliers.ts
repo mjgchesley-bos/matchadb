@@ -55,6 +55,24 @@ export type Profile = {
   pricing: string;
 };
 
+// One product, product line or option a supplier lists on its own site (shown as a card on its profile page).
+export type CatalogItem = {
+  name: string;
+  origin?: string;
+  cultivar?: string;
+  shading?: string;
+  picking?: string;
+  harvest?: string;
+  uses?: string[]; // what the supplier says it is for (usucha, latte, baking...)
+  badges?: string[]; // claims such as "Organic and conventional", worded as the supplier states them
+  notes: string; // a short plain description paraphrased from the supplier's own page
+  flavor?: { sweetness: number; bitterness: number; aroma: number; foam: number; finish: number }; // the supplier's own 0-5 ratings
+  options?: string[]; // sizes and choices as the supplier states them
+  price?: string; // as listed by the supplier, with the pack size only when it states one
+  priceNote?: string;
+  url?: string; // the product's page on the supplier's site
+};
+
 export type Supplier = {
   slug: string;
   name: string;
@@ -72,6 +90,8 @@ export type Supplier = {
   sources: { label: string; url: string }[];
   verified: string; // YYYY-MM-DD
   profile?: Profile;
+  catalog?: CatalogItem[];
+  catalogNote?: string;
 };
 
 export const SUPPLIERS = data as Supplier[];
