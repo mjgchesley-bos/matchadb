@@ -3,7 +3,7 @@ import type { Key } from "./en";
 export const ko: Partial<Record<Key, string>> = {
   "meta.title.default": "MatchaDB — 말차 리서치 및 비교 데이터베이스",
   "meta.description": "일본과 전 세계 브랜드의 수백 가지 말차 제품을 가격, 산지, 품종, 맛으로 비교해 보세요. 브랜드마다 정보가 엇갈리거나 비어 있는 부분은 숨기지 않고 그대로 밝힙니다.",
-  "nav.map.short": "지도",
+  "nav.map.short": "산지",
   "nav.map.long": "재배자 지도",
   "nav.search.short": "검색",
   "nav.search.long": "전체 데이터베이스 검색",

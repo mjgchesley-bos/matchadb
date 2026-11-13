@@ -3,7 +3,7 @@
 export const en = {
   "meta.title.default": "MatchaDB — Matcha Research & Comparison Database",
   "meta.description": "Compare pricing, sourcing region, cultivar, and tasting notes across hundreds of matcha products from Japanese and global brands — with sourcing transparency called out where brands disagree or leave gaps.",
-  "nav.map.short": "Map",
+  "nav.map.short": "Origins",
   "nav.map.long": "Cultivator map",
   "nav.search.short": "Search",
   "nav.search.long": "Search full database",

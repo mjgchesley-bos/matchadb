@@ -3,7 +3,7 @@ import type { Key } from "./en";
 export const ja: Partial<Record<Key, string>> = {
   "meta.title.default": "MatchaDB — 抹茶のリサーチ・比較データベース",
   "meta.description": "日本をはじめ世界のブランドの抹茶数百種について、価格・産地・品種・味わいを比較できます。ブランド間で情報が食い違う点や、情報が不足している点も隠さず明示します。",
-  "nav.map.short": "マップ",
+  "nav.map.short": "産地",
   "nav.map.long": "生産者マップ",
   "nav.search.short": "検索",
   "nav.search.long": "全データベースを検索",

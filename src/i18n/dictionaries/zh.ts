@@ -3,7 +3,7 @@ import type { Key } from "./en";
 export const zh: Partial<Record<Key, string>> = {
   "meta.title.default": "MatchaDB — 抹茶研究与比较数据库",
   "meta.description": "对比来自日本及全球品牌的数百款抹茶产品的价格、产区、品种与风味。品牌之间说法不一、信息缺失之处，我们都会如实标明。",
-  "nav.map.short": "地图",
+  "nav.map.short": "产地",
   "nav.map.long": "种植者地图",
   "nav.search.short": "搜索",
   "nav.search.long": "搜索完整数据库",

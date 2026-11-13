@@ -141,7 +141,7 @@ export default async function RootLayout({
               </Link>
               <Link
                 href="/stores"
-                className="hidden sm:inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
+                className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <span className="lg:hidden">{t("nav.stores.short")}</span>
                 <span className="hidden lg:inline">{t("nav.stores.long")}</span>

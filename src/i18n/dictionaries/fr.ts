@@ -3,7 +3,7 @@ import type { Key } from "./en";
 export const fr: Partial<Record<Key, string>> = {
   "meta.title.default": "MatchaDB — Base de données de recherche et de comparaison du matcha",
   "meta.description": "Comparez les prix, la région d'origine, le cultivar et les notes de dégustation de centaines de produits de matcha de marques japonaises et du monde entier, en signalant clairement les points où les marques se contredisent ou laissent des zones d'ombre.",
-  "nav.map.short": "Carte",
+  "nav.map.short": "Origines",
   "nav.map.long": "Carte des cultivateurs",
   "nav.search.short": "Recherche",
   "nav.search.long": "Rechercher dans toute la base",
