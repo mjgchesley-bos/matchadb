@@ -243,6 +243,7 @@ export const en = {
   "c.cf.nearPlace.one": "{count} café near {place}",
   "c.cf.nearPlace.other": "{count} cafés near {place}",
   "c.cf.listed": "{count} cafés listed in {region}. Search or use your location to see the ones near you.",
+  "c.cf.inView": "{count} cafés in this map area. Move the map to see more.",
   "c.cf.yourLocation": "your location",
   "c.cf.clear": "Clear",
   "c.cf.noneWithin": "No cafés listed within {radius} {unit} yet.",

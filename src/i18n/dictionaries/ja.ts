@@ -261,6 +261,7 @@ export const ja: Partial<Record<Key, string>> = {
   "c.cf.nearPlace.one": "{place}周辺のカフェ：{count}軒",
   "c.cf.nearPlace.other": "{place}周辺のカフェ：{count}軒",
   "c.cf.listed": "{region}で{count}軒のカフェを掲載中。検索または現在地の利用で、近くのカフェを表示できます。",
+  "c.cf.inView": "この地図の範囲に{count}軒のカフェ。地図を動かすとさらに表示されます。",
   "c.cf.yourLocation": "現在地",
   "c.cf.clear": "クリア",
   "c.cf.noneWithin": "{radius}{unit}以内に掲載中のカフェはまだありません。",

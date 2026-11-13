@@ -245,6 +245,7 @@ export const fr: Partial<Record<Key, string>> = {
   "c.cf.nearPlace.one": "{count} café près de {place}",
   "c.cf.nearPlace.other": "{count} cafés près de {place}",
   "c.cf.listed": "{count} cafés répertoriés en {region}. Lancez une recherche ou utilisez votre position pour voir ceux qui sont près de vous.",
+  "c.cf.inView": "{count} cafés dans cette zone de la carte. Déplacez la carte pour en voir plus.",
   "c.cf.yourLocation": "votre position",
   "c.cf.clear": "Effacer",
   "c.cf.noneWithin": "Aucun café répertorié à moins de {radius} {unit} pour l'instant.",

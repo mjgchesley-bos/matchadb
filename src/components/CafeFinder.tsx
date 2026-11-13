@@ -76,6 +76,19 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   const [busy, setBusy] = useState<"search" | "locate" | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
+  // Free scrolling: once the visitor touches the map it is theirs. The camera is only moved by an explicit action
+  // (search, "use my location", region tab, picking a café), never by data loading or a late GPS fix.
+  const touchedRef = useRef(false); // sticky: the visitor has panned/zoomed since the last explicit action
+  const gestureRef = useRef(false); // a pan/zoom gesture is in progress (consumed at moveend)
+  const [moved, setMoved] = useState<{ west: number; east: number; south: number; north: number; lat: number; lng: number } | null>(null); // the map area the visitor is looking at
+  const [frameNonce, setFrameNonce] = useState(0);
+  // An explicit action: take back control of the camera and go back to the search list.
+  const takeCamera = () => {
+    touchedRef.current = false;
+    gestureRef.current = false;
+    setMoved(null);
+    setFrameNonce((n) => n + 1);
+  };
 
   useEffect(() => {
     let live = true;
@@ -97,6 +110,16 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     const matching: Listed[] = (all ?? [])
       .filter((c) => !nameFilter || nameFilter.ids.has(c.id))
       .map((cafe) => ({ cafe, dist: origin ? haversineMiles(origin, cafe) * factor : null }));
+    if (moved) {
+      // The visitor scrolled the map: list what is in view, nearest the middle first (distances are from their own position when known).
+      const centre = { lat: moved.lat, lng: moved.lng };
+      const here = origin ?? myLoc;
+      const inView = (all ?? [])
+        .filter((c) => (!nameFilter || nameFilter.ids.has(c.id)) && c.lat >= moved.south && c.lat <= moved.north && c.lng >= moved.west && c.lng <= moved.east)
+        .map((cafe) => ({ cafe, dist: here ? haversineMiles(here, cafe) * factor : null, mid: haversineMiles(centre, cafe) }));
+      inView.sort((a, b) => a.mid - b.mid);
+      return { listed: inView.map(({ cafe, dist }) => ({ cafe, dist })), nearest: null as Listed | null, total: inView.length };
+    }
     if (!origin) {
       matching.sort((a, b) => a.cafe.cc.localeCompare(b.cafe.cc) || a.cafe.state.localeCompare(b.cafe.state) || a.cafe.city.localeCompare(b.cafe.city) || a.cafe.name.localeCompare(b.cafe.name));
       return { listed: matching, nearest: null as Listed | null, total: matching.length };
@@ -104,12 +127,16 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     matching.sort((a, b) => (a.dist ?? 0) - (b.dist ?? 0));
     const within = radius > 0 ? matching.filter((x) => (x.dist ?? 0) <= radius) : matching;
     return { listed: within, nearest: matching[0] ?? null, total: matching.length };
-  }, [all, nameFilter, origin, radius, unit]);
+  }, [all, nameFilter, origin, radius, unit, moved, myLoc]);
+
+  // Every café in the region is a pin, wherever the visitor scrolls (the map clusters them); only the list follows search/radius/view.
+  const pins = useMemo(() => (all ?? []).filter((c) => !nameFilter || nameFilter.ids.has(c.id)), [all, nameFilter]);
 
   // Normalized names, computed once per loaded list, for fast matching.
   const normNames = useMemo(() => (all ?? []).map((c) => norm(c.name)), [all]);
 
   const currentFeatures = useRef<GeoJSON.FeatureCollection>({ type: "FeatureCollection", features: [] });
+  const selectedRef = useRef<string | null>(null);
 
   // ---- map ----
   useEffect(() => {
@@ -145,8 +172,8 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
         source: "cafes",
         filter: ["!", ["has", "point_count"]],
         paint: {
-          "circle-radius": ["case", ["==", ["get", "sel"], 1], 11, 8],
-          "circle-color": ["case", ["==", ["get", "sel"], 1], "#2b5a20", "#6aa84f"],
+          "circle-radius": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], 11, 8],
+          "circle-color": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], "#2b5a20", "#6aa84f"],
           "circle-stroke-color": "#fff6df",
           "circle-stroke-width": 2.5,
         },
@@ -163,11 +190,31 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       if (f.properties?.cluster) {
         (map.getSource("cafes") as mapboxgl.GeoJSONSource).getClusterExpansionZoom(f.properties.cluster_id as number, (err, zoom) => {
           if (err || zoom == null) return;
+          gestureRef.current = true; // the visitor asked for this zoom: the list should follow it
+          touchedRef.current = true;
           map.easeTo({ center: (f.geometry as GeoJSON.Point).coordinates as [number, number], zoom: zoom + 0.3 });
         });
         return;
       }
       if (f.properties?.id) setSelectedId(f.properties.id as string);
+    });
+    // Free scrolling: remember that the visitor moved the map, and list what they are looking at.
+    for (const ev of ["dragstart", "zoomstart", "rotatestart", "pitchstart"] as const) {
+      map.on(ev, (e) => {
+        if ((e as { originalEvent?: unknown }).originalEvent) {
+          gestureRef.current = true;
+          touchedRef.current = true;
+        }
+      });
+    }
+    map.on("moveend", () => {
+      if (!gestureRef.current) return;
+      gestureRef.current = false;
+      const b = map.getBounds();
+      if (!b) return;
+      const c = map.getCenter();
+      setMoved({ west: b.getWest(), east: b.getEast(), south: b.getSouth(), north: b.getNorth(), lat: c.lat, lng: c.lng });
+      setShowAll(false);
     });
     for (const id of ["cafe-cluster", "cafe-point"]) {
       map.on("mouseenter", id, () => (map.getCanvas().style.cursor = "pointer"));
@@ -184,14 +231,23 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   useEffect(() => {
     currentFeatures.current = {
       type: "FeatureCollection",
-      features: listed.map(({ cafe }) => ({
+      features: pins.map((cafe) => ({
         type: "Feature" as const,
         geometry: { type: "Point" as const, coordinates: [cafe.lng, cafe.lat] },
-        properties: { id: cafe.id, sel: cafe.id === selectedId ? 1 : 0, focus: cafe.focus ? 1 : 0 },
+        properties: { id: cafe.id, focus: cafe.focus ? 1 : 0 },
       })),
     };
     (mapRef.current?.getSource("cafes") as mapboxgl.GeoJSONSource | undefined)?.setData(currentFeatures.current);
-  }, [listed, selectedId]);
+  }, [pins]);
+
+  // The selected pin is highlighted by repainting the layer (cheap), not by rebuilding the whole data set.
+  useEffect(() => {
+    selectedRef.current = selectedId;
+    const map = mapRef.current;
+    if (!map || !map.getLayer("cafe-point")) return;
+    map.setPaintProperty("cafe-point", "circle-radius", ["case", ["==", ["get", "id"], selectedId ?? ""], 11, 8]);
+    map.setPaintProperty("cafe-point", "circle-color", ["case", ["==", ["get", "id"], selectedId ?? ""], "#2b5a20", "#6aa84f"]);
+  }, [selectedId]);
 
   // Frame the map: the whole region with no search, the area around you after one.
   useEffect(() => {
@@ -200,13 +256,14 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     userMarkerRef.current?.remove();
     userMarkerRef.current = null;
     if (!origin) {
-      map.fitBounds(region.bounds, { padding: 20, duration: 800 });
+      if (!touchedRef.current) map.fitBounds(region.bounds, { padding: 20, duration: 800 });
       return;
     }
     const el = document.createElement("div");
     el.style.cssText = "width:16px;height:16px;border-radius:9999px;background:#2563eb;border:3px solid #fff;box-shadow:0 0 0 2px rgba(37,99,235,.35);";
     el.setAttribute("aria-label", t("c.cf.marker"));
     userMarkerRef.current = new mapboxgl.Marker({ element: el }).setLngLat([origin.lng, origin.lat]).addTo(map);
+    if (touchedRef.current) return;
     const near = listed.slice(0, 8);
     if (near.length === 0) {
       map.flyTo({ center: [origin.lng, origin.lat], zoom: 8, duration: 900 });
@@ -216,7 +273,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     for (const { cafe } of near) b.extend([cafe.lng, cafe.lat]);
     map.fitBounds(b, { padding: 70, maxZoom: 13, duration: 900 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [origin, radius, all, regionKey]);
+  }, [origin, radius, all, regionKey, frameNonce]);
 
   function select(id: string) {
     setSelectedId(id);
@@ -245,6 +302,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   // Switch to another part of the world.
   function changeRegion(k: RegionKey, keepOrigin?: Origin) {
     if (k === regionKey && !keepOrigin) return;
+    takeCamera();
     setRegionKey(k);
     setOrigin(keepOrigin ?? null);
     setSelectedId(null);
@@ -266,6 +324,10 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       (pos) => {
         const o: Origin = { lat: pos.coords.latitude, lng: pos.coords.longitude, label: t("c.cf.yourLocation") };
         setMyLoc(o);
+        setBusy(null);
+        // A quiet, automatic fix must never pull the map away from where the visitor is already looking.
+        if (auto && touchedRef.current) return;
+        takeCamera();
         setNameFilter(null);
         setOptions(null);
         // Pick the part of the world the visitor is in.
@@ -311,6 +373,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   const knownPosition = () => myLoc ?? (origin && origin.label === t("c.cf.yourLocation") ? origin : null);
 
   function goToPlace(o: Origin) {
+    takeCamera();
     const k = regionForCountry(o.country);
     setSelectedId(null);
     setNameFilter(null);
@@ -323,6 +386,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
 
   // Show the cafés named like `label` (closest to the visitor first) and bring them to the closest one.
   function goToCafes(label: string, hits: { cafe: Cafe; dist: number | null }[], from: Origin | null) {
+    takeCamera();
     setOptions(null);
     setSuggOpen(false);
     setQuery(label);
@@ -344,6 +408,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   function pick(o: Opt) {
     if (o.kind === "place") return goToPlace(o.origin);
     const from = knownPosition();
+    takeCamera();
     setNameFilter(null);
     setOptions(null);
     setSuggOpen(false);
@@ -427,6 +492,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   }, [query, suggOpen, all]);
 
   function clearSearch() {
+    takeCamera();
     setOrigin(null);
     setNameFilter(null);
     setOptions(null);
@@ -509,7 +575,10 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
           <label htmlFor="cafe-radius" className={label}>
             {t("c.cf.within")}
           </label>
-          <select id="cafe-radius" value={radius} onChange={(e) => setRadius(Number(e.target.value))} disabled={!origin} className={`${fieldClass} w-full lg:w-32 disabled:opacity-50`}>
+          <select id="cafe-radius" value={radius} onChange={(e) => {
+              takeCamera();
+              setRadius(Number(e.target.value));
+            }} disabled={!origin} className={`${fieldClass} w-full lg:w-32 disabled:opacity-50`}>
             {RADII.map((r) => (
               <option key={r} value={r}>
                 {r === 0 ? t("c.cf.anyDistance") : `${r} ${unitWord}`}
@@ -554,17 +623,24 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
             <p className="text-sm text-ink-muted">{t("c.cf.loading")}</p>
           ) : (
             <p className="text-sm text-ink-muted mb-3" aria-live="polite">
-              {origin
+              {moved
+                ? t("c.cf.inView", { count: nf(listed.length) })
+                : origin
                 ? radius > 0
                   ? t(listed.length === 1 ? "c.cf.withinOf.one" : "c.cf.withinOf.other", { count: nf(listed.length), radius, unit: unitWord, place: origin.label })
                   : t(listed.length === 1 ? "c.cf.nearPlace.one" : "c.cf.nearPlace.other", { count: nf(listed.length), place: origin.label })
                 : t("c.cf.listed", { count: nf(listed.length), region: regionLabel(region.key) })}
-              {nameFilter && !origin && (
+              {moved && (
                 <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
                   {t("c.cf.clear")}
                 </button>
               )}
-              {origin && (
+              {nameFilter && !origin && !moved && (
+                <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
+                  {t("c.cf.clear")}
+                </button>
+              )}
+              {origin && !moved && (
                 <button type="button" onClick={clearSearch} className="ml-2 text-matcha hover:text-forest underline">
                   {t("c.cf.clear")}
                 </button>
@@ -572,7 +648,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
             </p>
           )}
 
-          {origin && all && listed.length === 0 && (
+          {origin && !moved && all && listed.length === 0 && (
             <div className="rounded-sm border border-line bg-paper-raised p-4 text-sm text-ink-muted">
               <p>{t("c.cf.noneWithin", { radius, unit: unitWord })}</p>
               {nearest && (
@@ -627,7 +703,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
               {t("c.cf.showAll", { count: nf(listed.length) })}
             </button>
           )}
-          {!origin && all && total === 0 && <p className="text-sm text-ink-muted">{t("c.cf.noMatch")}</p>}
+          {!origin && !moved && all && total === 0 && <p className="text-sm text-ink-muted">{t("c.cf.noMatch")}</p>}
         </section>
       </div>
 

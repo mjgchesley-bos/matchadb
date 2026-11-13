@@ -261,6 +261,7 @@ export const ko: Partial<Record<Key, string>> = {
   "c.cf.nearPlace.one": "{place} 근처 카페 {count}곳",
   "c.cf.nearPlace.other": "{place} 근처 카페 {count}곳",
   "c.cf.listed": "{region}에 카페 {count}곳이 등록되어 있습니다. 검색하거나 내 위치를 사용하면 가까운 카페를 볼 수 있어요.",
+  "c.cf.inView": "이 지도 영역에 카페 {count}곳. 지도를 움직이면 더 볼 수 있어요.",
   "c.cf.yourLocation": "내 위치",
   "c.cf.clear": "지우기",
   "c.cf.noneWithin": "{radius}{unit} 이내에 등록된 카페가 아직 없습니다.",

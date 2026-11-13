@@ -259,6 +259,9 @@ for (id_, name, cat, cc, address, city, state, zip_, lat, lng, website, phone, c
 
 if os.path.exists(LEADS_FILE):
     leads = json.load(open(LEADS_FILE, encoding="utf-8"))
+    for _l in leads:  # a lead with no ZIP/phone must show blank, never the text "null"
+        for _k in ("zip", "address", "city", "state"):
+            if _l.get(_k) is None: _l[_k] = ""
     cafes.extend(leads)
     stats["leads"] = len(leads)
 

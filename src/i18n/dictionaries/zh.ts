@@ -261,6 +261,7 @@ export const zh: Partial<Record<Key, string>> = {
   "c.cf.nearPlace.one": "{place} 附近有 {count} 家咖啡馆",
   "c.cf.nearPlace.other": "{place} 附近有 {count} 家咖啡馆",
   "c.cf.listed": "{region}共收录 {count} 家咖啡馆。搜索或使用您的位置，即可查看离您最近的。",
+  "c.cf.inView": "此地图范围内有 {count} 家咖啡馆。移动地图可查看更多。",
   "c.cf.yourLocation": "您的位置",
   "c.cf.clear": "清除",
   "c.cf.noneWithin": "{radius} {unit}内暂无收录的咖啡馆。",

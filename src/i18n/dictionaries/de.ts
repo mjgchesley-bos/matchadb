@@ -243,6 +243,7 @@ export const de: Partial<Record<Key, string>> = {
   "c.cf.nearPlace.one": "{count} Café in der Nähe von {place}",
   "c.cf.nearPlace.other": "{count} Cafés in der Nähe von {place}",
   "c.cf.listed": "{count} Cafés in {region} gelistet. Suchen Sie oder verwenden Sie Ihren Standort, um die in Ihrer Nähe zu sehen.",
+  "c.cf.inView": "{count} Cafés in diesem Kartenausschnitt. Verschieben Sie die Karte, um mehr zu sehen.",
   "c.cf.yourLocation": "Ihr Standort",
   "c.cf.clear": "Zurücksetzen",
   "c.cf.noneWithin": "Im Umkreis von {radius} {unit} ist noch kein Café gelistet.",
