@@ -550,12 +550,12 @@ export default async function ProductDetailPage({
 
       {regionInfo && (
         <SectionCard id="sourcing-h" title={t("prod.sec.sourcing")}>
-          <div className="relative w-full max-w-md aspect-[8/5] rounded-sm overflow-hidden border border-line">
+          <div className="relative w-full max-w-2xl aspect-[8/5] rounded-sm overflow-hidden border border-line">
             <Image
               src={`/region-thumbnails/${product.region}.png`}
               alt={t("prod.map.alt", { name: tv("region", product.region ?? ""), country: regionCountry(regionInfo.country, lang) })}
               fill
-              sizes="(min-width: 640px) 448px, 100vw"
+              sizes="(min-width: 768px) 672px, 100vw"
               className="object-cover"
             />
           </div>
