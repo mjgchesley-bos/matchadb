@@ -2424,6 +2424,68 @@
    },
    "why": "Medici's own locations page: Airport, Gate 7.",
    "at": "2026-11-12"
+  },
+  "9aa58db5e5": {
+   "set": {
+    "address": "455A Myrtle Ave"
+   },
+   "why": "NYC audit: address per the venue's own site/listing",
+   "at": "2026-11-12"
+  },
+  "fsq5f7dbf3": {
+   "set": {
+    "address": "106 W 45th St",
+    "zip": "10036"
+   },
+   "why": "NYC audit: address per the venue's own site/listing",
+   "at": "2026-11-12"
+  },
+  "00b232eab9": {
+   "set": {
+    "address": "85B Bayard St"
+   },
+   "why": "NYC audit: address per the venue's own site/listing",
+   "at": "2026-11-12"
+  },
+  "3a3cc07a70": {
+   "set": {
+    "address": "500 W 70th St"
+   },
+   "why": "NYC audit: address per the venue's own site/listing",
+   "at": "2026-11-12"
+  },
+  "3eecc355d8": {
+   "set": {
+    "address": "212-12 Northern Blvd",
+    "city": "Bayside",
+    "zip": "11361",
+    "lat": 40.75988,
+    "lng": -73.77151
+   },
+   "why": "NYC audit: address/city per the venue's own site",
+   "at": "2026-11-12"
+  },
+  "d433fb9794": {
+   "set": {
+    "address": "1711 Grove St",
+    "city": "Ridgewood",
+    "zip": "11385",
+    "lat": 40.70319,
+    "lng": -73.91113
+   },
+   "why": "NYC audit: address/city per the venue's own site",
+   "at": "2026-11-12"
+  },
+  "e7a173f6ec": {
+   "set": {
+    "address": "818 Woodward Ave",
+    "city": "Ridgewood",
+    "zip": "11385",
+    "lat": 40.70309,
+    "lng": -73.90285
+   },
+   "why": "NYC audit: address/city per the venue's own site",
+   "at": "2026-11-12"
   }
  }
 }

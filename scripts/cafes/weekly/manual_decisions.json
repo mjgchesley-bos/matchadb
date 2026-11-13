@@ -23685,8 +23685,8 @@
 "at": "2026-11-12"
 },
 "fsq5612ab5": {
-"d": "KEEP",
-"r": "name-only web check: DewMatcha at 148 Bay 43rd St; ceremonial matcha listed on MapQuest",
+"d": "REMOVE",
+"r": "NYC audit: Shopify brand page and Instagram describe a matcha pop-up. No fixed venue verified at 148 ",
 "at": "2026-11-12"
 },
 "a3c7a62ae4": {
@@ -23830,13 +23830,13 @@
 "at": "2026-11-12"
 },
 "36d623618b": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Provisional. Brand site lists Matcha Latte, but no store-level menu for 42-15 Crescent St ",
 "at": "2026-11-12"
 },
 "3109ce0683": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
+"d": "REMOVE",
+"r": "NYC audit: Yelp listing for One Zo New York is marked CLOSED, and no matcha drink was seen on its men",
 "at": "2026-11-12"
 },
 "3fe5e83aa3": {
@@ -27806,17 +27806,17 @@
 },
 "fsq6ac1984": {
 "d": "KEEP",
-"r": "name-only web check: Aoko Matcha Park Slope at 155 5th Ave; open daily per Yelp and Corner",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
 "at": "2026-11-12"
 },
 "fsq69327ea": {
 "d": "KEEP",
-"r": "name-only web check: Kettl Matcha Sen Mon Ten at 38 Norman Ave, open daily per Kettl site",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
 "at": "2026-11-12"
 },
 "fsq665b6f5": {
 "d": "KEEP",
-"r": "name-only web check: Matchaful culinary lab and cafe at 44 Washington Ave; matcha drinks, hours liste",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
 "at": "2026-11-12"
 },
 "fsq687d4fa": {
@@ -27826,12 +27826,12 @@
 },
 "fsq69c8199": {
 "d": "KEEP",
-"r": "name-only web check: AOKO Matcha matcha gelato cafe at 81 Chrystie St, open, multi-store brand",
+"r": "NYC audit: Strawberry Matcha Latte \u00b7 $9.93",
 "at": "2026-11-12"
 },
 "fsq68a7207": {
 "d": "KEEP",
-"r": "name-only web check: A'more Caffe at 126 W 25th St, Yelp hours and Instagram list matcha drinks",
+"r": "NYC audit: Matcha Latte ... $5.75+",
 "at": "2026-11-12"
 },
 "fsq64d424d": {
@@ -27856,17 +27856,17 @@
 },
 "fsq6ac2bb9": {
 "d": "KEEP",
-"r": "name-only web check: Isshiki Matcha standalone cafe at 183 Grand St, daily 8am to 6pm",
+"r": "NYC audit: Matcha Latte Milk of choice \u00b7 Hot or cold Small $7 \u00b7 Medium $7.50 \u00b7 La",
 "at": "2026-11-12"
 },
 "fsq68050a9": {
 "d": "KEEP",
-"r": "name-only web check: Matcha 108 tea house at 108 Madison St, Yelp hours and matcha menu",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
 "at": "2026-11-12"
 },
 "fsq6a08f0d": {
 "d": "KEEP",
-"r": "name-only web check: Matcha 116 hand-whisked matcha cafe at 116 MacDougal St, open",
+"r": "NYC audit: Vanilla Matcha Latte $8.63+",
 "at": "2026-11-12"
 },
 "fsq5bf845f": {
@@ -27875,8 +27875,8 @@
 "at": "2026-11-12"
 },
 "fsq5bb2342": {
-"d": "KEEP",
-"r": "name-only web check: MUJI cafe in Chelsea Market at 75 9th Ave serves matcha lattes",
+"d": "REMOVE",
+"r": "NYC audit: No business named Matcha Cafe found at 75 9th Ave. That address is Chelsea Market, where a",
 "at": "2026-11-12"
 },
 "fsq68446ee": {
@@ -27886,17 +27886,17 @@
 },
 "fsq63223c3": {
 "d": "KEEP",
-"r": "name-only web check: Matchaful tea room at 240 E 54th St, hours and address on brand site",
+"r": "NYC audit: Frozen Matcha $10.95",
 "at": "2026-11-12"
 },
 "fsq6a6019c": {
 "d": "KEEP",
-"r": "name-only web check: Matchaful Flatiron cafe at 337 Park Ave S, opened 2026, on brand site",
+"r": "NYC audit: Frozen Matcha $10.95",
 "at": "2026-11-12"
 },
 "fsq6529533": {
-"d": "KEEP",
-"r": "name-only web check: Moka Matcha at Vanderbilt Market, 230 Park Ave, per brand contact page",
+"d": "REMOVE",
+"r": "NYC audit: Yelp lists Moka Matcha New York as CLOSED. No address in input.",
 "at": "2026-11-12"
 },
 "fsq67d0be6": {
@@ -27906,17 +27906,17 @@
 },
 "fsq66c4d7c": {
 "d": "KEEP",
-"r": "name-only web check: Tokuyamatcha and Onigirazu Bar at 115 E 27th St, open, matcha drinks",
+"r": "NYC audit: they have giant and creative rice balls and high quality matcha drinks",
 "at": "2026-11-12"
 },
 "fsq651dca4": {
 "d": "KEEP",
-"r": "name-only web check: rocky's matcha cafe inside WSA at 161 Water St; posts are older (2023)",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
 "at": "2026-11-12"
 },
 "fsq69597f6": {
-"d": "KEEP",
-"r": "name-only web check: Instagram confirms matcha cart whisking at 27-21 Jackson Ave, Long Island City",
+"d": "REMOVE",
+"r": "NYC audit: Not a fixed venue: Ginvee Matcha operates as a food truck/cart and pop-ups (Instagram: LIC",
 "at": "2026-11-12"
 },
 "fsq6a663c3": {
@@ -32836,12 +32836,12 @@
 },
 "f7c230d8e8": {
 "d": "KEEP",
-"r": "second pass: Sells Jasmine Matcha tea product",
+"r": "NYC audit: MATCHA MILKY STRAWBERRY: $10.00 - with organic matcha shot.",
 "at": "2026-11-12"
 },
 "5e7f22d48c": {
 "d": "KEEP",
-"r": "second pass: Sells Jasmine Matcha tea product",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
 "at": "2026-11-12"
 },
 "1c55c44e96": {
@@ -32856,12 +32856,12 @@
 },
 "c72b845373": {
 "d": "KEEP",
-"r": "second pass: Shop product category named Matcha-Lover on cafe site",
+"r": "NYC audit: Matcha Latte. Unsweetened matcha powder, milk. $7.00+.",
 "at": "2026-11-12"
 },
 "27abc4c4bc": {
-"d": "KEEP",
-"r": "second pass: Menu lists Matcha among drinks",
+"d": "REMOVE",
+"r": "NYC audit: Ellary's Greens site says: We have permanently closed all Ellary's Greens locations.",
 "at": "2026-11-12"
 },
 "1c51f3cfbd": {
@@ -32876,7 +32876,7 @@
 },
 "8bd92bac5e": {
 "d": "KEEP",
-"r": "second pass: Shop product category Matcha on coffee shop site",
+"r": "NYC audit: ORGANIC MATCHA $6.00 - $7.95 Add to Cart",
 "at": "2026-11-12"
 },
 "eaba2eaa41": {
@@ -32895,8 +32895,8 @@
 "at": "2026-11-12"
 },
 "fsq5b6840c": {
-"d": "KEEP",
-"r": "second pass: Matcha-named cafe and bar on own site",
+"d": "REMOVE",
+"r": "NYC audit: duplicate of Tokuyamatcha & Onigirazu Bar (same address)",
 "at": "2026-11-12"
 },
 "fsq58cab63": {
@@ -34532,6 +34532,1041 @@
 "d6ead183fa": {
 "d": "KEEP",
 "r": "Austin audit: live/ordering menu or own post verified",
+"at": "2026-11-12"
+},
+"fsq55435e0": {
+"d": "KEEP",
+"r": "NYC audit: Strawberry Matcha Latte $7.00 $8.00",
+"at": "2026-11-12"
+},
+"fsq4dbd812": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"ad995472dd": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"fsq5fea140": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Only matcha seen is MATCHA BUTTERMILK PANCAKES (food). Grubhub listing Oh Boy at 84 Haveme",
+"at": "2026-11-12"
+},
+"18e460c3fd": {
+"d": "KEEP",
+"r": "NYC audit: ICED MATCHA LATTE",
+"at": "2026-11-12"
+},
+"94c8ec96ba": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Green Tea - Blue Marble All Natural Ice Cream and Sorbet",
+"at": "2026-11-12"
+},
+"6613667516": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Brooklyn Bridge Park Pier 1 not confirmed as a fixed open venue (may be seasonal).",
+"at": "2026-11-12"
+},
+"fsq570619e": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: 314 Dean St address not confirmed in search. Blue Marble shop addresses seen: 186 Underhil",
+"at": "2026-11-12"
+},
+"fsq5f6daeb": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: 220 36th St Unit 33 not confirmed as a public shop (may be production or wholesale).",
+"at": "2026-11-12"
+},
+"4e323d373a": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte unsweetened japanese matcha with your choice of milk. $6.",
+"at": "2026-11-12"
+},
+"c0317d168e": {
+"d": "REMOVE",
+"r": "NYC audit: Matcha appears only as a cookie flavor (food). Site states the 1037 Broadway cafe is now c",
+"at": "2026-11-12"
+},
+"815055c468": {
+"d": "REMOVE",
+"r": "NYC audit: Matcha appears only as Matcha Loaf Slice (food). No matcha drink found.",
+"at": "2026-11-12"
+},
+"1fd016f061": {
+"d": "REMOVE",
+"r": "NYC audit: Duplicate of Colson Patisserie 374 9th St (815055c468), same business; matcha is food-only",
+"at": "2026-11-12"
+},
+"e27d3cd787": {
+"d": "KEEP",
+"r": "NYC audit: Organic and ethically sourced coffee, espresso, signature lattes, matc",
+"at": "2026-11-12"
+},
+"a15d7814f8": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Stored menu lists MATCHA, CHAI OR GOLDEN / ICED, but a Yelp owner note says matcha was tak",
+"at": "2026-11-12"
+},
+"c7400e1c2f": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Tea Latte $ 6.00",
+"at": "2026-11-12"
+},
+"c46270742c": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"eee668f36c": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Matcha Latte menu is the Carroll Gardens cafe (345 Smith St). 10 Grand Army Plaza location",
+"at": "2026-11-12"
+},
+"4682d58b65": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte* Kyoto matcha with steamed milk",
+"at": "2026-11-12"
+},
+"a18e166aee": {
+"d": "REMOVE",
+"r": "NYC audit: Yelp listing for Gertie, 357 Grand St, is marked CLOSED.",
+"at": "2026-11-12"
+},
+"66d5dba3ef": {
+"d": "KEEP",
+"r": "NYC audit: MATCHA Finely ground green tea leaves from Japan with silky steamed mi",
+"at": "2026-11-12"
+},
+"df9751fec7": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte Featuring a ceremonial grade Ayame Matcha from Japan",
+"at": "2026-11-12"
+},
+"1a134a9f3d": {
+"d": "KEEP",
+"r": "NYC audit: Order Matcha Latte online. Drip Coffee La Colombe drip coffee $3.50",
+"at": "2026-11-12"
+},
+"fsq5af8e49": {
+"d": "KEEP",
+"r": "NYC audit: FRESH DRINKS Mint Matcha Limeade",
+"at": "2026-11-12"
+},
+"fsq5dd9572": {
+"d": "KEEP",
+"r": "NYC audit: COFFEE COCOA, MATCHA, TEA",
+"at": "2026-11-12"
+},
+"fsq65b7b8b": {
+"d": "KEEP",
+"r": "NYC audit: Matcha $ 5.50",
+"at": "2026-11-12"
+},
+"e70ca64076": {
+"d": "KEEP",
+"r": "NYC audit: Frozen Matcha. $10.95",
+"at": "2026-11-12"
+},
+"2f461c9655": {
+"d": "KEEP",
+"r": "NYC audit: MACCHIATO MATCHA TEA COLD ICED",
+"at": "2026-11-12"
+},
+"fsq5a19ce6": {
+"d": "REMOVE",
+"r": "NYC audit: Yelp listing for Paper Plane Coffee Co., 70 N 7th St, is marked CLOSED. Montclair NJ locat",
+"at": "2026-11-12"
+},
+"9aa58db5e5": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte 5 455A MYRTLE AVENUE BROOKLYN NY 11205",
+"at": "2026-11-12"
+},
+"b55f3d74ea": {
+"d": "KEEP",
+"r": "NYC audit: COCO WATER MATCHA",
+"at": "2026-11-12"
+},
+"9c38061c0b": {
+"d": "REMOVE",
+"r": "NYC audit: Address 121 NY-94 is Warwick, NY (Orange County), outside NYC. Listed as Brooklyn in the f",
+"at": "2026-11-12"
+},
+"b25b38a5dd": {
+"d": "KEEP",
+"r": "NYC audit: Earl Grey Matcha A unique blend of rich earl grey tea and vibrant matc",
+"at": "2026-11-12"
+},
+"34bf97e38c": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Lemonade Sweet mango lemonade topped with matcha",
+"at": "2026-11-12"
+},
+"cc0929803e": {
+"d": "KEEP",
+"r": "NYC audit: Cardamom Matcha Latte. $8.49",
+"at": "2026-11-12"
+},
+"fsq55cf624": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte Japanese Wakatake Matcha steamed with milk $6.50",
+"at": "2026-11-12"
+},
+"a30202559e": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte. Hot Chocolate. COLD BEVERAGE. Iced Tea.",
+"at": "2026-11-12"
+},
+"b3066a7fde": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Iced Oat Matcha found only on the catering pre-order menu (Toast). In-store drink menu not",
+"at": "2026-11-12"
+},
+"300948f924": {
+"d": "KEEP",
+"r": "NYC audit: Iced Matcha Latte: $6.50. Hot Americano: $4.50 Hot Matcha Latte: $6.50",
+"at": "2026-11-12"
+},
+"3b2ce835ac": {
+"d": "KEEP",
+"r": "NYC audit: Very Joy Mucho Matcha: $13.95 - Matcha, raw cashews, dates, almond mil",
+"at": "2026-11-12"
+},
+"fsq5324631": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Tea. $5.75",
+"at": "2026-11-12"
+},
+"d433fb9794": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte $4.00",
+"at": "2026-11-12"
+},
+"a641e71400": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"3eecc355d8": {
+"d": "KEEP",
+"r": "NYC audit: Matcha + Fresh Milk $8.80",
+"at": "2026-11-12"
+},
+"02935bd431": {
+"d": "REMOVE",
+"r": "NYC audit: Hempstead (292 Central Ave) is in Nassau County, Long Island, outside NYC. Stored NJ Toast",
+"at": "2026-11-12"
+},
+"3ecafbcf57": {
+"d": "KEEP",
+"r": "NYC audit: Organic Matcha Latte Organic Japanese Matcha brewed with choice of ste",
+"at": "2026-11-12"
+},
+"fsq51435bb": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte. Japanese Wakatake Matcha steamed with milk. $6.25+.",
+"at": "2026-11-12"
+},
+"e2c1c35d9c": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"73ebaa7747": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Provisional. Stored menu lists Matcha; venue confirmed open at 101 W 10th St (wine bar). L",
+"at": "2026-11-12"
+},
+"950d2cd6fa": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Provisional. 102 Broadway (Williamsburg) confirmed as a location. Only retail matcha powde",
+"at": "2026-11-12"
+},
+"1ad8ba703b": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"11731785ab": {
+"d": "KEEP",
+"r": "NYC audit: MATCHA LATTE. ICED MATCHA LATTE.",
+"at": "2026-11-12"
+},
+"d0c7960ccc": {
+"d": "KEEP",
+"r": "NYC audit: MATCHA LATTE. ICED MATCHA LATTE.",
+"at": "2026-11-12"
+},
+"7cc698687c": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Provisional. 359 W 45th St confirmed. Only reviews and retail Ippodo tea seen; need the ca",
+"at": "2026-11-12"
+},
+"fsq6811957": {
+"d": "REMOVE",
+"r": "NYC audit: Vegan patisserie that says it operates from a commercial kitchen in East Harlem with onlin",
+"at": "2026-11-12"
+},
+"e73d1cd417": {
+"d": "KEEP",
+"r": "NYC audit: Yuzu Matcha Latte: $8.00 - 100% pure matcha blended with",
+"at": "2026-11-12"
+},
+"fsq4656e53": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte $5.50 $5.50.",
+"at": "2026-11-12"
+},
+"d420111dd4": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"19c04dc875": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: 828 8th Ave (Times Square) confirmed as open 7am-1am. Matcha Latte seen only on the shared",
+"at": "2026-11-12"
+},
+"1c5e0d68ee": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte $5.75",
+"at": "2026-11-12"
+},
+"29815686c3": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte w. Guava Puree",
+"at": "2026-11-12"
+},
+"886f381e76": {
+"d": "REMOVE",
+"r": "NYC audit: Chocolatier. Matcha appears only as a ganache flavor in a boxed product, not a drink or a ",
+"at": "2026-11-12"
+},
+"fsq580e02c": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"903a7a38ee": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"a84c7ae4dd": {
+"d": "KEEP",
+"r": "NYC audit: Apple Pie Matcha Latte. $6.50+",
+"at": "2026-11-12"
+},
+"ef66cfc1cc": {
+"d": "REMOVE",
+"r": "NYC audit: Japanese restaurant; matcha appears only in a cocktail (The Bowline, matcha foam), not a m",
+"at": "2026-11-12"
+},
+"ec6ad211a6": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte $6.25 - $7.75",
+"at": "2026-11-12"
+},
+"1d6a1263a1": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte. $6.50.",
+"at": "2026-11-12"
+},
+"c89f9c08f7": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Provisional. Felix chain store at 280 Park Ave; only retail matcha canister seen so far.",
+"at": "2026-11-12"
+},
+"59e1f93e58": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Provisional. Felix store at 450 Park Ave S; Yelp lists it but no matcha drink menu seen ye",
+"at": "2026-11-12"
+},
+"765905bdad": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Provisional. Felix store at 145 Greene St; only retail matcha canister seen so far.",
+"at": "2026-11-12"
+},
+"fsq5bafd84": {
+"d": "KEEP",
+"r": "NYC audit: STRAWBERRY ICED MATCHA",
+"at": "2026-11-12"
+},
+"337fa69d2a": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte: $6.00",
+"at": "2026-11-12"
+},
+"000f3d401e": {
+"d": "KEEP",
+"r": "NYC audit: Green Tea Matcha Latte (with Boba)",
+"at": "2026-11-12"
+},
+"24e7c42a87": {
+"d": "KEEP",
+"r": "NYC audit: Matcha on Tap Our house made Matcha Latte on Nitro draft!",
+"at": "2026-11-12"
+},
+"8fbd51044f": {
+"d": "KEEP",
+"r": "NYC audit: MATCHA. Finely ground green tea leaves with silky steamed milk.",
+"at": "2026-11-12"
+},
+"fsq5f7dbf3": {
+"d": "KEEP",
+"r": "NYC audit: ICED MATCHA. Finely ground green tea leaves from Japan, made to order,",
+"at": "2026-11-12"
+},
+"fsq514f891": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Only matcha seen is 'Mo' Matcha Milkshake (a strawberry matcha blend)' in a limited-time p",
+"at": "2026-11-12"
+},
+"a7068f6c34": {
+"d": "REMOVE",
+"r": "NYC audit: Matcha appears only as a retail tea-type filter and matcha powder collection on harney.com",
+"at": "2026-11-12"
+},
+"5fd12e738a": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Tea Latte Made with organic matcha powder and milk. $5.50+",
+"at": "2026-11-12"
+},
+"47668532de": {
+"d": "REMOVE",
+"r": "NYC audit: evidence page belongs to Bagels & Co, shared with unrelated shops",
+"at": "2026-11-12"
+},
+"d1d87d0c6c": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Lazy Sundaes brand menu says 'try our matcha latte', but no page confirmed that the 265 Ca",
+"at": "2026-11-12"
+},
+"90012e2ab7": {
+"d": "KEEP",
+"r": "NYC audit: Strawberry Matcha Latte.",
+"at": "2026-11-12"
+},
+"195651916e": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte at Lazy Sundaes! \ud83d\udccd11 Waverly Place, New York, NY",
+"at": "2026-11-12"
+},
+"3b75eb59ba": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Brand menu mentions matcha latte, but no page confirmed the 23 Clinton St shop is open.",
+"at": "2026-11-12"
+},
+"d7402bd992": {
+"d": "KEEP",
+"r": "NYC audit: 8\" Matcha pandan tiramisu cake",
+"at": "2026-11-12"
+},
+"fsq5f9afda": {
+"d": "KEEP",
+"r": "NYC audit: shizuoka matcha milk tea w. cr\u00e8me brulee & red bean",
+"at": "2026-11-12"
+},
+"24750da5ce": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Muchacha US$7.14",
+"at": "2026-11-12"
+},
+"4746464ccb": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"2a7d67445b": {
+"d": "REMOVE",
+"r": "NYC audit: 319 E 14th St is not on Madman Espresso's current location list (own site: 28 Liberty, Hud",
+"at": "2026-11-12"
+},
+"eefa35ff04": {
+"d": "REMOVE",
+"r": "NYC audit: 445 Park Ave is not on Madman Espresso's current location list. Midtown East is 141 E 44th",
+"at": "2026-11-12"
+},
+"146f7362a0": {
+"d": "REMOVE",
+"r": "NYC audit: 379 3rd Ave is not on Madman Espresso's current location list. Not found.",
+"at": "2026-11-12"
+},
+"fsq6a90907": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Muchacha Matcha, Pistacchio Milk $7.80+",
+"at": "2026-11-12"
+},
+"3d070f0a4b": {
+"d": "REMOVE",
+"r": "NYC audit: 359 Canal St is not on Matchaful's current cafe list (217 Mulberry, 240 E 54th, 337 Park A",
+"at": "2026-11-12"
+},
+"fsq5fe4a22": {
+"d": "KEEP",
+"r": "NYC audit: Frozen Matcha $10.95",
+"at": "2026-11-12"
+},
+"fsq648cd37": {
+"d": "KEEP",
+"r": "NYC audit: Frozen Matcha $10.95",
+"at": "2026-11-12"
+},
+"74e4af10eb": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte. $7.50",
+"at": "2026-11-12"
+},
+"8a9799fe76": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Mojo has moved, per mojodesserts.com/pages/visit, so 1567 Lexington is stale. The matcha m",
+"at": "2026-11-12"
+},
+"09e2ab38f1": {
+"d": "KEEP",
+"r": "NYC audit: Iced Matcha Tea $5.99 16 oz.",
+"at": "2026-11-12"
+},
+"49ca43d0d9": {
+"d": "REMOVE",
+"r": "NYC audit: Matcha appears only as a food item (Matcha Curry Set) on Ootoya's menu. No matcha drink se",
+"at": "2026-11-12"
+},
+"8addb91edd": {
+"d": "REMOVE",
+"r": "NYC audit: Matcha appears only as a food item (Matcha Curry Set) on Ootoya's menu. No matcha drink se",
+"at": "2026-11-12"
+},
+"fsq6a2d9c7": {
+"d": "KEEP",
+"r": "NYC audit: MATCHA $7.00",
+"at": "2026-11-12"
+},
+"fsq4a6c86a": {
+"d": "REMOVE",
+"r": "NYC audit: Matcha appears only in a dessert and food list (donut, cheesecake, etc.) on the vegan rest",
+"at": "2026-11-12"
+},
+"3a3cc07a70": {
+"d": "KEEP",
+"r": "NYC audit: Pistachio Oat Matcha $6.50",
+"at": "2026-11-12"
+},
+"940b69abc1": {
+"d": "REMOVE",
+"r": "NYC audit: Duplicate of 3a3cc07a70 (Pier I Cafe, same business and same 500 W 70th St location). Kept",
+"at": "2026-11-12"
+},
+"0ea581dbcb": {
+"d": "KEEP",
+"r": "NYC audit: Latte $5.50 Matcha $6.50 Mocha $6.00",
+"at": "2026-11-12"
+},
+"678a8628bd": {
+"d": "KEEP",
+"r": "NYC audit: Iced Strawberry Matcha $9.80+",
+"at": "2026-11-12"
+},
+"9111b58659": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Only the crawl's flavor-guide text (matcha cake) was seen. The shop address '47th St & 2nd",
+"at": "2026-11-12"
+},
+"89424d4e7c": {
+"d": "KEEP",
+"r": "NYC audit: Iced Matcha Latte",
+"at": "2026-11-12"
+},
+"97c10f6666": {
+"d": "KEEP",
+"r": "NYC audit: Matcha $4.70 - $5.50",
+"at": "2026-11-12"
+},
+"1a7d49baf4": {
+"d": "KEEP",
+"r": "NYC audit: Matcha $4.70 - $5.50",
+"at": "2026-11-12"
+},
+"396380825e": {
+"d": "KEEP",
+"r": "NYC audit: Theater District - Iced Matcha Latte",
+"at": "2026-11-12"
+},
+"d65e48f1df": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Venue's own Toast page for 129 4th Ave loaded without menu items. Only third-party Grubhub",
+"at": "2026-11-12"
+},
+"de7ccc1725": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Green Tea Ice Cream Pint",
+"at": "2026-11-12"
+},
+"1c7aa37162": {
+"d": "KEEP",
+"r": "NYC audit: Creamy, perfectly sweet, and full of rich matcha flavor. Find it at ou",
+"at": "2026-11-12"
+},
+"fc80881ae7": {
+"d": "KEEP",
+"r": "NYC audit: Soft Swerve Flavors Frozen Hot Chocolate Matcha",
+"at": "2026-11-12"
+},
+"00b232eab9": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Green Tea Ice Cream Pints",
+"at": "2026-11-12"
+},
+"e70156227a": {
+"d": "REMOVE",
+"r": "NYC audit: Chocolatier. Matcha appears only as a chocolate flavor (White Chocolate Truffle Pouch - Ma",
+"at": "2026-11-12"
+},
+"d42103c221": {
+"d": "REMOVE",
+"r": "NYC audit: Not a fixed venue: studiosweetly.com/faqs says it is a cottage bakery with no physical sto",
+"at": "2026-11-12"
+},
+"fsq68f0e7d": {
+"d": "KEEP",
+"r": "NYC audit: stored own-site/brand menu lists matcha; open confirmed (agent could not re-read menu)",
+"at": "2026-11-12"
+},
+"fb52fd0c19": {
+"d": "KEEP",
+"r": "NYC audit: DRINKS: Mont Blanc Strawberry Matcha Latte",
+"at": "2026-11-12"
+},
+"7fe65b2cc3": {
+"d": "KEEP",
+"r": "NYC audit: CLASSIC DRINK MENU ... Tea Matcha Latte",
+"at": "2026-11-12"
+},
+"fsq6912048": {
+"d": "KEEP",
+"r": "NYC audit: Try the Jeju matcha latte and chestnut financier",
+"at": "2026-11-12"
+},
+"fsq6a0b482": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte",
+"at": "2026-11-12"
+},
+"c3be40ad07": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Tea Latte",
+"at": "2026-11-12"
+},
+"aa49681581": {
+"d": "KEEP",
+"r": "NYC audit: ceremonial matcha lattes",
+"at": "2026-11-12"
+},
+"3bcf8a56b1": {
+"d": "KEEP",
+"r": "NYC audit: Brown Sugar Matcha Latte",
+"at": "2026-11-12"
+},
+"ae1d0733e1": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Tea Latte",
+"at": "2026-11-12"
+},
+"edef466542": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Einspanner. Matcha infused Cream Latte served with Espresso. 12",
+"at": "2026-11-12"
+},
+"58211f141a": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Einspanner. Matcha infused Cream Latte served with Espresso. 12",
+"at": "2026-11-12"
+},
+"0114cb20ae": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Einspanner. Matcha infused Cream Latte served with Espresso. 12",
+"at": "2026-11-12"
+},
+"8fa80d30c5": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte $7.00",
+"at": "2026-11-12"
+},
+"581917b0d6": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Venue's Instagram mentions a cinnamon rose matcha latte, but Yelp lists The Blue Light Spe",
+"at": "2026-11-12"
+},
+"938296cdee": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte $5.25\u2013$6.25",
+"at": "2026-11-12"
+},
+"f2c1d09940": {
+"d": "KEEP",
+"r": "NYC audit: Loaf Cakes ... Matcha Swirl",
+"at": "2026-11-12"
+},
+"ec6752c7dd": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Unregular Bakery 124 4th Ave confirmed on venue site (hours listed). The Square order page",
+"at": "2026-11-12"
+},
+"0ba5ca6d16": {
+"d": "REMOVE",
+"r": "NYC audit: unsure -> remove: Toast menu section header 'Coffee, Matcha & Tea' only. No specific matcha drink found on t",
+"at": "2026-11-12"
+},
+"04a7ae1bbb": {
+"d": "REMOVE",
+"r": "NYC audit: Duplicate or closed: Yelp lists Vive La Crepe at 189 Columbus Ave as CLOSED, and the activ",
+"at": "2026-11-12"
+},
+"fsq535e512": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte. Creamy green tea drink. Available as regular or iced. $6",
+"at": "2026-11-12"
+},
+"6888cc1433": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte $6 / $5.5",
+"at": "2026-11-12"
+},
+"d59f7e8e57": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"1909530c97": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"f5beb0faa9": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"9b463fe5b9": {
+"d": "KEEP",
+"r": "NYC audit: Japanese matcha powder makes this earthy flavor grassy and slightly bi",
+"at": "2026-11-12"
+},
+"bfe5f89205": {
+"d": "REMOVE",
+"r": "NYC audit: Not in NYC: 129 Wolfs Ln, Pelham NY (Westchester).",
+"at": "2026-11-12"
+},
+"e929a82a61": {
+"d": "REMOVE",
+"r": "NYC audit: Not in NYC: 83 Main St, Port Washington NY (Long Island).",
+"at": "2026-11-12"
+},
+"e7a173f6ec": {
+"d": "KEEP",
+"r": "NYC audit: Hot Matcha - Julia's 818 Woodward Ave",
+"at": "2026-11-12"
+},
+"ba1b8b2895": {
+"d": "KEEP",
+"r": "NYC audit: Matcha Latte. $6 (10 oz). $8 (16 oz).",
+"at": "2026-11-12"
+},
+"fsq56c20ce": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq5eebfa9": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"d3cdbcfe0b": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"298485d12c": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"acc71de9a2": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"231dc115f1": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"e2546cb3bc": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq5bdddd1": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"8be64fcf23": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"d0de96708b": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"1930c3c5c1": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"e9d50092c2": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq543882f": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"a241d533a5": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq57decad": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq5c16831": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"b11b2c9392": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"99d5f1f950": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"4c35a6f131": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"83478f4bb4": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"5259acd295": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"6d22895ff3": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"5b4fcd882b": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"579cec7909": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"1681821289": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"b852d0c033": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"ac69c80c9b": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"ad7d372b6e": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"851c260f4d": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"c05f67e63b": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"681d626a8e": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq666f2f5": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq66116f7": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"37fc51413e": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"edc56ec90f": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"7812aa68fd": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq641f9d0": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq5fa1fb7": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq5675c52": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"e7259c0ca2": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"4882c5cdf3": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fa090509f2": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"2cd3337aa8": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"4795f67bd6": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"fsq68f3baa": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"f9c47f3db3": {
+"d": "REMOVE",
+"r": "NYC audit: chain with 25+ outlets",
+"at": "2026-11-12"
+},
+"1e385a194c": {
+"d": "REMOVE",
+"r": "NYC audit: restaurant: matcha only in a dessert",
+"at": "2026-11-12"
+},
+"a160a94e0f": {
+"d": "REMOVE",
+"r": "NYC audit: restaurant: matcha only in a dessert",
+"at": "2026-11-12"
+},
+"396384fb1a": {
+"d": "REMOVE",
+"r": "NYC audit: restaurant: matcha only in a dessert",
+"at": "2026-11-12"
+},
+"b8cae1d1f5": {
+"d": "REMOVE",
+"r": "NYC audit: restaurant: matcha only as a soft-serve flavor",
+"at": "2026-11-12"
+},
+"efc38cddc2": {
+"d": "REMOVE",
+"r": "NYC audit: restaurant: matcha only as a packaged dessert",
+"at": "2026-11-12"
+},
+"74102139bd": {
+"d": "REMOVE",
+"r": "NYC audit: restaurant: matcha beer, not a matcha tea/latte",
+"at": "2026-11-12"
+},
+"e6679d14cd": {
+"d": "REMOVE",
+"r": "NYC audit: food court: evidence is website navigation only",
+"at": "2026-11-12"
+},
+"fsq4a9e9f2": {
+"d": "REMOVE",
+"r": "NYC audit: evidence is a blog headline, no menu item",
+"at": "2026-11-12"
+},
+"fsq5c9f97a": {
+"d": "REMOVE",
+"r": "NYC audit: duplicate of White Noise Coffee (same address)",
+"at": "2026-11-12"
+},
+"fsq5c3bd12": {
+"d": "REMOVE",
+"r": "NYC audit: duplicate of Mia's Brooklyn Bakery (same address)",
+"at": "2026-11-12"
+},
+"356175bace": {
+"d": "REMOVE",
+"r": "NYC audit: duplicate of Tokuyamatcha & Onigirazu Bar (same address)",
+"at": "2026-11-12"
+},
+"fsq4fb7e3c": {
+"d": "REMOVE",
+"r": "NYC audit: duplicate of Beans and Leaves (same address)",
+"at": "2026-11-12"
+},
+"e70e496979": {
+"d": "REMOVE",
+"r": "NYC audit: evidence page belongs to Bagels & Co, shared with unrelated shops",
 "at": "2026-11-12"
 }
 }
