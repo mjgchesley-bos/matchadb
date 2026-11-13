@@ -739,6 +739,22 @@ export default async function ProductDetailPage({
         <Comments targetType="product" targetKey={String(product.id)} subject={product.product_name} />
       </div>
 
+      {moreFromBrand.length > 0 && (
+        <SectionCard id="brand-h" title={t("prod.more.brand", { brand: product.brand_name })}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {moreFromBrand.map((p) => (
+              <ProductCard key={p.id} product={p} lang={lang} />
+            ))}
+          </div>
+          <Link
+            href={`/brands/${encodeURIComponent(product.brand_name)}`}
+            className="inline-block mt-4 text-sm text-matcha hover:text-forest transition-colors"
+          >
+            {t("prod.viewAll", { brand: product.brand_name })} &rarr;
+          </Link>
+        </SectionCard>
+      )}
+
       {relatedProducts.length > 0 && (
         <SectionCard
           id="related-h"
@@ -755,22 +771,6 @@ export default async function ProductDetailPage({
               <ProductCard key={p.id} product={p} lang={lang} />
             ))}
           </div>
-        </SectionCard>
-      )}
-
-      {moreFromBrand.length > 0 && (
-        <SectionCard id="brand-h" title={t("prod.more.brand", { brand: product.brand_name })}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {moreFromBrand.map((p) => (
-              <ProductCard key={p.id} product={p} lang={lang} />
-            ))}
-          </div>
-          <Link
-            href={`/brands/${encodeURIComponent(product.brand_name)}`}
-            className="inline-block mt-4 text-sm text-matcha hover:text-forest transition-colors"
-          >
-            {t("prod.viewAll", { brand: product.brand_name })} &rarr;
-          </Link>
         </SectionCard>
       )}
 
