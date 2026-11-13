@@ -210,28 +210,20 @@ const REDUNDANT_DISCLOSED_KEYS = new Set([
   "related_sku_noted",
 ]);
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{children}</h2>
-  );
-}
+// One bordered section with a pale-green title bar, the same look as the wholesale supplier pages.
+// Reviews and comments are shared components with their own plain headings; this frames them like the other sections
+// (border, pale-green title bar) without changing them for the pages that use them elsewhere.
+const FRAMED =
+  "mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised p-5 [&>section]:mt-0 [&>section>h2]:-mx-5 [&>section>h2]:-mt-5 [&>section>h2]:mb-4 [&>section>h2]:border-b [&>section>h2]:border-line [&>section>h2]:bg-matcha-soft [&>section>h2]:px-5 [&>section>h2]:py-3";
 
-function StatCard({ label, value, href }: { label: string; value: string; href?: string }) {
+function SectionCard({ id, title, children, flush = false }: { id: string; title: React.ReactNode; children: React.ReactNode; flush?: boolean }) {
   return (
-    <div className="border border-line rounded-sm bg-paper-raised px-4 py-3">
-      <p className="font-mono text-[0.65rem] tracking-[0.15em] uppercase text-ink-faint mb-1">
-        {label}
-      </p>
-      <p className="text-sm font-medium text-ink">
-        {href ? (
-          <Link href={href} className="text-matcha hover:text-forest underline decoration-line-strong underline-offset-2">
-            {value}
-          </Link>
-        ) : (
-          value
-        )}
-      </p>
-    </div>
+    <section aria-labelledby={id} className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised">
+      <h2 id={id} className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">
+        {title}
+      </h2>
+      {flush ? children : <div className="p-5">{children}</div>}
+    </section>
   );
 }
 
@@ -316,6 +308,12 @@ export default async function ProductDetailPage({
   }
   if (product.organic_certified === 1) stats.push({ label: t("prod.stat.cert"), value: t("prod.stat.organic") });
 
+  const facts: { label: string; value: string; href?: string }[] = [
+    { label: t("prod.stat.brand"), value: product.brand_name, href: `/brands/${encodeURIComponent(product.brand_name)}` },
+    ...stats,
+    ...(externalLink ? [{ label: t("prod.stat.sold"), value: externalLink.hostname }] : []),
+  ];
+
   const [relatedProducts, brandProducts] = await Promise.all([
     getRelatedProducts({ id: product.id, region: product.region, grade: product.grade }, 4),
     getBrandProducts(product.brand_name),
@@ -379,7 +377,8 @@ export default async function ProductDetailPage({
           we don't have real photography for any of these 714 products) plus
           title, price, and the primary action, in place of the old flat
           badge row. */}
-      <div className="mt-6 grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-start">
+      <div className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-7">
+      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-start">
         <div
           className="relative w-full aspect-[4/5] rounded-md border border-line-strong overflow-hidden flex flex-col items-center justify-center gap-4 p-8 text-center"
           style={{
@@ -496,15 +495,28 @@ export default async function ProductDetailPage({
             </a>
           )}
 
-          {stats.length > 0 && (
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mt-7">
-              {stats.map((s) => (
-                <StatCard key={s.label} label={s.label} value={s.value} href={s.href} />
-              ))}
-            </div>
-          )}
         </div>
       </div>
+      </div>
+
+      <SectionCard id="facts-h" title={t("prod.sec.facts")} flush>
+        <dl className="divide-y divide-line px-5">
+          {facts.map((r) => (
+            <div key={r.label} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-1 py-3.5">
+              <dt className="text-sm text-ink-faint">{r.label}</dt>
+              <dd className="text-ink leading-relaxed">
+                {r.href ? (
+                  <Link href={r.href} className="text-matcha underline decoration-line-strong underline-offset-2 hover:text-forest">
+                    {r.value}
+                  </Link>
+                ) : (
+                  r.value
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </SectionCard>
 
       {product.not_found === 1 && (
         <div className="mt-8 border border-red-300 dark:border-red-900 bg-red-50 dark:bg-red-950/40 p-4 text-sm text-red-800 dark:text-red-300">
@@ -513,8 +525,7 @@ export default async function ProductDetailPage({
       )}
 
       {insight && (
-        <section className="mt-12">
-          <SectionLabel>{t("prod.sec.context")}</SectionLabel>
+        <SectionCard id="context-h" title={t("prod.sec.context")}>
           <p className="text-ink-muted leading-relaxed max-w-2xl">{insight.sentences.join(" ")}</p>
           <p className="text-xs text-ink-faint mt-3 max-w-2xl">
             {t("prod.ctx.basis", { n: insight.basis })}{" "}
@@ -530,12 +541,11 @@ export default async function ProductDetailPage({
               {t("prod.ctx.how")}
             </Link>
           </p>
-        </section>
+        </SectionCard>
       )}
 
       {regionInfo && (
-        <section className="mt-12">
-          <SectionLabel>{t("prod.sec.sourcing")}</SectionLabel>
+        <SectionCard id="sourcing-h" title={t("prod.sec.sourcing")}>
           <div className="relative w-full max-w-md aspect-[8/5] rounded-sm overflow-hidden border border-line">
             <Image
               src={`/region-thumbnails/${product.region}.png`}
@@ -551,13 +561,12 @@ export default async function ProductDetailPage({
           <Link href="/map" className="text-sm text-matcha hover:text-forest transition-colors">
             {t("prod.map.full")} &rarr;
           </Link>
-        </section>
+        </SectionCard>
       )}
 
       {taste && (taste.chips.length > 0 || taste.rows.length > 0) && (
-        <section className="mt-12">
-          <SectionLabel>{t("prod.sec.tasting")}</SectionLabel>
-          <div className="rounded-sm border border-line bg-paper-raised p-5 sm:p-6">
+        <SectionCard id="tasting-h" title={t("prod.sec.tasting")}>
+          <div>
             {taste.chips.length > 0 && (
               <ul className="flex flex-wrap gap-2">
                 {taste.chips.map((c) => (
@@ -591,12 +600,11 @@ export default async function ProductDetailPage({
               </dl>
             )}
           </div>
-        </section>
+        </SectionCard>
       )}
 
       {hasCompounds && (
-        <section className="mt-12">
-          <SectionLabel>{t("prod.sec.composition")}</SectionLabel>
+        <SectionCard id="composition-h" title={t("prod.sec.composition")}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <CompoundCard
               label="L-theanine"
@@ -609,22 +617,19 @@ export default async function ProductDetailPage({
               note={egcgNote}
             />
           </div>
-        </section>
+        </SectionCard>
       )}
 
       {product.priceVariants.length > 0 && (
-        <section className="mt-12">
-          <SectionLabel>{t("prod.sec.pricing")}</SectionLabel>
-          <div className="flex flex-col gap-2">
+        <SectionCard id="pricing-h" title={t("prod.sec.pricing")} flush>
+          <div className="divide-y divide-line">
             {product.priceVariants.map((v) => {
               const { text, caution } = formatPriceVariant(v, { or: t("prod.var.or"), multi: t("prod.var.multi"), inferred: t("prod.var.inferred"), usd: t("prod.var.usd") });
               return (
                 <div
                   key={v.id}
-                  className={`border rounded-sm px-4 py-2.5 text-sm tabular-nums ${
-                    caution
-                      ? "border-amber-300 dark:border-amber-900 text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30"
-                      : "border-line bg-paper-raised text-ink"
+                  className={`px-5 py-3 text-sm tabular-nums ${
+                    caution ? "text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30" : "text-ink"
                   }`}
                 >
                   {text}
@@ -632,13 +637,12 @@ export default async function ProductDetailPage({
               );
             })}
           </div>
-        </section>
+        </SectionCard>
       )}
 
       {disclosedEntries.length > 0 && (
-        <section className="mt-12">
-          <SectionLabel>{t("prod.sec.details")}</SectionLabel>
-          <details className="group border border-line rounded-sm bg-paper-raised">
+        <SectionCard id="details-h" title={t("prod.sec.details")} flush>
+          <details className="group">
             <summary className="cursor-pointer select-none list-none px-4 py-3 text-sm text-ink-muted flex items-center justify-between">
               <span>
                 {t(disclosedEntries.length === 1 ? "prod.details.summary.one" : "prod.details.summary.other", { n: disclosedEntries.length })}
@@ -655,39 +659,43 @@ export default async function ProductDetailPage({
               ))}
             </dl>
           </details>
-        </section>
+        </SectionCard>
       )}
 
       {product.page_notes && (
-        <section className="mt-8">
-          <SectionLabel>{t("prod.sec.notes")}</SectionLabel>
+        <SectionCard id="notes-h" title={t("prod.sec.notes")}>
           <p className="text-sm text-ink-muted leading-relaxed">{product.page_notes}</p>
-        </section>
+        </SectionCard>
       )}
 
-      <ProductReviews productId={product.id} productName={product.product_name} />
-      <Comments targetType="product" targetKey={String(product.id)} subject={product.product_name} />
+      <div className={FRAMED}>
+        <ProductReviews productId={product.id} productName={product.product_name} />
+      </div>
+      <div className={FRAMED}>
+        <Comments targetType="product" targetKey={String(product.id)} subject={product.product_name} />
+      </div>
 
       {relatedProducts.length > 0 && (
-        <section className="mt-12">
-          <SectionLabel>
-            {product.region && product.grade
+        <SectionCard
+          id="related-h"
+          title={
+            product.region && product.grade
               ? t("prod.more.both", { grade: tv("grade", product.grade), region: tv("region", product.region) })
               : product.region
                 ? t("prod.more.region", { region: tv("region", product.region) })
-                : t("prod.more.grade", { grade: tv("grade", product.grade ?? "") })}
-          </SectionLabel>
+                : t("prod.more.grade", { grade: tv("grade", product.grade ?? "") })
+          }
+        >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {relatedProducts.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
             ))}
           </div>
-        </section>
+        </SectionCard>
       )}
 
       {moreFromBrand.length > 0 && (
-        <section className="mt-12">
-          <SectionLabel>{t("prod.more.brand", { brand: product.brand_name })}</SectionLabel>
+        <SectionCard id="brand-h" title={t("prod.more.brand", { brand: product.brand_name })}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {moreFromBrand.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
@@ -699,7 +707,7 @@ export default async function ProductDetailPage({
           >
             {t("prod.viewAll", { brand: product.brand_name })} &rarr;
           </Link>
-        </section>
+        </SectionCard>
       )}
 
     </main>
