@@ -37,6 +37,8 @@ export type Store = {
   listedBy?: string;
   brands: StoreBrand[];
   note?: string;
+  // The id comments and ratings were left under (a venue that moved from the café map to the stores map keeps them).
+  commentsFrom?: string;
   checked: string;
 };
 

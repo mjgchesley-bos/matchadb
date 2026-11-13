@@ -487,6 +487,11 @@ export function StoreFinder({
                   <a href={directionsUrl(s, lang)} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
                     {t("c.cf.directions")}
                   </a>
+                  {s.commentsFrom && (
+                    <Link href={`/stores/${s.id}`} className="font-medium text-matcha hover:text-forest">
+                      {t("c.st.page")}
+                    </Link>
+                  )}
                   {s.url && (
                     <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
                       {t("c.st.website")}
