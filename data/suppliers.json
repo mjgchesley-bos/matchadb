@@ -2606,6 +2606,28 @@
         "url": "https://www.europeanmatchasupplier.com/whitelabelling"
       }
     ],
-    "verified": "2026-11-13"
+    "verified": "2026-11-13",
+    "profile": {
+      "origins": [
+        "Japan (Kagoshima, Shizuoka and Uji)",
+        "China (Guizhou)"
+      ],
+      "products": [
+        "Matcha Gokō, Asahi x Gokō and Yabukita (Japan)",
+        "Matcha Supreme, Premium and Standard (China, Guizhou)",
+        "Private-label matcha"
+      ],
+      "organic": "Says its Japanese matcha is 100% organic and its Chinese matcha complies with EU organic standards (no certificate is shown on the site)",
+      "minimumOrder": "From 1 kg to tonnes, on request",
+      "samples": "10 g samples are available for each matcha",
+      "documentation": "Not stated on the site",
+      "certifications": [
+        "Says it meets EU food regulations (no certificate shown on the site)"
+      ],
+      "customers": "Businesses that want wholesale or private-label matcha",
+      "privateLabel": "Offers private-label (white-label) matcha sourced from Japan and distributed across the EU; see its White Labelling page",
+      "shipping": "Delivers to Spain, France, the United Kingdom, Italy and Germany; packed in its warehouse in Spain",
+      "pricing": "Quoted on request; the site recommends contacting them directly"
+    }
   }
 ]
