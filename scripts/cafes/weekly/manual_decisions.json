@@ -23655,14 +23655,14 @@
 "at": "2026-11-13"
 },
 "fsqf7de049": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: Bend Chamber: 601 NE 1st St Unit B is Big Ed's Artisan Bread (different business",
+"at": "2026-11-14"
 },
 "fsq0d73714": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: Cascade Business News: Be-Bop biscotti relocated to Redmond (1950 SW Badger Ave)",
+"at": "2026-11-14"
 },
 "1c6294ae8a": {
 "d": "KEEP",
@@ -31405,9 +31405,9 @@
 "at": "2026-11-12"
 },
 "2908ab2d05": {
-"d": "KEEP",
-"r": "second pass: Menu lists \u62b9\u8336 Fragola sweet item",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
 },
 "934c4b172e": {
 "d": "KEEP",
@@ -32495,9 +32495,9 @@
 "at": "2026-11-12"
 },
 "fsq766b2f7": {
-"d": "KEEP",
-"r": "second pass: Tea shop lists White Mulberry Matcha tea product",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
 },
 "ad3a3dfd91": {
 "d": "KEEP",
@@ -43672,6 +43672,211 @@
 "12109c5528": {
 "d": "REMOVE",
 "r": "Whole-database audit: chain variant name: ComeBuyTEA Seattle",
+"at": "2026-11-14"
+},
+"fsq4c96bfa": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"1c465d0878": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fe4d72390c": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"4e01f4fd70": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"8de20e8ead": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq5690c4d": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"e676e9bf32": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq5948ca8": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"271ae09781": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"3015219a22": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"ab4d4890a6": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"78b5e7cd1b": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"384e568d89": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"981d2b55d3": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"0713e086fd": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq9facef4": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fbd7b6df09": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"71de3ef2a0": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"801ec29c85": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"d64589b5ac": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"c2e2c1a2bf": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq51419d5": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"4f612e0d95": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"7863325f4a": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq5220127": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq8f65e49": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"632806d9b8": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"32fd270535": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"35425a75d8": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"d58b5011ba": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"07282205d6": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fd8e02b454": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq5ba376a": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"02c6fb7ccf": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsqc20ed7e": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"d9a89ef4c6": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"a4b0d95380": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq6a74c49": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"5aee4a1d96": {
+"d": "REMOVE",
+"r": "Whole-database audit: own site says this venue has closed",
+"at": "2026-11-14"
+},
+"fsq22c60a9": {
+"d": "REMOVE",
+"r": "Whole-database audit: Tabelog listing at \u6577\u5cf6\u753a241-15 labelled \u79fb\u8ee2 (relocated); branch now Botanical cafe ",
+"at": "2026-11-14"
+},
+"fsq4abecf6": {
+"d": "REMOVE",
+"r": "Whole-database audit: Airbnb listing for Boulder Coffee Cafe Pagosa Springs says 'permanently closed';",
 "at": "2026-11-14"
 }
 }
