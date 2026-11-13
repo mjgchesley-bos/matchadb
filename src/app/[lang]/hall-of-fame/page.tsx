@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import { PEOPLE, type Era } from "@/lib/matcha-people";
+import { PERSON_IMAGES, SECTION_IMAGES, type HofImage } from "@/lib/matcha-people-images";
 import { SITE_URL } from "@/lib/site";
 import { langOf } from "@/i18n/params";
 import { isLocale, type Locale } from "@/i18n/config";
@@ -18,6 +19,22 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 const ERAS: Era[] = ["china", "japan", "west"];
+
+// A picture with its caption and credit; every image is public domain or freely licensed.
+function Figure({ img, className = "" }: { img: HofImage; className?: string }) {
+  return (
+    <figure className={className}>
+      {/* eslint-disable-next-line @next/next/no-img-element -- fixed, pre-sized files in /public */}
+      <img src={img.src} width={img.w} height={img.h} alt={img.alt} loading="lazy" className="h-auto w-full rounded-sm border border-line bg-paper" />
+      <figcaption className="mt-1.5 text-xs leading-snug text-ink-faint">
+        {img.caption}.{" "}
+        <a href={img.page} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">
+          {img.credit}
+        </a>
+      </figcaption>
+    </figure>
+  );
+}
 
 export default async function HallOfFamePage({ params }: { params: Promise<{ lang: string }> }) {
   const lang = await langOf(params);
@@ -52,9 +69,13 @@ export default async function HallOfFamePage({ params }: { params: Promise<{ lan
           <section key={e} className="mt-12" aria-labelledby={`era-${e}`}>
             <h2 id={`era-${e}`} className="font-display text-2xl font-semibold text-ink">{eraLabel(e)}</h2>
             <p className="mt-1 text-sm text-ink-muted">{eraNote(e)}</p>
+            {SECTION_IMAGES[e] && <Figure img={SECTION_IMAGES[e]} className="mt-5 max-w-xl" />}
             <div className="mt-6 flex flex-col gap-6">
               {list.map((p) => (
                 <article key={p.slug} id={p.slug} className="scroll-mt-24 rounded-sm border border-line bg-paper-raised p-5 sm:p-6">
+                  <div className={(PERSON_IMAGES[p.slug] ?? []).length ? "sm:grid sm:grid-cols-[13rem_1fr] sm:gap-6" : ""}>
+                  {(PERSON_IMAGES[p.slug] ?? [])[0] && <Figure img={PERSON_IMAGES[p.slug][0]} className="mb-4 max-w-[13rem] sm:mb-0" />}
+                  <div>
                   <header>
                     <h3 className="font-display text-xl sm:text-2xl font-semibold text-ink">
                       {p.name}
@@ -82,6 +103,15 @@ export default async function HallOfFamePage({ params }: { params: Promise<{ lan
                       </span>
                     ))}
                   </p>
+                  {(PERSON_IMAGES[p.slug] ?? []).length > 1 && (
+                    <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                      {PERSON_IMAGES[p.slug].slice(1).map((img) => (
+                        <Figure key={img.src} img={img} />
+                      ))}
+                    </div>
+                  )}
+                  </div>
+                  </div>
                 </article>
               ))}
             </div>
