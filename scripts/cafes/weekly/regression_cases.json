@@ -222,6 +222,34 @@
    "name": "Lucy and Jane",
    "city": "Boston",
    "why": "retail brand (Boston audit)"
+  },
+  {
+   "name": "Czas na Herbat",
+   "why": "chain tea shops, 50+ outlets (Poland audit)"
+  },
+  {
+   "name": "Lody Bosko",
+   "why": "ice-cream chain, dessert only (Poland audit)"
+  },
+  {
+   "name": "Karmello",
+   "why": "chocolate chain (Poland audit)"
+  },
+  {
+   "name": "BuBu Tea",
+   "why": "bubble-tea franchise, 40+ outlets (Poland audit)"
+  },
+  {
+   "name": "Herbaty Świata",
+   "why": "tea importer retail (Poland audit)"
+  },
+  {
+   "name": "Manufaktura Herbaty",
+   "why": "tea retail (Poland audit)"
+  },
+  {
+   "host": "thewhitebearcoffee.pl",
+   "why": "White Bear Coffee: no matcha on own menu, borderline chain (Poland audit)"
   }
  ]
 }

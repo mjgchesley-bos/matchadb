@@ -27986,23 +27986,23 @@
 },
 "fsq6908d98": {
 "d": "KEEP",
-"r": "name-only web check: Matcha Bar CAME at Marii Sklodowskiej-Curie 8 Bialystok, per Instagram",
-"at": "2026-11-12"
+"r": "Poland audit: Matcha latte and matcha na zimno served on site - camematcha.pl (Marii",
+"at": "2026-11-14"
 },
 "c9fb99939b": {
-"d": "KEEP",
-"r": "name-only web check: Chodziez restaurant listing names matcha drinks; Mostowa 2C confirmed",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Name says Matcha Drinki but unverified. No own menu or open status found",
+"at": "2026-11-14"
 },
 "fsq688c8da": {
-"d": "KEEP",
-"r": "name-only web check: Eklerownia x Matcha at Wajdeloty 2 Gdansk, matcha and hojicha drinks",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Dessert shop. Name matches Lokal Eklerownia x Matcha, but no matcha drink. Wajde",
+"at": "2026-11-14"
 },
 "fsq69dbcc8": {
-"d": "KEEP",
-"r": "name-only web check: Moya Matcha Gdansk at Piwna 59/60, matcha latte menu confirmed",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own menu PDF 404; .eu site rate-limited. Matcha drinks not confirmed on ",
+"at": "2026-11-14"
 },
 "fsq68d66bf": {
 "d": "REMOVE",
@@ -28010,29 +28010,29 @@
 "at": "2026-11-12"
 },
 "c3d189b1fa": {
-"d": "KEEP",
-"r": "name-only web check: Matcha 4YOU on Sienkiewicza Kielce, matcha and slushie drinks per Facebook",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Cannot verify open status, menu or address",
+"at": "2026-11-14"
 },
 "fsq68fcab8": {
-"d": "KEEP",
-"r": "name-only web check: Ayko Matcha Bar at Wegierska 12 Krakow, matcha bar confirmed",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: No hours on site, city not stated on page. Could not check drink menu, s",
+"at": "2026-11-14"
 },
 "fsq69d12ac": {
-"d": "KEEP",
-"r": "name-only web check: The Locals Coffee and Matcha at Krasickiego 8, matcha to-go listed",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Cannot verify open status or matcha drink; no URL. Find a source before ",
+"at": "2026-11-14"
 },
 "fsq686033a": {
-"d": "KEEP",
-"r": "name-only web check: Hiru to Yoru matcha bar by day at Miodowa 32 Krakow, confirmed",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Could not confirm open or matcha drink; no site, no listing hits. Verify",
+"at": "2026-11-14"
 },
 "fsq698e39f": {
-"d": "KEEP",
-"r": "name-only web check: Kyoei Sanraku Matcha House, newly opened, at Swiety Marcin 41 Poznan",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: No website and no address on listing; search finds no 'Kyoei Sanraku Mat",
+"at": "2026-11-14"
 },
 "fsq5c9796b": {
 "d": "REMOVE",
@@ -28040,14 +28040,14 @@
 "at": "2026-11-12"
 },
 "fsq69d79b9": {
-"d": "KEEP",
-"r": "name-only web check: Too Matcha bar at Stary Rynek 6 Poznan, open per Facebook listing",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site toomatcha.net returns 404. FB snapshot says Closed now. Need ow",
+"at": "2026-11-14"
 },
 "fsq6a59009": {
-"d": "KEEP",
-"r": "name-only web check: Grande and Matcha at Kopernika 28 Torun (Hotel Nicolaus), matcha drinks",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Homepage shows no matcha; menu subpages 404 (grande-coffee.pl). Listing ",
+"at": "2026-11-14"
 },
 "fsq6a6618e": {
 "d": "REMOVE",
@@ -28055,34 +28055,34 @@
 "at": "2026-11-12"
 },
 "fsq687fc55": {
-"d": "KEEP",
-"r": "name-only web check: Matcha N Hype drink bar at Wilcza 19 Warsaw, open daily 11 to 19",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Matcha bar at Wilcza 19, 00-544 Warszawa; daily hours listed; drink list",
+"at": "2026-11-14"
 },
 "fsq69a0841": {
-"d": "KEEP",
-"r": "name-only web check: Dose Matcha and Coffee Bar at Krochmalna 54/U5 Warsaw, listed open",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Cannot verify open status or matcha drink.",
+"at": "2026-11-14"
 },
 "fsq6918bd5": {
-"d": "KEEP",
-"r": "name-only web check: Match Matcha mall outlet at Westfield Arkadia Warsaw, matcha on Uber Eats",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: No address on listing; need own menu and outlet count to confirm.",
+"at": "2026-11-14"
 },
 "fsq68dd6d3": {
-"d": "KEEP",
-"r": "name-only web check: Matcha Spot at Zgoda 3/5 Warsaw, confirmed on Wolt delivery listing",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: No website. Zgoda 3 has Macarons Store (matcha on Wolt), a different bus",
+"at": "2026-11-14"
 },
 "fsq68de79e": {
-"d": "KEEP",
-"r": "name-only web check: MatchaUP matcha bar at Skolimowska 4 Warsaw, open daily per Instagram",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Skolimowska not found; listing address incomplete (4 Skolimowska). Could",
+"at": "2026-11-14"
 },
 "fsq683c23f": {
-"d": "KEEP",
-"r": "name-only web check: Matcha cafe at Wilcza 43 confirmed by press review and Instagram, open daily 9-1",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Wilcza 43 address unconfirmed; venue site not reachable.",
+"at": "2026-11-14"
 },
 "fsq693c18f": {
 "d": "REMOVE",
@@ -28090,44 +28090,44 @@
 "at": "2026-11-12"
 },
 "fsq6a0241c": {
-"d": "KEEP",
-"r": "name-only web check: Matcha bar at Nowy Swiat 66; own site and Uber Eats menu list matcha",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site shows only a cookie banner: no menu, hours or address. Could not ve",
+"at": "2026-11-14"
 },
 "fsq69f31c3": {
-"d": "KEEP",
-"r": "name-only web check: Matcha tea house at Zelazna 27 per Instagram and Facebook; map had no address",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: No URL, no address, not found in web search. Cannot verify it exists or serves m",
+"at": "2026-11-14"
 },
 "ec4b0d3f4d": {
-"d": "KEEP",
-"r": "name-only web check: Wypiekamy bakery-cafe at Mila 1; Instagram posts show matcha drinks on menu",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Dessert shop, no website, no matcha drink found in any source. Cannot verify",
+"at": "2026-11-14"
 },
 "fsq68a9c2f": {
-"d": "KEEP",
-"r": "name-only web check: Coffee and matcha bar at Leszczynska 1A, daily hours, reviewed by Corner",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: No URL. Matcha bar (DOT. Coffee). Sources conflict: Leszczynska 1A vs Wi",
+"at": "2026-11-14"
 },
 "fsq6a023d8": {
-"d": "KEEP",
-"r": "name-only web check: Matcha shop in Galeria Wilenska at Targowa 72, Westfield listing confirms",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: no web presence at this address",
+"at": "2026-11-14"
 },
 "fsq6a023a3": {
-"d": "KEEP",
-"r": "name-only web check: Match Matcha at G City Promenada, Ostrobramska 75C; Wolt menu and tenant page",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: no web presence at this address",
+"at": "2026-11-14"
 },
 "fsq6a1c122": {
-"d": "KEEP",
-"r": "name-only web check: Matcha and ice cream shop at Freta 34/36 per Instagram and Corner",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: No web presence found for this venue or address. Cannot verify it exists",
+"at": "2026-11-14"
 },
 "fsq6a9583d": {
-"d": "KEEP",
-"r": "name-only web check: Matcha cafe at Widok 16 (map said 11); Instagram confirms address and matcha",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Address '11 Widok' is not a usable street address. Cannot verify it exis",
+"at": "2026-11-14"
 },
 "fsq683ca51": {
 "d": "REMOVE",
@@ -28135,54 +28135,54 @@
 "at": "2026-11-12"
 },
 "fsq6a67858": {
-"d": "KEEP",
-"r": "name-only web check: Ocha Matcha cafe at Chmielna 11 (map said 14); menu listed on Tastetown",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Cannot load own site and no third-party listing found. Cannot verify it ",
+"at": "2026-11-14"
 },
 "fsq6a82e27": {
-"d": "KEEP",
-"r": "name-only web check: Oromatcha matcha bar at Szeroki Dunaj 11; own site and Instagram confirm",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Cannot load own site. Street Szeroki Dunaj not found in Warsaw; address ",
+"at": "2026-11-14"
 },
 "fsq6a79a33": {
-"d": "KEEP",
-"r": "name-only web check: Perfect Matcha cafe at Hlonda 2, Wilanow; listed by Warsaw cafe guide",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Address '2 Prymasa Augusta Hlonda' not verified. Cannot verify it exists",
+"at": "2026-11-14"
 },
 "4b3adfacae": {
-"d": "KEEP",
-"r": "name-only web check: Ice cream and coffee shop at Dembowskiego 55 with matcha, per Instagram",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Ice cream shop, no URL, no source for address or matcha drink. Cannot verify",
+"at": "2026-11-14"
 },
 "fsq68df837": {
 "d": "KEEP",
-"r": "name-only web check: Brunch and ceremonial matcha cafe; own site gives Ofiar Oswiecimskich 36",
-"at": "2026-11-12"
+"r": "Poland audit: organic.wroclaw.pl: menu heading loads with no items; matcha only in g",
+"at": "2026-11-14"
 },
 "fsq6883c34": {
-"d": "KEEP",
-"r": "name-only web check: Matcha cafe in Galeria Wroclavia; a small outlet chain, under 25 stores",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Open at Wroclavia per site; matcha drink not named explicitly; listing a",
+"at": "2026-11-14"
 },
 "fsq69f9f0f": {
-"d": "KEEP",
-"r": "name-only web check: Matcha and coffee cafe at Biskupia 4A, open daily 9-20 per Facebook",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Could not verify open status or menu; tried one search only.",
+"at": "2026-11-14"
 },
 "fsq67e1773": {
-"d": "KEEP",
-"r": "name-only web check: Yamamoto Matcha stand in Pasaz Grunwaldzki serving matcha drinks",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Takeaway stand in Pasa\u017c Grunwaldzki; hours and open status not confirmed",
+"at": "2026-11-14"
 },
 "fsq6a7a49c": {
-"d": "KEEP",
-"r": "name-only web check: Pastry and coffee cafe at Pod Filarami 1; Instagram bio lists matcha",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Could not verify it is open or what it serves. Pod Filarami 1 not found;",
+"at": "2026-11-14"
 },
 "fsq6a9583e": {
-"d": "KEEP",
-"r": "name-only web check: Matcha tea room at Dolnych Mlynow 3, Krakow; Instagram lists hours and matcha",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Dolnych M\u0142yn\u00f3w 3 is HQ (Siedziba), not a cafe. City field is in Cyrillic.",
+"at": "2026-11-14"
 },
 "fsq5323439": {
 "d": "REMOVE",
@@ -29900,9 +29900,9 @@
 "at": "2026-11-12"
 },
 "fsq51ffaee": {
-"d": "KEEP",
-"r": "second pass: Bubble tea menu flavours and teas include matcha",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: bubblemania.cz is a Czech business (delivery across Czech Republic); no Polish o",
+"at": "2026-11-14"
 },
 "718b359ac8": {
 "d": "REMOVE",
@@ -33130,24 +33130,24 @@
 "at": "2026-11-12"
 },
 "fsqbee4254": {
-"d": "KEEP",
-"r": "second pass: Tea shop matcha category; also retails to consumers",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Herba-Ta: tea and coffee wholesaler/online shop, no drink menu. Duplicate of fsq",
+"at": "2026-11-14"
 },
 "fsqe8a2200": {
-"d": "KEEP",
-"r": "second pass: Tea shop matcha category; also retails to consumers",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Herba-Ta hurtownia: wholesaler, retail only, no drink menu. Duplicate of fsqbee4",
+"at": "2026-11-14"
 },
 "800171e233": {
-"d": "KEEP",
-"r": "second pass: Cafe offers matcha in workshop packages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: NOMO Food & Wine, \u015aluzowa 21A matches. Menus are PDFs not readable; no m",
+"at": "2026-11-14"
 },
 "5d3fda6a13": {
-"d": "KEEP",
-"r": "second pass: Bakery news promotes its own Moya Matcha tea",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Matcha Moment is a news post with no drink listed. Rajska 8 Gda\u0144sk not on site.",
+"at": "2026-11-14"
 },
 "473747949d": {
 "d": "REMOVE",
@@ -33170,29 +33170,29 @@
 "at": "2026-11-12"
 },
 "fsq621f77b": {
-"d": "KEEP",
-"r": "name-only web check: Moya Matcha Oleandrow Warsaw, listed on the chain's own site",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Moya Matcha has 2 outlets (Warsaw, Gdansk), not chain. Drink not confirm",
+"at": "2026-11-14"
 },
 "fsq50df8f1": {
-"d": "KEEP",
-"r": "name-only web check: Moya Matcha bar and tea room at Oleandrow 6; Karlowicza 9A is company office",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Warsaw bar address on own site is Oleandrow 6, not Karlowicza 9A (produc",
+"at": "2026-11-14"
 },
 "5de3e1de07": {
-"d": "KEEP",
-"r": "second pass: Sells Matcha GenMaiCha tea as new product",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Domain now belongs to Piag Tea online tea shop; no caf\u00e9 evidence for Gnie\u017anie\u0144sk",
+"at": "2026-11-14"
 },
 "b74e4ffe7a": {
-"d": "KEEP",
-"r": "name-only web check: Mochi donut shop at Piotrkowska 146 with matcha drinks, Uber Eats menu",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Site address is Morelowa 1, Dobrcz, not Piotrkowska 146. Mad Mochi at Piotrkowsk",
+"at": "2026-11-14"
 },
 "e7ece25104": {
-"d": "KEEP",
-"r": "second pass: Matcha chocolate flavour in product filter",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Poland audit: Retail only, no cafe on site.",
+"at": "2026-11-14"
 },
 "7533e23131": {
 "d": "REMOVE",
@@ -38168,5 +38168,2240 @@
 "d": "REMOVE",
 "r": "Boston audit: Taiyaki NYC: matcha is only an ice-cream flavor, not a drink; multi-outlet chain",
 "at": "2026-11-13"
+},
+"fsq53ce7db": {
+"d": "REMOVE",
+"r": "Poland audit: Website boboq.pl redirects to bubbletea-sklep.pl, an online wholesaler; no Polis",
+"at": "2026-11-14"
+},
+"fsq53663ca": {
+"d": "REMOVE",
+"r": "Poland audit: Five o'clock: retail tea shop chain (Westfield/SFERA stores); matcha only as pac",
+"at": "2026-11-14"
+},
+"fsq7da125e": {
+"d": "REMOVE",
+"r": "Poland audit: slodkakafiteria.pl: cakes and catering only; sernik matcha is cake, no matcha dr",
+"at": "2026-11-14"
+},
+"fsqe223cfa": {
+"d": "REMOVE",
+"r": "Poland audit: giolli.pl is a cosmetics and chemicals importer (Lubo\u0144), not a venue. Matcha is ",
+"at": "2026-11-14"
+},
+"e677af4a2f": {
+"d": "REMOVE",
+"r": "Poland audit: coffeelove.pl is an online coffee and tea shop; no caf\u00e9 on site, retail matcha o",
+"at": "2026-11-14"
+},
+"eba30bb0e5": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: kawazpianka.pl returned only a verification interstitial on all pages; m",
+"at": "2026-11-14"
+},
+"03b2347570": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of e677af4a2f (coffeelove.pl, online shop, retail only).",
+"at": "2026-11-14"
+},
+"1f7f7da35d": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of e677af4a2f (coffeelove.pl, online shop, retail only).",
+"at": "2026-11-14"
+},
+"63d1cc5296": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte 25 z\u0142, Matcha latte line on own menu - projektowana.cafe/",
+"at": "2026-11-14"
+},
+"fsqe122011": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of cc3f9244d0 (Maison du cafe, same address Kili\u0144skiego 10, same maiso",
+"at": "2026-11-14"
+},
+"45a9024c7e": {
+"d": "KEEP",
+"r": "Poland audit: Matcha section: matcha latte 26-30 z\u0142, Matcha smoothies - akcentkawiar",
+"at": "2026-11-14"
+},
+"cc3f9244d0": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte 0,2L 20z\u0142 / 0,45L 26z\u0142 under kawy mleczne - maisonducafe.",
+"at": "2026-11-14"
+},
+"bacfbd859f": {
+"d": "KEEP",
+"r": "Poland audit: Matcha na gor\u0105co: Matcha Latte 21, Cynamonowa 24 - niezleziolko.cafe/m",
+"at": "2026-11-14"
+},
+"70e57fe13e": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"0e393fd0af": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"e934ed2ff2": {
+"d": "REMOVE",
+"r": "Poland audit: cremino.pl: bakery and deli, no matcha drink on its menu; Matcha Bros is a deli ",
+"at": "2026-11-14"
+},
+"3704fae2f3": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte 18 z\u0142, Ice Matcha 18 z\u0142, Ice Matcha Latte malinowa 23 z\u0142 ",
+"at": "2026-11-14"
+},
+"ce8bf75006": {
+"d": "REMOVE",
+"r": "Poland audit: herbatykawa.pl: retail tea shop (Sklep), no tea room or drink menu. Matcha only ",
+"at": "2026-11-14"
+},
+"fe3acf5f27": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte 200 ml 19 z\u0142, Matcha 50 ml 16 z\u0142 on own menu - monobistro",
+"at": "2026-11-14"
+},
+"7fc89d44a0": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte 12 z\u0142, Ice matcha 12 z\u0142 - shameku.pl (own site menu)",
+"at": "2026-11-14"
+},
+"a1c752ff60": {
+"d": "KEEP",
+"r": "Poland audit: ICE MATCHA 0,4L 30 z\u0142 (lavender, lychee, mango, strawberry) - ramenyoi",
+"at": "2026-11-14"
+},
+"fsq4c7658e": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Same business as f49b636bd0 (Cukiernia Jarzyna + Kawiarnia). Site lists ",
+"at": "2026-11-14"
+},
+"f49b636bd0": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Grodziska 3A Brwin\u00f3w matches site. Cukiernia with Kawiarnia; matcha drin",
+"at": "2026-11-14"
+},
+"83afea2338": {
+"d": "KEEP",
+"r": "Poland audit: Menu: Matcha latte 23 z\u0142, Matcha lotus 24 z\u0142, Matcha tonic 27 z\u0142 (tuli",
+"at": "2026-11-14"
+},
+"451071c8c9": {
+"d": "REMOVE",
+"r": "Poland audit: Gelato wholesaler; matcha is a sorbet only, no matcha drink on menu.",
+"at": "2026-11-14"
+},
+"361c5c596b": {
+"d": "KEEP",
+"r": "Poland audit: Menu: Matcha 16,00 PLN, Matcha Latte 18,00 PLN (herbaciarnia-asia.pl)",
+"at": "2026-11-14"
+},
+"fbaab8cfbc": {
+"d": "REMOVE",
+"r": "Poland audit: Stored Yoko matcha snippet not found on the venue's own site or in search.",
+"at": "2026-11-14"
+},
+"ebdd0b2c14": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: No menu, hours or address readable; web search found nothing for W Lufci",
+"at": "2026-11-14"
+},
+"fsq6a7a499": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of 25a501f931 (Kofeina Mood, ul. Webera 2, Bytom). Keep 25a501f931 onl",
+"at": "2026-11-14"
+},
+"25a501f931": {
+"d": "KEEP",
+"r": "Poland audit: Menu: Matcha latte 14/16 z\u0142, Ice matcha latte 16 z\u0142 (kofeinamood.pl/me",
+"at": "2026-11-14"
+},
+"4557d810c6": {
+"d": "REMOVE",
+"r": "Poland audit: Retail-only tea shop. Company address is Pi\u0142a; no Chodzie\u017c outlet on site.",
+"at": "2026-11-14"
+},
+"a2d68c1f5f": {
+"d": "REMOVE",
+"r": "Poland audit: Roastery only, no caf\u00e9 drinks. Address S\u0119pole\u0144ska 24b matches.",
+"at": "2026-11-14"
+},
+"a3d5ccf10b": {
+"d": "KEEP",
+"r": "Poland audit: Banner: Kawa Carraro i matcha, nowe menu (cukierniamelba.pl); menu pag",
+"at": "2026-11-14"
+},
+"f2c7d286b1": {
+"d": "REMOVE",
+"r": "Poland audit: Retail-only, same site as 4557d810c6. No served matcha, no Ciechocinek location ",
+"at": "2026-11-14"
+},
+"d4ef6a7cb2": {
+"d": "REMOVE",
+"r": "Poland audit: No matcha drink found on own menu. Address Zamkowa 3B matches.",
+"at": "2026-11-14"
+},
+"6ae8b5468a": {
+"d": "KEEP",
+"r": "Poland audit: Napoje: Matcha Latte (mleko krowie) 18,00 z\u0142, Matcha Latte (mleko owsi",
+"at": "2026-11-14"
+},
+"d27cb2630f": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery/cake workshop, online. No drink menu. Address not shown on site.",
+"at": "2026-11-14"
+},
+"1bf9ab2a5f": {
+"d": "KEEP",
+"r": "Poland audit: Menu: Matcha latte 18 z\u0142, Matcha 20 z\u0142 (alleciacho.pl)",
+"at": "2026-11-14"
+},
+"a22a4385f0": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"58eec25a7a": {
+"d": "REMOVE",
+"r": "Poland audit: Chocolate shop. Chmielna 72 not on site. Matcha - truskawka is a chocolate produ",
+"at": "2026-11-14"
+},
+"5d858a5a6a": {
+"d": "KEEP",
+"r": "Poland audit: Menu: Matcha na zimno / Matcha na ciep\u0142o, Iced matcha latte 250 ml (be",
+"at": "2026-11-14"
+},
+"fsqd3d16fb": {
+"d": "REMOVE",
+"r": "Poland audit: Tea shop. No matcha drink found. Grunwaldzka 141 address not confirmed in search",
+"at": "2026-11-14"
+},
+"4597aa5faf": {
+"d": "REMOVE",
+"r": "Poland audit: Cookie shop, not a matcha drink venue. Address Subis\u0142awa 27C/6 matches.",
+"at": "2026-11-14"
+},
+"10c38e8a83": {
+"d": "REMOVE",
+"r": "Poland audit: Franchise supplier site. Galeria Morena outlet not listed. Possible chain. No se",
+"at": "2026-11-14"
+},
+"fsq8f828a9": {
+"d": "REMOVE",
+"r": "Poland audit: Retail-only. Site shows Rajska 10, not Krzemowa 1; site in preview mode.",
+"at": "2026-11-14"
+},
+"6aca340c8d": {
+"d": "KEEP",
+"r": "Poland audit: Menu item: Latte Matcha, organic matcha with milk (greenbubble.pl); pr",
+"at": "2026-11-14"
+},
+"1245d6fdc4": {
+"d": "KEEP",
+"r": "Poland audit: Menu Matcha: Matcha latte 22 z\u0142, Truskawka 24 z\u0142 (pikawa.pl/kawiarnia-",
+"at": "2026-11-14"
+},
+"75d51edffe": {
+"d": "KEEP",
+"r": "Poland audit: matcha smoothies on own menu: 'STRAWBERRY matcha, nap\u00f3j owsiany' etc. ",
+"at": "2026-11-14"
+},
+"fsq4b9b5be": {
+"d": "KEEP",
+"r": "Poland audit: no matcha drink found on pikawa.pl pages (menu link not loaded)",
+"at": "2026-11-14"
+},
+"fsq4e76075": {
+"d": "REMOVE",
+"r": "Poland audit: Open (Garbary 6). Dessert only, no matcha drink",
+"at": "2026-11-14"
+},
+"9d846ad2a0": {
+"d": "REMOVE",
+"r": "Poland audit: Retail site, no drinks served on premises",
+"at": "2026-11-14"
+},
+"62a67c60e0": {
+"d": "REMOVE",
+"r": "Poland audit: Roastery and online shop; no cafe drink menu found",
+"at": "2026-11-14"
+},
+"57239614d7": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Hours listed, open; drinks menu not readable, could not confirm a matcha",
+"at": "2026-11-14"
+},
+"d790324bca": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Could not load site; address not confirmed by any source",
+"at": "2026-11-14"
+},
+"547a322342": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Tea room per listing; could not load menu or hours",
+"at": "2026-11-14"
+},
+"89605c220f": {
+"d": "KEEP",
+"r": "Poland audit: 'Ice Matcha Latte - 18 z\u0142', 'Ice Matcha Latte truskawkowa - 20 z\u0142' (bl",
+"at": "2026-11-14"
+},
+"b82e755ff4": {
+"d": "REMOVE",
+"r": "Poland audit: No physical venue or drinks found",
+"at": "2026-11-14"
+},
+"b382b39f7f": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Open status and Nadbrze\u017cna Nisze 29 address not confirmed on site",
+"at": "2026-11-14"
+},
+"438ecc3636": {
+"d": "REMOVE",
+"r": "Poland audit: Site shows shop closed; matcha only as product category",
+"at": "2026-11-14"
+},
+"1da8925b13": {
+"d": "KEEP",
+"r": "Poland audit: 'Zielona, wiosenna energia - matcha w Capuccino Cafe' own news post (c",
+"at": "2026-11-14"
+},
+"d81b5777fa": {
+"d": "REMOVE",
+"r": "Poland audit: Online roastery shop; no served matcha; address differs in footer",
+"at": "2026-11-14"
+},
+"79ff8d38fe": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"73f0881713": {
+"d": "REMOVE",
+"r": "Poland audit: Retail online shop, drinks not served on premises",
+"at": "2026-11-14"
+},
+"fsq5852d0e": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of fadb9ce4c4 (same site); Korfantego 6 address not on site",
+"at": "2026-11-14"
+},
+"fadb9ce4c4": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha Latte 20', 'Zimna Matcha (iced matcha latte) 21' (kawiarniabez",
+"at": "2026-11-14"
+},
+"f47fa4067c": {
+"d": "KEEP",
+"r": "Poland audit: blackskycoffee.pl loads title only ('Kawa specialty i matcha'); no men",
+"at": "2026-11-14"
+},
+"fsq5667218": {
+"d": "REMOVE",
+"r": "Poland audit: Chain (multi-store, malls); outlet count not confirmed; retail not drink",
+"at": "2026-11-14"
+},
+"bcd1c07756": {
+"d": "KEEP",
+"r": "Poland audit: 'PUMPKIN SPICE MATCHA LATTE' on Lajkonik menu (lajkonik-pik.pl/shop/sk",
+"at": "2026-11-14"
+},
+"99cefc2af7": {
+"d": "KEEP",
+"r": "Poland audit: 'PUMPKIN SPICE MATCHA LATTE' on Lajkonik menu (lajkonik-pik.pl)",
+"at": "2026-11-14"
+},
+"d35b028459": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha Latte - 250 ml - 21 z\u0142', 'Iced matcha latte - 270 ml - 21 z\u0142' ",
+"at": "2026-11-14"
+},
+"1a4ebd59b1": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha Latte 21' in tea section (misterna.pwjm.pl/?page_id=2)",
+"at": "2026-11-14"
+},
+"5bb2077f92": {
+"d": "KEEP",
+"r": "Poland audit: matcha drinks 'Klasyczna 20 z\u0142', 'Truskawkowa 26 z\u0142', 'Mango 26 z\u0142' (s",
+"at": "2026-11-14"
+},
+"b5a16051b5": {
+"d": "KEEP",
+"r": "Poland audit: 'MATCHA LATTE PLN 18.00' (ekspresjacoffe.eu/menu/)",
+"at": "2026-11-14"
+},
+"d82fbf90b0": {
+"d": "REMOVE",
+"r": "Poland audit: No physical cafe with matcha drink found; no address on site",
+"at": "2026-11-14"
+},
+"5514872c0b": {
+"d": "REMOVE",
+"r": "Poland audit: No matcha drink found on own site after checking menu. Hours listed, so open. Tw",
+"at": "2026-11-14"
+},
+"4189a78a53": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate brand site of ColbergCoffee; site lists only Dubois 21A, not Jana Szym",
+"at": "2026-11-14"
+},
+"a5ac69f432": {
+"d": "KEEP",
+"r": "Poland audit: arka-mega.pl Eleven Cafe page: menu link only; menu fetched without an",
+"at": "2026-11-14"
+},
+"e5b0759c0b": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Matcha and hours on own site; address Gielda 8C/5 matches. Five o'clock ",
+"at": "2026-11-14"
+},
+"fsq5568682": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Kolobrzeg looks like a pickup point, not a cafe; Mazowiecka 24 not confi",
+"at": "2026-11-14"
+},
+"07a0bec343": {
+"d": "KEEP",
+"r": "Poland audit: lajkonik-pik.pl/menu: seasonal 'MATCHA LATTE' and 'DYNIOWA MATCHA LATT",
+"at": "2026-11-14"
+},
+"fsqbfc73c0": {
+"d": "REMOVE",
+"r": "Poland audit: Venue domain now belongs to another business. No Arka S.C. or Kapelanka 56 on si",
+"at": "2026-11-14"
+},
+"57540ce8ce": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Address mismatch: directories give Dajwor 3, 31-052 (not own site). Own ",
+"at": "2026-11-14"
+},
+"6b1fb17df7": {
+"d": "KEEP",
+"r": "Poland audit: ambalaz.pl menu: Matcha Latte 24 zl and Iced Matcha Latte 25 zl (Raspb",
+"at": "2026-11-14"
+},
+"46f41b644e": {
+"d": "KEEP",
+"r": "Poland audit: aurostudio.pl/kawiarnia: 'autorskie napoje z matcha' on menu (own site",
+"at": "2026-11-14"
+},
+"aa98e457eb": {
+"d": "KEEP",
+"r": "Poland audit: blossom.cafe: only image caption 'Cozy matcha'. Full menu is a PDF (bl",
+"at": "2026-11-14"
+},
+"821821e440": {
+"d": "KEEP",
+"r": "Poland audit: briocafe.pl: 'matcha latte' item on site (photo caption, 16 zl); store",
+"at": "2026-11-14"
+},
+"1e46c9e807": {
+"d": "KEEP",
+"r": "Poland audit: Belmont.cafe menu: Matcha Latte 20 zl, Ice Matcha Latte 22 zl, Ice Mat",
+"at": "2026-11-14"
+},
+"e57b8b3c1a": {
+"d": "KEEP",
+"r": "Poland audit: cakestercafe.pl/menu: 'Herbata i matcha' section: Matcha latte 22 zl, ",
+"at": "2026-11-14"
+},
+"f99e248f00": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Matcha seen only as sweets (Mis Matcha praline) in stored data. Address ",
+"at": "2026-11-14"
+},
+"67870eda59": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Only matcha on known pages is Mazurek Matcha (cake). Could not reach dri",
+"at": "2026-11-14"
+},
+"d246da7009": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Ambiguous: milk add-on implies matcha is made, but no matcha drink on me",
+"at": "2026-11-14"
+},
+"e63556b3d2": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Address Dietla 50, 31-039 matches. Duplicate of db7e273ae4 (same Dietla ",
+"at": "2026-11-14"
+},
+"db7e273ae4": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Duplicate-of e63556b3d2 (same venue, Dietla 50). Remove one of the two e",
+"at": "2026-11-14"
+},
+"220331d08f": {
+"d": "KEEP",
+"r": "Poland audit: destinokrakow.pl/menu-sniadaniowe/: Ice Matcha Latte 250 ml 22 zl and ",
+"at": "2026-11-14"
+},
+"1379ea99fb": {
+"d": "REMOVE",
+"r": "Poland audit: Retail-only, no matcha drink served on own site",
+"at": "2026-11-14"
+},
+"a481d9aa94": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop, no matcha drink. Multi-city chain (Warsaw, Wroclaw, Poznan)",
+"at": "2026-11-14"
+},
+"2d9a9c238d": {
+"d": "REMOVE",
+"r": "Poland audit: Retail-only tea importer. Address Swietego Jana 24 not on site",
+"at": "2026-11-14"
+},
+"5f302525b9": {
+"d": "REMOVE",
+"r": "Poland audit: No Krakow showroom or cafe found; address blank in our listing. Retail matcha on",
+"at": "2026-11-14"
+},
+"fsq5ac21d9": {
+"d": "KEEP",
+"r": "Poland audit: kukutaiwan.pl: menu not loaded (Bubble Tea category link only). Matcha",
+"at": "2026-11-14"
+},
+"c6a9d2e1d4": {
+"d": "REMOVE",
+"r": "Poland audit: Dessert-only (cake) and address not on site. Matcha drink not found",
+"at": "2026-11-14"
+},
+"7712d847ee": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site shows no Przemyslowa 4 or hours; menu not found on homepage. Could ",
+"at": "2026-11-14"
+},
+"737c0a1276": {
+"d": "REMOVE",
+"r": "Poland audit: No matcha drink on own site; retail only. Knitted Coffee has ~4 Krak\u00f3w sites; sh",
+"at": "2026-11-14"
+},
+"a6211344a4": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate site of 737c0a1276; no matcha drink found on own site",
+"at": "2026-11-14"
+},
+"012d3ab4cf": {
+"d": "KEEP",
+"r": "Poland audit: kromakrk.pl menu: MATCHA LATTE 20,00 PLN; ICE MATCHA LATTE 22,00 PLN (",
+"at": "2026-11-14"
+},
+"ea8c83f56a": {
+"d": "KEEP",
+"r": "Poland audit: lajkonik-pik.pl/pl/menu, napoje: MATCHA LATTE (matcha ze spienionym ml",
+"at": "2026-11-14"
+},
+"8048d4e508": {
+"d": "KEEP",
+"r": "Poland audit: lajkonik-pik.pl/pl/menu, napoje: MATCHA LATTE (matcha ze spienionym ml",
+"at": "2026-11-14"
+},
+"a42589c34e": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Listing has no street address, so location cannot be pinned. Find the ad",
+"at": "2026-11-14"
+},
+"8ede2f475e": {
+"d": "KEEP",
+"r": "Poland audit: Lajkonik chain menu lists MATCHA LATTE (lajkonik-pik.pl/pl/menu)",
+"at": "2026-11-14"
+},
+"ce5c74b7ee": {
+"d": "KEEP",
+"r": "Poland audit: Lajkonik chain menu lists MATCHA LATTE (lajkonik-pik.pl/pl/menu)",
+"at": "2026-11-14"
+},
+"69751fe1cc": {
+"d": "KEEP",
+"r": "Poland audit: Lajkonik chain menu lists MATCHA LATTE (lajkonik-pik.pl/pl/menu)",
+"at": "2026-11-14"
+},
+"a258532f48": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Listing has no street address, so location cannot be pinned. Find the ad",
+"at": "2026-11-14"
+},
+"94447b25e9": {
+"d": "KEEP",
+"r": "Poland audit: Lajkonik chain menu lists MATCHA LATTE (lajkonik-pik.pl/pl/menu)",
+"at": "2026-11-14"
+},
+"3c817f02ab": {
+"d": "KEEP",
+"r": "Poland audit: Lajkonik chain menu lists MATCHA LATTE (lajkonik-pik.pl/pl/menu)",
+"at": "2026-11-14"
+},
+"a01293ebd5": {
+"d": "KEEP",
+"r": "Poland audit: makutra-cukiernia.pl: 'Na miejscu: ... kawa specialty i matcha' but no",
+"at": "2026-11-14"
+},
+"a71e82a2ea": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site blocked; search found no Ohayo chain or Toru\u0144ska venue. Chain s",
+"at": "2026-11-14"
+},
+"cd1ed2e80e": {
+"d": "REMOVE",
+"r": "Poland audit: Retail-only roastery shop; no matcha drink on own site. Address Karmelicka 17 ma",
+"at": "2026-11-14"
+},
+"fsqef3932c": {
+"d": "REMOVE",
+"r": "Poland audit: Site belongs to a pad shop in Pi\u0142a (Magmar), not a caf\u00e9 at Aleja Bora-Komorowski",
+"at": "2026-11-14"
+},
+"71f1df83d2": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: slodkiwentzl.pl TLS cert mismatch blocked fetch; menu unverified. Pawia ",
+"at": "2026-11-14"
+},
+"fcafeb6029": {
+"d": "REMOVE",
+"r": "Poland audit: Online tea shop with address Kobierzy\u0144ska 117A/U4; not a tea room",
+"at": "2026-11-14"
+},
+"7e4e8028c9": {
+"d": "REMOVE",
+"r": "Poland audit: Tea/spice shop (sklep); address Plac Imbramowski 9 matches; no caf\u00e9",
+"at": "2026-11-14"
+},
+"835f02a5a9": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Address Fieldorfa-Nila 12/LU1 confirmed, open 8-18 per listing. Search f",
+"at": "2026-11-14"
+},
+"4849933d61": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: slodkiwentzl.pl cert error blocked menu; Rynek G\u0142\u00f3wny 19 unverified",
+"at": "2026-11-14"
+},
+"697df509ed": {
+"d": "REMOVE",
+"r": "Poland audit: Not a caf\u00e9 site; only Warsaw address shown in footer. Rynek 15 not confirmed",
+"at": "2026-11-14"
+},
+"c9817fbe70": {
+"d": "REMOVE",
+"r": "Poland audit: Address Miodowa 26/1.1 matches; shop with no on-site drinks",
+"at": "2026-11-14"
+},
+"d45f47cc41": {
+"d": "REMOVE",
+"r": "Poland audit: Address Brzozowa 20/1 matches; no tea room or caf\u00e9 on site",
+"at": "2026-11-14"
+},
+"1819c81894": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"fsq3aabebf": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of the S\u0142odki Wierzynek listing at Rynek G\u0142\u00f3wny 15 (697df509ed)",
+"at": "2026-11-14"
+},
+"da4cd5db25": {
+"d": "REMOVE",
+"r": "Poland audit: Address D\u0105bka 8/211 matches; shop in preview mode, no caf\u00e9 drink",
+"at": "2026-11-14"
+},
+"5d1b656dbb": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery; no matcha drink on own menu. Open per site hours.",
+"at": "2026-11-14"
+},
+"fsq9b1b911": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery with matcha cake only. Site unreachable, no business listing found in sea",
+"at": "2026-11-14"
+},
+"fsq0679096": {
+"d": "KEEP",
+"r": "Poland audit: cukierniamelba.pl banner 'Kawa Carraro i matcha - nowe menu' (url: cuk",
+"at": "2026-11-14"
+},
+"fsq7f3a4ff": {
+"d": "REMOVE",
+"r": "Poland audit: Dessert/ice cream shop; duplicate-of fsq0679096 (same site). Rynek 2 address not",
+"at": "2026-11-14"
+},
+"be5fd1092a": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery; matcha only as pastry.",
+"at": "2026-11-14"
+},
+"fsqd30959c": {
+"d": "REMOVE",
+"r": "Poland audit: Online tea shop, no drinks served. Same address as 3b2e8e5261 and cdfec53a26 (du",
+"at": "2026-11-14"
+},
+"3b2e8e5261": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of fsqd30959c (same site and address).",
+"at": "2026-11-14"
+},
+"cdfec53a26": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of fsqd30959c (same site and address).",
+"at": "2026-11-14"
+},
+"75d3e67e68": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"fbf822f7ef": {
+"d": "REMOVE",
+"r": "Poland audit: Retail shop, no drinks served.",
+"at": "2026-11-14"
+},
+"207c5a1254": {
+"d": "REMOVE",
+"r": "Poland audit: Retail bubble tea supplier; company address in Mysliborz, not a Lubin venue.",
+"at": "2026-11-14"
+},
+"fsqd21c72b": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of fsq62f423a (same owner, same Skladowice 1J address). fiveoclock.com",
+"at": "2026-11-14"
+},
+"fsq62f423a": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop, no drinks served. Same business as fsqd21c72b.",
+"at": "2026-11-14"
+},
+"d223e66823": {
+"d": "KEEP",
+"r": "Poland audit: boruramen.pl/menu/: 'Napoje bezalkoholowe' Matcha Latte 22 zl",
+"at": "2026-11-14"
+},
+"18bb65e554": {
+"d": "REMOVE",
+"r": "Poland audit: Retail shop; no matcha drink on site.",
+"at": "2026-11-14"
+},
+"79529b8705": {
+"d": "REMOVE",
+"r": "Poland audit: Ice cream/sweets stand; only matcha ice cream flavours, no matcha drink found.",
+"at": "2026-11-14"
+},
+"cdfe332ce4": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"a77ad5c5ef": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery, cake only. Same business as cd2d46ceaf listed twice; site header address",
+"at": "2026-11-14"
+},
+"cd2d46ceaf": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery, cake only. Duplicate listing of a77ad5c5ef; site header address Staromie",
+"at": "2026-11-14"
+},
+"2191bc35dc": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site says 'We are closed' in hours section, unclear if closed. Matcha dr",
+"at": "2026-11-14"
+},
+"fbf9d322fc": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Stored menu shows matcha lemonade but site does not confirm; name Lodofa",
+"at": "2026-11-14"
+},
+"5baafdaa9f": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Could not load menu. Search found no other listing.",
+"at": "2026-11-14"
+},
+"d71e6a1539": {
+"d": "KEEP",
+"r": "Poland audit: kokumo.pl/menu/: Matcha na cieple / Matcha na zimno, 19 zl",
+"at": "2026-11-14"
+},
+"595ac64022": {
+"d": "REMOVE",
+"r": "Poland audit: No Nadarzyn location found; no matcha drink. Retail.",
+"at": "2026-11-14"
+},
+"1f449fdf52": {
+"d": "KEEP",
+"r": "Poland audit: bubbles-candies.pl Bestsellers: Matcha Latte (matcha, milk, tapioca) 1",
+"at": "2026-11-14"
+},
+"2ba8b23607": {
+"d": "KEEP",
+"r": "Poland audit: Stored menu snippet 'Matchbata - Matcha ... zielona herbata w proszku'",
+"at": "2026-11-14"
+},
+"d0a36fe5dd": {
+"d": "KEEP",
+"r": "Poland audit: szopacafe.pl/menu: Matcha latte 15 zl, Mrozona matcha jagodowa 22 zl",
+"at": "2026-11-14"
+},
+"0e8c5fd003": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site address Gronkow 34-400 (gmina Nowy Targ). Seasonal: 'Sezon 29 maja ",
+"at": "2026-11-14"
+},
+"9f6e2ab6c5": {
+"d": "REMOVE",
+"r": "Poland audit: Site is DomKawy Mlawa (ul. Sadowa 10); no Nysa location found; no matcha drink o",
+"at": "2026-11-14"
+},
+"8a76f2a285": {
+"d": "REMOVE",
+"r": "Poland audit: Event-only coffee service (brings own equipment); no fixed venue; Glowna 97 not ",
+"at": "2026-11-14"
+},
+"62b4ca60bf": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: www.lodymelba.pl TLS cert mismatch, page not loadable; search finds no M",
+"at": "2026-11-14"
+},
+"f6523d8f9d": {
+"d": "KEEP",
+"r": "Poland audit: Matcha na lemoniadzie 20 zl; Latte matcha zielona 20 zl (streetcafeols",
+"at": "2026-11-14"
+},
+"2c1486965c": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"fsq8b8239e": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Same business as 3705d0b6a5 (Smooth the Fruit Opole, 8 outlets). Dzialko",
+"at": "2026-11-14"
+},
+"c76a502d26": {
+"d": "REMOVE",
+"r": "Poland audit: Online sweets shop (candy), no drink service; matcha only as candy flavour.",
+"at": "2026-11-14"
+},
+"4646228435": {
+"d": "REMOVE",
+"r": "Poland audit: Online tea shop (Sklep Internetowy Herbataonline, ul. Osmanczyka 18/2 Opole); re",
+"at": "2026-11-14"
+},
+"ee24ae6507": {
+"d": "KEEP",
+"r": "Poland audit: Matcha na zimno - 21 pln, Napoje sezonowe (labanawyspie.pl/menu)",
+"at": "2026-11-14"
+},
+"3705d0b6a5": {
+"d": "KEEP",
+"r": "Poland audit: matcha, napoj owsiany: STRAWBERRY / MANGO / COCO CLOUD / SMOOTHIE matc",
+"at": "2026-11-14"
+},
+"89998d4e33": {
+"d": "KEEP",
+"r": "Poland audit: verified on own menu/page",
+"at": "2026-11-14"
+},
+"7ff7dab7d0": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte 19 zl; Matcha Latte z syropem 21 zl (momentycafe.pl/menu)",
+"at": "2026-11-14"
+},
+"b864ef52a4": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Pabianice Warszawska 3/5 matches, open per hours. Current drink list has",
+"at": "2026-11-14"
+},
+"a651093fa9": {
+"d": "REMOVE",
+"r": "Poland audit: Address on site is Wyszynskiego 2 (not Dzieci Wrzesinskich 9/2). Matcha only as ",
+"at": "2026-11-14"
+},
+"21611e9a6b": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Open Mon-Sat per hours, closed Sun. Address site: Limanowskiego 16/7. Ma",
+"at": "2026-11-14"
+},
+"41331756de": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop (sklep z herbata); matcha only as product. Site address Wawelska",
+"at": "2026-11-14"
+},
+"71c9931d2d": {
+"d": "REMOVE",
+"r": "Poland audit: Coffee roastery and retail shop (Laczna 55 Pila); matcha only as retail product.",
+"at": "2026-11-14"
+},
+"a1af347c22": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte owocowa 22 zl; Herbata latte (matcha) 20 zl; Mojito match",
+"at": "2026-11-14"
+},
+"fsq4d99e68": {
+"d": "REMOVE",
+"r": "Poland audit: Tea shop with tasting (Dom Herbaty Aromat); matcha only as retail product (MATCH",
+"at": "2026-11-14"
+},
+"cf720a40f4": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: happatomame.pl says site is down for rebrand ('chwilowo nas tu nie ma');",
+"at": "2026-11-14"
+},
+"fd05e0e468": {
+"d": "KEEP",
+"r": "Poland audit: matcha tea 15.-, matcha latte 19.-, iced matcha 19.- (coffeebymiel.pl/",
+"at": "2026-11-14"
+},
+"5b533a696a": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte 19; Matcha Iced Latte 20; Truskawkowa Iced Matcha 22; Ton",
+"at": "2026-11-14"
+},
+"fsq59b272b": {
+"d": "REMOVE",
+"r": "Poland audit: Patisserie; only matcha item is dessert APPLE PIE MATCHA 31 zl. No matcha drink ",
+"at": "2026-11-14"
+},
+"b8a7ef4a9c": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site says Herbaciarnia/tea shop; menu page empty in fetch. Stored snippe",
+"at": "2026-11-14"
+},
+"2d93b55a32": {
+"d": "REMOVE",
+"r": "Poland audit: Could not load site (TLS error). Only matcha seen is retail chocolate bar 'Match",
+"at": "2026-11-14"
+},
+"c203a1ee5d": {
+"d": "KEEP",
+"r": "Poland audit: Matcha soft 16 zl; Matcha latte 18 zl; Salted maple matcha latte 20 zl",
+"at": "2026-11-14"
+},
+"ec4c0bbe7a": {
+"d": "REMOVE",
+"r": "Poland audit: Dessert-only matcha. Own site shows 3 Poznan outlets and franchising (chain-like",
+"at": "2026-11-14"
+},
+"c77aea3b43": {
+"d": "REMOVE",
+"r": "Poland audit: No matcha drink found on own site or TasteTown menu. Open status not confirmed.",
+"at": "2026-11-14"
+},
+"74f7c3ee02": {
+"d": "KEEP",
+"r": "Poland audit: Seasonal matcha served as latte or iced, own menu wuchtadobrego.pl/men",
+"at": "2026-11-14"
+},
+"6574e7705b": {
+"d": "REMOVE",
+"r": "Poland audit: Apetitio menu has no matcha. Only an old KISO-map listing (about 700 days old) m",
+"at": "2026-11-14"
+},
+"dd69ece607": {
+"d": "REMOVE",
+"r": "Poland audit: Tea shop, retail only, no drink served. Located in a mall shop unit.",
+"at": "2026-11-14"
+},
+"86831ab755": {
+"d": "KEEP",
+"r": "Poland audit: Own drinks list on malavicafe.pl: 'kawy bezkofeinowe, matcha, frappe, ",
+"at": "2026-11-14"
+},
+"84e3bf7b71": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha latte' 20,00 zl and 'Pumpkin Spice Matcha' 25,00 zl on kogielm",
+"at": "2026-11-14"
+},
+"153a79587b": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha Latte' 21,90 zl and iced matcha lines on zamkowacafe.pl/menu/",
+"at": "2026-11-14"
+},
+"c61535dc89": {
+"d": "KEEP",
+"r": "Poland audit: 'oferujemy matcha latte, matcha klasyczna' on cukierniachelminska.pl/m",
+"at": "2026-11-14"
+},
+"d9e3d058a0": {
+"d": "REMOVE",
+"r": "Poland audit: Online retail only. No venue serving drinks found.",
+"at": "2026-11-14"
+},
+"84ad9d4a87": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha latte' and 'Matcha latte mrozona' on own menu kawausasiadow.pl",
+"at": "2026-11-14"
+},
+"63a0b6fafc": {
+"d": "KEEP",
+"r": "Poland audit: Stored menu snippet lists 'Matcha Ceremonialna 13zl'; own homepage fet",
+"at": "2026-11-14"
+},
+"b104d1463b": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha 300ml' Japanese tea with frothed milk, 19,00 zl on niebowmiesc",
+"at": "2026-11-14"
+},
+"be3bf6a6ef": {
+"d": "KEEP",
+"r": "Poland audit: 'Zielone Przebudzenie' matcha smoothie 16,90/17,90 zl, brand page draf",
+"at": "2026-11-14"
+},
+"4747fc915d": {
+"d": "KEEP",
+"r": "Poland audit: 'Iced matcha latte' 17 zl and hot matcha latte 16 zl on powolicafe.pl ",
+"at": "2026-11-14"
+},
+"197fa9239b": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha' 16/17 zl flat/latte, 'Pumpkin Spice Matcha' 21 zl on pracowni",
+"at": "2026-11-14"
+},
+"65317157cb": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha Latte' with matcha tea and cream on Bolt Food ordering page fo",
+"at": "2026-11-14"
+},
+"8deef103a4": {
+"d": "REMOVE",
+"r": "Poland audit: Tea and gift shop, retail only. No drink served.",
+"at": "2026-11-14"
+},
+"13df10310d": {
+"d": "REMOVE",
+"r": "Poland audit: Packaged tea product, online shop. No drink served found.",
+"at": "2026-11-14"
+},
+"fsq64df74f": {
+"d": "REMOVE",
+"r": "Poland audit: Tea, yerba and crafts shop, retail only. No drink served found.",
+"at": "2026-11-14"
+},
+"f6bbd77ab4": {
+"d": "KEEP",
+"r": "Poland audit: Official site lists 'Matcha Latte' hot and cold, 'Matcha orange' (gale",
+"at": "2026-11-14"
+},
+"3065323c55": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"4437a1f189": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Fetched izabelakocot.pl: no matcha drink listed. Call cafe (+48 733 190 ",
+"at": "2026-11-14"
+},
+"82d3593e0b": {
+"d": "REMOVE",
+"r": "Poland audit: Chain: about 20-24 outlets, Krakow and Katowice, borderline. Address empty. Dupl",
+"at": "2026-11-14"
+},
+"82dce8b9dc": {
+"d": "REMOVE",
+"r": "Poland audit: Domain now another business, venue likely closed or sold. Matcha not confirmed.",
+"at": "2026-11-14"
+},
+"ba6350d9d4": {
+"d": "KEEP",
+"r": "Poland audit: Own site capuccinocafe.pl: 'four kinds of matcha served hot and four c",
+"at": "2026-11-14"
+},
+"bddbf30d21": {
+"d": "REMOVE",
+"r": "Poland audit: Chain: about 20-24 outlets, Krakow/Katowice per site, borderline. Duplicate of 8",
+"at": "2026-11-14"
+},
+"fsq2ccdad9": {
+"d": "REMOVE",
+"r": "Poland audit: Online shop, no cafe menu or hours found; Stalowa Wola cafe address not found in",
+"at": "2026-11-14"
+},
+"8ce1679296": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: herbacianawyspa.pl returned 403 twice; search found nothing; address Pos",
+"at": "2026-11-14"
+},
+"0111661151": {
+"d": "REMOVE",
+"r": "Poland audit: Roastery/online shop, no cafe or matcha drink; address Lakowa 1 Stromiec matches",
+"at": "2026-11-14"
+},
+"ac35bfc12d": {
+"d": "KEEP",
+"r": "Poland audit: Snippet shows Iced Orange Matcha Latte (25 zl) but galicjanka.com menu",
+"at": "2026-11-14"
+},
+"070f457963": {
+"d": "REMOVE",
+"r": "Poland audit: Roastery and online shop, not a cafe (reviewer: no drinks on site)",
+"at": "2026-11-14"
+},
+"90ec871c1b": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Shop plus cafe section; no drink menu seen; matches Piekarnia Machaczka ",
+"at": "2026-11-14"
+},
+"fe3aa45251": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery, no matcha drink; same website as Machaczka Cafe (machaczkacafe.pl)",
+"at": "2026-11-14"
+},
+"6e97d9cdf9": {
+"d": "REMOVE",
+"r": "Poland audit: Shop with no cafe; site lists Poznan not Suchy Las; no matcha drink",
+"at": "2026-11-14"
+},
+"b8a07376be": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"fsq5dbeafe": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte cold/hot, Matcha Yuzu Tonic, Coconut Matcha (szczawnica.c",
+"at": "2026-11-14"
+},
+"3f50288d74": {
+"d": "KEEP",
+"r": "Poland audit: Menu: napoje sezonowe, w tym wyjatkowa matcha specialty (buenasbuenas.",
+"at": "2026-11-14"
+},
+"74273cb261": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of fsq06e1edd (same Boguslawa 5 venue); own shop site has no matcha dr",
+"at": "2026-11-14"
+},
+"fsq06e1edd": {
+"d": "KEEP",
+"r": "Poland audit: fanaberia.szczecin.pl: oryginalna Matcha Latte, lemoniada (menu on Fac",
+"at": "2026-11-14"
+},
+"fsq763efab": {
+"d": "REMOVE",
+"r": "Poland audit: Wholesaler (hurtownia), no cafe; not a drink venue",
+"at": "2026-11-14"
+},
+"931a381c17": {
+"d": "REMOVE",
+"r": "Poland audit: Roastery and online shop, no drinks on site; Grodzka 18 is roastery address",
+"at": "2026-11-14"
+},
+"fsq59aea21": {
+"d": "REMOVE",
+"r": "Poland audit: Online tea/coffee shop, no cafe drink menu found",
+"at": "2026-11-14"
+},
+"c8641221c4": {
+"d": "REMOVE",
+"r": "Poland audit: Online shop with physical shop; no matcha drinks listed",
+"at": "2026-11-14"
+},
+"237e07c060": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"90b4759797": {
+"d": "REMOVE",
+"r": "Poland audit: Sushi/ramen restaurant, no matcha in any source; address matches Pyszne listing",
+"at": "2026-11-14"
+},
+"3e241993ef": {
+"d": "REMOVE",
+"r": "Poland audit: Sklep z herbatami online, no tea room; address is plac Roweckiego 1 lok 5",
+"at": "2026-11-14"
+},
+"fsq61a9c3b": {
+"d": "KEEP",
+"r": "Poland audit: Menu: Matcha Latte 18 zl, Iced Matcha Latte, Orange Matcha (kawiarniab",
+"at": "2026-11-14"
+},
+"d36cca9f2c": {
+"d": "REMOVE",
+"r": "Poland audit: Online shop with small physical store, no matcha drinks",
+"at": "2026-11-14"
+},
+"bcd19e3288": {
+"d": "REMOVE",
+"r": "Poland audit: Online coffee/tea shop, no cafe drinks",
+"at": "2026-11-14"
+},
+"ccaa209237": {
+"d": "KEEP",
+"r": "Poland audit: qcoffee.pl/menu: MATCHA LATTE HOT 22.00 zl; ICE MATCHA LATTE 22.00 zl",
+"at": "2026-11-14"
+},
+"fsq815343a": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of fsq61a9c3b (Bar Celona, Rynek 11); junk name; remove this record",
+"at": "2026-11-14"
+},
+"de9f48aba1": {
+"d": "REMOVE",
+"r": "Poland audit: Roastery and online shop, no cafe drink menu",
+"at": "2026-11-14"
+},
+"0038fa94a0": {
+"d": "REMOVE",
+"r": "Poland audit: Cafe site has no drink menu; matcha only as whisk accessory",
+"at": "2026-11-14"
+},
+"fsq436c6a7": {
+"d": "REMOVE",
+"r": "Poland audit: Not a cafe; service and order address of Fonte Torun; see 0038fa94a0",
+"at": "2026-11-14"
+},
+"23d12a7997": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop, no matcha drink served found.",
+"at": "2026-11-14"
+},
+"fsq50d1b2d": {
+"d": "KEEP",
+"r": "Poland audit: Napoje zimne: Matchbata (matcha) 330ml 18,00 PLN (szeroka9.pl)",
+"at": "2026-11-14"
+},
+"80f7342390": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte - ceremonialna herbata matcha, Otsumami & dodatki (wabina",
+"at": "2026-11-14"
+},
+"fsq552545b": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site blocked; matcha unverified. Same site as Kawiarnia Co Bady (possibl",
+"at": "2026-11-14"
+},
+"94f9a87ca6": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Same menu/site as Galeria Smaku, Tychy; matcha and open status unverifie",
+"at": "2026-11-14"
+},
+"3b3ef1a9f2": {
+"d": "REMOVE",
+"r": "Poland audit: No cafe on site; no drink served at listed venue.",
+"at": "2026-11-14"
+},
+"c22d5a7542": {
+"d": "REMOVE",
+"r": "Poland audit: Retail shop, preview mode. Same business as Sklepy Cynamonowe (duplicate).",
+"at": "2026-11-14"
+},
+"f47974e2f5": {
+"d": "REMOVE",
+"r": "Poland audit: Same business as Sklep Haga, Tychy (duplicate). Retail only.",
+"at": "2026-11-14"
+},
+"fsq58e667f": {
+"d": "KEEP",
+"r": "Poland audit: Stored menu: Iced Orange Matcha Latte (galicjanka.com); menu pages not",
+"at": "2026-11-14"
+},
+"fsq51bc759": {
+"d": "KEEP",
+"r": "Poland audit: Stored menu: Iced Orange Matcha Latte (galicjanka.com); menu pages not",
+"at": "2026-11-14"
+},
+"313fc55615": {
+"d": "KEEP",
+"r": "Poland audit: galicjanka.com directory: Galicjanka Jaroszowice at ul. Zakopianska 2,",
+"at": "2026-11-14"
+},
+"f5bdb47a81": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Bakery category. Piletsudskiego 10 is Stacja Galicjanka per own site; li",
+"at": "2026-11-14"
+},
+"fsq633e0bb": {
+"d": "KEEP",
+"r": "Poland audit: Stored menu: Iced Orange Matcha Latte (galicjanka.com); menu pages not",
+"at": "2026-11-14"
+},
+"084ee5c1bf": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte 22 zl, Napoje gorace (bistrocharlotte.com/pl/lokale/bouil",
+"at": "2026-11-14"
+},
+"e4d876e7a4": {
+"d": "KEEP",
+"r": "Poland audit: Hot drinks: Matcha Latte 22.00 (bistrocharlotte.com/pl/lokale/menora)",
+"at": "2026-11-14"
+},
+"fsq5991642": {
+"d": "REMOVE",
+"r": "Poland audit: Not a venue; no matcha drink served.",
+"at": "2026-11-14"
+},
+"fsq55dee46": {
+"d": "REMOVE",
+"r": "Poland audit: Matcha appears only as a dessert pudding in stored menu. Outlet count not checke",
+"at": "2026-11-14"
+},
+"fsq664877a": {
+"d": "KEEP",
+"r": "Poland audit: Specialty: Matcha latte 19 zl, matcha and oat milk (cafemichelle.com/m",
+"at": "2026-11-14"
+},
+"fsq4fe0ef6": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Retry needed. Chain status (bubble-tea franchise) not checked.",
+"at": "2026-11-14"
+},
+"6a0bd43fdd": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop, no on-site matcha drink. Own contact address Dzialkowa 121A, no",
+"at": "2026-11-14"
+},
+"320fc924e4": {
+"d": "REMOVE",
+"r": "Poland audit: Online tea shop, not a venue. Old domain sklep.adalberts.pl redirects to adalber",
+"at": "2026-11-14"
+},
+"bd12f2ec1e": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site unreachable (SSL error). Matcha drink not confirmed on own menu",
+"at": "2026-11-14"
+},
+"fsq50a38bf": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site cert error. Snippet looks like a drink; open daily 9-24 per lis",
+"at": "2026-11-14"
+},
+"353d7a7e6b": {
+"d": "KEEP",
+"r": "Poland audit: biskwit.cafe: klasycznego matcha latte oraz firmowych napojow na bazie",
+"at": "2026-11-14"
+},
+"665a033b9b": {
+"d": "KEEP",
+"r": "Poland audit: bajgleibable.pl menu: Matcha Latte 22 zl (http://www.bajgleibable.pl/)",
+"at": "2026-11-14"
+},
+"7cd5cc3dad": {
+"d": "KEEP",
+"r": "Poland audit: mi3t.pl/restauracje: Matcha bubble tea 22,00 zl; O smaku Matchy 23 zl ",
+"at": "2026-11-14"
+},
+"90d2fcfce8": {
+"d": "KEEP",
+"r": "Poland audit: belvederecafe.pl/menu-napoje: Matcha Latte 280 ml 32 zl; Matcha 300/70",
+"at": "2026-11-14"
+},
+"5eb7d9a8d8": {
+"d": "KEEP",
+"r": "Poland audit: brainfarm.cafe menu section Matcha / Hojicha: Matcha Latte (https://br",
+"at": "2026-11-14"
+},
+"33e5f1a65a": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Tea room at Swietokrzyska 3 confirmed (bubble tea). Live menu lacks matc",
+"at": "2026-11-14"
+},
+"fsq5f82e50": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site refused connection, address empty. Bistro Charlotte group (3 listin",
+"at": "2026-11-14"
+},
+"fsq6a60891": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site refused connection. Same Bistro Charlotte group as other listings. ",
+"at": "2026-11-14"
+},
+"fsq4db8072": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site not loaded. Only matcha cake seen. Bistro Charlotte group. Drink no",
+"at": "2026-11-14"
+},
+"378c52fedf": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery/cukiernia, matcha cake only. Three cities, not a chain",
+"at": "2026-11-14"
+},
+"e1baa3007b": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Address Powstancow Slaskich 80d matches. Live menu unreadable, hours not",
+"at": "2026-11-14"
+},
+"bb0627cd21": {
+"d": "KEEP",
+"r": "Poland audit: Stored snippet: Matcha Latte 20 zl on brand menu; Pansk 97 page not li",
+"at": "2026-11-14"
+},
+"cf1a79509f": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of Coffeedesk Tamka fsq61d1aee (Tamka 2 vs 2 Tamka). Keep one listing,",
+"at": "2026-11-14"
+},
+"fsq5fa80dc": {
+"d": "KEEP",
+"r": "Poland audit: kawiarnia.coffeedesk.pl/warszawa-prozna: matcha base for Late XXL; sto",
+"at": "2026-11-14"
+},
+"fsq61d1aee": {
+"d": "KEEP",
+"r": "Poland audit: Stored snippet: Matcha Latte 20 zl on brand menu (kawiarnia.coffeedesk",
+"at": "2026-11-14"
+},
+"97a496ef18": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery/cukiernia with matcha cake only. No matcha drink seen",
+"at": "2026-11-14"
+},
+"3a631d8a65": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Open 8-20 daily per site. Menu at /zamow-online/menu not loaded. Verify ",
+"at": "2026-11-14"
+},
+"8ad3623101": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site showed only a verification page. Menu categories look like tea shop",
+"at": "2026-11-14"
+},
+"dd6d61e45f": {
+"d": "KEEP",
+"r": "Poland audit: findtea.pl menu: Ice Blended Matcha, matcha drink with cheese foam (ht",
+"at": "2026-11-14"
+},
+"d2382f5526": {
+"d": "KEEP",
+"r": "Poland audit: fastkava.com.pl drink menu category Matcha i napoje mrozone (https://f",
+"at": "2026-11-14"
+},
+"7da5cc90e1": {
+"d": "REMOVE",
+"r": "Poland audit: Tea and accessories shop (retail). Chain of tea shops, outlet count not confirme",
+"at": "2026-11-14"
+},
+"7dfdc9064e": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop, not a drink venue; Five o'clock is a store chain. Own site bloc",
+"at": "2026-11-14"
+},
+"992e85aae5": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte 21 zl, Matcha latte Twist 25 zl, ice latte matcha 21 zl (",
+"at": "2026-11-14"
+},
+"e20dd98067": {
+"d": "REMOVE",
+"r": "Poland audit: Online and packaged tea shop, not a tea room serving drinks; no drink menu found",
+"at": "2026-11-14"
+},
+"ccb728c2af": {
+"d": "REMOVE",
+"r": "Poland audit: Ice cream manufacturer; no matcha drink served; no opening hours shown",
+"at": "2026-11-14"
+},
+"77fd487aa3": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Caf\u00e9 menu on own site not shown; no matcha drink confirmed. Address matc",
+"at": "2026-11-14"
+},
+"3a15385138": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Same website as Zelazna listing; Palisadowa cafe not found on own site; ",
+"at": "2026-11-14"
+},
+"2757d8bf19": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Mobile cafe, no fixed address; site footer says 2023; open status unknow",
+"at": "2026-11-14"
+},
+"9449534b7e": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte z syropem waniliowym 300 ml 25 zl (kawalerka-bistro.pl/me",
+"at": "2026-11-14"
+},
+"6b601c7097": {
+"d": "KEEP",
+"r": "Poland audit: Iced matcha latte mango, Zdrowa matcha latte on dobroczynna.cafe (own ",
+"at": "2026-11-14"
+},
+"fsq5c861e4": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site gives address Kolejowa 47 lok. U21 (listing says 49A). Drink not co",
+"at": "2026-11-14"
+},
+"bb6dc77fb9": {
+"d": "KEEP",
+"r": "Poland audit: kredki.store menu: 'Matcha' (hot) and 'Iced matcha latte' (cold) confi",
+"at": "2026-11-14"
+},
+"fsq58a876b": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site blocked. Search finds a French cafe-bistro at Sniadeckich 18, n",
+"at": "2026-11-14"
+},
+"81bb95c457": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte and Lavender Matcha (stored menu); Matcha Latte on Glovo ",
+"at": "2026-11-14"
+},
+"7c382a0431": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site empty on fetch. Hours conflict across sources. Confirm matcha l",
+"at": "2026-11-14"
+},
+"6b8a74783d": {
+"d": "REMOVE",
+"r": "Poland audit: Chocolate maker, retail only. Search found no cafe at Marszalkowska 9/15",
+"at": "2026-11-14"
+},
+"b9da2e32a8": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site has no usable content on fetch. Warsaw Insider has a Matcha Tea",
+"at": "2026-11-14"
+},
+"13c6695ca9": {
+"d": "KEEP",
+"r": "Poland audit: Matcha latte 22,00 zl under Napoje gorace; Iced matcha latte 24,90 zl ",
+"at": "2026-11-14"
+},
+"8d72ac7903": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Modlinska 227 not on own site (a Modlinska 227 cafe, unnamed, exists per",
+"at": "2026-11-14"
+},
+"3bc2b71999": {
+"d": "KEEP",
+"r": "Poland audit: okeh.pl: 'Our Matcha' section marked Coming Soon, no matcha drink line",
+"at": "2026-11-14"
+},
+"a287fde4f3": {
+"d": "KEEP",
+"r": "Poland audit: MATCHA LATTE 300ml 23, MATCHA ICED LATTE 300ml 23, six matcha drinks (",
+"at": "2026-11-14"
+},
+"ce267ac732": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site unreachable (cert expired); WebSearch found no venue at Marszalkows",
+"at": "2026-11-14"
+},
+"744d19b4f4": {
+"d": "KEEP",
+"r": "Poland audit: Menu pijalniadarynatury.pl/menu: Matcha latte 22,00 zl; Matcha blekitn",
+"at": "2026-11-14"
+},
+"2f6304e9d7": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Site lists only Mokotowska 19; Fabryka Norblina outlet not confirmed on ",
+"at": "2026-11-14"
+},
+"c619918757": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Bolt page gone (404); no other source found in WebSearch. Cannot confirm",
+"at": "2026-11-14"
+},
+"5b4caf9fe6": {
+"d": "REMOVE",
+"r": "Poland audit: Online retail tea shop (Ronnefeldt), no venue serving drinks at Polczynska 93",
+"at": "2026-11-14"
+},
+"e4f5761395": {
+"d": "REMOVE",
+"r": "Poland audit: Online retail tea shop; matcha sold as tea only, no drink service",
+"at": "2026-11-14"
+},
+"4886421cec": {
+"d": "KEEP",
+"r": "Poland audit: smooththefruit.pl/menu: '32. STRAWBERRY matcha, napoj owsiany...', '33",
+"at": "2026-11-14"
+},
+"dd3838a392": {
+"d": "REMOVE",
+"r": "Poland audit: Online tea retailer (sklep internetowy), no drink service. Address matches site",
+"at": "2026-11-14"
+},
+"64770f218a": {
+"d": "KEEP",
+"r": "Poland audit: teklacafe.pl/menu MATCHA BAR: 'Matcha 20', 'Matcha Latte 21', 'Ice Mat",
+"at": "2026-11-14"
+},
+"e204eed1bb": {
+"d": "REMOVE",
+"r": "Poland audit: Not a drink venue; matcha is an ice-cream flavour. Nowy Swiat 72 is a stand-up l",
+"at": "2026-11-14"
+},
+"10755d177a": {
+"d": "KEEP",
+"r": "Poland audit: Own home page lists no matcha; menu linked but not loaded. Stored snip",
+"at": "2026-11-14"
+},
+"bdba424e50": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Open and address confirmed. Coconut matcha only in listing snippet; chec",
+"at": "2026-11-14"
+},
+"3d9e7b13c7": {
+"d": "KEEP",
+"r": "Poland audit: uwagapiwo.pl: no matcha on home page; menu on separate page not loaded",
+"at": "2026-11-14"
+},
+"5723dd37d7": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"7f5d9a713d": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"06a3e0bf25": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery/cake shop, no matcha drink. Site address Grenadierow 6 Warszawa, not Kami",
+"at": "2026-11-14"
+},
+"05c4c2465d": {
+"d": "REMOVE",
+"r": "Poland audit: Online retail tea shop; no venue at Bydgoska 1 Walcz found on site",
+"at": "2026-11-14"
+},
+"fsq4f7d4a9": {
+"d": "REMOVE",
+"r": "Poland audit: Confectionery, no drinks. Site address Staromiejska 28, Lebork, not Wejherowo (w",
+"at": "2026-11-14"
+},
+"eed161bff5": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Menu content not loaded; no matcha drink confirmed. Wieliczka address no",
+"at": "2026-11-14"
+},
+"fsq33e947b": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Could not load own site; drink menu unknown. Snippet suggests tea retail",
+"at": "2026-11-14"
+},
+"fsq40f9c72": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop (Progressive sp. z o.o., Sosnowiecka 5 matches), no drink servic",
+"at": "2026-11-14"
+},
+"fsq5d77d56": {
+"d": "KEEP",
+"r": "Poland audit: bistroteczowa.pl home page: no matcha lines; address ul. Teczowa 83x, ",
+"at": "2026-11-14"
+},
+"fsq54f8a79": {
+"d": "REMOVE",
+"r": "Poland audit: Milk-alternative add-on is not a matcha drink. Site gives Pasaz Pokoyhof, no str",
+"at": "2026-11-14"
+},
+"dd220700b0": {
+"d": "REMOVE",
+"r": "Poland audit: Cake only, no matcha drink found. Benedykta Polaka 14b matches site's Wroclaw lo",
+"at": "2026-11-14"
+},
+"2321f931fa": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Retail-first; Hala Targowa stall 160 not confirmed as a tea house servin",
+"at": "2026-11-14"
+},
+"8b35a19742": {
+"d": "REMOVE",
+"r": "Poland audit: Retail tea shop, matcha is powder for sale. Address Legnicka 52/203 matches site",
+"at": "2026-11-14"
+},
+"ec445006b3": {
+"d": "REMOVE",
+"r": "Poland audit: Online packaged-tea retailer (Ewax), no drink service on site",
+"at": "2026-11-14"
+},
+"10229061bc": {
+"d": "REMOVE",
+"r": "Poland audit: Tea shop, retail only; menu could not be checked (403); pl. Dominika\u0144ski 3 addre",
+"at": "2026-11-14"
+},
+"ab7574598f": {
+"d": "KEEP",
+"r": "Poland audit: No matcha drink text; menu is an image at folgujemy.pl/menu-wrzesien-2",
+"at": "2026-11-14"
+},
+"da8d255352": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Teahouse network (Wroc\u0142aw, Krak\u00f3w, Katowice); network size unverified; d",
+"at": "2026-11-14"
+},
+"830f8282a8": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Online delivery juice brand, no venue, hours or address on site; listing",
+"at": "2026-11-14"
+},
+"785384dc7d": {
+"d": "KEEP",
+"r": "Poland audit: kalaczakra.org/karta-menu/: 'MATCHA LATTE 18pln', 'ICE MATCHA 19pln', ",
+"at": "2026-11-14"
+},
+"9d21e3f325": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of da8d255352 (same address Bia\u0142osk\u00f3rnicza 7, same site); no drink ser",
+"at": "2026-11-14"
+},
+"c4cd0ea2db": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Matcha drink only on June seasonal menu; current menu not seen; full str",
+"at": "2026-11-14"
+},
+"4efbf25b82": {
+"d": "KEEP",
+"r": "Poland audit: slodkichlopak.pl/o-nas/menu/: 'Matcha Latte', 'Ice Matcha Latte', 'Ice",
+"at": "2026-11-14"
+},
+"3b91cad397": {
+"d": "REMOVE",
+"r": "Poland audit: Online tea and health shop, no caf\u00e9; retail only.",
+"at": "2026-11-14"
+},
+"682ec9a9de": {
+"d": "KEEP",
+"r": "Poland audit: yamamotomatcha.com: 'matcha latte' and 'pure matcha' among caf\u00e9 offeri",
+"at": "2026-11-14"
+},
+"b9409f9b13": {
+"d": "REMOVE",
+"r": "Poland audit: Brand site for rooibos products; no caf\u00e9 at Trzebiatowskiego 5 found in search; ",
+"at": "2026-11-14"
+},
+"1ab0de7812": {
+"d": "REMOVE",
+"r": "Poland audit: Online retail shop, no drink menu, no address shown; not a caf\u00e9.",
+"at": "2026-11-14"
+},
+"26b3c499fa": {
+"d": "REMOVE",
+"r": "Poland audit: Chocolate maker shop; matcha is a chocolate product, not a drink.",
+"at": "2026-11-14"
+},
+"1b9ff6d229": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of 26b3c499fa (same name, address 3 Maja 28, same site).",
+"at": "2026-11-14"
+},
+"b04cd32351": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Menu not loaded, so 'BLACK SESAME MATCHA LATTE' unverified; open status ",
+"at": "2026-11-14"
+},
+"9df9f821f4": {
+"d": "KEEP",
+"r": "Poland audit: spokocafe.pl/menu/: 'Pumpkin Spice Matcha Latte 300 ml 22 PLN', 'Match",
+"at": "2026-11-14"
+},
+"fsq4f74694": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Own site blocked after redirect; drink menu unverified; open status unkn",
+"at": "2026-11-14"
+},
+"67b047e544": {
+"d": "KEEP",
+"r": "Poland audit: kawiarniafilizanki.com/menu/: 'Matcha latte, 330ml: 21 PLN', 'Iced mat",
+"at": "2026-11-14"
+},
+"2b924cf88e": {
+"d": "REMOVE",
+"r": "Poland audit: No matcha drink on own menu; site suggests closed until late Dec 2026. Re-check ",
+"at": "2026-11-14"
+},
+"fsqc0601d8": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of 2b924cf88e (same site and menu, listed under owner name); follows K",
+"at": "2026-11-14"
+},
+"ad99a59e4a": {
+"d": "KEEP",
+"r": "Poland audit: arabeskakawiarnia.pl/menu: matcha section 'Ice malina 23z\u0142', 'Ice trus",
+"at": "2026-11-14"
+},
+"db937419bb": {
+"d": "KEEP",
+"r": "Poland audit: naszeniebowmiescie.pl: matcha section 'Latte 16 z\u0142', 'Iced latte 18 z\u0142",
+"at": "2026-11-14"
+},
+"d777f435d7": {
+"d": "KEEP",
+"r": "Poland audit: majima.menu.pl Napoje: 'Matcha Latte 17,00 z\u0142', 'Earl Grey Matcha Latt",
+"at": "2026-11-14"
+},
+"f3d58fac85": {
+"d": "KEEP",
+"r": "Poland audit: Matcha Latte 17 z\u0142; Ice Matcha Latte 19 z\u0142 (palonemaslo.pl/l/fb)",
+"at": "2026-11-14"
+},
+"8c98e33903": {
+"d": "REMOVE",
+"r": "Poland audit: No cafe or tea room found; no \u0141omianki address on site.",
+"at": "2026-11-14"
+},
+"0e08574e65": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"afea99630d": {
+"d": "REMOVE",
+"r": "Poland audit: Retail product, no matcha drink. Address Kwiatkowskiego 5 matches. Open status n",
+"at": "2026-11-14"
+},
+"236f575eb9": {
+"d": "REMOVE",
+"r": "Poland audit: Bakery/cake shop, no matcha drink found.",
+"at": "2026-11-14"
+},
+"e337f81f51": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Same brand/site as 8a779a0aef (Instytut Kawy), possible duplicate. Could",
+"at": "2026-11-14"
+},
+"b003c6a8e6": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Gda\u0144ska 64 hours shown. Two cafes in \u0141\u00f3d\u017a, not a chain. Could not load t",
+"at": "2026-11-14"
+},
+"fsq62fb4c6": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Aggregators list Rzgowska 26, 93-153 \u0141\u00f3d\u017a (house no. missing on our list",
+"at": "2026-11-14"
+},
+"8a779a0aef": {
+"d": "REMOVE",
+"r": "Poland audit: unsure -> remove: Same site as e337f81f51 (Coffee Runner), possible duplicate. Could not l",
+"at": "2026-11-14"
+},
+"eceeaa1c99": {
+"d": "KEEP",
+"r": "Poland audit: Stored menu 'MATCHA Japanese Tea 27,00 z\u0142' not verified: jagacafe.pl/m",
+"at": "2026-11-14"
+},
+"c97c8df199": {
+"d": "REMOVE",
+"r": "Poland audit: Zgierska 56 is a shop/roastery. Stored 'Matcha Herbata zielona 28 z\u0142' is a tea r",
+"at": "2026-11-14"
+},
+"fsq682b963": {
+"d": "REMOVE",
+"r": "Poland audit: Site address Ludowa 14, \u0141omianki, not a \u0141\u00f3d\u017a cafe.",
+"at": "2026-11-14"
+},
+"201eb23edc": {
+"d": "KEEP",
+"r": "Poland audit: matchame.pl Matcha section: drink names only in image filenames (latte",
+"at": "2026-11-14"
+},
+"91aa91a756": {
+"d": "REMOVE",
+"r": "Poland audit: Starorudzka 10B is a roasting/production plant (Quba Cafe Serwis). No public caf",
+"at": "2026-11-14"
+},
+"9a51f83d9e": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha latte na ciep\u0142o' 27 z\u0142; 'Matcha yuzu' 26 z\u0142 (zjedz.my/sendai-s",
+"at": "2026-11-14"
+},
+"d215abf9d0": {
+"d": "KEEP",
+"r": "Poland audit: 'Matcha latte 21 z\u0142', 'Iced matcha 21 z\u0142', 'Basic matcha 21 z\u0142' (slodk",
+"at": "2026-11-14"
+},
+"e9fe5b49c7": {
+"d": "REMOVE",
+"r": "Poland audit: White Bear Coffee: no matcha drink on its own menu, chain size borderline (23+ outlets)",
+"at": "2026-11-14"
+},
+"6ba16feb68": {
+"d": "REMOVE",
+"r": "Poland audit: No served drink. \u015awidwin store address not confirmed on site.",
+"at": "2026-11-14"
+},
+"580a524fb0": {
+"d": "REMOVE",
+"r": "Poland audit: Szeroka 20 \u017bory matches. Duplicate of fsq50a5498 (Sklep z Herbat\u0105), same address",
+"at": "2026-11-14"
+},
+"fsq50a5498": {
+"d": "REMOVE",
+"r": "Poland audit: Duplicate of 580a524fb0 (Herbaciany prezent), same address Szeroka 20.",
+"at": "2026-11-14"
+},
+"fsq58cd7dd": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"fsq5331b56": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"1713b60ddb": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"fsq50ec8b6": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"17f27e733c": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"fsq51c5a1a": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"ef769410f1": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"eb763670ae": {
+"d": "REMOVE",
+"r": "Poland audit: chain/dessert by name: Sklep z kaw\u0105 i herbat\u0105 Czas na Herbat\u0119 - Bielsko Bia\u0142a",
+"at": "2026-11-14"
+},
+"86a2e6ee33": {
+"d": "REMOVE",
+"r": "Poland audit: chain/dessert by name: Zawsze znajd\u0119 Czas na Herbat\u0119",
+"at": "2026-11-14"
+},
+"ecf11bc092": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"fsq0f0761c": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"c649548444": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"760dbc3905": {
+"d": "REMOVE",
+"r": "Poland audit: chain/dessert by name: Czas na Herbat\u0119",
+"at": "2026-11-14"
+},
+"fsq2bf0d02": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"55a14315a2": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"ab5fe31dde": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"d957269279": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"fsqfef6f2c": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"b70ac83d51": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"626fbb7312": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"fsq0656105": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"fsq4797236": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"0e8b781710": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"fsq515d7c7": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"35c817e280": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"7f87cb0615": {
+"d": "REMOVE",
+"r": "Poland audit: chain/dessert by name: Zawsze znajd\u0119 Czas na Herbat\u0119",
+"at": "2026-11-14"
+},
+"1b018686f5": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"fb7a4de0e9": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"5dcc3826c4": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"2e41d2e22b": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"fsqf780a96": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"d9b87184dc": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"fsq9d348d0": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"f29dbe9831": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"a5d8e064ff": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"2e93e6bd8d": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"117ee9b36f": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"fsq8fb7577": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"9647c92f6a": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"ed30344eca": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"922a9d5e68": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"3490128889": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"bd39efda69": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"3162b423ab": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"25ee130c84": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"3b25d7cfe3": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"fcabe4655f": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"fsq505c682": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"0601c1bd50": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"1161c71cbe": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"390f515553": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"b2540e0963": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"2b1a1f2abe": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"fsqb7b883c": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"21de137a2d": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"fbd86bdb15": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"73f6a1c5ce": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"96594497db": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"de51ae485a": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"844756b07b": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"80b73ed74a": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"fsq5484395": {
+"d": "REMOVE",
+"r": "Poland audit: chain/dessert by name: Czas na Herbat\u0119",
+"at": "2026-11-14"
+},
+"a8e106c871": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"a75d663af7": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"0428a132d2": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"fsq87196ef": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"57a2ce1f5a": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"fsq5299ea6": {
+"d": "REMOVE",
+"r": "Poland audit: chain/dessert by name: Czas na herbat\u0119",
+"at": "2026-11-14"
+},
+"fc55550493": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"cb7dfa821c": {
+"d": "REMOVE",
+"r": "Poland audit: chain: Czas na Herbat\u0119 (50+ tea shops)",
+"at": "2026-11-14"
+},
+"ff8f7156f9": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"b2a2c1f44f": {
+"d": "REMOVE",
+"r": "Poland audit: chain: BuBu Tea franchise (40+ outlets)",
+"at": "2026-11-14"
+},
+"a038a99786": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
+},
+"7ce9f7fc8c": {
+"d": "REMOVE",
+"r": "Poland audit: chain chocolate lounges (Karmello), dessert",
+"at": "2026-11-14"
+},
+"039836be93": {
+"d": "REMOVE",
+"r": "Poland audit: chain/dessert by name: Czas Na Herbat\u0119",
+"at": "2026-11-14"
+},
+"fa7ac3bc51": {
+"d": "REMOVE",
+"r": "Poland audit: chain ice-cream shops (Lody Bosko), dessert only",
+"at": "2026-11-14"
 }
 }

@@ -1517,10 +1517,14 @@
   },
   "fsq6908d98": {
    "set": {
-    "url": "https://www.camematcha.pl"
+    "address": "Marii Skłodowskiej-Curie 8",
+    "city": "Białystok",
+    "zip": "15-097",
+    "lat": 53.12866,
+    "lng": 23.15753
    },
-   "why": "website found by name-only web check",
-   "at": "2026-11-12"
+   "why": "Poland audit: address per the venue's own site/listing",
+   "at": "2026-11-14"
   },
   "fsq688c8da": {
    "set": {
@@ -1587,10 +1591,12 @@
   },
   "fsq68df837": {
    "set": {
-    "url": "https://organic.wroclaw.pl/"
+    "address": "ul. Ofiar Oświęcimskich 36",
+    "city": "Wrocław",
+    "zip": "50-069"
    },
-   "why": "website found by name-only web check",
-   "at": "2026-11-12"
+   "why": "Poland audit: address per the venue's own site/listing",
+   "at": "2026-11-14"
   },
   "fsq6883c34": {
    "set": {
@@ -2514,6 +2520,41 @@
    },
    "why": "Boston audit: address per the shop list on the venue's own site",
    "at": "2026-11-13"
+  },
+  "a1c752ff60": {
+   "set": {
+    "address": "Dobra 40 (Elektrownia Powiśle)",
+    "city": "Warszawa",
+    "zip": "00-344"
+   },
+   "why": "Poland audit: address per the venue's own site/listing",
+   "at": "2026-11-14"
+  },
+  "a3d5ccf10b": {
+   "set": {
+    "address": "ul. Broniewskiego 10C",
+    "city": "Chrzanów",
+    "zip": "32-500"
+   },
+   "why": "Poland audit: address per the venue's own site/listing",
+   "at": "2026-11-14"
+  },
+  "c61535dc89": {
+   "set": {
+    "address": "ul. Mikolaja Reja 10",
+    "city": "Radom",
+    "zip": "26-600"
+   },
+   "why": "Poland audit: address per the venue's own site/listing",
+   "at": "2026-11-14"
+  },
+  "313fc55615": {
+   "set": {
+    "address": "ul. Zakopiańska 2",
+    "city": "Wadowice"
+   },
+   "why": "Poland audit: address per the venue's own site/listing",
+   "at": "2026-11-14"
   }
  }
 }
