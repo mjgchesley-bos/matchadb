@@ -94,10 +94,66 @@ export async function generateMetadata({
   };
 }
 
-function formatValue(v: unknown): string {
-  if (v == null) return "";
-  if (typeof v === "string" || typeof v === "number" || typeof v === "boolean") return String(v);
-  return JSON.stringify(v, null, 2);
+type Primitive = string | number | boolean;
+const isPrimitive = (v: unknown): v is Primitive => typeof v === "string" || typeof v === "number" || typeof v === "boolean";
+
+// Entries such as "20g Branded CAN": $30.24 and "20g Branded BOX": $30.24 are the same size at the same price in two
+// packagings. Listing both looks like a duplicate, so they are shown as one line: "20g Branded CAN / BOX".
+function mergeSameSizeSamePrice(entries: [string, Primitive][]): [string, Primitive][] {
+  const words = (l: string) => l.split(/\s+/).filter(Boolean);
+  const groups = new Map<string, [string, Primitive][]>();
+  for (const e of entries) {
+    const k = `${String(e[1])}|${words(e[0])[0]?.toLowerCase() ?? ""}`;
+    groups.set(k, [...(groups.get(k) ?? []), e]);
+  }
+  return [...groups.values()].map((g) => {
+    if (g.length === 1) return g[0];
+    const first = words(g[0][0]);
+    let common = first.length;
+    for (const [l] of g) {
+      const w = words(l);
+      let i = 0;
+      while (i < common && i < w.length && w[i].toLowerCase() === first[i].toLowerCase()) i++;
+      common = i;
+    }
+    const head = first.slice(0, common).join(" ");
+    const tails = g.map(([l]) => words(l).slice(common).join(" ")).filter(Boolean);
+    const label = common > 0 && tails.length === g.length ? `${head} ${tails.join(" / ")}` : g.map(([l]) => l).join(" / ");
+    return [label, g[0][1]] as [string, Primitive];
+  });
+}
+
+// A disclosed value as people read it: plain text, a bullet list, or labeled rows. Never raw JSON.
+function DisclosedValue({ value }: { value: unknown }) {
+  if (value == null || value === "") return null;
+  if (isPrimitive(value)) return <span className="whitespace-pre-wrap">{String(value)}</span>;
+  if (Array.isArray(value)) {
+    const items = value.filter((x) => x != null && x !== "");
+    if (items.length === 1) return <DisclosedValue value={items[0]} />;
+    return (
+      <ul className="list-disc pl-5 flex flex-col gap-1">
+        {items.map((x, i) => (
+          <li key={i}>
+            <DisclosedValue value={x} />
+          </li>
+        ))}
+      </ul>
+    );
+  }
+  let entries = Object.entries(value as Record<string, unknown>).filter(([, v]) => v != null && v !== "");
+  if (entries.length >= 2 && entries.every(([, v]) => isPrimitive(v))) entries = mergeSameSizeSamePrice(entries as [string, Primitive][]);
+  return (
+    <dl className="grid grid-cols-1 gap-x-5 gap-y-1.5 sm:grid-cols-[minmax(7rem,auto)_1fr]">
+      {entries.map(([k, v]) => (
+        <Fragment key={k}>
+          <dt className="text-ink-muted">{humanizeKey(k)}</dt>
+          <dd>
+            <DisclosedValue value={v} />
+          </dd>
+        </Fragment>
+      ))}
+    </dl>
+  );
 }
 
 function humanizeKey(key: string): string {
@@ -647,18 +703,22 @@ export default async function ProductDetailPage({
       {disclosedEntries.length > 0 && (
         <SectionCard id="details-h" title={t("prod.sec.details")} flush>
           <details className="group">
-            <summary className="cursor-pointer select-none list-none px-4 py-3 text-sm text-ink-muted flex items-center justify-between">
+            <summary className="flex cursor-pointer select-none list-none items-center justify-between gap-4 px-5 py-4 text-sm font-medium text-ink transition-colors hover:bg-matcha-soft focus-visible:outline-2 focus-visible:outline-matcha [&::-webkit-details-marker]:hidden">
               <span>
                 {t(disclosedEntries.length === 1 ? "prod.details.summary.one" : "prod.details.summary.other", { n: disclosedEntries.length })}
               </span>
-              <span className="text-ink-faint transition-transform group-open:rotate-180">&#9662;</span>
+              <span aria-hidden="true" className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-matcha bg-matcha text-paper shadow-sm transition-transform group-open:rotate-180">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3.5 6l4.5 4.5L12.5 6" />
+                </svg>
+              </span>
             </summary>
             {lang !== "en" && <p className="border-t border-line px-4 pt-3 text-xs text-ink-faint">{t("prod.details.note")}</p>}
             <dl className="divide-y divide-line border-t border-line px-4">
               {disclosedEntries.map(([key, value]) => (
                 <div key={key} className="py-3.5 grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-1">
                   <dt className="text-sm font-medium text-ink-faint">{humanizeKey(key)}</dt>
-                  <dd className="text-sm whitespace-pre-wrap text-ink">{formatValue(value)}</dd>
+                  <dd className="text-sm text-ink"><DisclosedValue value={value} /></dd>
                 </div>
               ))}
             </dl>
