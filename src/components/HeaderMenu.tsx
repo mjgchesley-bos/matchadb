@@ -9,6 +9,7 @@ import type { Key } from "@/i18n/dictionaries";
 // destinations that don't need a permanent button in the bar.
 const ITEMS: { href: string; label: Key; note: Key }[] = [
   { href: "/wholesale", label: "c.menu.wholesale.label", note: "c.menu.wholesale.note" },
+  { href: "/hall-of-fame", label: "c.menu.hof.label", note: "c.menu.hof.note" },
   { href: "/research", label: "c.menu.research.label", note: "c.menu.research.note" },
   { href: "/cultivars", label: "c.menu.cultivars.label", note: "c.menu.cultivars.note" },
   { href: "/guides/what-is-ceremonial-matcha", label: "c.menu.ceremonial.label", note: "c.menu.ceremonial.note" },
