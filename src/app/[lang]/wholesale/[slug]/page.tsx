@@ -84,14 +84,14 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         <span className="text-ink-faint">{s.name}</span>
       </nav>
 
-      <header className="mt-6 max-w-3xl">
+      <header className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-7">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("ws.slug.eyebrow")}</p>
         <div className="flex items-center gap-4">
           <BrandLogo brandName={s.name} size={64} maxWidth={200} allowTallerThanSize />
           <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{s.name}</h1>
         </div>
-        <p className="mt-4 text-lg text-ink-muted leading-relaxed">{s.summary}</p>
-        <p className="mt-5 flex flex-wrap items-center gap-3">
+        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">{s.summary}</p>
+        <p className="mt-5 flex flex-wrap items-center gap-3 border-t border-line pt-5">
           <a
             href={s.website}
             target="_blank"
@@ -114,11 +114,11 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         </p>
       </header>
 
-      <section className="mt-10" aria-labelledby="terms-h">
-        <h2 id="terms-h" className="font-display text-xl font-semibold text-ink">{t("ws.slug.terms")}</h2>
-        <dl className="mt-4 border-y border-line divide-y divide-line">
+      <section className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised" aria-labelledby="terms-h">
+        <h2 id="terms-h" className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.terms")}</h2>
+        <dl className="divide-y divide-line px-5">
           {rows.map((r) => (
-            <div key={r.label} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-1 py-3">
+            <div key={r.label} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-1 py-3.5">
               <dt className="text-sm text-ink-faint">{r.label}</dt>
               <dd className="text-ink leading-relaxed">{r.value}</dd>
             </div>
@@ -126,18 +126,18 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         </dl>
       </section>
 
-      <section className="mt-10 grid gap-10 sm:grid-cols-2">
-        <div>
-          <h2 className="font-display text-xl font-semibold text-ink">{t("ws.slug.products")}</h2>
-          <ul className="mt-3 list-disc pl-5 flex flex-col gap-1.5 text-ink-muted">
+      <section className="mt-6 grid gap-6 sm:grid-cols-2">
+        <div className="overflow-hidden rounded-sm border border-line bg-paper-raised">
+          <h2 className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.products")}</h2>
+          <ul className="list-disc pl-10 pr-5 py-4 flex flex-col gap-1.5 text-ink-muted">
             {p.products.map((x) => (
               <li key={x}>{x}</li>
             ))}
           </ul>
         </div>
-        <div>
-          <h2 className="font-display text-xl font-semibold text-ink">{t("ws.slug.certs")}</h2>
-          <ul className="mt-3 list-disc pl-5 flex flex-col gap-1.5 text-ink-muted">
+        <div className="overflow-hidden rounded-sm border border-line bg-paper-raised">
+          <h2 className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.certs")}</h2>
+          <ul className="list-disc pl-10 pr-5 py-4 flex flex-col gap-1.5 text-ink-muted">
             {p.certifications.map((c) => (
               <li key={c}>{c}</li>
             ))}
@@ -145,7 +145,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         </div>
       </section>
 
-      <section className="mt-12 rounded-sm border border-line bg-paper-raised px-5 py-4 text-sm text-ink-muted leading-relaxed">
+      <section className="mt-6 rounded-sm border border-dashed border-line-strong px-5 py-4 text-sm text-ink-muted leading-relaxed">
         <p>
           <strong className="text-ink">{t("ws.slug.where")}</strong> {t("ws.slug.note", { name: s.name, date: verified })}{" "}
           {s.sources.map((src, i) => (
