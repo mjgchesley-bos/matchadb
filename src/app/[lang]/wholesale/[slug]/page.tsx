@@ -4,12 +4,12 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { BrandLogo } from "@/components/product-cards";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
-import { SUPPLIERS, supplierBySlug, type CatalogItem, type Supplier } from "@/lib/suppliers";
+import { SUPPLIERS, supplierBySlug, itemGrade, itemRegion, type CatalogItem, type Supplier } from "@/lib/suppliers";
 import { ProductCard } from "@/components/ProductCard";
 import { getBrandProducts } from "@/lib/db";
 import { langOf } from "@/i18n/params";
 import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
-import { getT } from "@/i18n/server";
+import { getT, getTV } from "@/i18n/server";
 import { rich } from "@/i18n/rich";
 import { pageAlternates } from "@/i18n/seo";
 
@@ -35,8 +35,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 // One supplier product or option as a card, in the style of the consumer product cards: what it is, where it is from,
 // what the supplier says it is for, its own taste ratings, the options and price it states, and a link to its page.
-function CatalogCard({ item, t }: { item: CatalogItem; t: ReturnType<typeof getT> }) {
+function CatalogCard({ item, t, tv }: { item: CatalogItem; t: ReturnType<typeof getT>; tv: ReturnType<typeof getTV> }) {
   const chip = "rounded-full px-2 py-0.5 text-xs";
+  const grade = itemGrade(item);
+  const region = itemRegion(item);
   const flavor = item.flavor
     ? ([
         [t("ws.slug.f.sweet"), item.flavor.sweetness],
@@ -50,7 +52,9 @@ function CatalogCard({ item, t }: { item: CatalogItem; t: ReturnType<typeof getT
     <li className="flex flex-col gap-3 rounded-sm border border-line bg-paper p-4">
       <h3 className="text-base font-bold leading-snug text-ink">{item.name}</h3>
       <div className="flex flex-wrap gap-1.5">
-        {item.origin && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.origin}</span>}
+        {grade && <span className={`${chip} bg-matcha-soft text-matcha-ink`}>{tv("grade", grade)}</span>}
+        {region && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{tv("region", region)}</span>}
+        {item.origin && item.origin !== region && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.origin}</span>}
         {item.cultivar && <span className={`${chip} bg-matcha-soft text-matcha-ink`}>{item.cultivar}</span>}
         {item.shading && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.shading}</span>}
         {item.harvest && <span className={`${chip} border border-line bg-paper-raised text-ink-muted`}>{item.harvest}</span>}
@@ -158,6 +162,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
   const { slug } = await params;
   const lang = await langOf(params);
   const t = getT(lang);
+  const tv = getTV(lang);
   const s = supplierBySlug(slug);
   if (!s) notFound();
   const p = s.profile;
@@ -248,7 +253,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
           <ul className="grid gap-4 sm:grid-cols-2">
             <OfferCard s={s} t={t} />
             {(s.catalog ?? []).map((item) => (
-              <CatalogCard key={item.name} item={item} t={t} />
+              <CatalogCard key={item.name} item={item} t={t} tv={tv} />
             ))}
           </ul>
           {productCount > 0 && (

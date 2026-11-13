@@ -30,6 +30,9 @@ export function ProductCard({ product: p, lang = "en" }: { product: ProductRow; 
               {tv("region", p.region)}
             </span>
           )}
+          {p.cultivar && (
+            <span className="rounded-full bg-paper-raised border border-line text-ink-muted px-2 py-0.5">{p.cultivar}</span>
+          )}
           {p.organic_certified === 1 && (
             <span className="rounded-full bg-gold-soft text-gold px-2 py-0.5">{t("pc.organic")}</span>
           )}

@@ -58,6 +58,8 @@ export type Profile = {
 // One product, product line or option a supplier lists on its own site (shown as a card on its profile page).
 export type CatalogItem = {
   name: string;
+  grade?: "Ceremonial" | "Culinary" | "Latte grade"; // the same standard labels the product database uses (set only when the supplier's own name for the item says so)
+  region?: string; // the same standard region labels as the product database (Uji, Kagoshima, Shizuoka...)
   origin?: string;
   cultivar?: string;
   shading?: string;
@@ -112,3 +114,30 @@ export const profiled = (): Supplier[] => SUPPLIERS.filter((s) => s.profile);
 
 const dateFmt = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 export const verifiedOn = (s: Supplier): string => dateFmt.format(new Date(`${s.verified}T00:00:00Z`));
+
+
+// Standard labels for a wholesale card, in the same vocabulary as the consumer product cards. A grade is taken from the
+// item's name only when the name points to exactly one grade ("Ceremonial matcha" yes; "ceremonial and culinary" no).
+export function itemGrade(i: CatalogItem): CatalogItem["grade"] | undefined {
+  if (i.grade) return i.grade;
+  const hits = new Set<NonNullable<CatalogItem["grade"]>>();
+  if (/ceremonial/i.test(i.name)) hits.add("Ceremonial");
+  if (/culinary|baking/i.test(i.name)) hits.add("Culinary");
+  if (/latte/i.test(i.name)) hits.add("Latte grade");
+  return hits.size === 1 ? [...hits][0] : undefined;
+}
+
+const REGION_WORDS: [RegExp, string][] = [
+  [/\buji\b/i, "Uji"],
+  [/kagoshima/i, "Kagoshima"],
+  [/shizuoka/i, "Shizuoka"],
+  [/nishio|aichi/i, "Nishio"],
+  [/\byame\b/i, "Yame"],
+  [/wazuka/i, "Wazuka"],
+  [/china|guizhou|zhejiang/i, "China"],
+];
+export function itemRegion(i: CatalogItem): string | undefined {
+  if (i.region) return i.region;
+  const hits = new Set(REGION_WORDS.filter(([re]) => i.origin && re.test(i.origin)).map(([, r]) => r));
+  return hits.size === 1 ? [...hits][0] : undefined;
+}
