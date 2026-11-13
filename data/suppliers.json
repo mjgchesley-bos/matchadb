@@ -10,7 +10,10 @@
     "tags": [],
     "how": [],
     "summary": "Runs a separate wholesale catalog on Aiya America's site covering its ceremonial, culinary, organic and blended matcha.",
-    "facts": [],
+    "facts": [
+      "Free shipping to the US and Canada on wholesale orders over $500",
+      "Wholesale minimum order requirements apply, amount not stated"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -45,7 +48,9 @@
       "Organic and conventional available by the pallet",
       "Private-label minimums are set by pack size, from 1 case",
       "Production plant is FSSC 22000 certified",
-      "After registering, a representative confirms wholesale status; wholesale customers log in to order"
+      "After registering, a representative confirms wholesale status; wholesale customers log in to order",
+      "Particle size and grade can be adjusted on request, for both bulk and wholesale orders.",
+      "Two warehouses near Los Angeles serve US orders, and the US sales subsidiary is in Huntington Beach, California."
     ],
     "sources": [
       {
@@ -53,9 +58,67 @@
         "url": "https://aoimatcha.com/pages/business"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk matcha (100 kg and up)",
+        "notes": "Large-volume powder for manufacturers, suppliers and distributors, offered in conventional and organic types and shipped by the pallet.",
+        "origin": "Japan",
+        "uses": [
+          "Food",
+          "Beverage",
+          "Nutraceuticals",
+          "Cosmeceuticals"
+        ],
+        "options": [
+          "Orders from 100 kg in 25 kg steps",
+          "Pallet of 550 kg",
+          "Minimum order: 100 kg"
+        ],
+        "url": "https://aoimatcha.com/pages/business"
+      },
+      {
+        "name": "Wholesale matcha (1 kg and up)",
+        "notes": "Smaller wholesale orders for cafés, restaurants and food service buyers, with quick US shipping.",
+        "origin": "Japan",
+        "uses": [
+          "Cafés",
+          "Restaurants",
+          "Food service"
+        ],
+        "options": [
+          "Orders from 1 kg",
+          "Case of 40 tins of 30 g",
+          "Minimum order: 1 kg"
+        ],
+        "url": "https://aoimatcha.com/pages/business"
+      },
+      {
+        "name": "Private label and OEM",
+        "notes": "Custom-branded matcha and OEM supply, from product concept to finished product, with particle size, flavor and blend changes available.",
+        "origin": "Japan",
+        "options": [
+          "30 g cans (1 case = 10 inner cases x 140 tins)",
+          "80 g cans (1 case = 80 tins)",
+          "100 g bags",
+          "200 g bags",
+          "Single-dose stick packs (MOQ on request)",
+          "Minimum order: From 1 case, set by pack size"
+        ],
+        "url": "https://aoimatcha.com/pages/business"
+      },
+      {
+        "name": "Powder grades",
+        "notes": "Conventional and organic matcha powder, each available in five grades from gourmet down to supplement grade.",
+        "options": [
+          "Conventional: gourmet, culinary, cooking, multi-purpose, supplement",
+          "Organic: gourmet, culinary, cooking, multi-purpose, supplement"
+        ],
+        "url": "https://aoimatcha.com/pages/business"
+      }
     ]
   },
   {
@@ -69,7 +132,9 @@
     "tags": [],
     "how": [],
     "summary": "Has a wholesale page and a wholesale matcha collection; the terms are on its site.",
-    "facts": [],
+    "facts": [
+      "Says it works with wholesale clients such as restaurants, cafés, nutritionists, sports clubs and health food markets."
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -96,7 +161,9 @@
     "summary": "Berkeley, California tea company selling loose-leaf teas, matcha among them, in bulk to coffee shops, restaurants, specialty retailers and hospitality businesses.",
     "facts": [
       "Teas come from small family farms and collectives",
-      "Apply through its wholesale form"
+      "Apply through its wholesale form",
+      "Describes itself as a small direct-trade importer working with family-owned farms, artisan growers and small-batch producers.",
+      "Says each tea is grown sustainably and has traceable origins."
     ],
     "sources": [
       {
@@ -104,7 +171,26 @@
         "url": "https://www.bluewillowtea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Bulk loose-leaf teas",
+        "notes": "Loose-leaf teas in bulk, selected to fit each business's needs, for shops, restaurants and hospitality buyers.",
+        "origin": "Small family farms and collectives around the world",
+        "uses": [
+          "Coffee shops",
+          "Neighborhood restaurants",
+          "Specialty retail stores",
+          "Hospitality businesses"
+        ],
+        "url": "https://www.bluewillowtea.com/pages/wholesale"
+      },
+      {
+        "name": "Bespoke tea program",
+        "notes": "A custom tea program built around the client's menu and customers, with help choosing teas and training staff on steeping.",
+        "url": "https://www.bluewillowtea.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "breakaway-matcha",
@@ -123,7 +209,8 @@
     ],
     "summary": "Offers wholesale to restaurants, cafés, companies, tea shops, boutiques and other retailers.",
     "facts": [
-      "Asks for details on who you are and how you plan to offer its matcha"
+      "Asks for details on who you are and how you plan to offer its matcha",
+      "Says wholesale buyers receive the same level of customer care it gives retail customers."
     ],
     "sources": [
       {
@@ -148,7 +235,9 @@
     "how": [],
     "summary": "Swiss organic matcha brand that wholesales to cafés, coffee shops and retailers.",
     "facts": [
-      "Says it supplies cafés and coffee shops in Switzerland and beyond"
+      "Says it supplies cafés and coffee shops in Switzerland and beyond",
+      "Wholesale and store-stocking enquiries go by email to whisk@ceremonymatcha.com.",
+      "Matcha is ground to order in small batches."
     ],
     "sources": [
       {
@@ -156,7 +245,24 @@
         "url": "https://ceremonymatcha.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Organic matcha for cafés",
+        "notes": "Organic ceremonial matcha powder for cafés and coffee shops to serve to their customers.",
+        "origin": "Japan",
+        "uses": [
+          "Matcha drinks for café customers"
+        ],
+        "url": "https://ceremonymatcha.com/pages/wholesale"
+      },
+      {
+        "name": "Retail stocking",
+        "notes": "Organic matcha powder and accessories for shops and retailers that want to carry the brand.",
+        "origin": "Japan",
+        "url": "https://ceremonymatcha.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "cha-cha-matcha",
@@ -195,7 +301,9 @@
     ],
     "summary": "Form for cafés, restaurants and shops that want to carry Chaism.",
     "facts": [
-      "Says it replies within two business days"
+      "Says it replies within two business days",
+      "Wholesale inquiries can also be emailed to support@chaism.store.",
+      "Its leaves spend 35% longer under shade than standard, and only first-harvest leaves are used."
     ],
     "sources": [
       {
@@ -203,7 +311,23 @@
         "url": "https://chaism.store/pages/wholesale-contact"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Ceremonial grade matcha for cafés and shops",
+        "notes": "Shade-grown, first-harvest ceremonial matcha, stone-ground, offered to cafés, restaurants and shops that apply through the wholesale form.",
+        "origin": "Valleys near Hangzhou",
+        "uses": [
+          "Cafés",
+          "Restaurants",
+          "Shops"
+        ],
+        "options": [
+          "Ceremonial Grade Matcha Powder"
+        ],
+        "url": "https://chaism.store/pages/wholesale-contact"
+      }
+    ]
   },
   {
     "slug": "chalait",
@@ -222,7 +346,9 @@
     ],
     "summary": "Matcha brand with a wholesale page; cafés and shops can email its wholesale team to become a featured partner.",
     "facts": [
-      "Describes its matcha as selected from Japan's tea regions and stone-ground"
+      "Describes its matcha as selected from Japan's tea regions and stone-ground",
+      "Says it works closely with tea farmers who share its values on fair wages and sustainable farming.",
+      "Wholesale buyers are asked to contact the team to choose grade and quantity."
     ],
     "sources": [
       {
@@ -230,7 +356,28 @@
         "url": "https://www.chalait.com/pages/chalait-your-premier-wholesale-matcha-source"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Wholesale ceremonial and culinary matcha",
+        "notes": "Matcha in ceremonial grade for traditional drinks and culinary grade for recipes, selected from Japan's tea regions and stone-ground.",
+        "origin": "Uji, Japan",
+        "uses": [
+          "Traditional matcha drinks",
+          "Culinary creations"
+        ],
+        "options": [
+          "Ceremonial grade",
+          "Culinary grade"
+        ],
+        "url": "https://www.chalait.com/pages/chalait-your-premier-wholesale-matcha-source"
+      },
+      {
+        "name": "Customized wholesale program",
+        "notes": "Matcha offering tailored to a business's brand and customers, with help on preparation, menu development and marketing.",
+        "url": "https://www.chalait.com/pages/chalait-your-premier-wholesale-matcha-source"
+      }
+    ]
   },
   {
     "slug": "culinary-teas",
@@ -250,7 +397,9 @@
     "summary": "Tea company with wholesale partners across the US, including coffee and tea shops, restaurants, cafés, spas and gourmet shops.",
     "facts": [
       "Also takes corporate-gift and charitable-organization partners",
-      "Contact form to get started"
+      "Contact form to get started",
+      "The wholesale application asks for organization type (tea room, retail, caterer, church or other), website and expected tea volume per quarter.",
+      "Offers brewing guidelines for making tea in large quantities for tea rooms and restaurants."
     ],
     "sources": [
       {
@@ -258,9 +407,33 @@
         "url": "https://culinaryteas.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale partner program",
+        "notes": "Personalized wholesale accounts across the US, with ongoing support and sales reports on the most popular teas in a partner's area.",
+        "uses": [
+          "Coffee and tea shops",
+          "Restaurants",
+          "Cafés",
+          "Spas",
+          "Gourmet shops"
+        ],
+        "url": "https://culinaryteas.com/pages/wholesale"
+      },
+      {
+        "name": "Branded teas for organizations",
+        "notes": "Teas selected for an event, business or audience and packaged with the client's own branding.",
+        "uses": [
+          "Events",
+          "Corporate gifts",
+          "Charitable organizations"
+        ],
+        "url": "https://culinaryteas.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -276,17 +449,59 @@
     ],
     "how": [],
     "summary": "Wholesale matcha and tea for cafés in Canada and the United States.",
-    "facts": [],
+    "facts": [
+      "Ships across Canada and the United States; local delivery in Vancouver.",
+      "Includes staff training, preparation ratios and brewing guidance.",
+      "Many teas are exclusive to the company and not sold elsewhere.",
+      "Buyers start by describing their space, concept, menu and clientele."
+    ],
     "sources": [
       {
         "label": "Wholesale page",
         "url": "https://cultivatetea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "ca",
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Café program",
+        "notes": "Matcha, hojicha and a focused set of teas for daily café service, including caffeine-free options. The selection is built around each café's concept and workflow.",
+        "uses": [
+          "daily café service"
+        ],
+        "options": [
+          "matcha",
+          "hojicha",
+          "caffeine-free teas"
+        ],
+        "url": "https://cultivatetea.com/pages/wholesale"
+      },
+      {
+        "name": "Restaurant seasonal tea list",
+        "notes": "A rotating seasonal tea list matched to the restaurant's menu, plus non-alcoholic pairings for tasting menus.",
+        "uses": [
+          "restaurant tea list",
+          "tasting menu pairings"
+        ],
+        "url": "https://cultivatetea.com/pages/wholesale"
+      },
+      {
+        "name": "Retail packaged teas",
+        "notes": "Packaged teas and matcha for a retail counter or shelf, including new harvest releases and limited editions.",
+        "uses": [
+          "retail shelf"
+        ],
+        "url": "https://cultivatetea.com/pages/wholesale"
+      },
+      {
+        "name": "Taster packs",
+        "notes": "Buyers can order taster packs to try the recommended teas in their own setup before placing an order.",
+        "url": "https://cultivatetea.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -307,7 +522,11 @@
     ],
     "summary": "Tea company with a wholesale program for distributors, hotels, spas, restaurants, offices and boutiques; its range includes matcha tins.",
     "facts": [
-      "Apply to become a wholesaler; approved accounts log in to order"
+      "Apply to become a wholesaler; approved accounts log in to order",
+      "Delivery is $15.99 on orders under $500 before taxes and free on orders over $500.",
+      "Wholesale applications are answered within 3-5 business days.",
+      "Ships across Canada and the United States only.",
+      "Certifications such as organic and Fair Trade are listed for each product on the wholesale site."
     ],
     "sources": [
       {
@@ -315,10 +534,47 @@
         "url": "https://davidstea.com/en-us/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "ca",
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Tea sachets (packs and boxes)",
+        "notes": "Tea sachets sold to wholesale buyers in packs and in boxes.",
+        "options": [
+          "packs of tea sachets",
+          "boxes of tea sachets"
+        ],
+        "url": "https://davidstea.com/en-us/pages/wholesale"
+      },
+      {
+        "name": "Matcha tins",
+        "notes": "Matcha sold in tins as part of the wholesale range.",
+        "url": "https://davidstea.com/en-us/pages/wholesale"
+      },
+      {
+        "name": "Loose leaf tea",
+        "notes": "Premium loose leaf teas that buyers can choose from a wide range.",
+        "url": "https://davidstea.com/en-us/pages/wholesale"
+      },
+      {
+        "name": "Custom selection program",
+        "notes": "Buyers hand-pick a range suited to their business and can add seasonal exclusives and limited-edition blends. Marketing materials and product training are included.",
+        "uses": [
+          "distributors",
+          "hotels",
+          "spas",
+          "restaurants",
+          "offices",
+          "boutiques"
+        ],
+        "options": [
+          "Minimum order: $350 before taxes"
+        ],
+        "url": "https://davidstea.com/en-us/pages/wholesale"
+      }
     ]
   },
   {
@@ -339,7 +595,9 @@
     "summary": "Sells tea, chai concentrates and ceremonial matcha to businesses building a tea menu.",
     "facts": [
       "Offers tea cuppings for staff training and community tastings",
-      "Email the wholesale team to get set up; wholesale portal login"
+      "Email the wholesale team to get set up; wholesale portal login",
+      "Partners receive sourcing details, brewing guides and custom specialty drink recipes.",
+      "The wholesale contact form asks for business name, website, city, state and how the buyer heard of Dona."
     ],
     "sources": [
       {
@@ -347,7 +605,32 @@
         "url": "https://drinkdona.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Concentrates",
+        "notes": "Slow-steeped tea and chai concentrates for building drinks on a tea menu.",
+        "options": [
+          "Masala Chai Concentrate",
+          "Cardamom Rose Tea Concentrate"
+        ],
+        "url": "https://drinkdona.com/pages/wholesale"
+      },
+      {
+        "name": "Ceremonial matcha",
+        "notes": "Ceremonial matcha blended from several small producers, selected for a fresh, smooth, toasty flavour with a clean finish.",
+        "origin": "Japan: Kyoto, Kagoshima and Shizuoka",
+        "options": [
+          "First Flush Ceremonial Grade Matcha"
+        ],
+        "url": "https://drinkdona.com/pages/wholesale"
+      },
+      {
+        "name": "Single origin and herbal teas",
+        "notes": "Pure single origin teas and delicate herbal blends for a tea menu.",
+        "url": "https://drinkdona.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "encha",
@@ -364,14 +647,28 @@
       "form"
     ],
     "summary": "Organic matcha brand with a dedicated wholesale page and wholesale contact form.",
-    "facts": [],
+    "facts": [
+      "The brand's matcha is USDA Certified Organic."
+    ],
     "sources": [
       {
         "label": "Wholesale page",
         "url": "https://encha.com/pages/matcha-wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Barista Grade matcha",
+        "notes": "A robust matcha for milk drinks and recipes, described as nutty, toasted and chocolatey with a sweet grass note. The page says it is made for cafés and home baristas.",
+        "origin": "Japan; the brand sources from Kagoshima, Miyazaki, Shizuoka and Uji",
+        "uses": [
+          "milk drinks",
+          "recipes"
+        ],
+        "url": "https://encha.com/pages/matcha-wholesale"
+      }
+    ]
   },
   {
     "slug": "funky-matcha",
@@ -391,7 +688,10 @@
     "summary": "Supplies ceremonial-grade matcha to businesses worldwide, as bulk powder or as Nespresso-compatible pods, shipped from Scandinavia.",
     "facts": [
       "Bulk powder in 500 g, 1 kg and 5 kg bags",
-      "Also offers matcha pods for business customers, and subscriptions"
+      "Also offers matcha pods for business customers, and subscriptions",
+      "Sample packs are available for businesses to trial before ordering.",
+      "Ships from Scandinavia to Europe, North America, the Middle East, Asia and Australia.",
+      "The page estimates that 1 kg of matcha powder makes about 500 servings."
     ],
     "sources": [
       {
@@ -399,9 +699,53 @@
         "url": "https://funky-matcha.com/pages/matcha-wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk ceremonial matcha powder",
+        "notes": "Stone-ground ceremonial matcha in bulk bags, described as vibrant green and consistent from batch to batch.",
+        "uses": [
+          "drinks",
+          "desserts",
+          "bar programs"
+        ],
+        "options": [
+          "500 g bag",
+          "1 kg bag",
+          "5 kg bag",
+          "Minimum order: Flexible depending on product and format; no minimum contract"
+        ],
+        "url": "https://funky-matcha.com/pages/matcha-wholesale"
+      },
+      {
+        "name": "Nespresso-compatible matcha pods",
+        "notes": "Matcha pods in bulk, compatible with Nespresso OriginalLine machines, for tableside or in-room service.",
+        "uses": [
+          "tabletop Nespresso machines",
+          "in-room pod supply",
+          "offices"
+        ],
+        "options": [
+          "six flavours",
+          "variety pack",
+          "Minimum order: Flexible; no minimum contract"
+        ],
+        "url": "https://funky-matcha.com/pages/matcha-wholesale"
+      },
+      {
+        "name": "Subscription supply",
+        "notes": "Recurring orders at a chosen frequency and volume, handled automatically with no manual reordering. Subscription orders get priority fulfilment and consistent pricing across cycles.",
+        "url": "https://funky-matcha.com/pages/matcha-wholesale"
+      },
+      {
+        "name": "High-volume custom supply",
+        "notes": "Tailored solutions for large orders and multi-site operations.",
+        "price": "Volume pricing on all products and formats; figures are in a price list sent on request",
+        "url": "https://funky-matcha.com/pages/matcha-wholesale"
+      }
     ]
   },
   {
@@ -430,7 +774,24 @@
         "url": "https://golde.co/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Bulk matcha for cafés",
+        "notes": "Matcha sold in bulk for café use.",
+        "url": "https://golde.co/pages/wholesale"
+      },
+      {
+        "name": "Bulk turmeric lattes for cafés",
+        "notes": "Turmeric lattes sold in bulk for café use.",
+        "url": "https://golde.co/pages/wholesale"
+      },
+      {
+        "name": "Corporate gifts",
+        "notes": "Gifting orders for a company's team.",
+        "url": "https://golde.co/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "harney-and-sons",
@@ -477,7 +838,10 @@
       "form"
     ],
     "summary": "Offers café and bulk matcha accounts by application.",
-    "facts": [],
+    "facts": [
+      "Homepage says it supplies UK cafés and bakeries; origin given as farms in Uji and Kagoshima",
+      "Wholesale and bulk pricing is linked from the homepage but not shown on the pages read"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -508,7 +872,10 @@
       "Says minimum quantities are accessible for small businesses",
       "Teas can be packed under Ikkyu's brand, under your own, or in bulk",
       "Says clients include matcha brands, international café chains and online retailers",
-      "Supplies through a network of producers across Kyushu"
+      "Supplies through a network of producers across Kyushu",
+      "US-based inquiries are handled by the exclusive importing partner NOKA Imports.",
+      "Matcha inquiries should include expected quantities, monthly or yearly, to speed up the reply.",
+      "The team replies in English, French, Italian and Japanese."
     ],
     "sources": [
       {
@@ -516,9 +883,44 @@
         "url": "https://shop.ikkyu-tea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Private label and bulk packing",
+        "notes": "Teas can be packed under Ikkyu's brand, under the buyer's own brand, or sold in bulk.",
+        "options": [
+          "Ikkyu brand",
+          "buyer's own brand",
+          "bulk"
+        ],
+        "url": "https://shop.ikkyu-tea.com/pages/wholesale"
+      },
+      {
+        "name": "Matcha wholesale",
+        "notes": "Matcha wholesale inquiries reopened for 2026. Certified organic matcha and halal-certified options are available.",
+        "options": [
+          "certified organic",
+          "halal-certified"
+        ],
+        "url": "https://shop.ikkyu-tea.com/pages/wholesale"
+      },
+      {
+        "name": "Japanese tea range",
+        "notes": "Sencha, genmaicha, hojicha, black tea (wakocha) and tea bags, sourced through a network of producers across Kyushu.",
+        "origin": "Kyushu, Japan (Yame, Fukuoka)",
+        "options": [
+          "sencha",
+          "genmaicha",
+          "hojicha",
+          "black tea (wakocha)",
+          "tea bags",
+          "Minimum order: Accessible for small businesses; no figure stated"
+        ],
+        "url": "https://shop.ikkyu-tea.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -534,7 +936,9 @@
       "form"
     ],
     "summary": "Wholesale and business inquiries go through a form on the Ippodo Global Online Shop; Ippodo replies by email.",
-    "facts": [],
+    "facts": [
+      "Wholesale and business inquiries use a form on the Ippodo Global Online Shop, which is a different site from ippodotea.com; Ippodo replies by email."
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -563,7 +967,9 @@
     "summary": "Texas-based tea company with a wholesale store for restaurants and cafés, stores and markets, online stores, corporate sales and industrial buyers.",
     "facts": [
       "The application asks for a reseller certificate, federal tax ID and resale permit",
-      "Existing wholesale customers log in to the wholesale store"
+      "Existing wholesale customers log in to the wholesale store",
+      "The application asks the buyer to pick a business type: restaurant or café, store or market, online store, corporate sales, industrial or other.",
+      "Wholesale contact is by phone or email, Monday to Friday, 9am to 5pm EST."
     ],
     "sources": [
       {
@@ -589,7 +995,9 @@
     ],
     "summary": "Runs a separate wholesale store for cafés, coffee shops and foodservice: matcha concentrate cartons, latte mixes and ceremonial matcha in Teahouse and Barista editions.",
     "facts": [
-      "Says Jade Leaf is produced and distributed by the Kizuna Tea Collective, a network of family-run tea farms across Japan"
+      "Says Jade Leaf is produced and distributed by the Kizuna Tea Collective, a network of family-run tea farms across Japan",
+      "Free samples can be requested from the wholesale site.",
+      "Taxes, discounts and shipping are calculated at checkout."
     ],
     "sources": [
       {
@@ -597,7 +1005,83 @@
         "url": "https://wholesale.jadeleafmatcha.com/"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Matcha latte concentrate",
+        "notes": "Matcha latte concentrate sold by the carton, cased in sets of six, for cafés and foodservice.",
+        "origin": "Japan",
+        "uses": [
+          "Lattes",
+          "Lemonades"
+        ],
+        "options": [
+          "Original 32 oz carton, case of 6"
+        ],
+        "price": "$33.00 for a case of six 32 oz cartons",
+        "url": "https://wholesale.jadeleafmatcha.com/"
+      },
+      {
+        "name": "Matcha lemonade bundles",
+        "notes": "Matcha lemonade mixes sold as 8-count bundles in two sizes.",
+        "uses": [
+          "Lemonades"
+        ],
+        "options": [
+          "2.7 oz (7 servings), 8-count bundle",
+          "3.9 oz box (10 servings), 8-count bundle"
+        ],
+        "price": "$62.64 for the 2.7 oz bundle; $70.32 for the 3.9 oz bundle",
+        "url": "https://wholesale.jadeleafmatcha.com/"
+      },
+      {
+        "name": "Sugar-free latte mix",
+        "notes": "Sweetened matcha latte mix in sugar-free pouches, sold as 8-count bundles.",
+        "uses": [
+          "Lattes"
+        ],
+        "options": [
+          "Cafe Style Sweetened Matcha Latte Mix - Sugar Free, 2.5 oz pouch (7 servings), 8-count bundle"
+        ],
+        "price": "$62.64 for the 8-count bundle",
+        "url": "https://wholesale.jadeleafmatcha.com/"
+      },
+      {
+        "name": "Ceremonial matcha (Teahouse and Barista editions)",
+        "notes": "Ceremonial-grade matcha in artisanal and organic versions, offered as separate Teahouse and Barista editions. Pack sizes are not stated.",
+        "origin": "Japan",
+        "options": [
+          "Artisanal Teahouse Edition",
+          "Organic Teahouse Edition",
+          "Artisanal Barista Edition",
+          "Organic Barista Edition"
+        ],
+        "price": "Artisanal Teahouse $152.99; Organic Teahouse $188.99; Artisanal Barista $119.99; Organic Barista $139.99",
+        "url": "https://wholesale.jadeleafmatcha.com/"
+      },
+      {
+        "name": "Culinary matcha",
+        "notes": "Culinary-grade matcha in artisanal and organic versions. Pack sizes are not stated.",
+        "origin": "Japan",
+        "options": [
+          "Artisanal Culinary Matcha",
+          "Organic Culinary Matcha"
+        ],
+        "price": "Artisanal $69.99; Organic $89.99",
+        "url": "https://wholesale.jadeleafmatcha.com/"
+      },
+      {
+        "name": "Ingredient matcha",
+        "notes": "Ingredient-grade matcha in artisanal and organic versions. Pack sizes are not stated.",
+        "origin": "Japan",
+        "options": [
+          "Artisanal Ingredient Matcha",
+          "Organic Ingredient Matcha"
+        ],
+        "price": "Artisanal $53.99; Organic $63.99",
+        "url": "https://wholesale.jadeleafmatcha.com/"
+      }
+    ]
   },
   {
     "slug": "jing-tea",
@@ -615,14 +1099,42 @@
       "portal"
     ],
     "summary": "Tea company with a wholesale program and trade-account login; matcha is part of its range.",
-    "facts": [],
+    "facts": [
+      "Trade services include staff training, menu consultation and service design",
+      "Prospective buyers apply by emailing sales; existing partners log in to a trade portal"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
         "url": "https://jingtea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Matcha for trade buyers",
+        "notes": "Ceremonial and latte grades of matcha, each suited to a different serve, sold with the JING Matcha Shaker.",
+        "uses": [
+          "Hotels",
+          "Restaurants",
+          "Cafés"
+        ],
+        "options": [
+          "Ceremonial grade",
+          "Latte grade"
+        ],
+        "url": "https://jingtea.com/pages/wholesale"
+      },
+      {
+        "name": "Trade support services",
+        "notes": "Staff training in person or online, menu consultation, service design and ongoing menu innovation for trade accounts.",
+        "uses": [
+          "Luxury hotels",
+          "Restaurants"
+        ],
+        "url": "https://jingtea.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "kagoshima-tea",
@@ -642,7 +1154,10 @@
       "Says it is always looking for new wholesale partners",
       "Serves Japanese restaurants, Asian grocery stores, spas, health centers and bakeries",
       "Notes that importing organic Japanese tea can require a phytosanitary certificate, and offers to help",
-      "Wholesale access also covers its sister companies"
+      "Wholesale access also covers its sister companies",
+      "Private label service lets buyers choose tea style, packaging and labeling",
+      "Wholesale contact is a named wholesale concierge, reachable by phone, email or contact form",
+      "Wholesale buyers also get access to five sister stores, including Shizuoka Tea and Japanese Coffee Co."
     ],
     "sources": [
       {
@@ -650,9 +1165,39 @@
         "url": "https://kagoshimatea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale Japanese green tea and matcha",
+        "notes": "Organic and conventional Japanese green teas and matcha from Kagoshima, sold to trade buyers. No individual products or sizes are named.",
+        "origin": "Kagoshima, Japan",
+        "uses": [
+          "Tea and coffee shops",
+          "Japanese restaurants",
+          "Asian grocers",
+          "Spas",
+          "Bakeries",
+          "Boutique hotels"
+        ],
+        "options": [
+          "Organic",
+          "Conventional"
+        ],
+        "url": "https://kagoshimatea.com/pages/wholesale"
+      },
+      {
+        "name": "Private label tea service",
+        "notes": "Buyers pick the tea style, packaging and labeling to sell under their own brand.",
+        "url": "https://kagoshimatea.com/pages/wholesale"
+      },
+      {
+        "name": "Hard-to-find Japanese goods",
+        "notes": "Tea ware, whisks, coffee drippers and mugs that the company says are hard to get overseas.",
+        "url": "https://kagoshimatea.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -680,9 +1225,19 @@
         "url": "https://kenkomatcha.com/pages/wholesale-matcha"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale matcha powder and bulk matcha tea",
+        "notes": "Matcha supplied to businesses that will resell it. No product lines, sizes or wholesale prices are named.",
+        "uses": [
+          "Resale by health food shops, cafés, gour"
+        ],
+        "url": "https://kenkomatcha.com/pages/wholesale-matcha"
+      }
     ]
   },
   {
@@ -706,7 +1261,9 @@
     "summary": "Japanese-tea company that supplies restaurants and cafés and runs its own cafés; wholesale offerings are visible after signing in.",
     "facts": [
       "Says it works directly with its producers",
-      "Wholesale terms and prices are shown only to signed-in wholesale customers"
+      "Wholesale terms and prices are shown only to signed-in wholesale customers",
+      "Wholesale inquiries go through an interest form on the page or to wholesale@kettl.co",
+      "Offers menu curation, concept consultation and operational help to restaurants and cafés"
     ],
     "note": "Shogyokuen is sold through Kettl.",
     "sources": [
@@ -737,7 +1294,10 @@
     "facts": [
       "Under 30 kg a month: no application or waiting list, order online with a code for 30% off when you buy 10 or more pouches",
       "Example on its page: a 100 g Classic Ceremonial Uji pouch at $41.99 becomes $29.40",
-      "Over 30 kg a month: email your monthly volume for bulk pricing"
+      "Over 30 kg a month: email your monthly volume for bulk pricing",
+      "Ships from Japan on ExWorks, FOB and DDP terms for selected countries.",
+      "Says its products come from accredited facilities that meet international quality standards.",
+      "Not currently taking new OEM or private-label projects."
     ],
     "sources": [
       {
@@ -745,9 +1305,30 @@
         "url": "https://kiyomatcha.com/pages/b2b"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Café program (under 30 kg a month)",
+        "notes": "Small buyers order online with no application or waiting list, and get a discount code for pouches. The code applies when buying in larger quantities.",
+        "origin": "Uji, Japan",
+        "options": [
+          "Classic Ceremonial Uji Matcha 100g",
+          "Minimum order: 10 or more pouches for the 30% discount"
+        ],
+        "price": "30% off when buying 10 or more pouches; example: Classic Ceremonial Uji Matcha 100g goes from $41.99 to $29.40 per pouch",
+        "url": "https://kiyomatcha.com/pages/b2b"
+      },
+      {
+        "name": "Bulk supply (over 30 kg a month)",
+        "notes": "Larger buyers, including multi-outlet businesses, email their monthly volume to receive custom bulk pricing.",
+        "options": [
+          "Minimum order: Over 30 kg a month"
+        ],
+        "url": "https://kiyomatcha.com/pages/b2b"
+      }
     ]
   },
   {
@@ -769,7 +1350,10 @@
     "summary": "Uji (Kyoto) company with a wholesale service for matcha and Japanese loose-leaf green tea, plus a private-label service.",
     "facts": [
       "Says its matcha and teas have shipped to more than 30 countries",
-      "Its online store has bulk and business-size collections for small cafés"
+      "Its online store has bulk and business-size collections for small cafés",
+      "Wholesale and private-label requests are made through an inquiry form on the wholesale page.",
+      "Says it uses traceability and tests all tea for trace chemicals, microbes and radiation.",
+      "Offers one-stop services from OEM work to export solutions."
     ],
     "sources": [
       {
@@ -777,9 +1361,48 @@
         "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Matcha powder",
+        "notes": "Japanese matcha from Uji, Kyoto, offered through its wholesale service. Pricing is requested through the inquiry form.",
+        "origin": "Uji, Kyoto, Japan",
+        "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
+      },
+      {
+        "name": "Culinary powder",
+        "notes": "Powder for cooking and baking, listed as a wholesale product line. Details are requested through the inquiry form.",
+        "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
+      },
+      {
+        "name": "Tea powder",
+        "notes": "Tea powders listed as a wholesale product line. Details are requested through the inquiry form.",
+        "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
+      },
+      {
+        "name": "Loose-leaf Japanese green tea",
+        "notes": "Japanese loose-leaf green tea offered wholesale, sourced from several regions including Kyoto and Shizuoka.",
+        "origin": "Kyoto and Shizuoka, Japan",
+        "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
+      },
+      {
+        "name": "Tea accessories",
+        "notes": "Japanese tea accessories listed as a wholesale product line.",
+        "options": [
+          "Aroma bowls",
+          "Tea pots",
+          "Tea cups"
+        ],
+        "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
+      },
+      {
+        "name": "Private-label service",
+        "notes": "Private-label service for businesses, with OEM and one-stop export support. Details are requested through the inquiry form.",
+        "url": "https://www.kyotoyamasan.com/matcha-wholesale-from-japan/"
+      }
     ]
   },
   {
@@ -800,7 +1423,10 @@
     "facts": [
       "The application asks for a reseller certificate and up to two store locations",
       "Says its current review time is 48 hours",
-      "International wholesale accounts are limited to DDP payment terms"
+      "International wholesale accounts are limited to DDP payment terms",
+      "A reseller certificate is required to be exempt from taxes.",
+      "The application asks which online marketplaces and channels the buyer sells through, and whether they use a fulfillment center.",
+      "Says products are made in NSF-certified, FDA-inspected facilities."
     ],
     "sources": [
       {
@@ -808,9 +1434,17 @@
         "url": "https://legionathletics.com/wholesale/"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Retailer and marketplace wholesale account",
+        "notes": "Wholesale application for retail stores and online marketplace sellers (Amazon, Walmart, eBay, Etsy). It asks for a reseller certificate, store addresses and monthly order volume. Wholesale prices for products are not shown on the wholesale page.",
+        "origin": "Made in the USA (per site)",
+        "url": "https://legionathletics.com/wholesale/"
+      }
     ]
   },
   {
@@ -830,7 +1464,9 @@
     ],
     "summary": "Matcha cafés can apply to become wholesale partners and then see a business price catalogue.",
     "facts": [
-      "Says applications can take up to 7 business days"
+      "Says applications can take up to 7 business days",
+      "Approved partners see a business price catalogue at discounted prices; discount levels are not stated",
+      "Applications are a B2B form on the wholesale page and are handled in the order received"
     ],
     "sources": [
       {
@@ -838,7 +1474,18 @@
         "url": "https://maeda-en.com/pages/wholesale-registration-form"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Green Tea Wholesale Partners",
+        "notes": "Program for businesses such as matcha cafés. Approved partners can see a business price catalogue of products.",
+        "uses": [
+          "Matcha cafés",
+          "Other businesses"
+        ],
+        "url": "https://maeda-en.com/pages/wholesale-registration-form"
+      }
+    ]
   },
   {
     "slug": "maison-koko",
@@ -858,7 +1505,10 @@
       "Says it has a 50,000 kg annual allocation direct from Japan",
       "Matcha sourced from Uji and Yame",
       "Says orders ship same day (Mon-Fri), with 1-2 business day delivery to major Australian metro areas",
-      "Says minimums are low"
+      "Says minimums are low",
+      "Standing weekly, fortnightly or monthly orders receive extra discounts",
+      "Team replies within 24 hours to a wholesale form with pricing, optional samples and onboarding",
+      "International supply is selective and depends on each region's customs rules"
     ],
     "sources": [
       {
@@ -866,9 +1516,69 @@
         "url": "https://maisonkoko.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "au"
+    ],
+    "catalog": [
+      {
+        "name": "Ceremonial matcha (Premium and Signature)",
+        "notes": "Higher-grade matcha for lattes, iced drinks and signature menu items.",
+        "origin": "Uji and Yame, Japan",
+        "uses": [
+          "Lattes",
+          "Iced drinks",
+          "Signature menu items"
+        ],
+        "options": [
+          "Premium",
+          "Signature"
+        ],
+        "url": "https://maisonkoko.com/pages/wholesale"
+      },
+      {
+        "name": "Culinary and everyday matcha",
+        "notes": "Lower-cost matcha for lattes, smoothies and blended drinks.",
+        "uses": [
+          "Lattes",
+          "Smoothies",
+          "Blended drinks"
+        ],
+        "url": "https://maisonkoko.com/pages/wholesale"
+      },
+      {
+        "name": "Bulk culinary matcha",
+        "notes": "Matcha for high-volume food service, such as baking, syrups, desserts and batch drinks.",
+        "uses": [
+          "Baking",
+          "Syrups",
+          "Desserts",
+          "Batch drinks"
+        ],
+        "url": "https://maisonkoko.com/pages/wholesale"
+      },
+      {
+        "name": "Latte mix powders",
+        "notes": "Instant blended latte powders in several flavours.",
+        "options": [
+          "Matcha",
+          "Hojicha",
+          "Taro",
+          "Chai",
+          "Turmeric"
+        ],
+        "url": "https://maisonkoko.com/pages/wholesale"
+      },
+      {
+        "name": "Private label",
+        "notes": "White-label supply offered to select partners, depending on volume and brand fit.",
+        "url": "https://maisonkoko.com/pages/wholesale"
+      },
+      {
+        "name": "Paid samples",
+        "notes": "Samples to test colour, flavour and solubility before onboarding. Shipped the same day.",
+        "url": "https://maisonkoko.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -882,7 +1592,9 @@
     "tags": [],
     "how": [],
     "summary": "Has a wholesale page on its site.",
-    "facts": [],
+    "facts": [
+      "Wholesale inquiries go through a form on the wholesale page or to contact@mantramatcha.com"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -912,7 +1624,10 @@
     "facts": [
       "Contact them for B2B rates",
       "Private-label blends: minimum order of €5,000, varying with packaging",
-      "Bulk orders available from a gram up to kilograms"
+      "Bulk orders available from a gram up to kilograms",
+      "Wholesale and B2B enquiries go to a dedicated B2B email address on the page",
+      "Bulk supply is tailored to each buyer's specifications",
+      "Minimum order for bulk supply is not stated"
     ],
     "sources": [
       {
@@ -920,7 +1635,35 @@
         "url": "https://matchabotanicals.us/pages/pros"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Professional rates for cafes and shops",
+        "notes": "Trade pricing for businesses that stock the matcha in coffee, barista or retail settings. Rates are requested by contacting the company; no figures are shown.",
+        "options": [
+          "Coffee, barista and retail use"
+        ],
+        "url": "https://matchabotanicals.us/pages/pros"
+      },
+      {
+        "name": "White-label custom blends",
+        "notes": "Custom matcha blends for brands that want their own label. Supplied either as a ready-made solution shipped directly or in bulk quantities; packaging specs affect the price.",
+        "options": [
+          "Ready-made solution shipped directly",
+          "Bulk quantities",
+          "Minimum order: EUR 5,000 minimum order"
+        ],
+        "url": "https://matchabotanicals.us/pages/pros"
+      },
+      {
+        "name": "Large-quantity bulk supply",
+        "notes": "Bulk matcha tailored to the buyer's specs, for production or for multi-location businesses.",
+        "options": [
+          "From grams up to kilograms"
+        ],
+        "url": "https://matchabotanicals.us/pages/pros"
+      }
+    ]
   },
   {
     "slug": "matcha-crew",
@@ -971,7 +1714,10 @@
     "facts": [
       "Online bulk packs include a box of 50 tins of 30 g Akira matcha at $20.95 a tin and Ki matcha at $16.95 a tin",
       "Wholesale account pricing is shared after you contact them",
-      "North American orders ship from US warehouses; others ship from Japan"
+      "North American orders ship from US warehouses; others ship from Japan",
+      "Company recommends ordering only what you need because matcha quality declines over time",
+      "Wholesale application asks for business name, location, website, email and the product of interest",
+      "Company says its wholesale prices are the lowest in the market for high-quality matcha (company claim)"
     ],
     "sources": [
       {
@@ -979,10 +1725,55 @@
         "url": "https://matchakonomi.com/pages/wholesale-contact"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk loose matcha (4 lb)",
+        "notes": "Bulk-size loose matcha listed with a sale price. Three varieties are shown on the page.",
+        "options": [
+          "Miya 4 lb",
+          "Akira 4 lb",
+          "Ki 4 lb"
+        ],
+        "price": "Miya $519.80; Akira $719.80; Ki $579.80 (listed sale prices for 4 lb)",
+        "url": "https://matchakonomi.com/pages/wholesale-contact"
+      },
+      {
+        "name": "Akira matcha tin case",
+        "notes": "Case of single-serve tins of Akira matcha, listed as a bulk pack.",
+        "options": [
+          "Box of 50 x 30 g tins"
+        ],
+        "price": "$947.50 per box of 50 (about $20.95 per tin)",
+        "url": "https://matchakonomi.com/pages/wholesale-contact"
+      },
+      {
+        "name": "Ki ceremonial matcha sticks",
+        "notes": "Organic ceremonial matcha sold as single-serve sticks in bulk boxes.",
+        "options": [
+          "50 boxes of 15 sticks (750 sticks)",
+          "50 boxes of 25 sticks (1,250 sticks)"
+        ],
+        "price": "$697.50 for 750 sticks (about $0.93 each); $947.50 for 1,250 sticks (about $0.76 each)",
+        "url": "https://matchakonomi.com/pages/wholesale-contact"
+      },
+      {
+        "name": "Wholesale account for stores and large buyers",
+        "notes": "Account for retail stores and businesses with bigger needs than the bulk listings. Pricing is shared only after you contact the company.",
+        "options": [
+          "Akira",
+          "Oishi",
+          "Miya",
+          "Saemidori Sencha",
+          "Yabukita Hojicha",
+          "Minimum order: No minimum order after approval"
+        ],
+        "url": "https://matchakonomi.com/pages/wholesale-contact"
+      }
     ]
   },
   {
@@ -1002,7 +1793,8 @@
     ],
     "summary": "Sells 1 kg bags of organic Uji matcha for cafés, studios and small businesses, and has a wholesale page.",
     "facts": [
-      "Bulk bags are 1 kg"
+      "Bulk bags are 1 kg",
+      "Vegan, gluten-free and non-GMO."
     ],
     "sources": [
       {
@@ -1010,7 +1802,24 @@
         "url": "https://www.matchamaiden.com/matcha-bulk-bags-products/"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Organic Matcha Powder 1 kg bag",
+        "notes": "A 1 kg bag of Japanese certified organic matcha, stone-ground and sold in volume. It is the same matcha as its 70 g pouch.",
+        "origin": "Uji, Kyoto, Japan",
+        "uses": [
+          "Lattes and smoothies",
+          "Baking and desserts",
+          "Batch brewing for cafés and hospitality"
+        ],
+        "options": [
+          "1 kg bag"
+        ],
+        "price": "$198.75 for 1 kg (sale price; $265.00 before the sale)",
+        "url": "https://www.matchamaiden.com/matcha-bulk-bags-products/"
+      }
+    ]
   },
   {
     "slug": "matcha-ninja",
@@ -1028,7 +1837,9 @@
       "form"
     ],
     "summary": "Works with cafés, retailers, studios and wellness spaces across multiple regions.",
-    "facts": [],
+    "facts": [
+      "Wholesale enquiries are made through a contact form on the wholesale page."
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -1055,7 +1866,8 @@
     ],
     "summary": "Organic matcha and hojicha for retailers, cafés and wellness spaces.",
     "facts": [
-      "Apply with its wholesale form; once approved you get the full range, marketing assets and support"
+      "Apply with its wholesale form; once approved you get the full range, marketing assets and support",
+      "Wholesale applications are made on a separate wholesale site, and a Faire storefront is offered for buyers who want to order without waiting for approval"
     ],
     "sources": [
       {
@@ -1086,7 +1898,9 @@
     "facts": [
       "Bulk bags from 2.2 lb to 18 lb; wholesale tiers from 1 lb up to 4,000 lb",
       "Says wholesale orders ship free within the continental US",
-      "Business customers can request free samples"
+      "Business customers can request free samples",
+      "Wholesale orders within the continental US ship free, estimated at 3 to 5 business days",
+      "Offers a 100% money-back guarantee on the page"
     ],
     "sources": [
       {
@@ -1094,9 +1908,30 @@
         "url": "https://matchaoutlet.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk powder bags with tiered pricing",
+        "notes": "Sweet Japanese matcha powder sold in bulk bags, with a tiered price table. Page calls it the top seller and says quality is comparable to major coffee chains at a lower price. Table read from a partly garbled page; per-lb figures are the page's own column, not verified.",
+        "options": [
+          "18 lb",
+          "90 lb",
+          "300 lb",
+          "1,000 lb",
+          "2,000 lb",
+          "4,000 lb"
+        ],
+        "price": "18 lb $407.26; 90 lb $1,895.29; 300 lb $5,156.76; 1,000 lb $13,798.56; 2,000 lb $26,182.64; 4,000 lb $50,828.47 (about $22.62 to $12.70 per lb)",
+        "url": "https://matchaoutlet.com/pages/wholesale"
+      },
+      {
+        "name": "Pre-made latte matcha mix for coffee shops",
+        "notes": "A ready-made matcha latte mix aimed at coffee shops. The page describes it but gives no separate pricing.",
+        "url": "https://matchaoutlet.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -1114,7 +1949,9 @@
     "how": [],
     "summary": "Single-origin first-harvest matcha from Yame (Fukuoka) for cafés.",
     "facts": [
-      "Says wholesale orders start at 500 g"
+      "Says wholesale orders start at 500 g",
+      "Samples can be requested through the contact form before ordering",
+      "Company says it responds to wholesale enquiries within one business day"
     ],
     "sources": [
       {
@@ -1122,7 +1959,23 @@
         "url": "https://matchasense.com/pages/wholesale-matcha-bulk"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Signature Blend wholesale (Yame, first harvest)",
+        "notes": "Single-origin first-harvest ceremonial matcha from Yame, Fukuoka, marketed for lattes and other milk drinks. Sold as finely milled powder in bulk packaging; the pack format is confirmed on request. Bulk discounts exist but no figures are given.",
+        "origin": "Yame, Fukuoka, Japan",
+        "uses": [
+          "Lattes",
+          "Milk drinks"
+        ],
+        "options": [
+          "Bulk packaging, format confirmed on request",
+          "Minimum order: 500 g"
+        ],
+        "url": "https://matchasense.com/pages/wholesale-matcha-bulk"
+      }
+    ]
   },
   {
     "slug": "matcha-union",
@@ -1143,7 +1996,9 @@
     "facts": [
       "Says it replies within 24 hours",
       "Offers training and menu development",
-      "Ships from UK, Germany and UAE warehouses"
+      "Ships from UK, Germany and UAE warehouses",
+      "Wholesale pricing varies with order value; no figures are published",
+      "Marketing support and branded materials are provided to wholesale accounts"
     ],
     "sources": [
       {
@@ -1151,10 +2006,31 @@
         "url": "https://matchaunion.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "eu",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Retail-ready and service-size matcha",
+        "notes": "Full product range is available wholesale, from shelf-ready tins to larger packs for menus. Sizes and formats are not listed on the page.",
+        "options": [
+          "Retail-ready tins",
+          "Service-size packs"
+        ],
+        "url": "https://matchaunion.com/pages/wholesale"
+      },
+      {
+        "name": "White-label matcha",
+        "notes": "Private-label options for businesses that want their own branding. No minimums or terms are given on the page.",
+        "url": "https://matchaunion.com/pages/wholesale"
+      },
+      {
+        "name": "Training and menu development",
+        "notes": "Complimentary training and menu development for wholesale accounts, plus marketing support and branded materials.",
+        "url": "https://matchaunion.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -1174,14 +2050,39 @@
       "portal"
     ],
     "summary": "Wholesale matcha and tea for cafés, stores and restaurants, orderable through the Ordermentum app with standing orders.",
-    "facts": [],
+    "facts": [
+      "Buyers can pay directly through the Ordermentum app and avoid missed orders and invoices.",
+      "Flat rate shipping of $9.95, with free shipping on orders over $120."
+    ],
     "sources": [
       {
         "label": "Wholesale page",
         "url": "https://www.matchayutea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Ordermentum wholesale ordering",
+        "notes": "Cafés, stores and restaurants order through the Ordermentum app. It supports standing orders, payment in the app and invoices.",
+        "url": "https://www.matchayutea.com/pages/wholesale"
+      },
+      {
+        "name": "Matcha and hojicha powders",
+        "notes": "Matcha lines listed on the site as its everyday latte matcha and premium matcha for traditional tea, plus a hojicha powder. The wholesale page does not show prices.",
+        "origin": "Kagoshima, Japan (matcha)",
+        "uses": [
+          "Matcha lattes",
+          "Traditional tea"
+        ],
+        "options": [
+          "Everyday Matcha",
+          "Premium Matcha",
+          "Hojicha Roasted Green Tea Powder"
+        ],
+        "url": "https://www.matchayutea.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "matcha-com",
@@ -1204,7 +2105,9 @@
       "Says it does not require approval to start ordering",
       "New foodservice customers get a complimentary Matcha Kit with their wholesale order",
       "Says its average lead time on 2,000 kg is 3 days in transit",
-      "Organic matcha for cafés and bakeries"
+      "Organic matcha for cafés and bakeries",
+      "Bulk and private-label buyers request a quote or a free sample through the Get a Quote page",
+      "Private-label packing can be done in Japan or the United States"
     ],
     "sources": [
       {
@@ -1212,9 +2115,56 @@
         "url": "https://bulk.matcha.com/"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk matcha",
+        "notes": "Bulk matcha sourced from partner family cooperatives in Japan and stocked in US cold storage. The page claims about a dozen grades but does not name them. Ships with an average lead time of about 3 days on 2,000 kg.",
+        "origin": "Japan (partner family cooperatives)",
+        "options": [
+          "10 kg up to 10,000 kg or more"
+        ],
+        "url": "https://bulk.matcha.com/"
+      },
+      {
+        "name": "Bulk sencha and hojicha powder",
+        "notes": "Bulk sencha and hojicha powders are also offered alongside the matcha. No sizes or prices are given.",
+        "url": "https://bulk.matcha.com/"
+      },
+      {
+        "name": "Food service and cafe matcha",
+        "notes": "USDA organic and conventional matcha for cafes, bakeries and similar businesses. Orders ship within 12 hours from the warehouse, with next-day delivery possible. New food service customers get a complimentary Matcha Kit with their first wholesale order.",
+        "uses": [
+          "Cafes",
+          "Bakeries",
+          "Food service"
+        ],
+        "options": [
+          "USDA organic",
+          "Conventional",
+          "Minimum order: No minimum order quantity stated"
+        ],
+        "url": "https://bulk.matcha.com/"
+      },
+      {
+        "name": "Private label and white label",
+        "notes": "Custom packaging in standard formats or custom OEM packaging. Packing can be done in Japan or the United States. No minimums or prices are stated for this service.",
+        "options": [
+          "Tins",
+          "Bags",
+          "Stickpacks",
+          "Custom OEM packaging"
+        ],
+        "url": "https://bulk.matcha.com/"
+      },
+      {
+        "name": "Wholesale tools and whisks",
+        "notes": "Matcha whisks and other tools are listed for wholesale, with no details on the page.",
+        "url": "https://bulk.matcha.com/"
+      }
     ]
   },
   {
@@ -1234,7 +2184,9 @@
     "summary": "Wholesale program for cafés, bars and restaurants launching a matcha menu.",
     "facts": [
       "Program includes training, menu consultation and full setup",
-      "Form to ask about pricing and request a free sample"
+      "Form to ask about pricing and request a free sample",
+      "Says it partners with family farms and delivers every few months for freshness.",
+      "Says its matcha is lab tested for purity and contaminants."
     ],
     "sources": [
       {
@@ -1242,7 +2194,28 @@
         "url": "https://www.matchabar.co/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Café, bar and restaurant matcha program",
+        "notes": "A full program to launch a matcha menu, including training, menu consultation and setup. Pricing and a free sample are requested through a form.",
+        "uses": [
+          "Matcha menu for cafés, bars and restaura"
+        ],
+        "url": "https://www.matchabar.co/pages/wholesale"
+      },
+      {
+        "name": "Ceremonial Grade Matcha Powder",
+        "notes": "Single-origin ceremonial matcha made from first-harvest young leaves and sold in pouches. The site shows a retail price of $39.99; wholesale pricing is not on the page.",
+        "origin": "Kagoshima, Japan",
+        "url": "https://www.matchabar.co/pages/wholesale"
+      },
+      {
+        "name": "Instant iced latte",
+        "notes": "New instant iced latte line that combines single-origin coffee with matcha.",
+        "url": "https://www.matchabar.co/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "matchaeologist",
@@ -1262,7 +2235,8 @@
     ],
     "summary": "Supplies artisanal Japanese matcha to tea sommeliers, baristas, chefs, pâtissiers, chocolatiers and other food and beverage artisans.",
     "facts": [
-      "Offers ongoing support, training and education"
+      "Offers ongoing support, training and education",
+      "Wholesale inquiries can be sent to sales@matchaeologist.com or through the wholesale page form"
     ],
     "sources": [
       {
@@ -1270,9 +2244,22 @@
         "url": "https://www.matchaeologist.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale inquiry program",
+        "notes": "Trade buyers request wholesale terms through a submission form or by email. The page pitches hyperpremium artisanal Japanese matcha at competitive pricing, with ongoing support, training and education.",
+        "uses": [
+          "tea service",
+          "barista drinks",
+          "chef and pastry work",
+          "chocolate and other F&B products"
+        ],
+        "url": "https://www.matchaeologist.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -1292,7 +2279,9 @@
     "summary": "US organic matcha wholesaler for cafés, coffee shops, offices, hotels and restaurants.",
     "facts": [
       "Says wholesale partnerships are limited, with applications reviewed on a rolling basis",
-      "Offers hands-on team training"
+      "Offers hands-on team training",
+      "Matcha is tested by third parties for radiation, heavy metals and over 700 pesticides and herbicides before shipping",
+      "All tea is either pesticide-free or certified organic"
     ],
     "sources": [
       {
@@ -1300,7 +2289,22 @@
         "url": "https://www.matchaful.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Café and restaurant wholesale partnership",
+        "notes": "A wholesale partner program for cafés, coffee shops, offices, hotels and restaurants. It is described as a collaborative partnership built on education, with hands-on team training and ongoing resources. Partnerships are limited and applications are reviewed on a rolling basis.",
+        "origin": "Japan",
+        "uses": [
+          "cafés",
+          "coffee shops",
+          "offices",
+          "hotels",
+          "restaurants"
+        ],
+        "url": "https://www.matchaful.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "micro-ingredients",
@@ -1315,7 +2319,9 @@
       "email"
     ],
     "summary": "Has a wholesale page: email for price inquiries and wholesale qualification.",
-    "facts": [],
+    "facts": [
+      "Wholesale pricing is given after an email price inquiry and wholesale qualification at the wholesale address"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -1344,7 +2350,9 @@
       "Says its team replies in 2-3 business days",
       "Does not accept e-commerce businesses or unlicensed home-based cafés",
       "Applying does not guarantee approval",
-      "Says wholesale members get free samples and bonuses"
+      "Says wholesale members get free samples and bonuses",
+      "Only fully completed wholesale applications are reviewed, and applying does not guarantee approval",
+      "Approved wholesale businesses get access to a separate B2B partners shop"
     ],
     "sources": [
       {
@@ -1370,7 +2378,9 @@
     ],
     "summary": "Reached through Peet's foodservice program, whose account managers cover both Peet's coffee and Mighty Leaf tea.",
     "facts": [
-      "Partners get a dedicated account manager"
+      "Partners get a dedicated account manager",
+      "Partners must be running, or preparing to launch, a coffee program",
+      "After the online form is submitted, a sales representative contacts the applicant within 24 hours"
     ],
     "sources": [
       {
@@ -1378,9 +2388,21 @@
         "url": "https://www.peets.com/pages/foodservice-program"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Peet's foodservice program (coffee and Mighty Leaf tea)",
+        "notes": "A foodservice partner program run through Peet's account managers, who are trained in both coffee and Mighty Leaf tea operations. Partners receive staff training, quarterly business reviews and a custom deployment schedule. Program formats can be customized to the business.",
+        "uses": [
+          "campus stores",
+          "airport terminals",
+          "boutique hotels"
+        ],
+        "url": "https://www.peets.com/pages/foodservice-program"
+      }
     ]
   },
   {
@@ -1402,7 +2424,9 @@
     "summary": "Wholesale and bulk matcha program with free samples by request.",
     "facts": [
       "Says the program is getting a very high volume of applicants and inquiries are subject to a waitlist",
-      "Says its matcha is shade-grown, stone-milled and non-GMO, with certified organic options"
+      "Says its matcha is shade-grown, stone-milled and non-GMO, with certified organic options",
+      "Free samples are requested through the wholesale form and reviewed on a rolling basis",
+      "Current wholesale customers order through a separate B2B portal"
     ],
     "sources": [
       {
@@ -1410,7 +2434,31 @@
         "url": "https://mizubatea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Mizuba matcha and certified organic options",
+        "notes": "Shade-grown, stone-milled, non-GMO matcha, tested free of heavy metals and radiation, with certified organic options. No sizes or prices are given.",
+        "origin": "Direct-trade from long-term family farm partners; country not stated",
+        "uses": [
+          "Cafes",
+          "Bakeries",
+          "Ice cream shops",
+          "Spas",
+          "Hotels",
+          "Restaurants"
+        ],
+        "options": [
+          "Certified organic options"
+        ],
+        "url": "https://mizubatea.com/pages/wholesale"
+      },
+      {
+        "name": "Wholesale program with training",
+        "notes": "Hands-on one-on-one training, exclusive resources and video guides, and a quarterly cafe newsletter for wholesale accounts.",
+        "url": "https://mizubatea.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "moocha-matcha",
@@ -1430,7 +2478,9 @@
     ],
     "summary": "Wholesale for US-based cafés, tea shops and pop-ups, with bulk supply and samples for testing.",
     "facts": [
-      "Applicants are accepted case by case"
+      "Applicants are accepted case by case",
+      "Applications are made by email with company details and reviewed case by case",
+      "A members area is listed as coming soon"
     ],
     "sources": [
       {
@@ -1438,9 +2488,16 @@
         "url": "https://moochamatcha.co/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk matcha with samples",
+        "notes": "Bulk matcha across a range of quality levels for different occasions, with samples available for testing. No product names, sizes or prices are given.",
+        "url": "https://moochamatcha.co/pages/wholesale"
+      }
     ]
   },
   {
@@ -1460,7 +2517,10 @@
     ],
     "summary": "Wholesale application for US-based partners.",
     "facts": [
-      "Says the program is focused on US-based partners because of limited inventory allocation"
+      "Says the program is focused on US-based partners because of limited inventory allocation",
+      "Non-US applicants are asked to reapply if they open a US location",
+      "The single online form asks for estimated monthly matcha usage in grams",
+      "Questions about the application go to wholesale@namimatcha.com"
     ],
     "sources": [
       {
@@ -1468,9 +2528,26 @@
         "url": "https://namimatcha.com/pages/wholesale-application"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale matcha program (US partners)",
+        "notes": "Application for cafés, pop-ups, home cafés, mobile trucks and retail stores. Applicants can also register interest only in reselling tins.",
+        "uses": [
+          "Cafés",
+          "Pop-ups",
+          "Home cafés",
+          "Mobile trucks",
+          "Retail stores"
+        ],
+        "options": [
+          "Tins for resale"
+        ],
+        "url": "https://namimatcha.com/pages/wholesale-application"
+      }
     ]
   },
   {
@@ -1531,7 +2608,8 @@
     ],
     "summary": "Online wholesale ordering for US brick-and-mortar businesses that don't have a local Numi distributor and want smaller quantities.",
     "facts": [
-      "Request access through its form; email for distributor, non-US or other requests"
+      "Request access through its form; email for distributor, non-US or other requests",
+      "Existing wholesale account holders sign in to order; others use the Request Access link"
     ],
     "sources": [
       {
@@ -1539,9 +2617,16 @@
         "url": "https://numitea.com/pages/wholesale-access-form"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Online wholesale ordering",
+        "notes": "Account-based ordering for US brick-and-mortar businesses without a local Numi distributor, aimed at smaller quantities. No matcha or product lines are named.",
+        "url": "https://numitea.com/pages/wholesale-access-form"
+      }
     ]
   },
   {
@@ -1562,7 +2647,9 @@
     ],
     "summary": "Wazuka (Kyoto) farm with a separate wholesale site where registered buyers see pricing, products, downloadable price lists and catalogs.",
     "facts": [
-      "Registration is needed to see pricing and catalogs"
+      "Registration is needed to see pricing and catalogs",
+      "The wholesale site names a spring blend matcha, natural sakura sencha, Tsugumi and kukicha",
+      "A wholesale registration form is the entry point to the wholesale site"
     ],
     "sources": [
       {
@@ -1591,7 +2678,10 @@
     "facts": [
       "Register to unlock the wholesale catalog",
       "Says it has served specialty cafés in the US, UK and Europe for over 15 years",
-      "Offers matcha and hojicha for lattes, plus organic teas from its own farm"
+      "Offers matcha and hojicha for lattes, plus organic teas from its own farm",
+      "Ships worldwide with fast dispatch from Japan",
+      "Page offers free delivery over $60 but does not say whether this applies to wholesale orders",
+      "Application is reviewed by email, and tiered pricing unlocks after the reply"
     ],
     "sources": [
       {
@@ -1599,10 +2689,40 @@
         "url": "https://www.ochaandco.com/en-us/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us",
       "eu"
+    ],
+    "catalog": [
+      {
+        "name": "Tiered wholesale account",
+        "notes": "Application form for cafés, boutique retailers and hospitality buyers. Once the team replies by email, the account unlocks the wholesale catalog and tiered pricing, plus seasonal offers.",
+        "uses": [
+          "Cafés",
+          "Boutique retailers",
+          "Hotels",
+          "Restaurants",
+          "Spas"
+        ],
+        "url": "https://www.ochaandco.com/en-us/pages/wholesale"
+      },
+      {
+        "name": "Matcha for lattes and baking",
+        "notes": "Matcha positioned for lattes, whisked drinks and baking. The wholesale page does not name specific matcha products or grades.",
+        "uses": [
+          "Lattes",
+          "Whisked drinks",
+          "Baking"
+        ],
+        "url": "https://www.ochaandco.com/en-us/pages/wholesale"
+      },
+      {
+        "name": "Own-farm teas in small-batch packs",
+        "notes": "Some teas are grown on the company's own farm using traditional Japanese and natural farming methods. Packed vacuum-sealed in small batches to protect shelf life.",
+        "origin": "Japan (company farm)",
+        "url": "https://www.ochaandco.com/en-us/pages/wholesale"
+      }
     ]
   },
   {
@@ -1618,14 +2738,36 @@
       "form"
     ],
     "summary": "Contact form for businesses that want to buy OMGTea matcha.",
-    "facts": [],
+    "facts": [
+      "Enquiry email should include business type, location, grades wanted and expected order size and frequency",
+      "Aims to reply within 48 hours, Monday to Friday",
+      "Existing trade customers named on the page include Selfridges, Holland & Barrett and Ocado"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
         "url": "https://omgteas.co.uk/pages/wholesale-contact"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Matcha grades for trade buyers",
+        "notes": "Grades run from latte and baking grades up to premium ceremonial. The team helps match a grade to a menu or shelf. Pricing and pack sizes are not published and must be requested by email.",
+        "origin": "Japan, from one long-term producer partner",
+        "uses": [
+          "Lattes",
+          "Baking",
+          "Ceremonial drinks"
+        ],
+        "options": [
+          "Retail",
+          "Foodservice",
+          "Bulk"
+        ],
+        "url": "https://omgteas.co.uk/pages/wholesale-contact"
+      }
+    ]
   },
   {
     "slug": "ooika",
@@ -1646,7 +2788,9 @@
     "summary": "Mills matcha in the United States and grinds each wholesale order fresh to order.",
     "facts": [
       "Says new customer access is limited, with a waitlist form",
-      "Includes a matcha training course from its founder"
+      "Includes a matcha training course from its founder",
+      "Wholesale customers can reach out at any time for help",
+      "Wholesale access is limited, and new customers join a waitlist form"
     ],
     "sources": [
       {
@@ -1654,9 +2798,49 @@
         "url": "https://ooika.co/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Barista Matcha for cafés",
+        "notes": "Stone-milled barista matcha recommended for cafés. It is suited to matcha lattes, americanos and other culinary uses.",
+        "origin": "Uji, Japan",
+        "uses": [
+          "matcha lattes",
+          "americanos",
+          "culinary applications"
+        ],
+        "url": "https://ooika.co/wholesale"
+      },
+      {
+        "name": "Retail Barista Matcha",
+        "notes": "Small-batch matcha prepared for retailers to sell to customers who make matcha lattes or traditional matcha at home.",
+        "uses": [
+          "matcha lattes",
+          "traditional matcha at home"
+        ],
+        "url": "https://ooika.co/wholesale"
+      },
+      {
+        "name": "Single origin matcha jars",
+        "notes": "Transparent, farmer-focused single origin matcha offered in jars for retailers and tea houses. It is recommended for traditional preparations.",
+        "uses": [
+          "usucha",
+          "koicha"
+        ],
+        "url": "https://ooika.co/wholesale"
+      },
+      {
+        "name": "Fresh-milled wholesale orders",
+        "notes": "Every wholesale order is stone-milled to order in the United States and shipped right after milling. Orders come in smaller vacuum-sealed bags with mill dates printed on them.",
+        "origin": "Milled in Princeton, NJ, USA",
+        "options": [
+          "smaller portioned, vacuum-sealed bags"
+        ],
+        "url": "https://ooika.co/wholesale"
+      }
     ]
   },
   {
@@ -1672,7 +2856,9 @@
     ],
     "how": [],
     "summary": "Has a business page describing its tea program for hospitality partners.",
-    "facts": [],
+    "facts": [
+      "Retail partners are handled through a separate sign-up path from hospitality partners"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
@@ -1703,7 +2889,11 @@
       "Says to order at least 1 kg of each tea you stock",
       "Says there is no minimum order when you collect from its Vancouver warehouse",
       "Ships outside Canada and the US at a rate curated for your location",
-      "Download the application form and email it back"
+      "Download the application form and email it back",
+      "Wholesale orders of $375 or more ship free",
+      "Delivery takes about 2 to 3 business days in BC and 5 to 7 business days elsewhere",
+      "Invoices are payable through Square, and orders ship the day after payment",
+      "The account application PDF is available in English and French"
     ],
     "sources": [
       {
@@ -1711,11 +2901,37 @@
         "url": "https://paragontearoom.com/pages/wholesale-partners"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "ca",
       "us",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Ceremonial matcha, hojicha and Japanese tea powders",
+        "notes": "Offered to cafés, restaurants and shops. Grades, sizes and formats are not published.",
+        "origin": "Japan",
+        "uses": [
+          "Cafés",
+          "Restaurants",
+          "Shops"
+        ],
+        "url": "https://paragontearoom.com/pages/wholesale-partners"
+      },
+      {
+        "name": "Wholesale Communi-Tea community",
+        "notes": "Wholesale buyer community. Buyers take at least 1 kg of each tea they stock. Pricing is by inquiry only.",
+        "options": [
+          "Minimum order: 1 kg of each tea"
+        ],
+        "url": "https://paragontearoom.com/pages/wholesale-partners"
+      },
+      {
+        "name": "Credit terms",
+        "notes": "Available only to pre-approved vendors. Requires the full application, a bank reference and a signed credit review authorization.",
+        "url": "https://paragontearoom.com/pages/wholesale-partners"
+      }
     ]
   },
   {
@@ -1766,7 +2982,11 @@
       "Orders from 1 kg; most grades have a 1 kg minimum",
       "Price list is free to view; it asks for your email once to send updates",
       "Sources from producers in Uji, Kagoshima, Shizuoka and other regions",
-      "Private label and OEM available"
+      "Private label and OEM available",
+      "Samples cost about 800 JPY each plus DHL shipping",
+      "Payment is due upfront; bank transfer through Wise is preferred, and card or PayPal carry a 4% fee",
+      "Delivered-duty-paid shipping is offered to VAT-registered businesses, mainly in the EU and UK",
+      "One list price applies to all buyers, with no volume discounts"
     ],
     "sources": [
       {
@@ -1774,10 +2994,58 @@
         "url": "https://ujimatchatea.com/pages/wholesale-matcha"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Straight-drink ceremonial matcha",
+        "notes": "Ceremonial grades for whisking and drinking straight, from Kagoshima, Uji and Mie. Single list price for all buyers.",
+        "origin": "Kagoshima, Uji and Mie, Japan",
+        "uses": [
+          "Drinking straight"
+        ],
+        "options": [
+          "Kagoshima grade",
+          "Uji Okumidori grade",
+          "Mie grade",
+          "Minimum order: 1 kg"
+        ],
+        "price": "About 31,900 to 36,500 JPY per kg (list price)",
+        "url": "https://ujimatchatea.com/pages/wholesale-matcha"
+      },
+      {
+        "name": "Latte matcha grades",
+        "notes": "Three Uji grades aimed at lattes.",
+        "origin": "Uji, Japan",
+        "uses": [
+          "Lattes"
+        ],
+        "options": [
+          "Three Uji grades",
+          "Minimum order: 1 kg"
+        ],
+        "price": "About 19,900 to 30,300 JPY per kg (list price)",
+        "url": "https://ujimatchatea.com/pages/wholesale-matcha"
+      },
+      {
+        "name": "JAS-certified organic matcha",
+        "notes": "Four organic grades from Kakegawa, Shizuoka with JAS organic certificates. Organic lots are repacked in Japan and shipped in 20 kg lots.",
+        "origin": "Kakegawa, Shizuoka, Japan",
+        "options": [
+          "Four Kakegawa, Shizuoka grades",
+          "Minimum order: 1 kg for most grades, including organic; organic ships in 20 kg lots"
+        ],
+        "price": "About 14,900 to 21,900 JPY per kg for orders under 20 kg",
+        "url": "https://ujimatchatea.com/pages/wholesale-matcha"
+      },
+      {
+        "name": "Private label and OEM",
+        "notes": "Private label and OEM production for brands, retailers and cafés.",
+        "url": "https://ujimatchatea.com/pages/wholesale-matcha"
+      }
     ]
   },
   {
@@ -1987,7 +3255,9 @@
     "summary": "Direct-trade importer of organic teas and botanicals selling bulk wholesale to coffee shops, restaurants, specialty retailers, hotels and food service in the US and Canada.",
     "facts": [
       "Says organic certification covers over 95% of what it imports",
-      "Says someone replies in about 48 hours"
+      "Says someone replies in about 48 hours",
+      "Existing wholesale customers contact the Account Management team by phone or email",
+      "Works with artisan farmers and specialist producers on ongoing product development"
     ],
     "sources": [
       {
@@ -1995,10 +3265,33 @@
         "url": "https://www.rishi-tea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us",
       "ca"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk wholesale tea and botanicals",
+        "notes": "Direct-trade organic teas and botanicals sold in bulk to coffee shops, restaurants, specialty retailers, hotels and food service in the US and Canada. The inquiry form lets buyers choose a product line. Matcha is not named; the closest option is Powders.",
+        "uses": [
+          "Coffee shops",
+          "Restaurants",
+          "Specialty retailers",
+          "Hotels",
+          "Food service"
+        ],
+        "options": [
+          "Loose leaf",
+          "Sachets",
+          "Tea concentrates",
+          "Powders",
+          "Sparkling botanicals",
+          "Iced tea",
+          "Teaware"
+        ],
+        "url": "https://www.rishi-tea.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -2021,7 +3314,11 @@
     "facts": [
       "Each lot must be a single cultivar",
       "Bulk packaging for counter service; service tin with sifter (4 oz / 114 g)",
-      "Says wholesale prices were raised because of rising tencha costs"
+      "Says wholesale prices were raised because of rising tencha costs",
+      "Packaged tin resale is 40% off retail, sold in lots of 10 tins",
+      "Wholesale ordering is through a password-protected link on the site",
+      "Accessories wholesale minimum is $200 in merchandise, mixable",
+      "Site-wide shipping is free over $50 and $5 otherwise; no separate wholesale shipping terms stated"
     ],
     "sources": [
       {
@@ -2029,7 +3326,57 @@
         "url": "https://www.riverandstonetea.com/pages/wholesale-matcha"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Packaged matcha tins for resale",
+        "notes": "Stock River & Stone matcha tins in your shop at 40% off retail. Sold in lots of 10, one cultivar per lot. Starter order includes a window sign and a wooden display rack.",
+        "origin": "Milled fresh in the United States",
+        "uses": [
+          "Retail resale in shop"
+        ],
+        "options": [
+          "Lots of 10 tins, single cultivar per lot",
+          "Minimum order: Lots of 10 tins"
+        ],
+        "price": "40% off retail",
+        "url": "https://www.riverandstonetea.com/pages/wholesale-matcha"
+      },
+      {
+        "name": "Bulk matcha for house whisking and recipes",
+        "notes": "Fresh matcha for in-shop whisking or cooking, packed for counter service. Each lot is one cultivar. Starter order includes a service tin with sifter, a whisking bowl, a bamboo whisk and a scoop.",
+        "origin": "Milled fresh in the United States",
+        "uses": [
+          "In-shop whisking",
+          "Recipes",
+          "Baking and beverages"
+        ],
+        "options": [
+          "200 g",
+          "500 g",
+          "1 kg"
+        ],
+        "price": "$151 per 200 g; $354 per 500 g; $648 per 1,000 g (page says prices rose due to higher tencha costs)",
+        "url": "https://www.riverandstonetea.com/pages/wholesale-matcha"
+      },
+      {
+        "name": "Matcha bowls, whisks and accessories",
+        "notes": "Resell matcha bowls, whisks, scoops, stands and bamboo sets, mixed as you like. Bowl choices are listed on the ordering page.",
+        "uses": [
+          "Retail resale"
+        ],
+        "options": [
+          "Matcha bowl",
+          "Whisk",
+          "Scoop",
+          "Stand",
+          "Bamboo set",
+          "Minimum order: $200 in merchandise"
+        ],
+        "price": "Bowl $17.50 (50% off $35); whisk $9.80 (30% off $14); scoop $1.00 (60% off $2.50); stand $7.50 (50% off $15); bamboo set $61.75 (35% off $95)",
+        "url": "https://www.riverandstonetea.com/pages/wholesale-matcha"
+      }
+    ]
   },
   {
     "slug": "rockys",
@@ -2077,7 +3424,11 @@
     "summary": "First-harvest matcha for cafés, restaurants, hospitality, retail, manufacturers and distributors.",
     "facts": [
       "Tiered pricing by order value, applied when you are logged in to your wholesale account",
-      "Says shipping is included on US wholesale orders"
+      "Says shipping is included on US wholesale orders",
+      "Orders are processed in 2-4 business days; US shipping takes about 2-7 days",
+      "Matcha is first-harvest ceremonial grade, heavy-metal tested in its own GMP-compliant facility",
+      "Resale requires a valid resale certificate or seller's permit; resale on Amazon or Walmart not allowed",
+      "Apply through the on-page form; a team member contacts you in a couple of days"
     ],
     "sources": [
       {
@@ -2085,9 +3436,55 @@
         "url": "https://senchanaturals.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale account for cafés and businesses",
+        "notes": "Ongoing wholesale account for cafés, restaurants, small and mid-size businesses. Discounts rise with order value and apply automatically when logged in to the wholesale account.",
+        "uses": [
+          "Cafés",
+          "Coffee shops",
+          "Restaurants",
+          "Small and mid-size businesses"
+        ],
+        "options": [
+          "Tiers by order value",
+          "Minimum order: $300 USD"
+        ],
+        "price": "10% off $300-$999; 15% off $1,000-$2,499; 20% off $2,500-$4,999; 30% off $5,000+",
+        "url": "https://senchanaturals.com/pages/wholesale"
+      },
+      {
+        "name": "Emperor's Matcha (wholesale line)",
+        "notes": "The page says its most popular products are now available to wholesale cafés and small businesses. It lists regular prices only, with no separate wholesale price.",
+        "origin": "Shizuoka and Kagoshima, Japan",
+        "uses": [
+          "Cafés",
+          "Restaurants",
+          "Small businesses"
+        ],
+        "options": [
+          "4.2 oz (120 g)",
+          "1 oz (30 g)"
+        ],
+        "url": "https://senchanaturals.com/pages/wholesale"
+      },
+      {
+        "name": "Bulk supply for manufacturers and distributors",
+        "notes": "Larger-quantity pricing for manufacturers, distributors and ingredient buyers. Minimums vary and you contact the company for terms.",
+        "uses": [
+          "Manufacturers",
+          "Distributors",
+          "Ingredient buyers"
+        ],
+        "options": [
+          "Minimum order: Varies; contact company"
+        ],
+        "url": "https://senchanaturals.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -2107,7 +3504,10 @@
     ],
     "summary": "Tea company serving businesses with loose-leaf and sachet teas, merchandising tools and training.",
     "facts": [
-      "Contact sales by email or phone"
+      "Contact sales by email or phone",
+      "Sachets are plant-based and free of PET and nylon; herbal infusions are also offered",
+      "Apply with the Sign Up form; existing partners log in at smithteapartners.com",
+      "Prices, discounts, pack sizes, minimums and shipping are not on the page; sales team quotes them"
     ],
     "sources": [
       {
@@ -2115,7 +3515,34 @@
         "url": "https://www.smithtea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Loose-leaf tea program",
+        "notes": "A full-service loose tea program for businesses, including merchandising and custom programming for each account.",
+        "uses": [
+          "Businesses"
+        ],
+        "url": "https://www.smithtea.com/pages/wholesale"
+      },
+      {
+        "name": "Biodegradable sachet tea program",
+        "notes": "A sachet program using plant-based, biodegradable sachets.",
+        "uses": [
+          "Businesses"
+        ],
+        "url": "https://www.smithtea.com/pages/wholesale"
+      },
+      {
+        "name": "Training and merchandising support",
+        "notes": "Personalized staff training, educational tools, merchandising and service ware, and custom menus.",
+        "uses": [
+          "Business staff training",
+          "Menus"
+        ],
+        "url": "https://www.smithtea.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "takaokaya",
@@ -2155,7 +3582,9 @@
     ],
     "summary": "Tea specialist offering wholesale and sourcing along with tastings, staff training and building tea programs.",
     "facts": [
-      "Says it works with restaurants, cafés, shops and hotels"
+      "Says it works with restaurants, cafés, shops and hotels",
+      "Wholesale, sourcing, training and event inquiries go to the company's email address",
+      "Page lists no product names, sizes, prices or minimums; a free domestic shipping banner over $150 (excluding sparkling tea) does not say whether it applies to wholesale"
     ],
     "sources": [
       {
@@ -2163,7 +3592,28 @@
         "url": "https://www.teadealers.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Tea program design and staff training",
+        "notes": "Helps new and existing businesses build tea programs, with tastings, presentations and staff training.",
+        "uses": [
+          "Restaurants",
+          "Cafés",
+          "Shops",
+          "Hotels"
+        ],
+        "url": "https://www.teadealers.com/pages/wholesale"
+      },
+      {
+        "name": "Sourcing through producer network",
+        "notes": "Access to the company's international network of tea producers and distributors for wholesale sourcing.",
+        "uses": [
+          "Sourcing for businesses"
+        ],
+        "url": "https://www.teadealers.com/pages/wholesale"
+      }
+    ]
   },
   {
     "slug": "teapigs",
@@ -2183,7 +3633,8 @@
     ],
     "summary": "Tea brand supplying restaurants, coffee shops, hotels, grocery stores and offices; its 30-plus teas include matcha.",
     "facts": [
-      "Wholesale portal for existing customers; form to be connected with the team"
+      "Wholesale portal for existing customers; form to be connected with the team",
+      "Stockists receive a point-of-sale and support package with free remote tea school training"
     ],
     "sources": [
       {
@@ -2191,7 +3642,34 @@
         "url": "https://teapigs.com/pages/become-a-teapigs-stockist"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Stockist program",
+        "notes": "For restaurants, coffee shops, hotels, grocery stores and offices that want to stock teapigs. Stockists get a point-of-sale and support package and free remote tea school training.",
+        "uses": [
+          "Restaurants",
+          "Coffee shops",
+          "Hotels",
+          "Grocery stores",
+          "Offices"
+        ],
+        "url": "https://teapigs.com/pages/become-a-teapigs-stockist"
+      },
+      {
+        "name": "Wholesale portal for existing customers",
+        "notes": "Existing direct customers place wholesale orders through the Shop Wholesale link.",
+        "uses": [
+          "Existing wholesale customers"
+        ],
+        "url": "https://teapigs.com/pages/become-a-teapigs-stockist"
+      },
+      {
+        "name": "Matcha within the range",
+        "notes": "Matcha is named as one format among 30-plus teas. No matcha product, size or price is listed on this page.",
+        "url": "https://teapigs.com/pages/become-a-teapigs-stockist"
+      }
+    ]
   },
   {
     "slug": "tenzo-tea",
@@ -2209,7 +3687,11 @@
     "summary": "Wholesale and bulk matcha for cafés, restaurants and brands.",
     "facts": [
       "Matcha in 100 g, 250 g and 500 g packages",
-      "Organic and conventional varieties"
+      "Organic and conventional varieties",
+      "Certifications listed: USDA Organic, ISO and JAS",
+      "COAs, spec sheets and nutritional information are available on request",
+      "Sample requests go through a form on the page; the team responds within one business day",
+      "Page names past partners Liquid IV, Every Day Dose, Olipop and Kombucha"
     ],
     "sources": [
       {
@@ -2217,7 +3699,72 @@
         "url": "https://tenzotea.co/pages/bulk-matcha-and-matcha-wholesale"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Matcha packages for cafés",
+        "notes": "Affordable matcha for espresso add-ins, lattes and baked goods, sold in larger bags for cafés and restaurants.",
+        "origin": "Sourced directly from partners in Japan",
+        "uses": [
+          "Espresso add-ins",
+          "Lattes",
+          "Baked goods"
+        ],
+        "options": [
+          "100 g",
+          "250 g",
+          "500 g"
+        ],
+        "url": "https://tenzotea.co/pages/bulk-matcha-and-matcha-wholesale"
+      },
+      {
+        "name": "Bulk matcha and custom formulations for manufacturers",
+        "notes": "Organic and conventional matcha in bulk for food manufacturers, flavor houses and co-branding, with custom formulations on request.",
+        "origin": "Japan",
+        "uses": [
+          "Food manufacturers",
+          "Flavor houses",
+          "Co-branding",
+          "Beverage brands"
+        ],
+        "options": [
+          "Organic",
+          "Conventional"
+        ],
+        "url": "https://tenzotea.co/pages/bulk-matcha-and-matcha-wholesale"
+      },
+      {
+        "name": "Premium Blend",
+        "notes": "Premium-grade blend. The page gives serving counts rather than weights.",
+        "origin": "Japan",
+        "uses": [
+          "Beverages"
+        ],
+        "options": [
+          "30 servings",
+          "100 servings",
+          "500 servings"
+        ],
+        "price": "$8.99 (size as listed on page; serving count, not grams)",
+        "url": "https://tenzotea.co/pages/bulk-matcha-and-matcha-wholesale"
+      },
+      {
+        "name": "Original Blend",
+        "notes": "Ceremonial-grade blend; the page URL describes it as organic.",
+        "origin": "Japan",
+        "uses": [
+          "Beverages"
+        ],
+        "options": [
+          "Single-serve box",
+          "30 servings",
+          "100 servings",
+          "400 servings"
+        ],
+        "price": "$19.99 (size as listed on page; single-serve box)",
+        "url": "https://tenzotea.co/pages/bulk-matcha-and-matcha-wholesale"
+      }
+    ]
   },
   {
     "slug": "tezumi",
@@ -2239,7 +3786,11 @@
     "facts": [
       "Lists Organic Barista / Culinary matcha at $249/kg, shipped as four 250 g resealable bags",
       "Says prices are expected to rise around autumn after the 2026 harvest",
-      "Has a separate private-label page"
+      "Has a separate private-label page",
+      "Wholesale is limited to cafés and restaurants; apply via the contact form",
+      "Samples are refunded up to $50 with your first wholesale kilogram of each tea",
+      "Domestic US shipping by USPS Priority Mail is free; everything ships from New York City",
+      "Smaller orders can be placed through its Faire store"
     ],
     "sources": [
       {
@@ -2247,10 +3798,73 @@
         "url": "https://www.tezumi.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Organic Barista / Culinary Matcha",
+        "notes": "Matcha for cafés priced per kilogram and shipped as four resealable bags.",
+        "origin": "Not stated",
+        "uses": [
+          "Cafés",
+          "Culinary use"
+        ],
+        "options": [
+          "1 kg (four 250 g resealable bags)"
+        ],
+        "price": "$249 per kg",
+        "url": "https://www.tezumi.com/pages/wholesale"
+      },
+      {
+        "name": "Miyama Matcha",
+        "notes": "Matcha priced per kilogram and shipped as four resealable bags.",
+        "origin": "Shiga, Japan",
+        "uses": [
+          "Cafés"
+        ],
+        "options": [
+          "1 kg (four 250 g resealable bags)"
+        ],
+        "price": "$239 per kg",
+        "url": "https://www.tezumi.com/pages/wholesale"
+      },
+      {
+        "name": "Kazan Matcha",
+        "notes": "Matcha priced per kilogram and shipped as four resealable bags.",
+        "origin": "Kagoshima, Japan",
+        "uses": [
+          "Cafés"
+        ],
+        "options": [
+          "1 kg (four 250 g resealable bags)"
+        ],
+        "price": "$279 per kg",
+        "url": "https://www.tezumi.com/pages/wholesale"
+      },
+      {
+        "name": "Private label program",
+        "notes": "Private-label service with its own page. Details are not on the wholesale page.",
+        "uses": [
+          "Brands"
+        ],
+        "url": "https://www.tezumi.com/pages/wholesale"
+      },
+      {
+        "name": "Teaware at trade discount",
+        "notes": "Handmade pouring bowls and supplies at a flat trade discount. Some items are backordered for 3+ months.",
+        "uses": [
+          "Cafés",
+          "Restaurants"
+        ],
+        "options": [
+          "Minimum order: $1,000 minimum unless also a wholesale tea customer"
+        ],
+        "price": "20% off retail",
+        "url": "https://www.tezumi.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -2271,7 +3885,10 @@
     ],
     "summary": "Works with cafés, restaurants and stores to build wholesale programs.",
     "facts": [
-      "After account setup you get catalogs and a wholesale site to order, earn points and see account history"
+      "After account setup you get catalogs and a wholesale site to order, earn points and see account history",
+      "Wholesale tasting samples carry a nominal charge",
+      "The company is certified by QAI for organic standards at its facilities; a small share of teas are not organic but are audited or lab-tested",
+      "The wholesale application is a short online form"
     ],
     "sources": [
       {
@@ -2279,9 +3896,61 @@
         "url": "https://taooftea.com/wholesale/"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Loose leaf tea tins",
+        "notes": "Dozens of loose leaf teas in canisters, including white, green, oolong, black, puer, herbal and compressed teas.",
+        "options": [
+          "canisters"
+        ],
+        "url": "https://taooftea.com/wholesale/"
+      },
+      {
+        "name": "Tea bags",
+        "notes": "Biodegradable, organic tea sachets for cafés and stores, with several bulk ordering and storage options.",
+        "uses": [
+          "cafés",
+          "stores"
+        ],
+        "url": "https://taooftea.com/wholesale/"
+      },
+      {
+        "name": "Bulk loose leaf by the pound",
+        "notes": "Loose leaf white, green, oolong, black, puer and herbal teas ordered by weight. Bulk orders are hand-packed into kraft tin-tie bags or foil bags with a moisture barrier.",
+        "options": [
+          "by the pound"
+        ],
+        "url": "https://taooftea.com/wholesale/"
+      },
+      {
+        "name": "Iced tea pouches",
+        "notes": "Pre-measured pouches for brewing large quantities of iced tea.",
+        "uses": [
+          "large batches of iced tea"
+        ],
+        "options": [
+          "pre-measured pouches"
+        ],
+        "url": "https://taooftea.com/wholesale/"
+      },
+      {
+        "name": "Ready-to-drink bottled teas",
+        "notes": "Bottled teas in sweet and unsweetened versions. They are shelf stable but best served chilled.",
+        "options": [
+          "sweet",
+          "unsweetened"
+        ],
+        "url": "https://taooftea.com/wholesale/"
+      },
+      {
+        "name": "Teaware at wholesale prices",
+        "notes": "Teapots, cups and other accessories sold to wholesale customers, including pieces from family-run artisan crafters.",
+        "url": "https://taooftea.com/wholesale/"
+      }
     ]
   },
   {
@@ -2295,17 +3964,46 @@
     "tags": [],
     "how": [],
     "summary": "UK tea supplier with a trade page for wholesale tea stockists.",
-    "facts": [],
+    "facts": [
+      "Trade portal at trade.theteamakers.co.uk for log-in or sign-up",
+      "Trade contact form asks for business type: café or restaurant, hotel or B&B, retail, distributor, office, or other"
+    ],
     "sources": [
       {
         "label": "Wholesale page",
         "url": "https://www.theteamakers.co.uk/en-us/pages/trade"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "eu",
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale loose-leaf and teabag teas",
+        "notes": "Trade tea for hospitality and retail, with over 100 teas including single-origin and rare teas. Matcha supply is mentioned in general terms only.",
+        "uses": [
+          "Hospitality",
+          "Retail"
+        ],
+        "options": [
+          "Loose leaf",
+          "Teabags"
+        ],
+        "url": "https://www.theteamakers.co.uk/en-us/pages/trade"
+      },
+      {
+        "name": "Bespoke tea menus and staff training",
+        "notes": "Tailored tea menus, consultations, and hands-on staff training on brewing, flavour and food pairing.",
+        "uses": [
+          "Hotels",
+          "Restaurants",
+          "Cafés",
+          "Boutique retailers"
+        ],
+        "url": "https://www.theteamakers.co.uk/en-us/pages/trade"
+      }
     ]
   },
   {
@@ -2354,7 +4052,11 @@
     ],
     "summary": "French professional page (in French): matcha in professional formats for coffee shops, restaurants, pastry shops, boutiques and resellers.",
     "facts": [
-      "A form request gets a personalized offer and a professional brochure"
+      "A form request gets a personalized offer and a professional brochure",
+      "No minimum order quantity or minimum commitment stated",
+      "Samples can be requested, subject to conditions not specified on the page",
+      "Buyer pays shipping costs; delivery stated as fast in France and abroad",
+      "Free profitability calculator for matcha lattes linked from the page"
     ],
     "sources": [
       {
@@ -2362,10 +4064,41 @@
         "url": "https://tsukimatcha.com/pages/espace-pro"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "eu",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "L'Original ceremonial matcha (professional)",
+        "notes": "Japanese ceremonial-grade matcha offered to cafés, restaurants, pastry shops and resellers, priced per unit with volume discounts.",
+        "origin": "Japan",
+        "uses": [
+          "cafes",
+          "restaurants",
+          "pastry shops",
+          "resellers"
+        ],
+        "options": [
+          "30 g",
+          "100 g",
+          "1 kg bulk",
+          "Minimum order: No minimum order quantity stated"
+        ],
+        "price": "EUR 24.99 shown as a unit price (pack size not stated); volume-based pricing on quantity ordered, no percentages given",
+        "url": "https://tsukimatcha.com/pages/espace-pro"
+      },
+      {
+        "name": "Custom co-branded collaborations",
+        "notes": "Tailored projects for professional clients: co-branded launches, custom packaging, pop-ups, events and content.",
+        "uses": [
+          "launches",
+          "events",
+          "content"
+        ],
+        "url": "https://tsukimatcha.com/pages/espace-pro"
+      }
     ]
   },
   {
@@ -2391,7 +4124,9 @@
     "facts": [
       "Supplies bulk culinary, barista and ceremonial grade matcha and hojicha",
       "Says it replies within 24 hours",
-      "Stocked in the US"
+      "Stocked in the US",
+      "Says import tariffs and duties are already covered",
+      "Orders ship from a US warehouse"
     ],
     "note": "Hoshino Seichaen, Itoh Kyuemon and Rya are sold through Ujicha Matcha.",
     "sources": [
@@ -2400,9 +4135,39 @@
         "url": "https://ujichamatcha.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk wholesale matcha and hojicha",
+        "notes": "Culinary, barista and ceremonial grades of matcha plus hojicha, sold to cafes, bakeries and restaurants. Pack sizes and prices are not shown on the page.",
+        "origin": "Japan (directly imported)",
+        "uses": [
+          "lattes",
+          "baking",
+          "ceremonial use"
+        ],
+        "options": [
+          "bulk culinary grade",
+          "barista grade",
+          "ceremonial grade",
+          "hojicha"
+        ],
+        "url": "https://ujichamatcha.com/pages/wholesale"
+      },
+      {
+        "name": "Private label, white label, 3PL and co-packing",
+        "notes": "Supply programs where the company provides branded product, warehousing and co-packing services for partner brands.",
+        "options": [
+          "private label",
+          "white label",
+          "3PL",
+          "co-packing"
+        ],
+        "url": "https://ujichamatcha.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -2453,7 +4218,10 @@
     "facts": [
       "Says bulk orders start at 1 kg",
       "20 g samples available",
-      "Private label and OEM available through its wholesale site"
+      "Private label and OEM available through its wholesale site",
+      "Ships more than 30 tons of matcha a year worldwide",
+      "Tea is kept as leaves until production, which happens after an order or at the start of each month, and is packed promptly in Japan",
+      "Export documentation is available"
     ],
     "sources": [
       {
@@ -2461,10 +4229,83 @@
         "url": "https://und-ny.com/services/wholesale/"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk Uji matcha range",
+        "notes": "Flagship bulk matcha from Uji, Kyoto, covering ceremonial blends, a koicha selection, a reserve grade for usucha, first-flush single cultivars, and a premium culinary blend. Culinary grades are for lattes, baking and food production.",
+        "origin": "Uji, Kyoto, Japan",
+        "uses": [
+          "koicha",
+          "usucha",
+          "ceremonial service",
+          "lattes",
+          "baking",
+          "food production"
+        ],
+        "options": [
+          "1 kg",
+          "3 kg",
+          "5 kg",
+          "Minimum order: 1 kg"
+        ],
+        "url": "https://und-ny.com/services/wholesale/"
+      },
+      {
+        "name": "Sui Ceremonial Koicha Blend",
+        "notes": "Ceremonial blend from Uji described as layered and quiet. It is recommended for koicha and usucha.",
+        "origin": "Uji, Kyoto, Japan",
+        "uses": [
+          "koicha",
+          "usucha"
+        ],
+        "url": "https://und-ny.com/services/wholesale/"
+      },
+      {
+        "name": "Ren Ceremonial Reserve Blend",
+        "notes": "Reserve-grade ceremonial blend from Uji described as clean and composed. It is recommended for usucha.",
+        "origin": "Uji, Kyoto, Japan",
+        "uses": [
+          "usucha"
+        ],
+        "url": "https://und-ny.com/services/wholesale/"
+      },
+      {
+        "name": "Yame Ceremonial Single Cultivar",
+        "notes": "Single-cultivar Yabukita ceremonial matcha described as clean and nutty. It is recommended for usucha and lattes.",
+        "origin": "Yame, Fukuoka, Japan",
+        "uses": [
+          "usucha",
+          "lattes"
+        ],
+        "url": "https://und-ny.com/services/wholesale/"
+      },
+      {
+        "name": "Organic Iga Ceremonial Single Cultivar",
+        "notes": "Organic JAS-certified single-cultivar Yabukita ceremonial matcha described as concentrated and structured. It is recommended for usucha.",
+        "origin": "Iga, Mie, Japan",
+        "uses": [
+          "usucha"
+        ],
+        "url": "https://und-ny.com/services/wholesale/"
+      },
+      {
+        "name": "Private label and OEM matcha",
+        "notes": "Private label matcha, OEM production and custom packaging for cafés, bakeries, hotels, restaurants, retailers and brands. Programs cover selection, target price, format, volume, labeling, packing and export destination.",
+        "uses": [
+          "cafés",
+          "bakeries",
+          "hotels",
+          "restaurants",
+          "retailers",
+          "brands"
+        ],
+        "url": "https://und-ny.com/services/wholesale/"
+      }
     ]
   },
   {
@@ -2487,7 +4328,11 @@
     "summary": "Sources matcha from farmers and factories in Yame, Uji, Kagoshima and Shizuoka for cafés, wholesalers, retailers and global distributors, with OEM services.",
     "facts": [
       "Order through its form or on WhatsApp",
-      "OEM covers custom matcha selection and private-label, retail-ready packaging"
+      "OEM covers custom matcha selection and private-label, retail-ready packaging",
+      "JAS and EU Organic certified options are available",
+      "FDA-registered facility; FDA Prior Notice filed for each US shipment",
+      "Payment by bank transfer in JPY, USD or EUR, or by card; invoice sent after order confirmation",
+      "International delivery about two weeks; in-stock orders dispatch 1-2 days after payment"
     ],
     "sources": [
       {
@@ -2495,9 +4340,50 @@
         "url": "https://wakokoro-tea.com/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Bulk matcha in 1 kg bags",
+        "notes": "Matcha sold in bulk for cafés, distributors and resellers, one variety per bag, with a discount on larger orders.",
+        "origin": "Yame, Uji, Kagoshima and Shizuoka, Japan",
+        "uses": [
+          "beverages",
+          "desserts"
+        ],
+        "options": [
+          "1 kg bag, one variety per bag",
+          "Minimum order: No minimum order stated"
+        ],
+        "price": "5% off orders of 10 kg or more",
+        "url": "https://wakokoro-tea.com/pages/wholesale"
+      },
+      {
+        "name": "Wholesale sample sets",
+        "notes": "Sample sets used as the entry point for cafés, distributors and OEM buyers. Sold at regular price in yen with a wholesale sample discount.",
+        "options": [
+          "Reserve Ceremonial Grade: five 30 g, JPY 15,200",
+          "Imperial Ceremonial Grade: seven 30 g, JPY 15,500",
+          "Signature Ceremonial Grade: eight 30 g, JPY 13,900",
+          "Premium Ceremonial Grade: six varieties, JPY 8,100",
+          "Culinary & Latte Grade, JPY 1,800",
+          "Organic Matcha, JPY 4,800"
+        ],
+        "price": "Samples ship at retail price with a 20% wholesale-sample discount",
+        "url": "https://wakokoro-tea.com/pages/wholesale"
+      },
+      {
+        "name": "OEM private-label matcha pouches",
+        "notes": "Plain 30 g matcha pouches meant to fit a brand's own tins, for buyers who add their own labels. Custom blending is not offered; the closest existing product is recommended instead.",
+        "options": [
+          "30 g pouch in Silver, Gold, Black or White",
+          "Minimum order: No minimum on pouches or tins"
+        ],
+        "price": "USD 1.50 per pouch",
+        "url": "https://wakokoro-tea.com/pages/wholesale"
+      }
     ]
   },
   {
@@ -2518,7 +4404,9 @@
     "summary": "The \"___ x Whisk\" partnership program offers wholesale pricing to businesses.",
     "facts": [
       "Includes a free trial, marketing support, training, recipe development and free local shipping or delivery",
-      "Email to get details"
+      "Email to get details",
+      "Partnership questions go to partners@whiskmatcha.ca",
+      "Product described on the page as ultra-premium organic matcha; no product names or sizes listed"
     ],
     "sources": [
       {
@@ -2526,7 +4414,18 @@
         "url": "https://whiskmatcha.ca/pages/partnership-program"
       }
     ],
-    "verified": "2026-11-05"
+    "verified": "2026-11-13",
+    "catalog": [
+      {
+        "name": "Co-branded partnership program",
+        "notes": "A co-branded wholesale partnership in which the business and Whisk jointly market ultra-premium organic matcha. Pricing and product details are not given on the page.",
+        "uses": [
+          "adding healthy offerings for customers",
+          "entering the matcha market"
+        ],
+        "url": "https://whiskmatcha.ca/pages/partnership-program"
+      }
+    ]
   },
   {
     "slug": "yamamotoyama",
@@ -2545,7 +4444,9 @@
     ],
     "summary": "Tea company that sells by the case to resellers through an online business profile.",
     "facts": [
-      "A reseller's permit is required to buy by the case"
+      "A reseller's permit is required to buy by the case",
+      "Help creating a new online business profile is available at Wholesale@yamamotoyama.com",
+      "Other sales inquiries go to Sales@yamamotoyama.com"
     ],
     "sources": [
       {
@@ -2573,7 +4474,10 @@
     "summary": "Sells Shizuoka matcha to cafés, restaurants and hospitality businesses in the US and internationally, with in-stock orders shipping from Miami.",
     "facts": [
       "Sold in 500 g bags or cases of 48 bags (24 kg)",
-      "Says in-stock website orders ship the next business day"
+      "Says in-stock website orders ship the next business day",
+      "Lot testing for more than 200 pesticide residues; lot documentation available on request",
+      "No free samples; a 30 g ceremonial tin is sold for USD 30",
+      "Prices are in USD before shipping and taxes"
     ],
     "sources": [
       {
@@ -2581,10 +4485,69 @@
         "url": "https://yokomatcha.com/pages/wholesale-matcha-bulk-matcha"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "us",
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale ceremonial matcha, 500 g bag",
+        "notes": "First-harvest, single-cultivar ceremonial matcha, bead-milled in Japan, sold by the bag for smooth lattes and whisking with water.",
+        "origin": "Hon-Yama, Shizuoka, Japan",
+        "uses": [
+          "smooth lattes",
+          "whisked matcha with water"
+        ],
+        "options": [
+          "500 g bag",
+          "Minimum order: One 500 g bag; no larger minimum"
+        ],
+        "price": "USD 160 per bag; USD 128 each with 2 or more bags (20% off, applied automatically in the cart)",
+        "url": "https://yokomatcha.com/pages/wholesale-matcha-bulk-matcha"
+      },
+      {
+        "name": "Case of ceremonial matcha, 48 x 500 g",
+        "notes": "A full case of the ceremonial matcha at a lower per-bag cost; the 2-bag discount does not apply to cases.",
+        "origin": "Hon-Yama, Shizuoka, Japan",
+        "uses": [
+          "lattes",
+          "whisked matcha"
+        ],
+        "options": [
+          "48 x 500 g case (24 kg)"
+        ],
+        "price": "USD 4,320 per case (USD 90 per bag)",
+        "url": "https://yokomatcha.com/pages/wholesale-matcha-bulk-matcha"
+      },
+      {
+        "name": "Wholesale culinary matcha, 500 g bag",
+        "notes": "Third-harvest Yabukita matcha for baking, desserts and sweetened drinks.",
+        "origin": "Shizuoka, Japan",
+        "uses": [
+          "cookies",
+          "cakes",
+          "ice cream",
+          "chocolate",
+          "smoothies",
+          "sweetened lattes"
+        ],
+        "options": [
+          "500 g bag"
+        ],
+        "price": "USD 45 per bag; USD 36 each with 2 or more bags (20% off)",
+        "url": "https://yokomatcha.com/pages/wholesale-matcha-bulk-matcha"
+      },
+      {
+        "name": "Pallet, white-label and custom packaging",
+        "notes": "Larger and custom orders quoted individually through the contact form, with custom orders taking about two months from Japan.",
+        "options": [
+          "pallet pricing",
+          "white-label",
+          "custom packaging"
+        ],
+        "url": "https://yokomatcha.com/pages/wholesale-matcha-bulk-matcha"
+      }
     ]
   },
   {
@@ -2623,7 +4586,11 @@
       "States there is no minimum order for any product; some items come in lots such as 10 x 1 kg cases",
       "Custom production and private label generally start around ¥500,000",
       "Requires clients to also offer non-matcha Japanese tea (from 2026)",
-      "Open to businesses that resell tea and to clubs that distribute tea to members"
+      "Open to businesses that resell tea and to clubs that distribute tea to members",
+      "Shipping terms are FCA; in-stock orders take about 1 week, back-ordered items at least 4 weeks",
+      "Export permission required for purchases over JPY 200,000 (about one week, no charge)",
+      "Payment by credit card or international wire (WISE also accepted); JPY 4,000 wire handling fee under JPY 100,000",
+      "Wholesale accounts cannot use retail promotions or free-shipping offers"
     ],
     "note": "Sells these farms' teas; the program is Yunomi's.",
     "sources": [
@@ -2632,9 +4599,53 @@
         "url": "https://yunomi.life/pages/wholesale"
       }
     ],
-    "verified": "2026-11-05",
+    "verified": "2026-11-13",
     "serves": [
       "intl"
+    ],
+    "catalog": [
+      {
+        "name": "Wholesale Lite membership",
+        "notes": "Entry wholesale tier for businesses that resell tea, granted by application, with a discount on most products.",
+        "uses": [
+          "resale of tea",
+          "tea clubs distributing to members"
+        ],
+        "options": [
+          "Minimum order: No minimum order for standard products"
+        ],
+        "price": "30% off or more, depending on the product",
+        "url": "https://yunomi.life/pages/wholesale"
+      },
+      {
+        "name": "Wholesale Pro membership",
+        "notes": "Higher tier open to approved Lite members, with a paid recurring membership fee that is discounted for annual billing.",
+        "options": [
+          "quarterly fee",
+          "annual fee at a discount"
+        ],
+        "price": "Up to 60% off some products; membership fee is non-refundable but can be cancelled at any time",
+        "url": "https://yunomi.life/pages/wholesale"
+      },
+      {
+        "name": "Private labeling of matcha bags",
+        "notes": "Adds a client's label to in-stock unlabeled matcha bags for a per-unit fee, or runs a custom production run.",
+        "options": [
+          "unlabeled in-stock matcha bags",
+          "custom production",
+          "Minimum order: Custom orders and private label generally start at JPY 500,000 (store credit can cover it)"
+        ],
+        "url": "https://yunomi.life/pages/wholesale"
+      },
+      {
+        "name": "1 kg bulk tea units",
+        "notes": "Bulk tea sold in 1 kg units from several suppliers; some items come in lots. Orders of 30 kg or more of one tea may qualify for renegotiated pricing.",
+        "options": [
+          "1 kg bulk unit",
+          "lot of 10 x 1 kg cases"
+        ],
+        "url": "https://yunomi.life/pages/wholesale"
+      }
     ]
   },
   {
@@ -2655,7 +4666,8 @@
     "summary": "Inquiry form for cafés, retailers and partners who want to carry Zenkyu matcha.",
     "facts": [
       "The form asks your monthly matcha need in kilograms, intended use and timeline",
-      "Says it replies within a few business days"
+      "Says it replies within a few business days",
+      "Business type options on the inquiry form are Cafe, Restaurant, Tea Room / Matcha Bar, Distributor or Other"
     ],
     "sources": [
       {

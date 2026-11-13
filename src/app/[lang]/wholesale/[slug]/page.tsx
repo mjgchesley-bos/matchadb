@@ -87,18 +87,22 @@ function CatalogCard({ item, t }: { item: CatalogItem; t: ReturnType<typeof getT
           </ul>
         </div>
       )}
-      <div className="mt-auto border-t border-line pt-3">
-        <p className="flex items-baseline justify-between gap-3 text-sm">
-          <span className="text-xs font-medium uppercase tracking-wide text-ink-faint">{t("ws.slug.p.price")}</span>
-          <span className="tabular-nums font-medium text-ink">{item.price ?? t("ws.slug.p.onReq")}</span>
-        </p>
-        {item.priceNote && <p className="mt-1 text-xs leading-snug text-ink-faint">{item.priceNote}</p>}
-        {item.url && (
-          <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs font-medium text-matcha hover:text-forest">
-            {t("ws.slug.p.view")} &rarr;
-          </a>
-        )}
-      </div>
+      {(item.price || item.url) && (
+        <div className="mt-auto border-t border-line pt-3">
+          {item.price && (
+            <p className="flex items-baseline justify-between gap-3 text-sm">
+              <span className="text-xs font-medium uppercase tracking-wide text-ink-faint">{t("ws.slug.p.price")}</span>
+              <span className="tabular-nums font-medium text-ink">{item.price}</span>
+            </p>
+          )}
+          {item.priceNote && <p className="mt-1 text-xs leading-snug text-ink-faint">{item.priceNote}</p>}
+          {item.url && (
+            <a href={item.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs font-medium text-matcha hover:text-forest">
+              {t("ws.slug.p.view")} &rarr;
+            </a>
+          )}
+        </div>
+      )}
     </li>
   );
 }
@@ -269,7 +273,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
             </>
           )}
         </div>
-        {s.catalog && s.catalog.length > 0 && (
+        {s.catalog && s.catalog.length > 0 && (s.catalogNote || s.catalog.some((c) => c.flavor)) && (
           <p className="border-t border-line px-5 py-3 text-xs leading-relaxed text-ink-faint">
             {s.catalog.some((c) => c.flavor) && <>{t("ws.slug.f.note")} </>}
             {s.catalogNote}
