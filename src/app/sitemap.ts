@@ -7,7 +7,7 @@ import { TOPICS } from "@/lib/research-topics";
 import { GUIDES } from "@/lib/guides";
 import { CULTIVARS } from "@/lib/cultivars";
 import { PAIRS, pairSlug } from "@/lib/compare";
-import { profiled } from "@/lib/suppliers";
+import { SUPPLIERS } from "@/lib/suppliers";
 import { HTML_LANG, LOCALES, localePath } from "@/i18n/config";
 
 // Pages that exist in every language: one entry per language, each pointing at all the others.
@@ -38,7 +38,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...PAIRS.map(([a, b]) => ({ url: `${SITE_URL}/compare/${pairSlug(a, b)}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     { url: `${SITE_URL}/wholesale`, changeFrequency: "weekly", priority: 0.7 },
     ...multilingual("/hall-of-fame", "monthly", 0.6),
-    ...profiled().map((s) => ({ url: `${SITE_URL}/wholesale/${s.slug}`, changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...SUPPLIERS.map((s) => ({ url: `${SITE_URL}/wholesale/${s.slug}`, changeFrequency: "monthly" as const, priority: 0.6 })),
     ...multilingual("/about", "monthly", 0.5),
     ...multilingual("/contact", "yearly", 0.3),
     { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },

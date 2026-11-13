@@ -4,7 +4,9 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { BrandLogo } from "@/components/product-cards";
 import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
-import { profiled, supplierBySlug, type CatalogItem } from "@/lib/suppliers";
+import { SUPPLIERS, supplierBySlug, type CatalogItem, type Supplier } from "@/lib/suppliers";
+import { ProductCard } from "@/components/ProductCard";
+import { getBrandProducts } from "@/lib/db";
 import { langOf } from "@/i18n/params";
 import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
 import { getT } from "@/i18n/server";
@@ -14,7 +16,7 @@ import { pageAlternates } from "@/i18n/seo";
 // Full profiles exist only for suppliers whose own site gives enough detail to fill one in;
 // every other supplier is listed on /wholesale.
 export function generateStaticParams() {
-  return profiled().map((s) => ({ slug: s.slug }));
+  return SUPPLIERS.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
@@ -22,10 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const lang: Locale = isLocale(raw) ? raw : "en";
   const t = getT(lang);
   const s = supplierBySlug(slug);
-  if (!s?.profile) return {};
+  if (!s) return {};
   const alternates = pageAlternates(lang, `/wholesale/${s.slug}`);
   const title = t("ws.slug.title", { name: s.name });
-  const description = `${s.name}${s.hq ? ` (${s.hq})` : ""} supplies bulk matcha from ${s.profile.origins.join(" and ")}. ${s.profile.minimumOrder}. Terms and certifications as the supplier states them.`;
+  const description = s.profile
+    ? `${s.name}${s.hq ? ` (${s.hq})` : ""} supplies bulk matcha from ${s.profile.origins.join(" and ")}. ${s.profile.minimumOrder}. Terms and certifications as the supplier states them.`
+    : `${s.name}: ${s.summary} Wholesale details and products as the supplier states them.`;
   return { title, description: lang === "en" ? description : t("ws.desc"), alternates, openGraph: { title, description, url: alternates.canonical } };
 }
 
@@ -99,18 +103,67 @@ function CatalogCard({ item, t }: { item: CatalogItem; t: ReturnType<typeof getT
   );
 }
 
+// What every supplier offers wholesale, from the facts MatchaDB checked on its own wholesale page. Every supplier has this card.
+function OfferCard({ s, t }: { s: Supplier; t: ReturnType<typeof getT> }) {
+  const chip = "rounded-full px-2 py-0.5 text-xs";
+  return (
+    <li className="flex flex-col gap-3 rounded-sm border border-matcha/40 bg-paper p-4 sm:col-span-2">
+      <h3 className="text-base font-bold leading-snug text-ink">{t("ws.slug.offer")}</h3>
+      {s.tags.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {s.tags.map((x) => (
+            <span key={x} className={`${chip} bg-matcha-soft text-matcha-ink`}>{t(`c.ws.tag.${x}` as "c.ws.tag.bulk")}</span>
+          ))}
+        </div>
+      )}
+      <p className="text-sm leading-relaxed text-ink-muted">{s.summary}</p>
+      {s.facts.length > 0 && (
+        <ul className="list-disc pl-5 flex flex-col gap-1 text-sm text-ink-muted">
+          {s.facts.map((f) => (
+            <li key={f}>{f}</li>
+          ))}
+        </ul>
+      )}
+      {(s.how.length > 0 || (s.serves ?? []).length > 0) && (
+        <dl className="grid grid-cols-1 gap-x-6 gap-y-1 text-sm sm:grid-cols-[8rem_1fr]">
+          {s.how.length > 0 && (
+            <>
+              <dt className="text-ink-faint">{t("ws.slug.offer.how")}</dt>
+              <dd className="text-ink">{s.how.map((h) => t(`c.ws.how.${h}` as "c.ws.how.form")).join(" · ")}</dd>
+            </>
+          )}
+          {(s.serves ?? []).length > 0 && (
+            <>
+              <dt className="text-ink-faint">{t("ws.slug.offer.ships")}</dt>
+              <dd className="text-ink">{(s.serves ?? []).map((x) => t(`c.ws.serves.${x}` as "c.ws.serves.us")).join(" · ")}</dd>
+            </>
+          )}
+        </dl>
+      )}
+      {s.note && <p className="text-xs leading-snug text-ink-faint">{s.note}</p>}
+      <div className="mt-auto border-t border-line pt-3">
+        <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-matcha hover:text-forest">
+          {t("ws.slug.offer.open")} &#8599;
+        </a>
+      </div>
+    </li>
+  );
+}
+
 export default async function SupplierPage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { slug } = await params;
   const lang = await langOf(params);
   const t = getT(lang);
   const s = supplierBySlug(slug);
-  if (!s || !s.profile) notFound();
+  if (!s) notFound();
   const p = s.profile;
+  const dbProducts = await Promise.all(s.brands.map(async (b) => ({ brand: b, products: await getBrandProducts(b) })));
+  const productCount = dbProducts.reduce((n, x) => n + x.products.length, 0);
   const url = pageAlternates(lang, `/wholesale/${s.slug}`).canonical;
   const verified = new Intl.DateTimeFormat(INTL_LANG[lang], { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(`${s.verified}T00:00:00Z`));
   const hq = s.hq ?? "";
 
-  const rows: { label: string; value: React.ReactNode }[] = [
+  const rows: { label: string; value: React.ReactNode }[] = !p ? [] : [
     ...(hq ? [{ label: t("ws.slug.r.hq"), value: hq }] : []),
     { label: t("ws.slug.r.src"), value: p.origins.join(" and ") },
     { label: t("ws.slug.r.grades"), value: p.organic },
@@ -184,22 +237,47 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         </p>
       </header>
 
-      {s.catalog && s.catalog.length > 0 && (
-        <section className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised" aria-labelledby="catalog-h">
-          <h2 id="catalog-h" className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.catalog")}</h2>
-          <p className="px-5 pt-4 text-sm text-ink-faint">{t("ws.slug.catalogNote", { name: s.name, date: verified })}</p>
-          <ul className="grid gap-4 p-5 sm:grid-cols-2">
-            {s.catalog.map((item) => (
+      <section className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised" aria-labelledby="catalog-h">
+        <h2 id="catalog-h" className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.catalog")}</h2>
+        <div className="flex flex-col gap-5 p-5">
+          {s.catalog && s.catalog.length > 0 && <p className="text-sm text-ink-faint">{t("ws.slug.catalogNote", { name: s.name, date: verified })}</p>}
+          <ul className="grid gap-4 sm:grid-cols-2">
+            <OfferCard s={s} t={t} />
+            {(s.catalog ?? []).map((item) => (
               <CatalogCard key={item.name} item={item} t={t} />
             ))}
           </ul>
+          {productCount > 0 && (
+            <>
+              <p className="text-sm text-ink-faint">{t("ws.slug.dbNote", { brands: s.brands.join(", ") })}</p>
+              {dbProducts.filter((x) => x.products.length > 0).map((x) => (
+                <div key={x.brand}>
+                  {s.brands.length > 1 && (
+                    <h3 className="mb-3 text-base font-bold text-ink">
+                      <Link href={`/brands/${encodeURIComponent(x.brand)}`} className="hover:text-matcha">{x.brand}</Link>
+                    </h3>
+                  )}
+                  <ul className="grid gap-4 sm:grid-cols-2">
+                    {x.products.map((pr) => (
+                      <li key={pr.id}>
+                        <ProductCard product={pr} lang={lang} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </>
+          )}
+        </div>
+        {s.catalog && s.catalog.length > 0 && (
           <p className="border-t border-line px-5 py-3 text-xs leading-relaxed text-ink-faint">
             {s.catalog.some((c) => c.flavor) && <>{t("ws.slug.f.note")} </>}
             {s.catalogNote}
           </p>
-        </section>
-      )}
+        )}
+      </section>
 
+      {rows.length > 0 && (
       <section className="mt-6 overflow-hidden rounded-sm border border-line bg-paper-raised" aria-labelledby="terms-h">
         <h2 id="terms-h" className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.terms")}</h2>
         <dl className="divide-y divide-line px-5">
@@ -211,9 +289,11 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
           ))}
         </dl>
       </section>
+      )}
 
-      <section className={`mt-6 grid gap-6 ${s.catalog?.length ? "" : "sm:grid-cols-2"}`}>
-        {!s.catalog?.length && (
+      {p && (
+      <section className={`mt-6 grid gap-6 ${s.catalog?.length || productCount > 0 ? "" : "sm:grid-cols-2"}`}>
+        {!s.catalog?.length && productCount === 0 && (
         <div className="overflow-hidden rounded-sm border border-line bg-paper-raised">
           <h2 className="border-b border-line bg-matcha-soft px-5 py-3 font-display text-xl font-semibold text-ink">{t("ws.slug.products")}</h2>
           <ul className="list-disc pl-10 pr-5 py-4 flex flex-col gap-1.5 text-ink-muted">
@@ -232,6 +312,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
           </ul>
         </div>
       </section>
+      )}
 
       <section className="mt-6 rounded-sm border border-dashed border-line-strong px-5 py-4 text-sm text-ink-muted leading-relaxed">
         <p>

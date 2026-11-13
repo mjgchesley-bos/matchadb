@@ -230,11 +230,9 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
                 <span className="sr-only">{t("c.ws.pageSr", { name: s.name })}</span>
                 <span aria-hidden="true" className="ml-1">↗</span>
               </a>
-              {s.profile && (
-                <Link href={`/wholesale/${s.slug}`} className="text-sm text-matcha underline hover:text-forest">
-                  {t("c.ws.profile")}
-                </Link>
-              )}
+              <Link href={`/wholesale/${s.slug}`} className="text-sm text-matcha underline hover:text-forest">
+                {t("c.ws.profile")}
+              </Link>
               <span className="text-xs text-ink-faint">{t("c.ws.checked", { date: dateFmt.format(new Date(`${s.verified}T00:00:00Z`)) })}</span>
             </div>
           </li>
