@@ -79,6 +79,17 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
   return (
     <div>
       <div className="rounded-sm border border-line bg-paper-raised p-4 sm:p-5">
+        <div className="mb-5">
+          <label htmlFor="wholesale-search" className={label}>{t("c.ws.search")}</label>
+          <input
+            id="wholesale-search"
+            type="search"
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            placeholder={t("c.ws.searchPh")}
+            className="w-full max-w-md rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
+          />
+        </div>
         <div>
           <span className={label}>{t("c.ws.program")}</span>
           <div className="flex flex-wrap items-center gap-2" role="group" aria-label={t("c.ws.programAria")}>
@@ -137,17 +148,6 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
           </div>
         </div>
 
-        <div className="mt-5">
-          <label htmlFor="wholesale-search" className={label}>{t("c.ws.search")}</label>
-          <input
-            id="wholesale-search"
-            type="search"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder={t("c.ws.searchPh")}
-            className="w-full max-w-md rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
-          />
-        </div>
 
         <p className="mt-4 text-xs text-ink-faint" aria-live="polite">
           {t("c.ws.showing", { n: shown.length, total: suppliers.length })}
