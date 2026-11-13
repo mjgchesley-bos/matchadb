@@ -23645,14 +23645,14 @@
 "at": "2026-11-12"
 },
 "3e590cfaa6": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: patisserie, no matcha drink found",
+"at": "2026-11-13"
 },
 "36c5a80fab": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: patisserie, no matcha drink found",
+"at": "2026-11-13"
 },
 "fsqf7de049": {
 "d": "KEEP",
@@ -23680,9 +23680,9 @@
 "at": "2026-11-12"
 },
 "fsq5b78278": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Barry's fitness-studio chain smoothie bar, not a matcha venue",
+"at": "2026-11-13"
 },
 "fsq5612ab5": {
 "d": "REMOVE",
@@ -23815,19 +23815,19 @@
 "at": "2026-11-12"
 },
 "3f901675de": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: no matcha on One Zo menu",
+"at": "2026-11-13"
 },
 "0be83f5e85": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Own menu (onezo.us/menu) has no matcha; only a photo alt-text mention on homepage. No addr",
+"at": "2026-11-13"
 },
 "fbcf16b128": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: no address or matcha on site",
+"at": "2026-11-13"
 },
 "36d623618b": {
 "d": "REMOVE",
@@ -24120,9 +24120,9 @@
 "at": "2026-11-12"
 },
 "1b8578adb4": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Wrong location: business is in Bermuda, not Wellesley MA. No Wellesley location found.",
+"at": "2026-11-13"
 },
 "e23a36e443": {
 "d": "KEEP",
@@ -24140,9 +24140,9 @@
 "at": "2026-11-12"
 },
 "07382a13ae": {
-"d": "KEEP",
-"r": "deeper crawl found a matcha item on own pages",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: No public storefront at 57 Fairmount St; Lowell is a production site. Matcha is retail, no",
+"at": "2026-11-13"
 },
 "4fd6e685ad": {
 "d": "KEEP",
@@ -27550,34 +27550,34 @@
 "at": "2026-11-12"
 },
 "fsq6903d33": {
-"d": "KEEP",
-"r": "name-only web check: Matcha stand at The Current Seaport, Boston; Yelp reviews of matcha drinks",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: No physical cafe or Seaport Blvd address on site.",
+"at": "2026-11-13"
 },
 "fsq698d038": {
-"d": "KEEP",
-"r": "name-only web check: Matcha Loves Boba at 227 Hanover St, North End; own site and listings",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Rebranded/closed. No matcha drink menu on site.",
+"at": "2026-11-13"
 },
 "fsq6a8b3d4": {
 "d": "KEEP",
-"r": "name-only web check: Cafe Matchai at 1223 Beacon St, Brookline; own site, matcha drinks",
-"at": "2026-11-12"
+"r": "Boston audit: Strawberry Matcha Cloud $7.99 (menu) - cafematchaiusa.com",
+"at": "2026-11-13"
 },
 "fsq6a42786": {
-"d": "KEEP",
-"r": "name-only web check: Junbi Brookline location on Junbi's own locations page; matcha drinks",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Junbi is a 25+ outlet chain",
+"at": "2026-11-13"
 },
 "fsq6a4fbd7": {
-"d": "KEEP",
-"r": "name-only web check: Aoko Matcha Burlington at 1 Wheeler Rd; matcha parfait and frappes posted",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: no Aoko opening confirmed at this address",
+"at": "2026-11-13"
 },
 "fsq6a65124": {
-"d": "KEEP",
-"r": "name-only web check: Kyuramen restaurant with Aoko Matcha inside, same spot as Aoko Burlington",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Kyuramen ramen; no matcha drink; opening unconfirmed",
+"at": "2026-11-13"
 },
 "fsq698e1a4": {
 "d": "REMOVE",
@@ -27585,9 +27585,9 @@
 "at": "2026-11-12"
 },
 "fsq6ab59c4": {
-"d": "KEEP",
-"r": "name-only web check: Mizu Matcha Cambridge at 605 Mass Ave opened July 2026; matcha ice cream and lat",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Wrong address: 605 Mass Ave belongs to Moge Tee. Real Mizu Matcha is 217 Newbury St, Bosto",
+"at": "2026-11-13"
 },
 "fsq69077c3": {
 "d": "KEEP",
@@ -27596,8 +27596,8 @@
 },
 "fsq6940514": {
 "d": "KEEP",
-"r": "name-only web check: Own site confirms Thu-Sun matcha counter at 76 Lafayette St, Salem",
-"at": "2026-11-12"
+"r": "Boston audit: Homepage image alt 'iced matcha latte'; /menu lists no matcha item",
+"at": "2026-11-13"
 },
 "fsq668828b": {
 "d": "KEEP",
@@ -32365,39 +32365,39 @@
 "at": "2026-11-12"
 },
 "7aa47377b0": {
-"d": "KEEP",
-"r": "second pass: Matcha product category in shop catalogue",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: 680 Truman Hwy not among own locations. Probably a different business. No matcha drink con",
+"at": "2026-11-13"
 },
 "56f95b1783": {
-"d": "KEEP",
-"r": "second pass: Matcha product category in shop catalogue",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on own menu (only 'Matcha' retail/unverified term in stored text). Milton ",
+"at": "2026-11-13"
 },
 "943c35467b": {
-"d": "KEEP",
-"r": "second pass: Matcha product category in shop catalogue",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on own menu. Quincy Center 102 Franklin St matches site list.",
+"at": "2026-11-13"
 },
 "3729376265": {
-"d": "KEEP",
-"r": "second pass: Matcha product category in shop catalogue",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on own menu. Washington St 479 matches site list.",
+"at": "2026-11-13"
 },
 "567f8d3170": {
-"d": "KEEP",
-"r": "second pass: Matcha product category in shop catalogue",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on own menu. Wollaston 12 Old Colony Ave matches site list.",
+"at": "2026-11-13"
 },
 "e7c97a4fef": {
-"d": "KEEP",
-"r": "second pass: Matcha product category in shop catalogue",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on own menu; address not on own location list.",
+"at": "2026-11-13"
 },
 "f8ab06d648": {
-"d": "KEEP",
-"r": "second pass: Matcha product category in shop catalogue",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Locations on site are Quincy and Milton only, no Braintree store. No matcha drink on menu ",
+"at": "2026-11-13"
 },
 "8f2f2d8c1c": {
 "d": "KEEP",
@@ -32435,14 +32435,14 @@
 "at": "2026-11-12"
 },
 "fsq6170409": {
-"d": "KEEP",
-"r": "second pass: Menu has Matcha Mood drink category",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: own menu page shows no matcha",
+"at": "2026-11-13"
 },
 "fsq5d1ca43": {
-"d": "KEEP",
-"r": "second pass: Menu offers drink option made with matcha",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: matcha only as an add-on mention",
+"at": "2026-11-13"
 },
 "fsq474f3a8": {
 "d": "KEEP",
@@ -32455,9 +32455,9 @@
 "at": "2026-11-12"
 },
 "fsq4bc9a3b": {
-"d": "KEEP",
-"r": "second pass: Sells matcha green cannoli",
-"at": "2026-11-12"
+"d": "REMOVE",
+"r": "Boston audit: Dessert-only, no matcha drink. Not a drink",
+"at": "2026-11-13"
 },
 "7b542ffbcc": {
 "d": "REMOVE",
@@ -37027,6 +37027,1146 @@
 "c5dd1ba3f8": {
 "d": "REMOVE",
 "r": "chain with 25+ outlets (whole-map sweep after the NYC audit)",
+"at": "2026-11-13"
+},
+"b9478a76bb": {
+"d": "REMOVE",
+"r": "Boston audit: matcha only an ingredient in a smoothie; drink menu 'updating'",
+"at": "2026-11-13"
+},
+"44c9642b21": {
+"d": "KEEP",
+"r": "Boston audit: Matcha Latte: 'Tea latte made with Matcha tea', hot and iced (amesbury",
+"at": "2026-11-13"
+},
+"2ba8134c5d": {
+"d": "KEEP",
+"r": "Boston audit: verified on own menu/ordering page",
+"at": "2026-11-13"
+},
+"7fb0f440f3": {
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on homepage; /menu returns 404. Stored match was a health-article blurb, n",
+"at": "2026-11-13"
+},
+"af665c4df4": {
+"d": "KEEP",
+"r": "Boston audit: TEA LATTES: 'Matcha' (butternutbakehouse.com/fooddrink)",
+"at": "2026-11-13"
+},
+"e4df8d2c8d": {
+"d": "KEEP",
+"r": "Boston audit: TEA LATTES: 'Matcha Latte' (quebradabakingco.com/menus)",
+"at": "2026-11-13"
+},
+"a9466b9024": {
+"d": "KEEP",
+"r": "Boston audit: Drinks: 'Matcha Frappe ... topped with cold foam' $9.75 (wallyswickedg",
+"at": "2026-11-13"
+},
+"d508d8ec38": {
+"d": "KEEP",
+"r": "Boston audit: Beverages: 'Iced Matcha Latte' $6.50; 'Matcha Lemonade' $6.50 (evaslit",
+"at": "2026-11-13"
+},
+"121a416004": {
+"d": "REMOVE",
+"r": "Boston audit: Closed: shortstopcafe.com says 'As of July 29, 2022 we stopped our business operation.'",
+"at": "2026-11-13"
+},
+"c8ddc71590": {
+"d": "KEEP",
+"r": "Boston audit: TEA LATTES: 'Matcha' (butternutbakehouse.com/fooddrink)",
+"at": "2026-11-13"
+},
+"4b8baeec7b": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte - Matcha green tea, steamed milk $5.75' (toasttab.com/lo",
+"at": "2026-11-13"
+},
+"7dffdba8a3": {
+"d": "KEEP",
+"r": "Boston audit: TEA LATTES: 'Matcha Latte' (quebradabakingco.com/menus)",
+"at": "2026-11-13"
+},
+"fsq6abe489": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte $4.00 / $5.00 / $6.00' (thewoollybrew.com/menu)",
+"at": "2026-11-13"
+},
+"029e85870a": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha - $5.50, available hot or iced' (order.chownow.com/order/37607",
+"at": "2026-11-13"
+},
+"cfa4b8acbf": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte $6 / $7' under tea (beantrustcoffee.com/menu)",
+"at": "2026-11-13"
+},
+"6a6837478e": {
+"d": "KEEP",
+"r": "Boston audit: 'Green Matcha Latte' ($6): steamed milk, matcha, honey (grassyroots.co",
+"at": "2026-11-13"
+},
+"47f3512fde": {
+"d": "REMOVE",
+"r": "Boston audit: Kaffmandu's own site lists only Danvers; no Beverly shop",
+"at": "2026-11-13"
+},
+"fa8f0d15fd": {
+"d": "KEEP",
+"r": "Boston audit: verified on own menu/ordering page",
+"at": "2026-11-13"
+},
+"dc298b1784": {
+"d": "KEEP",
+"r": "Boston audit: 'MATCHA & TEA DRINKS': Matcha Latte, Iced Mango/Strawberry/Blueberry M",
+"at": "2026-11-13"
+},
+"f7309d8465": {
+"d": "REMOVE",
+"r": "Boston audit: Site's only address is 201 Route 111, Hampstead NH. Kneeland St Boston not on site; its 'M",
+"at": "2026-11-13"
+},
+"5c96e06d4d": {
+"d": "KEEP",
+"r": "Boston audit: verified on own menu/ordering page",
+"at": "2026-11-13"
+},
+"6367c9f030": {
+"d": "REMOVE",
+"r": "Boston audit: Matcha only as an ice cream flavor (Exotic Earthy matcha green tea ice cream). No matcha d",
+"at": "2026-11-13"
+},
+"1eb398c38c": {
+"d": "REMOVE",
+"r": "Boston audit: Chocolatier. Only matcha item is 'White Chocolate Matcha Green Tea Almonds' (nut product).",
+"at": "2026-11-13"
+},
+"fsq5e076a2": {
+"d": "KEEP",
+"r": "Boston audit: TEA, LATTES & COCOA: 'Matcha Latte', 'Iced Matcha Latte' (cafebonjourb",
+"at": "2026-11-13"
+},
+"cd4304fc44": {
+"d": "REMOVE",
+"r": "Boston audit: own menu page shows no matcha",
+"at": "2026-11-13"
+},
+"bc3868c79b": {
+"d": "KEEP",
+"r": "Boston audit: Tea page: 'green tea (matcha) latte made from premium tencha green tea",
+"at": "2026-11-13"
+},
+"d94ebb3123": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Tea Latte' $4.75 and 'Iced Matcha Tea Latte' $5.25 on menu (ca",
+"at": "2026-11-13"
+},
+"e35c25c724": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte' listed under Hot and Iced drinks on cannonballcafe.com",
+"at": "2026-11-13"
+},
+"fsq6a4ed3c": {
+"d": "REMOVE",
+"r": "Boston audit: Not confirmed open: press says 'coming to' 1785 Centre St, opening date not announced. No ",
+"at": "2026-11-13"
+},
+"2ef95c446f": {
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink found after checking own ordering page. Flag NODRINK confirmed.",
+"at": "2026-11-13"
+},
+"ed8b868087": {
+"d": "REMOVE",
+"r": "Boston audit: dessert shop; 'Matcha' item not clearly a drink",
+"at": "2026-11-13"
+},
+"d5173af96d": {
+"d": "REMOVE",
+"r": "Boston audit: dessert shop; 'Matcha' item not clearly a drink",
+"at": "2026-11-13"
+},
+"fsq626d258": {
+"d": "REMOVE",
+"r": "Boston audit: Catering-only matcha; no matcha on the cafe menu. Hours not shown on site.",
+"at": "2026-11-13"
+},
+"2767fe6be1": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte 4.50 12oz' under Beverages on dandelionbos.com/menu",
+"at": "2026-11-13"
+},
+"514a0e6f58": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on drinks ordering page; closed signals",
+"at": "2026-11-13"
+},
+"75c48dd2f4": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Iced Latte' $5.75 and 'Iced Strawberry Matcha' $6.75 on direct",
+"at": "2026-11-13"
+},
+"fsq5e10669": {
+"d": "REMOVE",
+"r": "Boston audit: Address is a residential apartment (Apt 413). Not a cafe.",
+"at": "2026-11-13"
+},
+"76da8c624a": {
+"d": "KEEP",
+"r": "Boston audit: 'Oreo Matcha (Iced Only)' on own-site seasonal drink list; Atly lists ",
+"at": "2026-11-13"
+},
+"0079f7c843": {
+"d": "REMOVE",
+"r": "Boston audit: CLOSED. No matcha drink evidence either.",
+"at": "2026-11-13"
+},
+"e08dbd80a3": {
+"d": "REMOVE",
+"r": "Boston audit: I-ce-ny appears closed (listing asks if closed). Ice cream only, no matcha drink.",
+"at": "2026-11-13"
+},
+"fsq5b3a269": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on own site; listed closed",
+"at": "2026-11-13"
+},
+"81094e053c": {
+"d": "REMOVE",
+"r": "Boston audit: only a customer review mentions matcha; no menu line",
+"at": "2026-11-13"
+},
+"4d578227b4": {
+"d": "REMOVE",
+"r": "Boston audit: only a customer review mentions matcha; no menu line",
+"at": "2026-11-13"
+},
+"8bb5025f40": {
+"d": "REMOVE",
+"r": "Boston audit: Likely closed. The matcha menu belongs to the 505 Tremont row, which is KEEP.",
+"at": "2026-11-13"
+},
+"fsq628242f": {
+"d": "KEEP",
+"r": "Boston audit: 'Iced Matcha', 'Hot Matcha', 'Banana Bread Matcha' under Matcha sectio",
+"at": "2026-11-13"
+},
+"83c6c34d3b": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte' $5.50/$6.00 and Strawberry Matcha Latte on limeredteaho",
+"at": "2026-11-13"
+},
+"8d0e86dbfe": {
+"d": "KEEP",
+"r": "Boston audit: Own site links 'Matcha Menu 5.13.26' PDF (matchamaikobos.com); Boston ",
+"at": "2026-11-13"
+},
+"fb5a1c2803": {
+"d": "REMOVE",
+"r": "Boston audit: No City Hall Plaza location on own site. Stored matcha line not confirmed at this address.",
+"at": "2026-11-13"
+},
+"fsq69472cb": {
+"d": "REMOVE",
+"r": "Boston audit: Gelato/dessert shop, no matcha drink. Same address as I-ce-ny row (217 Newbury).",
+"at": "2026-11-13"
+},
+"a29aeb28c4": {
+"d": "KEEP",
+"r": "Boston audit: Live Toast/own site shows Strawberry Shortcake Latte, Latte; matcha la",
+"at": "2026-11-13"
+},
+"7d6cd8d35a": {
+"d": "REMOVE",
+"r": "Boston audit: Boston address not on own site (menu is the Winchester shop's)",
+"at": "2026-11-13"
+},
+"d7e76a099d": {
+"d": "REMOVE",
+"r": "Boston audit: Site lists only Winchester storefront (15 Thompson St). No Fort Point / 15 Channel Ctr St ",
+"at": "2026-11-13"
+},
+"bbf978d1a6": {
+"d": "REMOVE",
+"r": "Boston audit: Bakery with no matcha drink on its site; matcha only as cookie/cake flavor (Raspberry Matc",
+"at": "2026-11-13"
+},
+"a8c1af814c": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu snippet: 'Matcha Steamed Matcha Latte'. Live Toast menu re",
+"at": "2026-11-13"
+},
+"9d63dae8a4": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte' listed, Hot 16oz / Iced 16oz/24oz, on psgourmetcoffee.c",
+"at": "2026-11-13"
+},
+"1034e61222": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte' listed, Hot / Iced, on psgourmetcoffee.com/our-menu/",
+"at": "2026-11-13"
+},
+"1fb8742e1a": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte' listed, Hot / Iced, on psgourmetcoffee.com/our-menu/",
+"at": "2026-11-13"
+},
+"4ea0944347": {
+"d": "REMOVE",
+"r": "Boston audit: Bakery with no storefront, catering only; no matcha drink; site shows closure notice",
+"at": "2026-11-13"
+},
+"e6cebf59fb": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu category 'MATCHA TEA & MORE' (phincoffeehouse.com). Homepa",
+"at": "2026-11-13"
+},
+"fsq6a56742": {
+"d": "KEEP",
+"r": "Boston audit: Same brand menu category 'MATCHA TEA & MORE' in stored snippet; no mat",
+"at": "2026-11-13"
+},
+"1b3f40b604": {
+"d": "REMOVE",
+"r": "Boston audit: Site domain now shows a different business. Reign Drink Lab not confirmed open or serving ",
+"at": "2026-11-13"
+},
+"ae73d40dc4": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu: 'Iced Matcha', 'Hot Matcha', 'Matcha Limeade OUT OF STOCK",
+"at": "2026-11-13"
+},
+"d4db85461d": {
+"d": "REMOVE",
+"r": "Boston audit: Chain: multi-state franchise, likely 25+ outlets. Outlet count not verified (site fetch ra",
+"at": "2026-11-13"
+},
+"68bd634599": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu: 'Green Tea Latte made with Matcha green tea powder' (sipb",
+"at": "2026-11-13"
+},
+"33c02d47a5": {
+"d": "REMOVE",
+"r": "Boston audit: Wrong address; duplicate of Sorelle row at 282 Congress St (9f75c88d22)",
+"at": "2026-11-13"
+},
+"9f75c88d22": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu: 'Matcha Latte $5.50+'. Toast menu order.toasttab.com/onli",
+"at": "2026-11-13"
+},
+"68a5eb836a": {
+"d": "REMOVE",
+"r": "Boston audit: Dessert shop; no matcha drink found; domain dead",
+"at": "2026-11-13"
+},
+"fsq630a43f": {
+"d": "KEEP",
+"r": "Boston audit: Brand menu (tenoneteahouse.com) lists 'ISE Matcha Latte'. Watertown To",
+"at": "2026-11-13"
+},
+"674ca21457": {
+"d": "KEEP",
+"r": "Boston audit: Brand menu (tenoneteahouse.com) lists 'ISE Matcha Latte'; same menu te",
+"at": "2026-11-13"
+},
+"dbbc65f1f1": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu: 'Mint Matcha Chip' smoothie (juicery.com). Live menu not ",
+"at": "2026-11-13"
+},
+"f43aca5f4f": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu on juicery.com/locations-and-menus/boston-university: 'Min",
+"at": "2026-11-13"
+},
+"ec319be11f": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu: 'strawberry iced matcha'. tradesmanctown.com menu 404, ho",
+"at": "2026-11-13"
+},
+"fsq560eaf4": {
+"d": "REMOVE",
+"r": "Boston audit: no City Hall location on the shop's own site",
+"at": "2026-11-13"
+},
+"86e6b22c51": {
+"d": "REMOVE",
+"r": "Boston audit: Ice cream shop; matcha only as ice cream flavor, not a drink",
+"at": "2026-11-13"
+},
+"7b02862f9e": {
+"d": "KEEP",
+"r": "Boston audit: wishingcup.com/menu: 'Classic Matcha Latte - Matcha, Choice of Milk' a",
+"at": "2026-11-13"
+},
+"40658e29e1": {
+"d": "REMOVE",
+"r": "Boston audit: restaurant, no matcha drink line",
+"at": "2026-11-13"
+},
+"20d58b84a0": {
+"d": "KEEP",
+"r": "Boston audit: Stored menu: 'Hot Matcha Latte (Unsweetened)'. swissbakers.com/menu 40",
+"at": "2026-11-13"
+},
+"fsq5c4b07f": {
+"d": "REMOVE",
+"r": "Boston audit: 'North Station' is not a street address; not on venue's own list. Duplicate-ish of Western",
+"at": "2026-11-13"
+},
+"0f7ae040cc": {
+"d": "KEEP",
+"r": "Boston audit: Enjoy matcha or chai lattes, smooth cappuccinos (site menu blurb) - ps",
+"at": "2026-11-13"
+},
+"c3d4cac25e": {
+"d": "KEEP",
+"r": "Boston audit: Matcha Latte; Matcha Smoothie on price list - drinksweetsip.com/price-",
+"at": "2026-11-13"
+},
+"8c3880ddf2": {
+"d": "KEEP",
+"r": "Boston audit: Matcha Milk Tea \u62b9\u8336\u5976\u8336 $6.99-$8.49 (menu) - yucoobubbletea.com",
+"at": "2026-11-13"
+},
+"b882727f3c": {
+"d": "KEEP",
+"r": "Boston audit: Tea lattes list includes CHAI MATCHA (homepage snippet) - brothersands",
+"at": "2026-11-13"
+},
+"5922ec5127": {
+"d": "REMOVE",
+"r": "Boston audit: ice-cream shop",
+"at": "2026-11-13"
+},
+"6528df7e4d": {
+"d": "KEEP",
+"r": "Boston audit: Tea Latte: Chai, Matcha, London Fog $6 (menu snippet) - knightmovescaf",
+"at": "2026-11-13"
+},
+"0b88880770": {
+"d": "REMOVE",
+"r": "Boston audit: Dessert shop (Ice Cream, Sweet Treats). Latte Series and Tea Lover unnamed; no matcha drin",
+"at": "2026-11-13"
+},
+"bd8ad55209": {
+"d": "REMOVE",
+"r": "Boston audit: Matcha only as a cocktail on restaurant bar menu. Not a matcha drink per rules.",
+"at": "2026-11-13"
+},
+"09cb99d122": {
+"d": "KEEP",
+"r": "Boston audit: Add Cart: Matcha Latte* $5.00 (ordering page snippet) - meetpointpatis",
+"at": "2026-11-13"
+},
+"fsq4a1b1a8": {
+"d": "KEEP",
+"r": "Boston audit: Mint Matcha Lavender Latte 6 (drink list) - pariscreperie.com",
+"at": "2026-11-13"
+},
+"fsq5703dc7": {
+"d": "KEEP",
+"r": "Boston audit: Only matcha seen: Matcha Mille Crepe Cake (dessert) - tbaarbrookline.c",
+"at": "2026-11-13"
+},
+"00a3e4e8da": {
+"d": "KEEP",
+"r": "Boston audit: Matcha $5.25 / $6.25 under Drinks tab - temptationscafema.com",
+"at": "2026-11-13"
+},
+"c55f97d437": {
+"d": "KEEP",
+"r": "Boston audit: Hot Matcha Latte (menu snippet) - julieannesbakeryburlington.com",
+"at": "2026-11-13"
+},
+"96e8a3b43a": {
+"d": "KEEP",
+"r": "Boston audit: Matcha - Japanese matcha powder, blended with milk (menu) - 1369coffee",
+"at": "2026-11-13"
+},
+"78ddfc029c": {
+"d": "KEEP",
+"r": "Boston audit: Matcha - Japanese matcha powder, blended with milk (menu) - 1369coffee",
+"at": "2026-11-13"
+},
+"7d12b887d1": {
+"d": "KEEP",
+"r": "Boston audit: Popular Options: Iced Matcha Latte (menu snippet) - brooklynbagelfacto",
+"at": "2026-11-13"
+},
+"d28019926d": {
+"d": "KEEP",
+"r": "Boston audit: Matcha green milk tea flavor $5.50 (menu snippet) - concordavenuecafe.",
+"at": "2026-11-13"
+},
+"fsq687f34c": {
+"d": "KEEP",
+"r": "Boston audit: Iced Honey Oat Matcha Latte, ceremonial grade matcha (menu snippet) - ",
+"at": "2026-11-13"
+},
+"5d4a96cbe4": {
+"d": "REMOVE",
+"r": "Boston audit: Cambridge 1663 Mass Ave cafe closed permanently per Harvard Crimson (Nov 2024). Matcha Lat",
+"at": "2026-11-13"
+},
+"2fd6e5533a": {
+"d": "REMOVE",
+"r": "Boston audit: Ice cream shop (Gracie's). Matcha is an ice cream flavor only; no matcha drink. Not a drin",
+"at": "2026-11-13"
+},
+"56280242de": {
+"d": "REMOVE",
+"r": "Boston audit: Chocolatier. Matcha only as white chocolate ganache flavor. No matcha drink.",
+"at": "2026-11-13"
+},
+"73f16d4c60": {
+"d": "KEEP",
+"r": "Boston audit: Matcha Latte: matcha powder whisked into a froth (menu snippet) - hi-r",
+"at": "2026-11-13"
+},
+"8b2eff0412": {
+"d": "REMOVE",
+"r": "Boston audit: Same business as 73f16d4c60 (Hi-Rise, 208 Concord Ave). 1663 Mass Ave was Hi-Rise former s",
+"at": "2026-11-13"
+},
+"b62edfecac": {
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink. Drinks: frappes, coffee, hot choc, MEM tea. Matcha only a waffle-cone fla",
+"at": "2026-11-13"
+},
+"4e1843994b": {
+"d": "REMOVE",
+"r": "Boston audit: own site shows no matcha drink",
+"at": "2026-11-13"
+},
+"21a1595d04": {
+"d": "REMOVE",
+"r": "Boston audit: listed website belongs to a different (PA) business",
+"at": "2026-11-13"
+},
+"fsq6227e62": {
+"d": "REMOVE",
+"r": "Boston audit: no address; Central Sq shop has no matcha",
+"at": "2026-11-13"
+},
+"8448810cdd": {
+"d": "KEEP",
+"r": "Boston audit: Summer Matcha: premium Kyoto matcha w/ strawberry & mango in oat milk;",
+"at": "2026-11-13"
+},
+"93fd17fdbd": {
+"d": "KEEP",
+"r": "Boston audit: Tea Latte: London Fog | Lady Earl Grey | Matcha (mariposabakery.com/me",
+"at": "2026-11-13"
+},
+"1fcc0a2b77": {
+"d": "KEEP",
+"r": "Boston audit: Hot or Iced Matcha Latte; Maple Spice Matcha served hot or iced (newci",
+"at": "2026-11-13"
+},
+"0a043c3612": {
+"d": "KEEP",
+"r": "Boston audit: Homepage: 'Whether you're here for a cappuccino or our strawberry matc",
+"at": "2026-11-13"
+},
+"fsq5e2330d": {
+"d": "KEEP",
+"r": "Boston audit: Green Matcha Latte, Hot or Iced, $4.75 (littlecrepecafe.com drink menu",
+"at": "2026-11-13"
+},
+"6986c61461": {
+"d": "REMOVE",
+"r": "Boston audit: Matcha only as ice cream flavor (Green Tea/Matcha Halvah). No matcha drink found. Ice crea",
+"at": "2026-11-13"
+},
+"0ab294ea92": {
+"d": "REMOVE",
+"r": "Boston audit: Same site/menu as 159 First St row. Matcha only as ice cream flavor, no matcha drink. Ice ",
+"at": "2026-11-13"
+},
+"fsq6a765b8": {
+"d": "KEEP",
+"r": "Boston audit: Matcha, Hot or Iced (triangleco.xyz menu)",
+"at": "2026-11-13"
+},
+"f789c9d5c6": {
+"d": "KEEP",
+"r": "Boston audit: Iced strawberry matcha 7.75/9.25; iced ube matcha latte; iced/hot matc",
+"at": "2026-11-13"
+},
+"fsq632f535": {
+"d": "KEEP",
+"r": "Boston audit: Premium-grade matcha latte, hot or iced, from $5.50 (bomdough.com)",
+"at": "2026-11-13"
+},
+"5ec44a3f88": {
+"d": "KEEP",
+"r": "Boston audit: verified on own menu/ordering page",
+"at": "2026-11-13"
+},
+"0722a64dcb": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on live menu",
+"at": "2026-11-13"
+},
+"418d598690": {
+"d": "REMOVE",
+"r": "Boston audit: duplicate of KJ's Chelmsford row",
+"at": "2026-11-13"
+},
+"55fbf5b368": {
+"d": "KEEP",
+"r": "Boston audit: verified on own menu/ordering page",
+"at": "2026-11-13"
+},
+"09b97002b9": {
+"d": "REMOVE",
+"r": "Boston audit: Chocolate/bonbon shop, not a cafe. Matcha only as a candy flavor. No matcha drink.",
+"at": "2026-11-13"
+},
+"d480bb75f7": {
+"d": "REMOVE",
+"r": "Boston audit: Gonetolunch.com now 301-redirects to thrivepressedjuice.com (different business). Same add",
+"at": "2026-11-13"
+},
+"baa1a06fce": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha drink on live menu",
+"at": "2026-11-13"
+},
+"b80fd539b3": {
+"d": "KEEP",
+"r": "Boston audit: Matcha Green Tea Latte, pre-sweetened matcha blended w/ steamed milk, ",
+"at": "2026-11-13"
+},
+"ff049c0c0e": {
+"d": "REMOVE",
+"r": "Boston audit: Tea shop with no drink menu. Matcha is only a tea product category. No matcha drink confir",
+"at": "2026-11-13"
+},
+"9681b3c8d9": {
+"d": "KEEP",
+"r": "Boston audit: NEW! 'Flavor Wheel' Iced Matcha, rotating fruit flavors (bigbearinthes",
+"at": "2026-11-13"
+},
+"89660f0b3a": {
+"d": "REMOVE",
+"r": "Boston audit: Ice cream shop, no matcha drink on own site. Address matches site.",
+"at": "2026-11-13"
+},
+"fsq6aba9ac": {
+"d": "KEEP",
+"r": "Boston audit: 'Oat milk \u2022 matcha \u2022 banana \u2022 date \u2022 spinach \u2022 vanilla' under Dew Drop",
+"at": "2026-11-13"
+},
+"e774cb755c": {
+"d": "REMOVE",
+"r": "Boston audit: Matcha only as cocktail. Encore Boston Harbor venue.",
+"at": "2026-11-13"
+},
+"964330a48e": {
+"d": "KEEP",
+"r": "Boston audit: Stored: Matcha Latte $5.15+; live site shows no matcha, /menu 404 (com",
+"at": "2026-11-13"
+},
+"fsq4e5666d": {
+"d": "KEEP",
+"r": "Boston audit: Stored snippet: 'Matcha Latte $5.15+'; site fetch shows no matcha (htt",
+"at": "2026-11-13"
+},
+"eb4b21bb66": {
+"d": "REMOVE",
+"r": "Boston audit: Matcha only as cocktail. Shares 1 Broadway address with Bru (e774cb755c) - Encore venue.",
+"at": "2026-11-13"
+},
+"fsq68fe470": {
+"d": "KEEP",
+"r": "Boston audit: Stored: Matcha Latte (Hot) $5.50; live site shows only a photo caption",
+"at": "2026-11-13"
+},
+"495fc330ff": {
+"d": "KEEP",
+"r": "Boston audit: Matcha only as snow ice/mochi/macaron flavors; drink menu is images (b",
+"at": "2026-11-13"
+},
+"7ea2338b82": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on current menu page",
+"at": "2026-11-13"
+},
+"6e1d7644f1": {
+"d": "KEEP",
+"r": "Boston audit: Stored: Matcha Latte $4.25 sm; live homepage has no matcha, grand open",
+"at": "2026-11-13"
+},
+"fsq62a5f26": {
+"d": "KEEP",
+"r": "Boston audit: Matcha Latte $5.50/Small $6.50/Large, iced or hot (theroastedcoffeebar",
+"at": "2026-11-13"
+},
+"fsqdc18857": {
+"d": "REMOVE",
+"r": "Boston audit: Ice cream shop; no matcha latte/tea drink. Blendie is a frozen dessert, not a matcha drink",
+"at": "2026-11-13"
+},
+"0481319b84": {
+"d": "KEEP",
+"r": "Boston audit: 'Organic Matcha Green Latte $7.50 hot or iced' (http://www.heartandsou",
+"at": "2026-11-13"
+},
+"790743fac4": {
+"d": "KEEP",
+"r": "Boston audit: Stored: Matcha Latte $5.25/$6.50; live homepage shows no matcha or pri",
+"at": "2026-11-13"
+},
+"fsq5946b3b": {
+"d": "REMOVE",
+"r": "Boston audit: Duplicate of Sandpiper Bakery 790743fac4 (same menu snippet) at an address not on the venu",
+"at": "2026-11-13"
+},
+"7274ec6c69": {
+"d": "KEEP",
+"r": "Boston audit: No matcha drink on homepage; menu page 404. Matcha mention is only a c",
+"at": "2026-11-13"
+},
+"d11a7a6868": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Iced Latte $7.99 Refreshing iced matcha.' and 'Matcha Hot Latt",
+"at": "2026-11-13"
+},
+"952d3f25fd": {
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on own site. Site says shop moved in 2023; hours may be stale. Address 282",
+"at": "2026-11-13"
+},
+"3b0f89b8fc": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on live site",
+"at": "2026-11-13"
+},
+"b2ea6b15c0": {
+"d": "KEEP",
+"r": "Boston audit: Stored snippet 'Matcha Latte'; own site returned 403; search found no ",
+"at": "2026-11-13"
+},
+"fsq512d2bd": {
+"d": "KEEP",
+"r": "Boston audit: Bubble tea $4.25: MATCHA GREEN TEA flavor (littledelightsbakery.com/me",
+"at": "2026-11-13"
+},
+"8bf57afeaf": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on live menu",
+"at": "2026-11-13"
+},
+"7c2d85c512": {
+"d": "KEEP",
+"r": "Boston audit: Matcha only as snow ice / mochi / macaron flavors; drink menu is image",
+"at": "2026-11-13"
+},
+"d68d29f326": {
+"d": "KEEP",
+"r": "Boston audit: No matcha on site; menu on Toast page not readable; one customer revie",
+"at": "2026-11-13"
+},
+"95f62b3e09": {
+"d": "REMOVE",
+"r": "Boston audit: brand-level matcha only",
+"at": "2026-11-13"
+},
+"e66d9bb786": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte A traditional drink of powdered green tea. 8.00' (https:",
+"at": "2026-11-13"
+},
+"c7871b1a1c": {
+"d": "KEEP",
+"r": "Boston audit: Menu: 'Iced Matcha Latte $5.99' and 'Hot Matcha Latte $6.50' (https://",
+"at": "2026-11-13"
+},
+"2660c2fb2c": {
+"d": "KEEP",
+"r": "Boston audit: 'Iced/hot Matcha Latte' (Green Tea Matcha Powder w/ steamed milk) - la",
+"at": "2026-11-13"
+},
+"fsq4ae07fa": {
+"d": "REMOVE",
+"r": "Boston audit: Closed at this address. Beverly 268 Cabot St is a different shop; no matcha found there.",
+"at": "2026-11-13"
+},
+"fee32f4bf8": {
+"d": "KEEP",
+"r": "Boston audit: 'Iced Matcha Latte $5.75+' - toasttab.com/local/order/blue-canoe-cafe ",
+"at": "2026-11-13"
+},
+"816b880fbf": {
+"d": "KEEP",
+"r": "Boston audit: Smoothie flavor 'Matcha' in drink section - theofficialmuffinshop.com ",
+"at": "2026-11-13"
+},
+"0dee478918": {
+"d": "KEEP",
+"r": "Boston audit: groundercafe.com home/menu: no matcha drink text; Toast order page 403",
+"at": "2026-11-13"
+},
+"881e21b29d": {
+"d": "REMOVE",
+"r": "Boston audit: No matcha drink on own menu; only a build-your-own add-in appears in stored text. Address ",
+"at": "2026-11-13"
+},
+"fsq52532ee": {
+"d": "KEEP",
+"r": "Boston audit: laqchara.com and /menu: no matcha drink text; order.toasttab.com/onlin",
+"at": "2026-11-13"
+},
+"d62b7410a6": {
+"d": "REMOVE",
+"r": "Boston audit: Website belongs to a Fullerton CA business, no Milton MA evidence; listing address blank. ",
+"at": "2026-11-13"
+},
+"1f9d637950": {
+"d": "KEEP",
+"r": "Boston audit: 'Iced Matcha Latte $6.00' (MEM Tea) - toasttab.com/local/order/steel-r",
+"at": "2026-11-13"
+},
+"2a1f9e19e6": {
+"d": "REMOVE",
+"r": "Boston audit: Matcha only in homepage marketing copy ('Pumpkin Latte, Chai & Matcha'), not on cafe menu.",
+"at": "2026-11-13"
+},
+"fsq4b64955": {
+"d": "REMOVE",
+"r": "Boston audit: 38 Washington St is not a Chococoa location on its own site; same address as The Proper Sh",
+"at": "2026-11-13"
+},
+"55df058879": {
+"d": "KEEP",
+"r": "Boston audit: jenjuboba.com 403/rate-limited; directory copy says menu 'boba, matcha",
+"at": "2026-11-13"
+},
+"95cff160ac": {
+"d": "REMOVE",
+"r": "Boston audit: No matcha lemonade/drink on own menu despite stored 'Matcha Lemonade' text. 45 Storey Ave ",
+"at": "2026-11-13"
+},
+"5f0c232549": {
+"d": "KEEP",
+"r": "Boston audit: plume-cafe.com/menu: 'Matcha' drink in 'Coffee & Matcha' section (no p",
+"at": "2026-11-13"
+},
+"c231d882d0": {
+"d": "KEEP",
+"r": "Boston audit: 'Mint Matcha Chip' smoothie - juicery.com/locations-and-menus/newburyp",
+"at": "2026-11-13"
+},
+"fsq6a0dea8": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha drink on own menu",
+"at": "2026-11-13"
+},
+"120a62d269": {
+"d": "REMOVE",
+"r": "Boston audit: Own site shows no Newton MA location; Newton 49 Boylston St listing belongs to a different",
+"at": "2026-11-13"
+},
+"b947d0ae2b": {
+"d": "KEEP",
+"r": "Boston audit: No Newton MA evidence found; stored text says ceremonial matcha served",
+"at": "2026-11-13"
+},
+"6d2adb3678": {
+"d": "REMOVE",
+"r": "Boston audit: Chocolatier, not a drink venue.",
+"at": "2026-11-13"
+},
+"5820106a72": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha drink found",
+"at": "2026-11-13"
+},
+"0a8427ae44": {
+"d": "KEEP",
+"r": "Boston audit: Stored snippet 'Iced Matcha $5.95'; justintimecafe.com 403",
+"at": "2026-11-13"
+},
+"edd3dd9eee": {
+"d": "REMOVE",
+"r": "Boston audit: own menu page has no matcha (YoCha page shared)",
+"at": "2026-11-13"
+},
+"01d96c693a": {
+"d": "REMOVE",
+"r": "Boston audit: Dessert-only shop; matcha is a jelly dessert, not a drink.",
+"at": "2026-11-13"
+},
+"2846eef157": {
+"d": "REMOVE",
+"r": "Boston audit: own site is a Scituate shop",
+"at": "2026-11-13"
+},
+"a9dfa1597f": {
+"d": "KEEP",
+"r": "Boston audit: 'Brown Sugar Bubble Matcha' $5.75 on stored menu text (tbaarquincy.com",
+"at": "2026-11-13"
+},
+"887e62c447": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Dau' / 'Matcha Xoai' / 'Matcha Latte' drinks under Matcha head",
+"at": "2026-11-13"
+},
+"d3b657b560": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte $7.50+', 'Japanese Matcha Slush $7.25' (vivibubbleteacaf",
+"at": "2026-11-13"
+},
+"6ce88e0fd0": {
+"d": "KEEP",
+"r": "Boston audit: 'Hot Matcha Latte (Unsweetened)' in stored menu text (swissbakers.com)",
+"at": "2026-11-13"
+},
+"28dc3f0f43": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte' and 'Iced Matcha Latte' (fjjuicebarcafe.com)",
+"at": "2026-11-13"
+},
+"5f2f22dd75": {
+"d": "REMOVE",
+"r": "Boston audit: Atomic Cafe's own site lists Beverly only",
+"at": "2026-11-13"
+},
+"889c88f0de": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte - green tea powder, honey, steamed milk' in stored menu ",
+"at": "2026-11-13"
+},
+"5fa96dfb30": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte 8 oz hot $4.25 / 12 oz $5.25' in stored menu text (fscsa",
+"at": "2026-11-13"
+},
+"d76e2585ea": {
+"d": "KEEP",
+"r": "Boston audit: 'MATCHA TEA LATTE 5.5 Ceremonial grade matcha in steamed milk' (gulugu",
+"at": "2026-11-13"
+},
+"9805830dc8": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte $5.10' in stored menu text (redlinecafesalem.com)",
+"at": "2026-11-13"
+},
+"0ced5f36d9": {
+"d": "KEEP",
+"r": "Boston audit: 'Mint Matcha Chip' specialty smoothie (juicery.com/locations-and-menus",
+"at": "2026-11-13"
+},
+"832f999ae7": {
+"d": "KEEP",
+"r": "Boston audit: 'Iced Matchas too! Matcha, sweetened fine powdered green tea' in store",
+"at": "2026-11-13"
+},
+"905b969f66": {
+"d": "KEEP",
+"r": "Boston audit: 'Maple ChaCha - GroundSwell's matcha with Vermont maple syrup' in stor",
+"at": "2026-11-13"
+},
+"b8201afb33": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte $6.35', 'Iced Matcha Latte $6.85' (Toast ordering page f",
+"at": "2026-11-13"
+},
+"e9f1262572": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte 12oz $6.35', iced 16oz $6.85 (order.toasttab.com/online/",
+"at": "2026-11-13"
+},
+"7df8c4cbcf": {
+"d": "REMOVE",
+"r": "Boston audit: Duplicate of e9f1262572 (626 Somerville Ave). Ice cream shop, not a separate venue",
+"at": "2026-11-13"
+},
+"fsq54271c8": {
+"d": "REMOVE",
+"r": "Boston audit: Ice cream shop, no matcha drink",
+"at": "2026-11-13"
+},
+"08c9ed3ed2": {
+"d": "REMOVE",
+"r": "Boston audit: Bakery, dessert only, no matcha drink",
+"at": "2026-11-13"
+},
+"41ccae90e9": {
+"d": "REMOVE",
+"r": "Boston audit: Closed. Only Brookline Knight Moves remains per article",
+"at": "2026-11-13"
+},
+"fsq692c842": {
+"d": "KEEP",
+"r": "Boston audit: 'UBE MATCHA 20 oz organic matcha with ube milk $8' in stored text (ube",
+"at": "2026-11-13"
+},
+"e6e485718c": {
+"d": "KEEP",
+"r": "Boston audit: 'Iced matcha, banana bread matcha' on lifealive.com menu text (Davis S",
+"at": "2026-11-13"
+},
+"178b12e0d2": {
+"d": "KEEP",
+"r": "Boston audit: 'Iced matcha' on lifealive.com menu text (Union Sq)",
+"at": "2026-11-13"
+},
+"0c5b29a137": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha - real Japanese matcha, whisked' in stored text (michette-bake",
+"at": "2026-11-13"
+},
+"64b15fdfa7": {
+"d": "KEEP",
+"r": "Boston audit: 'Matcha Latte small $3.99' in stored text (olacafesomerville.com); no ",
+"at": "2026-11-13"
+},
+"b6a01b2f04": {
+"d": "KEEP",
+"r": "Boston audit: 'ISE Matcha Latte' on menu at tenoneteahouse.com/menu (Assembly Row, 4",
+"at": "2026-11-13"
+},
+"a106904280": {
+"d": "KEEP",
+"r": "Boston audit: Homepage thebuzzinbean.com says 'best matcha alongside its signature c",
+"at": "2026-11-13"
+},
+"2a54780bc5": {
+"d": "REMOVE",
+"r": "Boston audit: Macaron/bakery shop. No matcha drink found on its own site. Open Thu-Sun per site.",
+"at": "2026-11-13"
+},
+"c189d52340": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on own site",
+"at": "2026-11-13"
+},
+"5a49c15c2d": {
+"d": "KEEP",
+"r": "Boston audit: Prior crawl had 'Hot Matcha Latte - 12 oz $5.75' but commongoodwaltham",
+"at": "2026-11-13"
+},
+"238b4c96d1": {
+"d": "REMOVE",
+"r": "Boston audit: matcha only as a cake",
+"at": "2026-11-13"
+},
+"4335fcf5ed": {
+"d": "KEEP",
+"r": "Boston audit: quebradabakingco.com homepage: no matcha line; menu link not reached (",
+"at": "2026-11-13"
+},
+"fsq6a650fc": {
+"d": "KEEP",
+"r": "Boston audit: terrarium-coffee.com/menu: 'MEM premium matcha, steamed milk (12oz. ho",
+"at": "2026-11-13"
+},
+"6126c47eed": {
+"d": "REMOVE",
+"r": "Boston audit: Matcha only as cocktail, not a matcha drink. Restaurant.",
+"at": "2026-11-13"
+},
+"28568b5454": {
+"d": "KEEP",
+"r": "Boston audit: Toast order page (toasttab.com/local/order/uncommon-grounds-watertown)",
+"at": "2026-11-13"
+},
+"fsq4bc0c39": {
+"d": "KEEP",
+"r": "Boston audit: Prior snippet 'Matcha Latte $6.00' on Maugus menu not reproduced; them",
+"at": "2026-11-13"
+},
+"6266d8f0a9": {
+"d": "KEEP",
+"r": "Boston audit: quebradabakingco.com menu not reached; homepage shows no matcha line, ",
+"at": "2026-11-13"
+},
+"c7cf12abe7": {
+"d": "KEEP",
+"r": "Boston audit: heirloomweston.com/eat: 'Matcha Latte - Hot or Iced' under SPECIALTY; ",
+"at": "2026-11-13"
+},
+"f252389641": {
+"d": "KEEP",
+"r": "Boston audit: Homepage nourishyoursoul.com has no matcha drink text; in-store menu l",
+"at": "2026-11-13"
+},
+"3c21e35a0f": {
+"d": "KEEP",
+"r": "Boston audit: adrianacafe.com/menu: 'Espresso and steamed milk (also available in mo",
+"at": "2026-11-13"
+},
+"fsq4da9de1": {
+"d": "REMOVE",
+"r": "Boston audit: Bakery with no matcha drink found. Website not reachable to confirm. Matcha only in baked ",
+"at": "2026-11-13"
+},
+"cfc4de53cf": {
+"d": "KEEP",
+"r": "Boston audit: selva-coffee-house.cloveronline.com/menu/all: 'Green Matcha Latte Smal",
+"at": "2026-11-13"
+},
+"fsq4b6979b": {
+"d": "KEEP",
+"r": "Boston audit: bostonkingespresso.com (redirects to greenfieldah.com): 'exceptional M",
+"at": "2026-11-13"
+},
+"14bc4f0e1b": {
+"d": "REMOVE",
+"r": "Boston audit: own site lists Lynn address, not Woburn",
+"at": "2026-11-13"
+},
+"b3c49d60bb": {
+"d": "KEEP",
+"r": "Boston audit: kaapiandco.com/menu: 'Matcha Latte 5 / 7' under Espresso Bar / Coffee",
+"at": "2026-11-13"
+},
+"0384ea00bb": {
+"d": "KEEP",
+"r": "Boston audit: teamojiwoburn.com menu: 'MATCHA SMOOTHIE' item (image caption, no pric",
+"at": "2026-11-13"
+},
+"2ca6a3777e": {
+"d": "REMOVE",
+"r": "Boston audit: only a 2022 menu mentions matcha",
+"at": "2026-11-13"
+},
+"55d78a083b": {
+"d": "REMOVE",
+"r": "Boston audit: no matcha on live site",
+"at": "2026-11-13"
+},
+"adc0bca346": {
+"d": "REMOVE",
+"r": "Boston audit: chain: L\u00e4derach (60+ boutiques), chocolatier",
+"at": "2026-11-13"
+},
+"debe68bc4e": {
+"d": "REMOVE",
+"r": "Boston audit: chain: L\u00e4derach, chocolatier",
+"at": "2026-11-13"
+},
+"41d180b64e": {
+"d": "REMOVE",
+"r": "Boston audit: chain: ROYCE' Chocolate, chocolatier",
+"at": "2026-11-13"
+},
+"1049e9399d": {
+"d": "REMOVE",
+"r": "Boston audit: Taiyaki NYC: matcha is only an ice-cream flavor, not a drink; multi-outlet chain",
+"at": "2026-11-13"
+},
+"090eca4980": {
+"d": "REMOVE",
+"r": "Boston audit: Taiyaki NYC: matcha is only an ice-cream flavor, not a drink; multi-outlet chain",
 "at": "2026-11-13"
 }
 }

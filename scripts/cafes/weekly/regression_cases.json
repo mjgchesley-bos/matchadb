@@ -122,6 +122,106 @@
   {
    "name": "Ginvee Matcha",
    "why": "food truck/pop-up (NYC audit)"
+  },
+  {
+   "name": "Home.stead",
+   "city": "Boston",
+   "why": "closed June 2026 (Boston audit)"
+  },
+  {
+   "name": "Short Stop Cafe",
+   "city": "Bedford",
+   "why": "closed since 2022 (Boston audit)"
+  },
+  {
+   "name": "Knight Moves Cafe Somerville",
+   "city": "Somerville",
+   "why": "closed (Boston audit)"
+  },
+  {
+   "name": "Dudley Cafe",
+   "city": "Cambridge",
+   "why": "closed Cambridge outpost (Boston audit)"
+  },
+  {
+   "name": "Reign Drink Lab",
+   "city": "Boston",
+   "why": "domain now another business (Boston audit)"
+  },
+  {
+   "name": "Matcha Loves Boba",
+   "city": "Boston",
+   "why": "rebranded, no longer matcha venue (Boston audit)"
+  },
+  {
+   "name": "Atomic Caf",
+   "city": "Marblehead",
+   "why": "closed; Blue Canoe now at address (Boston audit)"
+  },
+  {
+   "name": "Atomic Cafe",
+   "city": "Salem",
+   "why": "own site lists Beverly only (Boston audit)"
+  },
+  {
+   "name": "Mizu Matcha",
+   "city": "Cambridge",
+   "why": "address is Moge Tee, not Mizu (Boston audit)"
+  },
+  {
+   "name": "Monkey Business Cafe",
+   "city": "Milton",
+   "why": "website belongs to a California business (Boston audit)"
+  },
+  {
+   "name": "The Cloud at The Waterfront",
+   "city": "Wellesley",
+   "why": "Bermuda venue (Boston audit)"
+  },
+  {
+   "name": "Mia",
+   "city": "Newton",
+   "why": "Brooklyn bakery; only NYC locations (Boston audit)"
+  },
+  {
+   "name": "derach",
+   "city": "Boston",
+   "why": "Läderach chain chocolatier (Boston audit)"
+  },
+  {
+   "name": "ROYCE",
+   "city": "Boston",
+   "why": "Royce chain chocolatier (Boston audit)"
+  },
+  {
+   "name": "Taiyaki NYC",
+   "city": "Boston",
+   "why": "ice-cream flavor only; chain (Boston audit)"
+  },
+  {
+   "name": "Barry",
+   "city": "Boston",
+   "why": "fitness-studio smoothie bar (Boston audit)"
+  },
+  {
+   "name": "Coffee Break Cafe",
+   "city": "Quincy",
+   "why": "no matcha drink on own menu (Boston audit)"
+  },
+  {
+   "name": "Coffee Break Cafe",
+   "city": "Milton",
+   "why": "no matcha drink on own menu (Boston audit)"
+  },
+  {
+   "name": "Enzo Matcha",
+   "city": "Boston",
+   "why": "retail brand, apartment address (Boston audit)"
+  },
+  {
+   "name": "Lucy and Jane",
+   "city": "Boston",
+   "why": "retail brand (Boston audit)"
   }
  ]
 }

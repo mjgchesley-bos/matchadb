@@ -1724,10 +1724,11 @@
   },
   "fsq6a8b3d4": {
    "set": {
-    "url": "https://www.cafematchaiusa.com/"
+    "address": "1223 Beacon St",
+    "zip": "02446"
    },
-   "why": "website found by name-only web check",
-   "at": "2026-11-12"
+   "why": "Boston audit: address per the venue's own site",
+   "at": "2026-11-13"
   },
   "fsq6a42786": {
    "set": {
@@ -2486,6 +2487,33 @@
    },
    "why": "NYC audit: address/city per the venue's own site",
    "at": "2026-11-12"
+  },
+  "44c9642b21": {
+   "set": {
+    "address": "5 Market Square",
+    "zip": "01913"
+   },
+   "why": "Boston audit: address per the venue's own site",
+   "at": "2026-11-13"
+  },
+  "68bd634599": {
+   "set": {
+    "address": "Post Office Square",
+    "zip": "02109"
+   },
+   "why": "Boston audit: address per the venue's own site",
+   "at": "2026-11-13"
+  },
+  "1fb8742e1a": {
+   "set": {
+    "address": "514 Gallivan Blvd",
+    "city": "Boston",
+    "zip": "02124",
+    "lat": 42.28256,
+    "lng": -71.05513
+   },
+   "why": "Boston audit: address per the shop list on the venue's own site",
+   "at": "2026-11-13"
   }
  }
 }
