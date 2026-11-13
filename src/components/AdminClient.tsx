@@ -70,7 +70,7 @@ function ago(iso: string): string {
 }
 const snip = (s: string | null | undefined, n = 160) => (s && s.length > n ? `${s.slice(0, n).trim()}…` : s ?? "");
 
-type Names = { products: Record<string, { name: string; brand: string }>; cafes: Record<string, { name: string; city: string; slug: string }> };
+type Names = { products: Record<string, { name: string; brand: string }>; cafes: Record<string, { name: string; city: string; slug: string; removed?: string }> };
 
 function targetOf(e: { target_type: string | null; target_key: string | null }, names: Names): { label: string; href?: string } | null {
   const { target_type: t, target_key: k } = e;
@@ -81,7 +81,8 @@ function targetOf(e: { target_type: string | null; target_key: string | null }, 
   }
   if (t === "cafe") {
     const c = names.cafes[k];
-    return { label: c ? `${c.name}${c.city && !c.name.toLowerCase().includes(c.city.toLowerCase()) ? `, ${c.city}` : ""}` : `café ${k}`, href: c ? `/cafes/${c.slug}` : undefined };
+    const base = c ? `${c.name}${c.city && !c.name.toLowerCase().includes(c.city.toLowerCase()) ? `, ${c.city}` : ""}` : `café ${k}`;
+    return { label: c?.removed ? `${base} (no longer on the map: ${c.removed})` : base, href: c && !c.removed ? `/cafes/${c.slug}` : undefined };
   }
   if (t === "brand") return { label: k, href: `/brands/${encodeURIComponent(k)}` };
   if (t === "member") return { label: k };
@@ -408,8 +409,8 @@ export function AdminClient() {
         for (const x of r) add.products[String(x.id)] = { name: x.name, brand: x.brand };
       }
       if (wanted.c.length) {
-        const r = (await (await fetch(`/api/cafes/lookup?ids=${wanted.c.join(",")}`)).json()) as { id: string; name: string; city: string; slug: string }[];
-        for (const x of r) add.cafes[x.id] = { name: x.name, city: x.city, slug: x.slug };
+        const r = (await (await fetch(`/api/cafes/lookup?ids=${wanted.c.join(",")}`)).json()) as { id: string; name: string; city: string; slug: string; removed?: string }[];
+        for (const x of r) add.cafes[x.id] = { name: x.name, city: x.city, slug: x.slug, removed: x.removed };
       }
       if (live) setNames((n) => ({ products: { ...n.products, ...add.products }, cafes: { ...n.cafes, ...add.cafes } }));
     })().catch(() => {});

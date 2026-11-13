@@ -1298,6 +1298,7 @@ export const ko: Partial<Record<Key, string>> = {
   "u.drinks": "마시는 방법: {how}",
   "u.s.tried": "먹어본 수",
   "u.s.rated": "평가한 수",
+  "u.cafeRatings": "카페 평점",
   "u.s.avg": "평균 평가",
   "u.s.region": "좋아하는 산지",
   "u.top": "높은 평가",

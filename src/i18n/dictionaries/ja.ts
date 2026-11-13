@@ -1298,6 +1298,7 @@ export const ja: Partial<Record<Key, string>> = {
   "u.drinks": "飲み方: {how}",
   "u.s.tried": "試した数",
   "u.s.rated": "評価した数",
+  "u.cafeRatings": "カフェの評価",
   "u.s.avg": "平均評価",
   "u.s.region": "お気に入りの産地",
   "u.top": "高評価",

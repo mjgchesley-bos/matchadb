@@ -1282,6 +1282,7 @@ export const es: Partial<Record<Key, string>> = {
   "u.drinks": "Bebe: {how}",
   "u.s.tried": "Probados",
   "u.s.rated": "Puntuados",
+  "u.cafeRatings": "Valoraciones de cafés",
   "u.s.avg": "Puntuación media",
   "u.s.region": "Región favorita",
   "u.top": "Mejor puntuados",

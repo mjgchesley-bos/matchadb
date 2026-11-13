@@ -513,6 +513,9 @@ begin
                          from (select product_id, score, updated_at from public.ratings where user_id = u order by score desc, updated_at desc limit 40) r), '[]'::json),
     'brands', coalesce((select json_agg(brand order by created_at desc) from public.favorite_brands where user_id = u), '[]'::json),
     'cafes', coalesce((select json_agg(cafe_id order by created_at desc) from public.favorite_cafes where user_id = u), '[]'::json),
+    'cafe_ratings', coalesce((select json_agg(json_build_object('cafe_id', cafe_id, 'score', score) order by updated_at desc)
+                              from (select cafe_id, score, updated_at from public.cafe_ratings where user_id = u order by updated_at desc limit 40) cr), '[]'::json),
+    'cafe_rating_count', (select count(*) from public.cafe_ratings where user_id = u),
     'lists', coalesce((select json_agg(json_build_object('name', s.name, 'items', coalesce((select json_agg(i.product_id order by i.added_at desc) from public.custom_shelf_items i where i.shelf_id = s.id), '[]'::json)) order by s.created_at)
                        from public.custom_shelves s where s.user_id = u), '[]'::json),
     'reviews', coalesce((select json_agg(json_build_object('product_id', product_id, 'body', body, 'created_at', created_at) order by created_at desc)

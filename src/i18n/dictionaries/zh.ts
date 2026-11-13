@@ -1298,6 +1298,7 @@ export const zh: Partial<Record<Key, string>> = {
   "u.drinks": "喝法:{how}",
   "u.s.tried": "试过",
   "u.s.rated": "已评分",
+  "u.cafeRatings": "咖啡馆评分",
   "u.s.avg": "平均评分",
   "u.s.region": "最爱产区",
   "u.top": "最高评分",

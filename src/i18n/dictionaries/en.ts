@@ -1298,6 +1298,7 @@ export const en = {
   "u.drinks": "Drinks: {how}",
   "u.s.tried": "Tried",
   "u.s.rated": "Rated",
+  "u.cafeRatings": "Café ratings",
   "u.s.avg": "Average rating",
   "u.s.region": "Favorite region",
   "u.top": "Top rated",

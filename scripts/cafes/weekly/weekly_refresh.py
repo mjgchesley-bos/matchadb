@@ -198,6 +198,7 @@ def build_and_verify(allow_drop=None):
     shutil.rmtree(f"{WORK}/out_weekly", ignore_errors=True)
     os.makedirs(tmp_d); os.makedirs(tmp_p)
     run([sys.executable, "-I", f"{HERE}/build_all2.py", tmp_d, tmp_p], cwd=WORK, timeout=7200)
+    run([sys.executable, f"{HERE}/export_removed.py"], timeout=900)      # names + reasons of venues taken off, for the staff log
     new, old = count_slim(tmp_p), count_slim(f"{REPO}/public/data")
     problems = []
     for k in new:
