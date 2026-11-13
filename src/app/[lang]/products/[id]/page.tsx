@@ -308,10 +308,10 @@ export default async function ProductDetailPage({
   }
   if (product.organic_certified === 1) stats.push({ label: t("prod.stat.cert"), value: t("prod.stat.organic") });
 
-  const facts: { label: string; value: string; href?: string }[] = [
+  const facts: { label: string; value: string; href?: string; external?: boolean }[] = [
     { label: t("prod.stat.brand"), value: product.brand_name, href: `/brands/${encodeURIComponent(product.brand_name)}` },
     ...stats,
-    ...(externalLink ? [{ label: t("prod.stat.sold"), value: externalLink.hostname }] : []),
+    ...(externalLink ? [{ label: t("prod.stat.sold"), value: externalLink.hostname, href: externalLink.url, external: true }] : []),
   ];
 
   const [relatedProducts, brandProducts] = await Promise.all([
@@ -505,7 +505,11 @@ export default async function ProductDetailPage({
             <div key={r.label} className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-1 py-3.5">
               <dt className="text-sm text-ink-faint">{r.label}</dt>
               <dd className="text-ink leading-relaxed">
-                {r.href ? (
+                {r.href && r.external ? (
+                  <a href={r.href} target="_blank" rel="noopener noreferrer" className="text-matcha underline decoration-line-strong underline-offset-2 hover:text-forest">
+                    {r.value} &#8599;
+                  </a>
+                ) : r.href ? (
                   <Link href={r.href} className="text-matcha underline decoration-line-strong underline-offset-2 hover:text-forest">
                     {r.value}
                   </Link>
