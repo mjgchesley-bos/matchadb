@@ -10,6 +10,7 @@ import { TierIcon, hasTierIcon } from "@/components/TierIcon";
 import { getProductById } from "@/lib/db";
 import { getCafeSlimIndex } from "@/lib/cafes";
 import { cafeSlug } from "@/lib/cafe-types";
+import { removedIndex } from "@/lib/cafes-removed";
 import { BADGES } from "@/lib/badges";
 import { formatPrice } from "@/lib/price";
 import { supabaseAnon } from "@/lib/supabase-server";
@@ -61,7 +62,7 @@ const PHOTO_BASE = `${process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gropvtwig
 
 function Section({ title, children, note }: { title: string; children: React.ReactNode; note?: string }) {
   return (
-    <section className="mt-10">
+    <section className="mt-5 rounded-sm border border-line bg-paper-raised p-5 sm:p-6">
       <h2 className="font-display text-xl font-semibold text-ink">{title}</h2>
       {note && <p className="mt-1 text-sm text-ink-faint">{note}</p>}
       <div className="mt-3">{children}</div>
@@ -112,11 +113,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       </li>
     );
   };
-  const list = (items: React.ReactNode[]) => <ul className="divide-y divide-line border-y border-line">{items}</ul>;
+  const list = (items: React.ReactNode[]) => <ul className="divide-y divide-line">{items}</ul>;
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
-      <header className="flex flex-col gap-5 sm:flex-row sm:items-start">
+      <header className="flex flex-col gap-5 rounded-sm border border-line bg-paper-raised p-5 sm:flex-row sm:items-start sm:p-6">
         <Avatar avatar={p.avatar} photoPath={p.avatar_path} name={p.name} size={88} />
         <div className="min-w-0 flex-1">
           <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight">{p.name}</h1>
@@ -148,15 +149,15 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         </div>
       </header>
 
-      <dl className="mt-8 grid grid-cols-3 gap-4 border-y border-line py-5">
+      <dl className="mt-5 grid grid-cols-3 gap-3 sm:gap-4">
         {[
           [t("u.s.tried"), String(tried.length)],
           [t("u.s.rated"), String(p.stats.ratings + Number(p.cafe_rating_count ?? 0))],
           [t("u.s.avg"), avg != null ? avg.toFixed(1) : "–"],
         ].map(([k, v]) => (
-          <div key={k}>
-            <dt className="text-xs uppercase tracking-wide text-ink-faint">{k}</dt>
-            <dd className="mt-0.5 font-display text-xl font-semibold text-ink tabular-nums">{v}</dd>
+          <div key={k} className="rounded-sm border border-line bg-paper-raised px-4 py-4 text-center">
+            <dd className="font-display text-3xl font-semibold leading-none text-matcha tabular-nums">{v}</dd>
+            <dt className="mt-2 text-xs uppercase tracking-wide text-ink-faint">{k}</dt>
           </div>
         ))}
       </dl>
@@ -200,50 +201,59 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
       {(() => {
         const idx = getCafeSlimIndex();
-        const cafes = (p.cafes ?? []).map((id) => idx.get(id)).filter((r): r is NonNullable<typeof r> => !!r);
-        if (cafes.length === 0) return null;
-        return (
-          <Section title={t("c.acct.cafes")}>
-            <ul className="flex flex-wrap gap-3">
-              {cafes.map((r) => (
-                <li key={r[0]}>
-                  <Link href={`/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}`} className="inline-flex flex-col rounded-sm border border-line bg-paper-raised px-4 py-2 text-sm text-ink hover:border-matcha">
-                    <span className="font-medium">{r[1]}</span>
-                    <span className="text-xs text-ink-faint">
-                      {!r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3]}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Section>
-        );
-      })()}
-
-      {(() => {
-        const idx = getCafeSlimIndex();
+        const gone = removedIndex();
+        // A café that left the map after being favorited or rated is still shown (not linked): the member really went there.
+        const find = (id: string) => {
+          const r = idx.get(id);
+          if (r) return { id, name: r[1], place: !r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3], href: `/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}` };
+          const g = gone[id];
+          return g ? { id, name: g[0], place: g[1], href: null as string | null } : null;
+        };
+        const cardCls = "flex h-full items-center justify-between gap-4 rounded-sm border border-line bg-paper p-5 text-ink";
+        const hover = " transition-colors hover:border-matcha hover:bg-matcha-soft";
+        const favs = (p.cafes ?? []).map(find).filter((x): x is NonNullable<typeof x> => !!x);
         const rated = (p.cafe_ratings ?? []).flatMap((x) => {
-          const r = idx.get(x.cafe_id);
-          return r ? [{ r, score: Number(x.score) }] : []; // a café that is no longer on the map is not shown
+          const c = find(x.cafe_id);
+          return c ? [{ c, score: Number(x.score) }] : [];
         });
-        if (rated.length === 0) return null;
+        const body = (c: { name: string; place: string }, right: React.ReactNode) => (
+          <>
+            <span className="min-w-0">
+              <span className="block font-display text-xl font-semibold leading-snug">{c.name}</span>
+              <span className="block text-sm text-ink-muted">{c.place}</span>
+            </span>
+            {right}
+          </>
+        );
         return (
-          <Section title={t("u.cafeRatings")}>
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {rated.map(({ r, score }) => (
-                <li key={r[0]}>
-                  <Link href={`/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}`} className="flex h-full flex-col gap-1.5 rounded-sm border border-line bg-paper-raised p-5 text-ink transition-colors hover:border-matcha hover:bg-matcha-soft">
-                    <span className="font-display text-xl font-semibold leading-snug">{r[1]}</span>
-                    <span className="text-sm text-ink-muted">{!r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3]}</span>
-                    <span className="mt-2 flex items-center gap-2 text-lg tabular-nums text-ink">
-                      <Stars value={score} size={22} />
-                      {score.toFixed(1)}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Section>
+          <>
+            {favs.length > 0 && (
+              <Section title={t("c.acct.cafes")}>
+                <ul className="grid gap-4 sm:grid-cols-2">
+                  {favs.map((c) => (
+                    <li key={c.id}>
+                      {c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, <span className="text-2xl text-matcha" aria-hidden="true">♥</span>)}</Link> : <div className={cardCls}>{body(c, <span className="text-2xl text-matcha" aria-hidden="true">♥</span>)}</div>}
+                    </li>
+                  ))}
+                </ul>
+              </Section>
+            )}
+            {rated.length > 0 && (
+              <Section title={t("u.cafeRatings")}>
+                <ul className="grid gap-4 sm:grid-cols-2">
+                  {rated.map(({ c, score }) => {
+                    const right = (
+                      <span className="flex shrink-0 flex-col items-end gap-1 tabular-nums">
+                        <Stars value={score} size={20} />
+                        <span className="text-lg font-semibold text-matcha">{score.toFixed(1)}</span>
+                      </span>
+                    );
+                    return <li key={c.id}>{c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, right)}</Link> : <div className={cardCls}>{body(c, right)}</div>}</li>;
+                  })}
+                </ul>
+              </Section>
+            )}
+          </>
         );
       })()}
 

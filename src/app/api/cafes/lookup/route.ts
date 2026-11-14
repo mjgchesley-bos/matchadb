@@ -1,20 +1,6 @@
-import fs from "node:fs";
-import path from "node:path";
 import { getCafeSlimIndex } from "@/lib/cafes";
 import { cafeSlug } from "@/lib/cafe-types";
-
-// Venues taken off the map: id -> [name, city, country, why]. Lets the staff log say what a rated or commented
-// café was and why it is gone, instead of showing a bare id. Written by scripts/cafes/weekly/export_removed.py.
-let removed: Record<string, [string, string, string, string]> | null = null;
-function removedIndex() {
-  if (removed) return removed;
-  try {
-    removed = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "cafes-removed.json"), "utf8"));
-  } catch {
-    removed = {};
-  }
-  return removed!;
-}
+import { removedIndex } from "@/lib/cafes-removed";
 
 // Name, city and page address for a handful of café ids, for the staff activity log (the finder's data is public).
 export async function GET(req: Request) {
