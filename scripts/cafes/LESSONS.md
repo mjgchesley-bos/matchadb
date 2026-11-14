@@ -111,3 +111,5 @@ Full numbers in `ROOT_CAUSES.md`. Applied: 30 chain brands with 30+ real outlets
 ## Pitfalls when editing the pipeline
 - Python text written through a shell heredoc can turn `\b` into a backspace character: write regexes with `chr(92)+"b"` or a raw file edit, then check `s.count(chr(8)) == 0`.
 - `weekly_refresh.py --allow-drop "reason"` is required when a deliberate rule change removes more than 3% of a region; the reason is logged in the report.
+
+| 2026-11-13 | Audit removed Leche Coffee (Austin) as "TikTok scrape only, no matcha evidence", but a member had visited, rated it 5.0 and posted a photo; the owner confirmed it is real. | A venue with member activity (rating, comment, photo, favorite) is real evidence that people go there. Audits must never remove one; check `cafe_ratings`, `comments` (target_type cafe) and `favorite_cafes` ids first. Leche added to gold_cafes.json. |
