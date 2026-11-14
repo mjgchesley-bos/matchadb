@@ -197,6 +197,7 @@ def build_and_verify(allow_drop=None):
     tmp_d, tmp_p = f"{WORK}/out_weekly/d", f"{WORK}/out_weekly/p"
     shutil.rmtree(f"{WORK}/out_weekly", ignore_errors=True)
     os.makedirs(tmp_d); os.makedirs(tmp_p)
+    run([sys.executable, f"{HERE}/fetch_member_cafes.py"], timeout=300)      # cafés members used: audits never remove these
     run([sys.executable, "-I", f"{HERE}/build_all2.py", tmp_d, tmp_p], cwd=WORK, timeout=7200)
     run([sys.executable, f"{HERE}/export_removed.py"], timeout=900)      # names + reasons of venues taken off, for the staff log
     new, old = count_slim(tmp_p), count_slim(f"{REPO}/public/data")

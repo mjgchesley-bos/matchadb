@@ -366,7 +366,9 @@ _before = len(cafes)
 EV_BAD_HOSTS = {"localcraft.app", "menupages.com", "joinoko.com", "bizsite.link", "seedsheets.com", "emmidesserts.com", "ircagroup.com", "liquidline.co.uk", "inspiration-thes.com", "thecateredaffair.com", "marriott.com"}   # evidence that is a directory/blog/supplier/hotel-group page, never the venue's own menu
 def _evhost(c):
     u = (c.get("ev") or [{}])[0].get("u", ""); h = urlparse(u).netloc.lower().replace("www.", ""); return h
-cafes = [c for c in cafes if _LEDGER.get(c["id"], {}).get("d") != "REMOVE" and not (not c.get("via") and any(_evhost(c) == x or _evhost(c).endswith("." + x) for x in EV_BAD_HOSTS))]
+_MEMBER_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "member_cafes.json")
+_MEMBER = set(json.load(open(_MEMBER_FILE))) if os.path.exists(_MEMBER_FILE) else set()  # cafés members rated/commented/favorited: never removed by an audit
+cafes = [c for c in cafes if (c["id"] in _MEMBER or _LEDGER.get(c["id"], {}).get("d") != "REMOVE") and not (not c.get("via") and any(_evhost(c) == x or _evhost(c).endswith("." + x) for x in EV_BAD_HOSTS))]
 print("audit ledger removed", _before - len(cafes), "venues")
 json.dump(sorted(c["id"] for c in cafes if c["id"] not in _LEDGER), open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "unaudited_ids.json"), "w"))
 # Restaurant rule (owner, 2026-11-12): a restaurant/bar is listed only if it serves matcha TEA or LATTES (drinks), not just matcha-flavoured food, desserts or cocktails.
