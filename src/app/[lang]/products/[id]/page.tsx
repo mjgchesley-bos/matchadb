@@ -579,7 +579,7 @@ export default async function ProductDetailPage({
       </SectionCard>
 
       {product.not_found === 1 && (
-        <div className="mt-8 border border-red-300 dark:border-red-900 bg-red-50 dark:bg-red-950/40 p-4 text-sm text-red-800 dark:text-red-300">
+        <div className="mt-8 rounded-sm border border-red-200 bg-red-50 p-4 text-sm text-red-900 dark:border-red-800 dark:bg-red-950/60 dark:text-red-100">
           <strong>{t("prod.unverifiable.label")}</strong> {t("prod.unverifiable.body")}
         </div>
       )}

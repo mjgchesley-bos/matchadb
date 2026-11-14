@@ -46,7 +46,7 @@ export function ProductCard({ product: p, lang = "en" }: { product: ProductRow; 
             </span>
           ))}
           {p.not_found === 1 && (
-            <span className="rounded-full bg-red-100 dark:bg-red-900/40 text-red-800 dark:text-red-300 px-2 py-0.5">
+            <span className="rounded-full bg-red-50 border border-red-200 text-red-700 dark:bg-red-950/60 dark:border-red-800 dark:text-red-200 font-medium px-2 py-0.5">
               {t("pc.unverifiable")}
             </span>
           )}
