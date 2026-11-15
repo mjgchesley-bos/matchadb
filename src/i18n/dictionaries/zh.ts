@@ -1383,6 +1383,7 @@ export const zh: Partial<Record<Key, string>> = {
   "mp.verifiedSource": "已核实的来源",
   "footer.aria": "页脚",
   "c.sg.btn": "推荐咖啡馆",
+  "c.sg.missing": "没有您的咖啡馆?推荐一家",
   "c.sg.intro": "告诉我们哪家供应抹茶的咖啡馆还没有上地图。我们会确认这家店真实存在，然后收录。",
   "c.sg.name": "咖啡馆名称",
   "c.sg.addr": "街道地址和城市",

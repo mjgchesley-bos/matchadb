@@ -589,6 +589,9 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       </form>
       <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2">
         <p className="text-xs text-ink-faint">{t("c.cf.privacy")}</p>
+        <a href="#suggest-cafe" className="inline-flex items-center rounded-full border border-matcha bg-matcha-soft px-3.5 py-1.5 text-xs font-medium text-forest transition-colors hover:bg-matcha hover:text-paper">
+          {t("c.sg.missing")}
+        </a>
       </div>
       {message && (
         <p className="mt-3 rounded-sm border border-line bg-paper-raised px-3 py-2 text-sm text-ink-muted" role="status">
@@ -651,6 +654,9 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
           {origin && !moved && all && listed.length === 0 && (
             <div className="rounded-sm border border-line bg-paper-raised p-4 text-sm text-ink-muted">
               <p>{t("c.cf.noneWithin", { radius, unit: unitWord })}</p>
+              <p className="mt-2">
+                <a href="#suggest-cafe" className="font-medium text-matcha hover:text-forest underline">{t("c.sg.missing")}</a>
+              </p>
               {nearest && (
                 <p className="mt-2">
                   {rich(t("c.cf.nearest", { city: nearest.cafe.city, dist: nf(Math.round(nearest.dist ?? 0)), unit: unitWord }), { name: <strong className="text-ink">{nearest.cafe.name}</strong> })}{" "}

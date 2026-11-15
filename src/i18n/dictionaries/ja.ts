@@ -1383,6 +1383,7 @@ export const ja: Partial<Record<Key, string>> = {
   "mp.verifiedSource": "確認済みの出典",
   "footer.aria": "フッター",
   "c.sg.btn": "カフェを提案する",
+  "c.sg.missing": "載っていないカフェを提案",
   "c.sg.intro": "抹茶を提供しているのに地図に載っていないカフェを教えてください。実在を確認して追加します。",
   "c.sg.name": "カフェ名",
   "c.sg.addr": "住所（番地と市区町村）",

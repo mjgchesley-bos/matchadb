@@ -1383,6 +1383,7 @@ export const ko: Partial<Record<Key, string>> = {
   "mp.verifiedSource": "확인된 출처",
   "footer.aria": "푸터",
   "c.sg.btn": "카페 제안하기",
+  "c.sg.missing": "없는 카페 제안하기",
   "c.sg.intro": "말차를 파는데 지도에 없는 카페를 알려주세요. 실제 있는 곳인지 확인한 뒤 추가합니다.",
   "c.sg.name": "카페 이름",
   "c.sg.addr": "도로명 주소와 도시",

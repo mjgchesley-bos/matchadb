@@ -1383,6 +1383,7 @@ export const en = {
   "mp.verifiedSource": "Verified source",
   "footer.aria": "Footer",
   "c.sg.btn": "Suggest a café",
+  "c.sg.missing": "Missing a café? Suggest it",
   "c.sg.intro": "Tell us about a café that serves matcha and isn't on the map. We check that the place is real and add it.",
   "c.sg.name": "Café name",
   "c.sg.addr": "Street address and city",

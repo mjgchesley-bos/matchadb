@@ -1367,6 +1367,7 @@ export const es: Partial<Record<Key, string>> = {
   "mp.verifiedSource": "Fuente verificada",
   "footer.aria": "Pie de página",
   "c.sg.btn": "Sugerir un café",
+  "c.sg.missing": "¿Falta un café? Sugiérelo",
   "c.sg.intro": "Cuéntanos de un café que sirva matcha y no esté en el mapa. Comprobamos que el lugar existe y lo añadimos.",
   "c.sg.name": "Nombre del café",
   "c.sg.addr": "Dirección y ciudad",

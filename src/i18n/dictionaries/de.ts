@@ -1365,6 +1365,7 @@ export const de: Partial<Record<Key, string>> = {
   "mp.verifiedSource": "Geprüfte Quelle",
   "footer.aria": "Fußbereich",
   "c.sg.btn": "Café vorschlagen",
+  "c.sg.missing": "Café fehlt? Jetzt vorschlagen",
   "c.sg.intro": "Sag uns, welches Café Matcha serviert und noch nicht auf der Karte ist. Wir prüfen, ob es den Ort wirklich gibt, und nehmen ihn auf.",
   "c.sg.name": "Name des Cafés",
   "c.sg.addr": "Straße und Stadt",
