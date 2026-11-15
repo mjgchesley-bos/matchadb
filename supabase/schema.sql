@@ -198,7 +198,7 @@ create table if not exists public.comments (
   target_type text not null check (target_type in ('product', 'brand')),
   target_key text not null check (char_length(target_key) between 1 and 120),
   body text not null check (char_length(body) between 1 and 1500),
-  photos text[] not null default '{}' check (coalesce(array_length(photos, 1), 0) <= 3),
+  photos text[] not null default '{}' check (coalesce(array_length(photos, 1), 0) <= 5),
   status text not null default 'approved' check (status in ('pending', 'approved', 'hidden')),
   created_at timestamptz not null default now()
 );

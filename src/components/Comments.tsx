@@ -8,13 +8,13 @@ import { supabase } from "@/lib/supabase";
 import { useLang, useT } from "@/i18n/client";
 import { INTL_LANG } from "@/i18n/config";
 
-// Comment section for a product or a brand page, with up to three photos per comment.
+// Comment section for a product or a brand page, with up to five photos per comment.
 // Text-only comments appear at once; comments with photos wait for approval (the database
 // enforces this). Photos are shrunk and re-encoded in the browser before upload, which also
 // removes hidden metadata such as GPS location.
 
 export const COMMENT_BUCKET = "comment-photos";
-const MAX_PHOTOS = 3;
+const MAX_PHOTOS = 5;
 const MAX_CHARS = 1500;
 const MAX_SIDE = 1600;
 const PAGE = 15; // comments shown at first, and added by each "Load more"
