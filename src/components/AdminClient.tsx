@@ -34,6 +34,7 @@ const KINDS: Record<string, { label: string; tone: string }> = {
   follow: { label: "Follow", tone: "bg-paper text-ink-muted border border-line" },
   bookmark: { label: "Study saved", tone: "bg-paper text-ink-muted border border-line" },
   suggestion: { label: "Café suggestion", tone: "bg-gold-soft text-gold" },
+  feedback: { label: "Feedback", tone: "bg-gold-soft text-gold" },
   report: { label: "Report", tone: "bg-red-100 text-red-800" },
   visit: { label: "Visit", tone: "bg-paper text-ink-faint border border-line" },
 };
@@ -105,13 +106,14 @@ function describe(e: { kind: string; txt: string | null; target_type: string | n
     case "follow": return { verb: "followed", target };
     case "bookmark": return { verb: "saved a research paper", target };
     case "report": return { verb: `reported a ${e.target_type}${e.txt ? `: “${e.txt}”` : ""}`, target: e.target_type === "profile" ? targetOf({ target_type: "member", target_key: e.target_key }, names) : null };
+    case "feedback": return { verb: "sent feedback", target: null, body: e.txt ?? undefined };
     case "suggestion": return { verb: `suggested a café${e.status ? ` (${e.status})` : ""}`, target: null, body: e.txt ?? undefined };
     default: return { verb: e.kind, target };
   }
 }
 
 const itemKind = (e: { kind: string; target_type: string | null }): string | null => {
-  if (e.kind === "comment" || e.kind === "review" || e.kind === "suggestion") return e.kind;
+  if (e.kind === "comment" || e.kind === "review" || e.kind === "suggestion" || e.kind === "feedback") return e.kind;
   if (e.kind === "report" && (e.target_type === "comment" || e.target_type === "review" || e.target_type === "profile")) return `report-${e.target_type}`;
   return null;
 };
@@ -199,7 +201,7 @@ function ItemModal({ kind, refId, names, onClose, onMember, onChanged }: { kind:
     setBusy(false);
   };
 
-  const title = item?.kind === "comment" ? "Comment" : item?.kind === "review" ? "Review" : item?.kind === "suggestion" ? "Café suggestion" : item?.kind === "report-profile" ? "Profile report" : "Item";
+  const title = item?.kind === "comment" ? "Comment" : item?.kind === "review" ? "Review" : item?.kind === "suggestion" ? "Café suggestion" : item?.kind === "feedback" ? "Feedback" : item?.kind === "report-profile" ? "Profile report" : "Item";
   const target = item && item.target_type ? targetOf({ target_type: item.target_type, target_key: item.target_key ?? null }, names) : null;
   return (
     <Modal onClose={onClose} title={item === undefined ? "Loading…" : item === null ? "Not found" : title}>
@@ -449,6 +451,7 @@ export function AdminClient() {
     { label: "Saves & shelves", value: n("save", "shelf", "list"), kinds: ["save", "shelf", "list"] },
     { label: "Follows", value: n("follow"), kinds: ["follow"] },
     { label: "Suggestions", value: n("suggestion"), kinds: ["suggestion"] },
+    { label: "Feedback", value: n("feedback"), alert: n("feedback") > 0, kinds: ["feedback"] },
     { label: "Reports", value: n("report"), alert: n("report") > 0, kinds: ["report"] },
   ];
   const DAYCOLS: [string, string[]][] = [["Accounts", ["account"]], ["Comments", ["comment"]], ["Photos", ["photos"]], ["Reviews", ["review"]], ["Ratings", ["rating", "cafe_rating"]], ["Saves", ["save", "shelf", "list"]], ["Reports", ["report"]]];

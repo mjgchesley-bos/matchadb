@@ -29,6 +29,7 @@ language sql stable security definer set search_path = public, auth as $$
     union all select x.created_at, 'report', x.reporter_id, x.id::text, x.reason, 'comment', x.comment_id::text, 0, null from public.comment_reports x
     union all select x.created_at, 'report', x.reporter_id, x.id::text, x.reason, 'profile', x.profile_name, 0, null from public.profile_reports x
     union all select x.created_at, 'suggestion', x.user_id, x.id::text, x.name || ' | ' || x.address, 'suggestion', x.id::text, 0, x.status from public.cafe_suggestions x
+    union all select x.created_at, 'feedback', x.user_id, x.id::text, x.message, 'feedback', x.id::text, 0, x.status from public.feedback x
     union all select m.day::timestamptz, 'visit', m.user_id, null, null, null, null, 0, null from public.member_days m
   ) z
   where z.at >= p_from and z.at < p_to;
@@ -140,6 +141,9 @@ begin
     select json_build_object('kind', 'suggestion', 'id', s.id, 'at', s.created_at, 'member', p.display_name, 'name', s.name, 'address', s.address, 'link', s.link,
       'status', s.status, 'note', s.reviewer_note)
     into r from public.cafe_suggestions s left join public.profiles p on p.id = s.user_id where s.id = p_ref::uuid;
+  elsif p_kind = 'feedback' then
+    select json_build_object('kind', 'feedback', 'id', f.id, 'at', f.created_at, 'member', p.display_name, 'body', f.message, 'status', f.status, 'page', f.page)
+    into r from public.feedback f left join public.profiles p on p.id = f.user_id where f.id = p_ref::uuid;
   elsif p_kind = 'report-comment' then
     select (public.admin_item('comment', x.comment_id::text)::jsonb || jsonb_build_object('report_reason', x.reason, 'report_by', pp.display_name, 'report_at', x.created_at))::json into r
     from public.comment_reports x join public.profiles pp on pp.id = x.reporter_id where x.id = p_ref::uuid;

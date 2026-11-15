@@ -81,7 +81,7 @@ def build(d):
     out = [f"## {d.strftime('%A, %B %d, %Y')}", "",
            f"**{len(by['account'])} new accounts · {active} active members · {len(by['comment'])} comments · {photos} photos · {len(by['review'])} reviews · "
            f"{len(by['rating']) + len(by['cafe_rating'])} ratings · {len(by['save']) + len(by['shelf']) + len(by['list'])} saves/shelf adds · {len(by['follow'])} follows · "
-           f"{len(by['suggestion'])} café suggestions · {len(by['report'])} reports**", ""]
+           f"{len(by['suggestion'])} café suggestions · {len(by['feedback'])} feedback · {len(by['report'])} reports**", ""]
     out += section("Reports (look at these first)", by["report"], lambda e: f"{t(e)} {e['who']} reported a {e['target_type']}: “{e.get('txt')}”  → open /admin, Reports filter")
     out += section("New accounts", by["account"], lambda e: f"{t(e)} {e['who']}")
     out += section("Comments", by["comment"], lambda e: f"{t(e)} {e['who']} on {where(e)}{' [' + str(e['photos']) + ' photo(s)]' if e.get('photos') else ''}{' [HIDDEN]' if e.get('status') == 'hidden' else ''}: “{(e.get('txt') or '')[:300]}”")

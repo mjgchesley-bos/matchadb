@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { Avatar } from "@/components/Avatar";
 import { FollowBar } from "@/components/Friends";
 import { ProfileActions } from "@/components/ProfileActions";
+import { FeedbackButton } from "@/components/FeedbackButton";
+import { CONTACT_EMAIL } from "@/lib/site";
 import { BrandLogo } from "@/components/product-cards";
 import { Stars } from "@/components/Stars";
 import { TierIcon, hasTierIcon } from "@/components/TierIcon";
@@ -148,6 +150,10 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
           </p>
         </div>
       </header>
+
+      <div className="mt-4">
+        <FeedbackButton contactEmail={CONTACT_EMAIL} />
+      </div>
 
       <dl className="mt-5 grid grid-cols-3 gap-3 sm:gap-4">
         {[
