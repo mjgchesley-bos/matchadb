@@ -265,6 +265,12 @@ if os.path.exists(LEADS_FILE):
     cafes.extend(leads)
     stats["leads"] = len(leads)
 
+# A lead is a venue we added on purpose (its own site / the brand's location page). A venue the audit rejected must not shadow it in the
+# near-duplicate check below (same name within ~165 m is dropped as a duplicate; the rejected one is removed later, so both vanished: La La Land West 3rd St).
+_LEADIDS = {l["id"] for l in leads}
+_HERE0 = os.path.dirname(os.path.abspath(__file__))
+_REJ0 = {i for i, v in (json.load(open(os.path.join(_HERE0, "audit_ledger.json"), encoding="utf-8")).get("decisions", {}) if os.path.exists(os.path.join(_HERE0, "audit_ledger.json")) else {}).items() if v.get("d") == "REMOVE"}
+
 # a website shared by several places can be a wrong link in the place data (e.g. a London café listing Merit Coffee's site).
 # When one site clearly belongs to a group of places that carry its name, drop the ones that do not: other country, or a different name.
 GENERIC = {"coffee", "cafe", "caf", "co", "tea", "roasters", "roastery", "roasting", "the", "and", "company", "bar", "shop", "house", "kitchen", "bakery", "local"}
@@ -310,8 +316,12 @@ for c in cafes:
     key = norm(c["name"]) or c["id"]
     def _near(o):
         wide = c.get("via") or o.get("via")          # a name-only listing (e.g. Foursquare) can be ~1 km off the same café's other record
+        # two hand-verified leads with different street numbers are different branches of one brand, however near (La La Land The Grove vs West 3rd St)
+        if wide and c["id"] in _LEADIDS and o["id"] in _LEADIDS and c.get("address") and o.get("address"):
+            _na, _no = re.findall(r"\d+", c["address"]), re.findall(r"\d+", o["address"])
+            if _na and _no and _na[0] != _no[0]: wide = False
         return abs(o["lat"] - c["lat"]) < (0.012 if wide else 0.0015) and abs(o["lng"] - c["lng"]) < (0.016 if wide else 0.002)
-    if any(_near(o) for o in seen.get(key, [])): continue
+    if any(_near(o) for o in seen.get(key, []) if not (c["id"] in _LEADIDS and o["id"] in _REJ0)): continue
     seen.setdefault(key, []).append(c)
     kept.append(c)
 cafes = kept
