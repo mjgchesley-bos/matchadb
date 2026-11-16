@@ -4918,5 +4918,334 @@
       }
     ],
     "catalogNote": "Storage advice on every product page: keep in a cool, dry place away from light, refrigerate before and after opening, and use within 3 months of opening. The wholesale catalogue itself is behind a sign-up form, so only its public shop items are shown."
+  },
+  {
+    "slug": "umu-japan",
+    "name": "UMU Japan (United Matcha Union)",
+    "website": "https://umujapan.com",
+    "url": "https://umujapan.com/products/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "cafe",
+      "private-label",
+      "ingredient"
+    ],
+    "how": [
+      "form",
+      "email"
+    ],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Sells Japanese matcha, hojicha and genmaicha powder wholesale to cafés, brands and manufacturers from a Tokyo office, with a published 1 kg price for each of its 18 products, a 1 kg minimum, paid tasting kits and private label.",
+    "facts": [
+      "Wholesale only: matcha, hojicha and genmaicha powders plus provisional ready-to-drink formulas, for cafés, brands and manufacturers",
+      "Says all of it is grown and stone-milled in Japan at one partner mill that has made tea since 1939",
+      "Minimum order is 1 kg per grade; the site says a typical first order is 10 kg",
+      "Publishes a 1 kg price (USD, EXW Japan) on every product, from US$34 for a ready-to-drink base blend and US$74 for matcha, up to US$260 for ceremonial first-flush",
+      "Volume pricing is a firm quote per grade, volume and destination (EXW Japan, FCA Japan or FOB Kobe), valid 30 days",
+      "Sells five paid tasting kits of 30 g lots, US$36 to US$118 with shipping included; the site says they are not credited against a later order",
+      "Offers private label and OEM with a 1 kg minimum: custom blends, tins, pouches or bulk, milled to order",
+      "Says each lot has a certificate of analysis, a statement of origin and pesticide-residue results on request, and that US shipments carry an FDA Prior Notice filed by its team",
+      "Four products are listed as organic (JAS certified); its own Japan Matcha Standard is a sourcing checklist, which the site says is not a public certification",
+      "Says it ships worldwide; contact is a form on its home page or info@umujapan.com"
+    ],
+    "hq": "Tokyo, Japan (UMU LLC)",
+    "links": [
+      {
+        "label": "Request a quote or tasting kit (home page form)",
+        "url": "https://umujapan.com/"
+      }
+    ],
+    "sources": [
+      {
+        "label": "Home page",
+        "url": "https://umujapan.com/"
+      },
+      {
+        "label": "Product catalogue",
+        "url": "https://umujapan.com/products/"
+      }
+    ],
+    "verified": "2026-11-16",
+    "catalog": [
+      {
+        "name": "Uji Yabukita First-Flush Matcha",
+        "origin": "Uji, Kyoto, Japan",
+        "cultivar": "Yabukita",
+        "uses": [
+          "Koicha",
+          "Usucha",
+          "Latte"
+        ],
+        "notes": "Listed as Ceremonial Grade (UMU-MCH-1037). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 5/5, sweetness 4/5, colour 5/5, aroma 4/5, bitterness 2/5.",
+        "price": "US$260 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Ceremonial",
+        "harvest": "First flush"
+      },
+      {
+        "name": "Wazuka Yabukita First-Flush Matcha",
+        "origin": "Wazuka, Uji, Kyoto, Japan",
+        "cultivar": "Yabukita",
+        "uses": [
+          "Koicha",
+          "Usucha",
+          "Latte"
+        ],
+        "notes": "Listed as Ceremonial Grade (UMU-MCH-1029). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 5/5, sweetness 3/5, colour 4/5, aroma 5/5, bitterness 2/5.",
+        "price": "US$234 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Ceremonial",
+        "harvest": "First flush"
+      },
+      {
+        "name": "Uji Yutaka First-Flush Matcha",
+        "origin": "Uji, Kyoto, Japan",
+        "cultivar": "Yutaka",
+        "uses": [
+          "Koicha",
+          "Usucha",
+          "Latte"
+        ],
+        "notes": "Listed as Ceremonial Grade (UMU-MCH-1028). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 4/5, sweetness 4/5, colour 4/5, aroma 5/5, bitterness 3/5.",
+        "price": "US$200 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Ceremonial",
+        "harvest": "First flush"
+      },
+      {
+        "name": "Kagoshima Okumidori Matcha",
+        "origin": "Kagoshima, Japan",
+        "cultivar": "Okumidori",
+        "uses": [
+          "Usucha",
+          "Latte",
+          "Culinary"
+        ],
+        "notes": "Listed as Premium Grade (UMU-MCH-1018). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 4/5, sweetness 3/5, colour 4/5, aroma 2/5, bitterness 3/5.",
+        "price": "US$127 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Latte grade"
+      },
+      {
+        "name": "Kagoshima Saemidori First-Flush Matcha",
+        "origin": "Kagoshima, Japan",
+        "cultivar": "Saemidori",
+        "uses": [
+          "Usucha",
+          "Latte",
+          "Culinary"
+        ],
+        "notes": "Listed as Premium Grade (UMU-MCH-1016). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 3/5, sweetness 3/5, colour 4/5, aroma 4/5, bitterness 3/5.",
+        "price": "US$120 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Latte grade",
+        "harvest": "First flush"
+      },
+      {
+        "name": "Uji Blended Matcha (Premium)",
+        "origin": "Uji, Kyoto, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Usucha",
+          "Latte",
+          "Culinary"
+        ],
+        "notes": "Listed as Premium Grade (UMU-MCH-1013). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 3/5, sweetness 3/5, colour 3/5, aroma 3/5, bitterness 3/5.",
+        "price": "US$114 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Latte grade"
+      },
+      {
+        "name": "Shizuoka Blended Matcha",
+        "origin": "Shizuoka, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Standard Grade (UMU-MCH-1011). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 3/5, sweetness 2/5, colour 2/5, aroma 2/5, bitterness 4/5.",
+        "price": "US$107 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Culinary"
+      },
+      {
+        "name": "Uji Blended Matcha (Standard)",
+        "origin": "Uji, Kyoto, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Standard Grade (UMU-MCH-1007). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 3/5, sweetness 2/5, colour 2/5, aroma 2/5, bitterness 4/5.",
+        "price": "US$100 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Culinary"
+      },
+      {
+        "name": "Yame Blended Matcha",
+        "origin": "Yame, Fukuoka, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Standard Grade (UMU-MCH-1008). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 3/5, sweetness 3/5, colour 2/5, aroma 2/5, bitterness 4/5.",
+        "price": "US$80 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Culinary"
+      },
+      {
+        "name": "Organic Uji Yabukita First-Flush Matcha",
+        "origin": "Uji, Kyoto, Japan",
+        "cultivar": "Yabukita",
+        "uses": [
+          "Usucha",
+          "Latte",
+          "Culinary"
+        ],
+        "notes": "Listed as Premium Grade (UMU-MCH-1050). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 4/5, sweetness 2/5, colour 3/5, aroma 3/5, bitterness 3/5.",
+        "price": "US$200 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Latte grade",
+        "harvest": "First flush",
+        "badges": [
+          "Organic (JAS certified)"
+        ]
+      },
+      {
+        "name": "Organic Shizuoka Blended Matcha",
+        "origin": "Shizuoka, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Premium Grade (UMU-MCH-1039). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 3/5, sweetness 3/5, colour 4/5, aroma 5/5, bitterness 2/5.",
+        "price": "US$100 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Latte grade",
+        "badges": [
+          "Organic (JAS certified)"
+        ]
+      },
+      {
+        "name": "Organic Kagoshima Blended Matcha",
+        "origin": "Kagoshima, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Standard Grade (UMU-MCH-1041). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: umami 2/5, sweetness 2/5, colour 2/5, aroma 2/5, bitterness 3/5.",
+        "price": "US$74 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "grade": "Culinary",
+        "badges": [
+          "Organic (JAS certified)"
+        ]
+      },
+      {
+        "name": "Organic Kagoshima Blended Hojicha Powder",
+        "origin": "Kagoshima, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Premium Grade (deep roast) (UMU-HOJ-1057). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: roast level 5/5, roasted aroma 4/5, sweetness 3/5, body 5/5, bitterness 4/5.",
+        "price": "US$80 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/",
+        "badges": [
+          "Organic (JAS certified)"
+        ]
+      },
+      {
+        "name": "Yame Blended Hojicha Powder",
+        "origin": "Yame, Fukuoka, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Premium Grade (deep roast) (UMU-HOJ-1052). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: roast level 5/5, roasted aroma 5/5, sweetness 4/5, body 4/5, bitterness 3/5.",
+        "price": "US$60 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/"
+      },
+      {
+        "name": "Yame Blended Genmaicha Powder",
+        "origin": "Yame, Fukuoka, Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Latte",
+          "Culinary",
+          "Manufacturing"
+        ],
+        "notes": "Listed as Premium Grade (deep roast) (UMU-GEN-1053). The supplier's own sensory scores, which it says are a trained taster's judgment and not a certification: roast level 5/5, roasted aroma 5/5, sweetness 5/5, body 4/5, bitterness 2/5.",
+        "price": "US$60 per kg",
+        "priceNote": "The supplier's published 1 kg price (USD, EXW Japan); shipping, duty and taxes are extra, and volume pricing is quoted on request.",
+        "url": "https://umujapan.com/products/"
+      },
+      {
+        "name": "Japanese Blended Ready-to-Drink Matcha (bold)",
+        "origin": "Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Ready-to-drink development"
+        ],
+        "notes": "A provisional ready-to-drink base blend for private-label development (UMU-RTD-1054); the supplier says final specifications follow product finalisation. Its provisional scores: matcha presence 5/5, aroma 4/5, sweetness balance 3/5, body 4/5, colour 3/5, bitterness 3/5.",
+        "price": "US$60 per kg",
+        "priceNote": "A reference price for the base blend; the supplier says final pricing is set once the formula, volume and packaging are agreed.",
+        "url": "https://umujapan.com/products/"
+      },
+      {
+        "name": "Japanese Blended Ready-to-Drink Matcha (balanced)",
+        "origin": "Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Ready-to-drink development"
+        ],
+        "notes": "A provisional ready-to-drink base blend for private-label development (UMU-RTD-1055); the supplier says final specifications follow product finalisation. Its provisional scores: matcha presence 4/5, aroma 3/5, sweetness balance 3/5, body 3/5, colour 2/5, bitterness 2/5.",
+        "price": "US$47 per kg",
+        "priceNote": "A reference price for the base blend; the supplier says final pricing is set once the formula, volume and packaging are agreed.",
+        "url": "https://umujapan.com/products/"
+      },
+      {
+        "name": "Japanese Blended Ready-to-Drink Matcha (mild)",
+        "origin": "Japan",
+        "cultivar": "Blended",
+        "uses": [
+          "Ready-to-drink development"
+        ],
+        "notes": "A provisional ready-to-drink base blend for private-label development (UMU-RTD-1056); the supplier says final specifications follow product finalisation. Its provisional scores: matcha presence 3/5, aroma 2/5, sweetness balance 3/5, body 2/5, colour 2/5, bitterness 2/5.",
+        "price": "US$34 per kg",
+        "priceNote": "A reference price for the base blend; the supplier says final pricing is set once the formula, volume and packaging are agreed.",
+        "url": "https://umujapan.com/products/"
+      }
+    ],
+    "catalogNote": "All 18 products from the supplier's own catalogue, with its published 1 kg prices. The sensory scores are the supplier's own and are not tested by MatchaDB."
   }
 ]
