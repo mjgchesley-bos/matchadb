@@ -108,3 +108,13 @@ Generated 2026-11-15 by the brand completeness check. Each row is listed open on
 - Karak Chaii | Soho Road | 250 Soho Rd, Handsworth, Birmingham (GB) | https://karakchaii.co.uk/locations/soho-road/
 - Karak Chaii | Tooting | 35 Upper Tooting Rd, Tooting Bec, London (GB) | https://karakchaii.co.uk/locations/tooting/
 - WASBAR | Antwerpen Wijnegem Shopping | Turnhoutsebaan 5/bus 84, Wijnegem (BE) | https://wasbar.be/restaurants
+- I Heart Boba | I Heart Boba Can Tho | 136 Xo Viet Nghe Tinh, An Hoi, Ninh Kieu, Can Tho (VN) | https://iheartboba.com/
+- Café Morgane | Café St-Joseph | 360, boul. St-Joseph, Drummondville (CA) | https://cafemorgane.com/nos-espaces/
+- Kalve Coffee | KALVE Golden Gate | Ahtri tn 6, Tallinn (EE) | https://kalvecoffee.com/pages/locations
+- Kalve Coffee | KALVE Vasario | Vasario 16-osios g. 5, Vilnius (LT) | https://kalvecoffee.com/pages/locations
+- Sweet Paris Crêperie & Café | Nashville Yards | 931 Signal Crossing, Ste C2.01, Nashville (US) | https://sweetparis.com/locations
+- Sweet Paris Crêperie & Café | Fenton | 1 Fenton Main Street, Suite 190, Cary (US) | https://sweetparis.com/locations
+- Terres de Café | Yangjae | 111 Yangjaecheon-ro, Seocho-gu, Seoul (KR) | https://www.terresdecafe.com/fr/content/70-nos-boutiques
+- Le Cafe Coffee | Fashion District | 501 Seventh Avenue, New York (US) | https://lecafecoffee.com/locations/
+- Coffeebar | Northstar | 3001 Northstar Dr., Truckee (US) | https://coffeebar.com/locations/
+- Terres de Café (Mokdong) | 257 Mokdongdong-ro, Yangcheon-gu | Seoul (KR) | https://www.terresdecafe.com/fr/content/70-nos-boutiques
