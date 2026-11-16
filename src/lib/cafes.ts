@@ -84,19 +84,19 @@ export function nearbyCafes(c: Cafe, limit = 5): (Cafe & { miles: number })[] {
     .slice(0, limit);
 }
 
-// "Select chains" the owner chose to list (scripts/cafes/weekly/select_chains.json): outlets of one brand share a website host.
-let selectHosts: Set<string> | null = null;
-function getSelectHosts(): Set<string> {
-  if (selectHosts) return selectHosts;
-  const set = new Set<string>();
+// "Select chains" the owner chose to list (scripts/cafes/weekly/select_chains.json): one entry per brand, which may use several websites.
+let selectBrands: string[][] | null = null;
+function getSelectBrands(): string[][] {
+  if (selectBrands) return selectBrands;
+  let out: string[][] = [];
   try {
     const j = JSON.parse(fs.readFileSync(path.join(process.cwd(), "scripts", "cafes", "weekly", "select_chains.json"), "utf8")) as { brands: { hosts: string[] }[] };
-    for (const b of j.brands) for (const h of b.hosts) set.add(h.toLowerCase());
+    out = j.brands.map((b) => b.hosts.map((h) => h.toLowerCase()));
   } catch {
     // no list: no select chains
   }
-  selectHosts = set;
-  return set;
+  selectBrands = out;
+  return out;
 }
 const hostKey = (u?: string | null): string => {
   try {
@@ -105,25 +105,60 @@ const hostKey = (u?: string | null): string => {
     return "";
   }
 };
-let chainIndex: Map<string, Cafe[]> | null = null;
+
+// Websites shared by unrelated places (social pages, ordering platforms, site builders): never a brand.
+const SHARED_HOSTS = /instagram|facebook|toasttab|squareup|square\.site|foodora|chownow|onelink|linktr|ubereats|doordash|grubhub|google|yelp|wixsite|weebly|business\.site|godaddysites|shopinfo|jimdo|fc2|ameblo|tabelog|hotpepper|gnavi|retty|ocnk|base\.shop|thebase|stores\.jp|studio\.site|peraichi|wordpress\.com|blogspot/i;
+const nameStem = (n: string) => n.normalize("NFKC").toLowerCase().replace(/\(.*?\)|（.*?）/g, "").replace(/[^\p{L}\p{N}]/gu, "").slice(0, 6);
 
 export type ChainSibling = { id: string; label: string; slug: string };
 
-// The other locations of a select chain (same website host), for showing their reviews on a location that has few of its own.
+// Groups of locations that belong to one brand: a website used by 3+ locations that mostly share a name (a directory host mixes unrelated names),
+// plus owner-chosen select chains, whose several websites count as one brand. Used to show reviews from a brand's other locations.
+let chainGroups: { byHost: Map<string, string>; groups: Map<string, Cafe[]> } | null = null;
+function getChainGroups() {
+  if (chainGroups) return chainGroups;
+  const byHost = new Map<string, Cafe[]>();
+  for (const f of getCafeFiles())
+    for (const x of getCafesInFile(f)) {
+      const k = hostKey(x.url);
+      if (k && !SHARED_HOSTS.test(k)) byHost.set(k, [...(byHost.get(k) ?? []), x]);
+    }
+  const hostGroup = new Map<string, string>();
+  const groups = new Map<string, Cafe[]>();
+  getSelectBrands().forEach((hosts, i) => {
+    const key = `sel:${i}`;
+    for (const h of hosts) {
+      hostGroup.set(h, key);
+      groups.set(key, [...(groups.get(key) ?? []), ...(byHost.get(h) ?? [])]);
+    }
+  });
+  for (const [h, list] of byHost) {
+    if (hostGroup.has(h) || list.length < 3) continue;
+    const counts = new Map<string, number>();
+    for (const x of list) counts.set(nameStem(x.name), (counts.get(nameStem(x.name)) ?? 0) + 1);
+    if (Math.max(...counts.values()) / list.length < 0.5) continue;
+    hostGroup.set(h, `host:${h}`);
+    groups.set(`host:${h}`, list);
+  }
+  chainGroups = { byHost: hostGroup, groups };
+  return chainGroups;
+}
+
+// The other locations of the same brand, for showing their reviews on a location that has few of its own.
 // label = the part of the name after " - " (e.g. "West Lynn"), else the city.
 export function chainSiblings(c: Cafe): ChainSibling[] {
   const h = hostKey(c.url);
-  if (!h || !getSelectHosts().has(h)) return [];
-  if (!chainIndex) {
-    chainIndex = new Map();
-    const hosts = getSelectHosts();
-    for (const f of getCafeFiles())
-      for (const x of getCafesInFile(f)) {
-        const k = hostKey(x.url);
-        if (k && hosts.has(k)) chainIndex.set(k, [...(chainIndex.get(k) ?? []), x]);
-      }
-  }
-  return (chainIndex.get(h) ?? [])
-    .filter((x) => x.id !== c.id)
-    .map((x) => ({ id: x.id, label: x.name.includes(" - ") ? x.name.split(" - ").pop()!.trim() : x.city, slug: cafeSlug(x) }));
+  const { byHost, groups } = getChainGroups();
+  const g = h ? byHost.get(h) : undefined;
+  if (!g) return [];
+  const sibs = (groups.get(g) ?? []).filter((x) => x.id !== c.id);
+  // Several locations in one city (Burnet Rd and South Congress, both Austin): name them by street so the tag says which one.
+  const cityCount = new Map<string, number>();
+  for (const x of [c, ...sibs]) cityCount.set(x.city, (cityCount.get(x.city) ?? 0) + 1);
+  const street = (a: string) => a.replace(/^\s*\d+[\s-]*/, "").replace(/[,\s]+(ste\.?|suite|unit|#).*$/i, "").trim();
+  return sibs.map((x) => ({
+    id: x.id,
+    label: x.name.includes(" - ") ? x.name.split(" - ").pop()!.trim() : (cityCount.get(x.city) ?? 0) > 1 && street(x.address) ? `${x.city}, ${street(x.address)}` : x.city,
+    slug: cafeSlug(x),
+  }));
 }

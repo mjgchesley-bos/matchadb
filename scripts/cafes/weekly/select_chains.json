@@ -11,7 +11,8 @@
     {
       "name": "La La Land",
       "hosts": [
-        "lalalandcafe.com"
+        "lalalandcafe.com",
+        "lalalandkindcafe.com"
       ],
       "why": "owner request 2026-11-15: wants every location (38 on its own page, matcha-heavy Kind Cafe); Burnet Rd Austin was missing"
     }
