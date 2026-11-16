@@ -1,0 +1,66 @@
+# Brand locations on the brands' own pages that are not on the map yet (no exact pin found)
+
+Generated 2026-11-15 by the brand completeness check. Each row is listed open on the brand's own site; the address could not be pinned to the building automatically.
+
+- MACCHA HOUSE 抹茶館 | MACCHA HOUSE Orchard Central | #B1-40 Orchard Central, 181 Orchard Road, Singapore (SG) | https://maccha-house.com/1600/
+- MACCHA HOUSE 抹茶館 | MACCHA HOUSE Senayan City | Senayan City 1st Floor, Jl. Asia Afrika No.19, Gelora, Tanah Abang, Jakarta Pusat (ID) | https://maccha-house.com/mhsenayan/
+- The Tea Centre | Chermside | Shop 183, Westfield Chermside, Gympie Road, Chermside (AU) | https://theteacentre.com.au/pages/store-locator
+- The Tea Centre | Warringah Mall | Shop 2349, 145 Condamine St, Brookvale (AU) | https://theteacentre.com.au/pages/store-locator
+- Machi Machi | Sydney Town Hall | Shop 12C, Level 10/501 George St, Sydney (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Burwood | Shop 5, 127 Burwood Rd, Burwood (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Central Park | Shop RB05A, Lower Ground Level, Central Park Mall, 1 Central Park Avenue, Chippendale (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Rhodes | Kiosk In Front Of Cinema, Rhodes Waterside Food Court, 1 Rider Blv, Rhodes (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Waterloo | Shop 603, 23 Tung Hop Street, Waterloo (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Canley Heights | 214 Canley Vales Rd, Canley Heights (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Chatswood Chase | Lower Ground - Chatswood Chase, Kiosk K0007/345 Victoria Ave, Chatswood (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Eastwood | Shop 1, 204 Rowe Street, Eastwood (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Cabramatta | 1, 55 John St, Cabramatta (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Strathfield | 2 Churchill Ave, Strathfield (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | North Sydney | Victoria Cross Metro, Shop T08/155 Miller St, North Sydney (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Springvale | 8/258 Springvale Rd, Springvale (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Highpoint | Shop No. L02 2139A 120-200 Rosamond Rd, Maribyrnong (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Caulfield | 11-12 Sir John Monash Dr, Caulfield (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- Machi Machi | Harbour Town | Shop C001A, Harbour Town Premium Outlets, 147 - 189 Brisbane Road, Biggera Waters (AU) | https://machimachi.com.au/index.php?m=home&c=Lists&a=index&tid=70
+- 辻利兵衛本店 | 辻利兵衛本店 そごう千葉店 | 千葉県千葉市中央区新町1000 そごう千葉店本館 B1F, 千葉市 (JP) | https://www.tsujirihei.co.jp/shop/
+- Southern Grounds & Co. | JAX Airport Main Terminal | 2400 Yankee Clipper Dr, Jacksonville (US) | https://www.southerngrounds.com/locations-1/jax-airport-main-terminal
+- Southern Grounds & Co. | JAX Airport - Concourse A | 2400 Yankee Clipper Dr, Jacksonville (US) | https://www.southerngrounds.com/locations-1/jax-airport-post-tsa
+- Jenki Matcha Bar | Jenki Liverpool Street | Unit 2, 76-80 Old Broad Street, London (GB) | https://www.jenki.co.uk/pages/jenki-matcha-bar-liverpool-street
+- Matcha Crew | Prague Chodov | Roztylská 2321/19, Praha 11-Chodov (CZ) | https://matchacrew.com/pages/stores?view=cafes
+- Matcha Crew | Prague OC Palladium | Náměstí Republiky 1078/1, Praha (CZ) | https://matchacrew.com/pages/stores?view=cafes
+- Matcha Crew | Prague Westfield Černý Most | Chlumecká 765/6, Praha 14 (CZ) | https://matchacrew.com/pages/stores?view=cafes
+- Matcha Crew | Madrid reina | Calle del Dr. Drumen, 7, Madrid (ES) | https://matchacrew.com/pages/stores?view=cafes
+- THE MATCHA TOKYO | THE MATCHA TOKYO HARAJUKU | 東京都渋谷区神宮前1-13-18, 渋谷区 (JP) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Causeway Bay | G/F, 8 Matheson Street, Causeway Bay, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO K11 Art Mall | Shop B201, B2/F, K11 Art Mall, 18 Hanoi Road, Tsim Sha Tsui, Kowloon, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Tuen Mun tmtplaza | Shop 1133, 1/F, tmtplaza Phase 1, 1 Tuen Shun Street, Tuen Mun, New Territories, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO H Queen's Central | Shop 3, UG/F, H Queen's, 80 Queen's Road Central, Central, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Taikoo Shing Cityplaza | Shop 308, 3/F, Cityplaza, 18 Taikoo Shing Road, Tai Koo, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO APM Kwun Tong | Shop L1-9B, Level 1, APM, 418 Kwun Tong Road, Kwun Tong, Kowloon, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO MEGABOX | Shop L1-21 & 22, Level 1, Megabox, 38 Wang Chiu Road, Kowloon Bay, Kowloon, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO HARBOR CITY | GW L3, 3-27 Canton Road, Tsim Sha Tsui, Kowloon, Hong Kong (HK) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Mall of Asia | 3/F Main Mall, SM Mall of Asia, Pasay, Pasay (PH) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO EMSPHERE | GM Fl. THE EMSPHERE, 628 Sukhumvit Road, Klongton, Klongtoey, Bangkok (TH) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO EMPORIUM | 1F THE EMPORIUM SHOPPING COMPLEX, 622 Sukhumvit Road, Klongton, Klongtoey, Bangkok (TH) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Shanghai IFC | IFC International Financial Center Mall, No. 8 Century Avenue, Lujiazui Street, Shanghai (CN) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Rock Bund | Unit QL109, 1st Floor, Anren Building, 78 Huqiu Road, Huangpu District, Shanghai (CN) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO WuKang | 1st Floor, Midan Apartment, 115 Wukang Road, Xuhui District, Shanghai (CN) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Taikoo Li | Shop S4 L1, No. 1-9, Lane 500 Dongyu Road, Pudong New Area, Shanghai (CN) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO RAFFLES CITY THE BUND | No. 11, B2 Floor, Raffles City, North Bund, 999 Dongdaming Road, Hongkou District, Shanghai (CN) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO JING AN KERRY CENTRE | Unit P-NB2-01 and P-NB2-02, 1563 Nanjing West Road, Jing'an District, Shanghai (CN) | https://www.the-matcha.tokyo/pages/cafe
+- THE MATCHA TOKYO | THE MATCHA TOKYO Hanoi | 34 Hang Gai Street, Hoan Kiem District, Hanoi, Hanoi (VN) | https://www.the-matcha.tokyo/pages/cafe
+- 伊藤久右衛門 | 伊藤久右衛門 清水本店 | 京都市東山区清水二丁目211番地, 京都市東山区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/kiyomizuhonten/
+- 伊藤久右衛門 | 伊藤久右衛門 三条寺町店 | 京都府京都市中京区寺町通三条上る天性寺前町522番地7, 京都市中京区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/sanjo/
+- 伊藤久右衛門 | 伊藤久右衛門 台北中山店（台湾店） | 台湾台北市中山区中山北路1段115号, 台北市 (TW) | https://www.itohkyuemon.co.jp/corporate/shop/zhongshan/
+- Kimono Tea Ceremony Maikoya | Maikoya Gion Kiyomizu | 100 Rokurocho, Matsubara-dori Yamatooji Higashi iru, Higashiyama-ku (京都市東山区松原通大和大路東入轆轤町100), Kyoto (JP) | https://mai-ko.com/what-to-do-in-japan/kyoto/gion-hanamikoji/
+- Kimono Tea Ceremony Maikoya | Maikoya Shinjuku | Oriental Wave Building 4F, 5-17-13 Shinjuku, Shinjuku-ku (新宿5丁目17-13 オリエンタルウェーブビル4階), Tokyo (JP) | https://mai-ko.com/what-to-do-in-japan/tokyo/tea-ceremony-tokyo-maikoya-shinjuku/
+- YOYO Fresh Tea Bar | YOYO! Leidschendam | Westfield Mall of the Netherlands, Duindoorn 1000G, Leidschendam (NL) | https://www.yoyofreshtea.com/shops/yoyo-leidschendam
+- YOYO Fresh Tea Bar | YOYO! Amstelveen | Amstelveen Stadshart, Binnenhof 86, Amstelveen (NL) | https://www.yoyofreshtea.com/shops/yoyo-amstelveen
+- YOYO Fresh Tea Bar | YOYO! Roermond | Designer Outlet Roermond (Unit 474), Stadsweide 2, Roermond (NL) | https://www.yoyofreshtea.com/shops/yoyo-roermond
+- YOYO Fresh Tea Bar | YOYO! Rotterdam (Zuidplein) | Winkelcentrum Zuidplein / Ahoy, Zuidplein 60D, Rotterdam (NL) | https://www.yoyofreshtea.com/shops/yoyo-rotterdam-zuidplein
+- Tram Cream Coffee | Tram Cream Coffee Station 8 | 568 East El Camino Real Suite A, Sunnyvale (US) | https://www.tramcreamcoffee.com/locations/south-bay-station-8--444d7778-d9e3-46bd-9249-41d25a922b1d
+- 一〇八抹茶茶廊 ふかや花園プレミアム・アウトレット店 | 埼玉県深谷市花園1番地 | 深谷市 (JP) | https://www.108matcha-saro.com/#shop
+- 一〇八抹茶茶廊 ゆめが丘ソラトス店 | 神奈川県横浜市泉区ゆめが丘31番地 ゆめが丘ソラトス1 1階 | 横浜市 (JP) | https://www.108matcha-saro.com/#shop
+- THE MATCHA TOKYO Dubai Al Khawaneej | Al Khawaneej 1, Dubai | Dubai (AE) | https://www.the-matcha.tokyo/pages/cafe
+- 伊藤久右衛門 祇園四条店 / 祇園四条店茶房 | 京都市東山区四条通大和大路東南角祇園町南側586 | 京都市東山区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/gion/
+- 伊藤久右衛門 清水坂店 | 京都府京都市東山区清水208-10 | 京都市東山区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/taipei/
+- 伊藤久右衛門 錦高倉店 | 京都市中京区錦小路通り高倉東入中魚屋町511-1 | 京都市中京区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/nishikitakakura/
