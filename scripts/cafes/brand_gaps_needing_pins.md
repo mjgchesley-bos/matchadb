@@ -64,3 +64,47 @@ Generated 2026-11-15 by the brand completeness check. Each row is listed open on
 - 伊藤久右衛門 祇園四条店 / 祇園四条店茶房 | 京都市東山区四条通大和大路東南角祇園町南側586 | 京都市東山区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/gion/
 - 伊藤久右衛門 清水坂店 | 京都府京都市東山区清水208-10 | 京都市東山区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/taipei/
 - 伊藤久右衛門 錦高倉店 | 京都市中京区錦小路通り高倉東入中魚屋町511-1 | 京都市中京区 (JP) | https://www.itohkyuemon.co.jp/corporate/shop/nishikitakakura/
+- Satellite Coffee | Harvard - Nob Hill | 2300 Central Avenue SE, Albuquerque (US) | https://www.satellitecoffee.com/findus/
+- 茶匠清水一芳園 | 茶寮 清水一芳園 | 京都市下京区万寿寺通堺町東入堅田町567-1, 京都市 (JP) | https://ippoen.co.jp/cafe
+- Tehuset Java | Tehuset Java Marstrand | Kungsgatan 4D, Marstrand (SE) | https://www.tehusetjava.se/page/vara-butiker
+- Kaldi's Coffee | Emory University school of medicine | 100 Woodruff Circle, Atlanta (US) | https://kaldiscoffee.com/pages/kaldis-locations
+- L2 Bubble Tea | L2 Place Versailles | 7275 Sherbrooke East, kiosk 182, Montreal (CA) | https://l2bubbletea.com/en/locations
+- L2 Bubble Tea | L2 Laurier | 2700 Boul. Laurier, Kiosk #4090, Quebec (CA) | https://l2bubbletea.com/en/locations
+- Coffeehouse TasteHabitat | COFFEEHOUSE Agios Andreas | 19 Louki Akrita, Nicosia (CY) | https://coffeehouse.com.cy/locations/
+- Coffeehouse TasteHabitat | COFFEEHOUSE Marousi | 44 Kifisias Avenue, Marousi (GR) | https://coffeehouse.com.cy/locations/
+- Coffeehouse TasteHabitat | COFFEEHOUSE Avenue Mall | 41-47 Kifissias Avenue, Marousi (GR) | https://coffeehouse.com.cy/locations/
+- Coffeehouse TasteHabitat | COFFEEHOUSE Psychiko | 340 Kifisias Avenue, Psychiko (GR) | https://coffeehouse.com.cy/locations/
+- Hagen | Hagen Bankside | 245 Blackfriars Road, London (GB) | https://thehagenproject.com/london/hagen-bankside
+- Hagen | Hagen Jubilee Plaza | Unit 2, YY (as printed; street name looks like placeholder), London (GB) | https://thehagenproject.com/london/hagen-jubilee-plaza
+- Hagen | Hagen Paddington | Unit 16, The Arcade, 1 Paddington Sq, London (GB) | https://thehagenproject.com/london/hagen-paddington
+- Hagen | Hagen St Johns Wood | 99 St Johns Wood Terrace, London (GB) | https://thehagenproject.com/london/hagen-st-johns-wood
+- Hagen | Hagen Westfield | Unit SU1017, The Village, Westfield, London (GB) | https://thehagenproject.com/london/-hagen-westfield
+- Streamer Coffee Company | Shinsaibashi | 1-10-19, Nishishinsaibashi, Chuo-ku, Osaka (JP) | https://streamer.coffee/stores/
+- Streamer Coffee Company | Tondabayashi Diner | 1-1-22, MIYACHO, Tondabayashi, Osaka (JP) | https://streamer.coffee/stores/
+- Streamer Coffee Company | Wako Laboratory | 1-11-40, MINAMI, Wakoshi, Saitama (JP) | https://streamer.coffee/stores/
+- Streamer Coffee Company | Okayama | 244-5 Higashikawahara, Naka-ku, Okayama-shi (JP) | https://streamer.coffee/stores/
+- Streamer Coffee Company | Yoyogi Hachiman | 1-2-11, Tomigaya, Shibuya, Tokyo (JP) | https://streamer.coffee/stores/
+- Streamer Coffee Company | Barista Pro Shop Harajuku | 3-28-10 Jingumae, Shibuya-ku, Tokyo (JP) | https://streamer.coffee/stores/
+- Dark Horse Espresso Bar | OCADU | 230 Richmond St. West (OCAD University campus), Toronto (CA) | https://darkhorseespresso.com/pages/locations
+- Dark Horse Espresso Bar | Woodbridge | 3900 Hwy 7, Woodbridge (CA) | https://darkhorseespresso.com/pages/locations
+- Dark Horse Espresso Bar | South London | 1037 Wellington Rd, London (CA) | https://darkhorseespresso.com/pages/locations
+- 30ML Coffee Roasters | 30ML Amersfoort | Arnhemsestraat 2a, Amersfoort (NL) | https://30ml.nl/vestigingen/30ml-amersfoort/
+- 30ML Coffee Roasters | 30ML Slotermeer | Burgermeester de Vlugtlaan 59, Amsterdam (NL) | https://30ml.nl/vestigingen/30ml-slotermeer/
+- 30ML Coffee Roasters | 30ML Nieuwe Binnenweg | Nieuwe Binnenweg 105 A, Rotterdam (NL) | https://30ml.nl/vestigingen/30ml-nieuwe-binnenweg/
+- Funk Coffee and Food | Funk Gillman | Gate 9, 25-91 Bedford Street, Gillman (AU) | https://funkcoffeefood.com.au/stores/gillman/
+- Funk Coffee and Food | Funk 22 King William St | 22 King William Street (North Terrace End), Adelaide (AU) | https://funkcoffeefood.com.au/stores/22-king-william-st/
+- Take Five Café | Port Coquitlam | 2564 Shaughnessy Street, Port Coquitlam (CA) | https://takefivecafe.ca/contact-us/
+- Bean Squeeze | Bean Squeeze Derrimut Road | 2/760 Derrimut Road, Tarneit (AU) | https://beansqueeze.com/locations
+- Bean Squeeze | Bean Squeeze Moorabool Street | 500-506 Moorabool Street, Geelong (AU) | https://beansqueeze.com/locations
+- Bean Squeeze | Bean Squeeze Waurn Ponds (Colac Rd) | 195-203 Colac Road, Waurn Ponds (AU) | https://beansqueeze.com/locations
+- Shibam Coffee | Canton (Haggerty) | 1905 S Haggerty Rd, Canton Township (US) | https://shibamcoffee.com/locations/canton-haggerty
+- Les Comptoirs Thé Café | Andelnans | 15b, Route de Montbéliard, Andelnans (FR) | https://www.comptoirs-the-cafe.com/magasins
+- Les Comptoirs Thé Café | Saint-Pierre-du-Mont | 337 Boulevard Oscar Niemeyer, Saint-Pierre-du-Mont (FR) | https://www.comptoirs-the-cafe.com/magasins
+- Les Comptoirs Thé Café | Thonon | 7 rue Amédée de Foras, CC Shopping Leman, Thonon-les-Bains (FR) | https://www.comptoirs-the-cafe.com/magasins
+- Karak Chaii | Coventry Road | 402 Coventry Rd, Small Heath, Birmingham (GB) | https://karakchaii.co.uk/locations/coventry-road/
+- Karak Chaii | Gloucester | 7A Worcester St, Gloucester (GB) | https://karakchaii.co.uk/locations/gloucester/
+- Karak Chaii | Hemel Hempstead | 141 Marlowes, Hemel Hempstead (GB) | https://karakchaii.co.uk/locations/hemel-hempstead/
+- Karak Chaii | Rugby | 5 Royal George Buildings, Rugby (GB) | https://karakchaii.co.uk/locations/rugby/
+- Karak Chaii | Soho Road | 250 Soho Rd, Handsworth, Birmingham (GB) | https://karakchaii.co.uk/locations/soho-road/
+- Karak Chaii | Tooting | 35 Upper Tooting Rd, Tooting Bec, London (GB) | https://karakchaii.co.uk/locations/tooting/
+- WASBAR | Antwerpen Wijnegem Shopping | Turnhoutsebaan 5/bus 84, Wijnegem (BE) | https://wasbar.be/restaurants
