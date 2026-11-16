@@ -309,6 +309,8 @@ export const ja: Partial<Record<Key, string>> = {
   "c.cm.selected": "選択した写真{n}",
   "c.cm.removePhoto": "写真{n}を削除",
   "c.cm.addPhotos": "写真を追加（{n}/{max}）",
+  "c.cm.addPhoto": "写真を追加",
+  "c.cm.addingPhoto": "追加中…",
   "c.cm.posting": "投稿中…",
   "c.cm.post": "投稿",
   "c.cm.rules": "抹茶に関する内容でお願いします。広告、リンク、個人情報、他の人が写っている写真は禁止です。",

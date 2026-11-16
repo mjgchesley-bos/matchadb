@@ -309,6 +309,8 @@ export const ko: Partial<Record<Key, string>> = {
   "c.cm.selected": "선택한 사진 {n}",
   "c.cm.removePhoto": "사진 {n} 삭제",
   "c.cm.addPhotos": "사진 추가 ({n}/{max})",
+  "c.cm.addPhoto": "사진 추가",
+  "c.cm.addingPhoto": "추가 중…",
   "c.cm.posting": "등록 중…",
   "c.cm.post": "등록",
   "c.cm.rules": "말차에 관한 이야기만 남겨 주세요. 광고, 링크, 개인정보, 다른 사람이 찍힌 사진은 안 됩니다.",

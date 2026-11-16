@@ -126,6 +126,7 @@ export function Comments({
   const [mineState, setMineState] = useState<{ uid: string; list: Mine[] } | null>(null);
   const mine = uid && mineState?.uid === uid ? mineState.list : [];
   const [tick, setTick] = useState(0);
+  const [addingTo, setAddingTo] = useState<string | null>(null);
   const [text, setText] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [busy, setBusy] = useState(false);
@@ -283,6 +284,30 @@ export function Comments({
     setBusy(false);
   };
 
+  // Add a photo to a comment that is already posted (own comments only; the database checks that and the 5-photo limit).
+  const addPhoto = async (commentId: string, file: File | undefined) => {
+    if (!user || !file) return;
+    if (!/^image\/(jpeg|png|webp)$/.test(file.type)) return setMessage(t("c.cm.onlyImages"));
+    setMessage(null);
+    setAddingTo(commentId);
+    const sb = supabase();
+    let path = "";
+    try {
+      const blob = await shrink(file);
+      path = `${user.id}/${crypto.randomUUID()}.jpg`;
+      const { error: upErr } = await sb.storage.from(COMMENT_BUCKET).upload(path, blob, { contentType: "image/jpeg", upsert: false });
+      if (upErr) throw upErr;
+      const { error } = await sb.rpc("add_comment_photo", { p_comment: commentId, p_path: path });
+      if (error) throw error;
+      window.gtag?.("event", "comment_photo_added", { target_type: targetType });
+      setTick((n) => n + 1);
+    } catch {
+      if (path) await sb.storage.from(COMMENT_BUCKET).remove([path]);
+      setMessage(t("c.cm.failed"));
+    }
+    setAddingTo(null);
+  };
+
   const remove = async (c: Mine) => {
     if (!confirm(t("c.cm.confirmDelete"))) return;
     const sb = supabase();
@@ -357,9 +382,27 @@ export function Comments({
             <Photos paths={c.photos} who={c.display_name} />
             <div className="mt-2 text-xs text-ink-faint">
               {mineIds.has(c.id) ? (
-                <button type="button" onClick={() => void remove(mine.find((m) => m.id === c.id)!)} className="underline hover:text-ink-muted">
-                  {t("c.cm.delete")}
-                </button>
+                <span className="inline-flex flex-wrap items-center gap-3">
+                  {(mine.find((m) => m.id === c.id)?.photos.length ?? 0) < MAX_PHOTOS && (
+                    <label className={`inline-flex cursor-pointer items-center rounded-full border border-line-strong bg-paper-raised px-3 py-1 text-xs font-medium text-ink transition-colors hover:border-matcha hover:bg-matcha-soft ${addingTo === c.id ? "pointer-events-none opacity-50" : ""}`}>
+                      {addingTo === c.id ? t("c.cm.addingPhoto") : t("c.cm.addPhoto")}
+                      <input
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                        className="sr-only"
+                        disabled={addingTo === c.id}
+                        onChange={(e) => {
+                          const f = e.currentTarget.files?.[0];
+                          e.currentTarget.value = "";
+                          void addPhoto(c.id, f);
+                        }}
+                      />
+                    </label>
+                  )}
+                  <button type="button" onClick={() => void remove(mine.find((m) => m.id === c.id)!)} className="underline hover:text-ink-muted">
+                    {t("c.cm.delete")}
+                  </button>
+                </span>
               ) : reported.has(c.id) ? (
                 t("c.cm.reported")
               ) : reporting === c.id ? (

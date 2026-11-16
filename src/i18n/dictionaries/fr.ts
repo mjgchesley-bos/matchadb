@@ -293,6 +293,8 @@ export const fr: Partial<Record<Key, string>> = {
   "c.cm.selected": "Photo sélectionnée {n}",
   "c.cm.removePhoto": "Retirer la photo {n}",
   "c.cm.addPhotos": "Ajouter des photos ({n}/{max})",
+  "c.cm.addPhoto": "Ajouter une photo",
+  "c.cm.addingPhoto": "Ajout…",
   "c.cm.posting": "Publication…",
   "c.cm.post": "Publier",
   "c.cm.rules": "Restez sur le sujet du matcha. Pas de publicité, de liens ni d'informations personnelles, et pas de photos d'autres personnes.",

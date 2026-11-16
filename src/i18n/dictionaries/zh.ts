@@ -309,6 +309,8 @@ export const zh: Partial<Record<Key, string>> = {
   "c.cm.selected": "已选照片 {n}",
   "c.cm.removePhoto": "移除照片 {n}",
   "c.cm.addPhotos": "添加照片（{n}/{max}）",
+  "c.cm.addPhoto": "添加照片",
+  "c.cm.addingPhoto": "添加中…",
   "c.cm.posting": "发布中…",
   "c.cm.post": "发布",
   "c.cm.rules": "请围绕抹茶发表内容。禁止广告、链接和个人信息，也不要上传他人的照片。",

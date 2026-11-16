@@ -291,6 +291,8 @@ export const en = {
   "c.cm.selected": "Selected photo {n}",
   "c.cm.removePhoto": "Remove photo {n}",
   "c.cm.addPhotos": "Add photos ({n}/{max})",
+  "c.cm.addPhoto": "Add photo",
+  "c.cm.addingPhoto": "Adding…",
   "c.cm.posting": "Posting…",
   "c.cm.post": "Post",
   "c.cm.rules": "Keep it about the matcha. No ads, links or personal information, and no photos of other people.",
