@@ -7,6 +7,7 @@ import { ConsentBanner, CookieSettingsButton } from "@/components/ConsentBanner"
 import { AuthProvider } from "@/components/AuthProvider";
 import { HeaderAccount } from "@/components/HeaderAccount";
 import { HeaderMenu } from "@/components/HeaderMenu";
+import { SiteSearch } from "@/components/SiteSearch";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { I18nProvider } from "@/i18n/client";
 import { LOCALES, LOCALE_NAMES, HTML_LANG, OG_LOCALE, isLocale, localePath, type Locale } from "@/i18n/config";
@@ -153,6 +154,7 @@ export default async function RootLayout({
                 <span className="sm:hidden">{t("nav.wholesale.short")}</span>
                 <span className="hidden sm:inline">{t("nav.wholesale.long")}</span>
               </Link>
+              <SiteSearch />
             </nav>
           </div>
         </header>
