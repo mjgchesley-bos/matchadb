@@ -117,6 +117,20 @@ export function resolveShipsTo(v: string | undefined): ShipRegion | undefined {
   return parseShipRegion(v);
 }
 
+const EU_COUNTRIES = new Set("AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE".split(" "));
+
+/** The shopping region implied by a visitor's country (from the CDN's country header, else the region in Accept-Language), or undefined. */
+export function shipRegionFromHeaders(h: { get(name: string): string | null }): ShipRegion | undefined {
+  let cc = (h.get("cloudfront-viewer-country") || h.get("x-vercel-ip-country") || "").toUpperCase();
+  if (!cc) cc = ((h.get("accept-language") || "").split(",")[0].match(/-([A-Za-z]{2})/)?.[1] || "").toUpperCase();
+  if (cc === "US") return "US";
+  if (cc === "CA") return "CA";
+  if (cc === "GB") return "UK";
+  if (cc === "AU") return "AU";
+  if (cc === "JP") return "JP";
+  return EU_COUNTRIES.has(cc) ? "EU" : undefined;
+}
+
 /** Short label for a restricted brand, or null when no restriction is known. */
 export function shippingLabel(brand: string): string | null {
   const s = BRAND_SHIPPING[brand];

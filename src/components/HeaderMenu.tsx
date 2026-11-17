@@ -8,7 +8,7 @@ import type { Key } from "@/i18n/dictionaries";
 // The three-dots menu in the site header (like the one in Chrome): secondary
 // destinations that don't need a permanent button in the bar.
 const ITEMS: { href: string; label: Key; note: Key }[] = [
-  { href: "/wholesale", label: "c.menu.wholesale.label", note: "c.menu.wholesale.note" },
+  { href: "/map", label: "c.menu.map.label", note: "c.menu.map.note" },
   { href: "/hall-of-fame", label: "c.menu.hof.label", note: "c.menu.hof.note" },
   { href: "/research", label: "c.menu.research.label", note: "c.menu.research.note" },
   { href: "/cultivars", label: "c.menu.cultivars.label", note: "c.menu.cultivars.note" },

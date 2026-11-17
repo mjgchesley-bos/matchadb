@@ -133,11 +133,11 @@ export default async function RootLayout({
                 <span className="hidden sm:inline">{t("nav.search.long")}</span>
               </Link>
               <Link
-                href="/map"
+                href="/cafes"
                 className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
-                <span className="sm:hidden">{t("nav.map.short")}</span>
-                <span className="hidden sm:inline">{t("nav.map.long")}</span>
+                <span className="sm:hidden">{t("nav.cafes.short")}</span>
+                <span className="hidden sm:inline">{t("nav.cafes.long")}</span>
               </Link>
               <Link
                 href="/stores"
@@ -147,11 +147,11 @@ export default async function RootLayout({
                 <span className="hidden lg:inline">{t("nav.stores.long")}</span>
               </Link>
               <Link
-                href="/cafes"
+                href="/wholesale"
                 className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
-                <span className="sm:hidden">{t("nav.cafes.short")}</span>
-                <span className="hidden sm:inline">{t("nav.cafes.long")}</span>
+                <span className="sm:hidden">{t("nav.wholesale.short")}</span>
+                <span className="hidden sm:inline">{t("nav.wholesale.long")}</span>
               </Link>
             </nav>
           </div>

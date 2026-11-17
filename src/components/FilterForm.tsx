@@ -72,8 +72,8 @@ export function FilterForm({
         </svg>
         {t("f.title")}
       </h2>
-      <div className="divide-y divide-line">
-      <div className={groupClass}>
+      <div className="grid grid-cols-2 [&>*]:border-b [&>*]:border-line">
+      <div className={`${groupClass} col-span-2`}>
         <label className={labelClass} htmlFor="q">
           {t("f.search")}
         </label>
@@ -85,7 +85,19 @@ export function FilterForm({
           className={fieldClass}
         />
       </div>
-
+      <div className={groupClass}>
+        <label className={labelClass} htmlFor="ships">
+          {t("f.ships")}
+        </label>
+        <select id="ships" name="ships" defaultValue={filters.shipsTo || "any"} className={fieldClass}>
+          <option value="any">{t("f.any")}</option>
+          {SHIP_REGIONS.map((r) => (
+            <option key={r} value={r}>
+              {shipRegionLabel(r, lang)}
+            </option>
+          ))}
+        </select>
+      </div>
       <div className={groupClass}>
         <label className={labelClass} htmlFor="brand">
           {t("f.brand")}
@@ -99,63 +111,6 @@ export function FilterForm({
           ))}
         </select>
       </div>
-
-      <div className={groupClass}>
-        <span className={labelClass}>{t("f.grade")}</span>
-        <div className="flex flex-wrap gap-2">
-          {sortByOrder(
-            options.grades.filter((g) => QUALITY_ORDER.includes(g)),
-            QUALITY_ORDER
-          ).map((g) => (
-            <PillCheckbox
-              key={g}
-              name="grade"
-              value={g}
-              label={gradeLabel(g, tv)}
-              defaultChecked={filters.grades?.includes(g) ?? false}
-            />
-          ))}
-        </div>
-      </div>
-
-      {options.grades.some((g) => PREP_ORDER.includes(g)) && (
-        <div className={groupClass}>
-          <span className={labelClass}>{t("f.prep")}</span>
-          <div className="flex flex-wrap gap-2">
-            {sortByOrder(
-              options.grades.filter((g) => PREP_ORDER.includes(g)),
-              PREP_ORDER
-            ).map((g) => (
-              <PillCheckbox
-                key={g}
-                name="grade"
-                value={g}
-                label={gradeLabel(g, tv)}
-                defaultChecked={filters.grades?.includes(g) ?? false}
-              />
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className={groupClass}>
-        <span className={labelClass}>{t("f.use")}</span>
-        <div className="flex flex-wrap gap-2">
-          {sortByOrder(options.uses, USE_ORDER).map((u) => (
-            <PillCheckbox key={u} name="use" value={u} label={tv("use", u)} defaultChecked={filters.uses?.includes(u) ?? false} />
-          ))}
-        </div>
-      </div>
-
-      <div className={groupClass}>
-        <span className={labelClass}>{t("f.flavor")}</span>
-        <div className="flex flex-wrap gap-2">
-          {options.flavors.map((f) => (
-            <PillCheckbox key={f} name="flavor" value={f} label={tv("flavor", f)} defaultChecked={filters.flavors?.includes(f) ?? false} />
-          ))}
-        </div>
-      </div>
-
       <div className={groupClass}>
         <label className={labelClass} htmlFor="region">
           {t("f.region")}
@@ -169,22 +124,7 @@ export function FilterForm({
           ))}
         </select>
       </div>
-
       <div className={groupClass}>
-        <label className={labelClass} htmlFor="ships">
-          {t("f.ships")}
-        </label>
-        <select id="ships" name="ships" defaultValue={filters.shipsTo || ""} className={fieldClass}>
-          <option value="">{t("f.any")}</option>
-          {SHIP_REGIONS.map((r) => (
-            <option key={r} value={r}>
-              {shipRegionLabel(r, lang)}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className={`${groupClass} ${wideClassName}`}>
         <span className={labelClass}>{t("f.price")}</span>
         <div className="flex gap-3">
         <div className="flex-1">
@@ -215,8 +155,59 @@ export function FilterForm({
         </div>
         </div>
       </div>
-
-      <div className={`${groupClass} flex flex-col gap-3 ${wideClassName}`}>
+      <div className={`${groupClass} col-span-2`}>
+        <span className={labelClass}>{t("f.grade")}</span>
+        <div className="flex flex-wrap gap-2">
+          {sortByOrder(
+            options.grades.filter((g) => QUALITY_ORDER.includes(g)),
+            QUALITY_ORDER
+          ).map((g) => (
+            <PillCheckbox
+              key={g}
+              name="grade"
+              value={g}
+              label={gradeLabel(g, tv)}
+              defaultChecked={filters.grades?.includes(g) ?? false}
+            />
+          ))}
+        </div>
+      </div>
+      {options.grades.some((g) => PREP_ORDER.includes(g)) && (
+        <div className={`${groupClass} col-span-2`}>
+          <span className={labelClass}>{t("f.prep")}</span>
+          <div className="flex flex-wrap gap-2">
+            {sortByOrder(
+              options.grades.filter((g) => PREP_ORDER.includes(g)),
+              PREP_ORDER
+            ).map((g) => (
+              <PillCheckbox
+                key={g}
+                name="grade"
+                value={g}
+                label={gradeLabel(g, tv)}
+                defaultChecked={filters.grades?.includes(g) ?? false}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+      <div className={groupClass}>
+        <span className={labelClass}>{t("f.use")}</span>
+        <div className="flex flex-wrap gap-2">
+          {sortByOrder(options.uses, USE_ORDER).map((u) => (
+            <PillCheckbox key={u} name="use" value={u} label={tv("use", u)} defaultChecked={filters.uses?.includes(u) ?? false} />
+          ))}
+        </div>
+      </div>
+      <div className={groupClass}>
+        <span className={labelClass}>{t("f.flavor")}</span>
+        <div className="flex flex-wrap gap-2">
+          {options.flavors.map((f) => (
+            <PillCheckbox key={f} name="flavor" value={f} label={tv("flavor", f)} defaultChecked={filters.flavors?.includes(f) ?? false} />
+          ))}
+        </div>
+      </div>
+      <div className={`${groupClass} col-span-2 flex flex-col gap-3`}>
         <span className={`${labelClass} mb-0`}>{t("f.only")}</span>
         <label className="flex items-center gap-2.5 text-ink">
           <input
@@ -239,19 +230,7 @@ export function FilterForm({
           />
           {t("f.wholesale")}
         </label>
-
-        <label className="flex items-center gap-2.5 text-ink">
-          <input
-            type="checkbox"
-            name="hasContradictionsOnly"
-            value="1"
-            defaultChecked={filters.hasContradictionsOnly}
-            className="h-4 w-4 accent-matcha"
-          />
-          {t("f.contradictions")}
-        </label>
       </div>
-
       </div>
 
       <div className={`sticky bottom-0 flex flex-col gap-2.5 rounded-b-sm border-t border-line bg-paper-raised px-4 py-4 ${wideClassName}`}>

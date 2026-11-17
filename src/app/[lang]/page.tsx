@@ -22,6 +22,7 @@ import { getCommunityPopularIds } from "@/lib/popular";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getLibraryFacets } from "@/lib/studies";
+import { getCafeSlimIndex } from "@/lib/cafes";
 import { GUIDES } from "@/lib/guides";
 import { getT } from "@/i18n/server";
 import { isLocale, fmtNum, localePath, type Locale } from "@/i18n/config";
@@ -52,6 +53,7 @@ export default async function Home({
   const n = (x: number) => fmtNum(lang, x);
   const sp = await searchParams;
   const { brandCount, productCount, retailerCount } = await getStats();
+  const cafeCount = getCafeSlimIndex().size;
 
   // Home is a matching tool, not a database search -- only grade/use/flavor
   // are exposed here. Search, brand, region, price, and the QA-flag
@@ -106,6 +108,7 @@ export default async function Home({
     { value: n(productCount), label: t("h.stats.products") },
     { value: n(brandCount), label: t("h.stats.brands") },
     { value: n(retailerCount), label: t("h.stats.retailers") },
+    { value: n(cafeCount), label: t("h.stats.cafes") },
   ];
 
 
@@ -144,14 +147,11 @@ export default async function Home({
       />
       <section className="relative overflow-hidden">
         <div className="max-w-3xl mx-auto px-6 pt-20 pb-10 sm:pt-24 text-center">
-          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-6">
-            {t("h.hero.eyebrow")}
-          </p>
           <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[4.25rem] sm:leading-[1.02] font-semibold tracking-tight text-ink text-balance">
             {t("h.hero.title")}
           </h1>
           <p className="mt-7 text-lg text-ink-muted max-w-xl mx-auto leading-relaxed">
-            {t("h.hero.lede", { products: n(productCount), brands: n(brandCount) })}
+            {t("h.hero.lede", { products: n(productCount), brands: n(brandCount), cafes: n(cafeCount) })}
           </p>
         </div>
         <div className="max-w-4xl mx-auto px-6 pb-16">
@@ -173,7 +173,7 @@ export default async function Home({
       </section>
 
       <section className="bg-matcha">
-        <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6">
+        <div className="max-w-5xl mx-auto px-6 py-12 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-6">
           {stats.map((s) => (
             <div key={s.label}>
               <div className="font-display text-4xl sm:text-5xl font-semibold text-paper tabular-nums">

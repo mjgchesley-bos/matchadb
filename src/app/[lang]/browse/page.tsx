@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "@/i18n/Link";
-import { getProducts, getFilterOptions, getTieredPicks, getHiddenMatches, type BrowseFilters } from "@/lib/db";
-import { resolveShipsTo } from "@/lib/shipping";
+import { getProducts, getFilterOptions, getTieredPicks, getHiddenMatches, getPopularProducts, getProductsByIds, type BrowseFilters } from "@/lib/db";
+import { getCommunityPopularIds } from "@/lib/popular";
+import { PopularRail } from "@/components/PopularRail";
+import { headers } from "next/headers";
+import { resolveShipsTo, shipRegionFromHeaders } from "@/lib/shipping";
 import { shipRegionLabel } from "@/components/ShippingNote";
 import { getT } from "@/i18n/server";
 import { isLocale, fmtNum, type Locale } from "@/i18n/config";
@@ -15,6 +18,7 @@ import { FilterForm } from "@/components/FilterForm";
 // site. The home page embeds the same filter form but shows fewer results
 // and links here for the rest.
 const PAGE_SIZE = 48;
+const RAIL_SIZE = 4;
 
 // Canonical always points at the bare, unfiltered URL -- filter/search query
 // strings produce near-duplicate content (the same 728 products re-sliced),
@@ -57,17 +61,40 @@ export default async function BrowsePage({
     wholesaleOnly: toStr(sp.wholesaleOnly) === "1",
     minPrice: toNum(sp.minPrice),
     maxPrice: toNum(sp.maxPrice),
-    shipsTo: resolveShipsTo(toStr(sp.ships)),
+    // No choice made yet: start from where the visitor is. "any" (the Any option, or the show-all link) turns it off.
+    shipsTo: toStr(sp.ships) ? resolveShipsTo(toStr(sp.ships)) : shipRegionFromHeaders(await headers()),
     page: toNum(sp.page) || 1,
     pageSize: PAGE_SIZE,
   };
 
-  const [{ products, total, page, totalPages }, filterOptions, tieredPicks, hiddenByShipping] = await Promise.all([
+  // With nothing filtered, the default list is a brand-by-brand mix of well-known staples instead of one
+  // brand's whole catalogue (the plain ordering put a single brand at the top).
+  const noFiltersSelected =
+    !filters.q && !filters.brand && !filters.region && !filters.organicOnly && !filters.hasContradictionsOnly && !filters.wholesaleOnly &&
+    filters.minPrice == null && filters.maxPrice == null &&
+    filters.grades!.length === 0 && filters.flavors!.length === 0 && filters.uses!.length === 0;
+  const wantPage = filters.page || 1;
+
+  const [{ products: plainProducts, total, page, totalPages }, filterOptions, tieredPicks, hiddenByShipping, popularPool, communityIds] = await Promise.all([
     getProducts(filters),
     getFilterOptions(),
     getTieredPicks(filters),
     filters.shipsTo ? getHiddenMatches(filters) : Promise.resolve({ count: 0, brands: [] as string[] }),
+    noFiltersSelected ? getPopularProducts(wantPage * PAGE_SIZE + RAIL_SIZE, filters.shipsTo) : Promise.resolve(null),
+    noFiltersSelected && wantPage === 1 ? getCommunityPopularIds() : Promise.resolve([] as number[]),
   ]);
+  const mixed = popularPool ? popularPool.slice((wantPage - 1) * PAGE_SIZE, wantPage * PAGE_SIZE) : [];
+  const products = mixed.length > 0 ? mixed : plainProducts;
+
+  // "Popular right now", the same column as on the home page: member favorites first, staples to fill.
+  let rail: { products: typeof products; fromMembers: number } | null = null;
+  if (popularPool && wantPage === 1) {
+    const community = (await getProductsByIds(communityIds.slice(0, RAIL_SIZE * 2), filters.shipsTo)).slice(0, RAIL_SIZE);
+    const seen = new Set(community.map((p) => p.id));
+    const fill = popularPool.slice(PAGE_SIZE).filter((p) => !seen.has(p.id));
+    const railProducts = [...community, ...fill].slice(0, RAIL_SIZE);
+    if (railProducts.length > 0) rail = { products: railProducts, fromMembers: community.length };
+  }
   const hiddenCount = hiddenByShipping.count;
   const hiddenBrands = hiddenByShipping.brands;
   const brandList = hiddenBrands.length <= 3 ? hiddenBrands.join(", ") : t("b.brandsMore", { names: hiddenBrands.slice(0, 3).join(", "), n: hiddenBrands.length - 3 });
@@ -102,12 +129,17 @@ export default async function BrowsePage({
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-10">
         <aside className="md:sticky md:top-24 md:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto md:overscroll-contain md:pr-2">
           <FilterForm filters={filters} options={filterOptions} clearHref="/browse" lang={lang} />
         </aside>
 
         <section>
+          {rail && (
+            <div className="mb-10">
+              <PopularRail products={rail.products} fromMembers={rail.fromMembers} layout="strip" lang={lang} />
+            </div>
+          )}
           {tieredPicks && (
             <div className="mb-10">
               <p className="font-mono text-sm tracking-[0.2em] uppercase text-forest mb-4">
@@ -147,7 +179,7 @@ export default async function BrowsePage({
           )}
           {!(filters.shipsTo && hiddenCount > 0) && <div className="mb-3" />}
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {products.map((p) => (
               <ProductCard key={p.id} product={p} lang={lang} />
             ))}
