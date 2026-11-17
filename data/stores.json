@@ -61595,5 +61595,105 @@
     "lat": 53.70969,
     "lng": 16.69609,
     "commentsFrom": "c8641221c4"
+  },
+  {
+    "id": "ku-cha-boulder",
+    "name": "Ku Cha House of Tea Boulder",
+    "kind": "retailer",
+    "address": "1211 Pearl St",
+    "city": "Boulder",
+    "state": "CO",
+    "zip": "80302",
+    "url": "https://kuchatea.com/",
+    "brands": [
+      {
+        "name": "Ku Cha House of Tea",
+        "evidence": "https://kuchatea.com/"
+      }
+    ],
+    "note": "A tea shop that sells loose tea and tins; listed as a retailer, not a café.",
+    "checked": "2026-11-17",
+    "lat": 40.01804,
+    "lng": -105.27975
+  },
+  {
+    "id": "ku-cha-cherry-creek",
+    "name": "Ku Cha House of Tea Cherry Creek",
+    "kind": "retailer",
+    "address": "2445 E 3rd Ave",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80206",
+    "url": "https://kuchatea.com/",
+    "brands": [
+      {
+        "name": "Ku Cha House of Tea",
+        "evidence": "https://kuchatea.com/"
+      }
+    ],
+    "note": "A tea shop that sells loose tea and tins; listed as a retailer, not a café.",
+    "checked": "2026-11-17",
+    "lat": 39.72113,
+    "lng": -104.95744
+  },
+  {
+    "id": "ku-cha-denver-16th-st",
+    "name": "Ku Cha House of Tea Denver 16th St",
+    "kind": "retailer",
+    "address": "500 16th St Unit 132",
+    "city": "Denver",
+    "state": "CO",
+    "zip": "80202",
+    "url": "https://kuchatea.com/",
+    "brands": [
+      {
+        "name": "Ku Cha House of Tea",
+        "evidence": "https://kuchatea.com/"
+      }
+    ],
+    "note": "A tea shop that sells loose tea and tins; listed as a retailer, not a café.",
+    "checked": "2026-11-17",
+    "lat": 39.74402,
+    "lng": -104.99097
+  },
+  {
+    "id": "ku-cha-fort-collins",
+    "name": "Ku Cha House of Tea Fort Collins",
+    "kind": "retailer",
+    "address": "128 S College Ave",
+    "city": "Fort Collins",
+    "state": "CO",
+    "zip": "80524",
+    "url": "https://kuchatea.com/",
+    "brands": [
+      {
+        "name": "Ku Cha House of Tea",
+        "evidence": "https://kuchatea.com/"
+      }
+    ],
+    "note": "A tea shop that sells loose tea and tins; listed as a retailer, not a café.",
+    "checked": "2026-11-17",
+    "lat": 40.58631,
+    "lng": -105.07685
+  },
+  {
+    "id": "ku-cha-park-meadows",
+    "name": "Ku Cha House of Tea Park Meadows",
+    "kind": "retailer",
+    "address": "8401 Park Meadows Center Dr",
+    "city": "Lone Tree",
+    "state": "CO",
+    "zip": "80124",
+    "url": "https://kuchatea.com/",
+    "brands": [
+      {
+        "name": "Ku Cha House of Tea",
+        "evidence": "https://kuchatea.com/"
+      }
+    ],
+    "note": "A tea shop that sells loose tea and tins; listed as a retailer, not a café.",
+    "checked": "2026-11-17",
+    "lat": 39.56261,
+    "lng": -104.87655
   }
 ]
