@@ -118,3 +118,45 @@ Generated 2026-11-15 by the brand completeness check. Each row is listed open on
 - Le Cafe Coffee | Fashion District | 501 Seventh Avenue, New York (US) | https://lecafecoffee.com/locations/
 - Coffeebar | Northstar | 3001 Northstar Dr., Truckee (US) | https://coffeebar.com/locations/
 - Terres de Café (Mokdong) | 257 Mokdongdong-ro, Yangcheon-gu | Seoul (KR) | https://www.terresdecafe.com/fr/content/70-nos-boutiques
+- Boba Cucue | Marana | 225 N Courtney Page Way #125, Marana (US) | https://bobacucue.com/locations/
+- Boba Cucue | Bozeman | 2047 W Oak St Suite 104, Bozeman (US) | https://bobacucue.com/locations/
+- Tea Desire | Parkland Mall | 1133 Eagle Pass Way, Unit #9, Sicamous (CA) | https://www.teadesire.com/pages/stores
+- Safi's Desserts | Wallasey | 389 Poulton Rd, Wallasey (GB) | https://safisdesserts.com/locations-hours/
+- Safi's Desserts | Widnes | 51 Albert Rd, Widnes (GB) | https://safisdesserts.com/locations-hours/
+- Fuk Coffee Base | CAFE HAPJE | 1-4-20 Arato, Chuo-ku, Fukuoka (JP) | https://fuk-coffee.com/shop/
+- Fuk Coffee Base | CAFE HAPJE | 3-3-10 Nakazakicho, Kita-ku, Osaka (JP) | https://fuk-coffee.com/shop/
+- Fuk Coffee Base | Osaka | 1-17-23 Kitahorie, Nishi-ku, Osaka (JP) | https://fuk-coffee.com/shop/
+- Fuk Coffee Base | Osaka | 1-1-25 Kitahorie, Nishi-ku, Osaka (JP) | https://fuk-coffee.com/shop/
+- Fuk Coffee Base | CAFE HAPJE | 3-65 Banba-cho, Chuo-ku, Osaka (JP) | https://fuk-coffee.com/shop/
+- The Tosti Club | Breda | Vlaszak 2a4, Breda (NL) | https://thetosticlub.nl/locations/
+- The Tosti Club | Rotterdam | Oude Binnenweg 127B, Rotterdam (NL) | https://thetosticlub.nl/locations/
+- The Tosti Club | Abbekerk | Burg. P. Kromplein 7a, Abbekerk (NL) | https://thetosticlub.nl/locations/
+- The Tosti Club | Amersfoort | Kamp 15-17, Amersfoort (NL) | https://thetosticlub.nl/locations/
+- The Tosti Club | Den Haag | Turfmarkt 73-75, Den Haag (NL) | https://thetosticlub.nl/locations/
+- The Tosti Club | Dirkshorn | Dorpsstraat 36-38, Dirkshorn (NL) | https://thetosticlub.nl/locations/
+- The Tosti Club | Eindhoven (woensel) | Celsiusplein 50-51, Eindhoven (NL) | https://thetosticlub.nl/locations/
+- The Tosti Club | Groningen | J.van Ruysdaelstraat 18, Groningen (NL) | https://thetosticlub.nl/locations/
+- Urban Juicer | Nashville | 109 Platform Way N, Nashville (US) | https://theurbanjuicer.com/our-menu/
+- Doughnuttery | Hurricane | 4059 W Jellystone Rd., Hurricane (US) | https://www.doughnuttery.com/locations
+- Highwire Coffee Roasters | Walnut Creek at The Waymark | 200 Station Way, Walnut Creek (US) | https://www.highwirecoffee.com/pages/locations
+- CHAGEE Modern Teahouse | Brea Mall | 1065 Brea Mall, Brea (US) | https://chagee.us/stores
+- ThirsTea - Perris, CA | Katy | 94 W Grand Pkwy S STE 260, Katy (US) | https://thirstea.com/locations/
+- Analog Coffee | Calgary | 308 4th Ave SW, Suite 215, Calgary (CA) | https://www.analogcoffee.ca/our-cafes
+- Analog Coffee | Calgary | 1139 9th Avenue SE, Calgary (CA) | https://www.analogcoffee.ca/our-cafes
+- Analog Coffee | Calgary | 400 3rd Ave SW, #220, Calgary (CA) | https://www.analogcoffee.ca/our-cafes
+- Analog Coffee | Calgary | 315 8th Ave SW, #204, Calgary (CA) | https://www.analogcoffee.ca/our-cafes
+- Café La Maison Smith | Sainte-Pétronille | 8700 Chem. Royal, Sainte-Pétronille (CA) | https://smithcafe.com/
+- Café La Maison Smith | Québec | 15 Av. George VI, Québec (CA) | https://smithcafe.com/
+- Café La Maison Smith | Québec | 900 Bd René-Lévesque E, Québec (CA) | https://smithcafe.com/
+- Café La Maison Smith | Québec | 2012 Chem. Saint-Louis, Québec (CA) | https://smithcafe.com/
+- Over Easy University Village | Kansas City | 8653 NE 85th St., Kansas City (US) | https://www.urbanegg.com/contact/
+- Over Easy University Village | Coppell | 1560 S Belt Line Road, Suite 100, Coppell (US) | https://www.urbanegg.com/contact/
+- Maximilian's | Meerbusch-Büderich | Dorfstr. 2a, Meerbusch-Büderich (DE) | https://nordmanns-eisfabrik.de/standorte
+- Mad & Kaffe | Lyngby | Lyngby Storcenter 1, Kgs. Lyngby (DK) | https://madogkaffe.dk/cafeer/
+- Ked's Ice Cream, Waffles & Crepes | Little Elm | 1971 FM 423 Suite 300, Frisco (US) | https://www.kedsicecream.com/find-stores/
+- Ked's Ice Cream, Waffles & Crepes | McKinney | 2510 N Hardin Blvd Ste 600, McKinney (US) | https://www.kedsicecream.com/find-stores/
+- Kibou | Birmingham | 61-63 Temple Row, Birmingham (GB) | https://kibou.co.uk/locations
+- Kibou | Covent Garden | 1a Tavistock Street, London (GB) | https://kibou.co.uk/locations
+- Kova Patisserie | Ealing | 21 Dickens Yard, London (GB) | https://kovapatisserie.com/shop/
+- 箱根ベーカリー | 小田原市 | 栄町1-1-9, 小田原市 (JP) | https://xn--lckxe4btdc5595f1q2a.com/shop.html
+- Raw Replenish | Telford | 689 Harleysville Pike, Telford (US) | https://rawreplenish.com/locations/
