@@ -75,7 +75,7 @@ function MatchGroup({
   compact?: boolean;
 }) {
   return (
-    <div className={compact ? "" : "text-center"}>
+    <div className={compact ? "rounded-sm border border-line bg-paper-raised p-4 shadow-sm" : "text-center"}>
       <p
         className={`font-display font-semibold text-ink mb-3 ${compact ? "text-lg" : "text-2xl sm:text-3xl"}`}
       >
@@ -209,7 +209,7 @@ export function MatchTool({
   );
 
   return (
-    <div className={`flex flex-col ${compact ? "gap-6" : "gap-7"} transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
+    <div className={`flex flex-col ${compact ? "gap-4" : "gap-7"} transition-opacity duration-200 ${isPending ? "opacity-50" : ""}`}>
       <MatchGroup prompt={t("c.match.use")} compact={compact}>
         {uses.map((u) => (
           <MatchPill

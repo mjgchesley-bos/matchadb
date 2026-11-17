@@ -10,6 +10,7 @@ import { getBrandLogoPath, logoNeedsInvert } from "@/lib/logos";
 import { usd30 } from "@/lib/unit-price";
 import { useLang, useT, useTV } from "@/i18n/client";
 import { fmtNum } from "@/i18n/config";
+import { getBrandRecognitionScore } from "@/lib/brand-recognition";
 
 // Full-screen sourcing map: regions, named districts and verified farms as
 // pins; click one to fly in and open its detail panel. It shows where the
@@ -244,7 +245,8 @@ export function SourcingExplorer({ locations, totalProducts }: { locations: MapL
 
   function select(id: string | null) {
     setSelectedId(id);
-    if (id) setTab("overview");
+    // Regions open on their brands (biggest names first); a single farm has no brand list, so it opens on the overview.
+    if (id) setTab(byId.get(id)?.kind === "farm" ? "overview" : "brands");
   }
 
   // ---- map setup (once) ----
@@ -829,7 +831,7 @@ function DetailPanel({
   const t = useT();
   const tv = useTV();
   const filteredCount = countFor(loc, filters);
-  const tabs: Tab[] = loc.kind === "farm" ? ["overview", "products"] : ["overview", "brands", "products"];
+  const tabs: Tab[] = loc.kind === "farm" ? ["overview", "products"] : ["brands", "overview", "products"];
   const maxGrade = Math.max(1, ...loc.grades.map((g) => g.count));
   const params = new URLSearchParams();
   if (loc.regionKey) params.set("region", loc.regionKey);
@@ -945,7 +947,7 @@ function DetailPanel({
 
         {tab === "brands" && (
           <ul className="flex flex-col divide-y divide-line">
-            {loc.brandCounts.map((b) => (
+            {[...loc.brandCounts].sort((a, c) => getBrandRecognitionScore(c.name) - getBrandRecognitionScore(a.name) || c.count - a.count || a.name.localeCompare(c.name)).map((b) => (
               <li key={b.name}>
                 <Link href={`/brands/${encodeURIComponent(b.name)}`} className="flex items-center justify-between gap-3 py-2.5 hover:text-matcha">
                   <span className="flex items-center gap-2.5 min-w-0">

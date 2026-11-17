@@ -3,6 +3,7 @@ import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { Comments } from "@/components/Comments";
 import { FavoriteCafeButton } from "@/components/FavoriteCafeButton";
+import { ReportNoMatchaButton } from "@/components/ReportNoMatchaButton";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
@@ -127,6 +128,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           </p>
         )}
         <FavoriteCafeButton cafeId={c.id} name={c.name} />
+        <div className="mt-3"><ReportNoMatchaButton cafeId={c.id} name={c.name} /></div>
       </header>
 
       <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
