@@ -50,6 +50,7 @@ export function AccountClient() {
   const { ready, user, displayName, avatar, refreshStats, signIn, signOut } = useAuth();
   const t = useT();
   const [editingAvatar, setEditingAvatar] = useState(false);
+  const [allRatings, setAllRatings] = useState(false);
   const [favorites, setFavorites] = useState<number[] | null>(null);
   const [ratings, setRatings] = useState<Rated[] | null>(null);
   const [reviews, setReviews] = useState<Written[] | null>(null);
@@ -201,7 +202,35 @@ export function AccountClient() {
           </div>
           <Ribbons />
         </div>
-        <ProfileHeader />
+        <ProfileHeader>
+          <div className="mt-6 max-w-xl" aria-labelledby="ratings-h" role="group">
+            <h2 id="ratings-h" className="font-display text-lg font-semibold text-ink">{t("c.acct.ratings")}</h2>
+            {ratings === null ? (
+              <p className="mt-1 text-sm text-ink-faint">Loading…</p>
+            ) : ratings.length === 0 ? (
+              <p className="mt-1 text-sm text-ink-muted">{t("c.acct.ratingsEmpty")}</p>
+            ) : (
+              <>
+                <ul className="mt-2 grid gap-x-6 sm:grid-cols-2">
+                  {(allRatings ? ratings : ratings.slice(0, 6)).map((r) => (
+                    <li key={r.product_id} className="flex items-center justify-between gap-3 border-b border-line py-1.5">
+                      <ProductLink id={r.product_id} item={items[r.product_id]} />
+                      <span className="flex shrink-0 items-center gap-1.5 text-sm text-ink-muted tabular-nums">
+                        <Stars value={r.score} size={14} />
+                        {r.score.toFixed(1)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {ratings.length > 6 && (
+                  <button type="button" onClick={() => setAllRatings((v) => !v)} className="mt-2 text-sm text-matcha underline hover:text-forest">
+                    {allRatings ? t("c.mp.fewer") : t("c.mp.allRatings", { n: ratings.length })}
+                  </button>
+                )}
+              </>
+            )}
+          </div>
+        </ProfileHeader>
         {editingAvatar && (
           <div className="basis-full">
             <AccountAvatar open onOpenChange={setEditingAvatar} />
@@ -265,27 +294,6 @@ export function AccountClient() {
           </section>
 
           <FriendsSection />
-
-          <section aria-labelledby="ratings-h">
-            <h2 id="ratings-h" className={h2}>{t("c.acct.ratings")}</h2>
-            {ratings === null ? (
-              <p className="mt-2 text-sm text-ink-faint">Loading…</p>
-            ) : ratings.length === 0 ? (
-              <p className="mt-2 text-sm text-ink-muted">{t("c.acct.ratingsEmpty")}</p>
-            ) : (
-              <ul className="mt-3 divide-y divide-line border-y border-line">
-                {ratings.map((r) => (
-                  <li key={r.product_id} className="flex items-center justify-between gap-4 py-3">
-                    <ProductLink id={r.product_id} item={items[r.product_id]} />
-                    <span className="flex items-center gap-2 text-sm text-ink-muted tabular-nums">
-                      <Stars value={r.score} size={16} />
-                      {r.score.toFixed(1)}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
 
           <section aria-labelledby="cafes-h">
             <h2 id="cafes-h" className={h2}>{t("c.acct.cafes")}</h2>

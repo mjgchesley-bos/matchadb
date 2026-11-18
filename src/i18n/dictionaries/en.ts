@@ -1364,6 +1364,8 @@ export const en = {
   "c.av.random": "Randomise",
   "c.av.use": "Use this avatar",
   "c.mp.editAvatar": "Edit avatar",
+  "c.mp.allRatings": "Show all {n} ratings",
+  "c.mp.fewer": "Show fewer",
   "c.av.outfit": "Outfit",
   "c.av.outfitColor": "Outfit colour",
   "c.mp.public": "Public profile",

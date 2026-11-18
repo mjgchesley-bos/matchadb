@@ -8,7 +8,7 @@ import { supabase } from "@/lib/supabase";
 import { useT, useTV } from "@/i18n/client";
 
 // The top of My matcha: your name (click to change), a Public profile tick box beside it, your bio underneath, and your tier.
-export function ProfileHeader() {
+export function ProfileHeader({ children }: { children?: React.ReactNode }) {
   const t = useT();
   const tv = useTV();
   const { user, displayName, isPublic, setPublic, setDisplayName, stats } = useAuth();
@@ -110,6 +110,7 @@ export function ProfileHeader() {
           {msg && <span className="text-ink-muted" aria-live="polite">{msg}</span>}
         </div>
       </div>
+      {children}
     </div>
   );
 }
