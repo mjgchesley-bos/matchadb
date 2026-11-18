@@ -1,10 +1,8 @@
 "use client";
 
-import Link from "@/i18n/Link";
 import { useEffect, useRef, useState } from "react";
 import { AVATARS, Avatar, type AvatarKey } from "@/components/Avatar";
 import { useAuth } from "@/components/AuthProvider";
-import { HOW_LABELS } from "@/lib/badges";
 import { supabase } from "@/lib/supabase";
 import { useT, useTV } from "@/i18n/client";
 
@@ -33,7 +31,7 @@ async function squarePhoto(file: File): Promise<Blob> {
 export function PublicProfileSettings() {
   const t = useT();
   const tv = useTV();
-  const { user, displayName, setPublic, setAvatar } = useAuth();
+  const { user, displayName, setAvatar } = useAuth();
   const uid = user?.id ?? null;
   const [loaded, setLoaded] = useState<{ uid: string; s: Settings } | null>(null);
   const [draft, setDraft] = useState<Settings | null>(null);
@@ -102,7 +100,7 @@ export function PublicProfileSettings() {
     setMsg(null);
     const { error } = await supabase()
       .from("profiles")
-      .update({ is_public: s.is_public, find_by_contact: s.find_by_contact, bio: s.bio.trim(), avatar: s.avatar, avatar_path: s.avatar_path, how_i_drink: s.how_i_drink })
+      .update({ find_by_contact: s.find_by_contact, avatar: s.avatar, avatar_path: s.avatar_path })
       .eq("id", user.id);
     setSaving(false);
     if (error) {
@@ -112,11 +110,9 @@ export function PublicProfileSettings() {
     // The photo replaced or removed here is no longer needed.
     if (base?.avatar_path && base.avatar_path !== s.avatar_path) await supabase().storage.from(BUCKET).remove([base.avatar_path]);
     pending.current = null;
-    setLoaded({ uid: user.id, s: { ...s, bio: s.bio.trim() } });
+    setLoaded({ uid: user.id, s });
     setDraft(null);
-    setPublic(s.is_public);
     setAvatar(s.avatar, s.avatar_path);
-    if (s.is_public) window.gtag?.("event", "profile_public");
     setMsg(t("c.acct.saved"));
   };
 
@@ -126,29 +122,10 @@ export function PublicProfileSettings() {
 
   return (
     <section aria-labelledby="pp-h">
-      <h2 id="pp-h" className="font-display text-xl font-semibold text-ink">
-        {t("c.pp.h")}
-      </h2>
-      <p className="mt-2 text-sm text-ink-muted">
-        {t("c.pp.p")}
-      </p>
-
-      <label className="mt-4 flex items-center gap-2.5 text-sm text-ink">
-        <input type="checkbox" checked={s.is_public} onChange={(e) => set({ is_public: e.target.checked })} className="accent-matcha" />
-        {t("c.pp.make")}
-      </label>
-      <label className="mt-2 flex items-start gap-2.5 text-sm text-ink">
+      <label className="flex items-start gap-2.5 text-sm text-ink">
         <input type="checkbox" checked={s.find_by_contact} onChange={(e) => set({ find_by_contact: e.target.checked })} className="mt-0.5 accent-matcha" />
         {t("c.pp.find")}
       </label>
-      {s.is_public && base?.is_public && displayName && (
-        <p className="mt-2 text-sm">
-          <Link href={`/u/${encodeURIComponent(displayName)}`} className="text-matcha underline hover:text-forest">
-            {t("c.pp.view")}
-          </Link>
-        </p>
-      )}
-
       <div className="mt-5">
         <span className={label}>{t("c.pp.avatar")}</span>
         <div className="mt-2 flex flex-wrap items-center gap-2" role="radiogroup" aria-label={t("c.pp.avatar")}>
@@ -178,28 +155,6 @@ export function PublicProfileSettings() {
           )}
         </div>
         <p className="mt-1.5 text-xs text-ink-faint">{t("c.pp.photoNote")}</p>
-      </div>
-
-      <div className="mt-5 max-w-sm">
-        <label htmlFor="pp-how" className={label}>
-          {t("c.pp.how")}
-        </label>
-        <select id="pp-how" value={s.how_i_drink ?? ""} onChange={(e) => set({ how_i_drink: e.target.value || null })} className={`mt-1.5 ${field}`}>
-          <option value="">{t("c.pp.notSet")}</option>
-          {Object.keys(HOW_LABELS).map((k) => (
-            <option key={k} value={k}>
-              {tv("how", k)}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div className="mt-4">
-        <label htmlFor="pp-bio" className={label}>
-          {t("c.pp.bio")}
-        </label>
-        <textarea id="pp-bio" value={s.bio} onChange={(e) => set({ bio: e.target.value.slice(0, 140) })} rows={2} placeholder={t("c.pp.bioPh")} className={`mt-1.5 ${field}`} />
-        <p className="mt-1 text-xs text-ink-faint tabular-nums">{s.bio.length}/140</p>
       </div>
 
       <div className="mt-4 flex items-center gap-3">

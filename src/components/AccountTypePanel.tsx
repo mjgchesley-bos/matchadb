@@ -66,12 +66,8 @@ export function AccountTypePanel() {
   }
 
   return (
-    <section className="mt-8 rounded-sm border border-line bg-paper-raised p-5">
-      <h2 className="font-display text-xl font-semibold text-ink">{t("c.ty.h")}</h2>
-      <p className="mt-1 text-sm text-ink-muted">
-        {t("c.ty.current")} <span className="rounded-full border border-matcha bg-matcha-soft px-2.5 py-0.5 text-xs font-medium text-forest">{t(`c.ty.${row.account_type}` as "c.ty.general")}</span>
-      </p>
-      <label className="mt-4 flex items-center gap-2.5 text-sm text-ink">
+    <section className="rounded-sm border border-line bg-paper-raised p-5">
+      <label className="flex items-center gap-2.5 text-sm text-ink">
         <input type="checkbox" checked={row.accept_dms} onChange={(e) => void setDms(e.target.checked)} className="h-4 w-4 accent-matcha" />
         {t("c.ty.dms")}
       </label>
@@ -80,24 +76,27 @@ export function AccountTypePanel() {
         pending ? (
           <p className="mt-4 text-sm text-ink" role="status">{t("c.ty.pending", { business: pending.business })}</p>
         ) : (
-          <form onSubmit={request} className="mt-5 flex max-w-xl flex-col gap-3">
-            <p className="text-sm text-ink-muted">{t("c.ty.ask")}</p>
-            <div className="flex gap-4 text-sm text-ink">
-              {(["cafe_owner", "wholesaler"] as const).map((k) => (
-                <label key={k} className="flex items-center gap-2">
-                  <input type="radio" name="kind" checked={form.kind === k} onChange={() => setForm({ ...form, kind: k })} className="accent-matcha" />
-                  {t(`c.ty.${k}` as "c.ty.cafe_owner")}
-                </label>
-              ))}
-            </div>
-            <label className={lbl}>{t("c.ty.business")}<input required minLength={2} maxLength={80} value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className={input} /></label>
-            <label className={lbl}>{t("c.ty.site")}<input maxLength={160} value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="https://" className={input} /></label>
-            <label className={lbl}>{t("c.ty.note")}<textarea maxLength={500} rows={3} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} className={input} /></label>
-            <div><button type="submit" disabled={busy} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">{t("c.ty.request")}</button></div>
-          </form>
+          <details className="mt-4">
+            <summary className="cursor-pointer text-sm text-matcha underline hover:text-forest">{t("c.mp.bizAsk")}</summary>
+            <form onSubmit={request} className="mt-4 flex max-w-xl flex-col gap-3">
+              <div className="flex gap-4 text-sm text-ink">
+                {(["cafe_owner", "wholesaler"] as const).map((k) => (
+                  <label key={k} className="flex items-center gap-2">
+                    <input type="radio" name="kind" checked={form.kind === k} onChange={() => setForm({ ...form, kind: k })} className="accent-matcha" />
+                    {t(`c.ty.${k}` as "c.ty.cafe_owner")}
+                  </label>
+                ))}
+              </div>
+              <label className={lbl}>{t("c.ty.business")}<input required minLength={2} maxLength={80} value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className={input} /></label>
+              <label className={lbl}>{t("c.ty.site")}<input maxLength={160} value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} placeholder="https://" className={input} /></label>
+              <label className={lbl}>{t("c.ty.note")}<textarea maxLength={500} rows={3} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} className={input} /></label>
+              <div><button type="submit" disabled={busy} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">{t("c.ty.request")}</button></div>
+            </form>
+          </details>
         )
       ) : (
         <form onSubmit={save} className="mt-5 flex max-w-xl flex-col gap-3">
+          <h2 className="font-display text-xl font-semibold text-ink">{t("c.mp.bizH")}</h2>
           <label className={lbl}>{t("c.ty.business")}<input maxLength={60} value={row.business_name ?? ""} onChange={(e) => setRow({ ...row, business_name: e.target.value })} className={input} /></label>
           <label className={lbl}>{t("c.ty.site")}<input maxLength={120} value={row.website ?? ""} onChange={(e) => setRow({ ...row, website: e.target.value })} placeholder="https://" className={input} /></label>
           <label className={lbl}>{t("c.ty.about")}<textarea maxLength={600} rows={4} value={row.about ?? ""} onChange={(e) => setRow({ ...row, about: e.target.value })} className={input} /></label>

@@ -10,10 +10,21 @@ export const EXTRAS = ["None", "Matcha cup", "Whisk", "Leaf", "Blush", "Sparkles
 export const DESIGN_SIZES = [DESIGN_BG.length, DESIGN_SKIN.length, HAIR_STYLES.length, DESIGN_HAIR.length, EYES.length, MOUTHS.length, EXTRAS.length] as const;
 export type DesignParts = [number, number, number, number, number, number, number];
 
-export const designCode = (p: DesignParts): string => "d:" + p.map((n) => n.toString(36)).join("");
+// Full-body figure: what the avatar wears. Stored as two optional extra characters after the seven face parts (style, colour);
+// older codes without them mean "matcha-green robe".
+export const OUTFIT_STYLES = ["Robe", "Apron", "Hoodie", "T-shirt", "Jacket"];
+export const OUTFIT_COLORS = ["#3f7d3a", "#2f5d8a", "#b5472f", "#7a4a8a", "#d9b46a", "#2b2b33", "#c0577a", "#e9e4d6"];
+export type Outfit = [number, number];
+
+export const designCode = (p: DesignParts, o: Outfit = [0, 0]): string => "d:" + p.map((n) => n.toString(36)).join("") + (o[0] === 0 && o[1] === 0 ? "" : o.map((n) => n.toString(36)).join(""));
 export function parseDesign(code?: string | null): DesignParts | null {
-  if (!code || !/^d:[0-9a-z]{7}$/.test(code)) return null;
-  const p = code.slice(2).split("").map((c) => parseInt(c, 36)) as DesignParts;
+  if (!code || !/^d:[0-9a-z]{7}([0-9a-z]{2})?$/.test(code)) return null;
+  const p = code.slice(2, 9).split("").map((c) => parseInt(c, 36)) as DesignParts;
   return p.every((n, i) => n < DESIGN_SIZES[i]) ? p : null;
+}
+export function parseOutfit(code?: string | null): Outfit {
+  if (!code || !/^d:[0-9a-z]{9}$/.test(code)) return [0, 0];
+  const s = parseInt(code[9], 36), c = parseInt(code[10], 36);
+  return s < OUTFIT_STYLES.length && c < OUTFIT_COLORS.length ? [s, c] : [0, 0];
 }
 export const randomDesign = (): DesignParts => DESIGN_SIZES.map((n) => Math.floor(Math.random() * n)) as unknown as DesignParts;

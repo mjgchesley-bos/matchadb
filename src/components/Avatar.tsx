@@ -139,7 +139,8 @@ function Glyph({ k, fg, bg }: { k: AvatarKey; fg: string; bg: string }) {
   }
 }
 
-function Designed({ parts, size }: { parts: DesignParts; size: number }) {
+// The pieces of a designed face, drawn on a 64 x 64 canvas. The round avatar and the full-body figure both use them.
+export function designedFace(parts: DesignParts) {
   const [bg, skin, hs, hc, eyes, mouth, extra] = parts;
   const B = DESIGN_BG[bg], S = DESIGN_SKIN[skin], H = DESIGN_HAIR[hc], ink = "#2b2118";
   const hairBack =
@@ -175,6 +176,11 @@ function Designed({ parts, size }: { parts: DesignParts; size: number }) {
     extra === 3 ? <path d="M46 28c-1-6 3-9 8-9 0 6-3 9-8 9z" fill="#4a9a4a" /> :
     extra === 4 ? <g fill="#f08a9a" opacity="0.55"><ellipse cx="22.5" cy="36" rx="3" ry="2" /><ellipse cx="41.5" cy="36" rx="3" ry="2" /></g> :
     extra === 5 ? <g fill="#e6b93a"><path d="M10 16l1.2 3 3 1.2-3 1.2L10 24.4l-1.2-3-3-1.2 3-1.2z" /><path d="M54 10l.9 2.2 2.2.9-2.2.9-.9 2.2-.9-2.2-2.2-.9 2.2-.9z" /></g> : null;
+  return { B, S, H, hairBack, hairFront, eyeEl, mouthEl, extraEl };
+}
+
+function Designed({ parts, size }: { parts: DesignParts; size: number }) {
+  const { B, S, hairBack, hairFront, eyeEl, mouthEl, extraEl } = designedFace(parts);
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="Avatar" className="shrink-0">
       <defs><clipPath id={`av-${parts.join("")}`}><circle cx="32" cy="32" r="32" /></clipPath></defs>
