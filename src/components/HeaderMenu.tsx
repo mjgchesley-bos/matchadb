@@ -11,6 +11,8 @@ const ITEMS: { href: string; label: Key; note: Key }[] = [
   { href: "/map", label: "c.menu.map.label", note: "c.menu.map.note" },
   { href: "/hall-of-fame", label: "c.menu.hof.label", note: "c.menu.hof.note" },
   { href: "/research", label: "c.menu.research.label", note: "c.menu.research.note" },
+  { href: "/news", label: "c.menu.news.label", note: "c.menu.news.note" },
+  { href: "/events", label: "c.menu.events.label", note: "c.menu.events.note" },
   { href: "/producers", label: "c.menu.producers.label", note: "c.menu.producers.note" },
   { href: "/cultivars", label: "c.menu.cultivars.label", note: "c.menu.cultivars.note" },
   { href: "/guides/what-is-ceremonial-matcha", label: "c.menu.ceremonial.label", note: "c.menu.ceremonial.note" },
