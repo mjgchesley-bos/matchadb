@@ -49,6 +49,7 @@ function ProductLink({ item, id }: { item?: Item; id: number }) {
 export function AccountClient() {
   const { ready, user, displayName, avatar, refreshStats, signIn, signOut } = useAuth();
   const t = useT();
+  const [editingAvatar, setEditingAvatar] = useState(false);
   const [favorites, setFavorites] = useState<number[] | null>(null);
   const [ratings, setRatings] = useState<Rated[] | null>(null);
   const [reviews, setReviews] = useState<Written[] | null>(null);
@@ -182,21 +183,30 @@ export function AccountClient() {
           <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("c.acct.eyebrow")}</p>
           <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("c.acct.title")}</h1>
         </div>
-        <AccountAvatar />
       </div>
 
       <section className="flex flex-wrap items-start gap-x-8 gap-y-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-6" aria-label={t("c.acct.title")}>
         <div className="flex shrink-0 items-start gap-5">
-          {designed ? (
-            <AvatarFigure code={designed} height={300} />
-          ) : (
-            <div className="pt-2">
-              <Avatar avatar={avatar.key} photoPath={avatar.path} name={displayName} size={150} />
-            </div>
-          )}
+          <div className="flex flex-col items-center">
+            {designed ? (
+              <AvatarFigure code={designed} height={300} />
+            ) : (
+              <div className="pt-2">
+                <Avatar avatar={avatar.key} photoPath={avatar.path} name={displayName} size={150} />
+              </div>
+            )}
+            <button type="button" onClick={() => setEditingAvatar((v) => !v)} aria-expanded={editingAvatar} className="mt-2 text-sm text-matcha underline hover:text-forest">
+              {t("c.mp.editAvatar")}
+            </button>
+          </div>
           <Ribbons />
         </div>
         <ProfileHeader />
+        {editingAvatar && (
+          <div className="basis-full">
+            <AccountAvatar open onOpenChange={setEditingAvatar} />
+          </div>
+        )}
       </section>
 
       <div className="grid items-start gap-x-12 gap-y-10 lg:grid-cols-2">

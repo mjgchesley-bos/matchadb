@@ -7,9 +7,17 @@ import { useT } from "@/i18n/client";
 import { DESIGN_BG, DESIGN_HAIR, DESIGN_SKIN, EXTRAS, EYES, HAIR_STYLES, MOUTHS, OUTFIT_COLORS, OUTFIT_STYLES, designCode, parseDesign, parseOutfit, randomDesign, type DesignParts, type Outfit } from "@/lib/avatar-design";
 
 // "Design your own": pick a background, skin, hair, eyes, mouth, extra and outfit, or roll the dice, then use it as your avatar.
-export function AvatarDesigner({ current, onUse }: { current: string | null; onUse: (code: string) => void }) {
+export function AvatarDesigner({ current, onUse, open: openProp, onOpenChange }: { current: string | null; onUse: (code: string) => void; open?: boolean; onOpenChange?: (v: boolean) => void }) {
   const t = useT();
-  const [open, setOpen] = useState(false);
+  const [openState, setOpenState] = useState(false);
+  // Controlled (no button of its own, opened by an "Edit" link elsewhere) when `open` is passed.
+  const controlled = openProp !== undefined;
+  const open = controlled ? openProp : openState;
+  const setOpen = (v: boolean | ((o: boolean) => boolean)) => {
+    const next = typeof v === "function" ? v(open) : v;
+    if (controlled) onOpenChange?.(next);
+    else setOpenState(next);
+  };
   const [p, setP] = useState<DesignParts>(() => parseDesign(current) ?? randomDesign());
   const [o, setO] = useState<Outfit>(() => parseOutfit(current));
   const setPart = (i: number, v: number) => setP((old) => old.map((x, j) => (j === i ? v : x)) as DesignParts);
@@ -40,10 +48,12 @@ export function AvatarDesigner({ current, onUse }: { current: string | null; onU
 
   return (
     <>
-      <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-paper-raised px-4 py-2 text-sm font-medium text-ink hover:border-matcha hover:bg-matcha-soft">
-        <Avatar avatar={current} size={22} />
-        {t("c.av.open")}
-      </button>
+      {!controlled && (
+        <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-paper-raised px-4 py-2 text-sm font-medium text-ink hover:border-matcha hover:bg-matcha-soft">
+          <Avatar avatar={current} size={22} />
+          {t("c.av.open")}
+        </button>
+      )}
       {open && (
         <div className="basis-full rounded-sm border border-line bg-paper-raised p-4">
           <div className="flex flex-wrap items-start gap-6">

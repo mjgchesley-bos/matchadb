@@ -1363,6 +1363,7 @@ export const en = {
   "c.av.open": "Design your own avatar",
   "c.av.random": "Randomise",
   "c.av.use": "Use this avatar",
+  "c.mp.editAvatar": "Edit avatar",
   "c.av.outfit": "Outfit",
   "c.av.outfitColor": "Outfit colour",
   "c.mp.public": "Public profile",
