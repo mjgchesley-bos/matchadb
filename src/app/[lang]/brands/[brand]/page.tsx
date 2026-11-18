@@ -94,11 +94,12 @@ export default async function BrandPage({
   const grades = [...new Set(products.map((p) => p.grade).filter(Boolean))].map((g) => tv("grade", g as string).toLowerCase());
   const per30 = brandComparable.map((c) => c.pricePerGram).sort((a, b) => a - b);
   const faq: { q: string; a: string }[] = [];
+  const nm = /matcha|抹茶|말차/i.test(brandName) ? brandName : `${brandName} matcha`;
   if (lang === "en") {
-    if (per30.length) faq.push({ q: `How much does ${brandName} matcha cost?`, a: per30.length > 1 ? `Across ${per30.length} products with a stated size, ${brandName} matcha costs ${usd30(per30[0])} to ${usd30(per30[per30.length - 1])} per 30 g (the typical tin size).` : `The one ${brandName} matcha with a stated size works out to ${usd30(per30[0])} per 30 g (the typical tin size).` });
-    if (grades.length) faq.push({ q: `What grades of matcha does ${brandName} sell?`, a: `${brandName} lists ${grades.length === 1 ? "one grade" : "these grades"}: ${grades.join(", ")}. MatchaDB tracks ${products.length} ${brandName} product${products.length === 1 ? "" : "s"}.` });
+    if (per30.length) faq.push({ q: `How much does ${nm} cost?`, a: per30.length > 1 ? `Across ${per30.length} products with a stated size, ${nm} costs ${usd30(per30[0])} to ${usd30(per30[per30.length - 1])} per 30 g (the typical tin size).` : `The one ${nm} with a stated size works out to ${usd30(per30[0])} per 30 g (the typical tin size).` });
+    if (grades.length) faq.push({ q: `What grades does ${nm} come in?`, a: `${brandName} lists ${grades.length === 1 ? "one grade" : "these grades"}: ${grades.join(", ")}. MatchaDB tracks ${products.length} ${brandName} product${products.length === 1 ? "" : "s"}.` });
     const where = [ownShops.length ? `${ownShops.length} brand-owned shop${ownShops.length === 1 ? "" : "s"}` : "", retailers.length ? `${retailers.length} retailer${retailers.length === 1 ? "" : "s"}` : "", onlineResellers.length ? `${onlineResellers.length} online reseller${onlineResellers.length === 1 ? "" : "s"}` : ""].filter(Boolean);
-    if (where.length) faq.push({ q: `Where can I buy ${brandName} matcha?`, a: `MatchaDB lists ${where.join(" and ")} for ${brandName}, plus the brand's own product pages linked above.` });
+    if (where.length) faq.push({ q: `Where can I buy ${nm}?`, a: `MatchaDB lists ${where.join(" and ")} for ${brandName}, plus the brand's own product pages linked above.` });
   }
   const fmtChecked = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric" });
 
