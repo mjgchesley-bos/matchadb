@@ -44,7 +44,7 @@ export default async function EventsPage({ params }: { params: Promise<{ lang: s
           Festivals, tastings, trade shows and gatherings. Search by city or country, or tap Near me to see what is closest. Every listing links to the organizer, and each one says how we know the date. This list is new and still growing; <a href={`${SITE_URL}/contact`} className="text-matcha underline hover:text-forest">tell us about one we are missing</a>.
         </p>
       </header>
-      <div className="mt-8">
+      <div className="mt-8 rounded-sm border border-line bg-paper-raised p-5 sm:p-6">
         <EventsExplorer events={events} contactEmail={CONTACT_EMAIL} />
       </div>
     </main>

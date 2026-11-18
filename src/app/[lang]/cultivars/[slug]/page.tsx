@@ -243,9 +243,9 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       )}
 
       {pins.length > 0 && (
-        <section className="mt-10" aria-labelledby="cv-map">
-          <h2 id="cv-map" className="font-display text-2xl font-semibold text-ink">{t("cv.map.h")}</h2>
-          {extra?.where && <p className="mt-2 max-w-3xl text-ink-muted">{extra.where}</p>}
+        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="cv-map">
+          <h2 id="cv-map" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cv.map.h")}</h2>
+          {extra?.where && <p className="max-w-3xl text-ink-muted">{extra.where}</p>}
           <div className="mt-4">
             <CultivarMap pins={pins} label={t("cv.map.aria", { name: cultivar.name })} one={t("cv.map.one")} many={t("cv.map.many")} openLabel={t("cv.map.open")} />
           </div>

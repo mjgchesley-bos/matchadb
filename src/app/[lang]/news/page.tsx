@@ -75,11 +75,12 @@ export default async function NewsPage({ params }: { params: Promise<{ lang: str
       </header>
 
       {lead && (
-        <section className="mt-8 grid gap-8 border-y border-line py-8 lg:grid-cols-[1.6fr_1fr]" aria-label="Top stories">
+        <section className="mt-8 grid gap-8 rounded-sm border border-line border-t-4 border-t-matcha bg-paper-raised p-6 sm:p-8 lg:grid-cols-[1.6fr_1fr]" aria-label="Top stories">
           <div>
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.2em] text-forest">Top story</p>
             <Story s={lead} big />
           </div>
-          <div className="flex flex-col divide-y divide-line">
+          <div className="flex flex-col divide-y divide-line lg:border-l lg:border-line lg:pl-8">
             {side.map((s) => (
               <div key={s.url} className="py-3 first:pt-0 last:pb-0">
                 <Story s={s} />
@@ -112,8 +113,9 @@ export default async function NewsPage({ params }: { params: Promise<{ lang: str
           </div>
         </div>
 
-        <aside aria-labelledby="n-latest" className="lg:sticky lg:top-6 lg:self-start">
+        <aside aria-labelledby="n-latest" className="rounded-sm border border-line border-t-4 border-t-matcha bg-paper-raised p-5 lg:sticky lg:top-6 lg:self-start">
           <h2 id="n-latest" className="font-display text-xl font-semibold text-ink">Latest, in order</h2>
+          <p className="text-xs text-ink-faint">Newest first, by day</p>
           <div className="mt-4 max-h-[70vh] overflow-y-auto pr-2">
             <ol className="border-l-2 border-line pl-5">
               {groups.map((g) => (

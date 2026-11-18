@@ -91,7 +91,10 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
           {p.native && <span className="ml-3 text-2xl sm:text-3xl text-ink-muted">{p.native}</span>}
         </h1>
         <p className="mt-4 text-lg text-ink-muted leading-relaxed">{p.headline}.</p>
-        <p className="mt-3 text-sm text-ink-faint">Founded {p.founded} · {p.basedIn}</p>
+        <p className="mt-4 flex flex-wrap gap-2 text-sm">
+          <span className="rounded-full border border-line-strong bg-paper-raised px-3 py-1 text-ink-muted">Founded {p.founded}</span>
+          <span className="rounded-full border border-line-strong bg-paper-raised px-3 py-1 text-ink-muted">{p.basedIn}</span>
+        </p>
       </header>
 
       {images.length > 0 && (
@@ -109,7 +112,8 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
         </section>
       )}
 
-      <section className="mt-8 max-w-3xl flex flex-col gap-4 text-ink-muted leading-relaxed">
+      <section className="mt-8 max-w-3xl flex flex-col gap-4 rounded-sm border border-line bg-paper-raised px-5 py-5 text-ink-muted leading-relaxed" aria-labelledby="pr-story">
+        <h2 id="pr-story" className={label}>The story</h2>
         {p.story.map((para) => (
           <p key={para.slice(0, 30)}>{para}</p>
         ))}
@@ -128,9 +132,9 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       </section>
 
       {p.current.length > 0 && (
-        <section className="mt-10 max-w-3xl" aria-labelledby="pr-now">
-          <h2 id="pr-now" className={h2}>Today</h2>
-          <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-ink-muted">
+        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-now">
+          <h2 id="pr-now" className={label}>Today</h2>
+          <ul className="flex list-disc flex-col gap-2 pl-5 text-ink-muted">
             {p.current.map((c) => (
               <li key={c.slice(0, 30)}>{c}</li>
             ))}
@@ -139,9 +143,9 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       )}
 
       {p.awards.length > 0 && (
-        <section className="mt-10 max-w-3xl" aria-labelledby="pr-awards">
-          <h2 id="pr-awards" className={h2}>Awards and certifications</h2>
-          <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-ink-muted">
+        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-awards">
+          <h2 id="pr-awards" className={label}>Awards and certifications</h2>
+          <ul className="flex list-disc flex-col gap-2 pl-5 text-ink-muted">
             {p.awards.map((a) => (
               <li key={a.slice(0, 30)}>{a}</li>
             ))}
@@ -150,9 +154,9 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       )}
 
       {p.timeline.length > 0 && (
-        <section className="mt-10 max-w-3xl" aria-labelledby="pr-time">
-          <h2 id="pr-time" className={h2}>Timeline</h2>
-          <ol className="mt-4 flex flex-col gap-3 border-l-2 border-line pl-5">
+        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-time">
+          <h2 id="pr-time" className={label}>Timeline</h2>
+          <ol className="ml-1 flex flex-col gap-3 border-l-2 border-line pl-5">
             {p.timeline.map((t) => (
               <li key={t.year + t.text.slice(0, 12)} className="relative">
                 <span className="absolute -left-[1.6rem] top-1.5 h-2.5 w-2.5 rounded-full bg-matcha" aria-hidden="true" />
@@ -165,11 +169,11 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       )}
 
       {p.people.length > 0 && (
-        <section className="mt-10 max-w-3xl" aria-labelledby="pr-people">
-          <h2 id="pr-people" className={h2}>The people and the family</h2>
-          <ul className="mt-3 flex flex-col gap-2">
+        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-people">
+          <h2 id="pr-people" className={label}>The people and the family</h2>
+          <ul className="flex flex-col gap-2">
             {p.people.map((x) => (
-              <li key={x.name} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
+              <li key={x.name} className="rounded-sm border border-line bg-paper px-4 py-3">
                 <p className="font-medium text-ink">{x.name}{x.native ? <span className="ml-2 text-ink-muted">{x.native}</span> : null}</p>
                 <p className="text-sm text-ink-muted">{x.role}.</p>
               </li>
@@ -179,7 +183,7 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       )}
 
       {cultivars.length > 0 && (
-        <p className="mt-6 max-w-3xl text-sm text-ink-muted">
+        <p className="mt-8 max-w-3xl rounded-sm border border-line bg-matcha-soft px-5 py-3 text-sm text-ink-muted">
           Tea plants tied to this company:{" "}
           {cultivars.map((c, i) => (
             <span key={c.slug}>
@@ -192,16 +196,16 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       )}
 
       {pins.length > 0 && (
-        <section className="mt-10" aria-labelledby="pr-map">
-          <h2 id="pr-map" className={h2}>Where it is</h2>
-          <p className="mt-2 max-w-3xl text-sm text-ink-muted">Based in {p.basedIn}. The pin marks the town, not a street address.</p>
+        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-map">
+          <h2 id="pr-map" className={label}>Where it is</h2>
+          <p className="max-w-3xl text-sm text-ink-muted">Based in {p.basedIn}. The pin marks the town, not a street address.</p>
           <div className="mt-4">
             <CultivarMap pins={pins} label={`Map showing ${p.basedIn}`} one="{n} product in MatchaDB" many="{n} products in MatchaDB" openLabel="" />
           </div>
         </section>
       )}
 
-      <section className="mt-10 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-4" aria-labelledby="pr-matcha">
+      <section className="mt-8 max-w-3xl rounded-sm border border-line bg-matcha-soft px-5 py-5" aria-labelledby="pr-matcha">
         <h2 id="pr-matcha" className={label}>Its matcha in MatchaDB</h2>
         {products.length > 0 ? (
           <p className="text-ink-muted">
@@ -214,7 +218,7 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
         )}
       </section>
 
-      <p className="mt-6 max-w-3xl text-xs leading-relaxed text-ink-faint">
+      <p className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-4 text-xs leading-relaxed text-ink-faint">
         Sources:{" "}
         {p.sources.map((s, i) => (
           <span key={s.url}>

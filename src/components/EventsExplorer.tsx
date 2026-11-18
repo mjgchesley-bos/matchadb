@@ -112,7 +112,7 @@ export function EventsExplorer({ events, contactEmail }: { events: MatchaEvent[]
 
       <ul className="mt-4 flex flex-col gap-4">
         {rows.map(({ e, d }) => (
-          <li key={e.id} className="flex gap-4 rounded-sm border border-line bg-paper-raised p-4 sm:p-5">
+          <li key={e.id} className="flex gap-4 rounded-sm border border-line bg-paper p-4 sm:p-5">
             <div className="w-16 shrink-0 text-center" aria-hidden="true">
               <p className="font-mono text-xs uppercase tracking-[0.12em] text-forest">{fmtDate(e.start, { month: "short" })}</p>
               <p className="font-display text-3xl font-semibold leading-none text-ink">{fmtDate(e.start, { day: "numeric" })}</p>
