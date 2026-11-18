@@ -7,6 +7,7 @@ import { StaffLink } from "@/components/AdminClient";
 import { FriendsSection } from "@/components/Friends";
 import { MyLists } from "@/components/MyLists";
 import { PublicProfileSettings } from "@/components/PublicProfileSettings";
+import { AccountTypePanel } from "@/components/AccountTypePanel";
 import { BADGES } from "@/lib/badges";
 import { commentPhotoUrl, COMMENT_BUCKET } from "@/components/Comments";
 import { BrandLogo } from "@/components/product-cards";
@@ -231,6 +232,7 @@ export function AccountClient() {
       <FriendsSection />
 
       <PublicProfileSettings />
+      <AccountTypePanel />
 
       <section aria-labelledby="profile-h">
         <h2 id="profile-h" className={h2}>{t("c.acct.profile")}</h2>

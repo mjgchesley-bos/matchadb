@@ -1,5 +1,7 @@
 // Matcha-themed avatars members can pick from, so nobody has to upload a photo of themselves (a
 // photo is optional and takes priority when set).
+import { DESIGN_BG, DESIGN_HAIR, DESIGN_SKIN, parseDesign, type DesignParts } from "@/lib/avatar-design";
+
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gropvtwigbddfikcujhz.supabase.co";
 export const avatarPhotoUrl = (path: string): string => `${SUPABASE_URL}/storage/v1/object/public/avatars/${path}`;
 
@@ -137,6 +139,61 @@ function Glyph({ k, fg, bg }: { k: AvatarKey; fg: string; bg: string }) {
   }
 }
 
+function Designed({ parts, size }: { parts: DesignParts; size: number }) {
+  const [bg, skin, hs, hc, eyes, mouth, extra] = parts;
+  const B = DESIGN_BG[bg], S = DESIGN_SKIN[skin], H = DESIGN_HAIR[hc], ink = "#2b2118";
+  const hairBack =
+    hs === 2 ? <path d="M17 30c0-14 6-21 15-21s15 7 15 21v18H17z" fill={H} /> :
+    hs === 4 ? <path d="M17 28c0-12 6-19 15-19s15 7 15 19v8H17z" fill={H} /> :
+    hs === 3 ? <circle cx="32" cy="9" r="6" fill={H} /> : null;
+  const hairFront =
+    hs === 1 ? <path d="M19 27c0-9 5-15 13-15s13 6 13 15c-3-5-8-7-13-7s-10 2-13 7z" fill={H} /> :
+    hs === 2 || hs === 4 ? <path d="M19 27c0-9 5-14 13-14s13 5 13 14c-4-4-8-6-13-6s-9 2-13 6z" fill={H} /> :
+    hs === 3 ? <path d="M19 27c0-9 5-14 13-14s13 5 13 14c-4-4-8-6-13-6s-9 2-13 6z" fill={H} /> :
+    hs === 5 ? <g fill={H}>{[[21, 20], [27, 15], [33, 14], [39, 16], [44, 22], [19, 27], [45, 28]].map(([x, y]) => <circle key={x} cx={x} cy={y} r="5.5" />)}</g> :
+    hs === 6 ? <g><path d="M18 25c0-9 6-14 14-14s14 5 14 14z" fill={H} /><path d="M16 25h26c3 0 5 1 6 3H16z" fill={H} /></g> :
+    hs === 7 ? <g><path d="M10 24h44c-3 3-9 4-22 4s-19-1-22-4z" fill="#d9b46a" /><path d="M32 6l16 19H16z" fill="#e6c47a" /><path d="M24 17l-3 7M32 12v12M40 17l3 7" stroke="#b8923f" strokeWidth="1" /></g> :
+    hs === 8 ? <g><path d="M18 26c0-9 6-14 14-14s14 5 14 14c-5-3-9-4-14-4s-9 1-14 4z" fill={H} /><rect x="18" y="22" width="28" height="3.5" rx="1.7" fill="#c0577a" /></g> :
+    hs === 9 ? <g><ellipse cx="33" cy="17" rx="15" ry="6" fill="#3f7d3a" /><circle cx="33" cy="10.5" r="1.6" fill="#3f7d3a" /></g> : null;
+  const eyeEl =
+    eyes === 0 ? <g fill={ink}><circle cx="26" cy="30" r="1.8" /><circle cx="38" cy="30" r="1.8" /></g> :
+    eyes === 1 ? <g fill="none" stroke={ink} strokeWidth="1.8" strokeLinecap="round"><path d="M23.5 31c1-3 4-3 5 0M35.5 31c1-3 4-3 5 0" /></g> :
+    eyes === 2 ? <g><circle cx="26" cy="30" r="3" fill="#fff" /><circle cx="38" cy="30" r="3" fill="#fff" /><circle cx="26" cy="30" r="1.5" fill={ink} /><circle cx="38" cy="30" r="1.5" fill={ink} /></g> :
+    eyes === 3 ? <g stroke={ink} strokeWidth="1.8" strokeLinecap="round"><path d="M23.5 30h5M35.5 30h5" /></g> :
+    eyes === 4 ? <g fill="none" stroke={ink} strokeWidth="1.5"><circle cx="26" cy="30" r="4" /><circle cx="38" cy="30" r="4" /><path d="M30 30h4" /><circle cx="26" cy="30" r="1" fill={ink} /><circle cx="38" cy="30" r="1" fill={ink} /></g> :
+    <g><rect x="21.5" y="27" width="10" height="6" rx="2.5" fill={ink} /><rect x="32.5" y="27" width="10" height="6" rx="2.5" fill={ink} /><path d="M31.5 29h1" stroke={ink} strokeWidth="1.4" /></g>;
+  const mouthEl =
+    mouth === 0 ? <path d="M27 38c2 3 8 3 10 0" fill="none" stroke={ink} strokeWidth="1.8" strokeLinecap="round" /> :
+    mouth === 1 ? <path d="M26 37h12c0 5-3 7-6 7s-6-2-6-7z" fill="#fff" stroke={ink} strokeWidth="1.4" strokeLinejoin="round" /> :
+    mouth === 2 ? <path d="M28 39h8" stroke={ink} strokeWidth="1.8" strokeLinecap="round" /> :
+    mouth === 3 ? <ellipse cx="32" cy="39" rx="3" ry="3.6" fill="#7a2b2b" /> :
+    mouth === 4 ? <path d="M29.5 38.5c1.5 1.5 3.5 1.5 5 0" fill="none" stroke={ink} strokeWidth="1.8" strokeLinecap="round" /> :
+    <path d="M28 39c3 1 6 0 8-3" fill="none" stroke={ink} strokeWidth="1.8" strokeLinecap="round" />;
+  const extraEl =
+    extra === 1 ? <g><path d="M44 50h14c0 6-3 9-7 9s-7-3-7-9z" fill="#3f7d3a" /><path d="M46 49c-1-2 1-3 0-5M51 49c-1-2 1-3 0-5" stroke="#3f7d3a" strokeWidth="1.2" fill="none" strokeLinecap="round" /></g> :
+    extra === 2 ? <g><rect x="47" y="42" width="4" height="9" rx="1.8" fill="#8a6a3a" /><path d="M47 51c-3 1-4 4-4 8h12c0-4-1-7-4-8z" fill="#c9a86a" /></g> :
+    extra === 3 ? <path d="M46 28c-1-6 3-9 8-9 0 6-3 9-8 9z" fill="#4a9a4a" /> :
+    extra === 4 ? <g fill="#f08a9a" opacity="0.55"><ellipse cx="22.5" cy="36" rx="3" ry="2" /><ellipse cx="41.5" cy="36" rx="3" ry="2" /></g> :
+    extra === 5 ? <g fill="#e6b93a"><path d="M10 16l1.2 3 3 1.2-3 1.2L10 24.4l-1.2-3-3-1.2 3-1.2z" /><path d="M54 10l.9 2.2 2.2.9-2.2.9-.9 2.2-.9-2.2-2.2-.9 2.2-.9z" /></g> : null;
+  return (
+    <svg width={size} height={size} viewBox="0 0 64 64" role="img" aria-label="Avatar" className="shrink-0">
+      <defs><clipPath id={`av-${parts.join("")}`}><circle cx="32" cy="32" r="32" /></clipPath></defs>
+      <g clipPath={`url(#av-${parts.join("")})`}>
+        <rect width="64" height="64" fill={B} />
+        {hairBack}
+        <path d="M10 64c0-10 9-15 22-15s22 5 22 15z" fill="#3f7d3a" opacity="0.85" />
+        <rect x="27" y="42" width="10" height="9" rx="3" fill={S} />
+        <ellipse cx="32" cy="30" rx="13" ry="15" fill={S} />
+        <ellipse cx="19" cy="31" rx="2.2" ry="3.4" fill={S} /><ellipse cx="45" cy="31" rx="2.2" ry="3.4" fill={S} />
+        {hairFront}
+        {eyeEl}
+        {mouthEl}
+        {extraEl}
+      </g>
+    </svg>
+  );
+}
+
 export function Avatar({ avatar, name, size = 40, photoPath }: { avatar?: string | null; name?: string | null; size?: number; photoPath?: string | null }) {
   if (photoPath) {
     return (
@@ -144,6 +201,8 @@ export function Avatar({ avatar, name, size = 40, photoPath }: { avatar?: string
       <img src={avatarPhotoUrl(photoPath)} alt={name ? `${name}'s photo` : "Profile photo"} width={size} height={size} className="shrink-0 rounded-full object-cover" style={{ width: size, height: size }} />
     );
   }
+  const designed = parseDesign(avatar);
+  if (designed) return <Designed parts={designed} size={size} />;
   const k = (AVATARS as readonly string[]).includes(avatar ?? "") ? (avatar as AvatarKey) : null;
   if (!k) {
     // No icon chosen: the first letter of the username.

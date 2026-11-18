@@ -3,6 +3,7 @@ import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { Avatar } from "@/components/Avatar";
 import { FollowBar } from "@/components/Friends";
+import { MessageLink } from "@/components/MessageLink";
 import { ProfileActions } from "@/components/ProfileActions";
 import { FeedbackButton } from "@/components/FeedbackButton";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -80,6 +81,9 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
   const monthFmt = new Intl.DateTimeFormat(INTL_LANG[lang], { year: "numeric", month: "long", timeZone: "UTC" });
   const p = await load(name);
   if (!p) notFound();
+  const { data: bizData } = await supabaseAnon().rpc("public_business", { p_name: p.name });
+  const biz = (bizData as { account_type: string; business_name: string | null; website: string | null; about: string | null } | null) ?? null;
+  const bizType = biz && biz.account_type !== "general" ? biz : null;
 
   const ids = [...new Set([...p.shelf.map((x) => x.product_id), ...p.ratings.map((x) => x.product_id), ...p.lists.flatMap((l) => l.items), ...p.reviews.map((r) => r.product_id)])].slice(0, 160);
   const found = await Promise.all(ids.map((id) => getProductById(id)));
@@ -133,6 +137,20 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             <span>{t("u.since", { date: monthFmt.format(new Date(p.since)) })}</span>
             {p.how && <span>{t("u.drinks", { how: tv("how", p.how) })}</span>}
           </p>
+          {bizType && (
+            <div className="mt-3 max-w-xl rounded-sm border border-matcha bg-matcha-soft px-4 py-3 text-sm text-ink">
+              <p className="font-medium">
+                <span className="mr-2 rounded-full bg-matcha px-2.5 py-0.5 text-xs text-paper">{t(bizType.account_type === "cafe_owner" ? "c.ty.cafe_owner" : "c.ty.wholesaler")}</span>
+                {bizType.business_name}
+              </p>
+              {bizType.about && <p className="mt-2 whitespace-pre-line text-ink-muted">{bizType.about}</p>}
+              {bizType.website && (
+                <p className="mt-2">
+                  <a href={bizType.website} target="_blank" rel="nofollow noopener noreferrer" className="text-matcha underline hover:text-forest">{bizType.website.replace(/^https:\/\//, "")}</a>
+                </p>
+              )}
+            </div>
+          )}
           {p.bio && <p className="mt-3 max-w-xl text-ink-muted">{p.bio}</p>}
           {earned.length > 0 && (
             <ul className="mt-3 flex flex-wrap gap-2" aria-label={t("c.acct.badges")}>
@@ -145,6 +163,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             </ul>
           )}
           <FollowBar name={p.name} />
+          <div className="mt-3"><MessageLink name={p.name} /></div>
           <p className="mt-3">
             <ProfileActions name={p.name} />
           </p>

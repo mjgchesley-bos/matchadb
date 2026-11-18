@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Comments } from "@/components/Comments";
 import { FavoriteCafeButton } from "@/components/FavoriteCafeButton";
 import { ReportNoMatchaButton } from "@/components/ReportNoMatchaButton";
+import { CafeMenuManager } from "@/components/CafeMenuManager";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
@@ -132,6 +133,8 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       </header>
 
       <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
+
+      <CafeMenuManager cafeId={c.id} cafeName={c.name} />
 
       <details className="group mt-10 rounded-sm border border-line bg-paper-raised">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">

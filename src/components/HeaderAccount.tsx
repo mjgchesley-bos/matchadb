@@ -6,6 +6,7 @@ import { Avatar } from "@/components/Avatar";
 import { useAuth } from "@/components/AuthProvider";
 import { TierIcon } from "@/components/TierIcon";
 import { NotificationBell } from "@/components/NotificationBell";
+import { supabase } from "@/lib/supabase";
 import { useT } from "@/i18n/client";
 
 // "Sign in" in the header, or the person's initial with a small menu once signed in.
@@ -14,6 +15,16 @@ export function HeaderAccount() {
   const { ready, user, displayName, isPublic, avatar, stats, signIn, signOut } = useAuth();
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
+  const [unread, setUnread] = useState(0);
+  const uid = user?.id ?? null;
+  useEffect(() => {
+    if (!uid) return;
+    let live = true;
+    const load = () => supabase().rpc("unread_messages").then(({ data, error }) => live && !error && setUnread(Number(data) || 0));
+    void load();
+    const id = setInterval(load, 60000);
+    return () => { live = false; clearInterval(id); };
+  }, [uid]);
 
   useEffect(() => {
     if (!open) return;
@@ -77,6 +88,10 @@ export function HeaderAccount() {
           </p>
           <Link href="/account" role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
             {t("c.account.mine")}
+          </Link>
+          <Link href="/messages" role="menuitem" onClick={() => setOpen(false)} className="flex items-center justify-between px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
+            {t("c.account.messages")}
+            {unread > 0 && <span className="rounded-full bg-matcha px-2 text-xs text-paper">{unread}</span>}
           </Link>
           {isPublic && displayName && (
             <Link href={`/u/${encodeURIComponent(displayName)}`} role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">

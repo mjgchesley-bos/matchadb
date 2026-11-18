@@ -3,6 +3,7 @@
 import Link from "@/i18n/Link";
 import { useEffect, useRef, useState } from "react";
 import { AVATARS, Avatar, type AvatarKey } from "@/components/Avatar";
+import { AvatarDesigner } from "@/components/AvatarDesigner";
 import { useAuth } from "@/components/AuthProvider";
 import { HOW_LABELS } from "@/lib/badges";
 import { supabase } from "@/lib/supabase";
@@ -177,6 +178,7 @@ export function PublicProfileSettings() {
             </button>
           )}
         </div>
+        <AvatarDesigner current={s.avatar} onUse={(code) => { void dropPending().then(() => set({ avatar: code, avatar_path: null })); }} />
         <p className="mt-1.5 text-xs text-ink-faint">{t("c.pp.photoNote")}</p>
       </div>
 
