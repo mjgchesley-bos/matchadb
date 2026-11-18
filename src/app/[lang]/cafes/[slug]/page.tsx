@@ -10,6 +10,7 @@ import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
 import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/lib/cafe-places";
 import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
+import { matchaItem } from "@/lib/cafe-snippet";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { getT } from "@/i18n/server";
 import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
@@ -40,8 +41,18 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const t = getT(lang);
   const c = getCafeBySlug(slug);
   if (!c) return { title: t("cafe.notFound"), robots: { index: false } };
-  const title = t("cafe.meta.title", { name: c.name, loc: loc(c, lang) });
-  const description = t(c.via === "name" ? "cafe.meta.desc.name" : c.via === "reported" ? "cafe.meta.desc.reported" : "cafe.meta.desc.web", { name: c.name, where: formatPlace(c, lang) });
+  let title = t("cafe.meta.title", { name: c.name, loc: loc(c, lang) });
+  let description = t(c.via === "name" ? "cafe.meta.desc.name" : c.via === "reported" ? "cafe.meta.desc.reported" : "cafe.meta.desc.web", { name: c.name, where: formatPlace(c, lang) });
+  if (lang === "en") {
+    // People search "{café} menu"; say so in the title, and when the café's own menu shows a clean matcha item with a price, quote it.
+    title = `${c.name} Menu: Matcha in ${loc(c, lang)}`;
+    const item = c.via === "web" || !c.via ? matchaItem(c) : null;
+    const tail = "Menu, directions, and member ratings and reviews.";
+    if (item) description = `${c.name} in ${c.city || loc(c, lang)} lists ${item.name} at ${item.price} on its own menu. ${tail}`;
+    else if (c.via === "name") description = `${c.name} at ${formatPlace(c, lang)} is named for matcha. ${tail}`;
+    else if (c.via === "reported") description = `${c.name} at ${formatPlace(c, lang)} is reported by locals to serve matcha. ${tail}`;
+    else description = `${c.name} at ${formatPlace(c, lang)} lists matcha on its own website. ${tail}`;
+  }
   const alternates = pageAlternates(lang, `/cafes/${cafeSlug(c)}`);
   return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
 }
@@ -73,6 +84,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           name: c.name,
           url: c.url ?? undefined,
           telephone: c.phone ?? undefined,
+          hasMenu: c.menu ?? undefined,
           address: { "@type": "PostalAddress", streetAddress: c.address, addressLocality: c.city, addressRegion: c.state || undefined, postalCode: c.zip, addressCountry: c.cc ?? "US" },
           geo: { "@type": "GeoCoordinates", latitude: c.lat, longitude: c.lng },
         }}
