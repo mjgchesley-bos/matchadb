@@ -6,6 +6,9 @@ import { SITE_URL } from "@/lib/site";
 // The café pages, 10,000 per file: /cafes-sitemap/sitemap/0.xml, 1.xml, ... (robots.txt lists them all).
 // One file with every café was ~6.5 MB; the host refuses to serve a response over 6 MB (HTTP 413), so Google could not read it.
 // Only the English URL is listed: each café page names its other-language versions in its own <head> (hreflang).
+// Rendered when asked for, not stored in the build: the build output has a hard size limit on the host.
+export const dynamic = "force-dynamic";
+
 export async function generateSitemaps() {
   return Array.from({ length: cafeSitemapCount() }, (_, id) => ({ id }));
 }

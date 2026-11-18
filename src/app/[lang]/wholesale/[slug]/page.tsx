@@ -15,8 +15,12 @@ import { pageAlternates } from "@/i18n/seo";
 
 // Full profiles exist only for suppliers whose own site gives enough detail to fill one in;
 // every other supplier is listed on /wholesale.
+// Built the first time someone asks for each page, then kept for a day: prebuilding every supplier page in every language
+// was ~35 MB of the build output, and the host refuses a deployment over 220 MB.
+export const revalidate = 86400;
+export const dynamicParams = true;
 export function generateStaticParams() {
-  return SUPPLIERS.map((s) => ({ slug: s.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {

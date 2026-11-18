@@ -19,6 +19,9 @@ function multilingual(path: string, changeFrequency: "daily" | "weekly" | "month
   return LOCALES.map((l) => ({ url: abs(l), changeFrequency, priority: l === "en" ? priority : Math.max(0.1, priority - 0.1), alternates: { languages } }));
 }
 
+// Rendered when asked for, not stored in the build: the build output has a hard size limit on the host.
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { productIds, brands } = await getSitemapEntries();
 
