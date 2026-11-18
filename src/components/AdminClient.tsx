@@ -1,5 +1,6 @@
 "use client";
 
+import { AdminEvents } from "@/components/AdminEvents";
 import Link from "@/i18n/Link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
@@ -314,7 +315,7 @@ export function AdminClient() {
   const { user, ready, signIn } = useAuth();
   const [staff, setStaff] = useState<boolean | null>(null);
   const [range, setRange] = useState<RangeKey>("today");
-  const [tab, setTab] = useState<"activity" | "members">("activity");
+  const [tab, setTab] = useState<"activity" | "members" | "events">("activity");
   const [kinds, setKinds] = useState<string[]>([]);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [feed, setFeed] = useState<Ev[] | null>(null);
@@ -513,9 +514,9 @@ export function AdminClient() {
       )}
 
       <div className="mt-8 flex gap-5 border-b border-line" role="tablist">
-        {(["activity", "members"] as const).map((k) => (
+        {(["activity", "members", "events"] as const).map((k) => (
           <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={`-mb-px border-b-2 pb-2 text-sm font-medium ${tab === k ? "border-matcha text-ink" : "border-transparent text-ink-faint hover:text-ink-muted"}`}>
-            {k === "activity" ? "Activity feed" : "Members"}
+            {k === "activity" ? "Activity feed" : k === "members" ? "Members" : "Event posts"}
           </button>
         ))}
       </div>
@@ -546,6 +547,8 @@ export function AdminClient() {
           )}
         </section>
       )}
+
+      {tab === "events" && <AdminEvents />}
 
       {tab === "members" && (
         <section className="mt-4">

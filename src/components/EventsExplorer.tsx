@@ -153,7 +153,7 @@ export function EventsExplorer({ events, contactEmail }: { events: MatchaEvent[]
                         {e.end ? ` to ${fmtDate(e.end, { month: "short", day: "numeric", year: "numeric" })}` : ""}
                       </span>
                     </p>
-                    <h2 className="mt-1 font-display text-xl font-semibold text-ink">{e.name}</h2>
+                    <h3 className="mt-1 font-display text-xl font-semibold text-ink"><a href={`/events/${e.id}`} className="hover:text-matcha">{e.name}</a></h3>
                     <p className="text-sm text-ink-muted">
                       {[e.venue, e.city, e.country].filter(Boolean).join(", ")}
                       {d != null && <span className="ml-2 tabular-nums text-ink-faint">· {Math.round(d).toLocaleString("en-US")} km away</span>}
@@ -161,7 +161,7 @@ export function EventsExplorer({ events, contactEmail }: { events: MatchaEvent[]
                     <p className="mt-2 text-sm leading-relaxed text-ink-muted">{e.blurb}</p>
                     {e.note && <p className="mt-1 text-xs text-ink-faint">{e.note}</p>}
                     <p className="mt-2 text-xs text-ink-faint">{CONFIDENCE_LABEL[e.confidence]}. Source: {e.source}.</p>
-                    <a href={e.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm text-matcha underline hover:text-forest">Event page</a>
+                    <span className="mt-2 flex flex-wrap gap-x-5 gap-y-1 text-sm"><a href={`/events/${e.id}`} className="text-matcha underline hover:text-forest">Details and photos</a><a href={e.url} target="_blank" rel="noopener noreferrer" className="text-matcha underline hover:text-forest">Organizer's page</a></span>
                   </div>
                 </li>
               ))}
@@ -177,7 +177,7 @@ export function EventsExplorer({ events, contactEmail }: { events: MatchaEvent[]
       )}
 
       <p className="mt-8 max-w-2xl text-sm text-ink-muted">
-        Running or know of a matcha event? <a href={`mailto:${contactEmail}?subject=Matcha%20event%20for%20MatchaDB`} className="text-matcha underline hover:text-forest">Send it to us</a> with the date, place and the organizer&apos;s page. We only list events we can check against the organizer.
+        Running or know of a matcha event? <a href="#post" className="text-matcha underline hover:text-forest">Post it here</a> with the date, place and the organizer&apos;s page. We only list events we can check against the organizer. Prefer email? <a href={`mailto:${contactEmail}?subject=Matcha%20event%20for%20MatchaDB`} className="text-matcha underline hover:text-forest">Write to us</a>.
       </p>
     </div>
   );

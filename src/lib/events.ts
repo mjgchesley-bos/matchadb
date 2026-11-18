@@ -3,7 +3,7 @@ import auto from "../../data/events-auto.json";
 // Matcha and tea events around the world. Every entry was checked against the organizer's own page or a listing that names the date; the
 // `confidence` field says which. Recurring festivals with an expected date say so. Coordinates are the town or venue area, not a street address.
 export type EventKind = "festival" | "tea festival" | "trade show" | "tasting" | "exhibition" | "gathering";
-export type Confidence = "confirmed" | "reported" | "listed" | "expected";
+export type Confidence = "confirmed" | "reported" | "listed" | "expected" | "submitted";
 export type Continent = "North America" | "South America" | "Europe" | "Asia" | "Oceania" | "Africa";
 
 export type MatchaEvent = {
@@ -20,6 +20,9 @@ export type MatchaEvent = {
   lng: number;
   blurb: string;
   url: string;
+  organizer?: string;
+  // Public picture links (community posts); sourced pictures live in event-images.ts.
+  images?: string[];
   source: string;
   confidence: Confidence;
   note?: string;
@@ -30,6 +33,7 @@ export const CONFIDENCE_LABEL: Record<Confidence, string> = {
   reported: "Date confirmed by the organizer to a public listing; check their site before you travel",
   listed: "Date from event listings; confirm with the organizer",
   expected: "Recurring: date expected from the usual schedule",
+  submitted: "Posted by an organizer or member and reviewed by us; check the organizer's page",
 };
 
 export const EVENTS: MatchaEvent[] = [
@@ -191,12 +195,15 @@ export const EVENTS: MatchaEvent[] = [
 type AutoEvent = Omit<MatchaEvent, "blurb"> & { checked?: string };
 const norm = (n: string) => n.toLowerCase().replace(/[^a-z0-9]+/g, " ").replace(/\b(the|festival|tea|expo|international)\b/g, "").trim();
 
-export const upcoming = (today: string): MatchaEvent[] => {
-  const merged: MatchaEvent[] = [...EVENTS];
+// Every event we know about (curated, automatic and community-posted), including ones that have passed.
+export const allEvents = (extra: MatchaEvent[] = []): MatchaEvent[] => {
+  const merged: MatchaEvent[] = [...EVENTS, ...extra];
   for (const a of auto as AutoEvent[]) {
     const dup = merged.some((e) => (e.city.split(",")[0] === a.city && e.start === a.start) || norm(e.name) === norm(a.name));
     if (dup) continue;
     merged.push({ ...a, blurb: `A ${a.kind === "trade show" ? "trade show" : "tea festival"} in ${a.city}. Matcha is usually among the teas on offer; check the organizer's lineup.` });
   }
-  return merged.filter((e) => (e.end ?? e.start) >= today).sort((a, b) => (a.start < b.start ? -1 : 1));
+  return merged;
 };
+export const upcoming = (today: string, extra: MatchaEvent[] = []): MatchaEvent[] => allEvents(extra).filter((e) => (e.end ?? e.start) >= today).sort((a, b) => (a.start < b.start ? -1 : 1));
+export const eventById = (id: string, extra: MatchaEvent[] = []): MatchaEvent | undefined => allEvents(extra).find((e) => e.id === id);
