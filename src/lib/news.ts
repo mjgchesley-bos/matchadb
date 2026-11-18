@@ -1,4 +1,5 @@
 import { NEWS_SEED, type NewsCategory, type NewsItem } from "./news-seed";
+import saved from "../../data/news-live.json";
 
 // Matcha headlines for the news page: a live pull from GDELT's open news index (refreshed about every half hour), merged with a saved set so
 // the page is never empty if the feed is down or rate-limited. Headlines and links only; every story belongs to its publisher.
@@ -45,7 +46,7 @@ export async function getNews(): Promise<{ items: NewsItem[]; liveCount: number 
   const seen = new Set<string>();
   const norm = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().slice(0, 60);
   const items: NewsItem[] = [];
-  for (const it of [...fresh, ...NEWS_SEED]) {
+  for (const it of [...fresh, ...(saved as NewsItem[]), ...NEWS_SEED]) {
     const key = norm(it.title);
     if (seen.has(it.url) || seen.has(key)) continue;
     seen.add(it.url);
@@ -56,5 +57,6 @@ export async function getNews(): Promise<{ items: NewsItem[]; liveCount: number 
   // Keep the page to the last ~6 weeks.
   const cutoff = new Date(Date.now() - 42 * 86400000).toISOString().slice(0, 10);
   // With no live feed, keep showing the saved set however old it is, rather than an empty page.
-  return { items: fresh.length ? items.filter((i) => i.date >= cutoff) : items, liveCount: fresh.length };
+  const liveCount = fresh.length + (saved as NewsItem[]).filter((i) => i.date >= new Date(Date.now() - 3 * 86400000).toISOString().slice(0, 10)).length;
+  return { items: liveCount ? items.filter((i) => i.date >= cutoff) : items, liveCount };
 }
