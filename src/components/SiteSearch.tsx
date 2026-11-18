@@ -1,16 +1,20 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "@/i18n/Link";
 import { useT } from "@/i18n/client";
 
 type Result = { products: { id: number; name: string; brand: string }[]; brands: string[]; cafes: { name: string; city: string; slug: string }[] };
 
 // The site-wide search bar in the header: products, brands and cafés in one box. Enter opens the full database search.
-export function SiteSearch() {
+export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero" }) {
   const t = useT();
   const router = useRouter();
+  const pathname = usePathname();
+  const hero = variant === "hero";
+  // The home page has its own big search bar, so the small one in the header steps aside there.
+  const onHome = /^\/(ja|ko|zh|es|fr|de)?\/?$/.test(pathname || "/");
   const [q, setQ] = useState("");
   const [res, setRes] = useState<Result | null>(null);
   const [open, setOpen] = useState(false);
@@ -47,13 +51,14 @@ export function SiteSearch() {
     };
   }, []);
 
+  if (!hero && onHome) return null;
   const empty = res && res.products.length + res.brands.length + res.cafes.length === 0;
   const close = () => setOpen(false);
   const head = "px-4 pt-3 pb-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-forest";
   const row = "block px-4 py-2 text-sm text-ink hover:bg-matcha-soft focus-visible:bg-matcha-soft focus-visible:outline-none";
 
   return (
-    <div ref={rootRef} className="relative w-full sm:w-72 lg:w-80">
+    <div ref={rootRef} className={hero ? "relative mx-auto w-full max-w-2xl text-left" : "relative w-full sm:w-72 lg:w-80"}>
       <form
         role="search"
         onSubmit={(e) => {
@@ -77,7 +82,7 @@ export function SiteSearch() {
           placeholder={t("c.search.ph")}
           aria-label={t("c.search.ph")}
           autoComplete="off"
-          className="w-full rounded-full bg-paper px-4 py-2 sm:py-2.5 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-offset-2 focus:outline-paper"
+          className={hero ? "w-full rounded-full border border-line-strong bg-paper-raised px-6 py-4 text-base sm:text-lg text-ink shadow-sm placeholder:text-ink-faint focus:border-matcha focus:outline-2 focus:outline-matcha" : "w-full rounded-full bg-paper px-4 py-2 sm:py-2.5 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-offset-2 focus:outline-paper"}
         />
       </form>
       {open && res && (

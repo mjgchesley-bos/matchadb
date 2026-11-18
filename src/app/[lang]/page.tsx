@@ -24,6 +24,7 @@ import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { getLibraryFacets } from "@/lib/studies";
 import { getCafeSlimIndex } from "@/lib/cafes";
 import { GUIDES } from "@/lib/guides";
+import { SiteSearch } from "@/components/SiteSearch";
 import { getT } from "@/i18n/server";
 import { isLocale, fmtNum, localePath, type Locale } from "@/i18n/config";
 import { pageAlternates } from "@/i18n/seo";
@@ -146,8 +147,13 @@ export default async function Home({
         }}
       />
       <section className="relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-6 pt-20 pb-10 sm:pt-24 text-center">
-          <h1 className="font-display text-[2.75rem] leading-[1.05] sm:text-[4.25rem] sm:leading-[1.02] font-semibold tracking-tight text-ink text-balance">
+        <div className="max-w-3xl mx-auto px-6 pt-10 pb-10 sm:pt-16 text-center">
+          <SiteSearch variant="hero" />
+          <p className="mt-3 flex flex-wrap items-center justify-center gap-2 text-sm">
+            <Link href="/cafes" className="rounded-full border border-line-strong bg-paper-raised px-4 py-1.5 text-ink hover:border-matcha hover:bg-matcha-soft">{t("h.hero.near")}</Link>
+            <Link href="/browse" className="rounded-full border border-line-strong bg-paper-raised px-4 py-1.5 text-ink hover:border-matcha hover:bg-matcha-soft">{t("h.hero.browse")}</Link>
+          </p>
+          <h1 className="mt-12 font-display text-[2.75rem] leading-[1.05] sm:text-[4.25rem] sm:leading-[1.02] font-semibold tracking-tight text-ink text-balance">
             {t("h.hero.title")}
           </h1>
           <p className="mt-7 text-lg text-ink-muted max-w-xl mx-auto leading-relaxed">

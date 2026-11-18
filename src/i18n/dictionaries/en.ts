@@ -12,6 +12,8 @@ export const en = {
   "nav.cafes.short": "Cafés",
   "nav.cafes.long": "Matcha cafés",
   "c.search.ph": "Search products, brands, cafes…",
+  "h.hero.near": "Matcha near me",
+  "h.hero.browse": "Browse all products",
   "c.search.products": "Products",
   "c.search.brands": "Brands",
   "c.search.cafes": "Cafés",
