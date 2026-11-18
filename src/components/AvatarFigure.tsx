@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import dynamic from "next/dynamic";
 import { designedFace } from "@/components/Avatar";
 import { OUTFIT_COLORS, parseDesign, parseOutfit, type DesignParts } from "@/lib/avatar-design";
 
@@ -119,7 +120,7 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
   );
 }
 
-export function AvatarFigure({ code, height = 280 }: { code: string | null; height?: number }) {
+function FigureSvg({ code, height = 280 }: { code: string | null; height?: number }) {
   const [round, setRound] = useState(0);
   const parts = parseDesign(code);
   if (!parts) return null;
@@ -140,6 +141,21 @@ export function AvatarFigure({ code, height = 280 }: { code: string | null; heig
           <div className="av-face av-back"><Body parts={parts} outfit={outfit} back /></div>
         </div>
       </button>
+    </div>
+  );
+}
+
+// The real 3D figure (drag to turn, spins on arrival), loaded only when needed. Browsers without WebGL get the flat figure instead.
+const Avatar3D = dynamic(() => import("@/components/Avatar3D"), { ssr: false, loading: () => null });
+
+export function AvatarFigure({ code, height = 280 }: { code: string | null; height?: number }) {
+  const [failed, setFailed] = useState(false);
+  const onFail = useCallback(() => setFailed(true), []);
+  if (!code || !parseDesign(code)) return null;
+  if (failed) return <FigureSvg code={code} height={height} />;
+  return (
+    <div className="shrink-0" style={{ width: Math.round(height * 0.6), height }}>
+      <Avatar3D code={code} height={height} onFail={onFail} />
     </div>
   );
 }
