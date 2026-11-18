@@ -4,6 +4,7 @@ import Link from "@/i18n/Link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { TierBadge } from "@/components/TierBadge";
+import { Avatar } from "@/components/Avatar";
 import { supabase } from "@/lib/supabase";
 import { useLang, useT } from "@/i18n/client";
 import { INTL_LANG } from "@/i18n/config";
@@ -21,7 +22,7 @@ const PAGE = 15; // comments shown at first, and added by each "Load more"
 const MIN_OWN = 5; // a location with fewer reviews of its own also shows some from the chain's other locations
 const FROM_OTHERS = 10; // how many of those
 
-type Pub = { target_key?: string; id: string; body: string; photos: string[]; created_at: string; display_name: string; tier?: string | null; public_profile?: boolean; hearts?: number };
+type Pub = { target_key?: string; id: string; body: string; photos: string[]; created_at: string; display_name: string; tier?: string | null; public_profile?: boolean; hearts?: number; avatar?: string | null; avatar_path?: string | null };
 type Mine = { id: string; body: string; photos: string[]; status: "pending" | "approved" | "hidden"; created_at: string };
 
 export const commentPhotoUrl = (path: string): string => supabase().storage.from(COMMENT_BUCKET).getPublicUrl(path).data.publicUrl;
@@ -143,13 +144,10 @@ export function Comments({
     const ranked = await sb.rpc("ranked_comments", { p_type: targetType, p_key: targetKey, p_limit: PAGE + 1, p_offset: offset });
     if (!ranked.error) return ranked;
     // Fallback (if the ranking function is unavailable): plain newest-first pages, so comments never disappear.
-    return sb
-      .from("approved_comments")
-      .select("id, body, photos, created_at, display_name, tier, public_profile")
-      .eq("target_type", targetType)
-      .eq("target_key", targetKey)
-      .order("created_at", { ascending: false })
-      .range(offset, offset + PAGE);
+    const plain = (cols: string) =>
+      sb.from("approved_comments").select(cols).eq("target_type", targetType).eq("target_key", targetKey).order("created_at", { ascending: false }).range(offset, offset + PAGE);
+    const withAv = await plain("id, body, photos, created_at, display_name, tier, public_profile, avatar, avatar_path");
+    return withAv.error ? plain("id, body, photos, created_at, display_name, tier, public_profile") : withAv;
   };
 
   const absorb = (rows: Pub[], replace: boolean) => {
@@ -180,12 +178,9 @@ export function Comments({
     if (!needOthers) return;
     let live = true;
     const sb = supabase();
-    sb.from("approved_comments")
-      .select("id, body, photos, created_at, display_name, tier, public_profile, target_key")
-      .eq("target_type", "cafe")
-      .in("target_key", sibKey.split(","))
-      .order("created_at", { ascending: false })
-      .limit(FROM_OTHERS)
+    const q = (cols: string) => sb.from("approved_comments").select(cols).eq("target_type", "cafe").in("target_key", sibKey.split(",")).order("created_at", { ascending: false }).limit(FROM_OTHERS);
+    q("id, body, photos, created_at, display_name, tier, public_profile, target_key, avatar, avatar_path")
+      .then((r) => (r.error ? q("id, body, photos, created_at, display_name, tier, public_profile, target_key") : r))
       .then(async ({ data }) => {
         const rows = (data as Pub[] | null) ?? [];
         if (!live || !rows.length) return;
@@ -353,6 +348,7 @@ export function Comments({
   const card = (c: Pub, from?: { label: string; slug: string }) => (
           <article key={c.id} className="rounded-sm border border-line bg-paper-raised px-4 py-3.5">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <Avatar avatar={c.avatar} photoPath={c.avatar_path} name={c.display_name} size={30} />
               {c.public_profile ? (
                 <Link href={`/u/${encodeURIComponent(c.display_name)}`} className="text-base font-semibold text-matcha hover:text-forest hover:underline">
                   {c.display_name}

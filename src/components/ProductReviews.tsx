@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { Stars } from "@/components/Stars";
 import { TierBadge } from "@/components/TierBadge";
+import { Avatar } from "@/components/Avatar";
 import { supabase } from "@/lib/supabase";
 import { useLang, useT } from "@/i18n/client";
 import { INTL_LANG } from "@/i18n/config";
@@ -13,7 +14,7 @@ import { INTL_LANG } from "@/i18n/config";
 // write one review per product. New and edited reviews wait for approval before they show
 // publicly, so spam never lands on pages that search engines index.
 
-type Review = { id: string; body: string; created_at: string; display_name: string; rating: number | null; tier?: string | null; public_profile?: boolean };
+type Review = { id: string; body: string; created_at: string; display_name: string; rating: number | null; tier?: string | null; public_profile?: boolean; avatar?: string | null; avatar_path?: string | null };
 type Mine = { id: string; body: string; status: "pending" | "approved" | "hidden" };
 
 const MIN = 20;
@@ -54,13 +55,10 @@ export function ProductReviews({ productId, productName }: { productId: number; 
 
   useEffect(() => {
     let live = true;
-    supabase()
-      .from("approved_reviews")
-      .select("id, body, created_at, display_name, rating, tier, public_profile")
-      .eq("product_id", productId)
-      .order("created_at", { ascending: false })
-      .limit(50)
-      .then(({ data }) => live && setReviews((data as Review[] | null) ?? []));
+    const q = (cols: string) => supabase().from("approved_reviews").select(cols).eq("product_id", productId).order("created_at", { ascending: false }).limit(50);
+    q("id, body, created_at, display_name, rating, tier, public_profile, avatar, avatar_path")
+      .then((r) => (r.error ? q("id, body, created_at, display_name, rating, tier, public_profile") : r))
+      .then(({ data }) => live && setReviews((data as unknown as Review[] | null) ?? []));
     return () => {
       live = false;
     };
@@ -201,6 +199,7 @@ export function ProductReviews({ productId, productName }: { productId: number; 
         {reviews?.map((r) => (
           <article key={r.id} className="border-t border-line pt-4">
             <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <Avatar avatar={r.avatar} photoPath={r.avatar_path} name={r.display_name} size={28} />
               {r.public_profile ? (
                 <Link href={`/u/${encodeURIComponent(r.display_name)}`} className="text-sm font-medium text-ink hover:text-matcha">
                   {r.display_name}
