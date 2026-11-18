@@ -16,18 +16,28 @@ type Gdelt = { articles?: { url: string; title: string; seendate: string; domain
 const nameOf = (domain: string) => domain.replace(/^www\./, "");
 const isoOf = (seen: string) => `${seen.slice(0, 4)}-${seen.slice(4, 6)}-${seen.slice(6, 8)}`;
 
+let lastGood: NewsItem[] = [];
+
+// GDELT limits how often it answers (it replies 429 now and then), so try a few times, and keep the last good answer for this server instance.
 async function live(): Promise<NewsItem[]> {
-  try {
-    const q = new URLSearchParams({ query: "matcha sourcelang:english", mode: "artlist", format: "json", maxrecords: "75", sort: "datedesc", timespan: "10d" });
-    const res = await fetch(`https://api.gdeltproject.org/api/v2/doc/doc?${q}`, { next: { revalidate: 1800 }, headers: { "User-Agent": "MatchaDBBot/1.0 (+https://www.matchadb.com)" }, signal: AbortSignal.timeout(8000) });
-    if (!res.ok) return [];
-    const j = (await res.json()) as Gdelt;
-    return (j.articles ?? [])
-      .filter((a) => /matcha/i.test(a.title) && a.title.length <= 150 && !BLOCKED.test(a.domain) && (!a.language || /english/i.test(a.language)))
-      .map((a) => ({ title: a.title.replace(/\s+/g, " ").trim(), url: a.url, source: nameOf(a.domain), date: isoOf(a.seendate), category: categoryOf(a.title) }));
-  } catch {
-    return [];
+  const q = new URLSearchParams({ query: "matcha sourcelang:english", mode: "artlist", format: "json", maxrecords: "75", sort: "datedesc", timespan: "10d" });
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch(`https://api.gdeltproject.org/api/v2/doc/doc?${q}`, { next: { revalidate: 1800 }, headers: { "User-Agent": "MatchaDBBot/1.0 (+https://www.matchadb.com)" }, signal: AbortSignal.timeout(8000) });
+      if (res.ok) {
+        const j = (await res.json()) as Gdelt;
+        const items = (j.articles ?? [])
+          .filter((a) => /matcha/i.test(a.title) && a.title.length <= 150 && !BLOCKED.test(a.domain) && (!a.language || /english/i.test(a.language)))
+          .map((a) => ({ title: a.title.replace(/\s+/g, " ").trim(), url: a.url, source: nameOf(a.domain), date: isoOf(a.seendate), category: categoryOf(a.title) }));
+        if (items.length) lastGood = items;
+        return items;
+      }
+    } catch {
+      /* try again */
+    }
+    await new Promise((r) => setTimeout(r, 2500 * (attempt + 1)));
   }
+  return lastGood;
 }
 
 export async function getNews(): Promise<{ items: NewsItem[]; liveCount: number }> {
@@ -45,5 +55,6 @@ export async function getNews(): Promise<{ items: NewsItem[]; liveCount: number 
   items.sort((a, b) => (a.date < b.date ? 1 : a.date > b.date ? -1 : 0));
   // Keep the page to the last ~6 weeks.
   const cutoff = new Date(Date.now() - 42 * 86400000).toISOString().slice(0, 10);
-  return { items: items.filter((i) => i.date >= cutoff), liveCount: fresh.length };
+  // With no live feed, keep showing the saved set however old it is, rather than an empty page.
+  return { items: fresh.length ? items.filter((i) => i.date >= cutoff) : items, liveCount: fresh.length };
 }
