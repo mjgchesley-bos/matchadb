@@ -5247,5 +5247,597 @@
       }
     ],
     "catalogNote": "All 18 products from the supplier's own catalogue, with its published 1 kg prices. The sensory scores are the supplier's own and are not tested by MatchaDB."
+  },
+  {
+    "slug": "isshiki-matcha",
+    "name": "Isshiki Matcha",
+    "website": "https://isshikimatcha.com",
+    "url": "https://isshikimatcha.com/pages/wholesale",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "private-label"
+    ],
+    "how": [
+      "form"
+    ],
+    "serves": [
+      "us"
+    ],
+    "summary": "New York City matcha brand and café that sells ceremonial-grade Uji matcha wholesale and in bulk, with private label and no minimum order.",
+    "facts": [
+      "Offers wholesale and bulk matcha described as ceremonial-grade, stone-milled and from Uji, Kyoto",
+      "States there is no minimum order, so a business can start small and reorder",
+      "Says it ships to all 50 US states",
+      "Also offers packaged products and private label",
+      "Samples and pricing are requested through a form on the page"
+    ],
+    "hq": "New York City, USA",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://isshikimatcha.com/pages/wholesale"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "wakaba-matcha",
+    "name": "WAKABA Matcha & Tea",
+    "website": "https://matcha-wakaba.com",
+    "url": "https://matcha-wakaba.com/en",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "ingredient"
+    ],
+    "how": [
+      "form"
+    ],
+    "serves": [
+      "eu"
+    ],
+    "summary": "Düsseldorf-based B2B supplier of Japanese matcha for European cafés, retailers and food makers, from 1 kg, with organic options.",
+    "facts": [
+      "Says its matcha is tested by WAKABA in Düsseldorf and available from 1 kg",
+      "Lists wholesale since 2018 for cafés, restaurants, retailers and food manufacturers across Europe",
+      "Names these certifications: JAS organic, USDA Organic, EU Organic, German Bio-Siegel and FSSC 22000",
+      "Pricing is requested through a form; the page publishes no prices"
+    ],
+    "hq": "Düsseldorf, Germany",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://matcha-wakaba.com/en"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "kyosun",
+    "name": "Kyosun",
+    "website": "https://www.kyosun.com",
+    "url": "https://www.kyosun.com/en/matcha-wholesale/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label"
+    ],
+    "how": [
+      "portal",
+      "email"
+    ],
+    "serves": [
+      "eu",
+      "intl"
+    ],
+    "summary": "Czech importer and distributor of Japanese matcha for wholesale partners in Europe and beyond, with private label; prices sit behind an approved-account online shop.",
+    "facts": [
+      "Kyosun s.r.o. describes itself as an importer and distributor of Japanese matcha in Europe, active since 2012",
+      "Five grades from culinary to ceremonial, in packs from 2 g portions to kilograms",
+      "Prices and minimum order quantities are shown only in its wholesale online shop (matchab2b.com) after registration is approved",
+      "Says it supplies partners in Europe, in 30+ countries and worldwide",
+      "Offers private label; contact by email or phone"
+    ],
+    "hq": "Praha 9, Czech Republic",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.kyosun.com/en/matcha-wholesale/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "issa-matcha",
+    "name": "ISSA MATCHA",
+    "website": "https://issamatcha.com",
+    "url": "https://issamatcha.com/wholesale/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label"
+    ],
+    "how": [
+      "form",
+      "email"
+    ],
+    "serves": [
+      "us",
+      "ca",
+      "eu",
+      "au",
+      "intl"
+    ],
+    "summary": "Japan-based matcha exporter shipping from Osaka to businesses worldwide, with a 1 kg minimum, up to 10,000 kg a month, and OEM and private label.",
+    "facts": [
+      "Minimum order is 1 kg per product, and 10 kg on its Halal and Kosher certified blends",
+      "Says it supplies up to 10,000 kg a month, with samples in 3 days and invoice terms of 14 days",
+      "Ships from Osaka under DDP or FOB Osaka terms and says it files the FDA prior notice",
+      "Lists shipping to the US, Canada, Mexico, Colombia, UK, Spain, Poland, Netherlands, UAE, Saudi Arabia, Malaysia, Philippines, Hong Kong and Australia",
+      "Names Halal, Kosher and JAS organic certification, and offers OEM and private label",
+      "Samples and quotes are requested by form or email"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://issamatcha.com/wholesale/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "first-agri",
+    "name": "First Agri",
+    "website": "https://first-agri.jp",
+    "url": "https://first-agri.jp/matcha",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "ingredient"
+    ],
+    "how": [
+      "form"
+    ],
+    "serves": [
+      "us",
+      "eu",
+      "au",
+      "intl"
+    ],
+    "summary": "Japanese B2B matcha wholesaler for cafés, restaurants, bakeries and food makers, with JAS and USDA organic options and a 5 kg starting order.",
+    "facts": [
+      "Wholesale matcha, hojicha and genmaicha sourced from producers in Shizuoka, Kyoto and Kagoshima",
+      "Says to start with 5 kg, with flexible minimums up to 100-ton annual contracts",
+      "Lists JAS Organic, USDA Organic and FDA compliance",
+      "Says it delivers in 7-14 days to the USA, Europe, Singapore, Australia and DACH",
+      "Offers a free sample pack (the buyer pays shipping); requests go through a product request form"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://first-agri.jp/matcha"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "element-matcha",
+    "name": "Element Matcha",
+    "website": "https://elementmatcha.com",
+    "url": "https://elementmatcha.com/pages/wholesale",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "private-label"
+    ],
+    "how": [
+      "form"
+    ],
+    "serves": [
+      "us"
+    ],
+    "summary": "US wholesale programme for organic ceremonial and restaurant-grade matcha from family farms in Kagoshima, with a $300 minimum order.",
+    "facts": [
+      "States a $300 minimum order and US shipping",
+      "Lists USDA and JAS organic certification",
+      "Says the matcha comes direct from family farms in Kagoshima, Japan",
+      "Offers ceremonial and restaurant-grade options for cafés, roasters and food brands, plus private label",
+      "Applications and free samples go through a wholesale form"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://elementmatcha.com/pages/wholesale"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "matcha-and-beyond",
+    "name": "Matcha & Beyond",
+    "website": "https://matchaandbeyond.com",
+    "url": "https://matchaandbeyond.com/wholesale/",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "private-label"
+    ],
+    "how": [
+      "portal"
+    ],
+    "serves": [
+      "eu"
+    ],
+    "summary": "London matcha wholesaler and online retailer supplying UK specialty retailers and cafés, with no minimum order and a trade-account application.",
+    "facts": [
+      "Describes itself as a wholesaler and online retailer shipping to specialty retailers across the United Kingdom",
+      "States no minimum order",
+      "Names JAS and EU Organic certification",
+      "Applicants complete a trade questionnaire and create an account; the wholesale store opens after approval",
+      "Also offers private label matcha"
+    ],
+    "hq": "London",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://matchaandbeyond.com/wholesale/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "aiya-europe",
+    "name": "Aiya Europe",
+    "website": "https://aiya-europe.com",
+    "url": "https://aiya-europe.com/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label",
+      "ingredient"
+    ],
+    "how": [
+      "form"
+    ],
+    "serves": [
+      "eu"
+    ],
+    "summary": "Aiya's European company (Aiya Europe GmbH) supplying matcha and tea to food, beverage, hospitality, retail and supplement businesses, with bulk and private label.",
+    "facts": [
+      "Offers matcha for food, beverage, hospitality, cosmetics and supplement uses, plus ready-to-use blends for cafés and foodservice",
+      "Lists bulk and wholesale supply and private label services",
+      "Names EU Organic, JAS and IFS Broker certification",
+      "Says it has more than 20 years of experience in Europe",
+      "Free samples are requested through a form"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://aiya-europe.com/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "the-organic-labs",
+    "name": "The Organic Labs",
+    "website": "https://www.theorganiclabs.com",
+    "url": "https://www.theorganiclabs.com/en-us/products/bulk-organic-matcha-powder-25kg-wholesale-supplier-europe",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "ingredient"
+    ],
+    "how": [
+      "form",
+      "email"
+    ],
+    "serves": [
+      "eu"
+    ],
+    "summary": "Swedish B2B supplier of bulk organic matcha from Japan to European cafés, HoReCa and food brands, with stock in Sweden.",
+    "facts": [
+      "The Organic Labs Sweden AB sells bulk organic matcha from Japan; the minimum order on this product is one 25 kg drum",
+      "Bulk formats listed: 2 kg pouch, 10 kg box, 25 kg fibre drum and pallets",
+      "States stock in Sweden and dispatch in 3-5 days, serving the EU and EEA",
+      "Names EU organic (SE-EKO-01), ISO 22000 and HACCP, with a certificate of analysis per batch",
+      "Quotes are requested by form or email (info@theorganiclabs.com)"
+    ],
+    "hq": "Sweden",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.theorganiclabs.com/en-us/products/bulk-organic-matcha-powder-25kg-wholesale-supplier-europe"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "allreasons",
+    "name": "Allreasons",
+    "website": "https://allreasons.eu",
+    "url": "https://allreasons.eu/products/matcha-wholesale",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "private-label"
+    ],
+    "how": [
+      "form",
+      "email"
+    ],
+    "serves": [
+      "eu",
+      "intl"
+    ],
+    "summary": "Riga-based wholesaler of matcha and other powder ingredients for European food service, retail and manufacturers, with private label.",
+    "facts": [
+      "Wholesale matcha is sold in bulk from 25 kg, with smaller quantities in a separate wholesale shop",
+      "Names ISO 22000:2018 and EU Organic certification",
+      "Says it ships across Europe and worldwide by DHL, FedEx and UPS",
+      "Offers private label matcha, and a range of grades including organic",
+      "Pricing is requested by form or email"
+    ],
+    "hq": "Riga, Latvia",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://allreasons.eu/products/matcha-wholesale"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "sby-matcha",
+    "name": "SBY Matcha",
+    "website": "https://sbymatcha.com",
+    "url": "https://sbymatcha.com/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label",
+      "ingredient"
+    ],
+    "how": [],
+    "serves": [
+      "eu",
+      "intl"
+    ],
+    "summary": "Matcha producer that sells bulk organic and conventional matcha and private label to food and beverage manufacturers; the figures below are its own claims.",
+    "facts": [
+      "Says it specialises in private label matcha, with bulk packaging such as retail tins, bags and single-serve packets",
+      "Sells organic and conventional bulk matcha for food and beverage manufacturers",
+      "Says it exports over 1,000 tons a year to the EU, Japan and Southeast Asia (its own claim)",
+      "Lists HACCP, ISO 9001, FSSC 22000, EU Organic, FDA and Halal on its site",
+      "Minimum order is not stated; samples are offered free"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://sbymatcha.com/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "maruhori-seicha",
+    "name": "Maruhori Seicha (丸堀製茶)",
+    "website": "https://www.maruhori.co.jp",
+    "url": "https://www.maruhori.co.jp/business/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label",
+      "ingredient"
+    ],
+    "how": [],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Kakegawa, Shizuoka tea maker that takes business orders for matcha and tea: wholesale, OEM and ODM, from small lots to several tons.",
+    "facts": [
+      "The company page says it has made tea in Kakegawa for over 120 years and offers wholesale, OEM and ODM to businesses",
+      "States a processing capacity of 400 tons a year and ISO 22000 food safety certification",
+      "Says lots can be as small as a few dozen kilograms or as large as several tons",
+      "Says it can handle organic JAS and exports, and traces every raw tea to the field it came from",
+      "The page is in Japanese"
+    ],
+    "hq": "Kakegawa, Shizuoka, Japan",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.maruhori.co.jp/business/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "kaneshichi-hatakeyama-seicha",
+    "name": "Kaneshichi Hatakeyama Seicha (カネ七畠山製茶)",
+    "website": "https://www.7noshin.com",
+    "url": "https://www.7noshin.com/sp/product.html",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label"
+    ],
+    "how": [],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Fushimi, Kyoto Uji tea maker and wholesaler (founded 1751) that makes JAS organic and Uji matcha under OEM for other brands, in small lots.",
+    "facts": [
+      "Says it has made and wholesaled Uji tea in Fushimi, Kyoto since 1751",
+      "Offers OEM production of organic JAS matcha, Uji matcha, matcha powder and flavoured matcha",
+      "Says small lots are possible and that overseas shipping can be arranged",
+      "The page is in Japanese"
+    ],
+    "hq": "Fushimi, Kyoto, Japan",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.7noshin.com/sp/product.html"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "kyoto-chanokura",
+    "name": "Kyoto Chanokura (京都茶の蔵)",
+    "website": "https://www.kyoto-chanokura.co.jp",
+    "url": "https://www.kyoto-chanokura.co.jp/business",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label"
+    ],
+    "how": [],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Kyoto tea company founded in 1818 that supplies matcha and Japanese tea wholesale, with OEM and joint development and export support.",
+    "facts": [
+      "Says it was founded in 1818 in Kyoto",
+      "Offers wholesale of matcha and Japanese tea, OEM and joint product development from small trial lots to mass production",
+      "Says it supports export and product design for overseas markets",
+      "The page is in Japanese"
+    ],
+    "hq": "Kyoto, Japan",
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.kyoto-chanokura.co.jp/business"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "meiyo-seicha",
+    "name": "Meiyo (銘葉)",
+    "website": "https://meiyo.co.jp",
+    "url": "https://meiyo.co.jp/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label",
+      "ingredient"
+    ],
+    "how": [],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Japanese green tea and matcha maker focused on Shizuoka tea, offering contract manufacturing, private brand development, wholesale, import and export.",
+    "facts": [
+      "Offers OEM and private brand production of Shizuoka green tea and matcha, plus wholesale, import and export",
+      "Says it was the first in the Japanese tea industry to obtain Halal certification, for overseas sales",
+      "The page is in Japanese"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://meiyo.co.jp/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "otsuka-seicha",
+    "name": "Otsuka Seicha (大塚製茶)",
+    "website": "https://www.cha8088.com",
+    "url": "https://www.cha8088.com/user_data/service",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label",
+      "ingredient"
+    ],
+    "how": [],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Japanese tea company that sells to businesses: commercial wholesale, own-brand and OEM products, and raw tea powders including matcha, with exports since 2005.",
+    "facts": [
+      "Says it offers wholesale for commercial use, own-brand products, OEM and raw material wholesale",
+      "Says it has exported tea since 2005 and obtained ISO 22000 in January 2021",
+      "Says it obtained organic JAS certification in 2015 and carries organic sencha and matcha",
+      "Sells processing-grade powdered green tea and matcha as raw material in Japan and overseas",
+      "The page is in Japanese"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.cha8088.com/user_data/service"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "88-matcha",
+    "name": "88-MATCHA (抹茶卸.com)",
+    "website": "https://matcha-oroshi.com",
+    "url": "https://matcha-oroshi.com/",
+    "brands": [],
+    "tags": [
+      "cafe",
+      "bulk",
+      "private-label"
+    ],
+    "how": [],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Japanese wholesale service for commercial matcha, from small trial lots to annual contracts, with OEM, private brand and export support.",
+    "facts": [
+      "Supplies commercial matcha for cafés, OEM makers, food brands and importers overseas, from small lots to large annual contracts",
+      "Offers ceremonial, café and confectionery grades and OEM blends, plus private label",
+      "Says it handles food-safety documents, customs clearance and organic JAS support, and FDA and plant-quarantine requirements for export",
+      "The page is in Japanese"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://matcha-oroshi.com/"
+      }
+    ],
+    "verified": "2026-11-17"
+  },
+  {
+    "slug": "goodyoung",
+    "name": "Goodyoung (桔揚)",
+    "website": "https://www.goodyoung.info",
+    "url": "https://www.goodyoung.info/jp/recommended-commercialmatchapowder/",
+    "brands": [],
+    "tags": [
+      "bulk",
+      "private-label",
+      "ingredient"
+    ],
+    "how": [],
+    "serves": [
+      "intl"
+    ],
+    "summary": "Taiwan-based supplier of commercial matcha powder for chains and food makers, from Japan, Taiwan and Vietnam, with OEM and flavour development.",
+    "facts": [
+      "Says it has more than 30 years of history in Taiwan and sells commercial matcha powder for bakeries, beverages and restaurant chains",
+      "Offers matcha sourced from Japan, Taiwan and Vietnam, and custom taste matching with trial samples",
+      "Names HACCP and FSSC 22000 food safety certification",
+      "Offers OEM and ODM",
+      "The page is in Japanese"
+    ],
+    "sources": [
+      {
+        "label": "Wholesale page",
+        "url": "https://www.goodyoung.info/jp/recommended-commercialmatchapowder/"
+      }
+    ],
+    "verified": "2026-11-17"
   }
 ]
