@@ -1,0 +1,37 @@
+name: News refresh (daily)
+
+# Saves fresh matcha headlines into data/news-live.json from GDELT's open news index, which rate-limits shared servers, so the script retries and,
+# if it still cannot get an answer, leaves the saved file as it is. The news page also shows a built-in set when nothing newer is saved.
+# See scripts/refresh_news.py. Headlines and links only; the stories belong to their publishers.
+on:
+  schedule:
+    - cron: "41 6 * * *" # 06:41 UTC daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh headlines
+        run: python scripts/refresh_news.py
+
+      - name: Commit and push if the headlines changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/news-live.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Automated daily news refresh"
+            git push
+          fi

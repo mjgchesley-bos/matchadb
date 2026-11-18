@@ -1,0 +1,66 @@
+{
+ "Amsterdam, Netherlands": [
+  52.3730796,
+  4.8924534
+ ],
+ "Chicago, United States": [
+  41.8755616,
+  -87.6244212
+ ],
+ "Dresden, Germany": [
+  51.0493286,
+  13.7381437
+ ],
+ "Eugene, United States": [
+  44.0505054,
+  -123.0950506
+ ],
+ "Helsinki, Finland": [
+  60.1666204,
+  24.9435408
+ ],
+ "Kyiv, Ukraine": [
+  50.4500336,
+  30.5241361
+ ],
+ "Las Vegas, United States": [
+  36.1674263,
+  -115.1484131
+ ],
+ "Lisbon, Portugal": [
+  38.7077507,
+  -9.1365919
+ ],
+ "London, United Kingdom": [
+  51.5074456,
+  -0.1277653
+ ],
+ "Mechanicsburg, United States": [
+  40.2101972,
+  -77.0047276
+ ],
+ "Paris, France": [
+  48.8588897,
+  2.320041
+ ],
+ "Pasadena, United States": [
+  34.1476507,
+  -118.144155
+ ],
+ "Raleigh, United States": [
+  35.7803977,
+  -78.6390989
+ ],
+ "Reston, United States": [
+  38.953282,
+  -77.3464516
+ ],
+ "Sydney, Australia": [
+  -33.8698439,
+  151.2082848
+ ],
+ "Toronto, Canada": [
+  43.6534817,
+  -79.3839347
+ ]
+}

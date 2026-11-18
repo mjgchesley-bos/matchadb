@@ -1,17 +1,21 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CONFIDENCE_LABEL, type EventKind, type MatchaEvent } from "@/lib/events";
+import { CONFIDENCE_LABEL, type Continent, type EventKind, type MatchaEvent } from "@/lib/events";
 
 // Matcha events with a search box (a city, country or event name) and a "Near me" button. Either one sorts the list by distance.
 type Origin = { lat: number; lng: number; label: string } | null;
 const KINDS: { key: EventKind | "all"; label: string }[] = [
   { key: "all", label: "All events" },
-  { key: "festival", label: "Festivals" },
+  { key: "festival", label: "Matcha festivals" },
+  { key: "tea festival", label: "Tea festivals" },
   { key: "trade show", label: "Trade shows" },
   { key: "gathering", label: "Gatherings" },
   { key: "exhibition", label: "Exhibitions" },
 ];
+
+const CONTINENTS: Continent[] = ["North America", "Europe", "Asia", "Oceania", "South America", "Africa"];
+const slug = (c: string) => "cont-" + c.toLowerCase().replace(/\s+/g, "-");
 
 const km = (a: { lat: number; lng: number }, b: { lat: number; lng: number }) => {
   const r = Math.PI / 180;
@@ -38,6 +42,13 @@ export function EventsExplorer({ events, contactEmail }: { events: MatchaEvent[]
     if (origin) withDist.sort((a, b) => (a.d ?? 0) - (b.d ?? 0));
     return withDist;
   }, [events, q, kind, origin]);
+
+  const groups = useMemo(() => {
+    const out = CONTINENTS.map((c) => ({ c, list: rows.filter((r) => r.e.continent === c) })).filter((g) => g.list.length > 0);
+    // With a place chosen, the continent holding the nearest event comes first.
+    if (origin) out.sort((a, b) => Math.min(...a.list.map((r) => r.d ?? 0)) - Math.min(...b.list.map((r) => r.d ?? 0)));
+    return out;
+  }, [rows, origin]);
 
   const near = () => {
     setMsg(null);
@@ -110,35 +121,60 @@ export function EventsExplorer({ events, contactEmail }: { events: MatchaEvent[]
         {q.trim() && !origin && rows.length === events.filter((e) => kind === "all" || e.kind === kind).length ? ` Nothing matches “${q.trim()}” by name. Press Search to sort by distance from that place.` : ""}
       </p>
 
-      <ul className="mt-4 flex flex-col gap-4">
-        {rows.map(({ e, d }) => (
-          <li key={e.id} className="flex gap-4 rounded-sm border border-line bg-paper p-4 sm:p-5">
-            <div className="w-16 shrink-0 text-center" aria-hidden="true">
-              <p className="font-mono text-xs uppercase tracking-[0.12em] text-forest">{fmtDate(e.start, { month: "short" })}</p>
-              <p className="font-display text-3xl font-semibold leading-none text-ink">{fmtDate(e.start, { day: "numeric" })}</p>
-              <p className="mt-1 text-xs text-ink-faint">{fmtDate(e.start, { year: "numeric" })}</p>
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="flex flex-wrap items-center gap-2 text-xs text-ink-faint">
-                <span className="rounded-full border border-line-strong px-2 py-0.5 capitalize text-ink-muted">{e.kind}</span>
-                <span>
-                  {fmtDate(e.start, { weekday: "short", month: "short", day: "numeric", year: "numeric" })}
-                  {e.end ? ` to ${fmtDate(e.end, { month: "short", day: "numeric", year: "numeric" })}` : ""}
-                </span>
-              </p>
-              <h2 className="mt-1 font-display text-xl font-semibold text-ink">{e.name}</h2>
-              <p className="text-sm text-ink-muted">
-                {[e.venue, e.city, e.country].filter(Boolean).join(", ")}
-                {d != null && <span className="ml-2 tabular-nums text-ink-faint">· {Math.round(d).toLocaleString("en-US")} km away</span>}
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-ink-muted">{e.blurb}</p>
-              {e.note && <p className="mt-1 text-xs text-ink-faint">{e.note}</p>}
-              <p className="mt-2 text-xs text-ink-faint">{CONFIDENCE_LABEL[e.confidence]}. Source: {e.source}.</p>
-              <a href={e.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm text-matcha underline hover:text-forest">Event page</a>
-            </div>
-          </li>
+      {groups.length > 0 && (
+        <nav aria-label="Jump to a continent" className="mt-5 flex flex-wrap gap-2">
+          {groups.map((g) => (
+            <a key={g.c} href={`#${slug(g.c)}`} className={`${pill} border-line-strong text-ink-muted hover:bg-matcha-soft`}>
+              {g.c} <span className="tabular-nums text-ink-faint">({g.list.length})</span>
+            </a>
+          ))}
+        </nav>
+      )}
+
+      <div className="mt-6 flex flex-col gap-8">
+        {groups.map((g) => (
+          <section key={g.c} id={slug(g.c)} aria-labelledby={`${slug(g.c)}-h`} className="scroll-mt-6 rounded-sm border border-line border-t-4 border-t-matcha bg-paper-raised p-4 sm:p-5">
+            <h2 id={`${slug(g.c)}-h`} className="font-display text-2xl font-semibold text-ink">
+              {g.c} <span className="text-base font-normal text-ink-faint">· {g.list.length} {g.list.length === 1 ? "event" : "events"}</span>
+            </h2>
+            <ul className="mt-4 flex flex-col gap-4">
+              {g.list.map(({ e, d }) => (
+                <li key={e.id} className="flex gap-4 rounded-sm border border-line bg-paper p-4 sm:p-5">
+                  <div className="w-16 shrink-0 text-center" aria-hidden="true">
+                    <p className="font-mono text-xs uppercase tracking-[0.12em] text-forest">{fmtDate(e.start, { month: "short" })}</p>
+                    <p className="font-display text-3xl font-semibold leading-none text-ink">{fmtDate(e.start, { day: "numeric" })}</p>
+                    <p className="mt-1 text-xs text-ink-faint">{fmtDate(e.start, { year: "numeric" })}</p>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="flex flex-wrap items-center gap-2 text-xs text-ink-faint">
+                      <span className="rounded-full border border-line-strong px-2 py-0.5 capitalize text-ink-muted">{e.kind}</span>
+                      <span>
+                        {fmtDate(e.start, { weekday: "short", month: "short", day: "numeric", year: "numeric" })}
+                        {e.end ? ` to ${fmtDate(e.end, { month: "short", day: "numeric", year: "numeric" })}` : ""}
+                      </span>
+                    </p>
+                    <h2 className="mt-1 font-display text-xl font-semibold text-ink">{e.name}</h2>
+                    <p className="text-sm text-ink-muted">
+                      {[e.venue, e.city, e.country].filter(Boolean).join(", ")}
+                      {d != null && <span className="ml-2 tabular-nums text-ink-faint">· {Math.round(d).toLocaleString("en-US")} km away</span>}
+                    </p>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-muted">{e.blurb}</p>
+                    {e.note && <p className="mt-1 text-xs text-ink-faint">{e.note}</p>}
+                    <p className="mt-2 text-xs text-ink-faint">{CONFIDENCE_LABEL[e.confidence]}. Source: {e.source}.</p>
+                    <a href={e.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm text-matcha underline hover:text-forest">Event page</a>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </section>
         ))}
-      </ul>
+      </div>
+
+      {CONTINENTS.some((c) => !groups.some((g) => g.c === c)) && (
+        <p className="mt-6 rounded-sm border border-dashed border-line-strong px-4 py-3 text-sm text-ink-muted">
+          Nothing listed yet in {CONTINENTS.filter((c) => !groups.some((g) => g.c === c)).join(", ")}. Know of an event there? Send it to us below.
+        </p>
+      )}
 
       <p className="mt-8 max-w-2xl text-sm text-ink-muted">
         Running or know of a matcha event? <a href={`mailto:${contactEmail}?subject=Matcha%20event%20for%20MatchaDB`} className="text-matcha underline hover:text-forest">Send it to us</a> with the date, place and the organizer&apos;s page. We only list events we can check against the organizer.

@@ -1,0 +1,42 @@
+name: Events refresh (every 3 days)
+
+# Rebuilds data/events-auto.json: dated, organizer-confirmed tea and matcha festivals worldwide, found from a public tea-festival listing, each
+# checked against the organizer's own page where robots.txt allows. Events that have passed drop off, new ones appear, changed dates update.
+# Standard-library Python only; no keys needed. If the source is down or the page layout changes, the script leaves the saved file untouched
+# and the next run tries again. See scripts/refresh_events.py. The events page also hides finished events on its own every day.
+on:
+  schedule:
+    - cron: "17 5 */3 * *" # 05:17 UTC, every third day
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-events:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Refresh events
+        run: python scripts/refresh_events.py
+
+      - name: Commit and push if the events changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/events-auto.json data/geocache.json
+          # The "checked" date changes every run, so only commit when something other than that changed.
+          if git diff --cached --quiet; then
+            echo "No changes."
+          elif [ "$(git diff --cached -U0 data/events-auto.json | grep -E '^[+-] ' | grep -vc '\"checked\"')" -eq 0 ] && git diff --cached --quiet data/geocache.json; then
+            echo "Only the checked dates changed; skipping commit."
+            git reset -q
+          else
+            git commit -m "Automated events refresh"
+            git push
+          fi

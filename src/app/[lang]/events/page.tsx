@@ -41,7 +41,7 @@ export default async function EventsPage({ params }: { params: Promise<{ lang: s
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Events</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Matcha events around the world</h1>
         <p className="mt-4 text-ink-muted leading-relaxed">
-          Festivals, tastings, trade shows and gatherings. Search by city or country, or tap Near me to see what is closest. Every listing links to the organizer, and each one says how we know the date. This list is new and still growing; <a href={`${SITE_URL}/contact`} className="text-matcha underline hover:text-forest">tell us about one we are missing</a>.
+          Matcha festivals, tea festivals, trade shows and gatherings, grouped by continent. Search by city or country, or tap Near me to see what is closest. Every listing links to the organizer and says how we know the date. The list is rechecked every few days and events drop off once they have passed; <a href={`${SITE_URL}/contact`} className="text-matcha underline hover:text-forest">tell us about one we are missing</a>.
         </p>
       </header>
       <div className="mt-8 rounded-sm border border-line bg-paper-raised p-5 sm:p-6">
