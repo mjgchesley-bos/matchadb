@@ -52,6 +52,11 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     else if (c.via === "name") description = `${c.name} at ${formatPlace(c, lang)} is named for matcha. ${tail}`;
     else if (c.via === "reported") description = `${c.name} at ${formatPlace(c, lang)} is reported by locals to serve matcha. ${tail}`;
     else description = `${c.name} at ${formatPlace(c, lang)} lists matcha on its own website. ${tail}`;
+    // Japanese cafés are searched for by their Japanese name, so the title and snippet carry the Japanese words too.
+    if (c.cc === "JP" && /[぀-ヿ一-鿿]/.test(c.name)) {
+      title = `${c.name} メニュー・抹茶 | Matcha menu in ${c.city || "Japan"}`;
+      description = `${c.name}の抹茶メニュー、住所、地図。${description}`;
+    }
   }
   const alternates = pageAlternates(lang, `/cafes/${cafeSlug(c)}`);
   return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };

@@ -44,14 +44,22 @@ export async function generateMetadata({
     comparable.length >= 3
       ? t("br.desc.price", { lo: usd30(comparable[0]), hi: usd30(comparable[comparable.length - 1]) })
       : "";
-  const description = t(n === 1 ? "br.desc.one" : "br.desc.other", { brand: brandName, n, price: priceBit });
+  let description = t(n === 1 ? "br.desc.one" : "br.desc.other", { brand: brandName, n, price: priceBit });
+  let seoTitle = title;
+  if (lang === "en") {
+    // Searchers want price and where to buy: lead with the price range (per 30 g, from seller-stated sizes) and say what is listed.
+    const nm = plain ? brandName : `${brandName} Matcha`;
+    seoTitle = `${nm}: Prices${comparable.length ? " per 30 g" : ""}, Grades & Where to Buy`;
+    const lead = comparable.length >= 2 ? `${nm} costs ${usd30(comparable[0])}–${usd30(comparable[comparable.length - 1])} per 30 g across ${n} product${n === 1 ? "" : "s"}.` : comparable.length === 1 ? `${nm} from ${usd30(comparable[0])} per 30 g across ${n} product${n === 1 ? "" : "s"}.` : `${n} ${nm} product${n === 1 ? "" : "s"} compared.`;
+    description = `${lead} Grade, growing region, cultivar and tasting notes for each, with where to buy.`;
+  }
   const alternates = pageAlternates(lang, `/brands/${encodeURIComponent(brandName)}`);
 
   return {
-    title,
+    title: seoTitle,
     description,
     alternates,
-    openGraph: { title, description, url: alternates.canonical },
+    openGraph: { title: seoTitle, description, url: alternates.canonical },
   };
 }
 
