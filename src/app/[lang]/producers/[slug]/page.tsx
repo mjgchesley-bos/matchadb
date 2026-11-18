@@ -127,6 +127,28 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
         </dl>
       </section>
 
+      {p.current.length > 0 && (
+        <section className="mt-10 max-w-3xl" aria-labelledby="pr-now">
+          <h2 id="pr-now" className={h2}>Today</h2>
+          <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-ink-muted">
+            {p.current.map((c) => (
+              <li key={c.slice(0, 30)}>{c}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {p.awards.length > 0 && (
+        <section className="mt-10 max-w-3xl" aria-labelledby="pr-awards">
+          <h2 id="pr-awards" className={h2}>Awards and certifications</h2>
+          <ul className="mt-3 flex list-disc flex-col gap-2 pl-5 text-ink-muted">
+            {p.awards.map((a) => (
+              <li key={a.slice(0, 30)}>{a}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {p.timeline.length > 0 && (
         <section className="mt-10 max-w-3xl" aria-labelledby="pr-time">
           <h2 id="pr-time" className={h2}>Timeline</h2>
