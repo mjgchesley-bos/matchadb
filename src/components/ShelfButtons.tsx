@@ -5,12 +5,12 @@ import { useAuth } from "@/components/AuthProvider";
 import { supabase } from "@/lib/supabase";
 import { useT } from "@/i18n/client";
 
-// "Want to try / Using now / Tried it": a personal shelf for each product. Picking the same
-// status again clears it.
+// "Using now / Put on my shelf": a personal shelf for each product. Only one product can be "Using now" at a time (choosing another moves the
+// old one to the shelf). Picking the same button again clears it. Older "Tried it" rows still count as on the shelf.
 export type ShelfStatus = "want" | "using" | "tried";
 export const SHELF_LABELS: Record<ShelfStatus, string> = { want: "Want to try", using: "Using now", tried: "Tried it" };
 export const SHELF_KEYS = { want: "c.shelf.want", using: "c.shelf.using", tried: "c.shelf.tried" } as const;
-const ORDER: ShelfStatus[] = ["want", "using", "tried"];
+const ORDER: ShelfStatus[] = ["using", "want"];
 
 export function ShelfButtons({ productId, productName }: { productId: number; productName: string }) {
   const { user, ready, signIn, refreshStats } = useAuth();
@@ -54,10 +54,12 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
       signIn(t("c.shelf.signIn", { name: productName }));
       return;
     }
-    const clearing = status === next;
+    const clearing = status === next || (next === "want" && status === "tried");
     setBusy(true);
     setFailed(false);
     const sb = supabase();
+    // One "Using now" at a time: whatever was in the spot moves to the shelf.
+    if (!clearing && next === "using") await sb.from("shelf").update({ status: "want", updated_at: new Date().toISOString() }).eq("user_id", user.id).eq("status", "using").neq("product_id", productId);
     const { error } = clearing
       ? await sb.from("shelf").delete().eq("user_id", user.id).eq("product_id", productId)
       : await sb.from("shelf").upsert({ user_id: user.id, product_id: productId, status: next, updated_at: new Date().toISOString() }, { onConflict: "user_id,product_id" });
@@ -81,9 +83,9 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
             type="button"
             onClick={() => void pick(s)}
             disabled={busy || !ready}
-            aria-pressed={status === s}
+            aria-pressed={status === s || (s === "want" && status === "tried")}
             className={`rounded-full border px-3.5 py-1.5 text-sm transition-colors disabled:opacity-60 ${
-              status === s ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"
+              status === s || (s === "want" && status === "tried") ? "border-matcha bg-matcha text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"
             }`}
           >
             {t(SHELF_KEYS[s])}
@@ -100,7 +102,7 @@ export function ShelfButtons({ productId, productName }: { productId: number; pr
             .join(" · ")}
         </p>
       )}
-      {status === "tried" && <p className="mt-1.5 text-xs text-ink-faint">{t("c.shelf.rateHint")}</p>}
+      {status && <p className="mt-1.5 text-xs text-ink-faint">{t("c.shelf.rateHint")}</p>}
       {failed && <p className="mt-1.5 text-xs text-red-700">{t("c.shelf.failed")}</p>}
     </div>
   );

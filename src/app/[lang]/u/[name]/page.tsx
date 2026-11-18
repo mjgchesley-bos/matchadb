@@ -113,9 +113,10 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     info.set(prod.id, { name: prod.product_name, brand: prod.brand_name, region: prod.region, price: price.kind === "resolved" ? price.text : null });
   }
 
-  const using = p.shelf.filter((x) => x.status === "using");
-  const want = p.shelf.filter((x) => x.status === "want");
-  const tried = p.shelf.filter((x) => x.status === "tried");
+  // One product is "Using now" (the most recent one); everything else is on the shelf.
+  const using = p.shelf.filter((x) => x.status === "using").slice(0, 1);
+  const want = p.shelf.filter((x) => x.status !== "using" || x !== using[0]);
+  const tried: typeof p.shelf = [];
   const top = p.ratings.slice(0, 10);
   // Average of every rating we have for the member, matcha products and cafés together, from the first one.
   // (A member with more than 40 product ratings only has their 40 highest here, so that average is a little high.)
@@ -213,6 +214,16 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             <ProfileActions name={p.name} />
           </p>
         </div>
+        {using[0] && (
+          <section aria-labelledby="using-now-h" className="w-full shrink-0 rounded-sm border-2 border-matcha bg-paper-raised p-4 sm:w-60 sm:ml-auto">
+            <h2 id="using-now-h" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">{t("c.mp.using")}</h2>
+            <Link href={`/products/${using[0].product_id}`} className="mt-3 block text-ink hover:text-matcha">
+              <span className="block text-xs text-ink-faint">{info.get(using[0].product_id)?.brand ?? ""}</span>
+              <span className="font-display text-lg font-semibold leading-snug">{info.get(using[0].product_id)?.name ?? t("c.acct.product", { id: using[0].product_id })}</span>
+            </Link>
+            {info.get(using[0].product_id)?.price && <p className="mt-1 text-sm tabular-nums text-ink-muted">{info.get(using[0].product_id)?.price}</p>}
+          </section>
+        )}
       </header>
 
       <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
@@ -297,13 +308,12 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       )}
 
       <div className="mt-8">
-        {using.length > 0 && <Fold title={t("c.shelf.using")} count={using.length}>{list(using.map((x) => row(x.product_id)))}</Fold>}
         {top.length > 3 && (
           <Fold title={t("u.top")} count={top.length}>
             {list(top.map((r) => row(r.product_id, <span className="flex items-center gap-1.5 tabular-nums"><Stars value={Number(r.score)} size={14} />{Number(r.score).toFixed(1)}</span>)))}
           </Fold>
         )}
-        {want.length > 0 && <Fold title={t("c.shelf.want")} count={want.length}>{list(want.slice(0, 12).map((x) => row(x.product_id)))}</Fold>}
+        {want.length > 0 && <Fold title={t("c.acct.shelf")} count={want.length}>{list(want.slice(0, 12).map((x) => row(x.product_id)))}{want.length > 12 && <p className="mt-2 text-sm text-ink-faint">{t("u.showing", { n: want.length })}</p>}</Fold>}
         {tried.length > 0 && (
           <Fold title={t("c.shelf.tried")} count={tried.length}>
             {list(tried.slice(0, 12).map((x) => row(x.product_id)))}

@@ -10,6 +10,7 @@ import { PublicProfileSettings } from "@/components/PublicProfileSettings";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import { Ribbons } from "@/components/Ribbons";
 import { WoodShelf, type ShelfCard } from "@/components/WoodShelf";
+import { UsingNowCard } from "@/components/UsingNowCard";
 import { AvatarFigure } from "@/components/AvatarFigure";
 import { Avatar } from "@/components/Avatar";
 import { parseDesign } from "@/lib/avatar-design";
@@ -115,6 +116,30 @@ export function AccountClient() {
     };
   }, [user]);
 
+  // The "Using now" spot holds one product. Choosing another moves the old one to the shelf; clearing moves it to the shelf too.
+  const setUsing = async (c: { id: number; brand: string; name: string }) => {
+    if (!user) return;
+    const sb = supabase();
+    const now = new Date().toISOString();
+    await sb.from("shelf").update({ status: "want", updated_at: now }).eq("user_id", user.id).eq("status", "using").neq("product_id", c.id);
+    const { error } = await sb.from("shelf").upsert({ user_id: user.id, product_id: c.id, status: "using", updated_at: now }, { onConflict: "user_id,product_id" });
+    if (error) return;
+    setShelved((s) => [{ product_id: c.id, status: "using" as ShelfStatus }, ...(s ?? []).filter((x) => x.product_id !== c.id).map((x) => (x.status === "using" ? { ...x, status: "want" as ShelfStatus } : x))]);
+    setItems((o) => (o[c.id] ? o : { ...o, [c.id]: { id: c.id, name: c.name, brand: c.brand, price: null } }));
+    if (!items[c.id]) {
+      const list = (await fetch(`/api/products/lookup?ids=${c.id}`).then((r) => r.json()).catch(() => [])) as Item[];
+      if (list[0]) setItems((o) => ({ ...o, [list[0].id]: list[0] }));
+    }
+    window.gtag?.("event", "using_now_set", { product_id: c.id });
+    void refreshStats();
+  };
+  const clearUsing = async () => {
+    if (!user) return;
+    await supabase().from("shelf").update({ status: "want", updated_at: new Date().toISOString() }).eq("user_id", user.id).eq("status", "using");
+    setShelved((s) => (s ?? []).map((x) => (x.status === "using" ? { ...x, status: "want" as ShelfStatus } : x)));
+    void refreshStats();
+  };
+
   const unshelve = async (id: number) => {
     if (!user) return;
     setShelved((s) => s?.filter((x) => x.product_id !== id) ?? s);
@@ -173,9 +198,11 @@ export function AccountClient() {
 
   const h2 = "font-display text-xl font-semibold text-ink";
   const designed = parseDesign(avatar.key) ? avatar.key : null;
+  const usingRow = (shelved ?? []).find((x) => x.status === "using") ?? null;
+  const usingItem = usingRow ? { id: usingRow.product_id, brand: items[usingRow.product_id]?.brand ?? "", name: items[usingRow.product_id]?.name ?? t("c.acct.product", { id: usingRow.product_id }), price: items[usingRow.product_id]?.price ?? null } : null;
   const cards: ShelfCard[] = [
-    ...(shelved ?? []).map((x) => ({ id: x.product_id, brand: items[x.product_id]?.brand ?? "", name: items[x.product_id]?.name ?? t("c.acct.product", { id: x.product_id }), price: items[x.product_id]?.price ?? null, tag: x.status, onRemove: () => void unshelve(x.product_id) })),
-    ...(favorites ?? []).filter((id) => !(shelved ?? []).some((x) => x.product_id === id)).map((id) => ({ id, brand: items[id]?.brand ?? "", name: items[id]?.name ?? t("c.acct.product", { id }), price: items[id]?.price ?? null, tag: "saved" as const, onRemove: () => void unsave(id) })),
+    ...(shelved ?? []).filter((x) => x !== usingRow).map((x) => ({ id: x.product_id, brand: items[x.product_id]?.brand ?? "", name: items[x.product_id]?.name ?? t("c.acct.product", { id: x.product_id }), price: items[x.product_id]?.price ?? null, tag: (x.status === "tried" ? "tried" : "want") as ShelfStatus, onRemove: () => void unshelve(x.product_id) })),
+    ...(favorites ?? []).filter((id) => id !== usingRow?.product_id && !(shelved ?? []).some((x) => x.product_id === id)).map((id) => ({ id, brand: items[id]?.brand ?? "", name: items[id]?.name ?? t("c.acct.product", { id }), price: items[id]?.price ?? null, tag: "saved" as const, onRemove: () => void unsave(id) })),
   ];
   return (
     <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10 flex flex-col gap-10">
@@ -231,6 +258,7 @@ export function AccountClient() {
             )}
           </div>
         </ProfileHeader>
+        <UsingNowCard current={shelved === null ? null : usingItem} shelfChoices={cards.filter((c) => c.tag !== "saved").map((c) => ({ id: c.id, brand: c.brand, name: c.name }))} onSet={setUsing} onClear={clearUsing} />
         {editingAvatar && (
           <div className="basis-full">
             <AccountAvatar open onOpenChange={setEditingAvatar} />
