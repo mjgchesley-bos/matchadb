@@ -8,6 +8,8 @@ import { AuthProvider } from "@/components/AuthProvider";
 import { HeaderAccount } from "@/components/HeaderAccount";
 import { HeaderMenu } from "@/components/HeaderMenu";
 import { SiteSearch } from "@/components/SiteSearch";
+import { CompareProvider } from "@/components/CompareProvider";
+import { CompareTray } from "@/components/CompareTray";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { I18nProvider } from "@/i18n/client";
 import { LOCALES, LOCALE_NAMES, HTML_LANG, OG_LOCALE, isLocale, localePath, type Locale } from "@/i18n/config";
@@ -114,6 +116,7 @@ export default async function RootLayout({
         <GoogleAnalyticsPageView />
         <I18nProvider lang={lang} messages={clientMessages(lang)}>
         <AuthProvider>
+        <CompareProvider>
         <header className="sticky top-0 z-30 bg-matcha">
           <div className="w-full px-4 sm:px-6 py-4 flex flex-wrap items-center gap-x-4 lg:gap-x-8 gap-y-3">
             <Link href="/" className="flex items-baseline group">
@@ -193,6 +196,8 @@ export default async function RootLayout({
           </div>
         </footer>
         <ConsentBanner />
+        <CompareTray />
+        </CompareProvider>
         </AuthProvider>
         </I18nProvider>
       </body>

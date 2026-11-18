@@ -74,18 +74,18 @@ export function SiteSearch() {
           }}
           onFocus={() => setOpen(true)}
           onKeyDown={(e) => e.key === "Escape" && setOpen(false)}
-          placeholder={t("nav.siteSearch.ph")}
-          aria-label={t("nav.siteSearch.ph")}
+          placeholder={t("c.search.ph")}
+          aria-label={t("c.search.ph")}
           autoComplete="off"
           className="w-full rounded-full bg-paper px-4 py-2 sm:py-2.5 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-offset-2 focus:outline-paper"
         />
       </form>
       {open && res && (
         <div className="absolute left-0 right-0 top-full z-40 mt-2 max-h-[70vh] overflow-y-auto rounded-md border border-line bg-paper-raised pb-2 shadow-lg">
-          {empty && <p className="px-4 py-3 text-sm text-ink-muted">{t("nav.siteSearch.none")}</p>}
+          {empty && <p className="px-4 py-3 text-sm text-ink-muted">{t("c.search.none")}</p>}
           {res.products.length > 0 && (
             <>
-              <p className={head}>{t("nav.siteSearch.products")}</p>
+              <p className={head}>{t("c.search.products")}</p>
               {res.products.map((p) => (
                 <Link key={p.id} href={`/products/${p.id}`} onClick={close} className={row}>
                   {p.name} <span className="text-ink-faint">· {p.brand}</span>
@@ -95,7 +95,7 @@ export function SiteSearch() {
           )}
           {res.brands.length > 0 && (
             <>
-              <p className={head}>{t("nav.siteSearch.brands")}</p>
+              <p className={head}>{t("c.search.brands")}</p>
               {res.brands.map((b) => (
                 <Link key={b} href={`/brands/${encodeURIComponent(b)}`} onClick={close} className={row}>
                   {b}
@@ -105,7 +105,7 @@ export function SiteSearch() {
           )}
           {res.cafes.length > 0 && (
             <>
-              <p className={head}>{t("nav.siteSearch.cafes")}</p>
+              <p className={head}>{t("c.search.cafes")}</p>
               {res.cafes.map((c) => (
                 <Link key={c.slug} href={`/cafes/${c.slug}`} onClick={close} className={row}>
                   {c.name} <span className="text-ink-faint">· {c.city}</span>

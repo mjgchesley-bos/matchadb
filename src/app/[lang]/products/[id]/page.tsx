@@ -19,6 +19,7 @@ import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
 import { ListMenu } from "@/components/ListMenu";
 import { ShelfButtons } from "@/components/ShelfButtons";
+import { CompareButton } from "@/components/CompareButton";
 import { Comments } from "@/components/Comments";
 import { ProductReviews } from "@/components/ProductReviews";
 import { usd30 } from "@/lib/unit-price";
@@ -472,6 +473,7 @@ export default async function ProductDetailPage({
           <ProductRating productId={product.id} productName={product.product_name} />
           <FavoriteButton productId={product.id} productName={product.product_name} />
           <ShelfButtons productId={product.id} productName={product.product_name} />
+          <CompareButton productId={product.id} productName={product.product_name} brand={product.brand_name} />
           <ListMenu productId={product.id} productName={product.product_name} />
           <ShippingNote brand={product.brand_name} lang={lang} />
 
