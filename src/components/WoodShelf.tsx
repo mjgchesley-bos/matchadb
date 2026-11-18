@@ -26,7 +26,7 @@ export function WoodShelf({ cards }: { cards: ShelfCard[] }) {
               <li key={`${c.tag}-${c.id}`} className="flex flex-col rounded-sm border border-line bg-paper-raised p-2.5 text-xs shadow-sm">
                 <span className="truncate text-ink-faint">{c.brand}</span>
                 <Link href={`/products/${c.id}`} className="line-clamp-3 font-medium leading-snug text-ink hover:text-matcha">{c.name}</Link>
-                <span className="mt-1.5 inline-flex w-fit rounded-full bg-matcha-soft px-2 py-0.5 text-[11px] text-forest">{c.tag === "saved" ? t("c.mp.shelfSaved") : t(SHELF_KEYS[c.tag])}</span>
+                {c.tag !== "want" && <span className="mt-1.5 inline-flex w-fit rounded-full bg-matcha-soft px-2 py-0.5 text-[11px] text-forest">{c.tag === "saved" ? t("c.mp.shelfSaved") : t(SHELF_KEYS[c.tag])}</span>}
                 <span className="mt-auto flex items-center justify-between pt-2 tabular-nums text-ink-muted">
                   <span>{c.price}</span>
                   <button type="button" onClick={c.onRemove} className="underline hover:text-ink">{t("c.acct.remove")}</button>
