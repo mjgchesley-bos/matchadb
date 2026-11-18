@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/i18n/Link";
+import { PRODUCERS } from "@/lib/producers";
+
 import { notFound } from "next/navigation";
 import { getBrandProducts, getComparablePrices } from "@/lib/db";
 import { getBrandSummary } from "@/lib/product-insight";
@@ -161,6 +163,14 @@ export default async function BrandPage({
         {t(products.length === 1 ? "br.count.one" : "br.count.other", { n: products.length })}
       </p>
       <p className="text-ink-muted leading-relaxed max-w-2xl">{summary.join(" ")}</p>
+      {(() => {
+        const prod = PRODUCERS.find((x) => x.brand === brandName);
+        return prod && lang === "en" ? (
+          <p className="mt-3 text-sm">
+            <Link href={`/producers/${prod.slug}`} className="text-matcha underline hover:text-forest">The story of {prod.name}: its history, family and where it is</Link>
+          </p>
+        ) : null;
+      })()}
       {faq.length > 0 && (
         <dl className="mt-5 max-w-2xl rounded-sm border border-line bg-paper-raised px-4 py-3 text-sm">
           {faq.map((f) => (

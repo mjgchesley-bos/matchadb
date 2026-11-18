@@ -173,6 +173,7 @@ export default async function RootLayout({
                 <Link href="/stores" className="hover:text-ink-muted transition-colors">{t("footer.stores")}</Link>
                 <Link href="/guides" className="hover:text-ink-muted transition-colors">{t("footer.guides")}</Link>
                 <Link href="/wholesale" className="hover:text-ink-muted transition-colors">{t("footer.wholesale")}</Link>
+                <Link href="/producers" className="hover:text-ink-muted transition-colors">Producers</Link>
                 <Link href="/cultivars" className="hover:text-ink-muted transition-colors">{t("footer.cultivars")}</Link>
                 <Link href="/compare" className="hover:text-ink-muted transition-colors">{t("footer.compare")}</Link>
                 <Link href="/regions" className="hover:text-ink-muted transition-colors">{t("footer.regions")}</Link>

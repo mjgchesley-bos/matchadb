@@ -143,6 +143,8 @@ export const en = {
   "c.menu.map.note": "Where the matcha comes from, region by region",
   "c.menu.research.label": "Research library",
   "c.menu.research.note": "Every scientific study on matcha",
+  "c.menu.producers.label": "Producers",
+  "c.menu.producers.note": "The tea houses and families behind matcha",
   "c.menu.cultivars.label": "Cultivars",
   "c.menu.cultivars.note": "Yabukita, Okumidori, Samidori and more",
   "c.menu.ceremonial.label": "What is “ceremonial”?",

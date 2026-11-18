@@ -55,7 +55,7 @@ export function CultivarMap({ pins, label, one, many, openLabel }: { pins: Culti
         bounds.extend([p.lng, p.lat]);
       }
       if (pins.length > 1) map.fitBounds(bounds, { padding: 60, maxZoom: 7, duration: 0 });
-      else map.setZoom(7);
+      else map.setZoom(9);
       cleanup = () => map.remove();
     })();
     return () => {
