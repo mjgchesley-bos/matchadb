@@ -26,6 +26,12 @@ export function AccountTypeWelcome() {
     if (!ready || !uid || namePending) { setShow(false); return; }
     // Part of signing up only: needs the flag set when sign-in started, so it never pops up on a plain page load.
     try { if (sessionStorage.getItem(TYPE_KEY) !== "1") return; } catch { return; }
+    // One time ever, at account creation: only an account made in the last half hour qualifies, and answering or skipping is recorded on the
+    // account itself (so it holds on every device), not just in this browser. Regular sign-ins never see it.
+    const made = Date.parse(user?.created_at ?? "");
+    const brandNew = Number.isFinite(made) && Date.now() - made < 30 * 60 * 1000;
+    const answered = !!(user?.user_metadata as { type_prompt_done?: boolean } | undefined)?.type_prompt_done;
+    if (!brandNew || answered) { try { sessionStorage.removeItem(TYPE_KEY); } catch { /* ignore */ } return; }
     try { if (localStorage.getItem(flag(uid))) return; } catch { /* storage unavailable: fall through to the database check */ }
     let live = true;
     (async () => {
@@ -45,6 +51,7 @@ export function AccountTypeWelcome() {
   function done(id: string) {
     try { localStorage.setItem(flag(id), "1"); } catch { /* ignore */ }
     try { sessionStorage.removeItem(TYPE_KEY); } catch { /* ignore */ }
+    void supabase().auth.updateUser({ data: { type_prompt_done: true } }).catch(() => {}); // remembered on the account for good
     setShow(false);
   }
 
