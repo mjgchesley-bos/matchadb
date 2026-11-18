@@ -4,6 +4,7 @@ import Link from "@/i18n/Link";
 import { CafeFinder } from "@/components/CafeFinder";
 import { REGIONS, regionByKey } from "@/lib/cafe-regions";
 import { getAllCafes } from "@/lib/cafes";
+import { cityPath, getPlaceIndex } from "@/lib/cafe-places";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { getT } from "@/i18n/server";
 import { INTL_LANG, fmtNum, isLocale, type Locale } from "@/i18n/config";
@@ -29,6 +30,7 @@ export default async function CafesPage({ params, searchParams }: { params: Prom
   const wanted = Array.isArray(sp.region) ? sp.region[0] : sp.region;
   const initial = regionByKey(wanted).key;
   const cafes = getAllCafes();
+  const topCities = [...getPlaceIndex().cities.values()].filter((x) => x.cafes.length >= 3).sort((a, b) => b.cafes.length - a.cafes.length).slice(0, 40);
   const countries = new Set(cafes.map((c) => c.cc ?? "US")).size;
   const regionNames = REGIONS.map((r) => t(`c.region.${r.key}` as "c.region.us"));
   // English keeps its plain "A, B and C" wording; other languages use their own list style.
@@ -48,6 +50,20 @@ export default async function CafesPage({ params, searchParams }: { params: Prom
       </header>
 
       <CafeFinder contactEmail={CONTACT_EMAIL} initialRegion={initial} />
+
+      {lang === "en" && (
+        <section className="mt-14 max-w-4xl" aria-labelledby="by-city">
+          <h2 id="by-city" className="font-display text-xl font-semibold text-ink">Browse matcha cafés by city</h2>
+          <p className="mt-3 flex flex-wrap gap-2 text-sm">
+            {topCities.map((x) => (
+              <Link key={`${x.cc}/${x.slug}`} href={cityPath(x)} className="rounded-full border border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">
+                {x.city} ({x.cafes.length})
+              </Link>
+            ))}
+            <Link href="/cafes/in" className="px-3 py-1 text-matcha underline hover:text-forest">All countries and cities</Link>
+          </p>
+        </section>
+      )}
 
       <section className="mt-14 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-cafes">
         <h2 id="how-cafes" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">

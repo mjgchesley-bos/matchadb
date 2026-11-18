@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
-import { MIN_CAFES_FOR_CITY_PAGE, getPlaceIndex } from "@/lib/cafe-places";
+import { MIN_CAFES_FOR_CITY_PAGE, cityPath, getPlaceIndex } from "@/lib/cafe-places";
+import { matchaItem } from "@/lib/cafe-snippet";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/site";
 import { cafeSlug, countryName, formatPlace } from "@/lib/cafe-types";
+import type { Cafe } from "@/lib/cafe-types";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getT } from "@/i18n/server";
 import { pageAlternates } from "@/i18n/seo";
@@ -23,6 +27,12 @@ function find(cc: string, city: string) {
 }
 const placeOf = (e: { city: string; state: string; cc: string }, lang: Locale) => `${e.city}, ${e.cc === "US" ? e.state : countryName(e.cc, lang)}`.replace(/, $/, "");
 
+// Matcha-focused cafés first (matcha in the name or all over the menu), then those with a priced matcha item, then the rest.
+function pickCafes(list: Cafe[]): Cafe[] {
+  const score = (c: Cafe) => (c.focus ? 2 : 0) + (c.via === "name" ? 1 : 0) + (matchaItem(c) ? 1 : 0);
+  return [...list].sort((a, b) => score(b) - score(a) || a.name.localeCompare(b.name));
+}
+
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { lang: raw, cc, city } = await params;
   const lang: Locale = isLocale(raw) ? raw : "en";
@@ -31,8 +41,14 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   if (!e) return { title: t("cafe.notFound"), robots: { index: false } };
   const place = placeOf(e, lang);
   const alternates = pageAlternates(lang, `/cafes/in/${cc.toLowerCase()}/${encodeURIComponent(e.slug)}`);
-  const title = t("pl.city.h1", { place });
-  const description = t("pl.city.desc", { n: e.cafes.length, place });
+  let title = t("pl.city.h1", { place });
+  let description = t("pl.city.desc", { n: e.cafes.length, place });
+  if (lang === "en") {
+    // The page people search for is "matcha in {city}" or "matcha near me": name the city, the count and a few real cafés.
+    const names = pickCafes(e.cafes).slice(0, 3).map((c) => c.name);
+    title = `Matcha in ${place}: ${e.cafes.length} Cafés That Serve It`;
+    description = `${e.cafes.length} cafés in ${place} serve matcha${names.length ? `, including ${names.join(", ")}` : ""}. Menus, matcha prices where listed, and directions.`;
+  }
   return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
 }
 
@@ -45,21 +61,92 @@ export default async function CafeCity({ params }: { params: Promise<Params> }) 
   if (!e) notFound();
   const place = placeOf(e, lang);
   const cafes = [...e.cafes].sort((a, b) => a.name.localeCompare(b.name));
+  const en = lang === "en";
+  const itemOf = new Map(cafes.map((c) => [c.id, matchaItem(c)]));
+  const picks = pickCafes(e.cafes).filter((c) => c.focus || c.via === "name" || itemOf.get(c.id)).slice(0, 8);
+  const prices = [...itemOf.values()].flatMap((x) => (x ? [Number(x.price.slice(1))] : []));
+  const nearby = [...(getPlaceIndex().byCountry.get(e.cc) ?? [])]
+    .filter((x) => x.slug !== e.slug && (e.cc !== "US" || x.state === e.state))
+    .map((x) => ({ x, d: Math.hypot(x.cafes[0].lat - e.cafes[0].lat, x.cafes[0].lng - e.cafes[0].lng) }))
+    .sort((a, b) => a.d - b.d)
+    .slice(0, 8)
+    .map((v) => v.x);
+  const url = `${SITE_URL}${cityPath(e)}`;
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "ItemList",
+              name: `Matcha cafés in ${place}`,
+              numberOfItems: cafes.length,
+              itemListElement: cafes.slice(0, 50).map((c, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE_URL}/cafes/${cafeSlug(c)}`, name: c.name })),
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Matcha cafés", item: `${SITE_URL}/cafes` },
+                { "@type": "ListItem", position: 2, name: countryName(e.cc, "en"), item: `${SITE_URL}/cafes/in/${cc.toLowerCase()}` },
+                { "@type": "ListItem", position: 3, name: e.city, item: url },
+              ],
+            },
+          ],
+        }}
+      />
       <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
         <Link href={`/cafes/in/${cc.toLowerCase()}`} className="hover:text-matcha">{t("pl.backCountry", { place: countryName(e.cc, lang) })}</Link>
       </p>
       <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("pl.city.h1", { place })}</h1>
-      <p className="mt-3 text-ink-muted">{t("pl.city.desc", { n: cafes.length, place })}</p>
-      <ul className="mt-8 divide-y divide-line">
-        {cafes.map((c) => (
-          <li key={c.id} className="py-3">
-            <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-ink hover:text-matcha">{c.name}</Link>
-            <span className="block text-sm text-ink-faint">{formatPlace(c, lang)}</span>
-          </li>
-        ))}
+      <p className="mt-3 text-ink-muted">
+        {en
+          ? `${cafes.length} cafés in ${place} list matcha on their own menu or website${prices.length >= 3 ? `; where a price is shown, matcha drinks run about $${Math.min(...prices)}–$${Math.max(...prices)}` : ""}. Each entry links to the café's page with its menu evidence, directions, and member ratings and reviews.`
+          : t("pl.city.desc", { n: cafes.length, place })}
+      </p>
+      {en && picks.length > 0 && (
+        <section className="mt-8" aria-labelledby="picks">
+          <h2 id="picks" className="font-display text-xl font-semibold text-ink">Best places for matcha in {e.city}</h2>
+          <p className="mt-1 text-sm text-ink-muted">Cafés where matcha is front and centre, or where we found a priced matcha item on their own menu.</p>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            {picks.map((c) => {
+              const it = itemOf.get(c.id);
+              return (
+                <li key={c.id} className="rounded-sm border border-line bg-paper-raised p-4">
+                  <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-ink hover:text-matcha">{c.name}</Link>
+                  <span className="block text-sm text-ink-faint">{formatPlace(c, lang)}</span>
+                  {it && <span className="mt-1 block text-sm text-ink-muted">{it.name}, {it.price}</span>}
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      )}
+      <h2 className="mt-10 font-display text-xl font-semibold text-ink">{en ? `All ${cafes.length} matcha cafés in ${e.city}` : t("pl.city.h1", { place })}</h2>
+      <ul className="mt-3 divide-y divide-line">
+        {cafes.map((c) => {
+          const it = itemOf.get(c.id);
+          return (
+            <li key={c.id} className="py-3">
+              <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-ink hover:text-matcha">{c.name}</Link>
+              {en && it && <span className="ml-2 text-sm text-ink-muted">{it.name}, {it.price}</span>}
+              <span className="block text-sm text-ink-faint">{formatPlace(c, lang)}</span>
+            </li>
+          );
+        })}
       </ul>
+      {en && nearby.length > 0 && (
+        <section className="mt-10" aria-labelledby="nearby">
+          <h2 id="nearby" className="font-display text-xl font-semibold text-ink">Matcha in nearby cities</h2>
+          <p className="mt-3 flex flex-wrap gap-2 text-sm">
+            {nearby.map((x) => (
+              <Link key={x.slug} href={cityPath(x)} className="rounded-full border border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">
+                {x.city} ({x.cafes.length})
+              </Link>
+            ))}
+          </p>
+        </section>
+      )}
     </main>
   );
 }

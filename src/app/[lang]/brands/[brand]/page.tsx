@@ -90,6 +90,16 @@ export default async function BrandPage({
   const ownShops = stockists.filter((s) => s.kind === "brand-shop");
   const retailers = stockists.filter((s) => s.kind !== "brand-shop");
   const MAX_CARDS = 12;
+  // Answer-first facts (English only), built from this brand's own data, shown on the page and marked up as an FAQ.
+  const grades = [...new Set(products.map((p) => p.grade).filter(Boolean))].map((g) => tv("grade", g as string).toLowerCase());
+  const per30 = brandComparable.map((c) => c.pricePerGram).sort((a, b) => a - b);
+  const faq: { q: string; a: string }[] = [];
+  if (lang === "en") {
+    if (per30.length) faq.push({ q: `How much does ${brandName} matcha cost?`, a: per30.length > 1 ? `Across ${per30.length} products with a stated size, ${brandName} matcha costs ${usd30(per30[0])} to ${usd30(per30[per30.length - 1])} per 30 g (the typical tin size).` : `The one ${brandName} matcha with a stated size works out to ${usd30(per30[0])} per 30 g (the typical tin size).` });
+    if (grades.length) faq.push({ q: `What grades of matcha does ${brandName} sell?`, a: `${brandName} lists ${grades.length === 1 ? "one grade" : "these grades"}: ${grades.join(", ")}. MatchaDB tracks ${products.length} ${brandName} product${products.length === 1 ? "" : "s"}.` });
+    const where = [ownShops.length ? `${ownShops.length} brand-owned shop${ownShops.length === 1 ? "" : "s"}` : "", retailers.length ? `${retailers.length} retailer${retailers.length === 1 ? "" : "s"}` : "", onlineResellers.length ? `${onlineResellers.length} online reseller${onlineResellers.length === 1 ? "" : "s"}` : ""].filter(Boolean);
+    if (where.length) faq.push({ q: `Where can I buy ${brandName} matcha?`, a: `MatchaDB lists ${where.join(" and ")} for ${brandName}, plus the brand's own product pages linked above.` });
+  }
   const fmtChecked = (iso: string) => new Date(iso + "T12:00:00").toLocaleDateString(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric" });
 
   return (
@@ -131,6 +141,7 @@ export default async function BrandPage({
                 { "@type": "ListItem", position: 2, name: brandName, item: brandUrl },
               ],
             },
+            ...(faq.length ? [{ "@type": "FAQPage", mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }] : []),
           ],
         }}
       />
@@ -149,6 +160,16 @@ export default async function BrandPage({
         {t(products.length === 1 ? "br.count.one" : "br.count.other", { n: products.length })}
       </p>
       <p className="text-ink-muted leading-relaxed max-w-2xl">{summary.join(" ")}</p>
+      {faq.length > 0 && (
+        <dl className="mt-5 max-w-2xl rounded-sm border border-line bg-paper-raised px-4 py-3 text-sm">
+          {faq.map((f) => (
+            <div key={f.q} className="py-1.5">
+              <dt className="font-medium text-ink">{f.q}</dt>
+              <dd className="text-ink-muted">{f.a}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
       <FavoriteBrandButton brand={brandName} />
       <ShippingNote brand={brandName} lang={lang} />
       {wholesale.length > 0 && (
