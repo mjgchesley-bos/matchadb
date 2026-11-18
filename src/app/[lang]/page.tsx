@@ -21,12 +21,11 @@ import { PopularRail } from "@/components/PopularRail";
 import { getCommunityPopularIds } from "@/lib/popular";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
-import { getLibraryFacets } from "@/lib/studies";
 import { getCafeSlimIndex } from "@/lib/cafes";
 import { GUIDES } from "@/lib/guides";
 import { SiteSearch } from "@/components/SiteSearch";
 import { getT } from "@/i18n/server";
-import { isLocale, fmtNum, localePath, type Locale } from "@/i18n/config";
+import { isLocale, fmtNum, type Locale } from "@/i18n/config";
 import { pageAlternates } from "@/i18n/seo";
 
 // Abbreviated relative to /browse's full result set + pagination -- the home
@@ -292,32 +291,6 @@ export default async function Home({
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-20">
-        <div className="border border-line rounded-sm bg-paper-raised p-6 sm:p-8">
-          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("h.research.eyebrow")}</p>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-ink text-balance">
-            {t("h.research.title")}
-          </h2>
-          <p className="mt-3 text-ink-muted max-w-2xl leading-relaxed">
-            {t("h.research.body", { count: n(getLibraryFacets(false).total) })}
-          </p>
-          <form action={localePath(lang, "/research")} method="get" className="mt-5 flex gap-2 max-w-2xl">
-            <input
-              name="q"
-              type="search"
-              aria-label={t("h.research.searchLabel")}
-              placeholder={t("h.research.placeholder")}
-              className="flex-1 min-w-0 border border-line-strong rounded-full px-5 py-3 bg-paper text-base text-ink placeholder:text-ink-faint focus:outline-none focus:border-matcha transition-colors"
-            />
-            <button type="submit" className="rounded-full bg-matcha text-paper px-6 py-3 text-sm font-medium tracking-wide hover:bg-forest transition-colors shrink-0">
-              {t("h.research.button")}
-            </button>
-          </form>
-          <Link href="/research" className="inline-block mt-4 text-matcha hover:text-forest">
-            {t("h.research.browse")} &rarr;
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }

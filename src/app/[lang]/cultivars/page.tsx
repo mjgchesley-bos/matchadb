@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { CULTIVAR_EXTRAS } from "@/lib/cultivar-extras";
+import { imagesFor } from "@/lib/cultivar-images";
 import type { Metadata } from "next";
 import Link from "@/i18n/Link";
 import { CULTIVARS, loadCultivar } from "@/lib/cultivars";
@@ -54,6 +57,10 @@ export default async function CultivarsIndex({ params }: { params: Promise<{ lan
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
         {loaded.map(({ cultivar, s }) => (
           <Link key={cultivar.slug} href={`/cultivars/${cultivar.slug}`} className="border border-line rounded-sm bg-paper-raised p-5 hover:border-matcha hover:bg-matcha-soft transition-colors">
+            {(() => {
+              const im = imagesFor(CULTIVAR_EXTRAS[cultivar.slug]?.gallery).find((i) => i.w >= i.h);
+              return im ? <Image src={im.src} alt={im.alt} width={im.w} height={im.h} sizes="(min-width: 640px) 420px, 100vw" className="mb-4 h-36 w-full rounded-sm object-cover" /> : null;
+            })()}
             <span className="font-display text-xl font-semibold text-ink block">{lang === "en" ? cultivar.h1 : t("cv.h1", { name: cultivar.name })}</span>
             <span className="text-sm text-ink-muted mt-2 block leading-relaxed">{c(`cvc.${cultivar.slug}.desc`, cultivar.description)}</span>
             <span className="text-xs text-ink-faint mt-3 block tabular-nums">

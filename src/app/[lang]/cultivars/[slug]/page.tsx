@@ -2,13 +2,17 @@ import type { Metadata } from "next";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { CULTIVARS, cultivarBySlug, loadCultivar, type LoadedCultivar } from "@/lib/cultivars";
+import Image from "next/image";
 import { GroupTable } from "@/components/GuideBlocks";
+import { CultivarMap } from "@/components/CultivarMap";
+import { CULTIVAR_EXTRAS } from "@/lib/cultivar-extras";
+import { CULTIVAR_IMAGES, imagesFor } from "@/lib/cultivar-images";
 import { ProductCard } from "@/components/ProductCard";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
 import { usd30 } from "@/lib/unit-price";
 import { langOf } from "@/i18n/params";
-import { fmtNum, isLocale, type Locale } from "@/i18n/config";
+import { fmtNum, isLocale, localePath, type Locale } from "@/i18n/config";
 import { getT, getTV, type TFn, type TVFn } from "@/i18n/server";
 import { getC, type CFn } from "@/i18n/content";
 import { pageAlternates } from "@/i18n/seo";
@@ -82,6 +86,11 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
   const intro = cultivar.intro.map((p, i) => c(`cvc.${cultivar.slug}.intro.${i}`, p));
   const profile = cultivar.profile.map(([k, v], i) => c(`cvc.${cultivar.slug}.p${i}`, `${k} :: ${v}`).split(" :: ") as [string, string]);
   const related = cultivar.related.map((r) => cultivarBySlug(r)).filter((x): x is NonNullable<typeof x> => !!x);
+  const extra = CULTIVAR_EXTRAS[cultivar.slug];
+  const personKeys = new Set((extra?.people ?? []).map((p) => p.imageKey).filter(Boolean));
+  const gallery = imagesFor(extra?.gallery).filter((i) => !personKeys.has(i.key));
+  const pins = d.pins.map((p) => ({ name: p.name, sub: p.country, lat: p.lat, lng: p.lng, count: p.count, href: p.slug ? localePath(lang, `/regions/${p.slug}`) : null }));
+  const figCls = "overflow-hidden rounded-sm border border-line bg-paper-raised";
   const stats: [string, string][] = [
     [fmtNum(lang, s.count), t("cv.stat.plain", { name: cultivar.name })],
     [fmtNum(lang, s.brands), t("cv.stat.brands")],
@@ -138,6 +147,21 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
         </div>
       </header>
 
+      {gallery.length > 0 && (
+        <section className="mt-8" aria-label={t("cv.gallery.aria")}>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.slice(0, 3).map((im, i) => (
+              <figure key={im.key} className={`${figCls} ${i === 0 && gallery.length > 2 ? "sm:col-span-2 lg:col-span-2" : ""}`}>
+                <Image src={im.src} alt={im.alt} width={im.w} height={im.h} sizes="(min-width: 1024px) 40vw, 100vw" priority={i === 0} className="h-56 w-full object-cover sm:h-64" />
+                <figcaption className="px-3 py-2 text-xs leading-relaxed text-ink-faint">
+                  {im.caption}. <a href={im.page} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{im.credit}</a>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
       {cultivar.profile.length > 0 && (
         <section className="mt-8 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-label={t("cv.profile.aria")}>
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cv.profile")}</h2>
@@ -163,6 +187,69 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
               .
             </p>
           )}
+        </section>
+      )}
+
+      {extra && (extra.facts.length > 0 || extra.people.length > 0) && (
+        <section className="mt-8 max-w-3xl" aria-labelledby="cv-bg">
+          <h2 id="cv-bg" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cv.bg.h")}</h2>
+          {extra.facts.length > 0 && (
+            <dl className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-2 rounded-sm border border-line bg-paper-raised px-5 py-4 text-sm">
+              {extra.facts.map(([k, v]) => (
+                <div key={k} className="contents">
+                  <dt className="text-ink-faint">{k}</dt>
+                  <dd className="text-ink">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
+          {extra.people.length > 0 && (
+            <div className="mt-6">
+              <h3 className="font-display text-xl font-semibold text-ink">{t("cv.people.h")}</h3>
+              <ul className="mt-3 flex flex-col gap-4">
+                {extra.people.map((p) => {
+                  const im = p.imageKey ? CULTIVAR_IMAGES[p.imageKey] : null;
+                  return (
+                    <li key={p.name} className="flex gap-4 rounded-sm border border-line bg-paper-raised p-4">
+                      {im && (
+                        <figure className="w-28 shrink-0 sm:w-36">
+                          <Image src={im.src} alt={im.alt} width={im.w} height={im.h} sizes="144px" className="w-full rounded-sm object-cover" />
+                          <figcaption className="mt-1 text-[11px] leading-snug text-ink-faint"><a href={im.page} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{im.credit}</a></figcaption>
+                        </figure>
+                      )}
+                      <div>
+                        <p className="font-medium text-ink">{p.name}{p.native ? <span className="ml-2 text-ink-muted">{p.native}</span> : null}{p.years ? <span className="ml-2 text-sm text-ink-faint">({p.years})</span> : null}</p>
+                        <p className="mt-1 text-sm leading-relaxed text-ink-muted">{p.role}.</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+          {extra.sources.length > 0 && (
+            <p className="mt-3 text-xs leading-relaxed text-ink-faint">
+              {t("cv.sources")}{" "}
+              {extra.sources.map((src, i) => (
+                <span key={src.url}>
+                  {i > 0 && "; "}
+                  <a href={src.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{src.label}</a>
+                </span>
+              ))}
+              .
+            </p>
+          )}
+        </section>
+      )}
+
+      {pins.length > 0 && (
+        <section className="mt-10" aria-labelledby="cv-map">
+          <h2 id="cv-map" className="font-display text-2xl font-semibold text-ink">{t("cv.map.h")}</h2>
+          {extra?.where && <p className="mt-2 max-w-3xl text-ink-muted">{extra.where}</p>}
+          <div className="mt-4">
+            <CultivarMap pins={pins} label={t("cv.map.aria", { name: cultivar.name })} one={t("cv.map.one")} many={t("cv.map.many")} openLabel={t("cv.map.open")} />
+          </div>
+          <p className="mt-2 max-w-3xl text-xs leading-relaxed text-ink-faint">{t("cv.map.note", { name: cultivar.name })}</p>
         </section>
       )}
 

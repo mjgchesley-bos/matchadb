@@ -1,6 +1,8 @@
 import { getGuideRows, groupBy, pickProducts, summarize, type Group, type Summary } from "./guide-data";
 import { queryStudies } from "./studies";
 import type { ProductRow } from "./db";
+import { REGION_COORDINATES } from "./regions";
+import { REGION_CONTENT } from "./region-content";
 
 // One page per tea cultivar that brands name often enough for the numbers to
 // mean something. Two kinds of text live here, kept apart on the page:
@@ -17,6 +19,8 @@ export type Cultivar = {
   slug: string;
   // The value stored in the products table.
   name: string;
+  // Other spellings of the same cultivar in the products table.
+  aliases?: string[];
   title: string;
   h1: string;
   description: string;
@@ -170,6 +174,29 @@ export const CULTIVARS: Cultivar[] = [
     sources: [],
     related: ["yabukita", "saemidori", "okumidori"],
   },
+  {
+    slug: "ujihikari",
+    name: "Ujihikari",
+    aliases: ["Uji hikari", "Uji Hikari"],
+    title: "Ujihikari Matcha: Cultivar Profile, Price and Origins",
+    h1: "Ujihikari matcha",
+    description: "What the Ujihikari (Uji Hikari) tea cultivar is, how it is described, and how matcha made from it compares on price, grade and growing region across brands.",
+    intro: [
+      "Ujihikari is one of the three \"Uji varieties\" with Asahi and Samidori: a cultivar from Kyoto Prefecture grown for tencha (the leaf that becomes matcha) and gyokuro. It was chosen in 1954 by the Kyoto Prefecture Tea Industry Research Institute from the offspring of an Uji tea plant, and it is not nationally registered.",
+      "Its thin, soft, wavy leaves are described as giving tencha of good shape, color and luster, with a marine aroma when shaded. Brands spell the name both Ujihikari and Uji Hikari; this page counts both.",
+    ],
+    profile: [
+      ["Selected", "1954, Kyoto Prefecture Tea Industry Research Institute"],
+      ["Registration", "Not nationally registered"],
+      ["Common uses", "Tencha (matcha) and gyokuro"],
+      ["Typical description", "Vivid green, rich umami, marine aroma when shaded"],
+    ],
+    sources: [
+      { label: "My Japanese Green Tea: The Ujihikari tea cultivar", url: "https://myjapanesegreentea.com/the-ujihikari-tea-cultivar" },
+      { label: "Tealife Japanese Tea Pedia: Asahi and the Uji varieties", url: "https://japanesetea.sg/japanese-tea-pedia/cultivars/asahi/" },
+    ],
+    related: ["asahi", "samidori", "gokou"],
+  },
 ];
 
 export function cultivarBySlug(slug: string): Cultivar | undefined {
@@ -178,7 +205,8 @@ export function cultivarBySlug(slug: string): Cultivar | undefined {
 
 export function cultivarSlugFor(name: string | null): string | null {
   if (!name) return null;
-  return CULTIVARS.find((c) => c.name.toLowerCase() === name.toLowerCase())?.slug ?? null;
+  const n = name.toLowerCase();
+  return CULTIVARS.find((c) => c.name.toLowerCase() === n || (c.aliases ?? []).some((a) => a.toLowerCase() === n))?.slug ?? null;
 }
 
 export type LoadedCultivar = {
@@ -192,10 +220,12 @@ export type LoadedCultivar = {
   picks: ProductRow[];
   studies: number;
   organicShare: number;
+  // One pin per growing region brands name for this cultivar's products (never where a company is based).
+  pins: { name: string; country: string; lat: number; lng: number; count: number; slug: string | null }[];
 };
 
 export async function loadCultivar(cultivar: Cultivar): Promise<LoadedCultivar> {
-  const [rows, allRows] = await Promise.all([getGuideRows({ cultivars: [cultivar.name] }), getGuideRows({})]);
+  const [rows, allRows] = await Promise.all([getGuideRows({ cultivars: [cultivar.name, ...(cultivar.aliases ?? [])] }), getGuideRows({})]);
   const flavorCounts = new Map<string, number>();
   let withFlavors = 0;
   for (const r of rows) {
@@ -216,6 +246,10 @@ export async function loadCultivar(cultivar: Cultivar): Promise<LoadedCultivar> 
       .slice(0, 6),
     picks: pickProducts(rows, 9),
     studies: queryStudies({ q: cultivar.name, pageSize: 1 }).total,
+    pins: groupBy(rows, "region", 1).flatMap((g) => {
+      const c = REGION_COORDINATES[g.name];
+      return c ? [{ name: c.name, country: c.country, lat: c.lat, lng: c.lng, count: g.count, slug: REGION_CONTENT[g.name]?.slug ?? null }] : [];
+    }),
     organicShare: rows.length ? rows.filter((r) => r.organic_certified === 1).length / rows.length : 0,
   };
 }
