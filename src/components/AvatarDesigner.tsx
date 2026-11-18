@@ -36,12 +36,13 @@ export function AvatarDesigner({ current, onUse }: { current: string | null; onU
   );
 
   return (
-    <div className="mt-4">
-      <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} className="rounded-full border border-line-strong bg-paper-raised px-4 py-2 text-sm text-ink hover:bg-matcha-soft">
+    <>
+      <button type="button" onClick={() => setOpen((o) => !o)} aria-expanded={open} className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-paper-raised px-4 py-2 text-sm font-medium text-ink hover:border-matcha hover:bg-matcha-soft">
+        <Avatar avatar={current} size={22} />
         {t("c.av.open")}
       </button>
       {open && (
-        <div className="mt-3 rounded-sm border border-line bg-paper-raised p-4">
+        <div className="basis-full rounded-sm border border-line bg-paper-raised p-4">
           <div className="flex flex-wrap items-start gap-5">
             <div className="flex flex-col items-center gap-3">
               <Avatar avatar={designCode(p)} size={96} />
@@ -59,11 +60,11 @@ export function AvatarDesigner({ current, onUse }: { current: string | null; onU
               {choices(6, EXTRAS, t("c.av.extra"))}
             </div>
           </div>
-          <button type="button" onClick={() => onUse(designCode(p))} className="mt-4 rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest">
+          <button type="button" onClick={() => { onUse(designCode(p)); setOpen(false); }} className="mt-4 rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest">
             {t("c.av.use")}
           </button>
         </div>
       )}
-    </div>
+    </>
   );
 }

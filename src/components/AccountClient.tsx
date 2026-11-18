@@ -8,6 +8,7 @@ import { FriendsSection } from "@/components/Friends";
 import { MyLists } from "@/components/MyLists";
 import { PublicProfileSettings } from "@/components/PublicProfileSettings";
 import { AccountTypePanel } from "@/components/AccountTypePanel";
+import { AccountAvatar } from "@/components/AccountAvatar";
 import { BADGES } from "@/lib/badges";
 import { commentPhotoUrl, COMMENT_BUCKET } from "@/components/Comments";
 import { BrandLogo } from "@/components/product-cards";
@@ -42,7 +43,7 @@ function ProductLink({ item, id }: { item?: Item; id: number }) {
 }
 
 export function AccountClient() {
-  const { ready, user, displayName, stats, refreshStats, setDisplayName, signIn, signOut } = useAuth();
+  const { ready, user, displayName, avatar, stats, refreshStats, setDisplayName, signIn, signOut } = useAuth();
   const t = useT();
   const tv = useTV();
   const [favorites, setFavorites] = useState<number[] | null>(null);
@@ -182,9 +183,12 @@ export function AccountClient() {
   const h2 = "font-display text-xl font-semibold text-ink";
   return (
     <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-12 flex flex-col gap-10">
-      <div>
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("c.acct.eyebrow")}</p>
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("c.acct.title")}</h1>
+      <div className="flex flex-wrap items-end justify-between gap-x-6 gap-y-4">
+        <div>
+          <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("c.acct.eyebrow")}</p>
+          <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("c.acct.title")}</h1>
+        </div>
+        <AccountAvatar />
       </div>
 
       {stats && (
@@ -231,7 +235,7 @@ export function AccountClient() {
 
       <FriendsSection />
 
-      <PublicProfileSettings />
+      <PublicProfileSettings key={`${avatar.key}|${avatar.path}`} />
       <AccountTypePanel />
 
       <section aria-labelledby="profile-h">

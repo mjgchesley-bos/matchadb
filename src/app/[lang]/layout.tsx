@@ -10,6 +10,7 @@ import { HeaderMenu } from "@/components/HeaderMenu";
 import { SiteSearch } from "@/components/SiteSearch";
 import { CompareProvider } from "@/components/CompareProvider";
 import { CompareTray } from "@/components/CompareTray";
+import { AccountTypeWelcome } from "@/components/AccountTypeWelcome";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { I18nProvider } from "@/i18n/client";
 import { LOCALES, LOCALE_NAMES, HTML_LANG, OG_LOCALE, isLocale, localePath, type Locale } from "@/i18n/config";
@@ -198,6 +199,7 @@ export default async function RootLayout({
         </footer>
         <ConsentBanner />
         <CompareTray />
+        <AccountTypeWelcome />
         </CompareProvider>
         </AuthProvider>
         </I18nProvider>
