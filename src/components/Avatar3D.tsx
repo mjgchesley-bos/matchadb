@@ -15,7 +15,7 @@ const shade = (hex: string, amt: number) => {
   return `#${c.getHexString()}`;
 };
 
-function build(code: string): THREE.Group {
+function build(code: string) {
   const parts = parseDesign(code)!;
   const [, skin, hs, hc, eyes, mouth, extra] = parts;
   const [style, ci] = parseOutfit(code);
@@ -42,12 +42,16 @@ function build(code: string): THREE.Group {
   // torso
   const torso = add(new THREE.CapsuleGeometry(0.42, 0.62, 10, 24), std(shirt), 0, 1.5);
   torso.scale.set(1, 1, 0.74);
-  // arms and hands
-  for (const sx of [-1, 1]) {
-    const arm = add(new THREE.CapsuleGeometry(0.115, 0.62, 8, 16), std(armCol), sx * 0.6, 1.5);
+  // arms and hands hang from shoulder pivots so they can be raised
+  const arms = [-1, 1].map((sx) => {
+    const piv = new THREE.Group();
+    piv.position.set(sx * 0.58, 1.88, 0);
+    g.add(piv);
+    const arm = add(new THREE.CapsuleGeometry(0.115, 0.62, 8, 16), std(armCol), sx * 0.02, -0.38, 0, piv);
     arm.rotation.z = sx * 0.1;
-    add(new THREE.SphereGeometry(0.135, 16, 12), skinM, sx * 0.66, 1.08, 0.02);
-  }
+    add(new THREE.SphereGeometry(0.135, 16, 12), skinM, sx * 0.08, -0.8, 0.02, piv);
+    return piv;
+  });
   // outfit details
   const front = 0.33;
   if (style === 0) {
@@ -70,10 +74,10 @@ function build(code: string): THREE.Group {
     add(new THREE.BoxGeometry(0.5, 0.22, 0.06), std(Cd), 0, 1.22, front + 0.03);
     for (const sx of [-1, 1]) add(new THREE.CylinderGeometry(0.015, 0.015, 0.34, 6), std("#f3efe4"), sx * 0.09, 1.7, front + 0.03);
   } else if (style === 3) {
-    for (const sx of [-1, 1]) {
-      const sleeve = add(new THREE.CapsuleGeometry(0.125, 0.12, 8, 16), std(C), sx * 0.6, 1.8);
+    [-1, 1].forEach((sx, k) => {
+      const sleeve = add(new THREE.CapsuleGeometry(0.125, 0.12, 8, 16), std(C), sx * 0.02, -0.08, 0, arms[k]);
       sleeve.rotation.z = sx * 0.1;
-    }
+    });
   } else if (style === 4) {
     for (const sx of [-1, 1]) {
       const flap = add(new THREE.BoxGeometry(0.4, 1.0, 0.06), std(C), sx * 0.22, 1.5, front + 0.02);
@@ -104,14 +108,31 @@ function build(code: string): THREE.Group {
   if (eyes === 4) add(new THREE.BoxGeometry(0.12, 0.016, 0.016), inkM, 0, ey, surf(0, ey) + 0.02);
   if (eyes === 5) add(new THREE.BoxGeometry(0.1, 0.02, 0.03), inkM, 0, ey, surf(0, ey) + 0.03);
 
-  // mouth
+  // mouth (kept in a list so a big celebration smile can replace it for a moment)
   const my = headY - 0.22, mz = surf(0, my);
+  const before = g.children.length;
   if (mouth === 0) { const m = add(new THREE.TorusGeometry(0.11, 0.018, 8, 20, Math.PI), inkM, 0, my + 0.06, mz); m.rotation.z = Math.PI; }
   else if (mouth === 1) { const m = add(new THREE.CircleGeometry(0.13, 24, Math.PI, Math.PI), std("#fff", 0.35), 0, my + 0.05, mz + 0.005); m.material.side = THREE.DoubleSide; add(new THREE.TorusGeometry(0.13, 0.014, 8, 20, Math.PI), inkM, 0, my + 0.05, mz + 0.007).rotation.z = Math.PI; }
   else if (mouth === 2) add(new THREE.BoxGeometry(0.15, 0.022, 0.02), inkM, 0, my, mz + 0.005);
   else if (mouth === 3) { const m = add(new THREE.SphereGeometry(0.06, 14, 12), std("#7a2b2b"), 0, my, mz); m.scale.set(1, 1.2, 0.4); }
   else if (mouth === 4) { const m = add(new THREE.TorusGeometry(0.05, 0.016, 8, 16, Math.PI), inkM, 0, my + 0.02, mz); m.rotation.z = Math.PI; }
   else { const m = add(new THREE.TorusGeometry(0.1, 0.016, 8, 16, Math.PI * 0.7), inkM, 0.02, my + 0.05, mz); m.rotation.z = Math.PI * 1.15; }
+
+  const mouths = g.children.slice(before);
+  const grin = new THREE.Group();
+  {
+    const mouthIn = new THREE.Mesh(new THREE.CircleGeometry(0.17, 28, Math.PI, Math.PI), new THREE.MeshStandardMaterial({ color: "#7a2b2b", roughness: 0.5, side: THREE.DoubleSide }));
+    mouthIn.position.set(0, my + 0.07, mz + 0.01);
+    const teeth = new THREE.Mesh(new THREE.CircleGeometry(0.15, 28, Math.PI + 0.35, Math.PI - 0.7), new THREE.MeshStandardMaterial({ color: "#fff", roughness: 0.3, side: THREE.DoubleSide }));
+    teeth.position.set(0, my + 0.071, mz + 0.012);
+    teeth.scale.set(1, 0.4, 1);
+    const lip = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.016, 8, 24, Math.PI), inkM);
+    lip.position.set(0, my + 0.07, mz + 0.014);
+    lip.rotation.z = Math.PI;
+    grin.add(mouthIn, teeth, lip);
+    grin.visible = false;
+    g.add(grin);
+  }
 
   // hair and hats
   const cap = (r = 0.62, phi = Math.PI * 0.46) => {
@@ -133,11 +154,11 @@ function build(code: string): THREE.Group {
 
   // extras
   if (extra === 1) {
-    add(new THREE.CylinderGeometry(0.17, 0.12, 0.2, 20), std("#3f7d3a", 0.4), 0.7, 1.12, 0.2);
-    add(new THREE.CylinderGeometry(0.15, 0.15, 0.01, 20), std("#8fbf7a", 0.5), 0.7, 1.22, 0.2);
+    add(new THREE.CylinderGeometry(0.17, 0.12, 0.2, 20), std("#3f7d3a", 0.4), 0.12, -0.76, 0.2, arms[1]);
+    add(new THREE.CylinderGeometry(0.15, 0.15, 0.01, 20), std("#8fbf7a", 0.5), 0.12, -0.66, 0.2, arms[1]);
   } else if (extra === 2) {
-    add(new THREE.CylinderGeometry(0.03, 0.03, 0.34, 8), std("#8a6a3a"), 0.7, 1.22, 0.14);
-    add(new THREE.SphereGeometry(0.11, 14, 10), std("#c9a86a", 0.7), 0.7, 1.0, 0.14).scale.set(1, 1.2, 1);
+    add(new THREE.CylinderGeometry(0.03, 0.03, 0.34, 8), std("#8a6a3a"), 0.12, -0.66, 0.14, arms[1]);
+    add(new THREE.SphereGeometry(0.11, 14, 10), std("#c9a86a", 0.7), 0.12, -0.88, 0.14, arms[1]).scale.set(1, 1.2, 1);
   } else if (extra === 3) {
     const l = add(new THREE.SphereGeometry(0.15, 14, 10), std("#4a9a4a"), 0.5, headY + 0.45, 0.1);
     l.scale.set(1, 0.3, 0.55);
@@ -147,7 +168,7 @@ function build(code: string): THREE.Group {
   } else if (extra === 5) {
     for (const [x, y, z] of [[-0.75, headY + 0.5, 0.1], [0.78, headY + 0.75, 0.1]]) add(new THREE.OctahedronGeometry(0.07), new THREE.MeshBasicMaterial({ color: "#e6b93a" }), x, y, z);
   }
-  return g;
+  return { g, arms, mouths, grin };
 }
 
 export default function Avatar3D({ code, height, onFail }: { code: string; height: number; onFail: () => void }) {
@@ -183,7 +204,7 @@ export default function Avatar3D({ code, height, onFail }: { code: string; heigh
     scene.add(rim);
 
     const pivot = new THREE.Group();
-    const fig = build(code);
+    const { g: fig, arms, mouths, grin } = build(code);
     pivot.add(fig);
     scene.add(pivot);
     const shadow = new THREE.Mesh(new THREE.CircleGeometry(0.75, 32), new THREE.MeshBasicMaterial({ color: "#000", transparent: true, opacity: 0.16 }));
@@ -192,12 +213,14 @@ export default function Avatar3D({ code, height, onFail }: { code: string; heigh
     scene.add(shadow);
 
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    let spin = reduce ? 0 : performance.now(), dragging = false, lastX = 0, vel = 0, raf = 0, bobT = 0;
-    const SPIN_MS = 2200;
-    const down = (e: PointerEvent) => { dragging = true; lastX = e.clientX; spin = 0; renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = "grabbing"; };
+    // Arrival: one big 360 spin with both arms thrown up and a big smile, then a gentle 45-degree sway left and right.
+    const SPIN_MS = 2300, CELEBRATE_MS = 3400, SWAY = Math.PI / 4;
+    let t0 = reduce ? 0 : performance.now(), dragging = false, lastX = 0, vel = 0, raf = 0, idle = 0;
+    const smooth = (x: number) => x * x * (3 - 2 * x);
+    const down = (e: PointerEvent) => { dragging = true; lastX = e.clientX; t0 = 0; renderer.domElement.setPointerCapture(e.pointerId); renderer.domElement.style.cursor = "grabbing"; };
     const move = (e: PointerEvent) => { if (!dragging) return; const dx = e.clientX - lastX; lastX = e.clientX; pivot.rotation.y += dx * 0.012; vel = dx * 0.012; };
     const up = () => { dragging = false; renderer.domElement.style.cursor = "grab"; };
-    const dbl = () => { spin = performance.now(); pivot.rotation.y = 0; };
+    const dbl = () => { t0 = performance.now(); pivot.rotation.y = 0; };
     renderer.domElement.addEventListener("pointerdown", down);
     renderer.domElement.addEventListener("pointermove", move);
     renderer.domElement.addEventListener("pointerup", up);
@@ -206,16 +229,40 @@ export default function Avatar3D({ code, height, onFail }: { code: string; heigh
 
     const tick = (now: number) => {
       raf = requestAnimationFrame(tick);
-      bobT += 0.016;
-      if (spin) {
-        const p = Math.min(1, (now - spin) / SPIN_MS);
-        pivot.rotation.y = (1 - Math.pow(1 - p, 3)) * Math.PI * 2;
-        if (p >= 1) spin = 0;
-      } else if (!dragging) {
-        vel *= 0.94;
-        pivot.rotation.y += vel + (reduce ? 0 : 0.003);
+      let armUp = 0, jump = 0, celebrating = false;
+      if (t0) {
+        const el = now - t0;
+        if (el < CELEBRATE_MS) {
+          celebrating = true;
+          const p = Math.min(1, el / SPIN_MS);
+          pivot.rotation.y = (1 - Math.pow(1 - p, 3)) * Math.PI * 2;
+          jump = Math.sin(Math.min(1, el / 1400) * Math.PI) * 0.22;
+          // arms up fast, held, then lowered
+          armUp = el < 600 ? smooth(el / 600) : el < 2700 ? 1 : 1 - smooth((el - 2700) / (CELEBRATE_MS - 2700));
+          if (el > 450 && el < 2700) armUp += Math.sin(el / 90) * 0.06; // a little wave of the arms
+        } else {
+          t0 = 0;
+          idle = now;
+        }
       }
-      fig.position.y = Math.sin(bobT * 1.6) * 0.015;
+      if (!t0 && !dragging) {
+        if (reduce) {
+          pivot.rotation.y *= 0.9;
+        } else {
+          vel *= 0.9;
+          const target = Math.sin((now - idle) / 1500) * SWAY;
+          // glide to the sway position, wherever a drag left the figure
+          let cur = pivot.rotation.y % (Math.PI * 2);
+          if (cur > Math.PI) cur -= Math.PI * 2;
+          if (cur < -Math.PI) cur += Math.PI * 2;
+          pivot.rotation.y = cur + (target - cur) * 0.06 + vel;
+        }
+      }
+      arms[0].rotation.z = -armUp * 2.75;
+      arms[1].rotation.z = armUp * 2.75;
+      mouths.forEach((m) => (m.visible = !celebrating));
+      grin.visible = celebrating;
+      fig.position.y = jump + Math.sin(now / 600) * 0.012;
       renderer.render(scene, camera);
     };
     raf = requestAnimationFrame(tick);
