@@ -5,7 +5,9 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "@/i18n/Link";
 import { useT } from "@/i18n/client";
 
-type Result = { products: { id: number; name: string; brand: string }[]; brands: string[]; cafes: { name: string; city: string; slug: string }[] };
+type Hit = { label: string; sub?: string; href: string };
+type Result = { groups: { key: string; hits: Hit[] }[]; closest: boolean; popular: Hit[] };
+const TITLE: Record<string, string> = { products: "c.search.products", brands: "c.search.brands", producers: "c.search.producers", cafes: "c.search.cafes", places: "c.search.places", regions: "c.search.regions", cultivars: "c.search.cultivars" };
 
 // The site-wide search bar in the header: products, brands and cafés in one box. Enter opens the full database search.
 export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero" }) {
@@ -52,7 +54,6 @@ export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero"
   }, []);
 
   if (!hero && onHome) return null;
-  const empty = res && res.products.length + res.brands.length + res.cafes.length === 0;
   const close = () => setOpen(false);
   const head = "px-4 pt-3 pb-1 font-mono text-[0.65rem] uppercase tracking-[0.18em] text-forest";
   const row = "block px-4 py-2 text-sm text-ink hover:bg-matcha-soft focus-visible:bg-matcha-soft focus-visible:outline-none";
@@ -87,37 +88,34 @@ export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero"
       </form>
       {open && res && (
         <div className="absolute left-0 right-0 top-full z-40 mt-2 max-h-[70vh] overflow-y-auto rounded-md border border-line bg-paper-raised pb-2 shadow-lg">
-          {empty && <p className="px-4 py-3 text-sm text-ink-muted">{t("c.search.none")}</p>}
-          {res.products.length > 0 && (
-            <>
-              <p className={head}>{t("c.search.products")}</p>
-              {res.products.map((p) => (
-                <Link key={p.id} href={`/products/${p.id}`} onClick={close} className={row}>
-                  {p.name} <span className="text-ink-faint">· {p.brand}</span>
+          {res.closest && res.groups.length > 0 && <p className="px-4 pt-3 text-sm text-ink-muted">{t("c.search.closest")}</p>}
+          {res.groups.length === 0 && <p className="px-4 pt-3 text-sm text-ink-muted">{t("c.search.popular")}</p>}
+          {res.groups.map((g) => (
+            <div key={g.key}>
+              <p className={head}>{t((TITLE[g.key] ?? "c.search.products") as "c.search.products")}</p>
+              {g.hits.map((h) => (
+                <Link key={h.href} href={h.href} onClick={close} className={row}>
+                  {h.label} {h.sub && <span className="text-ink-faint">· {h.sub}</span>}
                 </Link>
               ))}
-            </>
-          )}
-          {res.brands.length > 0 && (
-            <>
-              <p className={head}>{t("c.search.brands")}</p>
-              {res.brands.map((b) => (
-                <Link key={b} href={`/brands/${encodeURIComponent(b)}`} onClick={close} className={row}>
-                  {b}
-                </Link>
-              ))}
-            </>
-          )}
-          {res.cafes.length > 0 && (
-            <>
-              <p className={head}>{t("c.search.cafes")}</p>
-              {res.cafes.map((c) => (
-                <Link key={c.slug} href={`/cafes/${c.slug}`} onClick={close} className={row}>
-                  {c.name} <span className="text-ink-faint">· {c.city}</span>
-                </Link>
-              ))}
-            </>
-          )}
+            </div>
+          ))}
+          {res.groups.length === 0 && res.popular.map((h) => (
+            <Link key={h.href} href={h.href} onClick={close} className={row}>
+              {h.label} {h.sub && <span className="text-ink-faint">· {h.sub}</span>}
+            </Link>
+          ))}
+          <div className="mt-1 border-t border-line px-4 pt-2 text-sm">
+            <Link href={`/browse?q=${encodeURIComponent(q.trim())}`} onClick={close} className="font-medium text-matcha hover:underline">{t("c.search.all", { q: q.trim() })}</Link>
+            {res.groups.length === 0 && (
+              <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-ink-muted">
+                <span>{t("c.search.try")}</span>
+                <Link href="/cafes" onClick={close} className="underline hover:text-ink">{t("c.search.exCafes")}</Link>
+                <Link href="/map" onClick={close} className="underline hover:text-ink">{t("c.search.exMap")}</Link>
+                <Link href="/browse" onClick={close} className="underline hover:text-ink">{t("c.search.exBrowse")}</Link>
+              </p>
+            )}
+          </div>
         </div>
       )}
     </div>

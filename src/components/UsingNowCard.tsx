@@ -21,7 +21,7 @@ export function UsingNowCard({ current, shelfChoices, onSet, onClear }: { curren
     if (v.length < 2) { setFound([]); return; }
     const ctl = new AbortController();
     const id = setTimeout(() => {
-      fetch(`/api/search?q=${encodeURIComponent(v)}`, { signal: ctl.signal })
+      fetch(`/api/search?only=products&q=${encodeURIComponent(v)}`, { signal: ctl.signal })
         .then((r) => (r.ok ? r.json() : null))
         .then((j: { products?: Choice[] } | null) => setFound(j?.products ?? []))
         .catch(() => {});

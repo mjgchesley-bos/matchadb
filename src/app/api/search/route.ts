@@ -1,52 +1,150 @@
-import { getProducts, getFilterOptions } from "@/lib/db";
+import { getDb, getProducts } from "@/lib/db";
 import { getCafeSlimIndex } from "@/lib/cafes";
-import { cafeSlug } from "@/lib/cafe-types";
-import { norm } from "@/lib/cafe-search";
+import { cafeSlug, countryName } from "@/lib/cafe-types";
+import { norm, lev } from "@/lib/cafe-search";
+import { getPlaceIndex, cityPath } from "@/lib/cafe-places";
+import { REGION_COORDINATES } from "@/lib/regions";
+import { REGION_CONTENT } from "@/lib/region-content";
+import { PRODUCERS } from "@/lib/producers";
+import { CULTIVARS } from "@/lib/cultivars";
 
-// One search for the whole site (the bar in the header): a few products, brands and cafés that match what was typed.
-type CafeKey = { id: string; name: string; city: string; state: string; cc: string; n: string; c: string };
-let cafeKeys: CafeKey[] | null = null;
-function keys(): CafeKey[] {
-  if (cafeKeys) return cafeKeys;
-  cafeKeys = [...getCafeSlimIndex().values()].map((r) => ({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] ?? "", n: norm(r[1]), c: norm(r[3]) }));
-  return cafeKeys;
+// One search for the whole site. Every word typed is matched separately against everything we know, so "brand + product",
+// "city + cafe", a country, a region, a producer or a cultivar all work; typos are forgiven; and when nothing matches well
+// it falls back to the closest guesses and then to popular picks, so the answer is never an empty box.
+type Hit = { label: string; sub?: string; href: string };
+type Item = { n: string; w: string[]; hit: Hit; weight?: number };
+
+const STOP = new Set(["cafe", "cafes", "coffee", "shop", "matcha", "tea", "in", "the", "a", "of", "and", "near", "best", "buy"]);
+const ALIAS: Record<string, string> = { usa: "united states", us: "united states", uk: "united kingdom", america: "united states", england: "united kingdom", korea: "south korea" };
+
+// How well one typed word matches one word of an item: 1 exact, .9 starts with, .7 inside, .6 a typo away, else 0.
+function wordScore(q: string, w: string): number {
+  if (q === w) return 1;
+  if (w.startsWith(q)) return q.length >= 2 ? 0.9 : 0;
+  if (q.length >= 3 && w.includes(q)) return 0.7;
+  if (q.length >= 4 && w.length >= 4) {
+    const max = q.length >= 8 ? 2 : 1;
+    if (lev(q, w, max) <= max) return 0.6;
+  }
+  return 0;
+}
+
+/** Mean of each typed word's best match among the item's words; no single word may score under `min`. */
+function score(qw: string[], it: Item, min: number): number {
+  let sum = 0;
+  for (const q of qw) {
+    let best = 0;
+    for (const w of it.w) {
+      const s = wordScore(q, w);
+      if (s > best) best = s;
+      if (best === 1) break;
+    }
+    if (best < min) return 0;
+    sum += best;
+  }
+  return sum / qw.length + (it.n.startsWith(qw.join(" ")) ? 0.2 : 0);
+}
+
+function rank(items: Item[], qw: string[], min: number, limit: number): Hit[] {
+  const out: { s: number; it: Item }[] = [];
+  for (const it of items) {
+    const s = score(qw, it, min);
+    if (s > 0) out.push({ s: s + (it.weight ?? 0), it });
+  }
+  return out.sort((a, b) => b.s - a.s || a.it.hit.label.length - b.it.hit.label.length).slice(0, limit).map((x) => x.it.hit);
+}
+
+const mk = (label: string, href: string, sub?: string, extra = "", weight = 0): Item => {
+  const n = norm(`${label} ${extra}`);
+  return { n, w: n.split(" "), hit: { label, sub, href }, weight };
+};
+
+type Cache = { products: Item[]; brands: Item[]; places: Item[]; regions: Item[]; producers: Item[]; cultivars: Item[]; cafes: Item[] };
+let cache: Cache | null = null;
+
+async function build(): Promise<Cache> {
+  if (cache) return cache;
+  const db = await getDb();
+  const res = db.exec("SELECT p.id, b.name, p.product_name FROM products p JOIN brands b ON p.brand_id = b.id WHERE p.not_found = 0");
+  const rows = (res.length ? res[0].values : []) as [number, string, string][];
+  const products = rows.map(([id, brand, name]) => mk(name, `/products/${id}`, brand, brand));
+  const brandSet = [...new Set(rows.map((r) => r[1]))];
+  const brands = brandSet.map((b) => mk(b, `/brands/${encodeURIComponent(b)}`));
+
+  const idx = getPlaceIndex();
+  const places: Item[] = [];
+  for (const [cc, n] of idx.countries) {
+    const name = countryName(cc);
+    const al = Object.entries(ALIAS).filter(([, v]) => norm(v) === norm(name)).map(([k]) => k).join(" ");
+    places.push(mk(name, `/cafes/in/${cc.toLowerCase()}`, `${n} cafés`, `${al} ${cc}`, 0.15));
+  }
+  for (const e of idx.cities.values()) {
+    if (e.cafes.length < 3) continue;
+    places.push(mk(e.city, cityPath(e), `${e.state ? e.state + ", " : ""}${countryName(e.cc)} · ${e.cafes.length} cafés`, `${e.state} ${countryName(e.cc)}`, Math.min(0.1, e.cafes.length / 2000)));
+  }
+  const regions = Object.entries(REGION_CONTENT).map(([key, c]) => {
+    const info = REGION_COORDINATES[key];
+    return mk(info?.name ?? key, `/regions/${c.slug}`, `Growing region${info ? ` · ${info.country}` : ""}`, `${key} ${info?.country ?? ""} region`);
+  });
+  const producers = PRODUCERS.map((p) => mk(p.name, `/producers/${p.slug}`, `Producer · ${p.basedIn}`, `${p.native ?? ""} ${p.brand}`));
+  const cultivars = CULTIVARS.map((c) => mk(c.name, `/cultivars/${c.slug}`, "Cultivar", `${(c.aliases ?? []).join(" ")} cultivar`));
+  const cafes: Item[] = [...getCafeSlimIndex().values()].map((r) => {
+    const slug = cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] ?? "" });
+    return mk(r[1], `/cafes/${slug}`, r[3], `${r[3]} ${r[9] ? countryName(r[9]) : ""}`);
+  });
+  cache = { products, brands, places, regions, producers, cultivars, cafes };
+  return cache;
 }
 
 export async function GET(req: Request) {
   const raw = (new URL(req.url).searchParams.get("q") ?? "").trim().slice(0, 80);
-  const q = norm(raw);
-  if (q.length < 2) return Response.json({ products: [], brands: [], cafes: [] });
-  const words = q.split(" ");
+  const all = norm(raw).split(" ").filter(Boolean);
+  if (norm(raw).length < 2) return Response.json({ groups: [], closest: false, popular: [] });
+  const c = await build();
 
-  const [{ products }, opts] = await Promise.all([
-    getProducts({ q: raw, page: 1, pageSize: 5, grades: [], flavors: [], uses: [] }),
-    getFilterOptions(),
-  ]);
-  const brands = opts.brands
-    .map((b) => ({ b, n: norm(b) }))
-    .filter((x) => words.every((w) => x.n.includes(w)))
-    .sort((a, c) => Number(c.n.startsWith(q)) - Number(a.n.startsWith(q)) || a.b.length - c.b.length)
-    .slice(0, 5)
-    .map((x) => x.b);
-
-  const scored: { s: number; c: CafeKey }[] = [];
-  for (const c of keys()) {
-    const hay = `${c.n} ${c.c}`;
-    if (!words.every((w) => hay.includes(w))) continue;
-    scored.push({ s: (c.n.startsWith(q) ? 0 : c.n.includes(q) ? 1 : 2) * 1000 + c.name.length, c });
-    if (scored.length > 400) break;
+  // Product-only mode (the "Using now" picker needs just products, as {id, name, brand}).
+  if (new URL(req.url).searchParams.get("only") === "products") {
+    const hits = rank(c.products, all, 0.6, 8).length ? rank(c.products, all, 0.6, 8) : rank(c.products, all.filter((w) => !STOP.has(w)), 0.6, 8);
+    return Response.json({ products: hits.map((h) => ({ id: Number(h.href.split("/").pop()), name: h.label, brand: h.sub ?? "" })) });
   }
-  const cafes = scored
-    .sort((a, b) => a.s - b.s)
-    .slice(0, 5)
-    .map(({ c }) => ({ name: c.name, city: c.city, slug: cafeSlug({ id: c.id, name: c.name, city: c.city, state: c.state, cc: c.cc }) }));
 
-  return Response.json(
-    {
-      products: products.map((p) => ({ id: p.id, name: p.product_name, brand: p.brand_name })),
-      brands,
-      cafes,
-    },
-    { headers: { "Cache-Control": "public, max-age=300" } }
-  );
+  const lists: [string, Item[], number][] = [
+    ["products", c.products, 6],
+    ["brands", c.brands, 4],
+    ["producers", c.producers, 3],
+    ["cafes", c.cafes, 6],
+    ["places", c.places, 5],
+    ["regions", c.regions, 3],
+    ["cultivars", c.cultivars, 3],
+  ];
+  const run = (qw: string[], min: number) => lists.map(([k, items, n]) => ({ key: k, hits: rank(items, qw, min, n) })).filter((g) => g.hits.length);
+
+  // 1. every word matches (typos allowed); 2. ignoring filler words like "cafe"/"matcha"; 3. closest guesses: any one word matches.
+  let groups = run(all, 0.6);
+  let closest = false;
+  if (!groups.length) {
+    const core = all.filter((w) => !STOP.has(w));
+    if (core.length && core.length < all.length) groups = run(core, 0.6);
+  }
+  if (!groups.length) {
+    closest = true;
+    for (const w of all.filter((x) => !STOP.has(x) && x.length >= 3)) {
+      for (const x of run([w], 0.6)) {
+        const e = groups.find((y) => y.key === x.key);
+        if (e) e.hits.push(...x.hits.filter((h) => !e.hits.some((z) => z.href === h.href)));
+        else groups.push(x);
+      }
+    }
+    groups = groups.map((g) => ({ ...g, hits: g.hits.slice(0, 4) }));
+  }
+  // A group whose top hit is exactly what was typed (a country, a brand, a region) leads.
+  const qn = all.join(" ");
+  groups.sort((a, b) => Number(norm(b.hits[0].label) === qn) - Number(norm(a.hits[0].label) === qn));
+  // 4. still nothing: popular picks, so the box is never empty.
+  let popular: Hit[] = [];
+  if (!groups.length) {
+    const { products } = await getProducts({ page: 1, pageSize: 5, grades: [], flavors: [], uses: [] });
+    popular = products.map((p) => ({ label: p.product_name, sub: p.brand_name, href: `/products/${p.id}` }));
+  }
+  return Response.json({ groups, closest, popular }, { headers: { "Cache-Control": "public, max-age=300" } });
 }

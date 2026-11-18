@@ -10,7 +10,7 @@ export const norm = (s: string): string =>
     .trim();
 
 /** Levenshtein distance, giving up (returning max + 1) once it is certain to exceed `max`. */
-function lev(a: string, b: string, max: number): number {
+export function lev(a: string, b: string, max: number): number {
   if (Math.abs(a.length - b.length) > max) return max + 1;
   let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
   for (let i = 1; i <= a.length; i++) {
