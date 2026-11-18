@@ -73,6 +73,25 @@ function Section({ title, children, note }: { title: string; children: React.Rea
   );
 }
 
+// A long list tucked into a closed section: the title and how many are inside stay visible, one click opens it.
+function Fold({ title, count, children }: { title: string; count: number; children: React.ReactNode }) {
+  return (
+    <details className="group mt-3 rounded-sm border border-line bg-paper-raised">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-3.5 hover:bg-matcha-soft">
+        <span className="font-display text-lg font-semibold text-ink">{title}</span>
+        <span className="flex items-center gap-2 text-sm tabular-nums text-ink-faint">
+          {count}
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="transition-transform group-open:rotate-180" aria-hidden="true"><path d="M3 6l5 5 5-5" /></svg>
+        </span>
+      </summary>
+      <div className="px-5 pb-5">{children}</div>
+    </details>
+  );
+}
+
+// A small heading above a highlight block near the top of the page.
+const Hl = ({ children }: { children: React.ReactNode }) => <h2 className="mb-3 font-mono text-xs font-medium uppercase tracking-[0.18em] text-forest">{children}</h2>;
+
 export default async function PublicProfilePage({ params }: { params: Promise<{ lang: string; name: string }> }) {
   const { name } = await params;
   const lang = await langOf(params);
@@ -121,9 +140,35 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
   };
   const list = (items: React.ReactNode[]) => <ul className="divide-y divide-line">{items}</ul>;
 
+  // Cafés: a café that left the map after being favorited or rated is still shown (not linked): the member really went there.
+  const cafeIdx = getCafeSlimIndex();
+  const gone = removedIndex();
+  const find = (id: string) => {
+    const r = cafeIdx.get(id);
+    if (r) return { id, name: r[1], place: !r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3], href: `/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}` };
+    const g = gone[id];
+    return g ? { id, name: g[0], place: g[1], href: null as string | null } : null;
+  };
+  const cardCls = "flex h-full items-center justify-between gap-4 rounded-md border-2 border-line bg-paper p-5 text-ink";
+  const hover = " transition-colors hover:border-matcha hover:bg-matcha-soft";
+  const favs = (p.cafes ?? []).map(find).filter((x): x is NonNullable<typeof x> => !!x);
+  const rated = (p.cafe_ratings ?? []).flatMap((x) => {
+    const c = find(x.cafe_id);
+    return c ? [{ c, score: Number(x.score) }] : [];
+  });
+  const body = (c: { name: string; place: string }, right: React.ReactNode) => (
+    <>
+      <span className="min-w-0">
+        <span className="block font-display text-xl font-semibold leading-snug">{c.name}</span>
+        <span className="block text-sm text-ink-muted">{c.place}</span>
+      </span>
+      {right}
+    </>
+  );
+
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
-      <header className="flex flex-col gap-5 rounded-sm border border-line bg-paper-raised p-5 sm:flex-row sm:items-start sm:p-6">
+      <header className="flex flex-col gap-5 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:flex-row sm:items-start sm:p-6">
         <Avatar avatar={p.avatar} photoPath={p.avatar_path} name={p.name} size={88} />
         <div className="min-w-0 flex-1">
           <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight">{p.name}</h1>
@@ -170,145 +215,161 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         </div>
       </header>
 
-      <div className="mt-4">
-        <FeedbackButton contactEmail={CONTACT_EMAIL} />
-      </div>
-
-      <dl className="mt-5 grid grid-cols-3 gap-3 sm:gap-4">
+      <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
         {[
           [t("u.s.tried"), String(tried.length)],
           [t("u.s.rated"), String(p.stats.ratings + Number(p.cafe_rating_count ?? 0))],
           [t("u.s.avg"), avg != null ? avg.toFixed(1) : "–"],
+          [t("c.acct.cafes"), String(favs.length)],
         ].map(([k, v]) => (
-          <div key={k} className="rounded-sm border border-line bg-paper-raised px-4 py-4 text-center">
-            <dd className="font-display text-3xl font-semibold leading-none text-matcha tabular-nums">{v}</dd>
-            <dt className="mt-2 text-xs uppercase tracking-wide text-ink-faint">{k}</dt>
+          <div key={k} className="rounded-md border-2 border-matcha/50 bg-matcha-soft px-4 py-4 text-center shadow-sm">
+            <dd className="font-display text-4xl font-semibold leading-none text-forest tabular-nums">{v}</dd>
+            <dt className="mt-2 text-xs uppercase tracking-wide text-ink-muted">{k}</dt>
           </div>
         ))}
       </dl>
 
-      {using.length > 0 && <Section title={t("c.shelf.using")}>{list(using.map((x) => row(x.product_id)))}</Section>}
-
       {top.length > 0 && (
-        <Section title={t("u.top")}>
-          {list(top.map((r) => row(r.product_id, <span className="flex items-center gap-1.5 tabular-nums"><Stars value={Number(r.score)} size={14} />{Number(r.score).toFixed(1)}</span>)))}
-        </Section>
+        <section className="mt-6" aria-label={t("u.top")}>
+          <Hl>{t("u.top")}</Hl>
+          <ul className="grid gap-3 sm:grid-cols-3">
+            {top.slice(0, 3).map((r, i) => {
+              const inf = info.get(r.product_id);
+              return (
+                <li key={r.product_id}>
+                  <Link href={`/products/${r.product_id}`} className="flex h-full flex-col gap-1.5 rounded-md border-2 border-gold bg-gold-soft p-4 transition-shadow hover:shadow-md">
+                    <span className="font-mono text-xs text-ink-faint">#{i + 1}{inf?.brand ? ` · ${inf.brand}` : ""}</span>
+                    <span className="font-display text-lg font-semibold leading-snug text-ink">{inf?.name ?? t("c.acct.product", { id: r.product_id })}</span>
+                    <span className="mt-auto flex items-center gap-2 tabular-nums"><Stars value={Number(r.score)} size={18} /><span className="font-semibold text-forest">{Number(r.score).toFixed(1)}</span></span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
       )}
 
-      {want.length > 0 && <Section title={t("c.shelf.want")}>{list(want.slice(0, 12).map((x) => row(x.product_id)))}</Section>}
-
-      {tried.length > 0 && (
-        <Section title={t("c.shelf.tried")} note={tried.length > 12 ? t("u.showing", { n: tried.length }) : undefined}>
-          {list(tried.slice(0, 12).map((x) => row(x.product_id)))}
-        </Section>
+      {rated.length > 0 && (
+        <section className="mt-6" aria-label={t("u.cafeRatings")}>
+          <Hl>{t("u.cafeRatings")}</Hl>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {[...rated].sort((a, b) => b.score - a.score).slice(0, 4).map(({ c, score }) => {
+              const right = (
+                <span className="flex shrink-0 flex-col items-end gap-1 tabular-nums">
+                  <Stars value={score} size={18} />
+                  <span className="text-lg font-semibold text-forest">{score.toFixed(1)}</span>
+                </span>
+              );
+              return <li key={c.id}>{c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, right)}</Link> : <div className={cardCls}>{body(c, right)}</div>}</li>;
+            })}
+          </ul>
+        </section>
       )}
-
-      {p.lists.filter((l) => l.items.length > 0).map((l) => (
-        <Section key={l.name} title={l.name}>
-          {list(l.items.slice(0, 20).map((id) => row(id)))}
-        </Section>
-      ))}
 
       {p.brands.length > 0 && (
-        <Section title={t("u.brands")}>
-          <ul className="flex flex-wrap gap-3">
-            {p.brands.map((b) => (
+        <section className="mt-6" aria-label={t("u.brands")}>
+          <Hl>{t("u.brands")}</Hl>
+          <ul className="flex flex-wrap gap-2.5">
+            {p.brands.slice(0, 12).map((b) => (
               <li key={b}>
-                <Link href={`/brands/${encodeURIComponent(b)}`} className="inline-flex items-center gap-2 rounded-full border border-line bg-paper-raised py-1.5 pl-2.5 pr-4 text-sm text-ink hover:border-matcha">
+                <Link href={`/brands/${encodeURIComponent(b)}`} className="inline-flex items-center gap-2 rounded-full border-2 border-matcha/40 bg-paper-raised py-1.5 pl-2.5 pr-4 text-sm font-medium text-ink hover:border-matcha hover:bg-matcha-soft">
                   <BrandLogo brandName={b} size={24} maxWidth={72} />
                   {b}
                 </Link>
               </li>
             ))}
           </ul>
-        </Section>
-      )}
-
-      {(() => {
-        const idx = getCafeSlimIndex();
-        const gone = removedIndex();
-        // A café that left the map after being favorited or rated is still shown (not linked): the member really went there.
-        const find = (id: string) => {
-          const r = idx.get(id);
-          if (r) return { id, name: r[1], place: !r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3], href: `/cafes/${cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] })}` };
-          const g = gone[id];
-          return g ? { id, name: g[0], place: g[1], href: null as string | null } : null;
-        };
-        const cardCls = "flex h-full items-center justify-between gap-4 rounded-sm border border-line bg-paper p-5 text-ink";
-        const hover = " transition-colors hover:border-matcha hover:bg-matcha-soft";
-        const favs = (p.cafes ?? []).map(find).filter((x): x is NonNullable<typeof x> => !!x);
-        const rated = (p.cafe_ratings ?? []).flatMap((x) => {
-          const c = find(x.cafe_id);
-          return c ? [{ c, score: Number(x.score) }] : [];
-        });
-        const body = (c: { name: string; place: string }, right: React.ReactNode) => (
-          <>
-            <span className="min-w-0">
-              <span className="block font-display text-xl font-semibold leading-snug">{c.name}</span>
-              <span className="block text-sm text-ink-muted">{c.place}</span>
-            </span>
-            {right}
-          </>
-        );
-        return (
-          <>
-            {favs.length > 0 && (
-              <Section title={t("c.acct.cafes")}>
-                <ul className="grid gap-4 sm:grid-cols-2">
-                  {favs.map((c) => (
-                    <li key={c.id}>
-                      {c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, <span className="text-2xl text-matcha" aria-hidden="true">♥</span>)}</Link> : <div className={cardCls}>{body(c, <span className="text-2xl text-matcha" aria-hidden="true">♥</span>)}</div>}
-                    </li>
-                  ))}
-                </ul>
-              </Section>
-            )}
-            {rated.length > 0 && (
-              <Section title={t("u.cafeRatings")}>
-                <ul className="grid gap-4 sm:grid-cols-2">
-                  {rated.map(({ c, score }) => {
-                    const right = (
-                      <span className="flex shrink-0 flex-col items-end gap-1 tabular-nums">
-                        <Stars value={score} size={20} />
-                        <span className="text-lg font-semibold text-matcha">{score.toFixed(1)}</span>
-                      </span>
-                    );
-                    return <li key={c.id}>{c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, right)}</Link> : <div className={cardCls}>{body(c, right)}</div>}</li>;
-                  })}
-                </ul>
-              </Section>
-            )}
-          </>
-        );
-      })()}
-
-      {p.reviews.length > 0 && (
-        <Section title={t("c.rv.heading")}>
-          <ul className="flex flex-col gap-4">
-            {p.reviews.map((r) => (
-              <li key={r.product_id} className="border-t border-line pt-3">
-                <Link href={`/products/${r.product_id}`} className="font-medium text-ink hover:text-matcha">
-                  {info.get(r.product_id)?.name ?? t("c.acct.product", { id: r.product_id })}
-                </Link>
-                <p className="mt-1 whitespace-pre-line text-sm text-ink-muted">{r.body}</p>
-              </li>
-            ))}
-          </ul>
-        </Section>
+        </section>
       )}
 
       {p.photos.length > 0 && (
-        <Section title={t("u.photos")}>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {p.photos.map((ph) => (
+        <section className="mt-6" aria-label={t("u.photos")}>
+          <Hl>{t("u.photos")}</Hl>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {p.photos.slice(0, 4).map((ph) => (
               <a key={ph} href={`${PHOTO_BASE}${ph}`} target="_blank" rel="noopener noreferrer" className="block">
                 {/* eslint-disable-next-line @next/next/no-img-element -- user photo from storage, already shrunk */}
-                <img src={`${PHOTO_BASE}${ph}`} alt={t("c.cm.photoBy", { who: p.name })} loading="lazy" className="aspect-square w-full rounded-sm border border-line object-cover transition-opacity hover:opacity-90" />
+                <img src={`${PHOTO_BASE}${ph}`} alt={t("c.cm.photoBy", { who: p.name })} loading="lazy" className="aspect-square w-full rounded-md border-2 border-line object-cover transition-opacity hover:opacity-90" />
               </a>
             ))}
           </div>
-        </Section>
+        </section>
       )}
+
+      <div className="mt-8">
+        {using.length > 0 && <Fold title={t("c.shelf.using")} count={using.length}>{list(using.map((x) => row(x.product_id)))}</Fold>}
+        {top.length > 3 && (
+          <Fold title={t("u.top")} count={top.length}>
+            {list(top.map((r) => row(r.product_id, <span className="flex items-center gap-1.5 tabular-nums"><Stars value={Number(r.score)} size={14} />{Number(r.score).toFixed(1)}</span>)))}
+          </Fold>
+        )}
+        {want.length > 0 && <Fold title={t("c.shelf.want")} count={want.length}>{list(want.slice(0, 12).map((x) => row(x.product_id)))}</Fold>}
+        {tried.length > 0 && (
+          <Fold title={t("c.shelf.tried")} count={tried.length}>
+            {list(tried.slice(0, 12).map((x) => row(x.product_id)))}
+            {tried.length > 12 && <p className="mt-2 text-sm text-ink-faint">{t("u.showing", { n: tried.length })}</p>}
+          </Fold>
+        )}
+        {p.lists.filter((l) => l.items.length > 0).map((l) => (
+          <Fold key={l.name} title={l.name} count={l.items.length}>{list(l.items.slice(0, 20).map((id) => row(id)))}</Fold>
+        ))}
+        {favs.length > 0 && (
+          <Fold title={t("c.acct.cafes")} count={favs.length}>
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {favs.map((c) => (
+                <li key={c.id}>
+                  {c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, <span className="text-2xl text-matcha" aria-hidden="true">♥</span>)}</Link> : <div className={cardCls}>{body(c, <span className="text-2xl text-ink-faint" aria-hidden="true">♥</span>)}</div>}
+                </li>
+              ))}
+            </ul>
+          </Fold>
+        )}
+        {rated.length > 4 && (
+          <Fold title={t("u.cafeRatings")} count={rated.length}>
+            <ul className="grid gap-4 sm:grid-cols-2">
+              {rated.map(({ c, score }) => {
+                const right = (
+                  <span className="flex shrink-0 flex-col items-end gap-1 tabular-nums">
+                    <Stars value={score} size={20} />
+                    <span className="text-lg font-semibold text-matcha">{score.toFixed(1)}</span>
+                  </span>
+                );
+                return <li key={c.id}>{c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, right)}</Link> : <div className={cardCls}>{body(c, right)}</div>}</li>;
+              })}
+            </ul>
+          </Fold>
+        )}
+        {p.reviews.length > 0 && (
+          <Fold title={t("c.rv.heading")} count={p.reviews.length}>
+            <ul className="flex flex-col gap-4">
+              {p.reviews.map((r) => (
+                <li key={r.product_id} className="border-t border-line pt-3">
+                  <Link href={`/products/${r.product_id}`} className="font-medium text-ink hover:text-matcha">
+                    {info.get(r.product_id)?.name ?? t("c.acct.product", { id: r.product_id })}
+                  </Link>
+                  <p className="mt-1 whitespace-pre-line text-sm text-ink-muted">{r.body}</p>
+                </li>
+              ))}
+            </ul>
+          </Fold>
+        )}
+        {p.photos.length > 4 && (
+          <Fold title={t("u.photos")} count={p.photos.length}>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {p.photos.map((ph) => (
+                <a key={ph} href={`${PHOTO_BASE}${ph}`} target="_blank" rel="noopener noreferrer" className="block">
+                  {/* eslint-disable-next-line @next/next/no-img-element -- user photo from storage, already shrunk */}
+                  <img src={`${PHOTO_BASE}${ph}`} alt={t("c.cm.photoBy", { who: p.name })} loading="lazy" className="aspect-square w-full rounded-sm border border-line object-cover transition-opacity hover:opacity-90" />
+                </a>
+              ))}
+            </div>
+          </Fold>
+        )}
+      </div>
+
+      <div className="mt-8">
+        <FeedbackButton contactEmail={CONTACT_EMAIL} />
+      </div>
     </main>
   );
 }
