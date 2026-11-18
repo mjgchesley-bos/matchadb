@@ -8,6 +8,7 @@ import { CafeMenuManager } from "@/components/CafeMenuManager";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
+import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/lib/cafe-places";
 import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { getT } from "@/i18n/server";
@@ -54,6 +55,9 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   if (!c) notFound();
   const where = formatPlace(c, lang);
   const near = nearbyCafes(c, 5);
+  const cc = (c.cc || "US").toUpperCase();
+  const cityEntry = c.city ? getPlaceIndex().cities.get(`${cc}/${citySlug(c.city, cc === "US" ? c.state : "")}`) : undefined;
+  const cityHub = cityEntry && cityEntry.cafes.length >= MIN_CAFES_FOR_CITY_PAGE ? cityPath(cityEntry) : null;
   const siblings = chainSiblings(c);
   const link = "text-matcha hover:text-forest underline";
   // The café's other pages and handles (Instagram, Yelp, TikTok...): every source host that is not its own website.
@@ -135,6 +139,12 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
 
       <CafeMenuManager cafeId={c.id} cafeName={c.name} />
+
+      {cityHub && (
+        <p className="mt-8 text-sm">
+          <Link href={cityHub} className="text-matcha underline hover:text-forest">{t("pl.more", { city: c.city })}</Link>
+        </p>
+      )}
 
       <details className="group mt-10 rounded-sm border border-line bg-paper-raised">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">

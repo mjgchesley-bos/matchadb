@@ -14,5 +14,5 @@ export default async function sitemap(props: { id: Promise<string> }): Promise<M
   const id = Number(await props.id);
   return getAllCafes()
     .slice(id * SITEMAP_CHUNK, (id + 1) * SITEMAP_CHUNK)
-    .map((c) => ({ url: `${SITE_URL}/cafes/${cafeSlug(c)}`, changeFrequency: "monthly" as const, priority: 0.4 }));
+    .map((c) => ({ url: `${SITE_URL}/cafes/${cafeSlug(c)}`, ...(c.checked ? { lastModified: c.checked } : {}), changeFrequency: "monthly" as const, priority: 0.4 }));
 }

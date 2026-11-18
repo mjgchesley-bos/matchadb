@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/account", "/admin", ...LOCALES.filter((l) => l !== "en").flatMap((l) => [`/${l}/account`, `/${l}/admin`])],
+      disallow: ["/account", "/admin", "/messages", "/api/", ...LOCALES.filter((l) => l !== "en").flatMap((l) => [`/${l}/account`, `/${l}/admin`, `/${l}/messages`])],
     },
     sitemap: [`${SITE_URL}/sitemap.xml`, ...Array.from({ length: cafeSitemapCount() }, (_, i) => `${SITE_URL}/cafes-sitemap/sitemap/${i}.xml`)],
   };

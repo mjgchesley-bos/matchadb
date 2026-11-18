@@ -9,6 +9,7 @@ import { CULTIVARS } from "@/lib/cultivars";
 import { PAIRS, pairSlug } from "@/lib/compare";
 import { SUPPLIERS } from "@/lib/suppliers";
 import { getStores } from "@/lib/stores";
+import { cityPath, getPlaceIndex } from "@/lib/cafe-places";
 import { HTML_LANG, LOCALES, localePath } from "@/i18n/config";
 
 // Pages that exist in every language: one entry per language, each pointing at all the others.
@@ -30,6 +31,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...TOPICS.map((t) => ({ url: `${SITE_URL}/research/topics/${t.slug}`, changeFrequency: "weekly" as const, priority: 0.7 })),
     ...multilingual("/stores", "weekly", 0.8),
     ...multilingual("/cafes", "weekly", 0.9),
+    { url: `${SITE_URL}/cafes/in`, changeFrequency: "weekly", priority: 0.8 },
+    ...[...getPlaceIndex().countries.keys()].map((cc) => ({ url: `${SITE_URL}/cafes/in/${cc.toLowerCase()}`, changeFrequency: "weekly" as const, priority: 0.7 })),
+    ...[...getPlaceIndex().byCountry.values()].flat().map((e) => ({ url: `${SITE_URL}${cityPath(e)}`, changeFrequency: "weekly" as const, priority: 0.6 })),
     { url: `${SITE_URL}/guides`, changeFrequency: "weekly", priority: 0.8 },
     ...GUIDES.map((g) => ({ url: `${SITE_URL}/guides/${g.slug}`, changeFrequency: "weekly" as const, priority: 0.8 })),
     { url: `${SITE_URL}/guides/what-is-ceremonial-matcha`, changeFrequency: "monthly", priority: 0.8 },
