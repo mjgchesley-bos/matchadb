@@ -44,6 +44,7 @@ type Auth = {
   signIn: (reason?: string) => void;
   signOut: () => Promise<void>;
   setDisplayName: (name: string) => void;
+  namePending: boolean;
 };
 
 const AuthContext = createContext<Auth>({
@@ -59,6 +60,7 @@ const AuthContext = createContext<Auth>({
   signIn: () => {},
   signOut: async () => {},
   setDisplayName: () => {},
+  namePending: false,
 });
 
 export const useAuth = () => useContext(AuthContext);
@@ -81,6 +83,14 @@ const inSignupFlow = (): boolean => {
 const endSignupFlow = () => {
   try {
     sessionStorage.removeItem(FLOW_KEY);
+  } catch {}
+};
+// The "Which describes you?" box is also part of signing up: set when someone starts signing in, read by
+// AccountTypeWelcome once the username step is over, cleared when they answer or skip. Not shown on ordinary page loads.
+export const TYPE_KEY = "mdb-type-prompt";
+const startTypeFlow = () => {
+  try {
+    sessionStorage.setItem(TYPE_KEY, "1");
   } catch {}
 };
 
@@ -214,6 +224,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       sessionStorage.setItem(FLOW_KEY, "1");
     } catch {}
+    startTypeFlow();
     const { error: err } = await supabase().auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}${window.location.pathname}` },
@@ -233,6 +244,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     try {
       sessionStorage.setItem(FLOW_KEY, "1");
     } catch {}
+    startTypeFlow();
     const { error: err } = await supabase().auth.signInWithIdToken({ provider: "google", token: idToken, nonce });
     if (err) {
       endSignupFlow();
@@ -271,8 +283,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   const value = useMemo<Auth>(
-    () => ({ ready, user, displayName, isPublic, setPublic, avatar, setAvatar, stats, refreshStats, signIn, signOut, setDisplayName }),
-    [ready, user, displayName, isPublic, setPublic, avatar, setAvatar, stats, refreshStats, signIn, signOut, setDisplayName]
+    () => ({ ready, user, displayName, isPublic, setPublic, avatar, setAvatar, stats, refreshStats, signIn, signOut, setDisplayName, namePending: needsName }),
+    [ready, user, displayName, isPublic, setPublic, avatar, setAvatar, stats, refreshStats, signIn, signOut, setDisplayName, needsName]
   );
 
   return (

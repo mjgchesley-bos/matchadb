@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useAuth } from "@/components/AuthProvider";
+import { useAuth, TYPE_KEY } from "@/components/AuthProvider";
 import { supabase } from "@/lib/supabase";
 import { submitFeedback } from "@/lib/feedback";
 import { useT } from "@/i18n/client";
@@ -12,7 +12,7 @@ type Kind = "general" | "cafe_owner" | "wholesaler";
 // (the site owner approves it); until then they are general members. Shown again never; the choice can be changed later in My matcha.
 export function AccountTypeWelcome() {
   const t = useT();
-  const { user, ready } = useAuth();
+  const { user, ready, namePending } = useAuth();
   const uid = user?.id ?? null;
   const [show, setShow] = useState(false);
   const [kind, setKind] = useState<Kind>("general");
@@ -23,7 +23,9 @@ export function AccountTypeWelcome() {
   const flag = (id: string) => `matchadb-type-chosen:${id}`;
 
   useEffect(() => {
-    if (!ready || !uid) { setShow(false); return; }
+    if (!ready || !uid || namePending) { setShow(false); return; }
+    // Part of signing up only: needs the flag set when sign-in started, so it never pops up on a plain page load.
+    try { if (sessionStorage.getItem(TYPE_KEY) !== "1") return; } catch { return; }
     try { if (localStorage.getItem(flag(uid))) return; } catch { /* storage unavailable: fall through to the database check */ }
     let live = true;
     (async () => {
@@ -38,10 +40,11 @@ export function AccountTypeWelcome() {
     })();
     return () => { live = false; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ready, uid]);
+  }, [ready, uid, namePending]);
 
   function done(id: string) {
     try { localStorage.setItem(flag(id), "1"); } catch { /* ignore */ }
+    try { sessionStorage.removeItem(TYPE_KEY); } catch { /* ignore */ }
     setShow(false);
   }
 
