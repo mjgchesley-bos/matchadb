@@ -11,8 +11,8 @@ import { getCommunityEvents, getEventPhotos } from "@/lib/events-community";
 import { isLocale, type Locale } from "@/i18n/config";
 import { pageAlternates } from "@/i18n/seo";
 
-// Built the first time someone asks for it, then kept for an hour.
-export const revalidate = 3600;
+// Built the first time someone asks for it, then kept for ten minutes.
+export const revalidate = 600;
 export const dynamicParams = true;
 export function generateStaticParams() {
   return [];

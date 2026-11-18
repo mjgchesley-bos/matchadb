@@ -8,8 +8,8 @@ import { CONTACT_EMAIL, SITE_URL } from "@/lib/site";
 import { langOf } from "@/i18n/params";
 import { pageAlternates } from "@/i18n/seo";
 
-// Rebuilt daily so past events drop off.
-export const revalidate = 86400;
+// Rebuilt every ten minutes, so newly approved posts show quickly and finished events drop off.
+export const revalidate = 600;
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const lang = await langOf(params);
