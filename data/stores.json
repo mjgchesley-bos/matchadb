@@ -9879,5 +9879,22 @@
     "evidence": "http://www.savvyteagourmet.com/collections/matcha-tea",
     "note": "Its own website lists matcha powder for sale with a price.",
     "checked": "2026-11-18"
+  },
+  {
+    "id": "mocca-landen-be",
+    "name": "Mocca",
+    "kind": "retailer",
+    "address": "Sint-Lambertusstraat 87",
+    "city": "Landen",
+    "state": "",
+    "zip": "3401",
+    "cc": "BE",
+    "lat": 50.72209,
+    "lng": 5.08667,
+    "url": "https://www.specialtycompany.be/",
+    "brands": [],
+    "evidence": "https://specialtycoffeebymocca.be/",
+    "note": "Specialty coffee and tea shop; matcha to take home (checked by the site owner).",
+    "checked": "2026-11-19"
   }
 ]
