@@ -25,3 +25,18 @@ export function getCafeProfile(id: string): CafeProfile | null {
   }
   return all?.[id] ?? null;
 }
+
+// Facts read from a café's own website by the crawl (data/cafe-extras.json, keyed by café id): phone, opening hours, a one-line
+// description and social profiles. Hours and phone are only kept for cafés that have a website of their own (not shared by a chain).
+export type CafeExtras = { phone?: string; hours?: string[]; desc?: string; social?: Record<string, string>; host?: string };
+let extras: Record<string, CafeExtras> | null = null;
+export function getCafeExtras(id: string): CafeExtras | null {
+  if (!extras) {
+    try {
+      extras = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "cafe-extras.json"), "utf8"));
+    } catch {
+      extras = {};
+    }
+  }
+  return extras?.[id] ?? null;
+}

@@ -10,7 +10,9 @@ import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
 import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/lib/cafe-places";
 import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
-import { getCafeProfile } from "@/lib/cafe-profiles";
+import { getCafeProfile, getCafeExtras } from "@/lib/cafe-profiles";
+import { MiniMap } from "@/components/MiniMap";
+import { SocialIcons } from "@/components/SocialIcons";
 import { matchaItem } from "@/lib/cafe-snippet";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { getT } from "@/i18n/server";
@@ -80,10 +82,23 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const link = "text-matcha hover:text-forest underline";
   // The café's other pages and handles (Instagram, Yelp, TikTok...): every source host that is not its own website.
   const ownHost = c.url ? hostOf(c.url) : "";
-  const socials = [...new Map(c.ev.filter((e) => hostOf(e.u) !== ownHost).map((e) => [hostOf(e.u), e.u] as const)).entries()].map(([host, url]) => ({ host, url, label: SOCIAL[host] ?? host }));
+  const extra = getCafeExtras(c.id);
+  const socialKey = (u: string) => {
+    const h = hostOf(u);
+    return h === "instagram.com" ? "instagram" : h === "facebook.com" ? "facebook" : h === "tiktok.com" ? "tiktok" : h === "x.com" || h === "twitter.com" ? "x" : h === "youtube.com" ? "youtube" : null;
+  };
+  const socialLinks: Record<string, string> = { ...(extra?.social ?? {}) };
+  for (const u of [...c.ev.map((e) => e.u), ...(profile?.links ?? []).map((l) => l.url)]) {
+    const k = socialKey(u);
+    if (k && !socialLinks[k]) socialLinks[k] = u;
+  }
+  // Other pages that mention the café (news, review sites): shown as small source links, not icons.
+  const socials = [...new Map(c.ev.filter((e) => hostOf(e.u) !== ownHost && !socialKey(e.u)).map((e) => [hostOf(e.u), e.u] as const)).entries()].map(([host, url]) => ({ host, url, label: SOCIAL[host] ?? host }));
+  const phone = c.phone ?? extra?.phone ?? null;
+  const hours = profile?.hours ?? extra?.hours ?? null;
 
   return (
-    <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-10">
+    <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -104,55 +119,76 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         / {loc(c, lang)}
       </nav>
 
-      <header className="mt-3">
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{c.name}</h1>
-        <p className="mt-2 text-ink-muted">{where}</p>
-        <ProductRating key={c.id} cafeId={c.id} productName={c.name} />
-        <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
-          <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
-          <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>
-        </p>
-        <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-          <a href={directionsUrl(c)} target="_blank" rel="noopener noreferrer" className="rounded-full bg-matcha px-5 py-2 font-medium text-paper hover:bg-forest transition-colors">
-            {t("cafe.directions")}
-          </a>
-          {c.url && (
-            <a href={c.url} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
-              {t("cafe.website", { host: hostOf(c.url) })}
-            </a>
-          )}
-          {c.menu && (
-            <a href={c.menu} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
-              {t("cafe.fullMenu")}
-            </a>
-          )}
-          {c.platform && (
-            <a href={c.platform} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
-              {t("cafe.order")}
-            </a>
-          )}
-          {c.pdf && (
-            <a href={c.pdf} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
-              {t("cafe.pdf")}
-            </a>
-          )}
-          {c.phone && (
-            <a href={`tel:${c.phone}`} className="self-center text-matcha hover:text-forest underline">
-              {c.phone.replace(/^\+?1?(\d{3})(\d{3})(\d{4})$/, "($1) $2-$3")}
-            </a>
-          )}
-        </p>
-        {socials.length > 0 && (
-          <p className="mt-3 flex flex-wrap gap-2 text-sm">
-            {socials.map((x) => (
-              <a key={x.host} href={x.url} target="_blank" rel="noopener noreferrer" className="rounded-full border border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">
-                {x.label}
+      <header className="mt-3 rounded-sm border-2 border-line-strong bg-paper-raised p-5 sm:p-6">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
+          <div className="min-w-0">
+            <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{c.name}</h1>
+            <p className="mt-2 text-ink-muted">{where}</p>
+            <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
+              <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
+              <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>
+            </p>
+            <ProductRating key={c.id} cafeId={c.id} productName={c.name} className="mt-4 rounded-sm border border-line bg-paper px-4 py-3 max-w-md" />
+            {extra?.desc && !profile?.about && (
+              <p className="mt-4 max-w-prose text-sm italic leading-relaxed text-ink-muted">
+                &ldquo;{extra.desc}&rdquo; <span className="not-italic text-ink-faint">· {ownHost}</span>
+              </p>
+            )}
+            <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+              <a href={directionsUrl(c)} target="_blank" rel="noopener noreferrer" className="rounded-full bg-matcha px-5 py-2 font-medium text-paper hover:bg-forest transition-colors">
+                {t("cafe.directions")}
               </a>
-            ))}
-          </p>
-        )}
-        <FavoriteCafeButton cafeId={c.id} name={c.name} />
-        <div className="mt-3"><ReportNoMatchaButton cafeId={c.id} name={c.name} /></div>
+              {c.url && (
+                <a href={c.url} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
+                  {t("cafe.website", { host: hostOf(c.url) })}
+                </a>
+              )}
+              {c.menu && (
+                <a href={c.menu} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
+                  {t("cafe.fullMenu")}
+                </a>
+              )}
+              {c.platform && (
+                <a href={c.platform} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
+                  {t("cafe.order")}
+                </a>
+              )}
+              {c.pdf && (
+                <a href={c.pdf} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
+                  {t("cafe.pdf")}
+                </a>
+              )}
+              {phone && (
+                <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="self-center text-matcha hover:text-forest underline">
+                  {phone.replace(/^\+?1?[\s-]*(\d{3})[\s.-]*(\d{3})[\s.-]*(\d{4})$/, "($1) $2-$3")}
+                </a>
+              )}
+            </p>
+            <div className="mt-4"><SocialIcons links={socialLinks} /></div>
+            {socials.length > 0 && (
+              <p className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-faint">
+                <span>{lang === "en" ? "Also mentioned by" : ""}</span>
+                {socials.map((x) => (
+                  <a key={x.host} href={x.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{x.label}</a>
+                ))}
+              </p>
+            )}
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <FavoriteCafeButton cafeId={c.id} name={c.name} />
+              <ReportNoMatchaButton cafeId={c.id} name={c.name} />
+            </div>
+          </div>
+          <div className="flex flex-col gap-4">
+            <MiniMap lat={c.lat} lng={c.lng} label={`Map of ${c.name}`} />
+            {hours && hours.length > 0 && (
+              <div className="rounded-sm border border-line p-4">
+                <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Hours</h2>
+                <ul className="mt-2 flex flex-col gap-1 text-sm text-ink-muted">{hours.map((h) => <li key={h}>{h}</li>)}</ul>
+                <p className="mt-2 text-xs text-ink-faint">{profile?.hours ? "As reported at opening; check before you go." : "From their website; check before you go."}</p>
+              </div>
+            )}
+          </div>
+        </div>
       </header>
 
       {profile && (

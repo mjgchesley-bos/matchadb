@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { Comments } from "@/components/Comments";
+import { ProductRating } from "@/components/ProductRating";
 import { JsonLd } from "@/components/JsonLd";
 import { formatPlace } from "@/lib/cafe-types";
 import { getStores } from "@/lib/stores";
@@ -71,11 +72,12 @@ export default async function StorePage({ params }: { params: Promise<{ lang: st
           </a>
         </p>
       </header>
-      {s.commentsFrom && (
-        <div className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-6 [&>section]:mt-0">
-          <Comments targetType="cafe" targetKey={s.commentsFrom} subject={s.name} />
-        </div>
-      )}
+      <div className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-6">
+        <ProductRating key={s.commentsFrom ?? s.id} cafeId={s.commentsFrom ?? s.id} productName={s.name} className="rounded-sm border border-line bg-paper px-4 py-3 max-w-md" />
+      </div>
+      <div className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-6 [&>section]:mt-0">
+        <Comments targetType="cafe" targetKey={s.commentsFrom ?? s.id} subject={s.name} />
+      </div>
       <p className="mt-6 text-sm">
         <Link href="/stores" className="text-matcha hover:text-forest">&larr; {t("c.st.page.back")}</Link>
       </p>

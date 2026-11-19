@@ -434,23 +434,16 @@ export default async function ProductDetailPage({
           title, price, and the primary action, in place of the old flat
           badge row. */}
       <div className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-7">
-      <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] gap-8 items-start">
-        <div
-          className="relative w-full aspect-[4/5] rounded-md border border-line-strong overflow-hidden flex flex-col items-center justify-center gap-4 p-8 text-center"
-          style={{
-            background:
-              "radial-gradient(circle at 30% 18%, var(--color-matcha-soft) 0%, var(--color-paper-raised) 68%)",
-          }}
-        >
+      <div className="grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8 items-start">
+        {/* The logo sits directly on the page (no big framed box), as large as its shape allows. */}
+        <div className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
           {logoPath ? (
-            <BrandLogo brandName={product.brand_name} size={72} maxWidth={220} allowTallerThanSize />
+            <BrandLogo brandName={product.brand_name} size={132} maxWidth={260} allowTallerThanSize plain />
           ) : (
-            <span className="font-display text-2xl font-semibold text-ink px-2 leading-snug">
-              {product.brand_name}
-            </span>
+            <span className="font-display text-2xl font-semibold text-ink leading-snug">{product.brand_name}</span>
           )}
           {product.grade && (
-            <span className="font-mono text-[0.7rem] tracking-[0.2em] uppercase text-matcha-ink/70">
+            <span className="rounded-full border border-line-strong px-3 py-0.5 font-mono text-[0.7rem] tracking-[0.2em] uppercase text-matcha-ink/80">
               {gradeLabel(product.grade, tv)}
             </span>
           )}

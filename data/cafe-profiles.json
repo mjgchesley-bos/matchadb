@@ -3,33 +3,80 @@
     "about": "Moon Child is Cork's first mobile matcha bar. Founder Monica Steenkamp, a South African barista who has lived in Cork for nearly seven years, fell for matcha in 2021 while working at The Grumpy Bakers café and began crafting her own flavour syrups. Moon Child started in 2025 as a pop-up at Cork farmers' markets and opened its first bricks-and-mortar spot, a pink \"matcha hideout\" upstairs at the former Cork Lotus Yoga studio reception on Carey's Lane, on 21 February 2026. Monica calls it an \"extended pop-up\" and says more days and hours will be added if it does well.",
     "matcha": "Ceremonial-grade matcha from Your Omma.",
     "menu": [
-      { "name": "O.G. Matcha", "note": "The classic, hot or iced, with a choice of milk and honey or maple." },
-      { "name": "Banana Bread Matcha", "note": "Artisan syrup on the matcha base." },
-      { "name": "Earl Matcha", "note": "Earl grey syrup." },
-      { "name": "Rooibos Matcha", "note": "Rooibos syrup." },
-      { "name": "Blanco Matcha", "note": "Made with local O'Conaill's white chocolate." },
-      { "name": "Jasmine Matcha", "note": "A light, floral finish." }
+      {
+        "name": "O.G. Matcha",
+        "note": "The classic, hot or iced, with a choice of milk and honey or maple."
+      },
+      {
+        "name": "Banana Bread Matcha",
+        "note": "Artisan syrup on the matcha base."
+      },
+      {
+        "name": "Earl Matcha",
+        "note": "Earl grey syrup."
+      },
+      {
+        "name": "Rooibos Matcha",
+        "note": "Rooibos syrup."
+      },
+      {
+        "name": "Blanco Matcha",
+        "note": "Made with local O'Conaill's white chocolate."
+      },
+      {
+        "name": "Jasmine Matcha",
+        "note": "A light, floral finish."
+      }
     ],
     "hours": [
       "Fridays and Saturdays, about 10am to 3pm (reports differ: 3pm and 3:30pm)",
-      "Thursdays: Mahon Farmers Market stall",
-      "These are the hours reported at the February 2026 opening; check Instagram for current times."
+      "Thursdays: Mahon Farmers Market stall"
     ],
     "facts": [
-      ["Founder", "Monica Steenkamp"],
-      ["Opened", "February 2026 (pop-ups since 2025)"],
-      ["Where", "Upstairs at Cork Lotus Studio, 2-4 Carey's Lane"],
-      ["Also at", "Mahon Farmers Market (Thursdays)"],
-      ["Events", "Hosts workshops and readings at the studio, listed on its Linktree"]
+      [
+        "Founder",
+        "Monica Steenkamp"
+      ],
+      [
+        "Opened",
+        "February 2026 (pop-ups since 2025)"
+      ],
+      [
+        "Where",
+        "Upstairs at Cork Lotus Studio, 2-4 Carey's Lane"
+      ],
+      [
+        "Also at",
+        "Mahon Farmers Market (Thursdays)"
+      ],
+      [
+        "Events",
+        "Hosts workshops and readings at the studio, listed on its Linktree"
+      ]
     ],
     "links": [
-      { "label": "Instagram", "url": "https://www.instagram.com/moonchild_cork/" },
-      { "label": "Linktree (events, contact, Google review)", "url": "https://linktr.ee/moonchild.matchabar" }
+      {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/moonchild_cork/"
+      },
+      {
+        "label": "Linktree (events, contact, Google review)",
+        "url": "https://linktr.ee/moonchild.matchabar"
+      }
     ],
     "sources": [
-      { "label": "Yay Cork, 20 Feb 2026", "url": "https://www.yaycork.ie/a-teeny-tiny-matcha-bar-is-opening-on-careys-lane-this-saturday/" },
-      { "label": "Cork Beo, 19 Feb 2026", "url": "https://www.corkbeo.ie/news/local-news/hidden-hideout-matcha-cafe-opening-33449820" },
-      { "label": "Moon Child on Linktree", "url": "https://linktr.ee/moonchild.matchabar" }
+      {
+        "label": "Yay Cork, 20 Feb 2026",
+        "url": "https://www.yaycork.ie/a-teeny-tiny-matcha-bar-is-opening-on-careys-lane-this-saturday/"
+      },
+      {
+        "label": "Cork Beo, 19 Feb 2026",
+        "url": "https://www.corkbeo.ie/news/local-news/hidden-hideout-matcha-cafe-opening-33449820"
+      },
+      {
+        "label": "Moon Child on Linktree",
+        "url": "https://linktr.ee/moonchild.matchabar"
+      }
     ]
   }
 }

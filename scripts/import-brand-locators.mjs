@@ -85,6 +85,9 @@ const key = (zip, address) => {
 const slug = (s) => s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 const cleanName = (n) => n.replace(/\s+-\s+/g, " ").replace(/\s+/g, " ").trim();
 
+const GROCERY = /(whole foods|sprouts|stop\s*(&|and)\s*shop|trader joe|kroger|safeway|publix|wegmans|\btarget\b|walmart|costco|giant eagle|giant food|shop\s?rite|shaw'?s\b|albertsons|h-e-b|\bheb\b|meijer|\baldi\b|\blidl\b|tesco|sainsbury|waitrose|carrefour|market basket|fresh thyme|natural grocers|new seasons|erewhon|harris teeter|\bralphs\b|\bvons\b|food lion|hannaford|king soopers|fred meyer|jewel-?osco|raley'?s|bi-?rite|bristol farms|gelson|lazy acres|mom'?s organic|earth fare|\bfairway\b|\bpcc\b|big y\b|price chopper|key food|stew leonard|fresh market|winco|smart & final|save mart|ingles|food co-?op|co-?op\b|grocery|grocer\b|grocers|supermarket|super market|natural foods?|natural market|organic market|health foods?|food market|\bfoodtown\b|food emporium|stater bros|pavilions|lucky supermarket|schnucks|dillons|\bfry'?s\b|smith'?s|marc'?s|giant\b|h mart|uwajimaya|nijiya|mitsuwa|pick 'n save|mariano|dierbergs|lunds|byerly|food bazaar|food basket|helsekost|marukai|tokyo central|alfalfa|new leaf|good earth|down to earth|mccaffrey|freshtown|health (store|unlimited|nut)|healthy living|nature'?s cupboard|natural living|whole earth|the merc|purity life)/i;
+const MARKETISH = /market|\bfoods?\b|organic|natural|\bfresh\b|provisions|mercantile|emporium|\bdeli\b|butcher|farm stand|farmers|pantry|bulk|whole ?sale|pharmacy|drug|wellness|vitamin|nutrition|apothecary/i;
+const TEA_OK = /tea|matcha|cafe|caf(e|é|�)|coffee|bakery|boba|tearoom|chado|teahouse/i;
 const EXCLUDED = new Set(JSON.parse(fs.readFileSync(path.join(__dirname, "..", "data", "store-exclusions.json"), "utf8")).ids);
 const stores = JSON.parse(fs.readFileSync(file, "utf8"));
 const byKey = new Map(stores.map((s) => [key(s.zip, s.address), s]));
@@ -101,6 +104,11 @@ function add(brand, evidence, p, kind, note) {
       existing.brands.push({ name: brand, evidence });
       stats[brand].merged++;
     } else stats[brand].dupe++;
+    return;
+  }
+  // Grocery stores, supermarkets and co-ops are not listed (only tea shops, specialty retailers and cafés).
+  if (kind === "retailer" && (GROCERY.test(p.name) || (MARKETISH.test(p.name) && !TEA_OK.test(p.name)))) {
+    stats[brand].skipped++;
     return;
   }
   const base = slug(`${p.name}-${p.city}-${p.state}`);

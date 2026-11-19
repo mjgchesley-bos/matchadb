@@ -84,24 +84,52 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
         <span className="text-ink-muted">{p.name}</span>
       </nav>
 
-      <header className="max-w-3xl">
-        <p className={label}>{p.kind}</p>
-        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">
-          {p.name}
-          {p.native && <span className="ml-3 text-2xl sm:text-3xl text-ink-muted">{p.native}</span>}
-        </h1>
-        <p className="mt-4 text-lg text-ink-muted leading-relaxed">{p.headline}.</p>
-        <p className="mt-4 flex flex-wrap gap-2 text-sm">
-          <span className="rounded-full border border-line-strong bg-paper-raised px-3 py-1 text-ink-muted">Founded {p.founded}</span>
-          <span className="rounded-full border border-line-strong bg-paper-raised px-3 py-1 text-ink-muted">{p.basedIn}</span>
-        </p>
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-7">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_21rem]">
+          <div className="min-w-0">
+            <p className={label}>{p.kind}</p>
+            <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">
+              {p.name}
+              {p.native && <span className="ml-3 text-2xl sm:text-3xl text-ink-muted">{p.native}</span>}
+            </h1>
+            <p className="mt-4 text-lg text-ink-muted leading-relaxed">{p.headline}.</p>
+            <p className="mt-4 flex flex-wrap gap-2 text-sm">
+              <span className="rounded-full border border-line-strong bg-paper-raised px-3 py-1 text-ink-muted">Founded {p.founded}</span>
+              <span className="rounded-full border border-line-strong bg-paper-raised px-3 py-1 text-ink-muted">{p.basedIn}</span>
+            </p>
+            <div className="mt-5 rounded-sm border-2 border-matcha/60 bg-paper-raised px-4 py-3 text-sm text-ink-muted">
+              {products.length > 0 ? (
+                <p>
+                  <strong className="text-ink">{products.length} {p.name} product{products.length === 1 ? "" : "s"}</strong> in MatchaDB
+                  {per30.length >= 2 ? `, a standard 30 g tin running ${usd30(per30[0])} to ${usd30(per30[per30.length - 1])}` : ""}.{" "}
+                  <Link href={`/brands/${encodeURIComponent(p.brand)}`} className="font-medium text-matcha underline hover:text-forest">See every product and where to buy</Link>
+                </p>
+              ) : (
+                <p>We don&apos;t list any products from this company yet.</p>
+              )}
+            </div>
+          </div>
+          <section className="rounded-sm border-2 border-line-strong bg-paper-raised px-5 py-4" aria-label="Key facts">
+            <h2 className={label}>At a glance</h2>
+            <dl className="grid grid-cols-[6.5rem_1fr] gap-x-4 gap-y-2.5 text-sm">
+              {p.facts.map(([k, v]) => (
+                <div key={k} className="contents">
+                  <dt className="text-ink-faint">{k}</dt>
+                  <dd className="text-ink">{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        </div>
       </header>
 
+      <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)]">
+        <div className="flex min-w-0 flex-col gap-6">
       {images.length > 0 && (
-        <section className="mt-8" aria-label={`Pictures related to ${p.name}`}>
+        <section className="" aria-label={`Pictures related to ${p.name}`}>
           <div className="grid gap-3 sm:grid-cols-2">
             {images.slice(0, 2).map((im, i) => (
-              <figure key={im.key} className="overflow-hidden rounded-sm border border-line bg-paper-raised">
+              <figure key={im.key} className="overflow-hidden rounded-sm border-2 border-line bg-paper-raised">
                 <Image src={im.src} alt={im.alt} width={im.w} height={im.h} sizes="(min-width: 640px) 45vw, 100vw" priority={i === 0} className="h-60 w-full object-cover sm:h-72" />
                 <figcaption className="px-3 py-2 text-xs leading-relaxed text-ink-faint">
                   {im.caption}. <a href={im.page} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{im.credit}</a>
@@ -112,49 +140,15 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
         </section>
       )}
 
-      <section className="mt-8 max-w-3xl flex flex-col gap-4 rounded-sm border border-line bg-paper-raised px-5 py-5 text-ink-muted leading-relaxed" aria-labelledby="pr-story">
+      <section className=" flex flex-col gap-4 rounded-sm border-2 border-line bg-paper-raised px-5 py-5 text-ink-muted leading-relaxed" aria-labelledby="pr-story">
         <h2 id="pr-story" className={label}>The story</h2>
         {p.story.map((para) => (
           <p key={para.slice(0, 30)}>{para}</p>
         ))}
       </section>
 
-      <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-4" aria-label="Key facts">
-        <h2 className={label}>At a glance</h2>
-        <dl className="grid grid-cols-1 gap-x-6 gap-y-2 text-sm sm:grid-cols-[10rem_1fr]">
-          {p.facts.map(([k, v]) => (
-            <div key={k} className="contents">
-              <dt className="text-ink-faint">{k}</dt>
-              <dd className="text-ink">{v}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
-      {p.current.length > 0 && (
-        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-now">
-          <h2 id="pr-now" className={label}>Today</h2>
-          <ul className="flex list-disc flex-col gap-2 pl-5 text-ink-muted">
-            {p.current.map((c) => (
-              <li key={c.slice(0, 30)}>{c}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {p.awards.length > 0 && (
-        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-awards">
-          <h2 id="pr-awards" className={label}>Awards and certifications</h2>
-          <ul className="flex list-disc flex-col gap-2 pl-5 text-ink-muted">
-            {p.awards.map((a) => (
-              <li key={a.slice(0, 30)}>{a}</li>
-            ))}
-          </ul>
-        </section>
-      )}
-
       {p.timeline.length > 0 && (
-        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-time">
+        <section className=" rounded-sm border-2 border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-time">
           <h2 id="pr-time" className={label}>Timeline</h2>
           <ol className="ml-1 flex flex-col gap-3 border-l-2 border-line pl-5">
             {p.timeline.map((t) => (
@@ -169,7 +163,7 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       )}
 
       {p.people.length > 0 && (
-        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-people">
+        <section className=" rounded-sm border-2 border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-people">
           <h2 id="pr-people" className={label}>The people and the family</h2>
           <ul className="flex flex-col gap-2">
             {p.people.map((x) => (
@@ -182,8 +176,32 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
         </section>
       )}
 
+        </div>
+        <div className="flex min-w-0 flex-col gap-6">
+      {p.current.length > 0 && (
+        <section className=" rounded-sm border-2 border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-now">
+          <h2 id="pr-now" className={label}>Today</h2>
+          <ul className="flex list-disc flex-col gap-2 pl-5 text-ink-muted">
+            {p.current.map((c) => (
+              <li key={c.slice(0, 30)}>{c}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {p.awards.length > 0 && (
+        <section className=" rounded-sm border-2 border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-awards">
+          <h2 id="pr-awards" className={label}>Awards and certifications</h2>
+          <ul className="flex list-disc flex-col gap-2 pl-5 text-ink-muted">
+            {p.awards.map((a) => (
+              <li key={a.slice(0, 30)}>{a}</li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       {cultivars.length > 0 && (
-        <p className="mt-8 max-w-3xl rounded-sm border border-line bg-matcha-soft px-5 py-3 text-sm text-ink-muted">
+        <p className=" rounded-sm border border-line bg-matcha-soft px-5 py-3 text-sm text-ink-muted">
           Tea plants tied to this company:{" "}
           {cultivars.map((c, i) => (
             <span key={c.slug}>
@@ -196,7 +214,7 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
       )}
 
       {pins.length > 0 && (
-        <section className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-map">
+        <section className=" rounded-sm border-2 border-line bg-paper-raised px-5 py-5" aria-labelledby="pr-map">
           <h2 id="pr-map" className={label}>Where it is</h2>
           <p className="max-w-3xl text-sm text-ink-muted">Based in {p.basedIn}. The pin marks the town, not a street address.</p>
           <div className="mt-4">
@@ -205,19 +223,8 @@ export default async function ProducerPage({ params }: { params: Promise<Params>
         </section>
       )}
 
-      <section className="mt-8 max-w-3xl rounded-sm border border-line bg-matcha-soft px-5 py-5" aria-labelledby="pr-matcha">
-        <h2 id="pr-matcha" className={label}>Its matcha in MatchaDB</h2>
-        {products.length > 0 ? (
-          <p className="text-ink-muted">
-            MatchaDB lists {products.length} {p.name} product{products.length === 1 ? "" : "s"}
-            {per30.length >= 2 ? `, a standard 30 g tin running ${usd30(per30[0])} to ${usd30(per30[per30.length - 1])}` : ""}.{" "}
-            <Link href={`/brands/${encodeURIComponent(p.brand)}`} className="text-matcha underline hover:text-forest">See every {p.name} product and where to buy</Link>.
-          </p>
-        ) : (
-          <p className="text-ink-muted">We don&apos;t list any products from this company yet.</p>
-        )}
-      </section>
-
+        </div>
+      </div>
       <p className="mt-8 max-w-3xl rounded-sm border border-line bg-paper-raised px-5 py-4 text-xs leading-relaxed text-ink-faint">
         Sources:{" "}
         {p.sources.map((s, i) => (
