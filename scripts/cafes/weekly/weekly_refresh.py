@@ -248,6 +248,9 @@ def build_and_verify(allow_drop=None):
 
 # ----------------------------------------------------------------------------------------------- 5. publish
 def publish(tmp_d, tmp_p, new, old):
+    # Multi-location names get their place in parentheses ("La La Land (Burnet)"); done on the verified build output, right before publishing.
+    sys.path.insert(0, HERE); import disambiguate as DIS
+    log("names:", DIS.apply(tmp_d, tmp_p)[:2])
     shutil.rmtree(f"{REPO}/data/cafes"); shutil.copytree(tmp_d, f"{REPO}/data/cafes")
     for f in glob.glob(f"{tmp_p}/cafes-slim-*.json"): shutil.copy(f, f"{REPO}/public/data/")
     for f in glob.glob(f"{HERE}/*"):                                    # keep the pipeline in git
