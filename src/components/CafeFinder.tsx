@@ -19,11 +19,12 @@ import { SuggestCafe } from "@/components/SuggestCafe";
 // to Mapbox's geocoder to turn it into a point.)
 
 // A place on the Matcha map. kind: "drinks" (a café serving matcha), "shop" (sells packaged matcha to take home), or "brandcafe" (a café a matcha brand lists as where to find it).
-type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string; kind: "drinks" | "shop" | "brandcafe"; brands?: string[] };
+type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string; kind: "drinks" | "shop" | "brandcafe"; brands?: string[]; home?: boolean };
 type Show = "all" | "drinks" | "shop";
 type ShopRow = [string, string, string, string, string, string, number, number, string, "s" | "b", string[]];
 const fromShop = (r: ShopRow): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], cc: r[8] || "US", focus: true, nameOnly: false, reported: false, kind: r[9] === "s" ? "shop" : "brandcafe", brands: r[10] });
-const hrefOf = (c: Cafe) => (c.kind === "drinks" ? `/cafes/${cafeSlug(c)}` : `/stores/${c.id}`);
+// A café-map venue that is really a shop (home) keeps its café page; shops from the store list have their own page.
+const hrefOf = (c: Cafe) => (c.kind === "drinks" || c.home ? `/cafes/${cafeSlug(c)}` : `/stores/${c.id}`);
 type Listed = { cafe: Cafe; dist: number | null };
 type Opt = { kind: "cafe"; cafe: Cafe; dist: number | null } | { kind: "place"; origin: Origin };
 
@@ -87,9 +88,13 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
   // panned or searched anywhere without picking a region first. The region tabs only move the camera.
   const [lists, setLists] = useState<Partial<Record<RegionKey, Cafe[]>>>({});
   const [shops, setShops] = useState<Cafe[]>([]);
+  const [takeHome, setTakeHome] = useState<Set<string>>(new Set());
   const [show, setShow] = useState<Show>("all");
   const [brand, setBrand] = useState<string | null>(null);
-  const everything = useMemo(() => (Object.keys(lists).length ? [...REGIONS.flatMap((r) => lists[r.key] ?? []), ...shops] : null), [lists, shops]);
+  const everything = useMemo(
+    () => (Object.keys(lists).length ? [...REGIONS.flatMap((r) => lists[r.key] ?? []).map((c) => (takeHome.has(c.id) ? { ...c, kind: "shop" as const, home: true } : c)), ...shops] : null),
+    [lists, shops, takeHome]
+  );
   // The filter chips decide what the map, the list and the search all see.
   const all = useMemo(
     () => (everything ? everything.filter((c) => (show === "all" || (show === "shop" ? c.kind === "shop" : c.kind !== "shop")) && (!brand || (c.brands ?? []).includes(brand))) : null),
@@ -153,6 +158,10 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
     fetch("/data/shops.json")
       .then((r) => (r.ok ? (r.json() as Promise<ShopRow[]>) : []))
       .then((rows) => live && setShops(rows.map(fromShop)))
+      .catch(() => {});
+    fetch("/data/take-home.json")
+      .then((r) => (r.ok ? (r.json() as Promise<string[]>) : []))
+      .then((ids) => live && setTakeHome(new Set(ids)))
       .catch(() => {});
     const q = new URLSearchParams(window.location.search);
     const b = q.get("brand");
