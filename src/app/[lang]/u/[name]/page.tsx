@@ -260,22 +260,30 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         </section>
       )}
 
-      {rated.length > 0 && (
-        <section className="mt-6" aria-label={t("u.cafeRatings")}>
-          <Hl>{t("u.cafeRatings")}</Hl>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {[...rated].sort((a, b) => b.score - a.score).slice(0, 4).map(({ c, score }) => {
-              const right = (
-                <span className="flex shrink-0 flex-col items-end gap-1 tabular-nums">
-                  <Stars value={score} size={18} />
-                  <span className="text-lg font-semibold text-forest">{score.toFixed(1)}</span>
-                </span>
-              );
-              return <li key={c.id}>{c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, right)}</Link> : <div className={cardCls}>{body(c, right)}</div>}</li>;
-            })}
-          </ul>
-        </section>
-      )}
+      {rated.length > 0 && (() => {
+        const sorted = [...rated].sort((a, b) => b.score - a.score);
+        const card = ({ c, score }: (typeof rated)[number]) => {
+          const right = (
+            <span className="flex shrink-0 flex-col items-end gap-1 tabular-nums">
+              <Stars value={score} size={18} />
+              <span className="text-lg font-semibold text-forest">{score.toFixed(1)}</span>
+            </span>
+          );
+          return <li key={c.id}>{c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, right)}</Link> : <div className={cardCls}>{body(c, right)}</div>}</li>;
+        };
+        return (
+          <section className="mt-6" aria-label={t("u.cafeRatings")}>
+            <Hl>{t("u.cafeRatings")} ({rated.length})</Hl>
+            <ul className="grid gap-3 sm:grid-cols-2">{sorted.slice(0, 4).map(card)}</ul>
+            {sorted.length > 4 && (
+              <details className="mt-3">
+                <summary className="cursor-pointer text-sm text-matcha underline hover:text-forest">{t("c.mp.allRatings", { n: sorted.length })}</summary>
+                <ul className="mt-3 grid gap-3 sm:grid-cols-2">{sorted.slice(4).map(card)}</ul>
+              </details>
+            )}
+          </section>
+        );
+      })()}
 
       {p.brands.length > 0 && (
         <section className="mt-6" aria-label={t("u.brands")}>
@@ -331,21 +339,6 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
                   {c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, <span className="text-2xl text-matcha" aria-hidden="true">♥</span>)}</Link> : <div className={cardCls}>{body(c, <span className="text-2xl text-ink-faint" aria-hidden="true">♥</span>)}</div>}
                 </li>
               ))}
-            </ul>
-          </Fold>
-        )}
-        {rated.length > 4 && (
-          <Fold title={t("u.cafeRatings")} count={rated.length}>
-            <ul className="grid gap-4 sm:grid-cols-2">
-              {rated.map(({ c, score }) => {
-                const right = (
-                  <span className="flex shrink-0 flex-col items-end gap-1 tabular-nums">
-                    <Stars value={score} size={20} />
-                    <span className="text-lg font-semibold text-matcha">{score.toFixed(1)}</span>
-                  </span>
-                );
-                return <li key={c.id}>{c.href ? <Link href={c.href} className={cardCls + hover}>{body(c, right)}</Link> : <div className={cardCls}>{body(c, right)}</div>}</li>;
-              })}
             </ul>
           </Fold>
         )}

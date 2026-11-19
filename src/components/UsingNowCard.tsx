@@ -38,7 +38,7 @@ export function UsingNowCard({ current, shelfChoices, onSet, onClear }: { curren
   };
 
   return (
-    <section aria-labelledby="using-now-h" className="w-full shrink-0 rounded-sm border-2 border-matcha bg-matcha-soft p-4 sm:w-64 lg:ml-auto">
+    <section aria-labelledby="using-now-h" className="w-full shrink-0 rounded-sm border-2 border-matcha bg-matcha-soft p-3 sm:w-52 lg:ml-auto">
       <h2 id="using-now-h" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">{t("c.mp.using")}</h2>
       {current ? (
         <div className="mt-3 flex flex-col items-start gap-2">

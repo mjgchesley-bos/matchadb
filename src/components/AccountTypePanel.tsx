@@ -30,7 +30,8 @@ export function AccountTypePanel() {
     return () => { live = false; };
   }, [uid]);
 
-  if (!user || !row) return null;
+  // Everyone picks their type when they sign up; this panel is for the business tools of approved café and wholesale accounts.
+  if (!user || !row || (row.account_type as string) === "general") return null;
   const input = "mt-1 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink focus:border-matcha focus:outline-none";
   const lbl = "block text-sm text-ink-muted";
   const pending = reqs.find((r) => r.status === "pending");

@@ -34,3 +34,16 @@ export function regionForCountry(code: string | undefined | null): RegionKey | n
 }
 
 export const ALL_COUNTRIES = REGIONS.flatMap((r) => r.countries);
+
+/** The part of the world a visitor's device clock says they are in (no permission needed), so Europeans start on Europe, not America. */
+export function regionFromTimeZone(tz: string | undefined | null): RegionKey | null {
+  const z = tz ?? "";
+  if (/^America\/(Toronto|Vancouver|Edmonton|Winnipeg|Halifax|Montreal|St_Johns|Regina|Moncton|Whitehorse|Yellowknife|Iqaluit|Thunder_Bay|Nipigon|Glace_Bay)$/.test(z)) return "ca";
+  if (/^(America|US|Canada)\//.test(z) || /^Pacific\/Honolulu$/.test(z)) return "us";
+  if (/^(Europe|Atlantic\/Reykjavik)/.test(z)) return "eu";
+  if (z === "Asia/Tokyo") return "jp";
+  if (z === "Asia/Seoul") return "kr";
+  if (/^Australia\//.test(z)) return "au";
+  if (/^Pacific\/(Auckland|Chatham)$/.test(z)) return "nz";
+  return null;
+}

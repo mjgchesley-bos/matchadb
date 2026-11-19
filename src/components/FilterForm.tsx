@@ -191,7 +191,7 @@ export function FilterForm({
           </div>
         </div>
       )}
-      <div className={groupClass}>
+      <div className={`${groupClass} col-span-2`}>
         <span className={labelClass}>{t("f.use")}</span>
         <div className="flex flex-wrap gap-2">
           {sortByOrder(options.uses, USE_ORDER).map((u) => (
@@ -199,7 +199,7 @@ export function FilterForm({
           ))}
         </div>
       </div>
-      <div className={groupClass}>
+      <div className={`${groupClass} col-span-2`}>
         <span className={labelClass}>{t("f.flavor")}</span>
         <div className="flex flex-wrap gap-2">
           {options.flavors.map((f) => (

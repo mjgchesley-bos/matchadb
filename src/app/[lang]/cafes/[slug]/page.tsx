@@ -107,7 +107,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       <header className="mt-3">
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{c.name}</h1>
         <p className="mt-2 text-ink-muted">{where}</p>
-        <ProductRating cafeId={c.id} productName={c.name} />
+        <ProductRating key={c.id} cafeId={c.id} productName={c.name} />
         <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
           <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
           <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>

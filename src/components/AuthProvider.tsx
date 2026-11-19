@@ -20,6 +20,7 @@ export type MemberStats = {
   next_tier: string | null;
   next_at: number | null;
   ratings: number;
+  cafe_ratings?: number;
   reviews: number;
   comments: number;
   photos: number;

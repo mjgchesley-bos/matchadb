@@ -17,7 +17,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { ShippingNote } from "@/components/ShippingNote";
 import { FavoriteButton } from "@/components/FavoriteButton";
 import { ProductRating } from "@/components/ProductRating";
-import { ListMenu } from "@/components/ListMenu";
 import { ShelfButtons } from "@/components/ShelfButtons";
 import { CompareButton } from "@/components/CompareButton";
 import { Comments } from "@/components/Comments";
@@ -458,23 +457,28 @@ export default async function ProductDetailPage({
         </div>
 
         <div>
-          <p className="text-sm text-ink-muted">
-            <Link
-              href={`/brands/${encodeURIComponent(product.brand_name)}`}
-              className="hover:text-matcha transition-colors"
-            >
-              {product.brand_name}
-            </Link>
-          </p>
-          <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight mt-1">
-            {product.product_name}
-          </h1>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <p className="text-sm text-ink-muted">
+              <Link
+                href={`/brands/${encodeURIComponent(product.brand_name)}`}
+                className="hover:text-matcha transition-colors"
+              >
+                {product.brand_name}
+              </Link>
+            </p>
+            <div className="flex items-center gap-3">
+              <FavoriteButton compact productId={product.id} productName={product.product_name} />
+              <CompareButton productId={product.id} productName={product.product_name} brand={product.brand_name} />
+            </div>
+          </div>
+          <div className="mt-1 flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
+            <h1 className="min-w-0 flex-1 basis-60 font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight">
+              {product.product_name}
+            </h1>
+            <ProductRating productId={product.id} productName={product.product_name} className="shrink-0 rounded-sm border border-line bg-paper-raised px-4 py-3 max-w-md" />
+          </div>
           {factsLine && <p className="text-ink-muted mt-2">{factsLine}</p>}
-          <ProductRating productId={product.id} productName={product.product_name} />
-          <FavoriteButton productId={product.id} productName={product.product_name} />
           <ShelfButtons productId={product.id} productName={product.product_name} />
-          <CompareButton productId={product.id} productName={product.product_name} brand={product.brand_name} />
-          <ListMenu productId={product.id} productName={product.product_name} />
           <ShippingNote brand={product.brand_name} lang={lang} />
 
           {product.flavorTags.length > 0 && (

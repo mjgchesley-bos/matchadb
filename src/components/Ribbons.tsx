@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { BADGES } from "@/lib/badges";
 import { useT } from "@/i18n/client";
@@ -23,10 +24,12 @@ function Rosette({ color, earned }: { color: string; earned: boolean }) {
 export function Ribbons() {
   const t = useT();
   const { stats } = useAuth();
+  const [all, setAll] = useState(false);
   if (!stats) return null;
   const rows = BADGES.map((b, i) => ({ i, earned: b.test(stats), name: t(`c.badge.${i}.n` as "c.badge.0.n"), hint: t(`c.badge.${i}.h` as "c.badge.0.h") }));
   const earned = rows.filter((r) => r.earned);
-  const next = rows.filter((r) => !r.earned).slice(0, 3);
+  const locked = rows.filter((r) => !r.earned);
+  const next = all ? locked : locked.slice(0, 3);
   return (
     <div className="w-36 shrink-0" aria-label={t("c.mp.ribbons")}>
       <p className="text-xs font-medium uppercase tracking-wide text-ink-faint">{t("c.mp.ribbons")}</p>
@@ -45,7 +48,11 @@ export function Ribbons() {
           </li>
         ))}
       </ul>
-      {rows.length - earned.length > next.length && <p className="mt-2 text-xs text-ink-faint">{t("c.mp.ribbonsLocked", { n: rows.length - earned.length - next.length })}</p>}
+      {locked.length > 3 && (
+        <button type="button" onClick={() => setAll((v) => !v)} aria-expanded={all} className="mt-2 text-left text-xs text-matcha underline hover:text-forest">
+          {all ? t("c.mp.fewer") : t("c.mp.ribbonsLocked", { n: locked.length - 3 })}
+        </button>
+      )}
     </div>
   );
 }

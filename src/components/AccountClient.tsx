@@ -5,8 +5,6 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { StaffLink } from "@/components/AdminClient";
 import { FriendsSection } from "@/components/Friends";
-import { MyLists } from "@/components/MyLists";
-import { PublicProfileSettings } from "@/components/PublicProfileSettings";
 import { ProfileHeader } from "@/components/ProfileHeader";
 import { Ribbons } from "@/components/Ribbons";
 import { WoodShelf, type ShelfCard } from "@/components/WoodShelf";
@@ -54,6 +52,7 @@ export function AccountClient() {
   const [allRatings, setAllRatings] = useState(false);
   const [favorites, setFavorites] = useState<number[] | null>(null);
   const [ratings, setRatings] = useState<Rated[] | null>(null);
+  const [cafeRatings, setCafeRatings] = useState<{ cafe_id: string; score: number }[] | null>(null);
   const [reviews, setReviews] = useState<Written[] | null>(null);
   const [items, setItems] = useState<Record<number, Item>>({});
   const [brands, setBrands] = useState<string[] | null>(null);
@@ -69,7 +68,7 @@ export function AccountClient() {
     let live = true;
     const sb = supabase();
     (async () => {
-      const [f, r, w, fb, cm, sh, bm, fc] = await Promise.all([
+      const [f, r, w, fb, cm, sh, bm, fc, cr] = await Promise.all([
         sb.from("favorites").select("product_id").order("created_at", { ascending: false }),
         sb.from("ratings").select("product_id, score").order("updated_at", { ascending: false }),
         sb.from("reviews").select("id, product_id, body, status").order("created_at", { ascending: false }),
@@ -78,6 +77,7 @@ export function AccountClient() {
         sb.from("shelf").select("product_id, status").order("updated_at", { ascending: false }),
         sb.from("research_bookmarks").select("study_id, note").order("updated_at", { ascending: false }),
         sb.from("favorite_cafes").select("cafe_id").order("created_at", { ascending: false }),
+        sb.from("cafe_ratings").select("cafe_id, score").order("updated_at", { ascending: false }),
       ]);
       if (!live) return;
       const favs = (f.data ?? []).map((x) => x.product_id as number);
@@ -85,13 +85,15 @@ export function AccountClient() {
       const written = (w.data ?? []) as Written[];
       setFavorites(favs);
       setRatings(rated);
+      const crated = (cr.data ?? []).map((x) => ({ cafe_id: x.cafe_id as string, score: Number(x.score) }));
+      setCafeRatings(crated);
       setReviews(written);
       setBrands((fb.data ?? []).map((x) => x.brand as string));
       const mine = (cm.data ?? []) as MyComment[];
       setComments(mine);
       const cafeIds = (fc.data ?? []).map((x) => x.cafe_id as string);
       setFavCafes(cafeIds);
-      if (cafeIds.length > 0 || mine.some((c) => c.target_type === "cafe")) {
+      if (cafeIds.length > 0 || crated.length > 0 || mine.some((c) => c.target_type === "cafe")) {
         const lists = await Promise.all(["us", "ca", "eu", "jp", "kr", "au", "nz"].map((k) => fetch(`/data/cafes-slim-${k}.json`).then((res) => (res.ok ? (res.json() as Promise<CafeSlim[]>) : []))));
         const rows = lists.flat();
         if (live) setCafeNames(Object.fromEntries(rows.map((r) => [r[0], { name: r[1], slug: cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] }), place: !r[9] || r[9] === "US" ? `${r[3]}, ${r[4]}` : r[3] }])));
@@ -229,35 +231,7 @@ export function AccountClient() {
           </div>
           <Ribbons />
         </div>
-        <ProfileHeader>
-          <div className="mt-6 max-w-xl" aria-labelledby="ratings-h" role="group">
-            <h2 id="ratings-h" className="font-display text-lg font-semibold text-ink">{t("c.acct.ratings")}</h2>
-            {ratings === null ? (
-              <p className="mt-1 text-sm text-ink-faint">Loading…</p>
-            ) : ratings.length === 0 ? (
-              <p className="mt-1 text-sm text-ink-muted">{t("c.acct.ratingsEmpty")}</p>
-            ) : (
-              <>
-                <ul className="mt-2 grid gap-x-6 sm:grid-cols-2">
-                  {(allRatings ? ratings : ratings.slice(0, 6)).map((r) => (
-                    <li key={r.product_id} className="flex items-center justify-between gap-3 border-b border-line py-1.5">
-                      <ProductLink id={r.product_id} item={items[r.product_id]} />
-                      <span className="flex shrink-0 items-center gap-1.5 text-sm text-ink-muted tabular-nums">
-                        <Stars value={r.score} size={14} />
-                        {r.score.toFixed(1)}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                {ratings.length > 6 && (
-                  <button type="button" onClick={() => setAllRatings((v) => !v)} className="mt-2 text-sm text-matcha underline hover:text-forest">
-                    {allRatings ? t("c.mp.fewer") : t("c.mp.allRatings", { n: ratings.length })}
-                  </button>
-                )}
-              </>
-            )}
-          </div>
-        </ProfileHeader>
+        <ProfileHeader />
         <UsingNowCard current={shelved === null ? null : usingItem} shelfChoices={cards.filter((c) => c.tag !== "saved").map((c) => ({ id: c.id, brand: c.brand, name: c.name }))} onSet={setUsing} onClear={clearUsing} />
         {editingAvatar && (
           <div className="basis-full">
@@ -268,6 +242,39 @@ export function AccountClient() {
 
       <div className="grid items-start gap-x-12 gap-y-10 lg:grid-cols-2">
         <div className="flex min-w-0 flex-col gap-10">
+          <FriendsSection />
+
+          <section aria-labelledby="cafes-h">
+            <h2 id="cafes-h" className={h2}>{t("c.acct.cafes")}</h2>
+            {favCafes === null ? (
+              <p className="mt-2 text-sm text-ink-faint">Loading…</p>
+            ) : favCafes.length === 0 ? (
+              <p className="mt-2 text-sm text-ink-muted">
+                {rich(t("c.acct.cafesEmpty", { save: "{save}", link: "{link}" }), {
+                  save: <strong>{t("c.fav.cafe.save")}</strong>,
+                  link: <Link href="/cafes" className="text-matcha underline">{t("c.acct.findCafes")}</Link>,
+                })}
+              </p>
+            ) : (
+              <ul className="mt-3 divide-y divide-line border-y border-line">
+                {favCafes.map((id) => (
+                  <li key={id} className="flex items-center justify-between gap-4 py-3">
+                    {cafeNames[id] ? (
+                      <Link href={`/cafes/${cafeNames[id].slug}`} className="text-ink hover:text-matcha">
+                        <span className="font-medium">{cafeNames[id].name}</span>
+                        <span className="ml-2 text-sm text-ink-faint">{cafeNames[id].place}</span>
+                      </Link>
+                    ) : (
+                      <span className="text-ink-muted">{t("c.acct.aCafe")}</span>
+                    )}
+                    <button type="button" onClick={() => void unsaveCafe(id)} className="text-sm text-ink-muted underline hover:text-ink">
+                      {t("c.acct.remove")}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
           <section aria-labelledby="comments-h">
             <h2 id="comments-h" className={h2}>{t("c.mp.reviewsPhotos")}</h2>
             {comments === null ? (
@@ -320,41 +327,50 @@ export function AccountClient() {
               </ul>
             )}
           </section>
-
-          <FriendsSection />
-
-          <section aria-labelledby="cafes-h">
-            <h2 id="cafes-h" className={h2}>{t("c.acct.cafes")}</h2>
-            {favCafes === null ? (
+          <section aria-labelledby="ratings-h">
+            <h2 id="ratings-h" className={h2}>{t("c.acct.ratings")}</h2>
+            {ratings === null || cafeRatings === null ? (
               <p className="mt-2 text-sm text-ink-faint">Loading…</p>
-            ) : favCafes.length === 0 ? (
-              <p className="mt-2 text-sm text-ink-muted">
-                {rich(t("c.acct.cafesEmpty", { save: "{save}", link: "{link}" }), {
-                  save: <strong>{t("c.fav.cafe.save")}</strong>,
-                  link: <Link href="/cafes" className="text-matcha underline">{t("c.acct.findCafes")}</Link>,
-                })}
-              </p>
+            ) : ratings.length + cafeRatings.length === 0 ? (
+              <p className="mt-2 text-sm text-ink-muted">{t("c.acct.ratingsEmpty")}</p>
             ) : (
-              <ul className="mt-3 divide-y divide-line border-y border-line">
-                {favCafes.map((id) => (
-                  <li key={id} className="flex items-center justify-between gap-4 py-3">
-                    {cafeNames[id] ? (
-                      <Link href={`/cafes/${cafeNames[id].slug}`} className="text-ink hover:text-matcha">
-                        <span className="font-medium">{cafeNames[id].name}</span>
-                        <span className="ml-2 text-sm text-ink-faint">{cafeNames[id].place}</span>
-                      </Link>
-                    ) : (
-                      <span className="text-ink-muted">{t("c.acct.aCafe")}</span>
-                    )}
-                    <button type="button" onClick={() => void unsaveCafe(id)} className="text-sm text-ink-muted underline hover:text-ink">
-                      {t("c.acct.remove")}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+              <>
+                <ul className="mt-3 divide-y divide-line border-y border-line">
+                  {(() => {
+                    const all = [
+                      ...ratings.map((r) => ({ key: `p${r.product_id}`, score: r.score, node: <ProductLink id={r.product_id} item={items[r.product_id]} /> })),
+                      ...cafeRatings.map((r) => ({
+                        key: `c${r.cafe_id}`,
+                        score: r.score,
+                        node: cafeNames[r.cafe_id] ? (
+                          <Link href={`/cafes/${cafeNames[r.cafe_id].slug}`} className="text-ink hover:text-matcha">
+                            <span className="block text-xs text-ink-faint">{cafeNames[r.cafe_id].place}</span>
+                            <span className="font-medium">{cafeNames[r.cafe_id].name}</span>
+                          </Link>
+                        ) : (
+                          <span className="text-ink-muted">{t("c.acct.aCafe")}</span>
+                        ),
+                      })),
+                    ].sort((a, b) => b.score - a.score);
+                    return (allRatings ? all : all.slice(0, 8)).map((r) => (
+                      <li key={r.key} className="flex items-center justify-between gap-3 py-2.5">
+                        {r.node}
+                        <span className="flex shrink-0 items-center gap-1.5 text-sm text-ink-muted tabular-nums">
+                          <Stars value={r.score} size={14} />
+                          {r.score.toFixed(1)}
+                        </span>
+                      </li>
+                    ));
+                  })()}
+                </ul>
+                {ratings.length + cafeRatings.length > 8 && (
+                  <button type="button" onClick={() => setAllRatings((v) => !v)} className="mt-2 text-sm text-matcha underline hover:text-forest">
+                    {allRatings ? t("c.mp.fewer") : t("c.mp.allRatings", { n: ratings.length + cafeRatings.length })}
+                  </button>
+                )}
+              </>
             )}
           </section>
-
           <section aria-labelledby="brands-h">
             <h2 id="brands-h" className={h2}>{t("c.acct.brands")}</h2>
             {brands === null ? (
@@ -382,6 +398,9 @@ export function AccountClient() {
               </ul>
             )}
           </section>
+
+
+
         </div>
 
         <div className="flex min-w-0 flex-col gap-10">
@@ -389,9 +408,6 @@ export function AccountClient() {
             <h2 id="shelf-h" className={`${h2} mb-3`}>{t("c.acct.shelf")}</h2>
             {shelved === null || favorites === null ? <p className="text-sm text-ink-faint">Loading…</p> : <WoodShelf cards={cards} />}
           </section>
-
-          <MyLists />
-
           <section aria-labelledby="folder-h">
             <h2 id="folder-h" className={h2}>{t("c.acct.folder")}</h2>
             {saved === null ? (
@@ -426,17 +442,13 @@ export function AccountClient() {
               </ul>
             )}
           </section>
+
+
         </div>
       </div>
 
       <StaffLink />
       <AccountTypePanel />
-      <details className="rounded-sm border border-line bg-paper-raised px-5 py-3">
-        <summary className="cursor-pointer text-sm font-medium text-ink">{t("c.mp.options")}</summary>
-        <div className="mt-4">
-          <PublicProfileSettings key={`${avatar.key}|${avatar.path}`} />
-        </div>
-      </details>
 
       <section className="border-t border-line pt-6 text-sm text-ink-muted">
         <button type="button" onClick={() => void signOut()} className="underline hover:text-ink">

@@ -16,7 +16,7 @@ type Stats = { count: number; average: number | null };
 const fmt = (n: number) => (Number.isInteger(n) ? n.toFixed(1) : String(n));
 
 // Rates a product (productId) or, with cafeId, a café.
-export function ProductRating({ productId, cafeId, productName }: { productId?: number; cafeId?: string; productName: string }) {
+export function ProductRating({ productId, cafeId, productName, className }: { productId?: number; cafeId?: string; productName: string; className?: string }) {
   const { user, signIn } = useAuth();
   const t = useT();
   const lang = useLang();
@@ -121,7 +121,7 @@ export function ProductRating({ productId, cafeId, productName }: { productId?: 
   const shown = hover ?? draft ?? mine ?? 0;
 
   return (
-    <section className="mt-4 rounded-sm border border-line bg-paper-raised px-4 py-3 max-w-md" aria-label={t("c.rt.label")}>
+    <section className={className ?? "mt-4 rounded-sm border border-line bg-paper-raised px-4 py-3 max-w-md"} aria-label={t("c.rt.label")}>
       <div className="flex items-center gap-3 flex-wrap">
         {stats.average != null && stats.count >= 1 ? (
           <>

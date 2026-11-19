@@ -7,7 +7,7 @@ import { supabase } from "@/lib/supabase";
 import { useT } from "@/i18n/client";
 
 // Heart button: save a product to "My matcha". Signed-out visitors are asked to sign in first.
-export function FavoriteButton({ productId, productName }: { productId: number; productName: string }) {
+export function FavoriteButton({ productId, productName, compact = false }: { productId: number; productName: string; compact?: boolean }) {
   const { user, ready, signIn } = useAuth();
   const t = useT();
   const [state, setState] = useState<{ uid: string; saved: boolean } | null>(null);
@@ -54,6 +54,28 @@ export function FavoriteButton({ productId, productName }: { productId: number; 
     }
     setBusy(false);
   };
+
+  if (compact) {
+    return (
+      <span className="inline-flex items-center gap-2">
+        <button
+          type="button"
+          onClick={toggle}
+          disabled={busy || !ready}
+          aria-pressed={saved}
+          aria-label={saved ? t("c.fav.saved") : t("c.fav.save")}
+          title={saved ? t("c.fav.saved") : t("c.fav.save")}
+          className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors disabled:opacity-60 ${saved ? "border-matcha bg-matcha-soft text-forest" : "border-line-strong bg-paper-raised text-ink-muted hover:bg-matcha-soft hover:text-forest"}`}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" fill={saved ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
+            <path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2 0 3.5 1.1 5.3 3 1.8-1.9 3.3-3 5.3-3 3.7 0 5.8 3.8 4.3 7.2C19.5 16.4 12 21 12 21z" />
+          </svg>
+        </button>
+        <SaveCount kind="product" itemKey={String(productId)} refresh={bump} />
+        {failed && <span className="text-xs text-red-700">{t("c.fav.failed")}</span>}
+      </span>
+    );
+  }
 
   return (
     <div className="mt-4 flex flex-wrap items-center gap-3">

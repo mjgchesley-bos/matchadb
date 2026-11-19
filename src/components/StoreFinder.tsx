@@ -273,10 +273,7 @@ export function StoreFinder({
     popupRef.current = popup;
   }, [selectedId, stores, brandInfo, lang, ts]);
 
-  // Selecting a pin on the map scrolls its card into view.
-  useEffect(() => {
-    if (selectedId) cardRefs.current.get(selectedId)?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-  }, [selectedId]);
+  // Tapping a pin shows that place in its popup and leaves the page where it is (no jump down the list), so several places can be checked quickly.
 
   // Switch to another part of the world (a brand that isn't stocked there is cleared).
   function changeRegion(k: RegionKey, keepOrigin?: Origin) {

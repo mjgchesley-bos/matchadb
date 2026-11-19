@@ -49,7 +49,7 @@ export default async function CafesPage({ params, searchParams }: { params: Prom
         </p>
       </header>
 
-      <CafeFinder contactEmail={CONTACT_EMAIL} initialRegion={initial} />
+      <CafeFinder contactEmail={CONTACT_EMAIL} initialRegion={initial} explicitRegion={!!wanted} />
 
       {lang === "en" && (
         <section className="mt-14 max-w-4xl" aria-labelledby="by-city">

@@ -5,7 +5,7 @@ import Link from "@/i18n/Link";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { cafeSlug, directionsUrl, formatPlace, type CafeSlim } from "@/lib/cafe-types";
-import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, type RegionKey } from "@/lib/cafe-regions";
+import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, regionFromTimeZone, type RegionKey } from "@/lib/cafe-regions";
 import { KM_PER_MILE, geocodeMany, haversineMiles, type Origin } from "@/lib/geo";
 import { nameScore, norm } from "@/lib/cafe-search";
 import { useLang, useT } from "@/i18n/client";
@@ -36,7 +36,11 @@ function buildPopup(c: Cafe, lang: Locale, linkText: string): HTMLElement {
     return n;
   };
   const root = el("div", "store-pop");
-  root.appendChild(el("p", "font-display text-base font-semibold text-ink leading-snug", c.name));
+  const title = el("a", "font-display text-base font-semibold text-ink leading-snug hover:text-matcha hover:underline", c.name) as HTMLAnchorElement;
+  title.href = localePath(lang, `/cafes/${cafeSlug(c)}`);
+  const h = el("p", "");
+  h.appendChild(title);
+  root.appendChild(h);
   root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", formatPlace(c, lang)));
   const a = el("a", "mt-2 inline-block text-sm font-medium text-matcha-ink underline underline-offset-2", linkText) as HTMLAnchorElement;
   a.href = localePath(lang, `/cafes/${cafeSlug(c)}`);
@@ -44,7 +48,7 @@ function buildPopup(c: Cafe, lang: Locale, linkText: string): HTMLElement {
   return root;
 }
 
-export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmail: string; initialRegion?: RegionKey }) {
+export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion = false }: { contactEmail: string; initialRegion?: RegionKey; explicitRegion?: boolean }) {
   const lang = useLang();
   const t = useT();
   const place = (c: Cafe) => formatPlace(c, lang);
@@ -56,11 +60,27 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
   const cardRefs = useRef<Map<string, HTMLLIElement>>(new Map());
 
   const [regionKey, setRegionKey] = useState<RegionKey>(initialRegion);
+  // No region asked for in the link: start where the visitor is (their device time zone), not always in America. Done after the
+  // first paint so the server and browser markup match.
+  useEffect(() => {
+    if (explicitRegion) return;
+    try {
+      const k = regionFromTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone);
+      if (k && k !== initialRegion) {
+        setRegionKey(k);
+      }
+    } catch {
+      /* keep the default */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const region = regionByKey(regionKey);
   const unit = region.unit;
-  // The list that was loaded, and which region it belongs to (so a region switch never shows the old list).
-  const [loaded, setLoaded] = useState<{ region: RegionKey; list: Cafe[] } | null>(null);
-  const all = loaded && loaded.region === regionKey ? loaded.list : null;
+  // Every region's cafés are loaded (the visitor's own part of the world first, the rest in the background), so the map can be
+  // panned or searched anywhere without picking a region first. The region tabs only move the camera.
+  const [lists, setLists] = useState<Partial<Record<RegionKey, Cafe[]>>>({});
+  const all = useMemo(() => (Object.keys(lists).length ? REGIONS.flatMap((r) => lists[r.key] ?? []) : null), [lists]);
   const [loadError, setLoadError] = useState(false);
   const [query, setQuery] = useState("");
   // One search bar: a café name narrows the list to those cafés (nameFilter); a place sets the origin.
@@ -92,23 +112,30 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
 
   useEffect(() => {
     let live = true;
-    fetch(`/data/cafes-slim-${regionKey}.json`)
-      .then((r) => (r.ok ? (r.json() as Promise<CafeSlim[]>) : Promise.reject(new Error("load"))))
-      .then((rows) => {
-        if (!live) return;
-        setLoadError(false);
-        setLoaded({ region: regionKey, list: rows.map(fromSlim) });
-      })
-      .catch(() => live && setLoadError(true));
+    (async () => {
+      const mine = (() => { if (explicitRegion) return initialRegion; try { return regionFromTimeZone(Intl.DateTimeFormat().resolvedOptions().timeZone) ?? initialRegion; } catch { return initialRegion; } })();
+      const order = [mine, ...REGIONS.map((r) => r.key).filter((k) => k !== mine)];
+      for (let i = 0; i < order.length && live; i++) {
+        try {
+          const r = await fetch(`/data/cafes-slim-${order[i]}.json`);
+          if (!r.ok) throw new Error("load");
+          const rows = (await r.json()) as CafeSlim[];
+          if (live) setLists((cur) => ({ ...cur, [order[i]]: rows.map(fromSlim) }));
+        } catch {
+          if (live && i === 0) setLoadError(true);
+        }
+      }
+    })();
     return () => {
       live = false;
     };
-  }, [regionKey]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const { listed, nearest, total } = useMemo(() => {
     const factor = unit === "km" ? KM_PER_MILE : 1;
     const matching: Listed[] = (all ?? [])
-      .filter((c) => !nameFilter || nameFilter.ids.has(c.id))
+      .filter((c) => (nameFilter ? nameFilter.ids.has(c.id) : origin || regionForCountry(c.cc) === regionKey))
       .map((cafe) => ({ cafe, dist: origin ? haversineMiles(origin, cafe) * factor : null }));
     if (moved) {
       // The visitor scrolled the map: list what is in view, nearest the middle first (distances are from their own position when known).
@@ -127,7 +154,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     matching.sort((a, b) => (a.dist ?? 0) - (b.dist ?? 0));
     const within = radius > 0 ? matching.filter((x) => (x.dist ?? 0) <= radius) : matching;
     return { listed: within, nearest: matching[0] ?? null, total: matching.length };
-  }, [all, nameFilter, origin, radius, unit, moved, myLoc]);
+  }, [all, nameFilter, origin, radius, unit, moved, myLoc, regionKey]);
 
   // Every café in the region is a pin, wherever the visitor scrolls (the map clusters them); only the list follows search/radius/view.
   const pins = useMemo(() => (all ?? []).filter((c) => !nameFilter || nameFilter.ids.has(c.id)), [all, nameFilter]);
@@ -295,10 +322,6 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
     popupRef.current = popup;
   }, [selectedId, all, lang, t]);
 
-  useEffect(() => {
-    if (selectedId) cardRefs.current.get(selectedId)?.scrollIntoView({ block: "nearest", behavior: "smooth" });
-  }, [selectedId]);
-
   // Switch to another part of the world.
   function changeRegion(k: RegionKey, keepOrigin?: Origin) {
     if (k === regionKey && !keepOrigin) return;
@@ -429,7 +452,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
       const qn = norm(q);
       const from = knownPosition();
       const exact = !/\d/.test(qn) ? matchCafes(qn, 1.2, from) : []; // a café with exactly this name
-      const places = await geocodeMany(q, region.countries, lang, 5).then((r) => (r.length ? r : geocodeMany(q, ALL_COUNTRIES, lang, 5)));
+      const places = await geocodeMany(q, ALL_COUNTRIES, lang, 5);
       const place = places[0];
       const placeStrong = !!place && (place.relevance ?? 0) >= 0.9;
       if (exact.length) return goToCafes(exact[0].cafe.name, exact, from); // the name of a venue: its closest outlet first
@@ -477,7 +500,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
         }
       }
       try {
-        const places = await geocodeMany(q, region.countries, lang, 4, true);
+        const places = await geocodeMany(q, ALL_COUNTRIES, lang, 4, true);
         for (const p of places) list.push({ kind: "place", origin: p });
       } catch {
         /* suggestions are optional */
@@ -679,17 +702,15 @@ export function CafeFinder({ contactEmail, initialRegion = "us" }: { contactEmai
                 }}
                 className={`rounded-sm border bg-paper-raised p-4 transition-colors ${selectedId === c.id ? "border-matcha bg-matcha-soft" : "border-line"}`}
               >
-                <button type="button" onClick={() => select(c.id)} className="block w-full text-left">
-                  <span className="flex items-baseline justify-between gap-3">
-                    <span className="font-display text-lg font-semibold text-ink">{c.name}</span>
-                    {dist != null && (
-                      <span className="text-xs tabular-nums text-matcha whitespace-nowrap">
-                        {fmtDist(dist)} {unit}
-                      </span>
-                    )}
-                  </span>
-                  <span className="mt-0.5 block text-sm text-ink-muted">{place(c)}</span>
-                </button>
+                <span className="flex items-baseline justify-between gap-3">
+                  <Link href={`/cafes/${cafeSlug(c)}`} className="font-display text-lg font-semibold text-ink hover:text-matcha hover:underline">{c.name}</Link>
+                  {dist != null && (
+                    <span className="text-xs tabular-nums text-matcha whitespace-nowrap">
+                      {fmtDist(dist)} {unit}
+                    </span>
+                  )}
+                </span>
+                <button type="button" onClick={() => select(c.id)} className="mt-0.5 block w-full text-left text-sm text-ink-muted" title="Show on the map">{place(c)}</button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
                   <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.reported ? t("c.cf.reported") : c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>
                 </p>

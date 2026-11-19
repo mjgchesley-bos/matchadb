@@ -16,7 +16,7 @@ export function WoodShelf({ cards }: { cards: ShelfCard[] }) {
   const t = useT();
   const rows: ShelfCard[][] = [];
   for (let i = 0; i < cards.length; i += 3) rows.push(cards.slice(i, i + 3));
-  if (rows.length === 0) rows.push([]);
+  while (rows.length < 2) rows.push([]); // always at least two planks
   return (
     <div className="rounded-sm border border-[#6e4a26] bg-[#d9c3a0]/40 p-3 dark:bg-[#3a2c1c]/60">
       {rows.map((row, ri) => (
