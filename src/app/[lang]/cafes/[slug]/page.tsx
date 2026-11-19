@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/i18n/Link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { Comments } from "@/components/Comments";
 import { FavoriteCafeButton } from "@/components/FavoriteCafeButton";
 import { ReportNoMatchaButton } from "@/components/ReportNoMatchaButton";
@@ -16,7 +16,7 @@ import { SocialIcons } from "@/components/SocialIcons";
 import { matchaItem } from "@/lib/cafe-snippet";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { getT } from "@/i18n/server";
-import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
+import { INTL_LANG, isLocale, localePath, type Locale } from "@/i18n/config";
 import { pageAlternates } from "@/i18n/seo";
 import { rich } from "@/i18n/rich";
 
@@ -72,6 +72,8 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const t = getT(lang);
   const c = getCafeBySlug(slug);
   if (!c) notFound();
+  // A venue renamed with its place in brackets keeps working at its old address, which now forwards to the current one (one page for Google, not two).
+  if (slug !== cafeSlug(c)) permanentRedirect(localePath(lang, `/cafes/${cafeSlug(c)}`));
   const where = formatPlace(c, lang);
   const near = nearbyCafes(c, 5);
   const cc = (c.cc || "US").toUpperCase();
