@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes, redirectedCafeSlug } from "@/lib/cafes";
 import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/lib/cafe-places";
-import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
+import { countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
 import { getCafeProfile, getCafeExtras } from "@/lib/cafe-profiles";
 import { MiniMap } from "@/components/MiniMap";
 import { OwnerCafeSections } from "@/components/OwnerCafeSections";
@@ -23,13 +23,13 @@ import { INTL_LANG, isLocale, localePath, type Locale } from "@/i18n/config";
 import { pageAlternates } from "@/i18n/seo";
 import { rich } from "@/i18n/rich";
 
+const fmtDate = (iso: string, lang: Locale) => new Date(iso + "T12:00:00").toLocaleDateString(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric" });
 // Café pages are built the first time someone asks for them, then kept for a day.
 export const revalidate = 86400;
 export const dynamicParams = true;
 
 type Params = { lang: string; slug: string };
 
-const fmtDate = (iso: string, lang: Locale) => new Date(iso + "T12:00:00").toLocaleDateString(INTL_LANG[lang], { year: "numeric", month: "short", day: "numeric" });
 const hostOf = (u: string) => {
   try {
     return new URL(u).hostname.replace(/^www\./, "");
@@ -220,20 +220,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           </div>
         </div>
       </header>
-
-      <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-        {[
-          [lang === "en" ? "Location" : "", loc(c, lang)],
-          [lang === "en" ? "Type" : "", CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")],
-          [lang === "en" ? "Matcha" : "", c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")],
-          [lang === "en" ? "Last checked" : "", fmtDate(c.checked, lang)],
-        ].filter(([k]) => k).map(([k, v]) => (
-          <div key={k} className="rounded-md border-2 border-matcha/50 bg-matcha-soft px-4 py-3 text-center shadow-sm">
-            <dd className="font-display text-lg font-semibold leading-snug text-forest">{v}</dd>
-            <dt className="mt-1 text-xs uppercase tracking-wide text-ink-muted">{k}</dt>
-          </div>
-        ))}
-      </dl>
 
       {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} />}
 
