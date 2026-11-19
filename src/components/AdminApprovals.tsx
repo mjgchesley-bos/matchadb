@@ -195,7 +195,7 @@ export function useQueueCount(enabled: boolean): number | null {
     const load = () => supabase().rpc("admin_queue").then(({ data, error }) => {
       if (!live || error || !data) return;
       const q = data as Queue;
-      setN(q.requests.length + q.comments.length + q.reviews.length + q.events + q.event_photos);
+      setN(q.requests.length + q.events + q.event_photos);
     });
     void load();
     const id = setInterval(load, 60000);
@@ -212,13 +212,13 @@ export function AdminApprovals({ onOpenEvents }: { onOpenEvents: () => void }) {
   useEffect(load, [load]);
   if (q === null) return <p className="mt-4 text-sm text-ink-faint">Loading…</p>;
   if (q === "error") return <p className="mt-4 text-sm text-ink-muted">The queue isn&apos;t available yet. Run <code>supabase/admin_queue.sql</code> in the Supabase SQL editor once.</p>;
-  const total = q.requests.length + q.comments.length + q.reviews.length + q.events + q.event_photos;
+  const total = q.requests.length + q.events + q.event_photos;
   return (
     <section className="mt-4" aria-label="Approvals queue">
       {total === 0 ? (
         <p className="rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-5 text-ink">Nothing is waiting for you.</p>
       ) : (
-        <p className="text-sm text-ink-muted">{total} waiting. Each one has been checked automatically; the green ones are one click.</p>
+        <p className="text-sm text-ink-muted">{total} waiting. Each has been checked automatically; the green ones are one click. Comments, reviews, events and photos go live as soon as they are posted; hide anything from the Activity feed or Event posts.</p>
       )}
       {q.requests.length > 0 && (
         <div className="mt-5">
@@ -230,21 +230,9 @@ export function AdminApprovals({ onOpenEvents }: { onOpenEvents: () => void }) {
         <div className="mt-5">
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Events</h2>
           <div className="mt-2 rounded-sm border-2 border-line bg-paper-raised p-4 text-sm text-ink">
-            {q.events} event post{q.events === 1 ? "" : "s"} and {q.event_photos} photo{q.event_photos === 1 ? "" : "s"} waiting.{" "}
+            {q.events} event{q.events === 1 ? "" : "s"} (a place we couldn't find automatically) and {q.event_photos} photo{q.event_photos === 1 ? "" : "s"} waiting.{" "}
             <button type="button" onClick={onOpenEvents} className="text-matcha underline hover:text-forest">Review them in the Event posts tab</button>
           </div>
-        </div>
-      )}
-      {q.comments.length > 0 && (
-        <div className="mt-5">
-          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Comments with photos ({q.comments.length})</h2>
-          <ul className="mt-2 flex flex-col gap-3">{q.comments.map((c) => <ContentCard key={c.id} kind="comment" id={c.id} who={c.member} when={c.created_at} where={`${c.target_type} ${c.target_key}`} body={c.body} photos={c.photos} onDone={load} />)}</ul>
-        </div>
-      )}
-      {q.reviews.length > 0 && (
-        <div className="mt-5">
-          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Product reviews ({q.reviews.length})</h2>
-          <ul className="mt-2 flex flex-col gap-3">{q.reviews.map((r) => <ContentCard key={r.id} kind="review" id={r.id} who={r.member} when={r.created_at} where={`product ${r.product_id}`} body={r.body} onDone={load} />)}</ul>
         </div>
       )}
     </section>

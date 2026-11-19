@@ -167,14 +167,25 @@ function PhotoCard({ p, onDone }: { p: Photo; onDone: () => void }) {
 export function AdminEvents() {
   const [subs, setSubs] = useState<Sub[] | null>(null);
   const [photos, setPhotos] = useState<Photo[] | null>(null);
+  const [live, setLive] = useState<{ id: string; created_at: string; name: string; city: string; country: string; url: string }[] | null>(null);
+  const [livePhotos, setLivePhotos] = useState<{ id: string; event_id: string; path: string; created_at: string }[] | null>(null);
+  const hide = async (table: "event_submissions" | "event_photos", id: string) => {
+    await supabase().from(table).update({ status: "rejected" }).eq("id", id);
+    void load();
+  };
   const load = useCallback(async () => {
     const sb = supabase();
-    const [a, b] = await Promise.all([
+    const since = new Date(Date.now() - 30 * 86400000).toISOString();
+    const [a, b, c, d] = await Promise.all([
       sb.from("event_submissions").select("*").eq("status", "pending").order("created_at"),
       sb.from("event_photos").select("*").eq("status", "pending").order("created_at"),
+      sb.from("event_submissions").select("id, created_at, name, city, country, url").eq("status", "approved").gte("created_at", since).order("created_at", { ascending: false }).limit(40),
+      sb.from("event_photos").select("id, event_id, path, created_at").eq("status", "approved").gte("created_at", since).order("created_at", { ascending: false }).limit(40),
     ]);
     setSubs((a.data ?? []) as Sub[]);
     setPhotos((b.data ?? []) as Photo[]);
+    setLive((c.data ?? []) as NonNullable<typeof live>);
+    setLivePhotos((d.data ?? []) as NonNullable<typeof livePhotos>);
   }, []);
   useEffect(() => { void load(); }, [load]);
 
@@ -184,6 +195,31 @@ export function AdminEvents() {
         <h2 className="font-display text-xl font-semibold text-ink">Posted events waiting for review {subs ? `(${subs.length})` : ""}</h2>
         <p className="text-sm text-ink-faint">Open the link and check the date and place. Then look up the place, choose the continent, and approve.</p>
         {subs === null ? <p className="mt-3 text-sm text-ink-faint">Loading…</p> : subs.length === 0 ? <p className="mt-3 text-sm text-ink-muted">Nothing waiting.</p> : <ul className="mt-3 flex flex-col gap-4">{subs.map((s) => <SubCard key={s.id} s={s} onDone={() => void load()} />)}</ul>}
+      </div>
+      <div>
+        <h2 className="font-display text-xl font-semibold text-ink">Posted in the last 30 days (live now) {live ? `(${live.length})` : ""}</h2>
+        <p className="text-sm text-ink-faint">Events and photos go live the moment a member posts them. Hide anything that doesn&apos;t belong.</p>
+        {live === null ? <p className="mt-3 text-sm text-ink-faint">Loading…</p> : live.length === 0 ? <p className="mt-3 text-sm text-ink-muted">Nothing posted yet.</p> : (
+          <ul className="mt-3 divide-y divide-line rounded-sm border border-line bg-paper-raised">
+            {live.map((e) => (
+              <li key={e.id} className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 text-sm">
+                <span className="min-w-0"><a href={`/events/community-${e.id.slice(0, 8)}`} target="_blank" rel="noopener noreferrer" className="font-medium text-ink hover:text-matcha">{e.name}</a> <span className="text-ink-faint">· {e.city}, {e.country}</span> <a href={e.url} target="_blank" rel="noopener noreferrer" className="text-matcha underline">link</a></span>
+                <button type="button" onClick={() => void hide("event_submissions", e.id)} className="rounded-full border border-red-700 px-3 py-1 text-xs text-red-700 hover:bg-red-50">Hide</button>
+              </li>
+            ))}
+          </ul>
+        )}
+        {livePhotos && livePhotos.length > 0 && (
+          <ul className="mt-3 flex flex-wrap gap-3">
+            {livePhotos.map((p) => (
+              <li key={p.id} className="w-28 text-xs">
+                {/* eslint-disable-next-line @next/next/no-img-element -- member photo on a public event page */}
+                <img src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/event-media/${p.path}`} alt="Event photo" className="h-24 w-28 rounded-sm border border-line object-cover" />
+                <button type="button" onClick={() => void hide("event_photos", p.id)} className="mt-1 text-red-700 underline">Hide photo</button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
       <div>
         <h2 className="font-display text-xl font-semibold text-ink">Event photos waiting for review {photos ? `(${photos.length})` : ""}</h2>

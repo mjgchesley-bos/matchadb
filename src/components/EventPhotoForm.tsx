@@ -21,7 +21,7 @@ export function EventPhotoForm({ eventId }: { eventId: string }) {
 
   if (!ready) return null;
   if (!user) return <button type="button" onClick={() => signIn("Sign in to add photos to this event.")} className="rounded-full border border-matcha px-5 py-2 text-sm font-medium text-matcha hover:bg-matcha-soft">Sign in to add photos</button>;
-  if (done) return <p className="rounded-sm border border-matcha bg-matcha-soft px-4 py-3 text-sm text-ink" role="status">Thank you. Your pictures are with us for review and will appear here once approved.</p>;
+  if (done) return <p className="rounded-sm border border-matcha bg-matcha-soft px-4 py-3 text-sm text-ink" role="status">Thank you. Your pictures are live and appear here once approved.</p>;
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,11 +36,11 @@ export function EventPhotoForm({ eventId }: { eventId: string }) {
       for (const file of files) {
         const blob = await shrinkImage(file);
         const path = `${user.id}/${crypto.randomUUID()}.jpg`;
-        const up = await sb.storage.from("event-uploads").upload(path, blob, { contentType: "image/jpeg", upsert: false });
+        const up = await sb.storage.from("event-media").upload(path, blob, { contentType: "image/jpeg", upsert: false });
         if (up.error) throw up.error;
         const { error } = await sb.from("event_photos").insert({ event_id: eventId, path, caption: caption.trim() || null, year: y, credit: credit.trim() || null, rights_ok: true });
         if (error) {
-          await sb.storage.from("event-uploads").remove([path]).catch(() => {});
+          await sb.storage.from("event-media").remove([path]).catch(() => {});
           throw error;
         }
       }

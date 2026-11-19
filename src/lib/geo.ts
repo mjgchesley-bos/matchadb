@@ -32,7 +32,7 @@ export async function geocodeMany(query: string, countries: string[], language =
   if (!q) return [];
   const types = "postcode,place,locality,neighborhood,address";
   const res = await fetch(
-    `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(q)}.json?access_token=${token}&country=${countries.join(",")}&types=${types}&limit=${limit}&autocomplete=${autocomplete}&language=${encodeURIComponent(language)}`,
+    `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(q)}.json?access_token=${token}${countries.length ? `&country=${countries.join(",")}` : ""}&types=${types}&limit=${limit}&autocomplete=${autocomplete}&language=${encodeURIComponent(language)}`,
   );
   if (!res.ok) throw new Error("geocoder");
   const json = (await res.json()) as { features?: MapboxFeature[] };

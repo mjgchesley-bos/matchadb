@@ -4,9 +4,11 @@ import { useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { OK_IMAGE, shrinkImage } from "@/lib/image-upload";
 import { supabase } from "@/lib/supabase";
+import { geocodeMany } from "@/lib/geo";
+import { continentOf } from "@/lib/continent";
 
-// "Post an event": a signed-in member sends a link, the details and up to four pictures (a flyer, photos from past years). It waits for staff
-// review before it appears. Pictures upload to a private bucket first; the member confirms they have the right to share them.
+// "Post an event": a signed-in member sends a link, the details and up to four pictures (a flyer, photos from past years). It goes live at once
+// (the place is looked up automatically); staff can hide anything afterwards. The member confirms they have the right to share the pictures.
 const input = "mt-1 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink focus:border-matcha focus:outline-none";
 const label = "block text-sm text-ink-muted";
 
@@ -17,7 +19,7 @@ export function EventSubmitForm() {
   const [rights, setRights] = useState(false);
   const [busy, setBusy] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
-  const [done, setDone] = useState(false);
+  const [done, setDone] = useState<null | { live: boolean; id: string }>(null);
   const set = (k: keyof typeof f, v: string) => { setF((o) => ({ ...o, [k]: v })); setMsg(null); };
 
   if (!ready) return null;
@@ -32,7 +34,11 @@ export function EventSubmitForm() {
   if (done) {
     return (
       <p className="rounded-sm border border-matcha bg-matcha-soft px-4 py-3 text-sm text-ink" role="status">
-        Thank you. Your event is with us for review. We check the link and the details, then publish it with its own page. You will see it on this page once it is live.
+        {done.live ? (
+          <>Thank you. Your event is live. <a href={`/events/community-${done.id.slice(0, 8)}`} className="text-matcha underline hover:text-forest">See its page</a>.</>
+        ) : (
+          <>Thank you. We couldn&apos;t find that place on the map automatically, so we&apos;ll check it and publish your event shortly.</>
+        )}
       </p>
     );
   }
@@ -53,25 +59,34 @@ export function EventSubmitForm() {
     setBusy(true);
     try {
       const sb = supabase();
+      // Find the place on the map so the event can go live straight away (an unknown place falls back to a quick staff check).
+      let place: { lat: number; lng: number; continent: string } | null = null;
+      try {
+        const hit = (await geocodeMany(`${f.city.trim()}, ${f.country.trim()}`, [], "en", 1))[0];
+        const continent = continentOf(hit?.country);
+        if (hit && continent) place = { lat: hit.lat, lng: hit.lng, continent };
+      } catch {
+        place = null;
+      }
       const paths: string[] = [];
       for (const file of files) {
         const blob = await shrinkImage(file);
         const path = `${user.id}/${crypto.randomUUID()}.jpg`;
-        const { error } = await sb.storage.from("event-uploads").upload(path, blob, { contentType: "image/jpeg", upsert: false });
+        const { error } = await sb.storage.from("event-media").upload(path, blob, { contentType: "image/jpeg", upsert: false });
         if (error) throw error;
         paths.push(path);
       }
-      const { error } = await sb.from("event_submissions").insert({
+      const { data: row, error } = await sb.from("event_submissions").insert({
         name: f.name.trim(), start_date: f.start, end_date: f.end || null, city: f.city.trim(), country: f.country.trim(),
         venue: f.venue.trim() || null, organizer: f.organizer.trim() || null, url: f.url.trim(), description: f.description.trim() || null,
-        images: paths, rights_ok: true,
-      });
-      if (error) {
-        if (paths.length) await sb.storage.from("event-uploads").remove(paths).catch(() => {});
+        images: paths, rights_ok: true, ...(place ?? {}),
+      }).select("id").single();
+      if (error || !row) {
+        if (paths.length) await sb.storage.from("event-media").remove(paths).catch(() => {});
         throw error;
       }
       window.gtag?.("event", "event_posted");
-      setDone(true);
+      setDone({ live: !!place, id: String(row.id) });
     } catch (err) {
       const m = (err as { code?: string; message?: string })?.message ?? "";
       setMsg(m.includes("daily limit") ? "You have posted the most events we allow in a day. Try again tomorrow." : "That didn't go through. Check the details and try again.");
