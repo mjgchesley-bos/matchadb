@@ -204,8 +204,8 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             </div>
           )}
           {p.bio && <p className="mt-3 max-w-xl text-ink-muted">{p.bio}</p>}
-          <TopCafes items={rated.map(({ c, score }) => ({ id: c.id, name: c.name, place: c.place, href: c.href, score }))} />
-          {earned.length > 0 && (
+          {!bizType && <TopCafes items={rated.map(({ c, score }) => ({ id: c.id, name: c.name, place: c.place, href: c.href, score }))} />}
+          {!bizType && earned.length > 0 && (
             <ul className="mt-3 flex flex-wrap gap-2" aria-label={t("c.acct.badges")}>
               {earned.map((b) => (
                 <li key={b.name} className="rounded-full border border-matcha bg-matcha-soft px-3 py-1 text-sm font-medium text-forest">
@@ -215,13 +215,13 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
               ))}
             </ul>
           )}
-          <FollowBar name={p.name} />
+          {!bizType && <FollowBar name={p.name} />}
           <div className="mt-3"><MessageLink name={p.name} /></div>
           <p className="mt-3">
             <ProfileActions name={p.name} />
           </p>
         </div>
-        {using[0] && (
+        {!bizType && using[0] && (
           <section aria-labelledby="using-now-h" className="w-full shrink-0 rounded-sm border-2 border-matcha bg-paper-raised p-4 sm:w-60 sm:ml-auto">
             <h2 id="using-now-h" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">{t("c.mp.using")}</h2>
             <Link href={`/products/${using[0].product_id}`} className="mt-3 block text-ink hover:text-matcha">
@@ -248,7 +248,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         </section>
       )}
 
-      <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+      {!bizType && <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
         {[
           [t("u.s.tried"), String(tried.length)],
           [t("u.s.rated"), String(p.stats.ratings + Number(p.cafe_rating_count ?? 0))],
@@ -260,9 +260,9 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             <dt className="mt-2 text-xs uppercase tracking-wide text-ink-muted">{k}</dt>
           </div>
         ))}
-      </dl>
+      </dl>}
 
-      {top.length > 0 && (
+      {!bizType && top.length > 0 && (
         <section className="mt-6" aria-label={t("u.top")}>
           <Hl>{t("u.top")}</Hl>
           <ul className="grid gap-3 sm:grid-cols-3">
@@ -282,7 +282,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         </section>
       )}
 
-      {rated.length > 0 && (() => {
+      {!bizType && rated.length > 0 && (() => {
         const sorted = [...rated].sort((a, b) => b.score - a.score);
         const card = ({ c, score }: (typeof rated)[number]) => {
           const right = (
@@ -307,7 +307,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         );
       })()}
 
-      {p.brands.length > 0 && (
+      {!bizType && p.brands.length > 0 && (
         <section className="mt-6" aria-label={t("u.brands")}>
           <Hl>{t("u.brands")}</Hl>
           <ul className="flex flex-wrap gap-2.5">
@@ -338,22 +338,22 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
       )}
 
       <div className="mt-8">
-        {top.length > 3 && (
+        {!bizType && top.length > 3 && (
           <Fold title={t("u.top")} count={top.length}>
             {list(top.map((r) => row(r.product_id, <span className="flex items-center gap-1.5 tabular-nums"><Stars value={Number(r.score)} size={14} />{Number(r.score).toFixed(1)}</span>)))}
           </Fold>
         )}
-        {want.length > 0 && <Fold title={t("c.acct.shelf")} count={want.length}>{list(want.slice(0, 12).map((x) => row(x.product_id)))}{want.length > 12 && <p className="mt-2 text-sm text-ink-faint">{t("u.showing", { n: want.length })}</p>}</Fold>}
-        {tried.length > 0 && (
+        {!bizType && want.length > 0 && <Fold title={t("c.acct.shelf")} count={want.length}>{list(want.slice(0, 12).map((x) => row(x.product_id)))}{want.length > 12 && <p className="mt-2 text-sm text-ink-faint">{t("u.showing", { n: want.length })}</p>}</Fold>}
+        {!bizType && tried.length > 0 && (
           <Fold title={t("c.shelf.tried")} count={tried.length}>
             {list(tried.slice(0, 12).map((x) => row(x.product_id)))}
             {tried.length > 12 && <p className="mt-2 text-sm text-ink-faint">{t("u.showing", { n: tried.length })}</p>}
           </Fold>
         )}
-        {p.lists.filter((l) => l.items.length > 0).map((l) => (
+        {!bizType && p.lists.filter((l) => l.items.length > 0).map((l) => (
           <Fold key={l.name} title={l.name} count={l.items.length}>{list(l.items.slice(0, 20).map((id) => row(id)))}</Fold>
         ))}
-        {favs.length > 0 && (
+        {!bizType && favs.length > 0 && (
           <Fold title={t("c.acct.cafes")} count={favs.length}>
             <ul className="grid gap-4 sm:grid-cols-2">
               {favs.map((c) => (

@@ -316,7 +316,7 @@ export function AdminClient() {
   const { user, ready, signIn } = useAuth();
   const [staff, setStaff] = useState<boolean | null>(null);
   const [range, setRange] = useState<RangeKey>("today");
-  const [tab, setTab] = useState<"approvals" | "activity" | "members" | "events">("approvals");
+  const [tab, setTab] = useState<"activity" | "members" | "events">("activity");
   const [kinds, setKinds] = useState<string[]>([]);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [feed, setFeed] = useState<Ev[] | null>(null);
@@ -460,7 +460,7 @@ export function AdminClient() {
   const DAYCOLS: [string, string[]][] = [["Accounts", ["account"]], ["Comments", ["comment"]], ["Photos", ["photos"]], ["Reviews", ["review"]], ["Ratings", ["rating", "cafe_rating"]], ["Saves", ["save", "shelf", "list"]], ["Reports", ["report"]]];
 
   return (
-    <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-10">
+    <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-10">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Staff only</p>
@@ -515,16 +515,15 @@ export function AdminClient() {
         </section>
       )}
 
-      <div className="mt-8 flex gap-5 border-b border-line" role="tablist">
-        {(["approvals", "activity", "members", "events"] as const).map((k) => (
+      <div className="mt-8 grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
+        <div className="min-w-0">
+      <div className="flex gap-5 border-b border-line" role="tablist">
+        {(["activity", "members", "events"] as const).map((k) => (
           <button key={k} type="button" role="tab" aria-selected={tab === k} onClick={() => setTab(k)} className={`-mb-px border-b-2 pb-2 text-sm font-medium ${tab === k ? "border-matcha text-ink" : "border-transparent text-ink-faint hover:text-ink-muted"}`}>
-            {k === "approvals" ? "Approvals" : k === "activity" ? "Activity feed" : k === "members" ? "Members" : "Event posts"}
-            {k === "approvals" && waiting != null && waiting > 0 && <span className="ml-2 rounded-full bg-red-700 px-2 py-0.5 text-xs font-semibold text-white">{waiting}</span>}
+            {k === "activity" ? "Activity feed" : k === "members" ? "Members" : "Event posts"}
           </button>
         ))}
       </div>
-
-      {tab === "approvals" && <AdminApprovals onOpenEvents={() => setTab("events")} />}
 
       {tab === "activity" && (
         <section className="mt-4">
@@ -595,6 +594,16 @@ export function AdminClient() {
           )}
         </section>
       )}
+
+        </div>
+        <aside aria-label="Waiting for you" className="rounded-sm border-2 border-line-strong bg-paper p-4 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
+          <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-ink">
+            Needs you
+            {waiting != null && waiting > 0 && <span className="rounded-full bg-red-700 px-2 py-0.5 text-xs font-semibold text-white">{waiting}</span>}
+          </h2>
+          <AdminApprovals onOpenEvents={() => setTab("events")} />
+        </aside>
+      </div>
 
       {item && <ItemModal kind={item.kind} refId={item.ref} names={names} onClose={() => setItem(null)} onMember={(nm) => { setItem(null); setMemberName(nm); }} onChanged={() => setTick((x) => x + 1)} />}
       {memberName && <MemberModal name={memberName} names={names} onClose={() => setMemberName(null)} onItem={(kind, ref) => { setMemberName(null); setItem({ kind, ref }); }} />}
