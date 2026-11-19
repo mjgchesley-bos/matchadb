@@ -12,6 +12,9 @@ import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/li
 import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
 import { getCafeProfile, getCafeExtras } from "@/lib/cafe-profiles";
 import { MiniMap } from "@/components/MiniMap";
+import { OwnerCafeSections } from "@/components/OwnerCafeSections";
+import { getOwnerData } from "@/lib/cafe-owner-page-server";
+import { accentStyle, cafeMediaUrl, DAYS } from "@/lib/cafe-owner-page";
 import { SocialIcons } from "@/components/SocialIcons";
 import { matchaItem } from "@/lib/cafe-snippet";
 import { CONTACT_EMAIL } from "@/lib/site";
@@ -85,6 +88,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const cityHub = cityEntry && cityEntry.cafes.length >= MIN_CAFES_FOR_CITY_PAGE ? cityPath(cityEntry) : null;
   const siblings = chainSiblings(c);
   const profile = getCafeProfile(c.id);
+  const owner = await getOwnerData(c.id);  // set when the verified owner has customised the page
   const link = "text-matcha hover:text-forest underline";
   // The café's other pages and handles (Instagram, Yelp, TikTok...): every source host that is not its own website.
   const ownHost = c.url ? hostOf(c.url) : "";
@@ -100,11 +104,14 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   }
   // Other pages that mention the café (news, review sites): shown as small source links, not icons.
   const socials = [...new Map(c.ev.filter((e) => hostOf(e.u) !== ownHost && !socialKey(e.u)).map((e) => [hostOf(e.u), e.u] as const)).entries()].map(([host, url]) => ({ host, url, label: SOCIAL[host] ?? host }));
-  const phone = c.phone ?? extra?.phone ?? null;
-  const hours = profile?.hours ?? extra?.hours ?? null;
+  for (const [k, v] of Object.entries(owner?.page.links ?? {})) socialLinks[k] = v;
+  if (owner?.page.website_url) socialLinks.website = owner.page.website_url;
+  const phone = owner?.page.phone ?? c.phone ?? extra?.phone ?? null;
+  const ownerHours = owner ? DAYS.filter(([k]) => owner.page.hours[k]).map(([k, name]) => `${name}: ${owner.page.hours[k]}`) : [];
+  const hours = ownerHours.length ? ownerHours : (profile?.hours ?? extra?.hours ?? null);
 
   return (
-    <main className="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
+    <main style={owner ? accentStyle(owner.page.accent) : undefined} className="flex-1 max-w-5xl mx-auto w-full px-6 py-10">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -125,11 +132,20 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         / {loc(c, lang)}
       </nav>
 
+      {owner?.page.cover_path && (
+        // eslint-disable-next-line @next/next/no-img-element -- owner cover photo from storage
+        <img src={cafeMediaUrl(owner.page.cover_path)} alt={`${c.name}`} className="mt-3 h-40 w-full rounded-sm border-2 border-line-strong object-cover sm:h-64" />
+      )}
+      {owner?.page.announcement && (
+        <p className="mt-3 rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-3 text-sm font-medium text-forest" role="status">{owner.page.announcement}</p>
+      )}
       <header className="mt-3 rounded-sm border-2 border-line-strong bg-paper-raised p-5 sm:p-6">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="min-w-0">
             <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{c.name}</h1>
             <p className="mt-2 text-ink-muted">{where}</p>
+            {owner?.page.tagline && <p className="mt-2 font-display text-lg text-forest">{owner.page.tagline}</p>}
+            {owner && <p className="mt-2"><span className="inline-flex items-center gap-1.5 rounded-full border border-matcha bg-matcha-soft px-3 py-0.5 text-xs font-medium text-forest">✓ Verified owner</span></p>}
             <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
               <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
               <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>
@@ -164,6 +180,15 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
                   {t("cafe.pdf")}
                 </a>
               )}
+              {owner?.page.order_url && (
+                <a href={owner.page.order_url} target="_blank" rel="noopener noreferrer" className="self-center rounded-full border border-matcha px-4 py-1.5 font-medium text-matcha hover:bg-matcha-soft">Order online</a>
+              )}
+              {owner?.page.reservation_url && (
+                <a href={owner.page.reservation_url} target="_blank" rel="noopener noreferrer" className="self-center rounded-full border border-matcha px-4 py-1.5 font-medium text-matcha hover:bg-matcha-soft">Reserve a table</a>
+              )}
+              {owner?.page.public_email && (
+                <a href={`mailto:${owner.page.public_email}`} className="self-center text-matcha hover:text-forest underline">{owner.page.public_email}</a>
+              )}
               {phone && (
                 <a href={`tel:${phone.replace(/[^\d+]/g, "")}`} className="self-center text-matcha hover:text-forest underline">
                   {phone.replace(/^\+?1?[\s-]*(\d{3})[\s.-]*(\d{3})[\s.-]*(\d{4})$/, "($1) $2-$3")}
@@ -190,14 +215,16 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               <div className="rounded-sm border border-line p-4">
                 <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Hours</h2>
                 <ul className="mt-2 flex flex-col gap-1 text-sm text-ink-muted">{hours.map((h) => <li key={h}>{h}</li>)}</ul>
-                <p className="mt-2 text-xs text-ink-faint">{profile?.hours ? "As reported at opening; check before you go." : "From their website; check before you go."}</p>
+                <p className="mt-2 text-xs text-ink-faint">{ownerHours.length ? "Set by the owner." : profile?.hours ? "As reported at opening; check before you go." : "From their website; check before you go."}</p>
               </div>
             )}
           </div>
         </div>
       </header>
 
-      {profile && (
+      {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} />}
+
+      {profile && !owner?.page.bio && (
         <section aria-labelledby="cafe-about" className="mt-8 rounded-sm border-2 border-line-strong bg-paper-raised p-5 sm:p-6">
           <h2 id="cafe-about" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">About {c.name}</h2>
           {profile.about && <p className="mt-3 max-w-prose leading-relaxed text-ink">{profile.about}</p>}

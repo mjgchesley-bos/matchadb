@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "@/i18n/Link";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { FeedbackButton } from "@/components/FeedbackButton";
@@ -111,6 +112,12 @@ export function BusinessTools({ contactEmail }: { contactEmail: string }) {
     <section className="rounded-sm border-2 border-matcha bg-paper-raised p-5 sm:p-6" aria-labelledby="biz-tools-h">
       <h2 id="biz-tools-h" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Your business page</h2>
       <p className="mt-2 max-w-2xl text-sm text-ink-muted">Add a banner and your products. They appear on your public profile. Edit prices and descriptions any time.</p>
+      {type === "cafe_owner" && (
+        <p className="mt-4 rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-3 text-sm text-ink">
+          <strong>Your café page:</strong> add a cover photo, your story, hours, menu, photos and all your social links, like your own landing page.{" "}
+          <Link href="/business" className="font-medium text-matcha underline hover:text-forest">Edit your café page</Link>
+        </p>
+      )}
 
       <div className="mt-5 rounded-sm border border-line p-4">
         <h3 className="font-display text-base font-semibold text-ink">Banner photo</h3>
