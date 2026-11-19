@@ -10,6 +10,7 @@ import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
 import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/lib/cafe-places";
 import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
+import { getCafeProfile } from "@/lib/cafe-profiles";
 import { matchaItem } from "@/lib/cafe-snippet";
 import { CONTACT_EMAIL } from "@/lib/site";
 import { getT } from "@/i18n/server";
@@ -75,6 +76,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const cityEntry = c.city ? getPlaceIndex().cities.get(`${cc}/${citySlug(c.city, cc === "US" ? c.state : "")}`) : undefined;
   const cityHub = cityEntry && cityEntry.cafes.length >= MIN_CAFES_FOR_CITY_PAGE ? cityPath(cityEntry) : null;
   const siblings = chainSiblings(c);
+  const profile = getCafeProfile(c.id);
   const link = "text-matcha hover:text-forest underline";
   // The café's other pages and handles (Instagram, Yelp, TikTok...): every source host that is not its own website.
   const ownHost = c.url ? hostOf(c.url) : "";
@@ -152,6 +154,58 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <FavoriteCafeButton cafeId={c.id} name={c.name} />
         <div className="mt-3"><ReportNoMatchaButton cafeId={c.id} name={c.name} /></div>
       </header>
+
+      {profile && (
+        <section aria-labelledby="cafe-about" className="mt-8 rounded-sm border-2 border-line-strong bg-paper-raised p-5 sm:p-6">
+          <h2 id="cafe-about" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">About {c.name}</h2>
+          {profile.about && <p className="mt-3 max-w-prose leading-relaxed text-ink">{profile.about}</p>}
+          {profile.matcha && <p className="mt-3 text-sm text-ink-muted"><strong className="font-semibold text-ink">The matcha:</strong> {profile.matcha}</p>}
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            {profile.menu && profile.menu.length > 0 && (
+              <div className="rounded-sm border border-line p-4">
+                <h3 className="font-display text-base font-semibold text-ink">Matcha menu highlights</h3>
+                <ul className="mt-2 flex flex-col gap-2 text-sm">
+                  {profile.menu.map((m) => (
+                    <li key={m.name}><span className="font-medium text-ink">{m.name}</span>{m.note && <span className="text-ink-muted"> · {m.note}</span>}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {((profile.hours && profile.hours.length > 0) || (profile.facts && profile.facts.length > 0)) && (
+              <div className="flex flex-col gap-4">
+                {profile.hours && profile.hours.length > 0 && (
+                  <div className="rounded-sm border border-line p-4">
+                    <h3 className="font-display text-base font-semibold text-ink">When to go</h3>
+                    <ul className="mt-2 flex flex-col gap-1.5 text-sm text-ink-muted">{profile.hours.map((h) => <li key={h}>{h}</li>)}</ul>
+                  </div>
+                )}
+                {profile.facts && profile.facts.length > 0 && (
+                  <dl className="rounded-sm border border-line p-4 text-sm">
+                    {profile.facts.map(([k, v]) => (
+                      <div key={k} className="flex gap-3 py-1"><dt className="w-20 shrink-0 text-ink-faint">{k}</dt><dd className="text-ink">{v}</dd></div>
+                    ))}
+                  </dl>
+                )}
+              </div>
+            )}
+          </div>
+          {profile.links && profile.links.length > 0 && (
+            <p className="mt-4 flex flex-wrap gap-2 text-sm">
+              {profile.links.map((l) => (
+                <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="rounded-full border border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">{l.label}</a>
+              ))}
+            </p>
+          )}
+          {profile.sources && profile.sources.length > 0 && (
+            <p className="mt-4 text-xs text-ink-faint">
+              Sources:{" "}
+              {profile.sources.map((x, i) => (
+                <span key={x.url}>{i > 0 && " · "}<a href={x.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{x.label}</a></span>
+              ))}
+            </p>
+          )}
+        </section>
+      )}
 
       <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
 
