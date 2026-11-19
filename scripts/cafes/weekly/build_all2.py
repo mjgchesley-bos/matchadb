@@ -112,8 +112,10 @@ def merge_weekly(old, new):
     if new.get("via") != "render" and any(h.get("r") for h in old.get("hits", [])): return old      # a plain fetch cannot see a JavaScript menu, so it cannot contradict a rendered one
     if new.get("matcha"): return {**new, "miss": 0, "platform": new.get("platform") or old.get("platform"), "pdf": new.get("pdf") or old.get("pdf")}
     if old.get("status") == "ok" and old.get("matcha"):
+        # OWNER RULE 2026-11-19 (category F audit): a read that finds no matcha NEVER removes a listing by itself. In the audit 5 of 6 such venues
+        # really had matcha on their menu (JavaScript menus, ordering platforms, images); only a human look or other hard evidence removes a venue.
         miss = old.get("miss", 0) + 1
-        return {**old, "miss": miss} if miss < 2 else {**new, "miss": miss}
+        return {**old, "miss": miss}
     return new
 
 res = {}
