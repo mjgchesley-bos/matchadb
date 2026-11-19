@@ -253,7 +253,7 @@ export function AccountClient() {
               <p className="mt-2 text-sm text-ink-muted">
                 {rich(t("c.acct.cafesEmpty", { save: "{save}", link: "{link}" }), {
                   save: <strong>{t("c.fav.cafe.save")}</strong>,
-                  link: <Link href="/cafes" className="text-matcha underline">{t("c.acct.findCafes")}</Link>,
+                  link: <Link href="/matcha-map" className="text-matcha underline">{t("c.acct.findCafes")}</Link>,
                 })}
               </p>
             ) : (

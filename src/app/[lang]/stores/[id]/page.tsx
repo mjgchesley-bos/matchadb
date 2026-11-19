@@ -53,7 +53,7 @@ export default async function StorePage({ params }: { params: Promise<{ lang: st
       <nav className="flex items-center gap-1.5 text-sm text-ink-muted">
         <Link href="/" className="hover:text-matcha transition-colors">MatchaDB</Link>
         <span aria-hidden="true">/</span>
-        <Link href="/stores" className="hover:text-matcha transition-colors">{t("c.st.page.crumb")}</Link>
+        <Link href="/matcha-map" className="hover:text-matcha transition-colors">{t("c.st.page.crumb")}</Link>
         <span aria-hidden="true">/</span>
         <span className="text-ink-faint">{s.name}</span>
       </nav>
@@ -79,7 +79,7 @@ export default async function StorePage({ params }: { params: Promise<{ lang: st
         <Comments targetType="cafe" targetKey={s.commentsFrom ?? s.id} subject={s.name} />
       </div>
       <p className="mt-6 text-sm">
-        <Link href="/stores" className="text-matcha hover:text-forest">&larr; {t("c.st.page.back")}</Link>
+        <Link href="/matcha-map" className="text-matcha hover:text-forest">&larr; {t("c.st.page.back")}</Link>
       </p>
     </main>
   );

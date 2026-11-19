@@ -149,7 +149,7 @@ export default async function Home({
         <div className="max-w-3xl mx-auto px-6 pt-10 pb-10 sm:pt-16 text-center">
           <SiteSearch variant="hero" />
           <p className="mt-3 flex flex-wrap items-center justify-center gap-2 text-sm">
-            <Link href="/cafes" className="rounded-full border border-line-strong bg-paper-raised px-4 py-1.5 text-ink hover:border-matcha hover:bg-matcha-soft">{t("h.hero.near")}</Link>
+            <Link href="/matcha-map" className="rounded-full border border-line-strong bg-paper-raised px-4 py-1.5 text-ink hover:border-matcha hover:bg-matcha-soft">{t("h.hero.near")}</Link>
             <Link href="/browse" className="rounded-full border border-line-strong bg-paper-raised px-4 py-1.5 text-ink hover:border-matcha hover:bg-matcha-soft">{t("h.hero.browse")}</Link>
           </p>
           <h1 className="mt-12 font-display text-[2.75rem] leading-[1.05] sm:text-[4.25rem] sm:leading-[1.02] font-semibold tracking-tight text-ink text-balance">

@@ -110,7 +110,7 @@ export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero"
             {res.groups.length === 0 && (
               <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-ink-muted">
                 <span>{t("c.search.try")}</span>
-                <Link href="/cafes" onClick={close} className="underline hover:text-ink">{t("c.search.exCafes")}</Link>
+                <Link href="/matcha-map" onClick={close} className="underline hover:text-ink">{t("c.search.exCafes")}</Link>
                 <Link href="/map" onClick={close} className="underline hover:text-ink">{t("c.search.exMap")}</Link>
                 <Link href="/browse" onClick={close} className="underline hover:text-ink">{t("c.search.exBrowse")}</Link>
               </p>

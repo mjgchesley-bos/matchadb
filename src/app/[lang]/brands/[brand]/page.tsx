@@ -322,7 +322,7 @@ export default async function BrandPage({
                 {g.list.length > MAX_CARDS && (
                   <p className="mt-3 text-sm text-ink-muted">
                     {t("br.rs.more", { n: g.list.length - MAX_CARDS })}{" "}
-                    <Link href={`/stores?brand=${encodeURIComponent(brandName)}`} className="text-matcha hover:text-forest underline">
+                    <Link href={`/matcha-map?brand=${encodeURIComponent(brandName)}`} className="text-matcha hover:text-forest underline">
                       {t("br.rs.seeAll")}
                     </Link>
                     .
@@ -379,7 +379,7 @@ export default async function BrandPage({
             </div>
           )}
           {stockists.length > 0 && (
-            <Link href={`/stores?brand=${encodeURIComponent(brandName)}`} className="inline-block mt-5 text-matcha hover:text-forest">
+            <Link href={`/matcha-map?brand=${encodeURIComponent(brandName)}`} className="inline-block mt-5 text-matcha hover:text-forest">
               {t("br.rs.storeMap")} &rarr;
             </Link>
           )}

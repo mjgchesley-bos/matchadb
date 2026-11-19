@@ -138,18 +138,11 @@ export default async function RootLayout({
                 <span className="hidden sm:inline">{t("nav.search.long")}</span>
               </Link>
               <Link
-                href="/cafes"
+                href="/matcha-map"
                 className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
               >
                 <span className="sm:hidden">{t("nav.cafes.short")}</span>
                 <span className="hidden sm:inline">{t("nav.cafes.long")}</span>
-              </Link>
-              <Link
-                href="/stores"
-                className="inline-flex items-center rounded-full bg-paper text-ink px-4 sm:px-5 xl:px-6 py-2 sm:py-2.5 text-sm font-medium tracking-wide transition-all hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <span className="lg:hidden">{t("nav.stores.short")}</span>
-                <span className="hidden lg:inline">{t("nav.stores.long")}</span>
               </Link>
               <Link
                 href="/wholesale"
@@ -168,9 +161,8 @@ export default async function RootLayout({
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
               <span>{t("footer.tagline")}</span>
               <nav aria-label={t("footer.aria")} className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1">
-                <Link href="/cafes" className="hover:text-ink-muted transition-colors">{t("footer.cafes")}</Link>
+                <Link href="/matcha-map" className="hover:text-ink-muted transition-colors">{t("footer.cafes")}</Link>
                 <Link href="/cafes/in" className="hover:text-ink-muted transition-colors">{t("footer.places")}</Link>
-                <Link href="/stores" className="hover:text-ink-muted transition-colors">{t("footer.stores")}</Link>
                 <Link href="/guides" className="hover:text-ink-muted transition-colors">{t("footer.guides")}</Link>
                 <Link href="/wholesale" className="hover:text-ink-muted transition-colors">{t("footer.wholesale")}</Link>
                 <Link href="/producers" className="hover:text-ink-muted transition-colors">Producers</Link>

@@ -59,7 +59,7 @@ export default async function CafeCountry({ params }: { params: Promise<Params> 
         </ul>
       ) : (
         <p className="mt-8 text-ink-muted">
-          <Link href="/cafes" className="text-matcha underline hover:text-forest">{t("nav.cafes.long")}</Link>
+          <Link href="/matcha-map" className="text-matcha underline hover:text-forest">{t("nav.cafes.long")}</Link>
         </p>
       )}
     </main>

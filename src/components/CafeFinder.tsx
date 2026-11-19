@@ -18,17 +18,22 @@ import { SuggestCafe } from "@/components/SuggestCafe";
 // browser to sort and map the list; nothing about it is sent to or stored by us. (A typed place is sent
 // to Mapbox's geocoder to turn it into a point.)
 
-type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string };
+// A place on the Matcha map. kind: "drinks" (a café serving matcha), "shop" (sells packaged matcha to take home), or "brandcafe" (a café a matcha brand lists as where to find it).
+type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string; kind: "drinks" | "shop" | "brandcafe"; brands?: string[] };
+type Show = "all" | "drinks" | "shop";
+type ShopRow = [string, string, string, string, string, string, number, number, string, "s" | "b", string[]];
+const fromShop = (r: ShopRow): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], cc: r[8] || "US", focus: true, nameOnly: false, reported: false, kind: r[9] === "s" ? "shop" : "brandcafe", brands: r[10] });
+const hrefOf = (c: Cafe) => (c.kind === "drinks" ? `/cafes/${cafeSlug(c)}` : `/stores/${c.id}`);
 type Listed = { cafe: Cafe; dist: number | null };
 type Opt = { kind: "cafe"; cafe: Cafe; dist: number | null } | { kind: "place"; origin: Origin };
 
 const RADII = [5, 10, 25, 50, 0]; // 0 = any distance
 const LIST_CAP = 30;
 
-const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] === 1 || r[8] === 2, nameOnly: r[8] === 2, reported: r[8] === 3, cc: r[9] ?? "US" });
+const fromSlim = (r: CafeSlim): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], focus: r[8] === 1 || r[8] === 2, nameOnly: r[8] === 2, reported: r[8] === 3, cc: r[9] ?? "US", kind: "drinks" });
 
 // The popup over a pin. Built with DOM nodes and textContent so a café name can never inject markup.
-function buildPopup(c: Cafe, lang: Locale, linkText: string): HTMLElement {
+function buildPopup(c: Cafe, lang: Locale, linkText: string, sells: string): HTMLElement {
   const el = (tag: string, cls: string, text?: string) => {
     const n = document.createElement(tag);
     n.className = cls;
@@ -37,13 +42,14 @@ function buildPopup(c: Cafe, lang: Locale, linkText: string): HTMLElement {
   };
   const root = el("div", "store-pop");
   const title = el("a", "font-display text-base font-semibold text-ink leading-snug hover:text-matcha hover:underline", c.name) as HTMLAnchorElement;
-  title.href = localePath(lang, `/cafes/${cafeSlug(c)}`);
+  title.href = localePath(lang, hrefOf(c));
   const h = el("p", "");
   h.appendChild(title);
   root.appendChild(h);
   root.appendChild(el("p", "mt-0.5 text-xs text-ink-muted", formatPlace(c, lang)));
+  root.appendChild(el("p", "mt-1 text-xs font-medium text-forest", sells));
   const a = el("a", "mt-2 inline-block text-sm font-medium text-matcha-ink underline underline-offset-2", linkText) as HTMLAnchorElement;
-  a.href = localePath(lang, `/cafes/${cafeSlug(c)}`);
+  a.href = localePath(lang, hrefOf(c));
   root.appendChild(a);
   return root;
 }
@@ -80,7 +86,16 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
   // Every region's cafés are loaded (the visitor's own part of the world first, the rest in the background), so the map can be
   // panned or searched anywhere without picking a region first. The region tabs only move the camera.
   const [lists, setLists] = useState<Partial<Record<RegionKey, Cafe[]>>>({});
-  const all = useMemo(() => (Object.keys(lists).length ? REGIONS.flatMap((r) => lists[r.key] ?? []) : null), [lists]);
+  const [shops, setShops] = useState<Cafe[]>([]);
+  const [show, setShow] = useState<Show>("all");
+  const [brand, setBrand] = useState<string | null>(null);
+  const everything = useMemo(() => (Object.keys(lists).length ? [...REGIONS.flatMap((r) => lists[r.key] ?? []), ...shops] : null), [lists, shops]);
+  // The filter chips decide what the map, the list and the search all see.
+  const all = useMemo(
+    () => (everything ? everything.filter((c) => (show === "all" || (show === "shop" ? c.kind === "shop" : c.kind !== "shop")) && (!brand || (c.brands ?? []).includes(brand))) : null),
+    [everything, show, brand]
+  );
+  const sellsLabel = (c: Cafe) => (c.kind === "shop" ? t("c.mm.sellsShop") : c.kind === "brandcafe" ? t("c.mm.sellsBrandCafe") : t("c.mm.sellsDrinks"));
   const [loadError, setLoadError] = useState(false);
   const [query, setQuery] = useState("");
   // One search bar: a café name narrows the list to those cafés (nameFilter); a place sets the origin.
@@ -130,6 +145,23 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
       live = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Places that sell matcha to take home (and cafés a brand lists), plus a brand or filter asked for in the link.
+  useEffect(() => {
+    let live = true;
+    fetch("/data/shops.json")
+      .then((r) => (r.ok ? (r.json() as Promise<ShopRow[]>) : []))
+      .then((rows) => live && setShops(rows.map(fromShop)))
+      .catch(() => {});
+    const q = new URLSearchParams(window.location.search);
+    const b = q.get("brand");
+    if (b) setBrand(b);
+    const w = q.get("show");
+    if (w === "drinks" || w === "shop") setShow(w);
+    return () => {
+      live = false;
+    };
   }, []);
 
   const { listed, nearest, total } = useMemo(() => {
@@ -200,7 +232,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
         filter: ["!", ["has", "point_count"]],
         paint: {
           "circle-radius": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], 11, 8],
-          "circle-color": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], "#2b5a20", "#6aa84f"],
+          "circle-color": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], "#2b5a20", ["==", ["get", "shop"], 1], "#c9a227", "#6aa84f"],
           "circle-stroke-color": "#fff6df",
           "circle-stroke-width": 2.5,
         },
@@ -261,7 +293,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
       features: pins.map((cafe) => ({
         type: "Feature" as const,
         geometry: { type: "Point" as const, coordinates: [cafe.lng, cafe.lat] },
-        properties: { id: cafe.id, focus: cafe.focus ? 1 : 0 },
+        properties: { id: cafe.id, focus: cafe.focus ? 1 : 0, shop: cafe.kind === "shop" ? 1 : 0 },
       })),
     };
     (mapRef.current?.getSource("cafes") as mapboxgl.GeoJSONSource | undefined)?.setData(currentFeatures.current);
@@ -273,7 +305,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
     const map = mapRef.current;
     if (!map || !map.getLayer("cafe-point")) return;
     map.setPaintProperty("cafe-point", "circle-radius", ["case", ["==", ["get", "id"], selectedId ?? ""], 11, 8]);
-    map.setPaintProperty("cafe-point", "circle-color", ["case", ["==", ["get", "id"], selectedId ?? ""], "#2b5a20", "#6aa84f"]);
+    map.setPaintProperty("cafe-point", "circle-color", ["case", ["==", ["get", "id"], selectedId ?? ""], "#2b5a20", ["==", ["get", "shop"], 1], "#c9a227", "#6aa84f"]);
   }, [selectedId]);
 
   // Frame the map: the whole region with no search, the area around you after one.
@@ -315,7 +347,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
     prev?.remove();
     const c = selectedId ? all?.find((x) => x.id === selectedId) : null;
     if (!map || !c) return;
-    const popup = new mapboxgl.Popup({ offset: 14, maxWidth: "300px", closeButton: true, closeOnClick: false, className: "store-popup" }).setLngLat([c.lng, c.lat]).setDOMContent(buildPopup(c, lang, t("c.cf.menu"))).addTo(map);
+    const popup = new mapboxgl.Popup({ offset: 14, maxWidth: "300px", closeButton: true, closeOnClick: false, className: "store-popup" }).setLngLat([c.lng, c.lat]).setDOMContent(buildPopup(c, lang, c.kind === "drinks" ? t("c.cf.menu") : t("c.mm.details"), sellsLabel(c))).addTo(map);
     popup.on("close", () => {
       if (popupRef.current === popup) setSelectedId(null);
     });
@@ -548,6 +580,26 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
         ))}
       </div>
 
+      <div className="mb-4 flex flex-wrap items-center gap-2" role="group" aria-label={t("c.mm.showLabel")}>
+        {(["all", "drinks", "shop"] as const).map((k) => (
+          <button
+            key={k}
+            type="button"
+            aria-pressed={show === k}
+            onClick={() => setShow(k)}
+            className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${show === k ? "border-forest bg-forest text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"}`}
+          >
+            {k !== "all" && <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full border border-paper/60" style={{ background: k === "shop" ? "#c9a227" : "#6aa84f" }} />}
+            {t(`c.mm.show.${k}` as "c.mm.show.all")}
+          </button>
+        ))}
+        {brand && (
+          <button type="button" onClick={() => setBrand(null)} className="inline-flex items-center gap-1.5 rounded-full border border-matcha bg-matcha-soft px-3 py-1.5 text-sm text-forest hover:bg-matcha hover:text-paper">
+            {t("c.mm.brand", { brand })} <span aria-hidden="true">✕</span>
+          </button>
+        )}
+      </div>
+
       <form onSubmit={runSearch} className="flex flex-col gap-3 lg:flex-row lg:items-end">
         <div className="flex-1">
           <label htmlFor="cafe-q" className={label}>
@@ -703,7 +755,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
                 className={`rounded-sm border bg-paper-raised p-4 transition-colors ${selectedId === c.id ? "border-matcha bg-matcha-soft" : "border-line"}`}
               >
                 <span className="flex items-baseline justify-between gap-3">
-                  <Link href={`/cafes/${cafeSlug(c)}`} className="font-display text-lg font-semibold text-ink hover:text-matcha hover:underline">{c.name}</Link>
+                  <Link href={hrefOf(c)} className="font-display text-lg font-semibold text-ink hover:text-matcha hover:underline">{c.name}</Link>
                   {dist != null && (
                     <span className="text-xs tabular-nums text-matcha whitespace-nowrap">
                       {fmtDist(dist)} {unit}
@@ -712,11 +764,13 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
                 </span>
                 <button type="button" onClick={() => select(c.id)} className="mt-0.5 block w-full text-left text-sm text-ink-muted" title="Show on the map">{place(c)}</button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.reported ? t("c.cf.reported") : c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>
+                  <span className={`rounded-full px-2 py-0.5 ${c.kind === "shop" ? "bg-gold-soft text-ink" : "bg-matcha-soft text-matcha-ink"}`}>{sellsLabel(c)}</span>
+                  {c.kind === "drinks" && <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{c.reported ? t("c.cf.reported") : c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>}
+                  {c.brands && c.brands.length > 0 && <span className="text-ink-muted">{c.brands.slice(0, 3).join(", ")}</span>}
                 </p>
                 <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                  <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-matcha hover:text-forest">
-                    {t("c.cf.menu")}
+                  <Link href={hrefOf(c)} className="font-medium text-matcha hover:text-forest">
+                    {c.kind === "drinks" ? t("c.cf.menu") : t("c.mm.details")}
                   </Link>
                   <a href={directionsUrl(c)} target="_blank" rel="noopener noreferrer" className="text-matcha hover:text-forest">
                     {t("c.cf.directions")}

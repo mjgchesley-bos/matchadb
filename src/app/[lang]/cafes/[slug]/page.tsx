@@ -113,7 +113,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       />
 
       <nav aria-label={t("prod.crumb.aria")} className="text-sm text-ink-faint">
-        <Link href="/cafes" className="hover:text-ink-muted">
+        <Link href="/matcha-map" className="hover:text-ink-muted">
           {t("cafe.crumb")}
         </Link>{" "}
         / {loc(c, lang)}

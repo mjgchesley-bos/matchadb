@@ -29,7 +29,7 @@ export default async function CafePlaces({ params }: { params: Promise<{ lang: s
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
       <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
-        <Link href="/cafes" className="hover:text-matcha">{t("nav.cafes.long")}</Link>
+        <Link href="/matcha-map" className="hover:text-matcha">{t("nav.cafes.long")}</Link>
       </p>
       <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("pl.countries.h1")}</h1>
       <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2">
