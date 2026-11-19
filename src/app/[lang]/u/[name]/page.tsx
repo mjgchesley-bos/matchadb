@@ -103,7 +103,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
   const p = await load(name);
   if (!p) notFound();
   const { data: bizData } = await supabaseAnon().rpc("public_business", { p_name: p.name });
-  const biz = (bizData as { account_type: string; business_name: string | null; website: string | null; about: string | null; banner_path?: string | null; products?: { name: string; description: string; price: string; url: string | null }[] } | null) ?? null;
+  const biz = (bizData as { account_type: string; business_name: string | null; website: string | null; about: string | null; banner_path?: string | null; cafe_ids?: string[]; products?: { name: string; description: string; price: string; url: string | null }[] } | null) ?? null;
   const bizType = biz && biz.account_type !== "general" ? biz : null;
 
   const ids = [...new Set([...p.shelf.map((x) => x.product_id), ...p.ratings.map((x) => x.product_id), ...p.lists.flatMap((l) => l.items), ...p.reviews.map((r) => r.product_id)])].slice(0, 160);
@@ -232,6 +232,27 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
           </section>
         )}
       </header>
+
+      {bizType?.cafe_ids && bizType.cafe_ids.length > 0 && (() => {
+        const owned = bizType.cafe_ids.map(find).filter((x): x is NonNullable<typeof x> & { href: string } => !!x && !!x.href);
+        if (!owned.length) return null;
+        return (
+          <section className="mt-6" aria-label="Café page">
+            <Hl>{owned.length > 1 ? "Café pages" : "Café page"}</Hl>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {owned.map((c) => (
+                <li key={c.id} className="flex items-center justify-between gap-4 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-4 shadow-sm">
+                  <div className="min-w-0">
+                    <p className="truncate font-display text-lg font-semibold text-ink">{c.name}</p>
+                    <p className="text-sm text-ink-muted">{c.place}</p>
+                  </div>
+                  <Link href={c.href} className="shrink-0 rounded-full border-2 border-matcha px-4 py-1.5 text-sm font-medium text-matcha hover:bg-matcha-soft">View café →</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        );
+      })()}
 
       {bizType?.products && bizType.products.length > 0 && (
         <section className="mt-6" aria-label="Products">
