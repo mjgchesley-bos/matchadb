@@ -224,31 +224,41 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} />}
 
       {profile && !owner?.page.bio && (
-        <section aria-labelledby="cafe-about" className="mt-8 rounded-sm border-2 border-line-strong bg-paper-raised p-5 sm:p-6">
-          <h2 id="cafe-about" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">About {c.name}</h2>
-          {profile.about && <p className="mt-3 max-w-prose leading-relaxed text-ink">{profile.about}</p>}
-          {profile.matcha && <p className="mt-3 text-sm text-ink-muted"><strong className="font-semibold text-ink">The matcha:</strong> {profile.matcha}</p>}
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+        <section aria-labelledby="cafe-about" className="mt-6 overflow-hidden rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised shadow-sm">
+          <div className="border-b-2 border-matcha/40 px-5 py-4 sm:px-7">
+            <h2 id="cafe-about" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">About</h2>
+            <p className="mt-1 font-display text-2xl font-semibold leading-tight text-ink sm:text-3xl">{c.name}</p>
+          </div>
+          <div className="flex flex-col gap-5 p-5 sm:p-7">
+            {profile.about && <p className="max-w-3xl text-base leading-relaxed text-ink sm:text-lg">{profile.about}</p>}
+            {profile.matcha && (
+              <div className="flex items-start gap-3 rounded-md border-2 border-matcha/50 bg-paper-raised px-4 py-3 shadow-sm">
+                <span aria-hidden="true" className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-matcha bg-matcha-soft text-sm font-semibold text-forest">茶</span>
+                <p className="text-sm leading-relaxed text-ink-muted"><span className="block font-mono text-xs uppercase tracking-[0.2em] text-forest">The matcha</span>{profile.matcha}</p>
+              </div>
+            )}
             {profile.menu && profile.menu.length > 0 && (
-              <div className="rounded-sm border border-line p-4">
-                <h3 className="font-display text-base font-semibold text-ink">Matcha menu highlights</h3>
-                <ul className="mt-2 flex flex-col gap-2 text-sm">
+              <div>
+                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Matcha menu highlights</h3>
+                <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                   {profile.menu.map((m) => (
-                    <li key={m.name}><span className="font-medium text-ink">{m.name}</span>{m.note && <span className="text-ink-muted"> · {m.note}</span>}</li>
+                    <li key={m.name} className="rounded-md border-2 border-line bg-paper-raised px-4 py-3 shadow-sm">
+                      <p className="flex items-center gap-2 font-display text-base font-semibold text-ink"><span aria-hidden="true" className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-matcha" />{m.name}</p>
+                      {m.note && <p className="mt-1 text-sm leading-snug text-ink-muted">{m.note}</p>}
+                    </li>
                   ))}
                 </ul>
               </div>
             )}
             {profile.facts && profile.facts.length > 0 && (
-              <div className="flex flex-col gap-4">
-                {profile.facts && profile.facts.length > 0 && (
-                  <dl className="rounded-sm border border-line p-4 text-sm">
-                    {profile.facts.map(([k, v]) => (
-                      <div key={k} className="flex gap-3 py-1"><dt className="w-20 shrink-0 text-ink-faint">{k}</dt><dd className="text-ink">{v}</dd></div>
-                    ))}
-                  </dl>
-                )}
-              </div>
+              <dl className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {profile.facts.map(([k, v]) => (
+                  <div key={k} className="rounded-md border-2 border-matcha/50 bg-paper-raised px-4 py-3 shadow-sm">
+                    <dt className="font-mono text-xs uppercase tracking-[0.2em] text-forest">{k}</dt>
+                    <dd className="mt-1 text-sm leading-snug text-ink">{v}</dd>
+                  </div>
+                ))}
+              </dl>
             )}
           </div>
         </section>
