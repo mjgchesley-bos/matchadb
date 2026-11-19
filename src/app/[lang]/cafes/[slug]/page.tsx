@@ -205,7 +205,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
             <div className="mt-4"><SocialIcons links={socialLinks} /></div>
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <FavoriteCafeButton cafeId={c.id} name={c.name} />
-              <ReportNoMatchaButton cafeId={c.id} name={c.name} />
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -370,6 +369,10 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           ),
         })}
       </p>
+
+      <div className="mt-4 flex justify-center">
+        <ReportNoMatchaButton cafeId={c.id} name={c.name} />
+      </div>
     </main>
   );
 }
