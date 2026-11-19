@@ -12,9 +12,10 @@ const ICONS: Record<string, Icon> = {
   linkedin: { label: "LinkedIn", glyph: "in" },
   spotify: { label: "Spotify", glyph: "♪" },
   google_maps: { label: "Google Maps", stroke: "M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12zM12 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" },
+  linkinbio: { label: "All links", stroke: "M10 13a5 5 0 007.5.5l3-3a5 5 0 00-7-7l-1.700 1.700M14 11a5 5 0 00-7.500-.5l-3 3a5 5 0 007 7l1.700-1.700" },
   website: { label: "Website", stroke: "M12 22a10 10 0 100-20 10 10 0 000 20zM2 12h20M12 2c3 3 4.500 6.500 4.500 10S15 19 12 22M12 2C9 5 7.500 8.500 7.500 12S9 19 12 22" },
 };
-export const SOCIAL_ORDER = ["instagram", "x", "facebook", "tiktok", "youtube", "threads", "pinterest", "yelp", "linkedin", "spotify", "google_maps", "website"] as const;
+export const SOCIAL_ORDER = ["instagram", "x", "facebook", "tiktok", "youtube", "threads", "pinterest", "yelp", "linkedin", "spotify", "google_maps", "linkinbio", "website"] as const;
 
 export function SocialIcons({ links }: { links: Partial<Record<string, string>> }) {
   const shown = SOCIAL_ORDER.filter((k) => links[k]);

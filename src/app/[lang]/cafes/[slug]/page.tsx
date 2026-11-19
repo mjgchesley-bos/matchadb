@@ -102,8 +102,19 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
     const k = socialKey(u);
     if (k && !socialLinks[k]) socialLinks[k] = u;
   }
-  // Other pages that mention the café (news, review sites): shown as small source links, not icons.
-  const socials = [...new Map(c.ev.filter((e) => hostOf(e.u) !== ownHost && !socialKey(e.u)).map((e) => [hostOf(e.u), e.u] as const)).entries()].map(([host, url]) => ({ host, url, label: SOCIAL[host] ?? host }));
+  // Link-in-bio pages (Linktree and friends) are shown as their own "All links" icon, not as the café's website.
+  const HUBS = /(^|\.)(linktr\.ee|beacons\.ai|bio\.link|lnk\.bio|linkin\.bio|campsite\.bio|taplink\.cc|solo\.to|msha\.ke|stan\.store|carrd\.co)$/i;
+  const isHub = (u: string | null | undefined) => !!u && HUBS.test(hostOf(u));
+  const hubUrl = [c.url, ...c.ev.map((e) => e.u), ...(profile?.links ?? []).map((l) => l.url)].find((u) => isHub(u)) ?? null;
+  if (hubUrl) socialLinks.linkinbio = hubUrl;
+  const siteUrl = c.url && !isHub(c.url) ? c.url : null;
+  // Pages that mention the café (news, review sites), one per site, never the café's own site, its social profiles or its link-in-bio page.
+  const usedHosts = new Set([ownHost, ...Object.values(socialLinks).map((u) => hostOf(u))]);
+  const aroundWeb = [
+    ...c.ev.map((e) => ({ url: e.u, label: "" })),
+    ...(profile?.sources ?? []).map((x) => ({ url: x.url, label: x.label })),
+  ].filter((x) => !socialKey(x.url) && !isHub(x.url) && !usedHosts.has(hostOf(x.url)));
+  const aroundWebList = [...new Map(aroundWeb.map((x) => [hostOf(x.url), x] as const)).values()].map((x) => ({ ...x, host: hostOf(x.url), label: x.label || SOCIAL[hostOf(x.url)] || hostOf(x.url) }));
   for (const [k, v] of Object.entries(owner?.page.links ?? {})) socialLinks[k] = v;
   if (owner?.page.website_url) socialLinks.website = owner.page.website_url;
   const phone = owner?.page.phone ?? c.phone ?? extra?.phone ?? null;
@@ -146,10 +157,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
             <p className="mt-2 text-ink-muted">{where}</p>
             {owner?.page.tagline && <p className="mt-2 font-display text-lg text-forest">{owner.page.tagline}</p>}
             {owner && <p className="mt-2"><span className="inline-flex items-center gap-1.5 rounded-full border border-matcha bg-matcha-soft px-3 py-0.5 text-xs font-medium text-forest">✓ Verified owner</span></p>}
-            <p className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
-              <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")}</span>
-              <span className="rounded-full bg-matcha-soft px-2 py-0.5 text-matcha-ink">{c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")}</span>
-            </p>
             <ProductRating key={c.id} cafeId={c.id} productName={c.name} className="mt-4 rounded-sm border border-line bg-paper px-4 py-3 max-w-md" />
             {extra?.desc && !profile?.about && (
               <p className="mt-4 max-w-prose text-sm italic leading-relaxed text-ink-muted">
@@ -160,9 +167,9 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               <a href={directionsUrl(c)} target="_blank" rel="noopener noreferrer" className="rounded-full bg-matcha px-5 py-2 font-medium text-paper hover:bg-forest transition-colors">
                 {t("cafe.directions")}
               </a>
-              {c.url && (
-                <a href={c.url} target="_blank" rel="noopener noreferrer" className="self-center text-matcha hover:text-forest underline">
-                  {t("cafe.website", { host: hostOf(c.url) })}
+              {siteUrl && (
+                <a href={siteUrl} target="_blank" rel="noopener noreferrer" className="self-center rounded-full border border-matcha px-4 py-1.5 font-medium text-matcha hover:bg-matcha-soft">
+                  {t("cafe.website", { host: hostOf(siteUrl) })}
                 </a>
               )}
               {c.menu && (
@@ -196,14 +203,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               )}
             </p>
             <div className="mt-4"><SocialIcons links={socialLinks} /></div>
-            {socials.length > 0 && (
-              <p className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-ink-faint">
-                <span>{lang === "en" ? "Also mentioned by" : ""}</span>
-                {socials.map((x) => (
-                  <a key={x.host} href={x.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{x.label}</a>
-                ))}
-              </p>
-            )}
             <div className="mt-4 flex flex-wrap items-center gap-3">
               <FavoriteCafeButton cafeId={c.id} name={c.name} />
               <ReportNoMatchaButton cafeId={c.id} name={c.name} />
@@ -221,6 +220,20 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           </div>
         </div>
       </header>
+
+      <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+        {[
+          [lang === "en" ? "Location" : "", loc(c, lang)],
+          [lang === "en" ? "Type" : "", CAT_LABEL[c.cat] ? t(`cafe.cat.${c.cat}` as "cafe.cat.cafe") : t("cafe.cat.cafe")],
+          [lang === "en" ? "Matcha" : "", c.via === "name" ? t("c.cf.inName") : c.via === "reported" ? t("c.cf.reported") : t("c.cf.onSite")],
+          [lang === "en" ? "Last checked" : "", fmtDate(c.checked, lang)],
+        ].filter(([k]) => k).map(([k, v]) => (
+          <div key={k} className="rounded-md border-2 border-matcha/50 bg-matcha-soft px-4 py-3 text-center shadow-sm">
+            <dd className="font-display text-lg font-semibold leading-snug text-forest">{v}</dd>
+            <dt className="mt-1 text-xs uppercase tracking-wide text-ink-muted">{k}</dt>
+          </div>
+        ))}
+      </dl>
 
       {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} />}
 
@@ -240,14 +253,8 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
                 </ul>
               </div>
             )}
-            {((profile.hours && profile.hours.length > 0) || (profile.facts && profile.facts.length > 0)) && (
+            {profile.facts && profile.facts.length > 0 && (
               <div className="flex flex-col gap-4">
-                {profile.hours && profile.hours.length > 0 && (
-                  <div className="rounded-sm border border-line p-4">
-                    <h3 className="font-display text-base font-semibold text-ink">When to go</h3>
-                    <ul className="mt-2 flex flex-col gap-1.5 text-sm text-ink-muted">{profile.hours.map((h) => <li key={h}>{h}</li>)}</ul>
-                  </div>
-                )}
                 {profile.facts && profile.facts.length > 0 && (
                   <dl className="rounded-sm border border-line p-4 text-sm">
                     {profile.facts.map(([k, v]) => (
@@ -258,21 +265,22 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               </div>
             )}
           </div>
-          {profile.links && profile.links.length > 0 && (
-            <p className="mt-4 flex flex-wrap gap-2 text-sm">
-              {profile.links.map((l) => (
-                <a key={l.url} href={l.url} target="_blank" rel="noopener noreferrer" className="rounded-full border border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">{l.label}</a>
-              ))}
-            </p>
-          )}
-          {profile.sources && profile.sources.length > 0 && (
-            <p className="mt-4 text-xs text-ink-faint">
-              Sources:{" "}
-              {profile.sources.map((x, i) => (
-                <span key={x.url}>{i > 0 && " · "}<a href={x.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-ink-muted">{x.label}</a></span>
-              ))}
-            </p>
-          )}
+        </section>
+      )}
+
+      {aroundWebList.length > 0 && (
+        <section aria-labelledby="cafe-web" className="mt-6 rounded-sm border-2 border-line bg-paper-raised p-5 sm:p-6">
+          <h2 id="cafe-web" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">{lang === "en" ? "From around the web" : t("cafe.menu.h2")}</h2>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            {aroundWebList.map((x) => (
+              <li key={x.host}>
+                <a href={x.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between gap-3 rounded-sm border border-line bg-paper px-4 py-2.5 text-sm hover:border-matcha hover:bg-matcha-soft">
+                  <span className="font-medium text-ink">{x.label}</span>
+                  <span className="text-xs text-ink-faint">{x.host} ↗</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
@@ -281,19 +289,19 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       <CafeMenuManager cafeId={c.id} cafeName={c.name} />
 
       {cityHub && (
-        <p className="mt-8 text-sm">
-          <Link href={cityHub} className="text-matcha underline hover:text-forest">{t("pl.more", { city: c.city })}</Link>
+        <p className="mt-8">
+          <Link href={cityHub} className="inline-flex items-center rounded-full border-2 border-matcha px-5 py-2 text-sm font-medium text-matcha hover:bg-matcha-soft">{t("pl.more", { city: c.city })} →</Link>
         </p>
       )}
 
-      <details className="group mt-10 rounded-sm border border-line bg-paper-raised">
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
-          <h2 id="cafe-menu" className="font-display text-lg font-semibold text-ink">
+      <details className="group mt-8 rounded-sm border-2 border-line bg-paper-raised">
+        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4">
+          <h2 id="cafe-menu" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">
             {t("cafe.menu.h2")}
           </h2>
           <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 shrink-0 text-ink-muted transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 8l5 5 5-5" /></svg>
         </summary>
-        <div className="px-4 pb-4">
+        <div className="px-5 pb-5">
         <p className="text-sm text-ink-muted">
           {c.via === "name" ? t("cafe.menu.name") : c.via === "reported" ? t("cafe.menu.reported") : t("cafe.menu.web", { date: fmtDate(c.checked, lang) })}
         </p>
@@ -334,18 +342,18 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
 
 
       {near.length > 0 && (
-        <section className="mt-12" aria-labelledby="cafe-near">
-          <h2 id="cafe-near" className="font-display text-xl font-semibold text-ink">
+        <section className="mt-8 rounded-sm border-2 border-line bg-paper-raised p-5 sm:p-6" aria-labelledby="cafe-near">
+          <h2 id="cafe-near" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">
             {t("cafe.near")}
           </h2>
-          <ul className="mt-3 flex flex-col divide-y divide-line border-y border-line">
+          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
             {near.map((n) => (
-              <li key={n.id} className="flex items-baseline justify-between gap-3 py-2.5">
-                <Link href={`/cafes/${cafeSlug(n)}`} className="text-ink hover:text-matcha">
-                  {n.name}
-                  <span className="ml-2 text-sm text-ink-faint">{loc(n, lang)}</span>
+              <li key={n.id} className="flex items-baseline justify-between gap-3 rounded-sm border border-line bg-paper px-4 py-2.5 hover:border-matcha hover:bg-matcha-soft">
+                <Link href={`/cafes/${cafeSlug(n)}`} className="min-w-0 text-ink hover:text-matcha">
+                  <span className="font-medium">{n.name}</span>
+                  <span className="block text-xs text-ink-faint">{loc(n, lang)}</span>
                 </Link>
-                <span className="text-xs tabular-nums text-ink-faint whitespace-nowrap">
+                <span className="text-xs tabular-nums text-ink-muted whitespace-nowrap rounded-full bg-matcha-soft px-2 py-0.5">
                   {(() => {
                     const d = !n.cc || n.cc === "US" ? n.miles : n.miles * 1.609344;
                     return `${d < 10 ? d.toFixed(1) : Math.round(d)} ${!n.cc || n.cc === "US" ? "mi" : "km"}`;
@@ -357,7 +365,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         </section>
       )}
 
-      <p className="mt-10 text-sm text-ink-muted">
+      <p className="mt-8 rounded-sm border border-line bg-paper-raised px-5 py-4 text-sm text-ink-muted">
         {rich(t("cafe.correct", { link: "{link}" }), {
           link: (
             <a href={`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`MatchaDB café correction: ${c.name}`)}`} className={link}>
