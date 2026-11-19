@@ -37,6 +37,8 @@ export type Store = {
   listedBy?: string;
   brands: StoreBrand[];
   note?: string;
+  // The page on the place's own site that shows it sells matcha (used for shops found by scanning tea shops' websites).
+  evidence?: string;
   // The id comments and ratings were left under (a venue that moved from the café map to the stores map keeps them).
   commentsFrom?: string;
   checked: string;

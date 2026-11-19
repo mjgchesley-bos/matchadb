@@ -61,6 +61,7 @@ export default async function StorePage({ params }: { params: Promise<{ lang: st
         <h1 className="font-display text-3xl font-semibold text-ink leading-tight">{s.name}</h1>
         <p className="mt-2 text-ink-muted">{place}</p>
         {s.note && <p className="mt-4 max-w-2xl leading-relaxed text-ink-muted">{s.note}</p>}
+        {s.evidence && <p className="mt-2 text-sm text-ink-muted"><a href={s.evidence} target="_blank" rel="noopener noreferrer" className="text-matcha underline hover:text-forest">See the matcha on its own site</a> (checked {s.checked})</p>}
         <p className="mt-5 flex flex-wrap items-center gap-3 border-t border-line pt-5">
           {s.url && (
             <a href={s.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full bg-matcha px-6 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-forest">
