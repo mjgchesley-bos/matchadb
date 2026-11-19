@@ -167,12 +167,12 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
         <span className="text-ink-muted">{heading}</span>
       </nav>
 
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("g.idx.cer.tag")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{heading}</h1>
       </header>
 
-      <section className="mt-6 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-label={c("wc.short.h", "The short answer")}>
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-label={c("wc.short.h", "The short answer")}>
         <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{c("wc.short.h", "The short answer")}</h2>
         <p className="text-lg text-ink leading-relaxed">
           {c(
@@ -183,7 +183,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
       </section>
 
       <div className="mt-10 max-w-3xl flex flex-col gap-10 text-ink-muted leading-relaxed">
-        <section>
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{c("wc.ceremony.h", "The ceremony behind the word")}</h2>
           <p className="mt-3">
             {c(
@@ -201,7 +201,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
           </ol>
         </section>
 
-        <section>
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{c("wc.trade.h", "What the Japanese trade actually calls things")}</h2>
           <p className="mt-3">
             {c(
@@ -218,7 +218,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
           </p>
         </section>
 
-        <section>
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{c("wc.how.h", "How “ceremonial grade” appeared")}</h2>
           <p className="mt-3">
             {c(
@@ -234,7 +234,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
           </p>
         </section>
 
-        <section>
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{c("wc.today.h", "What it means today")}</h2>
           <ul className="mt-3 flex flex-col gap-3 list-disc pl-5">
             {(
@@ -252,7 +252,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
           </ul>
         </section>
 
-        <section>
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{c("wc.data.h", "What our data shows")}</h2>
           <p className="mt-3">
             {c(
@@ -283,7 +283,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
           </p>
         </section>
 
-        <section>
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{c("wc.read.h", "Reading the label sensibly")}</h2>
           <ul className="mt-3 flex flex-col gap-2 list-disc pl-5">
             <li>{c("wc.read.1", "Treat “ceremonial” as the brand telling you what the powder is for, and look for the facts behind it.")}</li>
@@ -309,7 +309,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
           </ul>
         </section>
 
-        <section>
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{t("cv.faq.h")}</h2>
           <div className="mt-5 flex flex-col gap-6">
             {faq.map((f) => (
@@ -321,7 +321,7 @@ export default async function WhatIsCeremonialPage({ params }: { params: Promise
           </div>
         </section>
 
-        <section className="border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="ceremonial-sources">
+        <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm" aria-labelledby="ceremonial-sources">
           <h2 id="ceremonial-sources" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{c("wc.src.h", "Sources and notes")}</h2>
           <p className="text-sm">
             {c(

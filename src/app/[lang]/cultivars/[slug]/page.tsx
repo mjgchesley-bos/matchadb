@@ -137,7 +137,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
         <span className="text-ink-muted">{cultivar.name}</span>
       </nav>
 
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("cv.eyebrow")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{h1}</h1>
         <div className="mt-5 flex flex-col gap-4 text-lg text-ink-muted leading-relaxed">
@@ -148,7 +148,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       </header>
 
       {gallery.length > 0 && (
-        <section className="mt-8" aria-label={t("cv.gallery.aria")}>
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-label={t("cv.gallery.aria")}>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.slice(0, 3).map((im, i) => (
               <figure key={im.key} className={`${figCls} ${i === 0 && gallery.length > 2 ? "sm:col-span-2 lg:col-span-2" : ""}`}>
@@ -163,7 +163,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       )}
 
       {cultivar.profile.length > 0 && (
-        <section className="mt-8 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-label={t("cv.profile.aria")}>
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-label={t("cv.profile.aria")}>
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cv.profile")}</h2>
           <dl className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-2 text-sm">
             {profile.map(([k, v]) => (
@@ -191,7 +191,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       )}
 
       {extra && (extra.facts.length > 0 || extra.people.length > 0) && (
-        <section className="mt-8 max-w-3xl" aria-labelledby="cv-bg">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-labelledby="cv-bg">
           <h2 id="cv-bg" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cv.bg.h")}</h2>
           {extra.facts.length > 0 && (
             <dl className="grid grid-cols-1 sm:grid-cols-[11rem_1fr] gap-x-6 gap-y-2 rounded-sm border border-line bg-paper-raised px-5 py-4 text-sm">
@@ -273,7 +273,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       </section>
 
       {flavors.length > 0 && (
-        <section className="mt-10 max-w-3xl">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cv.flavors")}</h2>
           <div className="flex flex-wrap gap-2">
             {flavors.map((f) => (
@@ -287,7 +287,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       )}
 
       {picks.length > 0 && (
-        <section className="mt-12">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{t("cv.picks.h", { name: cultivar.name })}</h2>
           <p className="mt-1 text-sm text-ink-muted">{t("cv.picks.note")}</p>
           <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -305,7 +305,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       )}
 
       {faq.length > 0 && (
-        <section className="mt-12 max-w-3xl">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{t("cv.faq.h")}</h2>
           <div className="mt-5 flex flex-col gap-6">
             {faq.map((f) => (
@@ -319,7 +319,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       )}
 
       {studies > 0 && (
-        <section className="mt-10 max-w-3xl">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <p className="text-sm text-ink-muted">
             {t(studies === 1 ? "cv.studies.one" : "cv.studies.other", { n: studies, name: cultivar.name })}{" "}
             <Link href={`/research?q=${encodeURIComponent(cultivar.name)}`} className="text-matcha hover:text-forest">
@@ -329,7 +329,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
         </section>
       )}
 
-      <section className="mt-12 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-cultivar">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-labelledby="how-cultivar">
         <h2 id="how-cultivar" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("cv.how.h")}</h2>
         <p className="text-sm text-ink-muted leading-relaxed">
           {t("cv.how.p", { name: cultivar.name })}
@@ -337,7 +337,7 @@ export default async function CultivarPage({ params }: { params: Promise<{ lang:
       </section>
 
       {related.length > 0 && (
-        <section className="mt-12">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cv.other")}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {related.map((r) => (

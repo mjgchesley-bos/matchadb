@@ -57,7 +57,7 @@ export default async function StorePage({ params }: { params: Promise<{ lang: st
         <span aria-hidden="true">/</span>
         <span className="text-ink-faint">{s.name}</span>
       </nav>
-      <header className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-7">
+      <header className="mt-6 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <h1 className="font-display text-3xl font-semibold text-ink leading-tight">{s.name}</h1>
         <p className="mt-2 text-ink-muted">{place}</p>
         {s.note && <p className="mt-4 max-w-2xl leading-relaxed text-ink-muted">{s.note}</p>}

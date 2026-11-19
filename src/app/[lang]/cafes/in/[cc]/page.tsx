@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero, Panel } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { cityPath, getPlaceIndex } from "@/lib/cafe-places";
@@ -43,22 +44,18 @@ export default async function CafeCountry({ params }: { params: Promise<Params> 
   const cities = idx.byCountry.get(up) ?? [];
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
-      <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
-        <Link href="/cafes/in" className="hover:text-matcha">{t("pl.back")}</Link>
-      </p>
-      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("pl.country.h1", { place })}</h1>
-      <p className="mt-3 text-ink-muted">{t("pl.country.desc", { n: total.toLocaleString("en-US"), place })}</p>
+      <PageHero eyebrow={t("pl.back")} title={t("pl.country.h1", { place })} lede={t("pl.country.desc", { n: total.toLocaleString("en-US"), place })} />
       {cities.length > 0 ? (
-        <ul className="mt-8 grid grid-cols-1 gap-x-8 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {cities.map((e) => (
-            <li key={e.slug} className="flex items-baseline justify-between gap-3 border-b border-line py-2">
+            <li key={e.slug} className="flex items-baseline justify-between gap-3 rounded-md border-2 border-line bg-paper-raised px-4 py-3 shadow-sm hover:border-matcha hover:bg-matcha-soft">
               <Link href={cityPath(e)} className="text-ink hover:text-matcha">{e.city}{e.state ? `, ${e.state}` : ""}</Link>
               <span className="text-sm tabular-nums text-ink-faint">{e.cafes.length}</span>
             </li>
           ))}
         </ul>
       ) : (
-        <p className="mt-8 text-ink-muted">
+        <p className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 text-ink-muted">
           <Link href="/matcha-map" className="text-matcha underline hover:text-forest">{t("nav.cafes.long")}</Link>
         </p>
       )}

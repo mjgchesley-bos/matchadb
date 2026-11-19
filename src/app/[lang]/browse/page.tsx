@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/PageUI";
 import { notFound } from "next/navigation";
 import Link from "@/i18n/Link";
 import { getProducts, getFilterOptions, getTieredPicks, getHiddenMatches, getPopularProducts, getProductsByIds, type BrowseFilters } from "@/lib/db";
@@ -122,12 +123,7 @@ export default async function BrowsePage({
 
   return (
     <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
-      <div className="mb-8">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("b.eyebrow")}</p>
-        <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">
-          {t("b.h1")}
-        </h1>
-      </div>
+      <div className="mb-8"><PageHero eyebrow={t("b.eyebrow")} title={t("b.h1")} /></div>
 
       <div className="grid grid-cols-1 md:grid-cols-[380px_1fr] gap-10">
         <aside className="md:sticky md:top-24 md:self-start md:max-h-[calc(100vh-7rem)] md:overflow-y-auto md:overscroll-contain md:pr-2">

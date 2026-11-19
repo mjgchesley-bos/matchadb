@@ -140,7 +140,7 @@ export default async function StudyPage({ params }: { params: Promise<{ lang: st
         {!sourceLink && <span className="text-sm text-ink-faint italic self-center">{t("rs.s.noLink")}</span>}
       </div>
 
-      <section className="mt-10">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <Label>{t("rs.s.abstract")}</Label>
         {abstract ? (
           <p className="text-ink leading-relaxed max-w-3xl">{abstract}</p>
@@ -188,7 +188,7 @@ export default async function StudyPage({ params }: { params: Promise<{ lang: st
       </section>
 
       {(s.keywords.length > 0 || s.mesh.length > 0) && (
-        <section className="mt-8">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <Label>{t("rs.s.kw")}</Label>
           <div className="flex flex-wrap gap-1.5 text-xs">
             {[...new Set([...s.keywords, ...s.mesh])].slice(0, 20).map((k) => (
@@ -200,12 +200,12 @@ export default async function StudyPage({ params }: { params: Promise<{ lang: st
         </section>
       )}
 
-      <section className="mt-10 max-w-3xl">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <Label>{t("rs.s.folder")}</Label>
         <ResearchBookmark studyId={s.id} />
       </section>
 
-      <section className="mt-10 max-w-3xl">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <Label>{t("rs.s.cite")}</Label>
         <CopyCitation formats={{ apa: apaCitation(s), bibtex: bibtexCitation(s), ris: risCitation(s) }} />
         {(s.doi || s.pmid) && (
@@ -219,7 +219,7 @@ export default async function StudyPage({ params }: { params: Promise<{ lang: st
       </section>
 
       {related.length > 0 && (
-        <section className="mt-14">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <Label>{s.topics[0] ? t("rs.s.more", { topic: lang === "en" ? s.topics[0].toLowerCase() : tv("topic", s.topics[0]) }) : t("rs.s.moreGeneric")}</Label>
           <div className="flex flex-col gap-4">
             {related.map((r) => (

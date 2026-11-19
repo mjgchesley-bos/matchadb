@@ -102,7 +102,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
         <span className="text-ink-muted">{h1}</span>
       </nav>
 
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("g.eyebrow")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{h1}</h1>
         <div className="mt-5 flex flex-col gap-4 text-lg text-ink-muted leading-relaxed">
@@ -132,7 +132,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
       )}
 
       {lists.map((l, li) => (
-        <section key={l.heading} className="mt-12">
+        <section key={l.heading} className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{c(`gd.${guide.slug}.list.${li}.h`, l.heading, l.headingVars)}</h2>
           {l.note && <p className="mt-1 text-sm text-ink-muted">{c(`gd.${guide.slug}.list.${li}.n`, l.note)}</p>}
           {l.products.length > 0 ? (
@@ -155,7 +155,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
         </section>
       ))}
 
-      <section className="mt-12 max-w-3xl">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <h2 className="font-display text-2xl font-semibold text-ink">{t("cv.faq.h")}</h2>
         <div className="mt-5 flex flex-col gap-6">
           {faq.map((f) => (
@@ -167,7 +167,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
 
-      <section className="mt-12 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-compared">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-labelledby="how-compared">
         <h2 id="how-compared" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("g.how.h")}</h2>
         <p className="text-sm text-ink-muted leading-relaxed">
           {t("g.how.p", { grams: GUIDE_MIN_GRAMS, method: guide.method ? c(`gd.${guide.slug}.method`, guide.method) : "" })}
@@ -187,7 +187,7 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: st
       )}
 
       {related.length > 0 && (
-        <section className="mt-12">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("g.more")}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {related.map((r) => (

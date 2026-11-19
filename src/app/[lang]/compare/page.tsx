@@ -40,10 +40,10 @@ export default async function CompareIndex({ params }: { params: Promise<{ lang:
           },
         }}
       />
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.compare")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{t("cmp.idx.h1")}</h1>
-        <p className="mt-5 text-lg text-ink-muted leading-relaxed">
+        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">
           {t("cmp.idx.lead")}
         </p>
       </header>

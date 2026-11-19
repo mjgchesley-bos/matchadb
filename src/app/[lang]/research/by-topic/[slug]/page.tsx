@@ -92,7 +92,7 @@ export default async function TopicPage({ params }: { params: Promise<{ lang: st
         <span className="text-ink-muted">{tv("topic", tp.name)}</span>
       </nav>
 
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("rt.eyebrow")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{heading}</h1>
         <div className="mt-5 flex flex-col gap-4 text-lg text-ink-muted leading-relaxed">
@@ -112,7 +112,7 @@ export default async function TopicPage({ params }: { params: Promise<{ lang: st
       </section>
 
       <section className="mt-8 grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-6">
-        <div className="border border-line rounded-sm bg-paper-raised px-5 py-4">
+        <div className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm">
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rt.evidence")}</h2>
           <ul className="flex flex-col gap-2">
             {sum.designs.map((d) => (
@@ -127,7 +127,7 @@ export default async function TopicPage({ params }: { params: Promise<{ lang: st
           </ul>
           <p className="mt-4 text-sm text-ink-muted leading-relaxed">{c(`rt.${tp.slug}.look`, tp.lookFor)}</p>
         </div>
-        <div className="border border-line rounded-sm bg-paper-raised px-5 py-4">
+        <div className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm">
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rt.keywords")}</h2>
           <div className="flex flex-wrap gap-2">
             {sum.keywords.map((k) => (
@@ -143,7 +143,7 @@ export default async function TopicPage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
 
-      <section className="mt-12">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <h2 className="font-display text-2xl font-semibold text-ink">{t("rt.top")}</h2>
         <p className="mt-1 text-sm text-ink-muted">{t("rt.top.note")}</p>
         <div className="mt-5 flex flex-col gap-4">
@@ -156,7 +156,7 @@ export default async function TopicPage({ params }: { params: Promise<{ lang: st
         </Link>
       </section>
 
-      <section className="mt-12">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <h2 className="font-display text-2xl font-semibold text-ink">{t("rt.newest")}</h2>
         <div className="mt-5 flex flex-col gap-4">
           {latest.map((s) => (
@@ -165,7 +165,7 @@ export default async function TopicPage({ params }: { params: Promise<{ lang: st
         </div>
       </section>
 
-      <section className="mt-12">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rt.related")}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {tp.related

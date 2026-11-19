@@ -65,7 +65,7 @@ export default async function NewsPage({ params }: { params: Promise<{ lang: str
   return (
     <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
       <JsonLd data={{ "@context": "https://schema.org", "@type": "CollectionPage", name: "Matcha news", url: `${SITE_URL}/news`, mainEntity: { "@type": "ItemList", itemListElement: items.slice(0, 20).map((s, i) => ({ "@type": "ListItem", position: i + 1, url: s.url, name: s.title })) } }} />
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">News</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Matcha news from around the world</h1>
         <p className="mt-4 text-ink-muted leading-relaxed">

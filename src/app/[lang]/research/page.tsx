@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { getLibraryFacets, getLibraryMeta, queryStudies, type StudyFilters } from "@/lib/studies";
 import { toArr, toNum, toStr } from "@/lib/searchParams";
@@ -97,15 +98,9 @@ export default async function ResearchPage({
         }}
       />
 
-      <div className="mb-8 max-w-3xl">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.research")}</p>
-        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight">{t("rs.h1")}</h1>
-        <p className="mt-4 text-lg text-ink-muted leading-relaxed">
-          {t("rs.lead", { n: fmtNum(lang, facets.total) })}
-        </p>
-      </div>
+      <PageHero eyebrow={t("footer.research")} title={t("rs.h1")} lede={t("rs.lead", { n: fmtNum(lang, facets.total) })} />
 
-      <section className="mb-10 max-w-3xl" aria-label={t("rs.search.aria")}>
+      <section className="my-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6" aria-label={t("rs.search.aria")}>
         <ResearchSearch defaultValue={filters.q} formId="research-filters" />
         <p className="mt-3 text-xs text-ink-faint leading-relaxed">
           {rich(t("rs.tip", { link: "{link}" }), {

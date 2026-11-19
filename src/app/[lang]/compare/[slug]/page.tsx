@@ -142,16 +142,16 @@ export default async function ComparePage({ params }: { params: Promise<{ lang: 
         <span className="text-ink-muted">{nameA} vs {nameB}</span>
       </nav>
 
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("cmp.eyebrow")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{nameA} vs {nameB}</h1>
-        <p className="mt-5 text-lg text-ink-muted leading-relaxed">
+        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">
           {t("cmp.lead", { a: nameA, b: nameB, verdict: verdict ?? "" })}
         </p>
         <p className="mt-3 text-sm text-ink-faint">{t("cmp.facts")}</p>
       </header>
 
-      <section className="mt-8 border border-line rounded-sm bg-paper-raised" aria-label={t("cmp.aria")}>
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised shadow-sm" aria-label={t("cmp.aria")}>
         <div className="overflow-x-auto">
           <table className="w-full table-fixed text-[13px] sm:text-sm">
             <thead>
@@ -183,7 +183,7 @@ export default async function ComparePage({ params }: { params: Promise<{ lang: 
       </section>
 
       {[a, b].map((side) => (
-        <section key={side.name} className="mt-12">
+        <section key={side.name} className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-display text-2xl font-semibold text-ink">{t("cmp.range.h", { name: side.name })}</h2>
           <p className="mt-1 text-sm text-ink-muted">{t("cmp.range.note")}</p>
           {side.spread.length > 0 ? (
@@ -201,7 +201,7 @@ export default async function ComparePage({ params }: { params: Promise<{ lang: 
         </section>
       ))}
 
-      <section className="mt-12 max-w-3xl">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <h2 className="font-display text-2xl font-semibold text-ink">{t("cv.faq.h")}</h2>
         <div className="mt-5 flex flex-col gap-6">
           {faq.map((f) => (
@@ -213,7 +213,7 @@ export default async function ComparePage({ params }: { params: Promise<{ lang: 
         </div>
       </section>
 
-      <section className="mt-12 max-w-3xl border border-line rounded-sm bg-paper-raised px-5 py-4" aria-labelledby="how-compare">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-labelledby="how-compare">
         <h2 id="how-compare" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("cmp.how.h")}</h2>
         <p className="text-sm text-ink-muted leading-relaxed">
           {t("cmp.how.p")}
@@ -221,7 +221,7 @@ export default async function ComparePage({ params }: { params: Promise<{ lang: 
       </section>
 
       {others.length > 0 && (
-        <section className="mt-12">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
           <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("cmp.more")}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {others.map(([x, y]) => (

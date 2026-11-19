@@ -220,7 +220,7 @@ export default async function SupplierPage({ params }: { params: Promise<{ lang:
         <span className="text-ink-faint">{s.name}</span>
       </nav>
 
-      <header className="mt-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-7">
+      <header className="mt-6 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("ws.slug.eyebrow")}</p>
         <div className="flex items-center gap-4">
           <BrandLogo brandName={s.name} size={64} maxWidth={200} allowTallerThanSize />

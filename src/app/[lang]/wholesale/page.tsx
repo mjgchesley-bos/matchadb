@@ -78,12 +78,12 @@ export default async function WholesalePage({ params }: { params: Promise<{ lang
           },
         }}
       />
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.wholesale")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">
           {t("ws.h1")}
         </h1>
-        <p className="mt-5 text-lg text-ink-muted leading-relaxed">
+        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">
           {t(independent === 1 ? "ws.lead.one" : "ws.lead.other", { from: fromBrands, brands: brandCount, n: independent })}
         </p>
         <p className="mt-4 text-sm text-ink-muted leading-relaxed">
@@ -95,7 +95,7 @@ export default async function WholesalePage({ params }: { params: Promise<{ lang
         <WholesaleDirectory suppliers={suppliers} regionOrder={[...KNOWN_REGIONS, "Other"]} />
       </div>
 
-      <section className="mt-14 max-w-3xl" aria-labelledby="list-h">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-labelledby="list-h">
         <h2 id="list-h" className="font-display text-2xl font-semibold text-ink">
           {t("ws.supplier.h")}
         </h2>

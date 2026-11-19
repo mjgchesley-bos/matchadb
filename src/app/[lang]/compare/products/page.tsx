@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { getProductById } from "@/lib/db";
 import { formatPrice } from "@/lib/price";
@@ -67,8 +68,8 @@ export default async function CompareProducts({ params, searchParams }: { params
 
   return (
     <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
-      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("cmpp.h1")}</h1>
-      <div className="mt-8 overflow-x-auto">
+      <PageHero title={t("cmpp.h1")} />
+      <div className="mt-6 overflow-x-auto rounded-md border-2 border-line bg-paper-raised p-4 shadow-sm sm:p-6">
         <table className="w-full min-w-[40rem] border-collapse text-sm">
           <thead>
             <tr className="align-bottom">
@@ -92,8 +93,8 @@ export default async function CompareProducts({ params, searchParams }: { params
           </tbody>
         </table>
       </div>
-      <p className="mt-6 text-xs text-ink-faint">{t("cmpp.note")}</p>
-      <Link href="/browse" className="mt-4 inline-block text-matcha underline hover:text-forest">{t("cmpp.back")}</Link>
+      <p className="mt-6 rounded-sm border-2 border-line bg-paper-raised px-5 py-3 text-xs text-ink-faint">{t("cmpp.note")}</p>
+      <Link href="/browse" className="mt-4 inline-block rounded-full border-2 border-matcha px-5 py-2 text-sm font-medium text-matcha hover:bg-matcha-soft">{t("cmpp.back")}</Link>
     </main>
   );
 }

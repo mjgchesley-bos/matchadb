@@ -155,7 +155,8 @@ export default async function BrandPage({
         <span aria-hidden="true">/</span>
         <span className="text-ink-faint truncate">{brandName}</span>
       </nav>
-      <div className="flex items-center gap-4 mt-3 mb-1.5">
+      <header className="mt-3 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-1.5">
         <BrandLogo brandName={brandName} size={56} allowTallerThanSize />
         <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{brandName}</h1>
       </div>
@@ -172,7 +173,7 @@ export default async function BrandPage({
         ) : null;
       })()}
       {faq.length > 0 && (
-        <dl className="mt-5 max-w-2xl rounded-sm border border-line bg-paper-raised px-4 py-3 text-sm">
+        <dl className="mt-5 max-w-2xl rounded-sm border-2 border-line bg-paper-raised px-4 py-3 text-sm">
           {faq.map((f) => (
             <div key={f.q} className="py-1.5">
               <dt className="font-medium text-ink">{f.q}</dt>
@@ -183,6 +184,7 @@ export default async function BrandPage({
       )}
       <FavoriteBrandButton brand={brandName} />
       <ShippingNote brand={brandName} lang={lang} />
+      </header>
       {wholesale.length > 0 && (
         <p className="mt-3 text-sm text-ink-muted">
           {wholesale.map((s, i) => (

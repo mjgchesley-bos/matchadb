@@ -38,10 +38,10 @@ export default async function MatchaMapPage({ params, searchParams }: { params: 
 
   return (
     <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
-      <header className="max-w-3xl mb-8">
+      <header className="mb-8 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("cafes.eyebrow")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{t("cafes.h1")}</h1>
-        <p className="mt-5 text-lg text-ink-muted leading-relaxed">
+        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">
           {t("cafes.lede")}
         </p>
         <p className="mt-3 text-sm text-ink-faint">

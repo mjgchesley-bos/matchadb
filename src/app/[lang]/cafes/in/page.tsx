@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero, Panel } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { getPlaceIndex } from "@/lib/cafe-places";
 import { countryName } from "@/lib/cafe-types";
@@ -28,13 +29,10 @@ export default async function CafePlaces({ params }: { params: Promise<{ lang: s
   const list = [...countries.entries()].sort((a, b) => b[1] - a[1]);
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
-      <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
-        <Link href="/matcha-map" className="hover:text-matcha">{t("nav.cafes.long")}</Link>
-      </p>
-      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("pl.countries.h1")}</h1>
-      <ul className="mt-8 grid grid-cols-1 gap-x-8 gap-y-1 sm:grid-cols-2">
+      <PageHero eyebrow={t("nav.cafes.long")} title={t("pl.countries.h1")} tiles={[[t("nav.cafes.long"), String(list.length)]]} />
+      <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
         {list.map(([cc, n]) => (
-          <li key={cc} className="flex items-baseline justify-between gap-3 border-b border-line py-2.5">
+          <li key={cc} className="flex items-baseline justify-between gap-3 rounded-md border-2 border-line bg-paper-raised px-4 py-3 shadow-sm hover:border-matcha hover:bg-matcha-soft">
             <Link href={`/cafes/in/${cc.toLowerCase()}`} className="text-ink hover:text-matcha">{countryName(cc, lang)}</Link>
             <span className="text-sm tabular-nums text-ink-faint">{t("pl.count", { n: n.toLocaleString("en-US") })}</span>
           </li>

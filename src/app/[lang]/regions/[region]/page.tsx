@@ -135,7 +135,7 @@ export default async function RegionPage({
       <div className="mt-10 grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-8 items-start">
         <div className="flex flex-col gap-8">
           {summary.grades.length > 0 && (
-            <section>
+            <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
               <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rg.grades")}</h2>
               <div className="flex flex-wrap gap-2">
                 {summary.grades.map((g) => (
@@ -149,7 +149,7 @@ export default async function RegionPage({
           )}
 
           {summary.topFlavors.length > 0 && (
-            <section>
+            <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
               <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rg.flavor")}</h2>
               <ul className="flex flex-col gap-2">
                 {summary.topFlavors.map((f) => (
@@ -173,7 +173,7 @@ export default async function RegionPage({
             </section>
           )}
 
-          <section>
+          <section className="rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
             <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">{t("rg.brands")}</h2>
             <ul className="flex flex-wrap gap-2">
               {summary.topBrands.map((b) => (
@@ -201,7 +201,7 @@ export default async function RegionPage({
         </div>
       </div>
 
-      <section className="mt-12">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl">
         <h2 className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">
           {t("rg.matchaFrom", { name })}
         </h2>

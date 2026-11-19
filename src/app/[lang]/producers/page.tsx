@@ -33,10 +33,10 @@ export default async function ProducersIndex({ params }: { params: Promise<{ lan
           mainEntity: { "@type": "ItemList", itemListElement: sorted.map((p, i) => ({ "@type": "ListItem", position: i + 1, url: `${SITE_URL}/producers/${p.slug}`, name: p.name })) },
         }}
       />
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Producers</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">The tea houses and families behind matcha</h1>
-        <p className="mt-5 text-lg text-ink-muted leading-relaxed">
+        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">
           Many of the matcha brands in this database come from tea houses that have been run by the same families for centuries. Each profile tells the company&apos;s story from its own history pages, names the people behind it, shows where it is, and links to its matcha. Pictures are public domain or openly licensed, and credited.
         </p>
       </header>

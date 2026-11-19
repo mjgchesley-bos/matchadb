@@ -39,7 +39,7 @@ export default async function EventsPage({ params }: { params: Promise<{ lang: s
           })),
         }}
       />
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">Events</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">Matcha events around the world</h1>
         <p className="mt-4 text-ink-muted leading-relaxed">

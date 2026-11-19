@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero, Panel } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { getRegionSummary } from "@/lib/db";
 import { getRegionInfo, regionCountry } from "@/lib/regions";
@@ -28,13 +29,7 @@ export default async function RegionsIndexPage({ params }: { params: Promise<{ l
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-12">
-      <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("footer.regions")}</p>
-      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">
-        {t("rg.idx.h1")}
-      </h1>
-      <p className="text-ink-muted mt-3 max-w-2xl leading-relaxed">
-        {t("rg.idx.lead")}
-      </p>
+      <PageHero eyebrow={t("footer.regions")} title={t("rg.idx.h1")} lede={t("rg.idx.lead")} />
 
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
         {summaries.map((s) => {
@@ -45,7 +40,7 @@ export default async function RegionsIndexPage({ params }: { params: Promise<{ l
             <Link
               key={s.region}
               href={`/regions/${content.slug}`}
-              className="border border-line rounded-sm p-5 bg-paper-raised hover:border-matcha hover:bg-matcha-soft transition-colors flex flex-col gap-2"
+              className="rounded-md border-2 border-line p-5 bg-paper-raised shadow-sm hover:border-matcha hover:bg-matcha-soft transition-colors flex flex-col gap-2"
             >
               <span className="font-display text-xl font-semibold text-ink">{tv("region", s.region)}</span>
               <span className="text-xs text-ink-faint">{regionCountry(info.country, lang)}</span>
@@ -60,7 +55,7 @@ export default async function RegionsIndexPage({ params }: { params: Promise<{ l
         })}
       </div>
 
-      <p className="text-xs text-ink-faint mt-8">
+      <p className="mt-6 rounded-sm border-2 border-line bg-paper-raised px-5 py-3 text-xs text-ink-faint">
         {t("rg.idx.foot", { n: MIN_PRODUCTS_FOR_PAGE })}
       </p>
     </main>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { PageHero } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
 import { MIN_CAFES_FOR_CITY_PAGE, cityPath, getPlaceIndex } from "@/lib/cafe-places";
@@ -95,24 +96,22 @@ export default async function CafeCity({ params }: { params: Promise<Params> }) 
           ],
         }}
       />
-      <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">
-        <Link href={`/cafes/in/${cc.toLowerCase()}`} className="hover:text-matcha">{t("pl.backCountry", { place: countryName(e.cc, lang) })}</Link>
-      </p>
-      <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink">{t("pl.city.h1", { place })}</h1>
-      <p className="mt-3 text-ink-muted">
-        {en
+      <PageHero
+        eyebrow={t("pl.backCountry", { place: countryName(e.cc, lang) })}
+        title={t("pl.city.h1", { place })}
+        lede={<>{en
           ? `${cafes.length} cafés in ${place} list matcha on their own menu or website${prices.length >= 3 ? `; where a price is shown, matcha drinks run about $${Math.min(...prices)}–$${Math.max(...prices)}` : ""}. Each entry links to the café's page with its menu evidence, directions, and member ratings and reviews.`
-          : t("pl.city.desc", { n: cafes.length, place })}
-      </p>
+          : t("pl.city.desc", { n: cafes.length, place })}</>}
+      />
       {en && picks.length > 0 && (
-        <section className="mt-8" aria-labelledby="picks">
-          <h2 id="picks" className="font-display text-xl font-semibold text-ink">Best places for matcha in {e.city}</h2>
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6" aria-labelledby="picks">
+          <h2 id="picks" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Best places for matcha in {e.city}</h2>
           <p className="mt-1 text-sm text-ink-muted">Cafés where matcha is front and centre, or where we found a priced matcha item on their own menu.</p>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
             {picks.map((c) => {
               const it = itemOf.get(c.id);
               return (
-                <li key={c.id} className="rounded-sm border border-line bg-paper-raised p-4">
+                <li key={c.id} className="rounded-sm border-2 border-line bg-paper p-4 hover:border-matcha hover:bg-matcha-soft">
                   <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-ink hover:text-matcha">{c.name}</Link>
                   <span className="block text-sm text-ink-faint">{formatPlace(c, lang)}</span>
                   {it && <span className="mt-1 block text-sm text-ink-muted">{it.name}, {it.price}</span>}
@@ -122,8 +121,9 @@ export default async function CafeCity({ params }: { params: Promise<Params> }) 
           </ul>
         </section>
       )}
-      <h2 className="mt-10 font-display text-xl font-semibold text-ink">{en ? `All ${cafes.length} matcha cafés in ${e.city}` : t("pl.city.h1", { place })}</h2>
-      <ul className="mt-3 divide-y divide-line">
+      <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6" aria-labelledby="all-cafes">
+      <h2 id="all-cafes" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">{en ? `All ${cafes.length} matcha cafés in ${e.city}` : t("pl.city.h1", { place })}</h2>
+      <ul className="mt-3 divide-y-2 divide-line">
         {cafes.map((c) => {
           const it = itemOf.get(c.id);
           return (
@@ -135,12 +135,13 @@ export default async function CafeCity({ params }: { params: Promise<Params> }) 
           );
         })}
       </ul>
+      </section>
       {en && nearby.length > 0 && (
-        <section className="mt-10" aria-labelledby="nearby">
-          <h2 id="nearby" className="font-display text-xl font-semibold text-ink">Matcha in nearby cities</h2>
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6" aria-labelledby="nearby">
+          <h2 id="nearby" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Matcha in nearby cities</h2>
           <p className="mt-3 flex flex-wrap gap-2 text-sm">
             {nearby.map((x) => (
-              <Link key={x.slug} href={cityPath(x)} className="rounded-full border border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">
+              <Link key={x.slug} href={cityPath(x)} className="rounded-full border-2 border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">
                 {x.city} ({x.cafes.length})
               </Link>
             ))}

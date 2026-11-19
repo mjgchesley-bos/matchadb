@@ -73,7 +73,7 @@ export default async function EventPage({ params }: { params: Promise<Params> })
         <span className="text-ink-muted">{e.continent}</span>
       </nav>
 
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className={label}>{e.kind}{passed ? " · has passed" : ""}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold leading-tight text-ink text-balance">{e.name}</h1>
         <p className="mt-4 flex flex-wrap gap-2 text-sm">
@@ -139,7 +139,7 @@ export default async function EventPage({ params }: { params: Promise<Params> })
       </section>
 
       {more.length > 0 && (
-        <section className="mt-10" aria-labelledby="ev-more">
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-labelledby="ev-more">
           <h2 id="ev-more" className={label}>More in {e.continent}</h2>
           <div className="grid gap-3 sm:grid-cols-3">
             {more.map((m) => (

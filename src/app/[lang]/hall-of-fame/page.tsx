@@ -56,17 +56,17 @@ export default async function HallOfFamePage({ params }: { params: Promise<{ lan
           },
         }}
       />
-      <header className="max-w-3xl">
+      <header className="rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("hof.eyebrow")}</p>
         <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{t("hof.h1")}</h1>
-        <p className="mt-5 text-lg text-ink-muted leading-relaxed">{t("hof.lead")}</p>
+        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">{t("hof.lead")}</p>
         <p className="mt-3 text-sm text-ink-faint leading-relaxed">{t("hof.how")}</p>
       </header>
 
       {ERAS.map((e) => {
         const list = PEOPLE.filter((p) => p.era === e);
         return (
-          <section key={e} className="mt-12" aria-labelledby={`era-${e}`}>
+          <section key={e} className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6 [&_p]:max-w-3xl" aria-labelledby={`era-${e}`}>
             <h2 id={`era-${e}`} className="font-display text-2xl font-semibold text-ink">{eraLabel(e)}</h2>
             <p className="mt-1 text-sm text-ink-muted">{eraNote(e)}</p>
             {SECTION_IMAGES[e] && <Figure img={SECTION_IMAGES[e]} className="mt-5 max-w-xl" />}
