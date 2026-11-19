@@ -9,6 +9,7 @@ import { ProfileHeader } from "@/components/ProfileHeader";
 import { Ribbons } from "@/components/Ribbons";
 import { WoodShelf, type ShelfCard } from "@/components/WoodShelf";
 import { UsingNowCard } from "@/components/UsingNowCard";
+import { BusinessTools } from "@/components/BusinessTools";
 import { AvatarFigure } from "@/components/AvatarFigure";
 import { Avatar } from "@/components/Avatar";
 import { parseDesign } from "@/lib/avatar-design";
@@ -449,6 +450,7 @@ export function AccountClient() {
 
       <StaffLink />
       <AccountTypePanel />
+      <BusinessTools contactEmail={CONTACT_EMAIL} />
 
       <section className="border-t border-line pt-6 text-sm text-ink-muted">
         <button type="button" onClick={() => void signOut()} className="underline hover:text-ink">

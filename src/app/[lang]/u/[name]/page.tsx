@@ -12,6 +12,7 @@ import { Stars } from "@/components/Stars";
 import { TierIcon, hasTierIcon } from "@/components/TierIcon";
 import { getProductById } from "@/lib/db";
 import { getCafeSlimIndex } from "@/lib/cafes";
+import { bannerUrl } from "@/lib/business";
 import { cafeSlug } from "@/lib/cafe-types";
 import { removedIndex } from "@/lib/cafes-removed";
 import { BADGES } from "@/lib/badges";
@@ -101,7 +102,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
   const p = await load(name);
   if (!p) notFound();
   const { data: bizData } = await supabaseAnon().rpc("public_business", { p_name: p.name });
-  const biz = (bizData as { account_type: string; business_name: string | null; website: string | null; about: string | null } | null) ?? null;
+  const biz = (bizData as { account_type: string; business_name: string | null; website: string | null; about: string | null; banner_path?: string | null; products?: { name: string; description: string; price: string; url: string | null }[] } | null) ?? null;
   const bizType = biz && biz.account_type !== "general" ? biz : null;
 
   const ids = [...new Set([...p.shelf.map((x) => x.product_id), ...p.ratings.map((x) => x.product_id), ...p.lists.flatMap((l) => l.items), ...p.reviews.map((r) => r.product_id)])].slice(0, 160);
@@ -169,6 +170,10 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
 
   return (
     <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
+      {bizType?.banner_path && (
+        // eslint-disable-next-line @next/next/no-img-element -- business banner from storage
+        <img src={bannerUrl(bizType.banner_path)} alt={`${bizType.business_name ?? p.name} banner`} className="mb-4 h-36 w-full rounded-md border-2 border-matcha object-cover sm:h-52" />
+      )}
       <header className="flex flex-col gap-5 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:flex-row sm:items-start sm:p-6">
         <Avatar avatar={p.avatar} photoPath={p.avatar_path} name={p.name} size={88} />
         <div className="min-w-0 flex-1">
@@ -225,6 +230,21 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
           </section>
         )}
       </header>
+
+      {bizType?.products && bizType.products.length > 0 && (
+        <section className="mt-6" aria-label="Products">
+          <Hl>Products</Hl>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {bizType.products.map((b) => (
+              <li key={b.name} className="flex flex-col rounded-md border-2 border-line bg-paper-raised p-4">
+                <p className="flex flex-wrap items-baseline justify-between gap-2"><span className="font-display text-lg font-semibold text-ink">{b.name}</span>{b.price && <span className="tabular-nums text-ink-muted">{b.price}</span>}</p>
+                {b.description && <p className="mt-1 whitespace-pre-line text-sm text-ink-muted">{b.description}</p>}
+                {b.url && <a href={b.url} target="_blank" rel="nofollow noopener noreferrer" className="mt-auto pt-3 text-sm text-matcha underline hover:text-forest">View</a>}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
         {[
