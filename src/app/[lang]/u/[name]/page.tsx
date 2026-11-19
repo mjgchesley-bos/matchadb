@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "@/i18n/Link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { Avatar } from "@/components/Avatar";
 import { FollowBar } from "@/components/Friends";
 import { MessageLink } from "@/components/MessageLink";
@@ -21,7 +21,7 @@ import { formatPrice } from "@/lib/price";
 import { supabaseAnon } from "@/lib/supabase-server";
 import type { MemberStats } from "@/components/AuthProvider";
 import { langOf } from "@/i18n/params";
-import { INTL_LANG, isLocale, type Locale } from "@/i18n/config";
+import { localePath, INTL_LANG, isLocale, type Locale } from "@/i18n/config";
 import { getT, getTV } from "@/i18n/server";
 
 // A member's public page. It exists only if the member switched "public profile" on in My matcha;
@@ -152,6 +152,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
     const g = gone[id];
     return g ? { id, name: g[0], place: g[1], href: null as string | null } : null;
   };
+  // A café owner's profile adds nothing beyond their café page, so visitors go straight there (their comments and reviews still link to this name).
+  if (bizType?.account_type === "cafe_owner") {
+    const home = (bizType.cafe_ids ?? []).map(find).find((x) => x?.href);
+    if (home?.href) redirect(localePath(lang, home.href));
+  }
   const cardCls = "flex h-full items-center justify-between gap-4 rounded-md border-2 border-line bg-paper p-5 text-ink";
   const hover = " transition-colors hover:border-matcha hover:bg-matcha-soft";
   const favs = (p.cafes ?? []).map(find).filter((x): x is NonNullable<typeof x> => !!x);
