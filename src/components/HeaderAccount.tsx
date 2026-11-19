@@ -75,7 +75,7 @@ export function HeaderAccount() {
       {open && (
         <div role="menu" className="absolute right-0 top-full z-40 mt-2 w-56 overflow-hidden rounded-md border border-line bg-paper-raised py-1 shadow-lg">
           <p className="px-4 pt-2 pb-1 text-xs text-ink-faint">{t("c.account.signedInAs")}</p>
-          <p className="px-4 text-sm font-medium text-ink truncate">{displayName ?? "…"}</p>
+          <Link href="/account" role="menuitem" onClick={() => setOpen(false)} className="block px-4 text-sm font-medium text-matcha truncate hover:text-forest hover:underline">{displayName ?? "…"}</Link>
           <p className="flex items-center gap-1.5 px-4 pb-2 text-xs text-ink-faint">
             {stats ? (
               <>
@@ -86,9 +86,6 @@ export function HeaderAccount() {
               "\u00a0"
             )}
           </p>
-          <Link href="/account" role="menuitem" onClick={() => setOpen(false)} className="block px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
-            {t("c.account.mine")}
-          </Link>
           <Link href="/messages" role="menuitem" onClick={() => setOpen(false)} className="flex items-center justify-between px-4 py-2.5 text-sm text-ink hover:bg-matcha-soft">
             {t("c.account.messages")}
             {unread > 0 && <span className="rounded-full bg-matcha px-2 text-xs text-paper">{unread}</span>}
