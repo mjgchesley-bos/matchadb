@@ -28,6 +28,8 @@ export const en = {
   "c.search.cafes": "Cafés",
   "c.mm.sellsDrinks": "Matcha drinks",
   "c.mm.sellsShop": "Matcha to take home",
+  "c.mm.sellsSweets": "Matcha sweets and food (no matcha drinks listed)",
+  "c.mm.show.sweets": "Matcha sweets",
   "c.mm.sellsBrandCafe": "Serves a matcha brand (listed by the brand)",
   "c.mm.showLabel": "Show on the map",
   "c.mm.show.all": "Everything",

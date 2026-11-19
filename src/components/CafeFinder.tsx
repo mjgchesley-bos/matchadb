@@ -19,8 +19,8 @@ import { SuggestCafe } from "@/components/SuggestCafe";
 // to Mapbox's geocoder to turn it into a point.)
 
 // A place on the Matcha map. kind: "drinks" (a café serving matcha), "shop" (sells packaged matcha to take home), or "brandcafe" (a café a matcha brand lists as where to find it).
-type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string; kind: "drinks" | "shop" | "brandcafe"; brands?: string[]; home?: boolean };
-type Show = "all" | "drinks" | "shop";
+type Cafe = { id: string; name: string; address: string; city: string; state: string; zip: string; lat: number; lng: number; focus: boolean; nameOnly: boolean; reported: boolean; cc: string; kind: "drinks" | "shop" | "brandcafe" | "sweets"; brands?: string[]; home?: boolean };
+type Show = "all" | "drinks" | "sweets" | "shop";
 type ShopRow = [string, string, string, string, string, string, number, number, string, "s" | "b", string[]];
 const fromShop = (r: ShopRow): Cafe => ({ id: r[0], name: r[1], address: r[2], city: r[3], state: r[4], zip: r[5], lat: r[6], lng: r[7], cc: r[8] || "US", focus: true, nameOnly: false, reported: false, kind: r[9] === "s" ? "shop" : "brandcafe", brands: r[10] });
 // A café-map venue that is really a shop (home) keeps its café page; shops from the store list have their own page.
@@ -89,18 +89,19 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
   const [lists, setLists] = useState<Partial<Record<RegionKey, Cafe[]>>>({});
   const [shops, setShops] = useState<Cafe[]>([]);
   const [takeHome, setTakeHome] = useState<Set<string>>(new Set());
+  const [sweets, setSweets] = useState<Set<string>>(new Set());
   const [show, setShow] = useState<Show>("all");
   const [brand, setBrand] = useState<string | null>(null);
   const everything = useMemo(
-    () => (Object.keys(lists).length ? [...REGIONS.flatMap((r) => lists[r.key] ?? []).map((c) => (takeHome.has(c.id) ? { ...c, kind: "shop" as const, home: true } : c)), ...shops] : null),
-    [lists, shops, takeHome]
+    () => (Object.keys(lists).length ? [...REGIONS.flatMap((r) => lists[r.key] ?? []).map((c) => (takeHome.has(c.id) ? { ...c, kind: "shop" as const, home: true } : sweets.has(c.id) ? { ...c, kind: "sweets" as const, home: true } : c)), ...shops] : null),
+    [lists, shops, takeHome, sweets]
   );
   // The filter chips decide what the map, the list and the search all see.
   const all = useMemo(
-    () => (everything ? everything.filter((c) => (show === "all" || (show === "shop" ? c.kind === "shop" : c.kind !== "shop")) && (!brand || (c.brands ?? []).includes(brand))) : null),
+    () => (everything ? everything.filter((c) => (show === "all" || (show === "shop" ? c.kind === "shop" : show === "sweets" ? c.kind === "sweets" : c.kind === "drinks" || c.kind === "brandcafe")) && (!brand || (c.brands ?? []).includes(brand))) : null),
     [everything, show, brand]
   );
-  const sellsLabel = (c: Cafe) => (c.kind === "shop" ? t("c.mm.sellsShop") : c.kind === "brandcafe" ? t("c.mm.sellsBrandCafe") : t("c.mm.sellsDrinks"));
+  const sellsLabel = (c: Cafe) => (c.kind === "sweets" ? t("c.mm.sellsSweets") : c.kind === "shop" ? t("c.mm.sellsShop") : c.kind === "brandcafe" ? t("c.mm.sellsBrandCafe") : t("c.mm.sellsDrinks"));
   const [loadError, setLoadError] = useState(false);
   const [query, setQuery] = useState("");
   // One search bar: a café name narrows the list to those cafés (nameFilter); a place sets the origin.
@@ -162,6 +163,10 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
     fetch("/data/take-home.json")
       .then((r) => (r.ok ? (r.json() as Promise<string[]>) : []))
       .then((ids) => live && setTakeHome(new Set(ids)))
+      .catch(() => {});
+    fetch("/data/sweets.json")
+      .then((r) => (r.ok ? (r.json() as Promise<string[]>) : []))
+      .then((ids) => live && setSweets(new Set(ids)))
       .catch(() => {});
     const q = new URLSearchParams(window.location.search);
     const b = q.get("brand");
@@ -241,7 +246,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
         filter: ["!", ["has", "point_count"]],
         paint: {
           "circle-radius": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], 11, 8],
-          "circle-color": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], "#2b5a20", ["==", ["get", "shop"], 1], "#c9a227", "#6aa84f"],
+          "circle-color": ["case", ["==", ["get", "id"], selectedRef.current ?? ""], "#2b5a20", ["==", ["get", "shop"], 1], "#c9a227", ["==", ["get", "shop"], 2], "#d9779b", "#6aa84f"],
           "circle-stroke-color": "#fff6df",
           "circle-stroke-width": 2.5,
         },
@@ -302,7 +307,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
       features: pins.map((cafe) => ({
         type: "Feature" as const,
         geometry: { type: "Point" as const, coordinates: [cafe.lng, cafe.lat] },
-        properties: { id: cafe.id, focus: cafe.focus ? 1 : 0, shop: cafe.kind === "shop" ? 1 : 0 },
+        properties: { id: cafe.id, focus: cafe.focus ? 1 : 0, shop: cafe.kind === "shop" ? 1 : cafe.kind === "sweets" ? 2 : 0 },
       })),
     };
     (mapRef.current?.getSource("cafes") as mapboxgl.GeoJSONSource | undefined)?.setData(currentFeatures.current);
@@ -314,7 +319,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
     const map = mapRef.current;
     if (!map || !map.getLayer("cafe-point")) return;
     map.setPaintProperty("cafe-point", "circle-radius", ["case", ["==", ["get", "id"], selectedId ?? ""], 11, 8]);
-    map.setPaintProperty("cafe-point", "circle-color", ["case", ["==", ["get", "id"], selectedId ?? ""], "#2b5a20", ["==", ["get", "shop"], 1], "#c9a227", "#6aa84f"]);
+    map.setPaintProperty("cafe-point", "circle-color", ["case", ["==", ["get", "id"], selectedId ?? ""], "#2b5a20", ["==", ["get", "shop"], 1], "#c9a227", ["==", ["get", "shop"], 2], "#d9779b", "#6aa84f"]);
   }, [selectedId]);
 
   // Frame the map: the whole region with no search, the area around you after one.
@@ -590,7 +595,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
       </div>
 
       <div className="mb-4 flex flex-wrap items-center gap-2" role="group" aria-label={t("c.mm.showLabel")}>
-        {(["all", "drinks", "shop"] as const).map((k) => (
+        {(["all", "drinks", "sweets", "shop"] as const).map((k) => (
           <button
             key={k}
             type="button"
@@ -598,7 +603,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
             onClick={() => setShow(k)}
             className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${show === k ? "border-forest bg-forest text-paper" : "border-line-strong bg-paper-raised text-ink hover:bg-matcha-soft"}`}
           >
-            {k !== "all" && <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full border border-paper/60" style={{ background: k === "shop" ? "#c9a227" : "#6aa84f" }} />}
+            {k !== "all" && <span aria-hidden="true" className="h-2.5 w-2.5 rounded-full border border-paper/60" style={{ background: k === "shop" ? "#c9a227" : k === "sweets" ? "#d9779b" : "#6aa84f" }} />}
             {t(`c.mm.show.${k}` as "c.mm.show.all")}
           </button>
         ))}
@@ -773,8 +778,8 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
                 </span>
                 <button type="button" onClick={() => select(c.id)} className="mt-0.5 block w-full text-left text-sm text-ink-muted" title="Show on the map">{place(c)}</button>
                 <p className="mt-2 flex flex-wrap items-center gap-1.5 text-xs">
-                  <span className={`rounded-full px-2 py-0.5 ${c.kind === "shop" ? "bg-gold-soft text-ink" : "bg-matcha-soft text-matcha-ink"}`}>{sellsLabel(c)}</span>
-                  {c.kind === "drinks" && <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{c.reported ? t("c.cf.reported") : c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>}
+                  <span className={`rounded-full px-2 py-0.5 ${c.kind === "shop" ? "bg-gold-soft text-ink" : c.kind === "sweets" ? "bg-[#f8e1ea] text-ink" : "bg-matcha-soft text-matcha-ink"}`}>{sellsLabel(c)}</span>
+                  {(c.kind === "drinks" || c.kind === "sweets") && <span className="rounded-full border border-line-strong px-2 py-0.5 text-ink-muted">{c.reported ? t("c.cf.reported") : c.nameOnly ? t("c.cf.inName") : t("c.cf.onSite")}</span>}
                   {c.brands && c.brands.length > 0 && <span className="text-ink-muted">{c.brands.slice(0, 3).join(", ")}</span>}
                 </p>
                 <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">

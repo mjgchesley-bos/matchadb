@@ -7,7 +7,7 @@ import { ReportNoMatchaButton } from "@/components/ReportNoMatchaButton";
 import { CafeMenuManager } from "@/components/CafeMenuManager";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
-import { chainSiblings, getCafeBySlug, nearbyCafes } from "@/lib/cafes";
+import { chainSiblings, getCafeBySlug, nearbyCafes, redirectedCafeSlug } from "@/lib/cafes";
 import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/lib/cafe-places";
 import { CAT_LABEL, countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
 import { getCafeProfile, getCafeExtras } from "@/lib/cafe-profiles";
@@ -71,7 +71,11 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const lang: Locale = rawLang;
   const t = getT(lang);
   const c = getCafeBySlug(slug);
-  if (!c) notFound();
+  if (!c) {
+    const to = redirectedCafeSlug(slug);
+    if (to) permanentRedirect(localePath(lang, `/cafes/${to}`));
+    notFound();
+  }
   // A venue renamed with its place in brackets keeps working at its old address, which now forwards to the current one (one page for Google, not two).
   if (slug !== cafeSlug(c)) permanentRedirect(localePath(lang, `/cafes/${cafeSlug(c)}`));
   const where = formatPlace(c, lang);

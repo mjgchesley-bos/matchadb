@@ -162,3 +162,20 @@ export function chainSiblings(c: Cafe): ChainSibling[] {
     slug: cafeSlug(x),
   }));
 }
+
+// A venue removed as a duplicate forwards to the listing that stayed (data/cafe-redirects.json, built by scripts/build-redirects.py).
+let redirects: Record<string, string> | null = null;
+export function redirectedCafeSlug(slug: string): string | null {
+  const p = parseCafeSlug(slug);
+  if (!p) return null;
+  if (!redirects) {
+    try {
+      redirects = JSON.parse(fs.readFileSync(path.join(process.cwd(), "data", "cafe-redirects.json"), "utf8")) as Record<string, string>;
+    } catch {
+      redirects = {};
+    }
+  }
+  const to = redirects[p.id];
+  const r = to ? getCafeSlimIndex().get(to) : null;
+  return r ? cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] }) : null;
+}
