@@ -2,6 +2,8 @@
 -- admin_queue(): everything waiting for a decision, with the facts the automatic pre-review needs (the requester's sign-in email and name, which only staff can see).
 -- admin_decide_request(): approve or decline a café-owner / wholesaler request (approving sets the account type, business name and website, and links the café).
 
+alter table public.account_requests add column if not exists decided_at timestamptz;
+
 create or replace function public.admin_queue() returns jsonb
 language plpgsql stable security definer set search_path = public as $$
 begin
@@ -18,6 +20,13 @@ begin
       ) order by r.created_at)
       from public.account_requests r join public.profiles p on p.id = r.user_id left join auth.users u on u.id = r.user_id
       where r.status = 'pending'), '[]'::jsonb),
+    'done', coalesce((
+      select jsonb_agg(q.x order by q.sort_at desc) from (
+        select jsonb_build_object('id', r.id, 'decided_at', coalesce(r.decided_at, r.created_at), 'kind', r.kind, 'business', r.business, 'status', r.status, 'member', p.display_name,
+          'cafe_id', coalesce(r.cafe_id, (select o.cafe_id from public.cafe_owners o where o.user_id = r.user_id limit 1))) as x, coalesce(r.decided_at, r.created_at) as sort_at
+        from public.account_requests r join public.profiles p on p.id = r.user_id
+        where r.status <> 'pending' and coalesce(r.decided_at, r.created_at) > now() - interval '30 days'
+        order by coalesce(r.decided_at, r.created_at) desc limit 30) q), '[]'::jsonb),
     'comments', coalesce((
       select jsonb_agg(jsonb_build_object('id', c.id, 'created_at', c.created_at, 'member', p.display_name, 'target_type', c.target_type, 'target_key', c.target_key, 'body', c.body, 'photos', c.photos) order by c.created_at)
       from public.comments c join public.profiles p on p.id = c.user_id where c.status = 'pending'), '[]'::jsonb),
@@ -38,7 +47,7 @@ begin
   select * into r from public.account_requests where id = p_id and status = 'pending';
   if not found then return false; end if;
   if not p_approve then
-    update public.account_requests set status = 'declined' where id = p_id;
+    update public.account_requests set status = 'declined', decided_at = now() where id = p_id;
     return true;
   end if;
   perform set_config('app.admin_action', '1', true);
@@ -47,7 +56,7 @@ begin
   if r.kind = 'cafe_owner' and cid is not null and cid ~ '^([0-9a-f]{10}|fsq[0-9a-f]{7})$' then
     insert into public.cafe_owners (cafe_id, user_id) values (cid, r.user_id) on conflict do nothing;
   end if;
-  update public.account_requests set status = 'approved' where id = p_id;
+  update public.account_requests set status = 'approved', decided_at = now() where id = p_id;
   return true;
 end;
 $$;

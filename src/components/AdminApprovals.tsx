@@ -15,7 +15,8 @@ type Req = {
 };
 type Cmt = { id: string; created_at: string; member: string; target_type: string; target_key: string; body: string; photos: string[] };
 type Rev = { id: string; created_at: string; member: string; product_id: number; body: string };
-type Queue = { requests: Req[]; comments: Cmt[]; reviews: Rev[]; events: number; event_photos: number };
+type Done = { id: string; decided_at: string; kind: "cafe_owner" | "wholesaler"; business: string; status: "approved" | "declined"; member: string; cafe_id: string | null };
+type Queue = { done?: Done[]; requests: Req[]; comments: Cmt[]; reviews: Rev[]; events: number; event_photos: number };
 type Match = { id: string; name: string; city: string; cc: string; host: string | null; score: number; slug: string };
 type Verdict = { level: "valid" | "look" | "flag"; reasons: string[]; matches: Match[]; cafeId: string | null };
 
@@ -62,8 +63,7 @@ async function review(r: Req): Promise<Verdict> {
     else if (known) { reasons.push(`Email is at ${domain}, but the business website is ${known}.`); bump("flag"); }
     else { reasons.push(`Signed up with a ${domain} address; no website to compare it with.`); bump("look"); }
   } else if (free) {
-    reasons.push(`Free email (${domain || "unknown"}), so the email can't prove ownership.`);
-    bump("look");
+    reasons.push(`Signed up with a ${domain || "personal"} email, which is normal for a small business.`);
   }
   // 2. Google account name vs business name
   if (r.full_name) {
@@ -83,8 +83,6 @@ async function review(r: Req): Promise<Verdict> {
   // 5. a note, brand-new empty account
   if (!r.note) reasons.push("No note from the requester.");
   if (r.ratings + r.comments === 0) reasons.push("No other activity on the account yet (normal for a new owner).");
-  // a free email that otherwise lines up perfectly stays "take a look": say what would settle it
-  if (level === "look" && free) reasons.push("To settle it: message them from the café's own Instagram or email, or check the page links back to this account.");
   return { level, reasons, matches, cafeId };
 }
 
@@ -204,6 +202,27 @@ export function useQueueCount(enabled: boolean): number | null {
   return n;
 }
 
+function DoneRow({ d }: { d: Done }) {
+  const [cafe, setCafe] = useState<{ name: string; city: string; slug: string } | null>(null);
+  useEffect(() => {
+    let live = true;
+    if (d.cafe_id) fetch(`/api/cafes/lookup?ids=${d.cafe_id}`).then((r) => r.json()).then((j: { name: string; city: string; slug: string }[]) => live && j[0] && setCafe(j[0])).catch(() => {});
+    return () => { live = false; };
+  }, [d.cafe_id]);
+  return (
+    <li className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm">
+      <span className="min-w-0">
+        <span className={`mr-2 rounded-full border px-2.5 py-0.5 text-xs font-semibold ${d.status === "approved" ? chip.valid : chip.look}`}>{d.status === "approved" ? "Approved" : "Declined"}</span>
+        <strong className="text-ink">{d.business}</strong> <span className="text-ink-faint">· {d.kind === "cafe_owner" ? "café owner" : "wholesaler"} · {ago(d.decided_at)}</span>
+      </span>
+      <span className="flex flex-wrap gap-4">
+        <Link href={`/u/${encodeURIComponent(d.member)}`} className="text-matcha underline hover:text-forest">Business profile</Link>
+        {cafe && <Link href={`/cafes/${cafe.slug}`} className="text-matcha underline hover:text-forest">Café page ({cafe.city})</Link>}
+      </span>
+    </li>
+  );
+}
+
 export function AdminApprovals({ onOpenEvents }: { onOpenEvents: () => void }) {
   const [q, setQ] = useState<Queue | null | "error">(null);
   const load = useCallback(() => {
@@ -224,6 +243,12 @@ export function AdminApprovals({ onOpenEvents }: { onOpenEvents: () => void }) {
         <div className="mt-5">
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Business account requests ({q.requests.length})</h2>
           <ul className="mt-2 flex flex-col gap-3">{q.requests.map((r) => <RequestCard key={r.id} r={r} onDone={load} />)}</ul>
+        </div>
+      )}
+      {q.done && q.done.length > 0 && (
+        <div className="mt-6">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Completed (last 30 days)</h2>
+          <ul className="mt-2 divide-y divide-line rounded-sm border-2 border-line bg-paper-raised">{q.done.map((d) => <DoneRow key={d.id} d={d} />)}</ul>
         </div>
       )}
       {(q.events > 0 || q.event_photos > 0) && (
