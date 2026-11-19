@@ -13,6 +13,7 @@ import { TierIcon, hasTierIcon } from "@/components/TierIcon";
 import { getProductById } from "@/lib/db";
 import { getCafeSlimIndex } from "@/lib/cafes";
 import { bannerUrl } from "@/lib/business";
+import { TopCafes } from "@/components/TopCafes";
 import { cafeSlug } from "@/lib/cafe-types";
 import { removedIndex } from "@/lib/cafes-removed";
 import { BADGES } from "@/lib/badges";
@@ -203,6 +204,7 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
             </div>
           )}
           {p.bio && <p className="mt-3 max-w-xl text-ink-muted">{p.bio}</p>}
+          <TopCafes items={rated.map(({ c, score }) => ({ id: c.id, name: c.name, place: c.place, href: c.href, score }))} />
           {earned.length > 0 && (
             <ul className="mt-3 flex flex-wrap gap-2" aria-label={t("c.acct.badges")}>
               {earned.map((b) => (

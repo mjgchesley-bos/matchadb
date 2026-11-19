@@ -10,6 +10,7 @@ import { Ribbons } from "@/components/Ribbons";
 import { WoodShelf, type ShelfCard } from "@/components/WoodShelf";
 import { UsingNowCard } from "@/components/UsingNowCard";
 import { BusinessTools } from "@/components/BusinessTools";
+import { TopCafes } from "@/components/TopCafes";
 import { AvatarFigure } from "@/components/AvatarFigure";
 import { Avatar } from "@/components/Avatar";
 import { parseDesign } from "@/lib/avatar-design";
@@ -232,7 +233,9 @@ export function AccountClient() {
           </div>
           <Ribbons />
         </div>
-        <ProfileHeader />
+        <ProfileHeader>
+          <TopCafes items={(cafeRatings ?? []).flatMap((r) => (cafeNames[r.cafe_id] ? [{ id: r.cafe_id, name: cafeNames[r.cafe_id].name, place: cafeNames[r.cafe_id].place, href: `/cafes/${cafeNames[r.cafe_id].slug}`, score: r.score }] : []))} />
+        </ProfileHeader>
         <UsingNowCard current={shelved === null ? null : usingItem} shelfChoices={cards.filter((c) => c.tag !== "saved").map((c) => ({ id: c.id, brand: c.brand, name: c.name }))} onSet={setUsing} onClear={clearUsing} />
         {editingAvatar && (
           <div className="basis-full">
