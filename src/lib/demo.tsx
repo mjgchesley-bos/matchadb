@@ -7,7 +7,7 @@ import { demoMedia } from "@/lib/demo-media";
 // Demo mode for the staff dashboard: the real café-owner screens run against an in-memory fake of the few database calls they make, so a staff member
 // can try every button without creating an account or touching real data. Nothing here is sent anywhere; a reload resets it.
 export const DemoCtx = createContext(false);
-export const DEMO_CAFE = { id: "demo-cafe", name: "The Demo Matcha House", city: "Nowhere", slug: "" };
+export const DEMO_CAFE = { id: "demo-cafe", name: "The Demo Matcha House", city: "Nowhere", slug: "demo" };
 
 // What "Fill in from public info" returns in the demo (a real café gets this from its own website).
 export const DEMO_SUGGESTIONS = {

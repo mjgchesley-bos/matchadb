@@ -4,6 +4,7 @@ import Link from "@/i18n/Link";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { CafeMenuManager } from "@/components/CafeMenuManager";
+import { ProductsPanel, type Product } from "@/components/ProductsPanel";
 import { SocialIcons } from "@/components/SocialIcons";
 import { OK_IMAGE, shrinkImage } from "@/lib/image-upload";
 import { DEMO_CAFE, DemoCtx, useSb } from "@/lib/demo";
@@ -20,7 +21,7 @@ const input = "mt-1 w-full rounded-sm border border-line-strong bg-paper px-3 py
 const lbl = "block text-sm text-ink-muted";
 const BLANK = (id: string): OwnerPage => ({ cafe_id: id, tagline: null, bio: null, matcha_info: null, announcement: null, cover_path: null, accent: "green", hours: {}, phone: null, public_email: null, website_url: null, order_url: null, reservation_url: null, links: {}, amenities: [] });
 
-export function CafePageEditor({ onState }: { onState?: (s: { name: string; page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[] }) => void } = {}) {
+export function CafePageEditor({ onState }: { onState?: (s: { name: string; page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[]; products: Product[] }) => void } = {}) {
   const supabase = useSb();
   const demo = useContext(DemoCtx);
   const { user, ready, signIn } = useAuth();
@@ -29,6 +30,7 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
   const [page, setPage] = useState<OwnerPage | null>(null);
   const [photos, setPhotos] = useState<OwnerPhoto[]>([]);
   const [files, setFiles] = useState<OwnerMenuFile[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [msg, setMsg] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
   const [dirty, setDirty] = useState(false);
@@ -95,7 +97,7 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
     setDirty(false);
   }, [supabase, autofill]);
   useEffect(() => { if (cafe) void load(cafe.id); }, [cafe, load]);
-  useEffect(() => { if (cafe && page) onState?.({ name: cafe.name, page, photos, files }); }, [cafe, page, photos, files, onState]);
+  useEffect(() => { if (cafe && page) onState?.({ name: cafe.name, page, photos, files, products }); }, [cafe, page, photos, files, products, onState]);
 
   if (!ready) return null;
   if (!user) return <button type="button" onClick={() => signIn("Sign in to edit your café page.")} className="rounded-full bg-matcha px-6 py-2.5 text-sm font-medium text-paper hover:bg-forest">Sign in</button>;
@@ -222,8 +224,13 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
 
   return (
     <div style={accentStyle(page.accent)} className="flex flex-col gap-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div>
+      <div className="flex flex-col gap-3">
+        {(cafe.slug || demo) && (
+          <Link href={demo ? "#visitor-preview" : `/cafes/${cafe.slug}`} className="w-full rounded-full bg-matcha px-6 py-3 text-center text-base font-medium text-paper shadow-sm hover:bg-forest sm:w-auto sm:self-start">
+            View {cafe.name}&rsquo;s page
+          </Link>
+        )}
+        <div className="flex flex-wrap items-center justify-between gap-3">
           {owned.length > 1 ? (
             <select value={cafe.id} onChange={(e) => setCafe(owned.find((o) => o.id === e.target.value) ?? cafe)} className="rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm">
               {owned.map((o) => <option key={o.id} value={o.id}>{o.name}{o.city ? `, ${o.city}` : ""}</option>)}
@@ -231,9 +238,8 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
           ) : (
             <p className="font-display text-xl font-semibold text-ink">{cafe.name}{cafe.city ? <span className="text-ink-muted">, {cafe.city}</span> : null}</p>
           )}
+          <button type="button" disabled={busy} onClick={async () => { setBusy(true); setMsg(null); await autofill(page, cafe.id, false); setBusy(false); }} className="rounded-full border border-matcha px-5 py-2 text-sm font-medium text-matcha hover:bg-matcha-soft disabled:opacity-50">Fill in from public info</button>
         </div>
-        <button type="button" disabled={busy} onClick={async () => { setBusy(true); setMsg(null); await autofill(page, cafe.id, false); setBusy(false); }} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">Fill in from public info</button>
-        {cafe.slug && <Link href={`/cafes/${cafe.slug}`} className="rounded-full border border-matcha px-5 py-2 text-sm font-medium text-matcha hover:bg-matcha-soft">View your live page</Link>}
       </div>
 
       <section className={box} aria-labelledby="cv-h">
@@ -360,6 +366,8 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
           <CafeMenuManager cafeId={cafe.id} cafeName={cafe.name} />
         </div>
       </section>
+
+      <ProductsPanel onChange={setProducts} />
     </div>
   );
 }

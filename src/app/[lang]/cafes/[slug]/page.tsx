@@ -220,7 +220,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         </div>
       </header>
 
-      {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} />}
+      {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} products={owner.products} />}
 
       {profile && !owner?.page.bio && (
         <section aria-labelledby="cafe-about" className="mt-6 overflow-hidden rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised shadow-sm">

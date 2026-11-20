@@ -4,7 +4,9 @@ import { cafeMediaUrl, type OwnerMenuFile, type OwnerPage, type OwnerPhoto } fro
 const box = "rounded-sm border-2 border-line bg-paper-raised p-5 sm:p-6";
 const h2 = "font-mono text-xs uppercase tracking-[0.2em] text-forest";
 
-export function OwnerCafeSections({ name, page, photos, files }: { name: string; page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[] }) {
+type Product = { id: string; name: string; description: string; price: string; url: string | null };
+
+export function OwnerCafeSections({ name, page, photos, files, products = [] }: { name: string; page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[]; products?: Product[] }) {
   const hasAbout = page.bio || page.matcha_info || page.amenities.length > 0;
   return (
     <>
@@ -18,6 +20,24 @@ export function OwnerCafeSections({ name, page, photos, files }: { name: string;
               {page.amenities.map((a) => <li key={a} className="rounded-full border border-matcha bg-matcha-soft px-3 py-1 text-sm text-forest">{a}</li>)}
             </ul>
           )}
+        </section>
+      )}
+
+      {products.length > 0 && (
+        <section aria-labelledby="own-shop" className={`mt-6 ${box}`}>
+          <h2 id="own-shop" className={h2}>Shop</h2>
+          <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+            {products.map((p) => (
+              <li key={p.id} className="flex flex-col rounded-md border-2 border-matcha/50 bg-paper px-4 py-3">
+                <p className="flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="font-display text-lg font-semibold text-ink">{p.name}</span>
+                  {p.price && <span className="font-medium tabular-nums text-forest">{p.price}</span>}
+                </p>
+                {p.description && <p className="mt-1 whitespace-pre-line text-sm text-ink-muted">{p.description}</p>}
+                {p.url && <a href={p.url} target="_blank" rel="noopener noreferrer nofollow" className="mt-3 w-fit rounded-full border border-matcha px-4 py-1.5 text-sm font-medium text-matcha hover:bg-matcha-soft">Buy or learn more</a>}
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 
