@@ -471,11 +471,9 @@ export function AdminClient() {
 
       <section className="mt-6 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm" aria-labelledby="dash-tools">
         <h2 id="dash-tools" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Manage</h2>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-3 grid gap-3 sm:grid-cols-3">
           {[
             { href: "/admin/demo-cafe", title: "Café owner demo", note: "Sign in as a pretend café and try every owner screen. Nothing is saved.", primary: true },
-            { href: "/matcha-map", title: "Matcha map", note: "The live map and café finder." },
-            { href: "/wholesale", title: "Wholesale directory", note: "Supplier listings for café owners." },
             { href: "/business", title: "Owner page editor", note: "The real editor (needs an owner account)." },
           ].map((x) => (
             <Link key={x.href} href={x.href} className={`rounded-md border-2 bg-paper-raised px-4 py-3 shadow-sm hover:bg-matcha-soft ${x.primary ? "border-matcha" : "border-matcha/50"}`}>
