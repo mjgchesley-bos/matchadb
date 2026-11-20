@@ -109,7 +109,7 @@ function RequestCard({ r, onDone }: { r: Req; onDone: () => void }) {
     <li className="rounded-sm border-2 border-line bg-paper-raised p-4">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="font-medium text-ink">
-          <span className="mr-2 rounded-full bg-matcha px-2.5 py-0.5 text-xs text-paper">{r.kind === "cafe_owner" ? "Café owner" : "Wholesaler"}</span>
+          <span className="mr-2 rounded-full bg-matcha px-2.5 py-0.5 text-xs text-paper">{r.kind === "cafe_owner" ? "Café claim" : "Wholesaler"}</span>
           {r.kind === "cafe_owner" && v && (
             cafe ? <span className="mr-2 rounded-full border border-matcha px-2.5 py-0.5 text-xs text-forest">Claims a café already on the map</span>
             : v.matches.length ? <span className="mr-2 rounded-full border border-gold px-2.5 py-0.5 text-xs text-gold">Pick which café on the map</span>
@@ -261,7 +261,7 @@ function DoneRow({ d }: { d: Done }) {
     <li className="flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm">
       <span className="min-w-0">
         <span className={`mr-2 rounded-full border px-2.5 py-0.5 text-xs font-semibold ${d.status === "approved" ? chip.valid : chip.look}`}>{d.status === "approved" ? "Approved" : "Declined"}</span>
-        <strong className="text-ink">{d.business}</strong> <span className="text-ink-faint">· {d.kind === "cafe_owner" ? "café owner" : "wholesaler"} · {ago(d.decided_at)}</span>
+        <strong className="text-ink">{d.business}</strong> <span className="text-ink-faint">· {d.kind === "cafe_owner" ? "café claim" : "wholesaler"} · {ago(d.decided_at)}</span>
       </span>
       <span className="flex flex-wrap gap-4">
         <Link href={`/u/${encodeURIComponent(d.member)}`} className="text-matcha underline hover:text-forest">Business profile</Link>
@@ -289,7 +289,7 @@ export function AdminApprovals({ onOpenEvents }: { onOpenEvents: () => void }) {
       )}
       {q.requests.length > 0 && (
         <div className="mt-5">
-          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Business account requests ({q.requests.length})</h2>
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Café claims and wholesaler requests ({q.requests.length})</h2>
           <ul className="mt-2 flex flex-col gap-3">{q.requests.map((r) => <RequestCard key={r.id} r={r} onDone={load} />)}</ul>
         </div>
       )}

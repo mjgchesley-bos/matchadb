@@ -491,7 +491,7 @@ export function AdminClient() {
           ))}
           <a href="#dash-needs" className={`rounded-md border-2 px-4 py-3 shadow-sm ${waiting ? "border-red-300 bg-red-50" : "border-matcha/50 bg-paper-raised"}`}>
             <span className={`block font-display text-lg font-semibold tabular-nums ${waiting ? "text-red-800" : "text-forest"}`}>{waiting ?? 0} waiting for you</span>
-            <span className="mt-1 block text-xs text-ink-muted">Owner requests, suggestions and reports.</span>
+            <span className="mt-1 block text-xs text-ink-muted">Café claims, suggestions and reports.</span>
           </a>
         </div>
       </section>
