@@ -90,12 +90,14 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
   const [lists, setLists] = useState<Partial<Record<RegionKey, Cafe[]>>>({});
   const [shops, setShops] = useState<Cafe[]>([]);
   const [takeHome, setTakeHome] = useState<Set<string>>(new Set());
+  // Brands carried by cafés that also appeared in a brand's own store list (the store was merged into the café listing): keeps the brand filter working.
+  const [cafeBrands, setCafeBrands] = useState<Record<string, string[]>>({});
   const [sweets, setSweets] = useState<Set<string>>(new Set());
   const [show, setShow] = useState<Show>("all");
   const [brand, setBrand] = useState<string | null>(null);
   const everything = useMemo(
-    () => (Object.keys(lists).length ? [...REGIONS.flatMap((r) => lists[r.key] ?? []).map((c) => (takeHome.has(c.id) ? { ...c, kind: "shop" as const, home: true } : sweets.has(c.id) ? { ...c, kind: "sweets" as const, home: true } : c)), ...shops] : null),
-    [lists, shops, takeHome, sweets]
+    () => (Object.keys(lists).length ? [...REGIONS.flatMap((r) => lists[r.key] ?? []).map((c) => (takeHome.has(c.id) ? { ...c, kind: "shop" as const, home: true } : sweets.has(c.id) ? { ...c, kind: "sweets" as const, home: true } : c)).map((c) => (cafeBrands[c.id] ? { ...c, brands: cafeBrands[c.id] } : c)), ...shops] : null),
+    [lists, shops, takeHome, sweets, cafeBrands]
   );
   // The filter chips decide what the map, the list and the search all see.
   const all = useMemo(
@@ -160,6 +162,10 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
     fetch("/data/shops.json")
       .then((r) => (r.ok ? (r.json() as Promise<ShopRow[]>) : []))
       .then((rows) => live && setShops(rows.map(fromShop)))
+      .catch(() => {});
+    fetch("/data/cafe-brands.json")
+      .then((r) => (r.ok ? (r.json() as Promise<Record<string, string[]>>) : {}))
+      .then((m) => live && setCafeBrands(m))
       .catch(() => {});
     fetch("/data/take-home.json")
       .then((r) => (r.ok ? (r.json() as Promise<string[]>) : []))

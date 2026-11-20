@@ -2583,6 +2583,14 @@
    },
    "why": "owner request 2026-11-20: the café also sells matcha and hojicha tins on its own shop (thematchakoncept.com, Hojicha 450 Kč, Miyabi 800 Kč, Komorebi 700 Kč): one profile, shown as matcha to take home (rule R5)",
    "at": "2026-11-20"
+  },
+  "b5383ad9f0": {
+   "set": {
+    "name": "Kettl Greenpoint",
+    "city": "Brooklyn"
+   },
+   "why": "Same shop as the brand's own listing (Kettl, 70 Greenpoint Ave): named Kettl Greenpoint by the brand's own store list, and Greenpoint is in Brooklyn. One listing instead of two (2026-11-20).",
+   "at": "2026-11-20"
   }
  }
 }

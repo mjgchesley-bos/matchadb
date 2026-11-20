@@ -90,9 +90,15 @@ async function build(): Promise<Cache> {
   });
   const producers = PRODUCERS.map((p) => mk(p.name, `/producers/${p.slug}`, `Producer · ${p.basedIn}`, `${p.native ?? ""} ${p.brand}`));
   const cultivars = CULTIVARS.map((c) => mk(c.name, `/cultivars/${c.slug}`, "Cultivar", `${(c.aliases ?? []).join(" ")} cultivar`));
+  let aliases: Record<string, string[]> = {};
+  try {
+    aliases = JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "cafe-aliases.json"), "utf8"));
+  } catch {
+    /* optional */
+  }
   const cafes: Item[] = [...getCafeSlimIndex().values()].map((r) => {
     const slug = cafeSlug({ id: r[0], name: r[1], city: r[3], state: r[4], cc: r[9] ?? "" });
-    return mk(r[1], `/cafes/${slug}`, r[3], `${r[3]} ${r[4] ?? ""} ${r[9] ? countryName(r[9]) : ""}`);
+    return mk(r[1], `/cafes/${slug}`, r[3], `${r[3]} ${r[4] ?? ""} ${r[9] ? countryName(r[9]) : ""} ${(aliases[r[0]] ?? []).join(" ")}`);
   });
   // Shops and brand-run stores (the stores directory: Kettl's shops, take-home shops...) are places people look for too, so they are found here as well.
   try {
