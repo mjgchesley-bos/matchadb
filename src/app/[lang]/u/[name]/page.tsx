@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "@/i18n/Link";
 import { notFound, redirect } from "next/navigation";
 import { Avatar } from "@/components/Avatar";
+import { AvatarFigure } from "@/components/AvatarFigure";
+import { parseDesign } from "@/lib/avatar-design";
 import { FollowBar } from "@/components/Friends";
 import { MessageLink } from "@/components/MessageLink";
 import { ProfileActions } from "@/components/ProfileActions";
@@ -181,7 +183,11 @@ export default async function PublicProfilePage({ params }: { params: Promise<{ 
         <img src={bannerUrl(bizType.banner_path)} alt={`${bizType.business_name ?? p.name} banner`} className="mb-4 h-36 w-full rounded-md border-2 border-matcha object-cover sm:h-52" />
       )}
       <header className="flex flex-col gap-5 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:flex-row sm:items-start sm:p-6">
-        <Avatar avatar={p.avatar} photoPath={p.avatar_path} name={p.name} size={88} />
+        {parseDesign(p.avatar) ? (
+          <div className="mx-auto shrink-0 sm:mx-0"><AvatarFigure code={p.avatar} height={260} /></div>
+        ) : (
+          <Avatar avatar={p.avatar} photoPath={p.avatar_path} name={p.name} size={88} />
+        )}
         <div className="min-w-0 flex-1">
           <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight">{p.name}</h1>
           <p className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-ink-muted">
