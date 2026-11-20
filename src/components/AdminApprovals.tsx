@@ -110,6 +110,11 @@ function RequestCard({ r, onDone }: { r: Req; onDone: () => void }) {
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="font-medium text-ink">
           <span className="mr-2 rounded-full bg-matcha px-2.5 py-0.5 text-xs text-paper">{r.kind === "cafe_owner" ? "Café owner" : "Wholesaler"}</span>
+          {r.kind === "cafe_owner" && v && (
+            cafe ? <span className="mr-2 rounded-full border border-matcha px-2.5 py-0.5 text-xs text-forest">Claims a café already on the map</span>
+            : v.matches.length ? <span className="mr-2 rounded-full border border-gold px-2.5 py-0.5 text-xs text-gold">Pick which café on the map</span>
+            : <span className="mr-2 rounded-full border border-red-800 px-2.5 py-0.5 text-xs text-red-800">New café, not on the map yet</span>
+          )}
           {r.business}
         </p>
         {v && <span className={`rounded-full border px-3 py-0.5 text-xs font-semibold ${chip[v.level]}`}>{label[v.level]}</span>}
@@ -128,6 +133,9 @@ function RequestCard({ r, onDone }: { r: Req; onDone: () => void }) {
         <ul className="mt-3 flex flex-col gap-1 text-sm text-ink-muted">
           {v.reasons.map((x) => <li key={x} className="flex gap-2"><span aria-hidden="true">•</span><span>{x}</span></li>)}
         </ul>
+      )}
+      {v && r.kind === "cafe_owner" && !cafe && !v.matches.length && (
+        <p className="mt-3 rounded-sm border border-red-800 bg-paper p-2 text-sm text-red-800">Nothing on the map matches this business. Treat it as a new café proposal: check it exists and sells matcha, add it to the map, then link it below and approve. Approving without linking only upgrades the account.</p>
       )}
       {v && r.kind === "cafe_owner" && (
         <div className="mt-3 flex flex-wrap items-center gap-2 text-sm">
