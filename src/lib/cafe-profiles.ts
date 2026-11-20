@@ -11,6 +11,8 @@ export type CafeProfile = {
   hours?: string[];
   facts?: [string, string][];
   links?: { label: string; url: string }[];
+  // Things the café sells in its own shop (name, price as the shop shows it, a short note, the product page). Text and links only: product photos stay on the café's own site.
+  shop?: { name: string; price?: string; note?: string; url: string }[];
   sources?: { label: string; url: string }[];
 };
 

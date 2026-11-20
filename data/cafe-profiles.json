@@ -96,6 +96,26 @@
         "label": "Matcha Koncept shop",
         "url": "https://thematchakoncept.com/en/collections/nase-caje"
       }
+    ],
+    "shop": [
+      {
+        "name": "Hojicha",
+        "price": "450 Kč",
+        "note": "Roasted, gently sweet.",
+        "url": "https://thematchakoncept.com/en/products/hojicha"
+      },
+      {
+        "name": "Miyabi",
+        "price": "800 Kč",
+        "note": "Elegant, umami-rich.",
+        "url": "https://thematchakoncept.com/en/products/miyabi"
+      },
+      {
+        "name": "Komorebi",
+        "price": "700 Kč",
+        "note": "Fresh and balanced.",
+        "url": "https://thematchakoncept.com/en/products/komorebi"
+      }
     ]
   }
 }
