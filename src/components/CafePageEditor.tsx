@@ -7,6 +7,8 @@ import { CafeMenuManager } from "@/components/CafeMenuManager";
 import { SocialIcons } from "@/components/SocialIcons";
 import { OK_IMAGE, shrinkImage } from "@/lib/image-upload";
 import { DEMO_CAFE, DemoCtx, useSb } from "@/lib/demo";
+import { mergeIntoPage, type Suggestions } from "@/lib/autofill";
+import { DEMO_SUGGESTIONS } from "@/lib/demo";
 import { ACCENTS, AMENITIES, DAYS, NETWORKS, accentStyle, cafeMediaUrl, type AccentKey, type OwnerMenuFile, type OwnerPage, type OwnerPhoto } from "@/lib/cafe-owner-page";
 
 // The café owner's editor: a verified owner customises their café's page like a small landing page. Everything saved here appears on the café's public
@@ -50,6 +52,33 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
     return () => { live = false; };
   }, [uid, demo, supabase]);
 
+  // Fills EMPTY fields from what the café has already published (its own website, listing phone). Never overwrites anything the owner typed.
+  const autofill = useCallback(async (base: OwnerPage, id: string, auto: boolean) => {
+    try {
+      let found: Suggestions = {};
+      let source: string | null = null;
+      if (demo) { found = DEMO_SUGGESTIONS; source = "demomatchahouse.example"; }
+      else {
+        const { data } = await supabase().auth.getSession();
+        const token = data.session?.access_token;
+        if (!token) return;
+        const r = await fetch("/api/cafes/autofill", { method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" }, body: JSON.stringify({ cafeId: id }) });
+        if (!r.ok) throw new Error("autofill");
+        const j = (await r.json()) as { found?: Suggestions; source?: string | null };
+        found = j.found ?? {};
+        source = j.source ?? null;
+      }
+      const { page: np, filled } = mergeIntoPage(base, found);
+      if (filled.length) {
+        setPage(np);
+        setDirty(true);
+        setMsg(`Filled in from ${source ?? "your listing"}: ${filled.join(", ")}. Check it over, then press Save.`);
+      } else if (!auto) setMsg("Nothing new found. Everything we could find is already filled in.");
+    } catch {
+      if (!auto) setMsg("We couldn't read your website just now. You can still fill everything in by hand.");
+    }
+  }, [demo, supabase]);
+
   const load = useCallback(async (id: string) => {
     const sb = supabase();
     const [p, ph, mf] = await Promise.all([
@@ -57,11 +86,14 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
       sb.from("cafe_photos").select("id, path, caption, sort").eq("cafe_id", id).order("sort").order("created_at"),
       sb.from("cafe_menu_files").select("id, path, label, kind, sort").eq("cafe_id", id).order("sort").order("created_at"),
     ]);
-    setPage((p.data as OwnerPage | null) ?? BLANK(id));
+    const loaded = (p.data as OwnerPage | null) ?? BLANK(id);
+    setPage(loaded);
+    const empty = !loaded.tagline && !loaded.bio && !loaded.phone && !loaded.public_email && !Object.keys(loaded.hours ?? {}).length && !Object.keys(loaded.links ?? {}).length && !(loaded.amenities ?? []).length;
+    if (empty) void autofill(loaded, id, true);
     setPhotos((ph.data ?? []) as OwnerPhoto[]);
     setFiles((mf.data ?? []) as OwnerMenuFile[]);
     setDirty(false);
-  }, [supabase]);
+  }, [supabase, autofill]);
   useEffect(() => { if (cafe) void load(cafe.id); }, [cafe, load]);
   useEffect(() => { if (cafe && page) onState?.({ name: cafe.name, page, photos, files }); }, [cafe, page, photos, files, onState]);
 
@@ -200,6 +232,7 @@ export function CafePageEditor({ onState }: { onState?: (s: { name: string; page
             <p className="font-display text-xl font-semibold text-ink">{cafe.name}{cafe.city ? <span className="text-ink-muted">, {cafe.city}</span> : null}</p>
           )}
         </div>
+        <button type="button" disabled={busy} onClick={async () => { setBusy(true); setMsg(null); await autofill(page, cafe.id, false); setBusy(false); }} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">Fill in from public info</button>
         {cafe.slug && <Link href={`/cafes/${cafe.slug}`} className="rounded-full border border-matcha px-5 py-2 text-sm font-medium text-matcha hover:bg-matcha-soft">View your live page</Link>}
       </div>
 

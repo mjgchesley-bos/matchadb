@@ -9,6 +9,14 @@ import { demoMedia } from "@/lib/demo-media";
 export const DemoCtx = createContext(false);
 export const DEMO_CAFE = { id: "demo-cafe", name: "The Demo Matcha House", city: "Nowhere", slug: "" };
 
+// What "Fill in from public info" returns in the demo (a real café gets this from its own website).
+export const DEMO_SUGGESTIONS = {
+  order_url: "https://order.toasttab.com/online/demo-matcha-house",
+  reservation_url: "https://www.opentable.com/r/demo-matcha-house",
+  links: { facebook: "https://facebook.com/demomatchahouse", tiktok: "https://tiktok.com/@demomatchahouse", yelp: "https://yelp.com/biz/demo-matcha-house", google_maps: "https://maps.app.goo.gl/demo12345" },
+  amenities: ["Ceremonial matcha", "Oat milk", "Seating", "Takeaway", "Free Wi-Fi", "Outdoor seating"],
+};
+
 type Row = Record<string, unknown>;
 type Result = { data: unknown; error: { message: string } | null };
 let seq = 100;
@@ -24,7 +32,7 @@ function seed(): Record<string, Row[]> {
       matcha_info: "Ceremonial grade from Uji, Kyoto, stone-ground and whisked to order", announcement: "Demo special: iced strawberry matcha, two for one on Fridays.",
       cover_path: null, hours: { mon: "8am to 4pm", tue: "8am to 4pm", wed: "8am to 4pm", thu: "8am to 6pm", fri: "8am to 6pm", sat: "9am to 6pm", sun: "Closed" },
       phone: "(555) 010-0199", public_email: "hello@demomatchahouse.example", website_url: "https://example.com", order_url: null, reservation_url: null,
-      links: { instagram: "https://instagram.com/demomatchahouse" }, amenities: ["Ceremonial matcha", "Oat milk", "Seating", "Takeaway"],
+      links: { instagram: "https://instagram.com/demomatchahouse" }, amenities: [],
     }],
     cafe_photos: [],
     cafe_menu_files: [],
