@@ -9,7 +9,7 @@ type Item = { id: number; name: string; price: string | null; description: strin
 
 // The owner's own menu for a café (supabase/tiers_menus_dms.sql). Everyone sees the items; the owner of a café (approved by the site owner) can add,
 // change and remove them. Anyone else gets "Update menu", which asks to be approved as this café's owner.
-export function CafeMenuManager({ cafeId, cafeName }: { cafeId: string; cafeName: string }) {
+export function CafeMenuManager({ cafeId, cafeName, children, fallbackTitle }: { cafeId: string; cafeName: string; children?: React.ReactNode; fallbackTitle?: string }) {
   const t = useT();
   const supabase = useSb();
   const { user, signIn } = useAuth();
@@ -54,7 +54,9 @@ export function CafeMenuManager({ cafeId, cafeName }: { cafeId: string; cafeName
     setSent(true);
   }
 
-  if (items.length === 0 && !owner && !user) {
+  const hasOwnMenu = items.length > 0;
+  // No owner-added menu: the page's own evidence (what we found on the café's website) is the menu section, so there is only ever one.
+  if (!hasOwnMenu && !owner && !user && !children) {
     return (
       <p className="mt-6 text-sm">
         <button type="button" onClick={() => signIn(t("c.mn.signin"))} className="text-matcha underline hover:text-forest">{t("c.mn.update")}</button>
@@ -64,7 +66,7 @@ export function CafeMenuManager({ cafeId, cafeName }: { cafeId: string; cafeName
   return (
     <section className="mt-8 rounded-sm border border-line bg-paper-raised p-5" aria-labelledby="owner-menu">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 id="owner-menu" className="font-display text-lg font-semibold text-ink">{t("c.mn.h")}</h2>
+        <h2 id="owner-menu" className={hasOwnMenu || !children ? "font-display text-lg font-semibold text-ink" : "font-mono text-xs uppercase tracking-[0.2em] text-forest"}>{hasOwnMenu || !children ? t("c.mn.h") : fallbackTitle ?? t("c.mn.h")}</h2>
         {owner ? (
           <button type="button" onClick={() => setEditing((v) => !v)} className="rounded-full border border-line-strong px-4 py-1.5 text-sm text-ink hover:bg-matcha-soft">{editing ? t("c.mn.done") : t("c.mn.update")}</button>
         ) : (
@@ -73,16 +75,18 @@ export function CafeMenuManager({ cafeId, cafeName }: { cafeId: string; cafeName
       </div>
       {items.length > 0 ? (
         <>
-          <ul className="mt-3 divide-y divide-line">
+          <ul className="mt-3 flex flex-col gap-2">
             {items.map((i) => (
-              <li key={i.id} className="flex items-start justify-between gap-4 py-2.5">
-                <span className="min-w-0"><span className="block text-sm font-medium text-ink">{i.name}</span>{i.description && <span className="block text-xs text-ink-faint">{i.description}</span>}</span>
+              <li key={i.id} className={`flex items-start justify-between gap-4 rounded-sm border px-4 py-2.5 ${i.is_matcha ? "border-2 border-matcha bg-matcha-soft" : "border-line bg-paper"}`}>
+                <span className="min-w-0"><span className="block text-sm font-medium text-ink">{i.name}{i.is_matcha && <span className="ml-2 rounded-full bg-matcha px-2 py-0.5 align-middle text-[0.65rem] font-medium uppercase tracking-wide text-paper">Matcha</span>}</span>{i.description && <span className="block text-xs text-ink-muted">{i.description}</span>}</span>
                 <span className="flex items-center gap-3 text-sm text-ink-muted">{i.price}{owner && editing && <button type="button" onClick={() => void remove(i.id)} className="text-xs text-ink-faint underline hover:text-ink">{t("c.mn.remove")}</button>}</span>
               </li>
             ))}
           </ul>
           <p className="mt-2 text-xs text-ink-faint">{t("c.mn.note")}</p>
         </>
+      ) : children ? (
+        <div className="mt-3">{children}</div>
       ) : (
         <p className="mt-3 text-sm text-ink-muted">{t("c.mn.empty")}</p>
       )}

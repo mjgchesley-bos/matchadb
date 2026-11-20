@@ -8,7 +8,6 @@ import { CafeMenuManager } from "@/components/CafeMenuManager";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes, redirectedCafeSlug } from "@/lib/cafes";
-import { citySlug, cityPath, getPlaceIndex, MIN_CAFES_FOR_CITY_PAGE } from "@/lib/cafe-places";
 import { countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
 import { getCafeProfile, getCafeExtras } from "@/lib/cafe-profiles";
 import { MiniMap } from "@/components/MiniMap";
@@ -84,8 +83,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const where = formatPlace(c, lang);
   const near = nearbyCafes(c, 5);
   const cc = (c.cc || "US").toUpperCase();
-  const cityEntry = c.city ? getPlaceIndex().cities.get(`${cc}/${citySlug(c.city, cc === "US" ? c.state : "")}`) : undefined;
-  const cityHub = cityEntry && cityEntry.cafes.length >= MIN_CAFES_FOR_CITY_PAGE ? cityPath(cityEntry) : null;
   const siblings = chainSiblings(c);
   const profile = getCafeProfile(c.id);
   const owner = await getOwnerData(c.id);  // set when the verified owner has customised the page
@@ -281,28 +278,14 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
 
       <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
 
-      <CafeMenuManager cafeId={c.id} cafeName={c.name} />
-
-      {cityHub && (
-        <p className="mt-8">
-          <Link href={cityHub} className="inline-flex items-center rounded-full border-2 border-matcha px-5 py-2 text-sm font-medium text-matcha hover:bg-matcha-soft">{t("pl.more", { city: c.city })} →</Link>
-        </p>
-      )}
-
-      <details className="group mt-8 rounded-sm border-2 border-line bg-paper-raised">
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4">
-          <h2 id="cafe-menu" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">
-            {t("cafe.menu.h2")}
-          </h2>
-          <svg aria-hidden="true" viewBox="0 0 20 20" className="h-4 w-4 shrink-0 text-ink-muted transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 8l5 5 5-5" /></svg>
-        </summary>
-        <div className="px-5 pb-5">
+      <CafeMenuManager cafeId={c.id} cafeName={c.name} fallbackTitle={t("cafe.menu.h2")}>
+        <>
         <p className="text-sm text-ink-muted">
           {c.via === "name" ? t("cafe.menu.name") : c.via === "reported" ? t("cafe.menu.reported") : t("cafe.menu.web", { date: fmtDate(c.checked, lang) })}
         </p>
         {c.ev.length > 0 && (<ul className="mt-4 flex flex-col gap-3">
           {c.ev.map((e) => (
-            <li key={e.u} className="rounded-sm border border-line bg-paper-raised px-4 py-3">
+            <li key={e.u} className="rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-3">
               {e.s.map((q) =>
                 e.st === 1 ? (
                   <p key={q} className="text-sm text-ink leading-relaxed [&:not(:first-of-type)]:mt-2">
@@ -332,8 +315,11 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           ))}
         </ul>)}
         {c.shared > 1 && <p className="mt-3 text-xs text-ink-faint">{t("cafe.shared", { count: c.shared })}</p>}
-        </div>
-      </details>
+        </>
+      </CafeMenuManager>
+
+
+
 
 
       {near.length > 0 && (
