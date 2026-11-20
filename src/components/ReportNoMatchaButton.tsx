@@ -3,11 +3,12 @@
 import { useState } from "react";
 import { useLang, useT } from "@/i18n/client";
 import { submitFeedback } from "@/lib/feedback";
+import { supabase } from "@/lib/supabase";
 import { useAuth } from "@/components/AuthProvider";
 import Link from "@/i18n/Link";
 
 // "Report: no matcha here" on a café page: a signed-in member tells the owner this place does not serve matcha.
-// It goes into the same feedback table as profile feedback, so it shows in the /admin activity log with the café's name and id.
+// It is filed as a café removal report (supabase/cafe_removals.sql): staff see it in the /admin activity feed and the Needs you queue.
 export function ReportNoMatchaButton({ cafeId, name }: { cafeId: string; name: string }) {
   const t = useT();
   const lang = useLang();
@@ -21,6 +22,10 @@ export function ReportNoMatchaButton({ cafeId, name }: { cafeId: string; name: s
     const f = new FormData(e.currentTarget);
     if (String(f.get("website_url") ?? "")) { setState("done"); return; } // hidden trap field for bots
     setState("sending");
+    // Its own table, shown to staff as "Café removal" in the activity feed and the Needs you queue. Falls back to the feedback box
+    // only if that table has not been created yet, so a report is never lost.
+    const { error } = await supabase().from("cafe_removal_reports").insert({ cafe_id: cafeId, cafe_name: name.slice(0, 160), note: note.trim().slice(0, 500) || null });
+    if (!error || error.code === "23505") { setState("done"); return; } // 23505: this member already has a pending report for this café
     const ok = await submitFeedback(`[No matcha here] ${name} (${cafeId}): ${note.trim() || "(no note)"}`, window.location.pathname, lang);
     setState(ok ? "done" : "error");
   }

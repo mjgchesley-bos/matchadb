@@ -1,5 +1,6 @@
 -- MatchaDB admin approvals queue (staff only). Run once in the Supabase SQL editor (safe to re-run). Needs admin_activity.sql, tiers_menus_dms.sql and event_submissions.sql.
 -- admin_queue(): everything waiting for a decision, with the facts the automatic pre-review needs (the requester's sign-in email and name, which only staff can see).
+-- Needs cafe_removals.sql (café removal reports) to be run first.
 -- admin_decide_request(): approve or decline a café-owner / wholesaler request (approving sets the account type, business name and website, and links the café).
 
 alter table public.account_requests add column if not exists decided_at timestamptz;
@@ -33,6 +34,10 @@ begin
     'reviews', coalesce((
       select jsonb_agg(jsonb_build_object('id', r.id, 'created_at', r.created_at, 'member', p.display_name, 'product_id', r.product_id, 'body', r.body) order by r.created_at)
       from public.reviews r join public.profiles p on p.id = r.user_id where r.status = 'pending'), '[]'::jsonb),
+    'removals', coalesce((
+      select jsonb_agg(jsonb_build_object('id', r.id, 'created_at', r.created_at, 'cafe_id', r.cafe_id, 'cafe_name', r.cafe_name, 'note', r.note, 'member', p.display_name,
+        'reports', (select count(*) from public.cafe_removal_reports z where z.cafe_id = r.cafe_id and z.status = 'pending')) order by r.created_at)
+      from public.cafe_removal_reports r left join public.profiles p on p.id = r.user_id where r.status = 'pending'), '[]'::jsonb),
     'events', (select count(*) from public.event_submissions where status = 'pending'),
     'event_photos', (select count(*) from public.event_photos where status = 'pending')
   );

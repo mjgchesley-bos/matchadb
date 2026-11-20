@@ -37,6 +37,7 @@ const KINDS: Record<string, { label: string; tone: string }> = {
   bookmark: { label: "Study saved", tone: "bg-paper text-ink-muted border border-line" },
   suggestion: { label: "Café suggestion", tone: "bg-gold-soft text-gold" },
   feedback: { label: "Feedback", tone: "bg-gold-soft text-gold" },
+  removal: { label: "Café removal", tone: "bg-red-100 text-red-800" },
   report: { label: "Report", tone: "bg-red-100 text-red-800" },
   visit: { label: "Visit", tone: "bg-paper text-ink-faint border border-line" },
 };
@@ -109,6 +110,7 @@ function describe(e: { kind: string; txt: string | null; target_type: string | n
     case "bookmark": return { verb: "saved a research paper", target };
     case "report": return { verb: `reported a ${e.target_type}${e.txt ? `: “${e.txt}”` : ""}`, target: e.target_type === "profile" ? targetOf({ target_type: "member", target_key: e.target_key }, names) : null };
     case "feedback": return { verb: "sent feedback", target: null, body: e.txt ?? undefined };
+    case "removal": return { verb: `asked for a café to be removed${e.status && e.status !== "pending" ? ` (${e.status})` : ""}`, target, body: e.txt ?? undefined };
     case "suggestion": return { verb: `suggested a café${e.status ? ` (${e.status})` : ""}`, target: null, body: e.txt ?? undefined };
     default: return { verb: e.kind, target };
   }
@@ -455,6 +457,7 @@ export function AdminClient() {
     { label: "Follows", value: n("follow"), kinds: ["follow"] },
     { label: "Suggestions", value: n("suggestion"), kinds: ["suggestion"] },
     { label: "Feedback", value: n("feedback"), alert: n("feedback") > 0, kinds: ["feedback"] },
+    { label: "Café removals", value: n("removal"), alert: n("removal") > 0, kinds: ["removal"] },
     { label: "Reports", value: n("report"), alert: n("report") > 0, kinds: ["report"] },
   ];
   const DAYCOLS: [string, string[]][] = [["Accounts", ["account"]], ["Comments", ["comment"]], ["Photos", ["photos"]], ["Reviews", ["review"]], ["Ratings", ["rating", "cafe_rating"]], ["Saves", ["save", "shelf", "list"]], ["Reports", ["report"]]];

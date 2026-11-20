@@ -16,7 +16,8 @@ type Req = {
 type Cmt = { id: string; created_at: string; member: string; target_type: string; target_key: string; body: string; photos: string[] };
 type Rev = { id: string; created_at: string; member: string; product_id: number; body: string };
 type Done = { id: string; decided_at: string; kind: "cafe_owner" | "wholesaler"; business: string; status: "approved" | "declined"; member: string; cafe_id: string | null };
-type Queue = { done?: Done[]; requests: Req[]; comments: Cmt[]; reviews: Rev[]; events: number; event_photos: number };
+type Removal = { id: string; created_at: string; cafe_id: string; cafe_name: string | null; note: string | null; member: string | null; reports: number };
+type Queue = { done?: Done[]; requests: Req[]; removals?: Removal[]; comments: Cmt[]; reviews: Rev[]; events: number; event_photos: number };
 type Match = { id: string; name: string; city: string; cc: string; host: string | null; score: number; slug: string };
 type Verdict = { level: "valid" | "look" | "flag"; reasons: string[]; matches: Match[]; cafeId: string | null };
 
@@ -184,6 +185,45 @@ function ContentCard({ kind, id, who, when, where, body, photos, onDone }: { kin
   );
 }
 
+function RemovalCard({ r, onDone }: { r: Removal; onDone: () => void }) {
+  const [cafe, setCafe] = useState<{ name: string; city: string; slug: string } | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [msg, setMsg] = useState<string | null>(null);
+  useEffect(() => {
+    let live = true;
+    fetch(`/api/cafes/lookup?ids=${r.cafe_id}`).then((x) => x.json()).then((j: { name: string; city: string; slug: string }[]) => live && j[0] && setCafe(j[0])).catch(() => {});
+    return () => { live = false; };
+  }, [r.cafe_id]);
+  const decide = async (remove: boolean) => {
+    setBusy(true);
+    setMsg(null);
+    const { data, error } = await supabase().rpc("admin_resolve_removal", { p_id: r.id, p_remove: remove });
+    setBusy(false);
+    if (error || !data) setMsg("That didn't go through. Reload and try again.");
+    else onDone();
+  };
+  return (
+    <li className="rounded-sm border-2 border-line bg-paper-raised p-4">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="font-medium text-ink">
+          <span className="mr-2 rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800">Café removal</span>
+          {cafe ? <Link href={`/cafes/${cafe.slug}`} className="underline decoration-line-strong hover:text-matcha">{cafe.name}, {cafe.city}</Link> : r.cafe_name ?? r.cafe_id}
+        </p>
+        {r.reports > 1 && <span className="rounded-full border border-amber-500 bg-amber-100 px-3 py-0.5 text-xs font-semibold text-amber-950">{r.reports} reports</span>}
+      </div>
+      <p className="mt-1 text-sm text-ink-muted">
+        {r.member ? <>Member <Link href={`/u/${encodeURIComponent(r.member)}`} className="text-matcha underline">{r.member}</Link> · </> : null}said it doesn&apos;t serve matcha · {ago(r.created_at)}
+      </p>
+      {r.note && <p className="mt-2 text-sm text-ink">“{r.note}”</p>}
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <button type="button" disabled={busy} onClick={() => void decide(true)} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest disabled:opacity-50">Remove from map</button>
+        <button type="button" disabled={busy} onClick={() => void decide(false)} className="rounded-full border border-line-strong px-5 py-2 text-sm text-ink hover:bg-matcha-soft disabled:opacity-50">Keep on map</button>
+        {msg && <span className="text-sm text-red-800">{msg}</span>}
+      </div>
+    </li>
+  );
+}
+
 /** How many things are waiting (for the tab badge). */
 export function useQueueCount(enabled: boolean): number | null {
   const [n, setN] = useState<number | null>(null);
@@ -193,7 +233,7 @@ export function useQueueCount(enabled: boolean): number | null {
     const load = () => supabase().rpc("admin_queue").then(({ data, error }) => {
       if (!live || error || !data) return;
       const q = data as Queue;
-      setN(q.requests.length + q.events + q.event_photos);
+      setN(q.requests.length + (q.removals?.length ?? 0) + q.events + q.event_photos);
     });
     void load();
     const id = setInterval(load, 60000);
@@ -231,7 +271,7 @@ export function AdminApprovals({ onOpenEvents }: { onOpenEvents: () => void }) {
   useEffect(load, [load]);
   if (q === null) return <p className="mt-4 text-sm text-ink-faint">Loading…</p>;
   if (q === "error") return <p className="mt-4 text-sm text-ink-muted">The queue isn&apos;t available yet. Run <code>supabase/admin_queue.sql</code> in the Supabase SQL editor once.</p>;
-  const total = q.requests.length + q.events + q.event_photos;
+  const total = q.requests.length + (q.removals?.length ?? 0) + q.events + q.event_photos;
   return (
     <section className="mt-4" aria-label="Approvals queue">
       {total === 0 ? (
@@ -243,6 +283,12 @@ export function AdminApprovals({ onOpenEvents }: { onOpenEvents: () => void }) {
         <div className="mt-5">
           <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Business account requests ({q.requests.length})</h2>
           <ul className="mt-2 flex flex-col gap-3">{q.requests.map((r) => <RequestCard key={r.id} r={r} onDone={load} />)}</ul>
+        </div>
+      )}
+      {q.removals && q.removals.length > 0 && (
+        <div className="mt-5">
+          <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Café removal ({q.removals.length})</h2>
+          <ul className="mt-2 flex flex-col gap-3">{q.removals.map((r) => <RemovalCard key={r.id} r={r} onDone={load} />)}</ul>
         </div>
       )}
       {q.done && q.done.length > 0 && (

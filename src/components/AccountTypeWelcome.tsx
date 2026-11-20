@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useAuth, TYPE_KEY } from "@/components/AuthProvider";
 import { supabase } from "@/lib/supabase";
-import { submitFeedback } from "@/lib/feedback";
 import { useT } from "@/i18n/client";
 
 type Kind = "general" | "cafe_owner" | "wholesaler";
@@ -65,7 +64,6 @@ export function AccountTypeWelcome() {
     const { error } = await supabase().from("account_requests").insert({ kind, business: business.trim(), website: website.trim() || null });
     setBusy(false);
     if (error) return setErr(t("c.ty.err"));
-    void submitFeedback(`[Account request at sign-up] ${kind}: ${business.trim()} ${website.trim()}`.trim(), "/welcome", "en");
     done(uid);
   }
 

@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { useSb } from "@/lib/demo";
-import { submitFeedback } from "@/lib/feedback";
 import { useT } from "@/i18n/client";
 
 type Item = { id: number; name: string; price: string | null; description: string | null; is_matcha: boolean };
@@ -52,7 +51,6 @@ export function CafeMenuManager({ cafeId, cafeName }: { cafeId: string; cafeName
     setMsg(null);
     const { error } = await supabase().from("account_requests").insert({ kind: "cafe_owner", business: cafeName.slice(0, 80), cafe_id: cafeId });
     if (error) return setMsg(t("c.mn.err"));
-    void submitFeedback(`[Café owner request] ${cafeName} (${cafeId})`, window.location.pathname, "en");
     setSent(true);
   }
 

@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { supabase } from "@/lib/supabase";
-import { submitFeedback } from "@/lib/feedback";
 import { useT } from "@/i18n/client";
 
 type Row = { account_type: "general" | "cafe_owner" | "wholesaler"; business_name: string | null; website: string | null; about: string | null; accept_dms: boolean };
@@ -43,7 +42,6 @@ export function AccountTypePanel() {
     const { error } = await supabase().from("account_requests").insert({ kind: form.kind, business: form.business.trim(), website: form.website.trim() || null, note: form.note.trim() || null });
     if (error) setMsg(t("c.ty.err"));
     else {
-      void submitFeedback(`[Account request] ${form.kind}: ${form.business.trim()} ${form.website.trim()} ${form.note.trim()}`.trim(), "/account", "en");
       setReqs([{ kind: form.kind, business: form.business.trim(), status: "pending" }, ...reqs]);
       setMsg(t("c.ty.sent"));
     }
