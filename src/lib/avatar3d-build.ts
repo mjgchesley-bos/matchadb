@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
-import { DESIGN_HAIR, DESIGN_SKIN, OUTFIT_COLORS, parseDesign, parseOutfit } from "@/lib/avatar-design";
+import { DESIGN_HAIR, DESIGN_SKIN, OUTFIT_COLORS, SHOE_COLORS, parseDesign, parseOutfit } from "@/lib/avatar-design";
 
 // Builds the 3D figure: sculpted body, a real jacket (open front, collar, lapels, zip, pockets, cuffs), a kimono robe, apron, hoodie and tee,
 // glossy hair, a face with brows and a nose, and a soft ink outline around every big shape for a clean toy-like look.
@@ -17,7 +17,7 @@ export const shade = (hex: string, amt: number) => {
 export function build(code: string) {
   const parts = parseDesign(code)!;
   const [, skin, hs, hc, eyes, mouth, extra] = parts;
-  const [style, ci] = parseOutfit(code);
+  const [style, ci, shoeStyle, shoeCi] = parseOutfit(code);
   const S = DESIGN_SKIN[skin], H = DESIGN_HAIR[hc], C = OUTFIT_COLORS[ci], Cd = shade(C, -0.14), Cl = shade(C, 0.1);
   const g = new THREE.Group();
 
@@ -57,10 +57,19 @@ export function build(code: string) {
   for (const sx of [-1, 1]) {
     add(new THREE.CylinderGeometry(0.175, 0.14, 1.0, 22), cloth(pants), sx * 0.2, 0.56, 0, g, 0.018);
     add(new THREE.TorusGeometry(0.145, 0.03, 10, 24), cloth(shade(pants, -0.08)), sx * 0.2, 0.1, 0).rotation.x = Math.PI / 2;
-    const shoe = add(new THREE.SphereGeometry(0.22, 24, 16), phys(style === 3 || style === 9 ? "#f1ece0" : "#5a4330", { roughness: 0.4, clearcoat: 0.3 }), sx * 0.2, 0.1, 0.09, g, 0.02);
-    shoe.scale.set(1, 0.58, 1.5);
-    const sole = add(new THREE.SphereGeometry(0.22, 20, 10), phys("#f4efe4", { roughness: 0.6 }), sx * 0.2, 0.045, 0.09);
-    sole.scale.set(1.04, 0.2, 1.54);
+    // shoes: style and colour are the wearer's pick; "Classic" in the first colour keeps the old look (white with a tee, brown otherwise)
+    const sc = shoeStyle === 0 && shoeCi === 0 ? (style === 3 || style === 9 ? "#f1ece0" : "#5a4330") : SHOE_COLORS[shoeCi];
+    const x = sx * 0.2;
+    const body = (sy = 0.58, y = 0.1, mat?: THREE.Material, sxs = 1, sz = 1.5) => { const m = add(new THREE.SphereGeometry(0.22, 24, 16), mat ?? phys(sc, { roughness: 0.4, clearcoat: 0.3 }), x, y, 0.09, g, 0.02); m.scale.set(sxs, sy, sz); return m; };
+    const sole = (h = 0.2, col = "#f4efe4", y = 0.045) => { const m = add(new THREE.SphereGeometry(0.22, 20, 10), phys(col, { roughness: 0.6 }), x, y, 0.09); m.scale.set(1.04, h, 1.54); };
+    if (shoeStyle === 1) { body(0.6); sole(0.34, "#f4efe4", 0.05); const cap = add(new THREE.SphereGeometry(0.12, 14, 10), phys("#f4efe4", { roughness: 0.5 }), x, 0.1, 0.27); cap.scale.set(1.1, 0.7, 0.9); add(new THREE.BoxGeometry(0.16, 0.012, 0.012), phys("#f4efe4"), x, 0.19, 0.12); }
+    else if (shoeStyle === 2) { body(0.6); sole(0.34, "#f4efe4", 0.05); add(new THREE.CylinderGeometry(0.15, 0.16, 0.2, 20), phys(sc, { roughness: 0.4, clearcoat: 0.3 }), x, 0.24, 0, g, 0.016); add(new THREE.TorusGeometry(0.152, 0.02, 8, 20), phys("#f4efe4"), x, 0.34, 0).rotation.x = Math.PI / 2; }
+    else if (shoeStyle === 3) { body(0.55); sole(0.26, "#2b2118", 0.045); add(new THREE.CylinderGeometry(0.19, 0.2, 0.56, 24), phys(sc, { roughness: 0.5, clearcoat: 0.25 }), x, 0.38, -0.01, g, 0.018); add(new THREE.TorusGeometry(0.19, 0.022, 8, 24), phys(shade(sc, -0.1)), x, 0.66, -0.01).rotation.x = Math.PI / 2; }
+    else if (shoeStyle === 4) { body(0.46, 0.14, undefined, 0.88, 1.45); const sl = add(new THREE.CylinderGeometry(0.028, 0.02, 0.12, 10), phys(sc, { roughness: 0.3, clearcoat: 0.5 }), x, 0.06, -0.06); sl.rotation.x = 0.1; }
+    else if (shoeStyle === 5) { sole(0.12, sc, 0.04); const ft = add(new THREE.SphereGeometry(0.2, 18, 12), skinM, x, 0.1, 0.1); ft.scale.set(0.85, 0.5, 1.4); for (const z of [0.0, 0.2]) { const st = add(new THREE.TorusGeometry(0.16, 0.018, 8, 20), phys(sc), x, 0.12, z); st.scale.set(1, 0.5, 1); } }
+    else if (shoeStyle === 6) { body(0.55, 0.1, phys(sc, { roughness: 0.2, clearcoat: 0.8 })); sole(0.2, "#2b2118"); add(new THREE.BoxGeometry(0.1, 0.03, 0.03), phys("#d9b46a", { metalness: 0.7, roughness: 0.3 }), x, 0.19, 0.14); }
+    else if (shoeStyle === 7) { body(0.7, 0.11, phys(sc, { roughness: 0.95, sheen: 1, sheenColor: new THREE.Color(shade(sc, 0.2)) }), 1.08, 1.4); add(new THREE.TorusGeometry(0.14, 0.04, 8, 20), phys(shade(sc, 0.12), { roughness: 0.95 }), x, 0.22, 0.02).rotation.x = Math.PI / 2; }
+    else { body(); sole(); }
   }
 
   // ---- torso: a lathe profile gives shoulders, chest, waist and hips
@@ -400,10 +409,7 @@ export function build(code: string) {
   else if (hs === 24) { cap(0.6, Math.PI * 0.3); const sw = add(new THREE.SphereGeometry(0.3, 18, 12), hairM, 0, headY + 0.42, 0.3, g, 0.012); sw.scale.set(1.1, 0.5, 0.8); }
 
   // ---- extras
-  if (extra === 1) {
-    add(new THREE.CylinderGeometry(0.17, 0.12, 0.2, 24), phys("#3f7d3a", { roughness: 0.35, clearcoat: 0.5 }), 0.12, -0.76, 0.2, arms[1], 0.012);
-    add(new THREE.CylinderGeometry(0.15, 0.15, 0.012, 24), phys("#8fbf7a", { roughness: 0.5 }), 0.12, -0.66, 0.2, arms[1]);
-  } else if (extra === 2) {
+  if (extra === 2) {
     add(new THREE.CylinderGeometry(0.03, 0.03, 0.34, 10), phys("#8a6a3a"), 0.12, -0.66, 0.14, arms[1]);
     add(new THREE.SphereGeometry(0.11, 16, 12), phys("#c9a86a", { roughness: 0.7 }), 0.12, -0.88, 0.14, arms[1]).scale.set(1, 1.2, 1);
   } else if (extra === 3) {

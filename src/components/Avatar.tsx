@@ -196,7 +196,6 @@ export function designedFace(parts: DesignParts) {
     mouth === 7 ? <path d="M30 37.5c1-1 3-1 4 0 1 1.2 0 3.2-2 3.7-2-.5-3-2.5-2-3.7z" fill="#d0405a" /> :
     <g><path d="M27 38c2 3 8 3 10 0" fill="none" stroke={ink} strokeWidth="1.8" strokeLinecap="round" /><path d="M30 40.5c0 3.5 4 3.5 4 0z" fill="#f08a9a" /></g>;
   const extraEl =
-    extra === 1 ? <g><path d="M44 50h14c0 6-3 9-7 9s-7-3-7-9z" fill="#3f7d3a" /><path d="M46 49c-1-2 1-3 0-5M51 49c-1-2 1-3 0-5" stroke="#3f7d3a" strokeWidth="1.2" fill="none" strokeLinecap="round" /></g> :
     extra === 2 ? <g><rect x="47" y="42" width="4" height="9" rx="1.8" fill="#8a6a3a" /><path d="M47 51c-3 1-4 4-4 8h12c0-4-1-7-4-8z" fill="#c9a86a" /></g> :
     extra === 3 ? <path d="M46 28c-1-6 3-9 8-9 0 6-3 9-8 9z" fill="#4a9a4a" /> :
     extra === 4 ? <g fill="#f08a9a" opacity="0.55"><ellipse cx="22.5" cy="36" rx="3" ry="2" /><ellipse cx="41.5" cy="36" rx="3" ry="2" /></g> :

@@ -14,17 +14,26 @@ export type DesignParts = [number, number, number, number, number, number, numbe
 // older codes without them mean "matcha-green robe".
 export const OUTFIT_STYLES = ["Robe", "Apron", "Hoodie", "T-shirt", "Jacket", "Dress", "Skirt & top", "Sweater", "Overalls", "Tank top", "Button-up", "Polo", "Suit & tie", "Cardigan", "Tracksuit"];
 export const OUTFIT_COLORS = ["#3f7d3a", "#2f5d8a", "#b5472f", "#7a4a8a", "#d9b46a", "#2b2b33", "#c0577a", "#e9e4d6", "#f2a0b8", "#8fbf7a", "#3a8a8a", "#e8863a"];
-export type Outfit = [number, number];
+export const SHOE_STYLES = ["Classic", "Sneakers", "High-tops", "Boots", "Heels", "Sandals", "Loafers", "Slippers"];
+export const SHOE_COLORS = ["#5a4330", "#f4efe4", "#2b2b33", "#b5472f", "#2f5d8a", "#c0577a", "#3f7d3a", "#d9b46a"];
+export const RETIRED_EXTRAS = [1]; // the matcha cup; kept as a reserved slot so saved avatars still decode, but it no longer shows or can be picked
+export type Outfit = [number, number, number, number];
 
-export const designCode = (p: DesignParts, o: Outfit = [0, 0]): string => "d:" + p.map((n) => n.toString(36)).join("") + (o[0] === 0 && o[1] === 0 ? "" : o.map((n) => n.toString(36)).join(""));
+export const designCode = (p: DesignParts, o: Outfit = [0, 0, 0, 0]): string => "d:" + p.map((n) => n.toString(36)).join("") + (o[2] !== 0 || o[3] !== 0 ? o.map((n) => n.toString(36)).join("") : o[0] === 0 && o[1] === 0 ? "" : [o[0], o[1]].map((n) => n.toString(36)).join(""));
 export function parseDesign(code?: string | null): DesignParts | null {
-  if (!code || !/^d:[0-9a-z]{7}([0-9a-z]{2})?$/.test(code)) return null;
+  if (!code || !/^d:[0-9a-z]{7}([0-9a-z]{2}|[0-9a-z]{4})?$/.test(code)) return null;
   const p = code.slice(2, 9).split("").map((c) => parseInt(c, 36)) as DesignParts;
   return p.every((n, i) => n < DESIGN_SIZES[i]) ? p : null;
 }
 export function parseOutfit(code?: string | null): Outfit {
-  if (!code || !/^d:[0-9a-z]{9}$/.test(code)) return [0, 0];
+  if (!code || !/^d:[0-9a-z]{9}([0-9a-z]{2})?$/.test(code)) return [0, 0, 0, 0];
   const s = parseInt(code[9], 36), c = parseInt(code[10], 36);
-  return s < OUTFIT_STYLES.length && c < OUTFIT_COLORS.length ? [s, c] : [0, 0];
+  const hs = code.length > 11 ? parseInt(code[11], 36) : 0, hc = code.length > 12 ? parseInt(code[12], 36) : 0;
+  if (s >= OUTFIT_STYLES.length || c >= OUTFIT_COLORS.length) return [0, 0, 0, 0];
+  return hs < SHOE_STYLES.length && hc < SHOE_COLORS.length ? [s, c, hs, hc] : [s, c, 0, 0];
 }
-export const randomDesign = (): DesignParts => DESIGN_SIZES.map((n) => Math.floor(Math.random() * n)) as unknown as DesignParts;
+export const randomDesign = (): DesignParts => {
+  const p = DESIGN_SIZES.map((n) => Math.floor(Math.random() * n)) as unknown as DesignParts;
+  if (RETIRED_EXTRAS.includes(p[6])) p[6] = 0;
+  return p;
+};

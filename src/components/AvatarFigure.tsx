@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import dynamic from "next/dynamic";
 import { designedFace } from "@/components/Avatar";
-import { OUTFIT_COLORS, parseDesign, parseOutfit, type DesignParts } from "@/lib/avatar-design";
+import { OUTFIT_COLORS, SHOE_COLORS, parseDesign, parseOutfit, type DesignParts } from "@/lib/avatar-design";
 
 // A full-body, chunky cartoon figure built from the same parts as the round avatar plus an outfit. It spins once all the way round
 // when it appears (a front view and a back view on a flipping card) and again whenever it is clicked. Drawn on a 140 x 300 canvas.
@@ -15,15 +15,16 @@ function shade(hex: string, amt: number): string {
   return `#${[(n >> 16) & 255, (n >> 8) & 255, n & 255].map((v) => c(v).toString(16).padStart(2, "0")).join("")}`;
 }
 
-function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, number]; back: boolean }) {
+function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, number, number, number]; back: boolean }) {
   const { S, H, hairBack, hairFront, eyeEl, mouthEl, extraEl } = designedFace(parts);
   const hs = parts[2], extra = parts[6];
-  const [style, ci] = outfit;
+  const [style, ci, shoeStyle, shoeCi] = outfit;
+  const shoeCol = shoeStyle === 0 && shoeCi === 0 ? (style === 3 ? "#e9e4d6" : "#4a3a2a") : SHOE_COLORS[shoeCi];
   const C = OUTFIT_COLORS[ci], Cd = shade(C, -38), Cl = shade(C, 42);
   const pants = style === 3 || style === 7 || style === 9 ? "#3e5c8a" : style === 4 || style === 1 ? "#3b3f4a" : style === 5 || style === 6 ? S : style === 8 ? C : style === 14 || style === 12 ? Cd : style === 10 || style === 13 ? "#3b3f4a" : style === 11 ? "#3e5c8a" : Cd;
   const shirt = style === 1 || style === 4 || style === 8 || style === 12 || style === 13 ? "#f3efe4" : style === 6 ? Cl : C;
   const s = 2.2;
-  const hand = extra === 1 || extra === 2;
+  const hand = extra === 2;
   // Short sleeves show bare arms; everything else covers them.
   const bareArms = style === 3 || style === 5 || style === 6 || style === 9 || style === 11;
   const armCol = bareArms ? S : style === 1 || style === 8 ? "#f3efe4" : C;
@@ -52,7 +53,7 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
           {hairFront}
           {eyeEl}
           {mouthEl}
-          {extra !== 1 && extra !== 2 ? extraEl : null}
+          {extra !== 2 ? extraEl : null}
         </g>
       )}
     </g>
@@ -63,8 +64,12 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
       {/* legs and shoes */}
       <rect x="49" y="188" width="19" height="84" rx="8" fill={pants} />
       <rect x="72" y="188" width="19" height="84" rx="8" fill={pants} />
-      <ellipse cx="55" cy="277" rx="15" ry="8" fill={style === 3 ? "#e9e4d6" : "#4a3a2a"} />
-      <ellipse cx="85" cy="277" rx="15" ry="8" fill={style === 3 ? "#e9e4d6" : "#4a3a2a"} />
+      {shoeStyle === 3 && <g fill={shoeCol}><rect x="46" y="244" width="22" height="34" rx="6" /><rect x="72" y="244" width="22" height="34" rx="6" /></g>}
+      {shoeStyle === 2 && <g fill={shoeCol}><rect x="48" y="258" width="18" height="18" rx="5" /><rect x="74" y="258" width="18" height="18" rx="5" /></g>}
+      <ellipse cx="55" cy="277" rx={shoeStyle === 4 ? 12 : 15} ry={shoeStyle === 5 ? 5 : 8} fill={shoeStyle === 5 ? S : shoeCol} />
+      <ellipse cx="85" cy="277" rx={shoeStyle === 4 ? 12 : 15} ry={shoeStyle === 5 ? 5 : 8} fill={shoeStyle === 5 ? S : shoeCol} />
+      {shoeStyle === 1 || shoeStyle === 2 ? <g fill="#f4efe4"><rect x="40" y="281" width="30" height="4" rx="2" /><rect x="70" y="281" width="30" height="4" rx="2" /></g> : null}
+      {shoeStyle === 4 && <g fill={shoeCol}><rect x="45" y="278" width="3" height="10" /><rect x="92" y="278" width="3" height="10" /></g>}
       {/* arms behind torso */}
       <rect x="22" y="108" width="19" height="78" rx="9.5" fill={armCol} transform="rotate(6 31 112)" />
       <rect x="99" y="108" width="19" height="78" rx="9.5" fill={armCol} transform="rotate(-6 109 112)" />
@@ -124,13 +129,7 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
       {style === 14 && <g><path d="M70 112v84" stroke={Cl} strokeWidth="3" />{!back && <path d="M44 114v82M96 114v82" stroke="#f3efe4" strokeWidth="3" />}</g>}
       {style === 3 && !back && <path d="M58 109c3 8 21 8 24 0" fill="none" stroke={shade(C, -45)} strokeWidth="4" strokeLinecap="round" />}
       {/* held item in the right hand */}
-      {hand && !back && (
-        extra === 1 ? (
-          <g><path d="M104 168h24c0 12-5 18-12 18s-12-6-12-18z" fill="#3f7d3a" /><path d="M110 164c-2-4 2-6 0-10M118 164c-2-4 2-6 0-10" stroke="#8aa88a" strokeWidth="2" fill="none" strokeLinecap="round" /></g>
-        ) : (
-          <g><rect x="108" y="150" width="7" height="22" rx="3.5" fill="#8a6a3a" /><path d="M108 172c-6 2-8 8-8 16h24c0-8-2-14-9-16z" fill="#c9a86a" /></g>
-        )
-      )}
+      {hand && !back && <g><rect x="108" y="150" width="7" height="22" rx="3.5" fill="#8a6a3a" /><path d="M108 172c-6 2-8 8-8 16h24c0-8-2-14-9-16z" fill="#c9a86a" /></g>}
       <circle cx="28" cy="190" r="10" fill={S} />
       <circle cx="112" cy="190" r="10" fill={S} />
       {head}

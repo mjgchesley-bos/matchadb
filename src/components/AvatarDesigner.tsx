@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Avatar } from "@/components/Avatar";
 import { AvatarFigure } from "@/components/AvatarFigure";
 import { useT } from "@/i18n/client";
-import { DESIGN_BG, DESIGN_HAIR, DESIGN_SKIN, EXTRAS, EYES, HAIR_STYLES, MOUTHS, OUTFIT_COLORS, OUTFIT_STYLES, designCode, parseDesign, parseOutfit, randomDesign, type DesignParts, type Outfit } from "@/lib/avatar-design";
+import { DESIGN_BG, DESIGN_HAIR, DESIGN_SKIN, EXTRAS, EYES, HAIR_STYLES, MOUTHS, OUTFIT_COLORS, OUTFIT_STYLES, RETIRED_EXTRAS, SHOE_COLORS, SHOE_STYLES, designCode, parseDesign, parseOutfit, randomDesign, type DesignParts, type Outfit } from "@/lib/avatar-design";
 
 // "Design your own": pick a background, skin, hair, eyes, mouth, extra and outfit, or roll the dice, then use it as your avatar.
 export function AvatarDesigner({ current, onUse, open: openProp, onOpenChange }: { current: string | null; onUse: (code: string) => void; open?: boolean; onOpenChange?: (v: boolean) => void }) {
@@ -33,11 +33,11 @@ export function AvatarDesigner({ current, onUse, open: openProp, onOpenChange }:
       </div>
     </div>
   );
-  const choices = (selected: number, onPick: (k: number) => void, names: string[], label: string) => (
+  const choices = (selected: number, onPick: (k: number) => void, names: string[], label: string, hide: number[] = []) => (
     <div className="sm:col-span-2">
       <span className="text-xs text-ink-faint">{label}</span>
       <div className="mt-1 flex flex-wrap gap-1.5">
-        {names.map((n, k) => (
+        {names.map((n, k) => hide.includes(k) ? null : (
           <button key={n} type="button" aria-pressed={selected === k} onClick={() => onPick(k)} className={`rounded-full border px-3 py-1 text-xs ${selected === k ? "border-matcha bg-matcha-soft text-ink" : "border-line-strong text-ink-muted hover:bg-matcha-soft"}`}>
             {n}
           </button>
@@ -59,7 +59,7 @@ export function AvatarDesigner({ current, onUse, open: openProp, onOpenChange }:
         <div className="flex w-full basis-full flex-wrap items-start gap-x-8 gap-y-5">
           <div className="flex shrink-0 flex-col items-center gap-2">
             <AvatarFigure code={code} height={300} />
-            <button type="button" onClick={() => { setP(randomDesign()); setO([Math.floor(Math.random() * OUTFIT_STYLES.length), Math.floor(Math.random() * OUTFIT_COLORS.length)]); }} className="text-sm text-matcha underline hover:text-forest">
+            <button type="button" onClick={() => { setP(randomDesign()); setO([Math.floor(Math.random() * OUTFIT_STYLES.length), Math.floor(Math.random() * OUTFIT_COLORS.length), Math.floor(Math.random() * SHOE_STYLES.length), Math.floor(Math.random() * SHOE_COLORS.length)]); }} className="text-sm text-matcha underline hover:text-forest">
               {t("c.av.random")}
             </button>
           </div>
@@ -72,9 +72,11 @@ export function AvatarDesigner({ current, onUse, open: openProp, onOpenChange }:
               <div className="hidden sm:block" />
               {choices(p[4], (k) => setPart(4, k), EYES, t("c.av.eyes"))}
               {choices(p[5], (k) => setPart(5, k), MOUTHS, t("c.av.mouth"))}
-              {choices(p[6], (k) => setPart(6, k), EXTRAS, t("c.av.extra"))}
-              {choices(o[0], (k) => setO([k, o[1]]), OUTFIT_STYLES, t("c.av.outfit"))}
-              {swatches(o[1], (k) => setO([o[0], k]), OUTFIT_COLORS, t("c.av.outfitColor"))}
+              {choices(p[6], (k) => setPart(6, k), EXTRAS, t("c.av.extra"), RETIRED_EXTRAS)}
+              {choices(o[0], (k) => setO([k, o[1], o[2], o[3]]), OUTFIT_STYLES, t("c.av.outfit"))}
+              {swatches(o[1], (k) => setO([o[0], k, o[2], o[3]]), OUTFIT_COLORS, t("c.av.outfitColor"))}
+              {choices(o[2], (k) => setO([o[0], o[1], k, o[3]]), SHOE_STYLES, "Shoes")}
+              {swatches(o[3], (k) => setO([o[0], o[1], o[2], k]), SHOE_COLORS, "Shoe colour")}
             </div>
             <div className="mt-5 flex flex-wrap gap-3">
               <button type="button" onClick={() => { onUse(code); setOpen(false); }} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest">
