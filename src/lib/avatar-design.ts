@@ -32,6 +32,12 @@ export function parseOutfit(code?: string | null): Outfit {
   if (s >= OUTFIT_STYLES.length || c >= OUTFIT_COLORS.length) return [0, 0, 0, 0];
   return hs < SHOE_STYLES.length && hc < SHOE_COLORS.length ? [s, c, hs, hc] : [s, c, 0, 0];
 }
+export const randomOutfit = (): Outfit => {
+  const r = (n: number) => Math.floor(Math.random() * n);
+  return [r(OUTFIT_STYLES.length), r(OUTFIT_COLORS.length), r(SHOE_STYLES.length), r(SHOE_COLORS.length)];
+};
+/** A complete random avatar (face, outfit and shoes): what every new account starts with. */
+export const randomAvatarCode = (): string => designCode(randomDesign(), randomOutfit());
 export const randomDesign = (): DesignParts => {
   const p = DESIGN_SIZES.map((n) => Math.floor(Math.random() * n)) as unknown as DesignParts;
   if (RETIRED_EXTRAS.includes(p[6])) p[6] = 0;

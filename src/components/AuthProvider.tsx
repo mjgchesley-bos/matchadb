@@ -1,5 +1,6 @@
 "use client";
 
+import { randomAvatarCode } from "@/lib/avatar-design";
 import Link from "@/i18n/Link";
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, useSyncExternalStore } from "react";
 import type { User } from "@supabase/supabase-js";
@@ -162,7 +163,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       .select("display_name, is_public, avatar, avatar_path")
       .eq("id", uid)
       .maybeSingle()
-      .then(({ data }) => live && setProfile({ uid, name: data?.display_name ?? null, isPublic: !!data?.is_public, avatar: data?.avatar ?? null, avatarPath: data?.avatar_path ?? null }));
+      .then(async ({ data }) => {
+        if (!live) return;
+        let avatar: string | null = data?.avatar ?? null;
+        // Everyone has an avatar: an account that has neither a picked one nor a photo gets a random one (new sign-ups; the database also fills it in).
+        if (data && !avatar && !data.avatar_path) {
+          const code = randomAvatarCode();
+          const { error } = await supabase().from("profiles").update({ avatar: code }).eq("id", uid);
+          if (!error) avatar = code;
+        }
+        if (live) setProfile({ uid, name: data?.display_name ?? null, isPublic: !!data?.is_public, avatar, avatarPath: data?.avatar_path ?? null });
+      });
     return () => {
       live = false;
     };
