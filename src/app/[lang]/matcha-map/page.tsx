@@ -37,14 +37,14 @@ export default async function MatchaMapPage({ params, searchParams }: { params: 
   const covered = lang === "en" ? `${regionNames.slice(0, -1).join(", ")} and ${regionNames[regionNames.length - 1]}` : new Intl.ListFormat(INTL_LANG[lang], { type: "conjunction" }).format(regionNames);
 
   return (
-    <main className="flex-1 max-w-6xl mx-auto w-full px-6 py-10">
-      <header className="mb-8 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-8">
-        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-2">{t("cafes.eyebrow")}</p>
-        <h1 className="font-display text-3xl sm:text-5xl font-semibold text-ink leading-tight text-balance">{t("cafes.h1")}</h1>
-        <p className="mt-4 max-w-3xl text-lg text-ink-muted leading-relaxed">
+    <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-3 sm:px-6 sm:py-6">
+      <header className="mb-4 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised px-5 py-3 shadow-sm max-sm:sr-only">
+        <p className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-1">{t("cafes.eyebrow")}</p>
+        <h1 className="font-display text-2xl sm:text-3xl font-semibold text-ink leading-tight text-balance">{t("cafes.h1")}</h1>
+        <p className="mt-2 max-w-4xl text-sm text-ink-muted leading-snug">
           {t("cafes.lede")}
         </p>
-        <p className="mt-3 text-sm text-ink-faint">
+        <p className="mt-1 text-xs text-ink-faint">
           {t("cafes.count", { count: fmtNum(lang, cafes.length), countries, regions: covered })}
         </p>
       </header>
