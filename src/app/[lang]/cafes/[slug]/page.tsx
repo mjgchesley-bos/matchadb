@@ -245,7 +245,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
 
       {owner && <OwnerCafeSections part="rest" name={c.name} page={owner.page} photos={owner.photos} files={owner.files} products={owner.products} />}
 
-      {profile && !owner?.page.bio && (
+      {profile && (profile.about || profile.matcha || (profile.menu?.length ?? 0) > 0 || (profile.facts?.length ?? 0) > 0) && !owner?.page.bio && (
         <section aria-labelledby="cafe-about" className="mt-6 overflow-hidden rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised shadow-sm">
           <div className="border-b-2 border-matcha/40 px-5 py-4 sm:px-7">
             <h2 id="cafe-about" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">About</h2>
