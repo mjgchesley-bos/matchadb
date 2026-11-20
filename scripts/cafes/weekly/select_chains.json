@@ -15,6 +15,13 @@
         "lalalandkindcafe.com"
       ],
       "why": "owner request 2026-11-15: wants every location (38 on its own page, matcha-heavy Kind Cafe); Burnet Rd Austin was missing"
+    },
+    {
+      "name": "Blank Street Coffee",
+      "hosts": [
+        "blankstreet.com"
+      ],
+      "why": "owner request 2026-11-19: wants every location (109 on its own locations page, US + UK); matcha on its menu"
     }
   ]
 }
