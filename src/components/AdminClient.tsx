@@ -478,8 +478,8 @@ export function AdminClient() {
           {[
             { href: "/business", title: "Owner page editor", note: "The real editor (needs an owner account)." },
           ].map((x) => (
-            <Link key={x.href} href={x.href} className={`rounded-md border-2 bg-paper-raised px-4 py-3 shadow-sm hover:bg-matcha-soft ${x.primary ? "border-matcha" : "border-matcha/50"}`}>
-              <span className="block font-display text-lg font-semibold text-forest">{x.title}{x.primary ? " →" : ""}</span>
+            <Link key={x.href} href={x.href} className={`rounded-md border-2 bg-paper-raised px-4 py-3 shadow-sm hover:bg-matcha-soft border-matcha/50`}>
+              <span className="block font-display text-lg font-semibold text-forest">{x.title}</span>
               <span className="mt-1 block text-xs text-ink-muted">{x.note}</span>
             </Link>
           ))}
