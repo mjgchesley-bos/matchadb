@@ -220,19 +220,17 @@ export function WholesaleDirectory({ suppliers, regionOrder }: { suppliers: Supp
             )}
             {s.note && <p className="mt-1 text-xs text-ink-faint">{s.note}</p>}
             <div className="mt-auto pt-4 flex flex-wrap items-center gap-x-4 gap-y-2">
-              <a
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href={`/wholesale/${s.slug}`}
                 className="inline-flex items-center rounded-full bg-matcha px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-forest"
               >
+                {t("c.ws.profile")}
+              </Link>
+              <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-sm text-matcha underline hover:text-forest">
                 {t("c.ws.page")}
                 <span className="sr-only">{t("c.ws.pageSr", { name: s.name })}</span>
                 <span aria-hidden="true" className="ml-1">↗</span>
               </a>
-              <Link href={`/wholesale/${s.slug}`} className="text-sm text-matcha underline hover:text-forest">
-                {t("c.ws.profile")}
-              </Link>
               <span className="text-xs text-ink-faint">{t("c.ws.checked", { date: dateFmt.format(new Date(`${s.verified}T00:00:00Z`)) })}</span>
             </div>
           </li>

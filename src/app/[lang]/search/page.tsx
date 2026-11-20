@@ -9,7 +9,7 @@ import { getT } from "@/i18n/server";
 export const metadata: Metadata = { title: "Search", robots: { index: false, follow: true } };
 export const dynamic = "force-dynamic";
 
-const TITLE: Record<string, string> = { products: "c.search.products", brands: "c.search.brands", producers: "c.search.producers", cafes: "c.search.cafes", places: "c.search.places", regions: "c.search.regions", cultivars: "c.search.cultivars" };
+const TITLE: Record<string, string> = { products: "c.search.products", brands: "c.search.brands", producers: "c.search.producers", cafes: "c.search.cafes", places: "c.search.places", regions: "c.search.regions", cultivars: "c.search.cultivars", wholesale: "c.search.wholesale" };
 
 export default async function SearchPage({ params, searchParams }: { params: Promise<{ lang: string }>; searchParams: Promise<{ q?: string }> }) {
   const lang = await langOf(params);

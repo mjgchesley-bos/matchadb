@@ -43,6 +43,7 @@ export const en = {
   "c.search.regions": "Growing regions",
   "c.search.producers": "Producers",
   "c.search.cultivars": "Cultivars",
+  "c.search.wholesale": "Wholesale suppliers",
   "c.search.closest": "No exact match for that, but these are close:",
   "c.search.popular": "Nothing matched, so here are popular picks:",
   "c.search.all": "See every result for “{q}”",

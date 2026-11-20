@@ -7,7 +7,7 @@ import { useT } from "@/i18n/client";
 
 type Hit = { label: string; sub?: string; href: string };
 type Result = { groups: { key: string; hits: Hit[] }[]; closest: boolean; popular: Hit[] };
-const TITLE: Record<string, string> = { products: "c.search.products", brands: "c.search.brands", producers: "c.search.producers", cafes: "c.search.cafes", places: "c.search.places", regions: "c.search.regions", cultivars: "c.search.cultivars" };
+const TITLE: Record<string, string> = { products: "c.search.products", brands: "c.search.brands", producers: "c.search.producers", cafes: "c.search.cafes", places: "c.search.places", regions: "c.search.regions", cultivars: "c.search.cultivars", wholesale: "c.search.wholesale" };
 
 // The site-wide search bar in the header: cafés, places, brands and products in one box. Enter opens the full /search results page.
 export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero" }) {

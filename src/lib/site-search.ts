@@ -9,6 +9,7 @@ import { REGION_COORDINATES } from "@/lib/regions";
 import { REGION_CONTENT } from "@/lib/region-content";
 import { PRODUCERS } from "@/lib/producers";
 import { CULTIVARS } from "@/lib/cultivars";
+import { SUPPLIERS } from "@/lib/suppliers";
 
 // One search for the whole site. Every word typed is matched separately against everything we know, so "brand + product",
 // "city + cafe", a country, a region, a producer or a cultivar all work; typos are forgiven; and when nothing matches well
@@ -61,7 +62,7 @@ const mk = (label: string, href: string, sub?: string, extra = "", weight = 0): 
   return { n, w: n.split(" "), hit: { label, sub, href }, weight };
 };
 
-type Cache = { products: Item[]; brands: Item[]; places: Item[]; regions: Item[]; producers: Item[]; cultivars: Item[]; cafes: Item[] };
+type Cache = { products: Item[]; brands: Item[]; places: Item[]; regions: Item[]; producers: Item[]; cultivars: Item[]; cafes: Item[]; wholesale: Item[] };
 let cache: Cache | null = null;
 
 async function build(): Promise<Cache> {
@@ -107,7 +108,9 @@ async function build(): Promise<Cache> {
   } catch {
     /* the stores list is optional */
   }
-  cache = { products, brands, places, regions, producers, cultivars, cafes };
+  // Wholesale suppliers (UMU Japan, Pure Matcha Partners...): found by name, including the name in brackets, and by the brands they carry.
+  const wholesale = SUPPLIERS.map((u) => mk(u.name, `/wholesale/${u.slug}`, "Wholesale supplier", `${u.brands.join(" ")} wholesale supplier`, 0.05));
+  cache = { wholesale, products, brands, places, regions, producers, cultivars, cafes };
   return cache;
 }
 
@@ -129,6 +132,7 @@ export async function searchAll(rawIn: string, opts: { only?: string; scale?: nu
     ["cafes", c.cafes, Math.round(8 * scale)],
     ["places", c.places, Math.round(5 * scale)],
     ["brands", c.brands, Math.round(4 * scale)],
+    ["wholesale", c.wholesale, Math.round(3 * scale)],
     ["products", c.products, Math.round(6 * scale)],
     ["producers", c.producers, Math.round(3 * scale)],
     ["regions", c.regions, Math.round(3 * scale)],
@@ -156,7 +160,8 @@ export async function searchAll(rawIn: string, opts: { only?: string; scale?: nu
   }
   // A group whose top hit is exactly what was typed (a country, a brand, a region) leads.
   const qn = all.join(" ");
-  groups.sort((a, b) => Number(norm(b.hits[0].label) === qn) - Number(norm(a.hits[0].label) === qn));
+  const lead = (g: { hits: Hit[] }) => (norm(g.hits[0].label) === qn ? 2 : norm(g.hits[0].label).includes(qn) ? 1 : 0);
+  groups.sort((a, b) => lead(b) - lead(a));
   // 4. still nothing: popular picks, so the box is never empty.
   let popular: Hit[] = [];
   if (!groups.length) {
