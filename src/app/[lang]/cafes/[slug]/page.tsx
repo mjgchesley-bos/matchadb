@@ -147,7 +147,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
       {owner?.page.announcement && (
         <p className="mt-3 rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-3 text-sm font-medium text-forest" role="status">{owner.page.announcement}</p>
       )}
-      <header className="mt-3 rounded-sm border-2 border-line-strong bg-paper-raised p-5 sm:p-6">
+      <header className="mt-3 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft via-paper-raised to-paper-raised p-5 shadow-sm sm:p-6">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
           <div className="min-w-0">
             <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{c.name}</h1>
@@ -160,10 +160,11 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
                 &ldquo;{extra.desc}&rdquo; <span className="not-italic text-ink-faint">· {ownHost}</span>
               </p>
             )}
-            <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
               <a href={directionsUrl(c)} target="_blank" rel="noopener noreferrer" className="rounded-full bg-matcha px-5 py-2 font-medium text-paper hover:bg-forest transition-colors">
                 {t("cafe.directions")}
               </a>
+              <FavoriteCafeButton cafeId={c.id} name={c.name} />
               {siteUrl && (
                 <a href={siteUrl} target="_blank" rel="noopener noreferrer" className="self-center rounded-full border border-matcha px-4 py-1.5 font-medium text-matcha hover:bg-matcha-soft">
                   {t("cafe.website", { host: hostOf(siteUrl) })}
@@ -198,11 +199,8 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
                   {phone.replace(/^\+?1?[\s-]*(\d{3})[\s.-]*(\d{3})[\s.-]*(\d{4})$/, "($1) $2-$3")}
                 </a>
               )}
-            </p>
-            <div className="mt-4"><SocialIcons links={socialLinks} /></div>
-            <div className="mt-4 flex flex-wrap items-center gap-3">
-              <FavoriteCafeButton cafeId={c.id} name={c.name} />
             </div>
+            <div className="mt-4"><SocialIcons links={socialLinks} /></div>
           </div>
           <div className="flex flex-col gap-4">
             <MiniMap lat={c.lat} lng={c.lng} label={`Map of ${c.name}`} />
@@ -216,6 +214,8 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           </div>
         </div>
       </header>
+
+      <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
 
       {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} products={owner.products} />}
 
@@ -275,8 +275,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
           </ul>
         </section>
       )}
-
-      <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
 
       <CafeMenuManager cafeId={c.id} cafeName={c.name} fallbackTitle={t("cafe.menu.h2")}>
         <>

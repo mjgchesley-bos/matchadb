@@ -131,6 +131,7 @@ export function Comments({
   const [text, setText] = useState("");
   const [files, setFiles] = useState<File[]>([]);
   const [busy, setBusy] = useState(false);
+  const [composeOpen, setComposeOpen] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
   const [reporting, setReporting] = useState<string | null>(null);
   const [reported, setReported] = useState<Set<string>>(new Set());
@@ -269,6 +270,7 @@ export function Comments({
       window.gtag?.("event", "comment_submit", { target_type: targetType, photos: uploaded.length });
       setText("");
       setFiles([]);
+      setComposeOpen(false);
       setMessage(data.status === "pending" ? t("c.cm.thanksPending") : t("c.cm.thanks"));
       setTick((t) => t + 1);
     } catch (e) {
@@ -423,21 +425,24 @@ export function Comments({
   );
 
   return (
-    <section className="mt-12" aria-labelledby={`comments-${targetType}`}>
-      <h2 id={`comments-${targetType}`} className="font-display text-xl font-semibold text-ink">
-        {heading ?? t("c.cm.heading")}
-      </h2>
+    <section className="mt-6 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm sm:p-6" aria-labelledby={`comments-${targetType}`}>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <h2 id={`comments-${targetType}`} className="font-mono text-xs uppercase tracking-[0.2em] text-forest">
+          {heading ?? t("c.cm.heading")}
+        </h2>
+        <button
+          type="button"
+          aria-expanded={composeOpen}
+          onClick={() => (user ? setComposeOpen((v) => !v) : signIn(t("c.cm.signInPrompt", { subject })))}
+          className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper shadow-sm transition-colors hover:bg-forest"
+        >
+          {composeOpen ? t("c.cm.cancel") : t("c.cm.addLabel", { subject })}
+        </button>
+      </div>
 
-      {!user ? (
-        <p className="mt-3 text-sm text-ink-muted">
-          <button type="button" onClick={() => signIn(t("c.cm.signInPrompt", { subject }))} className="text-matcha underline hover:text-forest">
-            {t("c.cm.signIn")}
-          </button>{" "}
-          {t("c.cm.signInTail")}
-        </p>
-      ) : (
-        <div className="mt-4">
-          <label htmlFor={`comment-${targetType}`} className="block text-sm font-medium text-ink">
+      {user && composeOpen && (
+        <div className="mt-4 rounded-sm border-2 border-line bg-paper-raised p-4">
+          <label htmlFor={`comment-${targetType}`} className="sr-only">
             {t("c.cm.addLabel", { subject })}
           </label>
           <textarea
@@ -445,8 +450,9 @@ export function Comments({
             value={text}
             onChange={(e) => setText(e.target.value.slice(0, MAX_CHARS))}
             rows={3}
+            autoFocus
             placeholder={placeholder ?? t("c.cm.placeholder")}
-            className="mt-2 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
+            className="w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink placeholder:text-ink-faint focus:outline-2 focus:outline-matcha"
           />
           {files.length > 0 && (
             <div className="mt-2 flex flex-wrap gap-2">

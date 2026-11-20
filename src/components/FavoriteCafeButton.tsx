@@ -55,7 +55,7 @@ export function FavoriteCafeButton({ cafeId, name }: { cafeId: string; name: str
   };
 
   return (
-    <div className="mt-4 flex flex-wrap items-center gap-3">
+    <div className="flex flex-wrap items-center gap-3">
       <button
         type="button"
         onClick={toggle}
