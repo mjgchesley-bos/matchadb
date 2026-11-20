@@ -467,7 +467,10 @@ export function AdminClient() {
           <h1 className="mt-1 font-display text-3xl font-semibold text-ink">Dashboard</h1>
         </div>
         <div className="flex flex-col items-end gap-2">
-          <Link href="/admin/demo-cafe" className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper shadow-sm hover:bg-forest">Log in as a demo café owner</Link>
+          <div className="flex flex-wrap justify-end gap-2">
+            <Link href="/admin/demo-cafe" className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper shadow-sm hover:bg-forest">Log in as a demo café owner</Link>
+            <Link href="/admin/demo-wholesale" className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper shadow-sm hover:bg-forest">Log in as a demo wholesaler</Link>
+          </div>
           <p className="text-xs text-ink-faint">{updated ? `Updated ${updated.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · refreshes every minute` : ""}</p>
         </div>
       </div>

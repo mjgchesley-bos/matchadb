@@ -59,7 +59,7 @@ export function DemoCafeClient() {
       </header>
 
       <AuthContext.Provider value={fake}>
-        <DemoCtx.Provider value={true}>
+        <DemoCtx.Provider value="cafe">
           <div key={run} className="mt-6 flex flex-col gap-8">
             <CafePageEditor onState={setSnap} />
 

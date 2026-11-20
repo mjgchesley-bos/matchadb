@@ -6,7 +6,8 @@ import { demoMedia } from "@/lib/demo-media";
 
 // Demo mode for the staff dashboard: the real café-owner screens run against an in-memory fake of the few database calls they make, so a staff member
 // can try every button without creating an account or touching real data. Nothing here is sent anywhere; a reload resets it.
-export const DemoCtx = createContext(false);
+export type DemoKind = "cafe" | "wholesale";
+export const DemoCtx = createContext<DemoKind | false>(false);
 export const DEMO_CAFE = { id: "demo-cafe", name: "The Demo Matcha House", city: "Nowhere", slug: "demo" };
 
 // What "Fill in from public info" returns in the demo (a real café gets this from its own website).
@@ -22,7 +23,17 @@ type Result = { data: unknown; error: { message: string } | null };
 let seq = 100;
 const uuid = () => `demo-${++seq}`;
 
-function seed(): Record<string, Row[]> {
+function seed(kind: DemoKind): Record<string, Row[]> {
+  if (kind === "wholesale") {
+    return {
+      profiles: [{ id: "demo-owner", account_type: "wholesaler", banner_path: null }],
+      business_products: [
+        { id: "w1", user_id: "demo-owner", name: "Ceremonial matcha, 1 kg bulk bag", description: "First-flush Uji, stone-ground. Light-proof foil bag, nitrogen flushed. Pallet pricing on request.", price: "$310 / kg", url: "https://example.com/bulk-ceremonial" },
+        { id: "w2", user_id: "demo-owner", name: "Culinary matcha, 500 g", description: "Bright and bold for lattes and baking. Our best seller with cafés.", price: "$68 / 500 g", url: "https://example.com/culinary" },
+        { id: "w3", user_id: "demo-owner", name: "Café starter kit (whisks, bowls, scoops)", description: "Everything a new matcha bar needs, packed for 10 seats.", price: "$240", url: null },
+      ],
+    };
+  }
   return {
     cafe_owners: [{ cafe_id: DEMO_CAFE.id }],
     profiles: [{ id: "demo-owner", account_type: "cafe_owner", banner_path: null }],
@@ -100,8 +111,8 @@ class Q {
   then<T>(res: (v: Result) => T, rej?: (e: unknown) => T) { return Promise.resolve(this.run()).then(res, rej); }
 }
 
-function makeDemoClient() {
-  const db = seed();
+function makeDemoClient(kind: DemoKind) {
+  const db = seed(kind);
   return {
     from: (t: string) => new Q(db, t),
     storage: {
@@ -115,11 +126,11 @@ function makeDemoClient() {
 }
 
 // Components call this instead of the shared client: inside the demo they get the fake, everywhere else the real one.
-let fake: typeof supabase | null = null;
+const fakes: Partial<Record<DemoKind, typeof supabase>> = {};
 export function useSb(): typeof supabase {
   const demo = useContext(DemoCtx);
   if (!demo) return supabase;
-  if (!fake) { const c = makeDemoClient(); fake = (() => c) as unknown as typeof supabase; }
-  return fake;
+  if (!fakes[demo]) { const c = makeDemoClient(demo); fakes[demo] = (() => c) as unknown as typeof supabase; }
+  return fakes[demo]!;
 }
-export const resetDemo = () => { fake = null; demoMedia.clear(); };
+export const resetDemo = () => { delete fakes.cafe; delete fakes.wholesale; demoMedia.clear(); };

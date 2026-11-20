@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { FeedbackButton } from "@/components/FeedbackButton";
 import { useSb } from "@/lib/demo";
-import { ProductsPanel } from "@/components/ProductsPanel";
+import { ProductsPanel, type Product } from "@/components/ProductsPanel";
 import { OK_IMAGE, shrinkImage } from "@/lib/image-upload";
 
 import { bannerUrl } from "@/lib/business";
@@ -13,12 +13,13 @@ import { bannerUrl } from "@/lib/business";
 
 // Tools for approved café-owner and wholesaler accounts: a banner photo for the public profile and a list of products with an explanation, price and link.
 // (Needs supabase/business_profiles.sql; the panel stays quiet until it has been run.)
-export function BusinessTools({ contactEmail }: { contactEmail: string }) {
+export function BusinessTools({ contactEmail, onBanner, onProducts }: { contactEmail: string; onBanner?: (path: string | null) => void; onProducts?: (p: Product[]) => void }) {
   const supabase = useSb();
   const { user } = useAuth();
   const uid = user?.id ?? null;
   const [type, setType] = useState<string | null>(null);
   const [banner, setBanner] = useState<string | null>(null);
+  useEffect(() => { onBanner?.(banner); }, [banner, onBanner]);
   const [msg, setMsg] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
@@ -96,7 +97,7 @@ export function BusinessTools({ contactEmail }: { contactEmail: string }) {
         </div>
       </div>
 
-      <div className="mt-5"><ProductsPanel title="Products" /></div>
+      <div className="mt-5"><ProductsPanel title="Products" onChange={onProducts} /></div>
 
       {msg && <p className="mt-3 text-sm text-ink" role="status">{msg}</p>}
       <div className="mt-5"><FeedbackButton contactEmail={contactEmail} /></div>
