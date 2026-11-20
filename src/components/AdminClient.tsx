@@ -466,14 +466,16 @@ export function AdminClient() {
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Staff only</p>
           <h1 className="mt-1 font-display text-3xl font-semibold text-ink">Dashboard</h1>
         </div>
-        <p className="text-xs text-ink-faint">{updated ? `Updated ${updated.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · refreshes every minute` : ""}</p>
+        <div className="flex flex-col items-end gap-2">
+          <Link href="/admin/demo-cafe" className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper shadow-sm hover:bg-forest">Log in as a demo café owner</Link>
+          <p className="text-xs text-ink-faint">{updated ? `Updated ${updated.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · refreshes every minute` : ""}</p>
+        </div>
       </div>
 
       <section className="mt-6 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm" aria-labelledby="dash-tools">
         <h2 id="dash-tools" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Manage</h2>
-        <div className="mt-3 grid gap-3 sm:grid-cols-3">
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
           {[
-            { href: "/admin/demo-cafe", title: "Café owner demo", note: "Sign in as a pretend café and try every owner screen. Nothing is saved.", primary: true },
             { href: "/business", title: "Owner page editor", note: "The real editor (needs an owner account)." },
           ].map((x) => (
             <Link key={x.href} href={x.href} className={`rounded-md border-2 bg-paper-raised px-4 py-3 shadow-sm hover:bg-matcha-soft ${x.primary ? "border-matcha" : "border-matcha/50"}`}>
