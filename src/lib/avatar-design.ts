@@ -2,18 +2,18 @@
 // (background, skin, hair style, hair colour, eyes, mouth, extra). Same parts, same picture, everywhere on the site.
 export const DESIGN_BG = ["#dff0d6", "#e8f2dc", "#f3ead9", "#e2ecf6", "#fbe4ec", "#efe4f2", "#f6e6d6", "#dcefe6"];
 export const DESIGN_SKIN = ["#fde3cf", "#f6cfae", "#e9b58a", "#cf9468", "#a8714a", "#7d5236", "#5a3a28", "#f8d9c4"];
-export const DESIGN_HAIR = ["#2b2118", "#5a3a24", "#9a6a3a", "#d9b46a", "#b5472f", "#8a8a92", "#3f7d3a", "#c0577a"];
-export const HAIR_STYLES = ["None", "Short", "Long", "Bun", "Bob", "Curly", "Cap", "Bamboo hat", "Headband", "Beret"];
-export const EYES = ["Dots", "Happy", "Wide", "Sleepy", "Round glasses", "Sunglasses"];
-export const MOUTHS = ["Smile", "Grin", "Flat", "Open", "Small", "Smirk"];
-export const EXTRAS = ["None", "Matcha cup", "Whisk", "Leaf", "Blush", "Sparkles"];
+export const DESIGN_HAIR = ["#2b2118", "#5a3a24", "#9a6a3a", "#d9b46a", "#b5472f", "#8a8a92", "#3f7d3a", "#c0577a", "#e9d8a6", "#3a6ab0", "#7a4a8a", "#1c1c22"];
+export const HAIR_STYLES = ["None", "Short", "Long", "Bun", "Bob", "Curly", "Cap", "Bamboo hat", "Headband", "Beret", "Ponytail", "Pigtails", "Pixie", "Space buns", "Long wavy", "Braid"];
+export const EYES = ["Dots", "Happy", "Wide", "Sleepy", "Round glasses", "Sunglasses", "Lashes", "Wink", "Cat-eye glasses", "Aviators", "Heart sunglasses", "Square glasses"];
+export const MOUTHS = ["Smile", "Grin", "Flat", "Open", "Small", "Smirk", "Lipstick", "Kiss", "Tongue out"];
+export const EXTRAS = ["None", "Matcha cup", "Whisk", "Leaf", "Blush", "Sparkles", "Earrings", "Flower", "Bow", "Headphones", "Freckles", "Cat ears"];
 export const DESIGN_SIZES = [DESIGN_BG.length, DESIGN_SKIN.length, HAIR_STYLES.length, DESIGN_HAIR.length, EYES.length, MOUTHS.length, EXTRAS.length] as const;
 export type DesignParts = [number, number, number, number, number, number, number];
 
 // Full-body figure: what the avatar wears. Stored as two optional extra characters after the seven face parts (style, colour);
 // older codes without them mean "matcha-green robe".
-export const OUTFIT_STYLES = ["Robe", "Apron", "Hoodie", "T-shirt", "Jacket"];
-export const OUTFIT_COLORS = ["#3f7d3a", "#2f5d8a", "#b5472f", "#7a4a8a", "#d9b46a", "#2b2b33", "#c0577a", "#e9e4d6"];
+export const OUTFIT_STYLES = ["Robe", "Apron", "Hoodie", "T-shirt", "Jacket", "Dress", "Skirt & top", "Sweater", "Overalls", "Tank top"];
+export const OUTFIT_COLORS = ["#3f7d3a", "#2f5d8a", "#b5472f", "#7a4a8a", "#d9b46a", "#2b2b33", "#c0577a", "#e9e4d6", "#f2a0b8", "#8fbf7a", "#3a8a8a", "#e8863a"];
 export type Outfit = [number, number];
 
 export const designCode = (p: DesignParts, o: Outfit = [0, 0]): string => "d:" + p.map((n) => n.toString(36)).join("") + (o[0] === 0 && o[1] === 0 ? "" : o.map((n) => n.toString(36)).join(""));

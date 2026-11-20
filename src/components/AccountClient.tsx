@@ -218,29 +218,30 @@ export function AccountClient() {
       </div>
 
       <section className="flex flex-wrap items-start gap-x-8 gap-y-6 rounded-sm border border-line bg-paper-raised p-5 sm:p-6" aria-label={t("c.acct.title")}>
-        <div className="flex shrink-0 items-start gap-5">
-          <div className="flex flex-col items-center">
-            {designed ? (
-              <AvatarFigure code={designed} height={300} />
-            ) : (
-              <div className="pt-2">
-                <Avatar avatar={avatar.key} photoPath={avatar.path} name={displayName} size={150} />
+        {editingAvatar ? (
+          <AccountAvatar open onOpenChange={setEditingAvatar} />
+        ) : (
+          <>
+            <div className="flex shrink-0 items-start gap-5">
+              <div className="flex flex-col items-center">
+                {designed ? (
+                  <AvatarFigure code={designed} height={300} />
+                ) : (
+                  <div className="pt-2">
+                    <Avatar avatar={avatar.key} photoPath={avatar.path} name={displayName} size={150} />
+                  </div>
+                )}
+                <button type="button" onClick={() => setEditingAvatar(true)} aria-expanded={false} className="mt-2 text-sm text-matcha underline hover:text-forest">
+                  {t("c.mp.editAvatar")}
+                </button>
               </div>
-            )}
-            <button type="button" onClick={() => setEditingAvatar((v) => !v)} aria-expanded={editingAvatar} className="mt-2 text-sm text-matcha underline hover:text-forest">
-              {t("c.mp.editAvatar")}
-            </button>
-          </div>
-          <Ribbons />
-        </div>
-        <ProfileHeader>
-          <TopCafes items={(cafeRatings ?? []).flatMap((r) => (cafeNames[r.cafe_id] ? [{ id: r.cafe_id, name: cafeNames[r.cafe_id].name, place: cafeNames[r.cafe_id].place, href: `/cafes/${cafeNames[r.cafe_id].slug}`, score: r.score }] : []))} />
-        </ProfileHeader>
-        <UsingNowCard current={shelved === null ? null : usingItem} shelfChoices={cards.filter((c) => c.tag !== "saved").map((c) => ({ id: c.id, brand: c.brand, name: c.name }))} onSet={setUsing} onClear={clearUsing} />
-        {editingAvatar && (
-          <div className="basis-full">
-            <AccountAvatar open onOpenChange={setEditingAvatar} />
-          </div>
+              <Ribbons />
+            </div>
+            <ProfileHeader>
+              <TopCafes items={(cafeRatings ?? []).flatMap((r) => (cafeNames[r.cafe_id] ? [{ id: r.cafe_id, name: cafeNames[r.cafe_id].name, place: cafeNames[r.cafe_id].place, href: `/cafes/${cafeNames[r.cafe_id].slug}`, score: r.score }] : []))} />
+            </ProfileHeader>
+            <UsingNowCard current={shelved === null ? null : usingItem} shelfChoices={cards.filter((c) => c.tag !== "saved").map((c) => ({ id: c.id, brand: c.brand, name: c.name }))} onSet={setUsing} onClear={clearUsing} />
+          </>
         )}
       </section>
 

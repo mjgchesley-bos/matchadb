@@ -20,13 +20,13 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
   const hs = parts[2], extra = parts[6];
   const [style, ci] = outfit;
   const C = OUTFIT_COLORS[ci], Cd = shade(C, -38), Cl = shade(C, 42);
-  const pants = style === 3 ? "#3e5c8a" : style === 4 ? "#3b3f4a" : style === 1 ? "#3b3f4a" : Cd;
-  const shirt = style === 1 || style === 4 ? "#f3efe4" : C;
+  const pants = style === 3 || style === 7 || style === 9 ? "#3e5c8a" : style === 4 || style === 1 ? "#3b3f4a" : style === 5 || style === 6 ? S : style === 8 ? C : Cd;
+  const shirt = style === 1 || style === 4 || style === 8 ? "#f3efe4" : style === 6 ? Cl : C;
   const s = 2.2;
   const hand = extra === 1 || extra === 2;
   // Short sleeves show bare arms; everything else covers them.
-  const bareArms = style === 3;
-  const armCol = bareArms ? S : style === 1 ? "#f3efe4" : C;
+  const bareArms = style === 3 || style === 5 || style === 6 || style === 9;
+  const armCol = bareArms ? S : style === 1 || style === 8 ? "#f3efe4" : C;
   const head = (
     <g transform={`translate(${70 - 32 * s} -4) scale(${s})`}>
       {back ? (
@@ -41,6 +41,7 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
           {hs === 7 ? <g><path d="M10 24h44c-3 3-9 4-22 4s-19-1-22-4z" fill="#d9b46a" /><path d="M32 6l16 19H16z" fill="#e6c47a" /></g> : null}
           {hs === 8 ? <rect x="18" y="22" width="28" height="3.5" rx="1.7" fill="#c0577a" /> : null}
           {hs === 9 ? <ellipse cx="33" cy="17" rx="15" ry="6" fill="#3f7d3a" /> : null}
+          {hs >= 10 ? hairBack : null}
         </g>
       ) : (
         <g>
@@ -104,6 +105,16 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
         </g>
       )}
       {style === 4 && back && <path d="M38 110c8-8 56-8 64 0l4 86H34z" fill={C} />}
+      {style === 5 && <g><path d="M34 190l-10 50h92l-10-50z" fill={C} /><path d="M34 168h72v14H34z" fill={Cd} /><path d="M24 240h92" stroke={Cl} strokeWidth="3" /></g>}
+      {style === 6 && <g><path d="M36 176h68l12 56H24z" fill={C} /><path d="M36 176h68v8H36z" fill={Cd} /></g>}
+      {style === 7 && <g><rect x="58" y="104" width="24" height="10" rx="5" fill={Cl} /><path d="M34 188h72v8H34z" fill={Cd} /></g>}
+      {style === 8 && (
+        <g>
+          <path d="M44 128h52l8 68H36z" fill={C} />
+          <path d="M50 128l-4-20M90 128l4-20" stroke={C} strokeWidth="6" strokeLinecap="round" />
+          {!back && <rect x="58" y="150" width="24" height="16" rx="3" fill={Cd} opacity="0.6" />}
+        </g>
+      )}
       {style === 3 && !back && <path d="M58 109c3 8 21 8 24 0" fill="none" stroke={shade(C, -45)} strokeWidth="4" strokeLinecap="round" />}
       {/* held item in the right hand */}
       {hand && !back && (

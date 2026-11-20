@@ -34,7 +34,7 @@ export function AvatarDesigner({ current, onUse, open: openProp, onOpenChange }:
     </div>
   );
   const choices = (selected: number, onPick: (k: number) => void, names: string[], label: string) => (
-    <div>
+    <div className="sm:col-span-2">
       <span className="text-xs text-ink-faint">{label}</span>
       <div className="mt-1 flex flex-wrap gap-1.5">
         {names.map((n, k) => (
@@ -55,29 +55,36 @@ export function AvatarDesigner({ current, onUse, open: openProp, onOpenChange }:
         </button>
       )}
       {open && (
-        <div className="basis-full rounded-sm border border-line bg-paper-raised p-4">
-          <div className="flex flex-wrap items-start gap-6">
-            <div className="flex flex-col items-center gap-3">
-              <AvatarFigure code={code} height={230} />
-              <button type="button" onClick={() => { setP(randomDesign()); setO([Math.floor(Math.random() * OUTFIT_STYLES.length), Math.floor(Math.random() * OUTFIT_COLORS.length)]); }} className="text-sm text-matcha underline hover:text-forest">
-                {t("c.av.random")}
-              </button>
-            </div>
-            <div className="flex min-w-0 flex-1 flex-col gap-3">
-              {swatches(p[0], (k) => setPart(0, k), DESIGN_BG, t("c.av.bg"))}
+        // Edits the avatar in place: the figure on the left updates live, every option is on the right, and Save closes the editor again.
+        <div className="flex w-full basis-full flex-wrap items-start gap-x-8 gap-y-5">
+          <div className="flex shrink-0 flex-col items-center gap-2">
+            <AvatarFigure code={code} height={300} />
+            <button type="button" onClick={() => { setP(randomDesign()); setO([Math.floor(Math.random() * OUTFIT_STYLES.length), Math.floor(Math.random() * OUTFIT_COLORS.length)]); }} className="text-sm text-matcha underline hover:text-forest">
+              {t("c.av.random")}
+            </button>
+          </div>
+          <div className="min-w-0 flex-1 basis-80">
+            <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
               {swatches(p[1], (k) => setPart(1, k), DESIGN_SKIN, t("c.av.skin"))}
+              {swatches(p[0], (k) => setPart(0, k), DESIGN_BG, t("c.av.bg"))}
               {choices(p[2], (k) => setPart(2, k), HAIR_STYLES, t("c.av.hair"))}
               {swatches(p[3], (k) => setPart(3, k), DESIGN_HAIR, t("c.av.hairColor"))}
+              <div className="hidden sm:block" />
               {choices(p[4], (k) => setPart(4, k), EYES, t("c.av.eyes"))}
               {choices(p[5], (k) => setPart(5, k), MOUTHS, t("c.av.mouth"))}
               {choices(p[6], (k) => setPart(6, k), EXTRAS, t("c.av.extra"))}
               {choices(o[0], (k) => setO([k, o[1]]), OUTFIT_STYLES, t("c.av.outfit"))}
               {swatches(o[1], (k) => setO([o[0], k]), OUTFIT_COLORS, t("c.av.outfitColor"))}
             </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <button type="button" onClick={() => { onUse(code); setOpen(false); }} className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest">
+                {t("c.av.use")}
+              </button>
+              <button type="button" onClick={() => setOpen(false)} className="rounded-full border border-line-strong px-5 py-2 text-sm text-ink-muted hover:bg-paper">
+                {t("c.cm.cancel")}
+              </button>
+            </div>
           </div>
-          <button type="button" onClick={() => { onUse(code); setOpen(false); }} className="mt-4 rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest">
-            {t("c.av.use")}
-          </button>
         </div>
       )}
     </>
