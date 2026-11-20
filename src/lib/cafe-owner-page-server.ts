@@ -4,6 +4,15 @@ import type { OwnerMenuFile, OwnerPage, OwnerPhoto } from "@/lib/cafe-owner-page
 // What a café's verified owner has put on its page (public read; supabase/cafe_pages.sql). Null when the café has no owner page (or the tables are not set up yet).
 export type OwnerProduct = { id: string; name: string; description: string; price: string; url: string | null };
 export type OwnerData = { page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[]; products: OwnerProduct[] };
+// True when an account owns the café (supabase/cafe_has_owner.sql). False until that has been run, so the page falls back to "has an owner page".
+export async function cafeHasOwner(cafeId: string): Promise<boolean> {
+  try {
+    const { data, error } = await supabaseAnon().rpc("cafe_has_owner", { p_cafe_id: cafeId });
+    return !error && data === true;
+  } catch {
+    return false;
+  }
+}
 export async function getOwnerData(cafeId: string): Promise<OwnerData | null> {
   try {
     const sb = supabaseAnon();

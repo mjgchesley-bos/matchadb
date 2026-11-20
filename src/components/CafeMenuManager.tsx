@@ -9,7 +9,7 @@ type Item = { id: number; name: string; price: string | null; description: strin
 
 // The owner's own menu for a café (supabase/tiers_menus_dms.sql). Everyone sees the items; the owner of a café (approved by the site owner) can add,
 // change and remove them. Anyone else gets "Update menu", which asks to be approved as this café's owner.
-export function CafeMenuManager({ cafeId, cafeName, children, fallbackTitle }: { cafeId: string; cafeName: string; children?: React.ReactNode; fallbackTitle?: string }) {
+export function CafeMenuManager({ cafeId, cafeName, children, fallbackTitle, claimed = false }: { cafeId: string; cafeName: string; children?: React.ReactNode; fallbackTitle?: string; claimed?: boolean }) {
   const t = useT();
   const supabase = useSb();
   const { user, signIn } = useAuth();
@@ -56,7 +56,7 @@ export function CafeMenuManager({ cafeId, cafeName, children, fallbackTitle }: {
 
   const hasOwnMenu = items.length > 0;
   // No owner-added menu: the page's own evidence (what we found on the café's website) is the menu section, so there is only ever one.
-  if (!hasOwnMenu && !owner && !user && !children) {
+  if (!hasOwnMenu && !owner && !user && !children && !claimed) {
     return (
       <p className="mt-6 text-sm">
         <button type="button" onClick={() => signIn(t("c.mn.signin"))} className="text-matcha underline hover:text-forest">{t("c.mn.update")}</button>
@@ -69,7 +69,7 @@ export function CafeMenuManager({ cafeId, cafeName, children, fallbackTitle }: {
         <h2 id="owner-menu" className={hasOwnMenu || !children ? "font-display text-lg font-semibold text-ink" : "font-mono text-xs uppercase tracking-[0.2em] text-forest"}>{hasOwnMenu || !children ? t("c.mn.h") : fallbackTitle ?? t("c.mn.h")}</h2>
         {owner ? (
           <button type="button" onClick={() => setEditing((v) => !v)} className="rounded-full border border-line-strong px-4 py-1.5 text-sm text-ink hover:bg-matcha-soft">{editing ? t("c.mn.done") : t("c.mn.update")}</button>
-        ) : (
+        ) : claimed ? null : (
           <button type="button" onClick={() => (user ? setClaim((v) => !v) : signIn(t("c.mn.signin")))} className="rounded-full border border-line-strong px-4 py-1.5 text-sm text-ink hover:bg-matcha-soft">{t("c.mn.update")}</button>
         )}
       </div>
@@ -98,7 +98,7 @@ export function CafeMenuManager({ cafeId, cafeName, children, fallbackTitle }: {
           <div className="sm:col-span-2"><button type="submit" className="rounded-full bg-matcha px-5 py-2 text-sm font-medium text-paper hover:bg-forest">{t("c.mn.add")}</button></div>
         </form>
       )}
-      {!owner && claim && (
+      {!owner && !claimed && claim && (
         <div className="mt-4 rounded-sm bg-paper p-4 text-sm text-ink-muted">
           {sent ? <p className="text-ink" role="status">{t("c.mn.sent")}</p> : (
             <>

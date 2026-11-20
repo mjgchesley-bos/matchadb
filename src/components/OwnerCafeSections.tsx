@@ -6,11 +6,13 @@ const h2 = "font-mono text-xs uppercase tracking-[0.2em] text-forest";
 
 type Product = { id: string; name: string; description: string; price: string; url: string | null };
 
-export function OwnerCafeSections({ name, page, photos, files, products = [] }: { name: string; page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[]; products?: Product[] }) {
+// part: "shop" renders only the Shop (the café page puts it right under the header), "rest" everything else; leave it out for everything in one go.
+export function OwnerCafeSections({ name, page, photos, files, products = [], part }: { name: string; page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[]; products?: Product[]; part?: "shop" | "rest" }) {
   const hasAbout = page.bio || page.matcha_info || page.amenities.length > 0;
+  const shop = part !== "rest", rest = part !== "shop";
   return (
     <>
-      {hasAbout && (
+      {rest && hasAbout && (
         <section aria-labelledby="own-about" className={`mt-8 ${box}`}>
           <h2 id="own-about" className={h2}>About {name}</h2>
           {page.bio && <p className="mt-3 max-w-prose whitespace-pre-line leading-relaxed text-ink">{page.bio}</p>}
@@ -23,8 +25,8 @@ export function OwnerCafeSections({ name, page, photos, files, products = [] }: 
         </section>
       )}
 
-      {products.length > 0 && (
-        <section aria-labelledby="own-shop" className={`mt-6 ${box}`}>
+      {shop && products.length > 0 && (
+        <section aria-labelledby="own-shop" className={`mt-6 rounded-md border-2 border-gold bg-gradient-to-br from-gold-soft to-paper-raised p-5 shadow-sm sm:p-6`}>
           <h2 id="own-shop" className={h2}>Shop</h2>
           <ul className="mt-3 grid gap-3 sm:grid-cols-2">
             {products.map((p) => (
@@ -41,7 +43,7 @@ export function OwnerCafeSections({ name, page, photos, files, products = [] }: 
         </section>
       )}
 
-      {photos.length > 0 && (
+      {rest && photos.length > 0 && (
         <section aria-labelledby="own-photos" className={`mt-6 ${box}`}>
           <h2 id="own-photos" className={h2}>Photos</h2>
           <ul className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -58,7 +60,7 @@ export function OwnerCafeSections({ name, page, photos, files, products = [] }: 
         </section>
       )}
 
-      {files.length > 0 && (
+      {rest && files.length > 0 && (
         <section aria-labelledby="own-menu" className={`mt-6 ${box}`}>
           <h2 id="own-menu" className={h2}>Menu</h2>
           <ul className="mt-3 flex flex-col gap-4">

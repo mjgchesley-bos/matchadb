@@ -12,7 +12,7 @@ import { countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-ty
 import { getCafeProfile, getCafeExtras, isTakeHome } from "@/lib/cafe-profiles";
 import { MiniMap } from "@/components/MiniMap";
 import { OwnerCafeSections } from "@/components/OwnerCafeSections";
-import { getOwnerData } from "@/lib/cafe-owner-page-server";
+import { cafeHasOwner, getOwnerData } from "@/lib/cafe-owner-page-server";
 import { accentStyle, cafeMediaUrl, DAYS } from "@/lib/cafe-owner-page";
 import { SocialIcons } from "@/components/SocialIcons";
 import { matchaItem } from "@/lib/cafe-snippet";
@@ -86,6 +86,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const siblings = chainSiblings(c);
   const profile = getCafeProfile(c.id);
   const owner = await getOwnerData(c.id);  // set when the verified owner has customised the page
+  const claimed = !!owner || (await cafeHasOwner(c.id));  // an account already owns this café: no "claim" prompt
   const link = "text-matcha hover:text-forest underline";
   // The café's other pages and handles (Instagram, Yelp, TikTok...): every source host that is not its own website.
   const ownHost = c.url ? hostOf(c.url) : "";
@@ -220,9 +221,29 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         </div>
       </header>
 
+      {owner && <OwnerCafeSections part="shop" name={c.name} page={owner.page} photos={owner.photos} files={owner.files} products={owner.products} />}
+
+      {profile?.shop && profile.shop.length > 0 && (
+        <section aria-labelledby="cafe-shop" className="mt-6 overflow-hidden rounded-md border-2 border-gold bg-gradient-to-br from-gold-soft to-paper-raised shadow-sm">
+          <div className="border-b-2 border-gold/40 px-5 py-4 sm:px-7">
+            <h2 id="cafe-shop" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Shop</h2>
+            <p className="mt-1 text-sm text-ink-muted">Sold in {c.name}&rsquo;s own online shop. Prices and stock are theirs, so check the product page.</p>
+          </div>
+          <ul className="grid gap-3 p-5 sm:grid-cols-2 sm:p-7 lg:grid-cols-3">
+            {profile.shop.map((x) => (
+              <li key={x.url} className="flex flex-col rounded-md border-2 border-line bg-paper-raised px-4 py-3 shadow-sm">
+                <p className="flex flex-wrap items-baseline justify-between gap-2"><span className="font-display text-lg font-semibold text-ink">{x.name}</span>{x.price && <span className="tabular-nums text-ink-muted">{x.price}</span>}</p>
+                {x.note && <p className="mt-1 text-sm text-ink-muted">{x.note}</p>}
+                <a href={x.url} target="_blank" rel="nofollow noopener noreferrer" className="mt-auto pt-3 text-sm text-matcha underline hover:text-forest">View in their shop ↗</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
       <Comments targetType="cafe" targetKey={c.id} subject={c.name} heading={t("cafe.reviews.heading")} placeholder={t("cafe.reviews.ph")} siblings={siblings} />
 
-      {owner && <OwnerCafeSections name={c.name} page={owner.page} photos={owner.photos} files={owner.files} products={owner.products} />}
+      {owner && <OwnerCafeSections part="rest" name={c.name} page={owner.page} photos={owner.photos} files={owner.files} products={owner.products} />}
 
       {profile && !owner?.page.bio && (
         <section aria-labelledby="cafe-about" className="mt-6 overflow-hidden rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised shadow-sm">
@@ -265,24 +286,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         </section>
       )}
 
-      {profile?.shop && profile.shop.length > 0 && (
-        <section aria-labelledby="cafe-shop" className="mt-6 overflow-hidden rounded-md border-2 border-gold bg-gradient-to-br from-gold-soft to-paper-raised shadow-sm">
-          <div className="border-b-2 border-gold/40 px-5 py-4 sm:px-7">
-            <h2 id="cafe-shop" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Shop</h2>
-            <p className="mt-1 text-sm text-ink-muted">Sold in {c.name}&rsquo;s own online shop. Prices and stock are theirs, so check the product page.</p>
-          </div>
-          <ul className="grid gap-3 p-5 sm:grid-cols-2 sm:p-7 lg:grid-cols-3">
-            {profile.shop.map((x) => (
-              <li key={x.url} className="flex flex-col rounded-md border-2 border-line bg-paper-raised px-4 py-3 shadow-sm">
-                <p className="flex flex-wrap items-baseline justify-between gap-2"><span className="font-display text-lg font-semibold text-ink">{x.name}</span>{x.price && <span className="tabular-nums text-ink-muted">{x.price}</span>}</p>
-                {x.note && <p className="mt-1 text-sm text-ink-muted">{x.note}</p>}
-                <a href={x.url} target="_blank" rel="nofollow noopener noreferrer" className="mt-auto pt-3 text-sm text-matcha underline hover:text-forest">View in their shop ↗</a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
       {aroundWebList.length > 0 && (
         <section aria-labelledby="cafe-web" className="mt-6 rounded-sm border-2 border-line bg-paper-raised p-5 sm:p-6">
           <h2 id="cafe-web" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">{lang === "en" ? "From around the web" : t("cafe.menu.h2")}</h2>
@@ -299,7 +302,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         </section>
       )}
 
-      <CafeMenuManager cafeId={c.id} cafeName={c.name} fallbackTitle={t("cafe.menu.h2")}>
+      <CafeMenuManager cafeId={c.id} cafeName={c.name} claimed={claimed} fallbackTitle={t("cafe.menu.h2")}>
         <>
         <p className="text-sm text-ink-muted">
           {c.via === "name" ? t("cafe.menu.name") : c.via === "reported" ? t("cafe.menu.reported") : t("cafe.menu.web", { date: fmtDate(c.checked, lang) })}
