@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
 import { chainSiblings, getCafeBySlug, nearbyCafes, redirectedCafeSlug } from "@/lib/cafes";
 import { countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
-import { getCafeProfile, getCafeExtras } from "@/lib/cafe-profiles";
+import { getCafeProfile, getCafeExtras, isTakeHome } from "@/lib/cafe-profiles";
 import { MiniMap } from "@/components/MiniMap";
 import { OwnerCafeSections } from "@/components/OwnerCafeSections";
 import { getOwnerData } from "@/lib/cafe-owner-page-server";
@@ -153,7 +153,12 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
             <h1 className="font-display text-3xl sm:text-4xl font-semibold text-ink leading-tight text-balance">{c.name}</h1>
             <p className="mt-2 text-ink-muted">{where}</p>
             {owner?.page.tagline && <p className="mt-2 font-display text-lg text-forest">{owner.page.tagline}</p>}
-            {owner && <p className="mt-2"><span className="inline-flex items-center gap-1.5 rounded-full border border-matcha bg-matcha-soft px-3 py-0.5 text-xs font-medium text-forest">✓ Verified owner</span></p>}
+            {(owner || isTakeHome(c.id)) && (
+              <p className="mt-2 flex flex-wrap gap-2">
+                {owner && <span className="inline-flex items-center gap-1.5 rounded-full border border-matcha bg-matcha-soft px-3 py-0.5 text-xs font-medium text-forest">✓ Verified owner</span>}
+                {isTakeHome(c.id) && <span className="inline-flex items-center gap-1.5 rounded-full border border-gold bg-gold-soft px-3 py-0.5 text-xs font-medium text-ink">{t("cafe.takehome")}</span>}
+              </p>
+            )}
             <ProductRating key={c.id} cafeId={c.id} productName={c.name} className="mt-4 rounded-sm border border-line bg-paper px-4 py-3 max-w-md" />
             {extra?.desc && !profile?.about && (
               <p className="mt-4 max-w-prose text-sm italic leading-relaxed text-ink-muted">

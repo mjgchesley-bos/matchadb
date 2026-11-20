@@ -14,6 +14,19 @@ export type CafeProfile = {
   sources?: { label: string; url: string }[];
 };
 
+// Cafés that also sell packaged matcha to take home (public/data/take-home.json, the list the Matcha map's "Shop" filter reads). One profile, two roles.
+let takeHome: Set<string> | null = null;
+export function isTakeHome(id: string): boolean {
+  if (!takeHome) {
+    try {
+      takeHome = new Set(JSON.parse(fs.readFileSync(path.join(process.cwd(), "public", "data", "take-home.json"), "utf8")) as string[]);
+    } catch {
+      takeHome = new Set();
+    }
+  }
+  return takeHome.has(id);
+}
+
 let all: Record<string, CafeProfile> | null = null;
 export function getCafeProfile(id: string): CafeProfile | null {
   if (!all) {

@@ -484,6 +484,7 @@ export const en = {
   "cafe.directions": "Directions",
   "cafe.website": "Website ({host})",
   "cafe.menu.h2": "Matcha on the menu",
+  "cafe.takehome": "Also sells matcha to take home",
   "cafe.menu.name": "Matcha is in this business's own name, so we list it. We haven't been able to read a menu on its website yet, so check the menu or call ahead.",
   "cafe.menu.web": "We found matcha on this café's own website on {date}. We can't see what is in stock today, so check the menu or call ahead.",
   "cafe.menuItem": "Menu item: {item}",

@@ -2563,6 +2563,26 @@
    },
    "why": "Aoko Matcha's own location page lists Toms River at 1 NJ-37, Toms River, NJ 08753; the place record had no address.",
    "at": "2026-11-15"
+  },
+  "fsq69f9ab3": {
+   "set": {
+    "url": "https://thematchakoncept.com",
+    "ev": [
+     {
+      "u": "https://thematchakoncept.com/en/collections/nase-caje",
+      "k": "other",
+      "st": 2,
+      "n": 1,
+      "s": [
+       "Carefully selected Japanese matcha and hojicha from Wazuka, Kyoto."
+      ]
+     }
+    ],
+    "checked": "2026-11-20",
+    "conf": 0.85
+   },
+   "why": "owner request 2026-11-20: the café also sells matcha and hojicha tins on its own shop (thematchakoncept.com, Hojicha 450 Kč, Miyabi 800 Kč, Komorebi 700 Kč): one profile, shown as matcha to take home (rule R5)",
+   "at": "2026-11-20"
   }
  }
 }
