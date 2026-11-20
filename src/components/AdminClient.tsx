@@ -479,7 +479,7 @@ export function AdminClient() {
         <h2 id="dash-tools" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Manage</h2>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           {[
-            { href: "/business", title: "Owner page editor", note: "The real editor (needs an owner account)." },
+            { href: "/admin/demo-cafe", title: "Owner page editor", note: "Try the real editor on a pretend café (nothing is saved)." },
           ].map((x) => (
             <Link key={x.href} href={x.href} className={`rounded-md border-2 bg-paper-raised px-4 py-3 shadow-sm hover:bg-matcha-soft border-matcha/50`}>
               <span className="block font-display text-lg font-semibold text-forest">{x.title}</span>
