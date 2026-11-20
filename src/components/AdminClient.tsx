@@ -464,10 +464,33 @@ export function AdminClient() {
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Staff only</p>
-          <h1 className="mt-1 font-display text-3xl font-semibold text-ink">Activity log</h1>
+          <h1 className="mt-1 font-display text-3xl font-semibold text-ink">Dashboard</h1>
         </div>
         <p className="text-xs text-ink-faint">{updated ? `Updated ${updated.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })} · refreshes every minute` : ""}</p>
       </div>
+
+      <section className="mt-6 rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised p-5 shadow-sm" aria-labelledby="dash-tools">
+        <h2 id="dash-tools" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Manage</h2>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: "/admin/demo-cafe", title: "Café owner demo", note: "Sign in as a pretend café and try every owner screen. Nothing is saved.", primary: true },
+            { href: "/matcha-map", title: "Matcha map", note: "The live map and café finder." },
+            { href: "/wholesale", title: "Wholesale directory", note: "Supplier listings for café owners." },
+            { href: "/business", title: "Owner page editor", note: "The real editor (needs an owner account)." },
+          ].map((x) => (
+            <Link key={x.href} href={x.href} className={`rounded-md border-2 bg-paper-raised px-4 py-3 shadow-sm hover:bg-matcha-soft ${x.primary ? "border-matcha" : "border-matcha/50"}`}>
+              <span className="block font-display text-lg font-semibold text-forest">{x.title}{x.primary ? " →" : ""}</span>
+              <span className="mt-1 block text-xs text-ink-muted">{x.note}</span>
+            </Link>
+          ))}
+          <a href="#dash-needs" className={`rounded-md border-2 px-4 py-3 shadow-sm ${waiting ? "border-red-300 bg-red-50" : "border-matcha/50 bg-paper-raised"}`}>
+            <span className={`block font-display text-lg font-semibold tabular-nums ${waiting ? "text-red-800" : "text-forest"}`}>{waiting ?? 0} waiting for you</span>
+            <span className="mt-1 block text-xs text-ink-muted">Owner requests, suggestions and reports.</span>
+          </a>
+        </div>
+      </section>
+
+      <h2 className="mt-8 font-display text-2xl font-semibold text-ink">Activity log</h2>
 
       <div className="mt-5 flex flex-wrap items-center gap-2" role="tablist" aria-label="Date range">
         {RANGES.map((r) => (
@@ -596,7 +619,7 @@ export function AdminClient() {
       )}
 
         </div>
-        <aside aria-label="Waiting for you" className="rounded-sm border-2 border-line-strong bg-paper p-4 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
+        <aside id="dash-needs" aria-label="Waiting for you" className="rounded-sm border-2 border-line-strong bg-paper p-4 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
           <h2 className="flex items-center gap-2 font-display text-lg font-semibold text-ink">
             Needs you
             {waiting != null && waiting > 0 && <span className="rounded-full bg-red-700 px-2 py-0.5 text-xs font-semibold text-white">{waiting}</span>}
@@ -626,7 +649,7 @@ export function StaffLink() {
   if (!staff) return null;
   return (
     <p className="mt-4 text-sm">
-      <Link href="/admin" className="rounded-full border border-matcha px-4 py-1.5 font-medium text-matcha hover:bg-matcha-soft">Open the activity log (staff)</Link>
+      <Link href="/admin" className="rounded-full border border-matcha px-4 py-1.5 font-medium text-matcha hover:bg-matcha-soft">Open the dashboard (staff)</Link>
     </p>
   );
 }

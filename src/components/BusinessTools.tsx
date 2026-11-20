@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "@/i18n/Link";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { FeedbackButton } from "@/components/FeedbackButton";
-import { supabase } from "@/lib/supabase";
+import { DemoCtx, useSb } from "@/lib/demo";
 import { OK_IMAGE, shrinkImage } from "@/lib/image-upload";
 
 import { bannerUrl } from "@/lib/business";
@@ -15,6 +15,8 @@ const BLANK = { name: "", description: "", price: "", url: "" };
 // Tools for approved café-owner and wholesaler accounts: a banner photo for the public profile and a list of products with an explanation, price and link.
 // (Needs supabase/business_profiles.sql; the panel stays quiet until it has been run.)
 export function BusinessTools({ contactEmail }: { contactEmail: string }) {
+  const supabase = useSb();
+  const demo = useContext(DemoCtx);
   const { user } = useAuth();
   const uid = user?.id ?? null;
   const [type, setType] = useState<string | null>(null);
@@ -38,7 +40,7 @@ export function BusinessTools({ contactEmail }: { contactEmail: string }) {
     });
     sb.from("business_products").select("id, name, description, price, url").order("created_at").then(({ data, error }) => live && !error && setProducts((data as Product[]) ?? []));
     return () => { live = false; };
-  }, [uid]);
+  }, [uid, supabase]);
 
   if (!user || !type || type === "general" || products === null) return null;
   const input = "mt-1 w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink focus:border-matcha focus:outline-none";
@@ -115,7 +117,7 @@ export function BusinessTools({ contactEmail }: { contactEmail: string }) {
       {type === "cafe_owner" && (
         <p className="mt-4 rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-3 text-sm text-ink">
           <strong>Your café page:</strong> add a cover photo, your story, hours, menu, photos and all your social links, like your own landing page.{" "}
-          <Link href="/business" className="font-medium text-matcha underline hover:text-forest">Edit your café page</Link>
+          {demo ? <span className="font-medium text-forest">Edit it in Screen 2 below.</span> : <Link href="/business" className="font-medium text-matcha underline hover:text-forest">Edit your café page</Link>}
         </p>
       )}
 

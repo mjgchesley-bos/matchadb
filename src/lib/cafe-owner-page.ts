@@ -22,7 +22,8 @@ export type OwnerPhoto = { id: string; path: string; caption: string | null; sor
 export type OwnerMenuFile = { id: string; path: string; label: string; kind: "pdf" | "image"; sort: number };
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://gropvtwigbddfikcujhz.supabase.co";
-export const cafeMediaUrl = (path: string): string => `${SUPABASE_URL}/storage/v1/object/public/cafe-media/${path}`;
+import { demoMedia } from "@/lib/demo-media";
+export const cafeMediaUrl = (path: string): string => demoMedia.get(path) ?? `${SUPABASE_URL}/storage/v1/object/public/cafe-media/${path}`;
 
 // Colour themes: they re-colour the page's accent (buttons, links, highlights); the site's own tokens do the rest.
 export const ACCENTS: Record<AccentKey, { label: string; matcha: string; forest: string; soft: string; ink: string }> = {

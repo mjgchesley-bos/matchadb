@@ -1,12 +1,12 @@
 "use client";
 
 import Link from "@/i18n/Link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
 import { CafeMenuManager } from "@/components/CafeMenuManager";
 import { SocialIcons } from "@/components/SocialIcons";
 import { OK_IMAGE, shrinkImage } from "@/lib/image-upload";
-import { supabase } from "@/lib/supabase";
+import { DEMO_CAFE, DemoCtx, useSb } from "@/lib/demo";
 import { ACCENTS, AMENITIES, DAYS, NETWORKS, accentStyle, cafeMediaUrl, type AccentKey, type OwnerMenuFile, type OwnerPage, type OwnerPhoto } from "@/lib/cafe-owner-page";
 
 // The café owner's editor: a verified owner customises their café's page like a small landing page. Everything saved here appears on the café's public
@@ -18,7 +18,9 @@ const input = "mt-1 w-full rounded-sm border border-line-strong bg-paper px-3 py
 const lbl = "block text-sm text-ink-muted";
 const BLANK = (id: string): OwnerPage => ({ cafe_id: id, tagline: null, bio: null, matcha_info: null, announcement: null, cover_path: null, accent: "green", hours: {}, phone: null, public_email: null, website_url: null, order_url: null, reservation_url: null, links: {}, amenities: [] });
 
-export function CafePageEditor() {
+export function CafePageEditor({ onState }: { onState?: (s: { name: string; page: OwnerPage; photos: OwnerPhoto[]; files: OwnerMenuFile[] }) => void } = {}) {
+  const supabase = useSb();
+  const demo = useContext(DemoCtx);
   const { user, ready, signIn } = useAuth();
   const [owned, setOwned] = useState<Owned[] | null>(null);
   const [cafe, setCafe] = useState<Owned | null>(null);
@@ -38,7 +40,7 @@ export function CafePageEditor() {
       const { data } = await supabase().from("cafe_owners").select("cafe_id");
       const ids = ((data ?? []) as { cafe_id: string }[]).map((r) => r.cafe_id);
       if (!ids.length) return live && setOwned([]);
-      const info = (await fetch(`/api/cafes/lookup?ids=${ids.join(",")}`).then((r) => r.json()).catch(() => [])) as { id: string; name: string; city: string; slug: string }[];
+      const info = demo ? [DEMO_CAFE] : (await fetch(`/api/cafes/lookup?ids=${ids.join(",")}`).then((r) => r.json()).catch(() => [])) as { id: string; name: string; city: string; slug: string }[];
       const list = ids.map((id) => info.find((x) => x.id === id) ?? { id, name: "Your café", city: "", slug: "" });
       if (live) {
         setOwned(list);
@@ -46,7 +48,7 @@ export function CafePageEditor() {
       }
     })();
     return () => { live = false; };
-  }, [uid]);
+  }, [uid, demo, supabase]);
 
   const load = useCallback(async (id: string) => {
     const sb = supabase();
@@ -59,8 +61,9 @@ export function CafePageEditor() {
     setPhotos((ph.data ?? []) as OwnerPhoto[]);
     setFiles((mf.data ?? []) as OwnerMenuFile[]);
     setDirty(false);
-  }, []);
+  }, [supabase]);
   useEffect(() => { if (cafe) void load(cafe.id); }, [cafe, load]);
+  useEffect(() => { if (cafe && page) onState?.({ name: cafe.name, page, photos, files }); }, [cafe, page, photos, files, onState]);
 
   if (!ready) return null;
   if (!user) return <button type="button" onClick={() => signIn("Sign in to edit your café page.")} className="rounded-full bg-matcha px-6 py-2.5 text-sm font-medium text-paper hover:bg-forest">Sign in</button>;

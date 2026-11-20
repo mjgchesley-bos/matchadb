@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { useAuth } from "@/components/AuthProvider";
-import { supabase } from "@/lib/supabase";
+import { useSb } from "@/lib/demo";
 import { submitFeedback } from "@/lib/feedback";
 import { useT } from "@/i18n/client";
 
@@ -12,6 +12,7 @@ type Item = { id: number; name: string; price: string | null; description: strin
 // change and remove them. Anyone else gets "Update menu", which asks to be approved as this café's owner.
 export function CafeMenuManager({ cafeId, cafeName }: { cafeId: string; cafeName: string }) {
   const t = useT();
+  const supabase = useSb();
   const { user, signIn } = useAuth();
   const [items, setItems] = useState<Item[]>([]);
   const [owner, setOwner] = useState(false);
@@ -25,14 +26,14 @@ export function CafeMenuManager({ cafeId, cafeName }: { cafeId: string; cafeName
   const load = useCallback(async () => {
     const { data, error } = await supabase().from("cafe_menu_items").select("id, name, price, description, is_matcha").eq("cafe_id", cafeId).order("id");
     if (!error) setItems((data as Item[]) ?? []);
-  }, [cafeId]);
+  }, [cafeId, supabase]);
   useEffect(() => { void load(); }, [load]);
   useEffect(() => {
     if (!uid) { setOwner(false); return; }
     let live = true;
     supabase().from("cafe_owners").select("cafe_id").eq("cafe_id", cafeId).maybeSingle().then(({ data }) => live && setOwner(!!data));
     return () => { live = false; };
-  }, [uid, cafeId]);
+  }, [uid, cafeId, supabase]);
 
   const input = "w-full rounded-sm border border-line-strong bg-paper px-3 py-2 text-sm text-ink focus:border-matcha focus:outline-none";
   async function add(e: React.FormEvent) {

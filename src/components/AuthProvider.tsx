@@ -48,7 +48,7 @@ type Auth = {
   namePending: boolean;
 };
 
-const AuthContext = createContext<Auth>({
+export const AuthContext = createContext<Auth>({
   ready: false,
   user: null,
   displayName: null,
