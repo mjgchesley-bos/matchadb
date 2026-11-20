@@ -7,7 +7,7 @@ import path from "node:path";
 export type CafeProfile = {
   about?: string;
   matcha?: string;
-  menu?: { name: string; note?: string }[];
+  menu?: { name: string; note?: string; price?: string }[];
   hours?: string[];
   facts?: [string, string][];
   links?: { label: string; url: string }[];

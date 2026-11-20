@@ -9,7 +9,7 @@ type Hit = { label: string; sub?: string; href: string };
 type Result = { groups: { key: string; hits: Hit[] }[]; closest: boolean; popular: Hit[] };
 const TITLE: Record<string, string> = { products: "c.search.products", brands: "c.search.brands", producers: "c.search.producers", cafes: "c.search.cafes", places: "c.search.places", regions: "c.search.regions", cultivars: "c.search.cultivars" };
 
-// The site-wide search bar in the header: products, brands and cafés in one box. Enter opens the full database search.
+// The site-wide search bar in the header: cafés, places, brands and products in one box. Enter opens the full /search results page.
 export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero" }) {
   const t = useT();
   const router = useRouter();
@@ -67,7 +67,7 @@ export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero"
           const v = q.trim();
           if (v) {
             setOpen(false);
-            router.push(`/browse?q=${encodeURIComponent(v)}`);
+            router.push(`/search?q=${encodeURIComponent(v)}`);
           }
         }}
       >
@@ -106,7 +106,7 @@ export function SiteSearch({ variant = "header" }: { variant?: "header" | "hero"
             </Link>
           ))}
           <div className="mt-1 border-t border-line px-4 pt-2 text-sm">
-            <Link href={`/browse?q=${encodeURIComponent(q.trim())}`} onClick={close} className="font-medium text-matcha hover:underline">{t("c.search.all", { q: q.trim() })}</Link>
+            <Link href={`/search?q=${encodeURIComponent(q.trim())}`} onClick={close} className="font-medium text-matcha hover:underline">{t("c.search.all", { q: q.trim() })}</Link>
             {res.groups.length === 0 && (
               <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-ink-muted">
                 <span>{t("c.search.try")}</span>

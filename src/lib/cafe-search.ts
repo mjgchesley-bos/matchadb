@@ -27,13 +27,46 @@ export function lev(a: string, b: string, max: number): number {
   return prev[b.length];
 }
 
+/** How well one typed word matches one word: 1 exact, .9 starts with, .7 inside, .6 a typo away, else 0. */
+export function wordScore(q: string, w: string): number {
+  if (q === w) return 1;
+  if (w.startsWith(q)) return q.length >= 2 ? 0.9 : 0;
+  if (q.length >= 3 && w.includes(q)) return 0.7;
+  if (q.length >= 4 && w.length >= 4) {
+    const max = q.length >= 8 ? 2 : 1;
+    if (lev(q, w, max) <= max) return 0.6;
+  }
+  return 0;
+}
+
+/**
+ * "kettl brooklyn": every typed word has to match a word of the café's name or its place (city, state, country), and at least one has to
+ * match the name, so a pure place query is left to the place search. 0 = no match, otherwise the mean of the words' best scores.
+ */
+export function namePlaceScore(tokens: string[], nameWords: string[], placeWords: string[]): number {
+  let sum = 0;
+  let inName = false;
+  for (const q of tokens) {
+    let bn = 0;
+    for (const w of nameWords) bn = Math.max(bn, wordScore(q, w));
+    let bp = 0;
+    for (const w of placeWords) bp = Math.max(bp, wordScore(q, w));
+    const best = Math.max(bn, bp);
+    if (best < 0.6) return 0;
+    if (bn >= 0.7) inName = true;
+    sum += best;
+  }
+  return inName ? sum / tokens.length : 0;
+}
+
 /**
  * How well a normalized query matches a normalized café name. >= 1 means the query is inside the name
- * (1.2 identical, 1.1 name starts with it, 1.0 contained); below 1 is a typo-tolerant similarity (0..0.95).
+ * (1.2 identical, 1.15 as whole words, 1.1 name starts with it, 1.0 contained); below 1 is a typo-tolerant similarity (0..0.95).
  */
 export function nameScore(q: string, n: string): number {
   if (!q || !n) return 0;
   if (n === q) return 1.2;
+  if ((" " + n + " ").includes(" " + q + " ")) return 1.15; // the typed word(s) as whole words: "kettl" is Kettl Greenpoint before Kettle On Main
   if (n.startsWith(q)) return 1.1;
   if (n.includes(q)) return 1.0;
   if (q.length < 4) return 0;

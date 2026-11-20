@@ -7,7 +7,8 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { cafeSlug, directionsUrl, formatPlace, type CafeSlim } from "@/lib/cafe-types";
 import { ALL_COUNTRIES, REGIONS, regionByKey, regionForCountry, regionFromTimeZone, type RegionKey } from "@/lib/cafe-regions";
 import { KM_PER_MILE, geocodeMany, haversineMiles, type Origin } from "@/lib/geo";
-import { nameScore, norm } from "@/lib/cafe-search";
+import { nameScore, namePlaceScore, norm } from "@/lib/cafe-search";
+import { countryName } from "@/lib/cafe-types";
 import { useLang, useT } from "@/i18n/client";
 import { INTL_LANG, localePath, type Locale } from "@/i18n/config";
 import { rich } from "@/i18n/rich";
@@ -207,6 +208,9 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
 
   // Normalized names, computed once per loaded list, for fast matching.
   const normNames = useMemo(() => (all ?? []).map((c) => norm(c.name)), [all]);
+  // Words of each place's name and of where it is (city, state, country), for searches like "kettl brooklyn".
+  const nameWords = useMemo(() => normNames.map((n) => n.split(" ")), [normNames]);
+  const placeWords = useMemo(() => (all ?? []).map((c) => norm(`${c.city} ${c.state} ${c.cc ? countryName(c.cc) : ""}`).split(" ")), [all]);
 
   const currentFeatures = useRef<GeoJSON.FeatureCollection>({ type: "FeatureCollection", features: [] });
   const selectedRef = useRef<string | null>(null);
@@ -439,6 +443,19 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
     return out;
   }
 
+  // Places whose name AND location match what was typed ("kettl brooklyn"), best first (closest first when a position is known).
+  function matchNamePlace(qn: string, from: { lat: number; lng: number } | null): { cafe: Cafe; score: number; dist: number | null }[] {
+    const tokens = qn.split(" ").filter(Boolean);
+    const out: { cafe: Cafe; score: number; dist: number | null }[] = [];
+    if (tokens.length < 2) return out;
+    (all ?? []).forEach((cafe, i) => {
+      const score = namePlaceScore(tokens, nameWords[i], placeWords[i]);
+      if (score > 0) out.push({ cafe, score, dist: from ? haversineMiles(from, cafe) : null });
+    });
+    out.sort((x, y) => y.score - x.score || (from ? (x.dist ?? 0) - (y.dist ?? 0) : x.cafe.name.localeCompare(y.cafe.name)));
+    return out;
+  }
+
   const knownPosition = () => myLoc ?? (origin && origin.label === t("c.cf.yourLocation") ? origin : null);
 
   function goToPlace(o: Origin) {
@@ -501,10 +518,16 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
       const places = await geocodeMany(q, ALL_COUNTRIES, lang, 5);
       const place = places[0];
       const placeStrong = !!place && (place.relevance ?? 0) >= 0.9;
+      // The typed text is exactly a place (a city, a ZIP...): "Brooklyn" goes to Brooklyn. A fuzzy place that only resembles the text ("kettl" ~ the town
+      // of Kettle) does not win over a name that really contains it.
+      const placeExact = !!place && (/\d/.test(qn) || norm(place.label.split(",")[0]) === qn);
       if (exact.length) return goToCafes(exact[0].cafe.name, exact, from); // the name of a venue: its closest outlet first
-      if (placeStrong) return goToPlace(place); // a city, ZIP or postcode
+      if (placeStrong && placeExact) return goToPlace(place);
+      const both = !/\d/.test(qn) ? matchNamePlace(qn, from) : []; // a name plus a place: "kettl brooklyn"
+      if (both.length) return goToCafes(q, both, from);
       const inside = !/\d/.test(qn) && qn.length >= 3 ? matchCafes(qn, 1.0, from) : []; // the text is part of a café name
       if (inside.length) return goToCafes(q, inside, from);
+      if (placeStrong) return goToPlace(place); // any other strong place match
       // Nothing matched well (a typo, probably): offer the closest cafés and places to choose from.
       const fuzzy = qn.length >= 4 ? matchCafes(qn, 0.62, from) : [];
       const seen = new Set<string>();
@@ -537,7 +560,7 @@ export function CafeFinder({ contactEmail, initialRegion = "us", explicitRegion 
       const seen = new Set<string>();
       const list: Opt[] = [];
       if (!/\d/.test(qn)) {
-        for (const h of matchCafes(qn, 1.0, from)) {
+        for (const h of [...matchNamePlace(qn, from), ...matchCafes(qn, 1.0, from)]) {
           const k = norm(h.cafe.name);
           if (seen.has(k)) continue;
           seen.add(k);

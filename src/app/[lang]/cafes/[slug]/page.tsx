@@ -245,7 +245,7 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
 
       {owner && <OwnerCafeSections part="rest" name={c.name} page={owner.page} photos={owner.photos} files={owner.files} products={owner.products} />}
 
-      {profile && (profile.about || profile.matcha || (profile.menu?.length ?? 0) > 0 || (profile.facts?.length ?? 0) > 0) && !owner?.page.bio && (
+      {profile && (profile.about || profile.matcha || (profile.facts?.length ?? 0) > 0) && !owner?.page.bio && (
         <section aria-labelledby="cafe-about" className="mt-6 overflow-hidden rounded-md border-2 border-matcha bg-gradient-to-br from-matcha-soft to-paper-raised shadow-sm">
           <div className="border-b-2 border-matcha/40 px-5 py-4 sm:px-7">
             <h2 id="cafe-about" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">About</h2>
@@ -257,19 +257,6 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
               <div className="flex items-start gap-3 rounded-md border-2 border-matcha/50 bg-paper-raised px-4 py-3 shadow-sm">
                 <span aria-hidden="true" className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border-2 border-matcha bg-matcha-soft text-sm font-semibold text-forest">茶</span>
                 <p className="text-sm leading-relaxed text-ink-muted"><span className="block font-mono text-xs uppercase tracking-[0.2em] text-forest">The matcha</span>{profile.matcha}</p>
-              </div>
-            )}
-            {profile.menu && profile.menu.length > 0 && (
-              <div>
-                <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Matcha menu highlights</h3>
-                <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {profile.menu.map((m) => (
-                    <li key={m.name} className="rounded-md border-2 border-line bg-paper-raised px-4 py-3 shadow-sm">
-                      <p className="flex items-center gap-2 font-display text-base font-semibold text-ink"><span aria-hidden="true" className="inline-block h-2.5 w-2.5 shrink-0 rounded-full bg-matcha" />{m.name}</p>
-                      {m.note && <p className="mt-1 text-sm leading-snug text-ink-muted">{m.note}</p>}
-                    </li>
-                  ))}
-                </ul>
               </div>
             )}
             {profile.facts && profile.facts.length > 0 && (
@@ -307,7 +294,17 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <p className="text-sm text-ink-muted">
           {c.via === "name" ? t("cafe.menu.name") : c.via === "reported" ? t("cafe.menu.reported") : t("cafe.menu.web", { date: fmtDate(c.checked, lang) })}
         </p>
-        {c.ev.length > 0 && (<ul className="mt-4 flex flex-col gap-3">
+        {profile?.menu && profile.menu.length > 0 && (
+          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+            {profile.menu.map((m) => (
+              <li key={m.name} className="flex items-start justify-between gap-3 rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-2.5">
+                <span className="min-w-0"><span className="block text-sm font-medium text-ink">{m.name}<span className="ml-2 rounded-full bg-matcha px-2 py-0.5 align-middle text-[0.65rem] font-medium uppercase tracking-wide text-paper">Matcha</span></span>{m.note && m.price == null && <span className="block text-xs text-ink-muted">{m.note}</span>}</span>
+                {(m.price ?? null) !== null && <span className="shrink-0 text-sm tabular-nums text-ink-muted">{m.price}</span>}
+              </li>
+            ))}
+          </ul>
+        )}
+        {!(profile?.menu && profile.menu.length > 0) && c.ev.length > 0 && (<ul className="mt-4 flex flex-col gap-3">
           {c.ev.map((e) => (
             <li key={e.u} className="rounded-sm border-2 border-matcha bg-matcha-soft px-4 py-3">
               {e.s.map((q) =>
