@@ -20,12 +20,12 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
   const hs = parts[2], extra = parts[6];
   const [style, ci] = outfit;
   const C = OUTFIT_COLORS[ci], Cd = shade(C, -38), Cl = shade(C, 42);
-  const pants = style === 3 || style === 7 || style === 9 ? "#3e5c8a" : style === 4 || style === 1 ? "#3b3f4a" : style === 5 || style === 6 ? S : style === 8 ? C : Cd;
-  const shirt = style === 1 || style === 4 || style === 8 ? "#f3efe4" : style === 6 ? Cl : C;
+  const pants = style === 3 || style === 7 || style === 9 ? "#3e5c8a" : style === 4 || style === 1 ? "#3b3f4a" : style === 5 || style === 6 ? S : style === 8 ? C : style === 14 || style === 12 ? Cd : style === 10 || style === 13 ? "#3b3f4a" : style === 11 ? "#3e5c8a" : Cd;
+  const shirt = style === 1 || style === 4 || style === 8 || style === 12 || style === 13 ? "#f3efe4" : style === 6 ? Cl : C;
   const s = 2.2;
   const hand = extra === 1 || extra === 2;
   // Short sleeves show bare arms; everything else covers them.
-  const bareArms = style === 3 || style === 5 || style === 6 || style === 9;
+  const bareArms = style === 3 || style === 5 || style === 6 || style === 9 || style === 11;
   const armCol = bareArms ? S : style === 1 || style === 8 ? "#f3efe4" : C;
   const head = (
     <g transform={`translate(${70 - 32 * s} -4) scale(${s})`}>
@@ -115,6 +115,13 @@ function Body({ parts, outfit, back }: { parts: DesignParts; outfit: [number, nu
           {!back && <rect x="58" y="150" width="24" height="16" rx="3" fill={Cd} opacity="0.6" />}
         </g>
       )}
+      {style === 10 && !back && <g><path d="M54 108l16 18 16-18" fill="none" stroke={Cl} strokeWidth="5" strokeLinejoin="round" />{[134, 154, 174].map((y) => <circle key={y} cx="70" cy={y} r="2.2" fill={Cd} />)}<rect x="46" y="136" width="16" height="14" rx="2" fill={Cd} opacity="0.5" /></g>}
+      {style === 11 && !back && <g><path d="M54 108l16 14 16-14" fill="none" stroke={Cl} strokeWidth="5" strokeLinejoin="round" /><path d="M70 120v26" stroke={Cd} strokeWidth="3" />{[128, 138].map((y) => <circle key={y} cx="70" cy={y} r="2" fill={Cl} />)}</g>}
+      {style === 12 && !back && <g><path d="M38 110l22 6v80H34z" fill={C} /><path d="M102 110l-22 6v80h26z" fill={C} /><path d="M66 116h8l2 6-6 4-6-4z" fill={Cl} /><path d="M67 124h6l3 46-6 8-6-8z" fill={Cl} /></g>}
+      {style === 12 && back && <path d="M38 110c8-8 56-8 64 0l4 86H34z" fill={C} />}
+      {style === 13 && !back && <g><path d="M38 110l24 8v78H34z" fill={C} /><path d="M102 110l-24 8v78h28z" fill={C} />{[140, 158, 176].map((y) => <circle key={y} cx="62" cy={y} r="2" fill={Cd} />)}</g>}
+      {style === 13 && back && <path d="M38 110c8-8 56-8 64 0l4 86H34z" fill={C} />}
+      {style === 14 && <g><path d="M70 112v84" stroke={Cl} strokeWidth="3" />{!back && <path d="M44 114v82M96 114v82" stroke="#f3efe4" strokeWidth="3" />}</g>}
       {style === 3 && !back && <path d="M58 109c3 8 21 8 24 0" fill="none" stroke={shade(C, -45)} strokeWidth="4" strokeLinecap="round" />}
       {/* held item in the right hand */}
       {hand && !back && (

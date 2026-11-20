@@ -151,17 +151,27 @@ export function designedFace(parts: DesignParts) {
     hs === 11 ? <g fill={H}><ellipse cx="14.5" cy="38" rx="5" ry="10" /><ellipse cx="49.5" cy="38" rx="5" ry="10" /><circle cx="16" cy="29" r="2" fill="#c0577a" /><circle cx="48" cy="29" r="2" fill="#c0577a" /></g> :
     hs === 13 ? <g fill={H}><circle cx="21" cy="11" r="6.5" /><circle cx="43" cy="11" r="6.5" /></g> :
     hs === 14 ? <path d="M16 30c0-14 6-21 16-21s16 7 16 21c2 6 1 12-3 18-2-3-4-3-6 0-3-3-5-3-7 0-3-3-5-3-7 0-2-3-5-3-6 0-4-6-5-12-3-18z" fill={H} /> :
-    hs === 15 ? <g fill={H}><circle cx="46" cy="40" r="3.8" /><circle cx="47" cy="47" r="3.6" /><circle cx="46" cy="54" r="3.4" /><circle cx="47" cy="60" r="3" /></g> : null;
+    hs === 15 ? <g fill={H}><circle cx="46" cy="40" r="3.8" /><circle cx="47" cy="47" r="3.6" /><circle cx="46" cy="54" r="3.4" /><circle cx="47" cy="60" r="3" /></g> :
+    hs === 19 ? <g><circle cx="32" cy="8.5" r="5.2" fill={H} /><rect x="28" y="12.500" width="8" height="2" rx="1" fill="#3a3a42" /></g> : null;
   const hairFront =
     hs === 1 ? <path d="M19 27c0-9 5-15 13-15s13 6 13 15c-3-5-8-7-13-7s-10 2-13 7z" fill={H} /> :
     hs === 2 || hs === 4 ? <path d="M19 27c0-9 5-14 13-14s13 5 13 14c-4-4-8-6-13-6s-9 2-13 6z" fill={H} /> :
     hs === 3 || hs === 10 || hs === 11 || hs === 13 || hs === 14 || hs === 15 ? <path d="M19 27c0-9 5-14 13-14s13 5 13 14c-4-4-8-6-13-6s-9 2-13 6z" fill={H} /> :
     hs === 12 ? <path d="M19 28c0-10 5-16 13-16s13 6 13 16c-3-4-7-6-11-6-3 4-9 6-15 6z" fill={H} /> :
+    hs === 16 ? <path d="M20 25c0-8 5-12 12-12s12 4 12 12c-3-2-7-3-12-3s-9 1-12 3z" fill={H} opacity="0.9" /> :
+    hs === 17 ? <path d="M18.500 28c0-10 5-16 13.500-16s13.500 6 13.500 16c-1-4-3-7-6-8-5 3-12 3-18 0-1 2-2 5-3 8z" fill={H} /> :
+    hs === 18 ? <g><path d="M18.500 29c0-11 5-17 13.500-17s13.500 6 13.500 17c-2-5-6-9-13.500-9s-11.500 4-13.500 9z" fill={H} /><path d="M24 17c4-3 10-4 16-2" stroke="#fff" strokeWidth="1" opacity="0.35" fill="none" strokeLinecap="round" /></g> :
+    hs === 19 ? <path d="M19 27c0-9 5-15 13-15s13 6 13 15c-3-5-8-7-13-7s-10 2-13 7z" fill={H} /> :
+    hs === 20 ? <g><path d="M28 21c0-8 1-13 4-16 3 3 4 8 4 16z" fill={H} /><path d="M21 24c0-4 3-8 7-9v6c-3 1-5 2-7 3zM43 24c0-4-3-8-7-9v6c3 1 5 2 7 3z" fill={H} opacity="0.25" /></g> :
+    hs === 21 ? <g><path d="M18 27c-1-10 4-17 14-17 9 0 15 3 14 17-1-4-4-7-6-8-4 1-10 1-14 0-3 1-5 4-8 8z" fill={H} /><ellipse cx="34" cy="10" rx="13" ry="6.500" fill={H} /></g> :
+    hs === 24 ? <path d="M21 24c0-8 4-12 11-12s11 4 11 12c-3-2-7-3-11-3s-8 1-11 3z" fill={H} /> :
     hs === 5 ? <g fill={H}>{[[21, 20], [27, 15], [33, 14], [39, 16], [44, 22], [19, 27], [45, 28]].map(([x, y]) => <circle key={x} cx={x} cy={y} r="5.5" />)}</g> :
     hs === 6 ? <g><path d="M18 25c0-9 6-14 14-14s14 5 14 14z" fill={H} /><path d="M16 25h26c3 0 5 1 6 3H16z" fill={H} /></g> :
     hs === 7 ? <g><path d="M10 24h44c-3 3-9 4-22 4s-19-1-22-4z" fill="#d9b46a" /><path d="M32 6l16 19H16z" fill="#e6c47a" /><path d="M24 17l-3 7M32 12v12M40 17l3 7" stroke="#b8923f" strokeWidth="1" /></g> :
     hs === 8 ? <g><path d="M18 26c0-9 6-14 14-14s14 5 14 14c-5-3-9-4-14-4s-9 1-14 4z" fill={H} /><rect x="18" y="22" width="28" height="3.5" rx="1.7" fill="#c0577a" /></g> :
-    hs === 9 ? <g><ellipse cx="33" cy="17" rx="15" ry="6" fill="#3f7d3a" /><circle cx="33" cy="10.5" r="1.6" fill="#3f7d3a" /></g> : null;
+    hs === 9 ? <g><ellipse cx="33" cy="17" rx="15" ry="6" fill="#3f7d3a" /><circle cx="33" cy="10.5" r="1.6" fill="#3f7d3a" /></g> :
+    hs === 22 ? <g><path d="M18 26c0-10 6-16 14-16s14 6 14 16z" fill={H} /><rect x="17" y="22.500" width="30" height="5" rx="2.500" fill="#000" opacity="0.2" /><circle cx="32" cy="9" r="3" fill="#e9e4d6" /></g> :
+    hs === 23 ? <g><path d="M10 24h44c-2 3-8 4-22 4s-20-1-22-4z" fill={H} /><path d="M18 24c0-9 5-13 14-13s14 4 14 13z" fill={H} /><rect x="18" y="21.500" width="28" height="2.500" fill="#000" opacity="0.2" /></g> : null;
   const eyeEl =
     eyes === 0 ? <g fill={ink}><circle cx="26" cy="30" r="1.8" /><circle cx="38" cy="30" r="1.8" /></g> :
     eyes === 1 ? <g fill="none" stroke={ink} strokeWidth="1.8" strokeLinecap="round"><path d="M23.5 31c1-3 4-3 5 0M35.5 31c1-3 4-3 5 0" /></g> :
@@ -196,7 +206,11 @@ export function designedFace(parts: DesignParts) {
     extra === 8 ? <g fill="#e06a8a"><path d="M43 14l-8-4v8z" /><path d="M43 14l8-4v8z" /><circle cx="43" cy="14" r="2.2" fill="#c0405f" /></g> :
     extra === 9 ? <g><path d="M17 30c0-16 6-22 15-22s15 6 15 22" fill="none" stroke="#3a3a42" strokeWidth="2.6" strokeLinecap="round" /><rect x="12.5" y="26" width="6" height="11" rx="3" fill="#3a3a42" /><rect x="45.5" y="26" width="6" height="11" rx="3" fill="#3a3a42" /></g> :
     extra === 10 ? <g fill="#b0683a"><circle cx="24" cy="35" r="0.7" /><circle cx="26.500" cy="36.500" r="0.7" /><circle cx="22.500" cy="37" r="0.7" /><circle cx="40" cy="35" r="0.7" /><circle cx="37.500" cy="36.500" r="0.7" /><circle cx="41.500" cy="37" r="0.7" /></g> :
-    extra === 11 ? <g><path d="M19 20l-3-12 10 6z" fill={H} /><path d="M45 20l3-12-10 6z" fill={H} /><path d="M19.500 17.500l-1.500-6 5 3z" fill="#f2a0b8" /><path d="M44.500 17.500l1.500-6-5 3z" fill="#f2a0b8" /></g> : null;
+    extra === 11 ? <g><path d="M19 20l-3-12 10 6z" fill={H} /><path d="M45 20l3-12-10 6z" fill={H} /><path d="M19.500 17.500l-1.500-6 5 3z" fill="#f2a0b8" /><path d="M44.500 17.500l1.500-6-5 3z" fill="#f2a0b8" /></g> :
+    extra === 12 ? <path d="M21 36c1 8 5 11 11 11s10-3 11-11c-3 3-7 4-11 4s-8-1-11-4z" fill={H} opacity="0.32" /> :
+    extra === 13 ? <path fillRule="evenodd" d="M19 31c0 12 5 20 13 20s13-8 13-20c-1 3-3 5-5 5-2-2-5-3-8-3s-6 1-8 3c-2 0-4-2-5-5zM24.500 39.500a7.500 4.500 0 1 0 15 0a7.500 4.500 0 1 0-15 0z" fill={H} /> :
+    extra === 14 ? <path d="M25 36.500c2-2.500 5-2.500 7-1 2-1.500 5-1.500 7 1-3-.2-5 .8-7 .8s-4-1-7-.8z" fill={H} /> :
+    extra === 15 ? <g fill={H}><path d="M28.500 41.500c1-1.500 6-1.500 7 0 1 3-1 5.500-3.500 5.500s-4.500-2.500-3.500-5.500z" /><path d="M26 36.500c2-2 4-2 6-.8 2-1.200 4-1.200 6 .8-3 0-4 .8-6 .8s-3-.8-6-.8z" /></g> : null;
   return { B, S, H, hairBack, hairFront, eyeEl, mouthEl, extraEl };
 }
 
