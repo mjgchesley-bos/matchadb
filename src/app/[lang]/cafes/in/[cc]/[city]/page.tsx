@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
-import { MIN_CAFES_FOR_CITY_PAGE, cityPath, getPlaceIndex } from "@/lib/cafe-places";
+import { MIN_CAFES_FOR_CITY_PAGE, OTHER_CHUNK, cityPath, getPlaceIndex, otherCafes, otherPages } from "@/lib/cafe-places";
 import { matchaItem } from "@/lib/cafe-snippet";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/site";
@@ -34,10 +34,23 @@ function pickCafes(list: Cafe[]): Cafe[] {
   return [...list].sort((a, b) => score(b) - score(a) || a.name.localeCompare(b.name));
 }
 
+const otherN = (city: string): number | null => {
+  const m = /^other-(\d+)$/.exec(decodeURIComponent(city));
+  return m ? Number(m[1]) : null;
+};
+
 export async function generateMetadata({ params }: { params: Promise<Params> }): Promise<Metadata> {
   const { lang: raw, cc, city } = await params;
   const lang: Locale = isLocale(raw) ? raw : "en";
   const t = getT(lang);
+  const on = otherN(city);
+  if (on !== null) {
+    if (on < 1 || on > otherPages(cc)) return { title: t("cafe.notFound"), robots: { index: false } };
+    const title = `Matcha cafés in smaller towns of ${countryName(cc.toUpperCase(), lang)} (page ${on})`;
+    const description = `Matcha cafés in ${countryName(cc.toUpperCase(), lang)} towns with fewer than three listings, with their menus, directions and ratings.`;
+    const alternates = pageAlternates(lang, `/cafes/in/${cc.toLowerCase()}/other-${on}`);
+    return { title, description, alternates, openGraph: { title, description, url: alternates.canonical } };
+  }
   const e = find(cc, city);
   if (!e) return { title: t("cafe.notFound"), robots: { index: false } };
   const place = placeOf(e, lang);
@@ -58,6 +71,31 @@ export default async function CafeCity({ params }: { params: Promise<Params> }) 
   if (!isLocale(raw)) notFound();
   const lang: Locale = raw;
   const t = getT(lang);
+  const on = otherN(city);
+  if (on !== null) {
+    const list = otherCafes(cc).slice((on - 1) * OTHER_CHUNK, on * OTHER_CHUNK);
+    if (!list.length) notFound();
+    const cname = countryName(cc.toUpperCase(), lang);
+    return (
+      <main className="flex-1 max-w-4xl mx-auto w-full px-6 py-10">
+        <PageHero eyebrow={t("pl.backCountry", { place: cname })} title={`Matcha cafés in smaller towns of ${cname} (page ${on})`} lede={`${list.length} cafés in towns with fewer than three listings. Each links to its own page with menu evidence, directions and member ratings.`} />
+        <section className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6">
+          <ul className="divide-y-2 divide-line">
+            {list.map((c) => (
+              <li key={c.id} className="py-3">
+                <Link href={`/cafes/${cafeSlug(c)}`} className="font-medium text-ink hover:text-matcha">{c.name}</Link>
+                <span className="block text-sm text-ink-faint">{formatPlace(c, lang)}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 flex flex-wrap gap-3 text-sm">
+            {on > 1 && <Link href={`/cafes/in/${cc.toLowerCase()}/other-${on - 1}`} className="text-matcha underline hover:text-forest">Previous page</Link>}
+            {on < otherPages(cc) && <Link href={`/cafes/in/${cc.toLowerCase()}/other-${on + 1}`} className="text-matcha underline hover:text-forest">Next page</Link>}
+          </p>
+        </section>
+      </main>
+    );
+  }
   const e = find(cc, city);
   if (!e) notFound();
   const place = placeOf(e, lang);

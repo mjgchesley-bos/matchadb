@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHero, Panel } from "@/components/PageUI";
 import Link from "@/i18n/Link";
 import { notFound } from "next/navigation";
-import { cityPath, getPlaceIndex } from "@/lib/cafe-places";
+import { cityPath, getPlaceIndex, otherPages, otherCafes } from "@/lib/cafe-places";
 import { countryName } from "@/lib/cafe-types";
 import { isLocale, type Locale } from "@/i18n/config";
 import { getT } from "@/i18n/server";
@@ -54,7 +54,21 @@ export default async function CafeCountry({ params }: { params: Promise<Params> 
             </li>
           ))}
         </ul>
-      ) : (
+      ) : null}
+      {otherPages(up) > 0 && (
+        <section className="mt-8 rounded-md border-2 border-line bg-paper-raised p-5 shadow-sm sm:p-6" aria-labelledby="other-towns">
+          <h2 id="other-towns" className="font-mono text-xs uppercase tracking-[0.2em] text-forest">Smaller towns</h2>
+          <p className="mt-1 text-sm text-ink-muted">{otherCafes(up).length.toLocaleString("en-US")} more cafés in places with fewer than three, listed alphabetically.</p>
+          <p className="mt-3 flex flex-wrap gap-2 text-sm">
+            {Array.from({ length: otherPages(up) }, (_, i) => (
+              <Link key={i} href={`/cafes/in/${cc.toLowerCase()}/other-${i + 1}`} className="rounded-full border-2 border-line-strong px-3 py-1 text-ink hover:bg-matcha-soft">
+                Page {i + 1}
+              </Link>
+            ))}
+          </p>
+        </section>
+      )}
+      {cities.length === 0 && otherPages(up) === 0 && (
         <p className="mt-6 rounded-md border-2 border-line bg-paper-raised p-5 text-ink-muted">
           <Link href="/matcha-map" className="text-matcha underline hover:text-forest">{t("nav.cafes.long")}</Link>
         </p>

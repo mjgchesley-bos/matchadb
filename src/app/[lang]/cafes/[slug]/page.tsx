@@ -7,6 +7,7 @@ import { ReportNoMatchaButton } from "@/components/ReportNoMatchaButton";
 import { CafeMenuManager } from "@/components/CafeMenuManager";
 import { JsonLd } from "@/components/JsonLd";
 import { ProductRating } from "@/components/ProductRating";
+import { cityPath, citySlug, MIN_CAFES_FOR_CITY_PAGE, getPlaceIndex } from "@/lib/cafe-places";
 import { chainSiblings, getCafeBySlug, nearbyCafes, redirectedCafeSlug } from "@/lib/cafes";
 import { countryName, cafeSlug, directionsUrl, formatPlace } from "@/lib/cafe-types";
 import { getCafeProfile, getCafeExtras, isTakeHome } from "@/lib/cafe-profiles";
@@ -83,6 +84,8 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
   const where = formatPlace(c, lang);
   const near = nearbyCafes(c, 5);
   const cc = (c.cc || "US").toUpperCase();
+  const cityEntry = c.city ? getPlaceIndex().cities.get(`${cc}/${citySlug(c.city, cc === "US" ? c.state : "")}`) : undefined;
+  const cityHub = cityEntry && cityEntry.cafes.length >= MIN_CAFES_FOR_CITY_PAGE ? cityEntry : null;
   const siblings = chainSiblings(c);
   const profile = getCafeProfile(c.id);
   const owner = await getOwnerData(c.id);  // set when the verified owner has customised the page
@@ -138,7 +141,13 @@ export default async function CafePage({ params }: { params: Promise<Params> }) 
         <Link href="/matcha-map" className="hover:text-ink-muted">
           {t("cafe.crumb")}
         </Link>{" "}
-        / {loc(c, lang)}
+        / <Link href={`/cafes/in/${cc.toLowerCase()}`} className="hover:text-ink-muted">{countryName(cc, lang)}</Link>
+        {cityHub && (
+          <>
+            {" "}/ <Link href={cityPath(cityHub)} className="hover:text-ink-muted">{cityHub.city}</Link>
+          </>
+        )}{" "}
+        / {c.name}
       </nav>
 
       {owner?.page.cover_path && (

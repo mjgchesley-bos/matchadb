@@ -39,4 +39,16 @@ export function getPlaceIndex(): Index {
   return index;
 }
 
+// Cafés in towns too small for their own city page (or with no city on record). Without this they are linked from nowhere but the sitemap and "nearby".
+export const OTHER_CHUNK = 250;
+export function otherCafes(cc: string): Cafe[] {
+  const up = cc.toUpperCase();
+  const idx = getPlaceIndex();
+  const hubbed = new Set((idx.byCountry.get(up) ?? []).map((e) => e.slug));
+  return getAllCafes()
+    .filter((c) => (c.cc || "US").toUpperCase() === up && !(c.city && hubbed.has(citySlug(c.city, up === "US" ? c.state : ""))))
+    .sort((a, b) => (a.state || "").localeCompare(b.state || "") || (a.city || "").localeCompare(b.city || "") || a.name.localeCompare(b.name));
+}
+export const otherPages = (cc: string): number => Math.ceil(otherCafes(cc).length / OTHER_CHUNK);
+
 export const cityPath = (e: Pick<CityEntry, "cc" | "slug">): string => `/cafes/in/${e.cc.toLowerCase()}/${encodeURIComponent(e.slug)}`;
