@@ -15,6 +15,7 @@ import { ShippingNote } from "@/components/ShippingNote";
 import { getBrandLogoPath } from "@/lib/logos";
 import { comparisonsFor } from "@/lib/compare";
 import { usd30 } from "@/lib/unit-price";
+import { brandPriceContext } from "@/lib/brand-price-context";
 import { BRAND_RESELLER_NOTES, chainsForBrand, resellersForBrand, storesForBrand } from "@/lib/stores";
 import { suppliersForBrand } from "@/lib/suppliers";
 import { SITE_URL } from "@/lib/site";
@@ -82,7 +83,9 @@ export default async function BrandPage({
   if (products.length === 0) notFound();
 
   const brandUrl = pageAlternates(lang, `/brands/${encodeURIComponent(brandName)}`).canonical;
-  const brandComparable = (await getComparablePrices()).filter((c) => c.brand === brandName);
+  const allComparable = await getComparablePrices();
+  const brandComparable = allComparable.filter((c) => c.brand === brandName);
+  const priceCtx = lang === "en" ? brandPriceContext(brandName, allComparable) : null;
   const summary = getBrandSummary({ brand: brandName, products, comparable: brandComparable }, lang, t, tv);
   const logoPath = getBrandLogoPath(brandName);
   const comparisons = comparisonsFor(brandName);
@@ -101,6 +104,7 @@ export default async function BrandPage({
   const nm = /matcha|抹茶|말차/i.test(brandName) ? brandName : `${brandName} matcha`;
   if (lang === "en") {
     if (per30.length) faq.push({ q: `How much does ${nm} cost?`, a: per30.length > 1 ? `Across ${per30.length} products with a stated size, ${nm} costs ${usd30(per30[0])} to ${usd30(per30[per30.length - 1])} per 30 g (the typical tin size).` : `The one ${nm} with a stated size works out to ${usd30(per30[0])} per 30 g (the typical tin size).` });
+    if (priceCtx) faq.push({ q: `Is ${nm} expensive?`, a: `${brandName}'s typical product is ${usd30(priceCtx.brandMedian)} per 30 g, against ${usd30(priceCtx.allMedian)} for the median matcha tracked here. It ranks ${priceCtx.rank} of ${priceCtx.of} brands from cheapest to most expensive (median price per 30 g, brands with 2+ priced products).` });
     if (grades.length) faq.push({ q: `What grades does ${nm} come in?`, a: `${brandName} lists ${grades.length === 1 ? "one grade" : "these grades"}: ${grades.join(", ")}. MatchaDB tracks ${products.length} ${brandName} product${products.length === 1 ? "" : "s"}.` });
     const where = [ownShops.length ? `${ownShops.length} brand-owned shop${ownShops.length === 1 ? "" : "s"}` : "", retailers.length ? `${retailers.length} retailer${retailers.length === 1 ? "" : "s"}` : "", onlineResellers.length ? `${onlineResellers.length} online reseller${onlineResellers.length === 1 ? "" : "s"}` : ""].filter(Boolean);
     if (where.length) faq.push({ q: `Where can I buy ${nm}?`, a: `MatchaDB lists ${where.join(" and ")} for ${brandName}, plus the brand's own product pages linked above.` });
@@ -270,6 +274,47 @@ export default async function BrandPage({
           );
         })}
       </div>
+
+      {priceCtx && (
+        <section className="mt-12" aria-labelledby="price-context">
+          <h2 id="price-context" className="font-mono text-xs tracking-[0.2em] uppercase text-forest mb-3">
+            How {brandName} prices compare
+          </h2>
+          <div className="rounded-sm border border-line bg-paper-raised p-4 sm:p-5">
+            <p className="text-ink leading-relaxed max-w-2xl">
+              A typical {brandName} product costs <strong>{usd30(priceCtx.brandMedian)} per 30 g</strong>, versus {usd30(priceCtx.allMedian)} for the median matcha on MatchaDB. {priceCtx.pctCheaperThan >= 50
+                ? `That makes it one of the cheaper brands: less expensive than ${priceCtx.pctCheaperThan}% of the ${priceCtx.of} brands we can price`
+                : `That makes it one of the pricier brands: more expensive than ${100 - priceCtx.pctCheaperThan}% of the ${priceCtx.of} brands we can price`}{" "}
+              (rank {priceCtx.rank}, cheapest first).
+            </p>
+            {priceCtx.grades.length > 0 && (
+              <table className="mt-4 w-full max-w-2xl text-sm">
+                <caption className="sr-only">{brandName} median price per 30 g by grade, against all brands</caption>
+                <thead>
+                  <tr className="text-left font-mono text-xs uppercase tracking-wider text-ink-faint">
+                    <th className="py-1 pr-3 font-normal">Grade</th>
+                    <th className="py-1 pr-3 font-normal">{brandName}</th>
+                    <th className="py-1 font-normal">All brands</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {priceCtx.grades.map((g) => (
+                    <tr key={g.grade} className="border-t border-line">
+                      <td className="py-1.5 pr-3 text-ink">{tv("grade", g.grade)}</td>
+                      <td className="py-1.5 pr-3 tabular-nums text-ink">{usd30(g.brandMedian)} <span className="text-ink-faint">({g.brandN})</span></td>
+                      <td className="py-1.5 tabular-nums text-ink-muted">{usd30(g.allMedian)} <span className="text-ink-faint">({g.allN})</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+            <p className="mt-3 text-xs text-ink-faint max-w-2xl leading-relaxed">
+              Medians of prices per 30 g from seller-stated tin sizes; counts in brackets. Prices change, so check the product pages for today&apos;s figure.{" "}
+              <Link href="/browse" className="text-matcha underline hover:text-forest">Compare every product</Link>.
+            </p>
+          </div>
+        </section>
+      )}
 
       {(stockists.length > 0 || onlineResellers.length > 0 || chainListing) && (
         <section className="mt-12" aria-labelledby="where-to-buy">
