@@ -14,7 +14,7 @@
   "url": "https://www.teaexpo.com.au/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "confirmed",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-lisbon-tea-week-festival-2026",
@@ -31,7 +31,7 @@
   "url": "https://atecha.co",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "confirmed",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-toronto-tea-festival-2027",
@@ -48,7 +48,7 @@
   "url": "https://teafestivaltoronto.com/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-the-leafies-awards-tasting-2027",
@@ -65,7 +65,23 @@
   "url": "https://theleafies.co.uk",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
+ },
+ {
+  "id": "auto-global-tea-institute-colloquium-2027",
+  "name": "Global Tea Institute Colloquium",
+  "kind": "tea festival",
+  "start": "2027-01-28",
+  "city": "Davis",
+  "country": "United States",
+  "continent": "North America",
+  "venue": "UC Davis Conference Center",
+  "lat": 40.7475,
+  "lng": -92.3965,
+  "url": "https://globaltea.ucdavis.edu/",
+  "source": "Organizer's site (date found via a public tea-festival listing)",
+  "confidence": "reported",
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-amsterdam-tea-festival-2027",
@@ -81,7 +97,7 @@
   "url": "https://amsterdamteafestival.com/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "confirmed",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-cha-dao-tea-festival-2027",
@@ -98,7 +114,7 @@
   "url": "https://empr.media/?p=104487",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-tea-culture-festival-teekulttuurifestivaali-2027",
@@ -115,7 +131,7 @@
   "url": "https://ssl.eventilla.com/event/vNlPo",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-dresden-tea-festival-2027",
@@ -131,7 +147,7 @@
   "url": "https://teerausch.de/dresden-tea-festival-2026/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-raleigh-tea-festival-2027",
@@ -147,7 +163,7 @@
   "url": "https://raleighteafestival.square.site/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-world-tea-expo-world-tea-conference-expo-2027",
@@ -164,7 +180,7 @@
   "url": "https://www.worldteaexpo.com/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-chicago-tea-festival-2027",
@@ -181,7 +197,7 @@
   "url": "https://chicagoteafestival.com/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "confirmed",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-pasadena-festival-of-tea-2027",
@@ -197,7 +213,7 @@
   "url": "https://www.japanesegardenpasadena.com/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-northern-virginia-tea-festival-2027",
@@ -213,7 +229,7 @@
   "url": "https://www.eldenstreettea.com/northern-virginia-tea-festival",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "confirmed",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-eugene-tea-festival-2027",
@@ -229,7 +245,7 @@
   "url": "https://eugeneteafestival.org/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "confirmed",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-paris-tea-festival-2027",
@@ -246,7 +262,7 @@
   "url": "https://www.paristeafestival.com/en",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "reported",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  },
  {
   "id": "auto-pennsylvania-tea-festival-2027",
@@ -263,6 +279,6 @@
   "url": "https://www.teafestpa.com/",
   "source": "Organizer's site (date found via a public tea-festival listing)",
   "confidence": "confirmed",
-  "checked": "2026-11-19"
+  "checked": "2026-11-22"
  }
 ]
