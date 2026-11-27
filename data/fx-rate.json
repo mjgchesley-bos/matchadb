@@ -1,9 +1,9 @@
 {
-  "usdToJpy": 159.26,
-  "gbpToUsd": 1.310376,
-  "eurToUsd": 1.097502,
-  "audToUsd": 0.663526,
-  "cadToUsd": 0.702741,
-  "asOf": "2026-11-26",
+  "usdToJpy": 159.54,
+  "gbpToUsd": 1.312147,
+  "eurToUsd": 1.095698,
+  "audToUsd": 0.666844,
+  "cadToUsd": 0.702001,
+  "asOf": "2026-11-27",
   "source": "Frankfurter API (ECB daily reference rates), frankfurter.dev"
 }
